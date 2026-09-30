@@ -13,12 +13,22 @@
       "beneficio": "generico",
       "sostituibilita": "vera_per_molti",
       "apertura": "promessa_generica",
-      "elementi_concreti": ["Riserva di Chia"],
-      "concreti_fuori_hero": ["Cinque ettari di giardini mediterranei", "spiaggia privata a Su Portu", "Aperto maggio–ottobre"],
+      "elementi_concreti": [
+        "Riserva di Chia"
+      ],
+      "concreti_fuori_hero": [
+        "Cinque ettari di giardini mediterranei",
+        "spiaggia privata a Su Portu",
+        "Aperto maggio–ottobre"
+      ],
       "frase_posizionamento": "Per [vuoto], Veridia è un rifugio sul mare tra silenzio e natura nella Riserva di Chia, a differenza di [vuoto]."
     },
-    "prova": 0, "cta_primari": 2, "cta_testo": "PRENOTA ORA", "modulo_date": false,
-    "scarsita_finta": false, "scaduta": false
+    "prova": 0,
+    "cta_primari": 2,
+    "cta_testo": "PRENOTA ORA",
+    "modulo_date": false,
+    "scarsita_finta": false,
+    "scaduta": false
   },
   {
     "nome": "Olympic SPA Hotel",
@@ -26,7 +36,13 @@
     "frase_visibile": true,
     "headline": "Il lusso al naturale",
     "sottotitolo": "Chalet su due piani, immerso nella natura: lo sguardo si perde nel bosco.",
-    "supporto": ["HOTEL SOLO PER ADULTI 14+", "Nessun intermediario", "Possibilità di scegliere la stanza preferita", "Cancellazione gratuita fino a 14 prima dell'arrivo", "Siamo aperti fino al 2 novembre 2025"],
+    "supporto": [
+      "HOTEL SOLO PER ADULTI 14+",
+      "Nessun intermediario",
+      "Possibilità di scegliere la stanza preferita",
+      "Cancellazione gratuita fino a 14 prima dell'arrivo",
+      "Siamo aperti fino al 2 novembre 2025"
+    ],
     "headline_piu_grande": true,
     "fuori_hero": "Title: Olympic SPA Hotel 4*S in Val di Fassa | Sito Ufficiale | Meta: Olympic 4*S vi accoglie nel cuore della Val di Fassa e vi porta a scoprire l'essenza del Trentino e delle tradizioni Ladine con attività, escursioni e cucina tipica. | H1: Olympic SPA Hotel - Hotel Adults Only nel cuore del Trentino",
     "ai": {
@@ -34,12 +50,22 @@
       "beneficio": "generico",
       "sostituibilita": "vera_per_molti",
       "apertura": "promessa_generica",
-      "elementi_concreti": ["Chalet su due piani", "SOLO PER ADULTI 14+", "Cancellazione gratuita fino a 14"],
-      "concreti_fuori_hero": ["tradizioni Ladine"],
+      "elementi_concreti": [
+        "Chalet su due piani",
+        "SOLO PER ADULTI 14+",
+        "Cancellazione gratuita fino a 14"
+      ],
+      "concreti_fuori_hero": [
+        "tradizioni Ladine"
+      ],
       "frase_posizionamento": "Per adulti dai 14 anni in su, Olympic è un lusso al naturale in uno chalet nel bosco, a differenza di [vuoto]."
     },
-    "prova": 0, "cta_primari": 3, "cta_testo": "Prenota Online", "modulo_date": true,
-    "scarsita_finta": false, "scaduta": true
+    "prova": 0,
+    "cta_primari": 3,
+    "cta_testo": "Prenota Online",
+    "modulo_date": true,
+    "scarsita_finta": false,
+    "scaduta": true
   },
   {
     "nome": "Club Family Hotel",
@@ -56,11 +82,19 @@
       "sostituibilita": "vera_per_quasi_tutti",
       "apertura": "vuota",
       "elementi_concreti": [],
-      "concreti_fuori_hero": ["All Inclusive", "piscina riscaldata", "animazione e servizi per famiglie"],
+      "concreti_fuori_hero": [
+        "All Inclusive",
+        "piscina riscaldata",
+        "animazione e servizi per famiglie"
+      ],
       "frase_posizionamento": "Per [vuoto], Club Family Hotel è [vuoto], a differenza di [vuoto]."
     },
-    "prova": 0, "cta_primari": 1, "cta_testo": "Chiedi il tuo preventivo", "modulo_date": false,
-    "scarsita_finta": false, "scaduta": false
+    "prova": 0,
+    "cta_primari": 1,
+    "cta_testo": "Chiedi il tuo preventivo",
+    "modulo_date": false,
+    "scarsita_finta": false,
+    "scaduta": false
   },
   {
     "nome": "Moko",
@@ -77,11 +111,18 @@
       "sostituibilita": "vera_per_quasi_tutti",
       "apertura": "vuota",
       "elementi_concreti": [],
-      "concreti_fuori_hero": ["due minuti a piedi dal mare", "Papeete Beach"],
+      "concreti_fuori_hero": [
+        "due minuti a piedi dal mare",
+        "Papeete Beach"
+      ],
       "frase_posizionamento": "Per [vuoto], Moko è [vuoto], a differenza di [vuoto]."
     },
-    "prova": 0, "cta_primari": 2, "cta_testo": "Prenota", "modulo_date": false,
-    "scarsita_finta": false, "scaduta": false
+    "prova": 0,
+    "cta_primari": 2,
+    "cta_testo": "Prenota",
+    "modulo_date": false,
+    "scarsita_finta": false,
+    "scaduta": false
   },
   {
     "nome": "The Hoxton Shoreditch",
@@ -89,7 +130,11 @@
     "frase_visibile": true,
     "headline": "Hello, Shoreditch!",
     "sottotitolo": "",
-    "supporto": ["Give your pals a great feeling with 15% off their first Hox stay.", "Up to £150/$150/€150 credit for festive dining and cosy lobby drinks.", "The Hoxton x Lacoste capsule collection has landed."],
+    "supporto": [
+      "Give your pals a great feeling with 15% off their first Hox stay.",
+      "Up to £150/$150/€150 credit for festive dining and cosy lobby drinks.",
+      "The Hoxton x Lacoste capsule collection has landed."
+    ],
     "headline_piu_grande": true,
     "fuori_hero": "Title: Book Our Boutique Hotel in Shoreditch, East London | The Hoxton | Meta: Stay at The Hoxton Hotel, Shoreditch in the heart of East London and experience comfortable rooms, all-day dining with a rooftop! Book now.",
     "ai": {
@@ -97,11 +142,51 @@
       "beneficio": "assente",
       "sostituibilita": "vera_per_quasi_tutti",
       "apertura": "vuota",
-      "elementi_concreti": ["Lacoste"],
-      "concreti_fuori_hero": ["all-day dining", "rooftop"],
+      "elementi_concreti": [
+        "Lacoste"
+      ],
+      "concreti_fuori_hero": [
+        "all-day dining",
+        "rooftop"
+      ],
       "frase_posizionamento": "Per [vuoto], The Hoxton è [vuoto], a differenza di [vuoto]."
     },
-    "prova": 0, "cta_primari": 4, "cta_testo": "Find a Room", "modulo_date": true,
-    "scarsita_finta": false, "scaduta": false
+    "prova": 0,
+    "cta_primari": 4,
+    "cta_testo": "Find a Room",
+    "modulo_date": true,
+    "scarsita_finta": false,
+    "scaduta": false
+  },
+  {
+    "nome": "Veridia (landing stay.)",
+    "url": "https://stay.veridiaresort.com/",
+    "frase_visibile": true,
+    "headline": "Silence, Wild Nature, and the Cleanest Sea in Italy.",
+    "sottotitolo": "The only elegant retreat set within a protected Mediterranean nature reserve — where true luxury means being completely surrounded by wild nature.",
+    "supporto": [
+      "CHIA, SARDINIA · PROTECTED NATURE RESERVE"
+    ],
+    "headline_piu_grande": true,
+    "fuori_hero": "Title: Veridia Resort — Where Nature Becomes Your Luxury | Meta: Veridia Resort in Chia, Sardinia. The only elegant retreat set within a protected Mediterranean nature reserve. Silence, wild nature, and the cleanest sea in Italy.",
+    "ai": {
+      "target": "implicito",
+      "beneficio": "concreto",
+      "sostituibilita": "solo_questo_hotel",
+      "elemento_unico": "The only elegant retreat set within a protected Mediterranean nature reserve",
+      "apertura": "promessa_concreta",
+      "elementi_concreti": [
+        "Cleanest Sea in Italy",
+        "protected Mediterranean nature reserve"
+      ],
+      "concreti_fuori_hero": [],
+      "frase_posizionamento": "Per chi intende il lusso come natura selvaggia intorno, Veridia è silenzio, natura selvaggia e il mare più pulito d'Italia, a differenza del lusso fatto di sole strutture."
+    },
+    "prova": 0,
+    "cta_primari": 2,
+    "cta_testo": "PLAN MY ESCAPE →",
+    "modulo_date": false,
+    "scarsita_finta": false,
+    "scaduta": false
   }
 ]
