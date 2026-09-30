@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+import { writeFileSync } from 'node:fs';
+import { estraiDaPagina } from '../estrai.js';
+const b = await chromium.launch();
+const p = await (await b.newContext()).newPage();
+await p.goto('file://' + new URL('./pagina-prova.html', import.meta.url).pathname);
+const e = { url: 'pagina-prova.html', ...(await estraiDaPagina(p)) };
+await b.close();
+writeFileSync(new URL('./estrazione-prova.json', import.meta.url), JSON.stringify(e, null, 1));
+console.log(e.desktop.supporto);

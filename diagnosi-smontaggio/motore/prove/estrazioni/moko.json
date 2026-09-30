@@ -1,0 +1,47 @@
+{
+ "url": "https://www.hotelmoko.it/",
+ "title": "Hotel 3 Stelle Superior a Milano Marittima | Moko Boutique Hotel",
+ "meta": "",
+ "desktop": {
+  "headline": "Your stay. Your story. Your mark.",
+  "sottotitolo": "",
+  "supporto": [],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 1,
+  "cta_testo": "Prenota",
+  "modulo_date": false,
+  "testo_schermata": "Your stay. Your story. Your mark. \n ",
+  "h1_fuori": [
+   "L’Hotel 3 stelle superior che non ti aspetti, a Milano Marittima"
+  ],
+  "seconda_schermata": [
+   "MOKO Milano Marittima",
+   "Un lifestyle hotel a Milano Marittima, a due minuti a piedi dal mare e dal Papeete Beach. Abbiamo un tattoo studio, colazione fino a mezzogiorno",
+   "tattoo studio",
+   "colazione"
+  ],
+  "prove": []
+ },
+ "mobile": {
+  "headline": "Your stay. Your story. Your mark.",
+  "sottotitolo": "",
+  "supporto": [],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 1,
+  "cta_testo": "Prenota",
+  "modulo_date": false,
+  "testo_schermata": "Your stay. Your story. Your mark. \n ",
+  "h1_fuori": [
+   "L’Hotel 3 stelle superior che non ti aspetti, a Milano Marittima"
+  ],
+  "seconda_schermata": [
+   "MOKO Milano Marittima",
+   "Un lifestyle hotel a Milano Marittima, a due minuti a piedi dal mare e dal Papeete Beach. Abbiamo un tattoo studio, colazione fino a mezzogiorno",
+   "tattoo studio",
+   "colazione"
+  ],
+  "prove": []
+ }
+}

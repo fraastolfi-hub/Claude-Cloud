@@ -1,0 +1,67 @@
+{
+  "url": "https://thehoxton.com/london/shoreditch/",
+  "voto": 16,
+  "verdetto": "Scritta come tutti gli altri",
+  "parametri": {
+    "posizionamento": {
+      "target": 0,
+      "beneficio": 0,
+      "differenziazione": 0,
+      "totale": 0
+    },
+    "hook": 6,
+    "cliche": 0,
+    "riprova": 0,
+    "azione": 10,
+    "penalita": 0
+  },
+  "frase_posizionamento": "Per [vuoto], The Hoxton è [vuoto], a differenza di [vuoto].",
+  "hero": {
+    "headline": "Hello, Shoreditch!",
+    "sottotitolo": "",
+    "supporto": []
+  },
+  "cliche_trovati": [
+    "hello"
+  ],
+  "elementi_concreti": [],
+  "prova_migliore": null,
+  "segnalazioni": [
+    {
+      "tipo": "parole_posto_sbagliato",
+      "testo": "Hai già le parole giuste. Sono nel posto sbagliato.",
+      "citazioni": [
+        "comfortable rooms",
+        "all-day dining with a rooftop"
+      ]
+    }
+  ],
+  "ai": {
+    "nome_hotel": "The Hoxton",
+    "target": "assente",
+    "target_testo": null,
+    "target_citazione": null,
+    "beneficio": "assente",
+    "beneficio_testo": null,
+    "beneficio_citazione": null,
+    "sostituibilita": "vera_per_quasi_tutti",
+    "elemento_unico": null,
+    "alternativa": null,
+    "frase_posizionamento": "Per [vuoto], The Hoxton è [vuoto], a differenza di [vuoto].",
+    "apertura": "vuota",
+    "elementi_concreti": [],
+    "concreti_fuori_hero": [
+      "comfortable rooms",
+      "all-day dining with a rooftop"
+    ],
+    "superlativo": null,
+    "distanza": null,
+    "frase_distanza": null,
+    "accordo": {
+      "target": 1,
+      "beneficio": 1,
+      "sostituibilita": 1,
+      "apertura": 1
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+ "url": "https://www.olympicspahotel.it/",
+ "title": "Olympic SPA Hotel 4*S Val di Fassa | Adults-Only Wellness",
+ "meta": "Olympic 4*S in Val di Fassa: rifugio adults-only 14+. Scopri la Te Jaga SPA, l'iconica Sauna nel Bosco e l'autentica cucina Ladina in Trentino.",
+ "desktop": {
+  "headline": "Cuore Ladino e Tradizioni",
+  "sottotitolo": "",
+  "supporto": [
+   "SPA e Benessere"
+  ],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 0,
+  "cta_testo": "",
+  "modulo_date": false,
+  "testo_schermata": "Camere \n Cuore Ladino e Tradizioni \n SPA e Benessere \n Esperienze",
+  "h1_fuori": [
+   "Olympic SPA Hotel - Hotel Adults Only nel cuore del Trentino"
+  ],
+  "seconda_schermata": [
+   "L'Olympic propone durante l'anno tante offerte speciali e promozioni per la tua vacanza in Trentino. Scegli quella più adatta a te!",
+   "Ritmi lenti e colori autunnali Boschi dorati A PARTIRE DA € 1954 A PERSONA SCOPRI L'OFFERTA Dal 1° settembre all'8 novembre 2026",
+   "Colazione in baita o Forest experience mindfulness Soggiorno a inizio settimana A PARTIRE DA € 927 A CAMERA",
+   "Ladin soul Sentirsi parte della montagna. Esperienze e profumi sulle Dolomiti."
+  ],
+  "prove": [
+   {
+    "tipo": "riconoscimento",
+    "testo": "TripAdvisor",
+    "schermate": 3.68
+   }
+  ]
+ },
+ "mobile": {
+  "headline": "Cuore Ladino e Tradizioni",
+  "sottotitolo": "",
+  "supporto": [
+   "SPA e Benessere"
+  ],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 0,
+  "cta_testo": "",
+  "modulo_date": false,
+  "testo_schermata": "Camere \n Cuore Ladino e Tradizioni \n SPA e Benessere \n Esperienze",
+  "h1_fuori": [
+   "Olympic SPA Hotel - Hotel Adults Only nel cuore del Trentino"
+  ],
+  "seconda_schermata": [
+   "L'Olympic propone durante l'anno tante offerte speciali e promozioni per la tua vacanza in Trentino. Scegli quella più adatta a te!",
+   "Ritmi lenti e colori autunnali Boschi dorati A PARTIRE DA € 1954 A PERSONA SCOPRI L'OFFERTA Dal 1° settembre all'8 novembre 2026",
+   "Colazione in baita o Forest experience mindfulness Soggiorno a inizio settimana A PARTIRE DA € 927 A CAMERA",
+   "Ladin soul Sentirsi parte della montagna. Esperienze e profumi sulle Dolomiti."
+  ],
+  "prove": [
+   {
+    "tipo": "riconoscimento",
+    "testo": "TripAdvisor",
+    "schermate": 4.28
+   }
+  ]
+ }
+}

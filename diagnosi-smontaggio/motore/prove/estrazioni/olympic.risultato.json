@@ -1,0 +1,73 @@
+{
+  "url": "https://www.olympicspahotel.it/",
+  "voto": 29,
+  "verdetto": "Scritta come tutti gli altri",
+  "parametri": {
+    "posizionamento": {
+      "target": 0,
+      "beneficio": 4,
+      "differenziazione": 7,
+      "totale": 11
+    },
+    "hook": 11,
+    "cliche": 3.8,
+    "riprova": 3,
+    "azione": 0,
+    "penalita": 0
+  },
+  "frase_posizionamento": "Per [vuoto], Olympic SPA Hotel è un'esperienza legata al cuore Ladino e alle tradizioni, a differenza di [vuoto].",
+  "hero": {
+    "headline": "Cuore Ladino e Tradizioni",
+    "sottotitolo": "",
+    "supporto": [
+      "SPA e Benessere"
+    ]
+  },
+  "cliche_trovati": [],
+  "elementi_concreti": [],
+  "prova_migliore": {
+    "tipo": "riconoscimento",
+    "testo": "TripAdvisor",
+    "schermate": 3.68
+  },
+  "segnalazioni": [
+    {
+      "tipo": "parole_posto_sbagliato",
+      "testo": "Hai già le parole giuste. Sono nel posto sbagliato.",
+      "citazioni": [
+        "Te Jaga SPA",
+        "iconica Sauna nel Bosco",
+        "autentica cucina Ladina"
+      ]
+    }
+  ],
+  "ai": {
+    "nome_hotel": "Olympic SPA Hotel",
+    "target": "assente",
+    "target_testo": null,
+    "target_citazione": null,
+    "beneficio": "solo_caratteristiche",
+    "beneficio_testo": "Il testo promette un generico legame con \"cuore Ladino e tradizioni\" e menziona \"SPA e Benessere\", senza specificare benefici concreti per l'ospite.",
+    "beneficio_citazione": "Cuore Ladino e Tradizioni; SPA e Benessere",
+    "sostituibilita": "vera_per_molti",
+    "elemento_unico": null,
+    "alternativa": null,
+    "frase_posizionamento": "Per [vuoto], Olympic SPA Hotel è un'esperienza legata al cuore Ladino e alle tradizioni, a differenza di [vuoto].",
+    "apertura": "promessa_generica",
+    "elementi_concreti": [],
+    "concreti_fuori_hero": [
+      "Te Jaga SPA",
+      "iconica Sauna nel Bosco",
+      "autentica cucina Ladina"
+    ],
+    "superlativo": null,
+    "distanza": null,
+    "frase_distanza": null,
+    "accordo": {
+      "target": 1,
+      "beneficio": 1,
+      "sostituibilita": 1,
+      "apertura": 1
+    }
+  }
+}

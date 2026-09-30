@@ -1,0 +1,70 @@
+{
+  "url": "https://www.hotelmoko.it/",
+  "voto": 13,
+  "verdetto": "Scritta come tutti gli altri",
+  "parametri": {
+    "posizionamento": {
+      "target": 0,
+      "beneficio": 0,
+      "differenziazione": 0,
+      "totale": 0
+    },
+    "hook": 6,
+    "cliche": 0,
+    "riprova": 0,
+    "azione": 7,
+    "penalita": 0
+  },
+  "frase_posizionamento": "Per [vuoto], Moko Boutique Hotel è [vuoto], a differenza di [vuoto].",
+  "hero": {
+    "headline": "Your stay. Your story. Your mark.",
+    "sottotitolo": "",
+    "supporto": []
+  },
+  "cliche_trovati": [
+    "your stay",
+    "your story"
+  ],
+  "elementi_concreti": [],
+  "prova_migliore": null,
+  "segnalazioni": [
+    {
+      "tipo": "parole_posto_sbagliato",
+      "testo": "Hai già le parole giuste. Sono nel posto sbagliato.",
+      "citazioni": [
+        "a due minuti a piedi dal mare",
+        "tattoo studio",
+        "colazione fino a mezzogiorno"
+      ]
+    }
+  ],
+  "ai": {
+    "nome_hotel": "Moko Boutique Hotel",
+    "target": "assente",
+    "target_testo": null,
+    "target_citazione": null,
+    "beneficio": "assente",
+    "beneficio_testo": null,
+    "beneficio_citazione": null,
+    "sostituibilita": "vera_per_quasi_tutti",
+    "elemento_unico": null,
+    "alternativa": null,
+    "frase_posizionamento": "Per [vuoto], Moko Boutique Hotel è [vuoto], a differenza di [vuoto].",
+    "apertura": "vuota",
+    "elementi_concreti": [],
+    "concreti_fuori_hero": [
+      "a due minuti a piedi dal mare",
+      "tattoo studio",
+      "colazione fino a mezzogiorno"
+    ],
+    "superlativo": null,
+    "distanza": null,
+    "frase_distanza": null,
+    "accordo": {
+      "target": 1,
+      "beneficio": 1,
+      "sostituibilita": 1,
+      "apertura": 1
+    }
+  }
+}

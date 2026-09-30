@@ -1,0 +1,41 @@
+{
+ "url": "https://www.veridiaresort.com/it",
+ "title": "Il Nature Resort di Chia, Sud Sardegna - Veridia Resort",
+ "meta": "Un rifugio naturale sulla costa incontaminata di Chia, Sardegna. Cinque ettari di giardini mediterranei, spiaggia privata a Su Portu e silenzio autentico. Aperto maggio–ottobre.",
+ "desktop": {
+  "headline": "Il Nature Resort della Riserva di Chia",
+  "sottotitolo": "Un rifugio sul mare tra silenzio,natura e bellezza",
+  "supporto": [],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 2,
+  "cta_testo": "RICHIESTA",
+  "modulo_date": false,
+  "testo_schermata": "Il Nature Resort della Riserva di Chia \n Un rifugio sul mare tra silenzio,natura e bellezza",
+  "h1_fuori": [],
+  "seconda_schermata": [
+   "Nascosto lungo la costa incontaminata di Chia, Veridia Resort è un luogo dove la natura e la tranquillità si prendono la scena.",
+   "Immerso in cinque ettari di giardini mediterranei, Veridia non punta all’eccesso né al lusso: celebra il silenzio, lo spazio e la semplicità.",
+   "QUI, TRA L’ARIA PROFUMATA DI MIRTO E IL SUONO LIEVE DEL VENTO E DEL MARE, OGNI OSPITE PUÒ ALLONTANARSI DALLA FRENESIA QUOTIDIANA E RISCOPRIRE IL VALORE DEL TEMPO CHE SCORRE LENTO."
+  ],
+  "prove": []
+ },
+ "mobile": {
+  "headline": "Il Nature Resort della Riserva di Chia",
+  "sottotitolo": "Un rifugio sul mare tra silenzio,natura e bellezza",
+  "supporto": [],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 2,
+  "cta_testo": "RICHIESTA",
+  "modulo_date": false,
+  "testo_schermata": "Il Nature Resort della Riserva di Chia \n Un rifugio sul mare tra silenzio,natura e bellezza",
+  "h1_fuori": [],
+  "seconda_schermata": [
+   "Nascosto lungo la costa incontaminata di Chia, Veridia Resort è un luogo dove la natura e la tranquillità si prendono la scena.",
+   "Immerso in cinque ettari di giardini mediterranei, Veridia non punta all’eccesso né al lusso: celebra il silenzio, lo spazio e la semplicità.",
+   "QUI, TRA L’ARIA PROFUMATA DI MIRTO E IL SUONO LIEVE DEL VENTO E DEL MARE, OGNI OSPITE PUÒ ALLONTANARSI DALLA FRENESIA QUOTIDIANA E RISCOPRIRE IL VALORE DEL TEMPO CHE SCORRE LENTO."
+  ],
+  "prove": []
+ }
+}

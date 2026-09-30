@@ -1,0 +1,59 @@
+{
+ "url": "https://stay.veridiaresort.com/",
+ "title": "Veridia Resort — Where Nature Becomes Your Luxury",
+ "meta": "Veridia Resort in Chia, Sardinia. The only elegant retreat set within a protected Mediterranean nature reserve. Silence, wild nature, and the cleanest sea in Italy.",
+ "desktop": {
+  "headline": "Silence, Wild Nature, and the Cleanest Sea in Italy.",
+  "sottotitolo": "The only elegant retreat set within a protected Mediterranean nature reserve — where true luxury means being completely surrounded by wild nature.",
+  "supporto": [
+   "CHIA, SARDINIA · PROTECTED NATURE RESERVE"
+  ],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 1,
+  "cta_testo": "PLAN MY ESCAPE →",
+  "modulo_date": false,
+  "testo_schermata": "Silence, Wild Nature, and the Cleanest Sea in Italy. \n The only elegant retreat set within a protected Mediterranean nature reserve — where true luxury means being completely surrounded by wild nature. \n CHIA, SARDINIA · PROTECTED NATURE RESERVE",
+  "h1_fuori": [],
+  "seconda_schermata": [],
+  "prove": [
+   {
+    "tipo": "voto",
+    "testo": "B. Booking.com Superb 8.5 /10",
+    "schermate": 1.15
+   },
+   {
+    "tipo": "voto",
+    "testo": "tripadvisor ★★★★½ 4.5 /5",
+    "schermate": 1.15
+   },
+   {
+    "tipo": "riconoscimento",
+    "testo": "Legambiente Guida Blu 5 Vele award",
+    "schermate": 4.84
+   }
+  ]
+ },
+ "mobile": {
+  "headline": "Silence, Wild Nature, and the Cleanest Sea in Italy.",
+  "sottotitolo": "The only elegant retreat set within a protected Mediterranean nature reserve — where true luxury means being completely surrounded by wild nature.",
+  "supporto": [
+   "CHIA, SARDINIA · PROTECTED NATURE RESERVE"
+  ],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 1,
+  "cta_testo": "PLAN MY ESCAPE →",
+  "modulo_date": false,
+  "testo_schermata": "Silence, Wild Nature, and the Cleanest Sea in Italy. \n The only elegant retreat set within a protected Mediterranean nature reserve — where true luxury means being completely surrounded by wild nature. \n CHIA, SARDINIA · PROTECTED NATURE RESERVE",
+  "h1_fuori": [],
+  "seconda_schermata": [],
+  "prove": [
+   {
+    "tipo": "voto",
+    "testo": "B. Booking.com Superb 8.5 /10",
+    "schermate": 1.15
+   }
+  ]
+ }
+}

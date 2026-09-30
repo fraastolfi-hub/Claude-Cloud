@@ -119,8 +119,7 @@
     ],
     "saluti_e_autoreferenza": [
       "benvenut[oiae]",
-      "il nostro hotel",
-      "la nostra struttura",
+      "nostr[oa] (hotel|struttura|albergo)",
       "vi aspettiamo",
       "dal (19|20)\\d\\d",
       "da \\d+ anni",

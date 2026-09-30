@@ -1,0 +1,37 @@
+{
+ "url": "https://thehoxton.com/london/shoreditch/",
+ "title": "Book Our Boutique Hotel in Shoreditch, East London | The Hoxton",
+ "meta": "Stay at The Hoxton Hotel, Shoreditch in the heart of East London and experience comfortable rooms, all-day dining with a rooftop! Book now.",
+ "desktop": {
+  "headline": "Hello, Shoreditch!",
+  "sottotitolo": "",
+  "supporto": [],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 1,
+  "cta_testo": "",
+  "modulo_date": true,
+  "testo_schermata": "Hello, Shoreditch! \n ",
+  "h1_fuori": [],
+  "seconda_schermata": [
+   "Stay 2 nights and get £50/$50/€50 credit, 3 nights gets you £100/$100/€100, and 4 nights gets you £150/$150/€150!"
+  ],
+  "prove": []
+ },
+ "mobile": {
+  "headline": "Hello, Shoreditch!",
+  "sottotitolo": "",
+  "supporto": [],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "cta_primari": 1,
+  "cta_testo": "",
+  "modulo_date": true,
+  "testo_schermata": "Hello, Shoreditch! \n ",
+  "h1_fuori": [],
+  "seconda_schermata": [
+   "Stay 2 nights and get £50/$50/€50 credit, 3 nights gets you £100/$100/€100, and 4 nights gets you £150/$150/€150!"
+  ],
+  "prove": []
+ }
+}

@@ -1,0 +1,73 @@
+{
+  "url": "https://stay.veridiaresort.com/",
+  "voto": 75,
+  "verdetto": "Ha un motivo, va affilato",
+  "parametri": {
+    "posizionamento": {
+      "target": 7,
+      "beneficio": 15,
+      "differenziazione": 15,
+      "totale": 37
+    },
+    "hook": 15,
+    "cliche": 3.8,
+    "riprova": 12,
+    "azione": 7,
+    "penalita": 0
+  },
+  "frase_posizionamento": "Per chi considera il lusso come immersione totale nella natura, Veridia Resort offre accesso al mare più pulito d'Italia e soggiorno in una riserva naturale protetta, a differenza di altri hotel non immersi in una riserva naturale protetta.",
+  "hero": {
+    "headline": "Silence, Wild Nature, and the Cleanest Sea in Italy.",
+    "sottotitolo": "The only elegant retreat set within a protected Mediterranean nature reserve — where true luxury means being completely surrounded by wild nature.",
+    "supporto": [
+      "CHIA, SARDINIA · PROTECTED NATURE RESERVE"
+    ]
+  },
+  "cliche_trovati": [
+    "elegant",
+    "luxury"
+  ],
+  "elementi_concreti": [
+    "the Cleanest Sea in Italy",
+    "protected Mediterranean nature reserve"
+  ],
+  "prova_migliore": {
+    "tipo": "voto",
+    "testo": "B. Booking.com Superb 8.5 /10",
+    "schermate": 1.15
+  },
+  "segnalazioni": [
+    {
+      "tipo": "promessa_da_provare",
+      "testo": "«The only elegant retreat set within a protected Mediterranean nature reserve» è la promessa più forte della pagina. Chi la prova?"
+    }
+  ],
+  "ai": {
+    "nome_hotel": "Veridia Resort",
+    "target": "implicito",
+    "target_testo": "chi considera il lusso come immersione totale nella natura",
+    "target_citazione": "where true luxury means being completely surrounded by wild nature",
+    "beneficio": "concreto",
+    "beneficio_testo": "accesso al mare più pulito d'Italia e soggiorno in una riserva naturale protetta",
+    "beneficio_citazione": "Silence, Wild Nature, and the Cleanest Sea in Italy. The only elegant retreat set within a protected Mediterranean nature reserve",
+    "sostituibilita": "solo_questo_hotel",
+    "elemento_unico": "The only elegant retreat set within a protected Mediterranean nature reserve",
+    "alternativa": "altri hotel non immersi in una riserva naturale protetta",
+    "frase_posizionamento": "Per chi considera il lusso come immersione totale nella natura, Veridia Resort offre accesso al mare più pulito d'Italia e soggiorno in una riserva naturale protetta, a differenza di altri hotel non immersi in una riserva naturale protetta.",
+    "apertura": "promessa_concreta",
+    "elementi_concreti": [
+      "the Cleanest Sea in Italy",
+      "protected Mediterranean nature reserve"
+    ],
+    "concreti_fuori_hero": [],
+    "superlativo": "The only elegant retreat set within a protected Mediterranean nature reserve",
+    "distanza": null,
+    "frase_distanza": null,
+    "accordo": {
+      "target": 1,
+      "beneficio": 1,
+      "sostituibilita": 1,
+      "apertura": 1
+    }
+  }
+}

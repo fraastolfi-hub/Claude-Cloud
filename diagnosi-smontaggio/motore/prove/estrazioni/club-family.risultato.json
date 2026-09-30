@@ -1,0 +1,79 @@
+{
+  "url": "https://www.clubfamilyhotelriccione.com/",
+  "voto": 9,
+  "verdetto": "Scritta come tutti gli altri",
+  "parametri": {
+    "posizionamento": {
+      "target": 0,
+      "beneficio": 0,
+      "differenziazione": 0,
+      "totale": 0
+    },
+    "hook": 0,
+    "cliche": 0,
+    "riprova": 9,
+    "azione": 0,
+    "penalita": 0
+  },
+  "frase_posizionamento": "Per [vuoto], Club Family Hotel Riccione è [vuoto], a differenza di [vuoto].",
+  "hero": {
+    "headline": "",
+    "sottotitolo": "",
+    "supporto": []
+  },
+  "cliche_trovati": [],
+  "elementi_concreti": [],
+  "prova_migliore": {
+    "tipo": "riconoscimento",
+    "testo": "banner tripadvisor header-banner-it.png",
+    "schermate": 0.8
+  },
+  "segnalazioni": [
+    {
+      "tipo": "nessuna_frase",
+      "testo": "Nella prima schermata non c'è nessuna frase che dica perché scegliervi."
+    },
+    {
+      "tipo": "parole_posto_sbagliato",
+      "testo": "Hai già le parole giuste. Sono nel posto sbagliato.",
+      "citazioni": [
+        "premiato dalla community di TripAdvisor come miglior hotel per famiglie in Italia",
+        "Club Family All Inclusive® Open Bar H24 & Spiaggia",
+        "2 lettini e 1 ombrellone per tutta la vacanza",
+        "le Tate per i piccoli",
+        "i gonfiabili di Gommoland Park"
+      ]
+    }
+  ],
+  "ai": {
+    "nome_hotel": "Club Family Hotel Riccione",
+    "target": "assente",
+    "target_testo": null,
+    "target_citazione": null,
+    "beneficio": "assente",
+    "beneficio_testo": null,
+    "beneficio_citazione": null,
+    "sostituibilita": "vera_per_quasi_tutti",
+    "elemento_unico": null,
+    "alternativa": null,
+    "frase_posizionamento": "Per [vuoto], Club Family Hotel Riccione è [vuoto], a differenza di [vuoto].",
+    "apertura": "vuota",
+    "elementi_concreti": [],
+    "concreti_fuori_hero": [
+      "premiato dalla community di TripAdvisor come miglior hotel per famiglie in Italia",
+      "Club Family All Inclusive® Open Bar H24 & Spiaggia",
+      "2 lettini e 1 ombrellone per tutta la vacanza",
+      "le Tate per i piccoli",
+      "i gonfiabili di Gommoland Park"
+    ],
+    "superlativo": null,
+    "distanza": null,
+    "frase_distanza": null,
+    "accordo": {
+      "target": 1,
+      "beneficio": 1,
+      "sostituibilita": 1,
+      "apertura": 1
+    }
+  }
+}

@@ -16,16 +16,20 @@ La domanda a cui risponde: **in quella schermata c'è un posizionamento, e viene
 
 ## Estrazione della prima schermata
 
-1. Rendering con browser headless (Playwright), lingua `it-IT`, due viewport: desktop 1366×768 e mobile 390×844. Vale la versione peggiore delle due: l'ospite può arrivare da entrambe.
-2. **Si escludono**: menu e navigazione, pulsanti e link a forma di pulsante, moduli (etichette, campi, titoli dei moduli), banner cookie e consenso, popup e finestre modali (`role=dialog`, `aria-modal`, classi `modal|popup|newsletter|cookie|consent|iubenda|onetrust|cmp`), logo.
-3. **Testo del hero** = tutto il testo rimasto con `top < altezza viewport`:
-   - **headline**: l'`h1` visibile; se non c'è, il blocco di almeno 3 parole con il font più grande;
-   - **sottotitolo**: il primo blocco sotto la headline;
-   - **supporto**: gli altri testi visibili (badge, claim, barre promozionali).
-4. **Frase visibile**: vero se esiste una headline nella prima schermata e il suo centro non è coperto da un popup (`elementFromPoint`).
-5. Slider nel hero: si prende la prima slide.
-6. **Fuori dal hero** (non entrano nel voto, servono al controllo "parole nel posto sbagliato"): title, meta description, `h1` fuori dalla prima schermata.
-7. Sito illeggibile (blocco bot, testo solo dentro immagini): si chiede all'albergatore di incollare headline e sottotitolo. Nessun voto inventato.
+Implementata in `motore/estrai.js`.
+
+1. Rendering con browser headless (Playwright), lingua `it-IT`, due viewport: desktop 1366×768 e mobile 390×844. Per le regole di esecuzione vale la versione peggiore delle due.
+2. Prima della lettura si nascondono i banner cookie (li chiude ogni visitatore). Popup, newsletter e finestre modali restano: se coprono la headline, la frase non è visibile.
+3. **Si escludono** dal testo del hero: menu e navigazione, moduli, pulsanti, footer, popup, elementi fissi sullo schermo (barre, chat, notifiche, pannelli laterali), testi dentro link salvo i titoli di slide cliccabili, righe fatte solo di pulsanti.
+4. **Testo del hero** = tutto il testo rimasto con `top < altezza viewport`:
+   - **headline**: l'`h1` visibile; se non c'è, il blocco di 3-20 parole con il font più grande;
+   - **sottotitolo**: il primo blocco di almeno 3 parole sotto la headline;
+   - **supporto**: gli altri testi visibili.
+5. **Frase visibile**: vero se esiste una headline nella prima schermata e il suo centro non è coperto da un popup (`elementFromPoint`).
+6. **Pulsanti principali**: sfondo pieno sull'elemento o sul primo figlio. Non contano: pulsanti con solo il bordo, link testuali, link grandi quanto una slide, link di pochi pixel (accessibilità), telefono ed email, il pulsante accanto al campo date (fa parte del modulo di prenotazione).
+7. **Riprova sociale**: si scorre tutta la pagina e si registrano voti e riconoscimenti con la posizione in schermate. Il voto spezzato in più elementi si ricompone leggendo fino a tre contenitori sopra. Loghi delle piattaforme sì, icone del sito no, testi di reCAPTCHA e privacy no.
+8. **Fuori dal hero** (non entrano nel voto, servono alla segnalazione "parole nel posto sbagliato"): title, meta description, `h1` fuori dalla prima schermata, testi della seconda schermata.
+9. Sito illeggibile (blocco bot, testo solo dentro immagini): si chiede all'albergatore di incollare headline e sottotitolo. Nessun voto inventato.
 
 ## I parametri
 

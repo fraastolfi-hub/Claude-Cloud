@@ -1,0 +1,75 @@
+{
+ "url": "pagina-prova.html",
+ "title": "Hotel Prova | Rimini",
+ "meta": "Hotel a Rimini con piscina riscaldata a 30 gradi e colazione fino alle 12.",
+ "desktop": {
+  "headline": "Benvenuti al nostro hotel",
+  "sottotitolo": "Un'oasi di relax a pochi passi dal mare, con calorosa accoglienza.",
+  "supporto": [
+   "Siamo aperti fino al 2 novembre 2025"
+  ],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "pulsanti": [
+   {
+    "testo": "Prenota ora",
+    "principale": true
+   },
+   {
+    "testo": "Scopri di più",
+    "principale": false
+   }
+  ],
+  "cta_primari": 1,
+  "cta_testo": "Prenota ora",
+  "modulo_date": false,
+  "testo_schermata": "Benvenuti al nostro hotel \n Un'oasi di relax a pochi passi dal mare, con calorosa accoglienza. \n Siamo aperti fino al 2 novembre 2025",
+  "h1_fuori": [],
+  "prove": [
+   {
+    "tipo": "voto",
+    "testo": "Dicono di noi 9,1 su Booking · 1.240 recensioni",
+    "schermate": 1.22
+   }
+  ],
+  "seconda_schermata": [
+   "Dicono di noi",
+   "9,1 su Booking · 1.240 recensioni"
+  ]
+ },
+ "mobile": {
+  "headline": "Benvenuti al nostro hotel",
+  "sottotitolo": "Un'oasi di relax a pochi passi dal mare, con calorosa accoglienza.",
+  "supporto": [
+   "Siamo aperti fino al 2 novembre 2025"
+  ],
+  "frase_visibile": true,
+  "headline_piu_grande": true,
+  "pulsanti": [
+   {
+    "testo": "Prenota ora",
+    "principale": true
+   },
+   {
+    "testo": "Scopri di più",
+    "principale": false
+   }
+  ],
+  "cta_primari": 1,
+  "cta_testo": "Prenota ora",
+  "modulo_date": false,
+  "testo_schermata": "Benvenuti al nostro hotel \n Un'oasi di relax a pochi passi dal mare, con calorosa accoglienza. \n Siamo aperti fino al 2 novembre 2025",
+  "h1_fuori": [],
+  "prove": [
+   {
+    "tipo": "voto",
+    "testo": "Dicono di noi 9,1 su Booking · 1.240 recensioni",
+    "schermate": 1.2
+   }
+  ],
+  "seconda_schermata": [
+   "Dicono di noi",
+   "9,1 su Booking · 1.240 recensioni"
+  ]
+ }
+}

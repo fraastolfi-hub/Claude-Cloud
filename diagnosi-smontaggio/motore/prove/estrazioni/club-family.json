@@ -1,0 +1,64 @@
+{
+ "url": "https://www.clubfamilyhotelriccione.com/",
+ "title": "Club Family Hotel Riccione per famiglie sul mare con piscina - Club Family Hotel Riccione",
+ "meta": "Vacanze All Inclusive a Riccione in hotel 3 stelle sul mare con piscina riscaldata, animazione e servizi per famiglie.",
+ "desktop": {
+  "headline": "",
+  "sottotitolo": "",
+  "supporto": [],
+  "frase_visibile": false,
+  "headline_piu_grande": false,
+  "cta_primari": 0,
+  "cta_testo": "",
+  "modulo_date": false,
+  "testo_schermata": " \n ",
+  "h1_fuori": [
+   "Club Family Hotel Riccione 3 Stelle sul mare"
+  ],
+  "seconda_schermata": [
+   "Scopri il nostro hotel All Inclusive a Riccione, direttamente sulla spiaggia",
+   "Siamo un hotel 3 stelle sul mare di Riccione, premiato dalla community di TripAdvisor come miglior hotel per famiglie in Italia: qui ti aspettano il sorriso dello staff, la comodità di avere la spiaggia proprio davanti e tutti i servizi pensati per chi viaggia con i più piccoli.",
+   "Grazie alla formula esclusiva Club Family All Inclusive® Open Bar H24 & Spiaggia, puoi goderti il mare senza pensieri: nel tuo soggiorno sono inclusi 2 lettini e 1 ombrellone per tutta la vacanza, oltre a bevande illimitate e tanti servizi dedicati a tutta la famiglia.",
+   "Animazione, le Tate per i piccoli, le feste a tema, i gonfiabili di Gommoland Park, l'arena di gioco all'aperto e i giochi interattivi nell'area multimediale, gli acquascivoli in piscina"
+  ],
+  "prove": [
+   {
+    "tipo": "riconoscimento",
+    "testo": "banner tripadvisor header-banner-it.png",
+    "schermate": 0.8
+   },
+   {
+    "tipo": "riconoscimento",
+    "testo": "Siamo un hotel 3 stelle sul mare di Riccione, premiato dalla community di TripAdvisor come miglior hotel per famiglie in Italia",
+    "schermate": 1.59
+   }
+  ]
+ },
+ "mobile": {
+  "headline": "",
+  "sottotitolo": "",
+  "supporto": [],
+  "frase_visibile": false,
+  "headline_piu_grande": false,
+  "cta_primari": 1,
+  "cta_testo": "Chiedi il tuo preventivo MIGLIOR TARIFFA GARANTITA",
+  "modulo_date": false,
+  "testo_schermata": " \n ",
+  "h1_fuori": [
+   "Club Family Hotel Riccione 3 Stelle sul mare"
+  ],
+  "seconda_schermata": [
+   "Scopri il nostro hotel All Inclusive a Riccione, direttamente sulla spiaggia",
+   "Siamo un hotel 3 stelle sul mare di Riccione, premiato dalla community di TripAdvisor come miglior hotel per famiglie in Italia: qui ti aspettano il sorriso dello staff, la comodità di avere la spiaggia proprio davanti e tutti i servizi pensati per chi viaggia con i più piccoli.",
+   "Grazie alla formula esclusiva Club Family All Inclusive® Open Bar H24 & Spiaggia, puoi goderti il mare senza pensieri: nel tuo soggiorno sono inclusi 2 lettini e 1 ombrellone per tutta la vacanza, oltre a bevande illimitate e tanti servizi dedicati a tutta la famiglia.",
+   "Animazione, le Tate per i piccoli, le feste a tema, i gonfiabili di Gommoland Park, l'arena di gioco all'aperto e i giochi interattivi nell'area multimediale, gli acquascivoli in piscina"
+  ],
+  "prove": [
+   {
+    "tipo": "riconoscimento",
+    "testo": "banner tripadvisor header-banner-it.png",
+    "schermate": 0.85
+   }
+  ]
+ }
+}

@@ -1,0 +1,70 @@
+{
+  "url": "https://www.veridiaresort.com/it",
+  "voto": 29,
+  "verdetto": "Scritta come tutti gli altri",
+  "parametri": {
+    "posizionamento": {
+      "target": 0,
+      "beneficio": 7,
+      "differenziazione": 7,
+      "totale": 14
+    },
+    "hook": 11,
+    "cliche": 0,
+    "riprova": 0,
+    "azione": 4,
+    "penalita": 0
+  },
+  "frase_posizionamento": "Per [vuoto], Veridia Resort è un rifugio sul mare tra silenzio, natura e bellezza, a differenza di [vuoto].",
+  "hero": {
+    "headline": "Il Nature Resort della Riserva di Chia",
+    "sottotitolo": "Un rifugio sul mare tra silenzio,natura e bellezza",
+    "supporto": []
+  },
+  "cliche_trovati": [
+    "un rifugio",
+    "natura e bellezza"
+  ],
+  "elementi_concreti": [],
+  "prova_migliore": null,
+  "segnalazioni": [
+    {
+      "tipo": "parole_posto_sbagliato",
+      "testo": "Hai già le parole giuste. Sono nel posto sbagliato.",
+      "citazioni": [
+        "cinque ettari di giardini mediterranei",
+        "spiaggia privata a Su Portu",
+        "aperto maggio–ottobre"
+      ]
+    }
+  ],
+  "ai": {
+    "nome_hotel": "Veridia Resort",
+    "target": "assente",
+    "target_testo": null,
+    "target_citazione": null,
+    "beneficio": "generico",
+    "beneficio_testo": "Un rifugio sul mare tra silenzio, natura e bellezza.",
+    "beneficio_citazione": "Un rifugio sul mare tra silenzio,natura e bellezza",
+    "sostituibilita": "vera_per_molti",
+    "elemento_unico": null,
+    "alternativa": null,
+    "frase_posizionamento": "Per [vuoto], Veridia Resort è un rifugio sul mare tra silenzio, natura e bellezza, a differenza di [vuoto].",
+    "apertura": "promessa_generica",
+    "elementi_concreti": [],
+    "concreti_fuori_hero": [
+      "cinque ettari di giardini mediterranei",
+      "spiaggia privata a Su Portu",
+      "aperto maggio–ottobre"
+    ],
+    "superlativo": null,
+    "distanza": null,
+    "frase_distanza": null,
+    "accordo": {
+      "target": 1,
+      "beneficio": 1,
+      "sostituibilita": 1,
+      "apertura": 1
+    }
+  }
+}
