@@ -5,7 +5,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { estrai } from './estrai.js';
 import { analizza } from './analizza.js';
-import { calcola, testoHero } from './voto.js';
+import { calcola } from './voto.js';
 
 function argomenti(argv) {
   const a = { url: null };
