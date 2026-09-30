@@ -84,18 +84,26 @@ punti = 15 × limita(0.25 + 0.25·K − 0.25·C, 0, 1)
 Senza testo nel hero: 0. Nessun cliché e nessun elemento concreto: 3,75. Servono elementi concreti per salire.
 
 #### Riprova sociale (15)
-Solo elementi visibili nella prima schermata.
+Si cerca in tutta la pagina e si guarda **quanto è vicina al hero**. Una barra di rating subito sotto la prima schermata lavora quasi quanto una dentro.
 
-| Trovato | Punti |
+Punti = valore del tipo × fattore di posizione (si tiene l'elemento migliore).
+
+| Tipo | Valore |
 |---|---|
-| Voto con la fonte (`9,2 su Booking`, `4,8 ★ Google`) oppure numero di recensioni | 15 |
-| Riconoscimento con nome (Travellers' Choice, Michelin, guida citata) senza numero | 9 |
-| Frasi generiche ("ospiti soddisfatti") oppure nulla | 0 |
+| Voto con la fonte (`8,5 Booking`, `4,5 ★ Google`) oppure numero di recensioni | 15 |
+| Riconoscimento con nome (Travellers' Choice, Michelin, guida citata) oppure recensione citata con nome e fonte | 9 |
+| Frasi generiche ("ospiti soddisfatti", "i più amati") | 0 |
 
-Segnali: `\d[,.]\d\s*(\/\s*(10|5)|su 10|su 5|★)`, `\d+\s+recensioni`; `alt`/`src` delle immagini con `tripadvisor|booking|google|holidaycheck|michelin`.
+| Posizione (in schermate dall'inizio della pagina, vale la versione peggiore tra desktop e mobile) | Fattore |
+|---|---|
+| Nella prima schermata (< 1) | 1 |
+| Subito sotto (fino a 1,5) | 0,8 |
+| Più in basso nella pagina | 0,33 |
+
+Segnali: `\d[,.]\d\s*(\/\s*(10|5)|su 10|su 5|★)`, `\d+\s+(recensioni|reviews)`, `superb|eccellente|travellers.? choice`; `alt`/`src` delle immagini con `tripadvisor|booking|google|holidaycheck|michelin`.
 
 #### Focus sull'azione (10)
-Pulsanti principali nella prima schermata (esclusi menu e popup). Il modulo date del booking engine conta come un pulsante.
+Pulsanti principali nella prima schermata (esclusi menu e popup). Il modulo date del booking engine conta come un pulsante. **I pulsanti secondari non contano**: sfondo trasparente con solo il bordo, oppure link testuali (sottolineati o senza sfondo). Stanno lì per chi non è pronto e non rubano attenzione all'azione principale.
 
 | Pulsanti principali | Punti |
 |---|---|
@@ -117,7 +125,8 @@ Voto finale = posizionamento + esecuzione + penalità, limitato tra 0 e 100, arr
 ## Segnalazioni fuori voto
 
 - **Nessuna frase nella prima schermata**: se `frase visibile` è falso, è il primo problema del report.
-- **Parole nel posto sbagliato**: se meta description, title o `h1` sotto la piega contengono almeno 2 elementi concreti assenti dal hero. Frase: *«Hai già le parole giuste. Sono nel posto sbagliato.»* con le citazioni.
+- **Promessa da provare**: se il hero contiene un superlativo o un'esclusiva (`il più`, `l'unico`, `the only`, `the best`, `-est`, `migliore`) e accanto non c'è la fonte che lo dimostra. Frase: *«"[citazione]" è la promessa più forte della pagina. Chi la prova?»*
+- **Parole nel posto sbagliato**: se meta description, title, `h1` sotto la piega o le prime 2 schermate contengono almeno 2 elementi concreti (o un riconoscimento) assenti dal hero. Frase: *«Hai già le parole giuste. Sono nel posto sbagliato.»* con le citazioni.
 - **Distanza da ciò che vuoi dire**: se l'albergatore ha risposto alla domanda del modulo, una frase: *«Vuoi che capiscano: [X]. La tua homepage dice: [Y].»*
 
 ## Fasce e verdetto

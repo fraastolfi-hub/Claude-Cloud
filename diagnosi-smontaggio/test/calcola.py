@@ -13,6 +13,7 @@ VOCI = [v for lingua in ("it", "en") for l in DIZ[lingua].values() for v in l]
 TARGET = {"esplicito_escludente": 15, "implicito": 7, "assente": 0}
 BENEFICIO = {"concreto": 15, "generico": 7, "solo_caratteristiche": 4, "assente": 0}
 SOST = {"solo_questo_hotel": 15, "vera_per_molti": 7, "vera_per_quasi_tutti": 0}
+PROVA_TIPO = {"voto": 15, "riconoscimento": 9, None: 0}
 APERTURA = {"promessa_concreta": 9, "problema_soluzione": 6, "promessa_generica": 5, "storia_immagine": 4, "vuota": 0}
 
 
@@ -48,6 +49,13 @@ def niente_cliche(testo, concreti):
     return 15 * min(1, max(0, 0.25 + 0.25 * k - 0.25 * len(trovati))), trovati, k
 
 
+def riprova(tipo, schermate):
+    if not tipo:
+        return 0
+    fattore = 1 if schermate < 1 else 0.8 if schermate <= 1.5 else 0.33
+    return PROVA_TIPO[tipo] * fattore
+
+
 def azione(primari, testo, modulo_date):
     q = 6 if primari == 1 else 3 if primari == 2 else 0
     t = norm(testo)
@@ -62,17 +70,18 @@ for c in json.load(open(BASE / "casi.json")):
     pos = TARGET[ai["target"]] + BENEFICIO[ai["beneficio"]] + SOST[ai["sostituibilita"]]
     h = hook(c)
     cl, trovati, k = niente_cliche(hero, ai["elementi_concreti"])
+    pr = riprova(c["prova_tipo"], c["prova_schermate"])
     az = azione(c["cta_primari"], c["cta_testo"], c["modulo_date"])
     pen = (-5 if c["scarsita_finta"] else 0) + (-5 if c["scaduta"] else 0)
-    voto = round(max(0, min(100, pos + h + cl + c["prova"] + az + pen)))
+    voto = round(max(0, min(100, pos + h + cl + pr + az + pen)))
     fuori = [x for x in ai["concreti_fuori_hero"] if norm(x) in norm(c["fuori_hero"]) and norm(x) not in norm(hero)]
     risultati.append(dict(nome=c["nome"], voto=voto, pos=pos, t=TARGET[ai["target"]], b=BENEFICIO[ai["beneficio"]],
-                          d=SOST[ai["sostituibilita"]], hook=h, cliche=cl, prova=c["prova"], azione=az, pen=pen,
+                          d=SOST[ai["sostituibilita"]], hook=h, cliche=cl, prova=pr, promessa=c.get("promessa_da_provare"), azione=az, pen=pen,
                           trovati=trovati, k=k, frase=ai["frase_posizionamento"], visibile=c["frase_visibile"], fuori=fuori))
 
 print(f"{'Hotel':<22}{'Voto':>5} | {'Pos':>4} ({'T':>2} {'B':>2} {'D':>2}) | {'Hook':>4} {'Cli':>5} {'Prova':>5} {'Az':>3} {'Pen':>4}")
 for r in sorted(risultati, key=lambda r: -r["voto"]):
-    print(f"{r['nome']:<22}{r['voto']:>5} | {r['pos']:>4} ({r['t']:>2} {r['b']:>2} {r['d']:>2}) | {r['hook']:>4} {r['cliche']:>5.1f} {r['prova']:>5} {r['azione']:>3} {r['pen']:>4}")
+    print(f"{r['nome']:<22}{r['voto']:>5} | {r['pos']:>4} ({r['t']:>2} {r['b']:>2} {r['d']:>2}) | {r['hook']:>4} {r['cliche']:>5.1f} {r['prova']:>5.1f} {r['azione']:>3} {r['pen']:>4}")
 print()
 for r in sorted(risultati, key=lambda r: -r["voto"]):
     print(f"## {r['nome']} · {r['voto']}")
@@ -80,5 +89,7 @@ for r in sorted(risultati, key=lambda r: -r["voto"]):
     print(f"   cliché: {r['trovati']} · concreti nel hero: {r['k']}")
     if not r["visibile"]:
         print("   ! Nessuna frase nella prima schermata")
+    if r["promessa"]:
+        print(f"   ! Promessa da provare: \"{r['promessa']}\"")
     if len(r["fuori"]) >= 2:
         print(f"   ! Parole nel posto sbagliato: {r['fuori']}")

@@ -23,12 +23,14 @@
       ],
       "frase_posizionamento": "Per [vuoto], Veridia è un rifugio sul mare tra silenzio e natura nella Riserva di Chia, a differenza di [vuoto]."
     },
-    "prova": 0,
     "cta_primari": 2,
     "cta_testo": "PRENOTA ORA",
     "modulo_date": false,
     "scarsita_finta": false,
-    "scaduta": false
+    "scaduta": false,
+    "prova_tipo": null,
+    "prova_schermate": null,
+    "promessa_da_provare": null
   },
   {
     "nome": "Olympic SPA Hotel",
@@ -60,12 +62,14 @@
       ],
       "frase_posizionamento": "Per adulti dai 14 anni in su, Olympic è un lusso al naturale in uno chalet nel bosco, a differenza di [vuoto]."
     },
-    "prova": 0,
     "cta_primari": 3,
     "cta_testo": "Prenota Online",
     "modulo_date": true,
     "scarsita_finta": false,
-    "scaduta": true
+    "scaduta": true,
+    "prova_tipo": "riconoscimento",
+    "prova_schermate": 4.41,
+    "promessa_da_provare": null
   },
   {
     "nome": "Club Family Hotel",
@@ -75,7 +79,7 @@
     "sottotitolo": "",
     "supporto": [],
     "headline_piu_grande": false,
-    "fuori_hero": "Title: Club Family Hotel Riccione per famiglie sul mare con piscina | Meta: Vacanze All Inclusive a Riccione in hotel 3 stelle sul mare con piscina riscaldata, animazione e servizi per famiglie. | H1: Club Family Hotel Riccione 3 Stelle sul mare",
+    "fuori_hero": "Title: Club Family Hotel Riccione per famiglie sul mare con piscina | Meta: Vacanze All Inclusive a Riccione in hotel 3 stelle sul mare con piscina riscaldata, animazione e servizi per famiglie. | H1: Club Family Hotel Riccione 3 Stelle sul mare | Seconda schermata: TripAdvisor come miglior hotel per famiglie in Italia",
     "ai": {
       "target": "assente",
       "beneficio": "assente",
@@ -85,16 +89,19 @@
       "concreti_fuori_hero": [
         "All Inclusive",
         "piscina riscaldata",
-        "animazione e servizi per famiglie"
+        "animazione e servizi per famiglie",
+        "TripAdvisor come miglior hotel per famiglie in Italia"
       ],
       "frase_posizionamento": "Per [vuoto], Club Family Hotel è [vuoto], a differenza di [vuoto]."
     },
-    "prova": 0,
     "cta_primari": 1,
     "cta_testo": "Chiedi il tuo preventivo",
     "modulo_date": false,
     "scarsita_finta": false,
-    "scaduta": false
+    "scaduta": false,
+    "prova_tipo": "riconoscimento",
+    "prova_schermate": 0.85,
+    "promessa_da_provare": null
   },
   {
     "nome": "Moko",
@@ -117,12 +124,14 @@
       ],
       "frase_posizionamento": "Per [vuoto], Moko è [vuoto], a differenza di [vuoto]."
     },
-    "prova": 0,
-    "cta_primari": 2,
+    "cta_primari": 1,
     "cta_testo": "Prenota",
     "modulo_date": false,
     "scarsita_finta": false,
-    "scaduta": false
+    "scaduta": false,
+    "prova_tipo": null,
+    "prova_schermate": null,
+    "promessa_da_provare": null
   },
   {
     "nome": "The Hoxton Shoreditch",
@@ -151,12 +160,14 @@
       ],
       "frase_posizionamento": "Per [vuoto], The Hoxton è [vuoto], a differenza di [vuoto]."
     },
-    "prova": 0,
-    "cta_primari": 4,
+    "cta_primari": 1,
     "cta_testo": "Find a Room",
     "modulo_date": true,
     "scarsita_finta": false,
-    "scaduta": false
+    "scaduta": false,
+    "prova_tipo": null,
+    "prova_schermate": null,
+    "promessa_da_provare": null
   },
   {
     "nome": "Veridia (landing stay.)",
@@ -182,11 +193,13 @@
       "concreti_fuori_hero": [],
       "frase_posizionamento": "Per chi intende il lusso come natura selvaggia intorno, Veridia è silenzio, natura selvaggia e il mare più pulito d'Italia, a differenza del lusso fatto di sole strutture."
     },
-    "prova": 0,
-    "cta_primari": 2,
+    "cta_primari": 1,
     "cta_testo": "PLAN MY ESCAPE →",
     "modulo_date": false,
     "scarsita_finta": false,
-    "scaduta": false
+    "scaduta": false,
+    "prova_tipo": "voto",
+    "prova_schermate": 1.14,
+    "promessa_da_provare": "the Cleanest Sea in Italy"
   }
 ]
