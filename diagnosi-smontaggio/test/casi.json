@@ -2,49 +2,106 @@
   {
     "nome": "Veridia Resort",
     "url": "https://www.veridiaresort.com/it",
+    "frase_visibile": true,
     "headline": "Il Nature Resort della Riserva di Chia",
     "sottotitolo": "Un rifugio sul mare tra silenzio, natura e bellezza",
-    "ai": {"elementi_concreti": ["Riserva di Chia"], "sostituibilita": "vera_per_molti", "promesse": 2, "apertura": "promessa_concreta"},
-    "prova": 0, "cta_primari": 2, "cta_testo": "PRENOTA ORA", "modulo_date": false
+    "supporto": [],
+    "headline_piu_grande": true,
+    "fuori_hero": "Title: Il Nature Resort di Chia, Sud Sardegna - Veridia Resort | Meta: Un rifugio naturale sulla costa incontaminata di Chia, Sardegna. Cinque ettari di giardini mediterranei, spiaggia privata a Su Portu e silenzio autentico. Aperto maggio–ottobre.",
+    "ai": {
+      "target": "assente",
+      "beneficio": "generico",
+      "sostituibilita": "vera_per_molti",
+      "apertura": "promessa_generica",
+      "elementi_concreti": ["Riserva di Chia"],
+      "concreti_fuori_hero": ["Cinque ettari di giardini mediterranei", "spiaggia privata a Su Portu", "Aperto maggio–ottobre"],
+      "frase_posizionamento": "Per [vuoto], Veridia è un rifugio sul mare tra silenzio e natura nella Riserva di Chia, a differenza di [vuoto]."
+    },
+    "prova": 0, "cta_primari": 2, "cta_testo": "PRENOTA ORA", "modulo_date": false,
+    "scarsita_finta": false, "scaduta": false
   },
   {
     "nome": "Olympic SPA Hotel",
     "url": "https://www.olympicspahotel.it/",
+    "frase_visibile": true,
     "headline": "Il lusso al naturale",
     "sottotitolo": "Chalet su due piani, immerso nella natura: lo sguardo si perde nel bosco.",
-    "ai": {"elementi_concreti": ["Chalet su due piani"], "sostituibilita": "vera_per_molti", "promesse": 1, "apertura": "storia_immagine"},
-    "prova": 0, "cta_primari": 3, "cta_testo": "Prenota Online", "modulo_date": true
+    "supporto": ["HOTEL SOLO PER ADULTI 14+", "Nessun intermediario", "Possibilità di scegliere la stanza preferita", "Cancellazione gratuita fino a 14 prima dell'arrivo", "Siamo aperti fino al 2 novembre 2025"],
+    "headline_piu_grande": true,
+    "fuori_hero": "Title: Olympic SPA Hotel 4*S in Val di Fassa | Sito Ufficiale | Meta: Olympic 4*S vi accoglie nel cuore della Val di Fassa e vi porta a scoprire l'essenza del Trentino e delle tradizioni Ladine con attività, escursioni e cucina tipica. | H1: Olympic SPA Hotel - Hotel Adults Only nel cuore del Trentino",
+    "ai": {
+      "target": "esplicito_escludente",
+      "beneficio": "generico",
+      "sostituibilita": "vera_per_molti",
+      "apertura": "promessa_generica",
+      "elementi_concreti": ["Chalet su due piani", "SOLO PER ADULTI 14+", "Cancellazione gratuita fino a 14"],
+      "concreti_fuori_hero": ["tradizioni Ladine"],
+      "frase_posizionamento": "Per adulti dai 14 anni in su, Olympic è un lusso al naturale in uno chalet nel bosco, a differenza di [vuoto]."
+    },
+    "prova": 0, "cta_primari": 3, "cta_testo": "Prenota Online", "modulo_date": true,
+    "scarsita_finta": false, "scaduta": true
   },
   {
     "nome": "Club Family Hotel",
     "url": "https://www.clubfamilyhotelriccione.com/",
-    "headline": "Club Family Hotel Riccione 3 Stelle sul mare",
+    "frase_visibile": false,
+    "headline": "",
     "sottotitolo": "",
-    "ai": {"elementi_concreti": [], "sostituibilita": "vera_per_quasi_tutti", "promesse": 1, "apertura": "vuota"},
-    "prova": 0, "cta_primari": 1, "cta_testo": "Chiedi il tuo preventivo", "modulo_date": false
+    "supporto": [],
+    "headline_piu_grande": false,
+    "fuori_hero": "Title: Club Family Hotel Riccione per famiglie sul mare con piscina | Meta: Vacanze All Inclusive a Riccione in hotel 3 stelle sul mare con piscina riscaldata, animazione e servizi per famiglie. | H1: Club Family Hotel Riccione 3 Stelle sul mare",
+    "ai": {
+      "target": "assente",
+      "beneficio": "assente",
+      "sostituibilita": "vera_per_quasi_tutti",
+      "apertura": "vuota",
+      "elementi_concreti": [],
+      "concreti_fuori_hero": ["All Inclusive", "piscina riscaldata", "animazione e servizi per famiglie"],
+      "frase_posizionamento": "Per [vuoto], Club Family Hotel è [vuoto], a differenza di [vuoto]."
+    },
+    "prova": 0, "cta_primari": 1, "cta_testo": "Chiedi il tuo preventivo", "modulo_date": false,
+    "scarsita_finta": false, "scaduta": false
   },
   {
     "nome": "Moko",
     "url": "https://www.hotelmoko.it/",
+    "frase_visibile": true,
     "headline": "Your stay. Your story. Your mark.",
     "sottotitolo": "",
-    "ai": {"elementi_concreti": [], "sostituibilita": "vera_per_quasi_tutti", "promesse": 0, "apertura": "vuota"},
-    "prova": 0, "cta_primari": 2, "cta_testo": "Prenota", "modulo_date": false
-  },
-  {
-    "nome": "Moko (h1 sotto la piega)",
-    "url": "https://www.hotelmoko.it/",
-    "headline": "L'Hotel 3 stelle superior che non ti aspetti, a Milano Marittima",
-    "sottotitolo": "Un lifestyle hotel a Milano Marittima, a due minuti a piedi dal mare e dal Papeete Beach.",
-    "ai": {"elementi_concreti": ["due minuti a piedi", "Papeete Beach"], "sostituibilita": "vera_per_molti", "promesse": 2, "apertura": "promessa_concreta"},
-    "prova": 0, "cta_primari": 2, "cta_testo": "Prenota", "modulo_date": false
+    "supporto": [],
+    "headline_piu_grande": true,
+    "fuori_hero": "Title: Hotel 3 Stelle Superior a Milano Marittima | Moko Boutique Hotel | H1: L’Hotel 3 stelle superior che non ti aspetti, a Milano Marittima | Sotto: Un lifestyle hotel a Milano Marittima, a due minuti a piedi dal mare e dal Papeete Beach.",
+    "ai": {
+      "target": "assente",
+      "beneficio": "assente",
+      "sostituibilita": "vera_per_quasi_tutti",
+      "apertura": "vuota",
+      "elementi_concreti": [],
+      "concreti_fuori_hero": ["due minuti a piedi dal mare", "Papeete Beach"],
+      "frase_posizionamento": "Per [vuoto], Moko è [vuoto], a differenza di [vuoto]."
+    },
+    "prova": 0, "cta_primari": 2, "cta_testo": "Prenota", "modulo_date": false,
+    "scarsita_finta": false, "scaduta": false
   },
   {
     "nome": "The Hoxton Shoreditch",
     "url": "https://thehoxton.com/london/shoreditch/",
+    "frase_visibile": true,
     "headline": "Hello, Shoreditch!",
     "sottotitolo": "",
-    "ai": {"elementi_concreti": [], "sostituibilita": "vera_per_quasi_tutti", "promesse": 0, "apertura": "vuota"},
-    "prova": 0, "cta_primari": 3, "cta_testo": "Find a Room", "modulo_date": true
+    "supporto": ["Give your pals a great feeling with 15% off their first Hox stay.", "Up to £150/$150/€150 credit for festive dining and cosy lobby drinks.", "The Hoxton x Lacoste capsule collection has landed."],
+    "headline_piu_grande": true,
+    "fuori_hero": "Title: Book Our Boutique Hotel in Shoreditch, East London | The Hoxton | Meta: Stay at The Hoxton Hotel, Shoreditch in the heart of East London and experience comfortable rooms, all-day dining with a rooftop! Book now.",
+    "ai": {
+      "target": "assente",
+      "beneficio": "assente",
+      "sostituibilita": "vera_per_quasi_tutti",
+      "apertura": "vuota",
+      "elementi_concreti": ["Lacoste"],
+      "concreti_fuori_hero": ["all-day dining", "rooftop"],
+      "frase_posizionamento": "Per [vuoto], The Hoxton è [vuoto], a differenza di [vuoto]."
+    },
+    "prova": 0, "cta_primari": 4, "cta_testo": "Find a Room", "modulo_date": true,
+    "scarsita_finta": false, "scaduta": false
   }
 ]
