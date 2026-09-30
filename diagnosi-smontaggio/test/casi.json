@@ -1,0 +1,50 @@
+[
+  {
+    "nome": "Veridia Resort",
+    "url": "https://www.veridiaresort.com/it",
+    "headline": "Il Nature Resort della Riserva di Chia",
+    "sottotitolo": "Un rifugio sul mare tra silenzio, natura e bellezza",
+    "ai": {"elementi_concreti": ["Riserva di Chia"], "sostituibilita": "vera_per_molti", "promesse": 2, "apertura": "promessa_concreta"},
+    "prova": 0, "cta_primari": 2, "cta_testo": "PRENOTA ORA", "modulo_date": false
+  },
+  {
+    "nome": "Olympic SPA Hotel",
+    "url": "https://www.olympicspahotel.it/",
+    "headline": "Il lusso al naturale",
+    "sottotitolo": "Chalet su due piani, immerso nella natura: lo sguardo si perde nel bosco.",
+    "ai": {"elementi_concreti": ["Chalet su due piani"], "sostituibilita": "vera_per_molti", "promesse": 1, "apertura": "storia_immagine"},
+    "prova": 0, "cta_primari": 3, "cta_testo": "Prenota Online", "modulo_date": true
+  },
+  {
+    "nome": "Club Family Hotel",
+    "url": "https://www.clubfamilyhotelriccione.com/",
+    "headline": "Club Family Hotel Riccione 3 Stelle sul mare",
+    "sottotitolo": "",
+    "ai": {"elementi_concreti": [], "sostituibilita": "vera_per_quasi_tutti", "promesse": 1, "apertura": "vuota"},
+    "prova": 0, "cta_primari": 1, "cta_testo": "Chiedi il tuo preventivo", "modulo_date": false
+  },
+  {
+    "nome": "Moko",
+    "url": "https://www.hotelmoko.it/",
+    "headline": "Your stay. Your story. Your mark.",
+    "sottotitolo": "",
+    "ai": {"elementi_concreti": [], "sostituibilita": "vera_per_quasi_tutti", "promesse": 0, "apertura": "vuota"},
+    "prova": 0, "cta_primari": 2, "cta_testo": "Prenota", "modulo_date": false
+  },
+  {
+    "nome": "Moko (h1 sotto la piega)",
+    "url": "https://www.hotelmoko.it/",
+    "headline": "L'Hotel 3 stelle superior che non ti aspetti, a Milano Marittima",
+    "sottotitolo": "Un lifestyle hotel a Milano Marittima, a due minuti a piedi dal mare e dal Papeete Beach.",
+    "ai": {"elementi_concreti": ["due minuti a piedi", "Papeete Beach"], "sostituibilita": "vera_per_molti", "promesse": 2, "apertura": "promessa_concreta"},
+    "prova": 0, "cta_primari": 2, "cta_testo": "Prenota", "modulo_date": false
+  },
+  {
+    "nome": "The Hoxton Shoreditch",
+    "url": "https://thehoxton.com/london/shoreditch/",
+    "headline": "Hello, Shoreditch!",
+    "sottotitolo": "",
+    "ai": {"elementi_concreti": [], "sostituibilita": "vera_per_quasi_tutti", "promesse": 0, "apertura": "vuota"},
+    "prova": 0, "cta_primari": 3, "cta_testo": "Find a Room", "modulo_date": true
+  }
+]
