@@ -15,7 +15,7 @@
     "azione": 7,
     "penalita": 0
   },
-  "frase_posizionamento": "Per chi considera il lusso come immersione totale nella natura, Veridia Resort offre accesso al mare più pulito d'Italia e soggiorno in una riserva naturale protetta, a differenza di altri hotel non immersi in una riserva naturale protetta.",
+  "frase_posizionamento": "Per chi cerca lusso come immersione nella natura, Veridia Resort offre silenzio, natura selvaggia e il mare più pulito d'Italia, a differenza di altri hotel eleganti non immersi in una riserva naturale protetta.",
   "hero": {
     "headline": "Silence, Wild Nature, and the Cleanest Sea in Italy.",
     "sottotitolo": "The only elegant retreat set within a protected Mediterranean nature reserve — where true luxury means being completely surrounded by wild nature.",
@@ -45,15 +45,15 @@
   "ai": {
     "nome_hotel": "Veridia Resort",
     "target": "implicito",
-    "target_testo": "chi considera il lusso come immersione totale nella natura",
-    "target_citazione": "where true luxury means being completely surrounded by wild nature",
+    "target_testo": "Chi cerca lusso inteso come immersione totale nella natura.",
+    "target_citazione": "where true luxury means being completely surrounded by wild nature.",
     "beneficio": "concreto",
-    "beneficio_testo": "accesso al mare più pulito d'Italia e soggiorno in una riserva naturale protetta",
-    "beneficio_citazione": "Silence, Wild Nature, and the Cleanest Sea in Italy. The only elegant retreat set within a protected Mediterranean nature reserve",
+    "beneficio_testo": "Esperienza di silenzio, natura selvaggia e mare più pulito d'Italia, in un contesto esclusivo.",
+    "beneficio_citazione": "Silence, Wild Nature, and the Cleanest Sea in Italy.",
     "sostituibilita": "solo_questo_hotel",
     "elemento_unico": "The only elegant retreat set within a protected Mediterranean nature reserve",
-    "alternativa": "altri hotel non immersi in una riserva naturale protetta",
-    "frase_posizionamento": "Per chi considera il lusso come immersione totale nella natura, Veridia Resort offre accesso al mare più pulito d'Italia e soggiorno in una riserva naturale protetta, a differenza di altri hotel non immersi in una riserva naturale protetta.",
+    "alternativa": "altri hotel eleganti non immersi in una riserva naturale protetta",
+    "frase_posizionamento": "Per chi cerca lusso come immersione nella natura, Veridia Resort offre silenzio, natura selvaggia e il mare più pulito d'Italia, a differenza di altri hotel eleganti non immersi in una riserva naturale protetta.",
     "apertura": "promessa_concreta",
     "elementi_concreti": [
       "the Cleanest Sea in Italy",

@@ -1,13 +1,13 @@
 {
   "url": "https://www.olympicspahotel.it/",
-  "voto": 29,
+  "voto": 32,
   "verdetto": "Scritta come tutti gli altri",
   "parametri": {
     "posizionamento": {
       "target": 0,
-      "beneficio": 4,
+      "beneficio": 7,
       "differenziazione": 7,
-      "totale": 11
+      "totale": 14
     },
     "hook": 11,
     "cliche": 3.8,
@@ -15,7 +15,7 @@
     "azione": 0,
     "penalita": 0
   },
-  "frase_posizionamento": "Per [vuoto], Olympic SPA Hotel è un'esperienza legata al cuore Ladino e alle tradizioni, a differenza di [vuoto].",
+  "frase_posizionamento": "Per [vuoto], Olympic SPA Hotel è [vuoto], a differenza di [vuoto].",
   "hero": {
     "headline": "Cuore Ladino e Tradizioni",
     "sottotitolo": "",
@@ -35,6 +35,7 @@
       "tipo": "parole_posto_sbagliato",
       "testo": "Hai già le parole giuste. Sono nel posto sbagliato.",
       "citazioni": [
+        "adults-only 14+",
         "Te Jaga SPA",
         "iconica Sauna nel Bosco",
         "autentica cucina Ladina"
@@ -46,16 +47,17 @@
     "target": "assente",
     "target_testo": null,
     "target_citazione": null,
-    "beneficio": "solo_caratteristiche",
-    "beneficio_testo": "Il testo promette un generico legame con \"cuore Ladino e tradizioni\" e menziona \"SPA e Benessere\", senza specificare benefici concreti per l'ospite.",
-    "beneficio_citazione": "Cuore Ladino e Tradizioni; SPA e Benessere",
+    "beneficio": "generico",
+    "beneficio_testo": "Non viene espresso un beneficio concreto per l'ospite, solo riferimenti a concetti astratti come \"Cuore Ladino e Tradizioni\".",
+    "beneficio_citazione": "Cuore Ladino e Tradizioni",
     "sostituibilita": "vera_per_molti",
     "elemento_unico": null,
     "alternativa": null,
-    "frase_posizionamento": "Per [vuoto], Olympic SPA Hotel è un'esperienza legata al cuore Ladino e alle tradizioni, a differenza di [vuoto].",
+    "frase_posizionamento": "Per [vuoto], Olympic SPA Hotel è [vuoto], a differenza di [vuoto].",
     "apertura": "promessa_generica",
     "elementi_concreti": [],
     "concreti_fuori_hero": [
+      "adults-only 14+",
       "Te Jaga SPA",
       "iconica Sauna nel Bosco",
       "autentica cucina Ladina"

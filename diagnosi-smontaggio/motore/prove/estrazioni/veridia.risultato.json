@@ -25,7 +25,9 @@
     "un rifugio",
     "natura e bellezza"
   ],
-  "elementi_concreti": [],
+  "elementi_concreti": [
+    "Riserva di Chia"
+  ],
   "prova_migliore": null,
   "segnalazioni": [
     {
@@ -34,6 +36,7 @@
       "citazioni": [
         "cinque ettari di giardini mediterranei",
         "spiaggia privata a Su Portu",
+        "costa incontaminata di Chia",
         "aperto maggio–ottobre"
       ]
     }
@@ -51,10 +54,13 @@
     "alternativa": null,
     "frase_posizionamento": "Per [vuoto], Veridia Resort è un rifugio sul mare tra silenzio, natura e bellezza, a differenza di [vuoto].",
     "apertura": "promessa_generica",
-    "elementi_concreti": [],
+    "elementi_concreti": [
+      "Riserva di Chia"
+    ],
     "concreti_fuori_hero": [
       "cinque ettari di giardini mediterranei",
       "spiaggia privata a Su Portu",
+      "costa incontaminata di Chia",
       "aperto maggio–ottobre"
     ],
     "superlativo": null,

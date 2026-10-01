@@ -12,7 +12,8 @@ const PROVA = { voto: 15, riconoscimento: 9 };
 const GIU = { target: ['esplicito_escludente', 'implicito', 'assente'], beneficio: ['concreto', 'generico', 'solo_caratteristiche', 'assente'] };
 
 export const norm = s => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’‘]/g, "'").replace(/\s+/g, ' ').trim();
-const contiene = (testo, cit) => !!cit && norm(testo).includes(norm(cit));
+// Una citazione può unire più pezzi del hero ("A; B", "A | B"): devono esserci tutti.
+const contiene = (testo, cit) => !!cit && cit.split(/\s*[;|·]\s*/).filter(Boolean).every(p => norm(testo).includes(norm(p)));
 
 export function testoHero(s) {
   return [s.headline, s.sottotitolo, ...s.supporto].filter(Boolean).join(' \n ');

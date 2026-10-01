@@ -32,7 +32,7 @@
       "tipo": "parole_posto_sbagliato",
       "testo": "Hai già le parole giuste. Sono nel posto sbagliato.",
       "citazioni": [
-        "a due minuti a piedi dal mare",
+        "a due minuti a piedi dal mare e dal Papeete Beach",
         "tattoo studio",
         "colazione fino a mezzogiorno"
       ]
@@ -53,7 +53,7 @@
     "apertura": "vuota",
     "elementi_concreti": [],
     "concreti_fuori_hero": [
-      "a due minuti a piedi dal mare",
+      "a due minuti a piedi dal mare e dal Papeete Beach",
       "tattoo studio",
       "colazione fino a mezzogiorno"
     ],

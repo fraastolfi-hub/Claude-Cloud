@@ -9,6 +9,7 @@ Legge la prima schermata di una homepage, chiede i giudizi al modello e calcola 
 | `voto.js` | Verifica le citazioni, calcola i parametri, il voto, il verdetto e le segnalazioni |
 | `diagnosi.js` | Comando che mette insieme i tre passaggi |
 | `apify-pagefunction.mjs` | Genera la `pageFunction` per `apify/playwright-scraper` con lo stesso codice di `estrai.js` |
+| `genera-pagefunction-ts.mjs` | Scrive la stessa `pageFunction` come modulo per la funzione Supabase del sito |
 
 ## Uso
 
@@ -39,3 +40,17 @@ Risultati di riferimento (30/09/2026, `gpt-4.1`, 5 risposte, uguali in 3 giri co
 - Il testo dentro le immagini non viene letto (es. il banner "perfect day" di Club Family).
 - Gli slider mostrano slide diverse a ogni visita: la headline di Olympic è cambiata tra un giro e l'altro.
 - Il dizionario dei cliché non distingue una parola usata come cliché da una usata per rovesciarlo ("true luxury means...").
+
+## Sul sito
+La versione in produzione è nel repository `hotelpositioning`, branch `claude/diagnosi`:
+- `supabase/functions/diagnosi/`: la funzione (avvia la lettura su Apify, poi analisi e voto);
+- `supabase/functions/_shared/diagnosi/`: `analizza.ts`, `voto.ts`, `cliche.ts` (porte in Deno di questi file) e `pagefunction.ts` (generato);
+- `src/pages/Diagnosi.tsx`: la pagina `/diagnosi`.
+
+Se cambi `estrai.js`, rigenera il modulo del sito:
+
+```sh
+node genera-pagefunction-ts.mjs > ../../../hotelpositioning/supabase/functions/_shared/diagnosi/pagefunction.ts
+```
+
+Se cambi `analizza.js`, `voto.js` o `../cliche.json`, riporta la modifica nei file `.ts` corrispondenti.
