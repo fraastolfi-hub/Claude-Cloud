@@ -70,11 +70,11 @@ Il secondo errore è dello stesso tipo. Alcuni esempi avevano un codice generico
 
 ## 4. Integrazione casi studio (1 ottobre 2026)
 
-Su 31 hotel della lista, 5 erano già presenti (Ace, citizenM, The Hoxton, Equinox, PUBLIC). Ne ho aggiunti 25 e ne ho lasciato fuori uno.
+Su 31 hotel della lista, 5 erano già presenti (Ace, citizenM, The Hoxton, Equinox, PUBLIC). Ne ho aggiunti 22; 4 sono stati esclusi.
 
 - **Aggiunti e verificati (19):** The Ned, TWA Hotel, Zoku, Janu, Terramor, Scandic GO, Stay KooooK, Postcard Cabins, Civilian, Oderberger, French Theory, La Valise, sly Berlin, AVIVA make friends, Now Now NoHo, YellowSquare, Hotel Bardo, Bob W, MM:NT.
-- **Aggiunti ma da verificare (6):** MUJI Hotel (numero di hotel attivi), A-STAY (apertura e proprietà), Club Family Hotel (se le coppie sono davvero escluse), e tre identificazioni incerte: Eye Hotel (trovato a Utrecht), Mathis (Hôtel Mathis, Parigi), Ethos (inserito come Aethos).
-- **Non inserito (1):** Wisteria. Non è emerso un hotel con un posizionamento riconoscibile: serve la città o il link.
+- **Aggiunti ma da verificare (3):** MUJI Hotel (numero di hotel attivi), A-STAY (apertura e proprietà), Club Family Hotel (se le coppie sono davvero escluse).
+- **Esclusi (4):** Wisteria, Ethos, Eye Hotel, Mathis. Identificazione incerta: tolti su decisione di Francesco.
 - **Aggiornati:** PUBLIC (insolvenza 2023, rifinanziamento, Highgate dal 2026) e Soho House (delisting 2025).
 
 Nuovi pattern: D07 Hotel come Piazza di Quartiere, E06 Hotel-Showroom, H06 Servizi per Sottrazione, H07 Beta Permanente.

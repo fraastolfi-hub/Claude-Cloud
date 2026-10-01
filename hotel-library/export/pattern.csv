@@ -20,10 +20,10 @@ C08,Audience Focus,Remote Worker,Hotel per chi lavora in viaggio per lunghi peri
 D01,JTBD Reframe,Vendiamo lo Chef,L'asset è chi cucina: la camera è il dopo-cena.,consolidato,B01 G01,SingleThread; The Inn at Little Washington; Casa Maria Luigia; Casadonna – Reale
 D02,JTBD Reframe,Vendiamo il Sonno,"L'hotel come prodotto del riposo: materassi, buio, protocolli.",emergente,J03,Equinox Hotel New York
 D03,JTBD Reframe,Vendiamo il Silenzio,Il silenzio dichiarato e organizzato come prodotto principale.,emergente,I03,Eremito; Aman Kyoto
-D04,JTBD Reframe,Vendiamo la Connessione,"L'hotel-community dove si fa amicizia: cene comuni, attività di gruppo.",emergente,C08,Selina; Generator; Zoku; Janu; Stay KooooK; AVIVA make friends; Aethos; Now Now NoHo; YellowSquare
+D04,JTBD Reframe,Vendiamo la Connessione,"L'hotel-community dove si fa amicizia: cene comuni, attività di gruppo.",emergente,C08,Selina; Generator; Zoku; Janu; Stay KooooK; AVIVA make friends; Now Now NoHo; YellowSquare
 D05,JTBD Reframe,Vendiamo la Trasformazione,Te ne vai diverso: programmi guidati di più giorni.,consolidato,B04 J03,Lanserhof Tegernsee; SHA Wellness Clinic; COMO Shambhala Estate; Kamalaya; Six Senses
 D06,JTBD Reframe,Vendiamo il Tempo,Servizi che tolgono attrito e scelte invece di aggiungerne.,nascente,,
-D07,JTBD Reframe,Hotel come Piazza di Quartiere,"Il cliente non è solo l'ospite che dorme: bar, ristoranti, piscina o eventi sono aperti ai residenti e l'hotel diventa un luogo pubblico.",emergente,A03 D04,The Ned; Hotel Oderberger; Hôtel Mathis; YellowSquare; Hotel Bardo
+D07,JTBD Reframe,Hotel come Piazza di Quartiere,"Il cliente non è solo l'ospite che dorme: bar, ristoranti, piscina o eventi sono aperti ai residenti e l'hotel diventa un luogo pubblico.",emergente,A03 D04,The Ned; Hotel Oderberger; YellowSquare; Hotel Bardo
 E01,Category Creation,Hotel-Bottega,L'hotel ibridato con un'attività artigiana che è il vero centro.,nascente,E04,
 E02,Category Creation,Hotel-Museo / Collezione,"La collezione (arte, libri, vinili, auto) è il prodotto; la camera è l'accesso.",consolidato,E03,21c Museum Hotels; Atelier sul Mare; TWA Hotel; Civilian Hotel
 E03,Category Creation,Hotel-Residenza Artistica,Artisti in residenza producono mentre tu soggiorni.,nascente,E02 G03,Casa Wabi; Atelier sul Mare
@@ -33,18 +33,18 @@ E06,Category Creation,Hotel-Showroom,"Un brand nato fuori dall'hospitality (reta
 F01,Place-as-Identity,Albergo Diffuso,"L'hotel è il borgo, non sta nel borgo.",consolidato,J01,Sextantio
 F02,Place-as-Identity,Ambasciata Regionale,Porti il territorio fuori dal territorio.,emergente,G02,Casa Cipriani
 F03,Place-as-Identity,Single-View,Una vista o un elemento naturale definisce tutto.,consolidato,B05,Hotel Caruso (Belmond); Splendido (Belmond); Monastero Santa Rosa; Longitude 131°; Vigilius Mountain Resort; La Valise Tulum
-F04,Place-as-Identity,Edificio-Manifesto,"L'architettura storica o iconica è il prodotto, non la cornice.",consolidato,,Hotel Castello di Reschio; Hotel Caruso (Belmond); Monastero Santa Rosa; Palazzo Margherita; The Ned; TWA Hotel; Eye Hotel; Hotel Oderberger; sly Berlin
+F04,Place-as-Identity,Edificio-Manifesto,"L'architettura storica o iconica è il prodotto, non la cornice.",consolidato,,Hotel Castello di Reschio; Hotel Caruso (Belmond); Monastero Santa Rosa; Palazzo Margherita; The Ned; TWA Hotel; Hotel Oderberger; sly Berlin
 F05,Place-as-Identity,Cultura Locale come Prodotto,"Riti, persone e saperi del territorio sostituiscono l'intrattenimento standard.",emergente,J04,Borgo Egnazia
 G01,Persona-Driven,Founder-Persona,Un fondatore riconoscibile e narrato è il brand.,consolidato,,Sextantio; Eremito; Hotel Castello di Reschio; The Pig Hotels; The Inn at Little Washington; The Lost Kitchen; Casa Maria Luigia; Atelier sul Mare; Palazzo Margherita
 G02,Persona-Driven,N-Generazioni,La continuità familiare dichiarata come prova.,consolidato,F02,Borgo Egnazia; Hotel Castello di Reschio; Casa Cipriani
-G03,Persona-Driven,Curator-Driven,"L'ossessione di un curatore definisce ogni scelta: musica, libri, design, community.",consolidato,A02,Ace Hotel; Soho House; French Theory; Aethos
+G03,Persona-Driven,Curator-Driven,"L'ossessione di un curatore definisce ogni scelta: musica, libri, design, community.",consolidato,A02,Ace Hotel; Soho House; French Theory
 G04,Persona-Driven,Staff-as-Character,"Il team è famoso, non l'hotel.",emergente,,The Connaught
 H01,Operations Reframe,Self Check-in / Tech-First,"Arrivo ridisegnato: chioschi, app, nessuna coda alla reception.",consolidato,A03,citizenM; YOTEL; Scandic GO; A-STAY; Bob W; MM:NT Berlin Lab
 H02,Operations Reframe,Host al posto della Reception,Niente front desk: un host umano specifico ti accoglie.,nascente,G04,
 H03,Operations Reframe,Tariffa Unica / Camera Unica,"Un solo tipo di camera e un prezzo trasparente, niente upsell nascosti.",emergente,,citizenM
 H04,Operations Reframe,No Online Booking,Si prenota solo parlando: la conversazione è il servizio.,nascente,A01,
 H05,Operations Reframe,All-Inclusive Radicale o Invertito,"Tutto incluso davvero, oppure niente incluso e paghi solo ciò che usi.",emergente,,Sandals Resorts; Club Family Hotel
-H06,Operations Reframe,Servizi per Sottrazione,"Si tolgono ristorante, sale meeting, palestra o reception e si investe solo in ciò che il target usa davvero: prezzo più basso, promessa più chiara.",emergente,H01 H03,Scandic GO; Postcard Cabins (ex Getaway); Eye Hotel; Now Now NoHo; Bob W
+H06,Operations Reframe,Servizi per Sottrazione,"Si tolgono ristorante, sale meeting, palestra o reception e si investe solo in ciò che il target usa davvero: prezzo più basso, promessa più chiara.",emergente,H01 H03,Scandic GO; Postcard Cabins (ex Getaway); Now Now NoHo; Bob W
 H07,Operations Reframe,Beta Permanente,L'hotel come laboratorio: camere prototipo e feedback degli ospiti usati per progettare le strutture future.,nascente,H01,MM:NT Berlin Lab
 I01,Time-Inverted,Stagione Invertita,"Aperti quando gli altri chiudono (mare d'inverno, montagna fuori stagione).",nascente,B03,
 I02,Time-Inverted,Solo Infrasettimanale,Aperto solo in giorni specifici.,nascente,,

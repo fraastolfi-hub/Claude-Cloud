@@ -2525,29 +2525,6 @@
   },
   {
    "area": "Europa",
-   "luogo": "Utrecht",
-   "stato": "attivo",
-   "verifica": "da_verificare",
-   "caveat": false,
-   "categorie": [],
-   "sito": "",
-   "fonti": [
-    "https://guide.michelin.com/ar/es/hotels-stays/utrecht-city/eye-hotel-10926"
-   ],
-   "note": "Identificazione da confermare: è l'Eye Hotel che intendevi? Gruppo Utrecht City Hotels.",
-   "id": "eye-hotel",
-   "nome": "Eye Hotel",
-   "paese": "Paesi Bassi",
-   "proprieta": "gruppo_indipendente",
-   "tier": "T3",
-   "pattern": [
-    "F04",
-    "H06"
-   ],
-   "evidenza": "36 camere nel primo ospedale oftalmico dei Paesi Bassi (1858): la storia dell'edificio è il tema. Nessun ristorante proprio, la colazione è nell'hotel gemello."
-  },
-  {
-   "area": "Europa",
    "luogo": "Prenzlauer Berg, Berlino",
    "stato": "attivo",
    "verifica": "verificato",
@@ -2618,28 +2595,6 @@
   },
   {
    "area": "Europa",
-   "luogo": "Parigi 8e",
-   "stato": "attivo",
-   "verifica": "da_verificare",
-   "caveat": false,
-   "categorie": [],
-   "sito": "",
-   "fonti": [
-    "https://www.oyster.com/articles/in-the-spotlight-hotel-mathis-elysees-matignon-paris/"
-   ],
-   "note": "Identificazione e gestione attuale da confermare (H8 Collection dal 2015, F&B con Experimental Group).",
-   "id": "hotel-mathis",
-   "nome": "Hôtel Mathis",
-   "paese": "Francia",
-   "proprieta": "gruppo_indipendente",
-   "tier": "T3",
-   "pattern": [
-    "D07"
-   ],
-   "evidenza": "Una ventina di camere: il richiamo è il bar storico, gestito da un operatore della notte parigina, più delle camere."
-  },
-  {
-   "area": "Europa",
    "luogo": "Friedrichshain, Berlino",
    "stato": "attivo",
    "verifica": "verificato",
@@ -2688,29 +2643,6 @@
     "K05"
    ],
    "evidenza": "Dal 2007 solo per single, viaggiatori soli e gruppi di amici: coppie, bambini e addii al celibato non sono accettati. 'Arrivi da solo, fai vacanza insieme': tavoli condivisi e attività di gruppo."
-  },
-  {
-   "area": "Europa",
-   "luogo": "Milano, Ericeira, Maiorca, Londra, Sardegna",
-   "stato": "attivo",
-   "verifica": "da_verificare",
-   "caveat": false,
-   "categorie": [],
-   "sito": "",
-   "fonti": [
-    "https://iberian.property/news/hotels/aethos-obtains-eur100m-in-financing-for-global-expansion"
-   ],
-   "note": "Inserito come ipotesi per 'Ethos' della tua lista: confermare. Ha raccolto 100 milioni di euro per l'espansione.",
-   "id": "aethos",
-   "nome": "Aethos",
-   "paese": "Italia / Portogallo / Spagna / Regno Unito",
-   "proprieta": "gruppo_indipendente",
-   "tier": "T2",
-   "pattern": [
-    "D04",
-    "G03"
-   ],
-   "evidenza": "Boutique hotel con spirito da club: comunità, wellness e programmazione culturale."
   },
   {
    "area": "Nord America",
