@@ -1,6 +1,6 @@
 # Hotel Positioning Library v4
 
-Database di hotel classificati per posizionamento: 12 famiglie, 69 pattern, 19 categorie emergenti, 81 esempi.
+Database di hotel classificati per posizionamento: 12 famiglie, 69 pattern, 19 categorie emergenti, 80 esempi.
 
 | File | Contenuto |
 |---|---|

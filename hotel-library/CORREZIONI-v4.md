@@ -45,7 +45,7 @@ Il secondo errore è dello stesso tipo. Alcuni esempi avevano un codice generico
 |---|---|---|---|
 | Selina | "Fallita 2024, Chapter 11" | In administration nel Regno Unito dal 22/07/2024; business venduto a Collective Hospitality il 27/08/2024 | [Hospitality Investor](https://www.hospitalityinvestor.com/hotels/selina-hospitality-falls-administration), [Skift](https://skift.com/2024/07/22/selina-collapses-in-liquidity-crisis-seeks-buyers/) |
 | citizenM | Esempio di indipendente anti-catena | Acquisito da Marriott (chiusura luglio 2025, 37 hotel) | [Marriott](https://marriott.gcs-web.com/node/36046) |
-| Saorsa 1875 | "Venduta 2025, rebrand Birchwood con prodotti animali" | Confermata solo la messa in vendita (~£950k) per altri progetti dei proprietari. Rebrand ed esito: da verificare | [The Caterer](https://www.thecaterer.com/news/vegan-hotel-in-perthshire-on-the-market-for-nearly-1m) |
+| Saorsa 1875 | "Venduta 2025, rebrand Birchwood con prodotti animali" | Confermata solo la messa in vendita (~£950k) per altri progetti dei proprietari. **Eliminato dalla Library** (decisione di Francesco): esito non verificabile e nessun sito attivo | [The Caterer](https://www.thecaterer.com/news/vegan-hotel-in-perthshire-on-the-market-for-nearly-1m) |
 | Beaches | Family-Only | Family-designed: accoglie anche coppie, single e amici | [Sandals UK](https://www.sandals.co.uk/blog/the-best-caribbean-breaks-grandparents/) |
 | Reschio | Wedding-only | Hotel da 36 camere aperto nel 2021 | [Dezeen](https://www.dezeen.com/2021/07/05/hotel-castello-di-reschio-umbria-italy/amp/) |
 | Eremito | "Ex monastero XIV" | Eremo contemporaneo ricostruito da un rudere, aperto nel 2013 | [Gambero Rosso](https://gamberorossointernational.com/?p=523204) |
@@ -81,14 +81,15 @@ Nuovi pattern: D07 Hotel come Piazza di Quartiere, E06 Hotel-Showroom, H06 Servi
 Nuove categorie: CAT17 Hybrid Stay / Extended-Stay Urbano, CAT18 Hotel Digital-First, CAT19 Micro-Room / Sleeper Cabin.
 Pattern non più nascenti grazie ai nuovi casi: C02 (Now Now), L07 (AVIVA), L02 (Club Family Hotel, da confermare).
 
-I siti web dei nuovi casi sono vuoti dove l'indirizzo non è stato verificato: vanno inseriti a mano.
+Siti web: inseriti i 22 indirizzi verificati e confermati (per Now Now la pagina dell'operatore Dovetail + Co, per Club Family Hotel l'indirizzo fornito da Francesco). Restano vuoti Jill Hotel, The Stromness e MM:NT (nessun dominio confermato) e Atelier sul Mare.
+
+Atelier sul Mare è segnato come **chiuso**: ha chiuso il 14 agosto 2023 dopo un controllo dei NAS ([Artribune](https://www.artribune.com/?p=1004738)). Resta come caso storico.
 
 ## 5. Ancora da verificare prima di pubblicare
 
 Esempi con `verifica: da_verificare` (11) e `proposto` (8): l'elenco completo è in `export/esempi.csv` (colonne `verifica` e `note`). In ordine di priorità:
 
-1. Saorsa 1875: esito della vendita. Decide se resta un caso caveat.
-2. Six Senses: trovare una fonte per i dati economici o eliminarli.
-3. Soho House: in quali sedi le camere sono solo per soci (decide il tier su L05).
-4. The Connaught: fonte per il "maggiordomo da 40 anni".
-5. I nuovi casi italiani: Casa Maria Luigia, Casadonna-Reale, Atelier sul Mare, Vigilius, Lefay, Italy Family Hotels, Italy Bike Hotels, Palazzo Margherita.
+1. Six Senses: trovare una fonte per i dati economici o eliminarli.
+2. Soho House: in quali sedi le camere sono solo per soci (decide il tier su L05).
+3. The Connaught: fonte per il "maggiordomo da 40 anni".
+4. I nuovi casi italiani: Casa Maria Luigia, Casadonna-Reale, Atelier sul Mare, Vigilius, Lefay, Italy Family Hotels, Italy Bike Hotels, Palazzo Margherita.

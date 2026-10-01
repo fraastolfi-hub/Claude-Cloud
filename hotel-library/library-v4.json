@@ -2034,29 +2034,6 @@
    "note": "Su K04 (plant-based) solo dopo aver verificato la cucina attuale delle lodge."
   },
   {
-   "id": "saorsa-1875",
-   "nome": "Saorsa 1875",
-   "paese": "Regno Unito",
-   "area": "Europa",
-   "luogo": "Pitlochry, Scozia",
-   "proprieta": "indipendente",
-   "stato": "venduto",
-   "tier": "T1",
-   "verifica": "da_verificare",
-   "caveat": true,
-   "pattern": [
-    "K04"
-   ],
-   "categorie": [],
-   "sito": "",
-   "evidenza": "Aperto nel 2019 come primo hotel 100% vegetale del Regno Unito, 11 camere.",
-   "fonti": [
-    "https://www.thecaterer.com/news/vegan-hotel-in-perthshire-on-the-market-for-nearly-1m",
-    "https://www.hotelowner.co.uk/177306-uks-first-vegan-hotel-brought-to-market-for-950k/"
-   ],
-   "note": "Le fonti trovate confermano solo la messa in vendita a circa 950.000 sterline, motivata dai proprietari con altri progetti, non con un fallimento. Il rebrand 'Birchwood' e la reintroduzione di prodotti animali vanno verificati. Finché non lo sono, non presentarlo come 'business fallito'."
-  },
-  {
    "id": "jill-hotel",
    "nome": "Jill Hotel",
    "paese": "Belgio",
@@ -2152,9 +2129,9 @@
    "area": "Europa",
    "luogo": "Castel di Tusa (ME)",
    "proprieta": "indipendente",
-   "stato": "attivo",
+   "stato": "chiuso",
    "tier": "T2",
-   "verifica": "proposto",
+   "verifica": "verificato",
    "caveat": false,
    "pattern": [
     "E02",
@@ -2166,8 +2143,10 @@
    ],
    "sito": "",
    "evidenza": "Antonio Presti: hotel-museo con camere d'arte firmate da artisti contemporanei.",
-   "fonti": [],
-   "note": "Nuovo caso italiano per hotel-museo e residenza artistica."
+   "fonti": [
+    "https://www.artribune.com/?p=1004738"
+   ],
+   "note": "Chiuso il 14 agosto 2023 dopo un controllo dei NAS: resta come caso storico di hotel-museo. Un anno dopo Antonio Presti ha aperto un nuovo albergo d'arte a Villa Margi (sito da trovare)."
   },
   {
    "id": "vigilius",
@@ -2230,7 +2209,7 @@
     "C01"
    ],
    "categorie": [],
-   "sito": "",
+   "sito": "https://www.italyfamilyhotels.it",
    "evidenza": "Consorzio di hotel indipendenti con standard dedicati alle famiglie.",
    "fonti": [],
    "note": "Caso italiano di fascia media, vicino al target del servizio."
@@ -2250,7 +2229,7 @@
     "C04"
    ],
    "categorie": [],
-   "sito": "",
+   "sito": "https://www.italybikehotels.com",
    "evidenza": "Hotel indipendenti specializzati nel cicloturismo: officina, guide, percorsi.",
    "fonti": [],
    "note": "Caso italiano di fascia media per Sport-Expertise."
@@ -2271,7 +2250,7 @@
     "F04"
    ],
    "categorie": [],
-   "sito": "",
+   "sito": "https://thefamilycoppolahideaways.com/en/palazzo-margherita/location",
    "evidenza": "Palazzo ottocentesco della famiglia Coppola: il fondatore è la storia.",
    "fonti": [],
    "note": "Nuovo caso italiano per Founder-Persona."
@@ -2285,7 +2264,7 @@
    "categorie": [
     "CAT14"
    ],
-   "sito": "",
+   "sito": "https://www.thened.com/london",
    "fonti": [
     "https://www.dezeen.com/2017/05/05/soho-house-edwards-lutyens-midland-bank-hotel-members-club-interiors-hotels-renovatios-london-uk/amp/",
     "https://news.bgov.com/private-equity/soho-house-agrees-to-be-taken-private-in-2-7-billion-deal-1"
@@ -2310,7 +2289,7 @@
    "verifica": "verificato",
    "caveat": false,
    "categorie": [],
-   "sito": "",
+   "sito": "https://www.twahotel.com",
    "fonti": [
     "https://www.dezeen.com/2019/02/17/twa-hotel-eero-saarinen-jfk-airport-new-york-city/",
     "https://www.travelpulse.com/news/hotels-and-resorts/twa-hotel-opens-in-landmark-saarinen-flight-center"
@@ -2336,7 +2315,7 @@
    "categorie": [
     "CAT17"
    ],
-   "sito": "",
+   "sito": "https://livezoku.com",
    "fonti": [
     "https://hotelsmag.com/news/hot-openings-zoku-debuts-in-amsterdam/",
     "https://servicedapartmentnews.com/news/technology/zoku-secures-funding-for-european-expansion/"
@@ -2360,7 +2339,7 @@
    "verifica": "da_verificare",
    "caveat": false,
    "categorie": [],
-   "sito": "",
+   "sito": "https://hotel.muji.com/en/",
    "fonti": [
     "https://thepointsguy.com/2018/01/muji-opens-new-hotels-restaurants-in-china"
    ],
@@ -2383,7 +2362,7 @@
    "verifica": "verificato",
    "caveat": false,
    "categorie": [],
-   "sito": "",
+   "sito": "https://www.janu.com/janu-tokyo/",
    "fonti": [
     "https://hospitalitydesign.com/news/janu-tokyo/160752",
     "https://onemileatatime.com/janu-hotels-aman/"
@@ -2408,7 +2387,7 @@
    "categorie": [
     "CAT03"
    ],
-   "sito": "",
+   "sito": "https://terramoroutdoorresort.com",
    "fonti": [
     "https://www.rvtravel.com/no-rvs-at-koa-935b/",
     "https://www.bostonglobe.com/2020/10/01/lifestyle/glamping-comes-acadia-area"
@@ -2431,7 +2410,7 @@
    "categorie": [
     "CAT18"
    ],
-   "sito": "",
+   "sito": "https://www.scandichotels.com/en/about/scandic-go",
    "fonti": [
     "https://www.scandichotelsgroup.com/en/scandic-launches-new-hotel-brand/",
     "https://www.hospitalitynet.org/news/4116112/scandic-enters-economy-segment-first-scandic-go-hotel-to-open-after-summer"
@@ -2457,7 +2436,7 @@
    "categorie": [
     "CAT17"
    ],
-   "sito": "",
+   "sito": "https://www.staykooook.com/en/",
    "fonti": [
     "https://www.businesstraveller.com/hotel/stay-kooook-erstes-extended-stay-hotel-in-bern-wankdorf/",
     "https://sv-group.com/en/press-release/sv-group-bringing-two-innovative-hotel-concepts-geneva"
@@ -2483,7 +2462,7 @@
    "categorie": [
     "CAT16"
    ],
-   "sito": "",
+   "sito": "https://postcardcabins.com",
    "fonti": [
     "https://www.hotelmanagement.net/development/marriott-buys-postcard-cabins-plans-outdoor-hospitality-brand",
     "https://loyaltylobby.com/2024/12/12/marriott-acquires-postcard-cabins-signs-a-deal-with-trailborn/"
@@ -2507,7 +2486,7 @@
    "verifica": "verificato",
    "caveat": false,
    "categorie": [],
-   "sito": "",
+   "sito": "https://www.civilianhotel.com",
    "fonti": [
     "https://variety.com/2021/scene/news/civilian-hotel-broadway-david-rockwell-jason-pomeranc-1235081716"
    ],
@@ -2530,7 +2509,7 @@
    "verifica": "verificato",
    "caveat": false,
    "categorie": [],
-   "sito": "",
+   "sito": "https://www.hotel-oderberger.berlin/en/",
    "fonti": [
     "https://www.luxurytraveladvisor.com/hotels/hotel-oderberger-old-bathhouse-making-a-splash-berlin"
    ],
@@ -2553,7 +2532,7 @@
    "verifica": "verificato",
    "caveat": false,
    "categorie": [],
-   "sito": "",
+   "sito": "https://frtheory.com/en/",
    "fonti": [
     "https://www.sortiraparis.com/en/where-to-eat-in-paris/hotel/articles/192380-french-theory-the-trendy-left-bank-hotel"
    ],
@@ -2576,7 +2555,7 @@
    "verifica": "verificato",
    "caveat": false,
    "categorie": [],
-   "sito": "",
+   "sito": "https://www.lavalisetulum.com",
    "fonti": [
     "https://hoteldesigns.net/industry-news/introducing-la-valise-tulum-luxury-hospitality-in-the-jungle/",
     "https://www.mrandmrssmith.com/luxury-hotels/la-valise-tulum/rooms"
@@ -2602,7 +2581,7 @@
    "categorie": [
     "CAT17"
    ],
-   "sito": "",
+   "sito": "https://www.sly-berlin.com/en/",
    "fonti": [
     "https://www.tageskarte.io/hotellerie/detail/east-macher-eroeffnen-sly-hotel-in-berlin.html",
     "https://preferredhotels.com/hotels/germany/sly-berlin"
@@ -2653,7 +2632,7 @@
    "categorie": [
     "CAT19"
    ],
-   "sito": "",
+   "sito": "https://www.dovetailandco.com/a-bowery-hotel",
    "fonti": [
     "https://www.hotel-online.com/news/now-now-noho-opens-on-new-yorks-historic-bowery",
     "https://www.6sqft.com/new-sleeper-cabin-hotel-in-noho-brings-trendy-affordable-lodging-to-downtown-manhattan/"
@@ -2680,7 +2659,7 @@
    "categorie": [
     "CAT04"
    ],
-   "sito": "",
+   "sito": "https://yellowsquare.it",
    "fonti": [
     "https://wysetc.org/2020/02/welcome-to-our-new-member-yellowsquare",
     "https://www.theflorentine.net/2022/04/12/yellowsquare-hostel-opens-in-florences-viale-redi/"
@@ -2704,7 +2683,7 @@
    "verifica": "verificato",
    "caveat": false,
    "categorie": [],
-   "sito": "",
+   "sito": "https://www.staybardo.com",
    "fonti": [
     "https://www.hotel-online.com/news/hotel-bardo-savannah-set-to-open-in-february-following-transformation",
     "https://hoteldesigns.net/industry-news/hotel-bardo-a-social-hub-built-on-history/"
@@ -2732,7 +2711,7 @@
     "CAT17",
     "CAT18"
    ],
-   "sito": "",
+   "sito": "https://a-stay.com",
    "fonti": [
     "https://www.besix.com/en/news/besix-group-and-a-star-group-join-forces-to-revolutionize-city-stay-experience"
    ],
@@ -2808,7 +2787,7 @@
    "verifica": "da_verificare",
    "caveat": false,
    "categorie": [],
-   "sito": "",
+   "sito": "https://www.clubfamilyhotel.it/",
    "fonti": [
     "https://www.qualitytravel.it/mirabilandia-e-club-family-hotel-rinnovano-la-partnership-anche-per-il-2026/181490",
     "https://www.affaritaliani.it/cronache/club-family-hotel-906012.html"
