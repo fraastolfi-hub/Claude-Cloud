@@ -108,7 +108,7 @@ Ogni evento rilevante (acquisizione, chiusura, nuova apertura che crea una categ
 
 ## 6. Il motore dell'hotel: il ponte con la guida
 
-La guida "Come funziona davvero il positioning di un hotel" scompone il Posizionamento di Mercato in quattro componenti, ciascuna da 0 a 10: **Location**, **Capital**, **Operations**, **Narrativa di mercato**. La Library è il catalogo dei meccanismi della quarta componente, la narrativa. I due strumenti si usano in sequenza: prima la guida dice qual è il motore dell'hotel, poi la Library dice con quale pattern costruire la narrativa.
+La guida "Come funziona davvero il positioning di un hotel" scompone il Posizionamento di Mercato in quattro componenti, ciascuna da 0 a 10: **Location**, **Capital**, **Operations**, **Narrativa**. La Library è il catalogo dei meccanismi della quarta componente, la narrativa. I due strumenti si usano in sequenza: prima la guida dice qual è il motore dell'hotel, poi la Library dice con quale pattern costruire la narrativa.
 
 Nel file dati:
 

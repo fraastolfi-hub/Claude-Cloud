@@ -86,7 +86,7 @@ COMPONENTS = [
     ('C1', 'Location', 'Non si cambia', 'is-nascente', 'Dove sei: il flusso di clienti che arriva da solo e il nome che la gente riconosce.'),
     ('C2', 'Capital', 'Anni e investimenti', 'is-t3', 'Cosa hai costruito: la qualità percepita di camere, bagni, spazi, ristorante.'),
     ('C3', 'Operations', 'Mesi di lavoro', 'is-t2', 'Come lavori ogni giorno: accoglienza, pulizia, prezzi, risposta alle recensioni, formazione.'),
-    ('C4', 'Narrativa di mercato', 'Settimane · costo basso', 'is-t1', 'Come ti racconti: la promessa, il segmento che scegli, l’identità che ti distingue.'),
+    ('C4', 'Narrativa', 'Settimane · costo basso', 'is-t1', 'Come ti racconti: la promessa, il segmento che scegli, l’identità che ti distingue.'),
 ]
 components_html = ''.join(
     card(cid, [(speed, cls)], 'Componente', e(name), f'<p>{e(desc)}</p>') for cid, name, speed, cls, desc in COMPONENTS)
@@ -394,7 +394,7 @@ HTML = f"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Positioning di un hotel</title>
-<meta name="description" content="Una guida pratica per capire qual è il motore del tuo hotel (location, capital, operations o narrativa di mercato) e quale narrativa scegliere di conseguenza, con i pattern della Hotel Positioning Library.">
+<meta name="description" content="Una guida pratica per capire qual è il motore del tuo hotel (location, capital, operations o narrativa) e quale narrativa scegliere di conseguenza, con i pattern della Hotel Positioning Library.">
 {font_link}
 <style>{font_css}{CSS}</style>
 </head>
@@ -411,7 +411,7 @@ HTML = f"""<!doctype html>
 <main>
 <section class="hero"><div class="wrap hero__in">
  <h1 class="hero__title"><span class="hl">Come funziona davvero</span> il positioning di un hotel</h1>
- <p class="hero__lead">Una guida pratica per capire che tipo di hotel hai, quale leva fa davvero il tuo fatturato e come costruire una narrativa di mercato coerente con la tua realtà, invece che con la moda del momento. Alla fine di ogni profilo trovi i pattern della Library che funzionano per te.</p>
+ <p class="hero__lead">Una guida pratica per capire che tipo di hotel hai, quale leva fa davvero il tuo fatturato e come costruire una narrativa coerente con la tua realtà, invece che con la moda del momento. Alla fine di ogni profilo trovi i pattern della Library che funzionano per te.</p>
  <nav class="hero__pills" aria-label="Capitoli">{pills}</nav>
  <div class="hero__actions"><a class="btn" href="#cap7">Fai l’autodiagnosi →</a><a class="btn btn--paper" href="{SITE}/library">Apri la Library</a></div>
 </div></section>
@@ -421,14 +421,14 @@ HTML = f"""<!doctype html>
 <section class="chapter chapter--first">
  {h2('01', 'cap1', 'Un hotel non è una cosa sola', 'Quello che il mercato percepisce del tuo hotel, il suo <strong>Posizionamento di Mercato</strong>, è la somma di quattro componenti. Il lavoro vero è capire quale delle quattro è la tua leva principale e investire di conseguenza.')}
  <div class="formula">
-  <div class="formula__f"><span>Location</span><span class="op">+</span><span>Capital</span><span class="op">+</span><span>Operations</span><span class="op">+</span><span>Narrativa di mercato</span></div>
+  <div class="formula__f"><span>Location</span><span class="op">+</span><span>Capital</span><span class="op">+</span><span>Operations</span><span class="op">+</span><span>Narrativa</span></div>
   <div class="formula__res">= Posizionamento di Mercato</div>
   <div class="lbl">Ogni componente da 0 a 10 · totale da 0 a 40 · percepito dal cliente</div>
  </div>
  <div class="grid">{components_html}</div>
  <div class="prose">
   <p>Puoi vincere spingendo su una sola componente con le altre nella media, oppure con due o tre alte. Tutte e quattro alte è ovvio ma raro. Tutte e quattro basse è l’hotel commodity che sopravvive a fatica.</p>
-  <p>Non confondere due cose. Il <strong>Posizionamento di Mercato</strong> è il risultato percepito dal cliente. La <strong>Narrativa di mercato</strong> è una delle quattro componenti che lo determinano: la scelta deliberata di come racconti il tuo hotel. Delle quattro, è l’unica su cui puoi lavorare in fretta, con un costo contenuto e senza toccare i muri.</p>
+  <p>Non confondere due cose. Il <strong>Posizionamento di Mercato</strong> è il risultato percepito dal cliente. La <strong>Narrativa</strong> è una delle quattro componenti che lo determinano: la scelta deliberata di come racconti il tuo hotel. Delle quattro, è l’unica su cui puoi lavorare in fretta, con un costo contenuto e senza toccare i muri.</p>
   <h3>Dove sei: la location</h3>
   <p>La location non è solo un indirizzo. È il flusso di clienti che arriva da solo e la ragione per cui un turista sceglie una zona invece di un’altra.</p>
  </div>
@@ -446,7 +446,7 @@ HTML = f"""<!doctype html>
  <div class="prose">
   <h3>Come lavori ogni giorno: le operations</h3>
   <p>Accoglienza al check-in, pulizia costante, puntualità del ristorante, risposta alle recensioni, revenue management che adatta i prezzi, formazione del personale, gestione dei fornitori. Un hotel con componenti nella media ma operations eccellenti sopravvive e cresce. Uno con componenti alte ma operations scadenti brucia la reputazione in un anno e mezzo. Sono la componente più sottovalutata dai proprietari e la più decisiva nel lungo periodo.</p>
-  <h3>Come ti racconti: la narrativa di mercato</h3>
+  <h3>Come ti racconti: la narrativa</h3>
   <p>È la promessa che fai, il segmento che decidi di servire, l’identità che costruisci: la ragione precisa per cui un cliente deve scegliere te e pagare il prezzo che chiedi. Senza narrativa esisti come hotel generico, al prezzo che decidono le OTA. Una narrativa forte può poggiare sulla storia della famiglia, su un meccanismo operativo distintivo, su un segmento molto specifico, sull’opposizione a un format dominante, su una visione del mondo.</p>
   <p>Non è un’etichetta di marketing. È una scelta strategica che decide cosa offri, chi servi, come ti organizzi e come comunichi. E, una volta scelta, va mantenuta ogni giorno.</p>
  </div>
@@ -509,7 +509,7 @@ HTML = f"""<!doctype html>
 <section class="cta"><div class="wrap">
  <span class="h2__n">Cosa fare adesso</span>
  <h2>Dalla diagnosi al pattern giusto</h2>
- <p>Location, capital, operations e narrativa di mercato contribuiscono tutte al posizionamento. La narrativa giusta dipende dal tuo profilo: un hotel Location-driven racconta il luogo, uno Operations-driven racconta l’affidabilità con meccanismi visibili, uno Narrativa-driven costruisce valore dove le altre componenti non arrivano.</p>
+ <p>Location, capital, operations e narrativa contribuiscono tutte al posizionamento. La narrativa giusta dipende dal tuo profilo: un hotel Location-driven racconta il luogo, uno Operations-driven racconta l’affidabilità con meccanismi visibili, uno Narrativa-driven costruisce valore dove le altre componenti non arrivano.</p>
  <p>Se dopo le tre domande la narrativa è la tua leva, il passo successivo è scegliere il pattern giusto. La Hotel Positioning Library ne raccoglie {N_PAT}, osservati in hotel reali in Italia e nel mondo, ognuno con il profilo per cui funziona e il livello di operations che richiede. Se invece la risposta alla prima domanda è stata no, la narrativa può aspettare: lavora prima su quello che serve davvero.</p>
  <div class="cta__btns"><a class="btn" href="{SITE}/library">Apri la Library · hotelpositioning.com/library</a><a class="btn btn--paper" href="{SITE}/">Candidati per l’analisi</a></div>
 </div></section>
