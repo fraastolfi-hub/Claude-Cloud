@@ -81,7 +81,7 @@ Nuovi pattern: D07 Hotel come Piazza di Quartiere, E06 Hotel-Showroom, H06 Servi
 Nuove categorie: CAT17 Hybrid Stay / Extended-Stay Urbano, CAT18 Hotel Digital-First, CAT19 Micro-Room / Sleeper Cabin.
 Pattern non più nascenti grazie ai nuovi casi: C02 (Now Now), L07 (AVIVA), L02 (Club Family Hotel, da confermare).
 
-Siti web: inseriti i 22 indirizzi verificati e confermati (per Now Now la pagina dell'operatore Dovetail + Co, per Club Family Hotel l'indirizzo fornito da Francesco). Restano vuoti Jill Hotel, The Stromness e MM:NT (nessun dominio confermato) e Atelier sul Mare.
+Siti web: inseriti i 22 indirizzi verificati e confermati (per Now Now la pagina dell'operatore Dovetail + Co, per Club Family Hotel l'indirizzo fornito da Francesco). Jill Hotel, The Stromness, MM:NT e Atelier sul Mare: indirizzi forniti da Francesco. Tutti gli esempi hanno ora un sito.
 
 Atelier sul Mare è segnato come **chiuso**: ha chiuso il 14 agosto 2023 dopo un controllo dei NAS ([Artribune](https://www.artribune.com/?p=1004738)). Resta come caso storico.
 
