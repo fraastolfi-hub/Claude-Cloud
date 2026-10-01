@@ -1,234 +1,3105 @@
 {
-  "meta": {
-    "nome": "Hotel Positioning Library",
-    "versione": "4.0",
-    "autore": "Francesco Astolfi",
-    "aggiornato": "2026-10-01",
-    "scopo": "Library di hotel classificati per posizionamento: ispirazione per gli albergatori e strumento di lavoro per leggere i trend mondiali.",
-    "regole_codici": "Codice pattern = lettera famiglia + numero a due cifre DENTRO la famiglia (A01, B02...). Nessun numero globale: i numeri non vanno mai usati come chiave per collegare esempi e pattern.",
-    "legenda": {
-      "tier": {
-        "T1": "Caso archetipico: pattern esplicito, verificabile, il brand è riconosciuto come rappresentante.",
-        "T2": "Applicazione solida ma parziale, oppure il pattern è uno tra più elementi del posizionamento.",
-        "T3": "Caso nascente o sperimentale."
-      },
-      "verifica": {
-        "verificato": "Claim controllati su almeno una fonte terza o ufficiale, con data.",
-        "da_verificare": "Caso plausibile ma con uno o più claim non ancora confermati.",
-        "proposto": "Nuovo caso candidato (soprattutto italiano): da verificare prima della pubblicazione."
-      },
-      "maturita_pattern": {
-        "consolidato": "Più casi T1 verificati, replicabilità dimostrata.",
-        "emergente": "1-2 casi solidi, pattern in formazione.",
-        "nascente": "Pattern plausibile senza caso iconico verificato: opportunità di pionierato."
-      },
-      "proprieta": {
-        "indipendente": "Struttura singola o famiglia/proprietario unico.",
-        "gruppo_indipendente": "Più strutture, nessuna major alle spalle.",
-        "major": "Appartiene a un grande gruppo alberghiero (Marriott, Accor, IHG, LVMH/Belmond, ecc.)."
-      },
-      "caveat": "Posizionamento forte ma business non sostenibile o identità poi abbandonata. È un attributo separato dal tier."
-    }
+ "meta": {
+  "nome": "Hotel Positioning Library",
+  "versione": "4.0",
+  "autore": "Francesco Astolfi",
+  "aggiornato": "2026-10-01",
+  "scopo": "Library di hotel classificati per posizionamento: ispirazione per gli albergatori e strumento di lavoro per leggere i trend mondiali.",
+  "regole_codici": "Codice pattern = lettera famiglia + numero a due cifre DENTRO la famiglia (A01, B02...). Nessun numero globale: i numeri non vanno mai usati come chiave per collegare esempi e pattern.",
+  "legenda": {
+   "tier": {
+    "T1": "Caso archetipico: pattern esplicito, verificabile, il brand è riconosciuto come rappresentante.",
+    "T2": "Applicazione solida ma parziale, oppure il pattern è uno tra più elementi del posizionamento.",
+    "T3": "Caso nascente o sperimentale."
+   },
+   "verifica": {
+    "verificato": "Claim controllati su almeno una fonte terza o ufficiale, con data.",
+    "da_verificare": "Caso plausibile ma con uno o più claim non ancora confermati.",
+    "proposto": "Nuovo caso candidato (soprattutto italiano): da verificare prima della pubblicazione."
+   },
+   "maturita_pattern": {
+    "consolidato": "Più casi T1 verificati, replicabilità dimostrata.",
+    "emergente": "1-2 casi solidi, pattern in formazione.",
+    "nascente": "Pattern plausibile senza caso iconico verificato: opportunità di pionierato."
+   },
+   "proprieta": {
+    "indipendente": "Struttura singola o famiglia/proprietario unico.",
+    "gruppo_indipendente": "Più strutture, nessuna major alle spalle.",
+    "major": "Appartiene a un grande gruppo alberghiero (Marriott, Accor, IHG, LVMH/Belmond, ecc.)."
+   },
+   "caveat": "Posizionamento forte ma business non sostenibile o identità poi abbandonata. È un attributo separato dal tier."
+  }
+ },
+ "famiglie": [
+  {
+   "codice": "A",
+   "nome": "Anti-Competitor",
+   "core": "Ti definisci per opposizione a un competitor o a un format preciso.",
+   "rischio": "Dipendi dall'esistenza del nemico."
   },
-
-  "famiglie": [
-    {"codice": "A", "nome": "Anti-Competitor", "core": "Ti definisci per opposizione a un competitor o a un format preciso.", "rischio": "Dipendi dall'esistenza del nemico."},
-    {"codice": "B", "nome": "Limite Radicale", "core": "Un limite deliberato e non negoziabile diventa la promessa.", "rischio": "Il segmento che resta deve essere abbastanza ricco."},
-    {"codice": "C", "nome": "Audience Focus", "core": "Progettato per un pubblico preciso, ma aperto a tutti.", "rischio": "Il segmento può cambiare o restringersi."},
-    {"codice": "D", "nome": "JTBD Reframe", "core": "Riformuli il lavoro che l'ospite ti assume per fare.", "rischio": "Il risultato promesso deve essere misurabile."},
-    {"codice": "E", "nome": "Category Creation", "core": "Ibridi l'hotel con un'altra attività che diventa il centro.", "rischio": "La categoria deve essere ripetibile dai media."},
-    {"codice": "F", "nome": "Place-as-Identity", "core": "Hotel e luogo sono inseparabili.", "rischio": "Se il luogo perde attrattiva, l'hotel perde identità."},
-    {"codice": "G", "nome": "Persona-Driven", "core": "Una persona o una famiglia riconoscibile è il brand.", "rischio": "Serve un piano di successione."},
-    {"codice": "H", "nome": "Operations Reframe", "core": "Ripensi un'operazione standard dell'hotel.", "rischio": "Deve essere posizionamento, non taglio costi."},
-    {"codice": "I", "nome": "Time-Inverted", "core": "Inverti la logica temporale standard.", "rischio": "Restringe il fatturato annuo."},
-    {"codice": "J", "nome": "Genre Refusal", "core": "Rifiuti un intero genere dominante del tuo mercato.", "rischio": "Il rifiuto va sostanziato operativamente."},
-    {"codice": "K", "nome": "Worldview-Anchored", "core": "Una visione del mondo dichiarata e misurabile.", "rischio": "Serve coerenza totale."},
-    {"codice": "L", "nome": "Only (Esclusione Radicale)", "core": "Escludi interi segmenti. Versione a porte chiuse dei pattern C.", "rischio": "Mercato più piccolo: il segmento residuo deve pagare."}
-  ],
-
-  "pattern": [
-    {"codice": "A01", "famiglia": "A", "nome": "Anti-OTA", "definizione": "L'hotel come antagonista esplicito delle OTA: tutto ciò che Booking ed Expedia non possono dare.", "maturita": "nascente", "correlati": ["H04"]},
-    {"codice": "A02", "famiglia": "A", "nome": "Anti-Catena / Anti-Finto-Boutique", "definizione": "L'indipendente come vera alternativa ai brand di catena e al boutique da catalogo.", "maturita": "emergente", "correlati": ["G03"]},
-    {"codice": "A03", "famiglia": "A", "nome": "Anti-Business-Hotel", "definizione": "Lobby come spazio di lavoro e quartiere, contro il business hotel standard.", "maturita": "consolidato", "correlati": ["H01"]},
-    {"codice": "A04", "famiglia": "A", "nome": "Anti-Resort", "definizione": "L'opposto programmatico del villaggio: no animazione, no buffet, no braccialetti.", "maturita": "consolidato", "correlati": ["J04", "I03"]},
-    {"codice": "A05", "famiglia": "A", "nome": "Anti-Instagrammabile", "definizione": "Fatto per essere vissuto, non fotografato: comunicazione minima e rifiuto dell'estetica social.", "maturita": "emergente", "correlati": ["J01"]},
-
-    {"codice": "B01", "famiglia": "B", "nome": "Micro-scala (Solo X camere)", "definizione": "Il numero piccolissimo di camere dichiarato come promessa.", "maturita": "consolidato", "correlati": ["D01"]},
-    {"codice": "B02", "famiglia": "B", "nome": "Single Seating", "definizione": "Una sola cena, un solo orario, un solo menù.", "maturita": "emergente", "correlati": ["D01"]},
-    {"codice": "B03", "famiglia": "B", "nome": "Stagione Corta Dichiarata", "definizione": "Apertura ridotta presentata come scelta di qualità, non come limite.", "maturita": "emergente", "correlati": ["I01"]},
-    {"codice": "B04", "famiglia": "B", "nome": "Soggiorno Minimo Lungo", "definizione": "Minimo di più notti per filtrare il mordi-e-fuggi.", "maturita": "emergente", "correlati": ["D05"]},
-    {"codice": "B05", "famiglia": "B", "nome": "Accesso Difficile / Car-Free", "definizione": "Ci si arriva solo a piedi, in funivia o in barca: la fatica dell'accesso è parte del valore.", "maturita": "nascente", "correlati": ["F03"]},
-
-    {"codice": "C01", "famiglia": "C", "nome": "Family-Designed", "definizione": "Struttura e operazioni progettate per le famiglie con bambini.", "maturita": "consolidato", "correlati": ["L02"]},
-    {"codice": "C02", "famiglia": "C", "nome": "Solo-Traveler-Designed", "definizione": "Ridisegnato attorno a chi viaggia da solo, aperto a tutti.", "maturita": "nascente", "correlati": ["L07"]},
-    {"codice": "C03", "famiglia": "C", "nome": "Profession / Lifestyle", "definizione": "Pensato per una categoria professionale o uno stile di vita preciso.", "maturita": "emergente", "correlati": []},
-    {"codice": "C04", "famiglia": "C", "nome": "Sport-Expertise", "definizione": "Specializzazione profonda su uno sport, accessibile a chiunque.", "maturita": "consolidato", "correlati": ["L04"]},
-    {"codice": "C05", "famiglia": "C", "nome": "Pet-Welcomed Seriously", "definizione": "L'animale è ospite vero, ma il prodotto resta per l'umano.", "maturita": "consolidato", "correlati": ["L03"]},
-    {"codice": "C06", "famiglia": "C", "nome": "Identity-Explicit", "definizione": "Identità dichiarata come filtro comunicativo (LGBTQ+, cultura, ecc.).", "maturita": "emergente", "correlati": ["L06"]},
-    {"codice": "C07", "famiglia": "C", "nome": "Generazionale", "definizione": "La generazione come asse identitario (over-65 attivi, Gen Z).", "maturita": "nascente", "correlati": []},
-    {"codice": "C08", "famiglia": "C", "nome": "Remote Worker", "definizione": "Hotel per chi lavora in viaggio per lunghi periodi.", "maturita": "emergente", "correlati": ["D04"]},
-
-    {"codice": "D01", "famiglia": "D", "nome": "Vendiamo lo Chef", "definizione": "L'asset è chi cucina: la camera è il dopo-cena.", "maturita": "consolidato", "correlati": ["B01", "G01"]},
-    {"codice": "D02", "famiglia": "D", "nome": "Vendiamo il Sonno", "definizione": "L'hotel come prodotto del riposo: materassi, buio, protocolli.", "maturita": "emergente", "correlati": ["J03"]},
-    {"codice": "D03", "famiglia": "D", "nome": "Vendiamo il Silenzio", "definizione": "Il silenzio dichiarato e organizzato come prodotto principale.", "maturita": "emergente", "correlati": ["I03"]},
-    {"codice": "D04", "famiglia": "D", "nome": "Vendiamo la Connessione", "definizione": "L'hotel-community dove si fa amicizia: cene comuni, attività di gruppo.", "maturita": "emergente", "correlati": ["C08"]},
-    {"codice": "D05", "famiglia": "D", "nome": "Vendiamo la Trasformazione", "definizione": "Te ne vai diverso: programmi guidati di più giorni.", "maturita": "consolidato", "correlati": ["B04", "J03"]},
-    {"codice": "D06", "famiglia": "D", "nome": "Vendiamo il Tempo", "definizione": "Servizi che tolgono attrito e scelte invece di aggiungerne.", "maturita": "nascente", "correlati": []},
-
-    {"codice": "E01", "famiglia": "E", "nome": "Hotel-Bottega", "definizione": "L'hotel ibridato con un'attività artigiana che è il vero centro.", "maturita": "nascente", "correlati": ["E04"]},
-    {"codice": "E02", "famiglia": "E", "nome": "Hotel-Museo / Collezione", "definizione": "La collezione (arte, libri, vinili, auto) è il prodotto; la camera è l'accesso.", "maturita": "consolidato", "correlati": ["E03"]},
-    {"codice": "E03", "famiglia": "E", "nome": "Hotel-Residenza Artistica", "definizione": "Artisti in residenza producono mentre tu soggiorni.", "maturita": "nascente", "correlati": ["E02", "G03"]},
-    {"codice": "E04", "famiglia": "E", "nome": "Hotel-Azienda Agricola", "definizione": "Produzione visibile e filiera in tempo reale, oltre l'agriturismo standard.", "maturita": "consolidato", "correlati": ["K02"]},
-    {"codice": "E05", "famiglia": "E", "nome": "Hotel-Scuola", "definizione": "Esci con una competenza che non avevi (cucina, lingua, mestiere).", "maturita": "emergente", "correlati": ["E04"]},
-
-    {"codice": "F01", "famiglia": "F", "nome": "Albergo Diffuso", "definizione": "L'hotel è il borgo, non sta nel borgo.", "maturita": "consolidato", "correlati": ["J01"]},
-    {"codice": "F02", "famiglia": "F", "nome": "Ambasciata Regionale", "definizione": "Porti il territorio fuori dal territorio.", "maturita": "emergente", "correlati": ["G02"]},
-    {"codice": "F03", "famiglia": "F", "nome": "Single-View", "definizione": "Una vista o un elemento naturale definisce tutto.", "maturita": "consolidato", "correlati": ["B05"]},
-    {"codice": "F04", "famiglia": "F", "nome": "Edificio-Manifesto", "definizione": "L'architettura storica o iconica è il prodotto, non la cornice.", "maturita": "consolidato", "correlati": []},
-    {"codice": "F05", "famiglia": "F", "nome": "Cultura Locale come Prodotto", "definizione": "Riti, persone e saperi del territorio sostituiscono l'intrattenimento standard.", "maturita": "emergente", "correlati": ["J04"]},
-
-    {"codice": "G01", "famiglia": "G", "nome": "Founder-Persona", "definizione": "Un fondatore riconoscibile e narrato è il brand.", "maturita": "consolidato", "correlati": []},
-    {"codice": "G02", "famiglia": "G", "nome": "N-Generazioni", "definizione": "La continuità familiare dichiarata come prova.", "maturita": "consolidato", "correlati": ["F02"]},
-    {"codice": "G03", "famiglia": "G", "nome": "Curator-Driven", "definizione": "L'ossessione di un curatore definisce ogni scelta: musica, libri, design, community.", "maturita": "consolidato", "correlati": ["A02"]},
-    {"codice": "G04", "famiglia": "G", "nome": "Staff-as-Character", "definizione": "Il team è famoso, non l'hotel.", "maturita": "emergente", "correlati": []},
-
-    {"codice": "H01", "famiglia": "H", "nome": "Self Check-in / Tech-First", "definizione": "Arrivo ridisegnato: chioschi, app, nessuna coda alla reception.", "maturita": "consolidato", "correlati": ["A03"]},
-    {"codice": "H02", "famiglia": "H", "nome": "Host al posto della Reception", "definizione": "Niente front desk: un host umano specifico ti accoglie.", "maturita": "nascente", "correlati": ["G04"]},
-    {"codice": "H03", "famiglia": "H", "nome": "Tariffa Unica / Camera Unica", "definizione": "Un solo tipo di camera e un prezzo trasparente, niente upsell nascosti.", "maturita": "emergente", "correlati": []},
-    {"codice": "H04", "famiglia": "H", "nome": "No Online Booking", "definizione": "Si prenota solo parlando: la conversazione è il servizio.", "maturita": "nascente", "correlati": ["A01"]},
-    {"codice": "H05", "famiglia": "H", "nome": "All-Inclusive Radicale o Invertito", "definizione": "Tutto incluso davvero, oppure niente incluso e paghi solo ciò che usi.", "maturita": "emergente", "correlati": []},
-
-    {"codice": "I01", "famiglia": "I", "nome": "Stagione Invertita", "definizione": "Aperti quando gli altri chiudono (mare d'inverno, montagna fuori stagione).", "maturita": "nascente", "correlati": ["B03"]},
-    {"codice": "I02", "famiglia": "I", "nome": "Solo Infrasettimanale", "definizione": "Aperto solo in giorni specifici.", "maturita": "nascente", "correlati": []},
-    {"codice": "I03", "famiglia": "I", "nome": "Slow Obbligato", "definizione": "Ritmi imposti dalla struttura: niente wifi, orari, silenzio.", "maturita": "emergente", "correlati": ["D03", "A04"]},
-
-    {"codice": "J01", "famiglia": "J", "nome": "Anti-Lusso-Patinato", "definizione": "Il lusso è sottrazione: materiali grezzi, niente ostentazione.", "maturita": "consolidato", "correlati": ["A05", "F01"]},
-    {"codice": "J02", "famiglia": "J", "nome": "Anti-Design-da-Rivista", "definizione": "Vissuto, imperfetto, mismatched: l'opposto dell'hotel da shooting.", "maturita": "emergente", "correlati": []},
-    {"codice": "J03", "famiglia": "J", "nome": "Anti-Wellness-Fuffa", "definizione": "Rifiuti la spa decorativa e ti rifondi con protocolli medici.", "maturita": "consolidato", "correlati": ["D05"]},
-    {"codice": "J04", "famiglia": "J", "nome": "Anti-Animazione", "definizione": "Silenzio o cultura locale al posto dell'animazione, in un contesto dove tutti la fanno.", "maturita": "emergente", "correlati": ["A04", "F05"]},
-
-    {"codice": "K01", "famiglia": "K", "nome": "Manifesto Esplicito", "definizione": "Una visione dichiarata che filtra gli ospiti a monte.", "maturita": "emergente", "correlati": []},
-    {"codice": "K02", "famiglia": "K", "nome": "Filiera Misurata", "definizione": "Km zero dichiarato con numeri pubblici e verificabili.", "maturita": "nascente", "correlati": ["E04"]},
-    {"codice": "K03", "famiglia": "K", "nome": "Carbon Trasparente", "definizione": "Emissioni misurate, certificate e pubblicate.", "maturita": "emergente", "correlati": ["K05"]},
-    {"codice": "K04", "famiglia": "K", "nome": "Plant-Based Manifesto", "definizione": "Il vegetale come asse identitario, non come opzione di menù.", "maturita": "emergente", "correlati": []},
-    {"codice": "K05", "famiglia": "K", "nome": "Climate-First", "definizione": "L'impatto ambientale come principio di progetto e di comunicazione.", "maturita": "consolidato", "correlati": ["K03"]},
-    {"codice": "K06", "famiglia": "K", "nome": "Materiale-Manifesto", "definizione": "Un materiale dominante racconta la visione (bambù, legno, terra).", "maturita": "emergente", "correlati": []},
-    {"codice": "K07", "famiglia": "K", "nome": "Conservation", "definizione": "L'hotel esiste per finanziare la tutela di un ecosistema.", "maturita": "consolidato", "correlati": ["K01"]},
-
-    {"codice": "L01", "famiglia": "L", "nome": "Adults Only / Couples Only", "definizione": "Vietato ai minori come regola d'accesso.", "maturita": "consolidato", "correlati": []},
-    {"codice": "L02", "famiglia": "L", "nome": "Family Only", "definizione": "Solo famiglie con bambini.", "maturita": "nascente", "correlati": ["C01"]},
-    {"codice": "L03", "famiglia": "L", "nome": "Pets Only", "definizione": "L'hotel esiste per l'animale; l'umano accompagna.", "maturita": "emergente", "correlati": ["C05"]},
-    {"codice": "L04", "famiglia": "L", "nome": "Sport Only", "definizione": "Accesso riservato a chi pratica uno sport, con livello dichiarato.", "maturita": "nascente", "correlati": ["C04"]},
-    {"codice": "L05", "famiglia": "L", "nome": "Members Only", "definizione": "Private club: entri se accettato o presentato.", "maturita": "consolidato", "correlati": ["G03"]},
-    {"codice": "L06", "famiglia": "L", "nome": "Women Only", "definizione": "Struttura riservata alle donne.", "maturita": "emergente", "correlati": ["C06"]},
-    {"codice": "L07", "famiglia": "L", "nome": "Solo-Travelers Only", "definizione": "Rifiuta coppie e gruppi: solo chi viaggia da solo.", "maturita": "nascente", "correlati": ["C02"]},
-    {"codice": "L08", "famiglia": "L", "nome": "Buyout / Event Only", "definizione": "La struttura esiste solo per eventi privati in esclusiva.", "maturita": "nascente", "correlati": []}
-  ],
-
-  "categorie": [
-    {"id": "CAT01", "nome": "Longevity Hotel", "definizione": "Hotel-clinica con medicina della longevità, screening e protocolli.", "stadio": "emergente", "pattern_affini": ["D05", "J03"]},
-    {"id": "CAT02", "nome": "Sleep Tourism", "definizione": "L'hotel come prodotto del sonno.", "stadio": "emergente", "pattern_affini": ["D02"]},
-    {"id": "CAT03", "nome": "Glamping di Lusso", "definizione": "Tende e strutture leggere di fascia alta in natura.", "stadio": "maturo", "pattern_affini": ["F03", "B05"]},
-    {"id": "CAT04", "nome": "Boutique Hostel", "definizione": "Ostello di design per chi accetta la stanza condivisa.", "stadio": "maturo", "pattern_affini": ["D04", "H03"]},
-    {"id": "CAT05", "nome": "Workation Hub", "definizione": "Hotel per remote worker di lunga durata.", "stadio": "emergente", "pattern_affini": ["C08", "D04"]},
-    {"id": "CAT06", "nome": "Retreat Center", "definizione": "Hotel-ritiro tematico (yoga, silenzio, detox), permanente o pop-up.", "stadio": "emergente", "pattern_affini": ["D05", "B04", "D03"]},
-    {"id": "CAT07", "nome": "Wellness Medico", "definizione": "Hotel-clinica diagnostico/preventivo.", "stadio": "emergente", "pattern_affini": ["J03", "D05"]},
-    {"id": "CAT08", "nome": "Sober Hospitality", "definizione": "Hotel alcohol-free o mindful drinking.", "stadio": "nascente", "pattern_affini": ["K01", "D05"]},
-    {"id": "CAT09", "nome": "Sport Performance Hotel", "definizione": "Hotel-centro sportivo per atleti e amatori evoluti.", "stadio": "maturo", "pattern_affini": ["C04", "L04"]},
-    {"id": "CAT10", "nome": "Climate-Forward Hotel", "definizione": "Impatto ambientale dichiarato, misurato e certificato.", "stadio": "emergente", "pattern_affini": ["K05", "K03"]},
-    {"id": "CAT11", "nome": "Agriturismo Premium", "definizione": "Azienda agricola riposizionata in fascia alta.", "stadio": "emergente", "pattern_affini": ["E04", "E05"]},
-    {"id": "CAT12", "nome": "Slow Travel Hub", "definizione": "Base per soggiorni lenti con attività territoriali.", "stadio": "emergente", "pattern_affini": ["I03", "F05"]},
-    {"id": "CAT13", "nome": "Cultural Residency Hotel", "definizione": "Ospitalità + residenza artistica o culturale.", "stadio": "nascente", "pattern_affini": ["E03", "E02"]},
-    {"id": "CAT14", "nome": "Member Club Hotel", "definizione": "Private club urbano con camere.", "stadio": "maturo", "pattern_affini": ["L05", "G03"]},
-    {"id": "CAT15", "nome": "Branded Residences", "definizione": "Il brand alberghiero si estende al residenziale.", "stadio": "emergente", "pattern_affini": ["G02"]},
-    {"id": "CAT16", "nome": "Nature Hotel", "definizione": "Immersione naturalistica come prodotto centrale.", "stadio": "emergente", "pattern_affini": ["K07", "K06", "F03"]}
-  ],
-
-  "esempi": [
-    {"id": "sextantio", "nome": "Sextantio", "paese": "Italia", "area": "Europa", "luogo": "Santo Stefano di Sessanio (AQ) e Matera", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["F01", "A04", "J01", "K01", "G01"], "categorie": [], "sito": "https://www.sextantio.it", "evidenza": "Daniele Kihlgren: albergo diffuso, 'sviluppo senza costruzione', lusso dell'imperfezione.", "fonti": ["Harvard Business School, caso 'Sextantio' (E. Cantillon, 2006)"], "note": ""},
-    {"id": "borgo-egnazia", "nome": "Borgo Egnazia", "paese": "Italia", "area": "Europa", "luogo": "Savelletri di Fasano (BR)", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["F05", "J04", "G02"], "categorie": [], "sito": "https://www.borgoegnazia.com", "evidenza": "Famiglia Melpignano, aperto nel 2010. Borgo pugliese costruito ex novo, la cultura locale (massaie, musica popolare) al posto dell'intrattenimento da resort.", "fonti": [], "note": "Su J04 il caso è T2: c'è un'offerta bambini strutturata, il rifiuto riguarda l'animazione standard, non le attività."},
-    {"id": "eremito", "nome": "Eremito", "paese": "Italia", "area": "Europa", "luogo": "Parrano (TR), Umbria", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["A04", "I03", "D03", "G01", "K04"], "categorie": ["CAT12"], "sito": "https://www.eremito.com", "evidenza": "Marcello Murzilli, aperto nel 2013. Eremo contemporaneo ricostruito da un rudere: celle singole, niente wifi né tv, cena in silenzio, cucina vegetariana.", "fonti": ["https://gamberorossointernational.com/?p=523204", "https://www.iol.co.za/travel/the-importance-of-being-idle-1870386"], "note": "Correzione: non è un 'ex monastero del XIV secolo' in uso, è una ricostruzione in stile eremo. Su K04 è T2: vegetariano, non vegano."},
-    {"id": "borgo-pignano", "nome": "Borgo Pignano", "paese": "Italia", "area": "Europa", "luogo": "Volterra (PI), Toscana", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["E04", "E05"], "categorie": ["CAT11"], "sito": "https://www.borgopignano.com", "evidenza": "Tenuta biologica di circa 300 ettari: hotel, ristorante, orto e scuola di cucina.", "fonti": [], "note": ""},
-    {"id": "castello-di-reschio", "nome": "Hotel Castello di Reschio", "paese": "Italia", "area": "Europa", "luogo": "Lisciano Niccone (PG), Umbria", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["G01", "G02", "F04"], "categorie": [], "sito": "https://www.reschio.com", "evidenza": "Famiglia Bolza, tre generazioni dal 1994. Castello millenario, hotel da 36 camere aperto nel 2021; ogni scelta architettonica firmata da Benedikt Bolza.", "fonti": ["https://www.dezeen.com/2021/07/05/hotel-castello-di-reschio-umbria-italy/amp/"], "note": "Correzione: NON è una struttura solo eventi (L08). È un hotel aperto al pubblico."},
-    {"id": "hotel-caruso", "nome": "Hotel Caruso (Belmond)", "paese": "Italia", "area": "Europa", "luogo": "Ravello (SA)", "proprieta": "major", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["F03", "F04"], "categorie": [], "sito": "https://www.belmond.com", "evidenza": "Palazzo dell'XI secolo sospeso sulla costiera, la vista è il prodotto.", "fonti": [], "note": "Gruppo Belmond (LVMH): utile come ispirazione, non come modello per un indipendente."},
-    {"id": "splendido-portofino", "nome": "Splendido (Belmond)", "paese": "Italia", "area": "Europa", "luogo": "Portofino (GE)", "proprieta": "major", "stato": "attivo", "tier": "T2", "verifica": "da_verificare", "caveat": false, "pattern": ["F03", "B03"], "categorie": [], "sito": "https://www.belmond.com/hotels/europe/italy/portofino/belmond-hotel-splendido/", "evidenza": "Ex monastero sopra Portofino, apertura stagionale.", "fonti": [], "note": "Verificare il secolo del monastero (il file v3 dice XIV, altre fonti XVI) e il calendario di apertura."},
-    {"id": "casa-cipriani", "nome": "Casa Cipriani", "paese": "USA / Italia / EAU", "area": "Globale", "luogo": "New York, Milano, Dubai; Miami annunciata", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["F02", "G02", "L05"], "categorie": ["CAT14", "CAT15"], "sito": "https://www.casacipriani.com", "evidenza": "L'eleganza veneziana dei Cipriani esportata come club privato con camere. Miami: hotel da 40 camere, 23 residenze e club.", "fonti": ["https://www.hotelmanagement.net/development/casa-cipriani-enter-miami-market-boutique-luxury-offering"], "note": "Correzione: NON è 'Pets Only'. Sul sito era finito su L03 per un errore di codice."},
-    {"id": "monastero-santa-rosa", "nome": "Monastero Santa Rosa", "paese": "Italia", "area": "Europa", "luogo": "Conca dei Marini (SA)", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["F04", "F03"], "categorie": [], "sito": "https://www.monasterosantarosa.com", "evidenza": "Monastero del XVII secolo restaurato da Bianca Sharma, a picco sul mare.", "fonti": [], "note": "Rimosso da tutti i pattern E (era agganciato per errore a Hotel-Bottega, Scuola, ecc.)."},
-
-    {"id": "aman", "nome": "Aman", "paese": "Globale", "area": "Globale", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["A05", "J01"], "categorie": [], "sito": "https://www.aman.com", "evidenza": "Lusso per sottrazione, comunicazione minima, riservatezza.", "fonti": [], "note": "Rimosso da 'Vendiamo lo chef' (D01): era un errore di codice."},
-    {"id": "aman-kyoto", "nome": "Aman Kyoto", "paese": "Giappone", "area": "Asia", "luogo": "Kyoto", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T2", "verifica": "da_verificare", "caveat": false, "pattern": ["D03"], "categorie": [], "sito": "https://www.aman.com/resorts/aman-kyoto", "evidenza": "Il silenzio del giardino nascosto come esperienza centrale.", "fonti": [], "note": "Trovare una fonte che documenti il silenzio come promessa esplicita."},
-    {"id": "aman-residences", "nome": "Aman Residences", "paese": "Globale", "area": "Globale", "luogo": "New York, Tokyo e altre", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": [], "categorie": ["CAT15"], "sito": "https://www.aman.com/residences", "evidenza": "Il brand si estende al residenziale: i clienti vogliono vivere nel brand.", "fonti": [], "note": "Rimosso dai pattern E (errore di aggancio)."},
-    {"id": "the-pig", "nome": "The Pig Hotels", "paese": "Regno Unito", "area": "Europa", "luogo": "Varie sedi in Inghilterra", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["G01", "J02", "E04"], "categorie": [], "sito": "https://www.thepighotel.com", "evidenza": "Robin Hutson. 'Rusty beats shiny': interni vissuti, orto e menù da 25 miglia.", "fonti": [], "note": ""},
-    {"id": "babylonstoren", "nome": "Babylonstoren", "paese": "Sudafrica", "area": "Africa", "luogo": "Franschhoek / Paarl", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["E04"], "categorie": ["CAT11"], "sito": "https://www.babylonstoren.com", "evidenza": "Tenuta agricola con giardino produttivo al centro dell'esperienza (Koos Bekker e Karen Roos).", "fonti": [], "note": ""},
-    {"id": "lanserhof", "nome": "Lanserhof Tegernsee", "paese": "Germania", "area": "Europa", "luogo": "Baviera", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["J03", "D05"], "categorie": ["CAT07", "CAT01"], "sito": "https://lanserhof.com", "evidenza": "LANS Med Concept: diagnostica e protocolli medici al posto della spa.", "fonti": [], "note": ""},
-    {"id": "vivamayr", "nome": "Vivamayr", "paese": "Austria", "area": "Europa", "luogo": "Altaussee, Maria Wörth", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["J03"], "categorie": ["CAT07"], "sito": "https://www.vivamayr.com", "evidenza": "Si definisce resort medico, non spa: Modern Mayr Medicine.", "fonti": [], "note": ""},
-    {"id": "sha", "nome": "SHA Wellness Clinic", "paese": "Spagna / Messico", "area": "Europa", "luogo": "L'Albir (Alicante)", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["D05", "J03"], "categorie": ["CAT01"], "sito": "https://shawellness.com", "evidenza": "Alfredo Bataller Parietti, 2008. Longevità e nutrizione come prodotto centrale.", "fonti": [], "note": ""},
-    {"id": "como-shambhala", "nome": "COMO Shambhala Estate", "paese": "Indonesia", "area": "Asia", "luogo": "Ubud, Bali", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["D05", "B04"], "categorie": ["CAT06"], "sito": "https://www.comohotels.com/bali/como-shambhala-estate/", "evidenza": "Christina Ong. Programmi residenziali di più giorni come unità di prodotto.", "fonti": [], "note": "Verificare se il soggiorno minimo è obbligatorio (B04)."},
-    {"id": "kamalaya", "nome": "Kamalaya", "paese": "Thailandia", "area": "Asia", "luogo": "Koh Samui", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["D05", "B04"], "categorie": ["CAT06"], "sito": "https://kamalaya.com", "evidenza": "John e Karina Stewart, 2005. Programmi di trasformazione con soggiorno minimo.", "fonti": [], "note": ""},
-    {"id": "six-senses", "nome": "Six Senses", "paese": "Globale", "area": "Globale", "luogo": "", "proprieta": "major", "stato": "attivo", "tier": "T2", "verifica": "da_verificare", "caveat": false, "pattern": ["D05", "K05"], "categorie": [], "sito": "https://www.sixsenses.com", "evidenza": "Il wellness come spina dorsale del brand.", "fonti": [], "note": "Gruppo IHG dal 2019. I dati '42% del fatturato dal wellness' e '5,2 notti di soggiorno medio' NON hanno una fonte: non usarli finché non si trova."},
-    {"id": "equinox-hotel", "nome": "Equinox Hotel New York", "paese": "USA", "area": "Nord America", "luogo": "Hudson Yards, New York", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T2", "verifica": "verificato", "caveat": false, "pattern": ["D02"], "categorie": ["CAT02"], "sito": "https://equinox-hotels.com", "evidenza": "Aperto nel 2019, 212 camere. Programma 'Art + Science of Sleep': buio, silenzio e temperatura controllati, rituali serali.", "fonti": ["https://www.hospitalitynet.org/news/4119262.html"], "note": "Correzione: è un solo hotel full-service, non una catena ('Equinox Hotels'). Rimosso da 'Generazionale' (errore di codice)."},
-    {"id": "singlethread", "nome": "SingleThread", "paese": "USA", "area": "Nord America", "luogo": "Healdsburg, California", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["B01", "D01", "E04"], "categorie": [], "sito": "https://www.singlethreadfarms.com", "evidenza": "Kyle e Katina Connaughton: ristorante tre stelle Michelin, fattoria e 5 camere.", "fonti": [], "note": ""},
-    {"id": "inn-little-washington", "nome": "The Inn at Little Washington", "paese": "USA", "area": "Nord America", "luogo": "Washington, Virginia", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["D01", "G01"], "categorie": [], "sito": "https://www.theinnatlittlewashington.com", "evidenza": "Patrick O'Connell, 1978. Ristorante tre stelle Michelin con camere.", "fonti": [], "note": "Spostato da 'Vendiamo la trasformazione' a 'Vendiamo lo chef' (errore di codice sul sito)."},
-    {"id": "the-lost-kitchen", "nome": "The Lost Kitchen", "paese": "USA", "area": "Nord America", "luogo": "Freedom, Maine", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["B02", "G01"], "categorie": [], "sito": "https://findthelostkitchen.com", "evidenza": "Erin French: una cena al giorno, posti assegnati per estrazione, cabine per dormire.", "fonti": [], "note": "È prima un ristorante: ottimo per i ristoratori, da segnalare come tale."},
-
-    {"id": "citizenm", "nome": "citizenM", "paese": "Globale", "area": "Globale", "luogo": "", "proprieta": "major", "stato": "acquisito", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["A03", "H01", "H03"], "categorie": [], "sito": "https://www.citizenm.com", "evidenza": "Camera unica compatta, self check-in, lobby come soggiorno.", "fonti": ["https://marriott.gcs-web.com/node/36046"], "note": "Acquisito da Marriott (annuncio aprile 2025, chiusura luglio 2025; 37 hotel). Rimosso da Anti-OTA: era un errore di codice. Segnale di trend: i brand lifestyle nati contro le catene finiscono dentro le major."},
-    {"id": "yotel", "nome": "YOTEL", "paese": "Globale", "area": "Globale", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["H01"], "categorie": [], "sito": "https://www.yotel.com", "evidenza": "Simon Woodroffe. Cabine compatte, chioschi self check-in, robot per i bagagli.", "fonti": [], "note": "Da verificare l'uso di H03 (tariffa unica)."},
-    {"id": "the-hoxton", "nome": "The Hoxton", "paese": "Regno Unito / Europa / USA", "area": "Globale", "luogo": "", "proprieta": "major", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["A03"], "categorie": [], "sito": "https://thehoxton.com", "evidenza": "Lobby come spazio di lavoro gratuito e di quartiere, contro il business hotel.", "fonti": [], "note": "Oggi in Ennismore (joint venture Accor). Rimosso da 'Anti-finto-boutique' e 'Sport-expertise' (errori di codice)."},
-    {"id": "ace-hotel", "nome": "Ace Hotel", "paese": "USA", "area": "Nord America", "luogo": "Fondato a Seattle nel 1999", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["A02", "G03"], "categorie": [], "sito": "https://www.acehotel.com", "evidenza": "Alex Calderwood: lobby come community, cultura musicale e creativa curata.", "fonti": [], "note": ""},
-    {"id": "public-hotel", "nome": "Public Hotel", "paese": "USA", "area": "Nord America", "luogo": "New York", "proprieta": "indipendente", "stato": "attivo", "tier": "T3", "verifica": "da_verificare", "caveat": false, "pattern": ["C03"], "categorie": [], "sito": "https://www.publichotels.com", "evidenza": "Ian Schrager, 2017: 'lusso per tutti' per la classe creativa urbana.", "fonti": [], "note": "Il legame con un target professionale preciso è debole: cercare un caso più netto per C03."},
-    {"id": "selina", "nome": "Selina", "paese": "Globale", "area": "Globale", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "venduto", "tier": "T1", "verifica": "verificato", "caveat": true, "pattern": ["C08", "D04"], "categorie": ["CAT05"], "sito": "https://www.selina.com", "evidenza": "Hub per nomadi digitali: coworking, community, eventi.", "fonti": ["https://www.hospitalityinvestor.com/hotels/selina-hospitality-falls-administration", "https://skift.com/2024/07/22/selina-collapses-in-liquidity-crisis-seeks-buyers/"], "note": "Correzione: non 'Chapter 11'. Selina Hospitality PLC è entrata in administration nel Regno Unito il 22 luglio 2024; il 27 agosto 2024 il grosso del business è stato venduto a Collective Hospitality (Singapore). Rimosso da 'Solo X camere' (errore)."},
-    {"id": "generator", "nome": "Generator", "paese": "Europa / USA", "area": "Europa", "luogo": "Network di città", "proprieta": "gruppo_indipendente", "stato": "acquisito", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["D04"], "categorie": ["CAT04"], "sito": "https://staygenerator.com", "evidenza": "Ha definito l'ostello di design. Acquisito da Queensgate Investments nel 2017.", "fonti": [], "note": "Rimosso da tutti i pattern E (errore di aggancio)."},
-
-    {"id": "falkensteiner-family", "nome": "Falkensteiner Family Hotels", "paese": "Croazia / Italia / Austria", "area": "Europa", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T2", "verifica": "verificato", "caveat": false, "pattern": ["C01"], "categorie": [], "sito": "https://www.falkensteiner.com", "evidenza": "Linea family del gruppo austriaco, con strutture pensate per le famiglie.", "fonti": [], "note": "Correzione: era finito su 'Solo-travelers' per un errore di codice."},
-    {"id": "beaches", "nome": "Beaches Resorts", "paese": "Caraibi", "area": "Caraibi", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T2", "verifica": "verificato", "caveat": false, "pattern": ["C01"], "categorie": [], "sito": "https://www.beaches.com", "evidenza": "Brand gemello di Sandals pensato per le famiglie.", "fonti": ["https://www.sandals.co.uk/blog/the-best-caribbean-breaks-grandparents/"], "note": "Correzione: NON è 'Family Only'. Accoglie anche coppie, single e gruppi di amici. Resta valido il principio P1 (brand separato invece di annacquare Sandals)."},
-    {"id": "sandals", "nome": "Sandals Resorts", "paese": "Caraibi", "area": "Caraibi", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["L01", "H05"], "categorie": [], "sito": "https://www.sandals.com", "evidenza": "Famiglia Stewart. All-inclusive per sole coppie adulte.", "fonti": [], "note": ""},
-    {"id": "bucuti-tara", "nome": "Bucuti & Tara Beach Resort", "paese": "Aruba", "area": "Caraibi", "luogo": "Eagle Beach", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["K03", "L01"], "categorie": ["CAT10"], "sito": "https://www.bucuti.com", "evidenza": "Primo resort CarbonNeutral certificato dei Caraibi, emissioni pubblicate. Solo adulti.", "fonti": [], "note": ""},
-    {"id": "hostelle", "nome": "Hostelle", "paese": "Paesi Bassi", "area": "Europa", "luogo": "Amsterdam Zuidoost", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["L06", "C06"], "categorie": [], "sito": "https://www.hostelle.com", "evidenza": "Fondato nel 2012: primo e unico ostello solo donne di Amsterdam, di proprietà black-owned.", "fonti": ["https://travelnoire.com/hostelle-black-owned-women-only-hostel-in-amsterdam"], "note": "Correzione: è 'Women Only', non 'Solo-travelers only', 'Pet-welcomed' o 'Sport only' come risultava sul sito."},
-    {"id": "axel-hotels", "nome": "Axel Hotels", "paese": "Spagna / Germania / altri", "area": "Europa", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "da_verificare", "caveat": false, "pattern": ["C06"], "categorie": [], "sito": "https://www.axelhotels.com", "evidenza": "Catena LGBTQ+ con il claim 'heterofriendly'.", "fonti": [], "note": "Verificare le comunicazioni ufficiali attuali."},
-    {"id": "kimpton", "nome": "Kimpton Hotels", "paese": "Globale", "area": "Globale", "luogo": "", "proprieta": "major", "stato": "attivo", "tier": "T2", "verifica": "verificato", "caveat": false, "pattern": ["C05"], "categorie": [], "sito": "https://www.kimptonhotels.com", "evidenza": "Pet-friendly come politica di brand.", "fonti": [], "note": "Correzione: Kimpton è un brand IHG (dal 2015), non è un esempio di 'N-generazioni' né di founder vivo."},
-    {"id": "d-pet-hotels", "nome": "D Pet Hotels", "paese": "USA", "area": "Nord America", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T2", "verifica": "da_verificare", "caveat": false, "pattern": ["L03"], "categorie": [], "sito": "https://dpethotels.com", "evidenza": "Hotel di lusso per cani: suite, spa e servizi dedicati.", "fonti": [], "note": "Correzione: è 'Pets Only', non 'Members Only'. Verificare il numero di sedi attive."},
-    {"id": "soho-house", "nome": "Soho House", "paese": "Globale", "area": "Globale", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T2", "verifica": "da_verificare", "caveat": false, "pattern": ["L05", "G03"], "categorie": ["CAT14"], "sito": "https://www.sohohouse.com", "evidenza": "Nick Jones, 1995. Club privato per la classe creativa, con camere.", "fonti": [], "note": "Correzione: è 'Members Only', non 'Pets Only'. Tier T2 perché in molte sedi le camere sono prenotabili anche dai non soci: da verificare sede per sede."},
-    {"id": "the-connaught", "nome": "The Connaught", "paese": "Regno Unito", "area": "Europa", "luogo": "Mayfair, Londra", "proprieta": "major", "stato": "attivo", "tier": "T2", "verifica": "da_verificare", "caveat": false, "pattern": ["G04"], "categorie": [], "sito": "https://www.the-connaught.co.uk", "evidenza": "Personale storico e riconoscibile, servizio maggiordomo.", "fonti": [], "note": "Il claim 'maggiordomo da 40 anni, terza generazione di staff' non ha fonte: trovarla o toglierlo. Proprietà: Maybourne Hotel Group."},
-    {"id": "21c", "nome": "21c Museum Hotels", "paese": "USA", "area": "Nord America", "luogo": "Fondato a Louisville", "proprieta": "major", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["E02"], "categorie": [], "sito": "https://www.21cmuseumhotels.com", "evidenza": "Steve Wilson e Laura Lee Brown: hotel con museo d'arte contemporanea aperto al pubblico.", "fonti": [], "note": "Verificare la proprietà attuale (gestione Accor/MGallery dal 2018)."},
-    {"id": "casa-wabi", "nome": "Casa Wabi", "paese": "Messico", "area": "America Latina", "luogo": "Puerto Escondido, Oaxaca", "proprieta": "indipendente", "stato": "attivo", "tier": "T3", "verifica": "verificato", "caveat": false, "pattern": ["E03"], "categorie": ["CAT13"], "sito": "https://casawabi.org", "evidenza": "Fondazione di Bosco Sodi, edificio di Tadao Ando: residenze per artisti.", "fonti": [], "note": "È una fondazione con residenze, non un hotel aperto al pubblico: usarla come riferimento di categoria, non come modello alberghiero. Rimosso da 'No online booking' (claim non verificato)."},
-    {"id": "longitude-131", "nome": "Longitude 131°", "paese": "Australia", "area": "Oceania", "luogo": "Uluru", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["F03"], "categorie": ["CAT03"], "sito": "https://longitude131.com.au", "evidenza": "Baillie Lodges: tende di lusso con vista su Uluru.", "fonti": [], "note": ""},
-    {"id": "la-manga-club", "nome": "La Manga Club", "paese": "Spagna", "area": "Europa", "luogo": "Murcia", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["C04"], "categorie": ["CAT09"], "sito": "https://www.lamangaclub.com", "evidenza": "Resort sportivo: golf, tennis, ritiri di squadre di calcio.", "fonti": [], "note": "Correzione: è 'Sport-Expertise' (aperto a tutti), non 'Solo-travelers only' né 'Sport Only'."},
-    {"id": "1-hotels", "nome": "1 Hotels", "paese": "Globale", "area": "Globale", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["K05"], "categorie": ["CAT10"], "sito": "https://www.1hotels.com", "evidenza": "Barry Sternlicht, 2015. Brand costruito sull'impatto ambientale.", "fonti": [], "note": ""},
-    {"id": "bambu-indah", "nome": "Bambu Indah", "paese": "Indonesia", "area": "Asia", "luogo": "Ubud, Bali", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "da_verificare", "caveat": false, "pattern": ["K06"], "categorie": ["CAT16"], "sito": "https://www.bambuindah.com", "evidenza": "John e Cynthia Hardy: architettura in bambù come manifesto.", "fonti": [], "note": "Rimosso da 'Carbon trasparente' (K03): il caso giusto è Bucuti & Tara."},
-    {"id": "singita", "nome": "Singita", "paese": "Sudafrica / Tanzania / Zimbabwe / Ruanda", "area": "Africa", "luogo": "", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T1", "verifica": "verificato", "caveat": false, "pattern": ["K07", "K01"], "categorie": ["CAT16"], "sito": "https://singita.com", "evidenza": "Safari lodge che finanziano la conservazione, visione dichiarata a 100 anni.", "fonti": [], "note": "Su K04 (plant-based) solo dopo aver verificato la cucina attuale delle lodge."},
-    {"id": "saorsa-1875", "nome": "Saorsa 1875", "paese": "Regno Unito", "area": "Europa", "luogo": "Pitlochry, Scozia", "proprieta": "indipendente", "stato": "venduto", "tier": "T1", "verifica": "da_verificare", "caveat": true, "pattern": ["K04"], "categorie": [], "sito": "", "evidenza": "Aperto nel 2019 come primo hotel 100% vegetale del Regno Unito, 11 camere.", "fonti": ["https://www.thecaterer.com/news/vegan-hotel-in-perthshire-on-the-market-for-nearly-1m", "https://www.hotelowner.co.uk/177306-uks-first-vegan-hotel-brought-to-market-for-950k/"], "note": "Le fonti trovate confermano solo la messa in vendita a circa 950.000 sterline, motivata dai proprietari con altri progetti, non con un fallimento. Il rebrand 'Birchwood' e la reintroduzione di prodotti animali vanno verificati. Finché non lo sono, non presentarlo come 'business fallito'."},
-    {"id": "jill-hotel", "nome": "Jill Hotel", "paese": "Belgio", "area": "Europa", "luogo": "Saint-Gilles, Bruxelles", "proprieta": "indipendente", "stato": "attivo", "tier": "T3", "verifica": "verificato", "caveat": false, "pattern": ["K01"], "categorie": ["CAT08"], "sito": "", "evidenza": "Primo hotel in Belgio a togliere tutte le bevande alcoliche dal menù.", "fonti": ["https://traveltomorrow.com/brussels-based-jill-hotel-becomes-belgiums-first-to-ban-alcoholic-drinks-from-its-menu/"], "note": "Sostituisce 'Camp Recovery', che è un centro di riabilitazione, non un hotel."},
-    {"id": "the-stromness", "nome": "The Stromness Hotel", "paese": "Regno Unito", "area": "Europa", "luogo": "Orkney, Scozia", "proprieta": "indipendente", "stato": "attivo", "tier": "T3", "verifica": "da_verificare", "caveat": false, "pattern": ["K01"], "categorie": ["CAT08"], "sito": "", "evidenza": "I nuovi proprietari l'hanno reso alcohol-free in coerenza con un'identità wellness.", "fonti": [], "note": "Notizia emersa in rassegne sul turismo alcohol-free: trovare la fonte primaria e verificare se la scelta è ancora in vigore."},
-
-    {"id": "casa-maria-luigia", "nome": "Casa Maria Luigia", "paese": "Italia", "area": "Europa", "luogo": "Modena", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "proposto", "caveat": false, "pattern": ["D01", "G01"], "categorie": [], "sito": "https://www.casamarialuigia.com", "evidenza": "Massimo Bottura e Lara Gilmore: guest house in campagna legata all'universo Francescana.", "fonti": [], "note": "Nuovo caso italiano per 'Vendiamo lo chef'. Verificare numero di camere e formula."},
-    {"id": "casadonna-reale", "nome": "Casadonna – Reale", "paese": "Italia", "area": "Europa", "luogo": "Castel di Sangro (AQ)", "proprieta": "indipendente", "stato": "attivo", "tier": "T1", "verifica": "proposto", "caveat": false, "pattern": ["D01", "B01", "E05"], "categorie": [], "sito": "https://www.nikoromito.com", "evidenza": "Niko Romito: ex monastero con ristorante Reale, poche camere e scuola di cucina.", "fonti": [], "note": "Nuovo caso italiano. Verificare camere e stelle attuali."},
-    {"id": "atelier-sul-mare", "nome": "Atelier sul Mare", "paese": "Italia", "area": "Europa", "luogo": "Castel di Tusa (ME)", "proprieta": "indipendente", "stato": "attivo", "tier": "T2", "verifica": "proposto", "caveat": false, "pattern": ["E02", "E03", "G01"], "categorie": ["CAT13"], "sito": "", "evidenza": "Antonio Presti: hotel-museo con camere d'arte firmate da artisti contemporanei.", "fonti": [], "note": "Nuovo caso italiano per hotel-museo e residenza artistica."},
-    {"id": "vigilius", "nome": "Vigilius Mountain Resort", "paese": "Italia", "area": "Europa", "luogo": "Lana (BZ)", "proprieta": "indipendente", "stato": "attivo", "tier": "T2", "verifica": "proposto", "caveat": false, "pattern": ["B05", "F03"], "categorie": ["CAT16"], "sito": "https://www.vigilius.it", "evidenza": "Raggiungibile solo in funivia, senza auto: l'accesso fa parte del prodotto.", "fonti": [], "note": "Nuovo caso italiano per 'Accesso difficile'."},
-    {"id": "lefay", "nome": "Lefay Resort & SPA Lago di Garda", "paese": "Italia", "area": "Europa", "luogo": "Gargnano (BS)", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T2", "verifica": "proposto", "caveat": false, "pattern": ["K05", "J03"], "categorie": ["CAT10"], "sito": "https://www.lefayresorts.com", "evidenza": "Resort con impronta ambientale dichiarata e metodo spa proprietario.", "fonti": [], "note": "Nuovo caso italiano. Verificare le certificazioni ambientali."},
-    {"id": "italy-family-hotels", "nome": "Italy Family Hotels", "paese": "Italia", "area": "Europa", "luogo": "Consorzio, forte presenza in Riviera Romagnola", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T2", "verifica": "proposto", "caveat": false, "pattern": ["C01"], "categorie": [], "sito": "", "evidenza": "Consorzio di hotel indipendenti con standard dedicati alle famiglie.", "fonti": [], "note": "Caso italiano di fascia media, vicino al target del servizio."},
-    {"id": "italy-bike-hotels", "nome": "Italy Bike Hotels", "paese": "Italia", "area": "Europa", "luogo": "Consorzio nazionale", "proprieta": "gruppo_indipendente", "stato": "attivo", "tier": "T2", "verifica": "proposto", "caveat": false, "pattern": ["C04"], "categorie": [], "sito": "", "evidenza": "Hotel indipendenti specializzati nel cicloturismo: officina, guide, percorsi.", "fonti": [], "note": "Caso italiano di fascia media per Sport-Expertise."},
-    {"id": "palazzo-margherita", "nome": "Palazzo Margherita", "paese": "Italia", "area": "Europa", "luogo": "Bernalda (MT)", "proprieta": "indipendente", "stato": "attivo", "tier": "T2", "verifica": "proposto", "caveat": false, "pattern": ["G01", "F04"], "categorie": [], "sito": "", "evidenza": "Palazzo ottocentesco della famiglia Coppola: il fondatore è la storia.", "fonti": [], "note": "Nuovo caso italiano per Founder-Persona."}
-  ],
-
-  "fusion": [
-    {"esempio": "sextantio", "pattern": ["F01", "A04", "J01", "K01"]},
-    {"esempio": "borgo-egnazia", "pattern": ["F05", "J04"]},
-    {"esempio": "eremito", "pattern": ["A04", "I03", "D03"]},
-    {"esempio": "the-pig", "pattern": ["G01", "J02", "E04"]},
-    {"esempio": "castello-di-reschio", "pattern": ["G01", "G02", "F04"]},
-    {"esempio": "aman", "pattern": ["A05", "J01"]},
-    {"esempio": "casa-cipriani", "pattern": ["F02", "G02", "L05"]},
-    {"esempio": "lanserhof", "pattern": ["J03", "D05"]},
-    {"esempio": "citizenm", "pattern": ["A03", "H01", "H03"]},
-    {"esempio": "singlethread", "pattern": ["B01", "D01", "E04"]},
-    {"esempio": "bucuti-tara", "pattern": ["K03", "L01"]}
-  ],
-
-  "segnali_trend": [
-    {"data": "2024-07", "tipo": "crisi", "esempio": "selina", "categoria": "CAT05", "fatto": "Selina entra in administration nel Regno Unito; ad agosto 2024 il business viene venduto a Collective Hospitality.", "lettura": "Il workation hub funziona come posizionamento ma non regge con una crescita finanziata a debito."},
-    {"data": "2025-07", "tipo": "acquisizione", "esempio": "citizenm", "categoria": null, "fatto": "Marriott completa l'acquisizione di citizenM (37 hotel).", "lettura": "I brand nati contro le catene vengono assorbiti dalle major: per un indipendente il pattern A02 resta difendibile solo se legato a persona e luogo."},
-    {"data": "2017", "tipo": "acquisizione", "esempio": "generator", "categoria": "CAT04", "fatto": "Queensgate Investments acquisisce Generator.", "lettura": "Il boutique hostel è diventato una categoria matura e un asset da investimento."},
-    {"data": "2025", "tipo": "espansione", "esempio": "casa-cipriani", "categoria": "CAT15", "fatto": "Annunciata Casa Cipriani Miami: hotel, residenze private e club.", "lettura": "Club privato + residenze: il brand forte si estende al real estate."},
-    {"data": "2024-2025", "tipo": "nascita_categoria", "esempio": "jill-hotel", "categoria": "CAT08", "fatto": "Primi hotel europei completamente alcohol-free (Bruxelles, Orkney) e prime vacanze 'sober' strutturate in Portogallo.", "lettura": "La sober hospitality passa da trend di bar e menù a scelta d'identità: in Italia non ci sono ancora casi pionieri."}
-  ]
+  {
+   "codice": "B",
+   "nome": "Limite Radicale",
+   "core": "Un limite deliberato e non negoziabile diventa la promessa.",
+   "rischio": "Il segmento che resta deve essere abbastanza ricco."
+  },
+  {
+   "codice": "C",
+   "nome": "Audience Focus",
+   "core": "Progettato per un pubblico preciso, ma aperto a tutti.",
+   "rischio": "Il segmento può cambiare o restringersi."
+  },
+  {
+   "codice": "D",
+   "nome": "JTBD Reframe",
+   "core": "Riformuli il lavoro che l'ospite ti assume per fare.",
+   "rischio": "Il risultato promesso deve essere misurabile."
+  },
+  {
+   "codice": "E",
+   "nome": "Category Creation",
+   "core": "Ibridi l'hotel con un'altra attività che diventa il centro.",
+   "rischio": "La categoria deve essere ripetibile dai media."
+  },
+  {
+   "codice": "F",
+   "nome": "Place-as-Identity",
+   "core": "Hotel e luogo sono inseparabili.",
+   "rischio": "Se il luogo perde attrattiva, l'hotel perde identità."
+  },
+  {
+   "codice": "G",
+   "nome": "Persona-Driven",
+   "core": "Una persona o una famiglia riconoscibile è il brand.",
+   "rischio": "Serve un piano di successione."
+  },
+  {
+   "codice": "H",
+   "nome": "Operations Reframe",
+   "core": "Ripensi un'operazione standard dell'hotel.",
+   "rischio": "Deve essere posizionamento, non taglio costi."
+  },
+  {
+   "codice": "I",
+   "nome": "Time-Inverted",
+   "core": "Inverti la logica temporale standard.",
+   "rischio": "Restringe il fatturato annuo."
+  },
+  {
+   "codice": "J",
+   "nome": "Genre Refusal",
+   "core": "Rifiuti un intero genere dominante del tuo mercato.",
+   "rischio": "Il rifiuto va sostanziato operativamente."
+  },
+  {
+   "codice": "K",
+   "nome": "Worldview-Anchored",
+   "core": "Una visione del mondo dichiarata e misurabile.",
+   "rischio": "Serve coerenza totale."
+  },
+  {
+   "codice": "L",
+   "nome": "Only (Esclusione Radicale)",
+   "core": "Escludi interi segmenti. Versione a porte chiuse dei pattern C.",
+   "rischio": "Mercato più piccolo: il segmento residuo deve pagare."
+  }
+ ],
+ "pattern": [
+  {
+   "codice": "A01",
+   "famiglia": "A",
+   "nome": "Anti-OTA",
+   "definizione": "L'hotel come antagonista esplicito delle OTA: tutto ciò che Booking ed Expedia non possono dare.",
+   "maturita": "nascente",
+   "correlati": [
+    "H04"
+   ]
+  },
+  {
+   "codice": "A02",
+   "famiglia": "A",
+   "nome": "Anti-Catena / Anti-Finto-Boutique",
+   "definizione": "L'indipendente come vera alternativa ai brand di catena e al boutique da catalogo.",
+   "maturita": "emergente",
+   "correlati": [
+    "G03"
+   ]
+  },
+  {
+   "codice": "A03",
+   "famiglia": "A",
+   "nome": "Anti-Business-Hotel",
+   "definizione": "Lobby come spazio di lavoro e quartiere, contro il business hotel standard.",
+   "maturita": "consolidato",
+   "correlati": [
+    "H01"
+   ]
+  },
+  {
+   "codice": "A04",
+   "famiglia": "A",
+   "nome": "Anti-Resort",
+   "definizione": "L'opposto programmatico del villaggio: no animazione, no buffet, no braccialetti.",
+   "maturita": "consolidato",
+   "correlati": [
+    "J04",
+    "I03"
+   ]
+  },
+  {
+   "codice": "A05",
+   "famiglia": "A",
+   "nome": "Anti-Instagrammabile",
+   "definizione": "Fatto per essere vissuto, non fotografato: comunicazione minima e rifiuto dell'estetica social.",
+   "maturita": "emergente",
+   "correlati": [
+    "J01"
+   ]
+  },
+  {
+   "codice": "B01",
+   "famiglia": "B",
+   "nome": "Micro-scala (Solo X camere)",
+   "definizione": "Il numero piccolissimo di camere dichiarato come promessa.",
+   "maturita": "consolidato",
+   "correlati": [
+    "D01"
+   ]
+  },
+  {
+   "codice": "B02",
+   "famiglia": "B",
+   "nome": "Single Seating",
+   "definizione": "Una sola cena, un solo orario, un solo menù.",
+   "maturita": "emergente",
+   "correlati": [
+    "D01"
+   ]
+  },
+  {
+   "codice": "B03",
+   "famiglia": "B",
+   "nome": "Stagione Corta Dichiarata",
+   "definizione": "Apertura ridotta presentata come scelta di qualità, non come limite.",
+   "maturita": "emergente",
+   "correlati": [
+    "I01"
+   ]
+  },
+  {
+   "codice": "B04",
+   "famiglia": "B",
+   "nome": "Soggiorno Minimo Lungo",
+   "definizione": "Minimo di più notti per filtrare il mordi-e-fuggi.",
+   "maturita": "emergente",
+   "correlati": [
+    "D05"
+   ]
+  },
+  {
+   "codice": "B05",
+   "famiglia": "B",
+   "nome": "Accesso Difficile / Car-Free",
+   "definizione": "Ci si arriva solo a piedi, in funivia o in barca: la fatica dell'accesso è parte del valore.",
+   "maturita": "nascente",
+   "correlati": [
+    "F03"
+   ]
+  },
+  {
+   "codice": "C01",
+   "famiglia": "C",
+   "nome": "Family-Designed",
+   "definizione": "Struttura e operazioni progettate per le famiglie con bambini.",
+   "maturita": "consolidato",
+   "correlati": [
+    "L02"
+   ]
+  },
+  {
+   "codice": "C02",
+   "famiglia": "C",
+   "nome": "Solo-Traveler-Designed",
+   "definizione": "Ridisegnato attorno a chi viaggia da solo, aperto a tutti.",
+   "maturita": "emergente",
+   "correlati": [
+    "L07"
+   ]
+  },
+  {
+   "codice": "C03",
+   "famiglia": "C",
+   "nome": "Profession / Lifestyle",
+   "definizione": "Pensato per una categoria professionale o uno stile di vita preciso.",
+   "maturita": "emergente",
+   "correlati": []
+  },
+  {
+   "codice": "C04",
+   "famiglia": "C",
+   "nome": "Sport-Expertise",
+   "definizione": "Specializzazione profonda su uno sport, accessibile a chiunque.",
+   "maturita": "consolidato",
+   "correlati": [
+    "L04"
+   ]
+  },
+  {
+   "codice": "C05",
+   "famiglia": "C",
+   "nome": "Pet-Welcomed Seriously",
+   "definizione": "L'animale è ospite vero, ma il prodotto resta per l'umano.",
+   "maturita": "consolidato",
+   "correlati": [
+    "L03"
+   ]
+  },
+  {
+   "codice": "C06",
+   "famiglia": "C",
+   "nome": "Identity-Explicit",
+   "definizione": "Identità dichiarata come filtro comunicativo (LGBTQ+, cultura, ecc.).",
+   "maturita": "emergente",
+   "correlati": [
+    "L06"
+   ]
+  },
+  {
+   "codice": "C07",
+   "famiglia": "C",
+   "nome": "Generazionale",
+   "definizione": "La generazione come asse identitario (over-65 attivi, Gen Z).",
+   "maturita": "nascente",
+   "correlati": []
+  },
+  {
+   "codice": "C08",
+   "famiglia": "C",
+   "nome": "Remote Worker",
+   "definizione": "Hotel per chi lavora in viaggio per lunghi periodi.",
+   "maturita": "emergente",
+   "correlati": [
+    "D04"
+   ]
+  },
+  {
+   "codice": "D01",
+   "famiglia": "D",
+   "nome": "Vendiamo lo Chef",
+   "definizione": "L'asset è chi cucina: la camera è il dopo-cena.",
+   "maturita": "consolidato",
+   "correlati": [
+    "B01",
+    "G01"
+   ]
+  },
+  {
+   "codice": "D02",
+   "famiglia": "D",
+   "nome": "Vendiamo il Sonno",
+   "definizione": "L'hotel come prodotto del riposo: materassi, buio, protocolli.",
+   "maturita": "emergente",
+   "correlati": [
+    "J03"
+   ]
+  },
+  {
+   "codice": "D03",
+   "famiglia": "D",
+   "nome": "Vendiamo il Silenzio",
+   "definizione": "Il silenzio dichiarato e organizzato come prodotto principale.",
+   "maturita": "emergente",
+   "correlati": [
+    "I03"
+   ]
+  },
+  {
+   "codice": "D04",
+   "famiglia": "D",
+   "nome": "Vendiamo la Connessione",
+   "definizione": "L'hotel-community dove si fa amicizia: cene comuni, attività di gruppo.",
+   "maturita": "emergente",
+   "correlati": [
+    "C08"
+   ]
+  },
+  {
+   "codice": "D05",
+   "famiglia": "D",
+   "nome": "Vendiamo la Trasformazione",
+   "definizione": "Te ne vai diverso: programmi guidati di più giorni.",
+   "maturita": "consolidato",
+   "correlati": [
+    "B04",
+    "J03"
+   ]
+  },
+  {
+   "codice": "D06",
+   "famiglia": "D",
+   "nome": "Vendiamo il Tempo",
+   "definizione": "Servizi che tolgono attrito e scelte invece di aggiungerne.",
+   "maturita": "nascente",
+   "correlati": []
+  },
+  {
+   "codice": "D07",
+   "famiglia": "D",
+   "nome": "Hotel come Piazza di Quartiere",
+   "definizione": "Il cliente non è solo l'ospite che dorme: bar, ristoranti, piscina o eventi sono aperti ai residenti e l'hotel diventa un luogo pubblico.",
+   "maturita": "emergente",
+   "correlati": [
+    "A03",
+    "D04"
+   ]
+  },
+  {
+   "codice": "E01",
+   "famiglia": "E",
+   "nome": "Hotel-Bottega",
+   "definizione": "L'hotel ibridato con un'attività artigiana che è il vero centro.",
+   "maturita": "nascente",
+   "correlati": [
+    "E04"
+   ]
+  },
+  {
+   "codice": "E02",
+   "famiglia": "E",
+   "nome": "Hotel-Museo / Collezione",
+   "definizione": "La collezione (arte, libri, vinili, auto) è il prodotto; la camera è l'accesso.",
+   "maturita": "consolidato",
+   "correlati": [
+    "E03"
+   ]
+  },
+  {
+   "codice": "E03",
+   "famiglia": "E",
+   "nome": "Hotel-Residenza Artistica",
+   "definizione": "Artisti in residenza producono mentre tu soggiorni.",
+   "maturita": "nascente",
+   "correlati": [
+    "E02",
+    "G03"
+   ]
+  },
+  {
+   "codice": "E04",
+   "famiglia": "E",
+   "nome": "Hotel-Azienda Agricola",
+   "definizione": "Produzione visibile e filiera in tempo reale, oltre l'agriturismo standard.",
+   "maturita": "consolidato",
+   "correlati": [
+    "K02"
+   ]
+  },
+  {
+   "codice": "E05",
+   "famiglia": "E",
+   "nome": "Hotel-Scuola",
+   "definizione": "Esci con una competenza che non avevi (cucina, lingua, mestiere).",
+   "maturita": "emergente",
+   "correlati": [
+    "E04"
+   ]
+  },
+  {
+   "codice": "E06",
+   "famiglia": "E",
+   "nome": "Hotel-Showroom",
+   "definizione": "Un brand nato fuori dall'hospitality (retail, design, moda) trasforma la sua filosofia in camere: l'hotel è il negozio abitabile.",
+   "maturita": "emergente",
+   "correlati": [
+    "J01"
+   ]
+  },
+  {
+   "codice": "F01",
+   "famiglia": "F",
+   "nome": "Albergo Diffuso",
+   "definizione": "L'hotel è il borgo, non sta nel borgo.",
+   "maturita": "consolidato",
+   "correlati": [
+    "J01"
+   ]
+  },
+  {
+   "codice": "F02",
+   "famiglia": "F",
+   "nome": "Ambasciata Regionale",
+   "definizione": "Porti il territorio fuori dal territorio.",
+   "maturita": "emergente",
+   "correlati": [
+    "G02"
+   ]
+  },
+  {
+   "codice": "F03",
+   "famiglia": "F",
+   "nome": "Single-View",
+   "definizione": "Una vista o un elemento naturale definisce tutto.",
+   "maturita": "consolidato",
+   "correlati": [
+    "B05"
+   ]
+  },
+  {
+   "codice": "F04",
+   "famiglia": "F",
+   "nome": "Edificio-Manifesto",
+   "definizione": "L'architettura storica o iconica è il prodotto, non la cornice.",
+   "maturita": "consolidato",
+   "correlati": []
+  },
+  {
+   "codice": "F05",
+   "famiglia": "F",
+   "nome": "Cultura Locale come Prodotto",
+   "definizione": "Riti, persone e saperi del territorio sostituiscono l'intrattenimento standard.",
+   "maturita": "emergente",
+   "correlati": [
+    "J04"
+   ]
+  },
+  {
+   "codice": "G01",
+   "famiglia": "G",
+   "nome": "Founder-Persona",
+   "definizione": "Un fondatore riconoscibile e narrato è il brand.",
+   "maturita": "consolidato",
+   "correlati": []
+  },
+  {
+   "codice": "G02",
+   "famiglia": "G",
+   "nome": "N-Generazioni",
+   "definizione": "La continuità familiare dichiarata come prova.",
+   "maturita": "consolidato",
+   "correlati": [
+    "F02"
+   ]
+  },
+  {
+   "codice": "G03",
+   "famiglia": "G",
+   "nome": "Curator-Driven",
+   "definizione": "L'ossessione di un curatore definisce ogni scelta: musica, libri, design, community.",
+   "maturita": "consolidato",
+   "correlati": [
+    "A02"
+   ]
+  },
+  {
+   "codice": "G04",
+   "famiglia": "G",
+   "nome": "Staff-as-Character",
+   "definizione": "Il team è famoso, non l'hotel.",
+   "maturita": "emergente",
+   "correlati": []
+  },
+  {
+   "codice": "H01",
+   "famiglia": "H",
+   "nome": "Self Check-in / Tech-First",
+   "definizione": "Arrivo ridisegnato: chioschi, app, nessuna coda alla reception.",
+   "maturita": "consolidato",
+   "correlati": [
+    "A03"
+   ]
+  },
+  {
+   "codice": "H02",
+   "famiglia": "H",
+   "nome": "Host al posto della Reception",
+   "definizione": "Niente front desk: un host umano specifico ti accoglie.",
+   "maturita": "nascente",
+   "correlati": [
+    "G04"
+   ]
+  },
+  {
+   "codice": "H03",
+   "famiglia": "H",
+   "nome": "Tariffa Unica / Camera Unica",
+   "definizione": "Un solo tipo di camera e un prezzo trasparente, niente upsell nascosti.",
+   "maturita": "emergente",
+   "correlati": []
+  },
+  {
+   "codice": "H04",
+   "famiglia": "H",
+   "nome": "No Online Booking",
+   "definizione": "Si prenota solo parlando: la conversazione è il servizio.",
+   "maturita": "nascente",
+   "correlati": [
+    "A01"
+   ]
+  },
+  {
+   "codice": "H05",
+   "famiglia": "H",
+   "nome": "All-Inclusive Radicale o Invertito",
+   "definizione": "Tutto incluso davvero, oppure niente incluso e paghi solo ciò che usi.",
+   "maturita": "emergente",
+   "correlati": []
+  },
+  {
+   "codice": "H06",
+   "famiglia": "H",
+   "nome": "Servizi per Sottrazione",
+   "definizione": "Si tolgono ristorante, sale meeting, palestra o reception e si investe solo in ciò che il target usa davvero: prezzo più basso, promessa più chiara.",
+   "maturita": "emergente",
+   "correlati": [
+    "H01",
+    "H03"
+   ]
+  },
+  {
+   "codice": "H07",
+   "famiglia": "H",
+   "nome": "Beta Permanente",
+   "definizione": "L'hotel come laboratorio: camere prototipo e feedback degli ospiti usati per progettare le strutture future.",
+   "maturita": "nascente",
+   "correlati": [
+    "H01"
+   ]
+  },
+  {
+   "codice": "I01",
+   "famiglia": "I",
+   "nome": "Stagione Invertita",
+   "definizione": "Aperti quando gli altri chiudono (mare d'inverno, montagna fuori stagione).",
+   "maturita": "nascente",
+   "correlati": [
+    "B03"
+   ]
+  },
+  {
+   "codice": "I02",
+   "famiglia": "I",
+   "nome": "Solo Infrasettimanale",
+   "definizione": "Aperto solo in giorni specifici.",
+   "maturita": "nascente",
+   "correlati": []
+  },
+  {
+   "codice": "I03",
+   "famiglia": "I",
+   "nome": "Slow Obbligato",
+   "definizione": "Ritmi imposti dalla struttura: niente wifi, orari, silenzio.",
+   "maturita": "emergente",
+   "correlati": [
+    "D03",
+    "A04"
+   ]
+  },
+  {
+   "codice": "J01",
+   "famiglia": "J",
+   "nome": "Anti-Lusso-Patinato",
+   "definizione": "Il lusso è sottrazione: materiali grezzi, niente ostentazione.",
+   "maturita": "consolidato",
+   "correlati": [
+    "A05",
+    "F01"
+   ]
+  },
+  {
+   "codice": "J02",
+   "famiglia": "J",
+   "nome": "Anti-Design-da-Rivista",
+   "definizione": "Vissuto, imperfetto, mismatched: l'opposto dell'hotel da shooting.",
+   "maturita": "emergente",
+   "correlati": []
+  },
+  {
+   "codice": "J03",
+   "famiglia": "J",
+   "nome": "Anti-Wellness-Fuffa",
+   "definizione": "Rifiuti la spa decorativa e ti rifondi con protocolli medici.",
+   "maturita": "consolidato",
+   "correlati": [
+    "D05"
+   ]
+  },
+  {
+   "codice": "J04",
+   "famiglia": "J",
+   "nome": "Anti-Animazione",
+   "definizione": "Silenzio o cultura locale al posto dell'animazione, in un contesto dove tutti la fanno.",
+   "maturita": "emergente",
+   "correlati": [
+    "A04",
+    "F05"
+   ]
+  },
+  {
+   "codice": "K01",
+   "famiglia": "K",
+   "nome": "Manifesto Esplicito",
+   "definizione": "Una visione dichiarata che filtra gli ospiti a monte.",
+   "maturita": "emergente",
+   "correlati": []
+  },
+  {
+   "codice": "K02",
+   "famiglia": "K",
+   "nome": "Filiera Misurata",
+   "definizione": "Km zero dichiarato con numeri pubblici e verificabili.",
+   "maturita": "nascente",
+   "correlati": [
+    "E04"
+   ]
+  },
+  {
+   "codice": "K03",
+   "famiglia": "K",
+   "nome": "Carbon Trasparente",
+   "definizione": "Emissioni misurate, certificate e pubblicate.",
+   "maturita": "emergente",
+   "correlati": [
+    "K05"
+   ]
+  },
+  {
+   "codice": "K04",
+   "famiglia": "K",
+   "nome": "Plant-Based Manifesto",
+   "definizione": "Il vegetale come asse identitario, non come opzione di menù.",
+   "maturita": "emergente",
+   "correlati": []
+  },
+  {
+   "codice": "K05",
+   "famiglia": "K",
+   "nome": "Climate-First",
+   "definizione": "L'impatto ambientale come principio di progetto e di comunicazione.",
+   "maturita": "consolidato",
+   "correlati": [
+    "K03"
+   ]
+  },
+  {
+   "codice": "K06",
+   "famiglia": "K",
+   "nome": "Materiale-Manifesto",
+   "definizione": "Un materiale dominante racconta la visione (bambù, legno, terra).",
+   "maturita": "emergente",
+   "correlati": []
+  },
+  {
+   "codice": "K07",
+   "famiglia": "K",
+   "nome": "Conservation",
+   "definizione": "L'hotel esiste per finanziare la tutela di un ecosistema.",
+   "maturita": "consolidato",
+   "correlati": [
+    "K01"
+   ]
+  },
+  {
+   "codice": "L01",
+   "famiglia": "L",
+   "nome": "Adults Only / Couples Only",
+   "definizione": "Vietato ai minori come regola d'accesso.",
+   "maturita": "consolidato",
+   "correlati": []
+  },
+  {
+   "codice": "L02",
+   "famiglia": "L",
+   "nome": "Family Only",
+   "definizione": "Solo famiglie con bambini.",
+   "maturita": "emergente",
+   "correlati": [
+    "C01"
+   ]
+  },
+  {
+   "codice": "L03",
+   "famiglia": "L",
+   "nome": "Pets Only",
+   "definizione": "L'hotel esiste per l'animale; l'umano accompagna.",
+   "maturita": "emergente",
+   "correlati": [
+    "C05"
+   ]
+  },
+  {
+   "codice": "L04",
+   "famiglia": "L",
+   "nome": "Sport Only",
+   "definizione": "Accesso riservato a chi pratica uno sport, con livello dichiarato.",
+   "maturita": "nascente",
+   "correlati": [
+    "C04"
+   ]
+  },
+  {
+   "codice": "L05",
+   "famiglia": "L",
+   "nome": "Members Only",
+   "definizione": "Private club: entri se accettato o presentato.",
+   "maturita": "consolidato",
+   "correlati": [
+    "G03"
+   ]
+  },
+  {
+   "codice": "L06",
+   "famiglia": "L",
+   "nome": "Women Only",
+   "definizione": "Struttura riservata alle donne.",
+   "maturita": "emergente",
+   "correlati": [
+    "C06"
+   ]
+  },
+  {
+   "codice": "L07",
+   "famiglia": "L",
+   "nome": "Solo-Travelers Only",
+   "definizione": "Rifiuta coppie e gruppi: solo chi viaggia da solo.",
+   "maturita": "emergente",
+   "correlati": [
+    "C02"
+   ]
+  },
+  {
+   "codice": "L08",
+   "famiglia": "L",
+   "nome": "Buyout / Event Only",
+   "definizione": "La struttura esiste solo per eventi privati in esclusiva.",
+   "maturita": "nascente",
+   "correlati": []
+  }
+ ],
+ "categorie": [
+  {
+   "id": "CAT01",
+   "nome": "Longevity Hotel",
+   "definizione": "Hotel-clinica con medicina della longevità, screening e protocolli.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "D05",
+    "J03"
+   ]
+  },
+  {
+   "id": "CAT02",
+   "nome": "Sleep Tourism",
+   "definizione": "L'hotel come prodotto del sonno.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "D02"
+   ]
+  },
+  {
+   "id": "CAT03",
+   "nome": "Glamping di Lusso",
+   "definizione": "Tende e strutture leggere di fascia alta in natura.",
+   "stadio": "maturo",
+   "pattern_affini": [
+    "F03",
+    "B05"
+   ]
+  },
+  {
+   "id": "CAT04",
+   "nome": "Boutique Hostel",
+   "definizione": "Ostello di design per chi accetta la stanza condivisa.",
+   "stadio": "maturo",
+   "pattern_affini": [
+    "D04",
+    "H03"
+   ]
+  },
+  {
+   "id": "CAT05",
+   "nome": "Workation Hub",
+   "definizione": "Hotel per remote worker di lunga durata.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "C08",
+    "D04"
+   ]
+  },
+  {
+   "id": "CAT06",
+   "nome": "Retreat Center",
+   "definizione": "Hotel-ritiro tematico (yoga, silenzio, detox), permanente o pop-up.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "D05",
+    "B04",
+    "D03"
+   ]
+  },
+  {
+   "id": "CAT07",
+   "nome": "Wellness Medico",
+   "definizione": "Hotel-clinica diagnostico/preventivo.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "J03",
+    "D05"
+   ]
+  },
+  {
+   "id": "CAT08",
+   "nome": "Sober Hospitality",
+   "definizione": "Hotel alcohol-free o mindful drinking.",
+   "stadio": "nascente",
+   "pattern_affini": [
+    "K01",
+    "D05"
+   ]
+  },
+  {
+   "id": "CAT09",
+   "nome": "Sport Performance Hotel",
+   "definizione": "Hotel-centro sportivo per atleti e amatori evoluti.",
+   "stadio": "maturo",
+   "pattern_affini": [
+    "C04",
+    "L04"
+   ]
+  },
+  {
+   "id": "CAT10",
+   "nome": "Climate-Forward Hotel",
+   "definizione": "Impatto ambientale dichiarato, misurato e certificato.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "K05",
+    "K03"
+   ]
+  },
+  {
+   "id": "CAT11",
+   "nome": "Agriturismo Premium",
+   "definizione": "Azienda agricola riposizionata in fascia alta.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "E04",
+    "E05"
+   ]
+  },
+  {
+   "id": "CAT12",
+   "nome": "Slow Travel Hub",
+   "definizione": "Base per soggiorni lenti con attività territoriali.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "I03",
+    "F05"
+   ]
+  },
+  {
+   "id": "CAT13",
+   "nome": "Cultural Residency Hotel",
+   "definizione": "Ospitalità + residenza artistica o culturale.",
+   "stadio": "nascente",
+   "pattern_affini": [
+    "E03",
+    "E02"
+   ]
+  },
+  {
+   "id": "CAT14",
+   "nome": "Member Club Hotel",
+   "definizione": "Private club urbano con camere.",
+   "stadio": "maturo",
+   "pattern_affini": [
+    "L05",
+    "G03"
+   ]
+  },
+  {
+   "id": "CAT15",
+   "nome": "Branded Residences",
+   "definizione": "Il brand alberghiero si estende al residenziale.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "G02"
+   ]
+  },
+  {
+   "id": "CAT16",
+   "nome": "Nature Hotel",
+   "definizione": "Immersione naturalistica come prodotto centrale.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "K07",
+    "K06",
+    "F03"
+   ]
+  },
+  {
+   "id": "CAT17",
+   "nome": "Hybrid Stay / Extended-Stay Urbano",
+   "definizione": "A metà tra hotel, appartamento e co-living: cucina, spazi di lavoro, soggiorni da una notte a mesi.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "C08",
+    "D04",
+    "H01"
+   ]
+  },
+  {
+   "id": "CAT18",
+   "nome": "Hotel Digital-First",
+   "definizione": "Senza reception fisica: check-in, chiavi e assistenza passano dall'app o da remoto.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "H01",
+    "H06",
+    "H07"
+   ]
+  },
+  {
+   "id": "CAT19",
+   "nome": "Micro-Room / Sleeper Cabin",
+   "definizione": "Cabine o camere minime in centro città a prezzo accessibile, ispirate a capsule hotel e vagoni letto.",
+   "stadio": "emergente",
+   "pattern_affini": [
+    "C02",
+    "H06"
+   ]
+  }
+ ],
+ "esempi": [
+  {
+   "id": "sextantio",
+   "nome": "Sextantio",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Santo Stefano di Sessanio (AQ) e Matera",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "F01",
+    "A04",
+    "J01",
+    "K01",
+    "G01"
+   ],
+   "categorie": [],
+   "sito": "https://www.sextantio.it",
+   "evidenza": "Daniele Kihlgren: albergo diffuso, 'sviluppo senza costruzione', lusso dell'imperfezione.",
+   "fonti": [
+    "Harvard Business School, caso 'Sextantio' (E. Cantillon, 2006)"
+   ],
+   "note": ""
+  },
+  {
+   "id": "borgo-egnazia",
+   "nome": "Borgo Egnazia",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Savelletri di Fasano (BR)",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "F05",
+    "J04",
+    "G02"
+   ],
+   "categorie": [],
+   "sito": "https://www.borgoegnazia.com",
+   "evidenza": "Famiglia Melpignano, aperto nel 2010. Borgo pugliese costruito ex novo, la cultura locale (massaie, musica popolare) al posto dell'intrattenimento da resort.",
+   "fonti": [],
+   "note": "Su J04 il caso è T2: c'è un'offerta bambini strutturata, il rifiuto riguarda l'animazione standard, non le attività."
+  },
+  {
+   "id": "eremito",
+   "nome": "Eremito",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Parrano (TR), Umbria",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "A04",
+    "I03",
+    "D03",
+    "G01",
+    "K04"
+   ],
+   "categorie": [
+    "CAT12"
+   ],
+   "sito": "https://www.eremito.com",
+   "evidenza": "Marcello Murzilli, aperto nel 2013. Eremo contemporaneo ricostruito da un rudere: celle singole, niente wifi né tv, cena in silenzio, cucina vegetariana.",
+   "fonti": [
+    "https://gamberorossointernational.com/?p=523204",
+    "https://www.iol.co.za/travel/the-importance-of-being-idle-1870386"
+   ],
+   "note": "Correzione: non è un 'ex monastero del XIV secolo' in uso, è una ricostruzione in stile eremo. Su K04 è T2: vegetariano, non vegano."
+  },
+  {
+   "id": "borgo-pignano",
+   "nome": "Borgo Pignano",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Volterra (PI), Toscana",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "E04",
+    "E05"
+   ],
+   "categorie": [
+    "CAT11"
+   ],
+   "sito": "https://www.borgopignano.com",
+   "evidenza": "Tenuta biologica di circa 300 ettari: hotel, ristorante, orto e scuola di cucina.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "castello-di-reschio",
+   "nome": "Hotel Castello di Reschio",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Lisciano Niccone (PG), Umbria",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "G01",
+    "G02",
+    "F04"
+   ],
+   "categorie": [],
+   "sito": "https://www.reschio.com",
+   "evidenza": "Famiglia Bolza, tre generazioni dal 1994. Castello millenario, hotel da 36 camere aperto nel 2021; ogni scelta architettonica firmata da Benedikt Bolza.",
+   "fonti": [
+    "https://www.dezeen.com/2021/07/05/hotel-castello-di-reschio-umbria-italy/amp/"
+   ],
+   "note": "Correzione: NON è una struttura solo eventi (L08). È un hotel aperto al pubblico."
+  },
+  {
+   "id": "hotel-caruso",
+   "nome": "Hotel Caruso (Belmond)",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Ravello (SA)",
+   "proprieta": "major",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "F03",
+    "F04"
+   ],
+   "categorie": [],
+   "sito": "https://www.belmond.com",
+   "evidenza": "Palazzo dell'XI secolo sospeso sulla costiera, la vista è il prodotto.",
+   "fonti": [],
+   "note": "Gruppo Belmond (LVMH): utile come ispirazione, non come modello per un indipendente."
+  },
+  {
+   "id": "splendido-portofino",
+   "nome": "Splendido (Belmond)",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Portofino (GE)",
+   "proprieta": "major",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "pattern": [
+    "F03",
+    "B03"
+   ],
+   "categorie": [],
+   "sito": "https://www.belmond.com/hotels/europe/italy/portofino/belmond-hotel-splendido/",
+   "evidenza": "Ex monastero sopra Portofino, apertura stagionale.",
+   "fonti": [],
+   "note": "Verificare il secolo del monastero (il file v3 dice XIV, altre fonti XVI) e il calendario di apertura."
+  },
+  {
+   "id": "casa-cipriani",
+   "nome": "Casa Cipriani",
+   "paese": "USA / Italia / EAU",
+   "area": "Globale",
+   "luogo": "New York, Milano, Dubai; Miami annunciata",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "F02",
+    "G02",
+    "L05"
+   ],
+   "categorie": [
+    "CAT14",
+    "CAT15"
+   ],
+   "sito": "https://www.casacipriani.com",
+   "evidenza": "L'eleganza veneziana dei Cipriani esportata come club privato con camere. Miami: hotel da 40 camere, 23 residenze e club.",
+   "fonti": [
+    "https://www.hotelmanagement.net/development/casa-cipriani-enter-miami-market-boutique-luxury-offering"
+   ],
+   "note": "Correzione: NON è 'Pets Only'. Sul sito era finito su L03 per un errore di codice."
+  },
+  {
+   "id": "monastero-santa-rosa",
+   "nome": "Monastero Santa Rosa",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Conca dei Marini (SA)",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "F04",
+    "F03"
+   ],
+   "categorie": [],
+   "sito": "https://www.monasterosantarosa.com",
+   "evidenza": "Monastero del XVII secolo restaurato da Bianca Sharma, a picco sul mare.",
+   "fonti": [],
+   "note": "Rimosso da tutti i pattern E (era agganciato per errore a Hotel-Bottega, Scuola, ecc.)."
+  },
+  {
+   "id": "aman",
+   "nome": "Aman",
+   "paese": "Globale",
+   "area": "Globale",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "A05",
+    "J01"
+   ],
+   "categorie": [],
+   "sito": "https://www.aman.com",
+   "evidenza": "Lusso per sottrazione, comunicazione minima, riservatezza.",
+   "fonti": [],
+   "note": "Rimosso da 'Vendiamo lo chef' (D01): era un errore di codice."
+  },
+  {
+   "id": "aman-kyoto",
+   "nome": "Aman Kyoto",
+   "paese": "Giappone",
+   "area": "Asia",
+   "luogo": "Kyoto",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "pattern": [
+    "D03"
+   ],
+   "categorie": [],
+   "sito": "https://www.aman.com/resorts/aman-kyoto",
+   "evidenza": "Il silenzio del giardino nascosto come esperienza centrale.",
+   "fonti": [],
+   "note": "Trovare una fonte che documenti il silenzio come promessa esplicita."
+  },
+  {
+   "id": "aman-residences",
+   "nome": "Aman Residences",
+   "paese": "Globale",
+   "area": "Globale",
+   "luogo": "New York, Tokyo e altre",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [],
+   "categorie": [
+    "CAT15"
+   ],
+   "sito": "https://www.aman.com/residences",
+   "evidenza": "Il brand si estende al residenziale: i clienti vogliono vivere nel brand.",
+   "fonti": [],
+   "note": "Rimosso dai pattern E (errore di aggancio)."
+  },
+  {
+   "id": "the-pig",
+   "nome": "The Pig Hotels",
+   "paese": "Regno Unito",
+   "area": "Europa",
+   "luogo": "Varie sedi in Inghilterra",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "G01",
+    "J02",
+    "E04"
+   ],
+   "categorie": [],
+   "sito": "https://www.thepighotel.com",
+   "evidenza": "Robin Hutson. 'Rusty beats shiny': interni vissuti, orto e menù da 25 miglia.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "babylonstoren",
+   "nome": "Babylonstoren",
+   "paese": "Sudafrica",
+   "area": "Africa",
+   "luogo": "Franschhoek / Paarl",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "E04"
+   ],
+   "categorie": [
+    "CAT11"
+   ],
+   "sito": "https://www.babylonstoren.com",
+   "evidenza": "Tenuta agricola con giardino produttivo al centro dell'esperienza (Koos Bekker e Karen Roos).",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "lanserhof",
+   "nome": "Lanserhof Tegernsee",
+   "paese": "Germania",
+   "area": "Europa",
+   "luogo": "Baviera",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "J03",
+    "D05"
+   ],
+   "categorie": [
+    "CAT07",
+    "CAT01"
+   ],
+   "sito": "https://lanserhof.com",
+   "evidenza": "LANS Med Concept: diagnostica e protocolli medici al posto della spa.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "vivamayr",
+   "nome": "Vivamayr",
+   "paese": "Austria",
+   "area": "Europa",
+   "luogo": "Altaussee, Maria Wörth",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "J03"
+   ],
+   "categorie": [
+    "CAT07"
+   ],
+   "sito": "https://www.vivamayr.com",
+   "evidenza": "Si definisce resort medico, non spa: Modern Mayr Medicine.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "sha",
+   "nome": "SHA Wellness Clinic",
+   "paese": "Spagna / Messico",
+   "area": "Europa",
+   "luogo": "L'Albir (Alicante)",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "D05",
+    "J03"
+   ],
+   "categorie": [
+    "CAT01"
+   ],
+   "sito": "https://shawellness.com",
+   "evidenza": "Alfredo Bataller Parietti, 2008. Longevità e nutrizione come prodotto centrale.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "como-shambhala",
+   "nome": "COMO Shambhala Estate",
+   "paese": "Indonesia",
+   "area": "Asia",
+   "luogo": "Ubud, Bali",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "D05",
+    "B04"
+   ],
+   "categorie": [
+    "CAT06"
+   ],
+   "sito": "https://www.comohotels.com/bali/como-shambhala-estate/",
+   "evidenza": "Christina Ong. Programmi residenziali di più giorni come unità di prodotto.",
+   "fonti": [],
+   "note": "Verificare se il soggiorno minimo è obbligatorio (B04)."
+  },
+  {
+   "id": "kamalaya",
+   "nome": "Kamalaya",
+   "paese": "Thailandia",
+   "area": "Asia",
+   "luogo": "Koh Samui",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "D05",
+    "B04"
+   ],
+   "categorie": [
+    "CAT06"
+   ],
+   "sito": "https://kamalaya.com",
+   "evidenza": "John e Karina Stewart, 2005. Programmi di trasformazione con soggiorno minimo.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "six-senses",
+   "nome": "Six Senses",
+   "paese": "Globale",
+   "area": "Globale",
+   "luogo": "",
+   "proprieta": "major",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "pattern": [
+    "D05",
+    "K05"
+   ],
+   "categorie": [],
+   "sito": "https://www.sixsenses.com",
+   "evidenza": "Il wellness come spina dorsale del brand.",
+   "fonti": [],
+   "note": "Gruppo IHG dal 2019. I dati '42% del fatturato dal wellness' e '5,2 notti di soggiorno medio' NON hanno una fonte: non usarli finché non si trova."
+  },
+  {
+   "id": "equinox-hotel",
+   "nome": "Equinox Hotel New York",
+   "paese": "USA",
+   "area": "Nord America",
+   "luogo": "Hudson Yards, New York",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "D02"
+   ],
+   "categorie": [
+    "CAT02"
+   ],
+   "sito": "https://equinox-hotels.com",
+   "evidenza": "Aperto nel 2019, 212 camere. Programma 'Art + Science of Sleep': buio, silenzio e temperatura controllati, rituali serali.",
+   "fonti": [
+    "https://www.hospitalitynet.org/news/4119262.html"
+   ],
+   "note": "Correzione: è un solo hotel full-service, non una catena ('Equinox Hotels'). Rimosso da 'Generazionale' (errore di codice)."
+  },
+  {
+   "id": "singlethread",
+   "nome": "SingleThread",
+   "paese": "USA",
+   "area": "Nord America",
+   "luogo": "Healdsburg, California",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "B01",
+    "D01",
+    "E04"
+   ],
+   "categorie": [],
+   "sito": "https://www.singlethreadfarms.com",
+   "evidenza": "Kyle e Katina Connaughton: ristorante tre stelle Michelin, fattoria e 5 camere.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "inn-little-washington",
+   "nome": "The Inn at Little Washington",
+   "paese": "USA",
+   "area": "Nord America",
+   "luogo": "Washington, Virginia",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "D01",
+    "G01"
+   ],
+   "categorie": [],
+   "sito": "https://www.theinnatlittlewashington.com",
+   "evidenza": "Patrick O'Connell, 1978. Ristorante tre stelle Michelin con camere.",
+   "fonti": [],
+   "note": "Spostato da 'Vendiamo la trasformazione' a 'Vendiamo lo chef' (errore di codice sul sito)."
+  },
+  {
+   "id": "the-lost-kitchen",
+   "nome": "The Lost Kitchen",
+   "paese": "USA",
+   "area": "Nord America",
+   "luogo": "Freedom, Maine",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "B02",
+    "G01"
+   ],
+   "categorie": [],
+   "sito": "https://findthelostkitchen.com",
+   "evidenza": "Erin French: una cena al giorno, posti assegnati per estrazione, cabine per dormire.",
+   "fonti": [],
+   "note": "È prima un ristorante: ottimo per i ristoratori, da segnalare come tale."
+  },
+  {
+   "id": "citizenm",
+   "nome": "citizenM",
+   "paese": "Globale",
+   "area": "Globale",
+   "luogo": "",
+   "proprieta": "major",
+   "stato": "acquisito",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "A03",
+    "H01",
+    "H03"
+   ],
+   "categorie": [],
+   "sito": "https://www.citizenm.com",
+   "evidenza": "Camera unica compatta, self check-in, lobby come soggiorno.",
+   "fonti": [
+    "https://marriott.gcs-web.com/node/36046"
+   ],
+   "note": "Acquisito da Marriott (annuncio aprile 2025, chiusura luglio 2025; 37 hotel). Rimosso da Anti-OTA: era un errore di codice. Segnale di trend: i brand lifestyle nati contro le catene finiscono dentro le major."
+  },
+  {
+   "id": "yotel",
+   "nome": "YOTEL",
+   "paese": "Globale",
+   "area": "Globale",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "H01"
+   ],
+   "categorie": [],
+   "sito": "https://www.yotel.com",
+   "evidenza": "Simon Woodroffe. Cabine compatte, chioschi self check-in, robot per i bagagli.",
+   "fonti": [],
+   "note": "Da verificare l'uso di H03 (tariffa unica)."
+  },
+  {
+   "id": "the-hoxton",
+   "nome": "The Hoxton",
+   "paese": "Regno Unito / Europa / USA",
+   "area": "Globale",
+   "luogo": "",
+   "proprieta": "major",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "A03"
+   ],
+   "categorie": [],
+   "sito": "https://thehoxton.com",
+   "evidenza": "Lobby come spazio di lavoro gratuito e di quartiere, contro il business hotel.",
+   "fonti": [],
+   "note": "Oggi in Ennismore (joint venture Accor). Rimosso da 'Anti-finto-boutique' e 'Sport-expertise' (errori di codice)."
+  },
+  {
+   "id": "ace-hotel",
+   "nome": "Ace Hotel",
+   "paese": "USA",
+   "area": "Nord America",
+   "luogo": "Fondato a Seattle nel 1999",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "A02",
+    "G03"
+   ],
+   "categorie": [],
+   "sito": "https://www.acehotel.com",
+   "evidenza": "Alex Calderwood: lobby come community, cultura musicale e creativa curata.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "public-hotel",
+   "nome": "Public Hotel",
+   "paese": "USA",
+   "area": "Nord America",
+   "luogo": "New York",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T3",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "C03"
+   ],
+   "categorie": [],
+   "sito": "https://www.publichotels.com",
+   "evidenza": "Ian Schrager, 2017, 367 camere: 'lusso per tutti', servizio essenziale e spazi comuni da club per la classe creativa urbana.",
+   "fonti": [
+    "https://commercialobserver.com/2023/07/witkoff-and-schragers-public-hotel-heads-to-foreclosure-auction/"
+   ],
+   "note": "Joint venture Schrager-Witkoff: insolvenza su un prestito nel 2023, poi rifinanziamento. Da gennaio 2026 Highgate gestisce l'espansione del brand. Su C03 resta T3: il caso più netto è Civilian."
+  },
+  {
+   "id": "selina",
+   "nome": "Selina",
+   "paese": "Globale",
+   "area": "Globale",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "venduto",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": true,
+   "pattern": [
+    "C08",
+    "D04"
+   ],
+   "categorie": [
+    "CAT05"
+   ],
+   "sito": "https://www.selina.com",
+   "evidenza": "Hub per nomadi digitali: coworking, community, eventi.",
+   "fonti": [
+    "https://www.hospitalityinvestor.com/hotels/selina-hospitality-falls-administration",
+    "https://skift.com/2024/07/22/selina-collapses-in-liquidity-crisis-seeks-buyers/"
+   ],
+   "note": "Correzione: non 'Chapter 11'. Selina Hospitality PLC è entrata in administration nel Regno Unito il 22 luglio 2024; il 27 agosto 2024 il grosso del business è stato venduto a Collective Hospitality (Singapore). Rimosso da 'Solo X camere' (errore)."
+  },
+  {
+   "id": "generator",
+   "nome": "Generator",
+   "paese": "Europa / USA",
+   "area": "Europa",
+   "luogo": "Network di città",
+   "proprieta": "gruppo_indipendente",
+   "stato": "acquisito",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "D04"
+   ],
+   "categorie": [
+    "CAT04"
+   ],
+   "sito": "https://staygenerator.com",
+   "evidenza": "Ha definito l'ostello di design. Acquisito da Queensgate Investments nel 2017.",
+   "fonti": [],
+   "note": "Rimosso da tutti i pattern E (errore di aggancio)."
+  },
+  {
+   "id": "falkensteiner-family",
+   "nome": "Falkensteiner Family Hotels",
+   "paese": "Croazia / Italia / Austria",
+   "area": "Europa",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "C01"
+   ],
+   "categorie": [],
+   "sito": "https://www.falkensteiner.com",
+   "evidenza": "Linea family del gruppo austriaco, con strutture pensate per le famiglie.",
+   "fonti": [],
+   "note": "Correzione: era finito su 'Solo-travelers' per un errore di codice."
+  },
+  {
+   "id": "beaches",
+   "nome": "Beaches Resorts",
+   "paese": "Caraibi",
+   "area": "Caraibi",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "C01"
+   ],
+   "categorie": [],
+   "sito": "https://www.beaches.com",
+   "evidenza": "Brand gemello di Sandals pensato per le famiglie.",
+   "fonti": [
+    "https://www.sandals.co.uk/blog/the-best-caribbean-breaks-grandparents/"
+   ],
+   "note": "Correzione: NON è 'Family Only'. Accoglie anche coppie, single e gruppi di amici. Resta valido il principio P1 (brand separato invece di annacquare Sandals)."
+  },
+  {
+   "id": "sandals",
+   "nome": "Sandals Resorts",
+   "paese": "Caraibi",
+   "area": "Caraibi",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "L01",
+    "H05"
+   ],
+   "categorie": [],
+   "sito": "https://www.sandals.com",
+   "evidenza": "Famiglia Stewart. All-inclusive per sole coppie adulte.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "bucuti-tara",
+   "nome": "Bucuti & Tara Beach Resort",
+   "paese": "Aruba",
+   "area": "Caraibi",
+   "luogo": "Eagle Beach",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "K03",
+    "L01"
+   ],
+   "categorie": [
+    "CAT10"
+   ],
+   "sito": "https://www.bucuti.com",
+   "evidenza": "Primo resort CarbonNeutral certificato dei Caraibi, emissioni pubblicate. Solo adulti.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "hostelle",
+   "nome": "Hostelle",
+   "paese": "Paesi Bassi",
+   "area": "Europa",
+   "luogo": "Amsterdam Zuidoost",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "L06",
+    "C06"
+   ],
+   "categorie": [],
+   "sito": "https://www.hostelle.com",
+   "evidenza": "Fondato nel 2012: primo e unico ostello solo donne di Amsterdam, di proprietà black-owned.",
+   "fonti": [
+    "https://travelnoire.com/hostelle-black-owned-women-only-hostel-in-amsterdam"
+   ],
+   "note": "Correzione: è 'Women Only', non 'Solo-travelers only', 'Pet-welcomed' o 'Sport only' come risultava sul sito."
+  },
+  {
+   "id": "axel-hotels",
+   "nome": "Axel Hotels",
+   "paese": "Spagna / Germania / altri",
+   "area": "Europa",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "pattern": [
+    "C06"
+   ],
+   "categorie": [],
+   "sito": "https://www.axelhotels.com",
+   "evidenza": "Catena LGBTQ+ con il claim 'heterofriendly'.",
+   "fonti": [],
+   "note": "Verificare le comunicazioni ufficiali attuali."
+  },
+  {
+   "id": "kimpton",
+   "nome": "Kimpton Hotels",
+   "paese": "Globale",
+   "area": "Globale",
+   "luogo": "",
+   "proprieta": "major",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "C05"
+   ],
+   "categorie": [],
+   "sito": "https://www.kimptonhotels.com",
+   "evidenza": "Pet-friendly come politica di brand.",
+   "fonti": [],
+   "note": "Correzione: Kimpton è un brand IHG (dal 2015), non è un esempio di 'N-generazioni' né di founder vivo."
+  },
+  {
+   "id": "d-pet-hotels",
+   "nome": "D Pet Hotels",
+   "paese": "USA",
+   "area": "Nord America",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "pattern": [
+    "L03"
+   ],
+   "categorie": [],
+   "sito": "https://dpethotels.com",
+   "evidenza": "Hotel di lusso per cani: suite, spa e servizi dedicati.",
+   "fonti": [],
+   "note": "Correzione: è 'Pets Only', non 'Members Only'. Verificare il numero di sedi attive."
+  },
+  {
+   "id": "soho-house",
+   "nome": "Soho House",
+   "paese": "Globale",
+   "area": "Globale",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "pattern": [
+    "L05",
+    "G03"
+   ],
+   "categorie": [
+    "CAT14"
+   ],
+   "sito": "https://www.sohohouse.com",
+   "evidenza": "Nick Jones, 1995. Club privato per la classe creativa, con camere.",
+   "fonti": [],
+   "note": "Correzione: è 'Members Only', non 'Pets Only'. Tier T2 perché in molte sedi le camere sono prenotabili anche dai non soci: da verificare sede per sede. Nel 2025 Soho House ha accettato il delisting da parte di un consorzio guidato da MCR (con Apollo)."
+  },
+  {
+   "id": "the-connaught",
+   "nome": "The Connaught",
+   "paese": "Regno Unito",
+   "area": "Europa",
+   "luogo": "Mayfair, Londra",
+   "proprieta": "major",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "pattern": [
+    "G04"
+   ],
+   "categorie": [],
+   "sito": "https://www.the-connaught.co.uk",
+   "evidenza": "Personale storico e riconoscibile, servizio maggiordomo.",
+   "fonti": [],
+   "note": "Il claim 'maggiordomo da 40 anni, terza generazione di staff' non ha fonte: trovarla o toglierlo. Proprietà: Maybourne Hotel Group."
+  },
+  {
+   "id": "21c",
+   "nome": "21c Museum Hotels",
+   "paese": "USA",
+   "area": "Nord America",
+   "luogo": "Fondato a Louisville",
+   "proprieta": "major",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "E02"
+   ],
+   "categorie": [],
+   "sito": "https://www.21cmuseumhotels.com",
+   "evidenza": "Steve Wilson e Laura Lee Brown: hotel con museo d'arte contemporanea aperto al pubblico.",
+   "fonti": [],
+   "note": "Verificare la proprietà attuale (gestione Accor/MGallery dal 2018)."
+  },
+  {
+   "id": "casa-wabi",
+   "nome": "Casa Wabi",
+   "paese": "Messico",
+   "area": "America Latina",
+   "luogo": "Puerto Escondido, Oaxaca",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T3",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "E03"
+   ],
+   "categorie": [
+    "CAT13"
+   ],
+   "sito": "https://casawabi.org",
+   "evidenza": "Fondazione di Bosco Sodi, edificio di Tadao Ando: residenze per artisti.",
+   "fonti": [],
+   "note": "È una fondazione con residenze, non un hotel aperto al pubblico: usarla come riferimento di categoria, non come modello alberghiero. Rimosso da 'No online booking' (claim non verificato)."
+  },
+  {
+   "id": "longitude-131",
+   "nome": "Longitude 131°",
+   "paese": "Australia",
+   "area": "Oceania",
+   "luogo": "Uluru",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "F03"
+   ],
+   "categorie": [
+    "CAT03"
+   ],
+   "sito": "https://longitude131.com.au",
+   "evidenza": "Baillie Lodges: tende di lusso con vista su Uluru.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "la-manga-club",
+   "nome": "La Manga Club",
+   "paese": "Spagna",
+   "area": "Europa",
+   "luogo": "Murcia",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "C04"
+   ],
+   "categorie": [
+    "CAT09"
+   ],
+   "sito": "https://www.lamangaclub.com",
+   "evidenza": "Resort sportivo: golf, tennis, ritiri di squadre di calcio.",
+   "fonti": [],
+   "note": "Correzione: è 'Sport-Expertise' (aperto a tutti), non 'Solo-travelers only' né 'Sport Only'."
+  },
+  {
+   "id": "1-hotels",
+   "nome": "1 Hotels",
+   "paese": "Globale",
+   "area": "Globale",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "K05"
+   ],
+   "categorie": [
+    "CAT10"
+   ],
+   "sito": "https://www.1hotels.com",
+   "evidenza": "Barry Sternlicht, 2015. Brand costruito sull'impatto ambientale.",
+   "fonti": [],
+   "note": ""
+  },
+  {
+   "id": "bambu-indah",
+   "nome": "Bambu Indah",
+   "paese": "Indonesia",
+   "area": "Asia",
+   "luogo": "Ubud, Bali",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "pattern": [
+    "K06"
+   ],
+   "categorie": [
+    "CAT16"
+   ],
+   "sito": "https://www.bambuindah.com",
+   "evidenza": "John e Cynthia Hardy: architettura in bambù come manifesto.",
+   "fonti": [],
+   "note": "Rimosso da 'Carbon trasparente' (K03): il caso giusto è Bucuti & Tara."
+  },
+  {
+   "id": "singita",
+   "nome": "Singita",
+   "paese": "Sudafrica / Tanzania / Zimbabwe / Ruanda",
+   "area": "Africa",
+   "luogo": "",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "K07",
+    "K01"
+   ],
+   "categorie": [
+    "CAT16"
+   ],
+   "sito": "https://singita.com",
+   "evidenza": "Safari lodge che finanziano la conservazione, visione dichiarata a 100 anni.",
+   "fonti": [],
+   "note": "Su K04 (plant-based) solo dopo aver verificato la cucina attuale delle lodge."
+  },
+  {
+   "id": "saorsa-1875",
+   "nome": "Saorsa 1875",
+   "paese": "Regno Unito",
+   "area": "Europa",
+   "luogo": "Pitlochry, Scozia",
+   "proprieta": "indipendente",
+   "stato": "venduto",
+   "tier": "T1",
+   "verifica": "da_verificare",
+   "caveat": true,
+   "pattern": [
+    "K04"
+   ],
+   "categorie": [],
+   "sito": "",
+   "evidenza": "Aperto nel 2019 come primo hotel 100% vegetale del Regno Unito, 11 camere.",
+   "fonti": [
+    "https://www.thecaterer.com/news/vegan-hotel-in-perthshire-on-the-market-for-nearly-1m",
+    "https://www.hotelowner.co.uk/177306-uks-first-vegan-hotel-brought-to-market-for-950k/"
+   ],
+   "note": "Le fonti trovate confermano solo la messa in vendita a circa 950.000 sterline, motivata dai proprietari con altri progetti, non con un fallimento. Il rebrand 'Birchwood' e la reintroduzione di prodotti animali vanno verificati. Finché non lo sono, non presentarlo come 'business fallito'."
+  },
+  {
+   "id": "jill-hotel",
+   "nome": "Jill Hotel",
+   "paese": "Belgio",
+   "area": "Europa",
+   "luogo": "Saint-Gilles, Bruxelles",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T3",
+   "verifica": "verificato",
+   "caveat": false,
+   "pattern": [
+    "K01"
+   ],
+   "categorie": [
+    "CAT08"
+   ],
+   "sito": "",
+   "evidenza": "Primo hotel in Belgio a togliere tutte le bevande alcoliche dal menù.",
+   "fonti": [
+    "https://traveltomorrow.com/brussels-based-jill-hotel-becomes-belgiums-first-to-ban-alcoholic-drinks-from-its-menu/"
+   ],
+   "note": "Sostituisce 'Camp Recovery', che è un centro di riabilitazione, non un hotel."
+  },
+  {
+   "id": "the-stromness",
+   "nome": "The Stromness Hotel",
+   "paese": "Regno Unito",
+   "area": "Europa",
+   "luogo": "Orkney, Scozia",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T3",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "pattern": [
+    "K01"
+   ],
+   "categorie": [
+    "CAT08"
+   ],
+   "sito": "",
+   "evidenza": "I nuovi proprietari l'hanno reso alcohol-free in coerenza con un'identità wellness.",
+   "fonti": [],
+   "note": "Notizia emersa in rassegne sul turismo alcohol-free: trovare la fonte primaria e verificare se la scelta è ancora in vigore."
+  },
+  {
+   "id": "casa-maria-luigia",
+   "nome": "Casa Maria Luigia",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Modena",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "proposto",
+   "caveat": false,
+   "pattern": [
+    "D01",
+    "G01"
+   ],
+   "categorie": [],
+   "sito": "https://www.casamarialuigia.com",
+   "evidenza": "Massimo Bottura e Lara Gilmore: guest house in campagna legata all'universo Francescana.",
+   "fonti": [],
+   "note": "Nuovo caso italiano per 'Vendiamo lo chef'. Verificare numero di camere e formula."
+  },
+  {
+   "id": "casadonna-reale",
+   "nome": "Casadonna – Reale",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Castel di Sangro (AQ)",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T1",
+   "verifica": "proposto",
+   "caveat": false,
+   "pattern": [
+    "D01",
+    "B01",
+    "E05"
+   ],
+   "categorie": [],
+   "sito": "https://www.nikoromito.com",
+   "evidenza": "Niko Romito: ex monastero con ristorante Reale, poche camere e scuola di cucina.",
+   "fonti": [],
+   "note": "Nuovo caso italiano. Verificare camere e stelle attuali."
+  },
+  {
+   "id": "atelier-sul-mare",
+   "nome": "Atelier sul Mare",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Castel di Tusa (ME)",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "proposto",
+   "caveat": false,
+   "pattern": [
+    "E02",
+    "E03",
+    "G01"
+   ],
+   "categorie": [
+    "CAT13"
+   ],
+   "sito": "",
+   "evidenza": "Antonio Presti: hotel-museo con camere d'arte firmate da artisti contemporanei.",
+   "fonti": [],
+   "note": "Nuovo caso italiano per hotel-museo e residenza artistica."
+  },
+  {
+   "id": "vigilius",
+   "nome": "Vigilius Mountain Resort",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Lana (BZ)",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "proposto",
+   "caveat": false,
+   "pattern": [
+    "B05",
+    "F03"
+   ],
+   "categorie": [
+    "CAT16"
+   ],
+   "sito": "https://www.vigilius.it",
+   "evidenza": "Raggiungibile solo in funivia, senza auto: l'accesso fa parte del prodotto.",
+   "fonti": [],
+   "note": "Nuovo caso italiano per 'Accesso difficile'."
+  },
+  {
+   "id": "lefay",
+   "nome": "Lefay Resort & SPA Lago di Garda",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Gargnano (BS)",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "proposto",
+   "caveat": false,
+   "pattern": [
+    "K05",
+    "J03"
+   ],
+   "categorie": [
+    "CAT10"
+   ],
+   "sito": "https://www.lefayresorts.com",
+   "evidenza": "Resort con impronta ambientale dichiarata e metodo spa proprietario.",
+   "fonti": [],
+   "note": "Nuovo caso italiano. Verificare le certificazioni ambientali."
+  },
+  {
+   "id": "italy-family-hotels",
+   "nome": "Italy Family Hotels",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Consorzio, forte presenza in Riviera Romagnola",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "proposto",
+   "caveat": false,
+   "pattern": [
+    "C01"
+   ],
+   "categorie": [],
+   "sito": "",
+   "evidenza": "Consorzio di hotel indipendenti con standard dedicati alle famiglie.",
+   "fonti": [],
+   "note": "Caso italiano di fascia media, vicino al target del servizio."
+  },
+  {
+   "id": "italy-bike-hotels",
+   "nome": "Italy Bike Hotels",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Consorzio nazionale",
+   "proprieta": "gruppo_indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "proposto",
+   "caveat": false,
+   "pattern": [
+    "C04"
+   ],
+   "categorie": [],
+   "sito": "",
+   "evidenza": "Hotel indipendenti specializzati nel cicloturismo: officina, guide, percorsi.",
+   "fonti": [],
+   "note": "Caso italiano di fascia media per Sport-Expertise."
+  },
+  {
+   "id": "palazzo-margherita",
+   "nome": "Palazzo Margherita",
+   "paese": "Italia",
+   "area": "Europa",
+   "luogo": "Bernalda (MT)",
+   "proprieta": "indipendente",
+   "stato": "attivo",
+   "tier": "T2",
+   "verifica": "proposto",
+   "caveat": false,
+   "pattern": [
+    "G01",
+    "F04"
+   ],
+   "categorie": [],
+   "sito": "",
+   "evidenza": "Palazzo ottocentesco della famiglia Coppola: il fondatore è la storia.",
+   "fonti": [],
+   "note": "Nuovo caso italiano per Founder-Persona."
+  },
+  {
+   "area": "Europa",
+   "luogo": "City di Londra (anche New York NoMad)",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT14"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://www.dezeen.com/2017/05/05/soho-house-edwards-lutyens-midland-bank-hotel-members-club-interiors-hotels-renovatios-london-uk/amp/",
+    "https://news.bgov.com/private-equity/soho-house-agrees-to-be-taken-private-in-2-7-billion-deal-1"
+   ],
+   "note": "Nato come joint venture Soho House + Sydell Group. Nel 2025 Soho House ha accettato il delisting (circa 2,7 miliardi di dollari) da parte di un consorzio guidato da MCR. Modello 'club layer': piazza pubblica sotto, club a pagamento sopra.",
+   "id": "the-ned",
+   "nome": "The Ned",
+   "paese": "Regno Unito",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T1",
+   "pattern": [
+    "F04",
+    "D07",
+    "L05"
+   ],
+   "evidenza": "Ex sede della Midland Bank di Lutyens, aperto nel 2017 con 252 camere: ristoranti aperti al pubblico e, sopra, il livello riservato ai soci del Ned's Club con piscina sul tetto."
+  },
+  {
+   "area": "Nord America",
+   "luogo": "Aeroporto JFK, New York",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://www.dezeen.com/2019/02/17/twa-hotel-eero-saarinen-jfk-airport-new-york-city/",
+    "https://www.travelpulse.com/news/hotels-and-resorts/twa-hotel-opens-in-landmark-saarinen-flight-center"
+   ],
+   "note": "Sviluppato e gestito da MCR/MORSE Development. L'hotel d'aeroporto smette di essere un ripiego: si visita anche senza volare.",
+   "id": "twa-hotel",
+   "nome": "TWA Hotel",
+   "paese": "USA",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T1",
+   "pattern": [
+    "F04",
+    "E02"
+   ],
+   "evidenza": "Aperto nel 2019 nel terminal TWA di Eero Saarinen (1962): 512 camere insonorizzate, piscina sul tetto vista piste, cocktail bar dentro un Lockheed Constellation del 1958."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Amsterdam, Copenhagen, Vienna, Parigi",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT17"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://hotelsmag.com/news/hot-openings-zoku-debuts-in-amsterdam/",
+    "https://servicedapartmentnews.com/news/technology/zoku-secures-funding-for-european-expansion/"
+   ],
+   "note": "Verificare l'assetto proprietario 2025-2026.",
+   "id": "zoku",
+   "nome": "Zoku",
+   "paese": "Paesi Bassi / Danimarca / Austria / Francia",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T1",
+   "pattern": [
+    "C08",
+    "D04"
+   ],
+   "evidenza": "Fondato nel 2016 da Hans Meyer (cofondatore di citizenM) e Marc Jongerius. Il 'Loft' mette al centro tavolo da lavoro per 4 e cucina; il letto è su un soppalco. Soggiorni da pochi giorni a mesi."
+  },
+  {
+   "area": "Asia",
+   "luogo": "Tokyo Ginza, Shenzhen, Pechino",
+   "stato": "attivo",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://thepointsguy.com/2018/01/muji-opens-new-hotels-restaurants-in-china"
+   ],
+   "note": "Concept di Ryohin Keikaku (retail), progettazione e gestione UDS Ltd. Verificare il numero attuale di hotel aperti.",
+   "id": "muji-hotel",
+   "nome": "MUJI Hotel",
+   "paese": "Giappone / Cina",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T1",
+   "pattern": [
+    "E06",
+    "J01"
+   ],
+   "evidenza": "La filosofia 'né lussuoso né economico' del marchio diventa camera: arredi e materassi MUJI, negozio e ristorante nello stesso edificio. Ginza aperto nel 2019."
+  },
+  {
+   "area": "Asia",
+   "luogo": "Tokyo (Azabudai Hills)",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://hospitalitydesign.com/news/janu-tokyo/160752",
+    "https://onemileatatime.com/janu-hotels-aman/"
+   ],
+   "note": "Esempio del principio P1: Aman non annacqua Aman, crea un secondo brand per il lusso sociale. Aperture in Montenegro e AlUla rinviate.",
+   "id": "janu",
+   "nome": "Janu",
+   "paese": "Giappone",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T2",
+   "pattern": [
+    "D04"
+   ],
+   "evidenza": "Brand gemello di Aman, aperto a Tokyo nel 2024 con 122 camere: stessi standard ma socialità, ristorazione vivace e grande spa invece dell'isolamento."
+  },
+  {
+   "area": "Nord America",
+   "luogo": "Bar Harbor, Maine (Acadia)",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT03"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://www.rvtravel.com/no-rvs-at-koa-935b/",
+    "https://www.bostonglobe.com/2020/10/01/lifestyle/glamping-comes-acadia-area"
+   ],
+   "note": "Brand premium di Kampgrounds of America (KOA): il leader del campeggio crea un brand separato che esclude il proprio cliente storico (principio P1). Espansioni non confermate.",
+   "id": "terramor",
+   "nome": "Terramor Outdoor Resort",
+   "paese": "USA",
+   "proprieta": "major",
+   "tier": "T2",
+   "pattern": [],
+   "evidenza": "Aperto nel 2020 su un ex campeggio KOA: 64 tende in legno e tela con servizi da resort. Camper vietati."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Stoccolma e altre città nordiche",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT18"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://www.scandichotelsgroup.com/en/scandic-launches-new-hotel-brand/",
+    "https://www.hospitalitynet.org/news/4116112/scandic-enters-economy-segment-first-scandic-go-hotel-to-open-after-summer"
+   ],
+   "note": "Brand economy di Scandic, prima catena nordica: circa metà delle nuove camere previste entro il 2030 sarà GO. Verificare il numero di hotel aperti.",
+   "id": "scandic-go",
+   "nome": "Scandic GO",
+   "paese": "Svezia / Norvegia / Danimarca / Finlandia",
+   "proprieta": "major",
+   "tier": "T1",
+   "pattern": [
+    "H06",
+    "H01"
+   ],
+   "evidenza": "Lanciato nel 2023: niente ristorante, sale meeting o palestra; check-in e chiavi via app; camere compatte e cibo disponibile 24 ore su 24."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Berna, Ginevra",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT17"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://www.businesstraveller.com/hotel/stay-kooook-erstes-extended-stay-hotel-in-bern-wankdorf/",
+    "https://sv-group.com/en/press-release/sv-group-bringing-two-innovative-hotel-concepts-geneva"
+   ],
+   "note": "Brand proprietario di SV Group (ristorazione e hotel, Svizzera).",
+   "id": "stay-kooook",
+   "nome": "Stay KooooK",
+   "paese": "Svizzera",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T2",
+   "pattern": [
+    "C08",
+    "D04"
+   ],
+   "evidenza": "Studi con angolo cottura per soggiorni lunghi e 'The Flat', soggiorno e terrazza in comune per creare comunità."
+  },
+  {
+   "area": "Nord America",
+   "luogo": "29 località a circa due ore dalle grandi città",
+   "stato": "acquisito",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT16"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://www.hotelmanagement.net/development/marriott-buys-postcard-cabins-plans-outdoor-hospitality-brand",
+    "https://loyaltylobby.com/2024/12/12/marriott-acquires-postcard-cabins-signs-a-deal-with-trailborn/"
+   ],
+   "note": "Rinominato nell'ottobre 2024 e acquisito da Marriott a dicembre 2024 (brand; proprietà degli immobili da chiarire).",
+   "id": "postcard-cabins",
+   "nome": "Postcard Cabins (ex Getaway)",
+   "paese": "USA",
+   "proprieta": "major",
+   "tier": "T1",
+   "pattern": [
+    "H06",
+    "C05"
+   ],
+   "evidenza": "Fondato nel 2015 come Getaway: oltre 1.200 micro-cabine distanziate, con cucina e bagno, animali ammessi, nessun ristorante."
+  },
+  {
+   "area": "Nord America",
+   "luogo": "Hell's Kitchen, New York",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://variety.com/2021/scene/news/civilian-hotel-broadway-david-rockwell-jason-pomeranc-1235081716"
+   ],
+   "note": "Jason Pomeranc (Sixty Collective) con David Rockwell. Esempio più netto di C03 rispetto a Public Hotel.",
+   "id": "civilian",
+   "nome": "Civilian Hotel",
+   "paese": "USA",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T2",
+   "pattern": [
+    "C03",
+    "E02"
+   ],
+   "evidenza": "Aperto nel 2021, 203 camere: l'hotel è una scenografia di Broadway con centinaia di cimeli teatrali veri, pensato per chi va a teatro e per chi ci lavora."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Utrecht",
+   "stato": "attivo",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://guide.michelin.com/ar/es/hotels-stays/utrecht-city/eye-hotel-10926"
+   ],
+   "note": "Identificazione da confermare: è l'Eye Hotel che intendevi? Gruppo Utrecht City Hotels.",
+   "id": "eye-hotel",
+   "nome": "Eye Hotel",
+   "paese": "Paesi Bassi",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T3",
+   "pattern": [
+    "F04",
+    "H06"
+   ],
+   "evidenza": "36 camere nel primo ospedale oftalmico dei Paesi Bassi (1858): la storia dell'edificio è il tema. Nessun ristorante proprio, la colazione è nell'hotel gemello."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Prenzlauer Berg, Berlino",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://www.luxurytraveladvisor.com/hotels/hotel-oderberger-old-bathhouse-making-a-splash-berlin"
+   ],
+   "note": "",
+   "id": "oderberger",
+   "nome": "Hotel Oderberger",
+   "paese": "Germania",
+   "proprieta": "indipendente",
+   "tier": "T1",
+   "pattern": [
+    "F04",
+    "D07"
+   ],
+   "evidenza": "Aperto nel 2016 nello Stadtbad del 1898: la piscina storica è aperta al pubblico del quartiere, non solo agli ospiti. Fa parte del campus della scuola di lingue GLS."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Quartiere Latino, Parigi",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://www.sortiraparis.com/en/where-to-eat-in-paris/hotel/articles/192380-french-theory-the-trendy-left-bank-hotel"
+   ],
+   "note": "Fondatori Aurélien e Tiana Armagnac. Verificare l'anno di apertura (probabilmente 2020).",
+   "id": "french-theory",
+   "nome": "French Theory",
+   "paese": "Francia",
+   "proprieta": "indipendente",
+   "tier": "T2",
+   "pattern": [
+    "G03",
+    "C03"
+   ],
+   "evidenza": "48 camere ispirate ai caffè letterari della Rive Gauche: libri e casse in camera, concept store, caffè e uno studio musicale nel seminterrato."
+  },
+  {
+   "area": "America Latina",
+   "luogo": "Tulum (anche Città del Messico)",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://hoteldesigns.net/industry-news/introducing-la-valise-tulum-luxury-hospitality-in-the-jungle/",
+    "https://www.mrandmrssmith.com/luxury-hotels/la-valise-tulum/rooms"
+   ],
+   "note": "Gruppo Namron Hospitality (Yves Naman). Lezione: un'esperienza-firma fotografabile vale più di dieci servizi.",
+   "id": "la-valise",
+   "nome": "La Valise Tulum",
+   "paese": "Messico",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T2",
+   "pattern": [
+    "B01",
+    "F03"
+   ],
+   "evidenza": "22 suite in tutto. Il letto delle master suite scorre sulla terrazza per dormire sotto le stelle: un solo oggetto-firma è diventato il contenuto virale dell'hotel."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Parigi 8e",
+   "stato": "attivo",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://www.oyster.com/articles/in-the-spotlight-hotel-mathis-elysees-matignon-paris/"
+   ],
+   "note": "Identificazione e gestione attuale da confermare (H8 Collection dal 2015, F&B con Experimental Group).",
+   "id": "hotel-mathis",
+   "nome": "Hôtel Mathis",
+   "paese": "Francia",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T3",
+   "pattern": [
+    "D07"
+   ],
+   "evidenza": "Una ventina di camere: il richiamo è il bar storico, gestito da un operatore della notte parigina, più delle camere."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Friedrichshain, Berlino",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT17"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://www.tageskarte.io/hotellerie/detail/east-macher-eroeffnen-sly-hotel-in-berlin.html",
+    "https://preferredhotels.com/hotels/germany/sly-berlin"
+   ],
+   "note": "Dello stesso team di east Hamburg.",
+   "id": "sly-berlin",
+   "nome": "sly Berlin",
+   "paese": "Germania",
+   "proprieta": "indipendente",
+   "tier": "T2",
+   "pattern": [
+    "F04",
+    "C08"
+   ],
+   "evidenza": "Aperto nel 2023 con 150 camere in quattro ex fabbriche di mobili attorno ai cortili: serra-ristorante, sauna sul tetto, pensato per soggiorni lunghi e lavoro da remoto."
+  },
+  {
+   "area": "Europa",
+   "luogo": "St. Stefan am Walde, Mühlviertel",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [],
+   "sito": "https://www.hotel-aviva.at",
+   "fonti": [
+    "https://www.hotel-aviva.at/en/lifestylehotel-aviva/make-friends/",
+    "https://www.wko.at/ooe/news/aviva"
+   ],
+   "note": "Il caso più netto di esclusione radicale della Library. Ha anche l'Ecolabel austriaco ed europeo. Su K05 è T2.",
+   "id": "aviva",
+   "nome": "AVIVA make friends",
+   "paese": "Austria",
+   "proprieta": "indipendente",
+   "tier": "T1",
+   "pattern": [
+    "L07",
+    "D04",
+    "K05"
+   ],
+   "evidenza": "Dal 2007 solo per single, viaggiatori soli e gruppi di amici: coppie, bambini e addii al celibato non sono accettati. 'Arrivi da solo, fai vacanza insieme': tavoli condivisi e attività di gruppo."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Milano, Ericeira, Maiorca, Londra, Sardegna",
+   "stato": "attivo",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://iberian.property/news/hotels/aethos-obtains-eur100m-in-financing-for-global-expansion"
+   ],
+   "note": "Inserito come ipotesi per 'Ethos' della tua lista: confermare. Ha raccolto 100 milioni di euro per l'espansione.",
+   "id": "aethos",
+   "nome": "Aethos",
+   "paese": "Italia / Portogallo / Spagna / Regno Unito",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T2",
+   "pattern": [
+    "D04",
+    "G03"
+   ],
+   "evidenza": "Boutique hotel con spirito da club: comunità, wellness e programmazione culturale."
+  },
+  {
+   "area": "Nord America",
+   "luogo": "Bowery, New York",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT19"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://www.hotel-online.com/news/now-now-noho-opens-on-new-yorks-historic-bowery",
+    "https://www.6sqft.com/new-sleeper-cabin-hotel-in-noho-brings-trendy-affordable-lodging-to-downtown-manhattan/"
+   ],
+   "note": "Gruppo Dovetail + Co. Si definisce 'lodging club' per chi viaggia da solo.",
+   "id": "now-now",
+   "nome": "Now Now NoHo",
+   "paese": "USA",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T1",
+   "pattern": [
+    "C02",
+    "H06",
+    "D04"
+   ],
+   "evidenza": "Aperto nel 2025 in un ex dormitorio del 1917: circa 180 cabine singole da circa 4,5 m² ispirate a capsule hotel e vagoni letto, da 125 dollari a notte. Bacheca 'Connections Board' per incontrarsi."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Roma, Milano, Firenze, Atene",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT04"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://wysetc.org/2020/02/welcome-to-our-new-member-yellowsquare",
+    "https://www.theflorentine.net/2022/04/12/yellowsquare-hostel-opens-in-florences-viale-redi/"
+   ],
+   "note": "Caso italiano indipendente: utile per dimostrare che il pattern 'piazza di quartiere' funziona anche in Italia.",
+   "id": "yellowsquare",
+   "nome": "YellowSquare",
+   "paese": "Italia / Grecia",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T1",
+   "pattern": [
+    "D07",
+    "D04"
+   ],
+   "evidenza": "Nato a Roma nel 1999 con 25 letti dai fratelli Fabio e Marco Coppola. Ostello di design che vive anche per i residenti: bar, ristorante, barbiere, escape room, oltre 200 concerti l'anno."
+  },
+  {
+   "area": "Nord America",
+   "luogo": "Savannah, Georgia",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://www.hotel-online.com/news/hotel-bardo-savannah-set-to-open-in-february-following-transformation",
+    "https://hoteldesigns.net/industry-news/hotel-bardo-a-social-hub-built-on-history/"
+   ],
+   "note": "Sviluppatore Left Lane (New York). Altro esempio di 'club layer' sopra un hotel aperto.",
+   "id": "hotel-bardo",
+   "nome": "Hotel Bardo",
+   "paese": "USA",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T2",
+   "pattern": [
+    "L05",
+    "D07",
+    "C01"
+   ],
+   "evidenza": "Aperto nel 2024, 149 camere: 'urban resort' con club riservato ai soci, ristorante con scuola di cucina, spa e programma per bambini, aperto anche ai residenti."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Anversa, Stazione Centrale",
+   "stato": "attivo",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "categorie": [
+    "CAT17",
+    "CAT18"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://www.besix.com/en/news/besix-group-and-a-star-group-join-forces-to-revolutionize-city-stay-experience"
+   ],
+   "note": "Joint venture A-Star Group + BESIX. Verificare anno di apertura e proprietà attuale.",
+   "id": "a-stay",
+   "nome": "A-STAY",
+   "paese": "Belgio",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T2",
+   "pattern": [
+    "C08",
+    "H01"
+   ],
+   "evidenza": "192 camere e studi, soggiorni da un giorno a un anno, due piani per chi resta più di un mese. Tutto in self-service via tecnologia: paghi solo i servizi che scegli."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Helsinki e 17 altre città",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT17",
+    "CAT18"
+   ],
+   "sito": "https://bobw.co",
+   "fonti": [
+    "https://bobw.co/about-us",
+    "https://siliconcanals.com/bob-w-raises-40m/"
+   ],
+   "note": "Finanziato da venture capital (oltre 70 milioni di euro). Cresce convertendo uffici con partner immobiliari.",
+   "id": "bob-w",
+   "nome": "Bob W",
+   "paese": "Finlandia (e altri 9 paesi)",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T1",
+   "pattern": [
+    "H01",
+    "H06"
+   ],
+   "evidenza": "'Best of Both Worlds': fondato nel 2018 da un superhost Airbnb, oltre 5.000 unità. Appartamenti con l'affidabilità di un hotel, nessuna reception fisica, assistenza remota 24 ore su 24."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Hackescher Markt, Berlino",
+   "stato": "attivo",
+   "verifica": "verificato",
+   "caveat": false,
+   "categorie": [
+    "CAT18"
+   ],
+   "sito": "",
+   "fonti": [
+    "https://www.domusweb.it/en/interiors/gallery/2024/10/11/new-sperimental-hotel-berlin-mm-nt-lab.html",
+    "https://www.hospitalitynet.org/news/4121444.html"
+   ],
+   "note": "Laboratorio di Adina Hotels (TFE Hotels, Australia).",
+   "id": "mm-nt",
+   "nome": "MM:NT Berlin Lab",
+   "paese": "Germania",
+   "proprieta": "major",
+   "tier": "T3",
+   "pattern": [
+    "H07",
+    "H01"
+   ],
+   "evidenza": "Aperto nel 2024 con 6 camere prototipo: nessun personale, tutto via app, bar self-service. Il feedback degli ospiti decide le camere dei futuri hotel del gruppo."
+  },
+  {
+   "area": "Europa",
+   "luogo": "Riviera Romagnola (Milano Marittima, Cervia, Cesenatico, Riccione, Rimini)",
+   "stato": "attivo",
+   "verifica": "da_verificare",
+   "caveat": false,
+   "categorie": [],
+   "sito": "",
+   "fonti": [
+    "https://www.qualitytravel.it/mirabilandia-e-club-family-hotel-rinnovano-la-partnership-anche-per-il-2026/181490",
+    "https://www.affaritaliani.it/cronache/club-family-hotel-906012.html"
+   ],
+   "note": "Caso italiano di fascia media, vicinissimo al target del servizio. Verificare che coppie senza figli siano davvero escluse (decide se è L02 o solo C01).",
+   "id": "club-family-hotel",
+   "nome": "Club Family Hotel",
+   "paese": "Italia",
+   "proprieta": "gruppo_indipendente",
+   "tier": "T1",
+   "pattern": [
+    "L02",
+    "H05",
+    "C01"
+   ],
+   "evidenza": "Circa 13-14 hotel solo per famiglie con bambini, formula all-inclusive brevettata (bar, spiaggia e piscina inclusi), bambini fino a 18 anni gratis, partnership con Mirabilandia rinnovata per il 2026."
+  }
+ ],
+ "fusion": [
+  {
+   "esempio": "sextantio",
+   "pattern": [
+    "F01",
+    "A04",
+    "J01",
+    "K01"
+   ]
+  },
+  {
+   "esempio": "borgo-egnazia",
+   "pattern": [
+    "F05",
+    "J04"
+   ]
+  },
+  {
+   "esempio": "eremito",
+   "pattern": [
+    "A04",
+    "I03",
+    "D03"
+   ]
+  },
+  {
+   "esempio": "the-pig",
+   "pattern": [
+    "G01",
+    "J02",
+    "E04"
+   ]
+  },
+  {
+   "esempio": "castello-di-reschio",
+   "pattern": [
+    "G01",
+    "G02",
+    "F04"
+   ]
+  },
+  {
+   "esempio": "aman",
+   "pattern": [
+    "A05",
+    "J01"
+   ]
+  },
+  {
+   "esempio": "casa-cipriani",
+   "pattern": [
+    "F02",
+    "G02",
+    "L05"
+   ]
+  },
+  {
+   "esempio": "lanserhof",
+   "pattern": [
+    "J03",
+    "D05"
+   ]
+  },
+  {
+   "esempio": "citizenm",
+   "pattern": [
+    "A03",
+    "H01",
+    "H03"
+   ]
+  },
+  {
+   "esempio": "singlethread",
+   "pattern": [
+    "B01",
+    "D01",
+    "E04"
+   ]
+  },
+  {
+   "esempio": "bucuti-tara",
+   "pattern": [
+    "K03",
+    "L01"
+   ]
+  },
+  {
+   "esempio": "the-ned",
+   "pattern": [
+    "F04",
+    "D07",
+    "L05"
+   ]
+  },
+  {
+   "esempio": "aviva",
+   "pattern": [
+    "L07",
+    "D04"
+   ]
+  },
+  {
+   "esempio": "now-now",
+   "pattern": [
+    "C02",
+    "H06",
+    "D04"
+   ]
+  },
+  {
+   "esempio": "scandic-go",
+   "pattern": [
+    "H06",
+    "H01"
+   ]
+  }
+ ],
+ "segnali_trend": [
+  {
+   "data": "2024-07",
+   "tipo": "crisi",
+   "esempio": "selina",
+   "categoria": "CAT05",
+   "fatto": "Selina entra in administration nel Regno Unito; ad agosto 2024 il business viene venduto a Collective Hospitality.",
+   "lettura": "Il workation hub funziona come posizionamento ma non regge con una crescita finanziata a debito."
+  },
+  {
+   "data": "2025-07",
+   "tipo": "acquisizione",
+   "esempio": "citizenm",
+   "categoria": null,
+   "fatto": "Marriott completa l'acquisizione di citizenM (37 hotel).",
+   "lettura": "I brand nati contro le catene vengono assorbiti dalle major: per un indipendente il pattern A02 resta difendibile solo se legato a persona e luogo."
+  },
+  {
+   "data": "2017",
+   "tipo": "acquisizione",
+   "esempio": "generator",
+   "categoria": "CAT04",
+   "fatto": "Queensgate Investments acquisisce Generator.",
+   "lettura": "Il boutique hostel è diventato una categoria matura e un asset da investimento."
+  },
+  {
+   "data": "2025",
+   "tipo": "espansione",
+   "esempio": "casa-cipriani",
+   "categoria": "CAT15",
+   "fatto": "Annunciata Casa Cipriani Miami: hotel, residenze private e club.",
+   "lettura": "Club privato + residenze: il brand forte si estende al real estate."
+  },
+  {
+   "data": "2024-2025",
+   "tipo": "nascita_categoria",
+   "esempio": "jill-hotel",
+   "categoria": "CAT08",
+   "fatto": "Primi hotel europei completamente alcohol-free (Bruxelles, Orkney) e prime vacanze 'sober' strutturate in Portogallo.",
+   "lettura": "La sober hospitality passa da trend di bar e menù a scelta d'identità: in Italia non ci sono ancora casi pionieri."
+  },
+  {
+   "data": "2024-12",
+   "tipo": "acquisizione",
+   "esempio": "postcard-cabins",
+   "categoria": "CAT16",
+   "fatto": "Marriott acquisisce Postcard Cabins (ex Getaway) e lancia una collezione outdoor.",
+   "lettura": "Le major comprano anche la natura: il glamping e le cabine smettono di essere una nicchia per indipendenti."
+  },
+  {
+   "data": "2025-08",
+   "tipo": "acquisizione",
+   "esempio": "soho-house",
+   "categoria": "CAT14",
+   "fatto": "Soho House accetta il delisting da parte di un consorzio guidato da MCR (TWA Hotel) con Apollo.",
+   "lettura": "I club privati con camere sono ormai asset da fondi: il modello 'club layer' (The Ned, Bardo) è replicabile anche in piccolo."
+  },
+  {
+   "data": "2023-09",
+   "tipo": "nuovo_brand",
+   "esempio": "scandic-go",
+   "categoria": "CAT18",
+   "fatto": "Scandic, prima catena nordica, lancia GO: niente ristorante né reception, tutto via app.",
+   "lettura": "Le catene industrializzano la sottrazione: l'indipendente non può vincere sul prezzo per sottrazione, deve vincere su persona e luogo."
+  },
+  {
+   "data": "2024-03",
+   "tipo": "nuovo_brand",
+   "esempio": "janu",
+   "categoria": null,
+   "fatto": "Aman apre il primo Janu a Tokyo: brand gemello per il lusso sociale.",
+   "lettura": "Conferma il principio P1: per un nuovo segmento si crea un nuovo brand, non si annacqua quello esistente."
+  },
+  {
+   "data": "2025-04",
+   "tipo": "nascita_categoria",
+   "esempio": "now-now",
+   "categoria": "CAT19",
+   "fatto": "Apre Now Now a New York: cabine singole per chi viaggia da solo.",
+   "lettura": "Il viaggiatore solo diventa target esplicito anche in città: in Italia la casella è vuota."
+  },
+  {
+   "data": "2026-01",
+   "tipo": "espansione",
+   "esempio": "public-hotel",
+   "categoria": null,
+   "fatto": "Ian Schrager affida a Highgate lo sviluppo del brand Public.",
+   "lettura": "I brand di autore scalano appoggiandosi a gestori terzi: il fondatore resta il marchio."
+  }
+ ]
 }

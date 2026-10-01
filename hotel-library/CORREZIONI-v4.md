@@ -68,7 +68,22 @@ Il secondo errore è dello stesso tipo. Alcuni esempi avevano un codice generico
 - **Tier e caveat separati:** "T1-Caveat" non esiste più. Il tier misura quanto il caso rappresenta il pattern; `caveat` segnala se il business ha retto.
 - **Conteggi allineati:** il sito diceva 57+16, l'estratto 54 (dichiarati 56) e 49 esempi (dichiarati 51). Ora i numeri li calcola lo script: 65 pattern, 16 categorie, 59 esempi.
 
-## 4. Ancora da verificare prima di pubblicare
+## 4. Integrazione casi studio (1 ottobre 2026)
+
+Su 31 hotel della lista, 5 erano già presenti (Ace, citizenM, The Hoxton, Equinox, PUBLIC). Ne ho aggiunti 25 e ne ho lasciato fuori uno.
+
+- **Aggiunti e verificati (19):** The Ned, TWA Hotel, Zoku, Janu, Terramor, Scandic GO, Stay KooooK, Postcard Cabins, Civilian, Oderberger, French Theory, La Valise, sly Berlin, AVIVA make friends, Now Now NoHo, YellowSquare, Hotel Bardo, Bob W, MM:NT.
+- **Aggiunti ma da verificare (6):** MUJI Hotel (numero di hotel attivi), A-STAY (apertura e proprietà), Club Family Hotel (se le coppie sono davvero escluse), e tre identificazioni incerte: Eye Hotel (trovato a Utrecht), Mathis (Hôtel Mathis, Parigi), Ethos (inserito come Aethos).
+- **Non inserito (1):** Wisteria. Non è emerso un hotel con un posizionamento riconoscibile: serve la città o il link.
+- **Aggiornati:** PUBLIC (insolvenza 2023, rifinanziamento, Highgate dal 2026) e Soho House (delisting 2025).
+
+Nuovi pattern: D07 Hotel come Piazza di Quartiere, E06 Hotel-Showroom, H06 Servizi per Sottrazione, H07 Beta Permanente.
+Nuove categorie: CAT17 Hybrid Stay / Extended-Stay Urbano, CAT18 Hotel Digital-First, CAT19 Micro-Room / Sleeper Cabin.
+Pattern non più nascenti grazie ai nuovi casi: C02 (Now Now), L07 (AVIVA), L02 (Club Family Hotel, da confermare).
+
+I siti web dei nuovi casi sono vuoti dove l'indirizzo non è stato verificato: vanno inseriti a mano.
+
+## 5. Ancora da verificare prima di pubblicare
 
 Esempi con `verifica: da_verificare` (11) e `proposto` (8): l'elenco completo è in `export/esempi.csv` (colonne `verifica` e `note`). In ordine di priorità:
 

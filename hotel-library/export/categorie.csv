@@ -1,8 +1,8 @@
 id,nome,definizione,stadio,pattern_affini,esempi
 CAT01,Longevity Hotel,"Hotel-clinica con medicina della longevità, screening e protocolli.",emergente,D05 J03,Lanserhof Tegernsee; SHA Wellness Clinic
 CAT02,Sleep Tourism,L'hotel come prodotto del sonno.,emergente,D02,Equinox Hotel New York
-CAT03,Glamping di Lusso,Tende e strutture leggere di fascia alta in natura.,maturo,F03 B05,Longitude 131°
-CAT04,Boutique Hostel,Ostello di design per chi accetta la stanza condivisa.,maturo,D04 H03,Generator
+CAT03,Glamping di Lusso,Tende e strutture leggere di fascia alta in natura.,maturo,F03 B05,Longitude 131°; Terramor Outdoor Resort
+CAT04,Boutique Hostel,Ostello di design per chi accetta la stanza condivisa.,maturo,D04 H03,Generator; YellowSquare
 CAT05,Workation Hub,Hotel per remote worker di lunga durata.,emergente,C08 D04,Selina
 CAT06,Retreat Center,"Hotel-ritiro tematico (yoga, silenzio, detox), permanente o pop-up.",emergente,D05 B04 D03,COMO Shambhala Estate; Kamalaya
 CAT07,Wellness Medico,Hotel-clinica diagnostico/preventivo.,emergente,J03 D05,Lanserhof Tegernsee; Vivamayr
@@ -12,6 +12,9 @@ CAT10,Climate-Forward Hotel,"Impatto ambientale dichiarato, misurato e certifica
 CAT11,Agriturismo Premium,Azienda agricola riposizionata in fascia alta.,emergente,E04 E05,Borgo Pignano; Babylonstoren
 CAT12,Slow Travel Hub,Base per soggiorni lenti con attività territoriali.,emergente,I03 F05,Eremito
 CAT13,Cultural Residency Hotel,Ospitalità + residenza artistica o culturale.,nascente,E03 E02,Casa Wabi; Atelier sul Mare
-CAT14,Member Club Hotel,Private club urbano con camere.,maturo,L05 G03,Casa Cipriani; Soho House
+CAT14,Member Club Hotel,Private club urbano con camere.,maturo,L05 G03,Casa Cipriani; Soho House; The Ned
 CAT15,Branded Residences,Il brand alberghiero si estende al residenziale.,emergente,G02,Casa Cipriani; Aman Residences
-CAT16,Nature Hotel,Immersione naturalistica come prodotto centrale.,emergente,K07 K06 F03,Bambu Indah; Singita; Vigilius Mountain Resort
+CAT16,Nature Hotel,Immersione naturalistica come prodotto centrale.,emergente,K07 K06 F03,Bambu Indah; Singita; Vigilius Mountain Resort; Postcard Cabins (ex Getaway)
+CAT17,Hybrid Stay / Extended-Stay Urbano,"A metà tra hotel, appartamento e co-living: cucina, spazi di lavoro, soggiorni da una notte a mesi.",emergente,C08 D04 H01,Zoku; Stay KooooK; sly Berlin; A-STAY; Bob W
+CAT18,Hotel Digital-First,"Senza reception fisica: check-in, chiavi e assistenza passano dall'app o da remoto.",emergente,H01 H06 H07,Scandic GO; A-STAY; Bob W; MM:NT Berlin Lab
+CAT19,Micro-Room / Sleeper Cabin,"Cabine o camere minime in centro città a prezzo accessibile, ispirate a capsule hotel e vagoni letto.",emergente,C02 H06,Now Now NoHo

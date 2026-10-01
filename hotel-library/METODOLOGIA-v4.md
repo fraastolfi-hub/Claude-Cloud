@@ -136,13 +136,16 @@ Sei fasi:
 - **P3. Il luogo italiano come leva.** Sextantio ed Egnazia hanno costruito identità rifiutando il format dominante nel loro territorio.
 - **P4. I numeri rendono il posizionamento credibile, ma solo con fonte.** I dati Six Senses sono sospesi finché non si trova la fonte.
 - **P5. Il brand forte si estende al residenziale** (Aman Residences, Casa Cipriani Miami). Il dato "+150% in 10 anni" va ricollegato alla sua fonte prima di usarlo.
-- **P6 (nuovo). Il pattern anti-catena si compra.** citizenM e The Hoxton sono finiti in Marriott e Accor. Per un indipendente, la difesa duratura è legare il pattern a ciò che una major non può comprare: persona (G), luogo (F), visione (K).
+- **P6 (nuovo). Il pattern anti-catena si compra.** citizenM e The Hoxton sono finiti in Marriott e Accor, Postcard Cabins in Marriott. Per un indipendente, la difesa duratura è legare il pattern a ciò che una major non può comprare: persona (G), luogo (F), visione (K).
+- **P7 (nuovo). Le catene industrializzano la sottrazione.** Scandic GO, Bob W e MM:NT tolgono reception, ristorante e personale in loco. Un indipendente non può vincere sul prezzo togliendo servizi: la sottrazione funziona per lui solo se toglie ciò che il suo target non vuole (AVIVA toglie le coppie, Eremito toglie il wifi).
+- **P8 (nuovo). Il "club layer".** The Ned, Hotel Bardo e Casa Cipriani aprono ristoranti e spazi al pubblico e vendono, sopra, un livello riservato ai soci. È una forma di Members Only adatta anche a un hotel cittadino di medie dimensioni.
+- **P9 (nuovo). L'hotel come piazza.** YellowSquare, Oderberger e The Ned fatturano anche sui residenti: il bar, la piscina, i concerti. L'ospite trova un quartiere vivo e l'hotel ha un ricavo che non dipende dall'occupazione.
 
 ---
 
 ## 8. Roadmap della Library
 
-1. **Chiudere le verifiche** in `CORREZIONI-v4.md`, sezione 4.
+1. **Chiudere le verifiche** in `CORREZIONI-v4.md`, sezione 5.
 2. **Sito:** importare `library-v4.json` (o i CSV) al posto dei dati attuali; titolo, description e canonical propri per `/library` con pre-rendering; una pagina per pattern e per categoria.
 3. **Campi da aggiungere alla v4.1:** anno di apertura, numero di camere, fascia di prezzo, `data_verifica` per esempio. Servono per filtrare per dimensione e per misurare i trend nel tempo.
 4. **Copertura:** almeno un caso T1/T2 per ogni pattern non nascente e almeno un caso italiano indipendente per famiglia.
