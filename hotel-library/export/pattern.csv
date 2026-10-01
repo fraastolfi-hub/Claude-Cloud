@@ -26,7 +26,7 @@ D06,JTBD Reframe,Vendiamo il Tempo,Servizi che tolgono attrito e scelte invece d
 D07,JTBD Reframe,Hotel come Piazza di Quartiere,"Il cliente non è solo l'ospite che dorme: bar, ristoranti, piscina o eventi sono aperti ai residenti e l'hotel diventa un luogo pubblico.",emergente,A03 D04,The Ned; Hotel Oderberger; YellowSquare; Hotel Bardo
 E01,Category Creation,Hotel-Bottega,L'hotel ibridato con un'attività artigiana che è il vero centro.,nascente,E04,
 E02,Category Creation,Hotel-Museo / Collezione,"La collezione (arte, libri, vinili, auto) è il prodotto; la camera è l'accesso.",consolidato,E03,21c Museum Hotels; Atelier sul Mare; TWA Hotel; Civilian Hotel
-E03,Category Creation,Hotel-Residenza Artistica,Artisti in residenza producono mentre tu soggiorni.,nascente,E02 G03,Casa Wabi; Atelier sul Mare
+E03,Category Creation,Hotel-Residenza Artistica,Artisti in residenza producono mentre tu soggiorni.,emergente,E02 G03,Casa Wabi; Atelier sul Mare
 E04,Category Creation,Hotel-Azienda Agricola,"Produzione visibile e filiera in tempo reale, oltre l'agriturismo standard.",consolidato,K02,Borgo Pignano; The Pig Hotels; Babylonstoren; SingleThread
 E05,Category Creation,Hotel-Scuola,"Esci con una competenza che non avevi (cucina, lingua, mestiere).",emergente,E04,Borgo Pignano; Casadonna – Reale
 E06,Category Creation,Hotel-Showroom,"Un brand nato fuori dall'hospitality (retail, design, moda) trasforma la sua filosofia in camere: l'hotel è il negozio abitabile.",emergente,J01,MUJI Hotel
