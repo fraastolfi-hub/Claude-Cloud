@@ -83,7 +83,7 @@ Pattern non più nascenti grazie ai nuovi casi: C02 (Now Now), L07 (AVIVA), L02 
 
 Siti web: inseriti i 22 indirizzi verificati e confermati (per Now Now la pagina dell'operatore Dovetail + Co, per Club Family Hotel l'indirizzo fornito da Francesco). Jill Hotel, The Stromness, MM:NT e Atelier sul Mare: indirizzi forniti da Francesco. Tutti gli esempi hanno ora un sito.
 
-Atelier sul Mare è segnato come **chiuso**: ha chiuso il 14 agosto 2023 dopo un controllo dei NAS ([Artribune](https://www.artribune.com/?p=1004738)). Resta come caso storico.
+Atelier sul Mare è **attivo** (confermato da Francesco). Nell'agosto 2023 era stato chiuso dopo un controllo dei NAS ([Artribune](https://www.artribune.com/?p=1004738)), poi ha riaperto.
 
 ## 5. Ancora da verificare prima di pubblicare
 
