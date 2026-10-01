@@ -28,945 +28,1046 @@
     "major": "Appartiene a un grande gruppo alberghiero (Marriott, Accor, IHG, LVMH/Belmond, ecc.)."
    },
    "caveat": "Posizionamento forte ma business non sostenibile o identità poi abbandonata. È un attributo separato dal tier."
-  }
+  },
+  "nomi": "I nomi sono in italiano semplice; 'nome_en' conserva l'etichetta tecnica originale, usata anche nella ricerca del sito."
  },
  "famiglie": [
   {
    "codice": "A",
-   "nome": "Anti-Competitor",
+   "nome": "Contro un concorrente",
    "core": "Ti definisci per opposizione a un competitor o a un format preciso.",
-   "rischio": "Dipendi dall'esistenza del nemico."
+   "rischio": "Dipendi dall'esistenza del nemico.",
+   "nome_en": "Anti-Competitor"
   },
   {
    "codice": "B",
-   "nome": "Limite Radicale",
+   "nome": "Un limite come promessa",
    "core": "Un limite deliberato e non negoziabile diventa la promessa.",
-   "rischio": "Il segmento che resta deve essere abbastanza ricco."
+   "rischio": "Il segmento che resta deve essere abbastanza ricco.",
+   "nome_en": "Limite Radicale"
   },
   {
    "codice": "C",
-   "nome": "Audience Focus",
+   "nome": "Pensato per un pubblico",
    "core": "Progettato per un pubblico preciso, ma aperto a tutti.",
-   "rischio": "Il segmento può cambiare o restringersi."
+   "rischio": "Il segmento può cambiare o restringersi.",
+   "nome_en": "Audience Focus"
   },
   {
    "codice": "D",
-   "nome": "JTBD Reframe",
+   "nome": "Cosa vende davvero",
    "core": "Riformuli il lavoro che l'ospite ti assume per fare.",
-   "rischio": "Il risultato promesso deve essere misurabile."
+   "rischio": "Il risultato promesso deve essere misurabile.",
+   "nome_en": "JTBD Reframe"
   },
   {
    "codice": "E",
-   "nome": "Category Creation",
+   "nome": "Hotel + un'altra attività",
    "core": "Ibridi l'hotel con un'altra attività che diventa il centro.",
-   "rischio": "La categoria deve essere ripetibile dai media."
+   "rischio": "La categoria deve essere ripetibile dai media.",
+   "nome_en": "Category Creation"
   },
   {
    "codice": "F",
-   "nome": "Place-as-Identity",
+   "nome": "Il luogo è l'hotel",
    "core": "Hotel e luogo sono inseparabili.",
-   "rischio": "Se il luogo perde attrattiva, l'hotel perde identità."
+   "rischio": "Se il luogo perde attrattiva, l'hotel perde identità.",
+   "nome_en": "Place-as-Identity"
   },
   {
    "codice": "G",
-   "nome": "Persona-Driven",
+   "nome": "Una persona è il brand",
    "core": "Una persona o una famiglia riconoscibile è il brand.",
-   "rischio": "Serve un piano di successione."
+   "rischio": "Serve un piano di successione.",
+   "nome_en": "Persona-Driven"
   },
   {
    "codice": "H",
-   "nome": "Operations Reframe",
+   "nome": "Servizio ripensato",
    "core": "Ripensi un'operazione standard dell'hotel.",
-   "rischio": "Deve essere posizionamento, non taglio costi."
+   "rischio": "Deve essere posizionamento, non taglio costi.",
+   "nome_en": "Operations Reframe"
   },
   {
    "codice": "I",
-   "nome": "Time-Inverted",
+   "nome": "Tempi al contrario",
    "core": "Inverti la logica temporale standard.",
-   "rischio": "Restringe il fatturato annuo."
+   "rischio": "Restringe il fatturato annuo.",
+   "nome_en": "Time-Inverted"
   },
   {
    "codice": "J",
-   "nome": "Genre Refusal",
+   "nome": "Rifiuto del format",
    "core": "Rifiuti un intero genere dominante del tuo mercato.",
-   "rischio": "Il rifiuto va sostanziato operativamente."
+   "rischio": "Il rifiuto va sostanziato operativamente.",
+   "nome_en": "Genre Refusal"
   },
   {
    "codice": "K",
-   "nome": "Worldview-Anchored",
+   "nome": "Una visione del mondo",
    "core": "Una visione del mondo dichiarata e misurabile.",
-   "rischio": "Serve coerenza totale."
+   "rischio": "Serve coerenza totale.",
+   "nome_en": "Worldview-Anchored"
   },
   {
    "codice": "L",
-   "nome": "Only (Esclusione Radicale)",
+   "nome": "Solo per qualcuno",
    "core": "Escludi interi segmenti. Versione a porte chiuse dei pattern C.",
-   "rischio": "Mercato più piccolo: il segmento residuo deve pagare."
+   "rischio": "Mercato più piccolo: il segmento residuo deve pagare.",
+   "nome_en": "Only (Esclusione Radicale)"
   }
  ],
  "pattern": [
   {
    "codice": "A01",
    "famiglia": "A",
-   "nome": "Anti-OTA",
+   "nome": "Contro Booking ed Expedia",
    "definizione": "L'hotel come antagonista esplicito delle OTA: tutto ciò che Booking ed Expedia non possono dare.",
    "maturita": "nascente",
    "correlati": [
     "H04"
-   ]
+   ],
+   "nome_en": "Anti-OTA"
   },
   {
    "codice": "A02",
    "famiglia": "A",
-   "nome": "Anti-Catena / Anti-Finto-Boutique",
+   "nome": "L'indipendente contro le catene",
    "definizione": "L'indipendente come vera alternativa ai brand di catena e al boutique da catalogo.",
    "maturita": "emergente",
    "correlati": [
     "G03"
-   ]
+   ],
+   "nome_en": "Anti-Catena / Anti-Finto-Boutique"
   },
   {
    "codice": "A03",
    "famiglia": "A",
-   "nome": "Anti-Business-Hotel",
+   "nome": "Contro il business hotel",
    "definizione": "Lobby come spazio di lavoro e quartiere, contro il business hotel standard.",
    "maturita": "consolidato",
    "correlati": [
     "H01"
-   ]
+   ],
+   "nome_en": "Anti-Business-Hotel"
   },
   {
    "codice": "A04",
    "famiglia": "A",
-   "nome": "Anti-Resort",
+   "nome": "Contro il villaggio turistico",
    "definizione": "L'opposto programmatico del villaggio: no animazione, no buffet, no braccialetti.",
    "maturita": "consolidato",
    "correlati": [
     "J04",
     "I03"
-   ]
+   ],
+   "nome_en": "Anti-Resort"
   },
   {
    "codice": "A05",
    "famiglia": "A",
-   "nome": "Anti-Instagrammabile",
+   "nome": "Non fatto per Instagram",
    "definizione": "Fatto per essere vissuto, non fotografato: comunicazione minima e rifiuto dell'estetica social.",
    "maturita": "emergente",
    "correlati": [
     "J01"
-   ]
+   ],
+   "nome_en": "Anti-Instagrammabile"
   },
   {
    "codice": "B01",
    "famiglia": "B",
-   "nome": "Micro-scala (Solo X camere)",
+   "nome": "Pochissime camere",
    "definizione": "Il numero piccolissimo di camere dichiarato come promessa.",
    "maturita": "consolidato",
    "correlati": [
     "D01"
-   ]
+   ],
+   "nome_en": "Micro-scala (Solo X camere)"
   },
   {
    "codice": "B02",
    "famiglia": "B",
-   "nome": "Single Seating",
+   "nome": "Una sola cena, un solo orario",
    "definizione": "Una sola cena, un solo orario, un solo menù.",
    "maturita": "emergente",
    "correlati": [
     "D01"
-   ]
+   ],
+   "nome_en": "Single Seating"
   },
   {
    "codice": "B03",
    "famiglia": "B",
-   "nome": "Stagione Corta Dichiarata",
+   "nome": "Aperto pochi mesi, per scelta",
    "definizione": "Apertura ridotta presentata come scelta di qualità, non come limite.",
    "maturita": "emergente",
    "correlati": [
     "I01"
-   ]
+   ],
+   "nome_en": "Stagione Corta Dichiarata"
   },
   {
    "codice": "B04",
    "famiglia": "B",
-   "nome": "Soggiorno Minimo Lungo",
+   "nome": "Soggiorno minimo lungo",
    "definizione": "Minimo di più notti per filtrare il mordi-e-fuggi.",
    "maturita": "emergente",
    "correlati": [
     "D05"
-   ]
+   ],
+   "nome_en": "Soggiorno Minimo Lungo"
   },
   {
    "codice": "B05",
    "famiglia": "B",
-   "nome": "Accesso Difficile / Car-Free",
+   "nome": "Difficile da raggiungere, apposta",
    "definizione": "Ci si arriva solo a piedi, in funivia o in barca: la fatica dell'accesso è parte del valore.",
    "maturita": "nascente",
    "correlati": [
     "F03"
-   ]
+   ],
+   "nome_en": "Accesso Difficile / Car-Free"
   },
   {
    "codice": "C01",
    "famiglia": "C",
-   "nome": "Family-Designed",
+   "nome": "Pensato per le famiglie",
    "definizione": "Struttura e operazioni progettate per le famiglie con bambini.",
    "maturita": "consolidato",
    "correlati": [
     "L02"
-   ]
+   ],
+   "nome_en": "Family-Designed"
   },
   {
    "codice": "C02",
    "famiglia": "C",
-   "nome": "Solo-Traveler-Designed",
+   "nome": "Pensato per chi viaggia da solo",
    "definizione": "Ridisegnato attorno a chi viaggia da solo, aperto a tutti.",
    "maturita": "emergente",
    "correlati": [
     "L07"
-   ]
+   ],
+   "nome_en": "Solo-Traveler-Designed"
   },
   {
    "codice": "C03",
    "famiglia": "C",
-   "nome": "Profession / Lifestyle",
+   "nome": "Pensato per una professione o una passione",
    "definizione": "Pensato per una categoria professionale o uno stile di vita preciso.",
    "maturita": "emergente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Profession / Lifestyle"
   },
   {
    "codice": "C04",
    "famiglia": "C",
-   "nome": "Sport-Expertise",
+   "nome": "Pensato per chi fa sport",
    "definizione": "Specializzazione profonda su uno sport, accessibile a chiunque.",
    "maturita": "consolidato",
    "correlati": [
     "L04"
-   ]
+   ],
+   "nome_en": "Sport-Expertise"
   },
   {
    "codice": "C05",
    "famiglia": "C",
-   "nome": "Pet-Welcomed Seriously",
+   "nome": "Animali davvero benvenuti",
    "definizione": "L'animale è ospite vero, ma il prodotto resta per l'umano.",
    "maturita": "consolidato",
    "correlati": [
     "L03"
-   ]
+   ],
+   "nome_en": "Pet-Welcomed Seriously"
   },
   {
    "codice": "C06",
    "famiglia": "C",
-   "nome": "Identity-Explicit",
+   "nome": "Identità dichiarata",
    "definizione": "Identità dichiarata come filtro comunicativo (LGBTQ+, cultura, ecc.).",
    "maturita": "emergente",
    "correlati": [
     "L06"
-   ]
+   ],
+   "nome_en": "Identity-Explicit"
   },
   {
    "codice": "C07",
    "famiglia": "C",
-   "nome": "Generazionale",
+   "nome": "Pensato per una generazione",
    "definizione": "La generazione come asse identitario (over-65 attivi, Gen Z).",
    "maturita": "nascente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Generazionale"
   },
   {
    "codice": "C08",
    "famiglia": "C",
-   "nome": "Remote Worker",
+   "nome": "Pensato per chi lavora in viaggio",
    "definizione": "Hotel per chi lavora in viaggio per lunghi periodi.",
    "maturita": "emergente",
    "correlati": [
     "D04"
-   ]
+   ],
+   "nome_en": "Remote Worker"
   },
   {
    "codice": "D01",
    "famiglia": "D",
-   "nome": "Vendiamo lo Chef",
+   "nome": "Si viene per lo chef",
    "definizione": "L'asset è chi cucina: la camera è il dopo-cena.",
    "maturita": "consolidato",
    "correlati": [
     "B01",
     "G01"
-   ]
+   ],
+   "nome_en": "Vendiamo lo Chef"
   },
   {
    "codice": "D02",
    "famiglia": "D",
-   "nome": "Vendiamo il Sonno",
+   "nome": "Si viene per dormire bene",
    "definizione": "L'hotel come prodotto del riposo: materassi, buio, protocolli.",
    "maturita": "emergente",
    "correlati": [
     "J03"
-   ]
+   ],
+   "nome_en": "Vendiamo il Sonno"
   },
   {
    "codice": "D03",
    "famiglia": "D",
-   "nome": "Vendiamo il Silenzio",
+   "nome": "Si viene per il silenzio",
    "definizione": "Il silenzio dichiarato e organizzato come prodotto principale.",
    "maturita": "emergente",
    "correlati": [
     "I03"
-   ]
+   ],
+   "nome_en": "Vendiamo il Silenzio"
   },
   {
    "codice": "D04",
    "famiglia": "D",
-   "nome": "Vendiamo la Connessione",
+   "nome": "Si viene per conoscere gente",
    "definizione": "L'hotel-community dove si fa amicizia: cene comuni, attività di gruppo.",
    "maturita": "emergente",
    "correlati": [
     "C08"
-   ]
+   ],
+   "nome_en": "Vendiamo la Connessione"
   },
   {
    "codice": "D05",
    "famiglia": "D",
-   "nome": "Vendiamo la Trasformazione",
+   "nome": "Si viene per cambiare",
    "definizione": "Te ne vai diverso: programmi guidati di più giorni.",
    "maturita": "consolidato",
    "correlati": [
     "B04",
     "J03"
-   ]
+   ],
+   "nome_en": "Vendiamo la Trasformazione"
   },
   {
    "codice": "D06",
    "famiglia": "D",
-   "nome": "Vendiamo il Tempo",
+   "nome": "Si viene per avere tempo",
    "definizione": "Servizi che tolgono attrito e scelte invece di aggiungerne.",
    "maturita": "nascente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Vendiamo il Tempo"
   },
   {
    "codice": "D07",
    "famiglia": "D",
-   "nome": "Hotel come Piazza di Quartiere",
+   "nome": "Hotel aperto al quartiere",
    "definizione": "Il cliente non è solo l'ospite che dorme: bar, ristoranti, piscina o eventi sono aperti ai residenti e l'hotel diventa un luogo pubblico.",
    "maturita": "emergente",
    "correlati": [
     "A03",
     "D04"
-   ]
+   ],
+   "nome_en": "Hotel come Piazza di Quartiere"
   },
   {
    "codice": "E01",
    "famiglia": "E",
-   "nome": "Hotel-Bottega",
+   "nome": "Hotel + bottega artigiana",
    "definizione": "L'hotel ibridato con un'attività artigiana che è il vero centro.",
    "maturita": "nascente",
    "correlati": [
     "E04"
-   ]
+   ],
+   "nome_en": "Hotel-Bottega"
   },
   {
    "codice": "E02",
    "famiglia": "E",
-   "nome": "Hotel-Museo / Collezione",
+   "nome": "Hotel + museo o collezione",
    "definizione": "La collezione (arte, libri, vinili, auto) è il prodotto; la camera è l'accesso.",
    "maturita": "consolidato",
    "correlati": [
     "E03"
-   ]
+   ],
+   "nome_en": "Hotel-Museo / Collezione"
   },
   {
    "codice": "E03",
    "famiglia": "E",
-   "nome": "Hotel-Residenza Artistica",
+   "nome": "Hotel + artisti in residenza",
    "definizione": "Artisti in residenza producono mentre tu soggiorni.",
    "maturita": "emergente",
    "correlati": [
     "E02",
     "G03"
-   ]
+   ],
+   "nome_en": "Hotel-Residenza Artistica"
   },
   {
    "codice": "E04",
    "famiglia": "E",
-   "nome": "Hotel-Azienda Agricola",
+   "nome": "Hotel + azienda agricola",
    "definizione": "Produzione visibile e filiera in tempo reale, oltre l'agriturismo standard.",
    "maturita": "consolidato",
    "correlati": [
     "K02"
-   ]
+   ],
+   "nome_en": "Hotel-Azienda Agricola"
   },
   {
    "codice": "E05",
    "famiglia": "E",
-   "nome": "Hotel-Scuola",
+   "nome": "Hotel + scuola",
    "definizione": "Esci con una competenza che non avevi (cucina, lingua, mestiere).",
    "maturita": "emergente",
    "correlati": [
     "E04"
-   ]
+   ],
+   "nome_en": "Hotel-Scuola"
   },
   {
    "codice": "E06",
    "famiglia": "E",
-   "nome": "Hotel-Showroom",
+   "nome": "Hotel di un marchio non alberghiero",
    "definizione": "Un brand nato fuori dall'hospitality (retail, design, moda) trasforma la sua filosofia in camere: l'hotel è il negozio abitabile.",
    "maturita": "emergente",
    "correlati": [
     "J01"
-   ]
+   ],
+   "nome_en": "Hotel-Showroom"
   },
   {
    "codice": "F01",
    "famiglia": "F",
-   "nome": "Albergo Diffuso",
+   "nome": "Albergo diffuso",
    "definizione": "L'hotel è il borgo, non sta nel borgo.",
    "maturita": "consolidato",
    "correlati": [
     "J01"
-   ]
+   ],
+   "nome_en": "Albergo Diffuso"
   },
   {
    "codice": "F02",
    "famiglia": "F",
-   "nome": "Ambasciata Regionale",
+   "nome": "Un territorio portato altrove",
    "definizione": "Porti il territorio fuori dal territorio.",
    "maturita": "emergente",
    "correlati": [
     "G02"
-   ]
+   ],
+   "nome_en": "Ambasciata Regionale"
   },
   {
    "codice": "F03",
    "famiglia": "F",
-   "nome": "Single-View",
+   "nome": "Una vista unica",
    "definizione": "Una vista o un elemento naturale definisce tutto.",
    "maturita": "consolidato",
    "correlati": [
     "B05"
-   ]
+   ],
+   "nome_en": "Single-View"
   },
   {
    "codice": "F04",
    "famiglia": "F",
-   "nome": "Edificio-Manifesto",
+   "nome": "Un edificio unico",
    "definizione": "L'architettura storica o iconica è il prodotto, non la cornice.",
    "maturita": "consolidato",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Edificio-Manifesto"
   },
   {
    "codice": "F05",
    "famiglia": "F",
-   "nome": "Cultura Locale come Prodotto",
+   "nome": "La cultura del posto come esperienza",
    "definizione": "Riti, persone e saperi del territorio sostituiscono l'intrattenimento standard.",
    "maturita": "emergente",
    "correlati": [
     "J04"
-   ]
+   ],
+   "nome_en": "Cultura Locale come Prodotto"
   },
   {
    "codice": "G01",
    "famiglia": "G",
-   "nome": "Founder-Persona",
+   "nome": "Il fondatore è il brand",
    "definizione": "Un fondatore riconoscibile e narrato è il brand.",
    "maturita": "consolidato",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Founder-Persona"
   },
   {
    "codice": "G02",
    "famiglia": "G",
-   "nome": "N-Generazioni",
+   "nome": "La stessa famiglia da generazioni",
    "definizione": "La continuità familiare dichiarata come prova.",
    "maturita": "consolidato",
    "correlati": [
     "F02"
-   ]
+   ],
+   "nome_en": "N-Generazioni"
   },
   {
    "codice": "G03",
    "famiglia": "G",
-   "nome": "Curator-Driven",
+   "nome": "I gusti di un curatore",
    "definizione": "L'ossessione di un curatore definisce ogni scelta: musica, libri, design, community.",
    "maturita": "consolidato",
    "correlati": [
     "A02"
-   ]
+   ],
+   "nome_en": "Curator-Driven"
   },
   {
    "codice": "G04",
    "famiglia": "G",
-   "nome": "Staff-as-Character",
+   "nome": "Lo staff è la star",
    "definizione": "Il team è famoso, non l'hotel.",
    "maturita": "emergente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Staff-as-Character"
   },
   {
    "codice": "H01",
    "famiglia": "H",
-   "nome": "Self Check-in / Tech-First",
+   "nome": "Check-in da soli, con app o totem",
    "definizione": "Arrivo ridisegnato: chioschi, app, nessuna coda alla reception.",
    "maturita": "consolidato",
    "correlati": [
     "A03"
-   ]
+   ],
+   "nome_en": "Self Check-in / Tech-First"
   },
   {
    "codice": "H02",
    "famiglia": "H",
-   "nome": "Host al posto della Reception",
+   "nome": "Un padrone di casa al posto della reception",
    "definizione": "Niente front desk: un host umano specifico ti accoglie.",
    "maturita": "nascente",
    "correlati": [
     "G04"
-   ]
+   ],
+   "nome_en": "Host al posto della Reception"
   },
   {
    "codice": "H03",
    "famiglia": "H",
-   "nome": "Tariffa Unica / Camera Unica",
+   "nome": "Una sola camera, un solo prezzo",
    "definizione": "Un solo tipo di camera e un prezzo trasparente, niente upsell nascosti.",
    "maturita": "emergente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Tariffa Unica / Camera Unica"
   },
   {
    "codice": "H04",
    "famiglia": "H",
-   "nome": "No Online Booking",
+   "nome": "Si prenota solo parlando",
    "definizione": "Si prenota solo parlando: la conversazione è il servizio.",
    "maturita": "nascente",
    "correlati": [
     "A01"
-   ]
+   ],
+   "nome_en": "No Online Booking"
   },
   {
    "codice": "H05",
    "famiglia": "H",
-   "nome": "All-Inclusive Radicale o Invertito",
+   "nome": "Tutto incluso o niente incluso",
    "definizione": "Tutto incluso davvero, oppure niente incluso e paghi solo ciò che usi.",
    "maturita": "emergente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "All-Inclusive Radicale o Invertito"
   },
   {
    "codice": "H06",
    "famiglia": "H",
-   "nome": "Servizi per Sottrazione",
+   "nome": "Meno servizi, prezzo più basso",
    "definizione": "Si tolgono ristorante, sale meeting, palestra o reception e si investe solo in ciò che il target usa davvero: prezzo più basso, promessa più chiara.",
    "maturita": "emergente",
    "correlati": [
     "H01",
     "H03"
-   ]
+   ],
+   "nome_en": "Servizi per Sottrazione"
   },
   {
    "codice": "H07",
    "famiglia": "H",
-   "nome": "Beta Permanente",
+   "nome": "Hotel laboratorio",
    "definizione": "L'hotel come laboratorio: camere prototipo e feedback degli ospiti usati per progettare le strutture future.",
    "maturita": "nascente",
    "correlati": [
     "H01"
-   ]
+   ],
+   "nome_en": "Beta Permanente"
   },
   {
    "codice": "I01",
    "famiglia": "I",
-   "nome": "Stagione Invertita",
+   "nome": "Aperto quando gli altri chiudono",
    "definizione": "Aperti quando gli altri chiudono (mare d'inverno, montagna fuori stagione).",
    "maturita": "nascente",
    "correlati": [
     "B03"
-   ]
+   ],
+   "nome_en": "Stagione Invertita"
   },
   {
    "codice": "I02",
    "famiglia": "I",
-   "nome": "Solo Infrasettimanale",
+   "nome": "Aperto solo in settimana",
    "definizione": "Aperto solo in giorni specifici.",
    "maturita": "nascente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Solo Infrasettimanale"
   },
   {
    "codice": "I03",
    "famiglia": "I",
-   "nome": "Slow Obbligato",
+   "nome": "Ritmi lenti obbligatori",
    "definizione": "Ritmi imposti dalla struttura: niente wifi, orari, silenzio.",
    "maturita": "emergente",
    "correlati": [
     "D03",
     "A04"
-   ]
+   ],
+   "nome_en": "Slow Obbligato"
   },
   {
    "codice": "J01",
    "famiglia": "J",
-   "nome": "Anti-Lusso-Patinato",
+   "nome": "Lusso senza ostentazione",
    "definizione": "Il lusso è sottrazione: materiali grezzi, niente ostentazione.",
    "maturita": "consolidato",
    "correlati": [
     "A05",
     "F01"
-   ]
+   ],
+   "nome_en": "Anti-Lusso-Patinato"
   },
   {
    "codice": "J02",
    "famiglia": "J",
-   "nome": "Anti-Design-da-Rivista",
+   "nome": "Vissuto, non da rivista",
    "definizione": "Vissuto, imperfetto, mismatched: l'opposto dell'hotel da shooting.",
    "maturita": "emergente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Anti-Design-da-Rivista"
   },
   {
    "codice": "J03",
    "famiglia": "J",
-   "nome": "Anti-Wellness-Fuffa",
+   "nome": "Benessere medico, non spa decorativa",
    "definizione": "Rifiuti la spa decorativa e ti rifondi con protocolli medici.",
    "maturita": "consolidato",
    "correlati": [
     "D05"
-   ]
+   ],
+   "nome_en": "Anti-Wellness-Fuffa"
   },
   {
    "codice": "J04",
    "famiglia": "J",
-   "nome": "Anti-Animazione",
+   "nome": "Niente animazione",
    "definizione": "Silenzio o cultura locale al posto dell'animazione, in un contesto dove tutti la fanno.",
    "maturita": "emergente",
    "correlati": [
     "A04",
     "F05"
-   ]
+   ],
+   "nome_en": "Anti-Animazione"
   },
   {
    "codice": "K01",
    "famiglia": "K",
-   "nome": "Manifesto Esplicito",
+   "nome": "Un manifesto dichiarato",
    "definizione": "Una visione dichiarata che filtra gli ospiti a monte.",
    "maturita": "emergente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Manifesto Esplicito"
   },
   {
    "codice": "K02",
    "famiglia": "K",
-   "nome": "Filiera Misurata",
+   "nome": "Filiera corta con i numeri",
    "definizione": "Km zero dichiarato con numeri pubblici e verificabili.",
    "maturita": "nascente",
    "correlati": [
     "E04"
-   ]
+   ],
+   "nome_en": "Filiera Misurata"
   },
   {
    "codice": "K03",
    "famiglia": "K",
-   "nome": "Carbon Trasparente",
+   "nome": "Emissioni misurate e pubblicate",
    "definizione": "Emissioni misurate, certificate e pubblicate.",
    "maturita": "emergente",
    "correlati": [
     "K05"
-   ]
+   ],
+   "nome_en": "Carbon Trasparente"
   },
   {
    "codice": "K04",
    "famiglia": "K",
-   "nome": "Plant-Based Manifesto",
+   "nome": "Cucina solo vegetale",
    "definizione": "Il vegetale come asse identitario, non come opzione di menù.",
    "maturita": "emergente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Plant-Based Manifesto"
   },
   {
    "codice": "K05",
    "famiglia": "K",
-   "nome": "Climate-First",
+   "nome": "Ambiente al centro",
    "definizione": "L'impatto ambientale come principio di progetto e di comunicazione.",
    "maturita": "consolidato",
    "correlati": [
     "K03"
-   ]
+   ],
+   "nome_en": "Climate-First"
   },
   {
    "codice": "K06",
    "famiglia": "K",
-   "nome": "Materiale-Manifesto",
+   "nome": "Un materiale come manifesto",
    "definizione": "Un materiale dominante racconta la visione (bambù, legno, terra).",
    "maturita": "emergente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Materiale-Manifesto"
   },
   {
    "codice": "K07",
    "famiglia": "K",
-   "nome": "Conservation",
+   "nome": "L'hotel che protegge la natura",
    "definizione": "L'hotel esiste per finanziare la tutela di un ecosistema.",
    "maturita": "consolidato",
    "correlati": [
     "K01"
-   ]
+   ],
+   "nome_en": "Conservation"
   },
   {
    "codice": "L01",
    "famiglia": "L",
-   "nome": "Adults Only / Couples Only",
+   "nome": "Solo adulti",
    "definizione": "Vietato ai minori come regola d'accesso.",
    "maturita": "consolidato",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Adults Only / Couples Only"
   },
   {
    "codice": "L02",
    "famiglia": "L",
-   "nome": "Family Only",
+   "nome": "Solo famiglie",
    "definizione": "Solo famiglie con bambini.",
    "maturita": "emergente",
    "correlati": [
     "C01"
-   ]
+   ],
+   "nome_en": "Family Only"
   },
   {
    "codice": "L03",
    "famiglia": "L",
-   "nome": "Pets Only",
+   "nome": "Solo animali",
    "definizione": "L'hotel esiste per l'animale; l'umano accompagna.",
    "maturita": "emergente",
    "correlati": [
     "C05"
-   ]
+   ],
+   "nome_en": "Pets Only"
   },
   {
    "codice": "L04",
    "famiglia": "L",
-   "nome": "Sport Only",
+   "nome": "Solo sportivi",
    "definizione": "Accesso riservato a chi pratica uno sport, con livello dichiarato.",
    "maturita": "nascente",
    "correlati": [
     "C04"
-   ]
+   ],
+   "nome_en": "Sport Only"
   },
   {
    "codice": "L05",
    "famiglia": "L",
-   "nome": "Members Only",
+   "nome": "Solo soci",
    "definizione": "Private club: entri se accettato o presentato.",
    "maturita": "consolidato",
    "correlati": [
     "G03"
-   ]
+   ],
+   "nome_en": "Members Only"
   },
   {
    "codice": "L06",
    "famiglia": "L",
-   "nome": "Women Only",
+   "nome": "Solo donne",
    "definizione": "Struttura riservata alle donne.",
    "maturita": "emergente",
    "correlati": [
     "C06"
-   ]
+   ],
+   "nome_en": "Women Only"
   },
   {
    "codice": "L07",
    "famiglia": "L",
-   "nome": "Solo-Travelers Only",
+   "nome": "Solo chi viaggia da solo",
    "definizione": "Rifiuta coppie e gruppi: solo chi viaggia da solo.",
    "maturita": "emergente",
    "correlati": [
     "C02"
-   ]
+   ],
+   "nome_en": "Solo-Travelers Only"
   },
   {
    "codice": "L08",
    "famiglia": "L",
-   "nome": "Buyout / Event Only",
+   "nome": "Solo eventi privati",
    "definizione": "La struttura esiste solo per eventi privati in esclusiva.",
    "maturita": "nascente",
-   "correlati": []
+   "correlati": [],
+   "nome_en": "Buyout / Event Only"
   }
  ],
  "categorie": [
   {
    "id": "CAT01",
-   "nome": "Longevity Hotel",
+   "nome": "Hotel della longevità",
    "definizione": "Hotel-clinica con medicina della longevità, screening e protocolli.",
    "stadio": "emergente",
    "pattern_affini": [
     "D05",
     "J03"
-   ]
+   ],
+   "nome_en": "Longevity Hotel"
   },
   {
    "id": "CAT02",
-   "nome": "Sleep Tourism",
+   "nome": "Turismo del sonno",
    "definizione": "L'hotel come prodotto del sonno.",
    "stadio": "emergente",
    "pattern_affini": [
     "D02"
-   ]
+   ],
+   "nome_en": "Sleep Tourism"
   },
   {
    "id": "CAT03",
-   "nome": "Glamping di Lusso",
+   "nome": "Glamping di lusso",
    "definizione": "Tende e strutture leggere di fascia alta in natura.",
    "stadio": "maturo",
    "pattern_affini": [
     "F03",
     "B05"
-   ]
+   ],
+   "nome_en": "Glamping di Lusso"
   },
   {
    "id": "CAT04",
-   "nome": "Boutique Hostel",
+   "nome": "Ostello di design",
    "definizione": "Ostello di design per chi accetta la stanza condivisa.",
    "stadio": "maturo",
    "pattern_affini": [
     "D04",
     "H03"
-   ]
+   ],
+   "nome_en": "Boutique Hostel"
   },
   {
    "id": "CAT05",
-   "nome": "Workation Hub",
+   "nome": "Lavoro + vacanza",
    "definizione": "Hotel per remote worker di lunga durata.",
    "stadio": "emergente",
    "pattern_affini": [
     "C08",
     "D04"
-   ]
+   ],
+   "nome_en": "Workation Hub"
   },
   {
    "id": "CAT06",
-   "nome": "Retreat Center",
+   "nome": "Hotel per ritiri",
    "definizione": "Hotel-ritiro tematico (yoga, silenzio, detox), permanente o pop-up.",
    "stadio": "emergente",
    "pattern_affini": [
     "D05",
     "B04",
     "D03"
-   ]
+   ],
+   "nome_en": "Retreat Center"
   },
   {
    "id": "CAT07",
-   "nome": "Wellness Medico",
+   "nome": "Benessere medico",
    "definizione": "Hotel-clinica diagnostico/preventivo.",
    "stadio": "emergente",
    "pattern_affini": [
     "J03",
     "D05"
-   ]
+   ],
+   "nome_en": "Wellness Medico"
   },
   {
    "id": "CAT08",
-   "nome": "Sober Hospitality",
+   "nome": "Hotel senza alcol",
    "definizione": "Hotel alcohol-free o mindful drinking.",
    "stadio": "nascente",
    "pattern_affini": [
     "K01",
     "D05"
-   ]
+   ],
+   "nome_en": "Sober Hospitality"
   },
   {
    "id": "CAT09",
-   "nome": "Sport Performance Hotel",
+   "nome": "Hotel per lo sport",
    "definizione": "Hotel-centro sportivo per atleti e amatori evoluti.",
    "stadio": "maturo",
    "pattern_affini": [
     "C04",
     "L04"
-   ]
+   ],
+   "nome_en": "Sport Performance Hotel"
   },
   {
    "id": "CAT10",
-   "nome": "Climate-Forward Hotel",
+   "nome": "Hotel a basso impatto",
    "definizione": "Impatto ambientale dichiarato, misurato e certificato.",
    "stadio": "emergente",
    "pattern_affini": [
     "K05",
     "K03"
-   ]
+   ],
+   "nome_en": "Climate-Forward Hotel"
   },
   {
    "id": "CAT11",
-   "nome": "Agriturismo Premium",
+   "nome": "Agriturismo di alta gamma",
    "definizione": "Azienda agricola riposizionata in fascia alta.",
    "stadio": "emergente",
    "pattern_affini": [
     "E04",
     "E05"
-   ]
+   ],
+   "nome_en": "Agriturismo Premium"
   },
   {
    "id": "CAT12",
-   "nome": "Slow Travel Hub",
+   "nome": "Base per il turismo lento",
    "definizione": "Base per soggiorni lenti con attività territoriali.",
    "stadio": "emergente",
    "pattern_affini": [
     "I03",
     "F05"
-   ]
+   ],
+   "nome_en": "Slow Travel Hub"
   },
   {
    "id": "CAT13",
-   "nome": "Cultural Residency Hotel",
+   "nome": "Hotel con residenze d'artista",
    "definizione": "Ospitalità + residenza artistica o culturale.",
    "stadio": "nascente",
    "pattern_affini": [
     "E03",
     "E02"
-   ]
+   ],
+   "nome_en": "Cultural Residency Hotel"
   },
   {
    "id": "CAT14",
-   "nome": "Member Club Hotel",
+   "nome": "Club privato con camere",
    "definizione": "Private club urbano con camere.",
    "stadio": "maturo",
    "pattern_affini": [
     "L05",
     "G03"
-   ]
+   ],
+   "nome_en": "Member Club Hotel"
   },
   {
    "id": "CAT15",
-   "nome": "Branded Residences",
+   "nome": "Case con il marchio dell'hotel",
    "definizione": "Il brand alberghiero si estende al residenziale.",
    "stadio": "emergente",
    "pattern_affini": [
     "G02"
-   ]
+   ],
+   "nome_en": "Branded Residences"
   },
   {
    "id": "CAT16",
-   "nome": "Nature Hotel",
+   "nome": "Hotel immerso nella natura",
    "definizione": "Immersione naturalistica come prodotto centrale.",
    "stadio": "emergente",
    "pattern_affini": [
     "K07",
     "K06",
     "F03"
-   ]
+   ],
+   "nome_en": "Nature Hotel"
   },
   {
    "id": "CAT17",
-   "nome": "Hybrid Stay / Extended-Stay Urbano",
+   "nome": "Tra hotel e appartamento",
    "definizione": "A metà tra hotel, appartamento e co-living: cucina, spazi di lavoro, soggiorni da una notte a mesi.",
    "stadio": "emergente",
    "pattern_affini": [
     "C08",
     "D04",
     "H01"
-   ]
+   ],
+   "nome_en": "Hybrid Stay / Extended-Stay Urbano"
   },
   {
    "id": "CAT18",
-   "nome": "Hotel Digital-First",
+   "nome": "Hotel senza reception",
    "definizione": "Senza reception fisica: check-in, chiavi e assistenza passano dall'app o da remoto.",
    "stadio": "emergente",
    "pattern_affini": [
     "H01",
     "H06",
     "H07"
-   ]
+   ],
+   "nome_en": "Hotel Digital-First"
   },
   {
    "id": "CAT19",
-   "nome": "Micro-Room / Sleeper Cabin",
+   "nome": "Cabine e micro-camere in città",
    "definizione": "Cabine o camere minime in centro città a prezzo accessibile, ispirate a capsule hotel e vagoni letto.",
    "stadio": "emergente",
    "pattern_affini": [
     "C02",
     "H06"
-   ]
+   ],
+   "nome_en": "Micro-Room / Sleeper Cabin"
   }
  ],
  "esempi": [
