@@ -5,6 +5,11 @@ L'albergatore inserisce l'URL e riceve subito un voto 0-100 su quello che un osp
 
 La domanda a cui risponde: **in quella schermata c'è un posizionamento, e viene eseguito bene?**
 
+## Dove vive
+
+- **Diagnosi automatica:** `hotelpositioning.com/diagnosi`. L'albergatore inserisce l'URL e vede subito voto, frase di posizionamento e segnalazioni.
+- **Smontaggio a mano:** resta su `hotelpositioning.com/smontaggio`. La diagnosi ci porta con un pulsante, passando URL e nome dell'hotel per non farli riscrivere.
+
 ## Cosa fa la macchina, cosa fa Francesco
 
 | | Diagnosi automatica | Smontaggio a mano |
