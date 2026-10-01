@@ -44,6 +44,14 @@ def main() -> int:
             if c not in patterns:
                 errors.append(f"{p['codice']}: correlato inesistente {c}")
 
+    motori = {m["id"] for m in lib.get("motori", [])}
+    for p in lib["pattern"]:
+        if motori:
+            if not p.get("motore") or set(p["motore"]) - motori:
+                errors.append(f"{p['codice']}: motore mancante o non valido {p.get('motore')}")
+            if not isinstance(p.get("gestione_minima"), int) or not 0 <= p["gestione_minima"] <= 10:
+                errors.append(f"{p['codice']}: gestione_minima non valida")
+
     names = Counter(p["nome"].lower() for p in lib["pattern"])
     for n, k in names.items():
         if k > 1:
@@ -71,6 +79,8 @@ def main() -> int:
         for cid in e["categorie"]:
             if cid not in cats:
                 errors.append(f"{eid}: categoria inesistente {cid}")
+        if e.get("motore") and set(e["motore"]) - {m["id"] for m in lib.get("motori", [])}:
+            errors.append(f"{eid}: motore non valido {e['motore']}")
         if not e["pattern"] and not e["categorie"]:
             errors.append(f"{eid}: né pattern né categoria")
         if e["verifica"] == "verificato" and not e["evidenza"]:
@@ -110,11 +120,13 @@ def export(lib, patterns, cats):
     fam = {f["codice"]: f["nome"] for f in lib["famiglie"]}
     with open(EXPORT / "pattern.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
-        w.writerow(["codice", "famiglia", "nome", "definizione", "maturita", "correlati", "esempi"])
+        w.writerow(["codice", "famiglia", "nome", "nome_tecnico", "definizione", "maturita", "motore",
+                    "gestione_minima", "correlati", "esempi"])
         for p in lib["pattern"]:
             ex = [e["nome"] for e in lib["esempi"] if p["codice"] in e["pattern"]]
-            w.writerow([p["codice"], fam[p["famiglia"]], p["nome"], p["definizione"],
-                        p["maturita"], " ".join(p["correlati"]), "; ".join(ex)])
+            w.writerow([p["codice"], fam[p["famiglia"]], p["nome"], p.get("nome_en", ""), p["definizione"],
+                        p["maturita"], " ".join(p.get("motore", [])), p.get("gestione_minima", ""),
+                        " ".join(p["correlati"]), "; ".join(ex)])
     with open(EXPORT / "esempi.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["id", "nome", "paese", "area", "luogo", "proprieta", "stato", "tier",

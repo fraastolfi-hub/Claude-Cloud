@@ -29,7 +29,8 @@
    },
    "caveat": "Posizionamento forte ma business non sostenibile o identità poi abbandonata. È un attributo separato dal tier."
   },
-  "nomi": "I nomi sono in italiano semplice; 'nome_en' conserva l'etichetta tecnica originale, usata anche nella ricerca del sito."
+  "nomi": "I nomi sono in italiano semplice; 'nome_en' conserva l'etichetta tecnica originale, usata anche nella ricerca del sito.",
+  "motore": "Dalla guida 'Come funziona davvero il positioning di un hotel': 'motore' indica per quale profilo il pattern è più adatto, 'gestione_minima' il voto minimo di Operations (0-10) sotto cui il pattern non regge. Sugli esempi 'motore' è una valutazione editoriale."
  },
  "famiglie": [
   {
@@ -127,7 +128,11 @@
    "correlati": [
     "H04"
    ],
-   "nome_en": "Anti-OTA"
+   "nome_en": "Anti-OTA",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "A02",
@@ -138,7 +143,11 @@
    "correlati": [
     "G03"
    ],
-   "nome_en": "Anti-Catena / Anti-Finto-Boutique"
+   "nome_en": "Anti-Catena / Anti-Finto-Boutique",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 6
   },
   {
    "codice": "A03",
@@ -149,7 +158,12 @@
    "correlati": [
     "H01"
    ],
-   "nome_en": "Anti-Business-Hotel"
+   "nome_en": "Anti-Business-Hotel",
+   "motore": [
+    "operations",
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "A04",
@@ -161,7 +175,11 @@
     "J04",
     "I03"
    ],
-   "nome_en": "Anti-Resort"
+   "nome_en": "Anti-Resort",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "A05",
@@ -172,7 +190,12 @@
    "correlati": [
     "J01"
    ],
-   "nome_en": "Anti-Instagrammabile"
+   "nome_en": "Anti-Instagrammabile",
+   "motore": [
+    "narrativa",
+    "capital"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "B01",
@@ -183,7 +206,12 @@
    "correlati": [
     "D01"
    ],
-   "nome_en": "Micro-scala (Solo X camere)"
+   "nome_en": "Micro-scala (Solo X camere)",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "B02",
@@ -194,7 +222,12 @@
    "correlati": [
     "D01"
    ],
-   "nome_en": "Single Seating"
+   "nome_en": "Single Seating",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "B03",
@@ -205,7 +238,12 @@
    "correlati": [
     "I01"
    ],
-   "nome_en": "Stagione Corta Dichiarata"
+   "nome_en": "Stagione Corta Dichiarata",
+   "motore": [
+    "location",
+    "narrativa"
+   ],
+   "gestione_minima": 6
   },
   {
    "codice": "B04",
@@ -216,7 +254,12 @@
    "correlati": [
     "D05"
    ],
-   "nome_en": "Soggiorno Minimo Lungo"
+   "nome_en": "Soggiorno Minimo Lungo",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "B05",
@@ -227,7 +270,12 @@
    "correlati": [
     "F03"
    ],
-   "nome_en": "Accesso Difficile / Car-Free"
+   "nome_en": "Accesso Difficile / Car-Free",
+   "motore": [
+    "location",
+    "narrativa"
+   ],
+   "gestione_minima": 6
   },
   {
    "codice": "C01",
@@ -238,7 +286,12 @@
    "correlati": [
     "L02"
    ],
-   "nome_en": "Family-Designed"
+   "nome_en": "Family-Designed",
+   "motore": [
+    "operations",
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "C02",
@@ -249,7 +302,11 @@
    "correlati": [
     "L07"
    ],
-   "nome_en": "Solo-Traveler-Designed"
+   "nome_en": "Solo-Traveler-Designed",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "C03",
@@ -258,7 +315,11 @@
    "definizione": "Pensato per una categoria professionale o uno stile di vita preciso.",
    "maturita": "emergente",
    "correlati": [],
-   "nome_en": "Profession / Lifestyle"
+   "nome_en": "Profession / Lifestyle",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "C04",
@@ -269,7 +330,12 @@
    "correlati": [
     "L04"
    ],
-   "nome_en": "Sport-Expertise"
+   "nome_en": "Sport-Expertise",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "C05",
@@ -280,7 +346,11 @@
    "correlati": [
     "L03"
    ],
-   "nome_en": "Pet-Welcomed Seriously"
+   "nome_en": "Pet-Welcomed Seriously",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 6
   },
   {
    "codice": "C06",
@@ -291,7 +361,11 @@
    "correlati": [
     "L06"
    ],
-   "nome_en": "Identity-Explicit"
+   "nome_en": "Identity-Explicit",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "C07",
@@ -300,7 +374,11 @@
    "definizione": "La generazione come asse identitario (over-65 attivi, Gen Z).",
    "maturita": "nascente",
    "correlati": [],
-   "nome_en": "Generazionale"
+   "nome_en": "Generazionale",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "C08",
@@ -311,7 +389,12 @@
    "correlati": [
     "D04"
    ],
-   "nome_en": "Remote Worker"
+   "nome_en": "Remote Worker",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "D01",
@@ -323,7 +406,12 @@
     "B01",
     "G01"
    ],
-   "nome_en": "Vendiamo lo Chef"
+   "nome_en": "Vendiamo lo Chef",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "D02",
@@ -334,7 +422,12 @@
    "correlati": [
     "J03"
    ],
-   "nome_en": "Vendiamo il Sonno"
+   "nome_en": "Vendiamo il Sonno",
+   "motore": [
+    "operations",
+    "capital"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "D03",
@@ -345,7 +438,12 @@
    "correlati": [
     "I03"
    ],
-   "nome_en": "Vendiamo il Silenzio"
+   "nome_en": "Vendiamo il Silenzio",
+   "motore": [
+    "narrativa",
+    "location"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "D04",
@@ -356,7 +454,12 @@
    "correlati": [
     "C08"
    ],
-   "nome_en": "Vendiamo la Connessione"
+   "nome_en": "Vendiamo la Connessione",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "D05",
@@ -368,7 +471,12 @@
     "B04",
     "J03"
    ],
-   "nome_en": "Vendiamo la Trasformazione"
+   "nome_en": "Vendiamo la Trasformazione",
+   "motore": [
+    "operations",
+    "narrativa"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "D06",
@@ -377,7 +485,11 @@
    "definizione": "Servizi che tolgono attrito e scelte invece di aggiungerne.",
    "maturita": "nascente",
    "correlati": [],
-   "nome_en": "Vendiamo il Tempo"
+   "nome_en": "Vendiamo il Tempo",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "D07",
@@ -389,7 +501,12 @@
     "A03",
     "D04"
    ],
-   "nome_en": "Hotel come Piazza di Quartiere"
+   "nome_en": "Hotel come Piazza di Quartiere",
+   "motore": [
+    "narrativa",
+    "location"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "E01",
@@ -400,7 +517,11 @@
    "correlati": [
     "E04"
    ],
-   "nome_en": "Hotel-Bottega"
+   "nome_en": "Hotel-Bottega",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "E02",
@@ -411,7 +532,12 @@
    "correlati": [
     "E03"
    ],
-   "nome_en": "Hotel-Museo / Collezione"
+   "nome_en": "Hotel-Museo / Collezione",
+   "motore": [
+    "capital",
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "E03",
@@ -423,7 +549,11 @@
     "E02",
     "G03"
    ],
-   "nome_en": "Hotel-Residenza Artistica"
+   "nome_en": "Hotel-Residenza Artistica",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "E04",
@@ -434,7 +564,12 @@
    "correlati": [
     "K02"
    ],
-   "nome_en": "Hotel-Azienda Agricola"
+   "nome_en": "Hotel-Azienda Agricola",
+   "motore": [
+    "narrativa",
+    "location"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "E05",
@@ -445,7 +580,12 @@
    "correlati": [
     "E04"
    ],
-   "nome_en": "Hotel-Scuola"
+   "nome_en": "Hotel-Scuola",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "E06",
@@ -456,7 +596,12 @@
    "correlati": [
     "J01"
    ],
-   "nome_en": "Hotel-Showroom"
+   "nome_en": "Hotel-Showroom",
+   "motore": [
+    "capital",
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "F01",
@@ -467,7 +612,12 @@
    "correlati": [
     "J01"
    ],
-   "nome_en": "Albergo Diffuso"
+   "nome_en": "Albergo Diffuso",
+   "motore": [
+    "location",
+    "narrativa"
+   ],
+   "gestione_minima": 6
   },
   {
    "codice": "F02",
@@ -478,7 +628,11 @@
    "correlati": [
     "G02"
    ],
-   "nome_en": "Ambasciata Regionale"
+   "nome_en": "Ambasciata Regionale",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "F03",
@@ -489,7 +643,11 @@
    "correlati": [
     "B05"
    ],
-   "nome_en": "Single-View"
+   "nome_en": "Single-View",
+   "motore": [
+    "location"
+   ],
+   "gestione_minima": 6
   },
   {
    "codice": "F04",
@@ -498,7 +656,12 @@
    "definizione": "L'architettura storica o iconica è il prodotto, non la cornice.",
    "maturita": "consolidato",
    "correlati": [],
-   "nome_en": "Edificio-Manifesto"
+   "nome_en": "Edificio-Manifesto",
+   "motore": [
+    "capital",
+    "location"
+   ],
+   "gestione_minima": 6
   },
   {
    "codice": "F05",
@@ -509,7 +672,12 @@
    "correlati": [
     "J04"
    ],
-   "nome_en": "Cultura Locale come Prodotto"
+   "nome_en": "Cultura Locale come Prodotto",
+   "motore": [
+    "location",
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "G01",
@@ -518,7 +686,11 @@
    "definizione": "Un fondatore riconoscibile e narrato è il brand.",
    "maturita": "consolidato",
    "correlati": [],
-   "nome_en": "Founder-Persona"
+   "nome_en": "Founder-Persona",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "G02",
@@ -529,7 +701,11 @@
    "correlati": [
     "F02"
    ],
-   "nome_en": "N-Generazioni"
+   "nome_en": "N-Generazioni",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "G03",
@@ -540,7 +716,12 @@
    "correlati": [
     "A02"
    ],
-   "nome_en": "Curator-Driven"
+   "nome_en": "Curator-Driven",
+   "motore": [
+    "narrativa",
+    "capital"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "G04",
@@ -549,7 +730,12 @@
    "definizione": "Il team è famoso, non l'hotel.",
    "maturita": "emergente",
    "correlati": [],
-   "nome_en": "Staff-as-Character"
+   "nome_en": "Staff-as-Character",
+   "motore": [
+    "operations",
+    "narrativa"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "H01",
@@ -560,7 +746,11 @@
    "correlati": [
     "A03"
    ],
-   "nome_en": "Self Check-in / Tech-First"
+   "nome_en": "Self Check-in / Tech-First",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "H02",
@@ -571,7 +761,11 @@
    "correlati": [
     "G04"
    ],
-   "nome_en": "Host al posto della Reception"
+   "nome_en": "Host al posto della Reception",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "H03",
@@ -580,7 +774,11 @@
    "definizione": "Un solo tipo di camera e un prezzo trasparente, niente upsell nascosti.",
    "maturita": "emergente",
    "correlati": [],
-   "nome_en": "Tariffa Unica / Camera Unica"
+   "nome_en": "Tariffa Unica / Camera Unica",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "H04",
@@ -591,7 +789,11 @@
    "correlati": [
     "A01"
    ],
-   "nome_en": "No Online Booking"
+   "nome_en": "No Online Booking",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "H05",
@@ -600,7 +802,11 @@
    "definizione": "Tutto incluso davvero, oppure niente incluso e paghi solo ciò che usi.",
    "maturita": "emergente",
    "correlati": [],
-   "nome_en": "All-Inclusive Radicale o Invertito"
+   "nome_en": "All-Inclusive Radicale o Invertito",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "H06",
@@ -612,7 +818,11 @@
     "H01",
     "H03"
    ],
-   "nome_en": "Servizi per Sottrazione"
+   "nome_en": "Servizi per Sottrazione",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "H07",
@@ -623,7 +833,11 @@
    "correlati": [
     "H01"
    ],
-   "nome_en": "Beta Permanente"
+   "nome_en": "Beta Permanente",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "I01",
@@ -634,7 +848,11 @@
    "correlati": [
     "B03"
    ],
-   "nome_en": "Stagione Invertita"
+   "nome_en": "Stagione Invertita",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "I02",
@@ -643,7 +861,12 @@
    "definizione": "Aperto solo in giorni specifici.",
    "maturita": "nascente",
    "correlati": [],
-   "nome_en": "Solo Infrasettimanale"
+   "nome_en": "Solo Infrasettimanale",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "I03",
@@ -655,7 +878,11 @@
     "D03",
     "A04"
    ],
-   "nome_en": "Slow Obbligato"
+   "nome_en": "Slow Obbligato",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "J01",
@@ -667,7 +894,12 @@
     "A05",
     "F01"
    ],
-   "nome_en": "Anti-Lusso-Patinato"
+   "nome_en": "Anti-Lusso-Patinato",
+   "motore": [
+    "capital",
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "J02",
@@ -676,7 +908,12 @@
    "definizione": "Vissuto, imperfetto, mismatched: l'opposto dell'hotel da shooting.",
    "maturita": "emergente",
    "correlati": [],
-   "nome_en": "Anti-Design-da-Rivista"
+   "nome_en": "Anti-Design-da-Rivista",
+   "motore": [
+    "narrativa",
+    "capital"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "J03",
@@ -687,7 +924,12 @@
    "correlati": [
     "D05"
    ],
-   "nome_en": "Anti-Wellness-Fuffa"
+   "nome_en": "Anti-Wellness-Fuffa",
+   "motore": [
+    "operations",
+    "narrativa"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "J04",
@@ -699,7 +941,11 @@
     "A04",
     "F05"
    ],
-   "nome_en": "Anti-Animazione"
+   "nome_en": "Anti-Animazione",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "K01",
@@ -708,7 +954,11 @@
    "definizione": "Una visione dichiarata che filtra gli ospiti a monte.",
    "maturita": "emergente",
    "correlati": [],
-   "nome_en": "Manifesto Esplicito"
+   "nome_en": "Manifesto Esplicito",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "K02",
@@ -719,7 +969,12 @@
    "correlati": [
     "E04"
    ],
-   "nome_en": "Filiera Misurata"
+   "nome_en": "Filiera Misurata",
+   "motore": [
+    "operations",
+    "narrativa"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "K03",
@@ -730,7 +985,12 @@
    "correlati": [
     "K05"
    ],
-   "nome_en": "Carbon Trasparente"
+   "nome_en": "Carbon Trasparente",
+   "motore": [
+    "operations",
+    "narrativa"
+   ],
+   "gestione_minima": 8
   },
   {
    "codice": "K04",
@@ -739,7 +999,12 @@
    "definizione": "Il vegetale come asse identitario, non come opzione di menù.",
    "maturita": "emergente",
    "correlati": [],
-   "nome_en": "Plant-Based Manifesto"
+   "nome_en": "Plant-Based Manifesto",
+   "motore": [
+    "narrativa",
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "K05",
@@ -750,7 +1015,12 @@
    "correlati": [
     "K03"
    ],
-   "nome_en": "Climate-First"
+   "nome_en": "Climate-First",
+   "motore": [
+    "capital",
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "K06",
@@ -759,7 +1029,12 @@
    "definizione": "Un materiale dominante racconta la visione (bambù, legno, terra).",
    "maturita": "emergente",
    "correlati": [],
-   "nome_en": "Materiale-Manifesto"
+   "nome_en": "Materiale-Manifesto",
+   "motore": [
+    "capital",
+    "narrativa"
+   ],
+   "gestione_minima": 6
   },
   {
    "codice": "K07",
@@ -770,7 +1045,12 @@
    "correlati": [
     "K01"
    ],
-   "nome_en": "Conservation"
+   "nome_en": "Conservation",
+   "motore": [
+    "location",
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "L01",
@@ -779,7 +1059,11 @@
    "definizione": "Vietato ai minori come regola d'accesso.",
    "maturita": "consolidato",
    "correlati": [],
-   "nome_en": "Adults Only / Couples Only"
+   "nome_en": "Adults Only / Couples Only",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "L02",
@@ -790,7 +1074,12 @@
    "correlati": [
     "C01"
    ],
-   "nome_en": "Family Only"
+   "nome_en": "Family Only",
+   "motore": [
+    "operations",
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "L03",
@@ -801,7 +1090,11 @@
    "correlati": [
     "C05"
    ],
-   "nome_en": "Pets Only"
+   "nome_en": "Pets Only",
+   "motore": [
+    "operations"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "L04",
@@ -812,7 +1105,11 @@
    "correlati": [
     "C04"
    ],
-   "nome_en": "Sport Only"
+   "nome_en": "Sport Only",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "L05",
@@ -823,7 +1120,12 @@
    "correlati": [
     "G03"
    ],
-   "nome_en": "Members Only"
+   "nome_en": "Members Only",
+   "motore": [
+    "narrativa",
+    "capital"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "L06",
@@ -834,7 +1136,11 @@
    "correlati": [
     "C06"
    ],
-   "nome_en": "Women Only"
+   "nome_en": "Women Only",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "L07",
@@ -845,7 +1151,11 @@
    "correlati": [
     "C02"
    ],
-   "nome_en": "Solo-Travelers Only"
+   "nome_en": "Solo-Travelers Only",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   },
   {
    "codice": "L08",
@@ -854,7 +1164,11 @@
    "definizione": "La struttura esiste solo per eventi privati in esclusiva.",
    "maturita": "nascente",
    "correlati": [],
-   "nome_en": "Buyout / Event Only"
+   "nome_en": "Buyout / Event Only",
+   "motore": [
+    "narrativa"
+   ],
+   "gestione_minima": 7
   }
  ],
  "categorie": [
@@ -1095,7 +1409,10 @@
    "fonti": [
     "Harvard Business School, caso 'Sextantio' (E. Cantillon, 2006)"
    ],
-   "note": ""
+   "note": "",
+   "motore": [
+    "narrativa"
+   ]
   },
   {
    "id": "borgo-egnazia",
@@ -1117,7 +1434,11 @@
    "sito": "https://www.borgoegnazia.com",
    "evidenza": "Famiglia Melpignano, aperto nel 2010. Borgo pugliese costruito ex novo, la cultura locale (massaie, musica popolare) al posto dell'intrattenimento da resort.",
    "fonti": [],
-   "note": "Su J04 il caso è T2: c'è un'offerta bambini strutturata, il rifiuto riguarda l'animazione standard, non le attività."
+   "note": "Su J04 il caso è T2: c'è un'offerta bambini strutturata, il rifiuto riguarda l'animazione standard, non le attività.",
+   "motore": [
+    "capital",
+    "narrativa"
+   ]
   },
   {
    "id": "eremito",
@@ -1146,7 +1467,10 @@
     "https://gamberorossointernational.com/?p=523204",
     "https://www.iol.co.za/travel/the-importance-of-being-idle-1870386"
    ],
-   "note": "Correzione: non è un 'ex monastero del XIV secolo' in uso, è una ricostruzione in stile eremo. Su K04 è T2: vegetariano, non vegano."
+   "note": "Correzione: non è un 'ex monastero del XIV secolo' in uso, è una ricostruzione in stile eremo. Su K04 è T2: vegetariano, non vegano.",
+   "motore": [
+    "narrativa"
+   ]
   },
   {
    "id": "borgo-pignano",
@@ -1193,7 +1517,11 @@
    "fonti": [
     "https://www.dezeen.com/2021/07/05/hotel-castello-di-reschio-umbria-italy/amp/"
    ],
-   "note": "Correzione: NON è una struttura solo eventi (L08). È un hotel aperto al pubblico."
+   "note": "Correzione: NON è una struttura solo eventi (L08). È un hotel aperto al pubblico.",
+   "motore": [
+    "capital",
+    "narrativa"
+   ]
   },
   {
    "id": "hotel-caruso",
@@ -1214,7 +1542,11 @@
    "sito": "https://www.belmond.com",
    "evidenza": "Palazzo dell'XI secolo sospeso sulla costiera, la vista è il prodotto.",
    "fonti": [],
-   "note": "Gruppo Belmond (LVMH): utile come ispirazione, non come modello per un indipendente."
+   "note": "Gruppo Belmond (LVMH): utile come ispirazione, non come modello per un indipendente.",
+   "motore": [
+    "location",
+    "capital"
+   ]
   },
   {
    "id": "splendido-portofino",
@@ -1235,7 +1567,10 @@
    "sito": "https://www.belmond.com/hotels/europe/italy/portofino/belmond-hotel-splendido/",
    "evidenza": "Ex monastero sopra Portofino, apertura stagionale.",
    "fonti": [],
-   "note": "Verificare il secolo del monastero (il file v3 dice XIV, altre fonti XVI) e il calendario di apertura."
+   "note": "Verificare il secolo del monastero (il file v3 dice XIV, altre fonti XVI) e il calendario di apertura.",
+   "motore": [
+    "location"
+   ]
   },
   {
    "id": "casa-cipriani",
@@ -1262,7 +1597,11 @@
    "fonti": [
     "https://www.hotelmanagement.net/development/casa-cipriani-enter-miami-market-boutique-luxury-offering"
    ],
-   "note": "Correzione: NON è 'Pets Only'. Sul sito era finito su L03 per un errore di codice."
+   "note": "Correzione: NON è 'Pets Only'. Sul sito era finito su L03 per un errore di codice.",
+   "motore": [
+    "location",
+    "narrativa"
+   ]
   },
   {
    "id": "monastero-santa-rosa",
@@ -1283,7 +1622,11 @@
    "sito": "https://www.monasterosantarosa.com",
    "evidenza": "Monastero del XVII secolo restaurato da Bianca Sharma, a picco sul mare.",
    "fonti": [],
-   "note": "Rimosso da tutti i pattern E (era agganciato per errore a Hotel-Bottega, Scuola, ecc.)."
+   "note": "Rimosso da tutti i pattern E (era agganciato per errore a Hotel-Bottega, Scuola, ecc.).",
+   "motore": [
+    "location",
+    "capital"
+   ]
   },
   {
    "id": "aman",
@@ -1366,7 +1709,11 @@
    "sito": "https://www.thepighotel.com",
    "evidenza": "Robin Hutson. 'Rusty beats shiny': interni vissuti, orto e menù da 25 miglia.",
    "fonti": [],
-   "note": ""
+   "note": "",
+   "motore": [
+    "operations",
+    "narrativa"
+   ]
   },
   {
    "id": "babylonstoren",
@@ -1412,7 +1759,11 @@
    "sito": "https://lanserhof.com",
    "evidenza": "LANS Med Concept: diagnostica e protocolli medici al posto della spa.",
    "fonti": [],
-   "note": ""
+   "note": "",
+   "motore": [
+    "operations",
+    "narrativa"
+   ]
   },
   {
    "id": "vivamayr",
@@ -1570,7 +1921,11 @@
    "sito": "https://www.singlethreadfarms.com",
    "evidenza": "Kyle e Katina Connaughton: ristorante tre stelle Michelin, fattoria e 5 camere.",
    "fonti": [],
-   "note": ""
+   "note": "",
+   "motore": [
+    "operations",
+    "narrativa"
+   ]
   },
   {
    "id": "inn-little-washington",
@@ -1636,7 +1991,10 @@
    "fonti": [
     "https://marriott.gcs-web.com/node/36046"
    ],
-   "note": "Acquisito da Marriott (annuncio aprile 2025, chiusura luglio 2025; 37 hotel). Rimosso da Anti-OTA: era un errore di codice. Segnale di trend: i brand lifestyle nati contro le catene finiscono dentro le major."
+   "note": "Acquisito da Marriott (annuncio aprile 2025, chiusura luglio 2025; 37 hotel). Rimosso da Anti-OTA: era un errore di codice. Segnale di trend: i brand lifestyle nati contro le catene finiscono dentro le major.",
+   "motore": [
+    "operations"
+   ]
   },
   {
    "id": "yotel",
@@ -1656,7 +2014,10 @@
    "sito": "https://www.yotel.com",
    "evidenza": "Simon Woodroffe. Cabine compatte, chioschi self check-in, robot per i bagagli.",
    "fonti": [],
-   "note": "Da verificare l'uso di H03 (tariffa unica)."
+   "note": "Da verificare l'uso di H03 (tariffa unica).",
+   "motore": [
+    "operations"
+   ]
   },
   {
    "id": "the-hoxton",
@@ -2043,7 +2404,10 @@
    "sito": "https://longitude131.com.au",
    "evidenza": "Baillie Lodges: tende di lusso con vista su Uluru.",
    "fonti": [],
-   "note": ""
+   "note": "",
+   "motore": [
+    "location"
+   ]
   },
   {
    "id": "la-manga-club",
@@ -2381,7 +2745,11 @@
     "D07",
     "L05"
    ],
-   "evidenza": "Ex sede della Midland Bank di Lutyens, aperto nel 2017 con 252 camere: ristoranti aperti al pubblico e, sopra, il livello riservato ai soci del Ned's Club con piscina sul tetto."
+   "evidenza": "Ex sede della Midland Bank di Lutyens, aperto nel 2017 con 252 camere: ristoranti aperti al pubblico e, sopra, il livello riservato ai soci del Ned's Club con piscina sul tetto.",
+   "motore": [
+    "capital",
+    "narrativa"
+   ]
   },
   {
    "area": "Nord America",
@@ -2405,7 +2773,10 @@
     "F04",
     "E02"
    ],
-   "evidenza": "Aperto nel 2019 nel terminal TWA di Eero Saarinen (1962): 512 camere insonorizzate, piscina sul tetto vista piste, cocktail bar dentro un Lockheed Constellation del 1958."
+   "evidenza": "Aperto nel 2019 nel terminal TWA di Eero Saarinen (1962): 512 camere insonorizzate, piscina sul tetto vista piste, cocktail bar dentro un Lockheed Constellation del 1958.",
+   "motore": [
+    "capital"
+   ]
   },
   {
    "area": "Europa",
@@ -2526,7 +2897,10 @@
     "H06",
     "H01"
    ],
-   "evidenza": "Lanciato nel 2023: niente ristorante, sale meeting o palestra; check-in e chiavi via app; camere compatte e cibo disponibile 24 ore su 24."
+   "evidenza": "Lanciato nel 2023: niente ristorante, sale meeting o palestra; check-in e chiavi via app; camere compatte e cibo disponibile 24 ore su 24.",
+   "motore": [
+    "operations"
+   ]
   },
   {
    "area": "Europa",
@@ -2722,7 +3096,10 @@
     "D04",
     "K05"
    ],
-   "evidenza": "Dal 2007 solo per single, viaggiatori soli e gruppi di amici: coppie, bambini e addii al celibato non sono accettati. 'Arrivi da solo, fai vacanza insieme': tavoli condivisi e attività di gruppo."
+   "evidenza": "Dal 2007 solo per single, viaggiatori soli e gruppi di amici: coppie, bambini e addii al celibato non sono accettati. 'Arrivi da solo, fai vacanza insieme': tavoli condivisi e attività di gruppo.",
+   "motore": [
+    "narrativa"
+   ]
   },
   {
    "area": "Nord America",
@@ -2775,7 +3152,10 @@
     "D07",
     "D04"
    ],
-   "evidenza": "Nato a Roma nel 1999 con 25 letti dai fratelli Fabio e Marco Coppola. Ostello di design che vive anche per i residenti: bar, ristorante, barbiere, escape room, oltre 200 concerti l'anno."
+   "evidenza": "Nato a Roma nel 1999 con 25 letti dai fratelli Fabio e Marco Coppola. Ostello di design che vive anche per i residenti: bar, ristorante, barbiere, escape room, oltre 200 concerti l'anno.",
+   "motore": [
+    "narrativa"
+   ]
   },
   {
    "area": "Nord America",
@@ -2853,7 +3233,10 @@
     "H01",
     "H06"
    ],
-   "evidenza": "'Best of Both Worlds': fondato nel 2018 da un superhost Airbnb, oltre 5.000 unità. Appartamenti con l'affidabilità di un hotel, nessuna reception fisica, assistenza remota 24 ore su 24."
+   "evidenza": "'Best of Both Worlds': fondato nel 2018 da un superhost Airbnb, oltre 5.000 unità. Appartamenti con l'affidabilità di un hotel, nessuna reception fisica, assistenza remota 24 ore su 24.",
+   "motore": [
+    "operations"
+   ]
   },
   {
    "area": "Europa",
@@ -2904,7 +3287,11 @@
     "H05",
     "C01"
    ],
-   "evidenza": "Circa 13-14 hotel solo per famiglie con bambini, formula all-inclusive brevettata (bar, spiaggia e piscina inclusi), bambini fino a 18 anni gratis, partnership con Mirabilandia rinnovata per il 2026."
+   "evidenza": "Circa 13-14 hotel solo per famiglie con bambini, formula all-inclusive brevettata (bar, spiaggia e piscina inclusi), bambini fino a 18 anni gratis, partnership con Mirabilandia rinnovata per il 2026.",
+   "motore": [
+    "operations",
+    "narrativa"
+   ]
   }
  ],
  "fusion": [
@@ -3112,6 +3499,28 @@
    "categoria": null,
    "fatto": "Ian Schrager affida a Highgate lo sviluppo del brand Public.",
    "lettura": "I brand di autore scalano appoggiandosi a gestori terzi: il fondatore resta il marchio."
+  }
+ ],
+ "motori": [
+  {
+   "id": "location",
+   "nome": "Location",
+   "domanda": "Dove sei: il flusso e la notorietà che il luogo porta da solo."
+  },
+  {
+   "id": "capital",
+   "nome": "Capital",
+   "domanda": "Cosa hai costruito: la qualità fisica percepita di camere, spazi, materiali."
+  },
+  {
+   "id": "operations",
+   "nome": "Operations",
+   "domanda": "Come lavori ogni giorno: servizio, pulizia, prezzi, risposta alle recensioni."
+  },
+  {
+   "id": "narrativa",
+   "nome": "Narrativa di mercato",
+   "domanda": "Come ti racconti: la promessa, il segmento, l'identità distintiva."
   }
  ]
 }

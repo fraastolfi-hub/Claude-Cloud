@@ -1,70 +1,70 @@
-codice,famiglia,nome,definizione,maturita,correlati,esempi
-A01,Contro un concorrente,Contro Booking ed Expedia,L'hotel come antagonista esplicito delle OTA: tutto ciò che Booking ed Expedia non possono dare.,nascente,H04,
-A02,Contro un concorrente,L'indipendente contro le catene,L'indipendente come vera alternativa ai brand di catena e al boutique da catalogo.,emergente,G03,Ace Hotel
-A03,Contro un concorrente,Contro il business hotel,"Lobby come spazio di lavoro e quartiere, contro il business hotel standard.",consolidato,H01,citizenM; The Hoxton
-A04,Contro un concorrente,Contro il villaggio turistico,"L'opposto programmatico del villaggio: no animazione, no buffet, no braccialetti.",consolidato,J04 I03,Sextantio; Eremito
-A05,Contro un concorrente,Non fatto per Instagram,"Fatto per essere vissuto, non fotografato: comunicazione minima e rifiuto dell'estetica social.",emergente,J01,Aman
-B01,Un limite come promessa,Pochissime camere,Il numero piccolissimo di camere dichiarato come promessa.,consolidato,D01,SingleThread; Casadonna – Reale; La Valise Tulum
-B02,Un limite come promessa,"Una sola cena, un solo orario","Una sola cena, un solo orario, un solo menù.",emergente,D01,The Lost Kitchen
-B03,Un limite come promessa,"Aperto pochi mesi, per scelta","Apertura ridotta presentata come scelta di qualità, non come limite.",emergente,I01,Splendido (Belmond)
-B04,Un limite come promessa,Soggiorno minimo lungo,Minimo di più notti per filtrare il mordi-e-fuggi.,emergente,D05,COMO Shambhala Estate; Kamalaya
-B05,Un limite come promessa,"Difficile da raggiungere, apposta","Ci si arriva solo a piedi, in funivia o in barca: la fatica dell'accesso è parte del valore.",nascente,F03,Vigilius Mountain Resort
-C01,Pensato per un pubblico,Pensato per le famiglie,Struttura e operazioni progettate per le famiglie con bambini.,consolidato,L02,Falkensteiner Family Hotels; Beaches Resorts; Italy Family Hotels; Hotel Bardo; Club Family Hotel
-C02,Pensato per un pubblico,Pensato per chi viaggia da solo,"Ridisegnato attorno a chi viaggia da solo, aperto a tutti.",emergente,L07,Now Now NoHo
-C03,Pensato per un pubblico,Pensato per una professione o una passione,Pensato per una categoria professionale o uno stile di vita preciso.,emergente,,Public Hotel; Civilian Hotel; French Theory
-C04,Pensato per un pubblico,Pensato per chi fa sport,"Specializzazione profonda su uno sport, accessibile a chiunque.",consolidato,L04,La Manga Club; Italy Bike Hotels
-C05,Pensato per un pubblico,Animali davvero benvenuti,"L'animale è ospite vero, ma il prodotto resta per l'umano.",consolidato,L03,Kimpton Hotels; Postcard Cabins (ex Getaway)
-C06,Pensato per un pubblico,Identità dichiarata,"Identità dichiarata come filtro comunicativo (LGBTQ+, cultura, ecc.).",emergente,L06,Hostelle; Axel Hotels
-C07,Pensato per un pubblico,Pensato per una generazione,"La generazione come asse identitario (over-65 attivi, Gen Z).",nascente,,
-C08,Pensato per un pubblico,Pensato per chi lavora in viaggio,Hotel per chi lavora in viaggio per lunghi periodi.,emergente,D04,Selina; Zoku; Stay KooooK; sly Berlin; A-STAY
-D01,Cosa vende davvero,Si viene per lo chef,L'asset è chi cucina: la camera è il dopo-cena.,consolidato,B01 G01,SingleThread; The Inn at Little Washington; Casa Maria Luigia; Casadonna – Reale
-D02,Cosa vende davvero,Si viene per dormire bene,"L'hotel come prodotto del riposo: materassi, buio, protocolli.",emergente,J03,Equinox Hotel New York
-D03,Cosa vende davvero,Si viene per il silenzio,Il silenzio dichiarato e organizzato come prodotto principale.,emergente,I03,Eremito; Aman Kyoto
-D04,Cosa vende davvero,Si viene per conoscere gente,"L'hotel-community dove si fa amicizia: cene comuni, attività di gruppo.",emergente,C08,Selina; Generator; Zoku; Janu; Stay KooooK; AVIVA make friends; Now Now NoHo; YellowSquare
-D05,Cosa vende davvero,Si viene per cambiare,Te ne vai diverso: programmi guidati di più giorni.,consolidato,B04 J03,Lanserhof Tegernsee; SHA Wellness Clinic; COMO Shambhala Estate; Kamalaya; Six Senses
-D06,Cosa vende davvero,Si viene per avere tempo,Servizi che tolgono attrito e scelte invece di aggiungerne.,nascente,,
-D07,Cosa vende davvero,Hotel aperto al quartiere,"Il cliente non è solo l'ospite che dorme: bar, ristoranti, piscina o eventi sono aperti ai residenti e l'hotel diventa un luogo pubblico.",emergente,A03 D04,The Ned; Hotel Oderberger; YellowSquare; Hotel Bardo
-E01,Hotel + un'altra attività,Hotel + bottega artigiana,L'hotel ibridato con un'attività artigiana che è il vero centro.,nascente,E04,
-E02,Hotel + un'altra attività,Hotel + museo o collezione,"La collezione (arte, libri, vinili, auto) è il prodotto; la camera è l'accesso.",consolidato,E03,21c Museum Hotels; Atelier sul Mare; TWA Hotel; Civilian Hotel
-E03,Hotel + un'altra attività,Hotel + artisti in residenza,Artisti in residenza producono mentre tu soggiorni.,emergente,E02 G03,Casa Wabi; Atelier sul Mare
-E04,Hotel + un'altra attività,Hotel + azienda agricola,"Produzione visibile e filiera in tempo reale, oltre l'agriturismo standard.",consolidato,K02,Borgo Pignano; The Pig Hotels; Babylonstoren; SingleThread
-E05,Hotel + un'altra attività,Hotel + scuola,"Esci con una competenza che non avevi (cucina, lingua, mestiere).",emergente,E04,Borgo Pignano; Casadonna – Reale
-E06,Hotel + un'altra attività,Hotel di un marchio non alberghiero,"Un brand nato fuori dall'hospitality (retail, design, moda) trasforma la sua filosofia in camere: l'hotel è il negozio abitabile.",emergente,J01,MUJI Hotel
-F01,Il luogo è l'hotel,Albergo diffuso,"L'hotel è il borgo, non sta nel borgo.",consolidato,J01,Sextantio
-F02,Il luogo è l'hotel,Un territorio portato altrove,Porti il territorio fuori dal territorio.,emergente,G02,Casa Cipriani
-F03,Il luogo è l'hotel,Una vista unica,Una vista o un elemento naturale definisce tutto.,consolidato,B05,Hotel Caruso (Belmond); Splendido (Belmond); Monastero Santa Rosa; Longitude 131°; Vigilius Mountain Resort; La Valise Tulum
-F04,Il luogo è l'hotel,Un edificio unico,"L'architettura storica o iconica è il prodotto, non la cornice.",consolidato,,Hotel Castello di Reschio; Hotel Caruso (Belmond); Monastero Santa Rosa; Palazzo Margherita; The Ned; TWA Hotel; Hotel Oderberger; sly Berlin
-F05,Il luogo è l'hotel,La cultura del posto come esperienza,"Riti, persone e saperi del territorio sostituiscono l'intrattenimento standard.",emergente,J04,Borgo Egnazia
-G01,Una persona è il brand,Il fondatore è il brand,Un fondatore riconoscibile e narrato è il brand.,consolidato,,Sextantio; Eremito; Hotel Castello di Reschio; The Pig Hotels; The Inn at Little Washington; The Lost Kitchen; Casa Maria Luigia; Atelier sul Mare; Palazzo Margherita
-G02,Una persona è il brand,La stessa famiglia da generazioni,La continuità familiare dichiarata come prova.,consolidato,F02,Borgo Egnazia; Hotel Castello di Reschio; Casa Cipriani
-G03,Una persona è il brand,I gusti di un curatore,"L'ossessione di un curatore definisce ogni scelta: musica, libri, design, community.",consolidato,A02,Ace Hotel; Soho House; French Theory
-G04,Una persona è il brand,Lo staff è la star,"Il team è famoso, non l'hotel.",emergente,,The Connaught
-H01,Servizio ripensato,"Check-in da soli, con app o totem","Arrivo ridisegnato: chioschi, app, nessuna coda alla reception.",consolidato,A03,citizenM; YOTEL; Scandic GO; A-STAY; Bob W; MM:NT Berlin Lab
-H02,Servizio ripensato,Un padrone di casa al posto della reception,Niente front desk: un host umano specifico ti accoglie.,nascente,G04,
-H03,Servizio ripensato,"Una sola camera, un solo prezzo","Un solo tipo di camera e un prezzo trasparente, niente upsell nascosti.",emergente,,citizenM
-H04,Servizio ripensato,Si prenota solo parlando,Si prenota solo parlando: la conversazione è il servizio.,nascente,A01,
-H05,Servizio ripensato,Tutto incluso o niente incluso,"Tutto incluso davvero, oppure niente incluso e paghi solo ciò che usi.",emergente,,Sandals Resorts; Club Family Hotel
-H06,Servizio ripensato,"Meno servizi, prezzo più basso","Si tolgono ristorante, sale meeting, palestra o reception e si investe solo in ciò che il target usa davvero: prezzo più basso, promessa più chiara.",emergente,H01 H03,Scandic GO; Postcard Cabins (ex Getaway); Now Now NoHo; Bob W
-H07,Servizio ripensato,Hotel laboratorio,L'hotel come laboratorio: camere prototipo e feedback degli ospiti usati per progettare le strutture future.,nascente,H01,MM:NT Berlin Lab
-I01,Tempi al contrario,Aperto quando gli altri chiudono,"Aperti quando gli altri chiudono (mare d'inverno, montagna fuori stagione).",nascente,B03,
-I02,Tempi al contrario,Aperto solo in settimana,Aperto solo in giorni specifici.,nascente,,
-I03,Tempi al contrario,Ritmi lenti obbligatori,"Ritmi imposti dalla struttura: niente wifi, orari, silenzio.",emergente,D03 A04,Eremito
-J01,Rifiuto del format,Lusso senza ostentazione,"Il lusso è sottrazione: materiali grezzi, niente ostentazione.",consolidato,A05 F01,Sextantio; Aman; MUJI Hotel
-J02,Rifiuto del format,"Vissuto, non da rivista","Vissuto, imperfetto, mismatched: l'opposto dell'hotel da shooting.",emergente,,The Pig Hotels
-J03,Rifiuto del format,"Benessere medico, non spa decorativa",Rifiuti la spa decorativa e ti rifondi con protocolli medici.,consolidato,D05,Lanserhof Tegernsee; Vivamayr; SHA Wellness Clinic; Lefay Resort & SPA Lago di Garda
-J04,Rifiuto del format,Niente animazione,"Silenzio o cultura locale al posto dell'animazione, in un contesto dove tutti la fanno.",emergente,A04 F05,Borgo Egnazia
-K01,Una visione del mondo,Un manifesto dichiarato,Una visione dichiarata che filtra gli ospiti a monte.,emergente,,Sextantio; Singita; Jill Hotel; The Stromness Hotel
-K02,Una visione del mondo,Filiera corta con i numeri,Km zero dichiarato con numeri pubblici e verificabili.,nascente,E04,
-K03,Una visione del mondo,Emissioni misurate e pubblicate,"Emissioni misurate, certificate e pubblicate.",emergente,K05,Bucuti & Tara Beach Resort
-K04,Una visione del mondo,Cucina solo vegetale,"Il vegetale come asse identitario, non come opzione di menù.",emergente,,Eremito
-K05,Una visione del mondo,Ambiente al centro,L'impatto ambientale come principio di progetto e di comunicazione.,consolidato,K03,Six Senses; 1 Hotels; Lefay Resort & SPA Lago di Garda; AVIVA make friends
-K06,Una visione del mondo,Un materiale come manifesto,"Un materiale dominante racconta la visione (bambù, legno, terra).",emergente,,Bambu Indah
-K07,Una visione del mondo,L'hotel che protegge la natura,L'hotel esiste per finanziare la tutela di un ecosistema.,consolidato,K01,Singita
-L01,Solo per qualcuno,Solo adulti,Vietato ai minori come regola d'accesso.,consolidato,,Sandals Resorts; Bucuti & Tara Beach Resort
-L02,Solo per qualcuno,Solo famiglie,Solo famiglie con bambini.,emergente,C01,Club Family Hotel
-L03,Solo per qualcuno,Solo animali,L'hotel esiste per l'animale; l'umano accompagna.,emergente,C05,D Pet Hotels
-L04,Solo per qualcuno,Solo sportivi,"Accesso riservato a chi pratica uno sport, con livello dichiarato.",nascente,C04,
-L05,Solo per qualcuno,Solo soci,Private club: entri se accettato o presentato.,consolidato,G03,Casa Cipriani; Soho House; The Ned; Hotel Bardo
-L06,Solo per qualcuno,Solo donne,Struttura riservata alle donne.,emergente,C06,Hostelle
-L07,Solo per qualcuno,Solo chi viaggia da solo,Rifiuta coppie e gruppi: solo chi viaggia da solo.,emergente,C02,AVIVA make friends
-L08,Solo per qualcuno,Solo eventi privati,La struttura esiste solo per eventi privati in esclusiva.,nascente,,
+codice,famiglia,nome,nome_tecnico,definizione,maturita,motore,gestione_minima,correlati,esempi
+A01,Contro un concorrente,Contro Booking ed Expedia,Anti-OTA,L'hotel come antagonista esplicito delle OTA: tutto ciò che Booking ed Expedia non possono dare.,nascente,narrativa,7,H04,
+A02,Contro un concorrente,L'indipendente contro le catene,Anti-Catena / Anti-Finto-Boutique,L'indipendente come vera alternativa ai brand di catena e al boutique da catalogo.,emergente,narrativa,6,G03,Ace Hotel
+A03,Contro un concorrente,Contro il business hotel,Anti-Business-Hotel,"Lobby come spazio di lavoro e quartiere, contro il business hotel standard.",consolidato,operations narrativa,7,H01,citizenM; The Hoxton
+A04,Contro un concorrente,Contro il villaggio turistico,Anti-Resort,"L'opposto programmatico del villaggio: no animazione, no buffet, no braccialetti.",consolidato,narrativa,7,J04 I03,Sextantio; Eremito
+A05,Contro un concorrente,Non fatto per Instagram,Anti-Instagrammabile,"Fatto per essere vissuto, non fotografato: comunicazione minima e rifiuto dell'estetica social.",emergente,narrativa capital,7,J01,Aman
+B01,Un limite come promessa,Pochissime camere,Micro-scala (Solo X camere),Il numero piccolissimo di camere dichiarato come promessa.,consolidato,narrativa operations,8,D01,SingleThread; Casadonna – Reale; La Valise Tulum
+B02,Un limite come promessa,"Una sola cena, un solo orario",Single Seating,"Una sola cena, un solo orario, un solo menù.",emergente,narrativa operations,8,D01,The Lost Kitchen
+B03,Un limite come promessa,"Aperto pochi mesi, per scelta",Stagione Corta Dichiarata,"Apertura ridotta presentata come scelta di qualità, non come limite.",emergente,location narrativa,6,I01,Splendido (Belmond)
+B04,Un limite come promessa,Soggiorno minimo lungo,Soggiorno Minimo Lungo,Minimo di più notti per filtrare il mordi-e-fuggi.,emergente,narrativa operations,7,D05,COMO Shambhala Estate; Kamalaya
+B05,Un limite come promessa,"Difficile da raggiungere, apposta",Accesso Difficile / Car-Free,"Ci si arriva solo a piedi, in funivia o in barca: la fatica dell'accesso è parte del valore.",nascente,location narrativa,6,F03,Vigilius Mountain Resort
+C01,Pensato per un pubblico,Pensato per le famiglie,Family-Designed,Struttura e operazioni progettate per le famiglie con bambini.,consolidato,operations narrativa,7,L02,Falkensteiner Family Hotels; Beaches Resorts; Italy Family Hotels; Hotel Bardo; Club Family Hotel
+C02,Pensato per un pubblico,Pensato per chi viaggia da solo,Solo-Traveler-Designed,"Ridisegnato attorno a chi viaggia da solo, aperto a tutti.",emergente,narrativa,7,L07,Now Now NoHo
+C03,Pensato per un pubblico,Pensato per una professione o una passione,Profession / Lifestyle,Pensato per una categoria professionale o uno stile di vita preciso.,emergente,narrativa,7,,Public Hotel; Civilian Hotel; French Theory
+C04,Pensato per un pubblico,Pensato per chi fa sport,Sport-Expertise,"Specializzazione profonda su uno sport, accessibile a chiunque.",consolidato,narrativa operations,7,L04,La Manga Club; Italy Bike Hotels
+C05,Pensato per un pubblico,Animali davvero benvenuti,Pet-Welcomed Seriously,"L'animale è ospite vero, ma il prodotto resta per l'umano.",consolidato,operations,6,L03,Kimpton Hotels; Postcard Cabins (ex Getaway)
+C06,Pensato per un pubblico,Identità dichiarata,Identity-Explicit,"Identità dichiarata come filtro comunicativo (LGBTQ+, cultura, ecc.).",emergente,narrativa,7,L06,Hostelle; Axel Hotels
+C07,Pensato per un pubblico,Pensato per una generazione,Generazionale,"La generazione come asse identitario (over-65 attivi, Gen Z).",nascente,narrativa,7,,
+C08,Pensato per un pubblico,Pensato per chi lavora in viaggio,Remote Worker,Hotel per chi lavora in viaggio per lunghi periodi.,emergente,narrativa operations,7,D04,Selina; Zoku; Stay KooooK; sly Berlin; A-STAY
+D01,Cosa vende davvero,Si viene per lo chef,Vendiamo lo Chef,L'asset è chi cucina: la camera è il dopo-cena.,consolidato,narrativa operations,8,B01 G01,SingleThread; The Inn at Little Washington; Casa Maria Luigia; Casadonna – Reale
+D02,Cosa vende davvero,Si viene per dormire bene,Vendiamo il Sonno,"L'hotel come prodotto del riposo: materassi, buio, protocolli.",emergente,operations capital,8,J03,Equinox Hotel New York
+D03,Cosa vende davvero,Si viene per il silenzio,Vendiamo il Silenzio,Il silenzio dichiarato e organizzato come prodotto principale.,emergente,narrativa location,7,I03,Eremito; Aman Kyoto
+D04,Cosa vende davvero,Si viene per conoscere gente,Vendiamo la Connessione,"L'hotel-community dove si fa amicizia: cene comuni, attività di gruppo.",emergente,narrativa operations,7,C08,Selina; Generator; Zoku; Janu; Stay KooooK; AVIVA make friends; Now Now NoHo; YellowSquare
+D05,Cosa vende davvero,Si viene per cambiare,Vendiamo la Trasformazione,Te ne vai diverso: programmi guidati di più giorni.,consolidato,operations narrativa,8,B04 J03,Lanserhof Tegernsee; SHA Wellness Clinic; COMO Shambhala Estate; Kamalaya; Six Senses
+D06,Cosa vende davvero,Si viene per avere tempo,Vendiamo il Tempo,Servizi che tolgono attrito e scelte invece di aggiungerne.,nascente,operations,8,,
+D07,Cosa vende davvero,Hotel aperto al quartiere,Hotel come Piazza di Quartiere,"Il cliente non è solo l'ospite che dorme: bar, ristoranti, piscina o eventi sono aperti ai residenti e l'hotel diventa un luogo pubblico.",emergente,narrativa location,7,A03 D04,The Ned; Hotel Oderberger; YellowSquare; Hotel Bardo
+E01,Hotel + un'altra attività,Hotel + bottega artigiana,Hotel-Bottega,L'hotel ibridato con un'attività artigiana che è il vero centro.,nascente,narrativa,7,E04,
+E02,Hotel + un'altra attività,Hotel + museo o collezione,Hotel-Museo / Collezione,"La collezione (arte, libri, vinili, auto) è il prodotto; la camera è l'accesso.",consolidato,capital narrativa,7,E03,21c Museum Hotels; Atelier sul Mare; TWA Hotel; Civilian Hotel
+E03,Hotel + un'altra attività,Hotel + artisti in residenza,Hotel-Residenza Artistica,Artisti in residenza producono mentre tu soggiorni.,emergente,narrativa,7,E02 G03,Casa Wabi; Atelier sul Mare
+E04,Hotel + un'altra attività,Hotel + azienda agricola,Hotel-Azienda Agricola,"Produzione visibile e filiera in tempo reale, oltre l'agriturismo standard.",consolidato,narrativa location,7,K02,Borgo Pignano; The Pig Hotels; Babylonstoren; SingleThread
+E05,Hotel + un'altra attività,Hotel + scuola,Hotel-Scuola,"Esci con una competenza che non avevi (cucina, lingua, mestiere).",emergente,narrativa operations,7,E04,Borgo Pignano; Casadonna – Reale
+E06,Hotel + un'altra attività,Hotel di un marchio non alberghiero,Hotel-Showroom,"Un brand nato fuori dall'hospitality (retail, design, moda) trasforma la sua filosofia in camere: l'hotel è il negozio abitabile.",emergente,capital narrativa,7,J01,MUJI Hotel
+F01,Il luogo è l'hotel,Albergo diffuso,Albergo Diffuso,"L'hotel è il borgo, non sta nel borgo.",consolidato,location narrativa,6,J01,Sextantio
+F02,Il luogo è l'hotel,Un territorio portato altrove,Ambasciata Regionale,Porti il territorio fuori dal territorio.,emergente,narrativa,7,G02,Casa Cipriani
+F03,Il luogo è l'hotel,Una vista unica,Single-View,Una vista o un elemento naturale definisce tutto.,consolidato,location,6,B05,Hotel Caruso (Belmond); Splendido (Belmond); Monastero Santa Rosa; Longitude 131°; Vigilius Mountain Resort; La Valise Tulum
+F04,Il luogo è l'hotel,Un edificio unico,Edificio-Manifesto,"L'architettura storica o iconica è il prodotto, non la cornice.",consolidato,capital location,6,,Hotel Castello di Reschio; Hotel Caruso (Belmond); Monastero Santa Rosa; Palazzo Margherita; The Ned; TWA Hotel; Hotel Oderberger; sly Berlin
+F05,Il luogo è l'hotel,La cultura del posto come esperienza,Cultura Locale come Prodotto,"Riti, persone e saperi del territorio sostituiscono l'intrattenimento standard.",emergente,location narrativa,7,J04,Borgo Egnazia
+G01,Una persona è il brand,Il fondatore è il brand,Founder-Persona,Un fondatore riconoscibile e narrato è il brand.,consolidato,narrativa,7,,Sextantio; Eremito; Hotel Castello di Reschio; The Pig Hotels; The Inn at Little Washington; The Lost Kitchen; Casa Maria Luigia; Atelier sul Mare; Palazzo Margherita
+G02,Una persona è il brand,La stessa famiglia da generazioni,N-Generazioni,La continuità familiare dichiarata come prova.,consolidato,narrativa,7,F02,Borgo Egnazia; Hotel Castello di Reschio; Casa Cipriani
+G03,Una persona è il brand,I gusti di un curatore,Curator-Driven,"L'ossessione di un curatore definisce ogni scelta: musica, libri, design, community.",consolidato,narrativa capital,7,A02,Ace Hotel; Soho House; French Theory
+G04,Una persona è il brand,Lo staff è la star,Staff-as-Character,"Il team è famoso, non l'hotel.",emergente,operations narrativa,8,,The Connaught
+H01,Servizio ripensato,"Check-in da soli, con app o totem",Self Check-in / Tech-First,"Arrivo ridisegnato: chioschi, app, nessuna coda alla reception.",consolidato,operations,8,A03,citizenM; YOTEL; Scandic GO; A-STAY; Bob W; MM:NT Berlin Lab
+H02,Servizio ripensato,Un padrone di casa al posto della reception,Host al posto della Reception,Niente front desk: un host umano specifico ti accoglie.,nascente,operations,8,G04,
+H03,Servizio ripensato,"Una sola camera, un solo prezzo",Tariffa Unica / Camera Unica,"Un solo tipo di camera e un prezzo trasparente, niente upsell nascosti.",emergente,operations,7,,citizenM
+H04,Servizio ripensato,Si prenota solo parlando,No Online Booking,Si prenota solo parlando: la conversazione è il servizio.,nascente,operations,8,A01,
+H05,Servizio ripensato,Tutto incluso o niente incluso,All-Inclusive Radicale o Invertito,"Tutto incluso davvero, oppure niente incluso e paghi solo ciò che usi.",emergente,operations,8,,Sandals Resorts; Club Family Hotel
+H06,Servizio ripensato,"Meno servizi, prezzo più basso",Servizi per Sottrazione,"Si tolgono ristorante, sale meeting, palestra o reception e si investe solo in ciò che il target usa davvero: prezzo più basso, promessa più chiara.",emergente,operations,7,H01 H03,Scandic GO; Postcard Cabins (ex Getaway); Now Now NoHo; Bob W
+H07,Servizio ripensato,Hotel laboratorio,Beta Permanente,L'hotel come laboratorio: camere prototipo e feedback degli ospiti usati per progettare le strutture future.,nascente,operations,7,H01,MM:NT Berlin Lab
+I01,Tempi al contrario,Aperto quando gli altri chiudono,Stagione Invertita,"Aperti quando gli altri chiudono (mare d'inverno, montagna fuori stagione).",nascente,narrativa,7,B03,
+I02,Tempi al contrario,Aperto solo in settimana,Solo Infrasettimanale,Aperto solo in giorni specifici.,nascente,narrativa operations,7,,
+I03,Tempi al contrario,Ritmi lenti obbligatori,Slow Obbligato,"Ritmi imposti dalla struttura: niente wifi, orari, silenzio.",emergente,narrativa,7,D03 A04,Eremito
+J01,Rifiuto del format,Lusso senza ostentazione,Anti-Lusso-Patinato,"Il lusso è sottrazione: materiali grezzi, niente ostentazione.",consolidato,capital narrativa,7,A05 F01,Sextantio; Aman; MUJI Hotel
+J02,Rifiuto del format,"Vissuto, non da rivista",Anti-Design-da-Rivista,"Vissuto, imperfetto, mismatched: l'opposto dell'hotel da shooting.",emergente,narrativa capital,7,,The Pig Hotels
+J03,Rifiuto del format,"Benessere medico, non spa decorativa",Anti-Wellness-Fuffa,Rifiuti la spa decorativa e ti rifondi con protocolli medici.,consolidato,operations narrativa,8,D05,Lanserhof Tegernsee; Vivamayr; SHA Wellness Clinic; Lefay Resort & SPA Lago di Garda
+J04,Rifiuto del format,Niente animazione,Anti-Animazione,"Silenzio o cultura locale al posto dell'animazione, in un contesto dove tutti la fanno.",emergente,narrativa,7,A04 F05,Borgo Egnazia
+K01,Una visione del mondo,Un manifesto dichiarato,Manifesto Esplicito,Una visione dichiarata che filtra gli ospiti a monte.,emergente,narrativa,7,,Sextantio; Singita; Jill Hotel; The Stromness Hotel
+K02,Una visione del mondo,Filiera corta con i numeri,Filiera Misurata,Km zero dichiarato con numeri pubblici e verificabili.,nascente,operations narrativa,8,E04,
+K03,Una visione del mondo,Emissioni misurate e pubblicate,Carbon Trasparente,"Emissioni misurate, certificate e pubblicate.",emergente,operations narrativa,8,K05,Bucuti & Tara Beach Resort
+K04,Una visione del mondo,Cucina solo vegetale,Plant-Based Manifesto,"Il vegetale come asse identitario, non come opzione di menù.",emergente,narrativa operations,7,,Eremito
+K05,Una visione del mondo,Ambiente al centro,Climate-First,L'impatto ambientale come principio di progetto e di comunicazione.,consolidato,capital operations,7,K03,Six Senses; 1 Hotels; Lefay Resort & SPA Lago di Garda; AVIVA make friends
+K06,Una visione del mondo,Un materiale come manifesto,Materiale-Manifesto,"Un materiale dominante racconta la visione (bambù, legno, terra).",emergente,capital narrativa,6,,Bambu Indah
+K07,Una visione del mondo,L'hotel che protegge la natura,Conservation,L'hotel esiste per finanziare la tutela di un ecosistema.,consolidato,location narrativa,7,K01,Singita
+L01,Solo per qualcuno,Solo adulti,Adults Only / Couples Only,Vietato ai minori come regola d'accesso.,consolidato,narrativa,7,,Sandals Resorts; Bucuti & Tara Beach Resort
+L02,Solo per qualcuno,Solo famiglie,Family Only,Solo famiglie con bambini.,emergente,operations narrativa,7,C01,Club Family Hotel
+L03,Solo per qualcuno,Solo animali,Pets Only,L'hotel esiste per l'animale; l'umano accompagna.,emergente,operations,7,C05,D Pet Hotels
+L04,Solo per qualcuno,Solo sportivi,Sport Only,"Accesso riservato a chi pratica uno sport, con livello dichiarato.",nascente,narrativa,7,C04,
+L05,Solo per qualcuno,Solo soci,Members Only,Private club: entri se accettato o presentato.,consolidato,narrativa capital,7,G03,Casa Cipriani; Soho House; The Ned; Hotel Bardo
+L06,Solo per qualcuno,Solo donne,Women Only,Struttura riservata alle donne.,emergente,narrativa,7,C06,Hostelle
+L07,Solo per qualcuno,Solo chi viaggia da solo,Solo-Travelers Only,Rifiuta coppie e gruppi: solo chi viaggia da solo.,emergente,narrativa,7,C02,AVIVA make friends
+L08,Solo per qualcuno,Solo eventi privati,Buyout / Event Only,La struttura esiste solo per eventi privati in esclusiva.,nascente,narrativa,7,,

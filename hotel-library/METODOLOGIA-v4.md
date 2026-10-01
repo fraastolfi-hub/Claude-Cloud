@@ -106,7 +106,18 @@ Ogni evento rilevante (acquisizione, chiusura, nuova apertura che crea una categ
 
 ---
 
-## 6. Diagnosi del cliente (invariata nella sostanza)
+## 6. Il motore dell'hotel: il ponte con la guida
+
+La guida "Come funziona davvero il positioning di un hotel" scompone il Posizionamento di Mercato in quattro componenti, ciascuna da 0 a 10: **Location**, **Capital**, **Operations**, **Narrativa di mercato**. La Library è il catalogo dei meccanismi della quarta componente, la narrativa. I due strumenti si usano in sequenza: prima la guida dice qual è il motore dell'hotel, poi la Library dice con quale pattern costruire la narrativa.
+
+Nel file dati:
+
+- ogni pattern ha `motore`, cioè i profili per cui è più adatto, e `gestione_minima`, cioè il voto minimo di Operations sotto cui la promessa non regge (per esempio "Una sola cena, un solo orario" richiede Operations ≥ 8);
+- alcuni esempi hanno `motore`, una valutazione editoriale del motore principale dell'hotel (Eremito: narrativa; citizenM: operations; Casa Cipriani: location + narrativa).
+
+Regola di lettura per un cliente: conta le componenti con voto ≥ 8. Se sono zero, la leva è la narrativa. Se è una, il profilo è puro e la narrativa deve amplificare quella componente. Se sono due o più, il profilo è misto e la narrativa racconta l'incrocio. Prima di tutto, Operations deve superare la `gestione_minima` del pattern scelto.
+
+## 7. Diagnosi del cliente (invariata nella sostanza)
 
 Quattro input:
 
@@ -129,7 +140,7 @@ Sei fasi:
 
 ---
 
-## 7. Principi strategici (rivisti)
+## 8. Principi strategici (rivisti)
 
 - **P1. Identità chiara = brand separato.** Sandals (coppie, solo adulti) non ha annacquato il brand per le famiglie: ha creato Beaches. Nota: Beaches è *pensato* per le famiglie, non *riservato* a loro.
 - **P2. Rifondare la categoria con un vocabolario tecnico.** Vivamayr e Lanserhof non si chiamano spa: sono resort medici con protocolli e diagnostica.
@@ -143,7 +154,7 @@ Sei fasi:
 
 ---
 
-## 8. Roadmap della Library
+## 9. Roadmap della Library
 
 1. **Chiudere le verifiche** in `CORREZIONI-v4.md`, sezione 5.
 2. **Sito:** importare `library-v4.json` (o i CSV) al posto dei dati attuali; titolo, description e canonical propri per `/library` con pre-rendering; una pagina per pattern e per categoria.
