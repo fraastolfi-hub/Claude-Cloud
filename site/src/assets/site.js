@@ -101,7 +101,11 @@
     '/smontaggio/': ['Tre secondi', 'La tua homepage ha tre secondi. Tu qui ne hai già spesi trenta.', 'Quattro campi, nessuna call. Te la smonto io, riga per riga.', 'Smonta la mia homepage', '#form', 'La mia homepage va benissimo così']
   };
   var exitEl = document.getElementById('exit'), path = location.pathname.replace(/index\.html$/, '');
-  var cfg = EXIT[path];
+  // confronto sulla parte finale dell'indirizzo: funziona anche se il sito sta in una sottocartella
+  var key = Object.keys(EXIT).filter(function(k){ return k !== '/' && path.slice(-k.length) === k; })
+    .sort(function(x, y){ return y.length - x.length; })[0];
+  if (!key && document.getElementById('sintomi')) key = '/';
+  var cfg = EXIT[key];
   function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   function sstore(k, v){ try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
   if (exitEl && cfg) {
