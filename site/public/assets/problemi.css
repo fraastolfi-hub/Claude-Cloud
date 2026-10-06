@@ -99,6 +99,8 @@
   .sig-meter .sig-msg{min-height:0;font-size:14px}
   .sig-meter .sig-bar{grid-column:1 / -1}
   .sig-meter .btn{grid-column:1 / -1;padding:12px 14px;font-size:15px}
+  /* spazio in fondo: a fine lista il contatore si posa qui e non copre l'ultimo segnale */
+  .sig-grid{padding-bottom:220px}
 }
 
 /* ---------- ponte: il sintomo non è la malattia ---------- */
@@ -136,6 +138,7 @@
 .offer .check-list{gap:10px}
 .offer .check-list li{font-size:16px}
 .offer .btn{margin-top:auto;align-self:stretch}
+.offer .card.ink .btn{box-shadow:6px 6px 0 var(--paper)}
 .offer .card.ink .check-list li::before{background:var(--orange);border-color:var(--paper)}
 .offer-more{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;font:700 15px var(--mono)}
 .offer-more a{text-decoration-thickness:3px;text-decoration-color:var(--orange);text-underline-offset:4px}
