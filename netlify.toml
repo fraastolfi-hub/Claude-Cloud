@@ -1,0 +1,10 @@
+# Netlify: pubblica il sito Hotel Positioning dalla cartella site/
+[build]
+  base    = "site"
+  command = "python3 build.py"
+  publish = "public"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
