@@ -1,0 +1,29 @@
+<!-- Form candidatura condiviso. Collega l'endpoint in action="" e aggiungi data-endpoint="1". -->
+<form class="form" id="candidatura-form" action="#" method="post" data-hp-form novalidate>
+  <div class="fields">
+    <div class="form-head"><span>Candida il tuo hotel in 60 secondi</span><span data-prog-txt>0%</span></div>
+    <div class="prog"><i></i></div>
+    <div class="row2">
+      <div class="field"><label for="c-nome">Nome e cognome</label><input id="c-nome" name="nome" autocomplete="name" required><span class="em">Mi serve per sapere a chi rispondo.</span></div>
+      <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: la risposta arriva qui.</span></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="c-tel">Telefono</label><input id="c-tel" name="telefono" type="tel" autocomplete="tel" required><span class="em">Solo per la selezione. Niente telefonate di vendita.</span></div>
+      <div class="field"><label for="c-hotel">Nome dell'hotel</label><input id="c-hotel" name="hotel" required placeholder="Hotel, città"><span class="em">Senza questo non posso guardarlo.</span></div>
+    </div>
+    <div class="field"><label for="c-sito">Sito web <small>(se ce l'hai)</small></label><input id="c-sito" name="sito" inputmode="url" placeholder="www.tuohotel.it"></div>
+    <fieldset class="field" style="border:0">
+      <legend class="lab" style="font:700 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-bottom:7px">Posso pubblicare l'analisi?</legend>
+      <label class="check" style="margin:0 0 10px"><input type="radio" name="pubblicazione" value="nome" required><span><strong>Sì, come caso studio.</strong> Con nome dell'hotel e dati reali.</span></label>
+      <label class="check" style="margin:0"><input type="radio" name="pubblicazione" value="anonimo"><span><strong>Sì, ma in forma anonima.</strong> «Boutique hotel in [zona], X camere», senza altri dettagli.</span></label>
+    </fieldset>
+    <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento a essere ricontattato per la selezione.</span></label>
+    <button class="btn dark" type="submit">Candida il mio hotel <span class="arr">→</span></button>
+    <p class="form-foot">Risposta entro 48 ore. Anche se ti scarto, ti spiego perché.<br>I dati restano tra te e me.</p>
+  </div>
+  <div class="ok" role="status">
+    <div class="tick">✓</div>
+    <p class="big">Candidatura ricevuta.</p>
+    <p>Guardo <strong data-echo="#c-hotel">il tuo hotel</strong> e ti rispondo entro 48 ore, anche se la risposta è no. Nel frattempo apri Booking, cerca la tua zona e guarda con gli occhi di uno che non sei tu.</p>
+  </div>
+</form>

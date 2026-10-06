@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Analisi gratuita del tuo hotel · Hotel Positioning</title>
+<meta name="description" content="Di cosa è il numero 1 il tuo hotel? Analisi di posizionamento gratuita per hotel indipendenti, fatta a mano da Francesco Astolfi. Massimo 4 a settimana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111111;
+  --paper:#F3EDE2;
+  --paper-2:#E9E2D4;
+  --white:#FFFFFF;
+  --orange:#FF7A1A;
+  --orange-dk:#B8430A;
+  --yellow:#FFD43B;
+  --cream-y:#FFF4C2;
+  --mint:#7FD1AE;
+  --blue:#8FB8FF;
+  --grey:#D9D2C4;
+  --muted:#5E574B;
+  --b:3px solid var(--ink);
+  --sh:6px 6px 0 var(--ink);
+  --sh-lg:10px 10px 0 var(--ink);
+  --mono:'Space Mono',ui-monospace,monospace;
+  --sans:'Space Grotesk',system-ui,sans-serif;
+  --gut:clamp(16px,4vw,48px);
+  --max:1240px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:18px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  background-image:radial-gradient(rgba(17,17,17,.13) 1px,transparent 1.2px);
+  background-size:22px 22px;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+::selection{background:var(--orange);color:var(--ink)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.mono{font-family:var(--mono)}
+.sec{padding:clamp(72px,10vw,140px) 0;position:relative}
+.sec + .sec{border-top:var(--b)}
+
+/* ---------- type ---------- */
+h1,h2,h3{font-weight:700;letter-spacing:-.035em;line-height:.98}
+h1{font-size:clamp(38px,4.7vw,76px)}
+h2{font-size:clamp(36px,5.4vw,76px)}
+h3{font-size:clamp(22px,2.2vw,28px);letter-spacing:-.02em;line-height:1.1}
+.lead{font-size:clamp(19px,1.6vw,23px);line-height:1.5;max-width:40ch}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font:700 13px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;
+  background:var(--white);border:var(--b);padding:9px 12px;box-shadow:4px 4px 0 var(--ink);
+}
+.eyebrow .dot{width:10px;height:10px;background:var(--orange);border:2px solid var(--ink);border-radius:50%;animation:blink 1.4s steps(2) infinite}
+@keyframes blink{50%{opacity:.15}}
+.sec-head{display:grid;gap:22px;margin-bottom:clamp(40px,6vw,72px);max-width:900px}
+.kicker{font:700 13px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kicker b{color:var(--ink);background:var(--yellow);padding:2px 6px;border:2px solid var(--ink)}
+
+/* highlighter swipe */
+.hl{
+  background:linear-gradient(var(--yellow),var(--yellow)) no-repeat 0 88%/0% 40%;
+  transition:background-size .9s cubic-bezier(.7,0,.2,1) .25s;
+  padding:0 .06em;
+}
+.hl.or{background-image:linear-gradient(var(--orange),var(--orange))}
+.in .hl,.hl.in{background-size:100% 40%}
+.strike{position:relative;white-space:nowrap}
+.strike::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:.12em;background:var(--orange);transform:scaleX(0) rotate(-3deg);transform-origin:left;transition:transform .6s cubic-bezier(.7,0,.2,1) .6s}
+.in .strike::after{transform:scaleX(1) rotate(-3deg)}
+
+/* ---------- buttons ---------- */
+.btn{
+  --bg:var(--orange);
+  display:inline-flex;align-items:center;justify-content:center;gap:14px;
+  background:var(--bg);color:var(--ink);text-decoration:none;
+  font:700 clamp(17px,1.4vw,20px)/1.1 var(--sans);letter-spacing:-.01em;
+  padding:20px 26px;border:var(--b);box-shadow:var(--sh);
+  transition:transform .12s ease,box-shadow .12s ease,background .2s;
+  position:relative;
+}
+.btn .arr{display:inline-block;transition:transform .25s cubic-bezier(.5,1.8,.5,1)}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.btn:hover .arr{transform:translateX(6px)}
+.btn:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--ink)}
+.btn.dark{--bg:var(--ink);color:var(--paper);box-shadow:6px 6px 0 var(--orange)}
+.btn.dark:hover{box-shadow:9px 9px 0 var(--orange)}
+.btn.ghost{--bg:var(--white)}
+.micro{font:400 13px/1.5 var(--mono);color:var(--muted);margin-top:14px}
+.micro b{color:var(--ink)}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--ink);color:var(--paper);border-bottom:var(--b);overflow:hidden;white-space:nowrap;position:relative;z-index:30}
+.ticker-track{display:inline-flex;animation:marquee 38s linear infinite;padding:11px 0}
+.ticker span{font:700 13px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:0 22px;display:inline-flex;align-items:center;gap:22px}
+.ticker span::after{content:"✱";color:var(--orange);font-size:16px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:var(--b);transition:box-shadow .2s}
+.nav.scrolled{box-shadow:0 6px 0 var(--ink)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 18px/1 var(--sans);letter-spacing:-.02em}
+.logo-mark{width:38px;height:38px;background:var(--orange);border:var(--b);display:grid;place-items:center;font:700 15px var(--mono);box-shadow:3px 3px 0 var(--ink);transition:transform .4s cubic-bezier(.5,1.8,.5,1)}
+.logo:hover .logo-mark{transform:rotate(-12deg)}
+.nav .btn{padding:12px 16px;font-size:15px;box-shadow:4px 4px 0 var(--ink)}
+.nav-links{display:flex;gap:26px;font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.nav-links a{text-decoration:none;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:right;transition:transform .25s}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+@media (max-width:900px){.nav-links{display:none}}
+@media (max-width:480px){.nav .btn .full{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(48px,7vw,96px) 0 clamp(72px,9vw,120px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(36px,5vw,72px);align-items:center}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{margin:26px 0 28px}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line > span{display:inline-block;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.9,.2,1) forwards}
+.hero h1 .line:nth-child(2) > span{animation-delay:.1s}
+.hero h1 .line:nth-child(3) > span{animation-delay:.2s}
+@keyframes rise{to{transform:none}}
+.hero .lead{margin-bottom:12px}
+.hero .lead + .lead{margin-bottom:36px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.proof-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.chip{font:700 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;border:2px solid var(--ink);padding:8px 10px;background:var(--paper)}
+.chip.y{background:var(--yellow)}.chip.m{background:var(--mint)}.chip.b{background:var(--blue)}
+
+/* hero card stack */
+.stack{position:relative;min-height:520px}
+@media (max-width:980px){.stack{min-height:500px;max-width:520px;margin:0 auto;width:100%}}
+.card{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);position:absolute}
+.doc{inset:40px 30px 30px 10px;padding:28px;transform:rotate(-3deg);background:var(--paper-2)}
+.doc .lines i{display:block;height:10px;background:var(--grey);margin:12px 0;border:1.5px solid var(--ink)}
+.doc .lines i:nth-child(2){width:80%}.doc .lines i:nth-child(3){width:92%}.doc .lines i:nth-child(4){width:60%}
+.n1{inset:0 0 auto 40px;padding:26px 26px 30px;transform:rotate(2deg);background:var(--white);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:rotate(1deg) translateY(-8px)}}
+.n1 .lab{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between}
+.n1 .big{font:700 clamp(30px,3vw,40px)/1.05 var(--sans);letter-spacing:-.03em;margin-top:14px;min-height:3.2em}
+.caret{display:inline-block;width:.08em;height:.9em;background:var(--orange);vertical-align:-.08em;margin-left:4px;animation:blink 1s steps(2) infinite}
+.n1 hr{border:0;border-top:2px dashed var(--ink);margin:18px 0}
+.n1 .foot{font:400 13px/1.4 var(--mono);color:var(--muted)}
+.mini-map{inset:auto auto 0 0;width:58%;aspect-ratio:1.3;padding:14px;background:var(--cream-y);transform:rotate(-5deg)}
+.mini-map .ax{position:absolute;font:700 9px var(--mono);letter-spacing:.08em}
+.mini-map .dotp{position:absolute;width:20px;height:20px;border:2px solid var(--ink);border-radius:50%;background:var(--ink)}
+.mini-map .dotp.g{background:var(--grey)}
+.mini-map .dotp.tu{background:var(--orange);width:26px;height:26px;animation:hop 2.6s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes hop{0%,30%{left:48%;top:66%}55%,90%{left:24%;top:16%}100%{left:48%;top:66%}}
+.stamp{position:absolute;right:-10px;bottom:30px;width:150px;height:150px;z-index:5}
+.stamp svg{width:100%;height:100%;animation:spin 18s linear infinite}
+.stamp .core{position:absolute;inset:34px;background:var(--orange);border:var(--b);border-radius:50%;display:grid;place-items:center;font:700 22px/1 var(--sans);letter-spacing:-.03em;text-align:center;transform:rotate(-12deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+/* ---------- 3 second test ---------- */
+.test{background:var(--ink);color:var(--paper);overflow:hidden}
+.test .kicker{color:#B9B0A0}
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:center}
+@media (max-width:900px){.test-grid{grid-template-columns:1fr}}
+.test h2 em{font-style:normal;color:var(--orange)}
+.clock{
+  aspect-ratio:1;max-width:440px;width:100%;margin:0 auto;
+  border:3px solid var(--paper);box-shadow:10px 10px 0 var(--orange);
+  background:var(--ink);display:grid;place-items:center;text-align:center;position:relative;padding:28px;
+}
+.clock .num{font:700 clamp(120px,18vw,230px)/.9 var(--sans);letter-spacing:-.06em}
+.clock .msg{font:700 13px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.clock .ring{position:absolute;inset:16px;border:3px dashed rgba(243,237,226,.25);border-radius:50%}
+.clock.run .ring{animation:spin 3s linear}
+.clock.done{background:var(--orange);color:var(--ink);box-shadow:10px 10px 0 var(--paper)}
+.clock .res{font:700 clamp(26px,3vw,34px)/1.1 var(--sans);letter-spacing:-.02em;display:grid;gap:14px}
+.clock .res small{font:400 15px/1.5 var(--mono);letter-spacing:0}
+.test .btn{--bg:var(--paper)}
+.clock .btn{--bg:var(--ink);color:var(--paper);box-shadow:5px 5px 0 var(--paper);font-size:16px;padding:14px 18px}
+.test p.lead{color:#D8D1C4;margin:22px 0 32px}
+.shake{animation:shake .5s}
+@keyframes shake{20%,60%{transform:translateX(-10px) rotate(-1deg)}40%,80%{transform:translateX(10px) rotate(1deg)}}
+
+/* ---------- bingo ---------- */
+.bingo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:900px){.bingo-grid{grid-template-columns:repeat(2,1fr)}}
+.bingo-cell{
+  background:var(--white);border:var(--b);box-shadow:4px 4px 0 var(--ink);
+  padding:20px 16px;min-height:104px;text-align:left;
+  font:700 clamp(16px,1.5vw,20px)/1.15 var(--sans);letter-spacing:-.02em;
+  position:relative;transition:transform .12s,box-shadow .12s,background .2s;
+}
+.bingo-cell::before{content:"“";font:700 30px/1 var(--sans);color:var(--orange);display:block;height:18px}
+.bingo-cell:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.bingo-cell[aria-pressed="true"]{background:var(--ink);color:var(--paper);transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+.bingo-cell[aria-pressed="true"]::after{
+  content:"CE L'HO";position:absolute;right:-8px;top:-12px;background:var(--orange);color:var(--ink);
+  font:700 11px/1 var(--mono);letter-spacing:.08em;padding:6px 8px;border:2px solid var(--ink);transform:rotate(6deg);
+  animation:pop .35s cubic-bezier(.5,1.8,.5,1);
+}
+@keyframes pop{from{transform:scale(0) rotate(30deg)}}
+.bingo-score{
+  margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;
+  background:var(--yellow);border:var(--b);box-shadow:var(--sh);padding:22px 26px;
+}
+@media (max-width:640px){.bingo-score{grid-template-columns:1fr}}
+.bingo-score .count{font:700 64px/1 var(--sans);letter-spacing:-.05em;min-width:3ch}
+.bingo-score .count small{font-size:24px;color:var(--muted)}
+.bingo-score p{font-size:19px;line-height:1.45}
+.meter{height:14px;border:2px solid var(--ink);background:var(--white);margin-top:12px}
+.meter i{display:block;height:100%;width:0;background:var(--orange);transition:width .4s cubic-bezier(.5,1.6,.5,1)}
+.pull{
+  margin-top:clamp(48px,6vw,80px);
+  font:700 clamp(28px,3.6vw,50px)/1.08 var(--sans);letter-spacing:-.035em;max-width:22ch;
+}
+.pull small{display:block;font:400 18px/1.6 var(--sans);letter-spacing:0;max-width:56ch;margin-top:22px;color:var(--muted)}
+
+/* ---------- map ---------- */
+.map-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:26px;align-items:stretch}
+@media (max-width:980px){.map-wrap{grid-template-columns:1fr}}
+.toggle{display:inline-flex;border:var(--b);box-shadow:4px 4px 0 var(--ink);margin-bottom:22px;background:var(--white)}
+.toggle button{border:0;padding:12px 18px;font:700 14px var(--mono);text-transform:uppercase;letter-spacing:.06em;background:transparent;transition:background .2s,color .2s}
+.toggle button + button{border-left:var(--b)}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.toggle button.after[aria-pressed="true"]{background:var(--orange);color:var(--ink)}
+.map{
+  position:relative;border:var(--b);box-shadow:var(--sh-lg);background:var(--white);
+  aspect-ratio:1.35;overflow:hidden;
+  background-image:linear-gradient(rgba(17,17,17,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.08) 1px,transparent 1px);
+  background-size:10% 10%;
+}
+@media (max-width:640px){.map{aspect-ratio:.9}}
+.map .zone-price{position:absolute;left:0;right:0;bottom:0;height:42%;
+  background:repeating-linear-gradient(-45deg,rgba(17,17,17,.07) 0 10px,transparent 10px 20px);border-top:2px dashed var(--ink)}
+.map .zone-price span,.map .zone-free span{position:absolute;font:700 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 7px}
+.map .zone-price span{left:34px;top:10px;max-width:55%}
+.map .zone-free{position:absolute;left:20%;top:6%;width:30%;height:28%;border:2.5px dashed var(--ink);background:var(--cream-y);transition:background .4s}
+.map.after .zone-free{background:var(--orange)}
+.map .zone-free span{left:-3px;top:-3px;background:var(--yellow);color:var(--ink);border:2px solid var(--ink)}
+.map .yax{position:absolute;left:8px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font:700 10px var(--mono);letter-spacing:.1em}
+.map .xax{position:absolute;font:700 10px var(--mono);letter-spacing:.08em;bottom:-1px;padding:4px 6px;background:var(--white);border:2px solid var(--ink)}
+.map .xax.l{left:28px}.map .xax.r{right:-2px}
+.pt{
+  position:absolute;transform:translate(-50%,-50%);border:var(--b);border-radius:50%;
+  display:grid;place-items:center;font:700 15px var(--mono);
+  transition:left .9s cubic-bezier(.6,0,.2,1),top .9s cubic-bezier(.6,0,.2,1),box-shadow .15s,transform .15s,background .4s;
+}
+.pt:hover{transform:translate(-50%,-50%) scale(1.08)}
+.pt.tu{animation:pulse 2s infinite}
+@keyframes pulse{0%{outline:0 solid rgba(255,122,26,.6)}100%{outline:18px solid rgba(255,122,26,0)}}
+.panel{border:var(--b);box-shadow:var(--sh-lg);background:var(--paper);padding:26px;display:flex;flex-direction:column;gap:18px}
+.panel .tag{align-self:flex-start;font:700 12px var(--mono);letter-spacing:.08em;padding:6px 9px;border:2px solid var(--ink)}
+.panel .who{display:flex;gap:14px;align-items:center}
+.panel .who b{width:52px;height:52px;flex:none;border:var(--b);border-radius:50%;display:grid;place-items:center;font:700 15px var(--mono)}
+.panel .who h3{font-size:24px}
+.panel dt{font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.panel dd{font-size:20px;line-height:1.3;font-weight:500}
+.panel dd.q{font-style:italic;font-weight:400;font-size:18px}
+.panel .hint{font:400 12px var(--mono);color:var(--muted);margin-top:auto}
+.panel.flash{animation:flash .45s}
+@keyframes flash{from{background:var(--yellow)}}
+.note{font:400 13px/1.5 var(--mono);color:var(--muted);margin-top:22px}
+
+/* ---------- positions ---------- */
+.pos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:980px){.pos-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.pos-grid{grid-template-columns:1fr}}
+.pos{background:var(--white);border:var(--b);box-shadow:var(--sh);padding:26px 24px 28px;position:relative;transition:transform .2s,box-shadow .2s}
+.pos:hover{transform:translate(-3px,-3px) rotate(-.6deg);box-shadow:9px 9px 0 var(--ink)}
+.pos .st{display:inline-block;font:700 11px/1 var(--mono);letter-spacing:.12em;padding:6px 8px;border:2px solid var(--ink);background:var(--grey);margin-bottom:18px}
+.pos h3{margin-bottom:12px}
+.pos p{font-size:16px;line-height:1.5;color:#3a352d}
+.pos::after{
+  content:"PRESO";position:absolute;right:16px;top:16px;font:700 13px var(--mono);letter-spacing:.14em;
+  color:var(--orange-dk);border:2.5px solid var(--orange-dk);padding:4px 8px;transform:rotate(9deg);opacity:.85;
+}
+.pos.free{background:var(--orange);grid-column:span 3;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:34px}
+@media (max-width:980px){.pos.free{grid-column:span 2}}
+@media (max-width:620px){.pos.free{grid-column:span 1;grid-template-columns:1fr}}
+.pos.free::after{content:"LIBERO";color:var(--ink);border-color:var(--ink);background:var(--yellow);animation:wob 2.4s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(-6deg) scale(1.08)}}
+.pos.free .st{background:var(--yellow)}
+.pos.free h3{font-size:clamp(28px,3vw,40px)}
+.pos.free p{color:var(--ink);font-size:18px;max-width:60ch}
+
+/* ---------- OTA ---------- */
+.flows{display:grid;gap:22px}
+.flow{border:var(--b);box-shadow:var(--sh);background:var(--white);padding:22px}
+.flow.good{background:var(--mint)}
+.flow .fl-h{font:700 13px var(--mono);letter-spacing:.1em;margin-bottom:16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;align-items:stretch}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.step{border:2.5px solid var(--ink);background:var(--paper);padding:14px;font-weight:700;font-size:16px;line-height:1.25;position:relative;opacity:0;transform:translateX(-14px);transition:opacity .5s,transform .5s}
+.flow.good .step{background:var(--white)}
+.step + .step{margin-left:28px}
+@media (max-width:760px){.step + .step{margin-left:0;margin-top:24px}}
+.step + .step::before{content:"→";position:absolute;left:-26px;top:50%;transform:translateY(-50%);font:700 22px var(--mono)}
+@media (max-width:760px){.step + .step::before{content:"↓";left:50%;top:-24px;transform:translateX(-50%)}}
+.in .step{opacity:1;transform:none}
+.in .step:nth-child(2){transition-delay:.2s}.in .step:nth-child(3){transition-delay:.4s}.in .step:nth-child(4){transition-delay:.6s}
+.step.end{background:var(--ink);color:var(--paper)}
+.flow.good .step.end{background:var(--orange);color:var(--ink)}
+
+/* calculator */
+.calc{margin-top:clamp(48px,6vw,80px);border:var(--b);box-shadow:var(--sh-lg);background:var(--paper);display:grid;grid-template-columns:1fr 1fr}
+@media (max-width:900px){.calc{grid-template-columns:1fr}}
+.calc-in{padding:clamp(22px,3vw,36px);display:grid;gap:20px;border-right:var(--b)}
+@media (max-width:900px){.calc-in{border-right:0;border-bottom:var(--b)}}
+.calc-in h3{font-size:clamp(26px,2.6vw,34px)}
+.calc-in > p{font-size:16px;color:var(--muted)}
+.rng label{display:flex;justify-content:space-between;font:700 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;gap:10px}
+.rng output{background:var(--ink);color:var(--paper);padding:2px 7px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:14px;background:var(--white);border:2px solid var(--ink);outline-offset:4px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;background:var(--orange);border:3px solid var(--ink);box-shadow:2px 2px 0 var(--ink);cursor:grab}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;background:var(--orange);border:3px solid var(--ink);border-radius:0;cursor:grab}
+.calc-out{background:var(--ink);color:var(--paper);padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+.calc-out .lab{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#B9B0A0}
+.calc-out .money{font:700 clamp(48px,6vw,84px)/.95 var(--sans);letter-spacing:-.05em;color:var(--orange);word-break:break-word}
+.calc-out .sub{font-size:17px;line-height:1.5;color:#D8D1C4}
+.calc-out .sub b{color:var(--yellow)}
+.calc-out .fine{font:400 12px/1.5 var(--mono);color:#8E877B}
+.calc-out .btn{align-self:flex-start;margin-top:6px}
+
+/* ---------- deliverable pages ---------- */
+.pages{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media (max-width:980px){.pages{grid-template-columns:1fr}}
+.page{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:30px 28px 34px;position:relative;transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.page:nth-child(1){transform:rotate(-1.5deg)}.page:nth-child(3){transform:rotate(1.5deg)}
+.page:hover{transform:rotate(0) translateY(-10px)}
+.page::before{content:"";position:absolute;right:-3px;top:-3px;width:38px;height:38px;background:linear-gradient(225deg,var(--paper) 50%,var(--grey) 50%);border-left:var(--b);border-bottom:var(--b)}
+.page .pg{font:700 12px var(--mono);letter-spacing:.1em;color:var(--muted)}
+.page .no{font:700 92px/1 var(--sans);letter-spacing:-.06em;color:var(--orange);-webkit-text-stroke:3px var(--ink);margin:12px 0 6px}
+.page h3{margin-bottom:14px}
+.page p{font-size:16.5px;line-height:1.55}
+.page .lines{margin-top:22px}
+.page .lines i{display:block;height:8px;background:var(--paper-2);margin:8px 0}
+.page .lines i:nth-child(2){width:76%}.page .lines i:nth-child(3){width:88%}
+.guarantee{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,80px);align-items:start}
+@media (max-width:980px){.about-grid{grid-template-columns:1fr}}
+.photo{
+  aspect-ratio:4/5;border:var(--b);box-shadow:var(--sh-lg);position:relative;
+  background:repeating-linear-gradient(-45deg,var(--paper-2) 0 14px,var(--grey) 14px 28px);
+  display:grid;place-items:center;text-align:center;padding:28px;
+}
+.photo{background:var(--yellow);padding:0;overflow:visible}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;filter:contrast(1.05)}
+.photo .name{position:absolute;left:-14px;bottom:28px;background:var(--orange);border:var(--b);padding:10px 14px;font:700 22px/1 var(--sans);letter-spacing:-.02em;transform:rotate(-3deg);box-shadow:4px 4px 0 var(--ink)}
+.about-sticky{position:sticky;top:110px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:30px;border:var(--b);background:var(--white);box-shadow:var(--sh)}
+.stat{padding:20px;border-right:var(--b);border-bottom:var(--b)}
+.stat:nth-child(2n){border-right:0}.stat:nth-child(n+3){border-bottom:0}
+.stat b{display:block;font:700 56px/1 var(--sans);letter-spacing:-.05em}
+.stat span{font:400 13px/1.4 var(--mono);color:var(--muted)}
+.bio > p{margin-bottom:20px;font-size:18.5px}
+.bio > p:first-of-type{font-size:clamp(22px,2vw,26px);line-height:1.4;font-weight:500;letter-spacing:-.01em}
+.bio strong{background:var(--cream-y);padding:0 3px;font-weight:700}
+.method{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 26px}
+.logos{background:var(--white);border-top:var(--b);border-bottom:var(--b);overflow:hidden;white-space:nowrap}
+.logos .ticker-track{animation-duration:30s;padding:22px 0}
+.logos span{font:700 clamp(20px,2.2vw,30px)/1 var(--sans);letter-spacing:-.03em;padding:0 34px;display:inline-flex;align-items:center;gap:34px}
+.logos span::after{content:"";width:16px;height:16px;background:var(--orange);border:2.5px solid var(--ink);transform:rotate(45deg)}
+.logos-label{font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:14px;background:var(--ink);color:var(--paper)}
+
+/* ---------- cases ---------- */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:980px){.cases{grid-template-columns:1fr}}
+.case{background:var(--white);border:var(--b);box-shadow:var(--sh);display:flex;flex-direction:column}
+.case-h{background:var(--ink);color:var(--paper);padding:16px 20px;font:700 12px/1.4 var(--mono);letter-spacing:.08em}
+.case:nth-child(2) .case-h{background:var(--orange);color:var(--ink);border-bottom:var(--b)}
+.case:nth-child(3) .case-h{background:var(--blue);color:var(--ink);border-bottom:var(--b)}
+.case-b{padding:22px 20px;display:grid;gap:16px;flex:1}
+.case dt{font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.case dd{font-size:16.5px;line-height:1.45}
+.case blockquote{border-top:2px dashed var(--ink);padding-top:16px;margin-top:auto;font-size:18px;font-weight:500;line-height:1.35}
+.case cite{display:block;font:400 13px var(--mono);font-style:normal;color:var(--muted);margin-top:8px}
+.todo{background:var(--cream-y);outline:2px dashed var(--orange-dk);outline-offset:1px;padding:0 4px;font-family:var(--mono);font-size:.85em}
+
+/* ---------- process ---------- */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:start}
+@media (max-width:900px){.why{grid-template-columns:1fr}}
+.why-box{background:var(--yellow);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(24px,3vw,40px);transform:rotate(-1deg)}
+.why-box h3{font-size:clamp(30px,3vw,42px);margin-bottom:18px}
+.why-box p{margin-bottom:14px}
+.why-box .no-sell{margin-top:20px;display:inline-block;background:var(--ink);color:var(--paper);font:700 14px/1.4 var(--mono);padding:10px 14px}
+.timeline{display:grid;gap:0;counter-reset:s}
+.tl{display:grid;grid-template-columns:76px 1fr;gap:20px;padding-bottom:30px;position:relative}
+.tl::before{content:"";position:absolute;left:36px;top:76px;bottom:0;width:3px;background:var(--ink)}
+.tl:last-child::before{display:none}
+.tl .n{width:76px;height:76px;border:var(--b);background:var(--white);display:grid;place-items:center;font:700 34px var(--sans);box-shadow:4px 4px 0 var(--ink);transition:background .4s}
+.tl.in .n{background:var(--orange)}
+.tl .when{font:700 12px var(--mono);letter-spacing:.1em;background:var(--ink);color:var(--paper);display:inline-block;padding:4px 8px;margin:6px 0 10px}
+.tl h3{margin-bottom:8px}
+.tl p{font-size:17px}
+
+/* ---------- fit ---------- */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:900px){.fit{grid-template-columns:1fr}}
+.fit-col{border:var(--b);box-shadow:var(--sh);padding:clamp(22px,3vw,34px);background:var(--mint)}
+.fit-col.no{background:var(--white)}
+.fit-col h3{font-size:clamp(26px,2.6vw,34px);margin-bottom:20px}
+.fit-col ul{list-style:none;display:grid;gap:16px}
+.fit-col li{display:grid;grid-template-columns:34px 1fr;gap:12px;font-size:17.5px;line-height:1.45}
+.fit-col li::before{content:"✓";width:34px;height:34px;border:2.5px solid var(--ink);background:var(--white);display:grid;place-items:center;font:700 18px var(--mono)}
+.fit-col.no li::before{content:"✕";background:var(--ink);color:var(--paper)}
+.fit-col.no li{color:#3a352d}
+.fit-note{margin-top:30px;font-size:19px;max-width:62ch}
+
+/* ---------- faq ---------- */
+.faq{display:grid;gap:14px;max-width:920px}
+.faq details{border:var(--b);background:var(--white);box-shadow:4px 4px 0 var(--ink);transition:box-shadow .2s,transform .2s}
+.faq details[open]{box-shadow:var(--sh);transform:translate(-2px,-2px)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 24px;font:700 clamp(19px,1.8vw,23px)/1.2 var(--sans);letter-spacing:-.02em;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{flex:none;width:38px;height:38px;border:2.5px solid var(--ink);display:grid;place-items:center;font:700 22px var(--mono);background:var(--yellow);transition:transform .3s,background .3s}
+.faq details[open] .pm{transform:rotate(45deg);background:var(--orange)}
+.faq .ans{padding:0 24px 24px;font-size:17.5px;max-width:68ch}
+
+/* ---------- final / form ---------- */
+.final{background:var(--orange);overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(17,17,17,.2) 1.2px,transparent 1.4px);background-size:18px 18px;pointer-events:none}
+.final .wrap{position:relative}
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:start}
+@media (max-width:980px){.final-grid{grid-template-columns:1fr}}
+.final h2{margin-bottom:28px}
+.gets{list-style:none;display:grid;gap:14px;margin-bottom:30px}
+.gets li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;font-size:19px;font-weight:500;line-height:1.35}
+.gets li b{width:44px;height:44px;border:var(--b);background:var(--paper);display:grid;place-items:center;font:700 16px var(--mono)}
+.sign{display:flex;gap:16px;align-items:center;border-top:3px solid var(--ink);padding-top:24px}
+.sign .av{width:72px;height:72px;flex:none;border:var(--b);border-radius:50%;background:var(--yellow);overflow:hidden;box-shadow:3px 3px 0 var(--ink)}
+.sign .av img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.sign p{font-size:15.5px;line-height:1.5}
+.slots{margin-top:26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font:700 14px/1.4 var(--mono)}
+.slots .boxes{display:flex;gap:6px}
+.slots .boxes i{width:26px;height:26px;border:2.5px solid var(--ink);background:var(--paper)}
+.slots .boxes i.on{background:var(--ink)}
+
+form.f{background:var(--paper);border:var(--b);box-shadow:12px 12px 0 var(--ink);padding:clamp(22px,3vw,36px)}
+.f-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:8px;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.prog{height:16px;border:2.5px solid var(--ink);background:var(--white);margin-bottom:24px}
+.prog i{display:block;height:100%;width:0;background:repeating-linear-gradient(-45deg,var(--orange) 0 8px,var(--orange-dk) 8px 16px);transition:width .4s cubic-bezier(.5,1.5,.5,1)}
+.field{margin-bottom:18px}
+.field label{display:block;font:700 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-bottom:7px}
+.field label small{text-transform:none;font-weight:400;color:var(--muted)}
+.field input,.field select,.field textarea{
+  width:100%;font:500 17px/1.3 var(--sans);color:var(--ink);background:var(--white);
+  border:var(--b);padding:14px 14px;border-radius:0;transition:box-shadow .15s,transform .15s;
+}
+.field textarea{min-height:92px;resize:vertical}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 15px) 50%;background-size:7px 7px;background-repeat:no-repeat}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;box-shadow:5px 5px 0 var(--orange);transform:translate(-2px,-2px)}
+.field.err input,.field.err select,.field.err textarea{background:#FFE3D6}
+.field .em{display:none;font:400 12px var(--mono);color:var(--orange-dk);margin-top:6px}
+.field.err .em{display:block}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.row2{grid-template-columns:1fr}}
+.check{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start;font-size:14.5px;line-height:1.45;margin:6px 0 22px}
+.check input{width:26px;height:26px;accent-color:var(--orange);border:var(--b)}
+.check.err{color:var(--orange-dk)}
+form.f .btn{width:100%}
+.f-foot{font:400 12.5px/1.5 var(--mono);color:var(--muted);margin-top:14px;text-align:center}
+.ok{display:none;text-align:center;padding:30px 10px}
+.ok .big{font:700 clamp(34px,4vw,48px)/1 var(--sans);letter-spacing:-.04em;margin:18px 0}
+.ok .tick{width:96px;height:96px;margin:0 auto;border:var(--b);background:var(--mint);display:grid;place-items:center;font:700 52px var(--sans);box-shadow:var(--sh);animation:pop .5s cubic-bezier(.5,1.8,.5,1)}
+form.f.sent .fields{display:none}
+form.f.sent .ok{display:block}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:var(--paper);padding:56px 0 110px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-end}
+footer .big{font:700 clamp(40px,8vw,120px)/.9 var(--sans);letter-spacing:-.06em}
+footer .big span{color:var(--orange)}
+footer .meta{font:400 13px/1.8 var(--mono);color:#B9B0A0;text-align:right}
+footer .meta a{color:var(--paper)}
+@media (max-width:640px){footer .meta{text-align:left}}
+
+/* ---------- sticky mobile cta ---------- */
+.sticky-cta{
+  position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:none;
+  transform:translateY(140%);transition:transform .35s cubic-bezier(.3,1.4,.5,1);
+}
+.sticky-cta .btn{width:100%;padding:16px 18px}
+.sticky-cta.show{transform:none}
+@media (max-width:760px){.sticky-cta{display:block}}
+
+/* progress bar */
+.readbar{position:fixed;left:0;top:0;height:5px;background:var(--orange);z-index:60;width:0;border-right:3px solid var(--ink)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .line > span{transform:none}
+  .step{opacity:1;transform:none}
+  .hl{background-size:100% 40%}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="readbar" id="readbar" aria-hidden="true"></div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker">
+    <span>Analisi gratuita</span><span>Fatta a mano, una per una</span><span>Massimo 4 a settimana</span><span>Consegna entro 72 ore</span><span>Nessuna telefonata di vendita</span><span>Solo per hotel indipendenti</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Hotel Positioning, torna all'inizio"><span class="logo-mark">N°1</span>Hotel Positioning</a>
+    <nav class="nav-links" aria-label="Sezioni">
+      <a href="#mappa">La mappa</a>
+      <a href="#ota">Il costo</a>
+      <a href="#analisi">L'analisi</a>
+      <a href="#chi">Chi sono</a>
+      <a href="#faq">Domande</a>
+    </nav>
+    <a href="#richiedi" class="btn"><span><span class="full">Voglio l'analisi</span><span class="full"> del mio hotel</span></span><span class="arr">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Analisi gratuita per hotel indipendenti</span>
+      <h1>
+        <span class="line"><span>Gli hotel della tua zona</span></span>
+        <span class="line"><span>ti rubano <span class="hl or in">ospiti.</span></span></span>
+        <span class="line"><span>Ogni settimana.</span></span>
+      </h1>
+      <p class="lead">Quasi sempre per lo stesso motivo: quando qualcuno cerca dove dormire dalle tue parti, <strong>il primo nome che gli viene in mente non è il tuo.</strong></p>
+      <p class="lead">E chi non viene in mente per primo finisce nell'unico posto dove si confronta solo il prezzo. Su Booking.</p>
+      <div class="hero-cta">
+        <a href="#richiedi" class="btn">Voglio l'analisi del mio hotel <span class="arr">→</span></a>
+        <a href="#test" class="btn ghost">Fai il test dei 3 secondi</a>
+      </div>
+      <p class="micro"><b>Gratis.</b> Due minuti per chiederla, 72 ore per riceverla. Niente accessi, niente password.</p>
+      <div class="proof-row">
+        <span class="chip y">Fractional CMO di 4 strutture</span>
+        <span class="chip m">Recensioni lette in 5 lingue</span>
+        <span class="chip b">2 catene portate alla vendita</span>
+      </div>
+    </div>
+
+    <div class="stack" aria-hidden="true">
+      <div class="card doc">
+        <div class="mono" style="font-size:12px;font-weight:700;letter-spacing:.1em">ANALISI DI POSIZIONAMENTO · PAG. 1</div>
+        <div class="lines"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="card mini-map">
+        <span class="ax" style="left:10px;top:8px">RICONOSCIBILE</span>
+        <span class="ax" style="left:10px;bottom:8px">GENERICO</span>
+        <i class="dotp" style="left:70%;top:18%"></i>
+        <i class="dotp" style="left:84%;top:40%"></i>
+        <i class="dotp g" style="left:30%;top:70%"></i>
+        <i class="dotp g" style="left:62%;top:74%"></i>
+        <i class="dotp tu"></i>
+      </div>
+      <div class="card n1">
+        <div class="lab"><span>Il tuo hotel è il n°1 per</span><span>■ ■ ■</span></div>
+        <div class="big"><span id="typed"></span><span class="caret"></span></div>
+        <hr>
+        <div class="foot">Se questa riga non sai riempirla, l'ospite la riempie con un numero: il prezzo.</div>
+      </div>
+      <div class="stamp">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+          <circle cx="100" cy="100" r="97" fill="#FFFFFF" stroke="#111" stroke-width="4"/>
+          <text font-family="Space Mono, monospace" font-weight="700" font-size="17" letter-spacing="3.2"><textPath href="#circ">GRATIS ✱ FATTA A MANO ✱ MAX 4 A SETTIMANA ✱</textPath></text>
+        </svg>
+        <div class="core">Gratis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 SECOND TEST ================= -->
+<section class="sec test" id="test">
+  <div class="wrap test-grid">
+    <div class="rv">
+      <p class="kicker">Prima di andare avanti · un test</p>
+      <h2 style="margin-top:20px">Di cosa sei il numero 1 <em>nella tua zona?</em></h2>
+      <p class="lead">Rispondi ad alta voce, in una frase. Hai tre secondi. È il tempo che ti dà un ospite mentre scorre la lista degli hotel.</p>
+      <button class="btn" id="testBtn" type="button">Avvia il cronometro <span class="arr">→</span></button>
+    </div>
+    <div class="clock rv d2" id="clock" aria-live="polite">
+      <div class="ring"></div>
+      <div id="clockBody">
+        <div class="num">3</div>
+        <div class="msg">Secondi. Non uno di più.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BINGO ================= -->
+<section class="sec" id="bingo">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker"><b>Gioco</b> · Il bingo delle homepage</p>
+      <h2>Apri la tua homepage. Quante di queste frasi trovi?</h2>
+      <p class="lead">Poi apri quella di tre hotel vicino a te. Tocca le frasi che usi anche tu.</p>
+    </div>
+    <div class="bingo-grid rv d1" id="bingoGrid"></div>
+    <div class="bingo-score rv d2">
+      <div class="count"><span id="bingoN">0</span><small>/12</small></div>
+      <div>
+        <p id="bingoMsg">Nessuna? Bene. Oppure non hai ancora aperto la tua homepage.</p>
+        <div class="meter"><i id="bingoBar"></i></div>
+      </div>
+    </div>
+    <p class="pull rv">Il problema quasi mai è il budget. <span class="hl">Sono le parole.</span>
+      <small>Lavorando con gli hotel l'ho visto ogni volta. Chi usa le stesse parole del vicino, per l'ospite è il vicino. Solo con un altro prezzo.</small>
+    </p>
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section class="sec" id="mappa" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker"><b>Esempio</b> · Il cuore dell'analisi</p>
+      <h2>La mappa del tuo compset, come la vede l'ospite.</h2>
+      <p class="lead">In alto chi si riconosce. In basso chi si confonde con gli altri. Guarda dove sei oggi, poi premi <strong>Dopo l'analisi</strong>.</p>
+    </div>
+
+    <div class="toggle rv" role="group" aria-label="Momento">
+      <button type="button" id="tToday" aria-pressed="true">Oggi</button>
+      <button type="button" id="tAfter" class="after" aria-pressed="false">Dopo l'analisi</button>
+    </div>
+
+    <div class="map-wrap rv d1">
+      <div class="map" id="map">
+        <div class="zone-free"><span>Posizione libera</span></div>
+        <div class="zone-price"><span>Qui si compete sul prezzo. Su Booking.</span></div>
+        <span class="yax">GENERICO ← → RICONOSCIBILE</span>
+        <span class="xax l">PREZZO PIÙ BASSO</span>
+        <span class="xax r">PREZZO PIÙ ALTO</span>
+      </div>
+      <div class="panel" id="panel" aria-live="polite"></div>
+    </div>
+    <p class="note">Hotel e posizioni di fantasia. Nell'analisi la mappa la costruisco sul tuo hotel e sui competitor che mi indichi tu.</p>
+    <div style="margin-top:30px" class="rv"><a href="#richiedi" class="btn">Voglio la mappa del mio hotel <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= POSITIONS ================= -->
+<section class="sec" id="posizioni">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Posizioni prese</p>
+      <h2>Gli hotel che riempiono senza svendere hanno una cosa in comune.</h2>
+      <p class="lead">L'ospite sa dire in una frase perché ci va. Eccone otto prese bene. Nota che nessuna parla di “location unica”.</p>
+    </div>
+    <div class="pos-grid">
+      <article class="pos rv"><span class="st">OCCUPATO</span><h3>L'hotel dove arrivi in treno e l'auto non ti serve</h3><p>Navetta dalla stazione, bici in garage, cena a duecento metri. Il weekend senza cercare parcheggio.</p></article>
+      <article class="pos rv d1"><span class="st">OCCUPATO</span><h3>Il resort dove i bambini cenano alle 19 con lo staff</h3><p>E i genitori alle 21, da soli. Nelle recensioni lo scrivono tutti, quasi con le stesse parole.</p></article>
+      <article class="pos rv d2"><span class="st">OCCUPATO</span><h3>L'hotel dei ciclisti</h3><p>Officina, lavaggio divise, colazione alle sei. Il gruppo torna ogni primavera e porta gli amici.</p></article>
+      <article class="pos rv"><span class="st">OCCUPATO</span><h3>Il boutique dove la colazione dura fino all'una</h3><p>Si è preso l'ospite che in vacanza la sveglia non la punta. Gli altri chiudono la sala alle dieci e mezza.</p></article>
+      <article class="pos rv d1"><span class="st">OCCUPATO</span><h3>L'hotel business con check-out alle 18 il venerdì</h3><p>Chi ha l'ultima riunione nel pomeriggio in città non trova altro. Prenota lì da anni.</p></article>
+      <article class="pos rv d2"><span class="st">OCCUPATO</span><h3>L'agriturismo dove la cena la raccogli tu</h3><p>L'orto, il cesto, la cuoca che ti aspetta in cucina. Il prezzo con gli altri non lo confronta nessuno.</p></article>
+      <article class="pos rv"><span class="st">OCCUPATO</span><h3>L'hotel dove il cane grande è il benvenuto</h3><p>Ciotola in camera, cuccia vera, spiaggia a cinque minuti. Chi ha un labrador lo sa prima ancora di cercare.</p></article>
+      <article class="pos rv d1"><span class="st">OCCUPATO</span><h3>La SPA dove il telefono resta all'ingresso</h3><p>Una cassetta di legno alla reception. Ci vai per staccare davvero, e lo sai già quando prenoti.</p></article>
+      <article class="pos rv d2"><span class="st">OCCUPATO</span><h3>L'hotel che si è preso settembre</h3><p>Quando gli altri abbassano le tariffe, lui alza la voce: vendemmia, mare vuoto, sentieri liberi. Pieno fino a ottobre.</p></article>
+      <article class="pos free rv">
+        <div>
+          <span class="st">LIBERO</span>
+          <h3>Il tuo. Se lo prendi prima degli altri.</h3>
+          <p>Nella tua zona almeno una posizione è ancora vuota. Un tipo di ospite, un mese dell'anno, un servizio che nessuno ha messo davanti. L'analisi ti dice quale.</p>
+        </div>
+        <a href="#richiedi" class="btn dark">Trova la mia posizione <span class="arr">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OTA ================= -->
+<section class="sec" id="ota" style="background:var(--white)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Il conto che nessuno ti mostra</p>
+      <h2>Chi non ha una posizione finisce a <span class="hl or">lavorare per Booking.</span></h2>
+      <p class="lead">Quando l'ospite non sa perché dovrebbe scegliere te, confronta l'unica cosa confrontabile: il prezzo. E i prezzi si confrontano sulle OTA, dove paghi una commissione per stare in fila accanto agli hotel che ti somigliano.</p>
+    </div>
+
+    <div class="flows">
+      <div class="flow rv">
+        <div class="fl-h"><span>HOTEL GENERICO</span><span>→ COMMISSIONE</span></div>
+        <div class="steps">
+          <div class="step">L'ospite non ti distingue</div>
+          <div class="step">Confronta i prezzi</div>
+          <div class="step">Prenota su una OTA</div>
+          <div class="step end">Paghi la commissione</div>
+        </div>
+      </div>
+      <div class="flow good rv d1">
+        <div class="fl-h"><span>HOTEL POSIZIONATO</span><span>→ MARGINE</span></div>
+        <div class="steps">
+          <div class="step">L'ospite sa perché sceglierti</div>
+          <div class="step">Ti cerca per nome</div>
+          <div class="step">Ti scrive o prenota diretto</div>
+          <div class="step end">Il margine resta a te</div>
+        </div>
+      </div>
+    </div>
+    <p class="fit-note rv" style="margin-top:34px">Gli hotel con un'identità chiara seguono la seconda strada. L'ospite li cerca per nome, scrive direttamente, chiede un preventivo. <strong>Il prezzo arriva dopo, quando ha già deciso.</strong></p>
+
+    <div class="calc rv" id="calc">
+      <div class="calc-in">
+        <p class="kicker"><b>Calcolatore</b> · Due minuti</p>
+        <h3>Quanto regali alle OTA ogni anno?</h3>
+        <p>Muovi i cursori con i numeri del tuo hotel. Le stime restano sul tuo schermo: non salvo niente.</p>
+        <div class="rng"><label for="cRooms">Camere <output id="oRooms"></output></label><input type="range" id="cRooms" min="5" max="200" step="1" value="30"></div>
+        <div class="rng"><label for="cAdr">Tariffa media a notte <output id="oAdr"></output></label><input type="range" id="cAdr" min="50" max="600" step="5" value="130"></div>
+        <div class="rng"><label for="cDays">Giorni di apertura l'anno <output id="oDays"></output></label><input type="range" id="cDays" min="60" max="365" step="5" value="240"></div>
+        <div class="rng"><label for="cOcc">Occupazione media <output id="oOcc"></output></label><input type="range" id="cOcc" min="20" max="100" step="1" value="70"></div>
+        <div class="rng"><label for="cOta">Quota venduta via OTA <output id="oOta"></output></label><input type="range" id="cOta" min="0" max="100" step="1" value="60"></div>
+        <div class="rng"><label for="cCom">Commissione media <output id="oCom"></output></label><input type="range" id="cCom" min="10" max="30" step="1" value="18"></div>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <span class="lab">Commissioni pagate alle OTA, ogni anno</span>
+        <span class="money" id="money">€ 0</span>
+        <p class="sub">Se solo <b>1 prenotazione su 5</b> passasse dalle OTA al diretto, ti resterebbero in tasca <b id="save">€ 0</b> in più. Ogni anno. Senza vendere una camera in più.</p>
+        <p class="fine">Stima su ricavi camere: camere × giorni × occupazione × tariffa × quota OTA × commissione. Non include costi di billboard, promozioni e programmi preferred.</p>
+        <a href="#richiedi" class="btn">Voglio riprendermi quel margine <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT YOU GET ================= -->
+<section class="sec" id="analisi">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Cosa ricevi</p>
+      <h2>Tre pagine sul tuo hotel. Scritte a mano, non da un software.</h2>
+      <p class="lead">Lavoro solo su quello che vede l'ospite. Non ti chiedo accessi, password o dati riservati.</p>
+    </div>
+    <div class="pages">
+      <article class="page rv">
+        <span class="pg">PAG. 1 · POSIZIONAMENTO</span>
+        <div class="no">01</div>
+        <h3>Il tuo hotel, letto da fuori</h3>
+        <p>Recensioni, scheda Google, schede OTA e homepage, lette come le legge chi sta decidendo dove prenotare. Le recensioni le leggo in lingua originale: italiano, inglese, russo, arabo e cinese. Spesso il vero motivo per cui ti scelgono è scritto lì, in una lingua che in hotel non ha letto nessuno.</p>
+        <div class="lines"><i></i><i></i><i></i></div>
+      </article>
+      <article class="page rv d1">
+        <span class="pg">PAG. 2 · COMPETITOR</span>
+        <div class="no">02</div>
+        <h3>I tuoi competitor sotto la lente</h3>
+        <p>I 2-3 hotel che mi indichi tu. Perché gli ospiti scelgono loro, di cosa sono il numero 1, che prezzo tengono, cosa promettono e cosa mantengono secondo chi ci ha dormito.</p>
+        <div class="lines"><i></i><i></i><i></i></div>
+      </article>
+      <article class="page rv d2">
+        <span class="pg">PAG. 3 · DOVE COLPIRE</span>
+        <div class="no">03</div>
+        <h3>Dove puoi colpire</h3>
+        <p>La posizione libera nel tuo compset e le prime due o tre cose da cambiare: la frase in homepage, la scheda Google, il pacchetto da mettere davanti a tutto il resto.</p>
+        <div class="lines"><i></i><i></i><i></i></div>
+      </article>
+    </div>
+    <div class="guarantee rv">
+      <span class="chip y">Gratis davvero</span>
+      <span class="chip">Nessun contratto</span>
+      <span class="chip m">Nessun accesso richiesto</span>
+      <span class="chip b">Il documento resta tuo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<div class="logos-label">Strutture con cui lavoro oggi</div>
+<div class="logos" aria-label="Veridia Resort, Chia. Silva Splendid Hotel e SPA, Fiuggi. Tocq Hotel, Milano. Radisson Blu Bergamo ChorusLife.">
+  <div class="ticker-track" id="logos" aria-hidden="true">
+    <span>Veridia Resort · Chia</span><span>Silva Splendid Hotel &amp; SPA · Fiuggi</span><span>Tocq Hotel · Milano</span><span>Radisson Blu Bergamo ChorusLife</span>
+  </div>
+</div>
+
+<section class="sec" id="chi">
+  <div class="wrap about-grid">
+    <div class="about-sticky rv">
+      <div class="photo">
+        <img src="https://hotelpositioning.com/__l5e/assets-v1/1de3f3bd-22d7-4066-a21f-da7c7a17d6b5/francesco-hero-new.png" alt="Francesco Astolfi, fractional CMO per hotel e resort" loading="lazy" width="800" height="1000">
+        <div class="name">Francesco Astolfi</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-count="2">0</b><span>catene di ristorazione ideate e portate alla vendita</span></div>
+        <div class="stat"><b data-count="10">0</b><span>locali aperti da imprenditore</span></div>
+        <div class="stat"><b data-count="4">0</b><span>strutture seguite oggi come fractional CMO</span></div>
+        <div class="stat"><b data-count="5">0</b><span>lingue in cui leggo le tue recensioni</span></div>
+      </div>
+    </div>
+    <div class="bio">
+      <div class="sec-head rv" style="margin-bottom:34px">
+        <p class="kicker">Chi prepara la tua analisi</p>
+        <h2>Il marketing degli hotel lo faccio da dentro. Non lo guardo da fuori.</h2>
+      </div>
+      <p class="rv">Mi chiamo Francesco Astolfi e vengo da Rimini, dove gli alberghi stanno uno accanto all'altro sullo stesso lungomare. Lì l'ho capito presto: <strong>o l'ospite ti ricorda per qualcosa, o ti sceglie per il prezzo.</strong></p>
+      <p class="rv">Faccio il fractional CMO per hotel e resort. Entro nel marketing della struttura come se fossi della casa: posizionamento, campagne, CRM degli ospiti, richieste di preventivo, presenza su Google e sulle OTA. Ogni settimana sono al telefono con direttori, revenue e reception, non solo con chi firma.</p>
+      <p class="rv">Oggi seguo, tra gli altri, un resort in Sardegna, un hotel con SPA a Fiuggi, un boutique hotel a Milano e un hotel a Bergamo.</p>
+      <p class="rv">L'ospitalità l'ho fatta anche da imprenditore. Ho ideato e co-fondato due catene di ristorazione, Yume Ramen ed Enzu Asian Street Food: dieci locali aperti, tutte e due portate fino alla vendita. <strong>So cosa vuol dire far tornare i conti il lunedì mattina.</strong> E so cosa succede quando un posto lascia un ricordo così preciso che la gente torna, e porta altri.</p>
+      <p class="rv">Il metodo con cui lavoro mette insieme tre strumenti, adattati a chi vende camere invece che software:</p>
+      <div class="method rv">
+        <span class="chip y">Posizionamento · April Dunford</span>
+        <span class="chip m">Jobs-to-Be-Done</span>
+        <span class="chip b">Livelli di consapevolezza · Eugene Schwartz</span>
+      </div>
+      <p class="rv">Lo sto raccogliendo in un libro, <em>Hotel Positioning, manuale di posizionamento alberghiero</em>, e nel 2026 l'ho portato sul palco di Hospitality Day.</p>
+      <p class="rv">Le analisi le preparo io, una per una. Per questo sono massimo quattro a settimana: di più, fatte bene, non riesco.</p>
+      <div class="rv" style="margin-top:30px"><a href="#richiedi" class="btn">Voglio l'analisi del mio hotel <span class="arr">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASES ================= -->
+<section class="sec" id="casi" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Casi</p>
+      <h2>Tre hotel che hanno smesso di somigliare agli altri.</h2>
+      <p class="lead">Cosa è cambiato, raccontato da chi ci lavora.</p>
+    </div>
+    <div class="cases">
+      <article class="case rv">
+        <div class="case-h">VERIDIA RESORT · CHIA, SARDEGNA</div>
+        <dl class="case-b">
+          <div><dt>Il punto di partenza</dt><dd>Un resort sulla costa sud, in mezzo a tanti resort sul mare che promettono la stessa cosa.</dd></div>
+          <div><dt>La posizione</dt><dd>Stai dentro la natura, non accanto. Niente booking engine sulla landing: solo preventivo personale.</dd></div>
+          <div><dt>Cosa è cambiato</dt><dd><span class="todo">[RISULTATO CON UN NUMERO]</span></dd></div>
+          <blockquote>“<span class="todo">[CITAZIONE DEL CLIENTE]</span>”<cite><span class="todo">[Nome], [ruolo]</span></cite></blockquote>
+        </dl>
+      </article>
+      <article class="case rv d1">
+        <div class="case-h">RADISSON BLU · BERGAMO CHORUSLIFE</div>
+        <dl class="case-b">
+          <div><dt>Il punto di partenza</dt><dd>Un hotel dentro un distretto nuovo, che gli ospiti faticavano a capire prima di arrivare.</dd></div>
+          <div><dt>La posizione</dt><dd><span class="todo">[DA COMPLETARE]</span></dd></div>
+          <div><dt>Cosa è cambiato</dt><dd><span class="todo">[RISULTATO CON UN NUMERO]</span></dd></div>
+          <blockquote>“<span class="todo">[CITAZIONE DEL CLIENTE]</span>”<cite><span class="todo">[Nome], [ruolo]</span></cite></blockquote>
+        </dl>
+      </article>
+      <article class="case rv d2">
+        <div class="case-h">SILVA SPLENDID HOTEL &amp; SPA · FIUGGI</div>
+        <dl class="case-b">
+          <div><dt>Il punto di partenza</dt><dd><span class="todo">[DA COMPLETARE]</span></dd></div>
+          <div><dt>La posizione</dt><dd><span class="todo">[DA COMPLETARE]</span></dd></div>
+          <div><dt>Cosa è cambiato</dt><dd><span class="todo">[RISULTATO CON UN NUMERO]</span></dd></div>
+          <blockquote>“<span class="todo">[CITAZIONE DEL CLIENTE]</span>”<cite><span class="todo">[Nome], [ruolo]</span></cite></blockquote>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY FREE + PROCESS ================= -->
+<section class="sec" id="come">
+  <div class="wrap why">
+    <div class="why-box rv">
+      <p class="kicker" style="color:var(--ink)">La domanda che ti stai facendo</p>
+      <h3 style="margin-top:14px">Perché è gratis?</h3>
+      <p>Perché è il mio modo di presentarmi. Invece di raccontarti come lavoro, te lo faccio vedere sul tuo hotel.</p>
+      <p>Qualcuno, dopo averla letta, mi chiede di seguire il marketing della struttura. Gli altri la usano per conto loro. E va bene così.</p>
+      <span class="no-sell">Nessuna telefonata di vendita. Nessun preventivo che non hai chiesto.</span>
+    </div>
+    <div>
+      <div class="sec-head rv" style="margin-bottom:36px">
+        <p class="kicker">Come funziona</p>
+        <h2 style="font-size:clamp(32px,4vw,56px)">Dal modulo al documento, in tre passi.</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl rv"><div class="n">1</div><div><span class="when">DUE MINUTI</span><h3>Mi dici chi sei e contro chi giochi</h3><p>Hotel, sito, i 2-3 competitor che ti preoccupano. Nessuna chiamata obbligatoria.</p></div></div>
+        <div class="tl rv"><div class="n">2</div><div><span class="when">ENTRO 72 ORE</span><h3>Preparo l'analisi a mano</h3><p>Il tuo hotel contro i competitor che hai scelto: posizione, recensioni, promesse, dove puoi colpire.</p></div></div>
+        <div class="tl rv"><div class="n">3</div><div><span class="when">VIA EMAIL E WHATSAPP</span><h3>La ricevi e, se vuoi, ne parliamo</h3><p>Una videochiamata di venti minuti per i dubbi. Se non ti serve, il documento resta comunque tuo.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIT ================= -->
+<section class="sec" id="fit" style="background:var(--white)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Meglio dirlo subito</p>
+      <h2>Non è per tutti. <span class="strike">Davvero.</span></h2>
+    </div>
+    <div class="fit">
+      <div class="fit-col rv">
+        <h3>È per te se</h3>
+        <ul>
+          <li><span>Hai un hotel indipendente da circa 40 camere in su, e sul marketing decidi tu o puoi convincere chi decide.</span></li>
+          <li><span>Vuoi sapere come ti vede l'ospite, anche quando non è quello che speri.</span></li>
+          <li><span>Sei disposto a cambiare parole, pacchetti e priorità, se l'analisi dice che serve.</span></li>
+        </ul>
+      </div>
+      <div class="fit-col no rv d1">
+        <h3>Non è per te se</h3>
+        <ul>
+          <li><span>Pensi che il problema sia solo Booking, e che basti abbassare la tariffa sul sito.</span></li>
+          <li><span>Credi che un sito nuovo e più bello risolva tutto da solo.</span></li>
+          <li><span>Cerchi più follower, non più prenotazioni dirette.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fit-note rv">Lo scrivo per non farti perdere tempo. Cerco albergatori che vogliono la verità sul loro hotel, e strutture dove l'analisi può cambiare davvero qualcosa.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Domande</p>
+      <h2>Quelle che mi fanno tutti.</h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>Quanto costa, davvero?<span class="pm">+</span></summary><div class="ans">Niente. Non c'è un contratto da firmare e non c'è una seconda parte a pagamento per leggere le conclusioni.</div></details>
+      <details class="rv"><summary>Devo darti accessi al PMS, al booking engine o ad Analytics?<span class="pm">+</span></summary><div class="ans">No. Lavoro su quello che vede l'ospite prima di prenotare: recensioni, Google, OTA, sito, social.</div></details>
+      <details class="rv"><summary>Quanto tempo mi chiede?<span class="pm">+</span></summary><div class="ans">I due minuti del modulo. La videochiamata dopo è facoltativa.</div></details>
+      <details class="rv"><summary>Faccio parte di un brand o di una collezione. Ha senso lo stesso?<span class="pm">+</span></summary><div class="ans">Sì. Anche dentro un brand l'ospite sceglie tra te e l'hotel a due isolati. Il brand ti dà un nome, non ti dà un motivo per essere scelto in quella città.</div></details>
+      <details class="rv"><summary>E se poi non voglio lavorare con te?<span class="pm">+</span></summary><div class="ans">Il documento resta tuo e ci fai quello che vuoi. Non ti richiamo per insistere.</div></details>
+      <details class="rv"><summary>Perché massimo quattro a settimana?<span class="pm">+</span></summary><div class="ans">Perché le scrivo io, leggendo recensioni e siti uno per uno. Di più, fatte bene, non riesco. Se le quattro della settimana sono già prese, entri in coda per il lunedì successivo.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL + FORM ================= -->
+<section class="sec final" id="richiedi">
+  <div class="wrap final-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Gratis · Massimo 4 a settimana</span>
+      <h2 style="margin-top:24px" class="rv">Ti regalo l'analisi del tuo hotel. E dei tuoi competitor.</h2>
+      <ul class="gets">
+        <li class="rv"><b>01</b>Che posizione occupi tu nella testa degli ospiti.</li>
+        <li class="rv d1"><b>02</b>Quale occupano i tuoi competitor, e perché scelgono loro.</li>
+        <li class="rv d2"><b>03</b>Dove puoi colpire: la posizione libera che puoi prenderti.</li>
+      </ul>
+      <div class="sign rv">
+        <div class="av"><img src="https://hotelpositioning.com/__l5e/assets-v1/1de3f3bd-22d7-4066-a21f-da7c7a17d6b5/francesco-hero-new.png" alt="" loading="lazy" width="72" height="72"></div>
+        <p>Scritta a mano da <strong>Francesco Astolfi</strong>, fractional CMO per hotel e resort, ideatore di due catene portate alla vendita. Senza contratto, senza impegno.</p>
+      </div>
+      <div class="slots rv">
+        <div class="boxes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <span>4 analisi a settimana. Se sono finite, entri in coda per <span id="nextMon">lunedì</span>.</span>
+      </div>
+    </div>
+
+    <!-- Collega qui il tuo endpoint (Formspree, Make, HubSpot, ecc.) nell'attributo action -->
+    <form class="f rv d1" id="form" action="#" method="post" novalidate>
+      <div class="fields">
+        <div class="f-head"><span>Richiesta analisi</span><span id="progTxt">0%</span></div>
+        <div class="prog"><i id="progBar"></i></div>
+        <div class="row2">
+          <div class="field"><label for="fName">Nome e cognome</label><input id="fName" name="nome" autocomplete="name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
+          <div class="field"><label for="fRole">Il tuo ruolo</label>
+            <select id="fRole" name="ruolo" required>
+              <option value="">Scegli…</option><option>Proprietario</option><option>Direttore</option><option>Revenue / Sales</option><option>Marketing</option><option>Altro</option>
+            </select><span class="em">Scegli un ruolo.</span></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="fHotel">Nome dell'hotel e città</label><input id="fHotel" name="hotel" required placeholder="Hotel Aurora, Rimini"><span class="em">Senza questo non posso iniziare.</span></div>
+          <div class="field"><label for="fSite">Sito web</label><input id="fSite" name="sito" type="text" inputmode="url" required placeholder="www.tuohotel.it"><span class="em">Mi basta l'indirizzo.</span></div>
+        </div>
+        <div class="field"><label for="fComp">I 2-3 hotel che ti portano via ospiti</label><textarea id="fComp" name="competitor" required placeholder="Quelli a cui pensi quando vedi un'altra camera vuota."></textarea><span class="em">Almeno uno. Sono il cuore dell'analisi.</span></div>
+        <div class="row2">
+          <div class="field"><label for="fMail">Email</label><input id="fMail" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: è qui che arriva l'analisi.</span></div>
+          <div class="field"><label for="fWa">WhatsApp <small>(facoltativo)</small></label><input id="fWa" name="whatsapp" type="tel" autocomplete="tel"></div>
+        </div>
+        <label class="check" id="privWrap"><input type="checkbox" id="fPriv" name="privacy" required><span>Ho letto l'<a href="#privacy">informativa privacy</a> e acconsento a essere ricontattato per ricevere l'analisi.</span></label>
+        <button class="btn dark" type="submit">Voglio l'analisi del mio hotel <span class="arr">→</span></button>
+        <p class="f-foot">Mentre la preparo, pensa a questa domanda: di cosa sei il numero 1 nella tua zona?</p>
+      </div>
+      <div class="ok" role="status">
+        <div class="tick">✓</div>
+        <p class="big">Ricevuto. Ci penso io.</p>
+        <p>Entro 72 ore trovi l'analisi di <strong id="okHotel">il tuo hotel</strong> nella tua email. Nel frattempo, apri la tua homepage e rileggila con gli occhi di un ospite che non ti conosce.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="big">N°1<span>.</span><br>o il prezzo<span>.</span></div>
+    <div class="meta">
+      Francesco Astolfi · Hotel Positioning · Rimini<br>
+      P.IVA 04283940403<br>
+      <a href="#privacy" id="privacy">Privacy</a> · <a href="https://francescoastolfi.net">francescoastolfi.net</a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta"><a href="#richiedi" class="btn">Voglio l'analisi del mio hotel <span class="arr">→</span></a></div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s,c){return (c||document).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  /* duplicate marquee content for seamless loop */
+  ['ticker','logos'].forEach(function(id){
+    var t=document.getElementById(id); t.innerHTML += t.innerHTML + t.innerHTML + t.innerHTML;
+  });
+
+  /* reveal on scroll */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  $$('.rv,.flow,.sec-head,.pull,.tl').forEach(function(el){io.observe(el)});
+
+  /* nav shadow, read bar, sticky cta */
+  var nav=$('#nav'), bar=$('#readbar'), sticky=$('#stickyCta'), form=$('#richiedi');
+  function onScroll(){
+    var y=window.scrollY, h=document.documentElement.scrollHeight-innerHeight;
+    nav.classList.toggle('scrolled', y>10);
+    bar.style.width = (h>0 ? y/h*100 : 0)+'%';
+    var fr=form.getBoundingClientRect();
+    sticky.classList.toggle('show', y>innerHeight*.8 && fr.top>innerHeight);
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* typing effect */
+  var phrases=['chi viaggia in bici a maggio.','chi arriva in treno e lascia l’auto a casa.','chi ha un labrador da 40 chili.','chi fa colazione all’una.','…non lo sai? Ecco il problema.'];
+  var typed=$('#typed');
+  if(reduce){ typed.textContent=phrases[phrases.length-1]; }
+  else{
+    var pi=0,ci=0,del=false;
+    (function tick(){
+      var p=phrases[pi];
+      if(!del){ ci++; typed.textContent=p.slice(0,ci); if(ci===p.length){ del=true; return setTimeout(tick, pi===phrases.length-1?3200:1500);} return setTimeout(tick,48+Math.random()*50); }
+      ci--; typed.textContent=p.slice(0,ci); if(ci===0){ del=false; pi=(pi+1)%phrases.length; return setTimeout(tick,300);} setTimeout(tick,22);
+    })();
+  }
+
+  /* 3 second test */
+  var clock=$('#clock'), cb=$('#clockBody'), tb=$('#testBtn'), running=false;
+  tb.addEventListener('click',function(){
+    if(running) return; running=true;
+    clock.classList.remove('done'); clock.classList.add('run');
+    var n=3;
+    function show(){ cb.innerHTML='<div class="num">'+n+'</div><div class="msg">Di cosa sei il numero 1?</div>'; }
+    show();
+    var iv=setInterval(function(){
+      n--;
+      if(n>0){ show(); return; }
+      clearInterval(iv); running=false;
+      clock.classList.remove('run'); clock.classList.add('done');
+      if(!reduce){ clock.classList.remove('shake'); void clock.offsetWidth; clock.classList.add('shake'); }
+      cb.innerHTML='<div class="res">Tempo scaduto.<small>Se ci hai messo più di tre secondi, l’ospite ci metterà ancora meno. E sceglierà guardando il prezzo.</small><a href="#richiedi" class="btn dark" style="justify-self:center">Trova la tua risposta <span class="arr">→</span></a></div>';
+      tb.innerHTML='Riprova <span class="arr">↻</span>';
+    },1000);
+  });
+
+  /* bingo */
+  var cliches=['Location unica','Servizio impeccabile','A due passi dal mare','Ambiente accogliente e familiare','Staff cordiale e professionale','Posizione strategica','Camere spaziose e luminose','Un’esperienza indimenticabile','Ideale per famiglie e coppie','Il tuo angolo di paradiso','Comfort e relax','Cucina tipica del territorio'];
+  var g=$('#bingoGrid'), picked=0;
+  var msgs=[
+    [0,'Nessuna? Bene. Oppure non hai ancora aperto la tua homepage.'],
+    [1,'Una sola. Sei messo meglio di molti. Ma l’ospite cosa ricorda di te?'],
+    [3,'Già qualcuna di troppo. Sono le stesse frasi che leggerai dal vicino.'],
+    [5,'Se togli il logo, l’ospite non capisce più di quale hotel si tratta.'],
+    [8,'Bingo. La tua homepage potrebbe essere quella di chiunque. E chiunque costa meno.']
+  ];
+  cliches.forEach(function(c){
+    var b=document.createElement('button'); b.type='button'; b.className='bingo-cell'; b.textContent=c; b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')!=='true'; b.setAttribute('aria-pressed',on); picked+=on?1:-1;
+      $('#bingoN').textContent=picked; $('#bingoBar').style.width=(picked/12*100)+'%';
+      var m=msgs[0][1]; msgs.forEach(function(x){ if(picked>=x[0]) m=x[1]; }); $('#bingoMsg').textContent=m;
+    });
+    g.appendChild(b);
+  });
+
+  /* compset map */
+  var base=[
+    {id:'a',k:'A',name:'Resort con miniclub',x:60,y:20,status:'OCCUPATO',n1:'Le famiglie con bambini piccoli',voce:'“I bambini ci chiedono già quando torniamo.”'},
+    {id:'b',k:'B',name:'Design hotel per coppie',x:86,y:14,status:'OCCUPATO',n1:'Il weekend a due, con la cena già decisa',voce:'“Ci siamo tornati per l’anniversario.”'},
+    {id:'c',k:'C',name:'Il più economico del lungomare',x:14,y:40,status:'OCCUPATO',n1:'Il prezzo, e basta',voce:'“Per quello che costa, va bene.”'},
+    {id:'d',k:'D',name:'Hotel “a due passi dal mare”',x:30,y:76,status:'NESSUNA POSIZIONE',n1:'Niente in particolare',voce:'“Pulito, personale gentile, colazione buona.”'},
+    {id:'e',k:'E',name:'Hotel “comfort e cortesia”',x:68,y:82,status:'NESSUNA POSIZIONE',n1:'Niente in particolare',voce:'“Tutto nella norma, posizione comoda.”'},
+    {id:'f',k:'F',name:'Hotel “location unica”',x:80,y:66,status:'NESSUNA POSIZIONE',n1:'Niente in particolare',voce:'“Bella vista. Un po’ caro per quello che offre.”'}
+  ];
+  var tuToday={id:'tu',k:'TU',name:'Il tuo hotel, oggi',x:50,y:72,status:'IN MEZZO AGLI ALTRI',n1:'Niente, per ora. Per l’ospite sei uno dei tanti.',voce:'“Ottima posizione, staff cordiale.” Come gli altri tre.'};
+  var tuAfter={id:'tu',k:'TU',name:'Il tuo hotel, dopo',x:35,y:20,status:'POSIZIONE PRESA',n1:'Chi viaggia in bici a maggio e settembre',voce:'“Officina, percorsi e colazione alle sei. Torniamo ogni anno con il gruppo.”'};
+  var map=$('#map'), panel=$('#panel'), after=false, sel='tu', nodes={};
+  function style(p){
+    var gen=p.status==='NESSUNA POSIZIONE', tu=p.id==='tu';
+    var bg=gen?'#D9D2C4':'#111111', fg=gen?'#111111':'#F3EDE2';
+    if(tu){ bg=after?'#FF7A1A':'#FFD43B'; fg='#111111'; }
+    return {bg:bg,fg:fg,size:tu?64:48,dashed:tu&&!after};
+  }
+  function all(){ return base.concat([after?tuAfter:tuToday]); }
+  function render(){
+    all().forEach(function(p){
+      var el=nodes[p.id];
+      if(!el){
+        el=document.createElement('button'); el.type='button'; el.className='pt'+(p.id==='tu'?' tu':'');
+        el.addEventListener('click',function(){ sel=p.id; render(); panel.classList.remove('flash'); void panel.offsetWidth; panel.classList.add('flash'); });
+        map.appendChild(el); nodes[p.id]=el;
+      }
+      var s=style(p);
+      el.textContent=p.k; el.setAttribute('aria-label',p.name+': '+p.status.toLowerCase());
+      el.style.cssText='left:'+p.x+'%;top:'+p.y+'%;width:'+s.size+'px;height:'+s.size+'px;background:'+s.bg+';color:'+s.fg+';border-style:'+(s.dashed?'dashed':'solid')+';box-shadow:'+(p.id===sel?'5px 5px 0 #111':'none')+';z-index:'+(p.id==='tu'?3:(p.id===sel?2:1));
+    });
+    var cur=all().filter(function(p){return p.id===sel})[0];
+    var s=style(cur), gen=cur.status==='NESSUNA POSIZIONE';
+    var tagBg=cur.id==='tu'&&after?'#FF7A1A':(gen?'#FFFFFF':'#111111'), tagFg=cur.id==='tu'&&after?'#111':(gen?'#111':'#F3EDE2');
+    panel.innerHTML=
+      '<span class="tag" style="background:'+tagBg+';color:'+tagFg+'">'+cur.status+'</span>'+
+      '<div class="who"><b style="background:'+s.bg+';color:'+s.fg+';border-style:'+(s.dashed?'dashed':'solid')+'">'+cur.k+'</b><h3>'+cur.name+'</h3></div>'+
+      '<dl><dt>È il numero 1 per</dt><dd>'+cur.n1+'</dd></dl>'+
+      '<dl><dt>Cosa scrivono gli ospiti</dt><dd class="q">'+cur.voce+'</dd></dl>'+
+      '<p class="hint">▸ Tocca un punto della mappa</p>';
+    map.classList.toggle('after',after);
+    $('#tToday').setAttribute('aria-pressed',!after); $('#tAfter').setAttribute('aria-pressed',after);
+  }
+  $('#tToday').addEventListener('click',function(){after=false;sel='tu';render()});
+  $('#tAfter').addEventListener('click',function(){after=true;sel='tu';render()});
+  render();
+
+  /* calculator */
+  var eur=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  var ids=['Rooms','Adr','Days','Occ','Ota','Com'], shown=0, target=0, raf;
+  function calc(){
+    var v={}; ids.forEach(function(i){ v[i]=+$('#c'+i).value; });
+    $('#oRooms').textContent=v.Rooms; $('#oAdr').textContent=eur.format(v.Adr); $('#oDays').textContent=v.Days;
+    $('#oOcc').textContent=v.Occ+'%'; $('#oOta').textContent=v.Ota+'%'; $('#oCom').textContent=v.Com+'%';
+    var rev=v.Rooms*v.Days*(v.Occ/100)*v.Adr;
+    target=rev*(v.Ota/100)*(v.Com/100);
+    $('#save').textContent=eur.format(target*.2);
+    cancelAnimationFrame(raf);
+    if(reduce){ shown=target; $('#money').textContent=eur.format(target); return; }
+    (function step(){ shown+=(target-shown)*.18; if(Math.abs(target-shown)<1) shown=target; $('#money').textContent=eur.format(shown); if(shown!==target) raf=requestAnimationFrame(step); })();
+  }
+  ids.forEach(function(i){ $('#c'+i).addEventListener('input',calc); });
+  new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ calc(); o.disconnect(); } },{threshold:.3}).observe($('#calc'));
+
+  /* counters */
+  var co=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return; co.unobserve(e.target);
+      var el=e.target, to=+el.dataset.count, t0=null;
+      if(reduce){ el.textContent=to; return; }
+      (function f(t){ if(!t0) t0=t; var k=Math.min(1,(t-t0)/1100); el.textContent=Math.round(to*(1-Math.pow(1-k,3))); if(k<1) requestAnimationFrame(f); })(performance.now());
+    });
+  },{threshold:.6});
+  $$('[data-count]').forEach(function(el){co.observe(el)});
+
+  /* next monday */
+  var d=new Date(); d.setDate(d.getDate()+((8-d.getDay())%7||7));
+  $('#nextMon').textContent='lunedì '+d.toLocaleDateString('it-IT',{day:'numeric',month:'long'});
+
+  /* form */
+  var f=$('#form'), req=$$('[required]',f);
+  function progress(){
+    var ok=req.filter(function(el){ return el.type==='checkbox'?el.checked:el.value.trim()!==''; }).length;
+    var p=Math.round(ok/req.length*100); $('#progBar').style.width=p+'%'; $('#progTxt').textContent=p+'%';
+  }
+  f.addEventListener('input',function(e){ progress(); var w=e.target.closest('.field'); if(w) w.classList.remove('err'); if(e.target.id==='fPriv') $('#privWrap').classList.remove('err'); });
+  f.addEventListener('change',progress);
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var first=null;
+    req.forEach(function(el){
+      var bad= el.type==='checkbox' ? !el.checked : (el.value.trim()==='' || (el.type==='email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)));
+      var w= el.type==='checkbox' ? $('#privWrap') : el.closest('.field');
+      w.classList.toggle('err',bad); if(bad && !first) first=el;
+    });
+    if(first){ first.focus(); if(!reduce){ f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); } return; }
+    /* Sostituisci con l'invio al tuo endpoint, es. fetch(f.action,{method:'POST',body:new FormData(f)}) */
+    $('#okHotel').textContent=$('#fHotel').value.trim();
+    f.classList.add('sent');
+    f.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+  });
+})();
+</script>
+</body>
+</html>

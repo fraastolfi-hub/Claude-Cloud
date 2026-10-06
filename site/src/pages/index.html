@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posizionamento hotel: il motivo per cui ti scelgono · Hotel Positioning</title>
+<meta name="description" content="Brand positioning per hotel indipendenti. Un solo motivo, dimostrato dalle recensioni dei tuoi ospiti, per cui scelgono te e non l'hotel accanto. Il metodo di Francesco Astolfi.">
+<link rel="canonical" href="https://hotelpositioning.com/">
+<meta property="og:title" content="Il tuo hotel non ha un problema di marketing. Ha un problema di posizionamento.">
+<meta property="og:description" content="Brand positioning per hotel indipendenti, con il metodo Hotel Positioning di Francesco Astolfi.">
+<meta property="og:type" content="website">
+<!-- @include head -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Hotel Positioning","url":"https://hotelpositioning.com/","description":"Brand positioning per hotel indipendenti.","founder":{"@type":"Person","name":"Francesco Astolfi","jobTitle":"Consulente di posizionamento per hotel"},"address":{"@type":"PostalAddress","streetAddress":"Via Cupa 5","addressLocality":"Rimini","postalCode":"47923","addressCountry":"IT"},"email":"privacy@hotelpositioning.com","areaServed":"IT","serviceType":"Brand positioning per hotel"}
+</script>
+<style>
+/* --- hero: i cinquanta rettangoli --- */
+.rects-wrap{position:relative}
+.rects-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.rects-head .mono{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.rects{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;border:var(--b);background:var(--white);padding:12px;box-shadow:var(--sh-lg)}
+.rects i{aspect-ratio:1.5;background:var(--grey);border:2px solid var(--ink);transition:background .5s,transform .5s cubic-bezier(.5,1.8,.5,1),opacity .5s;position:relative}
+.rects i:nth-child(3n){background:#CFC7B8}
+.rects.after i{opacity:.35}
+.rects.after i.me{opacity:1;background:var(--orange);transform:scale(1.9);z-index:2;box-shadow:3px 3px 0 var(--ink)}
+.rects i.me{z-index:1}
+.rects-cap{margin-top:16px;font:400 14px/1.5 var(--mono);color:var(--muted);min-height:3em}
+.rects-cap b{color:var(--ink)}
+.rects-toggle{display:inline-flex;border:var(--b);box-shadow:4px 4px 0 var(--ink);background:var(--white)}
+.rects-toggle button{border:0;background:none;padding:9px 14px;font:700 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.rects-toggle button + button{border-left:var(--b)}
+.rects-toggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.rects-toggle button.on[aria-pressed="true"]{background:var(--orange);color:var(--ink)}
+.adj{position:absolute;font:700 12px/1 var(--mono);background:var(--white);border:2px solid var(--ink);padding:6px 8px;box-shadow:3px 3px 0 var(--ink);white-space:nowrap;animation:bob 4s ease-in-out infinite;transition:opacity .4s}
+.adj.a1{left:-14px;top:58px;transform:rotate(-5deg)}.adj.a2{right:-10px;top:120px;transform:rotate(4deg);animation-delay:1s}
+.adj.a3{left:20%;bottom:58px;transform:rotate(3deg);animation-delay:2s}.adj.a4{right:8%;bottom:90px;transform:rotate(-3deg);animation-delay:1.5s}
+.rects-wrap.after .adj{opacity:0}
+@keyframes bob{50%{translate:0 -6px}}
+@media (max-width:560px){.adj{display:none}}
+
+/* --- sintomi --- */
+.symptoms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:980px){.symptoms{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.symptoms{grid-template-columns:1fr}}
+.symptom{display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:230px;text-decoration:none;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:24px;transition:transform .15s,box-shadow .15s,background .25s}
+.symptom q{font:700 clamp(21px,1.9vw,25px)/1.2 var(--sans);letter-spacing:-.02em;quotes:"«" "»"}
+.symptom .meta{display:flex;justify-content:space-between;align-items:center;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.symptom .meta b{background:var(--yellow);border:2px solid var(--ink);padding:6px 9px;transition:background .2s}
+.symptom:hover{transform:translate(-4px,-4px);box-shadow:10px 10px 0 var(--ink);background:var(--ink);color:var(--paper)}
+.symptom:hover .meta b{background:var(--orange);color:var(--ink)}
+.herd{margin-top:34px;font:700 clamp(20px,2vw,26px)/1.35 var(--sans);letter-spacing:-.02em;max-width:40ch}
+
+/* --- tre anelli --- */
+.chain{display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr;align-items:stretch;margin:10px 0 40px}
+.ring{border:var(--b);background:var(--white);padding:24px;box-shadow:var(--sh);position:relative}
+.ring .k{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ring h3{margin:10px 0 6px;font-size:clamp(24px,2.4vw,32px)}
+.ring.here{background:var(--yellow)}
+.ring.here::after{content:"Tu sei qui";position:absolute;top:-18px;right:14px;background:var(--orange);border:var(--b);padding:6px 10px;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;transform:rotate(5deg);animation:wob 2.4s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(-4deg) scale(1.06)}}
+.link{display:grid;place-items:center;font:700 26px var(--mono)}
+@media (max-width:860px){.chain{grid-template-columns:1fr}.link{height:44px;transform:rotate(90deg)}}
+.third{list-style:none;display:grid;gap:12px;margin-bottom:40px}
+.third li{font-size:clamp(18px,1.6vw,21px);padding-left:34px;position:relative}
+.third li::before{content:"✕";position:absolute;left:0;top:2px;width:24px;height:24px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font:700 13px var(--mono)}
+
+/* --- metodo --- */
+.six{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--b);background:var(--white);box-shadow:var(--sh-lg)}
+.six li{list-style:none;padding:26px 24px 30px;border-right:var(--b);border-bottom:var(--b);margin:0 -3px -3px 0;position:relative;transition:background .25s}
+.six li:hover{background:var(--cream-y)}
+.six b{display:block;font:700 54px/1 var(--sans);letter-spacing:-.05em;color:var(--orange);-webkit-text-stroke:2px var(--ink);margin-bottom:12px}
+.six h3{font-size:21px;margin-bottom:8px}
+.six p{font-size:16px;color:#3a352d}
+@media (max-width:900px){.six{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.six{grid-template-columns:1fr}}
+.views{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+@media (max-width:760px){.views{grid-template-columns:1fr}}
+
+/* --- casi --- */
+.case-main{display:grid;grid-template-columns:1.1fr .9fr;border:var(--b);box-shadow:var(--sh-lg);background:var(--white)}
+@media (max-width:900px){.case-main{grid-template-columns:1fr}}
+.case-main .l{padding:clamp(22px,3vw,40px);border-right:var(--b)}
+@media (max-width:900px){.case-main .l{border-right:0;border-bottom:var(--b)}}
+.case-main .r{padding:clamp(22px,3vw,40px);background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:flex-end;gap:16px}
+.from-to{font:400 16.5px/1.5 var(--sans);display:grid;gap:10px}
+.from-to s{color:var(--muted)}
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;height:240px;border-bottom:3px solid var(--paper);padding:0 6px}
+.bar{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:10px;height:100%}
+.bar i{display:block;width:100%;background:var(--grey);border:3px solid var(--paper);height:0;transition:height 1.2s cubic-bezier(.2,.9,.2,1)}
+.bar.b2 i{background:var(--orange)}
+.in .bar.b1 i{height:46%}.in .bar.b2 i{height:100%;transition-delay:.3s}
+.bar span{font:700 22px var(--sans);letter-spacing:-.03em}
+.bars-lab{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center;font:700 12px var(--mono);letter-spacing:.08em;color:#B9B0A0}
+.case-honest{font:400 13px/1.55 var(--mono);color:#B9B0A0}
+.order{list-style:none;display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.order li{font:700 14px var(--mono);border:2px solid var(--ink);padding:8px 10px;background:var(--yellow)}
+.order li:nth-child(2){background:var(--white)}.order li:nth-child(3){background:var(--orange)}
+
+/* --- AI --- */
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:stretch;margin-top:40px}
+.vs .card{color:var(--ink)}
+.vs .eq{display:grid;place-items:center;font:700 40px var(--mono);color:var(--orange)}
+@media (max-width:760px){.vs{grid-template-columns:1fr}.vs .eq{font-size:28px}}
+.chat{border:3px solid var(--paper);background:#1d1d1d;padding:20px;font:400 15px/1.6 var(--mono);box-shadow:8px 8px 0 var(--orange)}
+.chat .u{color:var(--yellow)}
+.chat .typing::after{content:"▋";animation:blink 1s steps(2) infinite;color:var(--orange)}
+
+/* --- chi sono --- */
+.creds{list-style:none;display:grid;gap:0;border:var(--b);background:var(--white);box-shadow:var(--sh)}
+.creds li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 18px;border-bottom:2px solid var(--ink);align-items:center}
+.creds li:last-child{border-bottom:0}
+.creds b{font:700 22px/1.1 var(--sans);letter-spacing:-.03em}
+.creds span{font-size:16px}
+@media (max-width:520px){.creds li{grid-template-columns:1fr;gap:4px}}
+
+/* --- scala --- */
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:end}
+@media (max-width:980px){.ladder{grid-template-columns:1fr 1fr;align-items:stretch}}
+@media (max-width:560px){.ladder{grid-template-columns:1fr}}
+.step-card{display:flex;flex-direction:column;gap:12px;text-decoration:none;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:22px;transition:transform .15s,box-shadow .15s}
+.step-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+@media (min-width:981px){.step-card:nth-child(1){min-height:300px}.step-card:nth-child(2){min-height:340px}.step-card:nth-child(3){min-height:380px}.step-card:nth-child(4){min-height:420px}}
+.step-card .ico{width:54px;height:54px;border:var(--b);display:grid;place-items:center;font:700 24px var(--mono);background:var(--yellow)}
+.step-card:nth-child(2) .ico{background:var(--mint)}.step-card:nth-child(3) .ico{background:var(--blue)}.step-card:nth-child(4) .ico{background:var(--orange)}
+.step-card .t{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.step-card h3{font-size:24px}
+.step-card p{font-size:16px;flex:1}
+.step-card .go{font:700 15px var(--mono);border-top:2px dashed var(--ink);padding-top:12px;display:flex;justify-content:space-between}
+.step-card.top{background:var(--ink);color:var(--paper);box-shadow:var(--sh-lg)}
+.step-card.top .t{color:#B9B0A0}
+.step-card.top .go{border-color:var(--paper)}
+
+/* --- finale --- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:34px 0}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.two .card b.n{display:inline-grid;place-items:center;width:44px;height:44px;border:var(--b);background:var(--paper);font:700 18px var(--mono);margin-bottom:14px}
+</style>
+</head>
+<body>
+<!-- @include header -->
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Brand positioning per hotel indipendenti</span>
+      <h1>
+        <span class="line"><span>Il tuo hotel</span></span>
+        <span class="line"><span>non ha un problema</span></span>
+        <span class="line"><span>di <span class="strike in">marketing.</span></span></span>
+      </h1>
+      <p class="pull" style="margin:-6px 0 26px">Ha un problema di <span class="hl or in">posizionamento.</span></p>
+      <p class="lead">Il posizionamento che manca si traveste bene: commissioni alte, prezzi fermi, la terza agenzia in cinque anni. Io trovo il motivo per cui l'ospite dovrebbe scegliere te, e lo scrivo. Così smette di confonderti con l'hotel accanto.</p>
+      <div class="btn-row">
+        <a href="/analisi/#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+        <a href="#sintomi" class="btn ghost">Riconosci il tuo sintomo ↓</a>
+      </div>
+      <p class="micro"><b>Analisi gratuita per 5 hotel.</b> Una alla settimana, la faccio io. Poi torna a €697.</p>
+    </div>
+
+    <div class="rects-wrap rv d1" id="rectsWrap">
+      <div class="rects-head">
+        <span class="mono">Booking · la tua zona · 50 risultati</span>
+        <div class="rects-toggle" role="group" aria-label="Confronto">
+          <button type="button" id="rBefore" aria-pressed="true">Oggi</button>
+          <button type="button" id="rAfter" class="on" aria-pressed="false">Posizionato</button>
+        </div>
+      </div>
+      <div class="rects" id="rects" aria-hidden="true"></div>
+      <span class="adj a1">Accogliente</span><span class="adj a2">A pochi passi dal mare</span>
+      <span class="adj a3">Immerso nel verde</span><span class="adj a4">Confortevole</span>
+      <p class="rects-cap" id="rectsCap" aria-live="polite"><b>Cinquanta rettangoli. Uno è il tuo.</b> Trovalo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°01 SINTOMI ================= -->
+<section class="sec alt" id="sintomi">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>I sei travestimenti.</h2>
+      <p class="lead">Decine di hotel analizzati. Il problema si presentava sempre vestito in uno di questi modi. <strong>Riconosci il tuo.</strong></p>
+    </div>
+    <div class="symptoms">
+      <a class="symptom rv" href="/problemi/booking/"><q>Le commissioni a Booking mi costano un rene.</q><span class="meta"><span>Sintomo 01</span><b>È il mio →</b></span></a>
+      <a class="symptom rv d1" href="/problemi/prezzi/"><q>Non riesco ad alzare i prezzi senza perdere prenotazioni.</q><span class="meta"><span>Sintomo 02</span><b>È il mio →</b></span></a>
+      <a class="symptom rv d2" href="/problemi/sostituibili/"><q>Gli ospiti ci adorano. Ma non sanno spiegare perché.</q><span class="meta"><span>Sintomo 03</span><b>È il mio →</b></span></a>
+      <a class="symptom rv" href="/problemi/agenzie/"><q>Ho cambiato tre agenzie in cinque anni. I risultati sono gli stessi.</q><span class="meta"><span>Sintomo 04</span><b>È il mio →</b></span></a>
+      <a class="symptom rv d1" href="/problemi/valore/"><q>Il mio hotel vale per l'immobile. Il mio brand non vale niente.</q><span class="meta"><span>Sintomo 05</span><b>È il mio →</b></span></a>
+      <a class="symptom rv d2" href="/problemi/apertura/"><q>Sto aprendo una struttura. Non voglio nascere commodity.</q><span class="meta"><span>Sintomo 06</span><b>È il mio →</b></span></a>
+    </div>
+    <p class="herd rv">Ti sei riconosciuto in più di uno? Normale. I sintomi viaggiano in branco. <span class="hl">La malattia è una sola.</span> ↓</p>
+  </div>
+</section>
+
+<!-- ================= N°02 LA MALATTIA ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>Sei travestimenti. <em>Una sola malattia.</em></h2>
+      <p class="lead">Tra il tuo hotel e l'incasso ci sono tre anelli. Quasi tutti lavorano sull'ultimo.</p>
+    </div>
+    <div class="chain rv">
+      <div class="ring"><span class="k">Anello 1</span><h3>Posizionamento</h3><p>Quello che sai di essere.</p></div>
+      <div class="link" aria-hidden="true">→</div>
+      <div class="ring"><span class="k">Anello 2</span><h3>Promessa</h3><p>Quello che dici.</p></div>
+      <div class="link" aria-hidden="true">→</div>
+      <div class="ring here"><span class="k">Anello 3</span><h3>Prenotazione</h3><p>Quello che incassi.</p></div>
+    </div>
+    <div class="grid-2">
+      <ul class="third rv">
+        <li>Le commissioni sono terzo anello.</li>
+        <li>I prezzi fermi sono terzo anello.</li>
+        <li>L'agenzia che ti racconta come tutti gli altri è terzo anello.</li>
+        <li>Perfino la perizia che conta solo i muri è terzo anello.</li>
+      </ul>
+      <div class="prose rv d1">
+        <p style="font-size:21px">Stai riparando l'ultimo pezzo della catena. Da anni.</p>
+        <p>Sito nuovo. Agenzia nuova. Campagna nuova. Ogni volta un sintomo in meno per qualche mese, poi torna.</p>
+        <p><strong>Oppure curi la malattia. Una volta.</strong></p>
+      </div>
+    </div>
+    <blockquote class="big-quote rv" style="margin-top:50px">Chi non sa chi è, finisce a vendere sconti.</blockquote>
+  </div>
+</section>
+
+<!-- ================= N°03 IL METODO ================= -->
+<section class="sec white" id="metodo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°03</span>
+      <h2>La tua posizione non la inventi. <em>La scegli, in sei passaggi.</em></h2>
+      <p class="lead">Il posizionamento comincia da un no. Se non escludi nessuno, non hai scelto niente. Il metodo Hotel Positioning ti porta alla scelta nell'ordine giusto.</p>
+    </div>
+    <ol class="six rv">
+      <li><b>01</b><h3>Il bisogno vero</h3><p>Il problema o il desiderio profondo che l'ospite ti chiede di risolvere.</p></li>
+      <li><b>02</b><h3>Le alternative</h3><p>Quelle che ha davvero, comprese quelle che non sono hotel.</p></li>
+      <li><b>03</b><h3>Le unicità</h3><p>Quelle che hai già, e il valore che producono. Fatti verificabili, non opinioni.</p></li>
+      <li><b>04</b><h3>La persona giusta</h3><p>Quella a cui quel valore interessa davvero, e che esiste in numero sufficiente.</p></li>
+      <li><b>05</b><h3>La categoria</h3><p>Quella di cui puoi essere leader. Nella testa dell'ospite la seconda posizione non esiste.</p></li>
+      <li><b>06</b><h3>Il trend</h3><p>Quello da cavalcare, quando c'è. Alla fine, tutto sta su una pagina: il Positioning Canvas.</p></li>
+    </ol>
+    <div class="grid-2" style="margin-top:56px;align-items:center">
+      <div class="rv">
+        <p class="kicker"><b>Step 03</b> · La TAC del posizionamento</p>
+        <h3 style="font-size:clamp(28px,3vw,40px);margin:14px 0">Il passaggio dove quasi tutti barano.</h3>
+        <p>Ci si chiude in ufficio a immaginare cosa rende speciale l'hotel. Ma le tue unicità sono già scritte: nelle recensioni, nelle parole che usano gli ospiti, nelle caselle vuote lasciate dai concorrenti.</p>
+        <p class="big-quote" style="font-size:clamp(24px,2.6vw,34px);margin-top:26px">Il sito è la pelle. Le recensioni sono l'osso.</p>
+      </div>
+      <div class="views rv d1" style="grid-template-columns:1fr">
+        <div class="card y"><span class="kicker" style="color:var(--ink)">Vista 1</span><h3 style="margin:6px 0 0">Messaggio</h3><p>Quello che dici oggi.</p></div>
+        <div class="card m"><span class="kicker" style="color:var(--ink)">Vista 2</span><h3 style="margin:6px 0 0">Ascolto</h3><p>Quello che gli ospiti scrivono davvero.</p></div>
+        <div class="card b"><span class="kicker" style="color:var(--ink)">Vista 3</span><h3 style="margin:6px 0 0">Concorrenti</h3><p>Quale posto è rimasto libero.</p></div>
+      </div>
+    </div>
+    <div class="btn-row rv" style="margin-top:44px">
+      <a href="/metodo/" class="btn dark">Il metodo, passo per passo <span class="arr">→</span></a>
+      <a href="/libro/" class="btn ghost">È tutto nel libro · 19,90 €</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°04 CASI ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°04</span>
+      <h2>Prima la bussola. <em>Poi i muri.</em></h2>
+      <p class="lead">Tre posizionamenti che hanno cambiato i numeri. Con quello che dimostrano, e quello che non dimostrano.</p>
+    </div>
+    <article class="case-main rv" data-reveal>
+      <div class="l">
+        <p class="kicker"><b>Caso 01</b> · Silva Splendid · Fiuggi</p>
+        <h3 style="font-size:clamp(28px,3.2vw,44px);margin:16px 0 22px">Da «hotel 4 stelle con SPA» a <span class="hl in">L'Hotel Benessere di Fiuggi</span>.</h3>
+        <div class="from-to">
+          <span>118 camere, la SPA più grande del Lazio, il più recensito della zona. E invisibile lo stesso: diceva tutto a tutti.</span>
+          <span>La mossa: un fatto al posto di un aggettivo, una categoria con l'articolo determinativo, e l'uscita quasi totale dal mercato delle famiglie. <strong>Meno target, non più target.</strong></span>
+        </div>
+        <div class="chips" style="margin-top:22px">
+          <span class="chip y">Tariffa media circa ×2</span>
+          <span class="chip m">Recensioni Booking 8,6 → 9</span>
+          <span class="chip b">1.600 m² di SPA</span>
+        </div>
+        <ul class="order"><li>1. La bussola</li><li>2. I muri</li><li>3. L'ordine conta</li></ul>
+      </div>
+      <div class="r">
+        <span class="kicker">Fatturato annuo</span>
+        <div class="bars">
+          <div class="bar b1"><span>€3,5M</span><i></i></div>
+          <div class="bar b2"><span>€7M+</span><i></i></div>
+        </div>
+        <div class="bars-lab"><span>PRIMA</span><span>CINQUE ANNI DOPO</span></div>
+        <p class="case-honest">Non da solo: posizionamento più ristrutturazione. Il posizionamento ha dato la direzione, gli investimenti l'hanno resa credibile. In quest'ordine.</p>
+      </div>
+    </article>
+    <div class="grid-2" style="margin-top:22px;gap:22px">
+      <article class="card lift rv">
+        <p class="kicker"><b>Caso 02</b> · Veridia Resort · Chia</p>
+        <h3 style="margin:14px 0 10px">Cento resort sul mare. Uno solo nella natura.</h3>
+        <p>Non l'ho posizionato sul mare: l'ho posizionato sul luogo. <em>The nature resort of Chia.</em></p>
+        <p class="stat" style="border:0;padding:16px 0 0;margin:0"><b data-count="60" data-prefix="&gt;" data-suffix="%">0</b><span>di vendite dirette</span></p>
+      </article>
+      <article class="card lift rv d1">
+        <p class="kicker"><b>Caso 03</b> · Yume Ramen · 5 locali</p>
+        <h3 style="margin:14px 0 10px">Questo non l'ho consigliato. L'ho inventato.</h3>
+        <p>La posizione l'ho decisa prima di accendere la prima cucina. Con soldi miei.</p>
+        <p class="stat" style="border:0;padding:16px 0 0;margin:0"><b data-count="2.5" data-prefix="€" data-suffix="M">0</b><span>di fatturato, partendo da zero</span></p>
+      </article>
+    </div>
+    <div class="btn-row rv" style="margin-top:36px"><a href="/casi/" class="btn ghost">Leggi i casi per intero <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= N°05 AI ================= -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="grid-2" style="align-items:center">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="num-tag">N°05</span>
+        <h2>Booking ti metteva in una lista. <em>L'AI ti lascia fuori.</em></h2>
+        <p class="lead">Hai mai chiesto a un'AI dove dormire a Firenze? Non ti ha dato cento hotel. Te ne ha dati tre.</p>
+      </div>
+      <div class="chat rv d1" aria-label="Esempio di conversazione con un assistente AI">
+        <p class="u">&gt; Cerco un hotel boutique in Romagna per una coppia di quarantenni che vuole staccare.</p>
+        <p style="margin-top:12px">Ti consiglio due strutture. La prima è…</p>
+        <p class="typing" style="margin-top:12px;color:#8E877B">Il resto non esiste più. Per quell'ospite, in quel momento</p>
+      </div>
+    </div>
+    <div class="vs rv">
+      <div class="card p"><h3>Filtro Booking = lista</h3><p>Cento hotel. L'ospite è confuso, sceglie a caso o sceglie il più economico.</p></div>
+      <div class="eq" aria-hidden="true">≠</div>
+      <div class="card o"><h3>Filtro AI = scelta</h3><p>Un hotel, quello giusto per lui. E l'AI sceglie chi è riconoscibile, specifico, diverso dagli altri.</p></div>
+    </div>
+    <div class="prose" style="margin-top:44px">
+      <p class="pull rv" style="color:var(--paper)">L'AI è uno specchio. Se sei vuoto, riflette vuoto.</p>
+      <p class="rv" style="margin-top:18px;color:#D8D1C4">Può scrivere meglio di te. Non può inventare cosa scrivere. Tra qualche anno gli hotel si divideranno in due: <strong>quelli che un'AI sa raccontare, e quelli che un'AI manda su Booking.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°06 CHI SONO ================= -->
+<section class="sec" id="chi">
+  <div class="wrap grid-2">
+    <div class="rv">
+      <div class="photo">
+        <img src="https://hotelpositioning.com/__l5e/assets-v1/1de3f3bd-22d7-4066-a21f-da7c7a17d6b5/francesco-hero-new.png" alt="Francesco Astolfi" loading="lazy" width="800" height="1000">
+        <span class="name">Francesco Astolfi · Rimini</span>
+      </div>
+    </div>
+    <div>
+      <div class="sec-head" style="margin-bottom:30px">
+        <span class="num-tag">N°06</span>
+        <h2>Francesco, scusa. <em>Ma chi saresti tu?</em></h2>
+        <p class="lead">Vent'anni a vendere hotel. Da ogni lato del tavolo.</p>
+      </div>
+      <ul class="creds rv">
+        <li><b>€0 → €30M</b><span>Ho costruito TUI.it, da stagista a responsabile marketing.</span></li>
+        <li><b>20 hotel</b><span>Responsabile marketing di Ata Hotels.</span></li>
+        <li><b>Web agency</b><span>Ho diretto un'agenzia che lavorava solo per hotel. Ho visto migliaia di siti belli. E inutili.</span></li>
+        <li><b>10 locali</b><span>Yume Ramen ed Enzu Asian Food. Con soldi miei.</span></li>
+        <li><b>Il libro</b><span><em>Hotel Positioning</em>, il manuale di posizionamento alberghiero. Portato sul palco di Hospitality Day 2026.</span></li>
+      </ul>
+      <blockquote class="big-quote rv" style="font-size:clamp(24px,2.6vw,36px);margin-top:36px">I consulenti vendono consigli. Gli operatori vendono cicatrici.</blockquote>
+      <div class="btn-row rv" style="margin-top:30px"><a href="/francesco/" class="btn ghost">La mia storia <span class="arr">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°07 SCALA ================= -->
+<section class="sec alt" id="parti">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°07</span>
+      <h2>Non ti fidi ancora? <em>Giusto. Parti da qui.</em></h2>
+      <p class="lead">Quattro gradini. Sali fin dove ti serve.</p>
+    </div>
+    <div class="ladder">
+      <a class="step-card rv" href="/quiz/">
+        <span class="ico">?</span><span class="t">2 minuti · gratis</span>
+        <h3>Che hotel sei?</h3><p>Sette domande. Una risposta scomoda: invisibile, sostituibile o posizionato.</p>
+        <span class="go">Fai il quiz <span>→</span></span>
+      </a>
+      <a class="step-card rv d1" href="/smontaggio/">
+        <span class="ico">✂</span><span class="t">3 giorni · gratis</span>
+        <h3>Ti smonto la homepage</h3><p>Headline e sottotitolo, riga per riga. Tre alternative pronte. Sei al mese.</p>
+        <span class="go">Richiedi <span>→</span></span>
+      </a>
+      <a class="step-card rv d2" href="/libro/">
+        <span class="ico">▤</span><span class="t">Due sere · 19,90 €</span>
+        <h3>Il libro</h3><p>Il metodo completo, i casi, il canvas, duecento attributi. Più otto strumenti gratis da compilare.</p>
+        <span class="go">Scopri il libro <span>→</span></span>
+      </a>
+      <a class="step-card top rv d3" href="/analisi/">
+        <span class="ico">★</span><span class="t">48 ore · gratis o €697</span>
+        <h3>L'analisi del tuo hotel</h3><p>Il metodo applicato a te: diagnosi, competitor, profili ospite, posizionamento proposto, cinque azioni.</p>
+        <span class="go">Candida il tuo hotel <span>→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINALE ================= -->
+<section class="sec orange">
+  <div class="wrap narrow">
+    <div class="sec-head" style="margin-bottom:10px">
+      <h2>Nessuno dei sei è il tuo problema?</h2>
+      <p class="lead">Due possibilità.</p>
+    </div>
+    <div class="two">
+      <div class="card rv"><b class="n">1</b><h3>Sei posizionato davvero.</h3><p>Complimenti. Sei uno su cento. Da questa pagina non ti serve niente.</p></div>
+      <div class="card ink rv d1"><b class="n" style="color:var(--ink)">2</b><h3>Il tuo problema non ha ancora un nome.</h3><p>Succede. Il posizionamento che manca si traveste anche da stagionalità, da personale, da destinazione.</p></div>
+    </div>
+    <div class="btn-row">
+      <a href="/analisi/#candidatura" class="btn dark">Candida il tuo hotel <span class="arr">→</span></a>
+    </div>
+    <p class="micro" style="color:var(--ink)"><b>Analizzo io. Una alla settimana.</b> Anche se ti scarto, ti spiego perché.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- @include footer -->
+<script>
+(function(){
+  var box=document.getElementById('rects'), wrap=document.getElementById('rectsWrap'), cap=document.getElementById('rectsCap');
+  var ME=27, html='';
+  for(var i=0;i<50;i++) html+='<i'+(i===ME?' class="me"':'')+'></i>';
+  box.innerHTML=html;
+  var before=document.getElementById('rBefore'), after=document.getElementById('rAfter'), auto=null;
+  function set(on){
+    box.classList.toggle('after',on); wrap.classList.toggle('after',on);
+    before.setAttribute('aria-pressed',!on); after.setAttribute('aria-pressed',on);
+    cap.innerHTML = on ? '<b>Quarantanove rettangoli. E una cosa che non somiglia a niente.</b> L’ospite non confronta più il prezzo: sceglie te.'
+                       : '<b>Cinquanta rettangoli. Uno è il tuo.</b> Trovalo. Quando sembra tutto uguale, all’ospite resta un metro solo: il prezzo.';
+  }
+  before.addEventListener('click',function(){ clearInterval(auto); set(false); });
+  after.addEventListener('click',function(){ clearInterval(auto); set(true); });
+  set(false);
+  if(!HP.reduce){ var s=false; auto=setInterval(function(){ s=!s; set(s); },4200); }
+})();
+</script>
+</body>
+</html>
