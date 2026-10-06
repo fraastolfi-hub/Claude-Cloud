@@ -31,8 +31,9 @@
     if (nav) nav.classList.toggle('scrolled', y > 10);
     if (bar) bar.style.width = (h > 0 ? y / h * 100 : 0) + '%';
     if (sticky) {
-      var past = stopAt ? stopAt.getBoundingClientRect().top < innerHeight : false;
-      sticky.classList.toggle('show', y > innerHeight * .8 && !past);
+      var r = stopAt ? stopAt.getBoundingClientRect() : null;
+      var onForm = r ? (r.top < innerHeight && r.bottom > 0) : false; // nascosta solo mentre il form è a schermo
+      sticky.classList.toggle('show', y > innerHeight * .8 && !onForm);
     }
   }
   addEventListener('scroll', onScroll, { passive: true }); onScroll();

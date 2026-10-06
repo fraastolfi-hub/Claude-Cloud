@@ -783,15 +783,6 @@
   d.addEventListener('click',function(){ set(true); });
   set(false);
 
-  // CTA fissa su mobile: site.js parte prima che il partial sticky-candidatura esista, quindi la gestisco qui
-  var sticky=document.querySelector('.sticky-cta'), stop=document.querySelector('[data-sticky-stop]');
-  if(sticky){
-    var onS=function(){
-      var r=stop?stop.getBoundingClientRect():null, inForm=r?(r.top<innerHeight && r.bottom>0):false;
-      sticky.classList.toggle('show', scrollY>innerHeight*.8 && !inForm);
-    };
-    addEventListener('scroll',onS,{passive:true}); onS();
-  }
 })();
 </script>
 </body>
