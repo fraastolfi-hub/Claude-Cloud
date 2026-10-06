@@ -249,6 +249,9 @@ section{position:relative}
 .p-name{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,2.8vw,30px);line-height:1.05;text-transform:uppercase;color:var(--ink)}
 .p-cat{font-family:var(--f-display);font-weight:700;font-size:14px;color:var(--blue);letter-spacing:.02em}
 .p-sub{font-size:14.5px;line-height:1.45;color:var(--ink-soft);margin-top:4px}
+.look{margin-top:clamp(56px,8vw,96px);font-family:var(--f-display);font-feature-settings:"zero" 1;font-weight:800;text-transform:uppercase;font-size:clamp(28px,4.6vw,56px);line-height:1.05;letter-spacing:-.01em;text-wrap:balance;color:var(--ink);max-width:24ch;display:grid;gap:.15em}
+.look span{display:block}
+.look .b{color:var(--blue)}
 /* conti */
 .math{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:#DDE3F3;border:2px solid #DDE3F3;margin-top:44px}
 .math>div{background:#fff;padding:28px 24px;display:grid;gap:10px;align-content:start}
@@ -430,7 +433,8 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
       <img src="img/oculus.jpg" alt="">
       <img src="img/lampade.jpg" alt="">
     </div>
-    <div class="runfoot">Vedere un hotel e guardare un hotel sono due cose diverse</div>
+    <p class="look"><span>Vedi una lobby bellissima.</span> <span class="b">Guardala meglio: è un centro di ricavo.</span></p>
+    <div class="runfoot">03. Gli errori che vedo fare più spesso</div>
   </div>
 </section>
 
