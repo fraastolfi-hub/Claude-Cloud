@@ -1,0 +1,2126 @@
+[
+ {
+  "id": "A01",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "A. Contro un concorrente",
+  "title": "Contro Booking ed Expedia",
+  "desc": "L'hotel come antagonista esplicito delle OTA: tutto ciò che Booking ed Expedia non possono dare.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "A",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "A02",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "A. Contro un concorrente",
+  "title": "L'indipendente contro le catene",
+  "desc": "L'indipendente come vera alternativa ai brand di catena e al boutique da catalogo.",
+  "examples": [
+   {
+    "name": "Ace Hotel",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "A",
+  "ita": false
+ },
+ {
+  "id": "A03",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "A. Contro un concorrente",
+  "title": "Contro il business hotel",
+  "desc": "Lobby come spazio di lavoro e quartiere, contro il business hotel standard.",
+  "examples": [
+   {
+    "name": "citizenM",
+    "tier": "T1",
+    "ita": false,
+    "flag": "ACQUISITO",
+    "more": 2
+   },
+   {
+    "name": "The Hoxton",
+    "tier": "T1",
+    "ita": false
+   }
+  ],
+  "pioneer": false,
+  "fam": "A",
+  "ita": false
+ },
+ {
+  "id": "A04",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "A. Contro un concorrente",
+  "title": "Contro il villaggio turistico",
+  "desc": "L'opposto programmatico del villaggio: no animazione, no buffet, no braccialetti.",
+  "examples": [
+   {
+    "name": "Sextantio",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   },
+   {
+    "name": "Eremito",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   }
+  ],
+  "pioneer": false,
+  "fam": "A",
+  "ita": true
+ },
+ {
+  "id": "A05",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "A. Contro un concorrente",
+  "title": "Non fatto per Instagram",
+  "desc": "Fatto per essere vissuto, non fotografato: comunicazione minima e rifiuto dell'estetica social.",
+  "examples": [
+   {
+    "name": "Aman",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "A",
+  "ita": false
+ },
+ {
+  "id": "B01",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "B. Un limite come promessa",
+  "title": "Pochissime camere",
+  "desc": "Il numero piccolissimo di camere dichiarato come promessa.",
+  "examples": [
+   {
+    "name": "SingleThread",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "La Valise Tulum",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "B",
+  "ita": false
+ },
+ {
+  "id": "B02",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "B. Un limite come promessa",
+  "title": "Una sola cena, un solo orario",
+  "desc": "Una sola cena, un solo orario, un solo menù.",
+  "examples": [
+   {
+    "name": "The Lost Kitchen",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "B",
+  "ita": false
+ },
+ {
+  "id": "B03",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "B. Un limite come promessa",
+  "title": "Aperto pochi mesi, per scelta",
+  "desc": "Apertura ridotta presentata come scelta di qualità, non come limite.",
+  "examples": [
+   {
+    "name": "Splendido (Belmond)",
+    "tier": "T2",
+    "ita": true,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "B",
+  "ita": true
+ },
+ {
+  "id": "B04",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "B. Un limite come promessa",
+  "title": "Soggiorno minimo lungo",
+  "desc": "Minimo di più notti per filtrare il mordi-e-fuggi.",
+  "examples": [
+   {
+    "name": "COMO Shambhala Estate",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Kamalaya",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "B",
+  "ita": false
+ },
+ {
+  "id": "B05",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "B. Un limite come promessa",
+  "title": "Difficile da raggiungere, apposta",
+  "desc": "Ci si arriva solo a piedi, in funivia o in barca: la fatica dell'accesso è parte del valore.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "B",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "C01",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "C. Pensato per un pubblico",
+  "title": "Pensato per le famiglie",
+  "desc": "Struttura e operazioni progettate per le famiglie con bambini.",
+  "examples": [
+   {
+    "name": "Falkensteiner Family Hotels",
+    "tier": "T2",
+    "ita": true
+   },
+   {
+    "name": "Beaches Resorts",
+    "tier": "T2",
+    "ita": false
+   },
+   {
+    "name": "Hotel Bardo",
+    "tier": "T2",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "Club Family Hotel",
+    "tier": "T1",
+    "ita": true,
+    "flag": "DA VERIFICARE",
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "C",
+  "ita": true
+ },
+ {
+  "id": "C02",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "C. Pensato per un pubblico",
+  "title": "Pensato per chi viaggia da solo",
+  "desc": "Ridisegnato attorno a chi viaggia da solo, aperto a tutti.",
+  "examples": [
+   {
+    "name": "Now Now NoHo",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "C",
+  "ita": false
+ },
+ {
+  "id": "C03",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "C. Pensato per un pubblico",
+  "title": "Pensato per una professione o una passione",
+  "desc": "Pensato per una categoria professionale o uno stile di vita preciso.",
+  "examples": [
+   {
+    "name": "Public Hotel",
+    "tier": "T3",
+    "ita": false
+   },
+   {
+    "name": "Civilian Hotel",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "French Theory",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "C",
+  "ita": false
+ },
+ {
+  "id": "C04",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "C. Pensato per un pubblico",
+  "title": "Pensato per chi fa sport",
+  "desc": "Specializzazione profonda su uno sport, accessibile a chiunque.",
+  "examples": [
+   {
+    "name": "La Manga Club",
+    "tier": "T1",
+    "ita": false
+   }
+  ],
+  "pioneer": false,
+  "fam": "C",
+  "ita": false
+ },
+ {
+  "id": "C05",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "C. Pensato per un pubblico",
+  "title": "Animali davvero benvenuti",
+  "desc": "L'animale è ospite vero, ma il prodotto resta per l'umano.",
+  "examples": [
+   {
+    "name": "Kimpton Hotels",
+    "tier": "T2",
+    "ita": false
+   },
+   {
+    "name": "Postcard Cabins (ex Getaway)",
+    "tier": "T1",
+    "ita": false,
+    "flag": "ACQUISITO",
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "C",
+  "ita": false
+ },
+ {
+  "id": "C06",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "C. Pensato per un pubblico",
+  "title": "Identità dichiarata",
+  "desc": "Identità dichiarata come filtro comunicativo (LGBTQ+, cultura, ecc.).",
+  "examples": [
+   {
+    "name": "Hostelle",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Axel Hotels",
+    "tier": "T1",
+    "ita": false,
+    "flag": "DA VERIFICARE"
+   }
+  ],
+  "pioneer": false,
+  "fam": "C",
+  "ita": false
+ },
+ {
+  "id": "C07",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "C. Pensato per un pubblico",
+  "title": "Pensato per una generazione",
+  "desc": "La generazione come asse identitario (over-65 attivi, Gen Z).",
+  "examples": [],
+  "pioneer": true,
+  "fam": "C",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "C08",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "C. Pensato per un pubblico",
+  "title": "Pensato per chi lavora in viaggio",
+  "desc": "Hotel per chi lavora in viaggio per lunghi periodi.",
+  "examples": [
+   {
+    "name": "Selina",
+    "tier": "T1",
+    "ita": false,
+    "flag": "VENDUTO",
+    "more": 1
+   },
+   {
+    "name": "Zoku",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Stay KooooK",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "sly Berlin",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "A-STAY",
+    "tier": "T2",
+    "ita": false,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "C",
+  "ita": false
+ },
+ {
+  "id": "D01",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "D. Cosa vende davvero",
+  "title": "Si viene per lo chef",
+  "desc": "L'asset è chi cucina: la camera è il dopo-cena.",
+  "examples": [
+   {
+    "name": "SingleThread",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "The Inn at Little Washington",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "D",
+  "ita": false
+ },
+ {
+  "id": "D02",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "D. Cosa vende davvero",
+  "title": "Si viene per dormire bene",
+  "desc": "L'hotel come prodotto del riposo: materassi, buio, protocolli.",
+  "examples": [
+   {
+    "name": "Equinox Hotel New York",
+    "tier": "T2",
+    "ita": false
+   }
+  ],
+  "pioneer": false,
+  "fam": "D",
+  "ita": false
+ },
+ {
+  "id": "D03",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "D. Cosa vende davvero",
+  "title": "Si viene per il silenzio",
+  "desc": "Il silenzio dichiarato e organizzato come prodotto principale.",
+  "examples": [
+   {
+    "name": "Eremito",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   },
+   {
+    "name": "Aman Kyoto",
+    "tier": "T2",
+    "ita": false,
+    "flag": "DA VERIFICARE"
+   }
+  ],
+  "pioneer": false,
+  "fam": "D",
+  "ita": true
+ },
+ {
+  "id": "D04",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "D. Cosa vende davvero",
+  "title": "Si viene per conoscere gente",
+  "desc": "L'hotel-community dove si fa amicizia: cene comuni, attività di gruppo.",
+  "examples": [
+   {
+    "name": "Selina",
+    "tier": "T1",
+    "ita": false,
+    "flag": "VENDUTO",
+    "more": 1
+   },
+   {
+    "name": "Generator",
+    "tier": "T1",
+    "ita": false,
+    "flag": "ACQUISITO"
+   },
+   {
+    "name": "Zoku",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Janu",
+    "tier": "T2",
+    "ita": false
+   },
+   {
+    "name": "Stay KooooK",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "AVIVA make friends",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "Now Now NoHo",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "YellowSquare",
+    "tier": "T1",
+    "ita": true,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "D",
+  "ita": true
+ },
+ {
+  "id": "D05",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "D. Cosa vende davvero",
+  "title": "Si viene per cambiare",
+  "desc": "Te ne vai diverso: programmi guidati di più giorni.",
+  "examples": [
+   {
+    "name": "Lanserhof Tegernsee",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "SHA Wellness Clinic",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "COMO Shambhala Estate",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Kamalaya",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Six Senses",
+    "tier": "T2",
+    "ita": false,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "D",
+  "ita": false
+ },
+ {
+  "id": "D06",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "D. Cosa vende davvero",
+  "title": "Si viene per avere tempo",
+  "desc": "Servizi che tolgono attrito e scelte invece di aggiungerne.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "D",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "D07",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "D. Cosa vende davvero",
+  "title": "Hotel aperto al quartiere",
+  "desc": "Il cliente non è solo l'ospite che dorme: bar, ristoranti, piscina o eventi sono aperti ai residenti e l'hotel diventa un luogo pubblico.",
+  "examples": [
+   {
+    "name": "The Ned",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "Hotel Oderberger",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "YellowSquare",
+    "tier": "T1",
+    "ita": true,
+    "more": 1
+   },
+   {
+    "name": "Hotel Bardo",
+    "tier": "T2",
+    "ita": false,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "D",
+  "ita": true
+ },
+ {
+  "id": "E01",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "E. Hotel + un'altra attività",
+  "title": "Hotel + bottega artigiana",
+  "desc": "L'hotel ibridato con un'attività artigiana che è il vero centro.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "E",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "E02",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "E. Hotel + un'altra attività",
+  "title": "Hotel + museo o collezione",
+  "desc": "La collezione (arte, libri, vinili, auto) è il prodotto; la camera è l'accesso.",
+  "examples": [
+   {
+    "name": "21c Museum Hotels",
+    "tier": "T1",
+    "ita": false
+   },
+   {
+    "name": "Atelier sul Mare",
+    "tier": "T2",
+    "ita": true,
+    "more": 2
+   },
+   {
+    "name": "TWA Hotel",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Civilian Hotel",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "E",
+  "ita": true
+ },
+ {
+  "id": "E03",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "E. Hotel + un'altra attività",
+  "title": "Hotel + artisti in residenza",
+  "desc": "Artisti in residenza producono mentre tu soggiorni.",
+  "examples": [
+   {
+    "name": "Casa Wabi",
+    "tier": "T3",
+    "ita": false
+   },
+   {
+    "name": "Atelier sul Mare",
+    "tier": "T2",
+    "ita": true,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "E",
+  "ita": true
+ },
+ {
+  "id": "E04",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "E. Hotel + un'altra attività",
+  "title": "Hotel + azienda agricola",
+  "desc": "Produzione visibile e filiera in tempo reale, oltre l'agriturismo standard.",
+  "examples": [
+   {
+    "name": "Borgo Pignano",
+    "tier": "T1",
+    "ita": true,
+    "more": 1
+   },
+   {
+    "name": "The Pig Hotels",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "Babylonstoren",
+    "tier": "T1",
+    "ita": false
+   },
+   {
+    "name": "SingleThread",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "E",
+  "ita": true
+ },
+ {
+  "id": "E05",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "E. Hotel + un'altra attività",
+  "title": "Hotel + scuola",
+  "desc": "Esci con una competenza che non avevi (cucina, lingua, mestiere).",
+  "examples": [
+   {
+    "name": "Borgo Pignano",
+    "tier": "T1",
+    "ita": true,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "E",
+  "ita": true
+ },
+ {
+  "id": "E06",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "E. Hotel + un'altra attività",
+  "title": "Hotel di un marchio non alberghiero",
+  "desc": "Un brand nato fuori dall'hospitality (retail, design, moda) trasforma la sua filosofia in camere: l'hotel è il negozio abitabile.",
+  "examples": [
+   {
+    "name": "MUJI Hotel",
+    "tier": "T1",
+    "ita": false,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "E",
+  "ita": false
+ },
+ {
+  "id": "F01",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "F. Il luogo è l'hotel",
+  "title": "Albergo diffuso",
+  "desc": "L'hotel è il borgo, non sta nel borgo.",
+  "examples": [
+   {
+    "name": "Sextantio",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   }
+  ],
+  "pioneer": false,
+  "fam": "F",
+  "ita": true
+ },
+ {
+  "id": "F02",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "F. Il luogo è l'hotel",
+  "title": "Un territorio portato altrove",
+  "desc": "Porti il territorio fuori dal territorio.",
+  "examples": [
+   {
+    "name": "Casa Cipriani",
+    "tier": "T1",
+    "ita": true,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "F",
+  "ita": true
+ },
+ {
+  "id": "F03",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "F. Il luogo è l'hotel",
+  "title": "Una vista unica",
+  "desc": "Una vista o un elemento naturale definisce tutto.",
+  "examples": [
+   {
+    "name": "Hotel Caruso (Belmond)",
+    "tier": "T1",
+    "ita": true,
+    "more": 1
+   },
+   {
+    "name": "Splendido (Belmond)",
+    "tier": "T2",
+    "ita": true,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   },
+   {
+    "name": "Monastero Santa Rosa",
+    "tier": "T1",
+    "ita": true,
+    "more": 1
+   },
+   {
+    "name": "Longitude 131°",
+    "tier": "T1",
+    "ita": false
+   },
+   {
+    "name": "La Valise Tulum",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "F",
+  "ita": true
+ },
+ {
+  "id": "F04",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "F. Il luogo è l'hotel",
+  "title": "Un edificio unico",
+  "desc": "L'architettura storica o iconica è il prodotto, non la cornice.",
+  "examples": [
+   {
+    "name": "Hotel Castello di Reschio",
+    "tier": "T1",
+    "ita": true,
+    "more": 2
+   },
+   {
+    "name": "Hotel Caruso (Belmond)",
+    "tier": "T1",
+    "ita": true,
+    "more": 1
+   },
+   {
+    "name": "Monastero Santa Rosa",
+    "tier": "T1",
+    "ita": true,
+    "more": 1
+   },
+   {
+    "name": "The Ned",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "TWA Hotel",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Hotel Oderberger",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "sly Berlin",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "F",
+  "ita": true
+ },
+ {
+  "id": "F05",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "F. Il luogo è l'hotel",
+  "title": "La cultura del posto come esperienza",
+  "desc": "Riti, persone e saperi del territorio sostituiscono l'intrattenimento standard.",
+  "examples": [
+   {
+    "name": "Borgo Egnazia",
+    "tier": "T1",
+    "ita": true,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "F",
+  "ita": true
+ },
+ {
+  "id": "G01",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "G. Una persona è il brand",
+  "title": "Il fondatore è il brand",
+  "desc": "Un fondatore riconoscibile e narrato è il brand.",
+  "examples": [
+   {
+    "name": "Sextantio",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   },
+   {
+    "name": "Eremito",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   },
+   {
+    "name": "Hotel Castello di Reschio",
+    "tier": "T1",
+    "ita": true,
+    "more": 2
+   },
+   {
+    "name": "The Pig Hotels",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "The Inn at Little Washington",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "The Lost Kitchen",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Atelier sul Mare",
+    "tier": "T2",
+    "ita": true,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "G",
+  "ita": true
+ },
+ {
+  "id": "G02",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "G. Una persona è il brand",
+  "title": "La stessa famiglia da generazioni",
+  "desc": "La continuità familiare dichiarata come prova.",
+  "examples": [
+   {
+    "name": "Borgo Egnazia",
+    "tier": "T1",
+    "ita": true,
+    "more": 2
+   },
+   {
+    "name": "Hotel Castello di Reschio",
+    "tier": "T1",
+    "ita": true,
+    "more": 2
+   },
+   {
+    "name": "Casa Cipriani",
+    "tier": "T1",
+    "ita": true,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "G",
+  "ita": true
+ },
+ {
+  "id": "G03",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "G. Una persona è il brand",
+  "title": "I gusti di un curatore",
+  "desc": "L'ossessione di un curatore definisce ogni scelta: musica, libri, design, community.",
+  "examples": [
+   {
+    "name": "Ace Hotel",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Soho House",
+    "tier": "T2",
+    "ita": false,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   },
+   {
+    "name": "French Theory",
+    "tier": "T2",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "G",
+  "ita": false
+ },
+ {
+  "id": "G04",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "G. Una persona è il brand",
+  "title": "Lo staff è la star",
+  "desc": "Il team è famoso, non l'hotel.",
+  "examples": [
+   {
+    "name": "The Connaught",
+    "tier": "T2",
+    "ita": false,
+    "flag": "DA VERIFICARE"
+   }
+  ],
+  "pioneer": false,
+  "fam": "G",
+  "ita": false
+ },
+ {
+  "id": "H01",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "H. Servizio ripensato",
+  "title": "Check-in da soli, con app o totem",
+  "desc": "Arrivo ridisegnato: chioschi, app, nessuna coda alla reception.",
+  "examples": [
+   {
+    "name": "citizenM",
+    "tier": "T1",
+    "ita": false,
+    "flag": "ACQUISITO",
+    "more": 2
+   },
+   {
+    "name": "YOTEL",
+    "tier": "T1",
+    "ita": false
+   },
+   {
+    "name": "Scandic GO",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "A-STAY",
+    "tier": "T2",
+    "ita": false,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   },
+   {
+    "name": "Bob W",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "MM:NT Berlin Lab",
+    "tier": "T3",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "H",
+  "ita": false
+ },
+ {
+  "id": "H02",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "H. Servizio ripensato",
+  "title": "Un padrone di casa al posto della reception",
+  "desc": "Niente front desk: un host umano specifico ti accoglie.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "H",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "H03",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "H. Servizio ripensato",
+  "title": "Una sola camera, un solo prezzo",
+  "desc": "Un solo tipo di camera e un prezzo trasparente, niente upsell nascosti.",
+  "examples": [
+   {
+    "name": "citizenM",
+    "tier": "T1",
+    "ita": false,
+    "flag": "ACQUISITO",
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "H",
+  "ita": false
+ },
+ {
+  "id": "H04",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "H. Servizio ripensato",
+  "title": "Si prenota solo parlando",
+  "desc": "Si prenota solo parlando: la conversazione è il servizio.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "H",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "H05",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "H. Servizio ripensato",
+  "title": "Tutto incluso o niente incluso",
+  "desc": "Tutto incluso davvero, oppure niente incluso e paghi solo ciò che usi.",
+  "examples": [
+   {
+    "name": "Sandals Resorts",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Club Family Hotel",
+    "tier": "T1",
+    "ita": true,
+    "flag": "DA VERIFICARE",
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "H",
+  "ita": true
+ },
+ {
+  "id": "H06",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "H. Servizio ripensato",
+  "title": "Meno servizi, prezzo più basso",
+  "desc": "Si tolgono ristorante, sale meeting, palestra o reception e si investe solo in ciò che il target usa davvero: prezzo più basso, promessa più chiara.",
+  "examples": [
+   {
+    "name": "Scandic GO",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Postcard Cabins (ex Getaway)",
+    "tier": "T1",
+    "ita": false,
+    "flag": "ACQUISITO",
+    "more": 1
+   },
+   {
+    "name": "Now Now NoHo",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "Bob W",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "H",
+  "ita": false
+ },
+ {
+  "id": "H07",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "H. Servizio ripensato",
+  "title": "Hotel laboratorio",
+  "desc": "L'hotel come laboratorio: camere prototipo e feedback degli ospiti usati per progettare le strutture future.",
+  "examples": [
+   {
+    "name": "MM:NT Berlin Lab",
+    "tier": "T3",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "H",
+  "ita": false
+ },
+ {
+  "id": "I01",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "I. Tempi al contrario",
+  "title": "Aperto quando gli altri chiudono",
+  "desc": "Aperti quando gli altri chiudono (mare d'inverno, montagna fuori stagione).",
+  "examples": [],
+  "pioneer": true,
+  "fam": "I",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "I02",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "I. Tempi al contrario",
+  "title": "Aperto solo in settimana",
+  "desc": "Aperto solo in giorni specifici.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "I",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "I03",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "I. Tempi al contrario",
+  "title": "Ritmi lenti obbligatori",
+  "desc": "Ritmi imposti dalla struttura: niente wifi, orari, silenzio.",
+  "examples": [
+   {
+    "name": "Eremito",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   }
+  ],
+  "pioneer": false,
+  "fam": "I",
+  "ita": true
+ },
+ {
+  "id": "J01",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "J. Rifiuto del format",
+  "title": "Lusso senza ostentazione",
+  "desc": "Il lusso è sottrazione: materiali grezzi, niente ostentazione.",
+  "examples": [
+   {
+    "name": "Sextantio",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   },
+   {
+    "name": "Aman",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "MUJI Hotel",
+    "tier": "T1",
+    "ita": false,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "J",
+  "ita": true
+ },
+ {
+  "id": "J02",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "J. Rifiuto del format",
+  "title": "Vissuto, non da rivista",
+  "desc": "Vissuto, imperfetto, mismatched: l'opposto dell'hotel da shooting.",
+  "examples": [
+   {
+    "name": "The Pig Hotels",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "J",
+  "ita": false
+ },
+ {
+  "id": "J03",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "J. Rifiuto del format",
+  "title": "Benessere medico, non spa decorativa",
+  "desc": "Rifiuti la spa decorativa e ti rifondi con protocolli medici.",
+  "examples": [
+   {
+    "name": "Lanserhof Tegernsee",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Vivamayr",
+    "tier": "T1",
+    "ita": false
+   },
+   {
+    "name": "SHA Wellness Clinic",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "J",
+  "ita": false
+ },
+ {
+  "id": "J04",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "J. Rifiuto del format",
+  "title": "Niente animazione",
+  "desc": "Silenzio o cultura locale al posto dell'animazione, in un contesto dove tutti la fanno.",
+  "examples": [
+   {
+    "name": "Borgo Egnazia",
+    "tier": "T1",
+    "ita": true,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "J",
+  "ita": true
+ },
+ {
+  "id": "K01",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "K. Una visione del mondo",
+  "title": "Un manifesto dichiarato",
+  "desc": "Una visione dichiarata che filtra gli ospiti a monte.",
+  "examples": [
+   {
+    "name": "Sextantio",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   },
+   {
+    "name": "Singita",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Jill Hotel",
+    "tier": "T3",
+    "ita": false
+   },
+   {
+    "name": "The Stromness Hotel",
+    "tier": "T3",
+    "ita": false,
+    "flag": "DA VERIFICARE"
+   }
+  ],
+  "pioneer": false,
+  "fam": "K",
+  "ita": true
+ },
+ {
+  "id": "K02",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "K. Una visione del mondo",
+  "title": "Filiera corta con i numeri",
+  "desc": "Km zero dichiarato con numeri pubblici e verificabili.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "K",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "K03",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "K. Una visione del mondo",
+  "title": "Emissioni misurate e pubblicate",
+  "desc": "Emissioni misurate, certificate e pubblicate.",
+  "examples": [
+   {
+    "name": "Bucuti & Tara Beach Resort",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "K",
+  "ita": false
+ },
+ {
+  "id": "K04",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "K. Una visione del mondo",
+  "title": "Cucina solo vegetale",
+  "desc": "Il vegetale come asse identitario, non come opzione di menù.",
+  "examples": [
+   {
+    "name": "Eremito",
+    "tier": "T1",
+    "ita": true,
+    "more": 4
+   }
+  ],
+  "pioneer": false,
+  "fam": "K",
+  "ita": true
+ },
+ {
+  "id": "K05",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "K. Una visione del mondo",
+  "title": "Ambiente al centro",
+  "desc": "L'impatto ambientale come principio di progetto e di comunicazione.",
+  "examples": [
+   {
+    "name": "Six Senses",
+    "tier": "T2",
+    "ita": false,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   },
+   {
+    "name": "1 Hotels",
+    "tier": "T1",
+    "ita": false
+   },
+   {
+    "name": "AVIVA make friends",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "K",
+  "ita": false
+ },
+ {
+  "id": "K06",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "K. Una visione del mondo",
+  "title": "Un materiale come manifesto",
+  "desc": "Un materiale dominante racconta la visione (bambù, legno, terra).",
+  "examples": [
+   {
+    "name": "Bambu Indah",
+    "tier": "T1",
+    "ita": false,
+    "flag": "DA VERIFICARE"
+   }
+  ],
+  "pioneer": false,
+  "fam": "K",
+  "ita": false
+ },
+ {
+  "id": "K07",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "K. Una visione del mondo",
+  "title": "L'hotel che protegge la natura",
+  "desc": "L'hotel esiste per finanziare la tutela di un ecosistema.",
+  "examples": [
+   {
+    "name": "Singita",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "K",
+  "ita": false
+ },
+ {
+  "id": "L01",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "L. Solo per qualcuno",
+  "title": "Solo adulti",
+  "desc": "Vietato ai minori come regola d'accesso.",
+  "examples": [
+   {
+    "name": "Sandals Resorts",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   },
+   {
+    "name": "Bucuti & Tara Beach Resort",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "L",
+  "ita": false
+ },
+ {
+  "id": "L02",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "L. Solo per qualcuno",
+  "title": "Solo famiglie",
+  "desc": "Solo famiglie con bambini.",
+  "examples": [
+   {
+    "name": "Club Family Hotel",
+    "tier": "T1",
+    "ita": true,
+    "flag": "DA VERIFICARE",
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "L",
+  "ita": true
+ },
+ {
+  "id": "L03",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "L. Solo per qualcuno",
+  "title": "Solo animali",
+  "desc": "L'hotel esiste per l'animale; l'umano accompagna.",
+  "examples": [
+   {
+    "name": "D Pet Hotels",
+    "tier": "T2",
+    "ita": false,
+    "flag": "DA VERIFICARE"
+   }
+  ],
+  "pioneer": false,
+  "fam": "L",
+  "ita": false
+ },
+ {
+  "id": "L04",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "L. Solo per qualcuno",
+  "title": "Solo sportivi",
+  "desc": "Accesso riservato a chi pratica uno sport, con livello dichiarato.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "L",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "L05",
+  "type": "pattern",
+  "stage": "Consolidato",
+  "family": "L. Solo per qualcuno",
+  "title": "Solo soci",
+  "desc": "Private club: entri se accettato o presentato.",
+  "examples": [
+   {
+    "name": "Casa Cipriani",
+    "tier": "T1",
+    "ita": true,
+    "more": 2
+   },
+   {
+    "name": "Soho House",
+    "tier": "T2",
+    "ita": false,
+    "flag": "DA VERIFICARE",
+    "more": 1
+   },
+   {
+    "name": "The Ned",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   },
+   {
+    "name": "Hotel Bardo",
+    "tier": "T2",
+    "ita": false,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "L",
+  "ita": true
+ },
+ {
+  "id": "L06",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "L. Solo per qualcuno",
+  "title": "Solo donne",
+  "desc": "Struttura riservata alle donne.",
+  "examples": [
+   {
+    "name": "Hostelle",
+    "tier": "T1",
+    "ita": false,
+    "more": 1
+   }
+  ],
+  "pioneer": false,
+  "fam": "L",
+  "ita": false
+ },
+ {
+  "id": "L07",
+  "type": "pattern",
+  "stage": "Emergente",
+  "family": "L. Solo per qualcuno",
+  "title": "Solo chi viaggia da solo",
+  "desc": "Rifiuta coppie e gruppi: solo chi viaggia da solo.",
+  "examples": [
+   {
+    "name": "AVIVA make friends",
+    "tier": "T1",
+    "ita": false,
+    "more": 2
+   }
+  ],
+  "pioneer": false,
+  "fam": "L",
+  "ita": false
+ },
+ {
+  "id": "L08",
+  "type": "pattern",
+  "stage": "Nascente",
+  "family": "L. Solo per qualcuno",
+  "title": "Solo eventi privati",
+  "desc": "La struttura esiste solo per eventi privati in esclusiva.",
+  "examples": [],
+  "pioneer": true,
+  "fam": "L",
+  "note": "Nessun caso iconico verificato: un'opportunità di pionierato.",
+  "ita": false
+ },
+ {
+  "id": "CAT01",
+  "num": 1,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Hotel della longevità",
+  "desc": "Hotel-clinica con medicina della longevità, screening e protocolli.",
+  "example": {
+   "name": "Lanserhof Tegernsee",
+   "url": "https://lanserhof.com/",
+   "place": "Baviera",
+   "note": "LANS Med Concept: diagnostica e protocolli medici al posto della spa.",
+   "ita": false
+  },
+  "related": [
+   "D05",
+   "J03"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT02",
+  "num": 2,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Turismo del sonno",
+  "desc": "L'hotel come prodotto del sonno.",
+  "example": {
+   "name": "Equinox Hotel New York",
+   "url": "https://equinox-hotels.com/",
+   "place": "Hudson Yards, New York",
+   "note": "Aperto nel 2019, 212 camere. Programma 'Art + Science of Sleep': buio, silenzio e temperatura controllati, rituali serali.",
+   "ita": false
+  },
+  "related": [
+   "D02"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT03",
+  "num": 3,
+  "type": "categoria",
+  "stage": "Maturo",
+  "family": "Categoria emergente",
+  "title": "Glamping di lusso",
+  "desc": "Tende e strutture leggere di fascia alta in natura.",
+  "example": {
+   "name": "Longitude 131°",
+   "url": "https://longitude131.com.au/",
+   "place": "Uluru",
+   "note": "Baillie Lodges: tende di lusso con vista su Uluru.",
+   "ita": false
+  },
+  "related": [
+   "F03",
+   "B05"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT04",
+  "num": 4,
+  "type": "categoria",
+  "stage": "Maturo",
+  "family": "Categoria emergente",
+  "title": "Ostello di design",
+  "desc": "Ostello di design per chi accetta la stanza condivisa.",
+  "example": {
+   "name": "Generator",
+   "url": "https://staygenerator.com/",
+   "place": "Network di città",
+   "note": "Ha definito l'ostello di design. Acquisito da Queensgate Investments nel 2017.",
+   "ita": false
+  },
+  "related": [
+   "D04",
+   "H03"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT05",
+  "num": 5,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Lavoro + vacanza",
+  "desc": "Hotel per remote worker di lunga durata.",
+  "example": {
+   "name": "Selina",
+   "url": "https://www.selina.com/",
+   "place": "Globale",
+   "note": "Hub per nomadi digitali: coworking, community, eventi.",
+   "ita": false
+  },
+  "related": [
+   "C08",
+   "D04"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT06",
+  "num": 6,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Hotel per ritiri",
+  "desc": "Hotel-ritiro tematico (yoga, silenzio, detox), permanente o pop-up.",
+  "example": {
+   "name": "COMO Shambhala Estate",
+   "url": "https://www.comohotels.com/bali/como-shambhala-estate/",
+   "place": "Ubud, Bali",
+   "note": "Christina Ong. Programmi residenziali di più giorni come unità di prodotto.",
+   "ita": false
+  },
+  "related": [
+   "D05",
+   "B04",
+   "D03"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT07",
+  "num": 7,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Benessere medico",
+  "desc": "Hotel-clinica diagnostico/preventivo.",
+  "example": {
+   "name": "Lanserhof Tegernsee",
+   "url": "https://lanserhof.com/",
+   "place": "Baviera",
+   "note": "LANS Med Concept: diagnostica e protocolli medici al posto della spa.",
+   "ita": false
+  },
+  "related": [
+   "J03",
+   "D05"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT08",
+  "num": 8,
+  "type": "categoria",
+  "stage": "Nascente",
+  "family": "Categoria emergente",
+  "title": "Hotel senza alcol",
+  "desc": "Hotel alcohol-free o mindful drinking.",
+  "example": {
+   "name": "Jill Hotel",
+   "url": "https://www.jillhotel.com/en/",
+   "place": "Saint-Gilles, Bruxelles",
+   "note": "Primo hotel in Belgio a togliere tutte le bevande alcoliche dal menù.",
+   "ita": false
+  },
+  "related": [
+   "K01",
+   "D05"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT09",
+  "num": 9,
+  "type": "categoria",
+  "stage": "Maturo",
+  "family": "Categoria emergente",
+  "title": "Hotel per lo sport",
+  "desc": "Hotel-centro sportivo per atleti e amatori evoluti.",
+  "example": {
+   "name": "La Manga Club",
+   "url": "https://www.lamangaclub.com/",
+   "place": "Murcia",
+   "note": "Resort sportivo: golf, tennis, ritiri di squadre di calcio.",
+   "ita": false
+  },
+  "related": [
+   "C04",
+   "L04"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT10",
+  "num": 10,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Hotel a basso impatto",
+  "desc": "Impatto ambientale dichiarato, misurato e certificato.",
+  "example": {
+   "name": "Bucuti & Tara Beach Resort",
+   "url": "https://www.bucuti.com/",
+   "place": "Eagle Beach",
+   "note": "Primo resort CarbonNeutral certificato dei Caraibi, emissioni pubblicate. Solo adulti.",
+   "ita": false
+  },
+  "related": [
+   "K05",
+   "K03"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT11",
+  "num": 11,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Agriturismo di alta gamma",
+  "desc": "Azienda agricola riposizionata in fascia alta.",
+  "example": {
+   "name": "Borgo Pignano",
+   "url": "https://www.borgopignano.com/",
+   "place": "Volterra (PI), Toscana",
+   "note": "Tenuta biologica di circa 300 ettari: hotel, ristorante, orto e scuola di cucina.",
+   "ita": true
+  },
+  "related": [
+   "E04",
+   "E05"
+  ],
+  "ita": true
+ },
+ {
+  "id": "CAT12",
+  "num": 12,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Base per il turismo lento",
+  "desc": "Base per soggiorni lenti con attività territoriali.",
+  "example": {
+   "name": "Eremito",
+   "url": "https://www.eremito.com/",
+   "place": "Parrano (TR), Umbria",
+   "note": "Marcello Murzilli, aperto nel 2013. Eremo contemporaneo ricostruito da un rudere: celle singole, niente wifi né tv, cena in silenzio, cucina vegetariana.",
+   "ita": true
+  },
+  "related": [
+   "I03",
+   "F05"
+  ],
+  "ita": true
+ },
+ {
+  "id": "CAT13",
+  "num": 13,
+  "type": "categoria",
+  "stage": "Nascente",
+  "family": "Categoria emergente",
+  "title": "Hotel con residenze d'artista",
+  "desc": "Ospitalità + residenza artistica o culturale.",
+  "example": {
+   "name": "Atelier sul Mare",
+   "url": "https://www.ateliersulmare.com/",
+   "place": "Castel di Tusa (ME)",
+   "note": "Antonio Presti: hotel-museo con camere d'arte firmate da artisti contemporanei.",
+   "ita": true
+  },
+  "related": [
+   "E03",
+   "E02"
+  ],
+  "ita": true
+ },
+ {
+  "id": "CAT14",
+  "num": 14,
+  "type": "categoria",
+  "stage": "Maturo",
+  "family": "Categoria emergente",
+  "title": "Club privato con camere",
+  "desc": "Private club urbano con camere.",
+  "example": {
+   "name": "Casa Cipriani",
+   "url": "https://www.casacipriani.com/",
+   "place": "New York, Milano, Dubai; Miami annunciata",
+   "note": "L'eleganza veneziana dei Cipriani esportata come club privato con camere. Miami: hotel da 40 camere, 23 residenze e club.",
+   "ita": true
+  },
+  "related": [
+   "L05",
+   "G03"
+  ],
+  "ita": true
+ },
+ {
+  "id": "CAT15",
+  "num": 15,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Case con il marchio dell'hotel",
+  "desc": "Il brand alberghiero si estende al residenziale.",
+  "example": {
+   "name": "Casa Cipriani",
+   "url": "https://www.casacipriani.com/",
+   "place": "New York, Milano, Dubai; Miami annunciata",
+   "note": "L'eleganza veneziana dei Cipriani esportata come club privato con camere. Miami: hotel da 40 camere, 23 residenze e club.",
+   "ita": true
+  },
+  "related": [
+   "G02"
+  ],
+  "ita": true
+ },
+ {
+  "id": "CAT16",
+  "num": 16,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Hotel immerso nella natura",
+  "desc": "Immersione naturalistica come prodotto centrale.",
+  "example": {
+   "name": "Singita",
+   "url": "https://singita.com/",
+   "place": "Sudafrica / Tanzania / Zimbabwe / Ruanda",
+   "note": "Safari lodge che finanziano la conservazione, visione dichiarata a 100 anni.",
+   "ita": false
+  },
+  "related": [
+   "K07",
+   "K06",
+   "F03"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT17",
+  "num": 17,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Tra hotel e appartamento",
+  "desc": "A metà tra hotel, appartamento e co-living: cucina, spazi di lavoro, soggiorni da una notte a mesi.",
+  "example": {
+   "name": "Zoku",
+   "url": "https://livezoku.com/",
+   "place": "Amsterdam, Copenhagen, Vienna, Parigi",
+   "note": "Fondato nel 2016 da Hans Meyer (cofondatore di citizenM) e Marc Jongerius. Il 'Loft' mette al centro tavolo da lavoro per 4 e cucina; il letto è su un soppalco. Soggiorni da pochi giorni a mesi.",
+   "ita": false
+  },
+  "related": [
+   "C08",
+   "D04",
+   "H01"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT18",
+  "num": 18,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Hotel senza reception",
+  "desc": "Senza reception fisica: check-in, chiavi e assistenza passano dall'app o da remoto.",
+  "example": {
+   "name": "Scandic GO",
+   "url": "https://www.scandichotels.com/en/about/scandic-go",
+   "place": "Stoccolma e altre città nordiche",
+   "note": "Lanciato nel 2023: niente ristorante, sale meeting o palestra; check-in e chiavi via app; camere compatte e cibo disponibile 24 ore su 24.",
+   "ita": false
+  },
+  "related": [
+   "H01",
+   "H06",
+   "H07"
+  ],
+  "ita": false
+ },
+ {
+  "id": "CAT19",
+  "num": 19,
+  "type": "categoria",
+  "stage": "Emergente",
+  "family": "Categoria emergente",
+  "title": "Cabine e micro-camere in città",
+  "desc": "Cabine o camere minime in centro città a prezzo accessibile, ispirate a capsule hotel e vagoni letto.",
+  "example": {
+   "name": "Now Now NoHo",
+   "url": "https://www.dovetailandco.com/a-bowery-hotel",
+   "place": "Bowery, New York",
+   "note": "Aperto nel 2025 in un ex dormitorio del 1917: circa 180 cabine singole da circa 4,5 m² ispirate a capsule hotel e vagoni letto, da 125 dollari a notte. Bacheca 'Connections Board' per incontrarsi.",
+   "ita": false
+  },
+  "related": [
+   "C02",
+   "H06"
+  ],
+  "ita": false
+ }
+]

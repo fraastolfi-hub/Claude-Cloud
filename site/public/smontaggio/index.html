@@ -31,10 +31,10 @@
 .old{font:700 clamp(23px,2.5vw,34px)/1.22 var(--sans);letter-spacing:-.03em;color:var(--ink);quotes:"«" "»"}
 .old .w{position:relative;transition:color .4s}
 .old .g{display:inline-block;background:linear-gradient(var(--ink),var(--ink)) no-repeat 0 92%/100% 0;transition:background-size .4s ease .5s}
-.old .g .t{display:inline-block;transition:transform .9s cubic-bezier(.6,-.3,.7,1),opacity .9s ease}
-.old .g::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.13em;background:var(--orange);transform:scaleX(0) rotate(-2deg);transform-origin:left;transition:transform .45s cubic-bezier(.7,0,.2,1)}
-.rip.s1 .old .g::after{transform:scaleX(1) rotate(-2deg)}
-.rip.s1 .old .g::after{transition-delay:calc(var(--i,0) * .25s)}
+.old .g .t{display:inline-block;position:relative;transition:transform .9s cubic-bezier(.6,-.3,.7,1),opacity .9s ease}
+.old .g .t::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.13em;background:var(--orange);transform:scaleX(0) rotate(-2deg);transform-origin:left;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.rip.s1 .old .g .t::after{transform:scaleX(1) rotate(-2deg)}
+.rip.s1 .old .g .t::after{transition-delay:calc(var(--i,0) * .25s)}
 .rip.s2 .old .g .t{transform:translateY(160px) rotate(var(--r,8deg));opacity:0}
 .rip.s2 .old .g{background-size:100% 3px}
 .rip.s2 .old .f{color:#B3AB9C}
@@ -66,7 +66,7 @@
 .rip-ctrl button:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
 .rip-ctrl .mono{font-size:12px;color:var(--muted)}
 /* senza JS o con reduced motion: tutto visibile, frase vecchia barrata */
-.rip.static .old .g::after{transform:scaleX(1) rotate(-2deg)}
+.rip.static .old .g .t::after{transform:scaleX(1) rotate(-2deg)}
 .rip.static .nw .w,.rip.static .why li{opacity:1;transform:none}
 .rip.static .done-tag{transform:rotate(-5deg) scale(1)}
 
@@ -155,8 +155,8 @@
       <div class="rip-panel">
         <span class="seen">Già visto</span>
         <div class="rip-lab"><span>Scritta come tutti gli altri</span></div>
-        <p class="old" id="ripOld"><q><span class="w f">Hotel</span> <span class="w g" style="--r:-9deg;--i:0"><span class="t">a pochi passi dal mare</span></span><span class="w f">,</span> <span class="w f">camere</span> <span class="w g" style="--r:12deg;--i:1"><span class="t">confortevoli</span></span> <span class="w f">e</span> <span class="w g" style="--r:-6deg;--i:2"><span class="t">calorosa accoglienza</span></span></q></p>
-      <p class="rip-cap" aria-hidden="true">Tolti gli aggettivi resta «Hotel, camere e». Vale per chiunque.</p>
+        <p class="old" id="ripOld"><q><span class="w f">Hotel</span> <span style="white-space:nowrap"><span class="w g" style="--r:-9deg;--i:0"><span class="t">a pochi passi dal mare</span></span><span class="w f">,</span></span> <span class="w f">camere</span> <span class="w g" style="--r:12deg;--i:1"><span class="t">confortevoli</span></span> <span class="w f">e</span> <span class="w g" style="--r:-6deg;--i:2"><span class="t">calorosa accoglienza</span></span></q></p>
+      <p class="rip-cap" aria-hidden="true">Tolti i luoghi comuni resta «Hotel, camere e». Potrebbe essere chiunque.</p>
       </div>
       <div class="rip-arrow" aria-hidden="true"><b>↓</b><span>Rimontata con un fatto</span></div>
       <div class="rip-panel new">

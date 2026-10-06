@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Library dei posizionamenti per hotel: 69 pattern e 19 categorie · Hotel Positioning</title>
+<meta name="description" content="69 pattern e 19 categorie emergenti per differenziare un hotel indipendente, con esempi reali verificati. Filtra, combina 2-3 pattern dentro una categoria e salva la tua combinazione.">
+<link rel="canonical" href="https://hotelpositioning.com/library/">
+<meta property="og:title" content="La library dei posizionamenti: 69 pattern + 19 categorie per hotel indipendenti">
+<meta property="og:description" content="Come ti differenzi e in che gioco giochi. Con esempi reali verificati e i buchi dichiarati. Di Francesco Astolfi."><meta property="og:type" content="website">
+<!-- @include head -->
+<script type="application/ld+json">
+%%LDJSON%%
+</script>
+<style>
+/* --- hero --- */
+.lib-hero .lead{max-width:40ch}
+.formula{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(18px,2.4vw,28px);position:relative}
+.formula .f-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font:700 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.f-cat{border:var(--b);background:var(--yellow);padding:14px;box-shadow:4px 4px 0 var(--ink)}
+.f-lab{display:block;font:700 12px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.f-cat > b{display:block;font:700 clamp(22px,2.3vw,30px)/1.05 var(--sans);letter-spacing:-.03em;margin-bottom:14px}
+.f-pats{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:stretch}
+.f-p{background:var(--white);border:2.5px solid var(--ink);padding:10px;font:700 15px/1.2 var(--sans);letter-spacing:-.01em}
+.f-p span{display:block;font:700 22px/1 var(--sans);letter-spacing:-.04em;color:var(--orange);-webkit-text-stroke:1.5px var(--ink);margin-bottom:6px}
+.f-pats .plus{display:grid;place-items:center;font:700 22px var(--mono)}
+@media (max-width:560px){.f-pats{grid-template-columns:1fr}.f-pats .plus{line-height:.6}}
+.f-eq{margin-top:16px;font:700 clamp(20px,2vw,26px)/1.15 var(--sans);letter-spacing:-.03em}
+.f-eq span{background:var(--orange);border:2.5px solid var(--ink);padding:0 6px}
+.f-cap{margin-top:10px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+.lib-hero .stat-row{margin-top:clamp(40px,6vw,64px)}
+
+/* --- pattern vs categoria --- */
+.pvc{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:26px}
+@media (max-width:760px){.pvc{grid-template-columns:1fr}}
+.pvc .card .q{font:700 13px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px}
+.rule{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font:700 clamp(19px,1.8vw,24px)/1.25 var(--sans);letter-spacing:-.02em;border-top:var(--b);border-bottom:var(--b);padding:16px 0;margin-bottom:clamp(32px,4vw,48px)}
+.rule .sticker{flex:none}
+
+/* --- layout library --- */
+.lib-wrap{max-width:1560px}
+.lib{display:grid;grid-template-columns:270px minmax(0,1fr);gap:clamp(22px,3vw,36px);align-items:start}
+.filters{position:sticky;top:92px;max-height:calc(100vh - 108px);overflow:auto;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:18px 16px 20px;overscroll-behavior:contain}
+.filters-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.filters-head h2{font:700 14px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.f-close{display:none}
+.fg{padding:14px 0;border-top:2px dashed var(--ink)}
+.fg:first-of-type{border-top:0}
+.fg-t{font:700 12px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:flex;justify-content:space-between;gap:8px}
+.fg-t small{font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)}
+.fchips{display:flex;flex-wrap:wrap;gap:7px}
+.fchip{font:700 12px/1.15 var(--mono);letter-spacing:.03em;border:2px solid var(--ink);background:var(--paper);padding:7px 9px;text-align:left;transition:transform .12s,box-shadow .12s,background .15s}
+.fchip:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.fchip[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:3px 3px 0 var(--orange)}
+.fchips.fam .fchip{width:100%}
+.fchip .k{display:inline-block;min-width:1.4em}
+.toggle{display:flex;align-items:center;justify-content:space-between;width:100%;gap:12px;border:2px solid var(--ink);background:var(--paper);padding:9px 10px;font:700 13px/1.2 var(--mono);text-align:left}
+.toggle .sw{width:46px;height:24px;border:2px solid var(--ink);background:var(--white);position:relative;flex:none}
+.toggle .sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;background:var(--ink);transition:transform .15s}
+.toggle[aria-pressed="true"]{background:var(--mint)}
+.toggle[aria-pressed="true"] .sw::after{transform:translateX(22px);background:var(--orange);box-shadow:0 0 0 2px var(--ink)}
+.f-foot{display:none}
+.f-reset{font:700 12px var(--mono);text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:4px 0}
+.f-backdrop{display:none}
+
+/* --- toolbar --- */
+.tools{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 14px;align-items:center;margin-bottom:14px;position:sticky;top:77px;z-index:20;background:var(--paper-2);padding:12px 0 10px;border-bottom:2px solid var(--ink)}
+.search{position:relative}
+.search label{position:absolute;left:-9999px}
+.search input{width:100%;font:500 17px/1.3 var(--sans);color:var(--ink);background:var(--white);border:var(--b);padding:14px 14px 14px 46px;border-radius:0;box-shadow:4px 4px 0 var(--ink);-webkit-appearance:none;appearance:none}
+.search input:focus{outline:0;box-shadow:5px 5px 0 var(--orange);transform:translate(-1px,-1px)}
+.search input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+.search::before{content:"⌕";z-index:1;position:absolute;left:14px;top:50%;transform:translateY(-52%);font:700 24px/1 var(--mono);pointer-events:none}
+.tools-r{display:flex;gap:10px;align-items:center}
+.f-open{display:none}
+.tools-meta{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font:400 13px/1.4 var(--mono);color:var(--muted)}
+.count{font:700 14px/1.2 var(--mono);color:var(--ink);background:var(--yellow);border:2px solid var(--ink);padding:6px 9px}
+.active-f{display:flex;flex-wrap:wrap;gap:6px}
+.active-f button{font:700 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.04em;background:var(--white);border:2px solid var(--ink);padding:6px 8px}
+.active-f button::after{content:" ✕"}
+
+/* --- schede --- */
+.lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:22px;align-items:stretch}
+.lc{background:var(--white);border:var(--b);box-shadow:var(--sh);padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;position:relative;transition:transform .15s,box-shadow .15s;scroll-margin-top:230px}
+.lc:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.lc[hidden]{display:none}
+.lc.pinned{box-shadow:8px 8px 0 var(--orange);outline:3px solid var(--orange);outline-offset:-9px}
+.lc.flash{animation:flash 1.2s}
+@keyframes flash{0%,60%{background:var(--cream-y)}}
+.lc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.lc-code{font:700 clamp(44px,4vw,58px)/.85 var(--sans);letter-spacing:-.06em}
+.lc.cat{background:var(--paper)}
+.lc.cat .lc-code{color:var(--orange);-webkit-text-stroke:2px var(--ink)}
+.lc.cat .lc-code small{font-size:.42em;letter-spacing:0;-webkit-text-stroke:0;color:var(--ink);vertical-align:top;margin-right:4px;font-family:var(--mono)}
+.pin{flex:none;font:700 12px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;border:2px solid var(--ink);background:var(--paper);padding:8px 9px;box-shadow:3px 3px 0 var(--ink);transition:transform .1s,box-shadow .1s,background .15s}
+.lc.cat .pin{background:var(--white)}
+.pin:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.pin:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+.pin[aria-pressed="true"]{background:var(--orange)}
+.pin .on{display:none}.pin[aria-pressed="true"] .on{display:inline}.pin[aria-pressed="true"] .off{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lc-fam{font:700 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lc h3{font-size:clamp(21px,1.9vw,25px);margin:0}
+.lc-desc{font-size:16px;line-height:1.5}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.mat{font:700 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);padding:6px 7px}
+.mat.s-nascente{background:var(--blue)}
+.mat.s-emergente{background:var(--yellow)}
+.mat.s-consolidato{background:var(--mint)}
+.mat.s-maturo{background:var(--ink);color:var(--paper)}
+.mat.ita{background:var(--white)}
+.ex{margin-top:auto;border-top:2px solid var(--ink);padding-top:12px}
+.ex-h{font:700 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.ex ul{list-style:none;display:grid;gap:7px}
+.ex li{display:flex;flex-wrap:wrap;align-items:center;gap:5px 6px;font-size:15px;line-height:1.25}
+.ex li b{font-weight:700;margin-right:2px}
+.tg{font:700 10.5px/1 var(--mono);letter-spacing:.04em;border:1.5px solid var(--ink);padding:3px 4px;background:var(--white);text-transform:uppercase}
+.tg.t{background:var(--ink);color:var(--paper)}
+.tg.it{background:var(--mint)}
+.tg.warn{background:var(--cream-y);border-style:dashed;border-color:var(--orange-dk);color:var(--orange-dk)}
+.tg.gone{background:var(--grey)}
+.more{font:400 12px/1 var(--mono);color:var(--muted)}
+.pioneer{margin-top:auto;background:var(--cream-y);border:2px dashed var(--ink);padding:10px 12px;font:400 13px/1.5 var(--mono)}
+.pioneer b{display:block;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;margin-bottom:4px;color:var(--orange-dk)}
+.cex{margin-top:auto;background:var(--white);border:2px solid var(--ink);padding:12px}
+.cex a{font-weight:700;text-decoration-thickness:2px;text-underline-offset:3px}
+.cex a:hover{background:var(--yellow)}
+.cex .place{display:block;font:400 12px/1.4 var(--mono);color:var(--muted);margin:4px 0 6px}
+.cex p{font-size:14.5px;line-height:1.45}
+.rel{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font:700 11px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.rel button{font:700 12px/1 var(--mono);border:2px solid var(--ink);background:var(--yellow);padding:6px 7px}
+.rel button:hover{background:var(--orange)}
+.empty{border:var(--b);border-style:dashed;background:var(--cream-y);padding:clamp(24px,4vw,44px);text-align:center;display:grid;gap:14px;justify-items:center}
+.empty[hidden]{display:none}
+.empty h3{font-size:clamp(24px,2.6vw,34px)}
+.empty p{max-width:46ch}
+
+/* --- combinazione (dock) --- */
+.dock{position:fixed;right:16px;bottom:16px;z-index:55;width:min(420px,calc(100vw - 32px));background:var(--white);border:var(--b);box-shadow:var(--sh-lg);transform:translateY(0);transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.dock[hidden]{display:none}
+.dock.bump{animation:bump .35s}
+@keyframes bump{40%{transform:translate(-4px,-6px)}}
+.dock-bar{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--ink);color:var(--paper);border:0;padding:13px 14px;font:700 13px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;text-align:left}
+.dock-bar b{background:var(--orange);color:var(--ink);padding:3px 6px;border:2px solid var(--paper)}
+.dock-bar .codes{flex:1;text-transform:none;letter-spacing:0;color:#B9B0A0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock-bar .ar{transition:transform .2s}
+.dock-bar[aria-expanded="true"] .ar{transform:rotate(180deg)}
+.dock-panel{padding:16px;max-height:min(70vh,560px);overflow:auto}
+.dock-panel[hidden]{display:none}
+.combo{list-style:none;display:grid;gap:8px;margin-bottom:12px}
+.combo li{display:grid;grid-template-columns:58px 1fr auto;gap:10px;align-items:center;border:2px solid var(--ink);padding:8px 10px;background:var(--paper);font-size:15px;line-height:1.25}
+.combo li.slot-cat{background:var(--yellow)}
+.combo li.empty-slot{border-style:dashed;background:transparent;color:var(--muted);font:400 13px/1.35 var(--mono)}
+.combo .c{font:700 16px/1 var(--mono)}
+.combo .x{border:2px solid var(--ink);background:var(--white);width:30px;height:30px;font:700 14px var(--mono);display:grid;place-items:center}
+.verdict{font:400 14px/1.5 var(--sans);background:var(--cream-y);border-left:8px solid var(--orange);padding:10px 12px;margin-bottom:14px}
+.dock .btn{width:100%;font-size:16px;padding:15px 16px}
+.dock-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;font:400 12px/1.4 var(--mono);color:var(--muted)}
+.dock-foot button{font:700 12px var(--mono);background:none;border:0;text-decoration:underline;text-underline-offset:3px;color:var(--ink)}
+.toast{position:fixed;left:50%;top:92px;transform:translate(-50%,-16px);z-index:80;background:var(--ink);color:var(--paper);border:3px solid var(--paper);box-shadow:5px 5px 0 var(--orange);padding:12px 16px;font:700 14px/1.4 var(--mono);max-width:calc(100vw - 32px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* --- legenda --- */
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:clamp(36px,5vw,56px)}
+@media (max-width:980px){.legend{grid-template-columns:1fr}}
+.legend dl{display:grid;gap:12px}
+.legend dt{display:flex;gap:6px;flex-wrap:wrap}
+.legend dd{font-size:15.5px;line-height:1.45;margin-bottom:6px}
+.legend h3{margin-bottom:16px}
+
+/* --- mobile: filtri a scomparsa --- */
+@media (max-width:900px){
+  .lib{grid-template-columns:1fr}
+  .f-open{display:inline-flex}
+  .filters{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:70;max-height:86vh;border-left:0;border-right:0;border-bottom:0;box-shadow:0 -8px 0 var(--ink);padding:0 16px;transform:translateY(105%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.9,.2,1),visibility 0s linear .3s;display:flex;flex-direction:column}
+  .filters.open{transform:none;visibility:visible;transition:transform .3s cubic-bezier(.2,.9,.2,1)}
+  .filters-head{position:sticky;top:0;background:var(--white);padding:14px 0 10px;border-bottom:var(--b);margin:0;z-index:1}
+  .f-close{display:grid;place-items:center;width:42px;height:42px;border:var(--b);background:var(--yellow);font:700 18px var(--mono)}
+  .f-body{flex:1;overflow:auto;padding-bottom:8px}
+  .f-foot{display:block;position:sticky;bottom:0;background:var(--white);border-top:var(--b);padding:12px 0 16px}
+  .f-foot .btn{width:100%;padding:15px}
+  .f-backdrop{position:fixed;inset:0;z-index:65;background:rgba(17,17,17,.55);display:block;opacity:0;pointer-events:none;transition:opacity .25s}
+  .f-backdrop.show{opacity:1;pointer-events:auto}
+  .fchips.fam .fchip{width:auto}
+  .dock{left:12px;right:12px;bottom:12px;width:auto}
+}
+@media (max-width:560px){
+  .lib-hero .stat-row{grid-template-columns:1fr 1fr}
+  .lib-hero .stat{padding:16px}
+  .lib-hero .stat:last-child{grid-column:1/-1}
+  .tools{grid-template-columns:1fr 1fr;gap:8px}
+  .search{grid-column:1/-1}
+  .search input{padding:11px 12px 11px 42px;font-size:16px}
+  .tools-r{display:contents}
+  .tools-r .btn{padding:10px 12px}
+  .tools-meta{gap:6px}
+  .count{font-size:12.5px;padding:5px 8px}
+  .lc{padding:16px}
+  .lc-code{font-size:46px}
+}
+body.lock{overflow:hidden}
+</style>
+</head>
+<body>
+<!-- @include header -->
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero lib-hero">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Library · v4.0 · gratis</span>
+        <h1>
+          <span class="line"><span>La library</span></span>
+          <span class="line"><span>dei <span class="hl or in">posizionamenti.</span></span></span>
+        </h1>
+        <p class="lead">69 pattern e 19 categorie emergenti per differenziare un hotel indipendente. Con esempi reali, verificati. E con i buchi dichiarati: dove nessuno l'ha ancora fatto bene, c'è scritto.</p>
+        <div class="btn-row">
+          <a href="#library" class="btn">Apri la library ↓</a>
+          <a href="/analisi/#candidatura" class="btn ghost">Candida il tuo hotel <span class="arr">→</span></a>
+        </div>
+        <p class="micro"><b>Filtra, cerca, fissa fino a 3 pattern.</b> La tua combinazione resta salvata su questo browser.</p>
+      </div>
+
+      <figure class="formula rv d1" aria-label="Esempio di combinazione dalla library: tre pattern dentro una categoria">
+        <figcaption class="f-top"><span>Come si legge una combinazione</span><span>Caso: Eremito</span></figcaption>
+        <div class="f-cat">
+          <span class="f-lab">Categoria · #12</span>
+          <b>Base per il turismo lento</b>
+          <div class="f-pats">
+            <div class="f-p"><span>I03</span>Ritmi lenti obbligatori</div>
+            <span class="plus" aria-hidden="true">+</span>
+            <div class="f-p"><span>D03</span>Si viene per il silenzio</div>
+            <span class="plus" aria-hidden="true">+</span>
+            <div class="f-p"><span>K04</span>Cucina solo vegetale</div>
+          </div>
+        </div>
+        <p class="f-eq">= <span>Eremito</span>, Parrano (TR)</p>
+        <p class="f-cap">Celle singole, niente wifi né tv, cena in silenzio, cucina vegetariana. Tre pattern, una categoria chiara. Ognuno, da solo, si copia. Insieme fanno una posizione.</p>
+      </figure>
+    </div>
+
+    <div class="stat-row rv">
+      <div class="stat"><b data-count="%%N_PAT%%">0</b><span>pattern: come ti differenzi</span></div>
+      <div class="stat"><b data-count="%%N_CAT%%">0</b><span>categorie emergenti: in che gioco giochi</span></div>
+      <div class="stat"><b data-count="%%N_FAM%%">0</b><span>famiglie di pattern, da A a L</span></div>
+      <div class="stat"><b data-count="%%N_ITA%%">0</b><span>elementi con almeno un caso italiano</span></div>
+      <div class="stat"><b data-count="%%N_PIONEER%%">0</b><span>pattern ancora senza un caso iconico</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°01 LA LIBRARY ================= -->
+<section class="sec alt" id="library">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>Due domande. <em>Non una.</em></h2>
+      <p class="lead">La library è un sistema a due dimensioni. Quasi tutti gli hotel rispondono solo alla prima.</p>
+    </div>
+    <div class="pvc">
+      <div class="card rv"><span class="q">Pattern · 69</span><h3>Come ti differenzi.</h3><p>Il meccanismo. Contro chi ti metti, quale limite trasformi in promessa, per chi sei fatto, cosa vendi davvero. Dodici famiglie, da A a L.</p></div>
+      <div class="card y rv d1"><span class="q">Categoria · 19</span><h3>In che gioco giochi.</h3><p>Il mercato. Hotel della longevità, turismo del sonno, club privato con camere. Mercati emergenti, ognuno con un caso reale e i pattern che gli stanno vicino.</p></div>
+    </div>
+    <p class="rule rv"><span class="sticker">La regola</span><span>I posizionamenti più forti combinano <span class="hl in"><span style="white-space:nowrap">2-3 pattern</span> dentro una categoria chiara.</span></span></p>
+  </div>
+  <div class="wrap lib-wrap">
+    <div class="lib">
+      <div class="f-backdrop" id="fBackdrop" aria-hidden="true"></div>
+      <aside class="filters" id="filters" aria-labelledby="fTitle">
+        <div class="filters-head">
+          <h2 id="fTitle">Filtri</h2>
+          <button type="button" class="f-reset" data-reset>Azzera tutto</button>
+          <button type="button" class="f-close" id="fClose" aria-label="Chiudi i filtri">✕</button>
+        </div>
+        <div class="f-body">
+          <div class="fg">
+            <p class="fg-t" id="g-type">Tipo</p>
+            <div class="fchips" role="group" aria-labelledby="g-type">
+              <button type="button" class="fchip" data-f="type" data-v="all" aria-pressed="true">Tutti · %%N_ALL%%</button>
+              <button type="button" class="fchip" data-f="type" data-v="pattern" aria-pressed="false">Pattern · %%N_PAT%%</button>
+              <button type="button" class="fchip" data-f="type" data-v="categoria" aria-pressed="false">Categorie · %%N_CAT%%</button>
+            </div>
+          </div>
+          <div class="fg">
+            <p class="fg-t" id="g-ita">Provenienza</p>
+            <button type="button" class="toggle" data-f="ita" aria-pressed="false" aria-describedby="g-ita"><span>🇮🇹 Solo casi italiani</span><span class="sw" aria-hidden="true"></span></button>
+          </div>
+          <div class="fg">
+            <p class="fg-t" id="g-stage">Maturità</p>
+            <div class="fchips" role="group" aria-labelledby="g-stage">
+%%STAGE_CHIPS%%
+            </div>
+          </div>
+          <div class="fg">
+            <p class="fg-t" id="g-fam">Famiglia <small>solo pattern</small></p>
+            <div class="fchips fam" role="group" aria-labelledby="g-fam">
+%%FAM_CHIPS%%
+            </div>
+          </div>
+        </div>
+        <div class="f-foot"><button type="button" class="btn" id="fApply">Mostra <span data-n>%%N_ALL%%</span> elementi</button></div>
+      </aside>
+
+      <div>
+        <div class="tools">
+          <div class="search">
+            <label for="q">Cerca nella library</label>
+            <input type="search" id="q" placeholder="Cerca: silenzio, famiglie, Sextantio, D04…" autocomplete="off">
+          </div>
+          <div class="tools-r">
+            <button type="button" class="btn sm ghost f-open" id="fOpen" aria-expanded="false" aria-controls="filters">Filtri <span id="fOpenN"></span></button>
+            <button type="button" class="btn sm" id="shuffle">Rimescola ⤨</button>
+          </div>
+          <div class="tools-meta">
+            <p class="count" id="count" aria-live="polite"><span data-n>%%N_ALL%%</span> di %%N_ALL%% elementi</p>
+            <div class="active-f" id="activeF"></div>
+          </div>
+        </div>
+
+        <div class="lgrid" id="lgrid">
+%%CARDS%%
+        </div>
+        <div class="empty" id="empty" hidden>
+          <h3>Qui non c'è niente.</h3>
+          <p>Nessun elemento della library combina questi filtri. Togline uno, oppure cerca un'altra parola.</p>
+          <button type="button" class="btn sm" data-reset>Azzera i filtri <span class="arr">→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°02 COME SI LEGGE ================= -->
+<section class="sec white" id="legenda">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>Come si legge <em>una scheda.</em></h2>
+      <p class="lead">Ogni etichetta dice una cosa precisa. Anche quando dice “non lo sappiamo ancora”.</p>
+    </div>
+    <div class="legend">
+      <div class="card rv">
+        <h3>Maturità</h3>
+        <dl>
+          <dt><span class="mat s-consolidato">Consolidato</span><span class="mat s-maturo">Maturo</span></dt>
+          <dd>Il pattern (o la categoria) esiste da tempo e ha casi riconoscibili. Funziona, ma qualcuno ci è già arrivato.</dd>
+          <dt><span class="mat s-emergente">Emergente</span></dt>
+          <dd>Ci sono casi reali, ancora pochi. Il terreno è aperto.</dd>
+          <dt><span class="mat s-nascente">Nascente</span></dt>
+          <dd>Quasi nessuno lo fa. Dove trovi “Nessun caso iconico verificato” c'è un'opportunità di pionierato. E nessuno che ti dica se funziona.</dd>
+        </dl>
+      </div>
+      <div class="card rv d1">
+        <h3>Esempi</h3>
+        <dl>
+          <dt><span class="tg t">T1</span><span class="tg t">T2</span><span class="tg t">T3</span></dt>
+          <dd>Il livello di verifica assegnato a ogni esempio. <span class="todo">[DA COMPLETARE: definizione di T1, T2 e T3 dalle note metodologiche]</span></dd>
+          <dt><span class="tg it">🇮🇹 ITA</span></dt>
+          <dd>Caso italiano. Il filtro “Solo casi italiani” tiene le schede con almeno uno.</dd>
+          <dt><span class="more">+2 pattern</span></dt>
+          <dd>Lo stesso hotel compare in altri pattern. Chi è forte di solito ne combina più di uno.</dd>
+        </dl>
+      </div>
+      <div class="card rv d2">
+        <h3>Avvertenze</h3>
+        <dl>
+          <dt><span class="tg warn">Da verificare</span></dt>
+          <dd>Il caso è segnalato, ma il dato va ancora ricontrollato. Lo lasciamo visibile e lo diciamo.</dd>
+          <dt><span class="tg gone">Acquisito</span><span class="tg gone">Venduto</span></dt>
+          <dd>Il marchio è passato di mano. Il pattern resta valido, il caso va letto con quella data in testa.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="rv">
+        <h3 style="margin-bottom:18px">Cosa questa library non è.</h3>
+        <ul class="check-list no">
+          <li>Un menù. Non scegli il pattern più bello: scegli quello che i tuoi ospiti già ti riconoscono.</li>
+          <li>Una classifica. Consolidato non vuol dire migliore. Spesso vuol dire affollato.</li>
+          <li>Una garanzia. Copiare il pattern di Aman non ti trasforma in Aman.</li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <h3 style="margin-bottom:18px">Note metodologiche.</h3>
+        <div class="note-box">
+          <p style="margin-bottom:10px">Versione 4.0. 69 pattern in 12 famiglie, 19 categorie emergenti, esempi con livello di verifica. Dove un caso non è verificato, non lo inventiamo: lo scriviamo.</p>
+          <p><span class="todo">[DA COMPLETARE: testo delle note metodologiche della library (criteri di selezione dei casi, fonti, data di aggiornamento)]</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINALE ================= -->
+<section class="sec orange">
+  <div class="wrap narrow">
+    <div class="sec-head" style="margin-bottom:26px">
+      <h2>Una combinazione sulla carta <em>è un'ipotesi.</em></h2>
+      <p class="lead">Diventa posizionamento solo se i tuoi ospiti la confermano nelle recensioni. E se l'hotel accanto non la occupa già. È quello che verifico nell'analisi.</p>
+    </div>
+    <div class="btn-row">
+      <a href="/analisi/#candidatura" class="btn dark">Candida il tuo hotel <span class="arr">→</span></a>
+      <a href="/libro/" class="btn ghost">Le 12 vie e i 200 attributi sono nel libro <span class="arr">→</span></a>
+    </div>
+    <p class="micro" style="color:var(--ink)"><b>Analisi gratuita per 5 hotel.</b> Una alla settimana, la faccio io. Poi torna a €697.</p>
+  </div>
+</section>
+
+</main>
+
+<aside class="dock" id="dock" hidden aria-label="La tua combinazione">
+  <button type="button" class="dock-bar" id="dockBar" aria-expanded="false" aria-controls="dockPanel">
+    <span>Combinazione</span><span class="codes" id="dockCodes"></span><b id="dockN">0/3</b><span class="ar" aria-hidden="true">▲</span>
+  </button>
+  <div class="dock-panel" id="dockPanel" hidden>
+    <ol class="combo" id="combo"></ol>
+    <p class="verdict" id="verdict"></p>
+    <a href="/analisi/#candidatura" class="btn">Vuoi che la verifichi sul tuo hotel? <span class="arr">→</span></a>
+    <div class="dock-foot"><span>Salvata su questo browser.</span><button type="button" id="dockClear">Svuota</button></div>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="application/json" id="lib-data">%%DATA%%</script>
+
+<!-- @include footer -->
+<script>
+(function(){
+  var $ = function(s,c){ return (c||document).querySelector(s); };
+  var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+  var reduce = window.HP ? HP.reduce : false;
+  var DATA = JSON.parse($('#lib-data').textContent), TOTAL = DATA.length, byId = {};
+  function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  DATA.forEach(function(d){
+    byId[d.id] = d;
+    var ex = (d.examples||[]).map(function(e){ return e.name; }).join(' ');
+    if (d.example) ex += ' ' + d.example.name + ' ' + d.example.place + ' ' + d.example.note;
+    d.q = norm([d.id, d.type, d.title, d.desc, d.family, ex, d.note, (d.related||[]).join(' ')].join(' '));
+  });
+  var grid = $('#lgrid'), cards = {};
+  $$('.lc', grid).forEach(function(c){ cards[c.id] = c; });
+  var order = DATA.map(function(d){ return d.id; });
+
+  /* ---------- filtri ---------- */
+  var st = { type:'all', fam:[], stage:[], ita:false, q:'' };
+  var LABEL = { pattern:'Pattern', categoria:'Categorie' };
+  function setPressed(){
+    $$('[data-f]').forEach(function(b){
+      var f = b.dataset.f, v = b.dataset.v, on;
+      if (f === 'type') on = st.type === v;
+      else if (f === 'ita') on = st.ita;
+      else on = st[f].indexOf(v) > -1;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+  function apply(){
+    var terms = norm(st.q).split(/\s+/).filter(Boolean), n = 0;
+    DATA.forEach(function(d){
+      var ok = (st.type === 'all' || d.type === st.type)
+        && (!st.fam.length || st.fam.indexOf(d.fam) > -1)
+        && (!st.stage.length || st.stage.indexOf(d.stage) > -1)
+        && (!st.ita || d.ita)
+        && terms.every(function(t){ return d.q.indexOf(t) > -1; });
+      cards[d.id].hidden = !ok; if (ok) n++;
+    });
+    $$('[data-n]').forEach(function(el){ el.textContent = n; });
+    $('#empty').hidden = n > 0;
+    setPressed(); chipsActive();
+  }
+  function chipsActive(){
+    var box = $('#activeF'), out = [], k = 0;
+    if (st.type !== 'all') out.push(['type', st.type, LABEL[st.type]]);
+    if (st.ita) out.push(['ita', '', 'Solo italiani']);
+    st.stage.forEach(function(v){ out.push(['stage', v, v]); });
+    st.fam.forEach(function(v){ out.push(['fam', v, 'Famiglia ' + v]); });
+    if (st.q) out.push(['q', '', '“' + st.q + '”']);
+    box.innerHTML = '';
+    out.forEach(function(o){
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = o[2];
+      b.setAttribute('aria-label', 'Togli il filtro ' + o[2]);
+      b.addEventListener('click', function(){ unset(o[0], o[1]); apply(); });
+      box.appendChild(b); k++;
+    });
+    $('#fOpenN').textContent = (out.length - (st.q ? 1 : 0)) ? '· ' + (out.length - (st.q ? 1 : 0)) : '';
+  }
+  function unset(f, v){
+    if (f === 'type') st.type = 'all';
+    else if (f === 'ita') st.ita = false;
+    else if (f === 'q') { st.q = ''; $('#q').value = ''; }
+    else st[f] = st[f].filter(function(x){ return x !== v; });
+  }
+  $$('[data-f]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.dataset.f, v = b.dataset.v;
+      if (f === 'type') st.type = v;
+      else if (f === 'ita') st.ita = !st.ita;
+      else { var i = st[f].indexOf(v); if (i > -1) st[f].splice(i, 1); else st[f].push(v); }
+      apply();
+    });
+  });
+  function resetAll(){
+    st = { type:'all', fam:[], stage:[], ita:false, q:'' }; $('#q').value = '';
+    order = DATA.map(function(d){ return d.id; }); place(); apply();
+  }
+  $$('[data-reset]').forEach(function(b){ b.addEventListener('click', resetAll); });
+  var tq;
+  $('#q').addEventListener('input', function(e){
+    clearTimeout(tq); tq = setTimeout(function(){ st.q = e.target.value.trim(); apply(); }, 120);
+  });
+
+  /* ---------- rimescola ---------- */
+  function place(){ order.forEach(function(id){ grid.appendChild(cards[id]); }); }
+  $('#shuffle').addEventListener('click', function(){
+    for (var i = order.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = order[i]; order[i] = order[j]; order[j] = t; }
+    place(); toast('Rimescolato. Leggi quello che di solito salti.');
+  });
+
+  /* ---------- pattern affini ---------- */
+  $$('[data-goto]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var c = cards[b.dataset.goto]; if (!c) return;
+      if (c.hidden) resetAll();
+      c.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      c.classList.remove('flash'); void c.offsetWidth; c.classList.add('flash');
+      c.setAttribute('tabindex', '-1'); c.focus({ preventScroll: true });
+    });
+  });
+
+  /* ---------- filtri su mobile ---------- */
+  var panel = $('#filters'), opener = $('#fOpen'), back = $('#fBackdrop'), mq = window.matchMedia('(max-width:900px)');
+  function openF(){
+    panel.classList.add('open'); back.classList.add('show'); document.body.classList.add('lock');
+    panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-modal', 'true');
+    opener.setAttribute('aria-expanded', 'true'); $('#fClose').focus();
+  }
+  function closeF(){
+    if (!panel.classList.contains('open')) return;
+    panel.classList.remove('open'); back.classList.remove('show'); document.body.classList.remove('lock');
+    panel.removeAttribute('role'); panel.removeAttribute('aria-modal');
+    opener.setAttribute('aria-expanded', 'false'); opener.focus();
+  }
+  opener.addEventListener('click', openF);
+  $('#fClose').addEventListener('click', closeF);
+  back.addEventListener('click', closeF);
+  $('#fApply').addEventListener('click', function(){ closeF(); $('#library .lib').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeF(); } });
+  (mq.addEventListener ? mq.addEventListener('change', closeF) : mq.addListener(closeF));
+
+  /* ---------- combinazione: fino a 3 pattern + 1 categoria ---------- */
+  var KEY = 'hp-library-pins', MAX = 3, pins = [];
+  try { pins = JSON.parse(localStorage.getItem(KEY) || '[]').filter(function(id){ return byId[id]; }); } catch (e) { pins = []; }
+  function pats(){ return pins.filter(function(id){ return byId[id].type === 'pattern'; }); }
+  function cat(){ return pins.filter(function(id){ return byId[id].type === 'categoria'; })[0]; }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(pins)); } catch (e) {} }
+  var toastT;
+  function toast(msg){
+    var t = $('#toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove('show'); }, 2600);
+  }
+  function togglePin(id){
+    var d = byId[id], i = pins.indexOf(id);
+    if (i > -1) { pins.splice(i, 1); }
+    else if (d.type === 'categoria') {
+      var old = cat(); if (old) { pins.splice(pins.indexOf(old), 1); toast('Una categoria alla volta: ' + d.title + ' sostituisce ' + byId[old].title + '.'); }
+      pins.push(id);
+    } else if (pats().length >= MAX) {
+      toast('Hai già 3 pattern. Oltre tre non è un posizionamento, è un elenco. Togline uno.');
+      return;
+    } else pins.push(id);
+    save(); renderPins();
+    var dock = $('#dock'); if (!reduce && !dock.hidden) { dock.classList.remove('bump'); void dock.offsetWidth; dock.classList.add('bump'); }
+  }
+  $$('.pin').forEach(function(b){ b.addEventListener('click', function(){ togglePin(b.dataset.pin); }); });
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]; }); }
+  function row(id, cls){
+    var d = byId[id];
+    return '<li class="' + cls + '"><span class="c">' + (d.type === 'categoria' ? '#' + d.num : d.id) + '</span><span>' + esc(d.title) + '</span>'
+      + '<button type="button" class="x" data-unpin="' + id + '" aria-label="Togli ' + esc(d.title) + ' dalla combinazione">✕</button></li>';
+  }
+  function renderPins(){
+    var P = pats(), C = cat(), dock = $('#dock');
+    Object.keys(cards).forEach(function(id){
+      var on = pins.indexOf(id) > -1; cards[id].classList.toggle('pinned', on);
+      var b = cards[id].querySelector('.pin'); if (b) b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    dock.hidden = pins.length === 0;
+    if (!pins.length) { $('#dockPanel').hidden = true; $('#dockBar').setAttribute('aria-expanded', 'false'); return; }
+    $('#dockN').textContent = P.length + '/3';
+    $('#dockCodes').textContent = P.join(' + ') + (C ? (P.length ? ' in ' : '') + '#' + byId[C].num : '');
+    var html = C ? row(C, 'slot-cat') : '<li class="empty-slot slot-cat" style="grid-template-columns:1fr">Categoria: fissane una per dire in che gioco giochi.</li>';
+    P.forEach(function(id){ html += row(id, ''); });
+    for (var i = P.length; i < MAX; i++) html += '<li class="empty-slot" style="grid-template-columns:1fr">Pattern ' + (i + 1) + ': ' + (i < 2 ? 'scegline uno' : 'facoltativo') + '</li>';
+    $('#combo').innerHTML = html;
+    $$('[data-unpin]', $('#combo')).forEach(function(b){ b.addEventListener('click', function(){ togglePin(b.dataset.unpin); }); });
+    var v;
+    if (P.length === 0) v = 'Una categoria senza pattern è un mercato, non una posizione. Aggiungi 2-3 pattern.';
+    else if (P.length === 1) v = 'Un pattern da solo si copia in una stagione. Aggiungine almeno un altro.';
+    else if (!C) v = P.length + ' pattern. Ora manca il gioco in cui giocarli: fissa una categoria.';
+    else v = P.length + ' pattern dentro una categoria. Sulla carta regge. Resta da capire se i tuoi ospiti la riconoscono, e se l\'hotel accanto la occupa già.';
+    $('#verdict').textContent = v;
+  }
+  $('#dockBar').addEventListener('click', function(){
+    var open = this.getAttribute('aria-expanded') !== 'true';
+    this.setAttribute('aria-expanded', open ? 'true' : 'false'); $('#dockPanel').hidden = !open;
+  });
+  $('#dockClear').addEventListener('click', function(){ pins = []; save(); renderPins(); toast('Combinazione svuotata.'); });
+
+  renderPins(); apply();
+})();
+</script>
+</body>
+</html>

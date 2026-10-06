@@ -60,10 +60,8 @@ a.rung-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)
 .effort span{margin-left:6px}
 .rung .go .btn{white-space:nowrap}
 @media (max-width:420px){.rung .go .btn{white-space:normal}}
-.rung.paid .rung-card{background:var(--ink);color:var(--paper);box-shadow:var(--sh-lg)}
-.rung.paid .rung-card .aware{color:#B9B0A0}.rung.paid .rung-card .aware b{color:var(--paper)}
-.rung.paid .effort i{border-color:var(--paper);background:transparent}.rung.paid .effort i.f{background:var(--orange)}
-.rung.paid.pick .rung-card{box-shadow:9px 9px 0 var(--orange)}
+.an-stats{grid-template-columns:repeat(3,1fr)}
+@media (max-width:520px){.an-stats{grid-template-columns:1fr}}
 .legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:28px;font:400 13px var(--mono);color:var(--muted)}
 .legend .effort{color:var(--ink)}
 </style>
@@ -84,7 +82,7 @@ a.rung-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)
         <span class="line"><span><em>Parti da qui.</em></span></span>
       </h1>
       <p class="lead">Cinque gradini, in fila. Dal più leggero al più impegnativo. Ognuno ti dice qualcosa sul tuo hotel, anche se poi non sali sul successivo.</p>
-      <p style="max-width:46ch">Non sai quale fa per te? Rispondi a due domande qui accanto. Oppure scendi e guarda la scala intera.</p>
+      <p style="max-width:46ch">Non sai quale fa per te? Rispondi alle due domande di «Da dove parto?». Oppure guarda la scala intera.</p>
       <div class="btn-row" style="margin-top:28px">
         <a href="#scala" class="btn ghost">Guarda tutti i gradini ↓</a>
       </div>
@@ -200,7 +198,7 @@ a.rung-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)
         <p class="lead">L'analisi di posizionamento: il metodo applicato a te. Diagnosi, concorrenti, profili ospite, posizionamento proposto, azioni.</p>
       </div>
       <div class="rv d1">
-        <div class="stat-row" style="background:var(--paper);color:var(--ink);box-shadow:8px 8px 0 var(--orange)">
+        <div class="stat-row an-stats" style="background:var(--paper);color:var(--ink);box-shadow:8px 8px 0 var(--orange)">
           <div class="stat"><b>5</b><span>posti di candidatura gratuita</span></div>
           <div class="stat"><b>1</b><span>analisi alla settimana, la faccio io</span></div>
           <div class="stat"><b>48 h</b><span>per la risposta, anche se è no</span></div>
