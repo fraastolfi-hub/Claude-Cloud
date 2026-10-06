@@ -3,124 +3,163 @@
 <head>
 <meta charset="utf-8">
 <title>Report Dove colpire · mockup</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
 <style>
-/* Scena 1600x900: due pagine del report su un tavolo, in prospettiva.
-   Renderizzata da render.mjs. Dati di fantasia, dichiarati in pagina. */
+/* Scena 1600x900: pagine del report "Dove colpire" fotografate su un tavolo.
+   Identità della copertina del libro: carta crema, evidenziatore giallo, titoli neri pesanti,
+   etichette mono, palazzi grigi. Renderizzata da render.mjs. Hotel e dati di fantasia. */
 :root{
-  --ink:#111;--paper:#F3EDE2;--paper-2:#E9E2D4;--white:#FFFDF8;--orange:#FF7A1A;--orange-dk:#B8430A;
-  --yellow:#FFD43B;--cream-y:#FFF4C2;--mint:#7FD1AE;--grey:#D9D2C4;--muted:#6B6457;
-  --mono:'Space Mono',ui-monospace,monospace;--sans:'Space Grotesk',system-ui,sans-serif;
+  --ink:#16140F;--ink-2:#3B372E;--muted:#8A8374;--line:#CFC7B6;--line-2:#E2DBCC;
+  --paper:#F5F1E7;--paper-2:#EEE8DA;--yellow:#FFDD00;
+  --display:'Archivo Black','Space Grotesk',system-ui,sans-serif;
+  --sans:'Space Grotesk',system-ui,sans-serif;--mono:'Space Mono',ui-monospace,monospace;
+  --serif:'Source Serif 4',Georgia,serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1600px;height:900px;overflow:hidden}
-body{background:#D8CFBF;font-family:var(--sans);color:var(--ink);
-  background-image:radial-gradient(rgba(17,17,17,.10) 1px,transparent 1.3px);background-size:20px 20px;}
-.scene{position:absolute;inset:0;perspective:2600px}
-.sheet{position:absolute;width:1320px;height:830px;background:var(--white);border:3px solid var(--ink)}
-/* pagina sotto */
-.back{left:270px;top:40px;transform:scale(.84) rotateX(22deg) rotateY(-10deg) rotateZ(-2deg);background:var(--paper-2);box-shadow:14px 14px 0 rgba(17,17,17,.85)}
-.back .pg{position:absolute;left:46px;top:40px;font:700 15px var(--mono);letter-spacing:.1em}
-.back h2{position:absolute;left:46px;top:76px;font:700 44px/1 var(--sans);letter-spacing:-.04em}
-/* pagina sopra */
-.front{left:130px;top:40px;transform:scale(.86) rotateX(20deg) rotateY(-11deg) rotateZ(-4deg);box-shadow:18px 18px 0 var(--ink);padding:40px 46px}
-.top{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--ink);padding-bottom:16px}
-.top .meta{font:700 14px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.top .meta span{background:var(--yellow);border:2px solid var(--ink);padding:2px 7px;margin-right:10px}
-.logo{display:flex;align-items:center;gap:10px;font:700 21px var(--sans);letter-spacing:-.02em}
-.logo b{width:36px;height:36px;background:var(--orange);border:3px solid var(--ink);display:grid;place-items:center;font:700 13px var(--mono);box-shadow:3px 3px 0 var(--ink)}
-.cols{display:grid;grid-template-columns:1.12fr .88fr;gap:40px;margin-top:24px}
-h1{font:700 54px/1 var(--sans);letter-spacing:-.045em;margin-bottom:6px}
-h1 em{font-style:normal;background:linear-gradient(var(--orange),var(--orange)) no-repeat 0 85%/100% 38%}
-.sub{font:400 15px/1.4 var(--mono);color:var(--muted);margin-bottom:16px}
-/* mappa */
-.map{position:relative;height:520px;border:3px solid var(--ink);background:#fff;
-  background-image:linear-gradient(rgba(17,17,17,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.07) 1px,transparent 1px);background-size:10% 10%}
-.price{position:absolute;left:0;right:0;bottom:0;height:40%;border-top:2px dashed var(--ink);background:repeating-linear-gradient(-45deg,rgba(17,17,17,.08) 0 9px,transparent 9px 18px)}
-.price span{position:absolute;right:12px;top:10px;background:var(--ink);color:var(--paper);font:700 12px var(--mono);letter-spacing:.08em;padding:5px 8px}
-.free{position:absolute;left:19%;top:6%;width:33%;height:30%;background:var(--orange);border:3px dashed var(--ink)}
-.free span{position:absolute;left:-3px;top:-3px;background:var(--yellow);border:2px solid var(--ink);font:700 12px var(--mono);letter-spacing:.08em;padding:4px 7px}
-.free p{position:absolute;left:14px;bottom:12px;right:12px;font:700 17px/1.15 var(--sans);letter-spacing:-.02em}
-.yax{position:absolute;left:10px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font:700 12px var(--mono);letter-spacing:.1em}
-.xax{position:absolute;bottom:-3px;font:700 12px var(--mono);letter-spacing:.08em;background:#fff;border:2px solid var(--ink);padding:4px 7px}
-.pt{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;white-space:nowrap}
-.pt i{width:30px;height:30px;border:3px solid var(--ink);border-radius:50%;background:var(--ink);flex:none}
-.pt.g i{background:var(--grey)}
-.pt b{font:700 13px/1.2 var(--mono);background:#fff;border:2px solid var(--ink);padding:3px 6px}
-.pt.tu i{width:44px;height:44px;background:var(--yellow);border-style:dashed}
-.pt.tu b{background:var(--yellow);font-size:14px}
-.arrow{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
-/* colonna destra */
-.box{border:3px solid var(--ink);background:var(--cream-y);padding:20px 22px;box-shadow:6px 6px 0 var(--ink)}
-.box .k{font:700 13px var(--mono);letter-spacing:.1em;text-transform:uppercase}
-.box h3{font:700 27px/1.05 var(--sans);letter-spacing:-.03em;margin:10px 0}
-.box p{font:400 16.5px/1.45 var(--sans)}
-.box q{font-weight:700;quotes:"«" "»"}
-.moves{margin-top:26px}
-.moves .k{font:700 13px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;display:block}
-.mv{display:grid;grid-template-columns:44px 1fr;gap:14px;border:3px solid var(--ink);background:#fff;padding:13px 15px;margin-bottom:12px}
-.mv b.n{width:44px;height:44px;border:3px solid var(--ink);background:var(--orange);display:grid;place-items:center;font:700 18px var(--mono)}
-.mv h4{font:700 18px/1.15 var(--sans);letter-spacing:-.02em;margin-bottom:4px}
-.mv p{font:400 14.5px/1.4 var(--sans);color:#3a352d}
-.mv s{color:var(--muted)}
-.foot{position:absolute;left:46px;right:46px;bottom:22px;display:flex;justify-content:space-between;font:400 12px var(--mono);color:var(--muted);letter-spacing:.04em}
-.stamp{position:absolute;left:420px;top:112px;transform:rotate(9deg);border:3px solid var(--orange-dk);color:var(--orange-dk);font:700 15px var(--mono);letter-spacing:.14em;padding:6px 12px;background:rgba(255,253,248,.85)}
+body{font-family:var(--sans);color:var(--ink);
+  background:radial-gradient(120% 90% at 20% 0%,#F2EFEA 0%,#E4E0D8 55%,#D6D1C7 100%)}
+.scene{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 20%}
+.stack{position:absolute;left:175px;top:-8px;width:1340px;height:860px;transform-style:preserve-3d;
+  transform:rotateX(34deg) rotateY(-4deg) rotateZ(-8deg) scale(.86)}
+.sheet{position:absolute;inset:0;background:var(--paper);border-radius:3px}
+.sheet::before{content:"";position:absolute;inset:0;border-radius:3px;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .42 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.sheet::after{content:"";position:absolute;inset:0;border-radius:3px;pointer-events:none;
+  background:linear-gradient(115deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 38%,rgba(0,0,0,0) 70%,rgba(60,50,30,.07) 100%)}
+.s3{transform:translate3d(26px,22px,-6px);background:var(--paper-2);
+  box-shadow:0 2px 2px rgba(40,32,20,.12),0 30px 60px -10px rgba(40,32,20,.35)}
+.s2{transform:translate3d(13px,11px,-3px);background:#F1ECE0;box-shadow:0 1px 1px rgba(40,32,20,.15)}
+.s1{box-shadow:0 1px 1px rgba(40,32,20,.18),0 3px 6px rgba(40,32,20,.08),0 40px 80px -20px rgba(40,32,20,.45);padding:52px 64px 40px}
+
+.head{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:18px;border-bottom:1.5px solid var(--ink)}
+.brand{display:flex;align-items:flex-end;gap:12px}
+.brand svg{width:46px;height:34px}
+.brand b{font:400 20px/1 var(--display);letter-spacing:-.01em;text-transform:uppercase}
+.brand b span{background:linear-gradient(transparent 55%,var(--yellow) 55%)}
+.meta{text-align:right;font:400 12px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.meta strong{color:var(--ink);font-weight:700}
+.tag{display:inline-block;border:1px solid var(--ink-2);color:var(--ink-2);padding:3px 8px;border-radius:2px;margin-left:12px}
+
+.body{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;margin-top:30px}
+.kicker{font:400 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+h1{font:400 58px/1 var(--display);text-transform:uppercase;letter-spacing:-.015em;margin:10px 0 8px}
+h1 span{background:linear-gradient(transparent 52%,var(--yellow) 52%);padding:0 4px}
+.lede{font:italic 400 20px/1.35 var(--serif);color:var(--ink-2)}
+
+.chart{position:relative;height:470px;margin-top:22px}
+.chart svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.lbl{position:absolute;transform:translate(14px,-50%);font:500 15px/1.15 var(--sans);color:var(--ink-2);white-space:nowrap}
+.lbl small{display:block;font:400 11px var(--mono);letter-spacing:.06em;color:var(--muted);margin-top:2px}
+.lbl.you{font-weight:700;color:var(--ink)}
+.lbl.you small{color:var(--ink-2)}
+.zone{position:absolute;font:400 11.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.free-lbl{position:absolute;text-align:center;font:700 16px/1.2 var(--sans);color:var(--ink)}
+.free-lbl small{display:block;font:400 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:4px}
+.ax{position:absolute;font:400 11.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+.insight{background:rgba(255,221,0,.2);border-left:4px solid var(--yellow);padding:22px 26px;margin-top:10px}
+.insight h3{font:700 25px/1.18 var(--sans);letter-spacing:-.02em;margin-bottom:10px}
+.insight p{font:400 16px/1.5 var(--sans);color:var(--ink-2)}
+.insight q{quotes:"«" "»";font-weight:700;color:var(--ink)}
+.moves{margin-top:30px}
+.moves .kicker{display:block;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.mv{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line-2)}
+.mv .n{width:34px;height:34px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font:700 15px var(--mono);margin-top:2px}
+.mv h4{font:700 18px/1.2 var(--sans);letter-spacing:-.01em;margin-bottom:4px}
+.mv p{font:400 15px/1.45 var(--sans);color:var(--ink-2)}
+.mv s{color:var(--muted);text-decoration-thickness:1.5px}
+.mv em{font:italic 500 16px/1.4 var(--serif);color:var(--ink)}
+
+.foot{position:absolute;left:64px;right:64px;bottom:26px;display:flex;justify-content:space-between;font:400 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:12px;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
 <div class="scene">
-  <div class="sheet back">
-    <span class="pg">PAG. 6 · IL TUO HOTEL, LETTO DA FUORI</span>
-    <h2>Cosa scrivono di te</h2>
-  </div>
-
-  <div class="sheet front">
-    <div class="top">
-      <div class="meta"><span>Pag. 14</span>Analisi di posizionamento · Hotel Esempio, Riviera</div>
-      <div class="logo"><b>HP</b>Hotel Positioning</div>
+ <div class="stack">
+  <div class="sheet s3"></div>
+  <div class="sheet s2"></div>
+  <div class="sheet s1">
+    <div class="head">
+      <div class="brand">
+        <!-- il palazzo giallo tra i palazzi grigi, dalla copertina del libro -->
+        <svg viewBox="0 0 46 34" aria-hidden="true">
+          <rect x="0" y="14" width="8" height="20" fill="#C9C1B0"/><rect x="10" y="8" width="8" height="26" fill="#C9C1B0"/>
+          <rect x="20" y="4" width="9" height="30" fill="#FFDD00" stroke="#16140F" stroke-width="1.5"/>
+          <rect x="22.5" y="8" width="1.8" height="1.8" fill="#16140F"/><rect x="25.5" y="8" width="1.8" height="1.8" fill="#16140F"/>
+          <rect x="22.5" y="13" width="1.8" height="1.8" fill="#16140F"/><rect x="25.5" y="13" width="1.8" height="1.8" fill="#16140F"/>
+          <rect x="22.5" y="18" width="1.8" height="1.8" fill="#16140F"/><rect x="25.5" y="18" width="1.8" height="1.8" fill="#16140F"/>
+          <path d="M24.5 4V0l4 1.3-4 1.3" fill="#FFDD00" stroke="#16140F" stroke-width="1"/>
+          <rect x="31" y="10" width="7" height="24" fill="#C9C1B0"/><rect x="40" y="16" width="6" height="18" fill="#C9C1B0"/>
+        </svg>
+        <b>Hotel <span>Positioning</span></b>
+      </div>
+      <div class="meta">Analisi di posizionamento · <strong>Hotel Esempio, Riviera</strong><br>Pagina 14 di 24<span class="tag">Esempio · dati di fantasia</span></div>
     </div>
 
-    <div class="cols">
+    <div class="body">
       <div>
-        <h1>Dove <em>colpire.</em></h1>
-        <p class="sub">Il tuo compset, come lo vede l'ospite.</p>
-        <div class="map">
-          <div class="price"><span>Qui si compete sul prezzo. Su Booking.</span></div>
-          <div class="free"><span>Posizione libera</span><p>Chi viaggia in bici, a maggio e settembre</p></div>
-          <span class="yax">GENERICO ← → RICONOSCIBILE</span>
-          <span class="xax" style="left:36px">PREZZO PIÙ BASSO</span>
-          <span class="xax" style="right:-3px">PREZZO PIÙ ALTO</span>
-          <div class="pt" style="left:70%;top:17%"><i></i><b>Resort con miniclub</b></div>
-          <div class="pt" style="left:78%;top:36%"><i></i><b>Design per coppie</b></div>
-          <div class="pt" style="left:22%;top:48%"><i></i><b>Il più economico</b></div>
-          <div class="pt g" style="left:19%;top:84%"><i></i><b>«A due passi dal mare»</b></div>
-          <div class="pt g" style="left:60%;top:90%"><i></i><b>«Comfort e cortesia»</b></div>
-          <div class="pt g" style="left:76%;top:77%"><i></i><b>«Location unica»</b></div>
-          <div class="pt tu" style="left:40%;top:72%"><i></i><b>Il tuo hotel, oggi</b></div>
-          <svg class="arrow" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M39 65 C 38 52, 37 45, 36.5 37.5" fill="none" stroke="#111" stroke-width=".7" stroke-dasharray="2 1.4"/>
-            <path d="M35 38.8 L36.5 35.6 L38.1 38.8 Z" fill="#111"/>
+        <span class="kicker">03 · Dove colpire</span>
+        <h1><span>Dove colpire</span></h1>
+        <p class="lede">Il tuo compset, come lo vede l'ospite. E il posto che nessuno ha ancora preso.</p>
+
+        <div class="chart">
+          <svg viewBox="0 0 640 470" preserveAspectRatio="none">
+            <defs>
+              <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#D9D1C1" stroke-width="2.4"/></pattern>
+              <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#16140F"/></marker>
+              <radialGradient id="halo"><stop offset="0" stop-color="#FFDD00" stop-opacity=".55"/><stop offset="1" stop-color="#FFDD00" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect x="40" y="270" width="590" height="160" fill="url(#hatch)" opacity=".75"/>
+            <line x1="40" y1="270" x2="630" y2="270" stroke="#B8AF9C" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="335" y1="20" x2="335" y2="430" stroke="#D8D0C0" stroke-width="1" stroke-dasharray="3 5"/>
+            <ellipse cx="200" cy="110" rx="118" ry="70" fill="rgba(255,221,0,.28)" stroke="#16140F" stroke-width="1.4" stroke-dasharray="5 5"/>
+            <line x1="40" y1="430" x2="40" y2="14" stroke="#16140F" stroke-width="1.6" marker-end="url(#ah)"/>
+            <line x1="40" y1="430" x2="634" y2="430" stroke="#16140F" stroke-width="1.6" marker-end="url(#ah)"/>
+            <path d="M262 318 C 250 255, 236 215, 218 186" fill="none" stroke="#16140F" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+            <circle cx="430" cy="74" r="8" fill="#16140F"/>
+            <circle cx="545" cy="170" r="8" fill="#16140F"/>
+            <circle cx="96" cy="230" r="8" fill="#16140F"/>
+            <circle cx="96" cy="392" r="8" fill="#F5F1E7" stroke="#8A8374" stroke-width="2"/>
+            <circle cx="470" cy="312" r="8" fill="#F5F1E7" stroke="#8A8374" stroke-width="2"/>
+            <circle cx="410" cy="396" r="8" fill="#F5F1E7" stroke="#8A8374" stroke-width="2"/>
+            <circle cx="268" cy="332" r="30" fill="url(#halo)"/>
+            <circle cx="268" cy="332" r="11" fill="#FFDD00" stroke="#16140F" stroke-width="2.2"/>
           </svg>
+          <div class="free-lbl" style="left:21%;top:16%;width:20%"><small>Posizione libera</small>Chi viaggia in bici, maggio e settembre</div>
+          <span class="lbl" style="left:67.2%;top:15.7%">Resort con miniclub<small>Famiglie con bambini</small></span>
+          <span class="lbl" style="left:85.2%;top:36.2%">Design hotel<small>Coppie, weekend</small></span>
+          <span class="lbl" style="left:15%;top:49%">Il più economico<small>Il prezzo e basta</small></span>
+          <span class="lbl" style="left:15%;top:83.4%">«A due passi dal mare»<small>Nessuna posizione</small></span>
+          <span class="lbl" style="left:73.4%;top:66.4%">«Location unica»<small>Nessuna posizione</small></span>
+          <span class="lbl" style="left:64%;top:84.3%">«Comfort e cortesia»<small>Nessuna posizione</small></span>
+          <span class="lbl you" style="left:43.6%;top:70.6%">Il tuo hotel, oggi<small>In mezzo agli altri</small></span>
+          <span class="zone" style="left:8.5%;top:60.6%">Qui si compete sul prezzo</span>
+          <span class="ax" style="left:-8px;top:2%;writing-mode:vertical-rl;transform:rotate(180deg)">Riconoscibile ↑</span>
+          <span class="ax" style="left:-8px;bottom:9%;writing-mode:vertical-rl;transform:rotate(180deg)">Generico</span>
+          <span class="ax" style="right:0;bottom:-26px">Prezzo più alto →</span>
+          <span class="ax" style="left:6.3%;bottom:-26px">Prezzo più basso</span>
         </div>
       </div>
 
       <div>
-        <div class="box">
-          <span class="k">La posizione libera</span>
+        <span class="kicker">La posizione libera</span>
+        <div class="insight">
           <h3>Nessuno, in zona, è l'hotel dei ciclisti fuori stagione.</h3>
           <p>Le tue recensioni lo dicono già: <q>officina</q>, <q>giro del mattino</q>, <q>colazione alle sei</q>. Gli ospiti l'hanno scritto. Il tuo sito no.</p>
         </div>
         <div class="moves">
-          <span class="k">Le prime tre mosse</span>
-          <div class="mv"><b class="n">1</b><div><h4>La frase in homepage</h4><p><s>«A due passi dal mare»</s> → «L'hotel dei ciclisti della Riviera. Officina, percorsi, colazione alle sei.»</p></div></div>
-          <div class="mv"><b class="n">2</b><div><h4>La scheda Google</h4><p>Prime righe e prime foto sulla bici. Non sulla piscina.</p></div></div>
-          <div class="mv"><b class="n">3</b><div><h4>Il pacchetto davanti a tutto</h4><p>«Settimana in sella», maggio e settembre, per gruppi da sei.</p></div></div>
+          <span class="kicker">Le prime tre mosse</span>
+          <div class="mv"><span class="n">1</span><div><h4>La frase in homepage</h4><p><s>«A due passi dal mare»</s><br><em>«L'hotel dei ciclisti della Riviera. Officina, percorsi, colazione alle sei.»</em></p></div></div>
+          <div class="mv"><span class="n">2</span><div><h4>La scheda Google</h4><p>Prime righe e prime foto sulla bici. Non sulla piscina.</p></div></div>
+          <div class="mv"><span class="n">3</span><div><h4>Il pacchetto davanti a tutto</h4><p>«Settimana in sella», maggio e settembre, per gruppi da sei.</p></div></div>
         </div>
       </div>
     </div>
-    <span class="stamp">ESEMPIO</span>
-    <div class="foot"><span>Hotel e dati di fantasia. Nell'analisi la mappa si costruisce sul tuo hotel e sui competitor che indichi.</span><span>hotelpositioning.com</span></div>
+
+    <div class="foot"><span>Hotel Positioning · Francesco Astolfi</span><span>Esempio: la mappa si costruisce sul tuo hotel e sui competitor che indichi</span><span>14</span></div>
   </div>
+ </div>
 </div>
 </body>
 </html>

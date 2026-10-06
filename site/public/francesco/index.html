@@ -94,6 +94,8 @@
 /* --- libro --- */
 .book{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(30px,5vw,72px);align-items:center}
 @media (max-width:860px){.book{grid-template-columns:1fr}}
+.cover-img{max-width:300px;width:100%;height:auto;justify-self:center}
+@media (max-width:860px){.cover-img{max-width:220px}}
 .cover{aspect-ratio:3/4.3;max-width:300px;width:100%;justify-self:center;background:var(--orange);border:var(--b);box-shadow:14px 14px 0 var(--ink);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-3deg);transition:transform .4s cubic-bezier(.5,1.8,.5,1)}
 .cover:hover{transform:rotate(0)}
 @media (max-width:860px){.cover{max-width:220px}}
@@ -348,11 +350,7 @@
 <!-- ================= 06 LIBRO ================= -->
 <section class="sec alt" id="libro">
   <div class="wrap book">
-    <div class="cover rv" aria-hidden="true">
-      <span class="cs">Manuale di posizionamento alberghiero</span>
-      <span class="ct">Hotel Positioning</span>
-      <span class="ca">Francesco Astolfi</span>
-    </div>
+    <img class="cover-img rv" src="/assets/img/libro-hotel-positioning.webp" srcset="/assets/img/libro-hotel-positioning.webp 420w, /assets/img/libro-hotel-positioning@2x.webp 840w" sizes="300px" width="420" height="658" loading="lazy" alt="Copertina del libro Hotel Positioning di Francesco Astolfi">
     <div>
       <div class="sec-head" style="margin-bottom:26px">
         <span class="num-tag">N°06</span>
