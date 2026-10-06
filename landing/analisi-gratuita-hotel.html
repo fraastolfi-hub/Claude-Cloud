@@ -360,7 +360,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;background:var(--oran
   background:repeating-linear-gradient(-45deg,var(--paper-2) 0 14px,var(--grey) 14px 28px);
   display:grid;place-items:center;text-align:center;padding:28px;
 }
-.photo span{font:700 13px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--white);border:2px solid var(--ink);padding:10px 12px}
+.photo{background:var(--yellow);padding:0;overflow:visible}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;filter:contrast(1.05)}
 .photo .name{position:absolute;left:-14px;bottom:28px;background:var(--orange);border:var(--b);padding:10px 14px;font:700 22px/1 var(--sans);letter-spacing:-.02em;transform:rotate(-3deg);box-shadow:4px 4px 0 var(--ink)}
 .about-sticky{position:sticky;top:110px}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:30px;border:var(--b);background:var(--white);box-shadow:var(--sh)}
@@ -443,7 +444,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;background:var(--oran
 .gets li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;font-size:19px;font-weight:500;line-height:1.35}
 .gets li b{width:44px;height:44px;border:var(--b);background:var(--paper);display:grid;place-items:center;font:700 16px var(--mono)}
 .sign{display:flex;gap:16px;align-items:center;border-top:3px solid var(--ink);padding-top:24px}
-.sign .av{width:72px;height:72px;flex:none;border:var(--b);border-radius:50%;background:repeating-linear-gradient(45deg,var(--paper) 0 6px,var(--grey) 6px 12px);display:grid;place-items:center;font:700 10px var(--mono)}
+.sign .av{width:72px;height:72px;flex:none;border:var(--b);border-radius:50%;background:var(--yellow);overflow:hidden;box-shadow:3px 3px 0 var(--ink)}
+.sign .av img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
 .sign p{font-size:15.5px;line-height:1.5}
 .slots{margin-top:26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font:700 14px/1.4 var(--mono)}
 .slots .boxes{display:flex;gap:6px}
@@ -799,7 +801,7 @@ footer .meta a{color:var(--paper)}
   <div class="wrap about-grid">
     <div class="about-sticky rv">
       <div class="photo">
-        <span>[Foto di Francesco in hotel,<br>al lavoro con lo staff]</span>
+        <img src="https://hotelpositioning.com/__l5e/assets-v1/1de3f3bd-22d7-4066-a21f-da7c7a17d6b5/francesco-hero-new.png" alt="Francesco Astolfi, fractional CMO per hotel e resort" loading="lazy" width="800" height="1000">
         <div class="name">Francesco Astolfi</div>
       </div>
       <div class="stats">
@@ -906,7 +908,7 @@ footer .meta a{color:var(--paper)}
       <div class="fit-col rv">
         <h3>È per te se</h3>
         <ul>
-          <li><span>Hai un hotel indipendente da circa <span class="todo">[20]</span> camere in su, e sul marketing decidi tu o puoi convincere chi decide.</span></li>
+          <li><span>Hai un hotel indipendente da circa 40 camere in su, e sul marketing decidi tu o puoi convincere chi decide.</span></li>
           <li><span>Vuoi sapere come ti vede l'ospite, anche quando non è quello che speri.</span></li>
           <li><span>Sei disposto a cambiare parole, pacchetti e priorità, se l'analisi dice che serve.</span></li>
         </ul>
@@ -954,7 +956,7 @@ footer .meta a{color:var(--paper)}
         <li class="rv d2"><b>03</b>Dove puoi colpire: la posizione libera che puoi prenderti.</li>
       </ul>
       <div class="sign rv">
-        <div class="av">[FOTO]</div>
+        <div class="av"><img src="https://hotelpositioning.com/__l5e/assets-v1/1de3f3bd-22d7-4066-a21f-da7c7a17d6b5/francesco-hero-new.png" alt="" loading="lazy" width="72" height="72"></div>
         <p>Scritta a mano da <strong>Francesco Astolfi</strong>, fractional CMO per hotel e resort, ideatore di due catene portate alla vendita. Senza contratto, senza impegno.</p>
       </div>
       <div class="slots rv">
