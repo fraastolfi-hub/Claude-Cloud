@@ -233,6 +233,17 @@ section{position:relative}
 .quotes blockquote{margin:0;font-size:clamp(18px,2vw,21px);line-height:1.4;font-weight:600}
 .quotes figcaption{font-size:14px;color:var(--ink-soft);display:grid;gap:2px}
 .quotes figcaption b{font-family:var(--f-display);color:var(--ink);font-size:13.5px;letter-spacing:.02em}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.ghost-btn{background:transparent;color:var(--blue)}
+.ghost-btn:hover{background:var(--blue);color:#fff}
+.inside{padding-bottom:0}
+.scenes{list-style:none;margin:26px 0 0;padding:0;display:grid;border-top:1px solid #DDE3F3}
+.scenes li{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,3vw,34px);line-height:1.15;color:var(--ink);padding-block:18px;border-bottom:1px solid #DDE3F3;display:grid;grid-template-columns:clamp(36px,5vw,56px) 1fr;text-wrap:balance}
+.scenes li::before{content:"→";color:var(--blue)}
+.scenes-out{margin-top:36px;max-width:30ch}
+.first-person{margin:0;border-left:4px solid var(--blue);padding:6px 0 6px 22px;font-size:clamp(18px,2vw,21px);line-height:1.45;font-weight:500;font-style:italic;color:var(--ink)}
+.first-person cite{display:block;margin-top:10px;font-style:normal;font-family:var(--f-display);font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.h101{margin:0;font-family:var(--f-display);font-weight:500;font-size:clamp(15px,1.7vw,18px);line-height:1.45;max-width:46ch;opacity:.85}
 /* conti */
 .math{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:#DDE3F3;border:2px solid #DDE3F3;margin-top:44px}
 .math>div{background:#fff;padding:28px 24px;display:grid;gap:10px;align-content:start}
@@ -331,10 +342,13 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
   <div class="wrap hero-grid">
     <div style="min-width:0">
       <p class="eyebrow rv"><span class="dot"></span>Atlante di Product Marketing degli Hotel</p>
-      <h1 class="rv d1">Guarda oggi gli hotel che arriveranno in Italia domani.</h1>
-      <p class="lead rv d2">100 concept alberghieri osservati da dentro, soprattutto all'estero, e smontati pezzo per pezzo: perché esistono, che valore producono, cosa puoi portare nel tuo progetto. Prima che lo faccia l'hotel accanto.</p>
+      <h1 class="rv d1">Un hotel bellissimo può insegnarti pochissimo.</h1>
+      <p class="lead rv d2">Questi 100, invece, ti insegnano una cosa precisa: quale scelta di prodotto li ha resi più desiderabili, più riconoscibili e più redditizi. Osservati da dentro, soprattutto all'estero. <strong>È quello che arriverà in Italia domani: studialo prima dell'hotel accanto.</strong></p>
       <div class="hero-cta rv d3">
-        <a class="btn js-buy" href="#offerta"><span class="js-cta-label">Voglio l'atlante a €59</span> <span class="arr">→</span></a>
+        <div class="cta-row">
+          <a class="btn js-buy" href="#offerta"><span class="js-cta-label">Voglio l'atlante a €59</span> <span class="arr">→</span></a>
+          <a class="btn ghost-btn" href="#scheda">Sfoglia una scheda gratis</a>
+        </div>
         <p class="micro price-inline" data-when="before">Prezzo Hospitality Day, valido fino a fine giornata del 13 ottobre. Poi sale a <s>€99</s>.</p>
         <p class="micro" data-when="after" hidden>Pagamento sicuro con Stripe.</p>
       </div>
@@ -365,6 +379,21 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
   </div>
 </div>
 
+<!-- ============ DENTRO QUESTE PAGINE ============ -->
+<section class="pad inside">
+  <div class="wrap">
+    <p class="eyebrow">Dentro queste pagine</p>
+    <ul class="scenes">
+      <li>Un'auto che sale fino al piano della tua camera.</li>
+      <li>Una piscina affacciata sulle piste di un aeroporto.</li>
+      <li>Un letto che esce dalla stanza e finisce in terrazza.</li>
+      <li>Un marchio di orologi che diventa un hotel.</li>
+      <li>Un resort che costruisce un piccolo paese per chi ci lavora.</li>
+    </ul>
+    <p class="pull scenes-out">Instagram ti mostra che esistono. <em>Nessuno ti spiega perché funzionano.</em></p>
+  </div>
+</section>
+
 <!-- ============ TENSIONE ============ -->
 <section class="pad">
   <div class="wrap">
@@ -377,6 +406,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
         <p>Pavimenti, bagni, luci, letti. Il prodotto migliora davvero. Poi apri Booking e ti ritrovi accanto a dieci strutture che dicono le stesse parole: bello, nuovo, moderno, di design.</p>
         <p>Hai risolto un problema di obsolescenza. Non un problema di mercato.</p>
         <p>Togli l'insegna e somigli a tutti. L'ospite non ha un motivo per scegliere te, e allora sceglie in base al prezzo.</p>
+        <p>Siamo diventati bravissimi a vendere quello che abbiamo: revenue, distribuzione, campagne, OTA. La domanda non è come vendere meglio una camera a 120 euro. È <strong>cosa deve diventare quella camera perché qualcuno sia felice di pagarne 150 o 160.</strong></p>
       </div>
     </div>
 
@@ -384,7 +414,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
       <span class="x-mark" aria-hidden="true">✕</span>
       <div class="stack measure">
         <p class="mono">Il rischio più grande non è spendere troppo.<br>È spendere bene per fare la cosa sbagliata.</p>
-        <p>Succede a chi investe 20 milioni e a chi ne investe 20.000. Si parte dai rendering, dai materiali, dai colori. E solo dopo ci si chiede per chi è quell'hotel e perché qualcuno dovrebbe pagarlo di più. A quel punto muri, impianti e budget sono già decisi.</p>
+        <p>Succede a chi investe 20 milioni e a chi ne investe 20.000. Anzi, con 50.000 euro invece di 500.000 sapere dove metterli diventa vitale: chi ha meno da spendere ha meno margine per spenderlo male. Si parte dai rendering, dai materiali, dai colori. E solo dopo ci si chiede per chi è quell'hotel e perché qualcuno dovrebbe pagarlo di più. A quel punto muri, impianti e budget sono già decisi.</p>
         <p>Il problema non è la mancanza di informazioni. Siamo inondati di immagini, aperture e classifiche. <strong>Vedere tutto non significa sapere cosa osservare.</strong></p>
       </div>
     </div>
@@ -434,7 +464,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
 
     <div class="notfor">
       <span class="mono">Non è per te se</span>
-      <p>cerchi la classifica dei 100 hotel più belli o più lussuosi del mondo, o un manuale di interior design. Per quelli bastano Instagram e Pinterest. Qui non si assegnano medaglie: ogni hotel è stato scelto perché ha una lezione da insegnare su posizionamento, servizio, modello di business o marginalità.</p>
+      <p>cerchi la classifica degli hotel più lussuosi del mondo, un manuale di interior design o 100 idee da copiare così come sono. Le idee appartengono agli hotel che le hanno create. <strong style="color:#fff">Quello che puoi «rubare» è il modo di pensare il progetto.</strong></p>
     </div>
     <div class="runfoot">01. Per chi cerca una direzione</div>
   </div>
@@ -471,11 +501,11 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
 </section>
 
 <!-- ============ ANATOMIA DI UNA SCHEDA ============ -->
-<section class="pad grey">
+<section class="pad grey" id="scheda">
   <div class="wrap">
-    <p class="eyebrow">Ogni concept, la stessa anatomia</p>
-    <h2 style="margin-top:18px;max-width:20ch">Non 100 foto. 100 lezioni applicabili.</h2>
-    <p class="lead measure" style="margin-top:22px">Ogni scheda segue la stessa struttura, così puoi confrontare un ostello di Amsterdam con un resort nel deserto e un trenta camere in Riviera. Ecco la scheda numero 001, come la trovi nella guida.</p>
+    <p class="eyebrow">Sfoglia una scheda · gratis</p>
+    <h2 style="margin-top:18px;max-width:22ch">Due pagine. Cinque minuti. Una lezione da portare a casa.</h2>
+    <p class="lead measure" style="margin-top:22px">Ogni concept ha la stessa struttura. Apri a caso, leggi, e sai subito se quella lezione vale per il tuo hotel. Ecco la scheda 001, come la trovi nella guida.</p>
 
     <article class="scheda" style="background:#fff;padding-inline:clamp(18px,3vw,36px)">
       <div class="scheda-head">
@@ -521,7 +551,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
         <p>Indirizzo, quartiere, sito ufficiale e categoria in testa a ogni scheda: l'atlante diventa anche la tua lista di viaggio.</p>
       </div>
       <div class="cell full">
-        <span class="lbl">La domanda da portare a casa</span>
+        <span class="lbl">La domanda da portare a casa <i>· una sola, scomoda, da fare al tuo hotel lunedì mattina</i></span>
         <p class="q-take">Se togliessi reception e divani, quale motivo avrebbe qualcuno per venire nella lobby del mio hotel?</p>
       </div>
     </article>
@@ -567,7 +597,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
   <div class="wrap">
     <p class="eyebrow">Anteprima</p>
     <h2 style="margin-top:18px;max-width:20ch">10 segreti imparati da 100 hotel concept</h2>
-    <p class="lead measure" style="margin-top:22px">Dopo 100 hotel, più delle 100 idee restano alcuni principi. Tornano in città diverse, in categorie diverse, con budget diversissimi. Te ne mostriamo tre.</p>
+    <p class="lead measure" style="margin-top:22px">Dopo 100 hotel, più delle 100 idee restano alcuni principi. Tornano in città diverse, in categorie diverse, con budget diversissimi. Ne leggi tre adesso. Gli altri sette ti aspettano nella guida.</p>
 
     <div class="secrets">
       <div class="secret locked">
@@ -594,6 +624,10 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
         <span class="n">04</span>
         <div class="body"><h3>Ogni metro quadrato può fare più di un lavoro</h3><p class="seg">Il segreto completo è nella guida, con i casi che lo dimostrano.</p></div>
       </div>
+      <div class="secret locked">
+        <span class="n">05</span>
+        <div class="body"><h3>L'hotel non deve finire alla porta della camera</h3><p class="seg">Il segreto completo è nella guida, con i casi che lo dimostrano.</p></div>
+      </div>
       <div class="secret">
         <span class="n">06</span>
         <div class="body">
@@ -603,8 +637,20 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
         </div>
       </div>
       <div class="secret locked">
+        <span class="n">07</span>
+        <div class="body"><h3>La tua storia è un asset, se sai trasformarla in prodotto</h3><p class="seg">Il segreto completo è nella guida, con i casi che lo dimostrano.</p></div>
+      </div>
+      <div class="secret locked">
         <span class="n">08</span>
-        <div class="body"><h3>Un hotel può guadagnare anche quando non vende una camera</h3><p class="seg">Il segreto completo è nella guida, con i casi che lo dimostrano.</p><span class="lock">+ altri 4 segreti nella guida</span></div>
+        <div class="body"><h3>Un hotel può guadagnare anche quando non vende una camera</h3><p class="seg">Il segreto completo è nella guida, con i casi che lo dimostrano.</p></div>
+      </div>
+      <div class="secret locked">
+        <span class="n">09</span>
+        <div class="body"><h3>Il lusso sta cambiando: meno simboli, più qualità della vita</h3><p class="seg">Il segreto completo è nella guida, con i casi che lo dimostrano.</p></div>
+      </div>
+      <div class="secret locked">
+        <span class="n">10</span>
+        <div class="body"><h3>Il concept non è una cosa da inventare alla fine</h3><p class="seg">Il segreto completo è nella guida, con i casi che lo dimostrano.</p></div>
       </div>
     </div>
     <div class="runfoot">10 segreti · pag. 45</div>
@@ -626,7 +672,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
         <p>Anni '90, provincia di Ferrara. Niente smartphone, niente low cost: il primo aereo a 17 anni. Quando in paese arrivava qualcuno da fuori, Nicola voleva conoscerlo subito, per vivere i viaggi attraverso gli occhi degli altri.</p>
         <p>Quella curiosità non se n'è più andata. Istituto alberghiero a Ferrara, laurea in Economia del Turismo a Rimini, uno stage in Teamwork Hospitality da cui non è più uscito. Oggi è consulente di product marketing strategico: lavora su riqualificazioni e nuove aperture, entrando negli hotel per analizzarli, valorizzarli e renderli più redditizi. In 20 anni nel settore ha maturato una convinzione: <strong>l'hotellerie non si impara solo nelle aule o sui libri, ma vivendo le strutture da dentro.</strong> Lavorandoci, dormendoci, facendo colazione, osservando staff e ospiti.</p>
         <p class="pull" style="font-size:clamp(20px,2.3vw,26px)">Quando entra in un hotel con un concept forte <em>ne vede la matrice</em>. Perché la lobby è fatta così, perché quel profumo, quel materiale, quel tono di voce. Per chi è stato fatto? Rende la struttura più redditizia?</p>
-        <p>Questo atlante è quello sguardo, messo su carta.</p>
+        <blockquote class="first-person">«Pensavo sarebbe stato semplice. Poi ho iniziato a scegliere e ho capito che potevo arrivare a 200, forse 300. Il difficile non era trovarli. Era tenere solo quelli che avevano qualcosa da insegnare.»<cite>Nicola Delvecchio</cite></blockquote>
       </div>
     </div>
 
@@ -656,11 +702,11 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
 
     <p class="eyebrow" style="margin-top:72px">Chi ha già guardato gli hotel con Nicola</p>
     <div class="quotes">
-      <figure><blockquote>«Una delle esperienze più coinvolgenti e stimolanti. Ho subito messo in pratica.»</blockquote><figcaption><b>Marco Ragnacci</b>Proprietario, Hotel Catignano</figcaption></figure>
-      <figure><blockquote>«Formazione pratica e memorabile.»</blockquote><figcaption><b>Massimo Valentini</b>CEO, Puglia Paradise</figcaption></figure>
-      <figure><blockquote>«Consiglierei Hotel Voyager soprattutto ai giovani albergatori.»</blockquote><figcaption><b>Matteo Vincenzi</b>COO, Truly Verona</figcaption></figure>
+      <figure><blockquote>«Mi ha particolarmente colpito il focus su prodotto e marketing, che ha mostrato come piccoli dettagli possano fare una grande differenza.»</blockquote><figcaption><b>Marco Ragnacci</b>Proprietario, Hotel Catignano</figcaption></figure>
+      <figure><blockquote>«Mi ha colpito la selezione accurata degli hotel da visitare, senza dovermi preoccupare della ricerca.»</blockquote><figcaption><b>Massimo Valentini</b>CEO, Puglia Paradise</figcaption></figure>
+      <figure><blockquote>«Solo con lo studio dei migliori possiamo mantenere le nostre strutture competitive.»</blockquote><figcaption><b>Matteo Vincenzi</b>COO, Truly Verona</figcaption></figure>
     </div>
-    <p class="micro" style="margin-top:14px">Testimonianze pubblicate su hotelvoyager.it dai partecipanti ai viaggi studio.</p>
+    <p class="micro" style="margin-top:14px">Partecipanti ai viaggi studio Hotel Voyager, da cui arriva parte dei 100 concept.</p>
     <div class="runfoot">Vedere significa connettere posizionamento, prodotto, servizio, design ed esperienza</div>
   </div>
 </section>
@@ -668,9 +714,9 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
 <!-- ============ I CONTI ============ -->
 <section class="pad grey">
   <div class="wrap">
-    <p class="eyebrow">Facciamo due conti</p>
-    <h2 style="margin-top:18px;max-width:20ch">Quanto costa sbagliare una scelta di prodotto?</h2>
-    <p class="lead measure" style="margin-top:22px">Una SPA che produce solo costi. Un rooftop che nessuno usa. 40 camere rifatte che vendi alla stessa tariffa di prima. Ogni scelta aggiunge metri quadri, manutenzione e persone. Il WOW senza un perché può diventare semplicemente un costo molto bello da fotografare.</p>
+    <p class="eyebrow">Quanto vale una scelta giusta</p>
+    <h2 style="margin-top:18px;max-width:20ch">Il prezzo di un errore lo conosci già.</h2>
+    <p class="lead measure" style="margin-top:22px">Una SPA che produce solo costi. Un ristorante che nessuno da fuori ha motivo di provare. Quaranta camere rifatte che il mercato continua a pagare come prima. Nessuna guida elimina il rischio. Ma puoi guardare chi ha già percorso quella strada, e decidere <strong>con più consapevolezza e meno errori.</strong></p>
     <div class="math">
       <div><span class="k">6 cifre</span><span class="v">Una ristrutturazione impostata sul concept sbagliato. Si scopre dopo, quando muri e impianti sono già decisi.</span></div>
       <div><span class="k">4 cifre</span><span class="v">Un viaggio studio all'estero per vedere da vicino qualche hotel. Prezioso, ma qualche hotel, non cento.</span></div>
@@ -757,6 +803,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
   <span class="chap-num" aria-hidden="true">101</span>
   <div class="wrap stack" style="position:relative;gap:28px">
     <p class="eyebrow" style="color:#fff">E adesso?</p>
+    <blockquote class="h101">«Appena questa guida sarà stampata, troverò l'hotel numero 101. Magari lo troverete voi prima di me.»</blockquote>
     <h2 style="max-width:16ch">Nessuno dei 100 ha fatto tutto diversamente.</h2>
     <p class="lead measure">Ha fatto una o poche cose molto meglio, molto più coerentemente o molto più coraggiosamente degli altri. Non devi trasformare tutto il tuo hotel. Devi trovare la cosa per cui vale la pena ricordarlo.</p>
     <div style="display:grid;gap:14px;justify-items:start">
