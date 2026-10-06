@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risorse gratuite sul posizionamento hotel: parti da qui · Hotel Positioning</title>
+<meta name="description" content="Quiz, smontaggio della homepage, gli 8 strumenti del libro, la library dei posizionamenti e il libro Hotel Positioning. In fila, dalla più leggera alla più impegnativa. Scegli da dove partire.">
+<link rel="canonical" href="https://hotelpositioning.com/risorse/">
+<meta property="og:title" content="Parti da qui. Le risorse di Hotel Positioning, in fila."><meta property="og:description" content="Dal quiz di due minuti al libro: scegli il gradino giusto per il tuo hotel."><meta property="og:type" content="website">
+<!-- @include head -->
+<style>
+/* --- da dove parto --- */
+.picker{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(20px,2.6vw,32px)}
+.picker-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:18px}
+.picker-head b{background:var(--yellow);border:2px solid var(--ink);padding:3px 6px}
+.q{margin-bottom:20px}
+.q .lab{display:block;font:700 18px/1.25 var(--sans);letter-spacing:-.02em;margin-bottom:10px}
+.opts{display:grid;gap:8px}
+.opts.t{grid-template-columns:repeat(3,1fr)}
+@media (max-width:520px){.opts.t{grid-template-columns:1fr}}
+.opts button{text-align:left;border:2.5px solid var(--ink);background:var(--paper);padding:11px 14px;font:500 16px/1.3 var(--sans);box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .2s;display:flex;gap:10px;align-items:center}
+.opts button::before{content:"";flex:none;width:16px;height:16px;border:2.5px solid var(--ink);background:var(--white)}
+.opts button:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.opts button[aria-pressed="true"]{background:var(--yellow);font-weight:700}
+.opts button[aria-pressed="true"]::before{background:var(--ink);box-shadow:inset 0 0 0 2px var(--yellow)}
+.verdict{border:var(--b);background:var(--paper-2);padding:18px;min-height:150px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.verdict.on{background:var(--orange);box-shadow:5px 5px 0 var(--ink);animation:pop2 .35s cubic-bezier(.5,1.8,.5,1)}
+@keyframes pop2{from{transform:scale(.96)}}
+.verdict .k{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.verdict h3{font-size:clamp(24px,2.4vw,30px)}
+.verdict p{font-size:16px}
+.verdict .then{font:400 13px/1.5 var(--mono)}
+.verdict .then a{font-weight:700}
+.verdict .btn{align-self:flex-start;margin-top:4px}
+.verdict.idle p{color:var(--muted);font:400 14px/1.5 var(--mono)}
+
+/* --- la scala --- */
+.path{list-style:none;display:grid;gap:18px;position:relative}
+.path::before{content:"";position:absolute;left:39px;top:20px;bottom:20px;width:3px;background:var(--ink)}
+@media (max-width:760px){.path::before{left:27px}}
+.rung{display:grid;grid-template-columns:80px 1fr;gap:clamp(14px,2.4vw,28px);align-items:start;position:relative}
+@media (max-width:760px){.rung{grid-template-columns:56px 1fr}}
+.rung .n{width:80px;height:80px;border:var(--b);background:var(--white);display:grid;place-items:center;font:700 34px var(--sans);letter-spacing:-.04em;box-shadow:4px 4px 0 var(--ink);position:relative;z-index:1;transition:background .3s}
+@media (max-width:760px){.rung .n{width:56px;height:56px;font-size:24px}}
+.rung.in .n{background:var(--yellow)}
+.rung-card{display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:clamp(18px,2.4vw,28px);text-decoration:none;transition:transform .15s,box-shadow .15s,background .25s}
+a.rung-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+@media (max-width:860px){.rung-card{grid-template-columns:1fr}}
+.rung.pick .rung-card{background:var(--cream-y);box-shadow:9px 9px 0 var(--orange)}
+.rung.pick .n{background:var(--orange)}
+.rung .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.rung h3{font-size:clamp(24px,2.4vw,32px);margin-bottom:8px}
+.rung p{font-size:16.5px;max-width:62ch}
+.rung .aware{font:400 14px/1.5 var(--mono);color:var(--muted);margin-top:10px}
+.rung .aware b{color:var(--ink)}
+.rung .go{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.effort{display:flex;gap:4px;align-items:center;font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.effort i{width:16px;height:16px;border:2px solid var(--ink);background:var(--white)}
+.effort i.f{background:var(--ink)}
+.effort span{margin-left:6px}
+.rung .go .btn{white-space:nowrap}
+@media (max-width:420px){.rung .go .btn{white-space:normal}}
+.rung.paid .rung-card{background:var(--ink);color:var(--paper);box-shadow:var(--sh-lg)}
+.rung.paid .rung-card .aware{color:#B9B0A0}.rung.paid .rung-card .aware b{color:var(--paper)}
+.rung.paid .effort i{border-color:var(--paper);background:transparent}.rung.paid .effort i.f{background:var(--orange)}
+.rung.paid.pick .rung-card{box-shadow:9px 9px 0 var(--orange)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:28px;font:400 13px var(--mono);color:var(--muted)}
+.legend .effort{color:var(--ink)}
+</style>
+</head>
+<body>
+<!-- @include header -->
+
+<main id="main">
+
+<!-- ================= HERO + DA DOVE PARTO ================= -->
+<section class="hero">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Risorse · quattro gratis, una a 19,90 €</span>
+      <h1>
+        <span class="line"><span>Non ti fidi ancora?</span></span>
+        <span class="line"><span><em>Giusto.</em></span></span>
+        <span class="line"><span><em>Parti da qui.</em></span></span>
+      </h1>
+      <p class="lead">Cinque gradini, in fila. Dal più leggero al più impegnativo. Ognuno ti dice qualcosa sul tuo hotel, anche se poi non sali sul successivo.</p>
+      <p style="max-width:46ch">Non sai quale fa per te? Rispondi a due domande qui accanto. Oppure scendi e guarda la scala intera.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a href="#scala" class="btn ghost">Guarda tutti i gradini ↓</a>
+      </div>
+    </div>
+
+    <div class="picker rv d1" id="picker">
+      <div class="picker-head"><span>Da dove parto?</span><b>2 domande</b></div>
+      <div class="q" role="group" aria-labelledby="q1l">
+        <span class="lab" id="q1l">1. Cosa sai oggi del tuo posizionamento?</span>
+        <div class="opts" data-q="a">
+          <button type="button" data-v="a" aria-pressed="false">Non so se il mio hotel si distingue dagli altri</button>
+          <button type="button" data-v="b" aria-pressed="false">So che sembra uguale agli altri. Non so come uscirne</button>
+          <button type="button" data-v="c" aria-pressed="false">Voglio lavorarci io. Mi servono gli attrezzi</button>
+          <button type="button" data-v="d" aria-pressed="false">Voglio che qualcuno lo guardi sul mio hotel</button>
+        </div>
+      </div>
+      <div class="q" role="group" aria-labelledby="q2l">
+        <span class="lab" id="q2l">2. Quanto tempo hai, adesso?</span>
+        <div class="opts t" data-q="t">
+          <button type="button" data-v="1" aria-pressed="false">Due minuti</button>
+          <button type="button" data-v="2" aria-pressed="false">Un'ora</button>
+          <button type="button" data-v="3" aria-pressed="false">Qualche sera</button>
+        </div>
+      </div>
+      <div class="verdict idle" id="verdict" aria-live="polite">
+        <p>Rispondi alle due domande. Ti dico da quale gradino partire, e quale viene dopo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LA SCALA ================= -->
+<section class="sec alt" id="scala">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">La scala</span>
+      <h2>Cinque gradini. <em>Sali fin dove ti serve.</em></h2>
+      <p class="lead">Ordinati per impegno. E per quanto sei già convinto che il tuo problema non sia il marketing, ma il posizionamento.</p>
+    </div>
+    <div class="legend"><span class="effort"><i class="f"></i><i></i><i></i><i></i><i></i><span>Impegno richiesto</span></span><span>· <b>Per te se</b> = da che punto parti</span></div>
+    <ol class="path">
+      <li class="rung" data-reveal data-r="quiz">
+        <span class="n" aria-hidden="true">1</span>
+        <a class="rung-card" href="/quiz/">
+          <div>
+            <div class="meta"><span class="chip y">Gratis</span><span class="chip w">2 minuti</span><span class="chip w">7 domande</span></div>
+            <h3>Il quiz: che hotel sei?</h3>
+            <p>Sette domande. Una risposta scomoda: invisibile, sostituibile o posizionato. Una verità che forse non ti ha mai detto nessuno, nemmeno la tua agenzia.</p>
+            <p class="aware"><b>Per te se</b> non sai ancora se hai un problema di posizionamento.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Impegno 1 su 5"><i class="f"></i><i></i><i></i><i></i><i></i></span><span class="btn sm">Fai il quiz <span class="arr">→</span></span></div>
+        </a>
+      </li>
+      <li class="rung" data-reveal data-r="smontaggio">
+        <span class="n" aria-hidden="true">2</span>
+        <a class="rung-card" href="/smontaggio/">
+          <div>
+            <div class="meta"><span class="chip y">Gratis</span><span class="chip w">Risposta in 3 giorni lavorativi</span><span class="chip o">6 al mese</span></div>
+            <h3>Lo smontaggio della homepage</h3>
+            <p>Mandami l'URL. Prendo la prima cosa che legge un ospite, headline e sottotitolo, e te li smonto: cosa dicono oggi, perché non ti fanno scegliere, e tre alternative pronte. Niente call. Scritto da me, non da ChatGPT.</p>
+            <p class="aware"><b>Per te se</b> sospetti che il tuo sito dica quello che dicono tutti.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Impegno 2 su 5"><i class="f"></i><i class="f"></i><i></i><i></i><i></i></span><span class="btn sm">Smonta la mia homepage <span class="arr">→</span></span></div>
+        </a>
+      </li>
+      <li class="rung" data-reveal data-r="bonus">
+        <span class="n" aria-hidden="true">3</span>
+        <a class="rung-card" href="/bonus/">
+          <div>
+            <div class="meta"><span class="chip y">Gratis</span><span class="chip w">10 minuti a foglio</span><span class="chip w">+ primo capitolo PDF</span></div>
+            <h3>Gli 8 strumenti e il primo capitolo</h3>
+            <p>Otto fogli di lavoro da compilare con la tua struttura davanti: dai sei step al Positioning Canvas, dai 200 attributi al test del posizionamento. Più le prime otto pagine del libro.</p>
+            <p class="aware"><b>Per te se</b> vuoi metterci le mani tu, con un foglio davanti.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Impegno 3 su 5"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></span><span class="btn sm">Scarica gli 8 strumenti <span class="arr">→</span></span></div>
+        </a>
+      </li>
+      <li class="rung" data-reveal data-r="library">
+        <span class="n" aria-hidden="true">4</span>
+        <a class="rung-card" href="/library/">
+          <div>
+            <div class="meta"><span class="chip y">Gratis</span><span class="chip w">69 pattern</span><span class="chip w">19 categorie</span></div>
+            <h3>La library dei posizionamenti</h3>
+            <p>I pattern sono meccanismi: come ti differenzi. Le categorie sono mercati emergenti: in che gioco giochi. I posizionamenti più forti combinano due o tre pattern dentro una categoria chiara. Con filtri per destinazione, dimensione e ospite.</p>
+            <p class="aware"><b>Per te se</b> vuoi vedere come si sono differenziati gli altri, prima di scegliere.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Impegno 4 su 5"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span><span class="btn sm">Esplora la library <span class="arr">→</span></span></div>
+        </a>
+      </li>
+      <li class="rung" data-reveal data-r="libro">
+        <span class="n" aria-hidden="true">5</span>
+        <a class="rung-card" href="/libro/">
+          <div>
+            <div class="meta"><span class="chip o">19,90 €</span><span class="chip w">120 pagine · due sere</span><span class="chip w">Anche Kindle</span></div>
+            <h3>Il libro: Hotel Positioning</h3>
+            <p>Il metodo completo in sei passaggi. I casi Silva e Veridia, con quello che dimostrano e quello che no. Il canvas compilato su un hotel vero, duecento attributi, dodici vie. Meno di una commissione OTA su una camera, una notte.</p>
+            <p class="aware"><b>Per te se</b> hai capito che il problema è il posizionamento e vuoi il metodo intero.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Impegno 5 su 5"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span><span class="btn sm">Guarda il libro <span class="arr">→</span></span></div>
+        </a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= IL GRADINO DOPO ================= -->
+<section class="sec dark" id="analisi">
+  <div class="wrap">
+    <div class="grid-2" style="align-items:center">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="num-tag">Il gradino dopo</span>
+        <h2>Leggere il metodo è una cosa. <em>Applicarlo al tuo hotel è un'altra.</em></h2>
+        <p class="lead">L'analisi di posizionamento: il metodo applicato a te. Diagnosi, concorrenti, profili ospite, posizionamento proposto, azioni.</p>
+      </div>
+      <div class="rv d1">
+        <div class="stat-row" style="background:var(--paper);color:var(--ink);box-shadow:8px 8px 0 var(--orange)">
+          <div class="stat"><b>5</b><span>posti di candidatura gratuita</span></div>
+          <div class="stat"><b>1</b><span>analisi alla settimana, la faccio io</span></div>
+          <div class="stat"><b>48 h</b><span>per la risposta, anche se è no</span></div>
+        </div>
+        <p class="micro" style="margin-top:18px">Non vuoi aspettare la selezione? <b>L'analisi completa costa €697 + IVA</b>, con garanzia di rimborso più €500 entro 30 giorni.</p>
+        <div class="btn-row" style="margin-top:24px">
+          <a href="/analisi/#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+          <a href="/analisi/" class="btn ghost">Come funziona l'analisi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @include footer -->
+<script>
+(function(){
+  var R = {
+    quiz:{name:'Il quiz: che hotel sei?',url:'/quiz/',cta:'Fai il quiz',tag:'2 minuti · gratis'},
+    smontaggio:{name:'Lo smontaggio della homepage',url:'/smontaggio/',cta:'Smonta la mia homepage',tag:'gratis · 6 al mese'},
+    bonus:{name:'Gli 8 strumenti + il primo capitolo',url:'/bonus/',cta:'Scarica gli 8 strumenti',tag:'gratis · 10 minuti a foglio'},
+    library:{name:'La library dei posizionamenti',url:'/library/',cta:'Esplora la library',tag:'gratis · 69 pattern + 19 categorie'},
+    libro:{name:'Il libro Hotel Positioning',url:'/libro/',cta:'Guarda il libro',tag:'19,90 € · due sere'},
+    analisi:{name:"L'analisi del tuo hotel",url:'/analisi/#candidatura',cta:'Candida il tuo hotel',tag:'candidatura gratuita · 5 posti'}
+  };
+  // [risorsa, perché, poi]
+  var M = {
+    a1:['quiz','Due minuti, sette domande. Prima di tutto ti serve sapere se il problema c\'è.','smontaggio'],
+    a2:['smontaggio','Mandi l\'URL in due minuti, e in tre giorni lavorativi vedi nero su bianco cosa dice davvero la tua homepage.','quiz'],
+    a3:['bonus','Il primo capitolo ti fa vedere i cinquanta rettangoli. Il foglio 08, il test, ti dice dove sei tu.','libro'],
+    b1:['smontaggio','Il sintomo più visibile è la prima riga del sito. Parti da lì: ci metti due minuti a chiederlo.','bonus'],
+    b2:['library','Prima di scegliere, guarda come ne sono usciti gli altri. 69 modi diversi di non sembrare uguali.','libro'],
+    b3:['libro','Sai già che il problema c\'è. Ti serve il metodo intero, nell\'ordine giusto.','analisi'],
+    c1:['bonus','Ti registri ora, compili quando hai dieci minuti. Comincia dal foglio 01: è la spina dorsale.','libro'],
+    c2:['bonus','Un\'ora basta per i primi fogli. Comincia dai sei step, poi la matrice delle 4 caselle.','library'],
+    c3:['libro','Gli strumenti sono il banco da lavoro. Il metodo per usarli sta nel libro.','bonus'],
+    d1:['analisi','La candidatura si compila in un minuto. Rispondo entro 48 ore, anche se è no.','smontaggio'],
+    d2:['analisi','La candidatura si compila in un minuto. Nell\'ora che ti resta, fatti smontare la homepage.','smontaggio'],
+    d3:['analisi','Il metodo applicato al tuo hotel, da me. Se intanto vuoi capire come ragiono, c\'è il libro.','libro']
+  };
+  var state={a:null,t:null}, v=document.getElementById('verdict');
+  var rungs=[].slice.call(document.querySelectorAll('.rung'));
+  [].slice.call(document.querySelectorAll('#picker .opts')).forEach(function(g){
+    var q=g.dataset.q, bs=[].slice.call(g.querySelectorAll('button'));
+    bs.forEach(function(b){ b.addEventListener('click',function(){
+      bs.forEach(function(x){ x.setAttribute('aria-pressed', x===b); });
+      state[q]=b.dataset.v; render();
+    });});
+  });
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function render(){
+    if(!state.a||!state.t){
+      v.className='verdict idle';
+      v.innerHTML='<p>'+(state.a||state.t?'Manca una risposta. Poi ti dico da dove partire.':'Rispondi alle due domande. Ti dico da quale gradino partire, e quale viene dopo.')+'</p>';
+      return;
+    }
+    var m=M[state.a+state.t], r=R[m[0]], n=R[m[2]];
+    v.className='verdict'; void v.offsetWidth; v.className='verdict on';
+    v.innerHTML='<span class="k">Parti da qui · '+esc(r.tag)+'</span><h3>'+esc(r.name)+'</h3><p>'+esc(m[1])+'</p>'+
+      '<a class="btn dark sm" href="'+r.url+'">'+esc(r.cta)+' <span class="arr">→</span></a>'+
+      '<p class="then">Poi: <a href="'+n.url+'">'+esc(n.name)+'</a></p>';
+    rungs.forEach(function(el){ el.classList.toggle('pick', el.dataset.r===m[0]); });
+  }
+})();
+</script>
+</body>
+</html>

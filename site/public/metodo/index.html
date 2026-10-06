@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posizionamento hotel: il metodo in sei passaggi · Hotel Positioning</title>
+<meta name="description" content="Cos'è il posizionamento di un hotel, cosa non è, e come si costruisce: i sei passaggi del metodo Hotel Positioning, la TAC del posizionamento, il Positioning Canvas e il passaggio dalla posizione alle parole.">
+<link rel="canonical" href="https://hotelpositioning.com/metodo/">
+<meta property="og:title" content="Posizionamento hotel: il metodo in sei passaggi">
+<meta property="og:description" content="Brand positioning per hotel indipendenti, spiegato per intero: sei passaggi, la TAC, il Positioning Canvas, dalla posizione alle parole.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#FF7A1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='%23FF7A1A' stroke='%23111' stroke-width='6'/%3E%3Ctext x='32' y='42' font-family='monospace' font-weight='700' font-size='24' text-anchor='middle' fill='%23111'%3EHP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Posizionamento hotel: il metodo in sei passaggi","description":"Cos'è il brand positioning di un hotel, cosa non è, e come si costruisce con il metodo Hotel Positioning: sei passaggi, la TAC del posizionamento, il Positioning Canvas, dalla posizione alle parole.","inLanguage":"it","url":"https://hotelpositioning.com/metodo/","mainEntityOfPage":"https://hotelpositioning.com/metodo/","image":"https://hotelpositioning.com/__l5e/assets-v1/1de3f3bd-22d7-4066-a21f-da7c7a17d6b5/francesco-hero-new.png","about":["Posizionamento hotel","Brand positioning hotel","Positioning Canvas"],"author":{"@type":"Person","name":"Francesco Astolfi","url":"https://hotelpositioning.com/francesco/","jobTitle":"Consulente di posizionamento per hotel"},"publisher":{"@type":"Organization","name":"Hotel Positioning","url":"https://hotelpositioning.com/"}}
+</script>
+<style>
+html{scroll-padding-top:150px}
+
+/* --- hero + sommario --- */
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(32px,5vw,72px);align-items:start}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
+.def{margin-top:28px;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:20px 22px;max-width:60ch}
+.def dt{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.def dd{font:700 clamp(19px,1.7vw,23px)/1.3 var(--sans);letter-spacing:-.02em;margin-top:8px}
+.summary{background:var(--ink);color:var(--paper);border:var(--b);box-shadow:10px 10px 0 var(--orange);padding:22px}
+.summary h2{font:700 13px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#B9B0A0;margin-bottom:12px}
+.summary ol{list-style:none;display:grid}
+.summary a{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;padding:11px 0;border-top:2px solid #333;text-decoration:none;font:700 17px/1.25 var(--sans);letter-spacing:-.01em}
+.summary a span{font:700 13px var(--mono);color:var(--orange)}
+.summary a::after{content:"↓";font:700 14px var(--mono);color:#B9B0A0;transition:transform .2s}
+.summary a:hover{color:var(--yellow)}
+.summary a:hover::after{transform:translateY(3px);color:var(--orange)}
+
+/* --- indice fisso --- */
+.toc{position:sticky;top:74px;z-index:35;background:var(--ink);border-bottom:var(--b);border-top:var(--b)}
+.toc .wrap{display:flex;align-items:center;gap:14px}
+.toc-lab{flex:none;font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#B9B0A0}
+.toc ol{list-style:none;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:9px 0;flex:1}
+.toc ol::-webkit-scrollbar{display:none}
+.toc a{display:block;white-space:nowrap;text-decoration:none;font:700 12px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--paper);border:2px solid #444;padding:8px 10px;transition:background .2s,color .2s,border-color .2s}
+.toc a:hover{border-color:var(--paper)}
+.toc a.on{background:var(--orange);color:var(--ink);border-color:var(--orange)}
+@media (max-width:640px){.toc-lab{display:none}}
+
+/* --- cosa è / non è --- */
+.isnt{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:760px){.isnt{grid-template-columns:1fr}}
+.isnt .card h3{margin-bottom:18px}
+
+/* --- tre anelli --- */
+.chain{display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr;align-items:stretch;margin:10px 0 40px}
+.ring{border:var(--b);background:var(--white);padding:24px;box-shadow:var(--sh);position:relative}
+.ring .k{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ring h3{margin:10px 0 6px;font-size:clamp(24px,2.4vw,32px)}
+.ring.first{background:var(--orange)}
+.ring.first::after{content:"Si comincia qui";position:absolute;top:-18px;right:14px;background:var(--yellow);border:var(--b);padding:6px 10px;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;transform:rotate(5deg)}
+.link{display:grid;place-items:center;font:700 26px var(--mono)}
+@media (max-width:860px){.chain{grid-template-columns:1fr}.link{height:44px;transform:rotate(90deg)}}
+
+/* --- sei passaggi --- */
+.step{display:grid;grid-template-columns:180px 1fr;border:var(--b);background:var(--white);box-shadow:var(--sh-lg);margin-bottom:28px}
+.step-n{border-right:var(--b);background:var(--yellow);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.step:nth-child(2) .step-n{background:var(--mint)}.step:nth-child(3) .step-n{background:var(--blue)}
+.step:nth-child(4) .step-n{background:var(--orange)}.step:nth-child(5) .step-n{background:var(--cream-y)}.step:nth-child(6) .step-n{background:var(--paper-2)}
+.step-n b{font:700 clamp(64px,7vw,96px)/.85 var(--sans);letter-spacing:-.06em}
+.step-n span{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.step-b{padding:clamp(22px,3vw,36px)}
+.step-b h3{font-size:clamp(26px,2.8vw,38px);margin-bottom:16px}
+.ask{font:700 clamp(19px,1.7vw,23px)/1.3 var(--sans);letter-spacing:-.02em;border-left:8px solid var(--orange);padding-left:16px;margin-bottom:18px;max-width:40ch}
+.step-b > p{max-width:62ch;margin-bottom:14px}
+.step-x{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.step-x > div{border:2.5px solid var(--ink);padding:16px 18px;font-size:16.5px;line-height:1.5}
+.step-x .ex{background:var(--cream-y)}
+.step-x .err{background:var(--paper)}
+.step-x .lab{display:block;font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+@media (max-width:760px){.step{grid-template-columns:1fr}.step-n{border-right:0;border-bottom:var(--b);flex-direction:row;align-items:center}.step-x{grid-template-columns:1fr}}
+
+/* --- TAC --- */
+.tac{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:860px){.tac{grid-template-columns:1fr}}
+.tac .card dl{display:grid;gap:12px;margin-top:14px}
+.tac .card dt{font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.tac .card dd{font-size:16px;line-height:1.45}
+.formula{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:34px;font:700 clamp(17px,1.6vw,21px)/1.25 var(--sans)}
+.formula span{border:var(--b);background:var(--white);padding:12px 14px;box-shadow:4px 4px 0 var(--ink)}
+.formula i{font:700 24px var(--mono);font-style:normal}
+.formula .res{background:var(--orange)}
+
+/* --- canvas --- */
+.canvas-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.seg{display:inline-flex;border:var(--b);box-shadow:4px 4px 0 var(--ink);background:var(--white)}
+.seg button{border:0;background:none;padding:11px 14px;font:700 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.seg button + button{border-left:var(--b)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.canvas{border:var(--b);background:var(--white);box-shadow:var(--sh-lg);display:grid;grid-template-columns:repeat(3,1fr)}
+.canvas-head{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;border-bottom:var(--b);background:var(--ink);color:var(--paper);font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.cell{padding:18px;border-right:var(--b);border-bottom:var(--b);min-height:190px;display:flex;flex-direction:column;gap:10px}
+.cell:nth-child(4),.cell:nth-child(7){border-right:0}
+.cell .ct{display:flex;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.cell .ct b{width:34px;height:34px;flex:none;border:2.5px solid var(--ink);display:grid;place-items:center;background:var(--yellow)}
+.cell h3{font-size:21px}
+.cell .q,.cell .a{font-size:16px;line-height:1.45}
+.cell .a{display:none;font-weight:500}
+.canvas.ex .cell .q{display:none}
+.canvas.ex .cell .a{display:block}
+.cell.pos{grid-column:1/-1;border-right:0;border-bottom:0;background:var(--orange);min-height:0}
+.cell.pos .big{font:700 clamp(24px,3vw,40px)/1.05 var(--sans);letter-spacing:-.035em}
+.canvas .cell.pos .q{font:700 clamp(20px,2.2vw,28px)/1.15 var(--sans);letter-spacing:-.02em}
+@media (max-width:860px){.canvas{grid-template-columns:1fr 1fr}.cell{border-right:var(--b)!important}.cell:nth-child(odd):not(.pos){border-right:0!important}.cell.pos{border-right:0!important}}
+@media (max-width:560px){.canvas{grid-template-columns:1fr}.cell{border-right:0!important;min-height:0}}
+
+/* --- dalle posizione alle parole --- */
+.ladder3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}
+.rung{border:var(--b);background:var(--white);box-shadow:var(--sh);padding:20px}
+.rung:nth-child(1){min-height:200px}.rung:nth-child(2){min-height:250px;background:var(--cream-y)}.rung:nth-child(3){min-height:300px;background:var(--orange)}
+.rung .k{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.rung h3{margin:10px 0 10px}
+.rung p{font-size:16.5px}
+.rung q{display:block;margin-top:12px;font:700 19px/1.3 var(--sans);letter-spacing:-.02em;quotes:"«" "»"}
+@media (max-width:760px){.ladder3{grid-template-columns:1fr}.rung{min-height:0!important}}
+.headline-ba{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin-top:44px}
+.headline-ba .card q{display:block;font:700 clamp(21px,2.1vw,28px)/1.2 var(--sans);letter-spacing:-.025em;quotes:"«" "»";margin-top:12px}
+.headline-ba .card.old q{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:3px}
+.headline-ba .arrow{display:grid;place-items:center;font:700 34px var(--mono)}
+@media (max-width:760px){.headline-ba{grid-template-columns:1fr}.headline-ba .arrow{transform:rotate(90deg);height:40px}}
+.tree{display:grid;gap:0;border:var(--b);box-shadow:var(--sh);background:var(--white)}
+.tree > div{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:16px 18px;border-bottom:2px solid var(--ink);align-items:center}
+.tree > div:last-child{border-bottom:0;background:var(--ink);color:var(--paper)}
+.tree b{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.tree span{font-size:16.5px}
+@media (max-width:480px){.tree > div{grid-template-columns:1fr;gap:4px}}
+
+/* --- cosa cambia --- */
+.changes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:980px){.changes{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.changes{grid-template-columns:1fr}}
+.chg{border:var(--b);background:var(--white);box-shadow:var(--sh)}
+.chg h3{font-size:20px;padding:16px 18px;border-bottom:var(--b)}
+.chg p{font-size:16px;padding:12px 18px;line-height:1.45}
+.chg .pre{color:var(--muted);border-bottom:2px dashed var(--ink)}
+.chg .pre::before,.chg .post::before{display:block;font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;color:var(--ink)}
+.chg .pre::before{content:"Prima"}
+.chg .post::before{content:"Dopo"}
+.chg .post{background:var(--cream-y)}
+
+/* --- AI --- */
+.filters{display:grid;grid-template-columns:repeat(3,1fr);border:3px solid var(--paper);margin-top:40px}
+.filters > div{padding:22px;border-right:3px solid var(--paper)}
+.filters > div:last-child{border-right:0;background:var(--orange);color:var(--ink)}
+.filters .k{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#B9B0A0}
+.filters > div:last-child .k{color:var(--ink)}
+.filters h3{margin:10px 0 8px}
+.filters p{font-size:16px}
+.filters s{text-decoration-color:var(--orange);text-decoration-thickness:3px}
+@media (max-width:760px){.filters{grid-template-columns:1fr}.filters > div{border-right:0;border-bottom:3px solid var(--paper)}}
+
+/* --- tre modi --- */
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+@media (max-width:900px){.ways{grid-template-columns:1fr}}
+.way{display:flex;flex-direction:column;gap:12px;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:24px}
+.way .t{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.way h3{font-size:26px}
+.way ul{list-style:none;display:grid;gap:6px;font-size:16px;flex:1}
+.way li::before{content:"→ ";font-family:var(--mono);color:var(--orange-dk);font-weight:700}
+.way.top{background:var(--ink);color:var(--paper);box-shadow:10px 10px 0 var(--orange)}
+.way.top .t{color:#B9B0A0}
+.way.top li::before{color:var(--orange)}
+.way .btn{margin-top:8px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="readbar" aria-hidden="true"></div>
+<a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
+  <div class="ticker-track" aria-hidden="true">
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più →</span>
+  </div>
+</a>
+<header class="nav">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark">HP</span>Hotel Positioning</a>
+    <nav class="nav-links" aria-label="Principale">
+      <a aria-current="page" href="/metodo/">Il metodo</a>
+      <a href="/casi/">Casi</a>
+      <a href="/libro/">Libro</a>
+      <a href="/risorse/">Risorse gratis</a>
+      <a href="/francesco/">Chi sono</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn sm" href="/analisi/#candidatura">Candida il tuo hotel <span class="arr">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Apri il menu"><i></i></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mm" aria-label="Menu mobile">
+    <a aria-current="page" href="/metodo/">Il metodo</a>
+    <a href="/analisi/">L'analisi di posizionamento</a>
+    <a href="/casi/">Casi</a>
+    <a href="/libro/">Il libro</a>
+    <a href="/risorse/">Risorse gratis</a>
+    <a href="/francesco/">Chi sono</a>
+    <a class="btn" href="/analisi/#candidatura">Candida il tuo hotel <span class="arr">→</span></a>
+  </nav>
+</header>
+
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Il metodo Hotel Positioning · la guida completa</span>
+      <h1>
+        <span class="line"><span>Posizionamento hotel.</span></span>
+        <span class="line"><span>Il metodo,</span></span>
+        <span class="line"><span>in <em>sei passaggi.</em></span></span>
+      </h1>
+      <p class="lead">Tutto quello che faccio con un hotel, messo in fila su una pagina. Cos'è il posizionamento, cosa non è, come si costruisce e come diventa parole che fanno prenotare. Senza segreti: il metodo è questo.</p>
+      <dl class="def rv">
+        <dt>Posizionamento, in una riga</dt>
+        <dd>Il motivo, uno solo, per cui un ospite preciso sceglie il tuo hotel e non quello a trecento metri. Dimostrato da fatti, non da aggettivi.</dd>
+      </dl>
+      <div class="btn-row" style="margin-top:30px">
+        <a href="/analisi/#candidatura" class="btn">Applicalo al tuo hotel: candidalo <span class="arr">→</span></a>
+      </div>
+      <p class="micro"><b>Lettura: circa 15 minuti.</b> Oppure salta al passaggio che ti serve.</p>
+    </div>
+    <nav class="summary rv d1" aria-labelledby="sommario-t">
+      <h2 id="sommario-t">In questa pagina</h2>
+      <ol>
+        <li><a href="#cos-e"><span>01</span>Cos'è, e cosa non è</a></li>
+        <li><a href="#anelli"><span>02</span>I tre anelli</a></li>
+        <li><a href="#passaggi"><span>03</span>I sei passaggi</a></li>
+        <li><a href="#tac"><span>04</span>La TAC del posizionamento</a></li>
+        <li><a href="#canvas"><span>05</span>Il Positioning Canvas</a></li>
+        <li><a href="#parole"><span>06</span>Dalla posizione alle parole</a></li>
+        <li><a href="#cambia"><span>07</span>Cosa cambia, in pratica</a></li>
+        <li><a href="#ai"><span>08</span>Perché adesso</a></li>
+        <li><a href="#applica"><span>09</span>Tre modi per applicarlo</a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<nav class="toc" aria-label="Indice della pagina">
+  <div class="wrap">
+    <span class="toc-lab">Indice</span>
+    <ol id="toc">
+      <li><a href="#cos-e">01 Cos'è</a></li>
+      <li><a href="#anelli">02 Anelli</a></li>
+      <li><a href="#passaggi">03 Sei passaggi</a></li>
+      <li><a href="#tac">04 TAC</a></li>
+      <li><a href="#canvas">05 Canvas</a></li>
+      <li><a href="#parole">06 Parole</a></li>
+      <li><a href="#cambia">07 Cosa cambia</a></li>
+      <li><a href="#ai">08 Perché ora</a></li>
+      <li><a href="#applica">09 Applicalo</a></li>
+    </ol>
+  </div>
+</nav>
+
+<!-- ================= 01 COS'È ================= -->
+<section class="sec alt" id="cos-e">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>Cos'è il posizionamento di un hotel. <em>E cosa non è.</em></h2>
+      <p class="lead">Il posizionamento comincia da un no. Se non escludi nessuno, non hai scelto niente.</p>
+    </div>
+    <div class="grid-2" style="margin-bottom:44px">
+      <div class="prose rv">
+        <p style="font-size:21px">Apri Booking, cerca la tua zona. Cinquanta rettangoli. La stessa piscina vista dal drone, le stesse quattro stelle, gli stessi aggettivi comprati all'ingrosso.</p>
+        <p>Quando sembra tutto uguale, all'ospite resta un metro solo per decidere. <strong>Il prezzo. Il tuo.</strong></p>
+        <p>Il posizionamento è la risposta a una domanda che quasi nessun albergatore sa chiudere in trenta secondi: <em>perché dovrei scegliere te?</em> Non una lista di servizi. Una posizione, scelta, che l'ospite riconosce come vera.</p>
+      </div>
+      <div class="prose rv d1">
+        <p>Il messaggio che hai oggi, di solito, non l'hai costruito sui dati. L'hai costruito allo specchio, guardando quello che ti sembra importante di te. Oppure copiando il vicino che sembra andare bene.</p>
+        <p>Un posizionamento fatto a occhi chiusi.</p>
+        <p><strong>Il traffico lo puoi comprare. Il motivo per sceglierti no.</strong> Quello devi averlo tu, scritto, in una riga.</p>
+      </div>
+    </div>
+    <div class="isnt">
+      <div class="card rv">
+        <h3>Il posizionamento non è</h3>
+        <ul class="check-list no">
+          <li>Un logo nuovo.</li>
+          <li>Pubblicità.</li>
+          <li>«Più visibilità».</li>
+          <li>«Scrivere meglio». Un messaggio scritto bene su una posizione sbagliata è solo un errore scritto meglio.</li>
+          <li>Una ristrutturazione. Diverso non si costruisce con i muri.</li>
+          <li>L'elenco dei servizi. «4 stelle, SPA, ristorante» è inventario, non identità.</li>
+        </ul>
+      </div>
+      <div class="card y rv d1">
+        <h3>Il posizionamento è</h3>
+        <ul class="check-list">
+          <li>Trovare la posizione che hai e non sai di avere.</li>
+          <li>Scegliere chi escludere.</li>
+          <li>Prendere una categoria di cui puoi essere il primo.</li>
+          <li>Dimostrarla con fatti verificabili: le recensioni, i metri quadri, il luogo.</li>
+          <li>Scriverla, così chi legge non può più scambiarti per nessun altro.</li>
+        </ul>
+      </div>
+    </div>
+    <blockquote class="big-quote rv" style="margin-top:56px">Posizionamento e copywriting non sono due lavori. Sono lo stesso lavoro.</blockquote>
+  </div>
+</section>
+
+<!-- ================= 02 ANELLI ================= -->
+<section class="sec" id="anelli">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>Tra il tuo hotel e l'incasso ci sono tre anelli. <em>Si parte dal primo.</em></h2>
+      <p class="lead">Quasi tutti lavorano sull'ultimo, perché è quello che fa male. Il metodo lavora sul primo, perché è quello che decide gli altri due.</p>
+    </div>
+    <div class="chain rv">
+      <div class="ring first"><span class="k">Anello 1</span><h3>Posizionamento</h3><p>Quello che sai di essere.</p></div>
+      <div class="link" aria-hidden="true">→</div>
+      <div class="ring"><span class="k">Anello 2</span><h3>Promessa</h3><p>Quello che dici.</p></div>
+      <div class="link" aria-hidden="true">→</div>
+      <div class="ring"><span class="k">Anello 3</span><h3>Prenotazione</h3><p>Quello che incassi.</p></div>
+    </div>
+    <div class="grid-2">
+      <div class="prose rv">
+        <p>Commissioni alte, prezzi fermi, la terza agenzia in cinque anni: sono tutti problemi del terzo anello. Si vedono lì, ma non nascono lì.</p>
+        <p>Sito nuovo, agenzia nuova, campagna nuova. Ogni volta un sintomo in meno per qualche mese, poi torna.</p>
+      </div>
+      <div class="note-box rv d1">
+        <strong>La regola dell'ordine.</strong> Prima la bussola, poi i muri. Se rifai la promessa senza aver deciso la posizione, rifai lo stesso errore con parole nuove.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 SEI PASSAGGI ================= -->
+<section class="sec white" id="passaggi">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°03</span>
+      <h2>I sei passaggi. <em>Nell'ordine esatto.</em></h2>
+      <p class="lead">La tua posizione non la inventi. La scegli. Saltare un passaggio è il motivo per cui la maggior parte dei riposizionamenti muore in riunione.</p>
+    </div>
+    <ol style="list-style:none">
+      <li class="step rv">
+        <div class="step-n"><b>01</b><span>Il bisogno vero</span></div>
+        <div class="step-b">
+          <h3>Cosa ti sta chiedendo davvero l'ospite</h3>
+          <p class="ask">Quale problema, o quale desiderio profondo, l'ospite ti chiede di risolvere?</p>
+          <p>Nessuno compra una camera. Compra quello che la camera gli permette di fare, o di smettere di fare. Finché rispondi con i metri quadri, stai rispondendo a una domanda che l'ospite non ha fatto.</p>
+          <div class="step-x">
+            <div class="ex"><span class="lab">Esempio</span>Yume, in giapponese, vuol dire sogno. Non ho aperto un posto dove si mangia ramen. Ho aperto un posto dove ci si ferma a pensare il proprio.</div>
+            <div class="err"><span class="lab">L'errore tipico</span>Rispondere con l'elenco dei servizi. La lista non entra in memoria, e non ci entrerà mai.</div>
+          </div>
+        </div>
+      </li>
+      <li class="step rv">
+        <div class="step-n"><b>02</b><span>Le alternative</span></div>
+        <div class="step-b">
+          <h3>Contro chi giochi, davvero</h3>
+          <p class="ask">Se non prenotasse te, cosa farebbe? Comprese le alternative che non sono hotel.</p>
+          <p>Il tuo concorrente non è solo l'hotel accanto con la stessa piscina. È tutto quello che risolve lo stesso bisogno. Cambi il confronto, cambi il prezzo che l'ospite trova accettabile.</p>
+          <div class="step-x">
+            <div class="ex"><span class="lab">Esempio</span>Una coppia che vuole staccare non confronta solo gli hotel della tua zona. Confronta una day SPA in città, un weekend altrove, un'altra idea di vacanza.</div>
+            <div class="err"><span class="lab">L'errore tipico</span>Conoscere a memoria le tariffe di dodici concorrenti, e non saper dire in due frasi perché scegliere te.</div>
+          </div>
+        </div>
+      </li>
+      <li class="step rv">
+        <div class="step-n"><b>03</b><span>Le unicità</span></div>
+        <div class="step-b">
+          <h3>Quello che hai già, e che vale</h3>
+          <p class="ask">Cosa hai di verificabile che produce valore per l'ospite? Fatti, non opinioni.</p>
+          <p>«Accogliente» non è un'unicità: lo dicono tutti. Un fatto si può controllare, si capisce subito, e non si copia a parole. Nel libro ci sono duecento attributi in undici famiglie. Non per sceglierne trenta: <strong>per sceglierne due che puoi difendere ogni singolo giorno.</strong> È il passaggio dove quasi tutti barano, e ha uno strumento suo: la <a href="#tac">TAC</a>.</p>
+          <div class="step-x">
+            <div class="ex"><span class="lab">Esempio · Silva Splendid</span>La SPA più grande del Lazio. 1.600 m², oltre cento trattamenti, venti persone di staff, un medico. Verificabile, facile da capire, impossibile da copiare a parole.</div>
+            <div class="err"><span class="lab">L'errore tipico</span>Chiudersi in ufficio a immaginare cosa rende speciale l'hotel. Allo specchio.</div>
+          </div>
+        </div>
+      </li>
+      <li class="step rv">
+        <div class="step-n"><b>04</b><span>La persona giusta</span></div>
+        <div class="step-b">
+          <h3>Per chi sei irrinunciabile</h3>
+          <p class="ask">A chi interessa davvero quel valore? Ed esiste in numero sufficiente?</p>
+          <p>Specifico è scegliere. E scegliere è escludere. Due promesse opposte nella stessa struttura deludono entrambi gli ospiti: la coppia che cerca silenzio e la famiglia con i bambini a bordo piscina non stanno dentro la stessa frase.</p>
+          <div class="step-x">
+            <div class="ex"><span class="lab">Esempio</span>Non «coppie 35-50». Ma «manager di Milano in burnout». Il Silva è uscito quasi del tutto dal mercato delle famiglie. <strong>Meno target, non più target.</strong></div>
+            <div class="err"><span class="lab">L'errore tipico</span>«Da noi va bene per tutti.» Allora non sei la scelta di nessuno.</div>
+          </div>
+        </div>
+      </li>
+      <li class="step rv">
+        <div class="step-n"><b>05</b><span>La categoria</span></div>
+        <div class="step-b">
+          <h3>Il campo dove puoi essere primo</h3>
+          <p class="ask">Di quale categoria puoi essere il leader, nella testa dell'ospite?</p>
+          <p>Nella testa dell'ospite la seconda posizione non esiste. Se non sei primo nella categoria in cui sei, prendine una più stretta dove puoi esserlo. Anche una parola sola cambia tutto.</p>
+          <div class="step-x">
+            <div class="ex"><span class="lab">Esempio</span>«L'Hotel Benessere di Fiuggi», non «un hotel benessere a Fiuggi». L'articolo dice che ce n'è uno solo originale. Veridia: cento resort sul mare in Sardegna, uno solo nella natura. <em>The nature resort of Chia.</em></div>
+            <div class="err"><span class="lab">L'errore tipico</span>Entrare in una categoria affollata e sperare di farsi notare con gli aggettivi.</div>
+          </div>
+        </div>
+      </li>
+      <li class="step rv">
+        <div class="step-n"><b>06</b><span>Il trend</span></div>
+        <div class="step-b">
+          <h3>L'onda da cavalcare, quando c'è</h3>
+          <p class="ask">C'è un movimento che spinge nella tua direzione? Se non c'è, non inventarlo.</p>
+          <p>Il trend è un acceleratore, non una fondazione. Viene per ultimo apposta: prima decidi chi sei, poi guardi se il vento soffia dalla tua parte.</p>
+          <div class="step-x">
+            <div class="ex"><span class="lab">Esempio</span>Enzu Asian Food: una ghost kitchen lanciata nel 2020, in pieno lockdown, mentre tutti dicevano che la ristorazione era morta. Quando tutti scappano c'è spazio. Ma serve avere qualcosa da dire.</div>
+            <div class="err"><span class="lab">L'errore tipico</span>Inseguire la moda del momento senza una posizione sotto. Si cambia vestito ogni stagione, e non ti riconosce nessuno.</div>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div class="cta-band rv" style="margin-top:20px">
+      <div><h3>Il capitolo 6 del libro li spiega campo per campo.</h3><p>Con il canvas compilato su un hotel vero, con nome e cognome. Non su un esempio inventato per far quadrare la teoria.</p></div>
+      <a href="/libro/" class="btn dark">Il libro · 19,90 € <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 TAC ================= -->
+<section class="sec" id="tac">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°04</span>
+      <h2>La TAC del posizionamento. <em>Tre viste, un incrocio.</em></h2>
+      <p class="lead">Le tue unicità sono già scritte da qualche parte. Nelle recensioni dei tuoi ospiti, nelle parole che usano quando raccontano il soggiorno, e nelle caselle vuote che i concorrenti hanno lasciato scoperte.</p>
+    </div>
+    <div class="tac">
+      <div class="card y rv">
+        <span class="kicker" style="color:var(--ink)">Vista 1</span>
+        <h3 style="margin:8px 0 0">Messaggio</h3>
+        <dl>
+          <div><dt>Cosa guardi</dt><dd>Il sito, la descrizione su Booking, i post. Quello che dici oggi.</dd></div>
+          <div><dt>Cosa trovi, di solito</dt><dd>«Hotel 4 stelle. SPA. Ristorante. Relax.» Cambi il logo e funziona per cento altri.</dd></div>
+        </dl>
+      </div>
+      <div class="card m rv d1">
+        <span class="kicker" style="color:var(--ink)">Vista 2</span>
+        <h3 style="margin:8px 0 0">Ascolto</h3>
+        <dl>
+          <div><dt>Cosa guardi</dt><dd>Le recensioni. Le parole esatte che usano gli ospiti, non i voti.</dd></div>
+          <div><dt>Cosa trovi, di solito</dt><dd>Un dettaglio che tu non nomini mai, e che loro citano a ripetizione.</dd></div>
+        </dl>
+      </div>
+      <div class="card b rv d2">
+        <span class="kicker" style="color:var(--ink)">Vista 3</span>
+        <h3 style="margin:8px 0 0">Concorrenti</h3>
+        <dl>
+          <div><dt>Cosa guardi</dt><dd>Come si raccontano gli hotel con cui l'ospite ti confronta davvero.</dd></div>
+          <div><dt>Cosa trovi, di solito</dt><dd>Tutti sullo stesso aggettivo. E una casella che nessuno ha preso.</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="formula rv" aria-label="L'incrocio delle tre viste">
+      <span>Quello che gli ospiti dicono di te</span><i aria-hidden="true">+</i>
+      <span>che nessun concorrente dice</span><i aria-hidden="true">+</i>
+      <span>che tu oggi non dici</span><i aria-hidden="true">=</i>
+      <span class="res">La tua posizione</span>
+    </div>
+    <div class="grid-2" style="margin-top:56px;align-items:center">
+      <p class="big-quote rv">Il sito è la pelle. Le recensioni sono l'osso.</p>
+      <div class="prose rv d1">
+        <p>Le recensioni riflettono il posizionamento. Generico tu, generiche loro: «Pulito. Gentile. Buon rapporto qualità-prezzo.»</p>
+        <p>Quando la posizione è chiara, cambiano lingua: «L'unico posto dove ho trovato…». <strong>Gli ospiti confermano il tuo posizionamento, gratis.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 CANVAS ================= -->
+<section class="sec alt" id="canvas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°05</span>
+      <h2>Il Positioning Canvas. <em>Tutto su una pagina.</em></h2>
+      <p class="lead">Alla fine i sei passaggi stanno su un foglio solo. Quello da appendere in ufficio, e da mostrare all'agenzia prima che scriva una riga.</p>
+    </div>
+    <div class="canvas-top">
+      <p class="mono" style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Guarda il canvas:</p>
+      <div class="seg" role="group" aria-label="Contenuto del canvas">
+        <button type="button" id="cvQ" aria-pressed="true">Le domande</button>
+        <button type="button" id="cvE" aria-pressed="false">Esempio: Silva Splendid</button>
+      </div>
+    </div>
+    <div class="canvas rv" id="canvasBox" aria-live="polite">
+      <div class="canvas-head"><span>Positioning Canvas</span><span id="cvName">Il tuo hotel</span></div>
+      <div class="cell"><span class="ct"><b>01</b>Il bisogno vero</span><p class="q">Quale problema o desiderio profondo ti chiede di risolvere l'ospite?</p><p class="a">Il benessere vero. Non «un hotel con SPA».</p></div>
+      <div class="cell"><span class="ct"><b>02</b>Le alternative</span><p class="q">Cosa farebbe al posto tuo? Anche fuori dagli hotel.</p><p class="a"><span class="todo">[DA COMPLETARE: alternative reali del Silva, dal canvas del libro]</span></p></div>
+      <div class="cell"><span class="ct"><b>03</b>Le unicità</span><p class="q">Quali fatti verificabili hai già? Quale valore producono?</p><p class="a">La SPA più grande del Lazio: 1.600 m², oltre cento trattamenti, venti persone di staff, un medico.</p></div>
+      <div class="cell"><span class="ct"><b>04</b>La persona giusta</span><p class="q">A chi interessa davvero? Ce ne sono abbastanza? Chi escludi?</p><p class="a">Chi viene per il benessere. Famiglie con bambini quasi del tutto fuori.</p></div>
+      <div class="cell"><span class="ct"><b>05</b>La categoria</span><p class="q">Di quale categoria puoi essere il primo?</p><p class="a">L'hotel benessere di Fiuggi. Con l'articolo determinativo.</p></div>
+      <div class="cell"><span class="ct"><b>06</b>Il trend</span><p class="q">C'è un'onda che spinge nella tua direzione?</p><p class="a"><span class="todo">[DA COMPLETARE: trend usato per il Silva, se c'è]</span></p></div>
+      <div class="cell pos"><span class="ct"><b>=</b>La posizione, in una riga</span><p class="q">Una frase che l'ospite riconosce come vera, e che nessun concorrente può firmare.</p><p class="a big">L'Hotel Benessere di Fiuggi.</p></div>
+    </div>
+    <p class="micro">Il canvas compilato per intero è nel libro. Quello vuoto, da stampare, è tra gli <a href="/bonus/">otto strumenti gratuiti</a>.</p>
+  </div>
+</section>
+
+<!-- ================= 06 PAROLE ================= -->
+<section class="sec" id="parole">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°06</span>
+      <h2>Dalla posizione alle parole. <em>Tre gradini.</em></h2>
+      <p class="lead">Una posizione che resta nel canvas non prenota nessuno. Va scritta. E quasi tutti, quando scrivono, si fermano al primo gradino.</p>
+    </div>
+    <div class="ladder3">
+      <div class="rung rv"><span class="k">Gradino 1 · Il fatto</span><h3>Cosa c'è</h3><p>Verificabile. Necessario, ma da solo non commuove nessuno.</p><q>Diciotto camere, sopra gli ulivi. Una piscina.</q></div>
+      <div class="rung rv d1"><span class="k">Gradino 2 · Il beneficio</span><h3>Cosa ci guadagni</h3><p>Il fatto, tradotto in quello che cambia per l'ospite.</p><q>Pochi ospiti. La piscina quasi tutta per te.</q></div>
+      <div class="rung rv d2"><span class="k">Gradino 3 · La trasformazione</span><h3>Chi diventi</h3><p>Il momento che l'ospite si porta a casa. Qui si decide la prenotazione.</p><q>Il primo bagno della giornata, prima che arrivino gli altri.</q></div>
+    </div>
+    <div class="headline-ba">
+      <div class="card old rv"><span class="chip">Scritta come tutti gli altri</span><q>Hotel a pochi passi dal mare, camere confortevoli e calorosa accoglienza.</q></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="card o rv d1"><span class="chip w">Smontata</span><q>Diciotto camere sopra gli ulivi e il primo bagno in piscina prima che arrivino gli altri.</q></div>
+    </div>
+    <p class="micro">Esempio da uno <a href="/smontaggio/">smontaggio della homepage</a>. La prima riga ha tre secondi per dare un motivo. Di solito li affoga negli aggettivi.</p>
+
+    <div class="grid-2" style="margin-top:72px">
+      <div class="rv">
+        <p class="kicker"><b>Cap. 8</b> · L'albero del brand</p>
+        <h3 style="font-size:clamp(26px,2.8vw,36px);margin:14px 0 18px">Quasi tutti potano le foglie sperando che l'albero diventi un altro albero.</h3>
+        <div class="tree">
+          <div><b>Foglie</b><span>Foto, post, newsletter, campagne. Cambiano ogni stagione.</span></div>
+          <div><b>Rami</b><span>Sito, descrizione su Booking, risposte alle recensioni, script della reception.</span></div>
+          <div><b>Radici</b><span>La posizione. Decisa una volta, regge tutto il resto.</span></div>
+        </div>
+      </div>
+      <div class="rv d1">
+        <p class="kicker"><b>Cap. 8</b> · Il documento di messaggistica</p>
+        <h3 style="font-size:clamp(26px,2.8vw,36px);margin:14px 0 18px">Un foglio che tiene allineati tutti. Così lo staff smette di improvvisare.</h3>
+        <ul class="check-list">
+          <li>La posizione in una riga, e le due o tre prove che la reggono.</li>
+          <li>Cosa dice il sito, e da quale pagina partire: quella dove atterra più gente.</li>
+          <li>Cosa risponde la reception a «perché voi?», in trenta secondi.</li>
+          <li>Il tono delle campagne e delle risposte alle recensioni.</li>
+          <li>Le parole rubate agli ospiti, al posto di quelle comprate all'ingrosso dal sito del vicino.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 COSA CAMBIA ================= -->
+<section class="sec white" id="cambia">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°07</span>
+      <h2>Cosa cambia quando sai chi sei. <em>Da lunedì.</em></h2>
+      <p class="lead">Non sono promesse. Sono conseguenze meccaniche di sapere chi sei.</p>
+    </div>
+    <div class="changes">
+      <article class="chg rv"><h3>La reception filtra alla porta</h3><p class="pre">«Accettiamo tutti.»</p><p class="post">«Siamo perfetti per chi cerca X.» L'ospite giusto resta. Quello sbagliato va altrove, e va bene così.</p></article>
+      <article class="chg rv d1"><h3>Hai trenta secondi di risposta</h3><p class="pre">«Perché scegliere voi?» «Ehm… qualità, attenzione…»</p><p class="post">Una risposta precisa, che si ricorda. L'ospite capisce subito se fa per lui.</p></article>
+      <article class="chg rv d2"><h3>Il sito smette di essere una fotocopia</h3><p class="pre">Lo stesso testo di altri cinquanta hotel.</p><p class="post">Una headline che dice chi sei, a chi parli e perché tu.</p></article>
+      <article class="chg rv"><h3>Le recensioni cambiano lingua</h3><p class="pre">«Pulito. Gentile. Buon cibo.»</p><p class="post">«L'unico posto dove ho trovato…» Gli ospiti confermano la tua posizione.</p></article>
+      <article class="chg rv d1"><h3>A settembre tieni il prezzo</h3><p class="pre">Cala l'occupazione, tagli il prezzo. Un ospite in più, margine in meno.</p><p class="post">Tieni il prezzo e aspetti l'ospite giusto. Non cerca lo sconto: cerca quello che hai solo tu.</p></article>
+      <article class="chg rv d2"><h3>Booking torna al suo posto</h3><p class="pre">Booking è il canale. Tu paghi, tu dipendi.</p><p class="post">Booking è un canale. L'ospite ti cerca per nome.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 AI ================= -->
+<section class="sec dark" id="ai">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°08</span>
+      <h2>Perché adesso. <em>Il filtro è cambiato.</em></h2>
+      <p class="lead">Hai mai chiesto a un'AI dove dormire a Firenze? Non ti ha dato cento hotel. Te ne ha dati tre.</p>
+    </div>
+    <div class="filters rv">
+      <div><span class="k">Il filtro di ieri</span><h3><s>Le agenzie viaggi</s></h3><p>Una vetrina in ogni paese. Filtravano migliaia di hotel e sceglievano per il cliente. Booking le ha cancellate.</p></div>
+      <div><span class="k">Il filtro di oggi</span><h3>Booking</h3><p>Una lista di cento hotel. L'ospite è confuso, sceglie a caso o sceglie il più economico.</p></div>
+      <div><span class="k">Il filtro nuovo</span><h3>L'AI</h3><p>Una scelta, non una lista. E l'AI sceglie chi è riconoscibile, specifico, diverso dagli altri.</p></div>
+    </div>
+    <div class="grid-2" style="margin-top:56px">
+      <div class="prose rv">
+        <p class="pull" style="color:var(--paper)">L'AI è uno specchio. Se sei vuoto, riflette vuoto.</p>
+      </div>
+      <div class="prose rv d1" style="color:#D8D1C4">
+        <p>I tuoi concorrenti comprano tool, generano descrizioni con ChatGPT, ottimizzano per la ricerca AI. Risultato: tutti scrivono bene, tutti dicono cose simili. <strong>Scritto bene è il nuovo zero.</strong> Non differenzia, pareggia.</p>
+        <p>L'AI può scrivere meglio di te. Non può inventare cosa scrivere. È già successo con la SEO dieci anni fa. Sta succedendo di nuovo, più in fretta.</p>
+        <p>Gli hotel si divideranno in due: <strong>quelli che un'AI sa raccontare, e quelli che un'AI manda su Booking.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 APPLICALO ================= -->
+<section class="sec alt" id="applica">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°09</span>
+      <h2>Tre modi per applicarlo. <em>Scegli il tuo passo.</em></h2>
+      <p class="lead">Il metodo è lo stesso. Cambia chi tiene la matita.</p>
+    </div>
+    <div class="ways">
+      <div class="way rv">
+        <span class="t">Da solo · due sere · 19,90 €</span>
+        <h3>Con il libro</h3>
+        <ul><li>I sei passaggi, campo per campo</li><li>Il canvas compilato su un hotel vero</li><li>Duecento attributi, dodici vie per prendere posizione</li><li>120 pagine, 8 figure</li></ul>
+        <a class="btn ghost" href="/libro/">Il libro · 19,90 € <span class="arr">→</span></a>
+      </div>
+      <div class="way rv d1">
+        <span class="t">Da solo · gratis</span>
+        <h3>Con gli strumenti</h3>
+        <ul><li><a href="/quiz/">Il quiz «Che hotel sei?»</a>, 7 domande</li><li><a href="/bonus/">Gli otto strumenti</a> del libro, canvas compreso</li><li><a href="/smontaggio/">Lo smontaggio</a> della tua homepage, sei al mese</li><li><a href="/library/">La library</a> dei posizionamenti</li></ul>
+        <a class="btn ghost" href="/bonus/">Scarica gli otto strumenti <span class="arr">→</span></a>
+      </div>
+      <div class="way top rv d2">
+        <span class="t">Lo faccio io · 48 ore</span>
+        <h3>Con l'analisi</h3>
+        <ul><li>Il metodo applicato al tuo hotel</li><li>Diagnosi, concorrenti, profili ospite, posizione proposta</li><li>Candidatura gratuita: 5 posti, una analisi a settimana</li><li>Oppure €697 + IVA, con garanzia</li></ul>
+        <a class="btn" href="/analisi/#candidatura">Candida il tuo hotel <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <div class="faq" style="margin-top:72px">
+      <h3 style="font-size:clamp(26px,2.8vw,36px);margin-bottom:10px">Le domande sul metodo</h3>
+      <details class="rv"><summary>Il mio hotel è piccolo. Funziona lo stesso?</summary><div class="ans"><p><strong>Funziona meglio.</strong> Il Silva ha costruito un fatto. Veridia si è accorta di averne già uno e lo sprecava. La seconda situazione è molto più comune della prima, e il metodo serve proprio a farti vedere cosa hai già in mano.</p></div></details>
+      <details class="rv"><summary>Devo rifare il sito?</summary><div class="ans"><p><strong>No.</strong> Si parte da una pagina, quella dove atterra più gente, e da un documento di messaggistica che sta su un foglio. Riscrivere tutto prima di aver deciso la posizione è il modo migliore per rifare lo stesso errore con parole nuove.</p></div></details>
+      <details class="rv"><summary>È copywriting?</summary><div class="ans"><p><strong>Il copy è la seconda metà.</strong> La prima è la decisione: contro chi giochi, per chi sei irrinunciabile, su quale campo vinci. Poi la scrivi. Sono lo stesso lavoro, in quest'ordine.</p></div></details>
+      <details class="rv"><summary>Funziona per una catena?</summary><div class="ans"><p>Il metodo è scritto per l'albergatore indipendente, spesso di famiglia, che decide da solo. Se il tuo hotel è affiliato a una catena in franchising, la posizione la decide qualcun altro.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINALE ================= -->
+<section class="sec orange">
+  <div class="wrap narrow">
+    <div class="sec-head" style="margin-bottom:26px">
+      <h2>Hai letto il metodo. <em>Adesso applicalo a te.</em></h2>
+      <p class="lead">Il nemico non è Booking. È il cassetto dove finisce un'analisi buona, e il «lo facciamo dopo la stagione» che a ottobre diventa «dopo Natale».</p>
+    </div>
+    <div class="btn-row">
+      <a href="/analisi/#candidatura" class="btn dark">Candida il tuo hotel <span class="arr">→</span></a>
+      <a href="/libro/" class="btn ghost">Prima il libro · 19,90 €</a>
+    </div>
+    <p class="micro" style="color:var(--ink)"><b>5 posti gratuiti, una analisi a settimana.</b> Risposta entro 48 ore. Anche se ti scarto, ti spiego perché.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="big">Chi non sa chi è<span>,</span> finisce a vendere sconti<span>.</span></p>
+      </div>
+      <div>
+        <h4>Il metodo</h4>
+        <ul>
+          <li><a aria-current="page" href="/metodo/">I sei passaggi</a></li>
+          <li><a href="/analisi/">L'analisi di posizionamento</a></li>
+          <li><a href="/casi/">Casi</a></li>
+          <li><a href="/analisi/#candidatura">Candida il tuo hotel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Gratis</h4>
+        <ul>
+          <li><a href="/quiz/">Che hotel sei? Il quiz</a></li>
+          <li><a href="/smontaggio/">Lo smontaggio della homepage</a></li>
+          <li><a href="/bonus/">Gli 8 strumenti del libro</a></li>
+          <li><a href="/library/">La library dei posizionamenti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Francesco</h4>
+        <ul>
+          <li><a href="/francesco/">Chi sono</a></li>
+          <li><a href="/libro/">Il libro · 19,90 €</a></li>
+          <li><a href="mailto:privacy@hotelpositioning.com">Scrivimi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+      <span><a href="/privacy-policy/">Privacy policy</a></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+
+<script>
+(function(){
+  // canvas: domande / esempio
+  var box=document.getElementById('canvasBox'), q=document.getElementById('cvQ'), e=document.getElementById('cvE'), nm=document.getElementById('cvName');
+  function set(ex){ box.classList.toggle('ex',ex); q.setAttribute('aria-pressed',!ex); e.setAttribute('aria-pressed',ex); nm.textContent = ex ? 'Silva Splendid · Fiuggi' : 'Il tuo hotel'; }
+  q.addEventListener('click',function(){ set(false); }); e.addEventListener('click',function(){ set(true); });
+
+  // indice: voce attiva
+  var toc=document.getElementById('toc'), links=[].slice.call(toc.querySelectorAll('a')), map={};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting) return;
+      var a=map[en.target.id]; if(!a) return;
+      links.forEach(function(l){ l.classList.remove('on'); l.removeAttribute('aria-current'); });
+      a.classList.add('on'); a.setAttribute('aria-current','true');
+      var li=a.parentNode, left=li.offsetLeft - toc.offsetLeft - 20;
+      toc.scrollTo({left:left, behavior: HP.reduce ? 'auto' : 'smooth'});
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  Object.keys(map).forEach(function(id){ var s=document.getElementById(id); if(s) io.observe(s); });
+})();
+</script>
+</body>
+</html>

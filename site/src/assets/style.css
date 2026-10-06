@@ -281,3 +281,5 @@ a.card{text-decoration:none;display:block}
 }
 fieldset.err .check{color:var(--orange-dk)}
 fieldset.err::after{content:"Scegli una delle due opzioni.";display:block;font:400 12px var(--mono);color:var(--orange-dk);margin-top:6px}
+.form fieldset.field label.check{display:grid;font:400 15px/1.45 var(--sans);letter-spacing:0;text-transform:none}
+.form fieldset.field{padding:0;margin-bottom:18px}

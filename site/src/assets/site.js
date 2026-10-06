@@ -18,14 +18,15 @@
   }
 
   // nav: ombra, menu mobile, barra di lettura, cta fissa su mobile
-  var nav = document.querySelector('.nav'), bar = document.querySelector('.readbar'), sticky = document.querySelector('.sticky-cta');
+  var nav = document.querySelector('.nav'), bar = document.querySelector('.readbar');
   var burger = document.querySelector('.burger');
   if (burger) burger.addEventListener('click', function(){
     var open = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', open);
   });
   $$('.mobile-menu a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); }); });
-  var stopAt = document.querySelector('[data-sticky-stop]');
   function onScroll(){
+    // cercati qui e non all'avvio: la CTA fissa e il form arrivano dopo questo script
+    var sticky = document.querySelector('.sticky-cta'), stopAt = document.querySelector('[data-sticky-stop], #candidatura');
     var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
     if (nav) nav.classList.toggle('scrolled', y > 10);
     if (bar) bar.style.width = (h > 0 ? y / h * 100 : 0) + '%';
