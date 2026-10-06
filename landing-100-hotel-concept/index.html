@@ -223,6 +223,16 @@ section{position:relative}
 .voyager .q-big{font-size:clamp(20px,2.4vw,26px);line-height:1.35;font-weight:600}
 .voyager .src{font-family:var(--f-display);font-size:12px;letter-spacing:.06em;opacity:.8;text-transform:uppercase}
 
+.projects{margin-top:2px;border:2px solid #DDE3F3;border-top:0;padding:22px 24px;display:grid;gap:14px}
+.projects .lbl{font-family:var(--f-display);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.projects ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.projects li{font-family:var(--f-display);font-weight:700;font-size:13.5px;border:1.5px solid var(--blue);color:var(--blue);padding:6px 10px;line-height:1.2}
+.projects li span{font-weight:500;color:var(--ink-soft);margin-left:6px}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,36px);margin-top:22px}
+.quotes figure{margin:0;display:grid;gap:16px;align-content:space-between;border-top:3px solid var(--blue);padding-top:20px}
+.quotes blockquote{margin:0;font-size:clamp(18px,2vw,21px);line-height:1.4;font-weight:600}
+.quotes figcaption{font-size:14px;color:var(--ink-soft);display:grid;gap:2px}
+.quotes figcaption b{font-family:var(--f-display);color:var(--ink);font-size:13.5px;letter-spacing:.02em}
 /* conti */
 .math{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:#DDE3F3;border:2px solid #DDE3F3;margin-top:44px}
 .math>div{background:#fff;padding:28px 24px;display:grid;gap:10px;align-content:start}
@@ -281,7 +291,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
   .who{grid-template-columns:minmax(0,1fr)}
   .pages{grid-template-columns:repeat(2,1fr)}
   .inc{grid-template-columns:repeat(2,1fr)}
-  .math{grid-template-columns:minmax(0,1fr)}
+  .math,.quotes{grid-template-columns:minmax(0,1fr)}
   .toc-row{grid-template-columns:64px minmax(0,1fr)}
   .toc-row p{grid-column:2}
   .author-photo{max-width:100%}
@@ -305,7 +315,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
 
 <!-- ============ BARRA URGENZA ============ -->
 <div class="urgency" role="note">
-  <span data-when="before">Prezzo di lancio <b>Hospitality Day: €59</b> invece di €99 · scade tra <span class="cd" data-cd-inline>--</span></span>
+  <span data-when="before">Prezzo <b>Hospitality Day: €59</b> invece di €99 · fino al 13 ottobre · scade tra <span class="cd" data-cd-inline>--</span></span>
   <span data-when="after" hidden>L'offerta Hospitality Day è terminata. Prezzo attuale: <b>€99</b></span>
 </div>
 
@@ -325,16 +335,16 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
       <p class="lead rv d2">100 concept alberghieri osservati da dentro, soprattutto all'estero, e smontati pezzo per pezzo: perché esistono, che valore producono, cosa puoi portare nel tuo progetto. Prima che lo faccia l'hotel accanto.</p>
       <div class="hero-cta rv d3">
         <a class="btn js-buy" href="#offerta"><span class="js-cta-label">Voglio l'atlante a €59</span> <span class="arr">→</span></a>
-        <p class="micro price-inline" data-when="before">Prezzo Hospitality Day. Dopo l'evento sale a <s>€99</s>, senza eccezioni.</p>
+        <p class="micro price-inline" data-when="before">Prezzo Hospitality Day, valido fino a fine giornata del 13 ottobre. Poi sale a <s>€99</s>.</p>
         <p class="micro" data-when="after" hidden>Pagamento sicuro con Stripe.</p>
       </div>
       <div class="hero-trust">
         <img src="img/nicola-ascensore.jpg" alt="Nicola Delvecchio in un ascensore d'hotel">
-        <p>di <b>Nicola Delvecchio</b>. 20 anni a entrare negli hotel per capirli: lavorandoci, dormendoci, facendo colazione. Fondatore di <b>Hotel Voyager</b>, i viaggi studio per albergatori.</p>
+        <p>di <b>Nicola Delvecchio</b>, consulente di product marketing in Teamwork Hospitality. Circa 50 progetti alberghieri seguiti, ideatore di <b>Hotel Voyager</b>, i viaggi studio per albergatori.</p>
       </div>
     </div>
     <div class="book-wrap rv d2" aria-hidden="true">
-      <div class="stamp" data-when="before"><s>€99</s><br>€59 fino a fine<br>Hospitality Day</div>
+      <div class="stamp" data-when="before"><s>€99</s><br>€59 fino al<br>13 ottobre</div>
       <div class="book">
         <div class="b-tri"></div><div class="b-tri-t">CON-<br>CEPT<br>100</div>
         <div class="b-top">EDIZIONE 2026</div>
@@ -614,7 +624,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
         <p class="eyebrow">L'autore</p>
         <h2>Tutto è partito dalla noia.</h2>
         <p>Anni '90, provincia di Ferrara. Niente smartphone, niente low cost: il primo aereo a 17 anni. Quando in paese arrivava qualcuno da fuori, Nicola voleva conoscerlo subito, per vivere i viaggi attraverso gli occhi degli altri.</p>
-        <p>Quella curiosità non se n'è più andata. Oggi il suo lavoro è entrare negli hotel per analizzarli, valorizzarli e fare consulenza. In 20 anni nel settore ha maturato una convinzione: <strong>l'hotellerie non si impara solo nelle aule o sui libri, ma vivendo le strutture da dentro.</strong> Lavorandoci, dormendoci, facendo colazione, osservando staff e ospiti.</p>
+        <p>Quella curiosità non se n'è più andata. Istituto alberghiero a Ferrara, laurea in Economia del Turismo a Rimini, uno stage in Teamwork Hospitality da cui non è più uscito. Oggi è consulente di product marketing strategico: lavora su riqualificazioni e nuove aperture, entrando negli hotel per analizzarli, valorizzarli e renderli più redditizi. In 20 anni nel settore ha maturato una convinzione: <strong>l'hotellerie non si impara solo nelle aule o sui libri, ma vivendo le strutture da dentro.</strong> Lavorandoci, dormendoci, facendo colazione, osservando staff e ospiti.</p>
         <p class="pull" style="font-size:clamp(20px,2.3vw,26px)">Quando entra in un hotel con un concept forte <em>ne vede la matrice</em>. Perché la lobby è fatta così, perché quel profumo, quel materiale, quel tono di voce. Per chi è stato fatto? Rende la struttura più redditizia?</p>
         <p>Questo atlante è quello sguardo, messo su carta.</p>
       </div>
@@ -622,20 +632,35 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
 
     <!-- PROVE: compilate solo con elementi verificati -->
     <div class="proofs" id="proofs">
-      <div class="proof"><span class="k">20 anni</span><span class="v">nel settore alberghiero, <b>dentro</b> gli hotel: consulenza su posizionamento, prodotto e redditività.</span></div>
-      <div class="proof"><span class="k">Hotel Voyager</span><span class="v">fondatore dei <b>viaggi studio per albergatori</b> a Londra, New York, Amsterdam e oltre. Molte schede nascono da quelle edizioni.</span></div>
-      <div class="proof"><span class="k">UP Hotel</span><span class="v"><b>Rimini.</b> La «pensione romagnola 2.0», il caso italiano che apre la guida: concept, target, prodotto, gestione e modello di business.</span></div>
-      <div class="proof"><span class="k">Centinaia</span><span class="v">di messaggi di albergatori e professionisti che gli chiedono: <b>«Cosa vado a vedere a Londra, New York o Amsterdam?»</b> Questa guida è la risposta.</span></div>
+      <div class="proof"><span class="k">~50 progetti</span><span class="v">alberghieri seguiti in <b>Teamwork Hospitality</b>, tra riqualificazioni, riposizionamenti e nuove aperture.</span></div>
+      <div class="proof"><span class="k">20 anni</span><span class="v">nel settore alberghiero, vissuto <b>da dentro</b>: lavorandoci, dormendoci, osservando staff e ospiti.</span></div>
+      <div class="proof"><span class="k">Hotel Voyager</span><span class="v">ideatore dei <b>viaggi studio per albergatori</b>: Berlino, Parigi, Londra, New York, Amsterdam. Molte schede nascono lì.</span></div>
+      <div class="proof"><span class="k">Sul palco</span><span class="v">relatore a <b>ITHIC 2026</b>, BTO, BTM Italia, Hospitality Design Conference. Ideatore degli <b>Hospitality Social Awards</b> a Hospitality Day.</span></div>
+    </div>
+
+    <div class="projects">
+      <p class="lbl">Ha contribuito a ideare o riposizionare</p>
+      <ul>
+        <li>UP Hotel <span>Rimini</span></li><li>The Sense Resort <span>Follonica</span></li><li>The Poet <span>La Spezia</span></li><li>Stay Hotel <span>Varese</span></li><li>Interno Marche <span>Tolentino</span></li><li>J44 <span>Jesolo</span></li><li>The Match <span>Cervia</span></li><li>Jolly Roger <span>Pietra Ligure</span></li><li>Lugano Dante <span>Lugano</span></li><li>Maison Me</li><li>Le Palme Family Village</li>
+      </ul>
     </div>
 
     <div class="voyager">
       <img src="img/hotel-voyager.jpg" alt="Albergatori in viaggio studio con Hotel Voyager osservano la lobby di un hotel">
       <div>
-        <span class="src">Hotel Voyager · viaggio studio</span>
+        <span class="src">Hotel Voyager · viaggio studio di Teamwork Hospitality</span>
         <p class="q-big">«Molti di quelli che leggeranno queste pagine sono già venuti in viaggio con me. Altri mi scrivono da anni chiedendomi quale hotel andare a vedere.»</p>
         <p style="opacity:.86">La maggior parte dei 100 hotel Nicola li ha vissuti direttamente: provando i servizi e parlando con la direzione. Altri li ha analizzati durante le edizioni di Hotel Voyager, insieme ad altri imprenditori.</p>
       </div>
     </div>
+
+    <p class="eyebrow" style="margin-top:72px">Chi ha già guardato gli hotel con Nicola</p>
+    <div class="quotes">
+      <figure><blockquote>«Una delle esperienze più coinvolgenti e stimolanti. Ho subito messo in pratica.»</blockquote><figcaption><b>Marco Ragnacci</b>Proprietario, Hotel Catignano</figcaption></figure>
+      <figure><blockquote>«Formazione pratica e memorabile.»</blockquote><figcaption><b>Massimo Valentini</b>CEO, Puglia Paradise</figcaption></figure>
+      <figure><blockquote>«Consiglierei Hotel Voyager soprattutto ai giovani albergatori.»</blockquote><figcaption><b>Matteo Vincenzi</b>COO, Truly Verona</figcaption></figure>
+    </div>
+    <p class="micro" style="margin-top:14px">Testimonianze pubblicate su hotelvoyager.it dai partecipanti ai viaggi studio.</p>
     <div class="runfoot">Vedere significa connettere posizionamento, prodotto, servizio, design ed esperienza</div>
   </div>
 </section>
@@ -660,9 +685,9 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
   <div class="wrap offer" style="position:relative">
     <div class="stack">
       <p class="eyebrow" style="color:#fff" data-when="before">Solo per Hospitality Day</p>
-      <h2 data-when="before">Il prezzo sale a €99 quando si spengono le luci dell'evento.</h2>
+      <h2 data-when="before">Il 13 ottobre a mezzanotte il prezzo sale a €99.</h2>
       <h2 data-when="after" hidden>Prendi l'atlante e trova la tua prossima idea.</h2>
-      <p class="lead" data-when="before">Il prezzo di lancio è riservato a chi c'è adesso, durante Hospitality Day. Alla chiusura dell'evento la guida torna al prezzo pieno di €99. Non ci saranno proroghe né codici sconto.</p>
+      <p class="lead" data-when="before">L'atlante debutta a Hospitality Day, il 13 ottobre al Palacongressi di Rimini. Il prezzo di lancio vale solo per quella giornata: a mezzanotte la guida passa al prezzo pieno di €99. Non ci saranno proroghe né codici sconto.</p>
       <div data-when="before">
         <p class="micro" style="margin-bottom:8px">Il prezzo di lancio scade tra</p>
         <div class="countdown" aria-live="off">
@@ -679,7 +704,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
         <span class="now js-price">€59</span>
         <span class="was" data-when="before">€99</span>
       </div>
-      <p class="after" data-when="before">Risparmi €40. Dalla chiusura di Hospitality Day: €99.</p>
+      <p class="after" data-when="before">Risparmi €40. Dal 14 ottobre: €99.</p>
       <ul>
         <li><b>100 Hotel Concept 2026</b>, l'atlante completo con 100 schede</li>
         <li>La WHY-WOW Matrix per valutare ogni scelta di prodotto</li>
@@ -717,7 +742,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
       </details>
       <details>
         <summary>Il prezzo di €59 vale anche dopo Hospitality Day?</summary>
-        <div class="ans"><p>No. €59 è il prezzo di lancio legato all'evento. Alla chiusura di Hospitality Day la guida passa a €99 e il prezzo di lancio non tornerà.</p></div>
+        <div class="ans"><p>No. €59 è il prezzo di lancio legato a Hospitality Day, 13 ottobre 2026. Dalle 00:00 del 14 ottobre la guida passa a €99 e il prezzo di lancio non tornerà.</p></div>
       </details>
       <details>
         <summary>Posso avere la fattura per la mia struttura o il mio studio?</summary>
@@ -736,7 +761,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
     <p class="lead measure">Ha fatto una o poche cose molto meglio, molto più coerentemente o molto più coraggiosamente degli altri. Non devi trasformare tutto il tuo hotel. Devi trovare la cosa per cui vale la pena ricordarlo.</p>
     <div style="display:grid;gap:14px;justify-items:start">
       <a class="btn on-blue js-buy js-stripe" href="#" rel="noopener"><span class="js-cta-label">Voglio l'atlante a €59</span> <span class="arr">→</span></a>
-      <p class="micro" data-when="before">Prezzo Hospitality Day. Poi €99.</p>
+      <p class="micro" data-when="before">€59 solo fino al 13 ottobre. Poi €99.</p>
     </div>
     <div class="runfoot">Non serve essere grandi per imparare dai migliori</div>
   </div>
@@ -762,7 +787,7 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
 var CONFIG = {
   STRIPE_LINK_LANCIO: "https://buy.stripe.com/INSERISCI_LINK_59",
   STRIPE_LINK_PIENO:  "https://buy.stripe.com/INSERISCI_LINK_99",
-  FINE_OFFERTA: "2026-10-16T23:59:00+02:00",   // fine Hospitality Day (ora italiana)
+  FINE_OFFERTA: "2026-10-13T23:59:00+02:00",   // fine Hospitality Day, 13 ottobre 2026 (ora italiana)
   PREZZO_LANCIO: 59,
   PREZZO_PIENO: 99
 };
