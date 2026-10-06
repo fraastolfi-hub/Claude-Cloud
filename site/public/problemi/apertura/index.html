@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aprire un hotel: il posizionamento prima dell'apertura · Hotel Positioning</title>
+<meta name="description" content="Stai aprendo un hotel? Il posizionamento si decide prima delle fondamenta: dopo l'apertura costa il triplo. L'errore che Francesco Astolfi ha fatto al suo primo ristorante, perché tu non lo rifaccia.">
+<link rel="canonical" href="https://hotelpositioning.com/problemi/apertura/">
+<meta property="og:title" content="Ho aperto cinque ristoranti. Al primo ho fatto il tuo stesso errore."><meta property="og:description" content="Stai aprendo un hotel? Il posizionamento si decide prima delle fondamenta: dopo l'apertura costa il triplo. L'errore che Francesco Astolfi ha fatto al suo primo ristorante, perché tu non lo rifaccia."><meta property="og:type" content="website">
+<meta name="theme-color" content="#FF7A1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='%23FF7A1A' stroke='%23111' stroke-width='6'/%3E%3Ctext x='32' y='42' font-family='monospace' font-weight='700' font-size='24' text-anchor='middle' fill='%23111'%3EHP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+
+<link rel="stylesheet" href="/assets/problemi.css">
+<style>
+.phases{display:grid;grid-template-columns:repeat(5,1fr);font:700 10.5px/1.2 var(--mono);letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+.phases span{text-align:center;overflow-wrap:anywhere}
+.phases span:first-child{text-align:left}.phases span:last-child{text-align:right}
+.dec{list-style:none;border:2.5px solid var(--ink)}
+.dec li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;border-bottom:1.5px dashed #b9b0a0;font-size:15.5px;line-height:1.35;transition:background .25s,color .25s}
+.dec li:last-child{border-bottom:0}
+.dec .st{flex:none;font:700 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);padding:4px 7px;background:var(--mint)}
+.dec li.gone{background:var(--paper-2);color:var(--muted)}
+.dec li.gone span{text-decoration:line-through;text-decoration-color:var(--orange-dk);text-decoration-thickness:2px}
+.dec li.gone .st{background:var(--ink);color:var(--paper)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="readbar" aria-hidden="true"></div>
+<a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
+  <div class="ticker-track" aria-hidden="true">
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più →</span>
+  </div>
+</a>
+<header class="nav">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark">HP</span>Hotel Positioning</a>
+    <nav class="nav-links" aria-label="Principale">
+      <a href="/metodo/">Il metodo</a>
+      <a href="/casi/">Casi</a>
+      <a href="/libro/">Libro</a>
+      <a href="/risorse/">Risorse gratis</a>
+      <a href="/francesco/">Chi sono</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn sm" href="/analisi/#candidatura">Candida il tuo hotel <span class="arr">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Apri il menu"><i></i></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mm" aria-label="Menu mobile">
+    <a href="/metodo/">Il metodo</a>
+    <a href="/analisi/">L'analisi di posizionamento</a>
+    <a href="/casi/">Casi</a>
+    <a href="/libro/">Il libro</a>
+    <a href="/risorse/">Risorse gratis</a>
+    <a href="/francesco/">Chi sono</a>
+    <a class="btn" href="/analisi/#candidatura">Candida il tuo hotel <span class="arr">→</span></a>
+  </nav>
+</header>
+
+
+<main id="main">
+
+<!-- ================= HERO: il sintomo ================= -->
+<section class="ph-hero">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Sintomo 06 · Il cantiere senza risposta</span>
+      <h1><q>Sto aprendo una struttura. Non voglio nascere commodity.</q></h1>
+      <p class="pull">Ho aperto cinque ristoranti. <span class="hl or in">Al primo ho fatto il tuo stesso errore.</span></p>
+      <p class="lead">Te lo racconto prima che lo firmi anche tu. Il cantiere corre, i render sono bellissimi, e la risposta a «perché voi?» è ferma al «poi vediamo».</p>
+      <div class="btn-row">
+        <a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+        <a href="#conto" class="btn ghost">Cosa puoi ancora decidere? ↓</a>
+      </div>
+      <p class="micro"><b>Analisi gratuita per 5 hotel.</b> Una alla settimana, la faccio io. Poi torna a €697.</p>
+    </div>
+    <div class="memo rv d1" aria-label="Il giorno prima dell'apertura">
+      <div class="memo-h"><span>Il giorno prima dell'apertura</span><span>Ristorante n. 1</span></div>
+      <ul>
+        <li><span>Le luci</span><span class="v ok">✓ giuste</span></li>
+        <li><span>I tavoli</span><span class="v ok">✓ giusti</span></li>
+        <li><span>I piatti, proprio la ceramica</span><span class="v ok">✓ scelti da me</span></li>
+        <li><span>«Perché dovrei venire da voi?»</span><span class="v bad">?</span></li>
+      </ul>
+      <div class="tot"><span>La risposta</span><b>poi vediamo</b></div>
+      <p class="memo-f">Orgoglio, per dieci minuti. Poi una paura precisa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°01 AGITAZIONE ================= -->
+<section class="sec white" id="conto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>Il prodotto non parla. <em>Sta zitto ed è bello.</em></h2>
+      <p class="lead">Il giorno prima dell'apertura del primo ristorante ero in mezzo alla sala. Tutto perfetto.</p>
+    </div>
+    <div class="grid-2">
+      <div class="prose rv">
+        <p>Avevo scelto personalmente anche i piatti. Non il menu: proprio i piatti. La ceramica.</p>
+        <p>Orgoglio, per dieci minuti. Poi una paura precisa, che non ho detto a nessuno: se domani uno mi chiede «perché dovrei venire da voi?», io cosa rispondo?</p>
+        <p>Avevo speso tutto, soldi, notti, firme fatte tremando, su come il posto appariva. Zero su cosa il posto era.</p>
+        <p>Il primo anno è girato, per curiosità. Il secondo la curiosità è finita ed è cominciata la domanda vera. L'ho pagata cara.</p>
+        <p><strong>Gli hotel e i ristoranti non falliscono per le maniglie sbagliate. Falliscono perché nascono uguali.</strong> E chi nasce uguale ha una sola leva: il prezzo. Dal giorno uno.</p>
+      </div>
+      <div class="tool rv d1">
+        <div class="tool-head"><span>Cosa puoi ancora decidere</span><em>Sposta il cantiere</em></div>
+        <div class="tool-body">
+          <div class="tool-row">
+            <label for="apF">A che punto sei? <output id="apFo" for="apF">Cantiere aperto</output></label>
+            <input class="rng" type="range" id="apF" min="0" max="4" step="1" value="1" aria-valuetext="Cantiere aperto">
+            <div class="phases" aria-hidden="true"><span>Progetto</span><span>Cantiere</span><span>Finiture</span><span>Pre-apertura</span><span>Aperto</span></div>
+          </div>
+          <ul class="dec" id="apList">
+            <li data-until="0"><span>Quante camere, e di che tipo</span><b class="st">libera</b></li>
+            <li data-until="0"><span>Quali servizi: ristorante, SPA, spazi comuni</span><b class="st">libera</b></li>
+            <li data-until="1"><span>Distribuzione degli spazi e materiali</span><b class="st">libera</b></li>
+            <li data-until="2"><span>Arredi, luci, perfino i piatti</span><b class="st">libera</b></li>
+            <li data-until="2"><span>Nome e identità visiva</span><b class="st">libera</b></li>
+            <li data-until="3"><span>Prezzo d'apertura e pacchetti</span><b class="st">libera</b></li>
+            <li data-until="3"><span>Sito, foto e testi</span><b class="st">libera</b></li>
+            <li data-until="3"><span>Cosa sa rispondere la reception a «perché voi?»</span><b class="st">libera</b></li>
+          </ul>
+        </div>
+        <div class="tool-out" aria-live="polite">
+          <span class="k">Decisioni ancora libere</span>
+          <b class="tool-big" id="apOut">6 su 8</b>
+          <p id="apSub">Le fondamenta sono decise. Tutto quello che l'ospite vedrà, no.</p>
+        </div>
+        <p class="tool-note">Libera vuol dire: la decidi adesso, senza rifare niente. Dopo si può ancora cambiare tutto. Ma costa il triplo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°02 I DIECI SEGNALI ================= -->
+<section class="sec alt" id="segnali">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>I dieci segnali che stai per <em>nascere commodity.</em></h2>
+      <p class="lead">Spunta quelli in cui ti riconosci. Qui ogni segnale è ancora gratis da correggere. Dopo l'apertura, no.</p>
+    </div>
+    <div class="sig-wrap">
+      <aside class="sig-meter" id="sigMeter" aria-label="Segnali riconosciuti">
+        <span class="k">Ti riconosci in</span>
+        <span class="score" aria-live="polite"><span id="sigScore">0</span><small>/10</small></span>
+        <div class="sig-bar" id="sigBar" aria-hidden="true"></div>
+        <p class="sig-msg" id="sigMsg" aria-live="polite">Spunta i segnali in cui ti riconosci. Con onestà: qui siamo solo tu e me.</p>
+        <a href="#candidatura" class="btn sm">Candida il tuo hotel <span class="arr">→</span></a>
+      </aside>
+      <div class="sig-grid">
+        <article class="sig rv">
+          <span class="n">01</span>
+          <h3>Hai scelto le maniglie prima del motivo.</h3>
+          <p>Luci, tavoli, ceramica, rubinetti: tutto deciso. La risposta a «perché voi?» no.</p>
+          <p class="pk">Gli hotel non falliscono per le maniglie sbagliate.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">02</span>
+          <h3>«Il prodotto parlerà da solo.»</h3>
+          <p>Lo pensavo anch'io. Il giorno prima dell'apertura del mio primo ristorante.</p>
+          <p class="pk">Il prodotto non parla. Sta zitto ed è bello.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">03</span>
+          <h3>«Poi vediamo.»</h3>
+          <p>Il posizionamento è in fondo alla lista. Dopo gli arredi, prima del sito.</p>
+          <p class="pk">Il «poi» ha una scadenza. Si chiama apertura.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">04</span>
+          <h3>I render somigliano a quelli degli altri.</h3>
+          <p>Il design si compra. L'architetto di tendenza pure. E infatti li comprano tutti.</p>
+          <p class="pk">Il vantaggio estetico è un affitto. Scade.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">05</span>
+          <h3>Il concept è «boutique hotel».</h3>
+          <p>Vent'anni fa era una posizione. Oggi è una categoria. Affollata.</p>
+          <p class="pk">È come dire «siamo un hotel». Con meno camere.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">06</span>
+          <h3>Il progetto racconta il posto, non te.</h3>
+          <p>Il mare, il lago, le colline. Splendido.</p>
+          <p class="pk">Stai facendo marketing gratis a tutti gli hotel della zona.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">07</span>
+          <h3>Il prezzo lo decidi guardando i vicini.</h3>
+          <p>Ti metti un po' sotto, per partire. Poi lo alzi. Poi.</p>
+          <p class="pk">Chi nasce uguale ha una sola leva: il prezzo. Dal giorno uno.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">08</span>
+          <h3>Il piano vendite è Booking.</h3>
+          <p>Prima ancora di aprire, il canale principale è deciso. Ed è di un altro.</p>
+          <p class="pk">Si chiama dipendenza. E la firmi prima di aprire.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">09</span>
+          <h3>L'ospite ideale è «chi apprezza la qualità».</h3>
+          <p>Cioè tutti. Cioè nessuno.</p>
+          <p class="pk">Specifico è scegliere. E scegliere è escludere.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">10</span>
+          <h3>Ogni scelta del cantiere è un dibattito.</h3>
+          <p>Che ristorante? Che SPA? Che stile? Ogni riunione riparte da zero, a colpi di gusti personali.</p>
+          <p class="pk">Chi ha un'identità non dibatte. Deduce.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°03 PONTE: il sintomo non è la malattia ================= -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°03</span>
+      <h2>Il cantiere è il sintomo. <em>Il motivo è la fondazione.</em></h2>
+      <p class="lead">Prima la bussola, poi i muri. Tu sei ancora al primo anello: l'unico momento in cui costa poco.</p>
+    </div>
+    <div class="chain3 rv">
+      <div class="ring3 here"><span class="k">Anello 1</span><h3>Posizionamento</h3><p>Quello che sai di essere. Sei ancora in tempo.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3"><span class="k">Anello 2</span><h3>Promessa</h3><p>Quello che dirai all'ospite.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3"><span class="k">Anello 3</span><h3>Prenotazione</h3><p>Quello che incasserai. Se nasci uguale, a prezzo basso.</p></div>
+    </div>
+    <div class="grid-2" style="align-items:end">
+      <div class="prose rv">
+        <p>Prima delle fondamenta si decide dove costruire. Vale anche per l'identità.</p>
+        <p>Il posizionamento prima dell'apertura è quello che rende di più: decide camere, servizi, prezzo e parole prima che diventino cemento.</p>
+        <p><strong>Dopo, costa il triplo.</strong></p>
+      </div>
+      <div class="rv d1">
+        <p class="big-quote" style="font-size:clamp(26px,2.8vw,38px);margin-bottom:30px">Prima la bussola. Poi i muri. L'ordine conta.</p>
+        <a href="/metodo/" class="btn ghost">Il metodo in sei passaggi <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°04 LA PROVA ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°04</span>
+      <h2>Prima la bussola. <em>Poi i muri.</em></h2>
+    </div>
+    <article class="proof rv">
+      <div class="l">
+        <p class="kicker"><b>Caso</b> · Silva Splendid · Fiuggi</p>
+        <h3>Da «hotel 4 stelle con SPA» a <span class="hl in">L’Hotel Benessere di Fiuggi</span>.</h3>
+        <ol>
+          <li>118 camere e la SPA più grande del Lazio. Invisibile lo stesso: diceva tutto a tutti.</li>
+          <li>La mossa: un fatto al posto di un aggettivo, una categoria con l’articolo determinativo, e l’uscita quasi totale dal mercato delle famiglie.</li>
+          <li>In cinque anni il fatturato passa da 3,5 a oltre 7 milioni di euro. La tariffa media circa raddoppia.</li>
+        </ol>
+      </div>
+      <div class="r">
+        <span class="kicker">Fatturato annuo</span>
+        <b><s>€3,5M</s> €7M+</b>
+        <p class="case-honest">Non da solo: posizionamento più ristrutturazione. Il posizionamento ha dato la direzione, gli investimenti l’hanno resa credibile. In quest’ordine.</p>
+      </div>
+    </article>
+    <article class="card y rv" style="margin-top:22px">
+      <p class="kicker" style="color:var(--ink)"><b>Caso</b> · Yume Ramen · 5 locali</p>
+      <h3 style="margin:12px 0 8px">Questo non l'ho consigliato. L'ho inventato.</h3>
+      <p>La posizione l'ho decisa prima di accendere la prima cucina. Con soldi miei. Da zero a 2,5 milioni di euro di fatturato. È il motivo per cui, oggi, a te lo dico prima.</p>
+    </article>
+    <div class="btn-row rv" style="margin-top:30px"><a href="/casi/" class="btn ghost">Leggi i casi per intero <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= N°05 L'OFFERTA ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°05</span>
+      <h2>Due modi per partire. <em>Lo stesso metodo.</em></h2>
+      <p class="lead">Vale anche per le strutture non ancora aperte. Anzi: è il momento in cui l'analisi rende di più.</p>
+    </div>
+    <div class="offer">
+      <div class="card rv">
+        <p class="kicker"><b>Candidatura</b> · 5 posti</p>
+        <p class="price">Gratis</p>
+        <p>Cinque hotel selezionati. Un’analisi alla settimana, e la faccio io. Non un junior, non un tool.</p>
+        <ul class="check-list">
+          <li>Diagnosi del posizionamento attuale e mappa dei concorrenti.</li>
+          <li>Tre profili di ospite ideale.</li>
+          <li>Il posizionamento proposto e cinque azioni da fare subito.</li>
+          <li>20-25 pagine. Risposta alla candidatura entro 48 ore.</li>
+        </ul>
+        <a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+      </div>
+      <div class="card ink rv d1">
+        <p class="kicker" style="color:#B9B0A0"><b>Analisi completa</b> · subito</p>
+        <p class="price">€697<small>+ IVA</small></p>
+        <p>Per chi non vuole aspettare la selezione. O non è stato scelto.</p>
+        <ul class="check-list">
+          <li>5 documenti operativi, 39 pagine.</li>
+          <li>Consegna in 48 ore dal questionario.</li>
+          <li>3 call di controllo: mese 1, 3 e 6.</li>
+          <li>Garanzia: se non ti serve, rimborso più €500 entro 30 giorni.</li>
+        </ul>
+        <a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Acquista l’analisi · €697 + IVA <span class="arr">→</span></a>
+      </div>
+    </div>
+    <p class="offer-more rv"><a href="/analisi/">Tutti i dettagli dell’offerta →</a><span class="muted" style="font-weight:400">Garanzia, i cinque documenti, come lavoro.</span></p>
+  </div>
+</section>
+
+<!-- ================= CANDIDATURA ================= -->
+<section class="sec orange" id="candidatura" data-sticky-stop>
+  <div class="wrap cand">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="sticker">5 posti · 1 a settimana</span>
+        <h2>Candida il tuo hotel.</h2>
+        <p class="lead">Sessanta secondi. Il sito non serve: mettimi il nome del progetto e la città. Il resto me lo racconti dopo.</p>
+      </div>
+      <ul class="check-list">
+        <li>Hotel indipendenti. Non catene in franchising.</li>
+        <li>Proprietari e gestori disposti a cambiare qualcosa. E a rinunciare a certi ospiti.</li>
+        <li>Anche se ti scarto, ti spiego perché.</li>
+      </ul>
+      <ul class="check-list no" style="margin-top:14px">
+        <li>Non candidarti se cerchi una soluzione magica, o se pensi che il posizionamento sia «scrivere meglio».</li>
+      </ul>
+      <p class="note-box" style="margin-top:22px">Anche strutture non ancora aperte: il posizionamento pre-apertura è quello che rende di più.</p>
+    </div>
+    <!-- Form candidatura condiviso. Collega l'endpoint in action="" e aggiungi data-endpoint="1". -->
+<form class="form" id="candidatura-form" action="#" method="post" data-hp-form novalidate>
+  <div class="fields">
+    <div class="form-head"><span>Candida il tuo hotel in 60 secondi</span><span data-prog-txt>0%</span></div>
+    <div class="prog"><i></i></div>
+    <div class="row2">
+      <div class="field"><label for="c-nome">Nome e cognome</label><input id="c-nome" name="nome" autocomplete="name" required><span class="em">Mi serve per sapere a chi rispondo.</span></div>
+      <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: la risposta arriva qui.</span></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="c-tel">Telefono</label><input id="c-tel" name="telefono" type="tel" autocomplete="tel" required><span class="em">Solo per la selezione. Niente telefonate di vendita.</span></div>
+      <div class="field"><label for="c-hotel">Nome dell'hotel</label><input id="c-hotel" name="hotel" required placeholder="Hotel, città"><span class="em">Senza questo non posso guardarlo.</span></div>
+    </div>
+    <div class="field"><label for="c-sito">Sito web <small>(se ce l'hai)</small></label><input id="c-sito" name="sito" inputmode="url" placeholder="www.tuohotel.it"></div>
+    <fieldset class="field" style="border:0">
+      <legend class="lab" style="font:700 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-bottom:7px">Posso pubblicare l'analisi?</legend>
+      <label class="check" style="margin:0 0 10px"><input type="radio" name="pubblicazione" value="nome" required><span><strong>Sì, come caso studio.</strong> Con nome dell'hotel e dati reali.</span></label>
+      <label class="check" style="margin:0"><input type="radio" name="pubblicazione" value="anonimo"><span><strong>Sì, ma in forma anonima.</strong> «Boutique hotel in [zona], X camere», senza altri dettagli.</span></label>
+    </fieldset>
+    <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento a essere ricontattato per la selezione.</span></label>
+    <button class="btn dark" type="submit">Candida il mio hotel <span class="arr">→</span></button>
+    <p class="form-foot">Risposta entro 48 ore. Anche se ti scarto, ti spiego perché.<br>I dati restano tra te e me.</p>
+  </div>
+  <div class="ok" role="status">
+    <div class="tick">✓</div>
+    <p class="big">Candidatura ricevuta.</p>
+    <p>Guardo <strong data-echo="#c-hotel">il tuo hotel</strong> e ti rispondo entro 48 ore, anche se la risposta è no. Nel frattempo apri Booking, cerca la tua zona e guarda con gli occhi di uno che non sei tu.</p>
+  </div>
+</form>
+
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">FAQ</span>
+      <h2>Le domande che non mi fai <em>ad alta voce.</em></h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>Non ho ancora un sito. Ha senso candidarsi?</summary><div class="ans"><p>È il momento migliore. Prima delle fondamenta si decide dove costruire. Vale anche per l'identità.</p></div></details>
+      <details class="rv"><summary>Il concept ce l'ha già l'architetto.</summary><div class="ans"><p>L'architetto decide come appare. Il posizionamento decide perché esiste. Se gli dai il motivo prima, progetta meglio. Se glielo dai dopo, rifate.</p></div></details>
+      <details class="rv"><summary>Non è troppo presto?</summary><div class="ans"><p>No. È troppo tardi il giorno dopo l'apertura. Il «poi» ha una scadenza, e dopo costa il triplo.</p></div></details>
+      <details class="rv"><summary>Funziona anche per una struttura piccola?</summary><div class="ans"><p>Funziona meglio. Una struttura piccola può permettersi una nicchia stretta. Una grande vive di compromessi.</p></div></details>
+    </div>
+    <div class="btn-row rv" style="margin-top:36px">
+      <a href="#candidatura" class="btn dark">Candida il tuo hotel <span class="arr">→</span></a>
+      <a href="/analisi/" class="btn ghost">Tutti i dettagli dell’offerta</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="big">Chi non sa chi è<span>,</span> finisce a vendere sconti<span>.</span></p>
+      </div>
+      <div>
+        <h4>Il metodo</h4>
+        <ul>
+          <li><a href="/metodo/">I sei passaggi</a></li>
+          <li><a href="/analisi/">L'analisi di posizionamento</a></li>
+          <li><a href="/casi/">Casi</a></li>
+          <li><a href="/analisi/#candidatura">Candida il tuo hotel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Gratis</h4>
+        <ul>
+          <li><a href="/quiz/">Che hotel sei? Il quiz</a></li>
+          <li><a href="/smontaggio/">Lo smontaggio della homepage</a></li>
+          <li><a href="/bonus/">Gli 8 strumenti del libro</a></li>
+          <li><a href="/library/">La library dei posizionamenti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Francesco</h4>
+        <ul>
+          <li><a href="/francesco/">Chi sono</a></li>
+          <li><a href="/libro/">Il libro · 19,90 €</a></li>
+          <li><a href="mailto:privacy@hotelpositioning.com">Scrivimi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+      <span><a href="/privacy-policy/">Privacy policy</a></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+
+<div class="sticky-cta"><a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a></div>
+
+<script>
+/* cosa puoi ancora decidere */
+(function(){
+  var r=document.getElementById('apF'), o=document.getElementById('apFo'), items=[].slice.call(document.querySelectorAll('#apList li'));
+  var N=['Progetto','Cantiere aperto','Finiture e arredi','Pre-apertura','Aperto'];
+  var T=['Sei nel momento migliore. Il posizionamento può ancora decidere dove e cosa costruire.',
+         'Le fondamenta sono decise. Tutto quello che l’ospite vedrà, no.',
+         'Stai scegliendo le maniglie. Assicurati di sapere prima il motivo.',
+         'Restano il prezzo e le parole. Sono le prime cose che l’ospite vede.',
+         'Il «poi» è scaduto. Si può ancora fare, ma ogni decisione adesso è un rifacimento. Costa il triplo.'];
+  function upd(){
+    var f=+r.value, free=0;
+    items.forEach(function(li){ var ok=f<=+li.dataset.until; if(ok) free++; li.classList.toggle('gone',!ok); li.querySelector('.st').textContent=ok?'libera':'già decisa'; });
+    o.textContent=N[f]; r.setAttribute('aria-valuetext',N[f]);
+    document.getElementById('apOut').textContent=free+' su '+items.length;
+    document.getElementById('apSub').textContent=T[f];
+  }
+  r.addEventListener('input',upd); upd();
+})();
+
+/* i dieci segnali: contatore "Mi riconosco" */
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.sig-btn')), meter=document.getElementById('sigMeter');
+  var out=document.getElementById('sigScore'), msg=document.getElementById('sigMsg'), bar=document.getElementById('sigBar');
+  var M=[
+    'Spunta i segnali in cui ti riconosci. Con onestà: qui siamo solo tu e me.',
+    '<b>Uno o due.</b> Forse sei messo meglio di tanti. O forse stai leggendo troppo in fretta.',
+    '<b>Tre o quattro.</b> Il sintomo c’è. Non è ancora cronico: è il momento migliore per guardarlo.',
+    '<b>Cinque o più?</b> Fermati. Respira. Non è colpa tua: nessuno te l’ha mai insegnato.',
+    '<b>Otto o più.</b> Sei ancora in tempo. È l’unico momento in cui il posizionamento costa poco e decide tutto.'
+  ];
+  bar.innerHTML=new Array(11).join('<i></i>');
+  var cells=bar.children;
+  function upd(){
+    var n=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true';}).length;
+    out.textContent=n;
+    for(var i=0;i<cells.length;i++) cells[i].classList.toggle('on',i<n);
+    msg.innerHTML=M[n===0?0:n<3?1:n<5?2:n<8?3:4];
+    meter.classList.toggle('hot',n>=5);
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')!=='true';
+      b.setAttribute('aria-pressed',on);
+      b.closest('.sig').classList.toggle('on',on);
+      upd();
+    });
+  });
+  upd();
+})();
+</script>
+</body>
+</html>

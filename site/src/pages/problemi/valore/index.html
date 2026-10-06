@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quanto vale un hotel? Il brand nel calcolo del perito · Hotel Positioning</title>
+<meta name="description" content="Il perito valuta posizione, metri quadri, stato dell'immobile ed EBITDA. Il tuo nome non c'è in nessuna riga. Fai il calcolo e scopri quanto vale la riga che manca: il brand del tuo hotel.">
+<link rel="canonical" href="https://hotelpositioning.com/problemi/valore/">
+<meta property="og:title" content="Quanto vale davvero il tuo hotel? Fai il calcolo del perito."><meta property="og:description" content="Il perito valuta posizione, metri quadri, stato dell'immobile ed EBITDA. Il tuo nome non c'è in nessuna riga. Fai il calcolo e scopri quanto vale la riga che manca: il brand del tuo hotel."><meta property="og:type" content="website">
+<!-- @include head -->
+<link rel="stylesheet" href="/assets/problemi.css">
+<style>
+
+</style>
+</head>
+<body>
+<!-- @include header -->
+
+<main id="main">
+
+<!-- ================= HERO: il sintomo ================= -->
+<section class="ph-hero">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Sintomo 05 · I muri senza nome</span>
+      <h1><q>Il mio hotel vale per l'immobile. Il mio brand non vale niente.</q></h1>
+      <p class="pull">Quanto vale davvero il tuo hotel? <span class="hl or in">Fai il calcolo del perito.</span> Cinque minuti.</p>
+      <p class="lead">Poi parliamo della riga che manca. È l'unica del calcolo che dipende interamente da te.</p>
+      <div class="btn-row">
+        <a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+        <a href="#conto" class="btn ghost">Fai il calcolo del perito ↓</a>
+      </div>
+      <p class="micro"><b>Analisi gratuita per 5 hotel.</b> Una alla settimana, la faccio io. Poi torna a €697.</p>
+    </div>
+    <div class="memo rv d1" aria-label="Perizia · foglio 1">
+      <div class="memo-h"><span>Perizia · foglio 1</span><span>Il tuo nome?</span></div>
+      <ul>
+        <li><span>Riga 1 · La posizione</span><span class="v bad">✕ no</span></li>
+        <li><span>Riga 2 · I metri quadri</span><span class="v bad">✕ no</span></li>
+        <li><span>Riga 3 · Lo stato dell'immobile</span><span class="v bad">✕ no</span></li>
+        <li><span>Riga 4 · EBITDA × multiplo di zona</span><span class="v bad">✕ no</span></li>
+      </ul>
+      <div class="tot"><span>Il tuo nome</span><b>in nessuna riga</b></div>
+      <p class="memo-f">Vent'anni di lavoro. Quattro righe. Nessuna parla di te.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°01 AGITAZIONE ================= -->
+<section class="sec white" id="conto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>Il calcolo che decide <em>vent'anni di lavoro.</em></h2>
+      <p class="lead">Carta e penna. Sono quattro righe, e le conosci già.</p>
+    </div>
+    <div class="grid-2">
+      <div class="prose rv">
+        <p><strong>Riga 1, la posizione.</strong> Vale quello che vale la zona. Non l'hai decisa tu, non la muovi tu.</p>
+        <p><strong>Riga 2, i metri quadri.</strong> Moltiplicati per il valore locale. Matematica, non merito.</p>
+        <p><strong>Riga 3, lo stato dell'immobile.</strong> Le tue ristrutturazioni sono qui. Ammortizzate, cioè già scontate.</p>
+        <p><strong>Riga 4, l'EBITDA.</strong> Per un multiplo: quello di zona, degli immobili, non delle aziende.</p>
+        <p>Gli ospiti che tornano da dieci anni? Il modo in cui lavorate? In nessuna riga. Non perché il perito è cattivo. Il perito valuta quello che si trasferisce. E la tua identità oggi sta nella tua testa. La tua testa non è in vendita.</p>
+      </div>
+      <div class="tool rv d1">
+        <div class="tool-head"><span>La riga che manca</span><em>Foglio del perito</em></div>
+        <div class="tool-body">
+          <div class="tool-row">
+            <label for="vlE">EBITDA annuo <output id="vlEo" for="vlE">€500.000</output></label>
+            <input class="rng" type="range" id="vlE" min="100000" max="5000000" step="50000" value="500000" data-pre="€" data-suf="">
+            <small>Valore d'esempio: metti il tuo.</small>
+          </div>
+          <div class="tool-row">
+            <label for="vlM">Punti di multiplo in più <output id="vlMo" for="vlM">+1</output></label>
+            <input class="rng" type="range" id="vlM" min="0.5" max="5" step="0.5" value="1" data-pre="+" data-suf="">
+            
+          </div>
+          <div class="tool-row">
+            <span class="lab">Riga 5 · Il brand</span>
+            <button type="button" class="btn sm" id="vlB" aria-pressed="false" style="justify-self:start">Aggiungi la riga 5 <span class="arr">+</span></button>
+          </div>
+        </div>
+        <div class="tool-out" aria-live="polite">
+          <span class="k" id="vlK">Riga 5 · Il brand</span>
+          <b class="tool-big" id="vlOut">€0</b>
+          <p id="vlSub">Senza un'identità documentata, non c'è niente da comprare. Il brand vale zero.</p>
+        </div>
+        <p class="tool-note">Non ti dico di quanto cambia il multiplo: dipende dalla zona, dal mercato e da chi compra, e chi te lo promette in una pagina web mente. Ti dico quanto vale ogni punto. Il conto è solo EBITDA × punti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°02 I DIECI SEGNALI ================= -->
+<section class="sec alt" id="segnali">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>I dieci segnali che il tuo hotel <em>vale solo per i muri.</em></h2>
+      <p class="lead">Spunta quelli in cui ti riconosci. Ognuno è un pezzo di valore che resta nella tua testa invece che nell'hotel.</p>
+    </div>
+    <div class="sig-wrap">
+      <aside class="sig-meter" id="sigMeter" aria-label="Segnali riconosciuti">
+        <span class="k">Ti riconosci in</span>
+        <span class="score" aria-live="polite"><span id="sigScore">0</span><small>/10</small></span>
+        <div class="sig-bar" id="sigBar" aria-hidden="true"></div>
+        <p class="sig-msg" id="sigMsg" aria-live="polite">Spunta i segnali in cui ti riconosci. Con onestà: qui siamo solo tu e me.</p>
+        <a href="#candidatura" class="btn sm">Candida il tuo hotel <span class="arr">→</span></a>
+      </aside>
+      <div class="sig-grid">
+        <article class="sig rv">
+          <span class="n">01</span>
+          <h3>La valutazione conta i muri. Non il brand.</h3>
+          <p>Se domani vendessi, il prezzo sarebbe posizione più metri quadri più EBITDA. Il brand: zero. Perché non c'è niente da comprare.</p>
+          <p class="pk">Un hotel con identità si vende come un'azienda. Senza, come un immobile.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">02</span>
+          <h3>Senza di te, l'hotel perde la voce.</h3>
+          <p>L'identità sta nella tua testa. Non nei documenti, non nello staff, non nel sito. Se ti fermi un mese, l'hotel torna generico.</p>
+          <p class="pk">Per un gestore è un problema. Per un proprietario è un rischio patrimoniale.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">03</span>
+          <h3>Il vantaggio estetico è in affitto.</h3>
+          <p>Hai investito nel restyling. Il vicino ristruttura adesso, con lo stesso architetto. E nel calcolo le tue ristrutturazioni sono già ammortizzate.</p>
+          <p class="pk">L'estetica scade. L'identità resta.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">04</span>
+          <h3>Spendi dove si vede.</h3>
+          <p>Ristrutturazione, mobili, tecnologia. E tagli dove non si vede: strategia, formazione, marketing vero.</p>
+          <p class="pk">Poi ti chiedi perché sei sempre lì.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">05</span>
+          <h3>Gli ospiti sono di Booking.</h3>
+          <p>Buona parte delle prenotazioni passa da lì. Quegli ospiti sono suoi, non tuoi.</p>
+          <p class="pk">Chi compra non paga ospiti che appartengono a un altro.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">06</span>
+          <h3>Nessuno ti cerca per nome.</h3>
+          <p>Il diretto è fermo, nonostante sito nuovo e campagne. Ti trovano come «hotel + zona».</p>
+          <p class="pk">Una domanda che non porta il tuo nome non si trasferisce.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">07</span>
+          <h3>Le recensioni non dicono perché.</h3>
+          <p>«Pulito. Gentile. Torneremo.» Manca quella che dice: «L'unico posto dove ho trovato X.»</p>
+          <p class="pk">Nessuna prova scritta di cosa ti rende diverso.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">08</span>
+          <h3>Il personale cambia ogni stagione.</h3>
+          <p>Lavorano per «un hotel qualsiasi». Il servizio dipende da chi c'è quest'anno.</p>
+          <p class="pk">L'identità non è solo per l'ospite. È anche per chi lavora con te.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">09</span>
+          <h3>Ogni scelta è un dibattito.</h3>
+          <p>Nuovo ristorante: che concept? Nuova SPA: che filosofia? Ogni volta si riparte da zero.</p>
+          <p class="pk">Chi ha un'identità non dibatte. Deduce.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">10</span>
+          <h3>Sai l'occupazione. Non quanto guadagni per camera.</h3>
+          <p>Il pieno ti rassicura. Il margine per camera e per ospite non lo guardi.</p>
+          <p class="pk">Il perito i numeri li guarda. Tutti.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°03 PONTE: il sintomo non è la malattia ================= -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°03</span>
+      <h2>I muri sono il sintomo. <em>Manca il nome.</em></h2>
+      <p class="lead">Il perito misura il terzo anello: quello che incassi. Il brand nasce sul primo.</p>
+    </div>
+    <div class="chain3 rv">
+      <div class="ring3"><span class="k">Anello 1</span><h3>Posizionamento</h3><p>Quello che sai di essere. Oggi solo nella tua testa.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3"><span class="k">Anello 2</span><h3>Promessa</h3><p>Quello che dici all'ospite.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3 here"><span class="k">Anello 3</span><h3>Prenotazione</h3><p>Quello che incassi. L'unico che il perito vede.</p></div>
+    </div>
+    <div class="grid-2" style="align-items:end">
+      <div class="prose rv">
+        <p>Un hotel con un'identità documentata, cioè scritta, applicata e dimostrabile nei numeri diretti, aggiunge una riga alla formula. Si chiama brand.</p>
+        <p>E cambia il multiplo: da multiplo immobiliare a multiplo aziendale.</p>
+        <p><strong>È l'unica riga del calcolo che dipende interamente da te.</strong> E puoi iniziare a costruirla questa settimana.</p>
+      </div>
+      <div class="rv d1">
+        <p class="big-quote" style="font-size:clamp(26px,2.8vw,38px);margin-bottom:30px">L'identità è un asset che si rivaluta.</p>
+        <a href="/metodo/" class="btn ghost">Il metodo in sei passaggi <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°04 LA PROVA ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°04</span>
+      <h2>Prima la bussola. <em>Poi i muri.</em></h2>
+    </div>
+    <article class="proof rv">
+      <div class="l">
+        <p class="kicker"><b>Caso</b> · Silva Splendid · Fiuggi</p>
+        <h3>Da «hotel 4 stelle con SPA» a <span class="hl in">L’Hotel Benessere di Fiuggi</span>.</h3>
+        <ol>
+          <li>118 camere e la SPA più grande del Lazio. Invisibile lo stesso: diceva tutto a tutti.</li>
+          <li>La mossa: un fatto al posto di un aggettivo, una categoria con l’articolo determinativo, e l’uscita quasi totale dal mercato delle famiglie.</li>
+          <li>In cinque anni il fatturato passa da 3,5 a oltre 7 milioni di euro. La tariffa media circa raddoppia.</li>
+        </ol>
+      </div>
+      <div class="r">
+        <span class="kicker">Fatturato annuo</span>
+        <b><s>€3,5M</s> €7M+</b>
+        <p class="case-honest">Non da solo: posizionamento più ristrutturazione. Il posizionamento ha dato la direzione, gli investimenti l’hanno resa credibile. In quest’ordine.</p>
+      </div>
+    </article>
+
+    <div class="btn-row rv" style="margin-top:30px"><a href="/casi/" class="btn ghost">Leggi i casi per intero <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= N°05 L'OFFERTA ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°05</span>
+      <h2>Due modi per partire. <em>Lo stesso metodo.</em></h2>
+      <p class="lead">L'analisi è il primo documento della riga 5: il posizionamento del tuo hotel, scritto. Non più solo nella tua testa.</p>
+    </div>
+    <div class="offer">
+      <div class="card rv">
+        <p class="kicker"><b>Candidatura</b> · 5 posti</p>
+        <p class="price">Gratis</p>
+        <p>Cinque hotel selezionati. Un’analisi alla settimana, e la faccio io. Non un junior, non un tool.</p>
+        <ul class="check-list">
+          <li>Diagnosi del posizionamento attuale e mappa dei concorrenti.</li>
+          <li>Tre profili di ospite ideale.</li>
+          <li>Il posizionamento proposto e cinque azioni da fare subito.</li>
+          <li>20-25 pagine. Risposta alla candidatura entro 48 ore.</li>
+        </ul>
+        <a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+      </div>
+      <div class="card ink rv d1">
+        <p class="kicker" style="color:#B9B0A0"><b>Analisi completa</b> · subito</p>
+        <p class="price">€697<small>+ IVA</small></p>
+        <p>Per chi non vuole aspettare la selezione. O non è stato scelto.</p>
+        <ul class="check-list">
+          <li>5 documenti operativi, 39 pagine.</li>
+          <li>Consegna in 48 ore dal questionario.</li>
+          <li>3 call di controllo: mese 1, 3 e 6.</li>
+          <li>Garanzia: se non ti serve, rimborso più €500 entro 30 giorni.</li>
+        </ul>
+        <a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Acquista l’analisi · €697 + IVA <span class="arr">→</span></a>
+      </div>
+    </div>
+    <p class="offer-more rv"><a href="/analisi/">Tutti i dettagli dell’offerta →</a><span class="muted" style="font-weight:400">Garanzia, i cinque documenti, come lavoro.</span></p>
+  </div>
+</section>
+
+<!-- ================= CANDIDATURA ================= -->
+<section class="sec orange" id="candidatura" data-sticky-stop>
+  <div class="wrap cand">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="sticker">5 posti · 1 a settimana</span>
+        <h2>Candida il tuo hotel.</h2>
+        <p class="lead">Sessanta secondi. Guardo il tuo hotel come lo guarderebbe chi lo vuole comprare: cosa c'è oltre i muri.</p>
+      </div>
+      <ul class="check-list">
+        <li>Hotel indipendenti. Non catene in franchising.</li>
+        <li>Proprietari e gestori disposti a cambiare qualcosa. E a rinunciare a certi ospiti.</li>
+        <li>Anche se ti scarto, ti spiego perché.</li>
+      </ul>
+      <ul class="check-list no" style="margin-top:14px">
+        <li>Non candidarti se cerchi una soluzione magica, o se pensi che il posizionamento sia «scrivere meglio».</li>
+      </ul>
+
+    </div>
+    <!-- @include form-candidatura -->
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">FAQ</span>
+      <h2>Le domande che non mi fai <em>ad alta voce.</em></h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>Il perito sbaglia a non contare il brand?</summary><div class="ans"><p>No. Valuta quello che si trasferisce. Il lavoro è rendere il brand trasferibile: scritto, applicato dallo staff, visibile nelle prenotazioni dirette.</p></div></details>
+      <details class="rv"><summary>Cosa vuol dire «identità documentata»?</summary><div class="ans"><p>Un posizionamento scritto su una pagina, applicato nei testi, negli script e nelle scelte, dimostrabile nei numeri diretti. Finché sta solo nella tua testa, non vale per nessun altro.</p></div></details>
+      <details class="rv"><summary>Per me l'hotel è un immobile a reddito. Fa per me?</summary><div class="ans"><p>No. Se il brand non t'interessa, ti serve un agente, non un posizionamento. Te lo dico prima, così risparmiamo tempo entrambi.</p></div></details>
+      <details class="rv"><summary>Ho più strutture. Si può fare?</summary><div class="ans"><p>Sì, ed è dove rende di più: ogni struttura distinta dalle altre e dal mercato. Si parte comunque dall'analisi di una.</p></div></details>
+    </div>
+    <div class="btn-row rv" style="margin-top:36px">
+      <a href="#candidatura" class="btn dark">Candida il tuo hotel <span class="arr">→</span></a>
+      <a href="/analisi/" class="btn ghost">Tutti i dettagli dell’offerta</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @include footer -->
+<!-- @include sticky-candidatura -->
+<script>
+/* la riga che manca */
+(function(){
+  var nf=new Intl.NumberFormat('it-IT',{maximumFractionDigits:1});
+  function eur(x){ return '€'+new Intl.NumberFormat('it-IT',{maximumFractionDigits:0}).format(Math.round(x)); }
+  function bind(ids,cb){
+    ids.forEach(function(id){
+      var i=document.getElementById(id), o=document.getElementById(id+'o');
+      function u(){ o.textContent=(i.dataset.pre||'')+nf.format(+i.value)+(i.dataset.suf||''); }
+      i.addEventListener('input',function(){ u(); cb(); }); u();
+    });
+    cb();
+  }
+  function v(id){ return parseFloat(document.getElementById(id).value); }
+  var on=false, b=document.getElementById('vlB');
+  function calc(){
+    var e=v('vlE'), m=v('vlM');
+    document.getElementById('vlOut').textContent=on?eur(e*m):'€0';
+    document.getElementById('vlSub').innerHTML=on
+      ? 'Ogni punto di multiplo, sul tuo EBITDA, vale <strong>'+eur(e)+'</strong>. Il brand è la riga che può spostarlo: da multiplo immobiliare a multiplo aziendale.'
+      : 'Senza un’identità documentata, non c’è niente da comprare. Il brand vale zero.';
+  }
+  b.addEventListener('click',function(){
+    on=!on; b.setAttribute('aria-pressed',on);
+    b.innerHTML=on?'Togli la riga 5 <span class="arr">−</span>':'Aggiungi la riga 5 <span class="arr">+</span>';
+    calc();
+  });
+  bind(['vlE','vlM'],calc);
+})();
+
+/* i dieci segnali: contatore "Mi riconosco" */
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.sig-btn')), meter=document.getElementById('sigMeter');
+  var out=document.getElementById('sigScore'), msg=document.getElementById('sigMsg'), bar=document.getElementById('sigBar');
+  var M=[
+    'Spunta i segnali in cui ti riconosci. Con onestà: qui siamo solo tu e me.',
+    '<b>Uno o due.</b> Forse sei messo meglio di tanti. O forse stai leggendo troppo in fretta.',
+    '<b>Tre o quattro.</b> Il sintomo c’è. Non è ancora cronico: è il momento migliore per guardarlo.',
+    '<b>Cinque o più?</b> Fermati. Respira. Non è colpa tua: nessuno te l’ha mai insegnato.',
+    '<b>Otto o più.</b> Il bello senza posizione è un costo che si ammortizza. L’identità è un asset che si rivaluta.'
+  ];
+  bar.innerHTML=new Array(11).join('<i></i>');
+  var cells=bar.children;
+  function upd(){
+    var n=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true';}).length;
+    out.textContent=n;
+    for(var i=0;i<cells.length;i++) cells[i].classList.toggle('on',i<n);
+    msg.innerHTML=M[n===0?0:n<3?1:n<5?2:n<8?3:4];
+    meter.classList.toggle('hot',n>=5);
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')!=='true';
+      b.setAttribute('aria-pressed',on);
+      b.closest('.sig').classList.toggle('on',on);
+      upd();
+    });
+  });
+  upd();
+})();
+</script>
+</body>
+</html>

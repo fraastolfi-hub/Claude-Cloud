@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ridurre le commissioni Booking e vendere diretto · Hotel Positioning</title>
+<meta name="description" content="Un hotel di 80 camere lascia a Booking circa €150.000 l'anno. Fai il conto con i tuoi numeri, riconosci i dieci segnali della dipendenza e scopri perché l'ospite non prenota diretto.">
+<link rel="canonical" href="https://hotelpositioning.com/problemi/booking/">
+<meta property="og:title" content="Ogni anno regali €150.000 a Booking. Fai il conto con i tuoi numeri."><meta property="og:description" content="Un hotel di 80 camere lascia a Booking circa €150.000 l'anno. Fai il conto con i tuoi numeri, riconosci i dieci segnali della dipendenza e scopri perché l'ospite non prenota diretto."><meta property="og:type" content="website">
+<!-- @include head -->
+<link rel="stylesheet" href="/assets/problemi.css">
+<style>
+
+</style>
+</head>
+<body>
+<!-- @include header -->
+
+<main id="main">
+
+<!-- ================= HERO: il sintomo ================= -->
+<section class="ph-hero">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Sintomo 01 · Le commissioni</span>
+      <h1><q>Le commissioni a Booking mi costano un rene.</q></h1>
+      <p class="pull">Ogni anno regali <span class="hl or in">€150.000</span> a Booking. Ti mandano almeno il panettone a Natale?</p>
+      <p class="lead">Booking ti porta prenotazioni. Non ospiti: quelli restano suoi. Il problema non è Booking. È che non sai spiegare perché uno dovrebbe prenotare direttamente da te.</p>
+      <div class="btn-row">
+        <a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+        <a href="#conto" class="btn ghost">Fai il conto con i tuoi numeri ↓</a>
+      </div>
+      <p class="micro"><b>Analisi gratuita per 5 hotel.</b> Una alla settimana, la faccio io. Poi torna a €697.</p>
+    </div>
+    <div class="memo rv d1" aria-label="Facciamo due conti">
+      <span class="stamp-tag">ZERO PANETTONI</span><div class="memo-h"><span>Facciamo due conti</span><span>Esempio</span></div>
+      <ul>
+        <li><span>Hotel di 80 camere</span><span class="v ">× 80</span></li>
+        <li><span>Prenotazioni che arrivano da Booking</span><span class="v ">× 60%</span></li>
+        <li><span>Commissione</span><span class="v bad">× 18%</span></li>
+      </ul>
+      <div class="tot"><span>Ogni anno, a Booking</span><b>€150.000</b></div>
+      <p class="memo-f">Natale. Il panettone. Tuo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°01 AGITAZIONE ================= -->
+<section class="sec white" id="conto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>Ma Francesco, <em>senza Booking chiudo!</em></h2>
+      <p class="lead">No. Nessuno ti chiede di chiudere Booking. Ti chiedo di guardare quanto ti costa restarci dentro così.</p>
+    </div>
+    <div class="grid-2">
+      <div class="prose rv">
+        <p>Booking ti porta prenotazioni. <strong>Non ospiti.</strong></p>
+        <p>L'ospite è di Booking, non tuo. Tu riempi le camere con i suoi clienti. E lui difende il suo marchio con i tuoi soldi.</p>
+        <p>Si chiama dipendenza. Non partnership.</p>
+        <p>L'obiettivo non è uscire da Booking. È rimetterlo al suo posto: <strong>un canale, non il canale.</strong></p>
+        <p>Succede quando l'ospite ti cerca per nome. E ti cerca per nome solo se sa perché dovrebbe scegliere te.</p>
+      </div>
+      <div class="tool rv d1">
+        <div class="tool-head"><span>Il conto del panettone</span><em>Metti i tuoi numeri</em></div>
+        <div class="tool-body">
+          <div class="tool-row">
+            <label for="bkR">Camere <output id="bkRo" for="bkR">80</output></label>
+            <input class="rng" type="range" id="bkR" min="5" max="200" step="1" value="80" data-pre="" data-suf="">
+            
+          </div>
+          <div class="tool-row">
+            <label for="bkA">Tariffa media a notte <output id="bkAo" for="bkA">€95</output></label>
+            <input class="rng" type="range" id="bkA" min="40" max="500" step="5" value="95" data-pre="€" data-suf="">
+            
+          </div>
+          <div class="tool-row">
+            <label for="bkO">Occupazione media annua <output id="bkOo" for="bkO">50%</output></label>
+            <input class="rng" type="range" id="bkO" min="20" max="95" step="1" value="50" data-pre="" data-suf="%">
+            
+          </div>
+          <div class="tool-row">
+            <label for="bkQ">Quota di prenotazioni da Booking <output id="bkQo" for="bkQ">60%</output></label>
+            <input class="rng" type="range" id="bkQ" min="0" max="100" step="1" value="60" data-pre="" data-suf="%">
+            
+          </div>
+          <div class="tool-row">
+            <label for="bkC">Commissione <output id="bkCo" for="bkC">18%</output></label>
+            <input class="rng" type="range" id="bkC" min="10" max="25" step="0.5" value="18" data-pre="" data-suf="%">
+            
+          </div>
+        </div>
+        <div class="tool-out" aria-live="polite">
+          <span class="k">Ogni anno, nelle tasche di Booking</span>
+          <b class="tool-big" id="bkOut">€149.796</b>
+          <p id="bkSub">In dieci anni fanno circa un milione e mezzo.</p>
+        </div>
+        <p class="tool-note">Tariffa e occupazione sono valori d'esempio: con 80 camere, €95 a notte e il 50% di occupazione esce il conto di partenza, circa €150.000. Metti i tuoi. Il calcolo resta nel tuo browser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°02 I DIECI SEGNALI ================= -->
+<section class="sec alt" id="segnali">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>I dieci segnali che lavori <em>per Booking.</em></h2>
+      <p class="lead">E non lui per te. Spunta quelli in cui ti riconosci.</p>
+    </div>
+    <div class="sig-wrap">
+      <aside class="sig-meter" id="sigMeter" aria-label="Segnali riconosciuti">
+        <span class="k">Ti riconosci in</span>
+        <span class="score" aria-live="polite"><span id="sigScore">0</span><small>/10</small></span>
+        <div class="sig-bar" id="sigBar" aria-hidden="true"></div>
+        <p class="sig-msg" id="sigMsg" aria-live="polite">Spunta i segnali in cui ti riconosci. Con onestà: qui siamo solo tu e me.</p>
+        <a href="#candidatura" class="btn sm">Candida il tuo hotel <span class="arr">→</span></a>
+      </aside>
+      <div class="sig-grid">
+        <article class="sig rv">
+          <span class="n">01</span>
+          <h3>Trenta secondi muti.</h3>
+          <p>L'ospite chiede: «Cosa vi rende speciali?». Tu rispondi: «Ehm. Cura. Qualità. Attenzione.» Lui ringrazia. E prenota su Booking. Un altro hotel.</p>
+          <p class="pk">Se non sai dirlo in trenta secondi, non lo sai.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">02</span>
+          <h3>Lo staff non sa filtrare.</h3>
+          <p>Accettate tutti, purché paghino. Poi vi lamentate: «Gli ospiti non capiscono cosa offriamo.»</p>
+          <p class="pk">Specifico è scegliere. E scegliere è escludere.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">03</span>
+          <h3>Booking è il tuo socio.</h3>
+          <p>Ti porta sessanta prenotazioni su cento e si tiene diciotto euro su cento. Per un hotel di ottanta camere fanno centocinquantamila euro l'anno. Tutti gli anni.</p>
+          <p class="pk">Si chiama dipendenza. Non partnership.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">04</span>
+          <h3>Upgrade gratis a settembre.</h3>
+          <p>«Tanto la camera era vuota.» Intanto insegni una cosa all'ospite: aspetta lo sconto. E lui lo aspetta sempre. Anche a luglio.</p>
+          <p class="pk">Hai allenato il mercato a non pagarti il prezzo pieno.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">05</span>
+          <h3>Mai alzato i prezzi.</h3>
+          <p>«La gente non paga.» Falso. La gente giusta paga. Quella sbagliata no.</p>
+          <p class="pk">Tieni i prezzi bassi e avrai solo la gente sbagliata.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">06</span>
+          <h3>Il sito è anonimo.</h3>
+          <p>«Hotel 4 stelle. SPA. Ristorante. Relax.» Questo è un inventario, non un'identità. Cambi il logo e funziona per altri cento.</p>
+          <p class="pk">Cento hotel uguali. Tu sei uno dei cento.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">07</span>
+          <h3>Bruci soldi su Google.</h3>
+          <p>Duemila euro di annunci. Cinquanta clic. Due prenotazioni. Clicca chiunque, prenota solo chi sa. E tu non gli hai detto cosa sei.</p>
+          <p class="pk">Pubblicità senza identità è autocombustione.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">08</span>
+          <h3>Recensioni intercambiabili.</h3>
+          <p>«Pulito. Gentile. Buon rapporto qualità-prezzo.» Nessuno scrive: «L'unico posto dove ho trovato…».</p>
+          <p class="pk">Le recensioni riflettono il posizionamento. Generico tu, generiche loro.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">09</span>
+          <h3>Lo yo-yo.</h3>
+          <p>Bassa stagione: panico, sconti. Alta stagione: pieno, smetti di pensarci. Poi di nuovo bassa. Di nuovo panico.</p>
+          <p class="pk">Questo non è gestire. È sopravvivere. E Booking adora chi sopravvive.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">10</span>
+          <h3>Il senso di colpa al posto sbagliato.</h3>
+          <p>Alzi i prezzi e l'ospite «budget» se ne va. Tu ti senti in colpa. Dovresti festeggiare: hai liberato una camera per chi paga il giusto.</p>
+          <p class="pk">Non hai perso un ospite. Hai filtrato.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°03 PONTE: il sintomo non è la malattia ================= -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°03</span>
+      <h2>Le commissioni sono il sintomo. <em>Non la malattia.</em></h2>
+      <p class="lead">Tra il tuo hotel e l'incasso ci sono tre anelli. Booking lavora sull'ultimo. E tu, da anni, anche.</p>
+    </div>
+    <div class="chain3 rv">
+      <div class="ring3"><span class="k">Anello 1</span><h3>Posizionamento</h3><p>Quello che sai di essere.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3"><span class="k">Anello 2</span><h3>Promessa</h3><p>Quello che dici all'ospite.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3 here"><span class="k">Anello 3</span><h3>Prenotazione</h3><p>Quello che incassi. E che dividi con Booking.</p></div>
+    </div>
+    <div class="grid-2" style="align-items:end">
+      <div class="prose rv">
+        <p>Booking engine nuovo, campagne per il diretto, la tariffa più bassa sul sito. Tutto terzo anello. Utile, ma arriva dopo.</p>
+        <p>L'ospite prenota diretto quando ha un motivo per cercarti per nome. Il motivo sta nel primo anello. <strong>Si chiama posizionamento.</strong></p>
+        <p>E adesso conta il doppio: Booking ti metteva in una lista di cento. L'AI ne consiglia uno o due.</p>
+      </div>
+      <div class="rv d1">
+        <p class="big-quote" style="font-size:clamp(26px,2.8vw,38px);margin-bottom:30px">Booking ti metteva in una lista. L'AI ti lascia fuori.</p>
+        <a href="/metodo/" class="btn ghost">Il metodo in sei passaggi <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°04 LA PROVA ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°04</span>
+      <h2>Prima la bussola. <em>Poi i muri.</em></h2>
+    </div>
+    <article class="proof rv">
+      <div class="l">
+        <p class="kicker"><b>Caso</b> · Silva Splendid · Fiuggi</p>
+        <h3>Da «hotel 4 stelle con SPA» a <span class="hl in">L’Hotel Benessere di Fiuggi</span>.</h3>
+        <ol>
+          <li>118 camere e la SPA più grande del Lazio. Invisibile lo stesso: diceva tutto a tutti.</li>
+          <li>La mossa: un fatto al posto di un aggettivo, una categoria con l’articolo determinativo, e l’uscita quasi totale dal mercato delle famiglie.</li>
+          <li>In cinque anni il fatturato passa da 3,5 a oltre 7 milioni di euro. La tariffa media circa raddoppia.</li>
+        </ol>
+      </div>
+      <div class="r">
+        <span class="kicker">Fatturato annuo</span>
+        <b><s>€3,5M</s> €7M+</b>
+        <p class="case-honest">Non da solo: posizionamento più ristrutturazione. Il posizionamento ha dato la direzione, gli investimenti l’hanno resa credibile. In quest’ordine.</p>
+      </div>
+    </article>
+    <p class="note-box rv" style="margin-top:26px"><strong>Sul diretto, il caso è un altro.</strong> Veridia Resort, <em>the nature resort of Chia</em>, vende diretto oltre il 60%. Lì non ho un prima e dopo di fatturato da mostrarti. Quindi non te lo mostro.</p>
+    <div class="btn-row rv" style="margin-top:30px"><a href="/casi/" class="btn ghost">Leggi i casi per intero <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= N°05 L'OFFERTA ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°05</span>
+      <h2>Due modi per partire. <em>Lo stesso metodo.</em></h2>
+      <p class="lead">Prima di toccare il sito o le campagne, scopri cosa dire all'ospite perché prenoti da te.</p>
+    </div>
+    <div class="offer">
+      <div class="card rv">
+        <p class="kicker"><b>Candidatura</b> · 5 posti</p>
+        <p class="price">Gratis</p>
+        <p>Cinque hotel selezionati. Un’analisi alla settimana, e la faccio io. Non un junior, non un tool.</p>
+        <ul class="check-list">
+          <li>Diagnosi del posizionamento attuale e mappa dei concorrenti.</li>
+          <li>Tre profili di ospite ideale.</li>
+          <li>Il posizionamento proposto e cinque azioni da fare subito.</li>
+          <li>20-25 pagine. Risposta alla candidatura entro 48 ore.</li>
+        </ul>
+        <a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+      </div>
+      <div class="card ink rv d1">
+        <p class="kicker" style="color:#B9B0A0"><b>Analisi completa</b> · subito</p>
+        <p class="price">€697<small>+ IVA</small></p>
+        <p>Per chi non vuole aspettare la selezione. O non è stato scelto.</p>
+        <ul class="check-list">
+          <li>5 documenti operativi, 39 pagine.</li>
+          <li>Consegna in 48 ore dal questionario.</li>
+          <li>3 call di controllo: mese 1, 3 e 6.</li>
+          <li>Garanzia: se non ti serve, rimborso più €500 entro 30 giorni.</li>
+        </ul>
+        <a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Acquista l’analisi · €697 + IVA <span class="arr">→</span></a>
+      </div>
+    </div>
+    <p class="offer-more rv"><a href="/analisi/">Tutti i dettagli dell’offerta →</a><span class="muted" style="font-weight:400">Garanzia, i cinque documenti, come lavoro.</span></p>
+  </div>
+</section>
+
+<!-- ================= CANDIDATURA ================= -->
+<section class="sec orange" id="candidatura" data-sticky-stop>
+  <div class="wrap cand">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="sticker">5 posti · 1 a settimana</span>
+        <h2>Candida il tuo hotel.</h2>
+        <p class="lead">Sessanta secondi. Mi servono il nome dell'hotel e il sito: il resto lo guardo io, Booking compreso.</p>
+      </div>
+      <ul class="check-list">
+        <li>Hotel indipendenti. Non catene in franchising.</li>
+        <li>Proprietari e gestori disposti a cambiare qualcosa. E a rinunciare a certi ospiti.</li>
+        <li>Anche se ti scarto, ti spiego perché.</li>
+      </ul>
+      <ul class="check-list no" style="margin-top:14px">
+        <li>Non candidarti se cerchi una soluzione magica, o se pensi che il posizionamento sia «scrivere meglio».</li>
+      </ul>
+
+    </div>
+    <!-- @include form-candidatura -->
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">FAQ</span>
+      <h2>Le domande che non mi fai <em>ad alta voce.</em></h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>Devo uscire da Booking?</summary><div class="ans"><p>No. Booking resta un canale. Smette di essere il canale. Quando l'ospite ti cerca per nome, la prenotazione diretta arriva da sola: il lavoro è dargli un motivo per cercarti.</p></div></details>
+      <details class="rv"><summary>Serve rifare il sito?</summary><div class="ans"><p>No. Cambi headline, bio e testi chiave. Il sito nuovo viene dopo, solo se serve. Prima il posizionamento. Sempre.</p></div></details>
+      <details class="rv"><summary>Funziona anche per un hotel piccolo?</summary><div class="ans"><p>Funziona meglio. Un hotel piccolo può permettersi una nicchia stretta. Uno grande vive di compromessi. E con l'AI lo specifico batte il generico.</p></div></details>
+      <details class="rv"><summary>E l'AI cosa c'entra con le commissioni?</summary><div class="ans"><p>Booking ti metteva in una lista di cento. L'AI ne consiglia uno o due, e sceglie chi è riconoscibile, specifico, diverso dagli altri. L'AI è uno specchio: se sei vuoto, riflette vuoto.</p></div></details>
+    </div>
+    <div class="btn-row rv" style="margin-top:36px">
+      <a href="#candidatura" class="btn dark">Candida il tuo hotel <span class="arr">→</span></a>
+      <a href="/analisi/" class="btn ghost">Tutti i dettagli dell’offerta</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @include footer -->
+<!-- @include sticky-candidatura -->
+<script>
+/* calcolatore commissioni */
+(function(){
+  var nf=new Intl.NumberFormat('it-IT',{maximumFractionDigits:1});
+  function eur(x){ return '€'+new Intl.NumberFormat('it-IT',{maximumFractionDigits:0}).format(Math.round(x)); }
+  function bind(ids,cb){
+    ids.forEach(function(id){
+      var i=document.getElementById(id), o=document.getElementById(id+'o');
+      function u(){ o.textContent=(i.dataset.pre||'')+nf.format(+i.value)+(i.dataset.suf||''); }
+      i.addEventListener('input',function(){ u(); cb(); }); u();
+    });
+    cb();
+  }
+  function v(id){ return parseFloat(document.getElementById(id).value); }
+  bind(['bkR','bkA','bkO','bkQ','bkC'],function(){
+    var rev=v('bkR')*365*v('bkO')/100*v('bkA'), c=v('bkC')/100, out=rev*v('bkQ')/100*c, pt=rev*0.01*c;
+    document.getElementById('bkOut').textContent=eur(out);
+    document.getElementById('bkSub').innerHTML='In dieci anni: <strong>'+eur(out*10)+'</strong>. Ogni punto di quota che sposti da Booking al diretto vale <strong>'+eur(pt)+'</strong> l’anno.';
+  });
+})();
+
+/* i dieci segnali: contatore "Mi riconosco" */
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.sig-btn')), meter=document.getElementById('sigMeter');
+  var out=document.getElementById('sigScore'), msg=document.getElementById('sigMsg'), bar=document.getElementById('sigBar');
+  var M=[
+    'Spunta i segnali in cui ti riconosci. Con onestà: qui siamo solo tu e me.',
+    '<b>Uno o due.</b> Forse sei messo meglio di tanti. O forse stai leggendo troppo in fretta.',
+    '<b>Tre o quattro.</b> Il sintomo c’è. Non è ancora cronico: è il momento migliore per guardarlo.',
+    '<b>Cinque o più?</b> Fermati. Respira. Non è colpa tua: nessuno te l’ha mai insegnato.',
+    '<b>Otto o più.</b> Non ti serve più marketing. Ti serve sapere chi sei. Booking ti ha tenuto in vita finora: l’AI non ti farà lo stesso favore.'
+  ];
+  bar.innerHTML=new Array(11).join('<i></i>');
+  var cells=bar.children;
+  function upd(){
+    var n=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true';}).length;
+    out.textContent=n;
+    for(var i=0;i<cells.length;i++) cells[i].classList.toggle('on',i<n);
+    msg.innerHTML=M[n===0?0:n<3?1:n<5?2:n<8?3:4];
+    meter.classList.toggle('hot',n>=5);
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')!=='true';
+      b.setAttribute('aria-pressed',on);
+      b.closest('.sig').classList.toggle('on',on);
+      upd();
+    });
+  });
+  upd();
+})();
+</script>
+</body>
+</html>

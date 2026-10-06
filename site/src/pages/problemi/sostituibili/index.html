@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Come differenziare un hotel che sembra uguale agli altri · Hotel Positioning</title>
+<meta name="description" content="Il tuo hotel è bellissimo. Peccato che lo siano tutti. Fai il test del logo coperto sulla tua homepage, riconosci i dieci segnali dell'hotel sostituibile e trova il motivo per cui l'ospite sceglie te.">
+<link rel="canonical" href="https://hotelpositioning.com/problemi/sostituibili/">
+<meta property="og:title" content="Il tuo hotel è bellissimo. Peccato che lo siano tutti."><meta property="og:description" content="Il tuo hotel è bellissimo. Peccato che lo siano tutti. Fai il test del logo coperto sulla tua homepage, riconosci i dieci segnali dell'hotel sostituibile e trova il motivo per cui l'ospite sceglie te."><meta property="og:type" content="website">
+<!-- @include head -->
+<link rel="stylesheet" href="/assets/problemi.css">
+<style>
+.logo3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.lg{border:2.5px solid var(--ink);background:var(--paper);padding:12px;display:grid;gap:8px;align-content:start;min-width:0}
+.lg-n{font:700 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lg-l{height:16px;background:var(--ink);width:70%}
+.lg:nth-child(2) .lg-l{width:50%}.lg:nth-child(3) .lg-l{width:85%}
+.lg-t{font-size:14px;line-height:1.4;overflow-wrap:anywhere}
+.lg-t mark.gen{border-width:1.5px;padding:0 2px}
+@media (max-width:560px){.logo3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- @include header -->
+
+<main id="main">
+
+<!-- ================= HERO: il sintomo ================= -->
+<section class="ph-hero">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Sintomo 03 · Bello e sostituibile</span>
+      <h1><q>Gli ospiti ci adorano. Ma non sanno spiegare perché.</q></h1>
+      <p class="pull">Il tuo hotel è bellissimo. <span class="hl or in">Peccato che lo siano tutti.</span></p>
+      <p class="lead">Il design si compra. Il fotografo si compra. Il rebranding si compra. E infatti li hanno comprati tutti. Quello che non si compra è un motivo per scegliere te, e non l'altro bellissimo.</p>
+      <div class="btn-row">
+        <a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+        <a href="#conto" class="btn ghost">Fai il test del logo coperto ↓</a>
+      </div>
+      <p class="micro"><b>Analisi gratuita per 5 hotel.</b> Una alla settimana, la faccio io. Poi torna a €697.</p>
+    </div>
+    <div class="memo rv d1" aria-label="Homepage · logo coperto">
+      <div class="memo-h"><span>Homepage · logo coperto</span><span>████████</span></div>
+      <ul>
+        <li><span>«Eleganza. Charme. Esperienza autentica.»</span><span class="v "></span></li>
+        <li><span>Funziona per il tuo hotel?</span><span class="v ok">✓ sì</span></li>
+        <li><span>Per quello a venti minuti?</span><span class="v ok">✓ sì</span></li>
+        <li><span>Per quello su Condé Nast il mese scorso?</span><span class="v ok">✓ sì</span></li>
+      </ul>
+      <div class="tot"><span>Posizionamento</span><b>non pervenuto</b></div>
+      <p class="memo-f">Non hai un posizionamento. Hai un arredamento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°01 AGITAZIONE ================= -->
+<section class="sec white" id="conto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>Facciamo un test. <em>Copri il logo.</em></h2>
+      <p class="lead">Prendi la tua homepage. Copri il logo. Leggi il testo. Potrebbe essere il tuo hotel. O quello a venti minuti da te.</p>
+    </div>
+    <div class="grid-2">
+      <div class="prose rv">
+        <p>«Ma Francesco, il mio hotel è curato. Abbiamo fatto il rebranding due anni fa.»</p>
+        <p>Lo so. Si vede. Il logo è giusto. Le foto sono giuste. I materiali sono giusti.</p>
+        <p>È tutto giusto. <strong>Ed è questo il problema.</strong></p>
+        <p>Il «giusto», oggi, è lo standard. Ogni boutique hotel ha il logo giusto. Ogni resort ha le foto giuste.</p>
+        <p>Il problema non è come appari. È che non sai dire perché esisti.</p>
+      </div>
+      <div class="tool rv d1">
+        <div class="tool-head"><span>Il test del logo coperto</span><em>Usa la tua homepage</em></div>
+        <div class="tool-body">
+          <div class="tool-row">
+            <label for="sTxt">Incolla la prima frase della tua homepage</label>
+            <textarea id="sTxt" spellcheck="false">Un'oasi di eleganza e charme a pochi passi dal centro. Un'esperienza autentica e indimenticabile, curata in ogni dettaglio.</textarea>
+          </div>
+          <div class="logo3" id="sCards" aria-live="polite">
+            <div class="lg"><span class="lg-n">Il tuo hotel</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
+            <div class="lg"><span class="lg-n">Quello a venti minuti</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
+            <div class="lg"><span class="lg-n">Quello su Condé Nast</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
+          </div>
+          <div class="tool-row">
+            <span class="lab" id="sQ">Regge per tutti e tre?</span>
+            <div class="tgl" role="group" aria-labelledby="sQ">
+              <button type="button" data-v="si" aria-pressed="false">Sì, per tutti</button>
+              <button type="button" data-v="no" aria-pressed="false">No, solo per me</button>
+            </div>
+          </div>
+        </div>
+        <div class="tool-out" aria-live="polite">
+          <span class="k">Parole da vocabolario condiviso</span>
+          <b class="tool-big" id="sOut">9</b>
+          <p id="sSub">Rispondi alla domanda qui sopra.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°02 I DIECI SEGNALI ================= -->
+<section class="sec alt" id="segnali">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>I dieci segnali che sei <em>bello e sostituibile.</em></h2>
+      <p class="lead">Spunta quelli in cui ti riconosci. Non è un problema di gusto. È un problema di posizione.</p>
+    </div>
+    <div class="sig-wrap">
+      <aside class="sig-meter" id="sigMeter" aria-label="Segnali riconosciuti">
+        <span class="k">Ti riconosci in</span>
+        <span class="score" aria-live="polite"><span id="sigScore">0</span><small>/10</small></span>
+        <div class="sig-bar" id="sigBar" aria-hidden="true"></div>
+        <p class="sig-msg" id="sigMsg" aria-live="polite">Spunta i segnali in cui ti riconosci. Con onestà: qui siamo solo tu e me.</p>
+        <a href="#candidatura" class="btn sm">Candida il tuo hotel <span class="arr">→</span></a>
+      </aside>
+      <div class="sig-grid">
+        <article class="sig rv">
+          <span class="n">01</span>
+          <h3>Il test del logo coperto.</h3>
+          <p>Copri il logo sulla homepage. Il testo funziona per altri cento hotel: «Eleganza. Charme. Esperienza autentica.»</p>
+          <p class="pk">Non è un'identità. È un vocabolario condiviso con i tuoi concorrenti.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">02</span>
+          <h3>Recensioni splendide. E intercambiabili.</h3>
+          <p>«Struttura meravigliosa. Personale impeccabile. Torneremo.» Lo scrivono anche agli altri. Cerca quella che dice: «L'unico posto dove ho trovato X.»</p>
+          <p class="pk">Non c'è? Allora X non c'è.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">03</span>
+          <h3>Il tuo design ha 18 mesi di vantaggio. Forse.</h3>
+          <p>Hai investito nel restyling. Il tuo vicino sta ristrutturando adesso. Con lo stesso architetto di tendenza.</p>
+          <p class="pk">Il vantaggio estetico è un affitto: scade. L'identità è una proprietà: resta.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">04</span>
+          <h3>«Boutique hotel» non dice più niente.</h3>
+          <p>Vent'anni fa era una posizione. Oggi è una categoria. Affollata.</p>
+          <p class="pk">Dire «siamo un boutique hotel» è come dire «siamo un hotel». Con meno camere.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">05</span>
+          <h3>Vendi la destinazione, non te stesso.</h3>
+          <p>Il tuo sito parla della Sardegna. Della Toscana. Del lago. Splendido.</p>
+          <p class="pk">Stai facendo marketing gratis a tutti i concorrenti della tua zona.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">06</span>
+          <h3>Il diretto è fermo. Nonostante tutto.</h3>
+          <p>Sito nuovo, booking engine nuovo, campagne attive. Ma nessuno cerca te per nome: cercano «boutique hotel + zona».</p>
+          <p class="pk">E lì sei in lista. Con tutti gli altri belli.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">07</span>
+          <h3>Trenta secondi muti.</h3>
+          <p>L'ospite chiede: «Cosa vi rende speciali?». Tu rispondi: «Ehm. Cura. Qualità. Attenzione.»</p>
+          <p class="pk">Se non sai dirlo in trenta secondi, non lo sai.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">08</span>
+          <h3>Lo staff accetta tutti.</h3>
+          <p>Purché paghino. Poi vi lamentate: «Gli ospiti non capiscono cosa offriamo.»</p>
+          <p class="pk">Se accetti tutti, non offri niente di specifico.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">09</span>
+          <h3>Senza di te, l'hotel perde la voce.</h3>
+          <p>L'identità sta nella tua testa. Non nei documenti, non nello staff, non nel sito. Se ti fermi un mese, l'hotel torna generico.</p>
+          <p class="pk">Per un gestore è un problema. Per un proprietario è un rischio patrimoniale.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">10</span>
+          <h3>Ogni scelta è un dibattito.</h3>
+          <p>Nuovo ristorante: che concept? Nuova SPA: che filosofia? Nuova campagna: che messaggio? Ogni volta si riparte da zero.</p>
+          <p class="pk">Chi ha un'identità non dibatte. Deduce.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">Mi riconosco</button>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°03 PONTE: il sintomo non è la malattia ================= -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°03</span>
+      <h2>Bello è il sintomo. <em>Sostituibile è la malattia.</em></h2>
+      <p class="lead">Il rebranding decide come appari. Il posizionamento decide perché esisti.</p>
+    </div>
+    <div class="chain3 rv">
+      <div class="ring3"><span class="k">Anello 1</span><h3>Posizionamento</h3><p>Quello che sai di essere. Qui è vuoto.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3 here"><span class="k">Anello 2</span><h3>Promessa</h3><p>Quello che dici. Logo, foto, materiali: tutto giusto.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3"><span class="k">Anello 3</span><h3>Prenotazione</h3><p>Quello che incassi. Come gli altri belli.</p></div>
+    </div>
+    <div class="grid-2" style="align-items:end">
+      <div class="prose rv">
+        <p>Logo, foto, sito, materiali: hai lavorato bene sul secondo anello. Ma il primo è vuoto.</p>
+        <p>Un rebranding senza posizionamento è un vestito su misura senza nessuno dentro.</p>
+        <p><strong>Il design si compra. Il motivo no: va trovato.</strong> E di solito è già scritto, nelle parole dei tuoi ospiti.</p>
+      </div>
+      <div class="rv d1">
+        <p class="big-quote" style="font-size:clamp(26px,2.8vw,38px);margin-bottom:30px">Il sito è la pelle. Le recensioni sono l'osso.</p>
+        <a href="/metodo/" class="btn ghost">Il metodo in sei passaggi <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°04 LA PROVA ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°04</span>
+      <h2>Prima la bussola. <em>Poi i muri.</em></h2>
+    </div>
+    <article class="proof rv">
+      <div class="l">
+        <p class="kicker"><b>Caso</b> · Silva Splendid · Fiuggi</p>
+        <h3>Da «hotel 4 stelle con SPA» a <span class="hl in">L’Hotel Benessere di Fiuggi</span>.</h3>
+        <ol>
+          <li>118 camere e la SPA più grande del Lazio. Invisibile lo stesso: diceva tutto a tutti.</li>
+          <li>La mossa: un fatto al posto di un aggettivo, una categoria con l’articolo determinativo, e l’uscita quasi totale dal mercato delle famiglie.</li>
+          <li>In cinque anni il fatturato passa da 3,5 a oltre 7 milioni di euro. La tariffa media circa raddoppia.</li>
+        </ol>
+      </div>
+      <div class="r">
+        <span class="kicker">Recensioni Booking</span>
+        <b><s>8,6</s> 9</b>
+        <p class="case-honest">Non da solo: posizionamento più ristrutturazione. Il posizionamento ha dato la direzione, gli investimenti l’hanno resa credibile. In quest’ordine.</p>
+      </div>
+    </article>
+
+    <div class="btn-row rv" style="margin-top:30px"><a href="/casi/" class="btn ghost">Leggi i casi per intero <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= N°05 L'OFFERTA ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°05</span>
+      <h2>Due modi per partire. <em>Lo stesso metodo.</em></h2>
+      <p class="lead">L'analisi parte da quello che gli ospiti scrivono di te, non da quello che pensi tu. Lì dentro c'è già il motivo.</p>
+    </div>
+    <div class="offer">
+      <div class="card rv">
+        <p class="kicker"><b>Candidatura</b> · 5 posti</p>
+        <p class="price">Gratis</p>
+        <p>Cinque hotel selezionati. Un’analisi alla settimana, e la faccio io. Non un junior, non un tool.</p>
+        <ul class="check-list">
+          <li>Diagnosi del posizionamento attuale e mappa dei concorrenti.</li>
+          <li>Tre profili di ospite ideale.</li>
+          <li>Il posizionamento proposto e cinque azioni da fare subito.</li>
+          <li>20-25 pagine. Risposta alla candidatura entro 48 ore.</li>
+        </ul>
+        <a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
+      </div>
+      <div class="card ink rv d1">
+        <p class="kicker" style="color:#B9B0A0"><b>Analisi completa</b> · subito</p>
+        <p class="price">€697<small>+ IVA</small></p>
+        <p>Per chi non vuole aspettare la selezione. O non è stato scelto.</p>
+        <ul class="check-list">
+          <li>5 documenti operativi, 39 pagine.</li>
+          <li>Consegna in 48 ore dal questionario.</li>
+          <li>3 call di controllo: mese 1, 3 e 6.</li>
+          <li>Garanzia: se non ti serve, rimborso più €500 entro 30 giorni.</li>
+        </ul>
+        <a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Acquista l’analisi · €697 + IVA <span class="arr">→</span></a>
+      </div>
+    </div>
+    <p class="offer-more rv"><a href="/analisi/">Tutti i dettagli dell’offerta →</a><span class="muted" style="font-weight:400">Garanzia, i cinque documenti, come lavoro.</span></p>
+  </div>
+</section>
+
+<!-- ================= CANDIDATURA ================= -->
+<section class="sec orange" id="candidatura" data-sticky-stop>
+  <div class="wrap cand">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="sticker">5 posti · 1 a settimana</span>
+        <h2>Candida il tuo hotel.</h2>
+        <p class="lead">Sessanta secondi. Guardo la tua homepage, le tue recensioni e i tuoi concorrenti belli. Poi ti dico cosa ti rende diverso, se c'è.</p>
+      </div>
+      <ul class="check-list">
+        <li>Hotel indipendenti. Non catene in franchising.</li>
+        <li>Proprietari e gestori disposti a cambiare qualcosa. E a rinunciare a certi ospiti.</li>
+        <li>Anche se ti scarto, ti spiego perché.</li>
+      </ul>
+      <ul class="check-list no" style="margin-top:14px">
+        <li>Non candidarti se cerchi una soluzione magica, o se pensi che il posizionamento sia «scrivere meglio».</li>
+      </ul>
+
+    </div>
+    <!-- @include form-candidatura -->
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">FAQ</span>
+      <h2>Le domande che non mi fai <em>ad alta voce.</em></h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>Ho già fatto un rebranding. Non è la stessa cosa?</summary><div class="ans"><p>No. Il rebranding decide come appari. Il posizionamento decide perché esisti. Il primo senza il secondo è un vestito su misura senza nessuno dentro.</p></div></details>
+      <details class="rv"><summary>E se il mio hotel fosse già posizionato?</summary><div class="ans"><p>Forse lo è. Il test è qui sopra: copri il logo. Se la homepage regge solo per te, sei posizionato. Se regge per altri cento, no. L'analisi te lo dice senza sconti.</p></div></details>
+      <details class="rv"><summary>Funziona anche per un gruppo con più strutture?</summary><div class="ans"><p>Sì, ed è dove rende di più: ogni struttura distinta dalle altre e dal mercato. Si parte comunque dall'analisi di una.</p></div></details>
+      <details class="rv"><summary>Serve rifare il sito?</summary><div class="ans"><p>Quasi mai da zero. Serve rifare quello che dice. Che costa meno e conta di più.</p></div></details>
+    </div>
+    <div class="btn-row rv" style="margin-top:36px">
+      <a href="#candidatura" class="btn dark">Candida il tuo hotel <span class="arr">→</span></a>
+      <a href="/analisi/" class="btn ghost">Tutti i dettagli dell’offerta</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @include footer -->
+<!-- @include sticky-candidatura -->
+<script>
+/* test del logo coperto */
+(function(){
+  /* parole da vocabolario condiviso: radici che compaiono in quasi tutti i siti di hotel */
+  var STEMS=['eleganz','elegant','charme','autentic','esperienz','indimenticabil','unic','eccellen','accogl','relax','luss','raffinat','curat','qualità','qualita','cuore','oasi','immers','comfort','confortevol','emozion','magic','perfett','ideal','tranquill','esclusiv','ospitalità','attenzion','dettagl','valorizz','conoscere','stile','boutique','meraviglios','impeccabil','incantevol','suggestiv','prestigios','benvenut','straordinar','speciale','cornice','passi','incanto','sogno'];
+  function esc(s){ return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function mark(txt){
+    var n=0, html=esc(txt).replace(/[A-Za-zÀ-ÖØ-öø-ÿ]+/g,function(w){
+      var l=w.toLowerCase();
+      for(var i=0;i<STEMS.length;i++){ if(l.indexOf(STEMS[i])===0){ n++; return '<mark class="gen">'+w+'</mark>'; } }
+      return w;
+    });
+    return {html:html,n:n};
+  }
+  var ta=document.getElementById('sTxt'), cards=[].slice.call(document.querySelectorAll('#sCards .lg-t'));
+  var out=document.getElementById('sOut'), sub=document.getElementById('sSub'), choice=null;
+  var bs=[].slice.call(document.querySelectorAll('.tgl button[data-v]'));
+  function upd(){
+    var t=ta.value.trim(), r=mark(t||'…');
+    cards.forEach(function(c){ c.innerHTML=r.html; });
+    out.textContent=t?r.n:'0';
+    var w=r.n===1?'una parola':r.n+' parole';
+    if(choice==='si') sub.innerHTML='Allora non hai un posizionamento. Hai un arredamento. Non è un insulto: è il punto di partenza di quasi tutti.';
+    else if(choice==='no') sub.innerHTML=r.n>2?'Sicuro? Ci sono '+w+' che potrebbe usare qualunque hotel. Rileggila come se fossi l’ospite, non il proprietario.':'Bene. Ora la prova del nove: cerca nelle recensioni chi scrive «l’unico posto dove ho trovato…». Se c’è, sei sulla strada giusta.';
+    else sub.innerHTML=r.n?'Ci sono '+w+' che potrebbe usare qualunque hotel. Ora rispondi alla domanda qui sopra.':'Nessuna parola da catalogo. Buon segno. Ora rispondi alla domanda qui sopra.';
+  }
+  bs.forEach(function(b){ b.addEventListener('click',function(){
+    choice=b.dataset.v; bs.forEach(function(x){ x.setAttribute('aria-pressed',x===b); }); upd();
+  }); });
+  ta.addEventListener('input',upd); upd();
+})();
+
+/* i dieci segnali: contatore "Mi riconosco" */
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.sig-btn')), meter=document.getElementById('sigMeter');
+  var out=document.getElementById('sigScore'), msg=document.getElementById('sigMsg'), bar=document.getElementById('sigBar');
+  var M=[
+    'Spunta i segnali in cui ti riconosci. Con onestà: qui siamo solo tu e me.',
+    '<b>Uno o due.</b> Forse sei messo meglio di tanti. O forse stai leggendo troppo in fretta.',
+    '<b>Tre o quattro.</b> Il sintomo c’è. Non è ancora cronico: è il momento migliore per guardarlo.',
+    '<b>Cinque o più?</b> Fermati. Respira. Non è colpa tua: nessuno te l’ha mai insegnato.',
+    '<b>Otto o più.</b> Non ti serve un altro restyling. Ti serve sapere chi sei. Il bello senza posizione è un costo che si ammortizza.'
+  ];
+  bar.innerHTML=new Array(11).join('<i></i>');
+  var cells=bar.children;
+  function upd(){
+    var n=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true';}).length;
+    out.textContent=n;
+    for(var i=0;i<cells.length;i++) cells[i].classList.toggle('on',i<n);
+    msg.innerHTML=M[n===0?0:n<3?1:n<5?2:n<8?3:4];
+    meter.classList.toggle('hot',n>=5);
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')!=='true';
+      b.setAttribute('aria-pressed',on);
+      b.closest('.sig').classList.toggle('on',on);
+      upd();
+    });
+  });
+  upd();
+})();
+</script>
+</body>
+</html>
