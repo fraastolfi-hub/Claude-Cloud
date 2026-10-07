@@ -309,6 +309,7 @@ section{position:relative}
 .locked-list li{display:grid;grid-template-columns:34px 1fr;gap:8px;font-size:15.5px;color:var(--ink-soft);line-height:1.4}
 .locked-list li span{font-family:var(--f-display);font-weight:800;color:#9AA6C4}
 @media (max-width:640px){.locked-list ul{grid-template-columns:minmax(0,1fr)}}
+.locked-list li.blur i{font-style:normal;filter:blur(5px);user-select:none;-webkit-user-select:none}
 /* conti */
 .math{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:#DDE3F3;border:2px solid #DDE3F3;margin-top:44px}
 .math>div{background:#fff;padding:28px 24px;display:grid;gap:10px;align-content:start}
@@ -712,12 +713,12 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
       <p class="lock">Gli altri 7 sono nella guida</p>
       <ul>
         <li><span>01</span>Non puoi essere per tutti</li>
-        <li><span>04</span>Ogni metro quadrato può fare più di un lavoro</li>
-        <li><span>05</span>L'hotel non deve finire alla porta della camera</li>
-        <li><span>07</span>La tua storia è un asset, se sai trasformarla in prodotto</li>
+        <li class="blur"><span>04</span><i>Ogni metro quadrato può fare più di un lavoro</i></li>
+        <li class="blur"><span>05</span><i>L'hotel non deve finire alla porta della camera</i></li>
+        <li class="blur"><span>07</span><i>La tua storia è un asset, se sai trasformarla in prodotto</i></li>
         <li><span>08</span>Un hotel può guadagnare anche quando non vende una camera</li>
-        <li><span>09</span>Il lusso sta cambiando: meno simboli, più qualità della vita</li>
-        <li><span>10</span>Il concept non è una cosa da inventare alla fine</li>
+        <li class="blur"><span>09</span><i>Il lusso sta cambiando: meno simboli, più qualità della vita</i></li>
+        <li class="blur"><span>10</span><i>Il concept non è una cosa da inventare alla fine</i></li>
       </ul>
     </div>
     <div class="runfoot">10 segreti · pag. 45</div>
