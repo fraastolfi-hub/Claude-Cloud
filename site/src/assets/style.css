@@ -77,8 +77,8 @@ h1 em,h2 em{font-style:normal;color:var(--muted)}
 .prose h3{margin:36px 0 14px}
 .prose ul,.prose ol{margin:0 0 18px 22px;max-width:62ch}
 .prose li{margin-bottom:8px}
-.kicker{font:600 14px/1.3 var(--text);color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.kicker b{color:var(--ink);font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.kicker{font:600 14px/1.3 var(--text);color:var(--muted);display:block}
+.kicker b{color:var(--ink);font-weight:600;display:inline-flex;align-items:center;gap:8px;vertical-align:baseline}
 .kicker b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 1px rgba(0,0,0,.15)}
 .num-tag{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--text);color:var(--muted)}
 .num-tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 1px rgba(0,0,0,.18)}
