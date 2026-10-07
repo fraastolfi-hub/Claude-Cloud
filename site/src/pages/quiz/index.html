@@ -95,6 +95,55 @@
 .profiles .card .tag{align-self:flex-start;font:700 12px var(--mono);letter-spacing:0;border:1px solid var(--line);padding:6px 9px;background:var(--white);border-radius:var(--r-sm)}
 .profiles .card h3{font-size:clamp(28px,2.8vw,38px);margin:0}
 .profiles .card.g{background:var(--grey)}
+
+/* --- Essenziale: rifiniture del quiz --- */
+.qz{border:0;border-radius:28px;box-shadow:0 0 0 1px rgba(0,0,0,.06),var(--sh-lg)}
+.qz-top{background:var(--white);color:var(--muted);border-bottom:0;font:500 14px var(--text);padding:20px clamp(20px,3.4vw,44px) 14px}
+.qz-top .dots{gap:7px}
+.qz-top .dots i{width:8px;height:8px;border:0;border-radius:50%;background:var(--mist-2)}
+.qz-top .dots i.done{background:var(--ink)}
+.qz-top .dots i.now{background:var(--yellow);box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+.qz-bar{height:3px;border:0;background:var(--mist-2);margin:0 clamp(20px,3.4vw,44px);border-radius:3px;overflow:hidden}
+.qz-bar i{background:var(--ink);border:0;border-radius:3px;transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.qz-stage{padding:clamp(24px,3.4vw,44px)}
+.qz-opt{background:var(--mist);border:0;border-radius:var(--r-sm);padding:14px 18px 14px 14px;font:500 17px/1.4 var(--text);color:var(--ink);transition:background .2s,color .2s}
+.qz-opt .key{border:0;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);font:600 14px var(--text);color:var(--ink)}
+.qz-opt:hover{transform:none;background:var(--mist-2)}
+.qz-opt:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.qz-opt[aria-pressed="true"]{background:var(--night);color:#F5F5F7;transform:none}
+.qz-opt[aria-pressed="true"] .key{background:var(--yellow);color:#1D1D1F;box-shadow:none}
+.qz-foot{border-top:1px solid var(--line);font:400 13px/1.4 var(--text);padding:16px clamp(20px,3.4vw,44px)}
+.qz-back{border:0;border-radius:980px;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);padding:8px 15px;font:500 14px var(--text);color:var(--ink)}
+.qz-back:hover:not(:disabled){transform:none;background:var(--mist)}
+.qz kbd{font:500 12px var(--text);border:0;background:var(--mist);border-radius:6px;padding:2px 6px}
+/* risultato */
+.res-label{font:500 15px var(--text);color:var(--muted)}
+.res-name span{background:linear-gradient(transparent 80%,var(--res,var(--yellow)) 80%,var(--res,var(--yellow)) 94%,transparent 94%);border:0;box-shadow:none;border-radius:0;padding:0 .02em}
+.res-hook{font-family:var(--display)}
+.meter{margin:72px 0 8px}
+.meter-track{border:0;height:8px;gap:3px}
+.meter-track i,.meter-track i:last-child{border:0}
+.meter-track i:nth-child(1){background:var(--mist-2);border-radius:980px 0 0 980px}
+.meter-track i:nth-child(2){background:#D2D2D7}
+.meter-track i:nth-child(3){background:#AEAEB2;border-radius:0 980px 980px 0}
+.meter-lab{font:500 13px var(--text);color:var(--muted);margin-top:10px}
+.meter-lab span{padding-left:0}
+.meter-pin{top:-5px}
+.meter-pin::before{left:-9px;top:0;width:18px;height:18px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 3px #fff,0 2px 8px rgba(0,0,0,.25)}
+.meter-pin b{bottom:14px;background:var(--night);color:#F5F5F7;font:600 13px/1 var(--text);padding:6px 10px;border-radius:980px}
+.res-diag p strong{background:none;padding:0;font-weight:600}
+.weak li{border:0;background:var(--mist);border-radius:var(--r-sm);padding:16px 18px 16px 58px}
+.weak li::before{left:16px;top:15px;width:28px;height:28px;border-radius:50%;background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);font:600 13px var(--text)}
+.weak li b{font-weight:600}
+.weak li em{font:400 13px/1.45 var(--text)}
+.res-cta{border-top:1px solid var(--line)}
+.res-mail .form{background:var(--mist);box-shadow:none;border-radius:var(--r)}
+.res-again{border-top:1px solid var(--line)}
+/* profili */
+.profiles .card.g,.profiles .card.y,.profiles .card.o{background:var(--white);box-shadow:none}
+.profiles .card .tag{border:0;border-radius:980px;background:var(--mist);padding:7px 12px;font:500 13px/1 var(--text);display:inline-flex;align-items:center;gap:7px}
+.profiles .card.o .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+.chips .chip{background:var(--mist)}
 </style>
 </head>
 <body>
