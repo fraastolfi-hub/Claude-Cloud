@@ -25,6 +25,7 @@
   --yellow:#FFDD00;--night:#000000;--red:#C9352B;
   --display:'Inter Tight',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
   --text:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  --serif:'Source Serif 4',Georgia,serif;--sign:'Mrs Saint Delafield',cursive;
   --r:22px;--r-sm:14px;
   /* alias del sistema precedente */
   --paper:#FFFFFF;--paper-2:var(--mist);--cream-y:var(--mist);--mint:var(--mist);--blue:var(--mist);--grey:#E3E3E8;
@@ -96,7 +97,7 @@ h1 em,h2 em{font-style:normal;color:var(--muted)}
 .strike{position:relative;white-space:nowrap;color:var(--muted)}
 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.07em;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.7,0,.2,1) .6s}
 .in .strike::after,.strike.in::after{transform:scaleX(1)}
-.big-quote{font:600 clamp(28px,3.6vw,48px)/1.12 var(--display);letter-spacing:-.03em;max-width:22ch;position:relative;padding-left:clamp(20px,2.6vw,32px);border-left:3px solid var(--yellow)}
+.big-quote{font:400 clamp(26px,3vw,40px)/1.3 var(--serif);letter-spacing:-.01em;max-width:22ch;position:relative;padding-left:clamp(20px,2.6vw,32px);border-left:3px solid var(--yellow)}
 .pull{font:600 clamp(24px,3vw,40px)/1.15 var(--display);letter-spacing:-.03em;max-width:26ch}
 
 /* buttons: pillole */

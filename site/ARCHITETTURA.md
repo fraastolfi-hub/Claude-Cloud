@@ -58,14 +58,7 @@ Servono alle campagne: chi clicca su "commissioni Booking" deve trovare la sua f
 
 ## Tono di voce (vincolante)
 
-- Frasi corte. Spesso senza verbo. Un'idea per riga.
-- Sempre del "tu". Mai "il cliente target", sempre "l'ospite".
-- Metafore concrete e ricorrenti: i cinquanta rettangoli su Booking, il pane del giorno prima, le pesche del nonno, la bussola prima dei muri, le cicatrici al posto dei consigli, il cassetto dove muoiono le analisi.
-- Onestà disarmante: dire cosa un caso **non** dimostra (Silva = posizionamento più ristrutturazione).
-- Numeri veri al posto degli aggettivi. Nessun "unico", "eccellente", "indimenticabile", se non per prenderli in giro.
-- Ironia asciutta, mai battute. Le parolacce del sito attuale ("cazzata", "cazzi tuoi") restano solo dove sono già, nelle pagine di vendita.
-- Niente lineette em (—) nel copy. Due punti, punto, a capo.
-- Scarsità solo se vera: 1 analisi a settimana, 5 posti di candidatura, 6 smontaggi al mese.
+Vedi [TONO.md](TONO.md): "voi", registro professionale, il dato prima dell'aggettivo, niente provocazioni. Sostituisce le regole precedenti ("tu", ironia, parolacce).
 
 ## Fatti canonici (usare solo questi)
 

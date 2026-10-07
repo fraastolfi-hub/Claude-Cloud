@@ -83,7 +83,7 @@
   });
   // exit intent: un messaggio per pagina, al massimo una volta per visita, mai per 3 giorni dopo una chiusura
   var EXIT = {
-    '/': ['Te ne vai già?', 'Prima fai una prova.', 'Copri il logo della tua homepage e rileggila. Se funziona anche per l’hotel accanto, il problema non è questo sito.', 'Fai il test: 7 domande', '/quiz/', 'No, la mia homepage è perfetta così'],
+    '/': ['Prima di andare', 'Sette domande sulla vostra struttura.', 'Due minuti per capire quanto è riconoscibile oggi rispetto alle strutture della vostra zona.', 'Fai il test', '/quiz/', 'No, grazie'],
     '/metodo/': ['Il cassetto ti aspetta', 'Hai letto il metodo. Adesso finisce nel cassetto?', 'È lì che muoiono le buone idee. Ti mando gli otto strumenti per applicarlo: dieci minuti l’uno.', 'Mandami gli strumenti', '/bonus/', 'Lo applico dopo la stagione (come sempre)'],
     '/analisi/': ['Booking ringrazia', 'Chiudi la pagina. Booking incassa lo stesso.', 'Il 18% non va in vacanza. La candidatura chiede sessanta secondi e, se ti scarto, ti spiego perché.', 'Candida il tuo hotel', '/analisi/#candidatura', 'Preferisco pagare la commissione'],
     '/problemi/booking/': ['Un attimo', 'Esci pure. La commissione resta.', 'Ogni prenotazione che ti arriva da Booking mentre ci pensi costa il 18%. Pensarci è gratis. Candidarsi pure.', 'Candida il tuo hotel', '#candidatura', 'Va bene così, Booking è di famiglia'],
