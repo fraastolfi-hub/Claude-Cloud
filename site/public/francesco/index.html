@@ -24,7 +24,7 @@
 .hero-me{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,80px);align-items:center}
 @media (max-width:900px){.hero-me{grid-template-columns:1fr}}
 .photo-wrap{position:relative;max-width:480px;justify-self:center;width:100%}
-.photo-wrap .sticker{position:absolute;right:-10px;top:24px;z-index:2;transform:rotate(5deg)}
+.photo-wrap .sticker{position:absolute;right:-10px;top:24px;z-index:2;transform:rotate(2.5deg)}
 @media (max-width:520px){.photo-wrap .sticker{right:6px}}
 .hero .stat-row{margin-top:44px}
 .hero .stat b{font-size:clamp(32px,3.6vw,48px)}
@@ -53,7 +53,7 @@
 @media (max-width:980px){.scars{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.scars{grid-template-columns:1fr}}
 .scar{background:var(--white);border:var(--b);box-shadow:var(--sh);padding:22px;display:flex;flex-direction:column;gap:14px;transition:transform .15s,box-shadow .15s}
-.scar:hover{transform:translate(-3px,-3px) rotate(-.4deg);box-shadow:9px 9px 0 var(--ink)}
+.scar:hover{transform:translate(-2px,-2px) rotate(-.4deg);box-shadow:6px 6px 0 var(--ink)}
 .scar .did{font-size:16.5px;line-height:1.45}
 .scar .got{font:700 19px/1.3 var(--sans);letter-spacing:-.02em;border-top:2px dashed var(--ink);padding-top:14px;margin-top:auto}
 .scar .got::before{content:"La cicatrice";display:block;font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dk);margin-bottom:6px}
@@ -65,8 +65,8 @@
 @media (max-width:640px){.vs2{grid-template-columns:1fr}.vs2 > div + div{border-left:0;border-top:var(--b)}}
 
 /* --- punto di vista --- */
-.theses{list-style:none;display:grid;gap:0;border-top:3px solid var(--paper);counter-reset:th}
-.theses li{counter-increment:th;display:grid;grid-template-columns:70px 1fr;gap:18px;padding:24px 0;border-bottom:3px solid var(--paper)}
+.theses{list-style:none;display:grid;gap:0;border-top:2px solid var(--paper);counter-reset:th}
+.theses li{counter-increment:th;display:grid;grid-template-columns:70px 1fr;gap:18px;padding:24px 0;border-bottom:2px solid var(--paper)}
 .theses li::before{content:counter(th,decimal-leading-zero);font:700 15px var(--mono);color:var(--orange);padding-top:6px}
 .theses b{display:block;font:700 clamp(22px,2.4vw,32px)/1.1 var(--sans);letter-spacing:-.03em;color:var(--paper)}
 .theses p{margin-top:10px;color:#D8D1C4;font-size:17px;max-width:62ch}
@@ -96,19 +96,19 @@
 @media (max-width:860px){.book{grid-template-columns:1fr}}
 .cover-img{max-width:300px;width:100%;height:auto;justify-self:center}
 @media (max-width:860px){.cover-img{max-width:220px}}
-.cover{aspect-ratio:3/4.3;max-width:300px;width:100%;justify-self:center;background:var(--orange);border:var(--b);box-shadow:14px 14px 0 var(--ink);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-3deg);transition:transform .4s cubic-bezier(.5,1.8,.5,1)}
+.cover{aspect-ratio:3/4.3;max-width:300px;width:100%;justify-self:center;background:var(--orange);border:var(--b);box-shadow:7px 7px 0 var(--ink);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-1.5deg);transition:transform .4s cubic-bezier(.5,1.8,.5,1)}
 .cover:hover{transform:rotate(0)}
 @media (max-width:860px){.cover{max-width:220px}}
 .cover .ct{font:700 clamp(30px,3.4vw,42px)/.95 var(--sans);letter-spacing:-.05em}
 .cover .cs{font:700 11px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase}
-.cover .ca{font:700 14px var(--sans);border-top:3px solid var(--ink);padding-top:10px}
+.cover .ca{font:700 14px var(--sans);border-top:2px solid var(--ink);padding-top:10px}
 
 /* --- scala --- */
 .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:end}
 @media (max-width:980px){.ladder{grid-template-columns:1fr 1fr;align-items:stretch}}
 @media (max-width:560px){.ladder{grid-template-columns:1fr}}
 .step-card{display:flex;flex-direction:column;gap:12px;text-decoration:none;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:22px;transition:transform .15s,box-shadow .15s}
-.step-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.step-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
 @media (min-width:981px){.step-card:nth-child(1){min-height:300px}.step-card:nth-child(2){min-height:340px}.step-card:nth-child(3){min-height:380px}.step-card:nth-child(4){min-height:420px}}
 .step-card .ico{width:54px;height:54px;border:var(--b);display:grid;place-items:center;font:700 24px var(--mono);background:var(--yellow)}
 .step-card:nth-child(2) .ico{background:var(--mint)}.step-card:nth-child(3) .ico{background:var(--blue)}.step-card:nth-child(4) .ico{background:var(--orange)}

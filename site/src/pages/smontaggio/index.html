@@ -26,15 +26,15 @@
 .old .w{position:relative;transition:color .4s}
 .old .g{display:inline-block;background:linear-gradient(var(--ink),var(--ink)) no-repeat 0 92%/100% 0;transition:background-size .4s ease .5s}
 .old .g .t{display:inline-block;position:relative;transition:transform .9s cubic-bezier(.6,-.3,.7,1),opacity .9s ease}
-.old .g .t::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.13em;background:var(--orange);transform:scaleX(0) rotate(-2deg);transform-origin:left;transition:transform .45s cubic-bezier(.7,0,.2,1)}
-.rip.s1 .old .g .t::after{transform:scaleX(1) rotate(-2deg)}
+.old .g .t::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.13em;background:var(--orange);transform:scaleX(0) rotate(-1deg);transform-origin:left;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.rip.s1 .old .g .t::after{transform:scaleX(1) rotate(-1deg)}
 .rip.s1 .old .g .t::after{transition-delay:calc(var(--i,0) * .25s)}
 .rip.s2 .old .g .t{transform:translateY(160px) rotate(var(--r,8deg));opacity:0}
 .rip.s2 .old .g{background-size:100% 3px}
 .rip.s2 .old .f{color:#B3AB9C}
 .rip.s2 .old .g .t{transition-delay:calc(var(--i,0) * .12s)}
-.seen{position:absolute;right:16px;top:-16px;background:var(--grey);border:2.5px solid var(--ink);padding:5px 9px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;transform:rotate(5deg);transition:transform .4s cubic-bezier(.5,1.8,.5,1),background .3s}
-.rip.s1 .seen{background:var(--yellow);transform:rotate(-4deg) scale(1.12)}
+.seen{position:absolute;right:16px;top:-16px;background:var(--grey);border:2px solid var(--ink);padding:5px 9px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;transform:rotate(2.5deg);transition:transform .4s cubic-bezier(.5,1.8,.5,1),background .3s}
+.rip.s1 .seen{background:var(--yellow);transform:rotate(-2deg) scale(1.12)}
 .rip-cap{font:400 13px/1.45 var(--mono);color:var(--muted);margin-top:14px;opacity:0;transition:opacity .5s .9s}
 .rip.s2 .rip-cap,.rip.static .rip-cap,.rip:not(.js) .rip-cap{opacity:1}
 .rip-arrow{display:flex;align-items:center;justify-content:center;gap:14px;height:64px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
@@ -46,9 +46,9 @@
 .nw .w{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.9,.2,1)}
 .rip.s3 .nw .w{opacity:1;transform:none}
 .nw .k{color:var(--orange)}
-.done-tag{position:absolute;right:16px;top:-16px;background:var(--mint);border:2.5px solid var(--paper);color:var(--ink);padding:5px 9px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;transform:rotate(-5deg);transition:transform .45s cubic-bezier(.5,1.8,.5,1)}
-.rip.js .done-tag{transform:rotate(-5deg) scale(0)}
-.rip.s4 .done-tag{transform:rotate(-5deg) scale(1)}
+.done-tag{position:absolute;right:16px;top:-16px;background:var(--mint);border:2px solid var(--paper);color:var(--ink);padding:5px 9px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;transform:rotate(-2.5deg);transition:transform .45s cubic-bezier(.5,1.8,.5,1)}
+.rip.js .done-tag{transform:rotate(-2.5deg) scale(0)}
+.rip.s4 .done-tag{transform:rotate(-2.5deg) scale(1)}
 .why{list-style:none;display:grid;gap:8px;margin-top:20px;border-top:2px dashed #555;padding-top:16px}
 .why li{font:400 13.5px/1.45 var(--mono);color:#D8D1C4;display:grid;grid-template-columns:26px 1fr;gap:8px;transition:opacity .4s,transform .4s}
 .rip.js .why li{opacity:0;transform:translateX(-10px)}
@@ -56,13 +56,13 @@
 .rip.s4 .why li{opacity:1;transform:none}
 .rip.s4 .why li:nth-child(2){transition-delay:.15s}.rip.s4 .why li:nth-child(3){transition-delay:.3s}
 .rip-ctrl{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}
-.rip-ctrl button{border:2.5px solid var(--ink);background:var(--white);padding:9px 14px;font:700 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
-.rip-ctrl button:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.rip-ctrl button{border:2px solid var(--ink);background:var(--white);padding:9px 14px;font:700 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.rip-ctrl button:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
 .rip-ctrl .mono{font-size:12px;color:var(--muted)}
 /* senza JS o con reduced motion: tutto visibile, frase vecchia barrata */
-.rip.static .old .g .t::after{transform:scaleX(1) rotate(-2deg)}
+.rip.static .old .g .t::after{transform:scaleX(1) rotate(-1deg)}
 .rip.static .nw .w,.rip.static .why li{opacity:1;transform:none}
-.rip.static .done-tag{transform:rotate(-5deg) scale(1)}
+.rip.static .done-tag{transform:rotate(-2.5deg) scale(1)}
 
 /* --- cosa ricevi --- */
 .get{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:var(--b);background:var(--white);box-shadow:var(--sh-lg)}
@@ -82,7 +82,7 @@
 .six-m{display:flex;flex-direction:column;justify-content:space-between;gap:16px}
 .six-m .n{font:700 clamp(96px,10vw,150px)/.8 var(--sans);letter-spacing:-.06em}
 .six-m .slots{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-.six-m .slots i{aspect-ratio:1;border:2.5px solid var(--ink);background:var(--white)}
+.six-m .slots i{aspect-ratio:1;border:2px solid var(--ink);background:var(--white)}
 
 /* --- form --- */
 .form-sec .split{align-items:start}
