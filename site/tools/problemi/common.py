@@ -125,6 +125,7 @@ def page(p):
 <style>
 {p.get("css","").strip()}
 </style>
+<!-- @include tema -->
 </head>
 <body>
 <!-- @include header -->
