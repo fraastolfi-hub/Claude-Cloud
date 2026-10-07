@@ -377,11 +377,11 @@
   function html(i){
     var q = Q[i];
     var o = q.a.map(function(a, k){
-      return '<li><button type="button" class="qz-opt" data-k="' + k + '" aria-pressed="' + (ans[i] === k) + '"><span class="key" aria-hidden="true">' + keys[k] + '</span><span>' + esc(a.t) + '</span></button></li>';
+      return '<div class="qz-li"><button type="button" class="qz-opt" data-k="' + k + '" aria-pressed="' + (ans[i] === k) + '"><span class="key" aria-hidden="true">' + keys[k] + '</span><span>' + esc(a.t) + '</span></button></div>';
     }).join('');
     return '<div class="qz-q"><p class="kicker"><b>' + String(i + 1).padStart(2, '0') + '</b> ' + esc(q.k) + '</p>' +
       '<h2 id="qh" tabindex="-1">' + esc(q.t) + '</h2>' +
-      '<ul class="qz-opts" role="group" aria-labelledby="qh">' + o + '</ul></div>';
+      '<div class="qz-opts" role="group" aria-labelledby="qh">' + o + '</div></div>';
   }
 
   function show(i, dir){

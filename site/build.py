@@ -55,6 +55,20 @@ def render(text: str, partials: dict, url: str) -> str:
     return re.sub(r'<a href="(/[^"#]*)"', mark, text)
 
 
+def social_image(html: str) -> str:
+    """Ogni pagina ha un'immagine per le condivisioni: la sua, se c'è, altrimenti quella del sito."""
+    m = re.search(r'<meta property="og:image" content="([^"]+)"', html)
+    img = m.group(1) if m else "/assets/img/og-hotel-positioning.jpg"
+    if img.startswith("/"):
+        img = DOMAIN + img
+    tags = f'<meta name="twitter:image" content="{img}">\n'
+    if not m:
+        tags = f'<meta property="og:image" content="{img}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n' + tags
+    else:
+        html = html.replace(m.group(0), f'<meta property="og:image" content="{img}"', 1)
+    return html.replace('<meta name="twitter:card"', tags + '<meta name="twitter:card"', 1)
+
+
 def build():
     partials = {p.stem: p.read_text() for p in (SRC / "partials").glob("*.html")}
     if OUT.exists():
@@ -65,6 +79,7 @@ def build():
         rel = page.relative_to(SRC / "pages")
         url = url_for(rel)
         html = render(page.read_text(), partials, url)
+        html = social_image(html)
         missing = INCLUDE.findall(html)
         if missing:
             sys.exit(f"{rel}: include mancanti {missing}")

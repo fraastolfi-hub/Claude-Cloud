@@ -13,9 +13,15 @@
 window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 <meta name="theme-color" content="#fffdf6">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/style.css">
 
 <style>
@@ -67,14 +73,14 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 <body>
 <a class="skip" href="#main">Vai al contenuto</a>
 <div class="readbar" aria-hidden="true"></div>
-<a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
+<div role="region" aria-label="Novità"><a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
   <div class="ticker-track" aria-hidden="true">
     <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
   </div>
-</a>
+</a></div>
 <header class="nav">
   <div class="wrap">
-    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark">HP</span>Hotel Positioning</a>
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
     <nav class="nav-links" aria-label="Principale">
       <a href="/metodo/">Il metodo</a>
       <a href="/casi/">Casi</a>
@@ -167,7 +173,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
         <p>I dati non sono venduti né ceduti a terzi per loro finalità. Possono essere trattati, per conto del titolare e in qualità di responsabili del trattamento (art. 28 GDPR), dai fornitori che permettono di erogare il servizio:</p>
         <p class="sup"><strong>Netlify, Inc.</strong> (Stati Uniti): hosting del sito, ricezione dei moduli, filtro antispam ed esecuzione della funzione che inoltra i dati a Brevo.</p>
         <p class="sup"><strong>Brevo</strong> (Sendinblue SAS, Francia): gestione dei contatti, invio delle email ai contatti e delle notifiche interne al titolare. I dati sono trattati su server nell’Unione Europea.</p>
-        <p class="sup"><strong>Google Ireland Ltd / Google LLC</strong>: fornitura dei caratteri tipografici del sito (Google Fonts), per cui al caricamento delle pagine il browser trasmette a Google l’indirizzo IP; e, solo con il consenso, Google Analytics 4 per le statistiche, con indirizzo IP non memorizzato.</p>
+        <p class="sup"><strong>Google Ireland Ltd / Google LLC</strong>: solo con il consenso, Google Analytics 4 per le statistiche, con indirizzo IP non memorizzato.</p>
         <p class="sup"><strong>Meta Platforms Ireland Ltd</strong>: solo con il consenso, Pixel di Meta per la misura delle campagne su Facebook e Instagram. Per la raccolta e la trasmissione dei dati tramite il Pixel, il titolare e Meta sono contitolari del trattamento (art. 26 GDPR), secondo l’accordo di contitolarità predisposto da Meta; i trattamenti successivi sono svolti da Meta come titolare autonomo, secondo la propria <a href="https://www.facebook.com/privacy/policy/" rel="noopener">informativa</a>.</p>
         <p>I dati possono inoltre essere comunicati a consulenti fiscali e legali vincolati alla riservatezza, e alle autorità quando previsto dalla legge. Il pagamento dell’analisi, quando richiesto, avviene sulla piattaforma di Stripe e l’acquisto del libro su Amazon: in questi casi i dati sono trattati da quei soggetti secondo le rispettive informative, in qualità di titolari autonomi.</p>
       </section>
@@ -229,7 +235,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
         <p class="big">Senza un posizionamento chiaro, l’unica leva che resta è il prezzo.</p>
       </div>
       <div>
-        <h4>Il metodo</h4>
+        <h2 class="foot-h">Il metodo</h2>
         <ul>
           <li><a href="/metodo/">I sei passaggi</a></li>
           <li><a href="/analisi/">L'analisi di posizionamento</a></li>
@@ -238,7 +244,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
         </ul>
       </div>
       <div>
-        <h4>Risorse gratuite</h4>
+        <h2 class="foot-h">Risorse gratuite</h2>
         <ul>
           <li><a href="/quiz/">Il test di posizionamento</a></li>
           <li><a href="/smontaggio/">La revisione della homepage</a></li>
@@ -247,7 +253,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
         </ul>
       </div>
       <div>
-        <h4>Francesco</h4>
+        <h2 class="foot-h">Francesco</h2>
         <ul>
           <li><a href="/francesco/">Chi sono</a></li>
           <li><a href="/libro/">Il libro · 19,90 €</a></li>
