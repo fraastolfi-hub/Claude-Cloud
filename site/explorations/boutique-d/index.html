@@ -3,174 +3,154 @@
 <title>Hotel Positioning Essenziale</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* Layout: essenziale e centrato, alla maniera di Apple, vestito con la copertina del libro.
-   Fondo bianco, titoli in grottesco nero con l'evidenziatore giallo dietro le parole chiave,
-   etichette in monospaziato spaziato, sottotitoli in serif corsivo su una riga a sé.
-   Regola: un solo carattere per frase. Angoli vivi, filetti neri sottili come in copertina. */
+/* Layout: essenziale, alla maniera di Apple. Bianco e grigio chiarissimo, testo quasi nero, un solo sans,
+   titoli grandi e centrati, riquadri arrotondati a griglia; il giallo del libro solo come punta: il palazzo giallo, un puntino, un tratto. */
 :root{
-  --paper:#FFFFFF;       /* fondo bianco */
-  --paper-2:#F5F5F4;     /* sezioni alterne: grigio chiarissimo neutro */
-  --paper-3:#FFFFFF;     /* riquadri */
-  --ink:#151513;         /* inchiostro */
-  --ink-2:#3A3833;
-  --stone:#6F6E69;       /* testo secondario */
-  --rule:#DDDCD8;        /* filetti chiari */
-  --yellow:#FFDD00;      /* il giallo della copertina */
-  --sans:'Archivo',system-ui,sans-serif;
-  --serif:'Source Serif 4',Georgia,serif;
-  --mono:'Space Mono',ui-monospace,monospace;
+  --white:#FFFFFF;
+  --mist:#F5F5F7;        /* fondo dei riquadri */
+  --ink:#1D1D1F;         /* testo */
+  --ink-2:#424245;
+  --grey:#6E6E73;        /* testo secondario */
+  --line:#D2D2D7;
+  --bldg:#E3E3E8;        /* palazzi grigi */
+  --bldg-2:#D2D2D7;
+  --yellow:#FFDD00;      /* il giallo della copertina, solo come punta */
+  --night:#000000;
+  --display:'Inter Tight',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  --text:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
   --max:1080px;--wide:1240px;--gut:clamp(20px,4vw,40px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font:400 18px/1.65 var(--serif);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font:400 17px/1.47 var(--text);letter-spacing:-.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 img{max-width:100%;display:block}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
 .wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
 .wide{max-width:var(--wide)}
-h1,h2,h3{font-family:var(--sans);font-weight:800;letter-spacing:-.035em;text-wrap:balance}
-h1{font-size:clamp(44px,6.4vw,88px);line-height:1}
-h2{font-size:clamp(32px,4.2vw,56px);line-height:1.04}
-h3{font-size:clamp(20px,1.8vw,24px);line-height:1.2;font-weight:700;letter-spacing:-.02em}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.03em;text-wrap:balance}
+h1{font-size:clamp(46px,7vw,96px);line-height:1.02;font-weight:700}
+h2{font-size:clamp(36px,4.8vw,64px);line-height:1.05;font-weight:700}
+h3{font-size:clamp(22px,2vw,28px);line-height:1.15}
 p{text-wrap:pretty}
-/* l'evidenziatore della copertina: dietro le parole, stesso carattere */
-.hl{background:linear-gradient(transparent 52%,var(--yellow) 52%,var(--yellow) 90%,transparent 90%);padding:0 .06em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-/* etichette come «MANUALE DI POSIZIONAMENTO ALBERGHIERO» */
-.over{display:block;font:400 12.5px/1.5 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--stone)}
-/* sottotitoli come quello della copertina: serif corsivo, su una riga a sé */
-.sub{font:italic 400 clamp(20px,2vw,26px)/1.4 var(--serif);color:var(--ink-2);max-width:34ch;margin-inline:auto}
+.center{text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--text);color:var(--grey);letter-spacing:0}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+.sub{font:500 clamp(21px,2.1vw,28px)/1.25 var(--display);letter-spacing:-.015em;color:var(--ink-2);max-width:30ch;margin-inline:auto}
+.mark{background:linear-gradient(transparent 76%,var(--yellow) 76%,var(--yellow) 94%,transparent 94%)}
 
-/* bottoni: angoli vivi, grottesco */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 24px;background:var(--ink);color:var(--paper);font:600 15px/1 var(--sans);letter-spacing:-.005em;text-decoration:none;transition:background .2s,color .2s}
-.btn:hover{background:var(--ink-2)}
-.more{font:600 15px/1 var(--sans);text-decoration:none;padding-bottom:5px;border-bottom:1.5px solid var(--ink)}
-.more::after{content:" →"}
-.more:hover{color:var(--ink-2);border-color:var(--ink-2)}
-.acts{display:flex;flex-wrap:wrap;gap:18px 32px;justify-content:center;align-items:center;margin-top:32px}
+/* bottoni e link */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:980px;background:var(--ink);color:#fff;font:500 17px/1 var(--text);text-decoration:none;transition:background .2s}
+.btn:hover{background:#000}
+.btn.light{background:#fff;color:var(--ink)}
+.btn.light:hover{background:var(--mist)}
+.more{font:500 17px/1 var(--text);text-decoration:none;color:var(--ink)}
+.more::after{content:" ›";font-size:1.15em}
+.more:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--yellow);text-decoration-thickness:3px}
+.acts{display:flex;flex-wrap:wrap;gap:16px 30px;justify-content:center;align-items:center;margin-top:28px}
 
 /* nav */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--ink)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px;max-width:var(--wide)}
-.brand{display:flex;align-items:flex-end;gap:10px;text-decoration:none;font:800 16px/1 var(--sans);letter-spacing:-.01em;text-transform:uppercase}
-.brand svg{width:26px;height:20px}
-.nav nav{display:flex;gap:30px;font:500 14px var(--sans);color:var(--ink-2)}
-.nav nav a{text-decoration:none}.nav nav a:hover{color:var(--ink)}
-.nav .btn{padding:10px 15px;font-size:13.5px}
-@media (max-width:860px){.nav nav{display:none}}
-@media (max-width:420px){.nav .btn{display:none}}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:52px;gap:20px;max-width:var(--wide)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font:600 15px/1 var(--text)}
+.brand svg{width:22px;height:18px}
+.nav nav{display:flex;gap:30px;font:400 13px var(--text);color:var(--ink-2)}
+.nav nav a{text-decoration:none}.nav nav a:hover{color:#000}
+.nav .btn{padding:7px 14px;font-size:13px}
+@media (max-width:820px){.nav nav{display:none}}
 
 /* hero */
-.hero{padding-top:clamp(64px,8vw,112px);text-align:center}
-.hero h1{margin:22px auto 22px;max-width:15ch}
-.skyline{max-width:var(--wide);margin:clamp(52px,6vw,84px) auto 0;padding-inline:var(--gut)}
-@media (max-width:560px){.ground{flex-direction:column;gap:2px;font-size:15px}}
+.hero{padding-top:clamp(56px,8vw,104px);text-align:center}
+.hero h1{margin:18px auto 18px;max-width:14ch}
+.skyline{max-width:var(--wide);margin:clamp(48px,6vw,80px) auto 0;padding-inline:var(--gut)}
 .skyline svg{display:block;width:100%;height:auto}
-.ground{display:flex;justify-content:space-between;gap:16px;border-top:3px solid var(--ink);padding-top:14px;font:italic 400 17px var(--serif);color:var(--stone)}
 
 /* sezioni */
-.sec{padding-block:clamp(84px,10vw,144px)}
-.sec.alt{background:var(--paper-2)}
-.head{text-align:center;margin-bottom:clamp(44px,5vw,68px)}
-.head h2{max-width:20ch;margin:16px auto 0}
-.head .sub{margin-top:18px}
+.sec{padding-block:clamp(80px,10vw,140px)}
+.sec.mist{background:var(--mist)}
+.head{text-align:center;margin-bottom:clamp(40px,5vw,64px)}
+.head h2{max-width:18ch;margin:0 auto}
+.head .sub{margin-top:16px}
 
-/* riquadri dei risultati */
-.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:2px solid var(--ink);border-left:1px solid var(--rule)}
-.tile{padding:clamp(28px,3.2vw,44px);display:flex;flex-direction:column;gap:10px;min-width:0;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper-3)}
-.t-3{grid-column:span 3}.t-2{grid-column:span 2}
-@media (max-width:900px){.bento{grid-template-columns:1fr 1fr}.t-2,.t-3{grid-column:span 1}}
-@media (max-width:560px){.bento{grid-template-columns:1fr}}
-.tile .big{font:800 clamp(54px,6vw,86px)/1 var(--sans);letter-spacing:-.05em;font-variant-numeric:tabular-nums;margin:6px 0 2px}
-.tile .big s{font-size:.5em;color:var(--stone);font-weight:500;text-decoration-thickness:3px;margin-right:8px}
-.tile p{color:var(--ink-2);font-size:17px}
-.tile sup,.fine sup{font:400 .62em var(--mono);color:var(--stone)}
-.tile.ink{background:var(--ink);color:var(--paper)}
-.tile.ink .over{color:#A9A291}
-.tile.ink p{color:#DDD7C9}
-.tile.yl{background:var(--yellow)}
-.tile.yl .over{color:var(--ink)}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.tile{background:var(--white);border-radius:28px;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:10px;min-width:0;overflow:hidden;position:relative}
+.sec:not(.mist) .tile{background:var(--mist)}
+.t-3{grid-column:span 3}.t-2{grid-column:span 2}.t-4{grid-column:span 4}.t-6{grid-column:span 6}
+@media (max-width:900px){.bento{grid-template-columns:1fr 1fr}.t-2,.t-3,.t-4{grid-column:span 1}.t-6,.t-wide{grid-column:span 2}}
+@media (max-width:560px){.bento{grid-template-columns:1fr}.t-2,.t-3,.t-4,.t-6,.t-wide{grid-column:span 1}}
+.tile .k{font:600 14px var(--text);color:var(--grey)}
+.tile .big{font:700 clamp(52px,6vw,84px)/1 var(--display);letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.tile .big s{font-size:.5em;color:var(--grey);font-weight:600;text-decoration-thickness:2px;margin-right:8px}
+.tile p{color:var(--ink-2)}
+.tile sup,.fine sup{font-size:.6em;color:var(--grey)}
+.tile.dark{background:var(--night)!important;color:#F5F5F7}
+.tile.dark .k{color:#A1A1A6}
+.tile.dark p{color:#D2D2D7}
+.tile.book{flex-direction:row;align-items:center;gap:24px}
+.tile.book img{width:120px;height:auto;flex:none}
+@media (max-width:560px){.tile.book{flex-direction:column;align-items:flex-start}}
 
 /* problema: cinquanta rettangoli */
-.problem{background:var(--ink);color:var(--paper);text-align:center}
-.problem .over{color:#A9A291}
-.problem .sub{color:#DDD7C9}
+.problem{background:var(--night);color:#F5F5F7;text-align:center}
+.problem .sub{color:#A1A1A6}
 .rects{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;max-width:560px;margin:clamp(44px,5vw,64px) auto 0}
-.rects i{aspect-ratio:1.5;background:#3A3833}
-.rects i.y{background:var(--yellow)}
-.problem .cap{margin-top:24px;font:italic 400 18px var(--serif);color:#C9C4B8}
+.rects i{aspect-ratio:1.5;border-radius:6px;background:#2C2C2E}
+.rects i.y{background:var(--yellow);box-shadow:0 0 0 4px rgba(255,221,0,.18)}
+.problem .cap{margin-top:22px;font:500 15px var(--text);color:#A1A1A6}
+.problem .cap b{color:#F5F5F7;font-weight:600}
 
 /* metodo */
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;counter-reset:s;border-top:2px solid var(--ink)}
-.steps li{padding:30px 28px 34px 0;counter-increment:s;min-width:0;border-bottom:1px solid var(--rule)}
-.steps li:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--rule)}
-.steps li::before{content:"0" counter(s);display:block;font:700 13px var(--mono);letter-spacing:.14em;color:var(--stone);margin-bottom:14px}
-.steps li.y h3 span{background:linear-gradient(transparent 52%,var(--yellow) 52%,var(--yellow) 90%,transparent 90%)}
-.steps h3{margin-bottom:8px}
-.steps p{color:var(--ink-2);font-size:16.5px}
-@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}.steps li:not(:nth-child(3n+1)){padding-left:0;border-left:0}.steps li:nth-child(even){padding-left:24px;border-left:1px solid var(--rule)}}
-@media (max-width:540px){.steps{grid-template-columns:1fr}.steps li:nth-child(even){padding-left:0;border-left:0}}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;counter-reset:s}
+.steps li{background:var(--mist);border-radius:22px;padding:28px 26px 30px;counter-increment:s;min-width:0}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--white);font:700 15px var(--display);margin-bottom:18px;box-shadow:inset 0 0 0 1px var(--line)}
+.steps li.y::before{background:var(--yellow);box-shadow:none}
+.steps h3{font-size:22px;margin-bottom:6px}
+.steps p{color:var(--grey);font-size:16px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.steps{grid-template-columns:1fr}}
 
 /* libro: pagina prodotto */
 .product{text-align:center}
-.product img{width:min(380px,74vw);height:auto;margin:clamp(40px,5vw,60px) auto clamp(30px,4vw,44px)}
-.product .price{font:italic 400 21px var(--serif);color:var(--ink-2)}
-.specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:720px;margin:clamp(44px,5vw,60px) auto 0;border-top:2px solid var(--ink)}
-.specs div{padding:20px 10px;text-align:center}
-.specs div + div{border-left:1px solid var(--rule)}
-.specs b{display:block;font:800 40px/1 var(--sans);letter-spacing:-.04em}
-.specs span{display:block;margin-top:8px;font:400 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
-@media (max-width:520px){.specs{grid-template-columns:1fr 1fr}.specs div:nth-child(3){border-left:0}}
+.product img{width:min(380px,74vw);height:auto;margin:clamp(36px,5vw,56px) auto clamp(28px,4vw,40px)}
+.product .price{font:500 19px var(--text);color:var(--ink-2)}
+.product .price b{font-weight:600;color:var(--ink)}
+.specs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 48px;margin-top:clamp(40px,5vw,56px);padding-top:32px;border-top:1px solid var(--line)}
+.specs div{text-align:center}
+.specs b{display:block;font:700 34px/1 var(--display);letter-spacing:-.03em}
+.specs span{display:block;margin-top:6px;font-size:14px;color:var(--grey)}
 
-/* autore */
-.author{display:grid;grid-template-columns:7fr 5fr;border-top:2px solid var(--ink)}
-.author > div{padding:clamp(28px,3.4vw,48px);min-width:0}
-.author .bio{background:var(--ink);color:var(--paper)}
-.author .bio .over{color:#A9A291}
-.author .bio h3{font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.035em;margin:16px 0 18px}
-.author .bio p{color:#DDD7C9}
-.author .quote{background:var(--paper-3);display:flex;flex-direction:column;justify-content:flex-end;gap:14px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.author .quote p{font:italic 400 clamp(24px,2.2vw,30px)/1.3 var(--serif)}
-@media (max-width:860px){.author{grid-template-columns:1fr}}
-.clients{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;margin-top:40px;padding-top:24px;border-top:1px solid var(--rule)}
-.clients span:not(.over){font:700 17px var(--sans);letter-spacing:-.01em}
-.clients .over{flex-basis:100%;text-align:center}
-
-/* formati */
-.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink)}
-.model{text-align:center;padding:40px 30px 38px;display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0;background:var(--paper-3);border-bottom:1px solid var(--rule)}
-.model + .model{border-left:1px solid var(--rule)}
-.model.feat{background:var(--ink);color:var(--paper)}
-.model.feat p{color:#DDD7C9}
-.model.feat .over{color:#A9A291}
-.model .ico{width:58px;height:46px;margin-bottom:4px}
-.model p{color:var(--ink-2);font-size:16.5px}
-.model .terms{margin-top:auto;padding-top:18px}
-.model .tag{font:600 12.5px var(--sans);background:var(--paper);color:var(--ink);padding:6px 11px}
-.model.feat .btn{background:var(--paper);color:var(--ink)}
-.model.feat .btn:hover{background:#E8E7E3}
-@media (max-width:860px){.compare{grid-template-columns:1fr}.model + .model{border-left:0}}
+/* confronto dei formati */
+.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.model{text-align:center;padding:36px 28px 34px;border-radius:28px;background:var(--white);display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0}
+.model .ico{width:56px;height:56px;margin-bottom:6px}
+.model h3{font-size:24px}
+.model p{color:var(--ink-2);font-size:16px}
+.model .terms{margin-top:auto;padding-top:18px;font:600 14px var(--text);color:var(--grey)}
+.model.feat{box-shadow:inset 0 0 0 2px var(--ink)}
+.model .tag{font:600 12px var(--text);background:var(--yellow);border-radius:980px;padding:5px 11px}
+@media (max-width:860px){.compare{grid-template-columns:1fr}}
 
 /* chiusura */
 .close{text-align:center}
-.close h2{max-width:18ch;margin:22px auto 0}
-.close svg{display:block;margin:0 auto 28px}
+.close h2{max-width:16ch;margin:16px auto 0}
 
 /* note */
-.fine{border-top:2px solid var(--ink);padding-block:28px 44px;font:400 13px/1.6 var(--sans);color:var(--stone)}
-.fine ol{list-style:none;display:grid;gap:8px;padding-bottom:20px;border-bottom:1px solid var(--rule);margin-bottom:16px}
+.fine{background:var(--mist);padding-block:28px 40px;font-size:12px;line-height:1.5;color:var(--grey)}
+.fine ol{list-style:none;display:grid;gap:8px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:16px}
 .fine .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.note-top{background:var(--ink);color:var(--paper);font:500 13px/1.5 var(--sans);text-align:center;padding:9px var(--gut)}
+.note-top{background:var(--mist);color:var(--grey);font:500 12px/1.5 var(--text);text-align:center;padding:9px var(--gut)}
+.note-top b{color:var(--ink)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
-<div class="note-top">Proposta D · Essenziale su bianco, giallo e monospaziato ridotti · contenuti reali, impaginazione esplorativa</div>
+<div class="note-top"><b>Proposta D · Essenziale.</b> Bianco, nero e una punta di giallo. Contenuti reali, impaginazione esplorativa.</div>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#"><svg viewBox="0 0 26 20" aria-hidden="true"><rect x="0" y="8" width="6" height="12" fill="#C9C1AE"/><rect x="7" y="4" width="6" height="16" fill="#C9C1AE"/><rect x="14" y="2" width="7" height="18" fill="#FFDD00" stroke="#151513" stroke-width="1.2"/><rect x="22" y="7" width="4" height="13" fill="#C9C1AE"/></svg>Hotel Positioning</a>
+    <a class="brand" href="#"><svg viewBox="0 0 22 18" aria-hidden="true"><rect x="0" y="7" width="5" height="11" rx="1" fill="#D2D2D7"/><rect x="6" y="3" width="5" height="15" rx="1" fill="#D2D2D7"/><rect x="12" y="1" width="5" height="17" rx="1" fill="#FFDD00"/><rect x="18" y="6" width="4" height="12" rx="1" fill="#D2D2D7"/></svg>Hotel Positioning</a>
     <nav aria-label="Principale"><a href="#metodo">Metodo</a><a href="#risultati">Risultati</a><a href="#libro">Libro</a><a href="#formati">Formati</a></nav>
     <a class="btn" href="#formati">Candida la struttura</a>
   </div>
@@ -179,77 +159,55 @@ p{text-wrap:pretty}
 <main>
 <section class="hero">
   <div class="wrap">
-    <span class="over">Brand positioning per hotel e resort</span>
-    <h1>Il motivo per cui <span class="hl">scelgono voi.</span></h1>
+    <span class="eyebrow">Brand positioning per hotel e resort</span>
+    <h1>Il motivo per cui <span class="mark">scelgono voi.</span></h1>
     <p class="sub">Scritto con le parole dei vostri ospiti. Prima che lo scriva il prezzo.</p>
-    <div class="acts"><a class="btn" href="#formati">Candida la struttura</a><a class="more" href="#metodo">Il metodo</a></div>
+    <div class="acts"><a class="btn" href="#formati">Candida la struttura</a><a class="more" href="#metodo">Scopri il metodo</a></div>
   </div>
   <div class="skyline" aria-hidden="true">
-    <svg viewBox="0 0 1200 240" preserveAspectRatio="xMidYMax meet">
-      <defs>
-        <pattern id="win" width="14" height="18" patternUnits="userSpaceOnUse"><rect x="4" y="5" width="6" height="7" fill="#A39A85"/></pattern>
-        <pattern id="winb" width="16" height="20" patternUnits="userSpaceOnUse"><rect x="5" y="6" width="6" height="8" fill="#151513"/></pattern>
-      </defs>
-      <!-- colline con cipressi e casale -->
-      <path d="M0 240V176C70 128 170 110 270 140C350 164 410 150 480 166C540 180 590 204 630 240Z" fill="#EEEAE1"/>
-      <path d="M0 240V206C90 186 190 190 280 206C340 216 380 214 420 240Z" fill="#E4DFD3"/>
-      <g fill="#B9B19E">
-        <ellipse cx="58" cy="150" rx="9" ry="30"/><ellipse cx="80" cy="140" rx="10" ry="38"/><ellipse cx="102" cy="152" rx="8" ry="28"/>
-        <ellipse cx="292" cy="146" rx="9" ry="30"/><ellipse cx="312" cy="152" rx="8" ry="26"/>
+    <svg viewBox="0 0 1200 260">
+      <g fill="#E3E3E8">
+        <rect x="0" y="140" width="96" height="120" rx="6"/><rect x="110" y="80" width="86" height="180" rx="6"/><rect x="210" y="160" width="110" height="100" rx="6"/><rect x="334" y="50" width="96" height="210" rx="6"/>
+        <rect x="444" y="120" width="80" height="140" rx="6"/><rect x="538" y="170" width="76" height="90" rx="6"/>
+        <rect x="764" y="90" width="92" height="170" rx="6"/><rect x="870" y="150" width="80" height="110" rx="6"/><rect x="964" y="40" width="96" height="220" rx="6"/><rect x="1074" y="130" width="126" height="130" rx="6"/>
       </g>
-      <g fill="#C9C1AE"><rect x="160" y="120" width="76" height="44"/><path d="M154 122L198 96L242 122Z"/></g>
-      <rect x="168" y="130" width="62" height="28" fill="url(#win)"/>
-      <!-- borgo -->
-      <g fill="#C9C1AE">
-        <rect x="352" y="174" width="58" height="66"/><path d="M346 176L381 154L416 176Z"/>
-        <rect x="418" y="156" width="46" height="84"/><rect x="432" y="138" width="18" height="20"/>
-        <rect x="472" y="186" width="58" height="54"/>
+      <g fill="#D2D2D7">
+        <rect x="16" y="160" width="64" height="4" rx="2"/><rect x="16" y="180" width="64" height="4" rx="2"/><rect x="16" y="200" width="64" height="4" rx="2"/>
+        <rect x="126" y="100" width="54" height="4" rx="2"/><rect x="126" y="120" width="54" height="4" rx="2"/><rect x="126" y="140" width="54" height="4" rx="2"/><rect x="126" y="160" width="54" height="4" rx="2"/>
+        <rect x="350" y="70" width="64" height="4" rx="2"/><rect x="350" y="90" width="64" height="4" rx="2"/><rect x="350" y="110" width="64" height="4" rx="2"/><rect x="350" y="130" width="64" height="4" rx="2"/>
+        <rect x="780" y="110" width="60" height="4" rx="2"/><rect x="780" y="130" width="60" height="4" rx="2"/><rect x="780" y="150" width="60" height="4" rx="2"/>
+        <rect x="980" y="60" width="64" height="4" rx="2"/><rect x="980" y="80" width="64" height="4" rx="2"/><rect x="980" y="100" width="64" height="4" rx="2"/><rect x="980" y="120" width="64" height="4" rx="2"/>
       </g>
-      <g fill="url(#win)"><rect x="358" y="184" width="46" height="50"/><rect x="422" y="164" width="38" height="70"/><rect x="478" y="194" width="46" height="40"/></g>
       <!-- il vostro hotel -->
-      <rect x="552" y="138" width="138" height="102" fill="#FFDD00" stroke="#151513" stroke-width="3"/>
-      <rect x="566" y="150" width="110" height="80" fill="url(#winb)"/>
-      <path d="M621 138V96" stroke="#151513" stroke-width="3"/>
-      <path d="M621 96l26 9-26 9z" fill="#FFDD00" stroke="#151513" stroke-width="2.5" stroke-linejoin="round"/>
-      <!-- costa: villa, pino marittimo, ombrelloni, mare, vela -->
-      <rect x="706" y="178" width="66" height="62" fill="#C9C1AE"/>
-      <rect x="712" y="186" width="54" height="48" fill="url(#win)"/>
-      <path d="M800 240V176" stroke="#A39A85" stroke-width="5"/>
-      <ellipse cx="800" cy="168" rx="44" ry="14" fill="#B9B19E"/>
-      <g fill="#C9C1AE" stroke="#A39A85" stroke-width="2">
-        <path d="M862 204Q884 186 906 204Z"/><path d="M884 204V236" fill="none"/>
-        <path d="M922 204Q944 186 966 204Z"/><path d="M944 204V236" fill="none"/>
-      </g>
-      <g stroke="#C9C1AE" stroke-width="2"><path d="M990 206H1200M1004 214H1200M1018 222H1200M1032 230H1200"/></g>
-      <path d="M1112 198V164L1136 198Z" fill="#C9C1AE"/><path d="M1102 200H1144L1138 206H1108Z" fill="#A39A85"/>
+      <rect x="636" y="56" width="108" height="204" rx="8" fill="#FFDD00"/>
+      <g fill="#1D1D1F" opacity=".85"><rect x="656" y="80" width="68" height="5" rx="2.5"/><rect x="656" y="100" width="68" height="5" rx="2.5"/><rect x="656" y="120" width="68" height="5" rx="2.5"/><rect x="656" y="140" width="68" height="5" rx="2.5"/><rect x="656" y="160" width="68" height="5" rx="2.5"/><rect x="656" y="180" width="68" height="5" rx="2.5"/></g>
+      <path d="M690 56V14" stroke="#1D1D1F" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M690 14l24 8-24 8z" fill="#1D1D1F"/>
     </svg>
-    <div class="ground"><span>Colline, borghi, costa: cinquanta strutture nella vostra destinazione</span><span>Una che l’ospite sa spiegare</span></div>
   </div>
 </section>
 
 <section class="sec problem">
   <div class="wrap">
-    <span class="over">La questione</span>
-    <h2 style="max-width:16ch;margin:16px auto 0">Cinquanta hotel. Le stesse parole.</h2>
-    <p class="sub" style="margin-top:18px">Quando l’ospite non sa dire perché voi, confronta l’unica cosa che sa confrontare: il prezzo.</p>
+    <h2 style="max-width:16ch;margin:0 auto">Cinquanta hotel. Le stesse parole.</h2>
+    <p class="sub" style="margin-top:16px">Quando l’ospite non sa dire perché voi, confronta l’unica cosa che sa confrontare: il prezzo.</p>
     <div class="rects" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="y"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <p class="cap">Uno solo è riconoscibile. Può essere il vostro.</p>
+    <p class="cap">Uno solo è riconoscibile. <b>Può essere il vostro.</b></p>
   </div>
 </section>
 
-<section class="sec alt" id="risultati">
+<section class="sec mist" id="risultati">
   <div class="wrap wide">
     <div class="head">
-      <span class="over">Risultati</span>
       <h2>Posizionarsi cambia i numeri.</h2>
       <p class="sub">Non da un giorno all’altro. Ma in modo che dura.</p>
     </div>
     <div class="bento">
-      <div class="tile t-3 ink"><span class="over">Silva Splendid · Fiuggi</span><span class="big">€7M+</span><p>Fatturato annuo, da €3,5M in cinque anni. Da «hotel 4 stelle con SPA» a L’Hotel Benessere di Fiuggi.<sup>1</sup></p></div>
-      <div class="tile t-3"><span class="over">Veridia Resort · Chia</span><span class="big">&gt;60%</span><p>Vendite dirette. Non uno dei cento resort sul mare: il nature resort di Chia.<sup>2</sup></p></div>
-      <div class="tile t-2"><span class="over">Tariffa media</span><span class="big">×2</span><p>Circa, al Silva Splendid.</p></div>
-      <div class="tile t-2"><span class="over">Recensioni su Booking</span><span class="big"><s>8,6</s>9</span><p>Meno ospiti fuori target.</p></div>
-      <div class="tile t-2"><span class="over">Lingue lette</span><span class="big">5</span><p>Le recensioni, in originale.</p></div>
+      <div class="tile t-3 dark"><span class="k">Silva Splendid, Fiuggi</span><span class="big">€7M+</span><p>Fatturato annuo, da €3,5M in cinque anni. Da «hotel 4 stelle con SPA» a L’Hotel Benessere di Fiuggi.<sup>1</sup></p></div>
+      <div class="tile t-3"><span class="k">Veridia Resort, Chia</span><span class="big">&gt;60%</span><p>Vendite dirette. Non uno dei cento resort sul mare: il nature resort di Chia.<sup>2</sup></p></div>
+      <div class="tile t-2"><span class="k">Tariffa media</span><span class="big">×2</span><p>Circa, al Silva Splendid.</p></div>
+      <div class="tile t-2"><span class="k">Recensioni su Booking</span><span class="big"><s>8,6</s>9</span><p>Meno ospiti fuori target.</p></div>
+      <div class="tile t-2"><span class="k">Lingue lette</span><span class="big">5</span><p>Le recensioni, in originale.</p></div>
     </div>
   </div>
 </section>
@@ -257,14 +215,14 @@ p{text-wrap:pretty}
 <section class="sec" id="metodo">
   <div class="wrap">
     <div class="head">
-      <span class="over">Il metodo</span>
-      <h2>Sei passaggi. In quest’ordine.</h2>
+      <span class="eyebrow">Il metodo</span>
+      <h2 style="margin-top:14px">Sei passaggi. In quest’ordine.</h2>
       <p class="sub">Il posizionamento non si inventa. Si sceglie.</p>
     </div>
     <ol class="steps">
       <li><h3>Il bisogno</h3><p>Il desiderio profondo che l’ospite vi chiede di soddisfare.</p></li>
       <li><h3>Le alternative</h3><p>Quelle che ha davvero, comprese quelle che non sono hotel.</p></li>
-      <li><h3>Le unicità</h3><p>Fatti verificabili, letti nelle recensioni. Qui quasi tutti barano.</p></li>
+      <li class="y"><h3>Le unicità</h3><p>Fatti verificabili, letti nelle recensioni. Qui quasi tutti barano.</p></li>
       <li><h3>L’ospite giusto</h3><p>Chi riconosce quel valore, in numero sufficiente.</p></li>
       <li><h3>La categoria</h3><p>Quella di cui potete diventare il riferimento.</p></li>
       <li><h3>Il momento</h3><p>Il trend da cavalcare. Tutto su una pagina: il Positioning Canvas.</p></li>
@@ -272,65 +230,67 @@ p{text-wrap:pretty}
   </div>
 </section>
 
-<section class="sec alt product" id="libro">
+<section class="sec mist product" id="libro">
   <div class="wrap">
-    <span class="over">Manuale di posizionamento alberghiero</span>
-    <h2 style="margin-top:16px">Hotel <span class="hl">Positioning.</span></h2>
-    <p class="sub" style="margin-top:16px">Come l’ospite sceglie un hotel. E perché non sceglie il vostro.</p>
+    <span class="eyebrow">Il libro</span>
+    <h2 style="margin-top:14px">Hotel Positioning.</h2>
+    <p class="sub" style="margin-top:14px">Come l’ospite sceglie un hotel. E perché non sceglie il vostro.</p>
     <img src="img/libro-hotel-positioning@2x.webp" width="840" height="1316" alt="Il libro Hotel Positioning di Francesco Astolfi">
-    <p class="price">19,90 € su Amazon, anche Kindle.</p>
-    <div class="acts"><a class="btn" href="https://www.amazon.it/dp/B0HL3Z4XL7/">Acquista il libro</a><a class="more" href="#">Gli otto strumenti</a></div>
-    <div class="specs"><div><b>120</b><span>pagine</span></div><div><b>8</b><span>figure</span></div><div><b>6</b><span>passaggi</span></div><div><b>200</b><span>attributi</span></div></div>
+    <p class="price">Da <b>19,90 €</b> su Amazon, anche Kindle.</p>
+    <div class="acts"><a class="btn" href="https://www.amazon.it/dp/B0HL3Z4XL7/">Acquista</a><a class="more" href="#">Gli otto strumenti gratuiti</a></div>
+    <div class="specs"><div><b>120</b><span>pagine</span></div><div><b>8</b><span>figure</span></div><div><b>6</b><span>passaggi</span></div><div><b>200</b><span>attributi differenzianti</span></div></div>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap wide">
-    <div class="author">
-      <div class="bio">
-        <span class="over">Francesco Astolfi</span>
-        <h3>Vent’anni nell’ospitalità, da ogni lato del tavolo.</h3>
-        <p>TUI.it da zero a trenta milioni. Ata Hotels. Una web agency per hotel. Dieci locali con capitale proprio. Oggi un numero ristretto di strutture indipendenti, e ogni analisi condotta personalmente.</p>
+    <div class="bento">
+      <div class="tile t-4 dark" style="justify-content:space-between;min-height:320px">
+        <span class="k">Francesco Astolfi</span>
+        <h3 style="font-size:clamp(30px,3.4vw,44px);font-weight:700;max-width:16ch">Vent’anni nell’ospitalità. Da ogni lato del tavolo.</h3>
+        <p>TUI.it da zero a trenta milioni. Ata Hotels. Una web agency per hotel. Dieci locali con capitale proprio. Oggi un numero ristretto di strutture indipendenti.</p>
       </div>
-      <div class="quote">
-        <span class="over">Il principio</span>
-        <p>«I consulenti vendono consigli. Gli operatori vendono cicatrici.»</p>
+      <div class="tile t-2" style="justify-content:flex-end;min-height:320px">
+        <span class="k">Il principio</span>
+        <p style="font:600 24px/1.25 var(--display);letter-spacing:-.02em;color:var(--ink)">«I consulenti vendono consigli. Gli operatori vendono cicatrici.»</p>
       </div>
-    </div>
-    <div class="clients">
-      <span class="over">Strutture seguite oggi</span>
-      <span>Veridia Resort</span><span>Silva Splendid Hotel &amp; SPA</span><span>Tocq Hotel</span><span>Radisson Blu ChorusLife</span>
+      <div class="tile t-6" style="flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px">
+        <span class="k">Strutture seguite oggi</span>
+        <span style="font:600 19px var(--display);letter-spacing:-.02em">Veridia Resort</span>
+        <span style="font:600 19px var(--display);letter-spacing:-.02em">Silva Splendid Hotel &amp; SPA</span>
+        <span style="font:600 19px var(--display);letter-spacing:-.02em">Tocq Hotel</span>
+        <span style="font:600 19px var(--display);letter-spacing:-.02em">Radisson Blu ChorusLife</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec alt" id="formati">
+<section class="sec mist" id="formati">
   <div class="wrap wide">
     <div class="head">
-      <span class="over">Formati</span>
       <h2>Scegliete da dove iniziare.</h2>
     </div>
     <div class="compare">
       <div class="model">
-        <svg class="ico" viewBox="0 0 58 46" aria-hidden="true"><rect x="4" y="4" width="50" height="38" fill="#FAF8F2" stroke="#151513" stroke-width="2"/><rect x="11" y="12" width="26" height="5" fill="#FFDD00"/><rect x="11" y="23" width="34" height="2.5" fill="#A39A85"/><rect x="11" y="30" width="24" height="2.5" fill="#A39A85"/></svg>
+        <svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="8" y="10" width="40" height="36" rx="6" fill="#E3E3E8"/><rect x="14" y="18" width="22" height="4" rx="2" fill="#1D1D1F"/><rect x="14" y="27" width="28" height="3" rx="1.5" fill="#A1A1A6"/><rect x="14" y="34" width="20" height="3" rx="1.5" fill="#A1A1A6"/></svg>
         <h3>Revisione della homepage</h3>
         <p>La prima frase che legge l’ospite, smontata e riscritta. Una pagina, nessuna call.</p>
-        <span class="over terms">Gratuita · 6 al mese</span>
+        <span class="terms">Gratuita · 6 al mese</span>
         <a class="more" href="#">Richiedi</a>
       </div>
       <div class="model feat">
         <span class="tag">Si parte da qui</span>
-        <svg class="ico" viewBox="0 0 58 46" aria-hidden="true"><rect x="2" y="16" width="10" height="30" fill="#5A5648"/><rect x="14" y="10" width="10" height="36" fill="#5A5648"/><rect x="26" y="4" width="12" height="42" fill="#FFDD00"/><rect x="40" y="14" width="8" height="32" fill="#5A5648"/><rect x="50" y="20" width="8" height="26" fill="#5A5648"/></svg>
+        <svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="10" y="6" width="36" height="44" rx="6" fill="#E3E3E8"/><rect x="22" y="14" width="12" height="28" rx="2" fill="#FFDD00"/><rect x="25" y="18" width="6" height="2" rx="1" fill="#1D1D1F"/><rect x="25" y="23" width="6" height="2" rx="1" fill="#1D1D1F"/><rect x="25" y="28" width="6" height="2" rx="1" fill="#1D1D1F"/></svg>
         <h3>Analisi di posizionamento</h3>
         <p>Posizionamento attuale, concorrenti veri, profili dell’ospite, posizionamento proposto e prime azioni.</p>
-        <span class="over terms">Su candidatura · 1 a settimana</span>
+        <span class="terms">Su candidatura · 1 a settimana</span>
         <a class="btn" href="#">Candida la struttura</a>
       </div>
       <div class="model">
-        <svg class="ico" viewBox="0 0 58 46" aria-hidden="true"><circle cx="21" cy="16" r="9" fill="#C9C1AE"/><circle cx="37" cy="16" r="9" fill="none" stroke="#151513" stroke-width="2"/><path d="M6 44c0-9 7-14 15-14s15 5 15 14M22 44c0-9 7-14 15-14s15 5 15 14" fill="none" stroke="#151513" stroke-width="2"/></svg>
+        <svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="20" cy="22" r="8" fill="#E3E3E8"/><circle cx="36" cy="22" r="8" fill="#D2D2D7"/><rect x="8" y="34" width="40" height="12" rx="6" fill="#E3E3E8"/></svg>
         <h3>Advisory continuativo</h3>
         <p>Il posizionamento portato in campagne, CRM, preventivi, Google e OTA, a fianco della direzione.</p>
-        <span class="over terms">Su richiesta</span>
+        <span class="terms">Su richiesta</span>
         <a class="more" href="#">Parliamone</a>
       </div>
     </div>
@@ -339,10 +299,9 @@ p{text-wrap:pretty}
 
 <section class="sec close">
   <div class="wrap">
-    <svg viewBox="0 0 160 80" width="160" height="80" aria-hidden="true"><path d="M0 80V54C20 38 46 34 66 48C76 56 84 66 92 80Z" fill="#EEEAE1"/><ellipse cx="24" cy="50" rx="4" ry="13" fill="#B9B19E"/><ellipse cx="34" cy="46" rx="4.5" ry="16" fill="#B9B19E"/><rect x="44" y="52" width="20" height="28" fill="#C9C1AE"/><path d="M42 53L54 44L66 53Z" fill="#C9C1AE"/><rect x="70" y="40" width="40" height="40" fill="#FFDD00" stroke="#151513" stroke-width="2"/><path d="M90 40V24l11 4-11 4" fill="#FFDD00" stroke="#151513" stroke-width="1.6" stroke-linejoin="round"/><g stroke="#C9C1AE" stroke-width="2"><path d="M118 66H160M124 72H160M130 78H160"/></g><path d="M0 79h160" stroke="#151513" stroke-width="2"/></svg>
-    <span class="over">Candidatura</span>
+    <span class="eyebrow">Candidatura</span>
     <h2>Il prossimo palazzo giallo può essere il vostro.</h2>
-    <p class="sub" style="margin-top:18px">Il nome della struttura, il sito, due o tre concorrenti. Risposta entro 48 ore.</p>
+    <p class="sub" style="margin-top:16px">Il nome della struttura, il sito, due o tre concorrenti. Risposta entro 48 ore.</p>
     <div class="acts"><a class="btn" href="#">Candida la struttura</a><a class="more" href="#metodo">Come funziona</a></div>
   </div>
 </section>
