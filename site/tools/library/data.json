@@ -548,7 +548,7 @@
   "stage": "Consolidato",
   "family": "D. Cosa vende davvero",
   "title": "Si viene per cambiare",
-  "desc": "Te ne vai diverso: programmi guidati di più giorni.",
+  "desc": "Si riparte cambiati: programmi guidati di più giorni.",
   "examples": [
    {
     "name": "Lanserhof Tegernsee",
@@ -691,7 +691,7 @@
   "stage": "Emergente",
   "family": "E. Hotel + un'altra attività",
   "title": "Hotel + artisti in residenza",
-  "desc": "Artisti in residenza producono mentre tu soggiorni.",
+  "desc": "Artisti in residenza lavorano mentre gli ospiti soggiornano.",
   "examples": [
    {
     "name": "Casa Wabi",
@@ -751,7 +751,7 @@
   "stage": "Emergente",
   "family": "E. Hotel + un'altra attività",
   "title": "Hotel + scuola",
-  "desc": "Esci con una competenza che non avevi (cucina, lingua, mestiere).",
+  "desc": "L'ospite riparte con una competenza nuova (cucina, lingua, mestiere).",
   "examples": [
    {
     "name": "Borgo Pignano",
@@ -809,7 +809,7 @@
   "stage": "Emergente",
   "family": "F. Il luogo è l'hotel",
   "title": "Un territorio portato altrove",
-  "desc": "Porti il territorio fuori dal territorio.",
+  "desc": "Il territorio portato fuori dal territorio.",
   "examples": [
    {
     "name": "Casa Cipriani",
@@ -1132,7 +1132,7 @@
   "stage": "Nascente",
   "family": "H. Servizio ripensato",
   "title": "Un padrone di casa al posto della reception",
-  "desc": "Niente front desk: un host umano specifico ti accoglie.",
+  "desc": "Niente front desk: un host dedicato accoglie ogni ospite.",
   "examples": [],
   "pioneer": true,
   "fam": "H",
@@ -1178,7 +1178,7 @@
   "stage": "Emergente",
   "family": "H. Servizio ripensato",
   "title": "Tutto incluso o niente incluso",
-  "desc": "Tutto incluso davvero, oppure niente incluso e paghi solo ciò che usi.",
+  "desc": "Tutto incluso davvero, oppure niente incluso e si paga solo ciò che si usa.",
   "examples": [
    {
     "name": "Sandals Resorts",
@@ -1357,7 +1357,7 @@
   "stage": "Consolidato",
   "family": "J. Rifiuto del format",
   "title": "Benessere medico, non spa decorativa",
-  "desc": "Rifiuti la spa decorativa e ti rifondi con protocolli medici.",
+  "desc": "Al posto della spa decorativa, protocolli medici.",
   "examples": [
    {
     "name": "Lanserhof Tegernsee",
@@ -1639,7 +1639,7 @@
   "stage": "Consolidato",
   "family": "L. Solo per qualcuno",
   "title": "Solo soci",
-  "desc": "Private club: entri se accettato o presentato.",
+  "desc": "Private club: si entra su ammissione o presentazione.",
   "examples": [
    {
     "name": "Casa Cipriani",
