@@ -125,7 +125,7 @@
 .ring3.here{background:#F5F5F7;color:#1D1D1F}
 .ring3.here p{color:#424245}
 .ring3.here .k{color:#6E6E73}
-.ring3.here::after{content:"Tu sei qui";position:absolute;top:-12px;right:20px;background:var(--yellow);color:#1D1D1F;border-radius:980px;padding:6px 11px;font:600 12px/1 var(--text)}
+.ring3.here::after{content:"Siete qui";position:absolute;top:-12px;right:20px;background:var(--yellow);color:#1D1D1F;border-radius:980px;padding:6px 11px;font:600 12px/1 var(--text)}
 .chain3 .lk{display:grid;place-items:center;font:300 24px var(--text);color:#6E6E73}
 @media (max-width:860px){.chain3{grid-template-columns:1fr}.chain3 .lk{height:36px;transform:rotate(90deg)}}
 
