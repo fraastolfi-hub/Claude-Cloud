@@ -53,7 +53,8 @@
 
   // form: validazione, barra di avanzamento, stato inviato.
   // <form class="form" data-hp-form> ... campi [required] dentro .field, privacy in .check
-  // Per collegare un endpoint reale: metti l'URL in action="" e data-endpoint="1".
+  // Invio: Netlify Forms (attributo data-netlify) solo sul dominio pubblicato; in anteprima mostra solo la conferma.
+  // Dopo l'invio, la funzione netlify/functions/submission-created.js salva il contatto su Brevo e manda la notifica.
   $$('form[data-hp-form]').forEach(function(f){
     function missing(el){
       if (el.type === 'radio') return !f.querySelector('input[name="' + el.name + '"]:checked');
@@ -75,10 +76,26 @@
         if (bad && !first) first = el;
       });
       if (first) { e.preventDefault(); first.focus(); if (!reduce) { f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); } return; }
-      if (f.dataset.endpoint) return; // invio reale
       e.preventDefault();
-      $$('[data-echo]', f).forEach(function(o){ var src = f.querySelector(o.dataset.echo); if (src && src.value.trim()) o.textContent = src.value.trim(); });
-      f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      var done = function(){
+        $$('[data-echo]', f).forEach(function(o){ var src = f.querySelector(o.dataset.echo); if (src && src.value.trim()) o.textContent = src.value.trim(); });
+        f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      };
+      // Netlify Forms: invio in background; la funzione submission-created salva su Brevo e manda la notifica
+      if (f.hasAttribute('data-netlify') && /(^|\.)(hotelpositioning\.com|netlify\.app)$/.test(location.hostname)) {
+        var pg = f.querySelector('input[name="pagina"]'); if (pg) pg.value = location.pathname;
+        var btn = f.querySelector('[type=submit]'); if (btn) btn.disabled = true;
+        var fail = f.querySelector('.send-err');
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(f)).toString() })
+          .then(function(r){ if (!r.ok) throw new Error(r.status); done(); })
+          .catch(function(){
+            if (btn) btn.disabled = false;
+            if (!fail) { fail = document.createElement('p'); fail.className = 'form-foot send-err'; fail.setAttribute('role', 'alert'); btn.insertAdjacentElement('afterend', fail); }
+            fail.textContent = 'Invio non riuscito. Riprovate tra un momento oppure scrivete a privacy@hotelpositioning.com.';
+          });
+        return;
+      }
+      done();
     });
   });
   // exit intent: un messaggio per pagina, al massimo una volta per visita, mai per 3 giorni dopo una chiusura

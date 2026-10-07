@@ -478,8 +478,9 @@
       <p class="micro" style="color:var(--ink)"><b>Rispondo entro 48 ore</b>, anche quando la candidatura non è adatta. <a href="/analisi/">Come funziona l'analisi di posizionamento</a>.</p>
     </div>
     <div class="rv d1">
-      <!-- Form candidatura condiviso. Collega l'endpoint in action="" e aggiungi data-endpoint="1". -->
-<form class="form" id="candidatura-form" action="#" method="post" data-hp-form novalidate>
+      <!-- Form candidatura condiviso. Inviato a Netlify Forms (name="candidatura"); vedi netlify/functions/submission-created.js -->
+<form class="form" id="candidatura-form" name="candidatura" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" novalidate>
+  <input type="hidden" name="form-name" value="candidatura"><input type="hidden" name="pagina" value=""><p hidden><label>Non compilare: <input name="bot-field"></label></p>
   <div class="fields">
     <div class="form-head"><span>Candidatura della struttura · un minuto</span><span data-prog-txt>0%</span></div>
     <div class="prog"><i></i></div>

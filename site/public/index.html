@@ -219,16 +219,12 @@
 .bb-specs{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:40px;padding-top:26px;border-top:1px solid #3A3A3C}
 .bb-specs b{display:block;font:700 28px/1 var(--display);letter-spacing:-.03em;color:#F5F5F7}
 .bb-specs span{display:block;margin-top:6px;font-size:14px;color:#A1A1A6}
-.bb-stage{position:relative;height:520px}
-.bb-book{position:absolute;left:50%;bottom:150px;width:min(280px,70%);height:auto;transform:translateX(-46%);filter:drop-shadow(0 30px 40px rgba(0,0,0,.6));z-index:2}
-.bb-shadow{position:absolute;left:50%;bottom:166px;width:58%;height:24px;transform:translateX(-46%);background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.75),transparent 70%);z-index:1}
-.bb-stone{position:absolute;border-radius:3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),linear-gradient(180deg,#2E2E2D 0,#222221 9px,#1A1A19 10px,#0E0E0E 100%)}
-.bb-stone::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(255,255,255,.18)}
-.bb-stone.s2{left:0;right:0;bottom:0;height:60px;filter:brightness(.8)}
-.bb-stone.s1{left:12%;right:6%;bottom:60px;height:112px}
-.bookband{overflow:hidden;padding-bottom:0}
-.bookband .bb-text{padding-bottom:clamp(80px,10vw,136px)}
-@media (max-width:900px){.bookband .wrap{grid-template-columns:1fr}.bookband .bb-text{padding-bottom:0}.bb-stage{height:440px}.bb-book{width:220px;bottom:128px}.bb-stone.s2{height:50px}.bb-stone.s1{bottom:50px;height:94px}.bb-shadow{bottom:140px}}
+.bb-stage{position:relative;display:grid;place-items:center;padding:20px 0 40px}
+.bb-stage::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,221,0,.10),transparent 70%)}
+.bb-book{position:relative;width:min(300px,72%);height:auto;filter:drop-shadow(0 40px 50px rgba(0,0,0,.65));z-index:2}
+.bb-shadow{position:absolute;bottom:22px;left:50%;width:46%;height:22px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.07),transparent 70%);z-index:1}
+@media (max-width:900px){.bookband .wrap{grid-template-columns:1fr}.bb-book{width:230px}}
+@media (max-width:520px){.bb-specs{display:grid;grid-template-columns:1fr 1fr}}
 .me-body{font:400 19px/1.6 var(--serif);color:var(--ink-2);margin-bottom:26px;max-width:36em}
 .me-row{display:flex;align-items:center;gap:22px 40px;margin-top:34px;flex-wrap:wrap}
 .sign{font:400 clamp(40px,3.6vw,54px)/1 var(--sign);color:var(--ink);transform:rotate(-4deg);white-space:nowrap;user-select:none}
@@ -408,7 +404,7 @@
       <div class="bb-specs"><div><b>120</b><span>pagine</span></div><div><b>6</b><span>passaggi</span></div><div><b>200</b><span>attributi</span></div><div><b>19,90 €</b><span>anche Kindle</span></div></div>
     </div>
     <div class="bb-stage" aria-hidden="false">
-      <div class="bb-stone s2"></div><div class="bb-stone s1"></div><div class="bb-shadow"></div>
+      <div class="bb-shadow"></div>
       <img class="bb-book" src="/assets/img/libro-hotel-positioning@2x.webp" width="840" height="1316" alt="Il libro Hotel Positioning di Francesco Astolfi" loading="lazy">
     </div>
   </div>

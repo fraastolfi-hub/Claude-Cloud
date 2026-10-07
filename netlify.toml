@@ -4,6 +4,10 @@
   command = "python3 build.py"
   publish = "public"
 
+# Funzione che salva i moduli su Brevo e manda la notifica email (vedi site/netlify/functions)
+[functions]
+  directory = "netlify/functions"
+
 [[headers]]
   for = "/assets/*"
   [headers.values]
