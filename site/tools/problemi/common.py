@@ -50,7 +50,7 @@ def faq(items):
 
 
 SIG_JS = r'''
-/* i dieci segnali: contatore "Vale per noi" */
+/* i dieci segnali: contatore "Vale per me" */
 (function(){
   var btns=[].slice.call(document.querySelectorAll('.sig-btn')), meter=document.getElementById('sigMeter');
   var out=document.getElementById('sigScore'), msg=document.getElementById('sigMsg'), bar=document.getElementById('sigBar');

@@ -76,7 +76,7 @@ P = dict(
     sig_lead="Seleziona quelli che riconosci nel tuo hotel. Se sono molti, un'altra agenzia difficilmente cambierà il risultato.",
     signals=[
         ("Il brief sta in tre righe.", "«Fateci conoscere. Valorizzate la struttura. Puntiamo sulla qualità.»", "Con queste istruzioni, qualsiasi agenzia produce la stessa cosa."),
-        ("La risposta a «perché tu?».", "L'agenzia ti chiede cosa ti distingue. Rispondi «cura, qualità, attenzione», e l'agenzia scrive esattamente questo.", "Se la risposta non è chiara a te, non può esserlo all'agenzia."),
+        ("La risposta a «perché voi?».", "L'agenzia chiede: «Cosa vi distingue?». Rispondi «cura, qualità, attenzione», e l'agenzia scrive esattamente questo.", "Se la risposta non è chiara a te, non può esserlo all'agenzia."),
         ("Nessuna domanda iniziale.", "L'agenzia è partita dal piano editoriale, non dall'identità del tuo hotel. E nessuno l'ha notato.", "Questo è un limite dell'agenzia. Le altre, forse, aspettavano risposte."),
         ("Contenuti curati, poche prenotazioni.", "Il profilo è ordinato, i contenuti sono di qualità. Le prenotazioni arrivano da altri canali.", "La cura formale non sostituisce un messaggio."),
         ("Campagne a basso rendimento.", "€2.000 di annunci, 50 clic, 2 prenotazioni. Clicca chiunque; prenota chi ha capito cosa offri.", "La pubblicità amplifica il messaggio. Anche quando è generico."),

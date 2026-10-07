@@ -49,7 +49,7 @@ P = dict(
     sig_h2="Dieci segnali di <em>dipendenza dalle OTA.</em>",
     sig_lead="Seleziona quelli che riconosci nel tuo hotel.",
     signals=[
-        ("La risposta a «perché tu?».", "Un ospite ti chiede cosa ti distingue. Rispondi «cura, qualità, attenzione». Ringrazia e prenota un altro hotel su Booking.", "Se la risposta non sta in trenta secondi, non è ancora chiara."),
+        ("La risposta a «perché voi?».", "Un ospite chiede: «Cosa vi distingue?». Rispondi «cura, qualità, attenzione». Ringrazia e prenota un altro hotel su Booking.", "Se la risposta non sta in trenta secondi, non è ancora chiara."),
         ("Nessun filtro sulle richieste.", "Accetti tutte le prenotazioni. Poi ti accorgi che gli ospiti non capiscono cosa offri.", "Essere specifici significa scegliere. E scegliere significa escludere."),
         ("Booking è il primo canale.", "Porta 60 prenotazioni su 100 e ne trattiene il 18%. Con 80 camere sono circa €150.000 l'anno.", "Oltre una certa quota non è più un canale: è una dipendenza."),
         ("Upgrade gratuiti in bassa stagione.", "La camera era libera, l'upgrade non costa nulla. Ma l'ospite impara ad aspettare l'occasione, anche a luglio.", "Lo sconto ripetuto insegna a non pagare il prezzo pieno."),

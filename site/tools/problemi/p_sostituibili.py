@@ -97,7 +97,7 @@ P = dict(
         ("«Boutique hotel» non distingue più.", "Vent'anni fa era una posizione. Oggi è una categoria, e affollata.", "Dire «boutique hotel» oggi equivale quasi a dire «hotel»."),
         ("Racconti la destinazione, non il tuo hotel.", "Il sito parla della Sardegna, della Toscana, del lago.", "Così promuovi anche tutti i concorrenti della zona."),
         ("Il diretto non cresce.", "Sito nuovo, booking engine nuovo, campagne attive. Ma l'ospite cerca «boutique hotel + zona», non il tuo nome.", "E in quella ricerca sei uno tra molti."),
-        ("La risposta a «perché tu?».", "Ti chiedono cosa ti distingue. Rispondi «cura, qualità, attenzione».", "Se la risposta non sta in trenta secondi, non è ancora chiara."),
+        ("La risposta a «perché voi?».", "Un ospite chiede: «Cosa vi distingue?». Rispondi «cura, qualità, attenzione».", "Se la risposta non sta in trenta secondi, non è ancora chiara."),
         ("Nessun filtro sugli ospiti.", "Accetti tutte le richieste. Poi ti accorgi che gli ospiti non capiscono cosa offri.", "Una proposta per tutti non è specifica per nessuno."),
         ("L'identità dipende da una persona.", "Sta nella tua testa: non nei documenti, non nella squadra, non nel sito. Se manchi un mese, la comunicazione torna generica.", "Per la gestione è un limite. Per la proprietà è un rischio patrimoniale."),
         ("Ogni scelta riapre la discussione.", "Nuovo ristorante: quale concept? Nuova SPA: quale filosofia? Ogni volta si riparte da zero.", "Con un'identità definita, le scelte discendono dal posizionamento."),
