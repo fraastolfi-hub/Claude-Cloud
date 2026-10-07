@@ -57,6 +57,23 @@ def render(text: str, partials: dict, url: str) -> str:
     return re.sub(r'<a href="(/[^"#]*)"', mark, text)
 
 
+def asset_versions() -> dict:
+    """Impronta corta di ogni CSS e JS: /assets/site.js -> /assets/site.js?v=1a2b3c4d.
+    Così dopo ogni pubblicazione il browser scarica i file nuovi invece di usare quelli in cache."""
+    import hashlib
+    out = {}
+    for f in (SRC / "assets").glob("*"):
+        if f.suffix in (".css", ".js"):
+            out["/assets/" + f.name] = hashlib.sha1(f.read_bytes()).hexdigest()[:8]
+    return out
+
+
+def bust(html: str, versions: dict) -> str:
+    for path, v in versions.items():
+        html = html.replace(f'"{path}"', f'"{path}?v={v}"')
+    return html
+
+
 def social_image(html: str) -> str:
     """Ogni pagina ha un'immagine per le condivisioni: la sua, se c'è, altrimenti quella del sito."""
     m = re.search(r'<meta property="og:image" content="([^"]+)"', html)
@@ -77,11 +94,12 @@ def build():
         shutil.rmtree(OUT)
     shutil.copytree(SRC / "assets", OUT / "assets")
     urls = []
+    versions = asset_versions()
     for page in sorted((SRC / "pages").rglob("*.html")):
         rel = page.relative_to(SRC / "pages")
         url = url_for(rel)
         html = render(page.read_text(), partials, url)
-        html = social_image(html)
+        html = bust(social_image(html), versions)
         missing = INCLUDE.findall(html)
         if missing:
             sys.exit(f"{rel}: include mancanti {missing}")
