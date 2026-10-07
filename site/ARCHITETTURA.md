@@ -79,7 +79,7 @@ Vedi [TONO.md](TONO.md): "voi", registro professionale, il dato prima dell'agget
 | Smontaggio | Gratis, 6 al mese, risposta in 3 giorni lavorativi | — |
 | Libro | 120 pagine, 8 figure, 6 passaggi, €19,90 su Amazon (https://www.amazon.it/dp/B0HL3Z4XL7/), anche Kindle, rimborso Amazon 14 giorni, primo capitolo in PDF di 8 pagine | — |
 | Acquisto analisi | https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00 | — |
-| Dati legali | Francesco Astolfi, Via Cupa 5, 47923 Rimini (RN), P. IVA 04283940403, privacy@hotelpositioning.com | — |
+| Dati legali | Francesco Astolfi, Via Cupa 5, 47923 Rimini (RN), P. IVA 04283940403, consulting@francescoastolfi.net | — |
 
 ## Cose da decidere (per Francesco)
 

@@ -5,7 +5,7 @@
 // Variabili d'ambiente (Netlify → Site configuration → Environment variables):
 //   BREVO_API_KEY            obbligatoria
 //   NOTIFY_EMAIL             chi riceve le notifiche (più indirizzi separati da virgola)
-//   BREVO_SENDER_EMAIL       mittente verificato su Brevo (es. noreply@hotelpositioning.com)
+//   BREVO_SENDER_EMAIL       mittente verificato su Brevo (es. consulting@francescoastolfi.net)
 //   BREVO_LIST_DEFAULT       id della lista unica in cui finiscono tutti i contatti
 //   BREVO_LIST_CANDIDATURA, BREVO_LIST_REVISIONE, BREVO_LIST_TEST, BREVO_LIST_BONUS
 //                            facoltative: una lista diversa per modulo (prevalgono su quella unica)

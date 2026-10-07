@@ -92,7 +92,7 @@
           .catch(function(){
             if (btn) btn.disabled = false;
             if (!fail) { fail = document.createElement('p'); fail.className = 'form-foot send-err'; fail.setAttribute('role', 'alert'); btn.insertAdjacentElement('afterend', fail); }
-            fail.textContent = 'Invio non riuscito. Riprovate tra un momento oppure scrivete a privacy@hotelpositioning.com.';
+            fail.textContent = 'Invio non riuscito. Riprovate tra un momento oppure scrivete a consulting@francescoastolfi.net.';
           });
         return;
       }
