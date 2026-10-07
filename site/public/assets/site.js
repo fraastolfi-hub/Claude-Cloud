@@ -61,25 +61,62 @@
       return el.type === 'checkbox' ? !el.checked : el.value.trim() === '';
     }
     var req = $$('[required]', f), bar = f.querySelector('.prog i'), txt = f.querySelector('[data-prog-txt]');
+    // gruppi di caselle che finiscono in un solo campo (es. canali di prenotazione)
+    $$('[data-join]', f).forEach(function(g){
+      var out = f.querySelector('#' + g.dataset.join);
+      g.addEventListener('change', function(){ out.value = $$('input[type=checkbox]:checked', g).map(function(c){ return c.value; }).join(', '); g.classList.remove('err'); progress(); });
+    });
+    function bad(el){ return missing(el) || (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)); }
+    function wrap(el){ return el.type === 'radio' ? el.closest('fieldset') : el.closest('.field,.check'); }
+    function check(list){
+      var first = null;
+      list.forEach(function(el){ var b = bad(el), w = wrap(el); if (w) w.classList.toggle('err', b); if (b && !first) first = el; });
+      return first;
+    }
+    // passi: <div class="fstep"> uno alla volta, «Avanti» controlla solo il passo corrente
+    var steps = $$('.fstep', f), cur = 0, stxt = f.querySelector('[data-step-txt]');
+    function show(n){
+      cur = n;
+      steps.forEach(function(s, i){ s.hidden = i !== n; });
+      if (stxt) stxt.textContent = 'Passo ' + (n + 1) + ' di ' + steps.length;
+      if (bar) bar.style.width = Math.round(n / steps.length * 100) + '%';
+    }
+    function shake(){ if (!reduce) { f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); } }
+    function next(){
+      var first = check($$('[required]', steps[cur]));
+      if (first) { if (first.type !== 'hidden') first.focus(); shake(); return; }
+      show(cur + 1);
+      var foc = steps[cur].querySelector('input:not([type=hidden]),select,textarea'); if (foc) foc.focus({ preventScroll: true });
+      f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    }
+    if (steps.length) {
+      show(0);
+      f.addEventListener('click', function(e){
+        if (e.target.closest('[data-next]')) { e.preventDefault(); next(); }
+        else if (e.target.closest('[data-prev]')) { e.preventDefault(); show(Math.max(0, cur - 1)); }
+      });
+      // Invio da tastiera nei passi intermedi: va avanti invece di inviare
+      f.addEventListener('keydown', function(e){ if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA' && cur < steps.length - 1) { e.preventDefault(); next(); } });
+    }
     function progress(){
-      if (!bar) return;
+      if (!bar || steps.length) return;
       var ok = req.filter(function(el){ return !missing(el); }).length;
       var p = Math.round(ok / req.length * 100); bar.style.width = p + '%'; if (txt) txt.textContent = p + '%';
     }
     f.addEventListener('input', function(e){ progress(); var w = e.target.closest('fieldset,.field,.check'); if (w) w.classList.remove('err'); });
     f.addEventListener('change', progress);
     f.addEventListener('submit', function(e){
-      var first = null;
-      req.forEach(function(el){
-        var bad = missing(el) || (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
-        var w = el.type === 'radio' ? el.closest('fieldset') : el.closest('.field,.check'); if (w) w.classList.toggle('err', bad);
-        if (bad && !first) first = el;
-      });
-      if (first) { e.preventDefault(); first.focus(); if (!reduce) { f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); } return; }
+      if (steps.length && cur < steps.length - 1) { e.preventDefault(); next(); return; }
+      var first = check(req);
+      if (first) {
+        e.preventDefault();
+        if (steps.length) { var i = steps.findIndex(function(st){ return st.contains(first); }); if (i > -1 && i !== cur) show(i); }
+        if (first.type !== 'hidden') first.focus(); shake(); return;
+      }
       e.preventDefault();
       var done = function(){
         $$('[data-echo]', f).forEach(function(o){ var src = f.querySelector(o.dataset.echo); if (src && src.value.trim()) o.textContent = src.value.trim(); });
-        f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+        if (bar) bar.style.width = '100%'; f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
         if (window.HPtrack) HPtrack('lead', { form: f.getAttribute('name') || f.id });
       };
       // Netlify Forms: invio in background; la funzione submission-created salva su Brevo e manda la notifica

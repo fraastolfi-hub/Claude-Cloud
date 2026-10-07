@@ -22,7 +22,7 @@ Il filtro anti-spam di Netlify (campo nascosto `bot-field`) scarta gli invii aut
 1. **Chiave API:** Impostazioni, poi SMTP e API, poi API Keys. Generate una chiave.
 2. **Mittente:** Mittenti, domini e IP. Verificate l'indirizzo mittente (per esempio `consulting@francescoastolfi.net`) e, se possibile, autenticate il dominio.
 3. **Lista:** Contatti, poi Liste. Create una lista (per esempio «Sito Hotel Positioning») e annotate il suo numero ID.
-4. **Attributo FONTE:** Contatti, poi Impostazioni, poi Attributi. Create l'attributo `FONTE`, di tipo testo. Altri attributi facoltativi: `STRUTTURA`, `SITO`, `CAMERE`, `CONCORRENTI`, `PROFILO`, `PUNTEGGIO`, `PAGINA`.
+4. **Attributo FONTE:** Contatti, poi Impostazioni, poi Attributi. Create l'attributo `FONTE`, di tipo testo. Altri attributi facoltativi: `STRUTTURA`, `SITO`, `CAMERE`, `CONCORRENTI`, `PROFILO`, `PUNTEGGIO`, `PAGINA`, `TIPOLOGIA`, `PREZZO`, `CANALI`, `UNICITA`.
 
 ### Su Netlify
 1. **Forms:** Project configuration, poi Forms. Attivate il rilevamento dei moduli (form detection) e fate un nuovo deploy.

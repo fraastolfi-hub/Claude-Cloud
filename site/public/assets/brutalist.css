@@ -238,3 +238,16 @@ h3 .strike,.card .strike{white-space:normal}
 .beats > *,.moves li > *{min-width:0}
 @media (max-width:360px){.moves li{font-size:15px}}
 .foot .foot-h{font-size:12px!important;line-height:1.3}
+/* modulo a passi */
+.fstep-t{font:400 clamp(20px,2vw,24px)/1.1 var(--display);text-transform:uppercase;margin:4px 0 18px}
+.fstep-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px}
+.fstep .btn[data-next]{margin-left:auto}
+.fstep-back{border:0;background:none;padding:8px 0;font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--ink);cursor:pointer}
+.fstep-back:hover{text-decoration:underline;text-underline-offset:3px}
+.chk-group .lab{display:block;font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+.chk-group .lab small{text-transform:none;font-weight:400;letter-spacing:0;color:var(--muted)}
+.chk-group .check{margin:0 0 8px}
+.chk-group.err .lab{color:var(--ink)}
+.fstep[hidden]{display:none!important}
+.form .chk-group label.check{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.nw{white-space:nowrap}

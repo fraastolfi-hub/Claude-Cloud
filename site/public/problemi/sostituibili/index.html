@@ -351,33 +351,64 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
       </ul>
 
     </div>
-    <!-- Modulo unico: richiesta dell'analisi gratuita. Inviato a Netlify Forms (name="candidatura", nome tecnico invariato per Netlify e Brevo); vedi netlify/functions/submission-created.mjs -->
+    <!-- Modulo unico: richiesta dell'analisi gratuita, in quattro passi. Inviato a Netlify Forms (name="candidatura", nome tecnico invariato per Netlify e Brevo); vedi netlify/functions/submission-created.mjs -->
 <form class="form" id="richiesta-form" name="candidatura" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" novalidate>
   <input type="hidden" name="form-name" value="candidatura"><input type="hidden" name="pagina" value=""><p hidden><label>Non compilare: <input name="bot-field"></label></p>
   <div class="fields">
-    <div class="form-head"><span>Analisi gratuita · un minuto</span><span data-prog-txt>0%</span></div>
+    <div class="form-head"><span>Analisi gratuita</span><span data-step-txt>Passo 1 di 4</span></div>
     <div class="prog"><i></i></div>
-    <div class="row2">
-      <div class="field"><label for="c-nome">Nome e cognome</label><input id="c-nome" name="nome" autocomplete="name" required><span class="em">Scrivi il tuo nome.</span></div>
-      <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: l'analisi arriva qui.</span></div>
-    </div>
-    <div class="row2">
-      <div class="field"><label for="c-tel">Telefono</label><input id="c-tel" name="telefono" type="tel" autocomplete="tel" required><span class="em">Lo uso solo per l'analisi.</span></div>
+
+    <div class="fstep" data-title="Il tuo hotel">
+      <p class="fstep-t">Il tuo hotel</p>
       <div class="field"><label for="c-hotel">Nome dell'hotel</label><input id="c-hotel" name="hotel" required placeholder="Hotel, località"><span class="em">Scrivi quale hotel analizzo.</span></div>
-    </div>
-    <div class="row2">
       <div class="field"><label for="c-sito">Sito web</label><input id="c-sito" name="sito" inputmode="url" placeholder="www.tuohotel.it"></div>
-      <div class="field"><label for="c-camere">Camere <small>(dalle 40 in su)</small></label><select id="c-camere" name="camere" required><option value="">Scegli</option><option>40-80</option><option>80-150</option><option>Oltre 150</option></select><span class="em">Scegli il numero di camere.</span></div>
+      <div class="row2">
+        <div class="field"><label for="c-tipo">Tipologia</label><select id="c-tipo" name="tipologia" required><option value="">Scegli</option><option>Hotel</option><option>Resort</option><option>Boutique hotel</option><option>Hotel con SPA</option><option>Country house o agriturismo</option><option>Altro</option></select><span class="em">Scegli la tipologia.</span></div>
+        <div class="field"><label for="c-camere">Camere <small>(dalle 40 in su)</small></label><select id="c-camere" name="camere" required><option value="">Scegli</option><option>40-80</option><option>80-150</option><option>Oltre 150</option></select><span class="em">Scegli il numero di camere.</span></div>
+      </div>
+      <button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button>
     </div>
-    <div class="field"><label for="c-conc">Due o tre concorrenti <small>(facoltativo)</small></label><input id="c-conc" name="concorrenti" placeholder="Gli hotel con cui l'ospite ti confronta"></div>
-    <fieldset class="field" style="border:0">
-      <legend class="lab" style="font:500 14px var(--text);margin-bottom:7px">Posso pubblicare l'analisi?</legend>
-      <label class="check" style="margin:0 0 10px"><input type="radio" name="pubblicazione" value="nome" required><span><strong>Sì, come caso studio.</strong> Con il nome dell'hotel e i dati reali.</span></label>
-      <label class="check" style="margin:0"><input type="radio" name="pubblicazione" value="anonimo"><span><strong>Sì, in forma anonima.</strong> Per esempio «Resort in Sardegna, 80 camere».</span></label>
-    </fieldset>
-    <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e accetto di essere ricontattato per l'analisi.</span></label>
-    <button class="btn" type="submit">Richiedi l'analisi gratuita <span class="arr">→</span></button>
-    <p class="form-foot">Gratis, fatta a mano da me, massimo 5 al mese.<br>Solo hotel e resort dalle 40 camere. La ricevi in 48-72 ore.</p>
+
+    <div class="fstep" data-title="Prezzo e canali">
+      <p class="fstep-t">Prezzo e canali</p>
+      <div class="field"><label for="c-prezzo">Prezzo medio a notte, in camera doppia</label><select id="c-prezzo" name="prezzo" required><option value="">Scegli</option><option>Fino a 100 €</option><option>100-150 €</option><option>150-250 €</option><option>250-400 €</option><option>Oltre 400 €</option></select><span class="em">Scegli una fascia di prezzo.</span></div>
+      <div class="field chk-group" data-join="c-canali">
+        <span class="lab">Da dove arrivano oggi le prenotazioni? <small>(anche più di una)</small></span>
+        <label class="check"><input type="checkbox" value="Booking.com"><span>Booking.com</span></label>
+        <label class="check"><input type="checkbox" value="Expedia e altre OTA"><span>Expedia e altre OTA</span></label>
+        <label class="check"><input type="checkbox" value="Sito e booking engine"><span>Sito e booking engine</span></label>
+        <label class="check"><input type="checkbox" value="Telefono, email, WhatsApp"><span>Telefono, email, WhatsApp</span></label>
+        <label class="check"><input type="checkbox" value="Agenzie e tour operator"><span>Agenzie e tour operator</span></label>
+        <input type="hidden" id="c-canali" name="canali" required>
+        <span class="em">Scegli almeno un canale.</span>
+      </div>
+      <div class="fstep-nav"><button class="fstep-back" type="button" data-prev>← Indietro</button><button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button></div>
+    </div>
+
+    <div class="fstep" data-title="Concorrenti e unicità">
+      <p class="fstep-t">Concorrenti e unicità</p>
+      <div class="field"><label for="c-conc">I tuoi due o tre concorrenti</label><textarea id="c-conc" name="concorrenti" rows="3" required placeholder="Gli hotel con cui l'ospite ti confronta"></textarea><span class="em">Scrivi almeno un concorrente.</span></div>
+      <div class="field"><label for="c-unica">La tua unicità più importante</label><textarea id="c-unica" name="unicita" rows="3" required placeholder="Una cosa sola: quella che secondo te nessuno nella tua zona ha"></textarea><span class="em">Scrivi la cosa che ti distingue.</span></div>
+      <div class="fstep-nav"><button class="fstep-back" type="button" data-prev>← Indietro</button><button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button></div>
+    </div>
+
+    <div class="fstep" data-title="I tuoi contatti">
+      <p class="fstep-t">I tuoi contatti</p>
+      <div class="field"><label for="c-nome">Nome e cognome</label><input id="c-nome" name="nome" autocomplete="name" required><span class="em">Scrivi il tuo nome.</span></div>
+      <div class="row2">
+        <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: l'analisi arriva qui.</span></div>
+        <div class="field"><label for="c-tel">Telefono</label><input id="c-tel" name="telefono" type="tel" autocomplete="tel" required><span class="em">Lo uso solo per l'analisi.</span></div>
+      </div>
+      <fieldset class="field" style="border:0">
+        <legend class="lab" style="font:500 14px var(--text);margin-bottom:7px">Posso pubblicare l'analisi?</legend>
+        <label class="check" style="margin:0 0 10px"><input type="radio" name="pubblicazione" value="nome" required><span><strong>Sì, come caso studio.</strong> Con il nome dell'hotel e i dati reali.</span></label>
+        <label class="check" style="margin:0"><input type="radio" name="pubblicazione" value="anonimo"><span><strong>Sì, in forma anonima.</strong> Per esempio «Resort in Sardegna, 80 camere».</span></label>
+      </fieldset>
+      <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e accetto di essere ricontattato per l'analisi.</span></label>
+      <button class="btn" type="submit">Richiedi l'analisi gratuita <span class="arr">→</span></button>
+      <button class="fstep-back" type="button" data-prev style="display:block;margin:12px auto 0">← Indietro</button>
+    </div>
+    <p class="form-foot">Gratis, fatta a mano da me, massimo 5 al mese.<br>Solo hotel e resort dalle 40 camere. La ricevi in <span class="nw">48-72 ore</span>.</p>
   </div>
   <div class="ok" role="status">
     <div class="tick">✓</div>

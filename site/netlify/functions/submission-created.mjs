@@ -12,7 +12,7 @@
 //   BREVO_ATTRIBUTES         attributi personalizzati da compilare, creati prima su Brevo come testo:
 //                            "FONTE" (consigliato: il modulo di provenienza), oppure un elenco separato
 //                            da virgole tra STRUTTURA, SITO, CAMERE, CONCORRENTI, PROFILO, PUNTEGGIO,
-//                            FONTE, PAGINA, oppure "1" per tutti
+//                            FONTE, PAGINA, TIPOLOGIA, PREZZO, CANALI, UNICITA, oppure "1" per tutti
 
 const API = 'https://api.brevo.com/v3';
 
@@ -27,7 +27,7 @@ const FORMS = {
 const LABELS = {
   nome: 'Nome', nome_ruolo: 'Nome e ruolo', email: 'Email', telefono: 'Telefono',
   hotel: 'Struttura', struttura: 'Struttura', sito: 'Sito', url: 'Homepage', camere: 'Camere',
-  concorrenti: 'Concorrenti', pubblicazione: 'Pubblicazione', riga: 'Prima riga della homepage',
+  concorrenti: 'Concorrenti', tipologia: 'Tipologia', prezzo: 'Prezzo medio a notte', canali: 'Canali di prenotazione', unicita: 'Unicità più importante', pubblicazione: 'Pubblicazione', riga: 'Prima riga della homepage',
   profilo: 'Profilo del test', punteggio: 'Punteggio', pagina: 'Pagina', privacy: 'Privacy',
 };
 const SKIP = new Set(['form-name', 'bot-field', 'ip', 'user_agent', 'referrer']);
@@ -52,6 +52,7 @@ function contact(d, formName, form) {
     STRUTTURA: d.hotel || d.struttura || '', SITO: d.sito || d.url || '', CAMERE: d.camere || '',
     CONCORRENTI: d.concorrenti || '', PROFILO: d.profilo || '', PUNTEGGIO: d.punteggio || '',
     FONTE: form.label, PAGINA: d.pagina || '',
+    TIPOLOGIA: d.tipologia || '', PREZZO: d.prezzo || '', CANALI: d.canali || '', UNICITA: d.unicita || '',
   };
   const want = (process.env.BREVO_ATTRIBUTES || '').trim();
   const keys = want === '1' ? Object.keys(extra) : want.split(',').map((k) => k.trim().toUpperCase()).filter((k) => k in extra);
