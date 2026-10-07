@@ -129,8 +129,8 @@ section{position:relative}
 .x-mark{font-family:var(--f-display);font-weight:800;color:var(--blue);font-size:72px;line-height:.7}
 .callout{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;margin-top:8px}
 .callout .mono{color:var(--blue);font-weight:700;font-size:clamp(20px,2.4vw,26px);line-height:1.2}
-.split-img{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:56px}
-.split-img img{width:100%;height:clamp(180px,30vw,340px);object-fit:cover}
+.split-img{display:grid;grid-template-columns:1fr 1.5fr 1fr 1.5fr;gap:6px;margin-top:56px}
+.split-img img{width:100%;height:clamp(180px,26vw,360px);object-fit:cover}
 
 /* capitolo blu */
 .blue{background:var(--blue);color:#fff;overflow:hidden}
@@ -378,8 +378,8 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
   .scheda{grid-template-columns:minmax(0,1fr)}
   .cell,.cell:nth-child(odd){padding:22px 0;border-left:0}
   .proofs{grid-template-columns:minmax(0,1fr)}
-  .split-img{grid-template-columns:repeat(3,1fr)}
-  .split-img img{height:170px}
+  .split-img{grid-template-columns:1fr 1fr}
+  .split-img img{height:210px}
   .callout{grid-template-columns:1fr}
   .notfor{grid-template-columns:1fr}
   .stamp{left:0}
@@ -499,10 +499,11 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
       </div>
     </div>
 
-    <div class="split-img" aria-hidden="true">
-      <img src="img/ascensore.jpg" alt="">
-      <img src="img/oculus.jpg" alt="">
-      <img src="img/lampade.jpg" alt="">
+    <div class="split-img">
+      <img src="img/foto-lounge.jpg" alt="Lounge di un hotel con parete verde, cemento a vista e pavimento in marmo a palladiana">
+      <img src="img/foto-talk.jpg" alt="Nicola Delvecchio con un gruppo di albergatori durante un incontro nella lounge di un hotel">
+      <img src="img/foto-virgin.jpg" alt="Gruppo di albergatori in viaggio studio davanti all'ingresso di Virgin Hotels New York">
+      <img src="img/foto-lobby-rossa.jpg" alt="Lobby di un hotel con scala rossa scultorea e pareti in legno">
     </div>
     <p class="look"><span>Vedi una lobby bellissima.</span> <span class="b">Guardala meglio: è un centro di ricavo.</span></p>
     <div class="runfoot">03. Gli errori che vedo fare più spesso</div>
