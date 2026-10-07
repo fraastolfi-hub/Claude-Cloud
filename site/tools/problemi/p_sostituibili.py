@@ -64,8 +64,8 @@ P = dict(
         </div>
       </div>''',
     css='''.logo3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.lg{border:2px solid var(--ink);background:var(--paper);padding:12px;display:grid;gap:8px;align-content:start;min-width:0}
-.lg-n{font:700 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lg{border:1px solid var(--line);background:var(--paper);padding:12px;display:grid;gap:8px;align-content:start;min-width:0}
+.lg-n{font:700 11px/1.2 var(--mono);letter-spacing:0;color:var(--muted)}
 .lg-l{height:16px;background:var(--ink);width:70%}
 .lg:nth-child(2) .lg-l{width:50%}.lg:nth-child(3) .lg-l{width:85%}
 .lg-t{font-size:14px;line-height:1.4;overflow-wrap:anywhere}

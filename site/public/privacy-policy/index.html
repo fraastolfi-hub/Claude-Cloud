@@ -9,11 +9,11 @@
 <meta property="og:title" content="Informativa sulla privacy · Hotel Positioning">
 <meta property="og:description" content="Come vengono trattati i dati personali raccolti su hotelpositioning.com.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#FF7A1A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='%23FF7A1A' stroke='%23111' stroke-width='6'/%3E%3Ctext x='32' y='42' font-family='monospace' font-weight='700' font-size='24' text-anchor='middle' fill='%23111'%3EHP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D1D1F'/%3E%3Crect x='12' y='30' width='9' height='22' rx='2' fill='%236E6E73'/%3E%3Crect x='24' y='22' width='9' height='30' rx='2' fill='%236E6E73'/%3E%3Crect x='36' y='12' width='9' height='40' rx='2' fill='%23FFDD00'/%3E%3Crect x='48' y='26' width='6' height='26' rx='2' fill='%236E6E73'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 
 <style>
@@ -21,25 +21,25 @@
 .phero h1{font-size:clamp(40px,5.6vw,80px);margin:20px 0 18px}
 .phero .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
 .phero .note-box{margin-top:32px}
-.phero .note-box b{display:block;font:700 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.phero .note-box b{display:block;font:700 13px var(--mono);letter-spacing:0;margin-bottom:6px}
 .legal-wrap{display:grid;grid-template-columns:280px 1fr;gap:clamp(30px,5vw,72px);align-items:start}
 @media (max-width:900px){.legal-wrap{grid-template-columns:1fr}}
-.toc{position:sticky;top:100px;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:20px 22px}
+.toc{position:sticky;top:100px;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:20px 22px;border-radius:var(--r-sm)}
 @media (max-width:900px){.toc{position:static}}
-.toc h2{font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.toc h2{font:700 12px var(--mono);letter-spacing:0;margin-bottom:12px}
 .toc ol{list-style:none;display:grid;gap:2px;counter-reset:t}
 .toc li{counter-increment:t}
 .toc a{display:grid;grid-template-columns:30px 1fr;gap:6px;text-decoration:none;font-size:15px;line-height:1.35;padding:6px 0;border-bottom:1px dashed var(--grey)}
 .toc a::before{content:counter(t,decimal-leading-zero);font:700 12px/1.9 var(--mono);color:var(--muted)}
 .toc a:hover{color:var(--orange-dk)}
-.legal{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(22px,4vw,52px)}
-.legal section + section{margin-top:34px;padding-top:30px;border-top:2px solid var(--ink)}
+.legal{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(22px,4vw,52px);border-radius:var(--r-sm)}
+.legal section + section{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
 .legal h2{font-size:clamp(24px,2.6vw,32px);letter-spacing:-.025em;line-height:1.12;display:flex;gap:14px;align-items:baseline;margin-bottom:14px}
-.legal h2 span{flex:none;font:700 14px var(--mono);background:var(--ink);color:var(--paper);padding:5px 8px;letter-spacing:.04em}
+.legal h2 span{flex:none;font:700 14px var(--mono);background:var(--ink);color:var(--paper);padding:5px 8px;letter-spacing:0}
 .legal p{font-size:17px;line-height:1.65;max-width:68ch}
 .legal p + p{margin-top:12px}
 .legal a{color:var(--ink);text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:3px}
-.legal .sup{border-left:6px solid var(--orange);padding-left:14px}
+.legal .sup{border-left:3px solid var(--yellow);padding-left:14px}
 .legal .intro{font-size:18px;margin-bottom:6px}
 </style>
 </head>
@@ -48,7 +48,7 @@
 <div class="readbar" aria-hidden="true"></div>
 <a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
   <div class="ticker-track" aria-hidden="true">
-    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più →</span>
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
   </div>
 </a>
 <header class="nav">
@@ -116,7 +116,7 @@
     <article class="legal">
       <p class="intro">La presente informativa descrive come vengono trattati i dati personali raccolti attraverso questa pagina, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018 (Codice Privacy).</p>
 
-      <section id="titolare" style="margin-top:34px;padding-top:30px;border-top:2px solid var(--ink)">
+      <section id="titolare" style="margin-top:34px;padding-top:30px;border-top:1px solid var(--line)">
         <h2><span>01</span>Titolare del trattamento</h2>
         <p>Il titolare del trattamento è Francesco Astolfi, con sede in Via Cupa 5, 47923 Rimini (RN), P. IVA 04283940403. Per qualsiasi questione relativa ai tuoi dati puoi scrivere a: <a href="mailto:privacy@hotelpositioning.com">privacy@hotelpositioning.com</a>.</p>
       </section>

@@ -7,11 +7,11 @@
 <meta name="description" content="Otto fogli di lavoro per posizionare il tuo hotel, dieci minuti l'uno, più il primo capitolo del libro Hotel Positioning in PDF. Gratis, anche se il libro non l'hai comprato.">
 <link rel="canonical" href="https://hotelpositioning.com/bonus/">
 <meta property="og:title" content="La cassetta degli attrezzi del posizionamento. Gratis."><meta property="og:description" content="Gli otto strumenti compilabili del libro Hotel Positioning e il primo capitolo in PDF."><meta property="og:type" content="website">
-<meta name="theme-color" content="#FF7A1A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='%23FF7A1A' stroke='%23111' stroke-width='6'/%3E%3Ctext x='32' y='42' font-family='monospace' font-weight='700' font-size='24' text-anchor='middle' fill='%23111'%3EHP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D1D1F'/%3E%3Crect x='12' y='30' width='9' height='22' rx='2' fill='%236E6E73'/%3E%3Crect x='24' y='22' width='9' height='30' rx='2' fill='%236E6E73'/%3E%3Crect x='36' y='12' width='9' height='40' rx='2' fill='%23FFDD00'/%3E%3Crect x='48' y='26' width='6' height='26' rx='2' fill='%236E6E73'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 
 <style>
@@ -19,7 +19,7 @@
 @media (max-width:900px){.opt{grid-template-columns:1fr}}
 .gets{list-style:none;display:grid;gap:12px;margin:28px 0 0}
 .gets li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;font-size:18px}
-.gets li b{font:700 22px/1 var(--sans);letter-spacing:-.04em;min-width:64px;text-align:center;border:var(--b);background:var(--white);padding:10px 8px;box-shadow:3px 3px 0 var(--ink)}
+.gets li b{font:700 22px/1 var(--sans);letter-spacing:-.04em;min-width:64px;text-align:center;border:var(--b);background:var(--white);padding:10px 8px;box-shadow:none;border-radius:var(--r-sm)}
 .gets li:nth-child(1) b{background:var(--yellow)}.gets li:nth-child(2) b{background:var(--mint)}.gets li:nth-child(3) b{background:var(--orange)}
 .form .field select:invalid{color:var(--muted)}
 .form h2{font-size:clamp(26px,2.6vw,34px);margin-bottom:6px}
@@ -29,10 +29,10 @@
 .sheets{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 @media (max-width:1060px){.sheets{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.sheets{grid-template-columns:1fr}}
-.sheet{background:var(--white);border:var(--b);box-shadow:var(--sh);display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s}
+.sheet{background:var(--white);border:var(--b);box-shadow:var(--sh);display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s;border-radius:var(--r-sm)}
 .sheet:nth-child(odd){transform:rotate(-.6deg)}.sheet:nth-child(even){transform:rotate(.6deg)}
-.sheet:hover{transform:translate(-2px,-2px) rotate(0);box-shadow:6px 6px 0 var(--ink)}
-.sheet .bar{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:var(--b);padding:9px 12px;font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--paper)}
+.sheet:hover{transform:translate(-2px,-2px) rotate(0);box-shadow:none}
+.sheet .bar{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:var(--b);padding:9px 12px;font:700 11px var(--mono);letter-spacing:0;background:var(--paper)}
 .sheet .bar b{background:var(--ink);color:var(--paper);padding:3px 6px}
 .sheet .body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
 .sheet h3{font-size:21px}
@@ -45,21 +45,21 @@
 .sheet .stamp-tag{top:-16px;right:auto;left:46px}
 .sheet .mini{display:grid;gap:4px}
 .mini.m4{grid-template-columns:1fr 1fr}
-.mini.m4 span{border:2px solid var(--ink);height:26px;font:700 9px var(--mono);display:grid;place-items:center;text-transform:uppercase}
+.mini.m4 span{border:1px solid var(--line);height:26px;font:700 9px var(--mono);display:grid;place-items:center;}
 .mini.m4 span.x{background:var(--orange)}
 .mini.m7{grid-template-columns:repeat(7,1fr)}
-.mini.m7 span{border:2px solid var(--ink);height:16px}
+.mini.m7 span{border:1px solid var(--line);height:16px}
 .mini.m7 span.ok{background:var(--mint)}.mini.m7 span.ko{background:var(--orange)}
 .mini.ladder{grid-template-columns:repeat(4,1fr);align-items:end}
-.mini.ladder span{border:2px solid var(--ink);background:var(--blue)}
+.mini.ladder span{border:1px solid var(--line);background:var(--blue);border-radius:var(--r-sm)}
 .mini.m5{grid-template-columns:repeat(5,1fr)}
-.mini.m5 span{border:2px solid var(--ink);height:18px;font:700 9px var(--mono);display:grid;place-items:center}
+.mini.m5 span{border:1px solid var(--line);height:18px;font:700 9px var(--mono);display:grid;place-items:center}
 .mini.m5 span.on{background:var(--yellow)}
 .mini.attr{display:flex;flex-wrap:wrap;gap:4px}
-.mini.attr span{font:700 9px var(--mono);border:2px solid var(--ink);padding:2px 4px;text-transform:uppercase}
+.mini.attr span{font:700 9px var(--mono);border:1px solid var(--line);padding:2px 4px;}
 .mini.attr span.on{background:var(--orange)}
 .mini.cvs{grid-template-columns:repeat(3,1fr)}
-.mini.cvs span{border:2px solid var(--ink);height:16px;background:var(--paper)}
+.mini.cvs span{border:1px solid var(--line);height:16px;background:var(--paper);border-radius:var(--r-sm)}
 .mini.cvs span.w{grid-column:1/-1;background:var(--orange)}
 
 .after .tl{color:var(--ink)}
@@ -73,7 +73,7 @@
 <div class="readbar" aria-hidden="true"></div>
 <a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
   <div class="ticker-track" aria-hidden="true">
-    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più →</span>
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
   </div>
 </a>
 <header class="nav">

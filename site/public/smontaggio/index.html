@@ -9,11 +9,11 @@
 <meta property="og:title" content="Lo smontaggio: ti smonto la homepage dell'hotel, riga per riga.">
 <meta property="og:description" content="Gratis, niente call, risposta in 3 giorni lavorativi. Sei al mese, scritti da me.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#FF7A1A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='%23FF7A1A' stroke='%23111' stroke-width='6'/%3E%3Ctext x='32' y='42' font-family='monospace' font-weight='700' font-size='24' text-anchor='middle' fill='%23111'%3EHP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D1D1F'/%3E%3Crect x='12' y='30' width='9' height='22' rx='2' fill='%236E6E73'/%3E%3Crect x='24' y='22' width='9' height='30' rx='2' fill='%236E6E73'/%3E%3Crect x='36' y='12' width='9' height='40' rx='2' fill='%23FFDD00'/%3E%3Crect x='48' y='26' width='6' height='26' rx='2' fill='%236E6E73'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 
 <style>
@@ -24,59 +24,59 @@
 
 /* --- la macchina che smonta --- */
 .rip{position:relative}
-.rip-panel{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(20px,2.6vw,32px);position:relative}
+.rip-panel{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(20px,2.6vw,32px);position:relative;border-radius:var(--r-sm)}
 .rip-panel + .rip-arrow + .rip-panel{margin-top:0}
-.rip-lab{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;flex-wrap:wrap}
+.rip-lab{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:0;margin-bottom:16px;flex-wrap:wrap}
 .rip-lab .chip{font-size:11px;padding:6px 8px}
 .old{font:700 clamp(23px,2.5vw,34px)/1.22 var(--sans);letter-spacing:-.03em;color:var(--ink);quotes:"«" "»"}
 .old .w{position:relative;transition:color .4s}
 .old .g{display:inline-block;background:linear-gradient(var(--ink),var(--ink)) no-repeat 0 92%/100% 0;transition:background-size .4s ease .5s}
 .old .g .t{display:inline-block;position:relative;transition:transform .9s cubic-bezier(.6,-.3,.7,1),opacity .9s ease}
-.old .g .t::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.13em;background:var(--orange);transform:scaleX(0) rotate(-1deg);transform-origin:left;transition:transform .45s cubic-bezier(.7,0,.2,1)}
-.rip.s1 .old .g .t::after{transform:scaleX(1) rotate(-1deg)}
+.old .g .t::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.13em;background:var(--orange);transform:scaleX(0) rotate(0deg);transform-origin:left;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.rip.s1 .old .g .t::after{transform:scaleX(1) rotate(0deg)}
 .rip.s1 .old .g .t::after{transition-delay:calc(var(--i,0) * .25s)}
 .rip.s2 .old .g .t{transform:translateY(160px) rotate(var(--r,8deg));opacity:0}
 .rip.s2 .old .g{background-size:100% 3px}
 .rip.s2 .old .f{color:#B3AB9C}
 .rip.s2 .old .g .t{transition-delay:calc(var(--i,0) * .12s)}
-.seen{position:absolute;right:16px;top:-16px;background:var(--grey);border:2px solid var(--ink);padding:5px 9px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;transform:rotate(2.5deg);transition:transform .4s cubic-bezier(.5,1.8,.5,1),background .3s}
-.rip.s1 .seen{background:var(--yellow);transform:rotate(-2deg) scale(1.12)}
+.seen{position:absolute;right:16px;top:-16px;background:var(--grey);border:1px solid var(--line);padding:5px 9px;font:700 12px var(--mono);letter-spacing:0;transform:rotate(0deg);transition:transform .4s cubic-bezier(.5,1.8,.5,1),background .3s;border-radius:var(--r-sm)}
+.rip.s1 .seen{background:var(--yellow);transform:rotate(0deg) scale(1.12)}
 .rip-cap{font:400 13px/1.45 var(--mono);color:var(--muted);margin-top:14px;opacity:0;transition:opacity .5s .9s}
 .rip.s2 .rip-cap,.rip.static .rip-cap,.rip:not(.js) .rip-cap{opacity:1}
-.rip-arrow{display:flex;align-items:center;justify-content:center;gap:14px;height:64px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
-.rip-arrow b{width:44px;height:44px;border:var(--b);background:var(--yellow);display:grid;place-items:center;font:700 22px var(--mono);box-shadow:3px 3px 0 var(--ink);transition:transform .5s cubic-bezier(.5,1.8,.5,1)}
+.rip-arrow{display:flex;align-items:center;justify-content:center;gap:14px;height:64px;font:700 12px var(--mono);letter-spacing:0;}
+.rip-arrow b{width:44px;height:44px;border:var(--b);background:var(--yellow);display:grid;place-items:center;font:700 22px var(--mono);box-shadow:none;transition:transform .5s cubic-bezier(.5,1.8,.5,1);border-radius:var(--r-sm)}
 .rip.s3 .rip-arrow b{transform:rotate(360deg);background:var(--orange)}
 .rip-panel.new{background:var(--ink);color:var(--paper);box-shadow:var(--sh-lg);border-color:var(--ink)}
-.rip-panel.new .rip-lab{color:#B9B0A0}
+.rip-panel.new .rip-lab{color:#A1A1A6}
 .nw{font:700 clamp(25px,2.8vw,38px)/1.18 var(--sans);letter-spacing:-.035em;min-height:3.6em}
 .nw .w{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.9,.2,1)}
 .rip.s3 .nw .w{opacity:1;transform:none}
 .nw .k{color:var(--orange)}
-.done-tag{position:absolute;right:16px;top:-16px;background:var(--mint);border:2px solid var(--paper);color:var(--ink);padding:5px 9px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;transform:rotate(-2.5deg);transition:transform .45s cubic-bezier(.5,1.8,.5,1)}
-.rip.js .done-tag{transform:rotate(-2.5deg) scale(0)}
-.rip.s4 .done-tag{transform:rotate(-2.5deg) scale(1)}
+.done-tag{position:absolute;right:16px;top:-16px;background:var(--mint);border:1px solid rgba(255,255,255,.16);color:var(--ink);padding:5px 9px;font:700 12px var(--mono);letter-spacing:0;transform:rotate(0deg);transition:transform .45s cubic-bezier(.5,1.8,.5,1)}
+.rip.js .done-tag{transform:rotate(0deg) scale(0)}
+.rip.s4 .done-tag{transform:rotate(0deg) scale(1)}
 .why{list-style:none;display:grid;gap:8px;margin-top:20px;border-top:2px dashed #555;padding-top:16px}
-.why li{font:400 13.5px/1.45 var(--mono);color:#D8D1C4;display:grid;grid-template-columns:26px 1fr;gap:8px;transition:opacity .4s,transform .4s}
+.why li{font:400 13.5px/1.45 var(--mono);color:#D2D2D7;display:grid;grid-template-columns:26px 1fr;gap:8px;transition:opacity .4s,transform .4s}
 .rip.js .why li{opacity:0;transform:translateX(-10px)}
 .why li b{color:var(--ink);background:var(--yellow);width:22px;height:22px;display:grid;place-items:center;font-size:12px}
 .rip.s4 .why li{opacity:1;transform:none}
 .rip.s4 .why li:nth-child(2){transition-delay:.15s}.rip.s4 .why li:nth-child(3){transition-delay:.3s}
 .rip-ctrl{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}
-.rip-ctrl button{border:2px solid var(--ink);background:var(--white);padding:9px 14px;font:700 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
-.rip-ctrl button:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.rip-ctrl button{border:1px solid var(--line);background:var(--white);padding:9px 14px;font:700 13px var(--mono);letter-spacing:0;box-shadow:none;transition:transform .12s,box-shadow .12s;border-radius:var(--r-sm)}
+.rip-ctrl button:hover{transform:translate(-2px,-2px);box-shadow:none}
 .rip-ctrl .mono{font-size:12px;color:var(--muted)}
 /* senza JS o con reduced motion: tutto visibile, frase vecchia barrata */
-.rip.static .old .g .t::after{transform:scaleX(1) rotate(-1deg)}
+.rip.static .old .g .t::after{transform:scaleX(1) rotate(0deg)}
 .rip.static .nw .w,.rip.static .why li{opacity:1;transform:none}
-.rip.static .done-tag{transform:rotate(-2.5deg) scale(1)}
+.rip.static .done-tag{transform:rotate(0deg) scale(1)}
 
 /* --- cosa ricevi --- */
-.get{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:var(--b);background:var(--white);box-shadow:var(--sh-lg)}
+.get{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:var(--b);background:var(--white);box-shadow:var(--sh-lg);border-radius:var(--r-sm)}
 .get li{list-style:none;padding:26px 22px 30px;border-right:var(--b);margin-right:-3px;transition:background .25s}
 .get li:hover{background:var(--cream-y)}
-.get b{display:block;font:700 54px/1 var(--sans);letter-spacing:-.05em;color:var(--orange);-webkit-text-stroke:2px var(--ink);margin-bottom:12px}
+.get b{display:block;font:700 54px/1 var(--sans);letter-spacing:-.05em;color:var(--orange);margin-bottom:12px}
 .get h3{font-size:21px;margin-bottom:8px}
-.get p{font-size:16px;color:#3a352d}
+.get p{font-size:16px;color:#424245}
 @media (max-width:980px){.get{grid-template-columns:1fr 1fr}.get li{border-bottom:var(--b);margin-bottom:-3px}}
 @media (max-width:560px){.get{grid-template-columns:1fr}}
 
@@ -88,7 +88,7 @@
 .six-m{display:flex;flex-direction:column;justify-content:space-between;gap:16px}
 .six-m .n{font:700 clamp(96px,10vw,150px)/.8 var(--sans);letter-spacing:-.06em}
 .six-m .slots{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-.six-m .slots i{aspect-ratio:1;border:2px solid var(--ink);background:var(--white)}
+.six-m .slots i{aspect-ratio:1;border:1px solid var(--line);background:var(--white);border-radius:var(--r-sm)}
 
 /* --- form --- */
 .form-sec .split{align-items:start}
@@ -100,7 +100,7 @@
 <div class="readbar" aria-hidden="true"></div>
 <a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
   <div class="ticker-track" aria-hidden="true">
-    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più →</span>
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
   </div>
 </a>
 <header class="nav">

@@ -15,25 +15,25 @@
 .phero h1{font-size:clamp(40px,5.6vw,80px);margin:20px 0 18px}
 .phero .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
 .phero .note-box{margin-top:32px}
-.phero .note-box b{display:block;font:700 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.phero .note-box b{display:block;font:700 13px var(--mono);letter-spacing:0;margin-bottom:6px}
 .legal-wrap{display:grid;grid-template-columns:280px 1fr;gap:clamp(30px,5vw,72px);align-items:start}
 @media (max-width:900px){.legal-wrap{grid-template-columns:1fr}}
-.toc{position:sticky;top:100px;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:20px 22px}
+.toc{position:sticky;top:100px;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:20px 22px;border-radius:var(--r-sm)}
 @media (max-width:900px){.toc{position:static}}
-.toc h2{font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.toc h2{font:700 12px var(--mono);letter-spacing:0;margin-bottom:12px}
 .toc ol{list-style:none;display:grid;gap:2px;counter-reset:t}
 .toc li{counter-increment:t}
 .toc a{display:grid;grid-template-columns:30px 1fr;gap:6px;text-decoration:none;font-size:15px;line-height:1.35;padding:6px 0;border-bottom:1px dashed var(--grey)}
 .toc a::before{content:counter(t,decimal-leading-zero);font:700 12px/1.9 var(--mono);color:var(--muted)}
 .toc a:hover{color:var(--orange-dk)}
-.legal{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(22px,4vw,52px)}
-.legal section + section{margin-top:34px;padding-top:30px;border-top:2px solid var(--ink)}
+.legal{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(22px,4vw,52px);border-radius:var(--r-sm)}
+.legal section + section{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
 .legal h2{font-size:clamp(24px,2.6vw,32px);letter-spacing:-.025em;line-height:1.12;display:flex;gap:14px;align-items:baseline;margin-bottom:14px}
-.legal h2 span{flex:none;font:700 14px var(--mono);background:var(--ink);color:var(--paper);padding:5px 8px;letter-spacing:.04em}
+.legal h2 span{flex:none;font:700 14px var(--mono);background:var(--ink);color:var(--paper);padding:5px 8px;letter-spacing:0}
 .legal p{font-size:17px;line-height:1.65;max-width:68ch}
 .legal p + p{margin-top:12px}
 .legal a{color:var(--ink);text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:3px}
-.legal .sup{border-left:6px solid var(--orange);padding-left:14px}
+.legal .sup{border-left:3px solid var(--yellow);padding-left:14px}
 .legal .intro{font-size:18px;margin-bottom:6px}
 </style>
 </head>
@@ -78,7 +78,7 @@
     <article class="legal">
       <p class="intro">La presente informativa descrive come vengono trattati i dati personali raccolti attraverso questa pagina, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018 (Codice Privacy).</p>
 
-      <section id="titolare" style="margin-top:34px;padding-top:30px;border-top:2px solid var(--ink)">
+      <section id="titolare" style="margin-top:34px;padding-top:30px;border-top:1px solid var(--line)">
         <h2><span>01</span>Titolare del trattamento</h2>
         <p>Il titolare del trattamento è Francesco Astolfi, con sede in Via Cupa 5, 47923 Rimini (RN), P. IVA 04283940403. Per qualsiasi questione relativa ai tuoi dati puoi scrivere a: <a href="mailto:privacy@hotelpositioning.com">privacy@hotelpositioning.com</a>.</p>
       </section>

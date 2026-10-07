@@ -8,13 +8,15 @@ Poi copia src/assets, segna la voce di menu attiva, scrive sitemap.xml e _redire
 Uso:  python3 build.py            (build)
       python3 build.py --serve    (build + anteprima su http://localhost:8000)
 """
+import os
 import re
 import shutil
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SRC, OUT = ROOT / "src", ROOT / "public"
+SRC = ROOT / "src"
+OUT = Path(os.environ.get("HP_OUT", ROOT / "public"))  # HP_OUT: cartella di uscita alternativa (anteprime parallele)
 DOMAIN = "https://hotelpositioning.com"
 INCLUDE = re.compile(r"<!--\s*@include\s+([\w-]+)\s*-->")
 
@@ -78,7 +80,7 @@ def build():
     )
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
     (OUT / "_redirects").write_text("".join(f"{a}  {b}  301\n" for a, b in REDIRECTS.items()))
-    print(f"{len(urls)} pagine in {OUT.relative_to(ROOT)}/")
+    print(f"{len(urls)} pagine in {OUT}/")
 
 
 if __name__ == "__main__":

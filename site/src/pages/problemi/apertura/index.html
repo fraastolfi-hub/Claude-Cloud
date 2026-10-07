@@ -10,13 +10,13 @@
 <!-- @include head -->
 <link rel="stylesheet" href="/assets/problemi.css">
 <style>
-.phases{display:grid;grid-template-columns:repeat(5,1fr);font:700 10.5px/1.2 var(--mono);letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+.phases{display:grid;grid-template-columns:repeat(5,1fr);font:700 10.5px/1.2 var(--mono);letter-spacing:.02em;color:var(--muted)}
 .phases span{text-align:center;overflow-wrap:anywhere}
 .phases span:first-child{text-align:left}.phases span:last-child{text-align:right}
-.dec{list-style:none;border:2px solid var(--ink)}
-.dec li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;border-bottom:1.5px dashed #b9b0a0;font-size:15.5px;line-height:1.35;transition:background .25s,color .25s}
+.dec{list-style:none;border:1px solid var(--line)}
+.dec li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;border-bottom:1.5px dashed #A1A1A6;font-size:15.5px;line-height:1.35;transition:background .25s,color .25s}
 .dec li:last-child{border-bottom:0}
-.dec .st{flex:none;font:700 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);padding:4px 7px;background:var(--mint)}
+.dec .st{flex:none;font:700 11.5px var(--mono);letter-spacing:0;border:1px solid var(--line);padding:4px 7px;background:var(--mint);border-radius:var(--r-sm)}
 .dec li.gone{background:var(--paper-2);color:var(--muted)}
 .dec li.gone span{text-decoration:line-through;text-decoration-color:var(--orange-dk);text-decoration-thickness:2px}
 .dec li.gone .st{background:var(--ink);color:var(--paper)}
@@ -276,7 +276,7 @@
         <a href="#candidatura" class="btn">Candida il tuo hotel <span class="arr">→</span></a>
       </div>
       <div class="card ink rv d1">
-        <p class="kicker" style="color:#B9B0A0"><b>Analisi completa</b> · subito</p>
+        <p class="kicker" style="color:#A1A1A6"><b>Analisi completa</b> · subito</p>
         <p class="price">€697<small>+ IVA</small></p>
         <p>Per chi non vuole aspettare la selezione. O non è stato scelto.</p>
         <ul class="check-list">

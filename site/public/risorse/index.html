@@ -7,32 +7,32 @@
 <meta name="description" content="Quiz, smontaggio della homepage, gli 8 strumenti del libro, la library dei posizionamenti e il libro Hotel Positioning. In fila, dalla più leggera alla più impegnativa. Scegli da dove partire.">
 <link rel="canonical" href="https://hotelpositioning.com/risorse/">
 <meta property="og:title" content="Parti da qui. Le risorse di Hotel Positioning, in fila."><meta property="og:description" content="Dal quiz di due minuti al libro: scegli il gradino giusto per il tuo hotel."><meta property="og:type" content="website">
-<meta name="theme-color" content="#FF7A1A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='%23FF7A1A' stroke='%23111' stroke-width='6'/%3E%3Ctext x='32' y='42' font-family='monospace' font-weight='700' font-size='24' text-anchor='middle' fill='%23111'%3EHP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D1D1F'/%3E%3Crect x='12' y='30' width='9' height='22' rx='2' fill='%236E6E73'/%3E%3Crect x='24' y='22' width='9' height='30' rx='2' fill='%236E6E73'/%3E%3Crect x='36' y='12' width='9' height='40' rx='2' fill='%23FFDD00'/%3E%3Crect x='48' y='26' width='6' height='26' rx='2' fill='%236E6E73'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 
 <style>
 /* --- da dove parto --- */
-.picker{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(20px,2.6vw,32px)}
-.picker-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:18px}
-.picker-head b{background:var(--yellow);border:2px solid var(--ink);padding:3px 6px}
+.picker{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(20px,2.6vw,32px);border-radius:var(--r-sm)}
+.picker-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:0;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px}
+.picker-head b{background:var(--yellow);border:1px solid var(--line);padding:3px 6px;border-radius:var(--r-sm)}
 .q{margin-bottom:20px}
 .q .lab{display:block;font:700 18px/1.25 var(--sans);letter-spacing:-.02em;margin-bottom:10px}
 .opts{display:grid;gap:8px}
 .opts.t{grid-template-columns:repeat(3,1fr)}
 @media (max-width:520px){.opts.t{grid-template-columns:1fr}}
-.opts button{text-align:left;border:2px solid var(--ink);background:var(--paper);padding:11px 14px;font:500 16px/1.3 var(--sans);box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .2s;display:flex;gap:10px;align-items:center}
-.opts button::before{content:"";flex:none;width:16px;height:16px;border:2px solid var(--ink);background:var(--white)}
-.opts button:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.opts button{text-align:left;border:1px solid var(--line);background:var(--paper);padding:11px 14px;font:500 16px/1.3 var(--sans);box-shadow:none;transition:transform .12s,box-shadow .12s,background .2s;display:flex;gap:10px;align-items:center;border-radius:var(--r-sm)}
+.opts button::before{content:"";flex:none;width:16px;height:16px;border:1px solid var(--line);background:var(--white);border-radius:var(--r-sm)}
+.opts button:hover{transform:translate(-2px,-2px);box-shadow:none}
 .opts button[aria-pressed="true"]{background:var(--yellow);font-weight:700}
 .opts button[aria-pressed="true"]::before{background:var(--ink);box-shadow:inset 0 0 0 2px var(--yellow)}
-.verdict{border:var(--b);background:var(--paper-2);padding:18px;min-height:150px;display:flex;flex-direction:column;gap:10px;justify-content:center}
-.verdict.on{background:var(--orange);box-shadow:4px 4px 0 var(--ink);animation:pop2 .35s cubic-bezier(.5,1.8,.5,1)}
+.verdict{border:var(--b);background:var(--paper-2);padding:18px;min-height:150px;display:flex;flex-direction:column;gap:10px;justify-content:center;border-radius:var(--r-sm)}
+.verdict.on{background:var(--orange);box-shadow:none;animation:pop2 .35s cubic-bezier(.5,1.8,.5,1)}
 @keyframes pop2{from{transform:scale(.96)}}
-.verdict .k{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.verdict .k{font:700 12px var(--mono);letter-spacing:0;}
 .verdict h3{font-size:clamp(24px,2.4vw,30px)}
 .verdict p{font-size:16px}
 .verdict .then{font:400 13px/1.5 var(--mono)}
@@ -46,13 +46,13 @@
 @media (max-width:760px){.path::before{left:27px}}
 .rung{display:grid;grid-template-columns:80px 1fr;gap:clamp(14px,2.4vw,28px);align-items:start;position:relative}
 @media (max-width:760px){.rung{grid-template-columns:56px 1fr}}
-.rung .n{width:80px;height:80px;border:var(--b);background:var(--white);display:grid;place-items:center;font:700 34px var(--sans);letter-spacing:-.04em;box-shadow:3px 3px 0 var(--ink);position:relative;z-index:1;transition:background .3s}
+.rung .n{width:80px;height:80px;border:var(--b);background:var(--white);display:grid;place-items:center;font:700 34px var(--sans);letter-spacing:-.04em;box-shadow:none;position:relative;z-index:1;transition:background .3s;border-radius:var(--r-sm)}
 @media (max-width:760px){.rung .n{width:56px;height:56px;font-size:24px}}
 .rung.in .n{background:var(--yellow)}
-.rung-card{display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:clamp(18px,2.4vw,28px);text-decoration:none;transition:transform .15s,box-shadow .15s,background .25s}
-a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.rung-card{display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:clamp(18px,2.4vw,28px);text-decoration:none;transition:transform .15s,box-shadow .15s,background .25s;border-radius:var(--r-sm)}
+a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:none}
 @media (max-width:860px){.rung-card{grid-template-columns:1fr}}
-.rung.pick .rung-card{background:var(--cream-y);box-shadow:6px 6px 0 var(--orange)}
+.rung.pick .rung-card{background:var(--cream-y);box-shadow:none}
 .rung.pick .n{background:var(--orange)}
 .rung .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .rung h3{font-size:clamp(24px,2.4vw,32px);margin-bottom:8px}
@@ -60,8 +60,8 @@ a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)
 .rung .aware{font:400 14px/1.5 var(--mono);color:var(--muted);margin-top:10px}
 .rung .aware b{color:var(--ink)}
 .rung .go{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-.effort{display:flex;gap:4px;align-items:center;font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.effort i{width:16px;height:16px;border:2px solid var(--ink);background:var(--white)}
+.effort{display:flex;gap:4px;align-items:center;font:700 11px var(--mono);letter-spacing:0;}
+.effort i{width:16px;height:16px;border:1px solid var(--line);background:var(--white);border-radius:var(--r-sm)}
 .effort i.f{background:var(--ink)}
 .effort span{margin-left:6px}
 .rung .go .btn{white-space:nowrap}
@@ -77,7 +77,7 @@ a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)
 <div class="readbar" aria-hidden="true"></div>
 <a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
   <div class="ticker-track" aria-hidden="true">
-    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più →</span>
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
   </div>
 </a>
 <header class="nav">
@@ -236,7 +236,7 @@ a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)
         <p class="lead">L'analisi di posizionamento: il metodo applicato a te. Diagnosi, concorrenti, profili ospite, posizionamento proposto, azioni.</p>
       </div>
       <div class="rv d1">
-        <div class="stat-row an-stats" style="background:var(--paper);color:var(--ink);box-shadow:5px 5px 0 var(--orange)">
+        <div class="stat-row an-stats" style="background:var(--paper);color:var(--ink);box-shadow:none">
           <div class="stat"><b>5</b><span>posti di candidatura gratuita</span></div>
           <div class="stat"><b>1</b><span>analisi alla settimana, la faccio io</span></div>
           <div class="stat"><b>48 h</b><span>per la risposta, anche se è no</span></div>

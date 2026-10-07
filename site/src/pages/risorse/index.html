@@ -10,23 +10,23 @@
 <!-- @include head -->
 <style>
 /* --- da dove parto --- */
-.picker{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(20px,2.6vw,32px)}
-.picker-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:18px}
-.picker-head b{background:var(--yellow);border:2px solid var(--ink);padding:3px 6px}
+.picker{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);padding:clamp(20px,2.6vw,32px);border-radius:var(--r-sm)}
+.picker-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:0;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px}
+.picker-head b{background:var(--yellow);border:1px solid var(--line);padding:3px 6px;border-radius:var(--r-sm)}
 .q{margin-bottom:20px}
 .q .lab{display:block;font:700 18px/1.25 var(--sans);letter-spacing:-.02em;margin-bottom:10px}
 .opts{display:grid;gap:8px}
 .opts.t{grid-template-columns:repeat(3,1fr)}
 @media (max-width:520px){.opts.t{grid-template-columns:1fr}}
-.opts button{text-align:left;border:2px solid var(--ink);background:var(--paper);padding:11px 14px;font:500 16px/1.3 var(--sans);box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .2s;display:flex;gap:10px;align-items:center}
-.opts button::before{content:"";flex:none;width:16px;height:16px;border:2px solid var(--ink);background:var(--white)}
-.opts button:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.opts button{text-align:left;border:1px solid var(--line);background:var(--paper);padding:11px 14px;font:500 16px/1.3 var(--sans);box-shadow:none;transition:transform .12s,box-shadow .12s,background .2s;display:flex;gap:10px;align-items:center;border-radius:var(--r-sm)}
+.opts button::before{content:"";flex:none;width:16px;height:16px;border:1px solid var(--line);background:var(--white);border-radius:var(--r-sm)}
+.opts button:hover{transform:translate(-2px,-2px);box-shadow:none}
 .opts button[aria-pressed="true"]{background:var(--yellow);font-weight:700}
 .opts button[aria-pressed="true"]::before{background:var(--ink);box-shadow:inset 0 0 0 2px var(--yellow)}
-.verdict{border:var(--b);background:var(--paper-2);padding:18px;min-height:150px;display:flex;flex-direction:column;gap:10px;justify-content:center}
-.verdict.on{background:var(--orange);box-shadow:4px 4px 0 var(--ink);animation:pop2 .35s cubic-bezier(.5,1.8,.5,1)}
+.verdict{border:var(--b);background:var(--paper-2);padding:18px;min-height:150px;display:flex;flex-direction:column;gap:10px;justify-content:center;border-radius:var(--r-sm)}
+.verdict.on{background:var(--orange);box-shadow:none;animation:pop2 .35s cubic-bezier(.5,1.8,.5,1)}
 @keyframes pop2{from{transform:scale(.96)}}
-.verdict .k{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.verdict .k{font:700 12px var(--mono);letter-spacing:0;}
 .verdict h3{font-size:clamp(24px,2.4vw,30px)}
 .verdict p{font-size:16px}
 .verdict .then{font:400 13px/1.5 var(--mono)}
@@ -40,13 +40,13 @@
 @media (max-width:760px){.path::before{left:27px}}
 .rung{display:grid;grid-template-columns:80px 1fr;gap:clamp(14px,2.4vw,28px);align-items:start;position:relative}
 @media (max-width:760px){.rung{grid-template-columns:56px 1fr}}
-.rung .n{width:80px;height:80px;border:var(--b);background:var(--white);display:grid;place-items:center;font:700 34px var(--sans);letter-spacing:-.04em;box-shadow:3px 3px 0 var(--ink);position:relative;z-index:1;transition:background .3s}
+.rung .n{width:80px;height:80px;border:var(--b);background:var(--white);display:grid;place-items:center;font:700 34px var(--sans);letter-spacing:-.04em;box-shadow:none;position:relative;z-index:1;transition:background .3s;border-radius:var(--r-sm)}
 @media (max-width:760px){.rung .n{width:56px;height:56px;font-size:24px}}
 .rung.in .n{background:var(--yellow)}
-.rung-card{display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:clamp(18px,2.4vw,28px);text-decoration:none;transition:transform .15s,box-shadow .15s,background .25s}
-a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.rung-card{display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:clamp(18px,2.4vw,28px);text-decoration:none;transition:transform .15s,box-shadow .15s,background .25s;border-radius:var(--r-sm)}
+a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:none}
 @media (max-width:860px){.rung-card{grid-template-columns:1fr}}
-.rung.pick .rung-card{background:var(--cream-y);box-shadow:6px 6px 0 var(--orange)}
+.rung.pick .rung-card{background:var(--cream-y);box-shadow:none}
 .rung.pick .n{background:var(--orange)}
 .rung .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .rung h3{font-size:clamp(24px,2.4vw,32px);margin-bottom:8px}
@@ -54,8 +54,8 @@ a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)
 .rung .aware{font:400 14px/1.5 var(--mono);color:var(--muted);margin-top:10px}
 .rung .aware b{color:var(--ink)}
 .rung .go{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-.effort{display:flex;gap:4px;align-items:center;font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.effort i{width:16px;height:16px;border:2px solid var(--ink);background:var(--white)}
+.effort{display:flex;gap:4px;align-items:center;font:700 11px var(--mono);letter-spacing:0;}
+.effort i{width:16px;height:16px;border:1px solid var(--line);background:var(--white);border-radius:var(--r-sm)}
 .effort i.f{background:var(--ink)}
 .effort span{margin-left:6px}
 .rung .go .btn{white-space:nowrap}
@@ -198,7 +198,7 @@ a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)
         <p class="lead">L'analisi di posizionamento: il metodo applicato a te. Diagnosi, concorrenti, profili ospite, posizionamento proposto, azioni.</p>
       </div>
       <div class="rv d1">
-        <div class="stat-row an-stats" style="background:var(--paper);color:var(--ink);box-shadow:5px 5px 0 var(--orange)">
+        <div class="stat-row an-stats" style="background:var(--paper);color:var(--ink);box-shadow:none">
           <div class="stat"><b>5</b><span>posti di candidatura gratuita</span></div>
           <div class="stat"><b>1</b><span>analisi alla settimana, la faccio io</span></div>
           <div class="stat"><b>48 h</b><span>per la risposta, anche se è no</span></div>

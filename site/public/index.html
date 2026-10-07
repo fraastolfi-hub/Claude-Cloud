@@ -9,11 +9,11 @@
 <meta property="og:title" content="Il tuo hotel non ha un problema di marketing. Ha un problema di posizionamento.">
 <meta property="og:description" content="Brand positioning per hotel indipendenti, con il metodo Hotel Positioning di Francesco Astolfi.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#FF7A1A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='%23FF7A1A' stroke='%23111' stroke-width='6'/%3E%3Ctext x='32' y='42' font-family='monospace' font-weight='700' font-size='24' text-anchor='middle' fill='%23111'%3EHP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D1D1F'/%3E%3Crect x='12' y='30' width='9' height='22' rx='2' fill='%236E6E73'/%3E%3Crect x='24' y='22' width='9' height='30' rx='2' fill='%236E6E73'/%3E%3Crect x='36' y='12' width='9' height='40' rx='2' fill='%23FFDD00'/%3E%3Crect x='48' y='26' width='6' height='26' rx='2' fill='%236E6E73'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 
 <script type="application/ld+json">
@@ -24,23 +24,23 @@
 /* --- hero: i cinquanta rettangoli --- */
 .rects-wrap{position:relative}
 .rects-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-.rects-head .mono{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.rects{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;border:var(--b);background:var(--white);padding:12px;box-shadow:var(--sh-lg)}
-.rects i{aspect-ratio:1.5;background:var(--grey);border:2px solid var(--ink);transition:background .5s,transform .5s cubic-bezier(.5,1.8,.5,1),opacity .5s;position:relative}
-.rects i:nth-child(3n){background:#CFC7B8}
+.rects-head .mono{font-size:12px;font-weight:700;letter-spacing:0;}
+.rects{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;border:var(--b);background:var(--white);padding:12px;box-shadow:var(--sh-lg);border-radius:var(--r-sm)}
+.rects i{aspect-ratio:1.5;background:var(--grey);border:1px solid var(--line);transition:background .5s,transform .5s cubic-bezier(.5,1.8,.5,1),opacity .5s;position:relative;border-radius:var(--r-sm)}
+.rects i:nth-child(3n){background:#D2D2D7}
 .rects.after i{opacity:.35}
-.rects.after i.me{opacity:1;background:var(--orange);transform:scale(1.9);z-index:2;box-shadow:3px 3px 0 var(--ink)}
+.rects.after i.me{opacity:1;background:var(--orange);transform:scale(1.9);z-index:2;box-shadow:none}
 .rects i.me{z-index:1}
 .rects-cap{margin-top:16px;font:400 14px/1.5 var(--mono);color:var(--muted);min-height:3em}
 .rects-cap b{color:var(--ink)}
-.rects-toggle{display:inline-flex;border:var(--b);box-shadow:3px 3px 0 var(--ink);background:var(--white)}
-.rects-toggle button{border:0;background:none;padding:9px 14px;font:700 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.rects-toggle{display:inline-flex;border:var(--b);box-shadow:none;background:var(--white);border-radius:var(--r-sm)}
+.rects-toggle button{border:0;background:none;padding:9px 14px;font:700 12px var(--mono);letter-spacing:0;}
 .rects-toggle button + button{border-left:var(--b)}
 .rects-toggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .rects-toggle button.on[aria-pressed="true"]{background:var(--orange);color:var(--ink)}
-.adj{position:absolute;font:700 12px/1 var(--mono);background:var(--white);border:2px solid var(--ink);padding:6px 8px;box-shadow:3px 3px 0 var(--ink);white-space:nowrap;animation:none;transition:opacity .4s}
-.adj.a1{left:-14px;top:110px;transform:rotate(-2.5deg)}.adj.a2{right:-10px;top:120px;transform:rotate(2deg);animation-delay:1s}
-.adj.a3{left:18%;bottom:118px;transform:rotate(1.5deg);animation-delay:2s}.adj.a4{right:8%;bottom:90px;transform:rotate(-1.5deg);animation-delay:1.5s}
+.adj{position:absolute;font:700 12px/1 var(--mono);background:var(--white);border:1px solid var(--line);padding:6px 8px;box-shadow:none;white-space:nowrap;animation:none;transition:opacity .4s;border-radius:var(--r-sm)}
+.adj.a1{left:-14px;top:110px;transform:rotate(0deg)}.adj.a2{right:-10px;top:120px;transform:rotate(0deg);animation-delay:1s}
+.adj.a3{left:18%;bottom:118px;transform:rotate(0deg);animation-delay:2s}.adj.a4{right:8%;bottom:90px;transform:rotate(0deg);animation-delay:1.5s}
 .rects-wrap.after .adj{opacity:0}
 @keyframes bob{50%{translate:0 -6px}}
 @media (max-width:560px){.adj{display:none}}
@@ -49,26 +49,26 @@
 .symptoms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media (max-width:980px){.symptoms{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.symptoms{grid-template-columns:1fr}}
-.symptom{display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:230px;text-decoration:none;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:24px;transition:transform .15s,box-shadow .15s,background .25s}
+.symptom{display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:230px;text-decoration:none;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:24px;transition:transform .15s,box-shadow .15s,background .25s;border-radius:var(--r-sm)}
 .symptom q{font:700 clamp(21px,1.9vw,25px)/1.2 var(--sans);letter-spacing:-.02em;quotes:"«" "»"}
-.symptom .meta{display:flex;justify-content:space-between;align-items:center;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.symptom .meta b{background:var(--yellow);border:2px solid var(--ink);padding:6px 9px;transition:background .2s}
-.symptom:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);background:var(--ink);color:var(--paper)}
+.symptom .meta{display:flex;justify-content:space-between;align-items:center;font:700 12px var(--mono);letter-spacing:0;}
+.symptom .meta b{background:var(--yellow);border:1px solid var(--line);padding:6px 9px;transition:background .2s;border-radius:var(--r-sm)}
+.symptom:hover{transform:translate(-2px,-2px);box-shadow:none;background:var(--ink);color:var(--paper)}
 .symptom:hover .meta b{background:var(--orange);color:var(--ink)}
 .herd{margin-top:34px;font:700 clamp(20px,2vw,26px)/1.35 var(--sans);letter-spacing:-.02em;max-width:40ch}
 
 .sym-ico{width:62px;height:62px;flex:none;transition:transform .35s cubic-bezier(.5,1.8,.5,1)}
-.symptom:hover .sym-ico{transform:rotate(-4deg) scale(1.12)}
+.symptom:hover .sym-ico{transform:rotate(0deg) scale(1.12)}
 .symptom{justify-content:flex-start}
 .symptom .meta{margin-top:auto}
 /* --- tre anelli --- */
 .chain{display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr;align-items:stretch;margin:10px 0 40px}
-.ring{border:var(--b);background:var(--white);padding:24px;box-shadow:var(--sh);position:relative}
-.ring .k{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ring{border:var(--b);background:var(--white);padding:24px;box-shadow:var(--sh);position:relative;border-radius:var(--r-sm)}
+.ring .k{font:700 12px var(--mono);letter-spacing:0;color:var(--muted)}
 .ring h3{margin:10px 0 6px;font-size:clamp(24px,2.4vw,32px)}
 .ring.here{background:var(--yellow)}
-.ring.here::after{content:"Tu sei qui";position:absolute;top:-18px;right:14px;background:var(--orange);border:var(--b);padding:6px 10px;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;transform:rotate(2.5deg);animation:none}
-@keyframes wob{50%{transform:rotate(-2deg) scale(1.06)}}
+.ring.here::after{content:"Tu sei qui";position:absolute;top:-18px;right:14px;background:var(--orange);border:var(--b);padding:6px 10px;font:700 12px var(--mono);letter-spacing:0;transform:rotate(0deg);animation:none;border-radius:var(--r-sm)}
+@keyframes wob{50%{transform:rotate(0deg) scale(1.06)}}
 .link{display:grid;place-items:center;font:700 26px var(--mono)}
 @media (max-width:860px){.chain{grid-template-columns:1fr}.link{height:44px;transform:rotate(90deg)}}
 .third{list-style:none;display:grid;gap:12px;margin-bottom:40px}
@@ -76,35 +76,35 @@
 .third li::before{content:"✕";position:absolute;left:0;top:2px;width:24px;height:24px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font:700 13px var(--mono)}
 
 /* --- metodo --- */
-.six{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--b);background:var(--white);box-shadow:var(--sh-lg)}
-.six li{list-style:none;padding:26px 24px 30px;border-right:var(--b);border-bottom:var(--b);margin:0 -3px -3px 0;position:relative;transition:background .25s}
+.six{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--b);background:var(--white);box-shadow:var(--sh-lg);border-radius:var(--r-sm)}
+.six li{list-style:none;padding:26px 24px 30px;border-right:var(--b);border-bottom:var(--b);margin:0 -1px -1px 0;position:relative;transition:background .25s}
 .six li:hover{background:var(--cream-y)}
-.six b{display:block;font:700 54px/1 var(--sans);letter-spacing:-.05em;color:var(--orange);-webkit-text-stroke:2px var(--ink);margin-bottom:12px}
+.six b{display:block;font:700 54px/1 var(--sans);letter-spacing:-.05em;color:var(--orange);margin-bottom:12px}
 .six h3{font-size:21px;margin-bottom:8px}
-.six p{font-size:16px;color:#3a352d}
+.six p{font-size:16px;color:#424245}
 @media (max-width:900px){.six{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.six{grid-template-columns:1fr}}
 .views{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
 @media (max-width:760px){.views{grid-template-columns:1fr}}
 
 /* --- casi --- */
-.case-main{display:grid;grid-template-columns:1.1fr .9fr;border:var(--b);box-shadow:var(--sh-lg);background:var(--white)}
+.case-main{display:grid;grid-template-columns:1.1fr .9fr;border:var(--b);box-shadow:var(--sh-lg);background:var(--white);border-radius:var(--r-sm)}
 @media (max-width:900px){.case-main{grid-template-columns:1fr}}
 .case-main .l{padding:clamp(22px,3vw,40px);border-right:var(--b)}
 @media (max-width:900px){.case-main .l{border-right:0;border-bottom:var(--b)}}
 .case-main .r{padding:clamp(22px,3vw,40px);background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:flex-end;gap:16px}
 .from-to{font:400 16.5px/1.5 var(--sans);display:grid;gap:10px}
 .from-to s{color:var(--muted)}
-.bars{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;height:240px;border-bottom:2px solid var(--paper);padding:0 6px}
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;height:240px;border-bottom:1px solid rgba(255,255,255,.16);padding:0 6px}
 .bar{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:10px;height:100%}
-.bar i{display:block;width:100%;background:var(--grey);border:2px solid var(--paper);height:0;transition:height 1.2s cubic-bezier(.2,.9,.2,1)}
+.bar i{display:block;width:100%;background:var(--grey);border:1px solid rgba(255,255,255,.16);height:0;transition:height 1.2s cubic-bezier(.2,.9,.2,1)}
 .bar.b2 i{background:var(--orange)}
 .in .bar.b1 i{height:46%}.in .bar.b2 i{height:100%;transition-delay:.3s}
 .bar span{font:700 22px var(--sans);letter-spacing:-.03em}
-.bars-lab{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center;font:700 12px var(--mono);letter-spacing:.08em;color:#B9B0A0}
-.case-honest{font:400 13px/1.55 var(--mono);color:#B9B0A0}
+.bars-lab{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center;font:700 12px var(--mono);letter-spacing:0;color:#A1A1A6}
+.case-honest{font:400 13px/1.55 var(--mono);color:#A1A1A6}
 .order{list-style:none;display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.order li{font:700 14px var(--mono);border:2px solid var(--ink);padding:8px 10px;background:var(--yellow)}
+.order li{font:700 14px var(--mono);border:1px solid var(--line);padding:8px 10px;background:var(--yellow);border-radius:var(--r-sm)}
 .order li:nth-child(2){background:var(--white)}.order li:nth-child(3){background:var(--orange)}
 
 /* --- AI --- */
@@ -112,13 +112,13 @@
 .vs .card{color:var(--ink)}
 .vs .eq{display:grid;place-items:center;font:700 40px var(--mono);color:var(--orange)}
 @media (max-width:760px){.vs{grid-template-columns:1fr}.vs .eq{font-size:28px}}
-.chat{border:2px solid var(--paper);background:#1d1d1d;padding:20px;font:400 15px/1.6 var(--mono);box-shadow:5px 5px 0 var(--orange)}
+.chat{border:1px solid rgba(255,255,255,.16);background:#1C1C1E;padding:20px;font:400 15px/1.6 var(--mono);box-shadow:none}
 .chat .u{color:var(--yellow)}
 .chat .typing::after{content:"▋";animation:blink 1s steps(2) infinite;color:var(--orange)}
 
 /* --- chi sono --- */
-.creds{list-style:none;display:grid;gap:0;border:var(--b);background:var(--white);box-shadow:var(--sh)}
-.creds li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 18px;border-bottom:2px solid var(--ink);align-items:center}
+.creds{list-style:none;display:grid;gap:0;border:var(--b);background:var(--white);box-shadow:var(--sh);border-radius:var(--r-sm)}
+.creds li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 18px;border-bottom:1px solid var(--line);align-items:center}
 .creds li:last-child{border-bottom:0}
 .creds b{font:700 22px/1.1 var(--sans);letter-spacing:-.03em}
 .creds span{font-size:16px}
@@ -128,23 +128,86 @@
 .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:end}
 @media (max-width:980px){.ladder{grid-template-columns:1fr 1fr;align-items:stretch}}
 @media (max-width:560px){.ladder{grid-template-columns:1fr}}
-.step-card{display:flex;flex-direction:column;gap:12px;text-decoration:none;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:22px;transition:transform .15s,box-shadow .15s}
-.step-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.step-card{display:flex;flex-direction:column;gap:12px;text-decoration:none;background:var(--white);border:var(--b);box-shadow:var(--sh);padding:22px;transition:transform .15s,box-shadow .15s;border-radius:var(--r-sm)}
+.step-card:hover{transform:translate(-2px,-2px);box-shadow:none}
 @media (min-width:981px){.step-card:nth-child(1){min-height:300px}.step-card:nth-child(2){min-height:340px}.step-card:nth-child(3){min-height:380px}.step-card:nth-child(4){min-height:420px}}
-.step-card .ico{width:54px;height:54px;border:var(--b);display:grid;place-items:center;font:700 24px var(--mono);background:var(--yellow)}
+.step-card .ico{width:54px;height:54px;border:var(--b);display:grid;place-items:center;font:700 24px var(--mono);background:var(--yellow);border-radius:var(--r-sm)}
 .step-card:nth-child(2) .ico{background:var(--mint)}.step-card:nth-child(3) .ico{background:var(--blue)}.step-card:nth-child(4) .ico{background:var(--orange)}
-.step-card .t{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.step-card .t{font:700 12px var(--mono);letter-spacing:0;color:var(--muted)}
 .step-card h3{font-size:24px}
 .step-card p{font-size:16px;flex:1}
-.step-card .go{font:700 15px var(--mono);border-top:2px dashed var(--ink);padding-top:12px;display:flex;justify-content:space-between}
+.step-card .go{font:700 15px var(--mono);border-top:1px dashed var(--line);padding-top:12px;display:flex;justify-content:space-between}
 .step-card.top{background:var(--ink);color:var(--paper);box-shadow:var(--sh-lg)}
-.step-card.top .t{color:#B9B0A0}
+.step-card.top .t{color:#A1A1A6}
 .step-card.top .go{border-color:var(--paper)}
 
 /* --- finale --- */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:34px 0}
 @media (max-width:760px){.two{grid-template-columns:1fr}}
-.two .card b.n{display:inline-grid;place-items:center;width:44px;height:44px;border:var(--b);background:var(--paper);font:700 18px var(--mono);margin-bottom:14px}
+.two .card b.n{display:inline-grid;place-items:center;width:44px;height:44px;border:var(--b);background:var(--paper);font:700 18px var(--mono);margin-bottom:14px;border-radius:var(--r-sm)}
+
+/* --- Essenziale: rifiniture della home --- */
+.rects{border:0;background:var(--mist);border-radius:var(--r);padding:16px;gap:7px;box-shadow:none}
+.rects i{border:0;border-radius:5px;background:#E3E3E8}
+.rects i:nth-child(3n){background:#D9D9DE}
+.rects.after i.me{background:var(--yellow);transform:scale(1.6);box-shadow:0 4px 14px rgba(0,0,0,.12);border-radius:4px}
+.rects-toggle{border:0;box-shadow:none;background:var(--mist);border-radius:980px;padding:3px}
+.rects-toggle button{border-radius:980px;padding:7px 14px;font:500 13px var(--text)}
+.rects-toggle button + button{border-left:0}
+.rects-toggle button[aria-pressed="true"],.rects-toggle button.on[aria-pressed="true"]{background:var(--white);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.adj{border:0;border-radius:980px;padding:7px 11px;font:500 12px/1 var(--text);background:rgba(255,255,255,.92);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.rects-head .mono{font:500 13px var(--text);color:var(--muted)}
+.rects-cap{font:400 15px/1.5 var(--text)}
+.symptom{border:0;border-radius:var(--r);background:var(--white);padding:28px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.symptom:hover{transform:translateY(-3px);box-shadow:var(--sh-lg);background:var(--white);color:var(--ink)}
+.symptom q{font:600 clamp(20px,1.8vw,24px)/1.22 var(--display);letter-spacing:-.02em}
+.symptom .meta{font:500 14px var(--text);color:var(--muted)}
+.symptom .meta b,.symptom:hover .meta b{background:none;border:0;padding:0;color:var(--ink);font-weight:500}
+.symptom:hover .meta b{text-decoration:underline;text-underline-offset:3px}
+.symptom:hover .sym-ico{transform:none}
+.herd{font:600 clamp(20px,2vw,26px)/1.35 var(--display)}
+.ring{border:0;background:var(--mist);border-radius:var(--r)}
+.ring .k{font:500 14px var(--text)}
+.ring.here{background:var(--night);color:#F5F5F7}
+.ring.here .k{color:#A1A1A6}
+.ring.here::after{border:0;background:var(--yellow);border-radius:980px;font:600 12px/1 var(--text);padding:6px 11px;top:-12px}
+.link{font:300 26px var(--text);color:var(--muted)}
+.third li::before{content:"";background:var(--mist-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M7 7l6 6M13 7l-6 6' fill='none' stroke='%236E6E73' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center/100% no-repeat;border-radius:50%;width:22px;height:22px;top:3px}
+.six{border:0;background:none;box-shadow:none;gap:20px;counter-reset:s}
+.six li{border:0;margin:0;background:var(--mist);border-radius:var(--r)}
+.six li:hover{background:var(--mist)}
+.six b{width:34px;height:34px;border-radius:50%;background:var(--white);display:grid;place-items:center;font:700 15px var(--display);letter-spacing:0;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);margin-bottom:18px}
+.six li:nth-child(3) b{background:var(--yellow);box-shadow:none}
+.six p{color:var(--muted)}
+.case-main{border:0;box-shadow:none;background:var(--mist);border-radius:28px;overflow:hidden}
+.case-main .l{border:0}
+.case-main .r{background:var(--night)}
+.bars{border-bottom:1px solid #3A3A3C}
+.bar i{border:0;border-radius:10px 10px 0 0;background:#3A3A3C}
+.bar.b2 i{background:var(--yellow)}
+.bar span{font:700 24px var(--display)}
+.bars-lab{font:500 13px var(--text);color:#A1A1A6}
+.case-honest{font:400 13px/1.55 var(--text);color:#A1A1A6}
+.order li{border:0;border-radius:980px;background:var(--white);font:500 14px var(--text);padding:8px 13px}
+.order li:nth-child(2),.order li:nth-child(3){background:var(--white)}
+.case-main .chip{background:var(--white)}
+.card .stat{background:none;padding:16px 0 0}
+.chat{border:0;border-radius:var(--r);background:#1C1C1E;font:400 15px/1.6 var(--text);box-shadow:none;padding:24px}
+.chat .typing::after{color:var(--yellow)}
+.vs .eq{font:300 40px var(--text);color:#86868B}
+.creds{border:0;box-shadow:none;background:var(--mist);border-radius:var(--r);overflow:hidden}
+.creds li{border-bottom:1px solid var(--line)}
+.creds b{font:700 22px/1.1 var(--display)}
+.step-card{border:0;border-radius:var(--r);background:var(--white);padding:26px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.step-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.step-card .ico,.step-card:nth-child(2) .ico,.step-card:nth-child(3) .ico{border:0;border-radius:50%;width:44px;height:44px;background:var(--mist);font:500 18px var(--text);color:var(--ink)}
+.step-card.top .ico{background:var(--yellow);color:#1D1D1F}
+.step-card .t{font:500 13px var(--text)}
+.step-card .go{border-top:1px solid var(--line);font:500 15px var(--text)}
+.step-card.top{background:var(--night);box-shadow:none}
+.step-card.top .go{border-color:#3A3A3C}
+.two .card b.n{border:0;border-radius:50%;width:36px;height:36px;background:var(--mist);font:700 15px var(--display)}
+.two .card.ink b.n{background:#2C2C2E;color:#F5F5F7!important}
 </style>
 </head>
 <body>
@@ -152,7 +215,7 @@
 <div class="readbar" aria-hidden="true"></div>
 <a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
   <div class="ticker-track" aria-hidden="true">
-    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più →</span>
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
   </div>
 </a>
 <header class="nav">
@@ -228,12 +291,12 @@
       <p class="lead">Decine di hotel analizzati. Il problema si presentava sempre vestito in uno di questi modi. <strong>Riconosci il tuo.</strong></p>
     </div>
     <div class="symptoms">
-      <a class="symptom rv" href="/problemi/booking/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M15 7h34v49l-5.7-4-5.6 4-5.7-4-5.6 4-5.7-4-5.7 4z" fill="#FFD43B" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M22 17h20" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><text x="32" y="42" text-anchor="middle" font-family="Space Mono,monospace" font-weight="700" font-size="13" fill="#111">18%</text></svg><q>Le commissioni a Booking mi costano un rene.</q><span class="meta"><span>Sintomo 01</span><b>È il mio →</b></span></a>
-      <a class="symptom rv d1" href="/problemi/prezzi/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 30 28 8h18v18L24 48z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38" cy="16" r="3.2" fill="#111"/><rect x="34" y="38" width="22" height="18" fill="#FF7A1A" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M39 38v-6a6 6 0 0 1 12 0v6" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="45" cy="47" r="2.4" fill="#111"/></svg><q>Non riesco ad alzare i prezzi senza perdere prenotazioni.</q><span class="meta"><span>Sintomo 02</span><b>È il mio →</b></span></a>
-      <a class="symptom rv d2" href="/problemi/sostituibili/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 55S8 41 8 24a12 12 0 0 1 24-5 12 12 0 0 1 24 5c0 17-24 31-24 31z" fill="#FF7A1A" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><text x="32" y="38" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="24" fill="#111">?</text></svg><q>Gli ospiti ci adorano. Ma non sanno spiegare perché.</q><span class="meta"><span>Sintomo 03</span><b>È il mio →</b></span></a>
-      <a class="symptom rv" href="/problemi/agenzie/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="20" width="22" height="30" fill="#8FB8FF" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="21" y="14" width="22" height="30" fill="#7FD1AE" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="36" y="8" width="22" height="30" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><text x="47" y="29" text-anchor="middle" font-family="Space Mono,monospace" font-weight="700" font-size="14" fill="#111">3</text><path d="M10 58h44" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><q>Ho cambiato tre agenzie in cinque anni. I risultati sono gli stessi.</q><span class="meta"><span>Sintomo 04</span><b>È il mio →</b></span></a>
-      <a class="symptom rv d1" href="/problemi/valore/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="16" width="26" height="40" fill="#D9D2C4" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M14 24h4M24 24h4M14 32h4M24 32h4M14 40h4M24 40h4" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="44" cy="22" r="13" fill="#FFD43B" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><text x="44" y="27.5" text-anchor="middle" font-family="Space Mono,monospace" font-weight="700" font-size="14" fill="#111">€0</text><path d="M4 56h56" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><q>Il mio hotel vale per l'immobile. Il mio brand non vale niente.</q><span class="meta"><span>Sintomo 05</span><b>È il mio →</b></span></a>
-      <a class="symptom rv d2" href="/problemi/apertura/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M21 52 30 10h4l9 42z" fill="#FF7A1A" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M26 30h12M24 40h16" stroke="#fff" stroke-width="4"/><path d="M12 52h40v5H12z" fill="#111" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M48 14l6-6M50 22h7M14 14 8 8" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><q>Sto aprendo una struttura. Non voglio nascere commodity.</q><span class="meta"><span>Sintomo 06</span><b>È il mio →</b></span></a>
+      <a class="symptom rv" href="/problemi/booking/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M15 7h34v49l-5.7-4-5.6 4-5.7-4-5.6 4-5.7-4-5.7 4z" fill="#FFDD00" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M22 17h20" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><text x="32" y="42" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="13" fill="#1D1D1F">18%</text></svg><q>Le commissioni a Booking mi costano un rene.</q><span class="meta"><span>Sintomo 01</span><b>È il mio →</b></span></a>
+      <a class="symptom rv d1" href="/problemi/prezzi/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 30 28 8h18v18L24 48z" fill="#fff" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38" cy="16" r="3.2" fill="#1D1D1F"/><rect x="34" y="38" width="22" height="18" fill="#FFDD00" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M39 38v-6a6 6 0 0 1 12 0v6" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="45" cy="47" r="2.4" fill="#1D1D1F"/></svg><q>Non riesco ad alzare i prezzi senza perdere prenotazioni.</q><span class="meta"><span>Sintomo 02</span><b>È il mio →</b></span></a>
+      <a class="symptom rv d2" href="/problemi/sostituibili/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 55S8 41 8 24a12 12 0 0 1 24-5 12 12 0 0 1 24 5c0 17-24 31-24 31z" fill="#FFDD00" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><text x="32" y="38" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="24" fill="#1D1D1F">?</text></svg><q>Gli ospiti ci adorano. Ma non sanno spiegare perché.</q><span class="meta"><span>Sintomo 03</span><b>È il mio →</b></span></a>
+      <a class="symptom rv" href="/problemi/agenzie/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="20" width="22" height="30" fill="#E8E8ED" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><rect x="21" y="14" width="22" height="30" fill="#E8E8ED" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><rect x="36" y="8" width="22" height="30" fill="#fff" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><text x="47" y="29" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="14" fill="#1D1D1F">3</text><path d="M10 58h44" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><q>Ho cambiato tre agenzie in cinque anni. I risultati sono gli stessi.</q><span class="meta"><span>Sintomo 04</span><b>È il mio →</b></span></a>
+      <a class="symptom rv d1" href="/problemi/valore/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="16" width="26" height="40" fill="#E8E8ED" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M14 24h4M24 24h4M14 32h4M24 32h4M14 40h4M24 40h4" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="44" cy="22" r="13" fill="#FFDD00" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><text x="44" y="27.5" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="14" fill="#1D1D1F">€0</text><path d="M4 56h56" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><q>Il mio hotel vale per l'immobile. Il mio brand non vale niente.</q><span class="meta"><span>Sintomo 05</span><b>È il mio →</b></span></a>
+      <a class="symptom rv d2" href="/problemi/apertura/"><svg class="sym-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M21 52 30 10h4l9 42z" fill="#FFDD00" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M26 30h12M24 40h16" stroke="#fff" stroke-width="4"/><path d="M12 52h40v5H12z" fill="#1D1D1F" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M48 14l6-6M50 22h7M14 14 8 8" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><q>Sto aprendo una struttura. Non voglio nascere commodity.</q><span class="meta"><span>Sintomo 06</span><b>È il mio →</b></span></a>
     </div>
     <p class="herd rv">Ti sei riconosciuto in più di uno? Normale. I sintomi viaggiano in branco. <span class="hl">La malattia è una sola.</span> ↓</p>
   </div>
@@ -370,7 +433,7 @@
       <div class="chat rv d1" aria-label="Esempio di conversazione con un assistente AI">
         <p class="u">&gt; Cerco un hotel boutique in Romagna per una coppia di quarantenni che vuole staccare.</p>
         <p style="margin-top:12px">Ti consiglio due strutture. La prima è…</p>
-        <p class="typing" style="margin-top:12px;color:#8E877B">Il resto non esiste più. Per quell'ospite, in quel momento</p>
+        <p class="typing" style="margin-top:12px;color:#86868B">Il resto non esiste più. Per quell'ospite, in quel momento</p>
       </div>
     </div>
     <div class="vs rv">
@@ -380,7 +443,7 @@
     </div>
     <div class="prose" style="margin-top:44px">
       <p class="pull rv" style="color:var(--paper)">L'AI è uno specchio. Se sei vuoto, riflette vuoto.</p>
-      <p class="rv" style="margin-top:18px;color:#D8D1C4">Può scrivere meglio di te. Non può inventare cosa scrivere. Tra qualche anno gli hotel si divideranno in due: <strong>quelli che un'AI sa raccontare, e quelli che un'AI manda su Booking.</strong></p>
+      <p class="rv" style="margin-top:18px;color:#D2D2D7">Può scrivere meglio di te. Non può inventare cosa scrivere. Tra qualche anno gli hotel si divideranno in due: <strong>quelli che un'AI sa raccontare, e quelli che un'AI manda su Booking.</strong></p>
     </div>
   </div>
 </section>
