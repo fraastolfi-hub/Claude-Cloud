@@ -68,13 +68,13 @@ P = dict(
     br_prose='''        <p>Tariffe dinamiche, pacchetti, promozioni: tutto terzo passaggio. Servono quando c'è qualcosa da vendere al prezzo giusto.</p>
         <p>La tariffa sale quando cambia il confronto. Se l'ospite vi mette accanto alle altre strutture della zona, vince la più economica.</p>
         <p><strong>Quando vi confronta con un'alternativa diversa, cambia anche il prezzo che considera giusto.</strong></p>''',
-    br_quote="Senza un posizionamento chiaro, l'unica leva che resta è il prezzo.",
+    br_quote="Il mercato paga i motivi che riconosce. Non le camere.",
     proof_k="Tariffa media",
     proof_big="circa ×2",
     offer_lead="Uno dei cinque documenti dell'analisi completa si chiama «Come vendere senza svendere». Il punto di partenza resta il motivo.",
     cand_lead="Un minuto. Analizzo la struttura, le vostre tariffe e quelle delle strutture vicine, poi vi indico cosa manca.",
     faq=[
-        ("Nella nostra zona il mercato non accetta tariffe più alte.", "Spesso nella stessa zona c'è una struttura comparabile che applica una tariffa più alta e la mantiene. Il mercato paga i motivi che riconosce, non le camere in sé."),
+        ("Nella nostra zona il mercato non accetta tariffe più alte.", "Spesso nella stessa zona c'è una struttura comparabile che applica una tariffa più alta e la mantiene. Il prezzo che regge dipende dal motivo che l'ospite riconosce, più che dalle camere."),
         ("Se alziamo le tariffe, perdiamo prenotazioni?", "Con un motivo chiaro si perdono soprattutto quelle meno adatte alla struttura. Senza, si perdono e basta. Per questo il posizionamento viene prima del listino."),
         ("Non basta un revenue manager?", "Il revenue management lavora sul prezzo che il mercato accetta. Il posizionamento cambia il prezzo che il mercato considera giusto. Prima la bussola, poi la regolazione fine."),
         ("Chi si occupa dell'attuazione?", "La vostra squadra o i vostri fornitori. Io fornisco la direzione, i testi e gli script; nell'analisi completa c'è anche come gestire l'obiezione sul prezzo."),

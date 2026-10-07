@@ -21,7 +21,7 @@ P = dict(
     desc="State aprendo una struttura? Il posizionamento si decide prima del cantiere: dopo l'apertura ogni correzione costa il triplo. L'esperienza di Francesco Astolfi nei suoi locali, e cosa decidere adesso.",
     eyebrow="Segnale 06 · Nuove aperture",
     h1="Aprire con un'identità chiara.",
-    pull='State aprendo e volete partire con un\'identità chiara. <span class="hl or in">È il momento in cui il posizionamento costa meno e conta di più.</span>',
+    pull='Prima dell\'apertura il posizionamento <span class="hl or in">costa meno e conta di più.</span>',
     lead="Il cantiere procede, i render sono pronti, e la risposta a «perché voi?» spesso viene rimandata a dopo. Al mio primo ristorante l'ho rimandata anch'io.",
     cta2="Cosa potete ancora decidere ↓",
     memo=memo("Il giorno prima dell'apertura", "Ristorante n. 1",
