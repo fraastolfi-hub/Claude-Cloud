@@ -233,6 +233,52 @@
 .step-card .ico{font:600 16px var(--display)}
 .prose .pull{line-height:1.2}
 .sec.alt .six li,.sec.alt .six li:hover{background:var(--white)}
+
+/* --- mappa del posizionamento: fascia a colore pieno --- */
+.pmband{background:#0E0E10;color:#F5F5F7;padding:clamp(80px,9vw,128px) 0;overflow:hidden;position:relative}
+.pmband::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 72% 40%,rgba(255,221,0,.08),transparent 65%);pointer-events:none}
+.pm-wrap{position:relative;display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(32px,5vw,72px);align-items:center;max-width:1240px}
+.pmband h2{margin:16px 0 30px;color:#F5F5F7;font-size:clamp(34px,3.6vw,52px)}
+.pmband h2 em{color:#86868B}
+.pmband .num-tag{color:#A1A1A6}
+.pm-steps{list-style:none;display:grid;gap:8px;margin-bottom:32px;counter-reset:pm}
+.pm-steps li{counter-increment:pm;display:grid;grid-template-columns:30px 1fr;column-gap:14px;padding:14px 16px;border-radius:16px;transition:background .4s,opacity .4s;opacity:.45}
+.pm-steps li::before{content:counter(pm);grid-row:span 2;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:600 14px var(--display);background:#2C2C2E;color:#F5F5F7;transition:background .4s,color .4s}
+.pm-steps li.on{opacity:1;background:#1C1C1E}
+.pm-steps li.on::before{background:var(--yellow);color:#1D1D1F}
+.pm-steps b{font:600 17px/1.3 var(--display);letter-spacing:-.01em}
+.pm-steps span{font-size:15px;color:#A1A1A6;line-height:1.45}
+.pmband .btn{--bg:#F5F5F7;--fg:#1D1D1F}
+.pm-replay{border:0;background:none;color:#F5F5F7;font:500 16px var(--text);text-decoration:underline;text-underline-offset:4px;text-decoration-color:#48484A}
+.pm-replay:hover{text-decoration-color:var(--yellow)}
+.pm-fig{margin:0}
+.pm-fig figcaption{margin-top:12px;font-size:13px;color:#86868B}
+.pmap{width:100%;height:auto;display:block;font-family:var(--text)}
+.pm-grid line{stroke:#3A3A3C;stroke-width:1.5}
+.pm-grid line.soft{stroke:#242426;stroke-dasharray:4 8}
+.pm-axis{fill:#86868B;font-size:17px}
+.pm-occ circle{fill:#1C1C1E;stroke:#48484A;stroke-width:1.5}
+.pm-occ text{fill:#A1A1A6;font-size:17px}
+.pm-dot{fill:#48484A;transition:fill .8s,opacity .8s}
+.pm-note{fill:#6E6E73;font-size:16px;font-style:italic;transition:opacity .8s}
+.pm-free .ring{fill:rgba(255,221,0,0);stroke:var(--yellow);stroke-width:2;stroke-dasharray:6 7;opacity:0;transform-box:fill-box;transform-origin:center;transition:opacity .6s,fill .8s}
+.pm-free-t{fill:var(--yellow);font:600 19px var(--text);opacity:0;transition:opacity .6s}
+.pm-path{fill:none;stroke:var(--yellow);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);opacity:.85}
+.pm-you .core{fill:#F5F5F7;transition:fill .5s}
+.pm-you .halo{fill:rgba(245,245,247,.14);transition:fill .5s}
+.pm-you-t{fill:#F5F5F7;font:600 19px var(--text);transition:opacity .3s}
+.pmap.s2 .pm-free .ring,.pmap.s2 .pm-free-t{opacity:1}
+.pmap.s2 .pm-free .ring{animation:pmPulse 1.6s ease-in-out infinite}
+.pmap.s3 .pm-free .ring{animation:none;fill:rgba(255,221,0,.12);stroke-dasharray:0}
+.pmap.s3 .pm-dot{opacity:.45}
+.pmap.s3 .pm-note{opacity:.4}
+.pmap.s3 .pm-free-t{opacity:0}
+.pmap.s3 .pm-you .core{fill:var(--yellow)}
+.pmap.s3 .pm-you .halo{fill:rgba(255,221,0,.22)}
+@keyframes pmPulse{50%{transform:scale(1.08)}}
+@media (max-width:980px){.pm-wrap{grid-template-columns:1fr;gap:0}.pm-text{display:contents}.pm-text .num-tag{order:1;justify-self:start}.pmband h2{order:2;margin-bottom:26px}.pm-fig{order:3;margin-bottom:30px}.pm-steps{order:4}.pm-text .btn-row{order:5}}
+@media (max-width:600px){.pm-axis,.pm-occ text,.pm-note{font-size:24px}.pm-free-t,.pm-you-t{font-size:26px}.pm-note{display:none}.pm-occ text{display:none}}
+@media (prefers-reduced-motion:reduce){.pm-free .ring{animation:none!important}}
 </style>
 </head>
 <body>
@@ -302,6 +348,52 @@
       <span class="adj a3">Immerso nel verde</span><span class="adj a4">Confortevole</span>
       <p class="rects-cap" id="rectsCap" aria-live="polite"><b>Cinquanta strutture, le stesse parole.</b></p>
     </div>
+  </div>
+</section>
+
+<!-- ================= MAPPA DEL POSIZIONAMENTO (fascia a colore pieno) ================= -->
+<section class="pmband" id="mappa" aria-labelledby="pm-h">
+  <div class="wrap pm-wrap">
+    <div class="pm-text">
+      <span class="num-tag">Il posizionamento, in una mappa</span>
+      <h2 id="pm-h">Uscire dal gruppo. <em>Prendere la posizione libera.</em></h2>
+      <ol class="pm-steps" id="pmSteps">
+        <li class="on"><b>Oggi</b><span>La struttura è nel gruppo di quelle che si somigliano. L’ospite le confronta sul prezzo.</span></li>
+        <li><b>La posizione libera</b><span>In quasi ogni zona c’è un motivo di scelta che nessuno occupa ancora.</span></li>
+        <li><b>Posizionata</b><span>L’ospite riconosce la struttura e la sceglie per quel motivo, non per la tariffa.</span></li>
+      </ol>
+      <div class="btn-row"><a href="/analisi/#candidatura" class="btn">Candida la struttura</a><button type="button" class="pm-replay" id="pmReplay">Rivedi lo spostamento</button></div>
+    </div>
+    <figure class="pm-fig">
+      <svg class="pmap" viewBox="0 0 1000 600" role="img" aria-labelledby="pm-t pm-d">
+          <title id="pm-t">Mappa del posizionamento</title>
+          <desc id="pm-d">Molte strutture simili sono raggruppate al centro della mappa, dove l’ospite le confronta sul prezzo. La vostra struttura esce dal gruppo e raggiunge una posizione libera, più riconoscibile.</desc>
+          <g class="pm-grid">
+            <line x1="90" y1="45" x2="90" y2="530"/><line x1="90" y1="530" x2="960" y2="530"/>
+            <line class="soft" x1="90" y1="287" x2="960" y2="287"/><line class="soft" x1="525" y1="45" x2="525" y2="530"/>
+          </g>
+          <text class="pm-axis" x="96" y="30">Riconoscibile per l’ospite ↑</text>
+          <text class="pm-axis" x="960" y="566" text-anchor="end">Prezzo medio →</text>
+          <text class="pm-axis" x="96" y="566">Generica</text>
+          <g class="pm-occ">
+            <circle cx="215" cy="150" r="30"/><text x="215" y="207" text-anchor="middle">La più economica</text>
+            <circle cx="840" cy="120" r="30"/><text x="840" y="177" text-anchor="middle">Il cinque stelle storico</text>
+            <circle cx="430" cy="185" r="30"/><text x="430" y="242" text-anchor="middle">Il resort per famiglie</text>
+          </g>
+          <g class="pm-cluster"><circle class="pm-dot" cx="382" cy="426" r="9"/><circle class="pm-dot" cx="384" cy="392" r="9"/><circle class="pm-dot" cx="335" cy="396" r="9"/><circle class="pm-dot" cx="478" cy="423" r="9"/><circle class="pm-dot" cx="283" cy="441" r="9"/><circle class="pm-dot" cx="282" cy="332" r="9"/><circle class="pm-dot" cx="436" cy="378" r="9"/><circle class="pm-dot" cx="354" cy="477" r="9"/><circle class="pm-dot" cx="439" cy="455" r="9"/><circle class="pm-dot" cx="357" cy="374" r="9"/><circle class="pm-dot" cx="430" cy="342" r="9"/><circle class="pm-dot" cx="403" cy="460" r="9"/><circle class="pm-dot" cx="259" cy="391" r="9"/><circle class="pm-dot" cx="298" cy="415" r="9"/><circle class="pm-dot" cx="322" cy="446" r="9"/><circle class="pm-dot" cx="512" cy="431" r="9"/><circle class="pm-dot" cx="308" cy="473" r="9"/><circle class="pm-dot" cx="503" cy="386" r="9"/><circle class="pm-dot" cx="488" cy="352" r="9"/><circle class="pm-dot" cx="345" cy="432" r="9"/><circle class="pm-dot" cx="541" cy="419" r="9"/><circle class="pm-dot" cx="570" cy="420" r="9"/><circle class="pm-dot" cx="209" cy="385" r="9"/><circle class="pm-dot" cx="473" cy="393" r="9"/><circle class="pm-dot" cx="592" cy="357" r="9"/><circle class="pm-dot" cx="328" cy="343" r="9"/></g>
+          <text class="pm-note" x="400" y="510" text-anchor="middle">«Accogliente» · «A due passi dal mare» · «Confortevole»</text>
+          <g class="pm-free">
+            <circle class="ring" cx="690" cy="215" r="58"/>
+            <text class="pm-free-t" x="690" y="300" text-anchor="middle">Posizione libera</text>
+          </g>
+          <path class="pm-path" id="pmPath" d="M430 410 C 500 360, 560 300, 690 215"/>
+          <g class="pm-you" id="pmYou" transform="translate(430 410)">
+            <circle class="halo" r="26"/><circle class="core" r="12"/>
+          </g>
+          <text class="pm-you-t" id="pmYouT" x="430" y="452" text-anchor="middle">La vostra struttura</text>
+        </svg>
+      <figcaption>Esempio illustrativo. Nell’analisi la mappa si costruisce sulla vostra struttura e sui concorrenti reali.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -633,6 +725,32 @@
   after.addEventListener('click',function(){ clearInterval(auto); set(true); });
   set(false);
   if(!HP.reduce){ var s=false; auto=setInterval(function(){ s=!s; set(s); },4200); }
+})();
+</script>
+<script>
+(function(){
+  var svg=document.querySelector('.pmap'); if(!svg) return;
+  var path=document.getElementById('pmPath'), you=document.getElementById('pmYou'), lab=document.getElementById('pmYouT');
+  var steps=[].slice.call(document.querySelectorAll('#pmSteps li')), len=path.getTotalLength(), timers=[], raf=0;
+  path.style.setProperty('--len',len);
+  function step(n){ steps.forEach(function(li,i){ li.classList.toggle('on', i===n-1); }); svg.classList.toggle('s2', n>=2); svg.classList.toggle('s3', n>=3); }
+  function place(t){ var p=path.getPointAtLength(len*t); you.setAttribute('transform','translate('+p.x+' '+p.y+')'); lab.setAttribute('x',p.x); lab.setAttribute('y',p.y+(t>.98?88:42)); path.style.strokeDashoffset=len*(1-t); }
+  function reset(){ timers.forEach(clearTimeout); timers=[]; cancelAnimationFrame(raf); step(1); place(0); lab.textContent='La vostra struttura, oggi'; }
+  function run(){
+    reset();
+    if(HP.reduce){ step(3); place(1); lab.textContent='La vostra struttura, posizionata'; return; }
+    timers.push(setTimeout(function(){ step(2); }, 900));
+    timers.push(setTimeout(function(){
+      var t0=performance.now(), D=2200;
+      lab.style.opacity=0;
+      (function tick(now){ var k=Math.min(1,(now-t0)/D), e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2; place(e);
+        if(k<1) raf=requestAnimationFrame(tick); else { step(3); lab.textContent='La vostra struttura, posizionata'; lab.style.opacity=1; } })(t0);
+    }, 2100));
+  }
+  reset();
+  var done=false, io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && !done){ done=true; run(); } }); },{threshold:.45});
+  io.observe(svg);
+  document.getElementById('pmReplay').addEventListener('click', run);
 })();
 </script>
 </body>
