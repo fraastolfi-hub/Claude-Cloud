@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Francesco Astolfi · Autore</title>
+<meta name="description" content="Bozza di homepage in stile autore: il libro Hotel Positioning, chi è Francesco Astolfi, tre modi per iniziare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+/* Bozza "Autore": home essenziale da scrittore. Nero carbone, bianco, il giallo del libro solo su bottoni e icone.
+   Titoli in Inter leggero, testo lungo in Source Serif. Due caratteri, mai nella stessa frase. */
+:root{
+  --coal:#1C1C1C;--night:#0B0B0B;--white:#FFFFFF;--ink:#151515;--ink-2:#3A3A3A;--grey:#8A8A8A;--line:#D9D9D9;
+  --yellow:#FFDD00;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  --serif:'Source Serif 4',Georgia,serif;
+  --sign:'Mrs Saint Delafield',cursive;
+  --max:1240px;--gut:clamp(20px,6vw,100px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font:400 18px/1.6 var(--serif);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
+
+.note-top{background:#F3F3F3;color:#666;font:500 12px/1.5 var(--sans);text-align:center;padding:9px 20px}
+.note-top b{color:var(--ink)}
+
+/* bottoni */
+.btn{display:inline-flex;align-items:center;gap:12px;white-space:nowrap;background:var(--yellow);color:var(--ink);font:600 17px/1 var(--sans);text-decoration:none;padding:20px 22px;border-radius:3px;transition:background .2s,transform .2s}
+.btn svg{width:16px;height:16px;transition:transform .25s}
+.btn:hover{background:#FFE640}
+.btn:hover svg{transform:translateX(3px)}
+.btn.line{background:none;color:var(--yellow);box-shadow:inset 0 0 0 1px var(--yellow);padding:20px 40px}
+.btn.line:hover{background:rgba(255,221,0,.08)}
+
+/* nav sul nero */
+.nav{position:absolute;left:0;right:0;z-index:5}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:104px;gap:24px}
+.mark{font:400 19px/1 var(--sans);letter-spacing:.2em;color:#fff;text-decoration:none;white-space:nowrap}
+.nav nav{display:flex;gap:40px;font:400 16px var(--sans);color:#fff}
+.nav nav a{text-decoration:none;opacity:.92}
+.nav nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--yellow)}
+.nav .cand{display:inline-flex;align-items:center;gap:8px}
+.nav .cand::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--yellow)}
+@media (max-width:1000px){.nav nav a:not(.cand){display:none}}
+@media (max-width:600px){.nav nav{display:none}.nav .wrap{height:84px}.mark{font-size:16px}}
+
+/* hero */
+.hero{position:relative;background:var(--coal);color:#fff;overflow:hidden;min-height:760px;display:flex;align-items:center}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(60% 70% at 78% 30%,rgba(255,255,255,.10),transparent 60%),
+  radial-gradient(40% 50% at 95% 90%,rgba(255,255,255,.04),transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;width:100%;padding-top:150px;padding-bottom:90px}
+.kick{font:400 17px/1 var(--sans);letter-spacing:.02em;color:var(--yellow);text-transform:uppercase}
+.hero h1{font:300 clamp(40px,4.4vw,64px)/1.12 var(--sans);letter-spacing:-.012em;margin:22px 0 34px;max-width:15ch}
+.pub{font:italic 400 16px var(--serif);color:#E6E6E6;margin-top:24px}
+.hr{height:1px;background:rgba(255,255,255,.35);max-width:500px;margin:38px 0 32px}
+.hero blockquote{font:400 21px/1.45 var(--serif);max-width:30ch}
+.hero cite{display:block;margin-top:12px;font:400 15px var(--sans);font-style:normal;color:#A6A6A6}
+
+/* il libro sul piedistallo di pietra */
+.stage{position:relative;height:620px;align-self:end;margin-bottom:-90px}
+.book{position:absolute;left:50%;bottom:154px;width:min(320px,76%);height:auto;transform:translateX(-46%);filter:drop-shadow(0 30px 40px rgba(0,0,0,.55));z-index:2}
+.stone{position:absolute;border-radius:2px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#3A3A39 0,#2A2A29 9px,#232322 10px,#181817 100%)}
+.stone.s2{left:-6%;right:-40%;bottom:0;height:64px;filter:brightness(.85)}
+.stone.s1{left:10%;right:-40%;bottom:64px;height:118px}
+.stone::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(255,255,255,.22)}
+.book-shadow{position:absolute;left:50%;bottom:170px;width:62%;height:26px;transform:translateX(-46%);background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.7),transparent 70%);z-index:1}
+@media (max-width:900px){
+  .hero{min-height:0}
+  .hero .wrap{grid-template-columns:1fr;padding-top:130px;padding-bottom:0}
+  .stage{height:470px;margin:20px calc(var(--gut) * -1) 0}
+  .book{width:230px;bottom:122px}
+  .stone.s2{left:0;right:0;height:50px}
+  .stone.s1{left:12%;right:0;bottom:50px;height:92px}
+  .book-shadow{bottom:132px}
+}
+
+/* chi sono */
+.me{padding:clamp(80px,9vw,128px) 0}
+.me .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,140px);align-items:center}
+.me h2{font:300 clamp(38px,3.6vw,52px)/1.1 var(--sans);letter-spacing:.005em;text-transform:uppercase;margin-bottom:32px}
+.me p{font-size:20px;line-height:1.55;color:var(--ink);max-width:34em}
+.me p + p{margin-top:18px}
+.me strong{font-weight:600}
+.me .row{display:flex;align-items:center;gap:clamp(24px,4vw,56px);margin-top:44px}
+.sign{font:400 clamp(44px,4.2vw,62px)/1 var(--sign);color:var(--ink);transform:rotate(-4deg);white-space:nowrap;user-select:none}
+.portrait{border-radius:6px;overflow:hidden;background:#222;aspect-ratio:560/700}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+@media (max-width:900px){.me .wrap{grid-template-columns:1fr}.portrait{order:-1;max-width:460px}}
+@media (max-width:480px){.me .row{flex-wrap:wrap;gap:22px 28px}.sign{font-size:46px}}
+
+/* tre modi */
+.ways{background:var(--night);color:#fff;padding:clamp(90px,10vw,140px) 0;text-align:center}
+.ways h2{font:300 clamp(34px,3.6vw,52px)/1.1 var(--sans);text-transform:uppercase;letter-spacing:.01em;margin-bottom:clamp(60px,7vw,100px)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.way{display:flex;flex-direction:column;align-items:center}
+.way svg{width:56px;height:56px;margin-bottom:44px}
+.way h3{font:300 23px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.02em;margin-bottom:22px}
+.way p{font:400 17px/1.55 var(--sans);color:#B5B5B5;max-width:24ch;margin-bottom:44px}
+.way .btn{margin-top:auto}
+@media (max-width:860px){.three{grid-template-columns:1fr;gap:72px}}
+
+/* footer */
+.foot{background:var(--coal);color:#fff;padding:56px 0 40px;font-family:var(--sans)}
+.foot .top{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot nav{display:flex;gap:34px;flex-wrap:wrap;font-size:16px}
+.foot nav a{text-decoration:none}
+.foot nav a:hover{color:var(--yellow)}
+.foot .legal{margin-top:40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#9A9A9A}
+.foot .legal a{color:#fff;text-decoration:none}
+
+/* entrata */
+.up{opacity:0;transform:translateY(14px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.45s}
+@keyframes up{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.up{animation:none;opacity:1;transform:none}}
+</style>
+
+<div class="note-top"><b>Bozza · Home "Autore".</b> Struttura ispirata a benmeer.com: libro in apertura, la persona, tre strade. Contenuti reali.</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#">FRANCESCO ASTOLFI</a>
+    <nav aria-label="Principale">
+      <a href="#">Il libro</a><a href="#">Il metodo</a><a href="#">Casi</a><a href="#">Risorse gratis</a><a href="#chi">Chi sono</a><a class="cand" href="#">Candida il tuo hotel</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kick up">Hotel Positioning</p>
+      <h1 class="up d1">Ogni hotel ha un motivo per essere scelto. Quasi nessuno l’ha mai scritto.</h1>
+      <div class="up d2">
+        <a class="btn" href="https://www.amazon.it/dp/B0HL3Z4XL7/">Ordina il libro <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        <p class="pub">Su Amazon, anche in Kindle · 19,90 €</p>
+      </div>
+      <div class="hr up d3"></div>
+      <blockquote class="up d4">“I consulenti vendono consigli. Gli operatori vendono cicatrici.”<cite>— Francesco Astolfi, vent’anni nel marketing alberghiero</cite></blockquote>
+    </div>
+    <div class="stage" aria-hidden="false">
+      <div class="stone s2"></div>
+      <div class="stone s1"></div>
+      <div class="book-shadow"></div>
+      <img class="book" src="img/libro-hotel-positioning@2x.webp" width="840" height="1316" alt="Il libro Hotel Positioning di Francesco Astolfi">
+    </div>
+  </div>
+</section>
+
+<section class="me" id="chi">
+  <div class="wrap">
+    <div>
+      <h2>Ciao, sono Francesco Astolfi.</h2>
+      <p>Sono l’autore di <em>Hotel Positioning</em>, il manuale di posizionamento alberghiero. Vent’anni a vendere hotel, da ogni lato del tavolo: ho costruito TUI.it da zero a trenta milioni, ho guidato il marketing di Ata Hotels, ho diretto una web agency per hotel e aperto dieci locali con soldi miei.</p>
+      <p>Quasi nessun hotel sa dire in una frase <strong>perché l’ospite dovrebbe scegliere proprio lui</strong>. Così finisce a competere sul prezzo. Io trovo quella frase, la scrivo <strong>con le parole dei tuoi ospiti</strong> e la porto dove decidono: sito, Booking, Google, campagne.</p>
+      <div class="row">
+        <a class="btn" href="#">La mia storia <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        <span class="sign" aria-label="Firma di Francesco Astolfi">Francesco Astolfi</span>
+      </div>
+    </div>
+    <div class="portrait"><img src="img/francesco.webp" width="560" height="748" alt="Francesco Astolfi" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="ways">
+  <div class="wrap">
+    <h2>Tre modi in cui posso aiutarti</h2>
+    <div class="three">
+      <div class="way">
+        <svg viewBox="0 0 56 56" fill="none" stroke="#FFDD00" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M28 14c-5-3-12-4-20-3v31c8-1 15 0 20 3 5-3 12-4 20-3V11c-8-1-15 0-20 3z"/><path d="M28 14v31"/><path d="M13 19c4 0 7 .5 10 1.6M13 25c4 0 7 .5 10 1.6M13 31c4 0 7 .5 10 1.6M33 20.6c3-1.1 6-1.6 10-1.6M33 26.6c3-1.1 6-1.6 10-1.6M33 32.6c3-1.1 6-1.6 10-1.6"/></svg>
+        <h3>Il libro</h3>
+        <p>Come l’ospite sceglie un hotel. E perché non sceglie il tuo.</p>
+        <a class="btn line" href="https://www.amazon.it/dp/B0HL3Z4XL7/">Ordina il libro</a>
+      </div>
+      <div class="way">
+        <svg viewBox="0 0 56 56" fill="none" stroke="#FFDD00" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="10" y="20" width="9" height="26"/><rect x="23.5" y="12" width="9" height="34"/><rect x="37" y="24" width="9" height="22"/><path d="M28 12V6l5 2-5 2"/><path d="M6 46h44"/><path d="M13 25h3M13 30h3M13 35h3M26.5 17h3M26.5 22h3M26.5 27h3M26.5 32h3M40 29h3M40 34h3"/></svg>
+        <h3>L’analisi del tuo hotel</h3>
+        <p>Il metodo applicato alla tua struttura. Una alla settimana, risposta in 48 ore.</p>
+        <a class="btn line" href="#">Candida il tuo hotel</a>
+      </div>
+      <div class="way">
+        <svg viewBox="0 0 56 56" fill="none" stroke="#FFDD00" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="9" y="12" width="38" height="34" rx="2"/><path d="M9 20h38"/><path d="M14 16h1M18 16h1M22 16h1"/><path d="M16 28l3 3 6-6M16 38l3 3 6-6"/><path d="M30 29h11M30 39h11"/></svg>
+        <h3>Risorse gratis</h3>
+        <p>Il quiz «Che hotel sei?», lo smontaggio della homepage, gli otto strumenti del libro.</p>
+        <a class="btn line" href="#">Inizia gratis</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="top">
+      <a class="mark" href="#">FRANCESCO ASTOLFI</a>
+      <nav aria-label="Piè di pagina"><a href="#">Il libro</a><a href="#">Il metodo</a><a href="#">Casi</a><a href="#">Risorse gratis</a><a href="#chi">Chi sono</a><a href="#">Candida il tuo hotel</a></nav>
+    </div>
+    <div class="legal"><span>Hotel Positioning · Via Cupa 5, 47923 Rimini · P. IVA 04283940403</span><a href="#">Privacy policy</a></div>
+  </div>
+</footer>
+
+</html>
