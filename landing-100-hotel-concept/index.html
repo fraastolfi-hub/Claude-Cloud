@@ -168,7 +168,14 @@ section{position:relative}
 .q-panel .tag{font-family:var(--f-display);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.9}
 .q-panel h3{color:#fff;font-size:clamp(24px,3vw,32px)}
 .q-panel .sum{font-size:clamp(19px,2vw,22px);font-weight:600;line-height:1.35;padding-top:14px;border-top:1px solid rgba(255,255,255,.45)}
-.q-hint{font-family:var(--f-display);font-size:11.5px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;margin-top:10px}
+.q-hint{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:0 0 14px;padding:14px 18px;background:#FFF1E8;border-left:4px solid var(--cta);font-family:var(--f-display);font-size:14px;line-height:1.3;color:var(--ink);letter-spacing:.02em;text-transform:uppercase}
+.q-hint b{color:var(--cta-deep);font-weight:800;font-size:clamp(15px,1.7vw,18px)}
+.q-arrow{font-family:var(--f-display);font-weight:800;font-size:38px;line-height:.8;color:var(--cta);animation:bob 1.1s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(-4px)}50%{transform:translateY(6px)}}
+.matrix.nudge .q[aria-pressed="false"]{animation:glow 2.4s ease-in-out infinite}
+.matrix.nudge .q-dead{animation-delay:.6s!important}.matrix.nudge .q-straw{animation-delay:1.2s!important}
+@keyframes glow{0%,100%{box-shadow:none}50%{box-shadow:inset 0 0 0 3px rgba(255,255,255,.75)}}
+.q-hint.done .q-arrow{animation:none;opacity:.35}
 
 /* scheda */
 .scheda{margin-top:48px;border-top:6px solid var(--blue);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0}
@@ -553,7 +560,8 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
 
     <div class="matrix-wrap">
       <div>
-        <div class="matrix" role="group" aria-label="I quattro quadranti della WHY-WOW Matrix">
+        <p class="q-hint" id="qhint"><span class="q-hint-txt">Tocca un quadrante:<br><b>in quale si trova il tuo hotel?</b></span><span class="q-arrow" aria-hidden="true">↓</span></p>
+        <div class="matrix nudge" role="group" aria-label="I quattro quadranti della WHY-WOW Matrix">
           <div class="axis-y"><small>DEBOLE</small>WHY<small>FORTE</small></div>
           <button class="q q-why" data-q="why" aria-pressed="false"><b>Il comodo invisibile</b><span>Why forte / Wow basso</span></button>
           <button class="q q-master" data-q="master" aria-pressed="true"><b>Il colpo da maestro</b><span>Why forte / Wow alto</span></button>
@@ -561,7 +569,6 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
           <button class="q q-straw" data-q="straw" aria-pressed="false"><b>Il fuoco di paglia</b><span>Why debole / Wow alto</span></button>
           <div class="axis-x"><small>BASSO</small>WOW<small>ALTO</small></div>
         </div>
-        <p class="q-hint">Tocca un quadrante: in quale si trova il tuo hotel?</p>
       </div>
       <div class="q-panel" id="qpanel" aria-live="polite" style="background:var(--q-master)">
         <span class="tag">Why forte / Wow alto</span>
@@ -974,9 +981,12 @@ var CONFIG = {
   document.querySelectorAll(".q").forEach(function(b){
     b.addEventListener("click", function(){
       var d = Q[b.dataset.q];
+      document.querySelector(".matrix").classList.remove("nudge");
+      document.getElementById("qhint").classList.add("done");
       document.querySelectorAll(".q").forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
       panel.style.background = d.c;
       panel.innerHTML = '<span class="tag">' + d.t + '</span><h3>' + d.h + '</h3><p>' + d.p + '</p><p class="sum">' + d.s + '</p>';
+      if (window.matchMedia("(max-width:900px)").matches) panel.scrollIntoView({behavior:"smooth", block:"start"});
     });
   });
   /* exit-intent: una volta per sessione, non dopo un clic su "acquista" */
