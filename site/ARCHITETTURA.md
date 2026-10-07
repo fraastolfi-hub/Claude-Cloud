@@ -37,7 +37,7 @@ Ogni pagina ha **un'azione principale** e al massimo una secondaria, presa dal g
 ├── /risorse/             Hub degli strumenti gratuiti: "parti da qui"
 │   ├── /quiz/            Che hotel sei? 7 domande                           → risultato + Analisi o Libro
 │   ├── /smontaggio/      Ti smonto la homepage (6 al mese)                 → form
-│   ├── /bonus/           Gli 8 strumenti del libro + primo capitolo         → opt-in email
+│   ├── /bonus/           Gli 8 strumenti del libro (i bonus)                → opt-in email
 │   └── /library/         69 pattern + 19 categorie, con filtri              → Analisi
 ├── /francesco/           Chi sono: autorità, storia, cicatrici              → Analisi · sec.: Libro
 └── /privacy-policy/
@@ -77,7 +77,7 @@ Vedi [TONO.md](TONO.md): "voi", registro professionale, il dato prima dell'agget
 | Analisi | Analisi gratuita su richiesta: fatta a mano da Francesco, massimo 5 al mese, solo hotel e resort dalle 40 camere, consegna in 48-72 ore, 20-25 pagine; dopo, il posizionamento su misura solo se è l'hotel a ricontattare Francesco. La homepage è la pagina della richiesta (`/#richiedi`); /analisi-gratuita.html reindirizza lì. A pagamento: €697 + IVA, 5 documenti operativi (39 pagine), consegna in 48 ore dal questionario, 3 call di controllo (mese 1, 3, 6), garanzia: rimborso più €500 entro 30 giorni | "4 a settimana, entro 72 ore" (landing analisi gratuita) |
 | Lettura recensioni | In cinque lingue (italiano, inglese, russo, arabo, cinese), con il supporto dell'AI per le traduzioni: dirlo sempre così, mai come conoscenza diretta delle lingue | — |
 | Smontaggio | Gratis, 6 al mese, risposta in 3 giorni lavorativi | — |
-| Libro | 120 pagine, 8 figure, 6 passaggi, €19,90 su Amazon (https://www.amazon.it/dp/B0HL3Z4XL7/), anche Kindle, rimborso Amazon 14 giorni, primo capitolo in PDF di 8 pagine | — |
+| Libro | 120 pagine, 8 figure, 6 passaggi, €19,90 su Amazon (https://www.amazon.it/dp/B0HL3Z4XL7/), anche Kindle, rimborso Amazon 14 giorni. Bonus gratuiti: gli 8 strumenti (non esiste un capitolo gratuito) | — |
 | Acquisto analisi | https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00 | — |
 | Dati legali | Francesco Astolfi, Via Cupa 5, 47923 Rimini (RN), P. IVA 04283940403, consulting@francescoastolfi.net | — |
 
