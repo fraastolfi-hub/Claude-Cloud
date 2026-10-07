@@ -222,7 +222,8 @@ h3 .strike,.card .strike{white-space:normal}
 .memo li .v.bad,.tg.warn{color:#0a0a0a!important;background:var(--pomodoro)!important;padding:2px 6px}
 .field.err .em{display:inline-block;color:#0a0a0a;background:var(--pomodoro);padding:3px 8px;font:700 12px var(--mono);letter-spacing:.03em}
 .photo-wrap .sticker{background:var(--inchiostro)!important;color:var(--giallo)!important;backdrop-filter:none;-webkit-backdrop-filter:none}
-.sec.dark .case-n,.case-n{color:var(--giallo)}
+.case-n{color:var(--inchiostro)}
+.sec.dark .case-n{color:var(--giallo)}
 /* riquadri delle pagine: ogni blocco pieno ha il suo bordo, come nel resto del sistema */
 .six li,.step-card,.line-card,.dodont > div,.case-card,.step,.doc,.compass,.free-box,.verdict,.cex,.get li,.qz-opt,.opts button,
 .case,.seal,.tool,.memo,.ba,.fit .card,.slots li,.weak li,.legend .card,.mat,.pioneer,.canvas,.dec .st,
@@ -236,3 +237,4 @@ h3 .strike,.card .strike{white-space:normal}
 [class*="grid"] > *,.split > *,.wrap > *{min-width:0}
 .beats > *,.moves li > *{min-width:0}
 @media (max-width:360px){.moves li{font-size:15px}}
+.foot .foot-h{font-size:12px!important;line-height:1.3}
