@@ -5,7 +5,7 @@ P = dict(
     title="Ridurre le commissioni OTA e vendere diretto",
     og_title="Commissioni OTA: il calcolo con i numeri del tuo hotel.",
     desc="Un hotel di 80 camere lascia a Booking circa €150.000 l'anno di commissioni. Fai il calcolo con i tuoi numeri e scopri perché l'ospite non prenota diretto.",
-    eyebrow="Segnale 01 · Canali di vendita",
+    eyebrow="Il problema · Troppe commissioni OTA",
     h1="Ridurre la dipendenza dalle OTA.",
     pull='Le commissioni OTA pesano sempre di più sul margine. Per un hotel di 80 camere valgono circa <span class="hl or in">€150.000</span> l\'anno.',
     lead="Booking porta prenotazioni, ma l'ospite resta suo. La causa raramente è il canale: l'ospite non trova un motivo per prenotare da te.",

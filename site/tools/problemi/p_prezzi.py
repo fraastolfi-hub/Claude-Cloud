@@ -5,7 +5,7 @@ P = dict(
     title="Alzare le tariffe senza perdere prenotazioni",
     og_title="Il prodotto migliora ogni anno. La tariffa no.",
     desc="Il tuo hotel migliora, ma la tariffa resta ferma? Il prezzo segue il motivo per cui l'ospite sceglie, non il prodotto. Fai il calcolo con i tuoi numeri.",
-    eyebrow="Segnale 02 · Prezzo",
+    eyebrow="Il problema · Tariffe che non salgono",
     h1="Alzare le tariffe senza perdere prenotazioni.",
     pull='Alzare le tariffe significa perdere prenotazioni. <span class="hl or in">Finché l\'ospite non ha un motivo per pagarle.</span>',
     lead="A pochi chilometri, un hotel simile al tuo chiede €40 in più a notte e resta pieno. La differenza raramente è nel prodotto. È nel motivo che l'ospite riconosce.",

@@ -18,7 +18,7 @@ P = dict(
     title="Differenziare un hotel che somiglia agli altri",
     og_title="Gli ospiti ti apprezzano, ma non sanno spiegare perché.",
     desc="Molti hotel curati si somigliano. Fai il test del logo coperto sulla tua homepage e scopri il motivo per cui l'ospite sceglie te.",
-    eyebrow="Segnale 03 · Riconoscibilità",
+    eyebrow="Il problema · Un hotel uguale agli altri",
     h1="Rendere il tuo hotel riconoscibile.",
     pull='Gli ospiti ti apprezzano, ma non sanno spiegare perché. <span class="hl or in">Spesso non lo spiega nemmeno il sito.</span>',
     lead="Design, foto e rebranding si comprano, e infatti li hanno in tanti. Non si compra un motivo per scegliere te invece di un altro hotel curato.",

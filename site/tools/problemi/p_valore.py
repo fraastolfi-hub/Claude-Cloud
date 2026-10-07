@@ -5,7 +5,7 @@ P = dict(
     title="Quanto vale un hotel? Il brand nella valutazione",
     og_title="Il valore del tuo hotel oltre l'immobile: la riga che manca nella perizia.",
     desc="Il perito valuta posizione, metri quadri, stato dell'immobile ed EBITDA. Il nome del tuo hotel non compare. Calcola quanto vale la riga che manca: il brand.",
-    eyebrow="Segnale 05 · Valore del brand",
+    eyebrow="Il problema · Il valore del brand",
     h1="Un brand che valga oltre l'immobile.",
     pull='Il valore del tuo hotel coincide con quello dell\'immobile. <span class="hl or in">Il calcolo del perito lo mostra in quattro righe.</span>',
     lead="Poi c'è una quinta riga, che oggi manca. È l'unica che dipende solo dalle tue scelte.",

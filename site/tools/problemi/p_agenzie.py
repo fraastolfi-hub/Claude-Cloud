@@ -6,7 +6,7 @@ P = dict(
     title="Agenzie marketing per hotel: perché cambiarle non basta",
     og_title="Agenzie diverse, risultati simili. La causa è nelle istruzioni.",
     desc="Hai cambiato più agenzie e i risultati sono simili? Quando cambia chi esegue e il risultato no, la causa è nelle istruzioni. Fai il test del tuo brief.",
-    eyebrow="Segnale 04 · Comunicazione",
+    eyebrow="Il problema · Agenzie che non bastano",
     h1="Dare alle agenzie un brief chiaro.",
     pull='Agenzie diverse, risultati simili. <span class="hl or in">Quando cambia chi esegue e il risultato no, la causa è nelle istruzioni.</span>',
     lead="Non vuol dire che le agenzie fossero tutte scarse. Ognuna ha ricevuto lo stesso brief, e ha fatto ciò che quel brief permetteva.",

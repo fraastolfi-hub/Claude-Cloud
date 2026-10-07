@@ -19,7 +19,7 @@ P = dict(
     title="Aprire un hotel: il posizionamento prima dell'apertura",
     og_title="Il posizionamento si decide prima dell'apertura.",
     desc="Stai aprendo un hotel? Il posizionamento si decide prima del cantiere: dopo l'apertura ogni correzione costa il triplo. Guarda cosa puoi ancora decidere adesso.",
-    eyebrow="Segnale 06 · Nuove aperture",
+    eyebrow="Il problema · Un hotel da aprire",
     h1="Aprire con un'identità chiara.",
     pull='Prima dell\'apertura il posizionamento <span class="hl or in">costa meno e conta di più.</span>',
     lead="Il cantiere va avanti, i render sono pronti, e la risposta a «perché voi?» si rimanda. Al mio primo ristorante l'ho rimandata anch'io.",
