@@ -80,6 +80,7 @@
       var done = function(){
         $$('[data-echo]', f).forEach(function(o){ var src = f.querySelector(o.dataset.echo); if (src && src.value.trim()) o.textContent = src.value.trim(); });
         f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+        if (window.HPtrack) HPtrack('lead', { form: f.getAttribute('name') || f.id });
       };
       // Netlify Forms: invio in background; la funzione submission-created salva su Brevo e manda la notifica
       if (f.hasAttribute('data-netlify') && /(^|\.)(hotelpositioning\.com|netlify\.app)$/.test(location.hostname)) {

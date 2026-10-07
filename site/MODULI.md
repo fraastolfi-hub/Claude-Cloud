@@ -46,3 +46,20 @@ Se qualcosa non arriva: Netlify, poi Logs, poi Functions, poi `submission-create
 - In anteprima (localhost o link di anteprima) i moduli mostrano solo la conferma: l'invio reale parte solo da `hotelpositioning.com` o da un dominio `netlify.app`.
 - Le email automatiche ai contatti (primo capitolo del libro, risultato del test) si configurano su Brevo come automazioni sull'ingresso in lista.
 - La privacy policy (/privacy-policy/) descrive già Netlify, Brevo e Google Fonts: se cambiano fornitori o moduli, va aggiornata.
+
+# Google Analytics e Pixel di Meta
+
+Gli script partono solo dopo il consenso dato nel banner dei cookie (`src/partials/cookie-banner.html`, `src/assets/consent.js`). Prima della scelta, o dopo un rifiuto, non viene caricato nulla. La scelta dura 6 mesi; il link «Preferenze cookie» nel piè di pagina riapre il banner.
+
+**Per attivarli** inserite gli ID in `src/partials/head.html`:
+
+```html
+window.HP_TRACKING = { ga4: 'G-XXXXXXXXXX', metaPixel: '123456789012345' };
+```
+
+- `ga4`: l'ID di misurazione della proprietà GA4 (Amministrazione, poi Stream di dati).
+- `metaPixel`: l'ID del set di dati/Pixel (Gestione eventi di Meta).
+
+Se un ID resta vuoto, quello strumento è disattivato anche con il consenso.
+
+**Eventi già collegati:** a ogni modulo inviato con successo partono `generate_lead` su GA4 e `Lead` su Meta, con il nome del modulo (`candidatura`, `revisione-homepage`, `test-posizionamento`, `strumenti-libro`). Su GA4 segnate `generate_lead` come evento chiave; su Meta usate `Lead` come conversione delle campagne.

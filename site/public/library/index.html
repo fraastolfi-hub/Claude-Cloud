@@ -8,6 +8,8 @@
 <link rel="canonical" href="https://hotelpositioning.com/library/">
 <meta property="og:title" content="La library dei posizionamenti: 69 pattern + 19 categorie per hotel indipendenti">
 <meta property="og:description" content="Come differenziarsi e in quale mercato competere. Con esempi reali verificati e i casi mancanti dichiarati. Di Francesco Astolfi."><meta property="og:type" content="website">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D1D1F'/%3E%3Crect x='12' y='30' width='9' height='22' rx='2' fill='%236E6E73'/%3E%3Crect x='24' y='22' width='9' height='30' rx='2' fill='%236E6E73'/%3E%3Crect x='36' y='12' width='9' height='40' rx='2' fill='%23FFDD00'/%3E%3Crect x='48' y='26' width='6' height='26' rx='2' fill='%236E6E73'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -618,10 +620,28 @@ body.lock{overflow:hidden}
     </div>
     <div class="legal">
       <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
-      <span><a href="/privacy-policy/">Privacy policy</a></span>
+      <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
     </div>
   </div>
 </footer>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
+  <button type="button" class="cc-x" data-cc="reject" aria-label="Chiudi e rifiuta i cookie non necessari">✕</button>
+  <p class="cc-t" id="cc-t">Cookie e privacy</p>
+  <p class="cc-p">Usiamo cookie tecnici, necessari al sito. Con il vostro consenso usiamo anche cookie di statistica (Google Analytics) e di marketing (Pixel di Meta) per misurare le visite e l’efficacia delle campagne. Potete cambiare idea in qualsiasi momento. Dettagli nella <a href="/privacy-policy/#cookie">privacy policy</a>.</p>
+  <div class="cc-opts" id="cc-opts" hidden>
+    <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Tecnici</b> Necessari al funzionamento del sito. Sempre attivi.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistica</b> Google Analytics: visite e pagine più lette, in forma aggregata.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-mkt"><span><b>Marketing</b> Pixel di Meta: misura delle campagne su Facebook e Instagram e pubblico per gli annunci.</span></label>
+  </div>
+  <div class="cc-btns">
+    <button type="button" class="btn sm" data-cc="reject">Rifiuta</button>
+    <button type="button" class="btn sm" data-cc="accept">Accetta tutti</button>
+    <button type="button" class="cc-more" data-cc="custom" id="cc-custom">Personalizza</button>
+    <button type="button" class="btn sm" data-cc="save" id="cc-save" hidden>Salva le scelte</button>
+  </div>
+</div>
+<script src="/assets/consent.js"></script>
+
 <div class="exit" id="exit" role="dialog" aria-modal="true" aria-labelledby="exit-t" hidden>
   <div class="exit-card">
     <button type="button" class="exit-x" data-exit-close aria-label="Chiudi">✕</button>
