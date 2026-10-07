@@ -75,6 +75,7 @@ Vedi [TONO.md](TONO.md): "voi", registro professionale, il dato prima dell'agget
 | Clienti attuali | Veridia Resort (Chia), Silva Splendid (Fiuggi), Tocq Hotel (Milano), Radisson Blu Bergamo ChorusLife | — |
 | Palco | Hospitality Day 2026 | — |
 | Analisi | Candidatura gratuita: 5 posti, 1 analisi a settimana, risposta entro 48 ore, 20-25 pagine. A pagamento: €697 + IVA, 5 documenti operativi (39 pagine), consegna in 48 ore dal questionario, 3 call di controllo (mese 1, 3, 6), garanzia: rimborso più €500 entro 30 giorni | "4 a settimana, entro 72 ore" (landing analisi gratuita) |
+| Lettura recensioni | In cinque lingue (italiano, inglese, russo, arabo, cinese), con il supporto dell'AI per le traduzioni: dirlo sempre così, mai come conoscenza diretta delle lingue | — |
 | Smontaggio | Gratis, 6 al mese, risposta in 3 giorni lavorativi | — |
 | Libro | 120 pagine, 8 figure, 6 passaggi, €19,90 su Amazon (https://www.amazon.it/dp/B0HL3Z4XL7/), anche Kindle, rimborso Amazon 14 giorni, primo capitolo in PDF di 8 pagine | — |
 | Acquisto analisi | https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00 | — |
