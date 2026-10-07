@@ -16,11 +16,12 @@
 
 <link rel="stylesheet" href="/assets/problemi.css">
 <style>
-.brief-prev{font-size:16px;line-height:1.5;background:var(--paper);border:1px dashed var(--line);padding:12px 14px;overflow-wrap:anywhere}
+.brief-prev{font-size:16px;line-height:1.5;color:var(--ink-2);background:var(--white);border-radius:var(--r-sm);padding:14px 16px;overflow-wrap:anywhere}
 .brief-prev:empty{display:none}
-.bq{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed #A1A1A6;font-size:16px;line-height:1.35}
-.bq .tgl{flex:none;box-shadow:none}
-.bq .tgl button{padding:8px 12px}
+.bq{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.35;color:var(--ink)}
+.bq:last-child{border-bottom:0}
+.bq .tgl{flex:none}
+.bq .tgl button{padding:7px 14px}
 @media (max-width:480px){.bq{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
@@ -350,7 +351,7 @@
     </div>
     <div class="field"><label for="c-sito">Sito web <small>(se ce l'hai)</small></label><input id="c-sito" name="sito" inputmode="url" placeholder="www.tuohotel.it"></div>
     <fieldset class="field" style="border:0">
-      <legend class="lab" style="font:700 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-bottom:7px">Posso pubblicare l'analisi?</legend>
+      <legend class="lab" style="font:500 14px var(--text);margin-bottom:7px">Posso pubblicare l'analisi?</legend>
       <label class="check" style="margin:0 0 10px"><input type="radio" name="pubblicazione" value="nome" required><span><strong>Sì, come caso studio.</strong> Con nome dell'hotel e dati reali.</span></label>
       <label class="check" style="margin:0"><input type="radio" name="pubblicazione" value="anonimo"><span><strong>Sì, ma in forma anonima.</strong> «Boutique hotel in [zona], X camere», senza altri dettagli.</span></label>
     </fieldset>

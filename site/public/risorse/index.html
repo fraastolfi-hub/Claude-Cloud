@@ -70,6 +70,45 @@ a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:none}
 @media (max-width:520px){.an-stats{grid-template-columns:1fr}}
 .legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:28px;font:400 13px var(--mono);color:var(--muted)}
 .legend .effort{color:var(--ink)}
+
+/* --- Essenziale: rifiniture delle risorse --- */
+.picker{border:0;background:var(--white);border-radius:28px;box-shadow:0 0 0 1px rgba(0,0,0,.06),var(--sh-lg);padding:clamp(22px,3vw,34px)}
+.picker-head{font:500 13px var(--text);color:var(--muted)}
+.picker-head b{border:0;background:var(--mist);border-radius:980px;padding:5px 10px;font:500 12px/1 var(--text);color:var(--ink)}
+.q .lab{font:600 17px/1.3 var(--display);letter-spacing:-.015em}
+.opts button{border:0;background:var(--mist);border-radius:var(--r-sm);padding:12px 14px;font:400 15.5px/1.3 var(--text);color:var(--ink)}
+.opts button::before{width:16px;height:16px;border:1.5px solid #C7C7CC;border-radius:50%;background:var(--white)}
+.opts button:hover{transform:none;background:var(--mist-2)}
+.opts button[aria-pressed="true"]{background:var(--white);font-weight:500;box-shadow:inset 0 0 0 2px var(--ink)}
+.opts button[aria-pressed="true"]::before{background:var(--ink);border-color:var(--ink);box-shadow:inset 0 0 0 3px var(--white)}
+.verdict{border:0;background:var(--mist);border-radius:var(--r-sm);padding:20px}
+.verdict.on{background:var(--night);color:#F5F5F7}
+.verdict .k{font:500 13px var(--text);color:#A1A1A6}
+.verdict.on p{color:#D2D2D7}
+.verdict .then{font:400 13px/1.5 var(--text)}
+.verdict.on .then{color:#A1A1A6}
+.verdict .then a{color:#F5F5F7;font-weight:500}
+.verdict.on .btn{--bg:#F5F5F7;--fg:#1D1D1F}
+.verdict.idle p{font:400 14.5px/1.5 var(--text)}
+.path::before{width:1px;left:40px;background:var(--line)}
+@media (max-width:760px){.path::before{left:28px}}
+.rung .n{border:0;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);font:700 30px var(--display);letter-spacing:-.03em}
+@media (max-width:760px){.rung .n{font-size:22px}}
+.rung.in .n{background:var(--white)}
+.rung.pick .n{background:var(--night);color:#F5F5F7;box-shadow:none}
+.rung-card{border:0;box-shadow:none;background:var(--white);border-radius:var(--r);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+a.rung-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.rung.pick .rung-card{background:var(--white);box-shadow:inset 0 0 0 2px var(--ink)}
+.rung-card .meta .chip{background:var(--mist)}
+.an-stats .stat b{font-size:clamp(36px,3.4vw,46px);white-space:nowrap}
+.rung .chip.y::before{display:none}
+.rung .aware{font:400 14.5px/1.5 var(--text)}
+.effort{gap:5px;font:500 12px var(--text);color:var(--muted)}
+.effort i{width:8px;height:8px;border:0;border-radius:50%;background:var(--mist-2)}
+.effort i.f{background:var(--ink)}
+.legend{font:400 14px var(--text)}
+.legend .effort{color:var(--ink)}
+.legend b{color:var(--ink);font-weight:600}
 </style>
 </head>
 <body>
@@ -236,7 +275,7 @@ a.rung-card:hover{transform:translate(-2px,-2px);box-shadow:none}
         <p class="lead">L'analisi di posizionamento: il metodo applicato a te. Diagnosi, concorrenti, profili ospite, posizionamento proposto, azioni.</p>
       </div>
       <div class="rv d1">
-        <div class="stat-row an-stats" style="background:var(--paper);color:var(--ink);box-shadow:none">
+        <div class="stat-row an-stats" style="gap:12px">
           <div class="stat"><b>5</b><span>posti di candidatura gratuita</span></div>
           <div class="stat"><b>1</b><span>analisi alla settimana, la faccio io</span></div>
           <div class="stat"><b>48 h</b><span>per la risposta, anche se è no</span></div>

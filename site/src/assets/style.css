@@ -176,7 +176,6 @@ h1 em,h2 em{font-style:normal;color:var(--muted)}
 .sec.alt .card,.sec.orange .card{border-color:transparent}
 .sec.alt .card.y,.sec.alt .card.m,.sec.alt .card.b,.sec.alt .card.o,.sec.alt .card.p,
 .sec.orange .card.y,.sec.orange .card.m,.sec.orange .card.b,.sec.orange .card.o,.sec.orange .card.p{background:var(--white)}
-.card.y{box-shadow:inset 0 3px 0 var(--yellow)}
 .card.ink{background:var(--night);color:#F5F5F7;border-color:transparent;--muted:#A1A1A6;--line:#3A3A3C}
 .sec.dark .card{background:#1C1C1E;color:#F5F5F7;border-color:transparent}
 .sec.dark .card.o,.sec.dark .card.y{background:#F5F5F7;color:#1D1D1F;--ink:#1D1D1F;--muted:#6E6E73}

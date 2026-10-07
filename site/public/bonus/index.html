@@ -66,6 +66,35 @@
 .promise{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 @media (max-width:760px){.promise{grid-template-columns:1fr}}
 .promise .card p{font-size:16px}
+
+/* --- Essenziale: rifiniture dei bonus --- */
+.hero h1{font-size:clamp(40px,5.4vw,76px)}
+.gets li{font-size:17px}
+.gets li b{border:0;background:var(--mist);border-radius:var(--r-sm);font:700 20px/1 var(--display);letter-spacing:-.03em;padding:12px 10px;min-width:68px}
+.gets li:nth-child(1) b,.gets li:nth-child(2) b,.gets li:nth-child(3) b{background:var(--mist)}
+.sheets{gap:20px}
+.sheet,.sheet:nth-child(odd),.sheet:nth-child(even){transform:none;border:0;box-shadow:none;background:var(--white);border-radius:var(--r);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.sheet:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.sheet .bar{background:none;border-bottom:1px solid var(--line);padding:14px 18px 12px;font:500 13px var(--text);color:var(--muted)}
+.sheet .bar b{background:var(--mist);color:var(--ink);border-radius:980px;padding:4px 9px;font:600 12px/1 var(--text)}
+.sheet .body{padding:18px 18px 20px}
+.sheet p{color:var(--ink-2)}
+.sheet .lines i{height:1px;background:repeating-linear-gradient(90deg,#D2D2D7 0 6px,transparent 6px 10px)}
+.sheet.key{background:var(--white);box-shadow:inset 0 0 0 2px var(--ink)}
+.sheet.key:hover{box-shadow:inset 0 0 0 2px var(--ink),var(--sh-lg)}
+.sheet.key .bar{background:none}
+.sheet .stamp-tag{left:18px;top:-12px}
+.mini.m4 span,.mini.m7 span,.mini.m5 span,.mini.cvs span,.mini.ladder span{border:0;background:var(--mist);border-radius:6px}
+.mini.m4 span{font:500 9.5px var(--text);color:var(--ink-2)}
+.mini.m5 span{font:500 10px var(--text);color:var(--ink-2)}
+.mini.m4 span.x,.mini.m5 span.on,.mini.cvs span.w,.mini.attr span.on{background:var(--ink);color:#F5F5F7}
+.mini.m7 span{background:var(--white);box-shadow:inset 0 0 0 1px var(--line)}
+.mini.m7 span.ok{background:#D2D2D7;box-shadow:none}
+.mini.m7 span.ko{background:var(--ink);box-shadow:none}
+.mini.attr span{border:0;background:var(--mist);border-radius:980px;padding:3px 7px;font:500 10px var(--text);color:var(--ink-2)}
+.mini.ladder span{border-radius:5px 5px 2px 2px}
+.after .tl.in .n{background:var(--mist);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.after .tl:first-child.in .n{background:var(--yellow);box-shadow:none}
 </style>
 </head>
 <body>
@@ -187,7 +216,7 @@
       <article class="sheet rv">
         <div class="bar"><b>05</b><span>10 min</span></div>
         <div class="body"><h3>Dal fatto alla trasformazione</h3><p>Prendi la tua unicità e falla salire gradino per gradino, fino al punto in cui l'ospite si commuove.</p>
-          <div class="mini ladder lines" aria-hidden="true"><span style="height:12px"></span><span style="height:22px"></span><span style="height:32px"></span><span style="height:42px;background:var(--orange)"></span></div></div>
+          <div class="mini ladder lines" aria-hidden="true"><span style="height:12px"></span><span style="height:22px"></span><span style="height:32px"></span><span style="height:42px;background:var(--ink)"></span></div></div>
       </article>
       <article class="sheet rv d1">
         <div class="bar"><b>06</b><span>10 min</span></div>
