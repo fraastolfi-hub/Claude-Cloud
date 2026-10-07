@@ -95,7 +95,7 @@
     '/casi/': ['Prima di andare', 'Il prossimo caso può essere la vostra struttura.', 'Le candidature sono valutate una per una. Rispondo entro 48 ore.', 'Candida la struttura', '#candidatura', 'Ci penserò'],
     '/francesco/': ['Prima di andare', 'Una revisione gratuita della vostra homepage.', 'In tre giorni lavorativi vi dico cosa comunica oggi la vostra homepage, e cosa no.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
     '/libro/': ['Prima di andare', 'Il primo capitolo, gratuito.', 'Otto pagine in PDF, insieme agli otto strumenti del libro.', 'Ricevi il primo capitolo', '/bonus/', 'No, grazie'],
-    '/library/': ['Prima di andare', 'E il posizionamento della vostra struttura?', 'Sette domande per capire se oggi è riconoscibile, sostituibile o posizionata. Due minuti.', 'Fai il test', '/quiz/', 'No, grazie'],
+    '/library/': ['Prima di andare', 'E il posizionamento della vostra struttura?', 'Sette domande per capire se oggi è invisibile, sostituibile o posizionata. Due minuti.', 'Fai il test', '/quiz/', 'No, grazie'],
     '/risorse/': ['Prima di andare', 'Il punto di partenza più semplice.', 'Sette domande, due minuti, nessuna email obbligatoria.', 'Fai il test', '/quiz/', 'No, grazie'],
     '/quiz/': ['Mancano due minuti', 'Il risultato arriva alla fine del test.', 'Completate le domande per vedere il profilo della vostra struttura.', 'Completa il test', '#close', 'Esci'],
     '/smontaggio/': ['Prima di andare', 'La richiesta richiede quattro campi.', 'Nessuna call. Ricevete la revisione entro tre giorni lavorativi.', 'Richiedi la revisione', '#form', 'No, grazie']
