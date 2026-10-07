@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel Positioning Essenziale Nero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: essenziale, alla maniera di Apple, in negativo: nero e grigio antracite, testo chiaro, il bianco per i momenti forti, un solo sans,
+   titoli grandi e centrati, riquadri arrotondati a griglia; il giallo del libro solo come punta: il palazzo giallo, un puntino, un tratto. */
+:root{
+  --white:#000000;       /* fondo pagina: nero */
+  --mist:#161617;        /* fondo dei riquadri e delle sezioni alterne */
+  --ink:#F5F5F7;         /* testo chiaro */
+  --ink-2:#D2D2D7;
+  --grey:#A1A1A6;        /* testo secondario */
+  --line:#38383A;
+  --bldg:#2C2C2E;        /* palazzi */
+  --bldg-2:#3A3A3C;
+  --yellow:#FFDD00;      /* il giallo della copertina, solo come punta */
+  --night:#FFFFFF;       /* i momenti forti, in bianco */
+  color-scheme:dark;
+  --display:'Inter Tight',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  --text:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  --max:1080px;--wide:1240px;--gut:clamp(20px,4vw,40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font:400 17px/1.47 var(--text);letter-spacing:-.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
+.wide{max-width:var(--wide)}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.03em;text-wrap:balance}
+h1{font-size:clamp(46px,7vw,96px);line-height:1.02;font-weight:700}
+h2{font-size:clamp(36px,4.8vw,64px);line-height:1.05;font-weight:700}
+h3{font-size:clamp(22px,2vw,28px);line-height:1.15}
+p{text-wrap:pretty}
+.center{text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--text);color:var(--grey);letter-spacing:0}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+.sub{font:500 clamp(21px,2.1vw,28px)/1.25 var(--display);letter-spacing:-.015em;color:var(--ink-2);max-width:30ch;margin-inline:auto}
+.mark{background:linear-gradient(transparent 76%,var(--yellow) 76%,var(--yellow) 94%,transparent 94%)}
+
+/* bottoni e link */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:980px;background:var(--ink);color:#000;font:500 17px/1 var(--text);text-decoration:none;transition:background .2s}
+.btn:hover{background:#fff}
+.btn.light{background:#fff;color:var(--ink)}
+.btn.light:hover{background:var(--mist)}
+.more{font:500 17px/1 var(--text);text-decoration:none;color:var(--ink)}
+.more::after{content:" ›";font-size:1.15em}
+.more:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--yellow);text-decoration-thickness:3px}
+.acts{display:flex;flex-wrap:wrap;gap:16px 30px;justify-content:center;align-items:center;margin-top:28px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(0,0,0,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.1)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:52px;gap:20px;max-width:var(--wide)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font:600 15px/1 var(--text)}
+.brand svg{width:22px;height:18px}
+.nav nav{display:flex;gap:30px;font:400 13px var(--text);color:var(--ink-2)}
+.nav nav a{text-decoration:none}.nav nav a:hover{color:#fff}
+.nav .btn{padding:7px 14px;font-size:13px}
+@media (max-width:820px){.nav nav{display:none}}
+
+/* hero */
+.hero{padding-top:clamp(56px,8vw,104px);text-align:center}
+.hero h1{margin:18px auto 18px;max-width:14ch}
+.skyline{max-width:var(--wide);margin:clamp(48px,6vw,80px) auto 0;padding-inline:var(--gut)}
+.skyline svg{display:block;width:100%;height:auto}
+
+/* sezioni */
+.sec{padding-block:clamp(80px,10vw,140px)}
+.sec.mist{background:var(--mist)}
+.head{text-align:center;margin-bottom:clamp(40px,5vw,64px)}
+.head h2{max-width:18ch;margin:0 auto}
+.head .sub{margin-top:16px}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.tile{background:var(--white);border-radius:28px;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:10px;min-width:0;overflow:hidden;position:relative}
+.sec:not(.mist) .tile{background:var(--mist)}
+.t-3{grid-column:span 3}.t-2{grid-column:span 2}.t-4{grid-column:span 4}.t-6{grid-column:span 6}
+@media (max-width:900px){.bento{grid-template-columns:1fr 1fr}.t-2,.t-3,.t-4{grid-column:span 1}.t-6,.t-wide{grid-column:span 2}}
+@media (max-width:560px){.bento{grid-template-columns:1fr}.t-2,.t-3,.t-4,.t-6,.t-wide{grid-column:span 1}}
+.tile .k{font:600 14px var(--text);color:var(--grey)}
+.tile .big{font:700 clamp(52px,6vw,84px)/1 var(--display);letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.tile .big s{font-size:.5em;color:var(--grey);font-weight:600;text-decoration-thickness:2px;margin-right:8px}
+.tile p{color:var(--ink-2)}
+.tile sup,.fine sup{font-size:.6em;color:var(--grey)}
+.tile.dark{background:var(--night)!important;color:#1D1D1F}
+.tile.dark .k{color:#6E6E73}
+.tile.dark p{color:#424245}
+.tile.book{flex-direction:row;align-items:center;gap:24px}
+.tile.book img{width:120px;height:auto;flex:none}
+@media (max-width:560px){.tile.book{flex-direction:column;align-items:flex-start}}
+
+/* problema: cinquanta rettangoli */
+.problem{background:var(--night);color:#1D1D1F;text-align:center}
+.problem .sub{color:#6E6E73}
+.rects{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;max-width:560px;margin:clamp(44px,5vw,64px) auto 0}
+.rects i{aspect-ratio:1.5;border-radius:6px;background:#E3E3E8}
+.rects i.y{background:var(--yellow);box-shadow:0 0 0 4px rgba(255,221,0,.18)}
+.problem .cap{margin-top:22px;font:500 15px var(--text);color:#6E6E73}
+.problem .cap b{color:#1D1D1F;font-weight:600}
+
+/* metodo */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;counter-reset:s}
+.steps li{background:var(--mist);border-radius:22px;padding:28px 26px 30px;counter-increment:s;min-width:0}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--white);font:700 15px var(--display);margin-bottom:18px;box-shadow:inset 0 0 0 1px var(--line)}
+.steps li.y::before{background:var(--yellow);box-shadow:none;color:#000}
+.steps h3{font-size:22px;margin-bottom:6px}
+.steps p{color:var(--grey);font-size:16px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.steps{grid-template-columns:1fr}}
+
+/* libro: pagina prodotto */
+.product{text-align:center}
+.product img{width:min(380px,74vw);height:auto;margin:clamp(36px,5vw,56px) auto clamp(28px,4vw,40px)}
+.product .price{font:500 19px var(--text);color:var(--ink-2)}
+.product .price b{font-weight:600;color:var(--ink)}
+.specs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 48px;margin-top:clamp(40px,5vw,56px);padding-top:32px;border-top:1px solid var(--line)}
+.specs div{text-align:center}
+.specs b{display:block;font:700 34px/1 var(--display);letter-spacing:-.03em}
+.specs span{display:block;margin-top:6px;font-size:14px;color:var(--grey)}
+
+/* confronto dei formati */
+.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.model{text-align:center;padding:36px 28px 34px;border-radius:28px;background:var(--white);display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0}
+.model .ico{width:56px;height:56px;margin-bottom:6px}
+.model h3{font-size:24px}
+.model p{color:var(--ink-2);font-size:16px}
+.model .terms{margin-top:auto;padding-top:18px;font:600 14px var(--text);color:var(--grey)}
+.model.feat{box-shadow:inset 0 0 0 2px var(--ink)}
+.model .tag{font:600 12px var(--text);color:#000;background:var(--yellow);border-radius:980px;padding:5px 11px}
+@media (max-width:860px){.compare{grid-template-columns:1fr}}
+
+/* chiusura */
+.close{text-align:center}
+.close h2{max-width:16ch;margin:16px auto 0}
+
+/* note */
+.fine{background:var(--mist);padding-block:28px 40px;font-size:12px;line-height:1.5;color:var(--grey)}
+.fine ol{list-style:none;display:grid;gap:8px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.fine .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.note-top{background:var(--mist);color:var(--grey);font:500 12px/1.5 var(--text);text-align:center;padding:9px var(--gut)}
+.note-top b{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="note-top"><b>Proposta D2 · Essenziale, in nero.</b> Nero, bianco per i momenti forti, una punta di giallo. Contenuti reali, impaginazione esplorativa.</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#"><svg viewBox="0 0 22 18" aria-hidden="true"><rect x="0" y="7" width="5" height="11" rx="1" fill="#3A3A3C"/><rect x="6" y="3" width="5" height="15" rx="1" fill="#3A3A3C"/><rect x="12" y="1" width="5" height="17" rx="1" fill="#FFDD00"/><rect x="18" y="6" width="4" height="12" rx="1" fill="#3A3A3C"/></svg>Hotel Positioning</a>
+    <nav aria-label="Principale"><a href="#metodo">Metodo</a><a href="#risultati">Risultati</a><a href="#libro">Libro</a><a href="#formati">Formati</a></nav>
+    <a class="btn" href="#formati">Candida la struttura</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Brand positioning per hotel e resort</span>
+    <h1>Il motivo per cui <span class="mark">scelgono voi.</span></h1>
+    <p class="sub">Scritto con le parole dei vostri ospiti. Prima che lo scriva il prezzo.</p>
+    <div class="acts"><a class="btn" href="#formati">Candida la struttura</a><a class="more" href="#metodo">Scopri il metodo</a></div>
+  </div>
+  <div class="skyline" aria-hidden="true">
+    <svg viewBox="0 0 1200 260">
+      <g fill="#2C2C2E">
+        <rect x="0" y="140" width="96" height="120" rx="6"/><rect x="110" y="80" width="86" height="180" rx="6"/><rect x="210" y="160" width="110" height="100" rx="6"/><rect x="334" y="50" width="96" height="210" rx="6"/>
+        <rect x="444" y="120" width="80" height="140" rx="6"/><rect x="538" y="170" width="76" height="90" rx="6"/>
+        <rect x="764" y="90" width="92" height="170" rx="6"/><rect x="870" y="150" width="80" height="110" rx="6"/><rect x="964" y="40" width="96" height="220" rx="6"/><rect x="1074" y="130" width="126" height="130" rx="6"/>
+      </g>
+      <g fill="#3A3A3C">
+        <rect x="16" y="160" width="64" height="4" rx="2"/><rect x="16" y="180" width="64" height="4" rx="2"/><rect x="16" y="200" width="64" height="4" rx="2"/>
+        <rect x="126" y="100" width="54" height="4" rx="2"/><rect x="126" y="120" width="54" height="4" rx="2"/><rect x="126" y="140" width="54" height="4" rx="2"/><rect x="126" y="160" width="54" height="4" rx="2"/>
+        <rect x="350" y="70" width="64" height="4" rx="2"/><rect x="350" y="90" width="64" height="4" rx="2"/><rect x="350" y="110" width="64" height="4" rx="2"/><rect x="350" y="130" width="64" height="4" rx="2"/>
+        <rect x="780" y="110" width="60" height="4" rx="2"/><rect x="780" y="130" width="60" height="4" rx="2"/><rect x="780" y="150" width="60" height="4" rx="2"/>
+        <rect x="980" y="60" width="64" height="4" rx="2"/><rect x="980" y="80" width="64" height="4" rx="2"/><rect x="980" y="100" width="64" height="4" rx="2"/><rect x="980" y="120" width="64" height="4" rx="2"/>
+      </g>
+      <!-- il vostro hotel -->
+      <rect x="636" y="56" width="108" height="204" rx="8" fill="#FFDD00"/>
+      <g fill="#1D1D1F" opacity=".85"><rect x="656" y="80" width="68" height="5" rx="2.5"/><rect x="656" y="100" width="68" height="5" rx="2.5"/><rect x="656" y="120" width="68" height="5" rx="2.5"/><rect x="656" y="140" width="68" height="5" rx="2.5"/><rect x="656" y="160" width="68" height="5" rx="2.5"/><rect x="656" y="180" width="68" height="5" rx="2.5"/></g>
+      <path d="M690 56V14" stroke="#F5F5F7" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M690 14l24 8-24 8z" fill="#F5F5F7"/>
+    </svg>
+  </div>
+</section>
+
+<section class="sec problem">
+  <div class="wrap">
+    <h2 style="max-width:16ch;margin:0 auto">Cinquanta hotel. Le stesse parole.</h2>
+    <p class="sub" style="margin-top:16px">Quando l’ospite non sa dire perché voi, confronta l’unica cosa che sa confrontare: il prezzo.</p>
+    <div class="rects" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="y"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="cap">Uno solo è riconoscibile. <b>Può essere il vostro.</b></p>
+  </div>
+</section>
+
+<section class="sec mist" id="risultati">
+  <div class="wrap wide">
+    <div class="head">
+      <h2>Posizionarsi cambia i numeri.</h2>
+      <p class="sub">Non da un giorno all’altro. Ma in modo che dura.</p>
+    </div>
+    <div class="bento">
+      <div class="tile t-3 dark"><span class="k">Silva Splendid, Fiuggi</span><span class="big">€7M+</span><p>Fatturato annuo, da €3,5M in cinque anni. Da «hotel 4 stelle con SPA» a L’Hotel Benessere di Fiuggi.<sup>1</sup></p></div>
+      <div class="tile t-3"><span class="k">Veridia Resort, Chia</span><span class="big">&gt;60%</span><p>Vendite dirette. Non uno dei cento resort sul mare: il nature resort di Chia.<sup>2</sup></p></div>
+      <div class="tile t-2"><span class="k">Tariffa media</span><span class="big">×2</span><p>Circa, al Silva Splendid.</p></div>
+      <div class="tile t-2"><span class="k">Recensioni su Booking</span><span class="big"><s>8,6</s>9</span><p>Meno ospiti fuori target.</p></div>
+      <div class="tile t-2"><span class="k">Lingue lette</span><span class="big">5</span><p>Le recensioni, in originale.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="metodo">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Il metodo</span>
+      <h2 style="margin-top:14px">Sei passaggi. In quest’ordine.</h2>
+      <p class="sub">Il posizionamento non si inventa. Si sceglie.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Il bisogno</h3><p>Il desiderio profondo che l’ospite vi chiede di soddisfare.</p></li>
+      <li><h3>Le alternative</h3><p>Quelle che ha davvero, comprese quelle che non sono hotel.</p></li>
+      <li class="y"><h3>Le unicità</h3><p>Fatti verificabili, letti nelle recensioni. Qui quasi tutti barano.</p></li>
+      <li><h3>L’ospite giusto</h3><p>Chi riconosce quel valore, in numero sufficiente.</p></li>
+      <li><h3>La categoria</h3><p>Quella di cui potete diventare il riferimento.</p></li>
+      <li><h3>Il momento</h3><p>Il trend da cavalcare. Tutto su una pagina: il Positioning Canvas.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec mist product" id="libro">
+  <div class="wrap">
+    <span class="eyebrow">Il libro</span>
+    <h2 style="margin-top:14px">Hotel Positioning.</h2>
+    <p class="sub" style="margin-top:14px">Come l’ospite sceglie un hotel. E perché non sceglie il vostro.</p>
+    <img src="img/libro-hotel-positioning@2x.webp" width="840" height="1316" alt="Il libro Hotel Positioning di Francesco Astolfi">
+    <p class="price">Da <b>19,90 €</b> su Amazon, anche Kindle.</p>
+    <div class="acts"><a class="btn" href="https://www.amazon.it/dp/B0HL3Z4XL7/">Acquista</a><a class="more" href="#">Gli otto strumenti gratuiti</a></div>
+    <div class="specs"><div><b>120</b><span>pagine</span></div><div><b>8</b><span>figure</span></div><div><b>6</b><span>passaggi</span></div><div><b>200</b><span>attributi differenzianti</span></div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap wide">
+    <div class="bento">
+      <div class="tile t-4 dark" style="justify-content:space-between;min-height:320px">
+        <span class="k">Francesco Astolfi</span>
+        <h3 style="font-size:clamp(30px,3.4vw,44px);font-weight:700;max-width:16ch">Vent’anni nell’ospitalità. Da ogni lato del tavolo.</h3>
+        <p>TUI.it da zero a trenta milioni. Ata Hotels. Una web agency per hotel. Dieci locali con capitale proprio. Oggi un numero ristretto di strutture indipendenti.</p>
+      </div>
+      <div class="tile t-2" style="justify-content:flex-end;min-height:320px">
+        <span class="k">Il principio</span>
+        <p style="font:600 24px/1.25 var(--display);letter-spacing:-.02em;color:var(--ink)">«I consulenti vendono consigli. Gli operatori vendono cicatrici.»</p>
+      </div>
+      <div class="tile t-6" style="flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px">
+        <span class="k">Strutture seguite oggi</span>
+        <span style="font:600 19px var(--display);letter-spacing:-.02em">Veridia Resort</span>
+        <span style="font:600 19px var(--display);letter-spacing:-.02em">Silva Splendid Hotel &amp; SPA</span>
+        <span style="font:600 19px var(--display);letter-spacing:-.02em">Tocq Hotel</span>
+        <span style="font:600 19px var(--display);letter-spacing:-.02em">Radisson Blu ChorusLife</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec mist" id="formati">
+  <div class="wrap wide">
+    <div class="head">
+      <h2>Scegliete da dove iniziare.</h2>
+    </div>
+    <div class="compare">
+      <div class="model">
+        <svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="8" y="10" width="40" height="36" rx="6" fill="#2C2C2E"/><rect x="14" y="18" width="22" height="4" rx="2" fill="#F5F5F7"/><rect x="14" y="27" width="28" height="3" rx="1.5" fill="#636366"/><rect x="14" y="34" width="20" height="3" rx="1.5" fill="#636366"/></svg>
+        <h3>Revisione della homepage</h3>
+        <p>La prima frase che legge l’ospite, smontata e riscritta. Una pagina, nessuna call.</p>
+        <span class="terms">Gratuita · 6 al mese</span>
+        <a class="more" href="#">Richiedi</a>
+      </div>
+      <div class="model feat">
+        <span class="tag">Si parte da qui</span>
+        <svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="10" y="6" width="36" height="44" rx="6" fill="#2C2C2E"/><rect x="22" y="14" width="12" height="28" rx="2" fill="#FFDD00"/><rect x="25" y="18" width="6" height="2" rx="1" fill="#1D1D1F"/><rect x="25" y="23" width="6" height="2" rx="1" fill="#1D1D1F"/><rect x="25" y="28" width="6" height="2" rx="1" fill="#1D1D1F"/></svg>
+        <h3>Analisi di posizionamento</h3>
+        <p>Posizionamento attuale, concorrenti veri, profili dell’ospite, posizionamento proposto e prime azioni.</p>
+        <span class="terms">Su candidatura · 1 a settimana</span>
+        <a class="btn" href="#">Candida la struttura</a>
+      </div>
+      <div class="model">
+        <svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="20" cy="22" r="8" fill="#2C2C2E"/><circle cx="36" cy="22" r="8" fill="#3A3A3C"/><rect x="8" y="34" width="40" height="12" rx="6" fill="#2C2C2E"/></svg>
+        <h3>Advisory continuativo</h3>
+        <p>Il posizionamento portato in campagne, CRM, preventivi, Google e OTA, a fianco della direzione.</p>
+        <span class="terms">Su richiesta</span>
+        <a class="more" href="#">Parliamone</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec close">
+  <div class="wrap">
+    <span class="eyebrow">Candidatura</span>
+    <h2>Il prossimo palazzo giallo può essere il vostro.</h2>
+    <p class="sub" style="margin-top:16px">Il nome della struttura, il sito, due o tre concorrenti. Risposta entro 48 ore.</p>
+    <div class="acts"><a class="btn" href="#">Candida la struttura</a><a class="more" href="#metodo">Come funziona</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="fine">
+  <div class="wrap wide">
+    <ol>
+      <li><sup>1</sup> Risultato di posizionamento e ristrutturazione insieme: il posizionamento ha dato la direzione, gli investimenti della proprietà l’hanno resa credibile.</li>
+      <li><sup>2</sup> Riposizionamento recente: non esiste ancora un confronto prima/dopo sul fatturato.</li>
+    </ol>
+    <div class="row"><span>Hotel Positioning · Francesco Astolfi · Via Cupa 5, 47923 Rimini · P. IVA 04283940403</span><span>Privacy policy</span></div>
+  </div>
+</footer>
+
+</html>
