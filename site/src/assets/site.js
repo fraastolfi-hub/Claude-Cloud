@@ -26,7 +26,7 @@
   $$('.mobile-menu a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); }); });
   function onScroll(){
     // cercati qui e non all'avvio: la CTA fissa e il form arrivano dopo questo script
-    var sticky = document.querySelector('.sticky-cta'), stopAt = document.querySelector('[data-sticky-stop], #candidatura');
+    var sticky = document.querySelector('.sticky-cta'), stopAt = document.querySelector('[data-sticky-stop], #richiedi');
     var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
     if (nav) nav.classList.toggle('scrolled', y > 10);
     if (bar) bar.style.width = (h > 0 ? y / h * 100 : 0) + '%';
@@ -92,7 +92,7 @@
           .catch(function(){
             if (btn) btn.disabled = false;
             if (!fail) { fail = document.createElement('p'); fail.className = 'form-foot send-err'; fail.setAttribute('role', 'alert'); btn.insertAdjacentElement('afterend', fail); }
-            fail.textContent = 'Invio non riuscito. Riprovate tra un momento oppure scrivete a consulting@francescoastolfi.net.';
+            fail.textContent = 'Invio non riuscito. Riprova tra un momento oppure scrivimi a consulting@francescoastolfi.net.';
           });
         return;
       }
@@ -101,29 +101,28 @@
   });
   // exit intent: un messaggio per pagina, al massimo una volta per visita, mai per 3 giorni dopo una chiusura
   var EXIT = {
-    '/': ['Prima di andare', 'Sette domande sulla vostra struttura.', 'Due minuti per capire quanto è riconoscibile oggi rispetto alle strutture della vostra zona.', 'Fai il test', '/quiz/', 'No, grazie'],
-    '/metodo/': ['Per applicare il metodo', 'Gli otto strumenti del libro, gratuiti.', 'Schede pratiche per lavorare sui sei passaggi con la vostra squadra. Dieci minuti ciascuna.', 'Ricevi gli strumenti', '/bonus/', 'No, grazie'],
-    '/analisi/': ['Prima di andare', 'La candidatura richiede un minuto.', 'Rispondo entro 48 ore, anche quando la candidatura non è adatta.', 'Candida la struttura', '/analisi/#candidatura', 'Ci penserò'],
-    '/analisi-gratuita.html': ['Prima di andare', 'La candidatura richiede un minuto.', 'Rispondo entro 48 ore, anche quando la candidatura non è adatta.', 'Candida la struttura', '/analisi/#candidatura', 'Ci penserò'],
-    '/problemi/booking/': ['Prima di andare', 'Ridurre la dipendenza dalle OTA parte dal posizionamento.', 'Inviate la candidatura: valuto la struttura e rispondo entro 48 ore.', 'Candida la struttura', '#candidatura', 'Ci penserò'],
-    '/problemi/prezzi/': ['Prima di andare', 'Sette domande sul vostro posizionamento.', 'Due minuti per capire se il limite al prezzo dipende dal mercato o dalla riconoscibilità della struttura.', 'Fai il test', '/quiz/', 'No, grazie'],
-    '/problemi/sostituibili/': ['Prima di andare', 'Una revisione gratuita della vostra homepage.', 'Titolo e sottotitolo analizzati riga per riga, con tre alternative pronte. Sei revisioni al mese.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
-    '/problemi/agenzie/': ['Prima di andare', 'Un brief chiaro parte dalla homepage.', 'Una revisione gratuita di titolo e sottotitolo: il primo elemento di un brief efficace per qualsiasi agenzia.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
-    '/problemi/valore/': ['Prima di andare', 'Il valore del brand si può costruire.', 'Inviate la candidatura: valuto la struttura e rispondo entro 48 ore.', 'Candida la struttura', '#candidatura', 'Ci penserò'],
-    '/problemi/apertura/': ['Prima di andare', 'Il posizionamento si decide prima dell’apertura.', 'Dopo, cambiarlo costa molto di più. Inviate la candidatura e rispondo entro 48 ore.', 'Candida la struttura', '#candidatura', 'Ci penserò'],
-    '/casi/': ['Prima di andare', 'Il prossimo caso può essere la vostra struttura.', 'Le candidature sono valutate una per una. Rispondo entro 48 ore.', 'Candida la struttura', '#candidatura', 'Ci penserò'],
-    '/francesco/': ['Prima di andare', 'Una revisione gratuita della vostra homepage.', 'In tre giorni lavorativi vi dico cosa comunica oggi la vostra homepage, e cosa no.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
-    '/libro/': ['Prima di andare', 'I bonus del libro, gratuiti.', 'Gli otto fogli di lavoro che uso con le strutture che seguo, via email.', 'Scarica i bonus', '/bonus/', 'No, grazie'],
-    '/library/': ['Prima di andare', 'E il posizionamento della vostra struttura?', 'Sette domande per capire se oggi è invisibile, sostituibile o posizionata. Due minuti.', 'Fai il test', '/quiz/', 'No, grazie'],
+    '/': ['Prima di andare', 'Ti basta un minuto per richiederla.', 'L\'analisi gratuita del tuo hotel, fatta a mano da me. Massimo 5 al mese, dalle 40 camere in su.', 'Richiedi l\'analisi gratuita', '#richiedi', 'No, grazie'],
+    '/metodo/': ['Prima di andare', 'Il metodo applicato al tuo hotel.', 'Analisi gratuita, fatta a mano da me. Massimo 5 al mese, dalle 40 camere in su.', 'Richiedi l\'analisi gratuita', '/#richiedi', 'No, grazie'],
+    '/analisi/': ['Prima di andare', 'Ti basta un minuto per richiederla.', 'Analisi gratuita, fatta a mano da me. Ti rispondo entro 48 ore.', 'Richiedi l\'analisi gratuita', '/#richiedi', 'Ci penso'],
+    '/problemi/booking/': ['Prima di andare', 'Meno OTA parte dal posizionamento.', 'Analisi gratuita del tuo hotel e dei tuoi concorrenti. Ti rispondo entro 48 ore.', 'Richiedi l\'analisi gratuita', '#richiedi', 'Ci penso'],
+    '/problemi/prezzi/': ['Prima di andare', 'Sette domande sul tuo posizionamento.', 'Due minuti per capire se il limite al prezzo è il mercato o il tuo hotel.', 'Fai il test', '/quiz/', 'No, grazie'],
+    '/problemi/sostituibili/': ['Prima di andare', 'La revisione gratuita della tua homepage.', 'Titolo e sottotitolo letti riga per riga, con tre alternative pronte.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
+    '/problemi/agenzie/': ['Prima di andare', 'Un brief chiaro parte dalla homepage.', 'Revisione gratuita di titolo e sottotitolo: il primo pezzo di un buon brief.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
+    '/problemi/valore/': ['Prima di andare', 'Il valore del brand si costruisce.', 'Analisi gratuita del tuo hotel. Ti rispondo entro 48 ore.', 'Richiedi l\'analisi gratuita', '#richiedi', 'Ci penso'],
+    '/problemi/apertura/': ['Prima di andare', 'Il posizionamento si decide prima di aprire.', 'Dopo, cambiarlo costa molto di più. Analisi gratuita, ti rispondo entro 48 ore.', 'Richiedi l\'analisi gratuita', '#richiedi', 'Ci penso'],
+    '/casi/': ['Prima di andare', 'Il prossimo caso può essere il tuo hotel.', 'Analisi gratuita, fatta a mano da me. Massimo 5 al mese.', 'Richiedi l\'analisi gratuita', '#richiedi', 'Ci penso'],
+    '/francesco/': ['Prima di andare', 'La revisione gratuita della tua homepage.', 'In tre giorni lavorativi ti dico cosa comunica oggi la tua homepage, e cosa no.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
+    '/libro/': ['Prima di andare', 'I bonus del libro, gratis.', 'Gli otto fogli di lavoro che uso con gli hotel che seguo, via email.', 'Scarica i bonus', '/bonus/', 'No, grazie'],
+    '/library/': ['Prima di andare', 'E il tuo hotel, dove si trova?', 'Sette domande per capire se oggi è invisibile, sostituibile o posizionato. Due minuti.', 'Fai il test', '/quiz/', 'No, grazie'],
     '/risorse/': ['Prima di andare', 'Il punto di partenza più semplice.', 'Sette domande, due minuti, nessuna email obbligatoria.', 'Fai il test', '/quiz/', 'No, grazie'],
-    '/quiz/': ['Mancano due minuti', 'Il risultato arriva alla fine del test.', 'Completate le domande per vedere il profilo della vostra struttura.', 'Completa il test', '#close', 'Esci'],
-    '/smontaggio/': ['Prima di andare', 'La richiesta richiede quattro campi.', 'Nessuna call. Ricevete la revisione entro tre giorni lavorativi.', 'Richiedi la revisione', '#form', 'No, grazie']
+    '/quiz/': ['Mancano due minuti', 'Il risultato arriva alla fine del test.', 'Rispondi alle domande per vedere il profilo del tuo hotel.', 'Completa il test', '#close', 'Esci'],
+    '/smontaggio/': ['Prima di andare', 'Bastano quattro campi.', 'Nessuna chiamata. Ricevi la revisione entro tre giorni lavorativi.', 'Richiedi la revisione', '#form', 'No, grazie']
   };
   var exitEl = document.getElementById('exit'), path = location.pathname.replace(/index\.html$/, '');
   // confronto sulla parte finale dell'indirizzo: funziona anche se il sito sta in una sottocartella
   var key = Object.keys(EXIT).filter(function(k){ return k !== '/' && path.slice(-k.length) === k; })
     .sort(function(x, y){ return y.length - x.length; })[0];
-  if (!key && document.getElementById('sintomi')) key = '/';
+  if (!key && document.querySelector('.hero-c') && document.getElementById('richiedi')) key = '/';
   var cfg = EXIT[key];
   function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   function sstore(k, v){ try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }

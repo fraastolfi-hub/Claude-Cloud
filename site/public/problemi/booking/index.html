@@ -48,7 +48,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
       <a href="/francesco/">Chi sono</a>
     </nav>
     <div class="nav-right">
-      <a class="btn sm" href="/analisi/#candidatura">Candida la struttura <span class="arr">→</span></a>
+      <a class="btn sm" href="/#richiedi">Richiedi l'analisi <span class="arr">→</span></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Apri il menu"><i></i></button>
     </div>
   </div>
@@ -59,7 +59,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
     <a href="/libro/">Il libro</a>
     <a href="/risorse/">Risorse gratuite</a>
     <a href="/francesco/">Chi sono</a>
-    <a class="btn" href="/analisi/#candidatura">Candida la struttura <span class="arr">→</span></a>
+    <a class="btn" href="/#richiedi">Richiedi l'analisi gratuita <span class="arr">→</span></a>
   </nav>
 </header>
 
@@ -355,38 +355,38 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
       </ul>
 
     </div>
-    <!-- Form candidatura condiviso. Inviato a Netlify Forms (name="candidatura"); vedi netlify/functions/submission-created.js -->
-<form class="form" id="candidatura-form" name="candidatura" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" novalidate>
+    <!-- Modulo unico: richiesta dell'analisi gratuita. Inviato a Netlify Forms (name="candidatura", nome tecnico invariato per Netlify e Brevo); vedi netlify/functions/submission-created.mjs -->
+<form class="form" id="richiesta-form" name="candidatura" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" novalidate>
   <input type="hidden" name="form-name" value="candidatura"><input type="hidden" name="pagina" value=""><p hidden><label>Non compilare: <input name="bot-field"></label></p>
   <div class="fields">
-    <div class="form-head"><span>Candidatura della struttura · un minuto</span><span data-prog-txt>0%</span></div>
+    <div class="form-head"><span>Analisi gratuita · un minuto</span><span data-prog-txt>0%</span></div>
     <div class="prog"><i></i></div>
     <div class="row2">
-      <div class="field"><label for="c-nome">Nome e cognome</label><input id="c-nome" name="nome" autocomplete="name" required><span class="em">Indicate il nome del referente.</span></div>
-      <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="em">Verificate l'indirizzo: la risposta arriva qui.</span></div>
+      <div class="field"><label for="c-nome">Nome e cognome</label><input id="c-nome" name="nome" autocomplete="name" required><span class="em">Scrivi il tuo nome.</span></div>
+      <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: l'analisi arriva qui.</span></div>
     </div>
     <div class="row2">
-      <div class="field"><label for="c-tel">Telefono</label><input id="c-tel" name="telefono" type="tel" autocomplete="tel" required><span class="em">Serve solo per la selezione.</span></div>
-      <div class="field"><label for="c-hotel">Nome della struttura</label><input id="c-hotel" name="hotel" required placeholder="Struttura, località"><span class="em">Indicate la struttura da analizzare.</span></div>
+      <div class="field"><label for="c-tel">Telefono</label><input id="c-tel" name="telefono" type="tel" autocomplete="tel" required><span class="em">Lo uso solo per l'analisi.</span></div>
+      <div class="field"><label for="c-hotel">Nome dell'hotel</label><input id="c-hotel" name="hotel" required placeholder="Hotel, località"><span class="em">Scrivi quale hotel analizzo.</span></div>
     </div>
     <div class="row2">
-      <div class="field"><label for="c-sito">Sito web</label><input id="c-sito" name="sito" inputmode="url" placeholder="www.nomestruttura.it"></div>
-      <div class="field"><label for="c-camere">Numero di camere</label><select id="c-camere" name="camere" required><option value="">Selezionate</option><option>Meno di 40</option><option>40-80</option><option>80-150</option><option>Oltre 150</option></select><span class="em">Indicate il numero di camere.</span></div>
+      <div class="field"><label for="c-sito">Sito web</label><input id="c-sito" name="sito" inputmode="url" placeholder="www.tuohotel.it"></div>
+      <div class="field"><label for="c-camere">Camere <small>(dalle 40 in su)</small></label><select id="c-camere" name="camere" required><option value="">Scegli</option><option>40-80</option><option>80-150</option><option>Oltre 150</option></select><span class="em">Scegli il numero di camere.</span></div>
     </div>
-    <div class="field"><label for="c-conc">Due o tre concorrenti <small>(facoltativo)</small></label><input id="c-conc" name="concorrenti" placeholder="Le strutture con cui l'ospite vi confronta"></div>
+    <div class="field"><label for="c-conc">Due o tre concorrenti <small>(facoltativo)</small></label><input id="c-conc" name="concorrenti" placeholder="Gli hotel con cui l'ospite ti confronta"></div>
     <fieldset class="field" style="border:0">
-      <legend class="lab" style="font:500 14px var(--text);margin-bottom:7px">Possiamo pubblicare l'analisi?</legend>
-      <label class="check" style="margin:0 0 10px"><input type="radio" name="pubblicazione" value="nome" required><span><strong>Sì, come caso studio.</strong> Con il nome della struttura e i dati reali.</span></label>
-      <label class="check" style="margin:0"><input type="radio" name="pubblicazione" value="anonimo"><span><strong>Sì, ma in forma anonima.</strong> Per esempio «Resort in Sardegna, 80 camere», senza altri dettagli.</span></label>
+      <legend class="lab" style="font:500 14px var(--text);margin-bottom:7px">Posso pubblicare l'analisi?</legend>
+      <label class="check" style="margin:0 0 10px"><input type="radio" name="pubblicazione" value="nome" required><span><strong>Sì, come caso studio.</strong> Con il nome dell'hotel e i dati reali.</span></label>
+      <label class="check" style="margin:0"><input type="radio" name="pubblicazione" value="anonimo"><span><strong>Sì, in forma anonima.</strong> Per esempio «Resort in Sardegna, 80 camere».</span></label>
     </fieldset>
-    <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento a essere ricontattato per la selezione.</span></label>
-    <button class="btn dark" type="submit">Invia la candidatura <span class="arr">→</span></button>
-    <p class="form-foot">Risposta entro 48 ore, anche quando la candidatura non è adatta.<br>I dati sono usati solo per la selezione.</p>
+    <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e accetto di essere ricontattato per l'analisi.</span></label>
+    <button class="btn" type="submit">Richiedi l'analisi gratuita <span class="arr">→</span></button>
+    <p class="form-foot">Gratis, fatta a mano da me, massimo 5 al mese.<br>Solo hotel e resort dalle 40 camere. Ti rispondo entro 48 ore.</p>
   </div>
   <div class="ok" role="status">
     <div class="tick">✓</div>
-    <p class="big">Candidatura ricevuta.</p>
-    <p>Esamino <strong data-echo="#c-hotel">la vostra struttura</strong> e rispondo entro 48 ore, anche quando la candidatura non è adatta. Nel frattempo vi suggerisco un esercizio: cercate la vostra zona su Booking e leggete i risultati con gli occhi di un ospite che non vi conosce.</p>
+    <p class="big">Richiesta ricevuta.</p>
+    <p>Guardo <strong data-echo="#c-hotel">il tuo hotel</strong> e ti rispondo entro 48 ore. Intanto un esercizio: cerca la tua zona su Booking e guarda i risultati con gli occhi di un ospite che non ti conosce.</p>
   </div>
 </form>
 
@@ -427,7 +427,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
           <li><a href="/metodo/">I sei passaggi</a></li>
           <li><a href="/analisi/">L'analisi di posizionamento</a></li>
           <li><a href="/casi/">Casi</a></li>
-          <li><a href="/analisi/#candidatura">Candida la struttura</a></li>
+          <li><a href="/#richiedi">Richiedi l'analisi gratuita</a></li>
         </ul>
       </div>
       <div>
@@ -457,7 +457,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 <div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
   <button type="button" class="cc-x" data-cc="reject" aria-label="Chiudi e rifiuta i cookie non necessari">✕</button>
   <p class="cc-t" id="cc-t">Cookie e privacy</p>
-  <p class="cc-p">Usiamo cookie tecnici, necessari al sito. Con il vostro consenso usiamo anche cookie di statistica (Google Analytics) e di marketing (Pixel di Meta) per misurare le visite e l’efficacia delle campagne. Potete cambiare idea in qualsiasi momento. Dettagli nella <a href="/privacy-policy/#cookie">privacy policy</a>.</p>
+  <p class="cc-p">Usiamo cookie tecnici, necessari al sito. Con il tuo consenso usiamo anche cookie di statistica (Google Analytics) e di marketing (Pixel di Meta) per misurare le visite e l’efficacia delle campagne. Puoi cambiare idea in qualsiasi momento. Dettagli nella <a href="/privacy-policy/#cookie">privacy policy</a>.</p>
   <div class="cc-opts" id="cc-opts" hidden>
     <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Tecnici</b> Necessari al funzionamento del sito. Sempre attivi.</span></label>
     <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistica</b> Google Analytics: visite e pagine più lette, in forma aggregata.</span></label>
@@ -485,7 +485,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 
 <script src="/assets/site.js"></script>
 
-<div class="sticky-cta" role="region" aria-label="Candidatura"><a href="#candidatura" class="btn">Candida la struttura <span class="arr">→</span></a></div>
+<div class="sticky-cta" role="region" aria-label="Analisi gratuita"><a href="#richiedi" class="btn">Richiedi l'analisi gratuita <span class="arr">→</span></a></div>
 
 <script>
 /* calcolatore commissioni */

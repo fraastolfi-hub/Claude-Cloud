@@ -22,6 +22,8 @@ INCLUDE = re.compile(r"<!--\s*@include\s+([\w-]+)\s*-->")
 
 # vecchi URL -> nuovi (le querystring UTM passano da sole con lo status 301 di Netlify/Cloudflare)
 REDIRECTS = {
+    "/analisi-gratuita.html": "/#richiedi",
+    "/analisi-gratuita": "/#richiedi",
     "/landing-booking": "/problemi/booking/",
     "/landing-prezzi": "/problemi/prezzi/",
     "/landing-sostituibili": "/problemi/sostituibili/",

@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brand positioning per hotel e resort · Hotel Positioning</title>
-<meta name="description" content="Brand positioning per hotel e resort indipendenti: il motivo per cui l’ospite sceglie la vostra struttura, costruito a partire dalle recensioni con scelte di target, prodotto e rinuncia, e tradotto in offerta e tariffa. Il metodo di Francesco Astolfi.">
+<meta name="description" content="Analisi gratuita di posizionamento per hotel e resort dalle 40 camere: il tuo hotel e i tuoi concorrenti come li vede l’ospite, e la posizione libera nella tua zona. Fatta a mano da Francesco Astolfi, massimo 5 al mese.">
 <link rel="canonical" href="https://hotelpositioning.com/">
 <meta property="og:title" content="Posizionarsi è scegliere. Anche cosa non essere · Hotel Positioning">
-<meta property="og:description" content="Brand positioning per hotel indipendenti, con il metodo Hotel Positioning di Francesco Astolfi.">
+<meta property="og:description" content="Analisi gratuita di posizionamento per hotel e resort dalle 40 camere. Fatta a mano, massimo 5 al mese.">
 <meta property="og:type" content="website">
 <!-- @include head -->
 <script type="application/ld+json">
@@ -176,6 +176,39 @@
 .pol-close{margin-top:30px;font:600 clamp(20px,2vw,26px)/1.35 var(--display);letter-spacing:-.02em;max-width:40ch}
 @media (max-width:700px){.pol-labels{grid-template-columns:1fr;gap:16px}.pol-labels .mid,.pol-labels .end{text-align:left}}
 @media (prefers-reduced-motion:reduce){.pol-line{stroke-dashoffset:0!important}.pol-area,.pol-up,.pol-down{opacity:1!important;transform:none!important}}
+
+/* --- homepage unica: posizioni, perché gratis, per chi è, richiesta --- */
+.pos-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:980px){.pos-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.pos-grid{grid-template-columns:minmax(0,1fr)}}
+.pos{background:var(--mist);padding:clamp(22px,2.4vw,28px);display:flex;flex-direction:column;gap:8px}
+.pos .st{align-self:flex-start;font:700 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
+.pos h3{font-size:clamp(19px,1.7vw,22px)}
+.pos p{font-size:16px;line-height:1.5;color:var(--ink-2)}
+.pos.free{grid-column:1/-1;background:var(--night);color:#F5F5F7;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+@media (max-width:760px){.pos.free{grid-template-columns:1fr}}
+.pos.free .st{background:var(--yellow);color:#0a0a0a;padding:5px 8px}
+.pos.free h3{font-size:clamp(24px,2.6vw,34px);color:#F5F5F7}
+.pos.free p{color:#D2D2D7;max-width:60ch}
+.pos-note{margin-top:18px;font-size:13px;color:var(--muted)}
+.why-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:900px){.why-grid{grid-template-columns:1fr}}
+.why-box{background:var(--white);padding:clamp(24px,3vw,36px)}
+.why-box h3{font-size:clamp(24px,2.4vw,32px);margin:14px 0 12px}
+.why-box p{font-size:17px;line-height:1.55;color:var(--ink-2)}
+.why-box p + p{margin-top:10px}
+.why-box .no-sell{display:block;margin-top:18px;padding-top:14px;border-top:2px solid var(--ink);font:500 15px/1.45 var(--text);color:var(--ink)}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.fit{grid-template-columns:1fr}}
+.fit .card h3{margin-bottom:16px}
+.fit-note{margin-top:22px;font-size:16px;color:var(--muted);max-width:62ch}
+.gets{list-style:none;display:grid;gap:12px;margin:26px 0}
+.gets li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:baseline;font-size:18px;line-height:1.4}
+.gets b{font:400 22px/1 var(--display)}
+.sign-row{display:flex;align-items:center;gap:14px;margin:8px 0 18px}
+.sign-row img{width:56px;height:56px;object-fit:cover;filter:grayscale(1);border:2px solid var(--ink)}
+.sign-row p{font-size:15px;line-height:1.45;color:var(--ink-2);max-width:40ch}
+.pull.words{margin-top:clamp(36px,4vw,52px)}
 </style>
 <!-- @include tema -->
 </head>
@@ -187,14 +220,14 @@
 <!-- ================= HERO ================= -->
 <section class="hero-c">
   <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span>Brand positioning per hotel e resort indipendenti</span>
+    <span class="eyebrow"><span class="dot"></span>Analisi gratuita di posizionamento · hotel e resort</span>
     <h1><span class="line"><span>Posizionarsi è scegliere.</span></span><span class="line"><span><span class="hl in">Anche cosa non essere.</span></span></span></h1>
-    <p class="lead">Partiamo da ciò che gli ospiti riconoscono nelle recensioni. Poi decidiamo con voi l’ospite giusto, il prodotto e le rinunce. Il risultato: una frase, un’offerta e una tariffa che reggono il confronto.</p>
+    <p class="lead">Quando qualcuno cerca dove dormire dalle tue parti, il primo nome che gli viene in mente non è il tuo. Così finisci dove si confronta solo il prezzo: su Booking.</p>
     <div class="btn-row">
-      <a href="#candidatura" class="btn">Candida la struttura <span class="arr">→</span></a>
-      <a href="#analisi" class="btn ghost">Cosa ricevete</a>
+      <a href="#richiedi" class="btn">Richiedi l’analisi gratuita <span class="arr">→</span></a>
+      <a href="#analisi" class="btn ghost">Cosa c’è nell’analisi</a>
     </div>
-    <p class="micro"><b>Per strutture indipendenti dalle 40 camere.</b> Su candidatura: una analisi alla settimana, risposta entro 48 ore.</p>
+    <p class="micro"><b>Gratis, fatta a mano da me, massimo 5 al mese.</b> Solo hotel e resort dalle 40 camere in su.</p>
   </div>
   <div class="skyline" aria-hidden="true">
     <svg viewBox="0 0 1200 260">
@@ -210,7 +243,7 @@
         <rect x="780" y="110" width="60" height="4" rx="2"/><rect x="780" y="130" width="60" height="4" rx="2"/><rect x="780" y="150" width="60" height="4" rx="2"/>
         <rect x="980" y="60" width="64" height="4" rx="2"/><rect x="980" y="80" width="64" height="4" rx="2"/><rect x="980" y="100" width="64" height="4" rx="2"/><rect x="980" y="120" width="64" height="4" rx="2"/>
       </g>
-      <!-- il vostro hotel -->
+      <!-- il tuo hotel -->
       <rect x="636" y="56" width="108" height="204" rx="8" fill="#FFDD00"/>
       <g fill="#1D1D1F" opacity=".85"><rect x="656" y="80" width="68" height="5" rx="2.5"/><rect x="656" y="100" width="68" height="5" rx="2.5"/><rect x="656" y="120" width="68" height="5" rx="2.5"/><rect x="656" y="140" width="68" height="5" rx="2.5"/><rect x="656" y="160" width="68" height="5" rx="2.5"/><rect x="656" y="180" width="68" height="5" rx="2.5"/></g>
       <path d="M690 56V14" stroke="#1D1D1F" stroke-width="2.5" stroke-linecap="round"/>
@@ -219,23 +252,51 @@
   </div>
 </section>
 
+<!-- ================= POSIZIONI ================= -->
+<section class="sec" id="posizioni">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Posizioni prese</span>
+      <h2>Di cosa è il numero 1 il tuo hotel, <em>nella tua zona?</em></h2>
+      <p class="lead">Gli hotel che riempiono senza svendere hanno una cosa in comune: l’ospite sa dire in una frase perché li sceglie.</p>
+    </div>
+    <div class="pos-grid">
+      <article class="pos rv"><span class="st">Presa</span><h3>L’hotel dove arrivi in treno e l’auto non serve</h3><p>Navetta dalla stazione, bici in garage, cena a duecento metri.</p></article>
+      <article class="pos rv d1"><span class="st">Presa</span><h3>Il resort dove i bambini cenano alle 19 con lo staff</h3><p>E i genitori alle 21, da soli. Nelle recensioni lo scrivono tutti.</p></article>
+      <article class="pos rv d2"><span class="st">Presa</span><h3>L’hotel dei ciclisti</h3><p>Officina, lavaggio divise, colazione alle sei. Il gruppo torna ogni primavera.</p></article>
+      <article class="pos rv"><span class="st">Presa</span><h3>Il boutique dove la colazione dura fino all’una</h3><p>Ha scelto l’ospite che in vacanza non punta la sveglia.</p></article>
+      <article class="pos rv d1"><span class="st">Presa</span><h3>L’hotel dove il cane grande è il benvenuto</h3><p>Ciotola in camera, cuccia vera, spiaggia a cinque minuti.</p></article>
+      <article class="pos rv d2"><span class="st">Presa</span><h3>L’hotel che si è preso settembre</h3><p>Quando gli altri abbassano le tariffe, racconta vendemmia e mare vuoto. Pieno fino a ottobre.</p></article>
+      <article class="pos free rv">
+        <div>
+          <span class="st">Libera</span>
+          <h3>La tua, se la prendi prima degli altri.</h3>
+          <p>Nella tua zona c’è quasi sempre un posto libero: un tipo di ospite, un mese dell’anno, un servizio che nessuno ha messo davanti. L’analisi ti dice quale.</p>
+        </div>
+        <a href="#richiedi" class="btn">Richiedi l’analisi gratuita <span class="arr">→</span></a>
+      </article>
+    </div>
+    <p class="pos-note">Esempi per spiegare il metodo, non hotel reali. Se per rispondere ti servono più di tre secondi, l’analisi parte da qui.</p>
+  </div>
+</section>
+
 <!-- ================= MAPPA DEL POSIZIONAMENTO (fascia a colore pieno) ================= -->
 <section class="pmband" id="mappa" aria-labelledby="pm-h">
   <div class="wrap pm-wrap">
     <div class="pm-text">
-      <span class="num-tag">Il posizionamento, in una mappa</span>
-      <h2 id="pm-h">Uscire dal gruppo. <em>Prendere la posizione libera.</em></h2>
+      <span class="num-tag">Cosa fa l’analisi</span>
+      <h2 id="pm-h">Esci dal gruppo. <em>Prendi la posizione libera.</em></h2>
       <ol class="pm-steps" id="pmSteps">
-        <li class="on"><b>Oggi</b><span>La struttura è nel gruppo di quelle che si somigliano. L’ospite le confronta sul prezzo.</span></li>
-        <li><b>La posizione libera</b><span>In quasi ogni zona c’è un motivo di scelta che nessuno occupa ancora.</span></li>
-        <li><b>Posizionata</b><span>L’ospite riconosce la struttura e la sceglie per quel motivo, non per la tariffa.</span></li>
+        <li class="on"><b>Oggi</b><span>Il tuo hotel è in mezzo a quelli che si somigliano. L’ospite li confronta sul prezzo.</span></li>
+        <li><b>La posizione libera</b><span>In quasi ogni zona c’è un motivo di scelta che nessuno occupa.</span></li>
+        <li><b>Posizionato</b><span>L’ospite riconosce il tuo hotel e lo sceglie per quel motivo, non per la tariffa.</span></li>
       </ol>
-      <div class="btn-row"><a href="#candidatura" class="btn">Candida la struttura</a><button type="button" class="pm-replay" id="pmReplay">Rivedi lo spostamento</button></div>
+      <div class="btn-row"><a href="#richiedi" class="btn">Richiedi l’analisi gratuita <span class="arr">→</span></a><button type="button" class="pm-replay" id="pmReplay">Rivedi lo spostamento</button></div>
     </div>
     <figure class="pm-fig">
       <svg class="pmap" viewBox="0 0 1000 600" role="img" aria-labelledby="pm-t pm-d">
           <title id="pm-t">Mappa del posizionamento</title>
-          <desc id="pm-d">Molte strutture simili sono raggruppate al centro della mappa, dove l’ospite le confronta sul prezzo. La vostra struttura esce dal gruppo e raggiunge una posizione libera, più riconoscibile.</desc>
+          <desc id="pm-d">Molti hotel simili sono raggruppati al centro della mappa, dove l’ospite le confronta sul prezzo. Il tuo hotel esce dal gruppo e raggiunge una posizione libera, più riconoscibile.</desc>
           <g class="pm-grid">
             <line x1="90" y1="45" x2="90" y2="530"/><line x1="90" y1="530" x2="960" y2="530"/>
             <line class="soft" x1="90" y1="287" x2="960" y2="287"/><line class="soft" x1="525" y1="45" x2="525" y2="530"/>
@@ -258,13 +319,12 @@
           <g class="pm-you" id="pmYou" transform="translate(430 410)">
             <circle class="halo" r="26"/><circle class="core" r="12"/>
           </g>
-          <text class="pm-you-t" id="pmYouT" x="430" y="452" text-anchor="middle">La vostra struttura</text>
+          <text class="pm-you-t" id="pmYouT" x="430" y="452" text-anchor="middle">Il tuo hotel</text>
         </svg>
-      <figcaption>Esempio illustrativo. Nell’analisi la mappa si costruisce sulla vostra struttura e sui concorrenti reali.</figcaption>
+      <figcaption>Esempio. Nell’analisi la mappa la costruisco sul tuo hotel e sui tuoi concorrenti reali.</figcaption>
     </figure>
   </div>
 </section>
-
 
 <!-- ================= IL MERCATO SI POLARIZZA ================= -->
 <section class="sec polar" id="mercato">
@@ -272,7 +332,7 @@
     <div class="sec-head">
       <span class="num-tag">Il mercato</span>
       <h2>Il mercato si polarizza. <em>Chi sta nel mezzo perde.</em></h2>
-      <p class="lead">Crescono le strutture con un’identità precisa, ai due estremi. Perdono terreno quelle che l’ospite non sa distinguere.</p>
+      <p class="lead">Crescono gli hotel con un’identità precisa, ai due estremi. Perde chi l’ospite non sa distinguere.</p>
     </div>
     <figure class="pol-card rv" id="polCard">
       <p class="pol-k">Andamento della domanda per tipo di struttura</p>
@@ -294,60 +354,62 @@
       </div>
       <figcaption>Schema qualitativo della tendenza, non un dato misurato.</figcaption>
     </figure>
-    <p class="pol-close rv">Il posizionamento serve a uscire dal centro della curva: scegliere un estremo e renderlo riconoscibile.</p>
   </div>
 </section>
 
 <!-- ================= LE PAROLE DELLA HOMEPAGE ================= -->
-<section class="sec alt" id="sintomi">
+<section class="sec alt" id="parole">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="num-tag">Una prova di un minuto</span>
-      <h2>Quante di queste frasi <em>sono sulla vostra homepage?</em></h2>
-      <p class="lead">Aprite il sito della struttura e quello di due strutture vicine. Selezionate le frasi che ritrovate.</p>
+      <span class="num-tag">Prova di un minuto</span>
+      <h2>Quante di queste frasi <em>sono sulla tua homepage?</em></h2>
+      <p class="lead">Apri il tuo sito e quello di due hotel vicini. Tocca le frasi che ritrovi.</p>
     </div>
     <div class="bingo-grid rv" id="bingoGrid"></div>
     <div class="bingo-score rv" style="background:var(--white);box-shadow:none">
       <div class="count"><span id="bingoN">0</span><small>/12</small></div>
       <div>
-        <p id="bingoMsg" aria-live="polite">Nessuna, per ora. Il confronto funziona meglio con la homepage aperta accanto.</p>
+        <p id="bingoMsg" aria-live="polite">Nessuna, per ora. Funziona meglio con la homepage aperta accanto.</p>
         <div class="meter"><i id="bingoBar"></i></div>
       </div>
     </div>
+    <p class="pull words rv">Il problema quasi mai è il budget. <span class="hl">Sono le parole.</span>
+      <small>Chi usa le stesse parole del vicino, per l’ospite è il vicino. Solo con un altro prezzo.</small></p>
   </div>
 </section>
 
-<!-- ================= COSA RICEVETE ================= -->
+<!-- ================= COSA C'È NELL'ANALISI ================= -->
 <section class="sec" id="analisi">
   <div class="wrap">
     <div class="sec-head">
-      <span class="num-tag">L’analisi di posizionamento</span>
-      <h2>Un documento sulla vostra struttura. <em>Scritto da me, non da un software.</em></h2>
-      <p class="lead">Lavoro su ciò che l’ospite vede prima di prenotare: recensioni, scheda Google, schede OTA, sito. Non servono accessi né dati riservati.</p>
+      <span class="num-tag">Cosa c’è nell’analisi</span>
+      <h2>20-25 pagine sul tuo hotel. <em>Scritte da me, a mano.</em></h2>
+      <p class="lead">Leggo quello che l’ospite vede prima di prenotare: recensioni in cinque lingue, Google, Booking, il tuo sito. Niente accessi, niente password.</p>
     </div>
     <div class="get-grid">
       <ol class="parts rv">
-        <li><span class="n">1</span><div><h3>Come vi vede l’ospite oggi</h3><p>La struttura letta da fuori, come la legge chi sta decidendo dove prenotare.</p></div></li>
-        <li><span class="n">2</span><div><h3>I concorrenti reali</h3><p>Di cosa sono il riferimento, quale prezzo tengono, cosa promettono.</p></div></li>
-        <li><span class="n">3</span><div><h3>L’ospite giusto</h3><p>Tre profili di ospite con un bisogno preciso, non fasce d’età.</p></div></li>
-        <li><span class="n">4</span><div><h3>La posizione libera</h3><p>Il motivo per cui scegliere voi, descritto in una frase.</p></div></li>
-        <li><span class="n">5</span><div><h3>Le prime azioni</h3><p>Cosa cambiare subito: la frase in homepage, la scheda Google, l’offerta in primo piano.</p></div></li>
+        <li><span class="n">1</span><div><h3>Come ti vede l’ospite oggi</h3><p>Di cosa è il numero 1 il tuo hotel adesso, letto da recensioni, Google e OTA.</p></div></li>
+        <li><span class="n">2</span><div><h3>I tuoi concorrenti, uno per uno</h3><p>Di cosa sono il riferimento, che prezzo tengono, perché l’ospite li sceglie.</p></div></li>
+        <li><span class="n">3</span><div><h3>L’ospite giusto per te</h3><p>Tre profili con un bisogno preciso. Non fasce d’età.</p></div></li>
+        <li><span class="n">4</span><div><h3>La posizione libera</h3><p>Il motivo per cui sceglierti, scritto in una frase.</p></div></li>
+        <li><span class="n">5</span><div><h3>Le prime tre mosse</h3><p>La frase in homepage, la scheda Google, l’offerta da mettere davanti.</p></div></li>
       </ol>
       <figure class="report-fig rv d1" style="background:var(--mist)">
         <img src="/assets/img/report-dove-colpire.webp" srcset="/assets/img/report-dove-colpire.webp 1600w, /assets/img/report-dove-colpire@2x.webp 2400w" sizes="(max-width:900px) 100vw, 540px" width="1600" height="900" loading="lazy" alt="Esempio di pagina dell’analisi: la mappa dei concorrenti e la posizione libera">
-        <figcaption>Una pagina d’esempio: la mappa dei concorrenti come la vede l’ospite e la posizione rimasta libera. Dati di fantasia.</figcaption>
+        <figcaption>Una pagina d’esempio: la mappa dei concorrenti e la posizione libera. Dati di fantasia.</figcaption>
       </figure>
     </div>
     <div class="terms rv">
-      <span class="chip">Senza costi per le strutture selezionate</span>
-      <span class="chip">Nessun contratto</span>
-      <span class="chip">Nessun accesso richiesto</span>
-      <span class="chip">Il documento resta vostro</span>
+      <span class="chip y">Gratis</span>
+      <span class="chip">Fatta a mano</span>
+      <span class="chip">Massimo 5 al mese</span>
+      <span class="chip">Dalle 40 camere</span>
+      <span class="chip">Il documento resta tuo</span>
     </div>
   </div>
 </section>
 
-<!-- ================= CASI ================= -->
+<!-- ================= RISULTATI ================= -->
 <section class="sec alt">
   <div class="wrap">
     <div class="sec-head">
@@ -363,36 +425,14 @@
   </div>
 </section>
 
-<!-- ================= IL LIBRO (unica sezione scura) ================= -->
-<section class="sec dark bookband" id="libro">
-  <div class="wrap">
-    <div class="bb-text rv">
-      <span class="num-tag">Il libro</span>
-      <h2>Hotel Positioning.</h2>
-      <p class="bb-sub">Come l’ospite sceglie un hotel (e perché non sceglie il tuo).</p>
-      <p class="bb-body">Il metodo completo in sei passaggi, i casi, il Positioning Canvas e duecento attributi differenzianti. Con otto strumenti da compilare.</p>
-      <div class="btn-row">
-        <a class="btn" href="https://www.amazon.it/dp/B0HL3Z4XL7/">Ordina su Amazon</a>
-        <a class="bb-more" href="/bonus/">Gli otto strumenti gratuiti ›</a>
-      </div>
-      <div class="bb-specs"><div><b>120</b><span>pagine</span></div><div><b>6</b><span>passaggi</span></div><div><b>200</b><span>attributi</span></div><div><b>19,90 €</b><span>anche Kindle</span></div></div>
-    </div>
-    <div class="bb-stage" aria-hidden="false">
-      <div class="bb-shadow"></div>
-      <img class="bb-book" src="/assets/img/libro-hotel-positioning@2x.webp" width="840" height="1316" alt="Il libro Hotel Positioning di Francesco Astolfi" loading="lazy">
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= CHI SEGUE L'ANALISI ================= -->
+<!-- ================= CHI FA L'ANALISI ================= -->
 <section class="sec" id="chi">
   <div class="wrap me-grid">
     <div class="photo rv"><img src="/assets/img/francesco.webp" alt="Francesco Astolfi" loading="lazy" width="560" height="748"></div>
     <div>
-      <span class="num-tag">Chi segue l’analisi</span>
-      <h2 style="margin:16px 0 22px">Francesco Astolfi. <em>Vent’anni nel marketing alberghiero.</em></h2>
-      <p class="me-body rv">Ho lavorato da ogni lato del tavolo: in un tour operator, con TUI.it da zero a trenta milioni; in una catena, come responsabile marketing di Ata Hotels; in un’agenzia specializzata in hotel; e come imprenditore, con dieci locali aperti con capitale proprio. Oggi seguo un numero ristretto di strutture indipendenti, e ogni analisi la faccio io.</p>
+      <span class="num-tag">Chi fa l’analisi</span>
+      <h2 style="margin:16px 0 22px">Francesco Astolfi. <em>Vent’anni di hotel, da ogni lato.</em></h2>
+      <p class="me-body rv">Ho portato TUI.it da zero a trenta milioni. Ho guidato il marketing di Ata Hotels. Ho lavorato in un’agenzia per hotel e aperto dieci locali con capitale mio. Ogni analisi la faccio io, a mano. Per questo non ne faccio più di cinque al mese.</p>
       <blockquote class="big-quote rv" style="margin-top:30px">I consulenti vendono consigli. Gli operatori vendono cicatrici.</blockquote>
       <div class="me-row rv">
         <a href="/francesco/" class="btn ghost">La mia storia</a>
@@ -402,19 +442,94 @@
   </div>
 </section>
 
-<!-- ================= CANDIDATURA ================= -->
-<section class="sec alt" id="candidatura" data-sticky-stop>
+<!-- ================= PERCHÉ GRATIS + COME FUNZIONA ================= -->
+<section class="sec alt" id="come">
+  <div class="wrap why-grid">
+    <div class="why-box rv">
+      <span class="num-tag">Una domanda giusta</span>
+      <h3>Perché è gratis.</h3>
+      <p>È il mio modo di presentarmi: invece di raccontarti come lavoro, te lo faccio vedere sul tuo hotel.</p>
+      <p>Alcuni hotel, dopo, mi chiedono di seguirli. Gli altri usano l’analisi da soli, e va bene così.</p>
+      <p>In cambio ti chiedo solo il permesso di pubblicarla, anche in forma anonima.</p>
+      <span class="no-sell">Niente telefonate di vendita. Niente preventivi che non hai chiesto.</span>
+    </div>
+    <div>
+      <div class="sec-head" style="margin-bottom:32px">
+        <span class="num-tag">Come funziona</span>
+        <h2 style="font-size:clamp(30px,3.8vw,50px)">Dalla richiesta al documento, <em>in quattro passi.</em></h2>
+      </div>
+      <div class="tl"><div class="n">1</div><div><span class="when">Un minuto</span><h3>Richiedi l’analisi</h3><p>Hotel, sito e, se vuoi, due o tre concorrenti.</p></div></div>
+      <div class="tl"><div class="n">2</div><div><span class="when">Entro 48 ore</span><h3>Ti rispondo</h3><p>Ti dico quando arriva la tua analisi.</p></div></div>
+      <div class="tl"><div class="n">3</div><div><span class="when">Al tuo turno</span><h3>Ricevi l’analisi</h3><p>20-25 pagine sul tuo hotel e sui tuoi concorrenti.</p></div></div>
+      <div class="tl"><div class="n">4</div><div><span class="when">Senza vincoli</span><h3>Decidi tu</h3><p>Il documento resta tuo, qualunque cosa decidi.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PER CHI È ================= -->
+<section class="sec" id="fit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Per chi è</span>
+      <h2>Parliamoci chiaro. <em>Non è per tutti.</em></h2>
+    </div>
+    <div class="fit">
+      <div class="card rv">
+        <h3>È per te se</h3>
+        <ul class="check-list">
+          <li>Hai un hotel o un resort indipendente, da 40 camere in su.</li>
+          <li>Vuoi sapere come ti vede l’ospite, anche quando non ti piace.</li>
+          <li>Sei pronto a cambiare parole, offerte e priorità, se serve.</li>
+        </ul>
+      </div>
+      <div class="card rv d1">
+        <h3>Non è per te se</h3>
+        <ul class="check-list no">
+          <li>Pensi che il problema sia solo Booking, e la soluzione una tariffa più bassa sul sito.</li>
+          <li>Speri che un sito nuovo risolva tutto da solo.</li>
+          <li>Vuoi più follower, non più prenotazioni dirette.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fit-note rv">Te lo dico prima, così non perdiamo tempo tutti e due.</p>
+  </div>
+</section>
+
+<!-- ================= DOMANDE ================= -->
+<section class="sec alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Domande</span>
+      <h2>Le domande che mi fanno tutti.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Quanto costa?</summary><div class="ans"><p>Niente. Nessun contratto, nessuna seconda parte a pagamento per leggere le conclusioni.</p></div></details>
+      <details><summary>Servono accessi al PMS, al booking engine o ad Analytics?</summary><div class="ans"><p>No. Lavoro su quello che vede l’ospite: recensioni, Google, OTA, sito, social.</p></div></details>
+      <details><summary>Quanto tempo mi chiede?</summary><div class="ans"><p>Un minuto per la richiesta. Il resto lo faccio io.</p></div></details>
+      <details><summary>Perché massimo 5 al mese?</summary><div class="ans"><p>Perché le faccio io, a mano, leggendo recensioni e siti uno per uno. Di più, fatte bene, non se ne fanno.</p></div></details>
+      <details><summary>E se il mio hotel ha meno di 40 camere?</summary><div class="ans"><p>L’analisi gratuita è pensata per hotel e resort dalle 40 camere. Per strutture più piccole ci sono <a href="/quiz/">il test di posizionamento</a> e <a href="/bonus/">gli strumenti gratuiti del libro</a>.</p></div></details>
+      <details><summary>E se dopo non voglio andare avanti?</summary><div class="ans"><p>Il documento resta tuo. Nessuno ti richiama per insistere.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RICHIEDI ================= -->
+<section class="sec" id="richiedi" data-sticky-stop>
   <div class="wrap apply-grid">
     <div>
-      <span class="num-tag">Candidatura</span>
-      <h2 style="margin:16px 0 18px">La prossima struttura riconoscibile <em>può essere la vostra.</em></h2>
-      <p class="lead">Seguo personalmente ogni analisi, una alla settimana. Rispondo entro 48 ore, anche quando la candidatura non è adatta.</p>
-      <div class="apply-steps">
-        <div class="tl"><div class="n">1</div><div><span class="when">Un minuto</span><h3>Inviate la candidatura</h3><p>Struttura, sito e, se volete, due o tre concorrenti.</p></div></div>
-        <div class="tl"><div class="n">2</div><div><span class="when">Entro 48 ore</span><h3>Vi rispondo</h3><p>Con l’esito della selezione e la settimana assegnata.</p></div></div>
-        <div class="tl"><div class="n">3</div><div><span class="when">Nella settimana assegnata</span><h3>Ricevete l’analisi</h3><p>Il documento resta vostro, qualunque cosa decidiate.</p></div></div>
+      <span class="num-tag">Analisi gratuita</span>
+      <h2 style="margin:16px 0 18px">Richiedi l’analisi <em>del tuo hotel.</em></h2>
+      <p class="lead">Tre risposte sul tuo hotel e sulla tua zona.</p>
+      <ol class="gets">
+        <li class="rv"><b>01</b>Che posizione occupi oggi per l’ospite.</li>
+        <li class="rv d1"><b>02</b>Quale occupano i tuoi concorrenti, e perché li sceglie.</li>
+        <li class="rv d2"><b>03</b>Quale posizione è libera, e le prime mosse per prenderla.</li>
+      </ol>
+      <div class="sign-row rv">
+        <img src="/assets/img/francesco.webp" alt="" loading="lazy" width="112" height="112">
+        <p>Fatta a mano da <strong>Francesco Astolfi</strong>. Senza contratto, senza impegno.</p>
       </div>
-      <p class="why-line"><b>Perché senza costi?</b> È il modo in cui presento il mio lavoro: invece di descriverlo, lo mostro sulla vostra struttura. In cambio chiedo il consenso a pubblicarla e una testimonianza sincera, se vi è stata utile.</p>
+      <p class="micro"><b>Massimo 5 analisi al mese.</b> Solo hotel e resort dalle 40 camere. Ti rispondo entro 48 ore.</p>
     </div>
     <div class="rv d1">
 <!-- @include form-candidatura -->
@@ -435,16 +550,16 @@
   path.style.setProperty('--len',len);
   function step(n){ steps.forEach(function(li,i){ li.classList.toggle('on', i===n-1); }); svg.classList.toggle('s2', n>=2); svg.classList.toggle('s3', n>=3); }
   function place(t){ var p=path.getPointAtLength(len*t); you.setAttribute('transform','translate('+p.x+' '+p.y+')'); lab.setAttribute('x',p.x); lab.setAttribute('y',p.y+(t>.98?88:42)); path.style.strokeDashoffset=len*(1-t); }
-  function reset(){ timers.forEach(clearTimeout); timers=[]; cancelAnimationFrame(raf); step(1); place(0); lab.textContent='La vostra struttura, oggi'; }
+  function reset(){ timers.forEach(clearTimeout); timers=[]; cancelAnimationFrame(raf); step(1); place(0); lab.textContent='Il tuo hotel, oggi'; }
   function run(){
     reset();
-    if(HP.reduce){ step(3); place(1); lab.textContent='La vostra struttura, posizionata'; return; }
+    if(HP.reduce){ step(3); place(1); lab.textContent='Il tuo hotel, posizionato'; return; }
     timers.push(setTimeout(function(){ step(2); }, 900));
     timers.push(setTimeout(function(){
       var t0=performance.now(), D=2200;
       lab.style.opacity=0;
       (function tick(now){ var k=Math.min(1,(now-t0)/D), e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2; place(e);
-        if(k<1) raf=requestAnimationFrame(tick); else { step(3); lab.textContent='La vostra struttura, posizionata'; lab.style.opacity=1; } })(t0);
+        if(k<1) raf=requestAnimationFrame(tick); else { step(3); lab.textContent='Il tuo hotel, posizionato'; lab.style.opacity=1; } })(t0);
     }, 2100));
   }
   reset();
@@ -460,7 +575,7 @@
 (function(){
   var g=document.getElementById('bingoGrid'); if(!g) return; var picked=0;
   var cliches=['Location unica','Servizio impeccabile','A due passi dal mare','Ambiente accogliente e familiare','Staff cordiale e professionale','Posizione strategica','Camere spaziose e luminose','Un’esperienza indimenticabile','Ideale per famiglie e coppie','Un angolo di paradiso','Comfort e relax','Cucina tipica del territorio'];
-  var msgs=[[0,'Nessuna, per ora. Il confronto funziona meglio con la homepage aperta accanto.'],[1,'Una sola. Resta da capire cosa ricorda l’ospite della struttura.'],[3,'Qualcuna di troppo: sono le stesse frasi che si leggono nelle strutture vicine.'],[5,'Coprendo il logo, l’ospite non saprebbe più di quale struttura si tratta.'],[8,'La homepage potrebbe appartenere a molte altre strutture. E a parità di parole, si sceglie il prezzo.']];
+  var msgs=[[0,'Nessuna, per ora. Funziona meglio con la homepage aperta accanto.'],[1,'Una sola. Resta da capire cosa ricorda di te l’ospite.'],[3,'Qualcuna di troppo: sono le stesse frasi degli hotel vicini.'],[5,'Copri il logo: l’ospite non saprebbe più di quale hotel si tratta.'],[8,'La tua homepage potrebbe essere di molti altri hotel. E a parità di parole, si sceglie il prezzo.']];
   cliches.forEach(function(c){
     var b=document.createElement('button'); b.type='button'; b.className='bingo-cell'; b.textContent='«'+c+'»'; b.setAttribute('aria-pressed','false');
     b.addEventListener('click',function(){ var on=b.getAttribute('aria-pressed')!=='true'; b.setAttribute('aria-pressed',on); picked+=on?1:-1;

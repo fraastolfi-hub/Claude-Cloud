@@ -236,3 +236,4 @@ h3 .strike,.card .strike{white-space:normal}
 [class*="grid"] > *,.split > *,.wrap > *{min-width:0}
 .beats > *,.moves li > *{min-width:0}
 @media (max-width:360px){.moves li{font-size:15px}}
+.foot .foot-h{font-size:12px!important;line-height:1.3}

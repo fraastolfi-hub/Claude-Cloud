@@ -17,7 +17,7 @@
 const API = 'https://api.brevo.com/v3';
 
 const FORMS = {
-  'candidatura': { label: 'Candidatura', list: 'BREVO_LIST_CANDIDATURA' },
+  'candidatura': { label: 'Richiesta analisi gratuita', list: 'BREVO_LIST_CANDIDATURA' },
   'revisione-homepage': { label: 'Revisione della homepage', list: 'BREVO_LIST_REVISIONE' },
   'test-posizionamento': { label: 'Test di posizionamento', list: 'BREVO_LIST_TEST' },
   'strumenti-libro': { label: 'Strumenti del libro', list: 'BREVO_LIST_BONUS' },

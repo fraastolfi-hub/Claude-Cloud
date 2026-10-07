@@ -15,7 +15,7 @@ Una categoria, una persona, un metodo, una scala.
 - **Categoria:** brand positioning per hotel indipendenti. Non marketing, non agenzia, non revenue.
 - **Persona:** Francesco Astolfi, vent'anni da ogni lato del tavolo, operatore e non consulente ("vendo cicatrici").
 - **Metodo:** Hotel Positioning, in sei passaggi. Il libro lo racconta, l'analisi lo applica.
-- **Scala:** gratis (quiz, smontaggio, strumenti, library) → libro (€19,90) → analisi (candidatura gratuita oppure €697) → affiancamento continuativo.
+- **Scala:** gratis (quiz, smontaggio, strumenti, library) → libro (€19,90) → analisi (gratuita su richiesta oppure €697) → affiancamento continuativo.
 
 Ogni pagina ha **un'azione principale** e al massimo una secondaria, presa dal gradino subito sotto della scala.
 
@@ -24,9 +24,9 @@ Ogni pagina ha **un'azione principale** e al massimo una secondaria, presa dal g
 ```
 /                         Home · categoria + metodo + prova + scala        → CTA: Candida il tuo hotel
 ├── /metodo/              Il metodo in 6 passaggi (pagina pilastro SEO)     → Analisi · sec.: Libro
-├── /analisi/             L'offerta: candidatura gratis o €697 + garanzia  → Form candidatura · sec.: Acquista
+├── /analisi/             L'offerta: analisi gratuita su richiesta o €697 + garanzia  → Modulo di richiesta · sec.: Acquista
 │   └── /problemi/        Sei ingressi per sintomo (destinazioni delle ads)
-│       ├── booking/      "Ogni anno regali €150.000 a Booking"             → Candidatura (form breve)
+│       ├── booking/      "Ogni anno regali €150.000 a Booking"             → Richiesta analisi gratuita
 │       ├── prezzi/       "Il tuo prezzo è fermo al 2022"
 │       ├── sostituibili/ "Bellissimo. E identico a quello accanto"
 │       ├── agenzie/      "Tre agenzie, stesso risultato"
@@ -74,7 +74,7 @@ Vedi [TONO.md](TONO.md): "voi", registro professionale, il dato prima dell'agget
 | Veridia | The nature resort of Chia. Vendite dirette sopra il 60%. Nessun prima/dopo di fatturato | — |
 | Clienti attuali | Veridia Resort (Chia), Silva Splendid (Fiuggi), Tocq Hotel (Milano), Radisson Blu Bergamo ChorusLife | — |
 | Palco | Hospitality Day 2026 | — |
-| Analisi | Candidatura gratuita: 5 posti, 1 analisi a settimana, risposta entro 48 ore, 20-25 pagine. A pagamento: €697 + IVA, 5 documenti operativi (39 pagine), consegna in 48 ore dal questionario, 3 call di controllo (mese 1, 3, 6), garanzia: rimborso più €500 entro 30 giorni | "4 a settimana, entro 72 ore" (landing analisi gratuita) |
+| Analisi | Analisi gratuita su richiesta: fatta a mano da Francesco, massimo 5 al mese, solo hotel e resort dalle 40 camere, risposta entro 48 ore, 20-25 pagine. La homepage è la pagina della richiesta (`/#richiedi`); /analisi-gratuita.html reindirizza lì. A pagamento: €697 + IVA, 5 documenti operativi (39 pagine), consegna in 48 ore dal questionario, 3 call di controllo (mese 1, 3, 6), garanzia: rimborso più €500 entro 30 giorni | "4 a settimana, entro 72 ore" (landing analisi gratuita) |
 | Lettura recensioni | In cinque lingue (italiano, inglese, russo, arabo, cinese), con il supporto dell'AI per le traduzioni: dirlo sempre così, mai come conoscenza diretta delle lingue | — |
 | Smontaggio | Gratis, 6 al mese, risposta in 3 giorni lavorativi | — |
 | Libro | 120 pagine, 8 figure, 6 passaggi, €19,90 su Amazon (https://www.amazon.it/dp/B0HL3Z4XL7/), anche Kindle, rimborso Amazon 14 giorni, primo capitolo in PDF di 8 pagine | — |
@@ -83,7 +83,7 @@ Vedi [TONO.md](TONO.md): "voi", registro professionale, il dato prima dell'agget
 
 ## Cose da decidere (per Francesco)
 
-1. La landing `analisi-gratuita.html` (mappa del compset, "4 a settimana", consegna in 72 ore) promette un'offerta diversa dalla candidatura del sito. Va allineata, oppure diventa un'offerta separata.
+1. (Risolto: la landing è stata unita alla homepage.) La landing `analisi-gratuita.html` (mappa del compset, "4 a settimana", consegna in 72 ore) promette un'offerta diversa dalla candidatura del sito. Va allineata, oppure diventa un'offerta separata.
 2. Il gradino "affiancamento continuativo / fractional CMO" esiste nei fatti (Tocq, Radisson), ma nessuna pagina lo vende. In `/analisi/` compare solo come "dopo l'analisi, se serve", senza prezzo.
 3. Le domande del quiz non erano leggibili dal sito pubblicato: sono state riscritte da zero e vanno validate.
 4. I form non inviano ancora dati: vanno collegati al CRM o al servizio di email marketing.

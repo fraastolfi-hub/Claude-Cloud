@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Il test di posizionamento per hotel · Hotel Positioning</title>
-<meta name="description" content="Il test di posizionamento per hotel e resort: sette domande, due minuti. Indica se oggi la struttura è invisibile, sostituibile o posizionata, e in quali punti l'ospite fatica a sceglierla.">
+<meta name="description" content="Il test di posizionamento per hotel e resort: sette domande, due minuti. Ti dice se oggi la tua struttura è invisibile, sostituibile o posizionata, e dove l'ospite fatica a sceglierla.">
 <link rel="canonical" href="https://hotelpositioning.com/quiz/">
 <meta property="og:title" content="Il test di posizionamento: invisibile, sostituibile o posizionata.">
-<meta property="og:description" content="Sette domande, due minuti. Dove la struttura è riconoscibile e dove rischia di essere sostituita.">
+<meta property="og:description" content="Sette domande, due minuti. Dove il tuo hotel è riconoscibile e dove rischia di essere sostituito.">
 <meta property="og:type" content="website">
 <!-- @include head -->
 <style>
@@ -158,8 +158,8 @@
     <div class="intro">
       <span class="eyebrow"><span class="dot"></span>Sette domande · gratuito</span>
       <h1>Il test di <em>posizionamento.</em></h1>
-      <p class="lead">Sette domande per capire quanto la struttura è riconoscibile oggi, agli occhi di un ospite che non la conosce. Due minuti.</p>
-      <p class="micro" style="margin-top:0"><b>Rispondete con sincerità, guardando la struttura come la guarderebbe un ospite.</b> Il risultato resta riservato: lo vedete solo voi.</p>
+      <p class="lead">Sette domande per capire quanto il tuo hotel è riconoscibile oggi, per un ospite che non lo conosce. Due minuti.</p>
+      <p class="micro" style="margin-top:0"><b>Rispondi con sincerità, come se fossi un ospite.</b> Il risultato lo vedi solo tu.</p>
     </div>
 
     <div class="qz" id="test" aria-live="off">
@@ -170,7 +170,7 @@
       <div class="qz-bar" role="progressbar" aria-label="Avanzamento del test" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="qzBar"><i></i></div>
 
       <div class="qz-stage" id="qzStage">
-        <noscript><p>Il test richiede JavaScript attivo. In alternativa potete <a href="/smontaggio/">richiedere la revisione della homepage</a>, anch'essa gratuita.</p></noscript>
+        <noscript><p>Il test richiede JavaScript attivo. In alternativa puoi <a href="/smontaggio/">richiedere la revisione della homepage</a>, anche quella gratis.</p></noscript>
       </div>
       <div class="qz-foot" id="qzFoot">
         <button type="button" class="qz-back" id="qzBack" disabled>← Indietro</button>
@@ -179,7 +179,7 @@
 
       <!-- risultato: statico nel DOM, così il form lo gestisce site.js -->
       <div class="qz-res" id="qzRes" hidden tabindex="-1">
-        <p class="res-label">Oggi la vostra struttura è</p>
+        <p class="res-label">Oggi la tua struttura è</p>
         <h2 class="res-name" id="resName" tabindex="-1"><span>…</span></h2>
         <p class="res-hook" id="resHook"></p>
 
@@ -192,7 +192,7 @@
         <div class="res-body">
           <div class="res-diag" id="resDiag"></div>
           <div class="weak">
-            <h3 id="weakTitle">Dove la struttura perde l'ospite</h3>
+            <h3 id="weakTitle">Dove perdi l'ospite</h3>
             <ol id="weakList"></ol>
           </div>
         </div>
@@ -202,27 +202,27 @@
         <div class="res-mail">
           <div>
             <h3 style="font-size:clamp(22px,2.2vw,28px);margin-bottom:10px">Il risultato per email.</h3>
-            <p style="font-size:16.5px">Per condividerlo con chi decide insieme a voi, o per rileggerlo tra sei mesi e vedere cosa è cambiato.</p>
+            <p style="font-size:16.5px">Per girarlo a chi decide con te, o rileggerlo tra sei mesi e vedere cosa è cambiato.</p>
           </div>
           <form class="form" id="quiz-form" name="test-posizionamento" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" novalidate>
   <input type="hidden" name="form-name" value="test-posizionamento"><input type="hidden" name="pagina" value=""><p hidden><label>Non compilare: <input name="bot-field"></label></p>
             <div class="fields">
               <input type="hidden" name="profilo" id="qzProfilo" value="">
               <input type="hidden" name="punteggio" id="qzPunteggio" value="">
-              <div class="field"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required><span class="em">Controllate l'indirizzo: il risultato arriverà qui.</span></div>
+              <div class="field"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: il risultato arriva qui.</span></div>
               <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e desidero ricevere il risultato del test via email.</span></label>
               <button class="btn dark" type="submit">Invia il risultato <span class="arr">→</span></button>
             </div>
             <div class="ok" role="status">
               <div class="tick">✓</div>
               <p class="big">Ricevuto.</p>
-              <p>Il risultato è in arrivo nella vostra casella. Se non lo trovate, controllate la cartella spam.</p>
+              <p>Il risultato sta arrivando nella tua casella. Se non lo trovi, guarda nello spam.</p>
             </div>
           </form>
         </div>
 
         <div class="res-again">
-          <p class="micro" style="margin:0"><b>Un suggerimento:</b> ripetete il test dal punto di vista dell'ospite. Spesso il risultato cambia.</p>
+          <p class="micro" style="margin:0"><b>Un suggerimento:</b> rifai il test mettendoti nei panni dell'ospite. Spesso il risultato cambia.</p>
           <button type="button" class="btn ghost sm" id="qzAgain">↻ Ripeti il test</button>
         </div>
       </div>
@@ -236,23 +236,23 @@
     <div class="sec-head">
       <span class="num-tag">N°01</span>
       <h2>Tre profili possibili. <em>Ognuno indica un lavoro da fare.</em></h2>
-      <p class="lead">Anche il profilo migliore richiede attenzione per essere mantenuto.</p>
+      <p class="lead">Anche il profilo migliore va mantenuto.</p>
     </div>
     <div class="profiles">
       <article class="card g rv">
         <span class="tag">0-5 punti</span>
         <h3>Invisibile</h3>
-        <p>Su Booking la struttura è uno dei cinquanta rettangoli, e l'ospite fatica a distinguerla dagli altri. Per decidere gli resta un solo criterio: il prezzo.</p>
+        <p>Su Booking il tuo hotel è uno dei cinquanta rettangoli. L'ospite non lo distingue dagli altri e decide sul prezzo.</p>
       </article>
       <article class="card y rv d1">
         <span class="tag">6-10 punti</span>
         <h3>Sostituibile</h3>
-        <p>La struttura ha qualcosa di vero, e gli ospiti lo percepiscono, ma non riescono a dirlo. Senza un motivo esplicito, basta una struttura vicina che costa meno.</p>
+        <p>Il tuo hotel ha qualcosa di vero. Gli ospiti lo sentono, ma non sanno dirlo. Così basta un hotel vicino che costa meno.</p>
       </article>
       <article class="card o rv d2">
         <span class="tag">11-14 punti</span>
         <h3>Posizionata</h3>
-        <p>Un motivo preciso per essere scelta, espresso in una frase che l'ospite riconosce come vera. È una posizione rara, e va mantenuta nel tempo.</p>
+        <p>Un motivo preciso per essere scelto, in una frase che l'ospite riconosce come vera. È raro, e va mantenuto.</p>
       </article>
     </div>
   </div>
@@ -266,9 +266,9 @@
       <h2>Da dove vengono <em>le domande.</em></h2>
     </div>
     <div class="prose rv">
-      <p>Ogni domanda corrisponde a un segnale che osservo quando analizzo una struttura per la prima volta: la frase di trenta secondi, il logo coperto, le recensioni intercambiabili, il prezzo che scende a settembre, un messaggio costruito a partire da sé invece che dalle parole degli ospiti.</p>
-      <p><strong>Cosa non fa questo test:</strong> non analizza la struttura, ma il modo in cui rispondete. In due minuti indica dove guardare, non cosa scrivere.</p>
-      <p>Per quello serve il metodo applicato alla vostra struttura, con le vostre recensioni e i vostri concorrenti.</p>
+      <p>Ogni domanda è un segnale che guardo quando analizzo un hotel per la prima volta: la frase di trenta secondi, il logo coperto, le recensioni intercambiabili, il prezzo che scende a settembre, un messaggio scritto da chi lo gestisce invece che dagli ospiti.</p>
+      <p><strong>Cosa non fa questo test:</strong> non analizza il tuo hotel, misura le tue risposte. Ti dice dove guardare, non cosa scrivere.</p>
+      <p>Per quello serve il metodo applicato al tuo hotel, con le tue recensioni e i tuoi concorrenti.</p>
       <div class="chips" style="margin:24px 0 28px">
         <span class="chip y">Trenta secondi</span><span class="chip w">Logo coperto</span><span class="chip m">Recensioni</span><span class="chip b">Prezzo</span><span class="chip o">Origine del messaggio</span>
       </div>
@@ -289,66 +289,66 @@
   // s = punti (0 invisibile, 1 sostituibile, 2 posizionata). w = punto debole mostrato se s < 2.
   var Q = [
     { k:'La frase di trenta secondi',
-      t:'Un ospite al telefono chiede: «Perché dovrei scegliere voi?» Cosa risponde la struttura?',
+      t:'Un ospite al telefono chiede: «Perché dovrei scegliere voi?» Cosa gli rispondi?',
       a:[ {t:'«Struttura curata, qualità, grande attenzione all\'ospite.»', s:0},
           {t:'Elenchiamo i servizi: piscina, SPA, ristorante, parcheggio.', s:1},
           {t:'Una frase precisa, sempre la stessa: per chi siamo e cosa si trova solo qui.', s:2},
           {t:'Dipende da chi risponde: ognuno dice la sua.', s:0} ],
-      w:{t:'Manca una risposta di trenta secondi.', d:'Se la struttura non ha una risposta chiara, la reception non può darla al posto suo. La frase va decisa una volta e condivisa con tutta la squadra.'} },
+      w:{t:'Manca una risposta di trenta secondi.', d:'Se non l\'hai decisa tu, la reception non può inventarla. La frase si decide una volta e si dà a tutta la squadra.'} },
     { k:'Il logo coperto',
-      t:'Coprite il logo sulla vostra homepage. La prima frase che resta…',
+      t:'Copri il logo sulla tua homepage. La prima frase che resta…',
       a:[ {t:'…funzionerebbe anche per l\'hotel accanto.', s:0},
           {t:'…funzionerebbe per gli hotel della zona, non per tutti.', s:1},
           {t:'…vale solo per noi: contiene un fatto che gli altri non hanno.', s:2},
           {t:'Non sappiamo con precisione cosa dice la prima frase della homepage.', s:0} ],
-      w:{t:'La homepage descrive i servizi, non l\'identità.', d:'Cambiando il logo, lo stesso testo varrebbe per altri cento hotel. Un vocabolario condiviso con i concorrenti non costruisce un posizionamento.'} },
+      w:{t:'La homepage descrive i servizi, non chi sei.', d:'Cambia il logo e lo stesso testo vale per altri cento hotel. Se usi le parole dei concorrenti, l\'ospite non ti distingue.'} },
     { k:'Le recensioni',
-      t:'Rileggete le ultime venti recensioni. Cosa dicono, soprattutto?',
+      t:'Rileggi le ultime venti recensioni. Cosa dicono, soprattutto?',
       a:[ {t:'Pulito. Gentile. Buon rapporto qualità-prezzo.', s:0},
           {t:'Tornano sempre le stesse due o tre cose, con parole simili alle nostre.', s:2},
           {t:'Commenti positivi, ma ognuno apprezza una cosa diversa: chi la colazione, chi la vista, chi lo staff.', s:1} ],
-      w:{t:'Recensioni intercambiabili.', d:'Le recensioni riflettono il posizionamento: se il messaggio è generico, lo sono anche loro. Il segnale da cercare è «l\'unico posto dove ho trovato…». Se manca, l\'elemento distintivo non è ancora percepito.'} },
+      w:{t:'Recensioni intercambiabili.', d:'Se il messaggio è generico, lo sono anche le recensioni. Cerca la frase «l\'unico posto dove ho trovato…». Se non c\'è, l\'ospite non ha ancora visto cosa ti rende diverso.'} },
     { k:'L\'ospite giusto',
-      t:'Per quale ospite è pensata la vostra struttura?',
+      t:'Per quale ospite è pensato il tuo hotel?',
       a:[ {t:'Per tutti: famiglie, coppie, business, gruppi.', s:0},
           {t:'Per due o tre tipi di ospite, a seconda della stagione.', s:1},
           {t:'Per un ospite preciso. A chi cerca altro, a volte lo diciamo prima che prenoti.', s:2} ],
-      w:{t:'Un ospite non ancora scelto.', d:'Una struttura che si rivolge a tutti non ha ancora fatto una scelta. Essere specifici significa scegliere, e scegliere significa anche escludere.'} },
+      w:{t:'Un ospite non ancora scelto.', d:'Se parli a tutti, non hai ancora scelto. Scegliere un ospite vuol dire anche lasciarne andare altri.'} },
     { k:'Il prezzo',
-      t:'Settembre, l\'occupazione cala. Come reagisce la struttura?',
+      t:'Settembre, l\'occupazione cala. Cosa fai?',
       a:[ {t:'Abbassiamo le tariffe e offriamo qualche upgrade.', s:0},
           {t:'Lanciamo un\'offerta o un pacchetto per coprire i vuoti.', s:1},
           {t:'Manteniamo il prezzo e ci rivolgiamo a chi verrebbe apposta per noi.', s:2},
           {t:'Ci allineiamo ai concorrenti, leggermente sotto.', s:0} ],
-      w:{t:'Il mercato si abitua allo sconto.', d:'E inizia ad aspettarlo anche in alta stagione. Quando una struttura sembra uguale alle altre, all\'ospite resta un solo criterio di scelta: il prezzo.'} },
+      w:{t:'Il mercato si abitua allo sconto.', d:'E comincia ad aspettarlo anche ad agosto. Se il tuo hotel sembra uguale agli altri, l\'ospite sceglie sul prezzo.'} },
     { k:'I canali OTA',
       t:'Su cento prenotazioni, quante arrivano dalle OTA?',
       a:[ {t:'Più di sessanta.', s:0},
           {t:'Tra trenta e sessanta.', s:1},
           {t:'Meno di trenta: chi ci sceglie, ci cerca per nome.', s:2},
           {t:'Non lo sappiamo con precisione.', s:0} ],
-      w:{t:'Una forte dipendenza dalle OTA.', d:'Le OTA portano prenotazioni, ma l\'ospite resta della piattaforma. La causa non è Booking: è l\'assenza di un motivo chiaro per prenotare direttamente dalla struttura.'} },
+      w:{t:'Una forte dipendenza dalle OTA.', d:'Le OTA portano prenotazioni, ma l\'ospite resta loro. La causa non è Booking: manca un motivo chiaro per prenotare da te.'} },
     { k:'L\'origine del messaggio',
-      t:'Il messaggio che usate oggi, da dove viene?',
+      t:'Il messaggio che usi oggi, da dove viene?',
       a:[ {t:'L\'ha scritto l\'agenzia, o chi ha realizzato il sito.', s:0},
           {t:'L\'abbiamo deciso noi, in base a ciò che ci sembra importante e a quello che fanno i vicini.', s:1},
           {t:'Dalle parole degli ospiti e dalle posizioni lasciate libere dai concorrenti.', s:2} ],
-      w:{t:'Un messaggio nato dall\'interno.', d:'Le unicità di una struttura sono già scritte: nelle recensioni degli ospiti e negli spazi lasciati liberi dai concorrenti. È lì che conviene cercarle.'} }
+      w:{t:'Un messaggio nato dall\'interno.', d:'Quello che ti rende unico è già scritto: nelle recensioni degli ospiti e negli spazi che i concorrenti lasciano liberi. Cercalo lì.'} }
   ];
 
   var P = {
     inv:{ name:'Invisibile', col:'var(--grey)',
-      hook:'Su Booking è uno dei cinquanta rettangoli, e l\'ospite fatica a distinguerla.',
-      diag:'<p>Più che poco conosciuta, oggi la struttura è difficile da distinguere. L\'ospite scorre le offerte e, quando tutto sembra uguale, gli resta un solo criterio di scelta: <strong>il prezzo.</strong></p><p>La qualità può essere alta. Il punto è che non emerge: ciò che rende unica la struttura non è ancora diventato un messaggio riconoscibile.</p><p>È una situazione molto diffusa, e si può cambiare. Il primo passo è trovare il motivo per cui l\'ospite dovrebbe scegliere voi.</p>',
-      cta:'<h3>Il primo passo: definire il posizionamento.</h3><p>Prima di investire in altro marketing, serve il motivo per cui l\'ospite dovrebbe scegliere la vostra struttura. L\'analisi lo cerca con il metodo, nelle recensioni e tra i vostri concorrenti.</p><div class="btn-row"><a href="/analisi/#candidatura" class="btn">Candida la struttura <span class="arr">→</span></a><a href="/smontaggio/" class="btn ghost">Richiedi la revisione della homepage</a></div><p class="micro"><b>Su candidatura.</b> Seguo personalmente ogni analisi, una alla settimana.</p>' },
+      hook:'Su Booking è uno dei cinquanta rettangoli. L\'ospite non la distingue.',
+      diag:'<p>Il tuo hotel non è poco conosciuto: è difficile da distinguere. L\'ospite scorre le offerte e, se tutto sembra uguale, sceglie <strong>sul prezzo.</strong></p><p>La qualità può essere alta, ma non si vede. Quello che ti rende unico non è ancora un messaggio.</p><p>Succede a molti, e si può cambiare. Il primo passo è trovare il motivo per cui l\'ospite dovrebbe scegliere te.</p>',
+      cta:'<h3>Il primo passo: definire il posizionamento.</h3><p>Prima di spendere in altro marketing, ti serve il motivo per cui l\'ospite dovrebbe scegliere il tuo hotel. L\'analisi gratuita lo cerca nelle tue recensioni e tra i tuoi concorrenti.</p><div class="btn-row"><a href="/#richiedi" class="btn">Richiedi l\'analisi gratuita <span class="arr">→</span></a><a href="/smontaggio/" class="btn ghost">Richiedi la revisione della homepage</a></div><p class="micro"><b>Gratis, fatta a mano da me.</b> Massimo 5 al mese, per hotel e resort dalle 40 camere in su. Ti rispondo entro 48 ore.</p>' },
     sos:{ name:'Sostituibile', col:'var(--yellow)',
-      hook:'Apprezzata dagli ospiti, ma ancora simile alle strutture vicine.',
-      diag:'<p>La struttura ha qualcosa di vero. Gli ospiti lo percepiscono, e alcuni lo scrivono nelle recensioni. Ma non è ancora espresso in una frase, e quindi non lavora per voi.</p><p>Finché il motivo resta implicito, l\'ospite vi confronta con chi ha la stessa piscina a trecento metri. <strong>E a quel punto basta una struttura vicina che costa meno.</strong></p><p>Un vantaggio estetico dura finché un concorrente non ristruttura. Un posizionamento chiaro resta.</p>',
-      cta:'<h3>Il passo successivo: scegliere un motivo.</h3><p>Scegliere un motivo e costruire tutta la comunicazione attorno a quello. È il lavoro dell\'analisi: diagnosi, concorrenti, profili ospite, posizionamento proposto, cinque azioni.</p><div class="btn-row"><a href="/analisi/#candidatura" class="btn">Candida la struttura <span class="arr">→</span></a><a href="/smontaggio/" class="btn ghost">Richiedi la revisione della homepage</a></div><p class="micro"><b>Su candidatura.</b> Seguo personalmente ogni analisi, una alla settimana.</p>' },
+      hook:'Gli ospiti la apprezzano, ma somiglia ancora agli hotel vicini.',
+      diag:'<p>Il tuo hotel ha qualcosa di vero. Gli ospiti lo sentono, alcuni lo scrivono nelle recensioni. Ma non è ancora una frase, quindi non lavora per te.</p><p>Finché il motivo resta implicito, l\'ospite ti confronta con chi ha la stessa piscina a trecento metri. <strong>E basta un hotel vicino che costa meno.</strong></p><p>Una camera nuova dura finché il vicino non ristruttura. Un posizionamento chiaro resta.</p>',
+      cta:'<h3>Il passo successivo: scegliere un motivo.</h3><p>Un motivo solo, e tutta la comunicazione costruita attorno. L\'analisi gratuita te lo propone in 20-25 pagine sul tuo hotel e sui tuoi concorrenti.</p><div class="btn-row"><a href="/#richiedi" class="btn">Richiedi l\'analisi gratuita <span class="arr">→</span></a><a href="/smontaggio/" class="btn ghost">Richiedi la revisione della homepage</a></div><p class="micro"><b>Gratis, fatta a mano da me.</b> Massimo 5 al mese, per hotel e resort dalle 40 camere in su. Ti rispondo entro 48 ore.</p>' },
     pos:{ name:'Posizionata', col:'var(--orange)',
       hook:'Ha un motivo preciso per essere scelta, e lo comunica.',
-      diag:'<p>L\'ospite che arriva sa già cosa troverà. Chi cerca altro sceglie altrove, ed è giusto così.</p><p>Una cautela: un test di due minuti misura le vostre risposte, non la percezione degli ospiti. <strong>Verificate che le recensioni dicano le stesse cose che dite voi.</strong> Se coincidono, il posizionamento è solido.</p><p>Il lavoro, ora, è mantenerlo: restare coerenti quando arrivano un nuovo concorrente, una nuova agenzia o la tentazione dello sconto.</p>',
-      cta:'<h3>Il passo successivo: mantenere la posizione.</h3><p>Osservate come la mantengono le strutture che ci sono riuscite, e usate il metodo per verificarla quando il mercato cambia.</p><div class="btn-row"><a href="/library/" class="btn">La library dei posizionamenti <span class="arr">→</span></a><a href="/libro/" class="btn ghost">Il libro · 19,90 €</a></div>' }
+      diag:'<p>L\'ospite che arriva sa già cosa troverà. Chi cerca altro va altrove, ed è giusto così.</p><p>Una cautela: il test misura le tue risposte, non cosa pensano gli ospiti. <strong>Controlla che le recensioni dicano quello che dici tu.</strong> Se coincidono, il posizionamento è solido.</p><p>Ora va mantenuto: quando arriva un nuovo concorrente, una nuova agenzia o la voglia di fare sconti.</p>',
+      cta:'<h3>Il passo successivo: mantenere la posizione.</h3><p>Guarda come la mantengono gli hotel che ci sono riusciti, e usa il metodo per verificarla quando il mercato cambia.</p><div class="btn-row"><a href="/library/" class="btn">La library dei posizionamenti <span class="arr">→</span></a><a href="/libro/" class="btn ghost">Il libro · 19,90 €</a></div>' }
   };
 
   var stage = document.getElementById('qzStage'), foot = document.getElementById('qzFoot'),
@@ -434,11 +434,11 @@
     document.getElementById('qzPunteggio').value = score + '/14 · ' + ans.map(function(a){ return keys[a]; }).join('');
     var list = document.getElementById('weakList'), wt = document.getElementById('weakTitle');
     var take = weak.slice(0, key === 'pos' ? 2 : 3);
-    wt.textContent = key === 'pos' ? (take.length ? 'Da tenere sotto controllo' : 'Nessun punto debole evidente') : 'Dove la struttura perde l\'ospite';
+    wt.textContent = key === 'pos' ? (take.length ? 'Da tenere sotto controllo' : 'Nessun punto debole evidente') : 'Dove perdi l\'ospite';
     list.innerHTML = take.length ? take.map(function(w){
       var q = Q[w.i];
       return '<li><b>' + esc(q.w.t) + '</b>' + esc(q.w.d) + '<em>Domanda ' + (w.i + 1) + ' · risposta: ' + esc(q.a[ans[w.i]].t) + '</em></li>';
-    }).join('') : '<li><b>Sette risposte su sette da struttura posizionata.</b>Il passo successivo è verificare che le recensioni lo confermino. Se dicono altro, conta il punto di vista dell\'ospite.</li>';
+    }).join('') : '<li><b>Sette risposte su sette da struttura posizionata.</b>Ora controlla che le recensioni lo confermino. Se dicono altro, ha ragione l\'ospite.</li>';
 
     var pin = document.getElementById('resPin');
     pin.style.left = '0%';

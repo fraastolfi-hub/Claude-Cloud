@@ -28,7 +28,7 @@ def signals(items):
           <h3>{h}</h3>
           <p>{p}</p>
           <p class="pk">{pk}</p>
-          <button type="button" class="sig-btn" aria-pressed="false">Vale per noi</button>
+          <button type="button" class="sig-btn" aria-pressed="false">Vale per me</button>
         </article>''')
     return "\n".join(out)
 
@@ -55,10 +55,10 @@ SIG_JS = r'''
   var btns=[].slice.call(document.querySelectorAll('.sig-btn')), meter=document.getElementById('sigMeter');
   var out=document.getElementById('sigScore'), msg=document.getElementById('sigMsg'), bar=document.getElementById('sigBar');
   var M=[
-    'Selezionate i segnali che riconoscete nella vostra struttura.',
-    '<b>Uno o due.</b> Segnali isolati: possono avere cause diverse dal posizionamento.',
-    '<b>Tre o quattro.</b> I segnali iniziano a ripetersi. È il momento giusto per verificarne la causa.',
-    '<b>Cinque o più.</b> Segnali così diffusi hanno quasi sempre una causa comune: manca un posizionamento chiaro.',
+    'Seleziona i segnali che riconosci nel tuo hotel.',
+    '<b>Uno o due.</b> Segnali isolati: la causa può essere un\'altra.',
+    '<b>Tre o quattro.</b> I segnali si ripetono. Conviene verificarne la causa.',
+    '<b>Cinque o più.</b> Quasi sempre la causa è una: manca un posizionamento chiaro.',
     '<b>Otto o più.</b> %TAIL%'
   ];
   bar.innerHTML=new Array(11).join('<i></i>');
@@ -141,10 +141,10 @@ def page(p):
       <p class="pull">{p["pull"]}</p>
       <p class="lead">{p["lead"]}</p>
       <div class="btn-row">
-        <a href="#candidatura" class="btn">Candida la struttura <span class="arr">→</span></a>
+        <a href="#richiedi" class="btn">Richiedi l’analisi gratuita <span class="arr">→</span></a>
         <a href="#conto" class="btn ghost">{p["cta2"]}</a>
       </div>
-      <p class="micro"><b>Analisi su candidatura.</b> Seguo personalmente ogni analisi, una alla settimana.</p>
+      <p class="micro"><b>Gratis, fatta a mano da me.</b> Massimo 5 al mese, risposta entro 48 ore.</p>
     </div>
 {p["memo"]}
   </div>
@@ -180,8 +180,8 @@ def page(p):
         <span class="k">Segnali riconosciuti</span>
         <span class="score" aria-live="polite"><span id="sigScore">0</span><small>/10</small></span>
         <div class="sig-bar" id="sigBar" aria-hidden="true"></div>
-        <p class="sig-msg" id="sigMsg" aria-live="polite">Selezionate i segnali che riconoscete nella vostra struttura.</p>
-        <a href="#candidatura" class="btn sm">Candida la struttura <span class="arr">→</span></a>
+        <p class="sig-msg" id="sigMsg" aria-live="polite">Seleziona i segnali che riconosci nel tuo hotel.</p>
+        <a href="#richiedi" class="btn sm">Richiedi l’analisi gratuita <span class="arr">→</span></a>
       </aside>
       <div class="sig-grid">
 {signals(p["signals"])}
@@ -225,15 +225,15 @@ def page(p):
         <p class="kicker"><b>Caso</b> · Silva Splendid · Fiuggi</p>
         <h3>Da «hotel 4 stelle con SPA» a <span class="hl in">L’Hotel Benessere di Fiuggi</span>.</h3>
         <ol>
-          <li>118 camere e la SPA più grande del Lazio. Eppure poco riconoscibile: parlava a tutti.</li>
-          <li>{p.get("proof_move","La scelta: un fatto al posto di un aggettivo, una categoria con l’articolo determinativo e l’uscita quasi totale dal segmento famiglie.")}</li>
+          <li>118 camere e la SPA più grande del Lazio. Eppure parlava a tutti, e nessuno lo ricordava.</li>
+          <li>{p.get("proof_move","La scelta: un fatto al posto di un aggettivo, una categoria con l’articolo determinativo, quasi niente più famiglie.")}</li>
           <li>In cinque anni il fatturato passa da 3,5 a oltre 7 milioni di euro. La tariffa media circa raddoppia.</li>
         </ol>
       </div>
       <div class="r">
         <span class="kicker">{p.get("proof_k","Fatturato annuo")}</span>
         <b>{p.get("proof_big","<s>€3,5M</s> €7M+")}</b>
-        <p class="case-honest">Risultato di posizionamento e ristrutturazione insieme: il posizionamento ha dato la direzione, gli investimenti della proprietà l’hanno resa credibile. In quest’ordine.</p>
+        <p class="case-honest">Posizionamento e ristrutturazione insieme: il primo ha dato la direzione, gli investimenti della proprietà l’hanno resa credibile. In quest’ordine.</p>
       </div>
     </article>
 {proof_extra}
@@ -251,26 +251,26 @@ def page(p):
     </div>
     <div class="offer">
       <div class="card rv">
-        <p class="kicker"><b>Candidatura</b> · 5 posti</p>
+        <p class="kicker"><b>Analisi gratuita</b> · massimo 5 al mese</p>
         <p class="price">Gratuita</p>
-        <p>Cinque strutture selezionate, un’analisi alla settimana. Seguo personalmente ogni analisi, senza delegarla.</p>
+        <p>La faccio io, a mano. Solo hotel e resort dalle 40 camere in su.</p>
         <ul class="check-list">
-          <li>Diagnosi del posizionamento attuale e mappa dei concorrenti.</li>
+          <li>Il tuo posizionamento di oggi e la mappa dei tuoi concorrenti.</li>
           <li>Tre profili di ospite ideale.</li>
           <li>Il posizionamento proposto e cinque azioni da avviare subito.</li>
-          <li>20-25 pagine. Risposta alla candidatura entro 48 ore.</li>
+          <li>20-25 pagine. Risposta entro 48 ore.</li>
         </ul>
-        <a href="#candidatura" class="btn">Candida la struttura <span class="arr">→</span></a>
+        <a href="#richiedi" class="btn">Richiedi l’analisi gratuita <span class="arr">→</span></a>
       </div>
       <div class="card ink rv d1">
-        <p class="kicker" style="color:#A1A1A6"><b>Analisi completa</b> · senza attesa</p>
+        <p class="kicker" style="color:#A1A1A6"><b>Analisi completa</b> · subito</p>
         <p class="price">39<small>pagine</small></p>
-        <p>Per le strutture che preferiscono non attendere la selezione.</p>
+        <p>Per chi vuole partire subito, con i documenti operativi.</p>
         <ul class="check-list">
           <li>5 documenti operativi.</li>
           <li>Consegna in 48 ore dal questionario.</li>
           <li>3 call di controllo: mese 1, 3 e 6.</li>
-          <li>Garanzia: rimborso più €500 entro 30 giorni, se l’analisi non vi è utile.</li>
+          <li>Garanzia: rimborso più €500 entro 30 giorni, se l’analisi non ti è utile.</li>
         </ul>
         <a href="/analisi/" class="btn">Condizioni e prezzo <span class="arr">→</span></a>
       </div>
@@ -279,22 +279,22 @@ def page(p):
   </div>
 </section>
 
-<!-- ================= CANDIDATURA ================= -->
-<section class="sec orange" id="candidatura" data-sticky-stop>
+<!-- ================= RICHIEDI ================= -->
+<section class="sec orange" id="richiedi" data-sticky-stop>
   <div class="wrap cand">
     <div>
       <div class="sec-head" style="margin-bottom:0">
-        <span class="sticker">5 posti · 1 a settimana</span>
-        <h2>Candidate la vostra struttura.</h2>
+        <span class="sticker">Gratis · massimo 5 al mese</span>
+        <h2>Richiedi l’analisi gratuita.</h2>
         <p class="lead">{p["cand_lead"]}</p>
       </div>
       <ul class="check-list">
-        <li>Strutture indipendenti, dalle 40 camere in su.</li>
-        <li>Proprietà e direzioni disposte a fare scelte, anche a rinunciare a una parte degli ospiti.</li>
-        <li>Rispondo entro 48 ore, anche quando la candidatura non è adatta.</li>
+        <li>Hotel e resort indipendenti, dalle 40 camere in su.</li>
+        <li>Per chi è pronto a scegliere, anche a rinunciare a una parte degli ospiti.</li>
+        <li>Ti rispondo entro 48 ore, anche quando il tuo hotel non è adatto.</li>
       </ul>
       <ul class="check-list no" style="margin-top:14px">
-        <li>Non è adatta a chi cerca risultati immediati, o considera il posizionamento una questione di testi.</li>
+        <li>Non fa per te se cerchi risultati immediati, o pensi che il posizionamento sia una questione di testi.</li>
       </ul>
 {cand_extra}
     </div>
@@ -313,7 +313,7 @@ def page(p):
 {faq(p["faq"])}
     </div>
     <div class="btn-row rv" style="margin-top:36px">
-      <a href="#candidatura" class="btn dark">Candida la struttura <span class="arr">→</span></a>
+      <a href="#richiedi" class="btn dark">Richiedi l’analisi gratuita <span class="arr">→</span></a>
       <a href="/analisi/" class="btn ghost">Tutti i dettagli dell’offerta</a>
     </div>
   </div>

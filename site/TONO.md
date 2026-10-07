@@ -1,5 +1,15 @@
 # Hotel Positioning · guida di tono
 
+> **Aggiornamento 7 ottobre 2026: si dà del tu.** Le regole qui sotto valgono con questi cambiamenti, che prevalgono su tutto il resto:
+>
+> - **Tu, non voi.** Si parla al titolare o al direttore, una persona: «il tuo hotel», «i tuoi concorrenti», «ti rispondo entro 48 ore». Francesco parla in prima persona («io», «faccio a mano»).
+> - **Concreto e breve, come ristomachine.it/mappa-della-zona.** Frasi corte. Esempi veri e visibili (la navetta dalla stazione, la colazione fino all'una, il check-out alle 18) al posto dei concetti. Un paragrafo dice una cosa. Se una frase si può togliere senza perdere informazione, si toglie.
+> - **Un'unica richiesta: l'analisi gratuita.** Si chiama «analisi gratuita di posizionamento». Il bottone dice «Richiedi l'analisi gratuita» (o, se stretto, «Richiedi l'analisi») e porta a `/#richiedi`. Mai «candidatura», «candidati», «candida la struttura», «selezione», «posti».
+> - **I fatti dell'offerta, sempre uguali:** gratis; fatta a mano da Francesco; massimo 5 al mese; solo hotel e resort dalle 40 camere in su; risposta entro 48 ore; un documento di 20-25 pagine sul tuo hotel e sui tuoi concorrenti; niente accessi né password; il documento resta tuo.
+> - Le domande dirette al lettore sono ammesse quando sono vere e concrete («Di cosa è il numero 1 il tuo hotel, nella tua zona?»).
+> - Restano: il dato prima dell'aggettivo, niente sarcasmo, niente metafore mediche, onestà sui casi, niente lineette lunghe, il prezzo dell'analisi completa (€697 + IVA) solo nella pagina /analisi/.
+
+
 Vale per il sito, le email, LinkedIn, le presentazioni e i documenti dell'analisi.
 Sostituisce la sezione "Tono di voce" di ARCHITETTURA.md.
 

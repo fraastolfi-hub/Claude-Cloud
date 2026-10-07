@@ -7,7 +7,7 @@ I quattro moduli del sito vengono inviati a Netlify Forms. A ogni invio, la funz
 
 | Modulo (nome su Netlify) | Dove si trova | Valore di FONTE su Brevo |
 |---|---|---|
-| `candidatura` | home, analisi, casi, metodo, sintomi, landing analisi gratuita | Candidatura |
+| `candidatura` (richiesta dell'analisi gratuita; il nome tecnico resta «candidatura») | home e pagine che includono il modulo | Richiesta analisi gratuita |
 | `revisione-homepage` | /smontaggio/ | Revisione della homepage |
 | `test-posizionamento` | /quiz/ | Test di posizionamento |
 | `strumenti-libro` | /bonus/ | Strumenti del libro |
