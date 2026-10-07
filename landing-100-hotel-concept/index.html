@@ -28,6 +28,8 @@
   --q-master:#5FB59A;      /* colpo da maestro */
   --q-dead:#CB4D36;        /* peso morto */
   --q-straw:#F07C2F;       /* fuoco di paglia */
+  --cta:#E35D12;           /* arancione dei bottoni (testo bianco leggibile) */
+  --cta-deep:#C24A0A;
   --f-display:"JetBrains Mono","Lenia Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
   --f-body:"Wix Madefor Text","Helvetica Neue",Arial,sans-serif;
   --gutter:clamp(16px,5vw,56px);
@@ -71,13 +73,14 @@ section{position:relative}
 .top .btn{padding:10px 16px;font-size:13px}
 
 /* bottoni */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--blue);color:#fff;text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:clamp(15px,1.6vw,17px);letter-spacing:.02em;text-transform:uppercase;padding:20px 28px;border:2px solid var(--blue);transition:background .18s,color .18s,transform .18s}
-.btn:hover{background:var(--blue-deep);border-color:var(--blue-deep)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--cta);color:#fff;text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:clamp(15px,1.6vw,17px);letter-spacing:.02em;text-transform:uppercase;padding:20px 28px;border:2px solid var(--cta);transition:background .18s,color .18s,transform .18s}
+.btn:hover{background:var(--cta-deep);border-color:var(--cta-deep)}
 .btn:active{transform:translateY(1px)}
-.btn:focus-visible,.q:focus-visible,summary:focus-visible{outline:3px solid #F07C2F;outline-offset:3px}
+.btn:focus-visible,.q:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .btn .arr{font-size:1.2em;line-height:1}
-.btn.on-blue{background:#fff;color:var(--blue);border-color:#fff}
-.btn.on-blue:hover{background:transparent;color:#fff}
+.btn.on-blue{background:var(--cta);color:#fff;border-color:var(--cta)}
+.btn.on-blue:hover{background:var(--cta-deep);border-color:var(--cta-deep)}
+.btn.on-blue:focus-visible{outline-color:#fff}
 .micro{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
 .blue .micro{color:rgba(255,255,255,.78)}
 .price-inline s{color:var(--ink-soft)}
@@ -234,8 +237,8 @@ section{position:relative}
 .quotes figcaption{font-size:14px;color:var(--ink-soft);display:grid;gap:2px}
 .quotes figcaption b{font-family:var(--f-display);color:var(--ink);font-size:13.5px;letter-spacing:.02em}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-.ghost-btn{background:transparent;color:var(--blue)}
-.ghost-btn:hover{background:var(--blue);color:#fff}
+.ghost-btn{background:transparent;color:var(--cta-deep)}
+.ghost-btn:hover{background:var(--cta);color:#fff}
 .inside{padding-bottom:0}
 .scenes{list-style:none;margin:26px 0 0;padding:0;display:grid;border-top:1px solid #DDE3F3}
 .scenes li{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,3vw,34px);line-height:1.15;color:var(--ink);padding-block:18px;border-bottom:1px solid #DDE3F3;display:grid;grid-template-columns:clamp(36px,5vw,56px) 1fr;text-wrap:balance}
