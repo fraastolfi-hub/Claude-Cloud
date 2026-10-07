@@ -66,6 +66,7 @@ p{text-wrap:pretty}
 .hero{padding-top:clamp(64px,8vw,112px);text-align:center}
 .hero h1{margin:22px auto 22px;max-width:15ch}
 .skyline{max-width:var(--wide);margin:clamp(52px,6vw,84px) auto 0;padding-inline:var(--gut)}
+@media (max-width:560px){.ground{flex-direction:column;gap:2px;font-size:15px}}
 .skyline svg{display:block;width:100%;height:auto}
 .ground{display:flex;justify-content:space-between;gap:16px;border-top:3px solid var(--ink);padding-top:14px;font:italic 400 17px var(--serif);color:var(--stone)}
 
@@ -184,27 +185,45 @@ p{text-wrap:pretty}
     <div class="acts"><a class="btn" href="#formati">Candida la struttura</a><a class="more" href="#metodo">Il metodo</a></div>
   </div>
   <div class="skyline" aria-hidden="true">
-    <svg viewBox="0 0 1200 230" preserveAspectRatio="xMidYMax meet">
+    <svg viewBox="0 0 1200 240" preserveAspectRatio="xMidYMax meet">
       <defs>
-        <pattern id="win" width="16" height="20" patternUnits="userSpaceOnUse"><rect x="5" y="6" width="6" height="8" fill="#A39A85"/></pattern>
+        <pattern id="win" width="14" height="18" patternUnits="userSpaceOnUse"><rect x="4" y="5" width="6" height="7" fill="#A39A85"/></pattern>
         <pattern id="winb" width="16" height="20" patternUnits="userSpaceOnUse"><rect x="5" y="6" width="6" height="8" fill="#151513"/></pattern>
       </defs>
+      <!-- colline con cipressi e casale -->
+      <path d="M0 240V176C70 128 170 110 270 140C350 164 410 150 480 166C540 180 590 204 630 240Z" fill="#EEEAE1"/>
+      <path d="M0 240V206C90 186 190 190 280 206C340 216 380 214 420 240Z" fill="#E4DFD3"/>
+      <g fill="#B9B19E">
+        <ellipse cx="58" cy="150" rx="9" ry="30"/><ellipse cx="80" cy="140" rx="10" ry="38"/><ellipse cx="102" cy="152" rx="8" ry="28"/>
+        <ellipse cx="292" cy="146" rx="9" ry="30"/><ellipse cx="312" cy="152" rx="8" ry="26"/>
+      </g>
+      <g fill="#C9C1AE"><rect x="160" y="120" width="76" height="44"/><path d="M154 122L198 96L242 122Z"/></g>
+      <rect x="168" y="130" width="62" height="28" fill="url(#win)"/>
+      <!-- borgo -->
       <g fill="#C9C1AE">
-        <rect x="0" y="120" width="80" height="110"/><rect x="92" y="70" width="70" height="160"/><rect x="174" y="140" width="96" height="90"/><rect x="282" y="40" width="80" height="190"/>
-        <rect x="374" y="100" width="64" height="130"/><rect x="450" y="60" width="88" height="170"/><rect x="550" y="130" width="70" height="100"/>
-        <rect x="740" y="80" width="76" height="150"/><rect x="828" y="30" width="72" height="200"/><rect x="912" y="110" width="90" height="120"/><rect x="1014" y="64" width="78" height="166"/><rect x="1104" y="124" width="96" height="106"/>
+        <rect x="352" y="174" width="58" height="66"/><path d="M346 176L381 154L416 176Z"/>
+        <rect x="418" y="156" width="46" height="84"/><rect x="432" y="138" width="18" height="20"/>
+        <rect x="472" y="186" width="58" height="54"/>
       </g>
-      <g fill="url(#win)">
-        <rect x="0" y="130" width="80" height="90"/><rect x="92" y="80" width="70" height="140"/><rect x="174" y="150" width="96" height="70"/><rect x="282" y="50" width="80" height="170"/>
-        <rect x="374" y="110" width="64" height="110"/><rect x="450" y="70" width="88" height="150"/><rect x="550" y="140" width="70" height="80"/>
-        <rect x="740" y="90" width="76" height="130"/><rect x="828" y="40" width="72" height="180"/><rect x="912" y="120" width="90" height="100"/><rect x="1014" y="74" width="78" height="146"/><rect x="1104" y="134" width="96" height="86"/>
+      <g fill="url(#win)"><rect x="358" y="184" width="46" height="50"/><rect x="422" y="164" width="38" height="70"/><rect x="478" y="194" width="46" height="40"/></g>
+      <!-- il vostro hotel -->
+      <rect x="552" y="138" width="138" height="102" fill="#FFDD00" stroke="#151513" stroke-width="3"/>
+      <rect x="566" y="150" width="110" height="80" fill="url(#winb)"/>
+      <path d="M621 138V96" stroke="#151513" stroke-width="3"/>
+      <path d="M621 96l26 9-26 9z" fill="#FFDD00" stroke="#151513" stroke-width="2.5" stroke-linejoin="round"/>
+      <!-- costa: villa, pino marittimo, ombrelloni, mare, vela -->
+      <rect x="706" y="178" width="66" height="62" fill="#C9C1AE"/>
+      <rect x="712" y="186" width="54" height="48" fill="url(#win)"/>
+      <path d="M800 240V176" stroke="#A39A85" stroke-width="5"/>
+      <ellipse cx="800" cy="168" rx="44" ry="14" fill="#B9B19E"/>
+      <g fill="#C9C1AE" stroke="#A39A85" stroke-width="2">
+        <path d="M862 204Q884 186 906 204Z"/><path d="M884 204V236" fill="none"/>
+        <path d="M922 204Q944 186 966 204Z"/><path d="M944 204V236" fill="none"/>
       </g>
-      <rect x="638" y="66" width="86" height="164" fill="#FFDD00" stroke="#151513" stroke-width="3"/>
-      <rect x="652" y="80" width="58" height="136" fill="url(#winb)"/>
-      <path d="M681 66V20" stroke="#151513" stroke-width="3"/>
-      <path d="M681 20l26 9-26 9z" fill="#FFDD00" stroke="#151513" stroke-width="2.5" stroke-linejoin="round"/>
+      <g stroke="#C9C1AE" stroke-width="2"><path d="M990 206H1200M1004 214H1200M1018 222H1200M1032 230H1200"/></g>
+      <path d="M1112 198V164L1136 198Z" fill="#C9C1AE"/><path d="M1102 200H1144L1138 206H1108Z" fill="#A39A85"/>
     </svg>
-    <div class="ground"><span>Cinquanta hotel nella vostra destinazione</span><span>Uno che l’ospite sa spiegare</span></div>
+    <div class="ground"><span>Colline, borghi, costa: cinquanta strutture nella vostra destinazione</span><span>Una che l’ospite sa spiegare</span></div>
   </div>
 </section>
 
@@ -320,7 +339,7 @@ p{text-wrap:pretty}
 
 <section class="sec close">
   <div class="wrap">
-    <svg viewBox="0 0 140 80" width="140" height="80" aria-hidden="true"><rect x="0" y="34" width="22" height="46" fill="#C9C1AE"/><rect x="26" y="20" width="22" height="60" fill="#C9C1AE"/><rect x="53" y="14" width="34" height="66" fill="#FFDD00" stroke="#151513" stroke-width="2"/><path d="M70 14V2l11 4-11 4" fill="#FFDD00" stroke="#151513" stroke-width="1.6" stroke-linejoin="round"/><rect x="92" y="28" width="22" height="52" fill="#C9C1AE"/><rect x="118" y="40" width="22" height="40" fill="#C9C1AE"/><path d="M0 79h140" stroke="#151513" stroke-width="2"/></svg>
+    <svg viewBox="0 0 160 80" width="160" height="80" aria-hidden="true"><path d="M0 80V54C20 38 46 34 66 48C76 56 84 66 92 80Z" fill="#EEEAE1"/><ellipse cx="24" cy="50" rx="4" ry="13" fill="#B9B19E"/><ellipse cx="34" cy="46" rx="4.5" ry="16" fill="#B9B19E"/><rect x="44" y="52" width="20" height="28" fill="#C9C1AE"/><path d="M42 53L54 44L66 53Z" fill="#C9C1AE"/><rect x="70" y="40" width="40" height="40" fill="#FFDD00" stroke="#151513" stroke-width="2"/><path d="M90 40V24l11 4-11 4" fill="#FFDD00" stroke="#151513" stroke-width="1.6" stroke-linejoin="round"/><g stroke="#C9C1AE" stroke-width="2"><path d="M118 66H160M124 72H160M130 78H160"/></g><path d="M0 79h160" stroke="#151513" stroke-width="2"/></svg>
     <span class="over">Candidatura</span>
     <h2>Il prossimo palazzo giallo può essere il vostro.</h2>
     <p class="sub" style="margin-top:18px">Il nome della struttura, il sito, due o tre concorrenti. Risposta entro 48 ore.</p>
