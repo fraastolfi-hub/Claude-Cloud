@@ -288,7 +288,7 @@ def page(p):
         <p class="lead">{p["cand_lead"]}</p>
       </div>
       <ul class="check-list">
-        <li>Strutture indipendenti, dalle 40 camere in su. Non catene in franchising.</li>
+        <li>Strutture indipendenti, dalle 40 camere in su.</li>
         <li>Proprietà e direzioni disposte a fare scelte, anche a rinunciare a una parte degli ospiti.</li>
         <li>Rispondo entro 48 ore, anche quando la candidatura non è adatta.</li>
       </ul>
