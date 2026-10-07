@@ -25,7 +25,8 @@ Un consulente senior che ha già visto il problema molte volte: calmo, preciso, 
 9. **Scarsità solo se vera**, detta come un fatto organizzativo: "Seguo personalmente ogni analisi, una alla settimana". Mai come pressione.
 10. **Frasi brevi, un'idea per paragrafo.** Niente lineette lunghe (—): punto, due punti, a capo.
 11. **Una sola frase d'autore per pagina**, sempre firmata da Francesco. Per esempio: "I consulenti vendono consigli. Gli operatori vendono cicatrici."
-12. **I prezzi dell'analisi non stanno in homepage.** L'accesso è "su candidatura". Il prezzo compare solo nella pagina dell'offerta.
+12. **Bottoni:** l'imperativo breve è ammesso per convenzione d'interfaccia ("Candida la struttura", "Scopri il libro", "Fai il test"). I testi intorno restano al "voi".
+13. **I prezzi dell'analisi non stanno in homepage.** L'accesso è "su candidatura". Il prezzo compare solo nella pagina dell'offerta.
 
 ## Le metafore che restano
 
