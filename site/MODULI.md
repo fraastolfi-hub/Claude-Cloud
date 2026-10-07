@@ -42,7 +42,7 @@ Se qualcosa non arriva: Netlify, poi Logs, poi Functions, poi `submission-create
 
 ## Note
 - In anteprima (localhost o link di anteprima) i moduli mostrano solo la conferma: l'invio reale parte solo da `hotelpositioning.com` o da un dominio `netlify.app`.
-- Le email automatiche ai contatti (primo capitolo del libro, risultato del test) si configurano su Brevo come automazioni sull'ingresso in lista.
+- Le email automatiche ai contatti (strumenti del libro, risultato del test) si configurano su Brevo come automazioni sull'ingresso in lista.
 - La privacy policy (/privacy-policy/) descrive già Netlify e Brevo. I caratteri sono ospitati sul sito (assets/fonts), quindi non passa nulla a Google Fonts. Se cambiano fornitori o moduli, va aggiornata.
 
 # Google Analytics e Pixel di Meta
