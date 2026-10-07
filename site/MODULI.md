@@ -5,12 +5,14 @@ I quattro moduli del sito vengono inviati a Netlify Forms. A ogni invio, la funz
 1. salva o aggiorna il contatto su **Brevo**, nella lista del modulo;
 2. manda un'**email di notifica** con tutti i campi all'indirizzo indicato in `NOTIFY_EMAIL`. La risposta all'email va direttamente a chi ha compilato il modulo.
 
-| Modulo (nome su Netlify) | Dove si trova | Lista Brevo |
+| Modulo (nome su Netlify) | Dove si trova | Valore di FONTE su Brevo |
 |---|---|---|
-| `candidatura` | home, analisi, casi, metodo, sintomi, landing analisi gratuita | `BREVO_LIST_CANDIDATURA` |
-| `revisione-homepage` | /smontaggio/ | `BREVO_LIST_REVISIONE` |
-| `test-posizionamento` | /quiz/ | `BREVO_LIST_TEST` |
-| `strumenti-libro` | /bonus/ | `BREVO_LIST_BONUS` |
+| `candidatura` | home, analisi, casi, metodo, sintomi, landing analisi gratuita | Candidatura |
+| `revisione-homepage` | /smontaggio/ | Revisione della homepage |
+| `test-posizionamento` | /quiz/ | Test di posizionamento |
+| `strumenti-libro` | /bonus/ | Strumenti del libro |
+
+Configurazione scelta: **una sola lista** per tutti i contatti, con il campo `FONTE` che indica il modulo di provenienza (su Brevo i contatti non hanno tag: si filtra e si segmenta su `FONTE`). Liste separate per modulo restano possibili con le variabili `BREVO_LIST_CANDIDATURA` ecc.
 
 Il filtro anti-spam di Netlify (campo nascosto `bot-field`) scarta gli invii automatici prima che arrivino a Brevo. Tutti gli invii restano consultabili anche su Netlify: Forms.
 
@@ -19,8 +21,8 @@ Il filtro anti-spam di Netlify (campo nascosto `bot-field`) scarta gli invii aut
 ### Su Brevo
 1. **Chiave API:** Impostazioni, poi SMTP e API, poi API Keys. Generate una chiave.
 2. **Mittente:** Mittenti, domini e IP. Verificate l'indirizzo mittente (per esempio `noreply@hotelpositioning.com`) e, se possibile, autenticate il dominio.
-3. **Liste:** Contatti, poi Liste. Create quattro liste (Candidature, Revisione homepage, Test di posizionamento, Strumenti del libro) e annotate i loro numeri ID.
-4. **Attributi (facoltativo):** Contatti, poi Impostazioni, poi Attributi. Create come testo: `STRUTTURA`, `SITO`, `CAMERE`, `CONCORRENTI`, `PROFILO`, `PUNTEGGIO`, `FONTE`, `PAGINA`. Poi impostate `BREVO_ATTRIBUTES=1` su Netlify.
+3. **Lista:** Contatti, poi Liste. Create una lista (per esempio «Sito Hotel Positioning») e annotate il suo numero ID.
+4. **Attributo FONTE:** Contatti, poi Impostazioni, poi Attributi. Create l'attributo `FONTE`, di tipo testo. Altri attributi facoltativi: `STRUTTURA`, `SITO`, `CAMERE`, `CONCORRENTI`, `PROFILO`, `PUNTEGGIO`, `PAGINA`.
 
 ### Su Netlify
 1. **Forms:** Project configuration, poi Forms. Attivate il rilevamento dei moduli (form detection) e fate un nuovo deploy.
@@ -31,12 +33,8 @@ Il filtro anti-spam di Netlify (campo nascosto `bot-field`) scarta gli invii aut
 | `BREVO_API_KEY` | la chiave API di Brevo |
 | `NOTIFY_EMAIL` | l'indirizzo che riceve le notifiche (più indirizzi separati da virgola) |
 | `BREVO_SENDER_EMAIL` | il mittente verificato su Brevo |
-| `BREVO_LIST_CANDIDATURA` | ID della lista |
-| `BREVO_LIST_REVISIONE` | ID della lista |
-| `BREVO_LIST_TEST` | ID della lista |
-| `BREVO_LIST_BONUS` | ID della lista |
-| `BREVO_LIST_DEFAULT` | facoltativa: lista usata se una delle precedenti manca |
-| `BREVO_ATTRIBUTES` | `1` dopo aver creato gli attributi su Brevo |
+| `BREVO_LIST_DEFAULT` | ID della lista unica |
+| `BREVO_ATTRIBUTES` | `FONTE` (oppure un elenco separato da virgole degli attributi creati su Brevo) |
 
 3. Fate un nuovo deploy. Poi inviate un modulo di prova dal sito pubblicato e controllate: l'invio su Netlify Forms, il contatto su Brevo, l'email di notifica.
 

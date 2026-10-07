@@ -6,10 +6,13 @@
 //   BREVO_API_KEY            obbligatoria
 //   NOTIFY_EMAIL             chi riceve le notifiche (più indirizzi separati da virgola)
 //   BREVO_SENDER_EMAIL       mittente verificato su Brevo (es. noreply@hotelpositioning.com)
+//   BREVO_LIST_DEFAULT       id della lista unica in cui finiscono tutti i contatti
 //   BREVO_LIST_CANDIDATURA, BREVO_LIST_REVISIONE, BREVO_LIST_TEST, BREVO_LIST_BONUS
-//                            id numerici delle liste Brevo; BREVO_LIST_DEFAULT se una manca
-//   BREVO_ATTRIBUTES=1       manda anche gli attributi personalizzati (vanno creati prima su Brevo:
-//                            STRUTTURA, SITO, CAMERE, CONCORRENTI, PROFILO, PUNTEGGIO, FONTE, PAGINA)
+//                            facoltative: una lista diversa per modulo (prevalgono su quella unica)
+//   BREVO_ATTRIBUTES         attributi personalizzati da compilare, creati prima su Brevo come testo:
+//                            "FONTE" (consigliato: il modulo di provenienza), oppure un elenco separato
+//                            da virgole tra STRUTTURA, SITO, CAMERE, CONCORRENTI, PROFILO, PUNTEGGIO,
+//                            FONTE, PAGINA, oppure "1" per tutti
 
 const API = 'https://api.brevo.com/v3';
 
@@ -45,13 +48,14 @@ function contact(d, formName, form) {
   const full = (d.nome || d.nome_ruolo || '').trim();
   const [first, ...rest] = full.split(/\s+/);
   const attributes = { FIRSTNAME: first || '', LASTNAME: rest.join(' ') };
-  if (process.env.BREVO_ATTRIBUTES === '1') {
-    Object.assign(attributes, {
-      STRUTTURA: d.hotel || d.struttura || '', SITO: d.sito || d.url || '', CAMERE: d.camere || '',
-      CONCORRENTI: d.concorrenti || '', PROFILO: d.profilo || '', PUNTEGGIO: d.punteggio || '',
-      FONTE: form.label, PAGINA: d.pagina || '',
-    });
-  }
+  const extra = {
+    STRUTTURA: d.hotel || d.struttura || '', SITO: d.sito || d.url || '', CAMERE: d.camere || '',
+    CONCORRENTI: d.concorrenti || '', PROFILO: d.profilo || '', PUNTEGGIO: d.punteggio || '',
+    FONTE: form.label, PAGINA: d.pagina || '',
+  };
+  const want = (process.env.BREVO_ATTRIBUTES || '').trim();
+  const keys = want === '1' ? Object.keys(extra) : want.split(',').map((k) => k.trim().toUpperCase()).filter((k) => k in extra);
+  for (const k of keys) attributes[k] = extra[k];
   for (const k of Object.keys(attributes)) if (attributes[k] === '') delete attributes[k];
   const id = Number(process.env[form.list] || process.env.BREVO_LIST_DEFAULT);
   return { email: d.email, attributes, updateEnabled: true, ...(id ? { listIds: [id] } : {}) };
