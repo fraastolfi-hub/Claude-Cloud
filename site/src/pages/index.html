@@ -273,6 +273,34 @@
 @media (max-width:980px){.pm-wrap{grid-template-columns:1fr;gap:0}.pm-text{display:contents}.pm-text .num-tag{order:1;justify-self:start}.pmband h2{order:2;margin-bottom:26px}.pm-fig{order:3;margin-bottom:30px}.pm-steps{order:4}.pm-text .btn-row{order:5}}
 @media (max-width:600px){.pm-axis,.pm-occ text,.pm-note{font-size:24px}.pm-free-t,.pm-you-t{font-size:26px}.pm-note{display:none}.pm-occ text{display:none}}
 @media (prefers-reduced-motion:reduce){.pm-free .ring{animation:none!important}}
+
+/* --- il mercato si polarizza --- */
+.pol-card{margin:0;background:var(--mist);border-radius:28px;padding:clamp(24px,4vw,48px)}
+.pol-k{font:500 15px var(--text);color:var(--muted);margin-bottom:18px}
+.pol-svg{width:100%;height:auto;display:block;overflow:visible}
+.pol-base{stroke:var(--line);stroke-width:1.5}
+.pol-area{fill:url(#polFill);opacity:0;transition:opacity 1s .9s}
+.pol-line{fill:none;stroke:var(--ink);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:var(--len,1200);stroke-dashoffset:var(--len,1200);transition:stroke-dashoffset 1.8s cubic-bezier(.6,0,.3,1) .2s}
+.pol-up circle{fill:var(--yellow);stroke:var(--ink);stroke-width:2}
+.pol-up path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.pol-down circle{fill:var(--white);stroke:var(--muted);stroke-width:3}
+.pol-down path{fill:none;stroke:var(--red);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.pol-up,.pol-down{opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s;transform-box:fill-box}
+.pol-down{transition-delay:1.1s}.pol-up.pol-l{transition-delay:1.6s}.pol-up.pol-r{transition-delay:1.9s}
+.pol-card.in .pol-line{stroke-dashoffset:0}
+.pol-card.in .pol-area{opacity:1}
+.pol-card.in .pol-up,.pol-card.in .pol-down{opacity:1;transform:none}
+.pol-labels{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
+.pol-labels div{display:grid;gap:4px;font-size:15.5px;line-height:1.45;color:var(--ink-2)}
+.pol-labels .mid{text-align:center}.pol-labels .end{text-align:right}
+.pol-labels b{font:600 17px var(--display);letter-spacing:-.01em}
+.pol-labels b.up{color:var(--ink)}
+.pol-labels b.up::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 1px rgba(0,0,0,.2);margin-right:7px;vertical-align:2px}
+.pol-labels b.down{color:var(--red)}
+.pol-card figcaption{margin-top:22px;font-size:13px;color:var(--muted)}
+.pol-close{margin-top:30px;font:600 clamp(20px,2vw,26px)/1.35 var(--display);letter-spacing:-.02em;max-width:40ch}
+@media (max-width:700px){.pol-labels{grid-template-columns:1fr;gap:16px}.pol-labels .mid,.pol-labels .end{text-align:left}}
+@media (prefers-reduced-motion:reduce){.pol-line{stroke-dashoffset:0!important}.pol-area,.pol-up,.pol-down{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -356,6 +384,38 @@
         </svg>
       <figcaption>Esempio illustrativo. Nell’analisi la mappa si costruisce sulla vostra struttura e sui concorrenti reali.</figcaption>
     </figure>
+  </div>
+</section>
+
+<!-- ================= IL MERCATO SI POLARIZZA ================= -->
+<section class="sec polar" id="mercato">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Il mercato</span>
+      <h2>Il mercato si polarizza. <em>Chi sta nel mezzo perde.</em></h2>
+      <p class="lead">Crescono le strutture con un’identità precisa, ai due estremi. Perdono terreno quelle che l’ospite non sa distinguere.</p>
+    </div>
+    <figure class="pol-card rv" id="polCard">
+      <p class="pol-k">Andamento della domanda per tipo di struttura</p>
+      <svg class="pol-svg" viewBox="0 0 1000 380" role="img" aria-labelledby="pol-t pol-d">
+        <title id="pol-t">Il mercato alberghiero si polarizza</title>
+        <desc id="pol-d">Una curva a U: la domanda cresce ai due estremi, per le formule snelle e per boutique hotel e resort con un’identità forte, e cala al centro, per gli hotel indifferenziati.</desc>
+        <defs><linearGradient id="polFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D1D1F" stop-opacity=".10"/><stop offset="1" stop-color="#1D1D1F" stop-opacity="0"/></linearGradient></defs>
+        <line class="pol-base" x1="40" y1="340" x2="960" y2="340"/>
+        <path class="pol-area" d="M70 70 C 300 70, 380 300, 500 300 C 620 300, 700 70, 930 70 L930 340 L70 340 Z"/>
+        <path class="pol-line" id="polLine" d="M70 70 C 300 70, 380 300, 500 300 C 620 300, 700 70, 930 70"/>
+        <g class="pol-up pol-l"><circle cx="70" cy="70" r="9"/><path d="M70 50 V 14 M58 26 L70 14 L82 26"/></g>
+        <g class="pol-up pol-r"><circle cx="930" cy="70" r="9"/><path d="M930 50 V 14 M918 26 L930 14 L942 26"/></g>
+        <g class="pol-down"><circle cx="500" cy="300" r="10"/><path d="M500 228 V 278 M488 266 L500 278 L512 266"/></g>
+      </svg>
+      <div class="pol-labels">
+        <div><b class="up">Crescono</b><span>Formule snelle e senza fronzoli: tre stelle essenziali, ostelli e hotel di design a prezzo contenuto.</span></div>
+        <div class="mid"><b class="down">Calano</b><span>Hotel indifferenziati: tre e quattro stelle generici, senza un’identità precisa.</span></div>
+        <div class="end"><b class="up">Crescono</b><span>Boutique hotel e resort con un’identità forte e riconoscibile.</span></div>
+      </div>
+      <figcaption>Schema qualitativo della tendenza, non un dato misurato.</figcaption>
+    </figure>
+    <p class="pol-close rv">Il posizionamento serve a uscire dal centro della curva: scegliere un estremo e renderlo riconoscibile.</p>
   </div>
 </section>
 
@@ -663,6 +723,9 @@
   io.observe(svg);
   document.getElementById('pmReplay').addEventListener('click', run);
 })();
+</script>
+<script>
+(function(){ var l=document.getElementById('polLine'); if(!l) return; l.style.setProperty('--len', l.getTotalLength()); })();
 </script>
 </body>
 </html>
