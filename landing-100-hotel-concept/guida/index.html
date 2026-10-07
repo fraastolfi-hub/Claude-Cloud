@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grazie · 100 Hotel Concept</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+/* Pagina di conferma: un'apertura di capitolo blu come nella guida, poi una pagina bianca
+   con i primi passi. Stessi token della landing. */
+:root{
+  --blue:#054BC7;
+  --blue-deep:#03389A;
+  --blue-ghost:rgba(255,255,255,.22);
+  --ink:#141821;
+  --ink-soft:#4A5162;
+  --paper:#FFFFFF;
+  --paper-2:#F1F2F5;
+  --rule:#8FA6E0;
+  --accent:#F07C2F;
+  --f-display:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --f-body:"Wix Madefor Text","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(16px,5vw,56px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:960px;margin-inline:auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:var(--f-display);font-feature-settings:"zero" 1;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--f-display);font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+/* apertura blu */
+.hero{position:relative;overflow:hidden;background:var(--blue);color:#fff;padding-block:clamp(56px,9vw,110px)}
+.hero .ghost{position:absolute;right:-3%;bottom:-14%;font-family:var(--f-display);font-feature-settings:"zero" 1;font-weight:800;font-size:clamp(220px,36vw,460px);line-height:.8;letter-spacing:-.07em;color:var(--blue-ghost);pointer-events:none;user-select:none}
+.hero .wrap{position:relative;display:grid;gap:22px}
+.hero h1{font-size:clamp(40px,7vw,84px)}
+.hero .lead{font-size:clamp(19px,2.3vw,24px);line-height:1.4;font-weight:500;max-width:34ch}
+.cta{display:grid;gap:12px;justify-items:start;margin-top:10px}
+.btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--blue);text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:clamp(15px,1.7vw,18px);letter-spacing:.02em;text-transform:uppercase;padding:20px 28px;border:2px solid #fff;transition:background .18s,color .18s}
+.btn:hover{background:transparent;color:#fff}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn .arr{font-size:1.2em;line-height:1}
+.micro{font-size:14px;color:rgba(255,255,255,.82);line-height:1.5;max-width:52ch}
+
+/* primi passi */
+.steps-sec{padding-block:clamp(64px,9vw,110px)}
+.steps-sec h2{color:var(--blue);font-size:clamp(28px,4.4vw,46px);margin-top:16px}
+.steps-sec .eyebrow{color:var(--blue)}
+.steps{list-style:none;margin:40px 0 0;padding:0;display:grid;border-top:1px solid #DDE3F3}
+.steps li{display:grid;grid-template-columns:clamp(64px,9vw,104px) minmax(0,1fr);gap:clamp(12px,3vw,32px);padding-block:28px;border-bottom:1px solid #DDE3F3}
+.steps .n{font-family:var(--f-display);font-feature-settings:"zero" 1;font-weight:800;font-size:clamp(40px,5vw,58px);line-height:.85;color:var(--blue)}
+.steps h3{font-size:clamp(18px,2.1vw,22px);color:var(--ink)}
+.steps p{margin-top:8px;color:var(--ink-soft);max-width:60ch}
+
+.quote{margin-top:clamp(48px,7vw,80px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:start}
+.quote .tri{width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent;border-left:26px solid var(--blue);margin-top:6px}
+.quote p{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.6vw,28px);line-height:1.25;color:var(--blue)}
+.quote small{display:block;margin-top:10px;font-family:var(--f-body);font-weight:500;font-size:15px;color:var(--ink-soft)}
+
+/* aiuto */
+.help{background:var(--paper-2);padding-block:clamp(48px,7vw,80px)}
+.help .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,5vw,64px)}
+.help h3{font-size:clamp(17px,1.9vw,20px);color:var(--blue)}
+.help p{margin-top:10px;color:var(--ink-soft);font-size:16px}
+.help a{color:var(--blue);font-weight:600}
+
+.runfoot{display:flex;align-items:center;gap:16px;padding-block:32px;font-family:var(--f-display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rule)}
+.runfoot::before{content:"";flex:1;height:1px;background:var(--rule)}
+
+.rv{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.rv.d1{animation-delay:.1s}.rv.d2{animation-delay:.2s}
+@keyframes rise{from{transform:translateY(12px);opacity:.001}to{transform:none;opacity:1}}
+
+@media (max-width:700px){
+  body{font-size:16px}
+  .help .wrap{grid-template-columns:minmax(0,1fr)}
+  .btn{width:100%;justify-content:center}
+  .cta{justify-items:stretch}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="ghost" aria-hidden="true">100</span>
+  <div class="wrap">
+    <p class="eyebrow rv">Pagamento confermato · 100 Hotel Concept</p>
+    <h1 class="rv d1">Grazie. Adesso inizia a guardare.</h1>
+    <p class="lead rv d1">Il tuo atlante del prodotto alberghiero è pronto: 100 scelte di prodotto dall'hotellerie di tutto il mondo, decodificate e commentate.</p>
+    <div class="cta rv d2">
+      <a class="btn" id="guida-link" href="#" target="_blank" rel="noopener">Apri la guida <span class="arr">→</span></a>
+      <p class="micro">Salva questa pagina tra i preferiti o scarica subito il file sul tuo computer: è il modo più semplice per ritrovarla. Riceverai anche la ricevuta di pagamento via email da Stripe.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="steps-sec">
+    <div class="wrap">
+      <p class="eyebrow">Da dove partire</p>
+      <h2>Tre passi per non lasciarla nel cassetto</h2>
+      <ol class="steps">
+        <li>
+          <span class="n">01</span>
+          <div>
+            <h3>Leggi prima la WHY-WOW Matrix</h3>
+            <p>È nel capitolo 04 e ti servono dieci minuti. È la lente con cui leggere ogni scheda: perché esiste quella scelta, e se rende l'hotel più desiderabile.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n">02</span>
+          <div>
+            <h3>Non leggerla in ordine</h3>
+            <p>È un atlante, non un romanzo. Sfoglia, fermati sulle schede che ti somigliano o che ti irritano, e segna le «Ideale per» che parlano del tuo hotel o del tuo progetto.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n">03</span>
+          <div>
+            <h3>Porta una domanda a lunedì mattina</h3>
+            <p>Ogni scheda finisce con «la domanda da portare a casa». Scegline una e falla al tuo team, al tuo socio o al tuo architetto. È lì che la guida comincia a lavorare.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="quote">
+        <span class="tri" aria-hidden="true"></span>
+        <p>«Non devi trasformare tutto il tuo hotel. Devi trovare la cosa per cui vale la pena ricordarlo.»<small>Nicola Delvecchio</small></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="help">
+    <div class="wrap">
+      <div>
+        <h3>Il link non si apre?</h3>
+        <p>Prova da un altro browser o da computer. Se non funziona ancora, rispondi all'email di conferma dell'acquisto indicando il nome usato per il pagamento: ti rimandiamo la guida.</p>
+      </div>
+      <div>
+        <h3>Il viaggio continua</h3>
+        <p>Molte schede nascono dai viaggi studio di Hotel Voyager. Se vuoi vedere questi hotel dal vivo, trovi le prossime partenze su <a href="https://www.hotelvoyager.it" target="_blank" rel="noopener">hotelvoyager.it</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap runfoot">100 Hotel Concept · Edizione 2026 · Nicola Delvecchio</footer>
+
+<script>
+/* Link al file della guida: sostituisci con l'indirizzo reale
+   (es. una cartella condivisa di Google Drive o Dropbox, o un PDF caricato su questo sito). */
+var GUIDA_URL = "INSERISCI_LINK_ALLA_GUIDA";
+(function(){
+  var a = document.getElementById("guida-link");
+  if (GUIDA_URL.indexOf("http") === 0) { a.href = GUIDA_URL; }
+  else { a.removeAttribute("target"); a.href = "#"; a.addEventListener("click", function(e){ e.preventDefault(); }); }
+})();
+</script>
+</body>
+</html>
