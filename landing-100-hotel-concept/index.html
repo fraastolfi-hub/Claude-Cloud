@@ -275,6 +275,20 @@ section{position:relative}
 .exit-no:hover{color:#fff}
 .exit-no:focus-visible{outline:3px solid #F07C2F;outline-offset:3px}
 .p-ed{font-family:var(--f-display);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.media{border-top:1px solid #E3E8F4;background:var(--paper)}
+.media-in{display:flex;align-items:center;gap:clamp(18px,4vw,48px);padding-block:22px;flex-wrap:wrap}
+.media-lbl{font-family:var(--f-display);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);max-width:16ch;line-height:1.35}
+.logos{list-style:none;margin:0;padding:0;display:flex;flex:1;align-items:center;justify-content:space-between;gap:clamp(18px,3.5vw,44px);flex-wrap:wrap;min-width:0}
+.logos li{display:flex;align-items:center;justify-content:center;height:64px;filter:grayscale(1) contrast(1.1);opacity:.72;transition:filter .2s,opacity .2s}
+.logos li:hover{filter:none;opacity:1}
+.logos img{height:64px;width:auto;mix-blend-mode:multiply}
+.logos img.wide{height:30px}
+.wm{display:grid;justify-items:center;line-height:1;color:var(--ink)}
+.wm-well b{font-family:"Wix Madefor Text",Arial,sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em}
+.wm-well small{font-size:8.5px;letter-spacing:.22em;margin-top:4px}
+.wm-tw b{font-family:"Wix Madefor Text",Arial,sans-serif;font-weight:500;font-size:20px;letter-spacing:.14em}
+.wm-tw small{font-size:10px;letter-spacing:.42em;margin-top:5px}
+@media (max-width:640px){.logos{justify-content:center}.logos li,.logos img{height:48px}.logos img.wide{height:24px}.media-lbl{max-width:none;width:100%;text-align:center}}
 /* conti */
 .math{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:#DDE3F3;border:2px solid #DDE3F3;margin-top:44px}
 .math>div{background:#fff;padding:28px 24px;display:grid;gap:10px;align-content:start}
@@ -400,6 +414,20 @@ details .ans{padding-bottom:24px;color:var(--ink-soft);max-width:68ch;display:gr
       </div>
       <p class="book-cap">100 scelte di prodotto dall'hotellerie di tutto il mondo, decodificate e commentate. Per chi gestisce e progetta hotel in Italia.</p>
     </div>
+  </div>
+</section>
+
+<!-- ============ MEDIA E COLLABORAZIONI ============ -->
+<section class="media" aria-label="Media e collaborazioni di Nicola Delvecchio">
+  <div class="wrap media-in">
+    <p class="media-lbl">Nicola su media e progetti del settore</p>
+    <ul class="logos">
+      <li title="we:ll Hospitality Trend"><span class="wm wm-well"><b>we:ll</b><small>HOSPITALITY TREND</small></span></li>
+      <li title="RTL 102.5"><img src="img/logo-rtl.png" alt="RTL 102.5" width="280" height="280"></li>
+      <li title="Pambianco News Hotellerie"><img src="img/logo-pambianco.png" alt="Pambianco News Hotellerie" width="280" height="280"></li>
+      <li title="Hotel Domani"><img class="wide" src="img/logo-hoteldomani.png" alt="Hotel Domani" width="280" height="84"></li>
+      <li title="Teamwork Hospitality"><span class="wm wm-tw"><b>TEAMWORK</b><small>HOSPITALITY</small></span></li>
+    </ul>
   </div>
 </section>
 
