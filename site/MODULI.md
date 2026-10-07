@@ -11,6 +11,7 @@ I quattro moduli del sito vengono inviati a Netlify Forms. A ogni invio, la funz
 | `revisione-homepage` | /smontaggio/ | Revisione della homepage |
 | `test-posizionamento` | /quiz/ | Test di posizionamento |
 | `strumenti-libro` | /bonus/ | Strumenti del libro |
+| `questionario` | /questionario/ (pagina nascosta, noindex, da mandare a chi acquista l'analisi) | Questionario di posizionamento |
 
 Configurazione scelta: **una sola lista** per tutti i contatti, con il campo `FONTE` che indica il modulo di provenienza (su Brevo i contatti non hanno tag: si filtra e si segmenta su `FONTE`). Liste separate per modulo restano possibili con le variabili `BREVO_LIST_CANDIDATURA` ecc.
 

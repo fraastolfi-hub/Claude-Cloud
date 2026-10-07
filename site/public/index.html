@@ -426,8 +426,8 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
         <div class="meter"><i id="bingoBar"></i></div>
       </div>
     </div>
-    <p class="pull words rv">Il problema quasi mai è il budget. <span class="hl">Sono le parole.</span>
-      <small>Chi usa le stesse parole del vicino, per l’ospite è il vicino. Solo con un altro prezzo.</small></p>
+    <p class="pull words rv">Il problema quasi mai è il budget. <span class="hl">Sono le promesse.</span>
+      <small>Chi fa le stesse promesse del vicino, per l’ospite è il vicino. Solo con un altro prezzo.</small></p>
   </div>
 </section>
 
@@ -762,7 +762,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 (function(){
   var g=document.getElementById('bingoGrid'); if(!g) return; var picked=0;
   var cliches=['Location unica','Servizio impeccabile','A due passi dal mare','Ambiente accogliente e familiare','Staff cordiale e professionale','Posizione strategica','Camere spaziose e luminose','Un’esperienza indimenticabile','Ideale per famiglie e coppie','Un angolo di paradiso','Comfort e relax','Cucina tipica del territorio'];
-  var msgs=[[0,'Nessuna, per ora. Funziona meglio con la homepage aperta accanto.'],[1,'Una sola. Resta da capire cosa ricorda di te l’ospite.'],[3,'Qualcuna di troppo: sono le stesse frasi degli hotel vicini.'],[5,'Copri il logo: l’ospite non saprebbe più di quale hotel si tratta.'],[8,'La tua homepage potrebbe essere di molti altri hotel. E a parità di parole, si sceglie il prezzo.']];
+  var msgs=[[0,'Nessuna, per ora. Funziona meglio con la homepage aperta accanto.'],[1,'Una sola. Resta da capire cosa ricorda di te l’ospite.'],[3,'Qualcuna di troppo: sono le stesse frasi degli hotel vicini.'],[5,'Copri il logo: l’ospite non saprebbe più di quale hotel si tratta.'],[8,'La tua homepage potrebbe essere di molti altri hotel. E a parità di promesse, si sceglie il prezzo.']];
   cliches.forEach(function(c){
     var b=document.createElement('button'); b.type='button'; b.className='bingo-cell'; b.textContent='«'+c+'»'; b.setAttribute('aria-pressed','false');
     b.addEventListener('click',function(){ var on=b.getAttribute('aria-pressed')!=='true'; b.setAttribute('aria-pressed',on); picked+=on?1:-1;

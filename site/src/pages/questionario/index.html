@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questionario di posizionamento · Hotel Positioning</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Il questionario dell’analisi di posizionamento: dieci minuti di risposte, la base dell’analisi del tuo hotel.">
+<!-- @include head -->
+<style>
+/* /questionario: pagina nascosta (noindex, non collegata), per chi ha acquistato l'analisi completa */
+.q-top{border-bottom:var(--bd);background:var(--carta)}
+.q-top .wrap{display:flex;align-items:center;height:64px}
+.q-stage{max-width:860px;margin:0 auto;padding:clamp(36px,6vw,64px) clamp(16px,4vw,40px) clamp(56px,8vw,104px)}
+.q-intro h1{font-size:clamp(32px,5.2vw,60px);margin:16px 0 20px}
+.q-intro .lead{max-width:40em;margin-bottom:clamp(26px,4vw,40px)}
+.q-steps{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-bottom:22px}
+.q-steps i{height:16px;border:2px solid var(--ink);background:var(--carta)}
+.q-steps i.done{background:var(--ink)}
+.q-steps i.cur{background:var(--yellow);box-shadow:3px 3px 0 var(--ink)}
+.q-form .prog{display:none}
+.q-form textarea{min-height:110px}
+.q-form fieldset legend.lab{font:700 13px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+.q-any{border:2px dashed var(--ink);padding:16px 16px 4px;margin-bottom:22px}
+.q-any > .lab{display:block;font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--yellow);padding:6px 9px;margin-bottom:14px;width:fit-content}
+.q-any.err{border-color:var(--pomodoro)}
+.q-foot{margin-top:28px;font:400 12px/1.6 var(--mono);color:var(--muted);text-align:center}
+</style>
+<!-- @include tema -->
+</head>
+<body>
+<header class="q-top"><div class="wrap"><a href="/" class="logo" aria-label="Hotel Positioning"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a></div></header>
+<main id="main" class="q-stage">
+  <div class="q-intro">
+    <span class="eyebrow"><span class="dot"></span>Analisi di posizionamento · questionario</span>
+    <h1>Questionario <span class="hl in">di posizionamento.</span></h1>
+    <p class="lead">Serve a capire come ti racconti oggi e come vedi il tuo hotel. Incrocio le tue risposte con le recensioni dei tuoi ospiti, con quello che emerge dai social e con le posizioni dei tuoi concorrenti. Ti servono circa dieci minuti. Le risposte restano salvate in questo browser finché non invii.</p>
+  </div>
+  <div class="q-steps" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<form class="form q-form" id="questionario-form" name="questionario" action="/" method="post" data-hp-form data-save="hp-questionario-v1" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+  <input type="hidden" name="form-name" value="questionario"><input type="hidden" name="pagina" value=""><p hidden><label>Non compilare: <input name="bot-field"></label></p>
+  <div class="fields">
+    <div class="form-head"><span>Questionario</span><span data-step-txt>Passo 1 di 8</span></div>
+    <div class="prog"><i></i></div>
+
+    <div class="fstep">
+      <p class="fstep-t">La struttura in pochi dati</p>
+      <div class="field"><label for="q-nome_localita">1. Nome e località</label><input id="q-nome_localita" name="nome_localita" type="text" required placeholder="Es. Hotel La Quercia, Assisi"><span class="em">Compila questo campo.</span></div>
+      <div class="row2">
+        <div class="field"><label for="q-tipologia">2. Tipologia</label><select id="q-tipologia" name="tipologia" required><option value="">Scegli</option><option>Hotel</option><option>Resort</option><option>Boutique hotel</option><option>Hotel con SPA</option><option>Country house o agriturismo</option><option>Altro</option></select><span class="em">Scegli la tipologia.</span></div>
+        <div class="field"><label for="q-numero_camere">3. Numero di camere</label><input id="q-numero_camere" name="numero_camere" type="number" min="1" inputmode="numeric" required><span class="em">Scrivi il numero di camere.</span></div>
+      </div>
+      <div class="field"><label for="q-stagionalita">4. Stagionalità: sei aperto tutto l’anno? Quali sono i mesi forti e quelli deboli?</label><textarea id="q-stagionalita" name="stagionalita" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="row2">
+        <div class="field"><label for="q-adr">5. Prezzo medio a notte (ADR indicativo, €)</label><input id="q-adr" name="adr" type="number" min="0" inputmode="numeric" required><span class="em">Scrivi un prezzo indicativo.</span></div>
+        <div class="field"><label for="q-sito_web">6. Sito web <small>(facoltativo)</small></label><input id="q-sito_web" name="sito_web" inputmode="url" placeholder="www.tuohotel.it"></div>
+      </div>
+      <div class="field"><label for="q-canali_prenotazione">7. Quali canali di prenotazione usi oggi?</label><input id="q-canali_prenotazione" name="canali_prenotazione" type="text" required placeholder="Es. sito, Booking, Expedia, telefono"><span class="em">Compila questo campo.</span></div>
+      <fieldset class="field" style="border:0">
+        <legend class="lab">8. Su 100 prenotazioni, quante arrivano dirette e quante dalle OTA?</legend>
+        <div class="row2">
+          <div class="field"><label for="q-quota_dirette">Dirette (%)</label><input id="q-quota_dirette" name="quota_dirette" type="number" min="0" max="100" inputmode="numeric" required><span class="em">Un numero da 0 a 100.</span></div>
+          <div class="field"><label for="q-quota_ota">OTA (%)</label><input id="q-quota_ota" name="quota_ota" type="number" min="0" max="100" inputmode="numeric" required><span class="em">Un numero da 0 a 100.</span></div>
+        </div>
+      </fieldset>
+      <button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button>
+    </div>
+
+    <div class="fstep">
+      <p class="fstep-t">Come ti racconti oggi</p>
+      <div class="field"><label for="q-descrizione_frase">9. In una frase, come descrivi il tuo hotel a uno sconosciuto?</label><textarea id="q-descrizione_frase" name="descrizione_frase" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-perche_noi">10. Se un ospite ti chiede «perché voi e non un altro hotel qui vicino?», cosa rispondi?</label><textarea id="q-perche_noi" name="perche_noi" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-promessa">11. Qual è la promessa, anche implicita, che fai a chi prenota?</label><textarea id="q-promessa" name="promessa" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="fstep-nav"><button class="fstep-back" type="button" data-prev>← Indietro</button><button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button></div>
+    </div>
+
+    <div class="fstep">
+      <p class="fstep-t">I tuoi concorrenti veri</p>
+      <div class="field"><label for="q-concorrenti">12. Quando un ospite non sceglie te, dove va? Scrivi i nomi precisi, non «altri hotel».</label><textarea id="q-concorrenti" name="concorrenti" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-cosa_offrono_loro">13. Cosa offrono loro che tu non offri?</label><textarea id="q-cosa_offrono_loro" name="cosa_offrono_loro" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-alternativa_sparizione">14. Se il tuo hotel sparisse domani, cosa sceglierebbero i tuoi ospiti al suo posto?</label><textarea id="q-alternativa_sparizione" name="alternativa_sparizione" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="fstep-nav"><button class="fstep-back" type="button" data-prev>← Indietro</button><button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button></div>
+    </div>
+
+    <div class="fstep">
+      <p class="fstep-t">Chi viene davvero da te</p>
+      <div class="field"><label for="q-ospite_che_torna">15. Descrivi l’ospite che torna e ti consiglia ad altri. Una persona concreta, non una fascia d’età.</label><textarea id="q-ospite_che_torna" name="ospite_che_torna" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-occasione">16. Per quale occasione prenotano da te? (anniversario, fuga dalla città, tappa di viaggio, lavoro…)</label><textarea id="q-occasione" name="occasione" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-vita_prima_di_prenotare">17. Cosa succedeva nella vita di quell’ospite il giorno prima di prenotare? Cosa cercava di risolvere?</label><textarea id="q-vita_prima_di_prenotare" name="vita_prima_di_prenotare" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="fstep-nav"><button class="fstep-back" type="button" data-prev>← Indietro</button><button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button></div>
+    </div>
+
+    <div class="fstep">
+      <p class="fstep-t">Cosa è difficile da copiarti</p>
+      <div class="field"><label for="q-difficile_copiare">18. Cosa hai che un concorrente non può copiare facilmente? (posizione, storia, persone, edificio, ricette…)</label><textarea id="q-difficile_copiare" name="difficile_copiare" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-sorpresa_positiva">19. Quando un ospite resta sorpreso in positivo, cosa dice più spesso?</label><textarea id="q-sorpresa_positiva" name="sorpresa_positiva" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-cosa_non_diamo">20. Cosa ti chiedono di continuo che tu non puoi o non vuoi dare?</label><textarea id="q-cosa_non_diamo" name="cosa_non_diamo" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="fstep-nav"><button class="fstep-back" type="button" data-prev>← Indietro</button><button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button></div>
+    </div>
+
+    <div class="fstep">
+      <p class="fstep-t">Cosa non sei (e non vuoi essere)</p>
+      <div class="field"><label for="q-cosa_rifiuti">21. C’è qualcosa che rifiuti di fare, anche se ti farebbe guadagnare di più?</label><textarea id="q-cosa_rifiuti" name="cosa_rifiuti" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-unico_ospite">22. Se potessi accettare un solo tipo di ospite per i prossimi dieci anni, quale sceglieresti?</label><textarea id="q-unico_ospite" name="unico_ospite" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-fastidio_competitor">23. Cosa ti dà fastidio nel modo in cui comunicano gli hotel simili al tuo?</label><textarea id="q-fastidio_competitor" name="fastidio_competitor" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="fstep-nav"><button class="fstep-back" type="button" data-prev>← Indietro</button><button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button></div>
+    </div>
+
+    <div class="fstep">
+      <p class="fstep-t">Dove vuoi arrivare</p>
+      <div class="field"><label for="q-obiettivo_12_mesi">24. Qual è l’obiettivo numero uno dei prossimi 12 mesi? (più prenotazioni dirette, ADR più alto, riempire la bassa stagione, salire di fascia…)</label><textarea id="q-obiettivo_12_mesi" name="obiettivo_12_mesi" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="field"><label for="q-chi_comunica">25. Chi gestisce oggi la comunicazione, e con che tono?</label><textarea id="q-chi_comunica" name="chi_comunica" rows="3" required></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="fstep-nav"><button class="fstep-back" type="button" data-prev>← Indietro</button><button class="btn" type="button" data-next>Avanti <span class="arr">→</span></button></div>
+    </div>
+
+    <div class="fstep">
+      <p class="fstep-t">Recensioni e contatto</p>
+      <div class="field q-any" data-any="q-recensioni">
+        <span class="lab">Le tue recensioni: almeno uno dei tre link</span>
+        <div class="field"><label for="q-link_tripadvisor">26. Link alle recensioni TripAdvisor</label><input id="q-link_tripadvisor" name="link_tripadvisor" inputmode="url" placeholder="https://"></div>
+        <div class="field"><label for="q-link_booking">27. Link alle recensioni Booking</label><input id="q-link_booking" name="link_booking" inputmode="url" placeholder="https://"></div>
+        <div class="field"><label for="q-link_google">28. Link alle recensioni Google</label><input id="q-link_google" name="link_google" inputmode="url" placeholder="https://"></div>
+        <input type="hidden" id="q-recensioni" required>
+        <span class="em">Inserisci almeno un link alle recensioni.</span>
+      </div>
+      <div class="field"><label for="q-note_materiali">29. Note su foto, sito ed eventuali linee guida del brand <small>(facoltativo)</small></label><textarea id="q-note_materiali" name="note_materiali" rows="3"></textarea><span class="em">Rispondi a questa domanda per andare avanti.</span></div>
+      <div class="row2">
+        <div class="field"><label for="q-nome_referente">30. Nome del referente</label><input id="q-nome_referente" name="nome_referente" autocomplete="name" required><span class="em">Scrivi il tuo nome.</span></div>
+        <div class="field"><label for="q-email">31. Email (per inviarti l’analisi)</label><input id="q-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l’indirizzo email.</span></div>
+      </div>
+      <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a>.</span></label>
+      <button class="btn" type="submit">Invia il questionario <span class="arr">→</span></button>
+      <button class="fstep-back" type="button" data-prev style="display:block;margin:12px auto 0">← Indietro</button>
+    </div>
+
+  </div>
+  <div class="ok" role="status">
+    <div class="tick">✓</div>
+    <p class="big">Ricevuto.</p>
+    <p>Analizzo le tue risposte insieme alle recensioni dei tuoi ospiti. Ti scrivo io appena l’analisi è pronta.</p>
+  </div>
+</form>
+  <p class="q-foot">Francesco Astolfi · Hotel Positioning · <a href="/privacy-policy/">Privacy policy</a></p>
+</main>
+<!-- @include cookie-banner -->
+<script src="/assets/site.js"></script>
+</body>
+</html>

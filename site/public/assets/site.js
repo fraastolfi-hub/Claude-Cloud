@@ -66,7 +66,21 @@
       var out = f.querySelector('#' + g.dataset.join);
       g.addEventListener('change', function(){ out.value = $$('input[type=checkbox]:checked', g).map(function(c){ return c.value; }).join(', '); g.classList.remove('err'); progress(); });
     });
-    function bad(el){ return missing(el) || (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)); }
+    function bad(el){
+      if (missing(el)) return true;
+      if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)) return true;
+      if (el.type === 'number') { var n = parseFloat(el.value); if (isNaN(n) || (el.min !== '' && n < +el.min) || (el.max !== '' && n > +el.max)) return true; }
+      return false;
+    }
+    // gruppi «almeno uno»: <div data-any="id-del-campo-nascosto"> con più campi; il campo nascosto (required) si riempie se almeno uno è compilato
+    $$('[data-any]', f).forEach(function(g){
+      var out = f.querySelector('#' + g.dataset.any);
+      function upd(){ out.value = $$('input:not([type=hidden]),textarea', g).some(function(i){ return i.value.trim(); }) ? '1' : ''; if (out.value) g.classList.remove('err'); }
+      g.addEventListener('input', upd); upd();
+    });
+    // salvataggio nel browser: <form data-save="chiave"> ricorda risposte e passo finché non si invia
+    var SAVE = f.dataset.save, saveReady = false;
+    function save(){ if (!SAVE) return; try { var o = { step: cur, v: {} }; $$('[name]', f).forEach(function(el){ if (el.type === 'hidden' || el.name === 'bot-field') return; o.v[el.name] = (el.type === 'checkbox' || el.type === 'radio') ? (el.checked ? el.value || 'on' : (o.v[el.name] || '')) : el.value; }); localStorage.setItem(SAVE, JSON.stringify(o)); } catch (e) {} }
     function wrap(el){ return el.type === 'radio' ? el.closest('fieldset') : el.closest('.field,.check'); }
     function check(list){
       var first = null;
@@ -80,6 +94,9 @@
       steps.forEach(function(s, i){ s.hidden = i !== n; });
       if (stxt) stxt.textContent = 'Passo ' + (n + 1) + ' di ' + steps.length;
       if (bar) bar.style.width = Math.round(n / steps.length * 100) + '%';
+      var sq = f.parentElement.querySelectorAll('.q-steps i');
+      for (var i = 0; i < sq.length; i++) { sq[i].className = i < n ? 'done' : (i === n ? 'cur' : ''); }
+      if (SAVE && saveReady) save();
     }
     function shake(){ if (!reduce) { f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); } }
     function next(){
@@ -91,6 +108,12 @@
     }
     if (steps.length) {
       show(0);
+      if (SAVE) { try { var sv = JSON.parse(localStorage.getItem(SAVE) || 'null'); if (sv && sv.v) {
+        $$('[name]', f).forEach(function(el){ var v = sv.v[el.name]; if (v == null || el.type === 'hidden') return; if (el.type === 'checkbox' || el.type === 'radio') el.checked = (el.value || 'on') === v; else el.value = v; });
+        $$('[data-any]', f).forEach(function(g){ g.dispatchEvent(new Event('input')); });
+        if (typeof sv.step === 'number') show(Math.min(Math.max(sv.step, 0), steps.length - 1));
+      } } catch (e) {} }
+      saveReady = true; f.addEventListener('input', save); f.addEventListener('change', save);
       f.addEventListener('click', function(e){
         if (e.target.closest('[data-next]')) { e.preventDefault(); next(); }
         else if (e.target.closest('[data-prev]')) { e.preventDefault(); show(Math.max(0, cur - 1)); }
@@ -116,7 +139,7 @@
       e.preventDefault();
       var done = function(){
         $$('[data-echo]', f).forEach(function(o){ var src = f.querySelector(o.dataset.echo); if (src && src.value.trim()) o.textContent = src.value.trim(); });
-        if (bar) bar.style.width = '100%'; f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+        if (bar) bar.style.width = '100%'; if (f.dataset.save) { try { localStorage.removeItem(f.dataset.save); } catch (e) {} } f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
         if (window.HPtrack) HPtrack('lead', { form: f.getAttribute('name') || f.id });
       };
       // Netlify Forms: invio in background; la funzione submission-created salva su Brevo e manda la notifica
