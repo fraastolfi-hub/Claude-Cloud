@@ -183,6 +183,134 @@
 @media (max-width:560px){.ps-note{grid-template-columns:1fr;gap:10px}}
 .endbar{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;justify-content:space-between;border-top:var(--b);margin-top:clamp(50px,7vw,80px);padding-top:26px}
 .endbar a.lnk{font:700 15px var(--mono);text-decoration:none;border-bottom:3px solid var(--yellow)}
+
+/* --- Essenziale: rifiniture del libro (pagina prodotto) --- */
+/* hero: una colonna centrata, copertina grande, prezzo, specs */
+.hero{text-align:center;padding-top:clamp(56px,7vw,96px)}
+.hero .split{grid-template-columns:1fr;justify-items:center;gap:0}
+.hero .split > div:first-child{display:contents}
+.hero .eyebrow{justify-self:center}
+.hero h1{margin:18px auto 22px;font-size:clamp(44px,7vw,96px)}
+.hero .lead{margin:0 auto 14px;max-width:34ch}
+.book-stage{order:5;padding:0;margin:clamp(40px,5vw,60px) 0 0;display:flex;flex-direction:column;align-items:center}
+.book-stage .sticker{position:static;transform:none;margin-bottom:clamp(20px,3vw,32px);font-size:14px}
+.book-img{width:min(420px,74vw)}
+.book-img:hover{transform:translateY(-4px)}
+.book-stage .price-tag{position:static;transform:none;background:none;border:0;border-radius:0;padding:0;margin-top:clamp(28px,4vw,40px);font:600 21px/1.3 var(--text);letter-spacing:-.015em;color:var(--ink)}
+.book-stage .price-tag small{display:inline;font:400 19px var(--text);color:var(--ink-2);margin:0 0 0 4px}
+.hero .btn-row{order:6;justify-content:center;margin-top:22px}
+.hero .micro{order:7;max-width:52ch;margin:20px auto 0}
+.hero-stats{max-width:880px;margin:clamp(56px,7vw,80px) auto 0;padding-top:34px;border-top:1px solid var(--line);grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.hero-stats .stat{background:none;border-radius:0;padding:0 14px;text-align:center}
+.hero-stats .stat + .stat{border-left:1px solid var(--line)}
+.hero-stats .stat b{font-size:clamp(34px,3.4vw,44px);letter-spacing:-.035em}
+.hero-stats .stat span{max-width:20ch;margin:8px auto 0}
+@media (max-width:640px){
+  .hero-stats{grid-template-columns:1fr 1fr;row-gap:30px}
+  .hero-stats .stat:nth-child(3){border-left:0}
+}
+
+/* N°01 */
+.mini-rects{border:0;box-shadow:none;background:var(--white);border-radius:var(--r);padding:16px;gap:7px}
+.mini-rects i{border:0;border-radius:5px;background:#E3E3E8}
+.mini-rects i:nth-child(3n){background:#D9D9DE}
+.mini-rects.found i.me{background:var(--yellow);border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.adjs span{border:0;border-radius:980px;background:var(--white);padding:7px 12px;font:500 13px/1 var(--text);color:var(--muted);text-decoration-color:var(--muted);text-decoration-thickness:1px}
+.bread .ico{border:0;border-radius:50%;background:var(--white);font:600 11px/1.15 var(--text);color:var(--ink-2);box-shadow:none}
+
+/* N°03 */
+.crate{border:0;border-radius:var(--r);background:#1C1C1E;padding:26px 26px 14px}
+.crate .row{border-bottom:1px solid #2C2C2E;font:400 15px/1.4 var(--text);color:#D2D2D7}
+.crate .row b,.crate .row.bad b{color:#F5F5F7;font-weight:600}
+.peach .prose p strong{color:#F5F5F7;font-weight:600}
+.peach .big-quote{color:#F5F5F7}
+
+/* N°04: sei passaggi come in home */
+.six{border:0;background:none;box-shadow:none;gap:20px;border-radius:0}
+.six li{border:0;margin:0;background:var(--mist);border-radius:var(--r);padding:28px 26px 30px}
+.six li:hover{background:var(--mist)}
+.six b{width:34px;height:34px;border-radius:50%;background:var(--white);display:grid;place-items:center;font:700 15px var(--display);letter-spacing:0;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);margin-bottom:18px}
+.six li:nth-child(3) b{background:var(--yellow);box-shadow:none}
+.six p{color:var(--muted)}
+.canvas{transform:none;border:0;box-shadow:none;background:var(--mist);border-radius:var(--r);padding:clamp(18px,2.4vw,26px)}
+.canvas-head{font:500 13px var(--text);color:var(--muted);border-bottom:1px solid var(--line)}
+.cv{border:0;background:var(--white);border-radius:var(--r-sm);padding:12px 14px 16px}
+.cv .n{font:500 12px var(--text);color:var(--muted)}
+.cv .n i{background:none;border:0;padding:0}
+.cv .ln span{height:1px;background:repeating-linear-gradient(90deg,#D2D2D7 0 6px,transparent 6px 10px)}
+.cv.wide{background:var(--night);color:#F5F5F7}
+.cv.wide .n{color:#A1A1A6}
+.tac circle{stroke-width:1.5}
+.tac rect{rx:10px;stroke-width:1.5}
+.tac .sub{font:400 13px var(--text);fill:var(--muted)}
+.tac .core{font:600 12px var(--text);text-transform:lowercase}
+.views-list b{border:0;border-radius:980px;padding:6px 11px;font:500 13px/1 var(--text);background:var(--mist)}
+
+/* N°05: casi */
+.case{border:0;box-shadow:none;background:var(--mist);border-radius:28px;overflow:hidden}
+.case-top{border-bottom:0;padding-bottom:clamp(14px,2vw,24px)}
+.case .stat-row{border:0;gap:12px;padding:0 clamp(22px,3vw,40px)}
+.case .stat{background:var(--white)}
+@media (max-width:640px){.case .stat-row{grid-template-columns:1fr 1fr;gap:10px}.case .stat{padding:20px}}
+.case .stat .ar{color:var(--muted)}
+.case .stat s{text-decoration-color:var(--muted);text-decoration-thickness:2px}
+.case-body > div + div{border-left:1px solid var(--line)}
+@media (max-width:860px){.case-body > div + div{border-left:0;border-top:1px solid var(--line)}}
+.case-body h4{background:none;border:0;padding:0;border-radius:0;font:600 14px var(--text);color:var(--muted)}
+.case-body p strong{background:none;padding:0;font-weight:600}
+.honest{background:var(--night);color:#D2D2D7;font:400 15px/1.6 var(--text)}
+.honest b{color:#F5F5F7;font-weight:600}
+.vs2 .card{box-shadow:none}
+.vs2 .eq{font:300 40px var(--text);color:#86868B}
+
+/* N°06: indice */
+.toc{border:0;box-shadow:none;background:var(--white);border-radius:var(--r);overflow:hidden}
+.toc li{padding:20px 24px}
+.toc li:hover{background:var(--white)}
+.toc li::before{font:600 17px var(--display);color:var(--muted);letter-spacing:-.01em}
+.toc .ref{border:0;background:var(--mist);border-radius:980px;font:500 12px/1 var(--text);color:var(--ink-2);padding:7px 11px}
+
+/* N°07 */
+.appx .card.y{box-shadow:none}
+.appx .big{font-family:var(--display)}
+.appx .card .kicker{color:var(--muted)}
+
+/* N°08 */
+.me-row .stat b{font-size:clamp(28px,2.8vw,38px)}
+
+/* N°09: il conto */
+.receipt{border:0;font-family:var(--text);border-radius:var(--r);padding:26px 26px 0;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.06),var(--sh-lg)}
+.receipt::after{display:none}
+.receipt h3{font:600 15px var(--text);border-bottom:1px solid var(--line)}
+.receipt .ln{border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink-2)}
+.receipt .ln b{font:600 18px var(--display);color:var(--ink)}
+.receipt .ln.bad b{color:var(--red)}
+.receipt .ln.tot{background:var(--night);color:#D2D2D7;border-top:0;margin:14px -26px 0;padding:20px 26px}
+.receipt .ln.tot b{color:#F5F5F7;font-size:30px}
+.receipt .foot-r{margin:0 -26px;padding:16px 26px 22px;background:var(--night)}
+.receipt .foot-r .chip{background:#1C1C1E;color:#D2D2D7}
+
+/* N°10: strumenti */
+.tool{border:0;background:var(--white);border-radius:var(--r-sm);padding:18px;font:600 16px/1.3 var(--display);letter-spacing:-.015em;align-items:center}
+.tool::before{width:28px;height:28px;border:0;border-radius:50%;padding:0;display:grid;place-items:center;background:var(--mist);font:600 12px var(--text);color:var(--ink-2)}
+.tool:nth-child(7){background:var(--night);color:#F5F5F7}
+.tool:nth-child(7)::before{background:#2C2C2E;color:#F5F5F7}
+
+/* N°11: garanzia */
+.seal{border:0;background:var(--mist);box-shadow:none}
+.seal::before{border:1px solid var(--line)}
+.seal b{font-family:var(--display);letter-spacing:-.05em}
+.seal span{font:500 13px/1.3 var(--text);color:var(--muted)}
+
+/* N°13 */
+.roads .card b.n{border:0;border-radius:50%;width:36px;height:36px;background:var(--mist);font:700 15px var(--display)}
+.roads .card.ink b.n{background:#2C2C2E;color:#F5F5F7}
+.ps-note{border:0;box-shadow:none;background:var(--white);border-radius:var(--r);padding:26px 28px;grid-template-columns:76px 1fr}
+@media (max-width:560px){.ps-note{grid-template-columns:1fr}}
+.ps-note:nth-child(2),.ps-note:nth-child(3){margin-left:0;transform:none}
+.ps-note b.k{background:none;color:var(--ink);padding:0;font:700 17px/1.4 var(--display);letter-spacing:-.01em}
+.endbar{border-top:1px solid var(--line)}
+.endbar a.lnk{font:500 15px var(--text);border-bottom:2px solid var(--yellow);padding-bottom:1px}
 </style>
 </head>
 <body>
@@ -203,7 +331,7 @@
           <span class="line"><span><em>a quello accanto.</em></span></span>
         </h1>
         <p class="lead">Hotel Positioning è il metodo per smettere di assomigliare a tutti gli altri. Prendere posizione, parlare chiaro, farti scegliere. <strong>Al tuo prezzo.</strong></p>
-        <p style="margin:-10px 0 30px;max-width:46ch">Scritto da chi negli hotel ci ha lavorato dentro. Non da chi li studia da fuori.</p>
+        <p style="margin:0 auto;max-width:46ch;color:var(--ink-2)">Scritto da chi negli hotel ci ha lavorato dentro. Non da chi li studia da fuori.</p>
         <div class="btn-row">
           <a href="https://www.amazon.it/dp/B0HL3Z4XL7/" class="btn" rel="noopener">Prendi il libro su Amazon · 19,90 € <span class="arr">→</span></a>
           <a href="/bonus/" class="btn ghost">Prima il primo capitolo, gratis</a>
@@ -657,7 +785,7 @@
     </div>
     <div class="roads">
       <div class="card rv"><b class="n">1</b><h3>Prima strada</h3><p>Non cambia niente. La prossima stagione apri con lo stesso messaggio, gli stessi cinquanta rettangoli e, a fine mese, la stessa fattura di Booking. Continui a curare il prodotto come un orafo e a lasciare che il prezzo lo faccia qualcun altro.</p></div>
-      <div class="card ink rv d1"><b class="n">2</b><h3>Seconda strada</h3><p>Ti prendi due sere e un pomeriggio. Decidi contro chi giochi e per chi sei irrinunciabile. E la prossima volta che un ospite apre Booking trova quarantanove rettangoli e <strong style="color:var(--yellow)">una cosa che non somiglia a niente.</strong></p></div>
+      <div class="card ink rv d1"><b class="n">2</b><h3>Seconda strada</h3><p>Ti prendi due sere e un pomeriggio. Decidi contro chi giochi e per chi sei irrinunciabile. E la prossima volta che un ospite apre Booking trova quarantanove rettangoli e <strong style="color:#F5F5F7;text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:2px;text-underline-offset:4px">una cosa che non somiglia a niente.</strong></p></div>
     </div>
     <p class="pull" style="margin-bottom:30px">Non puoi lasciarlo nel cassetto e poi chiamarlo sfortuna.</p>
     <div class="btn-row">

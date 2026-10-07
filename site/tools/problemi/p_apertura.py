@@ -57,16 +57,16 @@ P = dict(
         </div>
         <p class="tool-note">Libera vuol dire: la decidi adesso, senza rifare niente. Dopo si può ancora cambiare tutto. Ma costa il triplo.</p>
       </div>''',
-    css='''.phases{display:grid;grid-template-columns:repeat(5,1fr);font:700 10.5px/1.2 var(--mono);letter-spacing:.02em;color:var(--muted)}
+    css='''.phases{display:grid;grid-template-columns:repeat(5,1fr);font:500 12px/1.2 var(--text);color:var(--muted)}
 .phases span{text-align:center;overflow-wrap:anywhere}
 .phases span:first-child{text-align:left}.phases span:last-child{text-align:right}
-.dec{list-style:none;border:1px solid var(--line)}
-.dec li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;border-bottom:1.5px dashed #A1A1A6;font-size:15.5px;line-height:1.35;transition:background .25s,color .25s}
+.dec{list-style:none;background:var(--white);border-radius:var(--r-sm);padding:4px 16px}
+.dec li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.35;transition:color .25s}
 .dec li:last-child{border-bottom:0}
-.dec .st{flex:none;font:700 11.5px var(--mono);letter-spacing:0;border:1px solid var(--line);padding:4px 7px;background:var(--mint)}
-.dec li.gone{background:var(--paper-2);color:var(--muted)}
-.dec li.gone span{text-decoration:line-through;text-decoration-color:var(--orange-dk);text-decoration-thickness:2px}
-.dec li.gone .st{background:var(--ink);color:var(--paper)}''',
+.dec .st{flex:none;font:500 12.5px/1 var(--text);border-radius:980px;padding:6px 10px;background:var(--mist);color:var(--ink);transition:background .25s,color .25s}
+.dec li.gone{color:var(--muted)}
+.dec li.gone span{text-decoration:line-through;text-decoration-color:var(--muted);text-decoration-thickness:1px}
+.dec li.gone .st{background:transparent;color:var(--muted);box-shadow:inset 0 0 0 1px var(--line)}''',
     js='''/* cosa puoi ancora decidere */
 (function(){
   var r=document.getElementById('apF'), o=document.getElementById('apFo'), items=[].slice.call(document.querySelectorAll('#apList li'));
@@ -108,8 +108,8 @@ P = dict(
         <p>Il posizionamento prima dell'apertura è quello che rende di più: decide camere, servizi, prezzo e parole prima che diventino cemento.</p>
         <p><strong>Dopo, costa il triplo.</strong></p>''',
     br_quote="Prima la bussola. Poi i muri. L'ordine conta.",
-    proof_extra='''    <article class="card y rv" style="margin-top:22px">
-      <p class="kicker" style="color:var(--ink)"><b>Caso</b> · Yume Ramen · 5 locali</p>
+    proof_extra='''    <article class="card y rv" style="margin-top:20px;box-shadow:none;border-radius:28px">
+      <p class="kicker"><b>Caso</b> · Yume Ramen · 5 locali</p>
       <h3 style="margin:12px 0 8px">Questo non l'ho consigliato. L'ho inventato.</h3>
       <p>La posizione l'ho decisa prima di accendere la prima cucina. Con soldi miei. Da zero a 2,5 milioni di euro di fatturato. È il motivo per cui, oggi, a te lo dico prima.</p>
     </article>''',

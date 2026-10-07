@@ -87,6 +87,45 @@
 /* --- form --- */
 .form-sec .split{align-items:start}
 .form-sec .steps-list li{font-size:17px}
+
+/* --- Essenziale: rifiniture dello smontaggio --- */
+.badges .chip{background:var(--mist)}
+.rip-panel{border:0;border-radius:28px;box-shadow:0 0 0 1px rgba(0,0,0,.06),var(--sh-lg)}
+.rip > .rip-panel:first-child{overflow:hidden}
+.rip-lab{font:500 13px var(--text);color:var(--muted)}
+.old{font-family:var(--display)}
+.old .g .t::after{background:var(--ink);height:.09em}
+.rip.s2 .old .f{color:#AEAEB2}
+.seen{top:18px;right:18px;border:0;border-radius:980px;background:var(--mist);color:var(--muted);padding:6px 11px;font:500 12px/1 var(--text)}
+.rip.s1 .seen{background:var(--ink);color:#F5F5F7;transform:none}
+.rip-cap{font:400 14px/1.45 var(--text)}
+.rip-arrow{font:500 13px var(--text);color:var(--muted)}
+.rip-arrow b{width:40px;height:40px;border:0;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);font:500 18px var(--text);color:var(--ink)}
+.rip.s3 .rip-arrow b{background:var(--yellow);box-shadow:none}
+.rip-panel.new{background:var(--night);box-shadow:var(--sh-lg)}
+.rip-panel.new .rip-lab{color:#A1A1A6}
+.nw{font-family:var(--display);color:#86868B}
+.nw .k{color:#F5F5F7}
+.done-tag{top:18px;right:18px;border:0;border-radius:980px;background:#2C2C2E;color:#F5F5F7;padding:6px 11px;font:500 12px/1 var(--text)}
+.why{border-top:1px solid #3A3A3C}
+.why li{font:400 14px/1.45 var(--text)}
+.why li b{background:#2C2C2E;color:#F5F5F7;border-radius:50%;font:600 12px var(--text)}
+.rip-ctrl button{border:0;border-radius:980px;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);padding:9px 16px;font:500 14px var(--text);color:var(--ink)}
+.rip-ctrl button:hover{transform:none;background:var(--mist);box-shadow:inset 0 0 0 1px var(--line)}
+.rip-ctrl .mono{font-size:13px}
+/* cosa ricevi */
+.get{gap:16px;border:0;background:none;box-shadow:none;border-radius:0}
+.get li{border:0;margin:0;background:var(--mist);border-radius:var(--r);padding:28px 26px 30px}
+.get li:hover{background:var(--mist)}
+.get b{width:36px;height:36px;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;font:700 14px var(--display);letter-spacing:0;color:var(--ink);margin-bottom:20px}
+.get p{color:var(--ink-2)}
+@media (max-width:980px){.get li{border:0;margin:0}}
+/* per chi */
+.who .card .chip{background:var(--mist)}
+.who .card.ink .chip{background:#2C2C2E;color:#F5F5F7}
+.six-m.card.y{box-shadow:none}
+.six-m .n{font-family:var(--display)}
+.six-m .slots i{border:0;border-radius:50%;background:var(--mist-2)}
 </style>
 </head>
 <body>

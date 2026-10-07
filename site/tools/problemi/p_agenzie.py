@@ -45,11 +45,12 @@ P = dict(
           <p id="aSub">Con queste istruzioni, chiunque produce charme ed eleganza.</p>
         </div>
       </div>''',
-    css='''.brief-prev{font-size:16px;line-height:1.5;background:var(--paper);border:1px dashed var(--line);padding:12px 14px;overflow-wrap:anywhere}
+    css='''.brief-prev{font-size:16px;line-height:1.5;color:var(--ink-2);background:var(--white);border-radius:var(--r-sm);padding:14px 16px;overflow-wrap:anywhere}
 .brief-prev:empty{display:none}
-.bq{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed #A1A1A6;font-size:16px;line-height:1.35}
-.bq .tgl{flex:none;box-shadow:none}
-.bq .tgl button{padding:8px 12px}
+.bq{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.35;color:var(--ink)}
+.bq:last-child{border-bottom:0}
+.bq .tgl{flex:none}
+.bq .tgl button{padding:7px 14px}
 @media (max-width:480px){.bq{flex-direction:column;align-items:flex-start}}''',
     js='''/* test del brief */
 (function(){''' + WORDS_JS + '''
