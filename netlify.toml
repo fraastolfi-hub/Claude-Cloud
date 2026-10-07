@@ -1,0 +1,10 @@
+# Netlify: pubblica la landing di 100 Hotel Concept
+[build]
+  base    = "landing-100-hotel-concept"
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
