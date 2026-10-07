@@ -15,52 +15,52 @@ WORDS_JS = r'''
 
 P = dict(
     slug="sostituibili",
-    title="Come differenziare un hotel che sembra uguale agli altri",
-    og_title="Il tuo hotel è bellissimo. Peccato che lo siano tutti.",
-    desc="Il tuo hotel è bellissimo. Peccato che lo siano tutti. Fai il test del logo coperto sulla tua homepage, riconosci i dieci segnali dell'hotel sostituibile e trova il motivo per cui l'ospite sceglie te.",
-    eyebrow="Sintomo 03 · Bello e sostituibile",
-    h1="Gli ospiti ci adorano. Ma non sanno spiegare perché.",
-    pull='Il tuo hotel è bellissimo. <span class="hl or in">Peccato che lo siano tutti.</span>',
-    lead="Il design si compra. Il fotografo si compra. Il rebranding si compra. E infatti li hanno comprati tutti. Quello che non si compra è un motivo per scegliere te, e non l'altro bellissimo.",
-    cta2="Fai il test del logo coperto ↓",
+    title="Differenziare una struttura che somiglia alle altre",
+    og_title="Gli ospiti vi apprezzano, ma non sanno spiegare perché.",
+    desc="Molte strutture curate si somigliano. Il test del logo coperto sulla vostra homepage, dieci segnali di una struttura sostituibile e il motivo per cui l'ospite sceglie voi.",
+    eyebrow="Segnale 03 · Riconoscibilità",
+    h1="Rendere la struttura riconoscibile.",
+    pull='Gli ospiti vi apprezzano, ma non sanno spiegare perché. <span class="hl or in">Spesso non lo spiega nemmeno il sito.</span>',
+    lead="Design, fotografia e rebranding si acquistano, e infatti molte strutture li hanno. Non si acquista un motivo per scegliere voi invece di un'altra struttura curata.",
+    cta2="Il test del logo coperto ↓",
     memo=memo("Homepage · logo coperto", "████████",
               [("«Eleganza. Charme. Esperienza autentica.»", "", ""),
-               ("Funziona per il tuo hotel?", "✓ sì", "ok"),
-               ("Per quello a venti minuti?", "✓ sì", "ok"),
-               ("Per quello su Condé Nast il mese scorso?", "✓ sì", "ok")],
-              "Posizionamento", "non pervenuto",
-              "Non hai un posizionamento. Hai un arredamento."),
-    ag_h2="Facciamo un test. <em>Copri il logo.</em>",
-    ag_lead="Prendi la tua homepage. Copri il logo. Leggi il testo. Potrebbe essere il tuo hotel. O quello a venti minuti da te.",
-    ag_prose='''        <p>«Ma Francesco, il mio hotel è curato. Abbiamo fatto il rebranding due anni fa.»</p>
-        <p>Lo so. Si vede. Il logo è giusto. Le foto sono giuste. I materiali sono giusti.</p>
-        <p>È tutto giusto. <strong>Ed è questo il problema.</strong></p>
-        <p>Il «giusto», oggi, è lo standard. Ogni boutique hotel ha il logo giusto. Ogni resort ha le foto giuste.</p>
-        <p>Il problema non è come appari. È che non sai dire perché esisti.</p>''',
+               ("Vale per la vostra struttura?", "✓ sì", "ok"),
+               ("Per quella a venti minuti?", "✓ sì", "ok"),
+               ("Per quella su Condé Nast il mese scorso?", "✓ sì", "ok")],
+              "Posizionamento", "non riconoscibile",
+              "Le parole sono corrette. Ma valgono per tutte."),
+    ag_h2="Un test semplice. <em>Coprite il logo.</em>",
+    ag_lead="Aprite la vostra homepage, coprite il logo e leggete il testo. Descrive la vostra struttura, o anche quella a venti minuti?",
+    ag_prose='''        <p>Molte strutture hanno fatto un rebranding negli ultimi anni, e si vede.</p>
+        <p>Il logo è corretto. Le fotografie sono corrette. I materiali sono corretti.</p>
+        <p>È tutto corretto. <strong>Ed è proprio questo il punto.</strong></p>
+        <p>Oggi il «corretto» è lo standard. Ogni boutique hotel ha un logo curato, ogni resort ha belle fotografie.</p>
+        <p>La differenza non sta in come la struttura appare. Sta nel motivo per cui esiste, detto in modo che l'ospite lo riconosca.</p>''',
     tool='''      <div class="tool rv d1">
-        <div class="tool-head"><span>Il test del logo coperto</span><em>Usa la tua homepage</em></div>
+        <div class="tool-head"><span>Il test del logo coperto</span><em>Con la vostra homepage</em></div>
         <div class="tool-body">
           <div class="tool-row">
-            <label for="sTxt">Incolla la prima frase della tua homepage</label>
+            <label for="sTxt">Incollate la prima frase della vostra homepage</label>
             <textarea id="sTxt" spellcheck="false">Un'oasi di eleganza e charme a pochi passi dal centro. Un'esperienza autentica e indimenticabile, curata in ogni dettaglio.</textarea>
           </div>
           <div class="logo3" id="sCards" aria-live="polite">
-            <div class="lg"><span class="lg-n">Il tuo hotel</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
-            <div class="lg"><span class="lg-n">Quello a venti minuti</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
-            <div class="lg"><span class="lg-n">Quello su Condé Nast</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
+            <div class="lg"><span class="lg-n">La vostra struttura</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
+            <div class="lg"><span class="lg-n">Quella a venti minuti</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
+            <div class="lg"><span class="lg-n">Quella su Condé Nast</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
           </div>
           <div class="tool-row">
-            <span class="lab" id="sQ">Regge per tutti e tre?</span>
+            <span class="lab" id="sQ">Vale per tutte e tre?</span>
             <div class="tgl" role="group" aria-labelledby="sQ">
-              <button type="button" data-v="si" aria-pressed="false">Sì, per tutti</button>
-              <button type="button" data-v="no" aria-pressed="false">No, solo per me</button>
+              <button type="button" data-v="si" aria-pressed="false">Sì, per tutte</button>
+              <button type="button" data-v="no" aria-pressed="false">No, solo per noi</button>
             </div>
           </div>
         </div>
         <div class="tool-out" aria-live="polite">
-          <span class="k">Parole da vocabolario condiviso</span>
+          <span class="k">Parole di uso comune nel settore</span>
           <b class="tool-big" id="sOut">9</b>
-          <p id="sSub">Rispondi alla domanda qui sopra.</p>
+          <p id="sSub">Rispondete alla domanda qui sopra.</p>
         </div>
       </div>''',
     css='''.logo3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -80,46 +80,46 @@ P = dict(
     cards.forEach(function(c){ c.innerHTML=r.html; });
     out.textContent=t?r.n:'0';
     var w=r.n===1?'una parola':r.n+' parole';
-    if(choice==='si') sub.innerHTML='Allora non hai un posizionamento. Hai un arredamento. Non è un insulto: è il punto di partenza di quasi tutti.';
-    else if(choice==='no') sub.innerHTML=r.n>2?'Sicuro? Ci sono '+w+' che potrebbe usare qualunque hotel. Rileggila come se fossi l’ospite, non il proprietario.':'Bene. Ora la prova del nove: cerca nelle recensioni chi scrive «l’unico posto dove ho trovato…». Se c’è, sei sulla strada giusta.';
-    else sub.innerHTML=r.n?'Ci sono '+w+' che potrebbe usare qualunque hotel. Ora rispondi alla domanda qui sopra.':'Nessuna parola da catalogo. Buon segno. Ora rispondi alla domanda qui sopra.';
+    if(choice==='si') sub.innerHTML='Allora il testo descrive la categoria, non la struttura. È il punto di partenza di molte strutture, e si può correggere.';
+    else if(choice==='no') sub.innerHTML=r.n>2?'Ci sono però '+w+' che potrebbe usare qualsiasi struttura. Provate a rileggere la frase con gli occhi di un ospite che non vi conosce.':'Bene. Una verifica ulteriore: cercate nelle recensioni chi scrive «l’unico posto dove ho trovato…». Se c’è, è una traccia del vostro posizionamento.';
+    else sub.innerHTML=r.n?'Ci sono '+w+' che potrebbe usare qualsiasi struttura. Ora rispondete alla domanda qui sopra.':'Nessuna parola di uso comune. Buon segno. Ora rispondete alla domanda qui sopra.';
   }
   bs.forEach(function(b){ b.addEventListener('click',function(){
     choice=b.dataset.v; bs.forEach(function(x){ x.setAttribute('aria-pressed',x===b); }); upd();
   }); });
   ta.addEventListener('input',upd); upd();
 })();''',
-    sig_h2="I dieci segnali che sei <em>bello e sostituibile.</em>",
-    sig_lead="Spunta quelli in cui ti riconosci. Non è un problema di gusto. È un problema di posizione.",
+    sig_h2="Dieci segnali di una struttura <em>curata ma sostituibile.</em>",
+    sig_lead="Selezionate quelli che riconoscete nella vostra struttura. Non è una questione di gusto, ma di posizione.",
     signals=[
-        ("Il test del logo coperto.", "Copri il logo sulla homepage. Il testo funziona per altri cento hotel: «Eleganza. Charme. Esperienza autentica.»", "Non è un'identità. È un vocabolario condiviso con i tuoi concorrenti."),
-        ("Recensioni splendide. E intercambiabili.", "«Struttura meravigliosa. Personale impeccabile. Torneremo.» Lo scrivono anche agli altri. Cerca quella che dice: «L'unico posto dove ho trovato X.»", "Non c'è? Allora X non c'è."),
-        ("Il tuo design ha 18 mesi di vantaggio. Forse.", "Hai investito nel restyling. Il tuo vicino sta ristrutturando adesso. Con lo stesso architetto di tendenza.", "Il vantaggio estetico è un affitto: scade. L'identità è una proprietà: resta."),
-        ("«Boutique hotel» non dice più niente.", "Vent'anni fa era una posizione. Oggi è una categoria. Affollata.", "Dire «siamo un boutique hotel» è come dire «siamo un hotel». Con meno camere."),
-        ("Vendi la destinazione, non te stesso.", "Il tuo sito parla della Sardegna. Della Toscana. Del lago. Splendido.", "Stai facendo marketing gratis a tutti i concorrenti della tua zona."),
-        ("Il diretto è fermo. Nonostante tutto.", "Sito nuovo, booking engine nuovo, campagne attive. Ma nessuno cerca te per nome: cercano «boutique hotel + zona».", "E lì sei in lista. Con tutti gli altri belli."),
-        ("Trenta secondi muti.", "L'ospite chiede: «Cosa vi rende speciali?». Tu rispondi: «Ehm. Cura. Qualità. Attenzione.»", "Se non sai dirlo in trenta secondi, non lo sai."),
-        ("Lo staff accetta tutti.", "Purché paghino. Poi vi lamentate: «Gli ospiti non capiscono cosa offriamo.»", "Se accetti tutti, non offri niente di specifico."),
-        ("Senza di te, l'hotel perde la voce.", "L'identità sta nella tua testa. Non nei documenti, non nello staff, non nel sito. Se ti fermi un mese, l'hotel torna generico.", "Per un gestore è un problema. Per un proprietario è un rischio patrimoniale."),
-        ("Ogni scelta è un dibattito.", "Nuovo ristorante: che concept? Nuova SPA: che filosofia? Nuova campagna: che messaggio? Ogni volta si riparte da zero.", "Chi ha un'identità non dibatte. Deduce."),
+        ("Il test del logo coperto.", "Coperto il logo, il testo della homepage vale per cento strutture: «Eleganza. Charme. Esperienza autentica.»", "È un vocabolario condiviso con i concorrenti, non un'identità."),
+        ("Recensioni ottime, ma intercambiabili.", "«Struttura meravigliosa. Personale impeccabile. Torneremo.» Le stesse parole compaiono nelle recensioni dei concorrenti. Manca quella che dice: «L'unico posto dove ho trovato X.»", "Se nessuno lo scrive, X non è ancora percepito."),
+        ("Il vantaggio estetico è temporaneo.", "Il restyling è recente. Una struttura vicina sta ristrutturando ora, spesso con lo stesso studio di architettura.", "Il vantaggio estetico scade. L'identità resta."),
+        ("«Boutique hotel» non distingue più.", "Vent'anni fa era una posizione. Oggi è una categoria, e affollata.", "Dire «boutique hotel» oggi equivale quasi a dire «hotel»."),
+        ("Si racconta la destinazione, non la struttura.", "Il sito parla della Sardegna, della Toscana, del lago.", "Così la comunicazione promuove anche tutti i concorrenti della zona."),
+        ("Il diretto non cresce.", "Sito nuovo, booking engine nuovo, campagne attive. Ma l'ospite cerca «boutique hotel + zona», non il vostro nome.", "E in quella ricerca la struttura è una tra molte."),
+        ("La risposta a «perché voi?».", "Alla domanda «Cosa vi distingue?» la risposta è «cura, qualità, attenzione».", "Se la risposta non sta in trenta secondi, non è ancora chiara."),
+        ("Nessun filtro sugli ospiti.", "Si accettano tutte le richieste. Poi si nota che gli ospiti non colgono cosa offre la struttura.", "Una proposta per tutti non è specifica per nessuno."),
+        ("L'identità dipende da una persona.", "Sta nella testa della proprietà o della direzione: non nei documenti, non nella squadra, non nel sito. Con un mese di assenza, la comunicazione torna generica.", "Per la gestione è un limite. Per la proprietà è un rischio patrimoniale."),
+        ("Ogni scelta riapre la discussione.", "Nuovo ristorante: quale concept? Nuova SPA: quale filosofia? Nuova campagna: quale messaggio? Ogni volta si riparte da zero.", "Con un'identità definita, le scelte discendono dal posizionamento."),
     ],
-    sig_tail="Non ti serve un altro restyling. Ti serve sapere chi sei. Il bello senza posizione è un costo che si ammortizza.",
-    br_h2="Bello è il sintomo. <em>Sostituibile è la malattia.</em>",
-    br_lead="Il rebranding decide come appari. Il posizionamento decide perché esisti.",
+    sig_tail="Non serve un altro restyling. Serve definire chi siete e per quale ospite. Un’estetica senza posizione si ammortizza; un’identità resta.",
+    br_h2="Curata ma sostituibile. <em>La causa è nel primo passaggio.</em>",
+    br_lead="Il rebranding decide come la struttura appare. Il posizionamento decide perché l'ospite la sceglie.",
     br_here=2,
-    br_rings=["Quello che sai di essere. Qui è vuoto.", "Quello che dici. Logo, foto, materiali: tutto giusto.", "Quello che incassi. Come gli altri belli."],
-    br_prose='''        <p>Logo, foto, sito, materiali: hai lavorato bene sul secondo anello. Ma il primo è vuoto.</p>
-        <p>Un rebranding senza posizionamento è un vestito su misura senza nessuno dentro.</p>
-        <p><strong>Il design si compra. Il motivo no: va trovato.</strong> E di solito è già scritto, nelle parole dei tuoi ospiti.</p>''',
-    br_quote="Il sito è la pelle. Le recensioni sono l'osso.",
+    br_rings=["Chi siete, e per quale ospite. Qui manca una risposta.", "Cosa dite all'ospite. Logo, fotografie, materiali: tutto curato.", "Cosa incassate. Come le altre strutture curate."],
+    br_prose='''        <p>Su logo, fotografie, sito e materiali avete lavorato bene: è il secondo passaggio. Ma il primo è rimasto senza risposta.</p>
+        <p>Un rebranding senza posizionamento dà forma a qualcosa che non è ancora stato definito.</p>
+        <p><strong>Il design si acquista. Il motivo va trovato.</strong> E di solito è già scritto, nelle parole dei vostri ospiti.</p>''',
+    br_quote="Le unicità di una struttura sono già scritte: nelle recensioni degli ospiti.",
     proof_k="Recensioni Booking",
     proof_big="<s>8,6</s> 9",
-    offer_lead="L'analisi parte da quello che gli ospiti scrivono di te, non da quello che pensi tu. Lì dentro c'è già il motivo.",
-    cand_lead="Sessanta secondi. Guardo la tua homepage, le tue recensioni e i tuoi concorrenti belli. Poi ti dico cosa ti rende diverso, se c'è.",
+    offer_lead="L'analisi parte da ciò che gli ospiti scrivono della struttura, non da ciò che ne pensa la proprietà. Il motivo, spesso, è già lì.",
+    cand_lead="Un minuto. Analizzo la vostra homepage, le recensioni e le strutture concorrenti, poi vi indico cosa vi distingue, se c'è già.",
     faq=[
-        ("Ho già fatto un rebranding. Non è la stessa cosa?", "No. Il rebranding decide come appari. Il posizionamento decide perché esisti. Il primo senza il secondo è un vestito su misura senza nessuno dentro."),
-        ("E se il mio hotel fosse già posizionato?", "Forse lo è. Il test è qui sopra: copri il logo. Se la homepage regge solo per te, sei posizionato. Se regge per altri cento, no. L'analisi te lo dice senza sconti."),
-        ("Funziona anche per un gruppo con più strutture?", "Sì, ed è dove rende di più: ogni struttura distinta dalle altre e dal mercato. Si parte comunque dall'analisi di una."),
-        ("Serve rifare il sito?", "Quasi mai da zero. Serve rifare quello che dice. Che costa meno e conta di più."),
+        ("Abbiamo già fatto un rebranding. Non è la stessa cosa?", "No. Il rebranding decide come la struttura appare. Il posizionamento decide perché l'ospite la sceglie. Il primo senza il secondo resta una forma senza contenuto."),
+        ("E se la struttura fosse già posizionata?", "È possibile. Il test è qui sopra: coprite il logo. Se la homepage vale solo per voi, la posizione c'è. Se vale per cento strutture, no. L'analisi lo verifica punto per punto."),
+        ("Funziona anche per un gruppo con più strutture?", "Sì, ed è dove rende di più: ogni struttura distinta dalle altre del gruppo e dal mercato. Si parte comunque dall'analisi di una."),
+        ("Serve rifare il sito?", "Quasi mai da zero. Serve rivedere ciò che dice: costa meno e conta di più."),
     ],
 )

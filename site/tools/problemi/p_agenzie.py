@@ -3,46 +3,46 @@ from p_sostituibili import WORDS_JS
 
 P = dict(
     slug="agenzie",
-    title="Agenzia marketing per hotel: perché cambiarla non basta",
-    og_title="Tre agenzie, stesso risultato. La statistica ha una sola spiegazione.",
-    desc="Hai cambiato tre agenzie marketing in cinque anni e i risultati sono gli stessi? Quando cambi tre volte l'esecutore e il risultato non cambia, il problema è nelle istruzioni. Fai il test del tuo brief.",
-    eyebrow="Sintomo 04 · Il valzer delle agenzie",
-    h1="Ho cambiato tre agenzie in cinque anni. I risultati sono gli stessi.",
-    pull='Tre agenzie, stesso risultato. <span class="hl or in">La statistica ha una sola spiegazione.</span>',
-    lead="E non è che sono tutte incapaci. Quando cambi tre volte l'esecutore e il risultato non cambia, il problema è nelle istruzioni.",
-    cta2="Fai il test del tuo brief ↓",
-    memo=memo("Storico fornitori", "5 anni",
-              [("Agenzia 1: prometteva, non portava.", "✕", "bad"),
-               ("Agenzia 2: «Ci vuole tempo.» Il tempo è passato.", "✕", "bad"),
-               ("Agenzia 3: post bellissimi, like dei parenti.", "✕", "bad")],
-              "Prenotazioni in più", "di nessuno",
-              "Tre squadre. Tre metodi. Stesso identico risultato."),
-    ag_h2="Tre cuochi sbagliano lo stesso piatto? <em>È la ricetta.</em>",
-    ag_lead="Un principio che vale in cucina, in sala e nel marketing. Un cuoco che sbaglia il piatto è incapace. Tre cuochi che sbagliano lo stesso piatto: la ricetta è sbagliata.",
-    ag_prose='''        <p>Nel marketing la ricetta si chiama brief. Cosa dice il tuo?</p>
+    title="Agenzie marketing per hotel: perché cambiarle non basta",
+    og_title="Agenzie diverse, risultati simili. La causa è nelle istruzioni.",
+    desc="Più agenzie in pochi anni e risultati simili? Quando cambia chi esegue e il risultato resta lo stesso, la causa è nelle istruzioni. Il test del vostro brief e dieci segnali da verificare.",
+    eyebrow="Segnale 04 · Comunicazione",
+    h1="Dare alle agenzie un brief chiaro.",
+    pull='Agenzie diverse, risultati simili. <span class="hl or in">Quando cambia chi esegue e il risultato no, la causa è nelle istruzioni.</span>',
+    lead="Non significa che le agenzie fossero tutte inadeguate. Significa che ognuna ha ricevuto lo stesso brief, e ha prodotto ciò che quel brief permetteva.",
+    cta2="Il test del brief ↓",
+    memo=memo("Fornitori di comunicazione", "5 anni",
+              [("Agenzia 1: obiettivi ambiziosi, risultati modesti.", "✕", "bad"),
+               ("Agenzia 2: «Serve tempo.» Il tempo è passato.", "✕", "bad"),
+               ("Agenzia 3: contenuti curati, poche prenotazioni.", "✕", "bad")],
+              "Prenotazioni in più", "invariate",
+              "Tre squadre, tre metodi. Lo stesso risultato."),
+    ag_h2="Se tre cuochi sbagliano lo stesso piatto, <em>va rivista la ricetta.</em>",
+    ag_lead="Un principio che vale in cucina, in sala e nel marketing. Un cuoco che sbaglia un piatto può essere poco preparato. Se lo sbagliano in tre, il problema è la ricetta.",
+    ag_prose='''        <p>Nel marketing la ricetta si chiama brief. Spesso dice così:</p>
         <p>«Fateci conoscere. Valorizzate la struttura. Puntiamo sulla qualità.»</p>
-        <p>Con queste istruzioni anche la migliore agenzia d'Italia produce la stessa cosa: charme, eleganza, esperienza autentica. Come per gli altri dodici hotel che ha in portafoglio.</p>
-        <p>Onestà: a volte il principio non vale. Ci sono agenzie davvero scarse. Le riconosci da una cosa: <strong>non ti fanno domande.</strong></p>
-        <p>Ma se le domande te le facevano e tu non avevi le risposte, il problema non era loro.</p>''',
+        <p>Con queste istruzioni anche un'ottima agenzia produce charme, eleganza, esperienza autentica. Le stesse parole che usa per le altre strutture che segue.</p>
+        <p>Per onestà: a volte l'agenzia è davvero inadeguata. Si riconosce da un segnale preciso: <strong>non fa domande.</strong></p>
+        <p>Se invece le domande arrivavano e mancavano le risposte, cambiare agenzia non basta.</p>''',
     tool='''      <div class="tool rv d1">
-        <div class="tool-head"><span>Il test del brief</span><em>Usa il tuo</em></div>
+        <div class="tool-head"><span>Il test del brief</span><em>Con il vostro brief</em></div>
         <div class="tool-body">
           <div class="tool-row">
-            <label for="aTxt">Scrivi cosa hai chiesto all'ultima agenzia</label>
+            <label for="aTxt">Scrivete cosa avete chiesto all'ultima agenzia</label>
             <textarea id="aTxt" spellcheck="false">Fateci conoscere. Valorizzate la struttura. Puntiamo sulla qualità e sull'esperienza autentica.</textarea>
           </div>
           <p class="brief-prev" id="aPrev" aria-hidden="true"></p>
           <div class="tool-row">
-            <span class="lab">Il tuo brief risponde a queste tre domande?</span>
-            <div class="bq" role="group" aria-labelledby="q1"><span id="q1">Per chi siamo, e per chi no?</span><div class="tgl"><button type="button" data-q="0" data-v="1" aria-pressed="false">Sì</button><button type="button" data-q="0" data-v="0" aria-pressed="false">No</button></div></div>
-            <div class="bq" role="group" aria-labelledby="q2"><span id="q2">Contro chi competiamo davvero, anche fuori dagli hotel?</span><div class="tgl"><button type="button" data-q="1" data-v="1" aria-pressed="false">Sì</button><button type="button" data-q="1" data-v="0" aria-pressed="false">No</button></div></div>
-            <div class="bq" role="group" aria-labelledby="q3"><span id="q3">Perché l'ospite sceglie noi, in una frase che si può verificare?</span><div class="tgl"><button type="button" data-q="2" data-v="1" aria-pressed="false">Sì</button><button type="button" data-q="2" data-v="0" aria-pressed="false">No</button></div></div>
+            <span class="lab">Il vostro brief risponde a queste tre domande?</span>
+            <div class="bq" role="group" aria-labelledby="q1"><span id="q1">Per quali ospiti siamo, e per quali no?</span><div class="tgl"><button type="button" data-q="0" data-v="1" aria-pressed="false">Sì</button><button type="button" data-q="0" data-v="0" aria-pressed="false">No</button></div></div>
+            <div class="bq" role="group" aria-labelledby="q2"><span id="q2">Con chi competiamo davvero, anche fuori dal settore alberghiero?</span><div class="tgl"><button type="button" data-q="1" data-v="1" aria-pressed="false">Sì</button><button type="button" data-q="1" data-v="0" aria-pressed="false">No</button></div></div>
+            <div class="bq" role="group" aria-labelledby="q3"><span id="q3">Perché l'ospite sceglie noi, in una frase verificabile?</span><div class="tgl"><button type="button" data-q="2" data-v="1" aria-pressed="false">Sì</button><button type="button" data-q="2" data-v="0" aria-pressed="false">No</button></div></div>
           </div>
         </div>
         <div class="tool-out" aria-live="polite">
           <span class="k">Esito</span>
-          <b class="tool-big" id="aOut">Brief da catalogo</b>
-          <p id="aSub">Con queste istruzioni, chiunque produce charme ed eleganza.</p>
+          <b class="tool-big" id="aOut">Brief generico</b>
+          <p id="aSub">Con queste istruzioni, qualsiasi agenzia produce charme ed eleganza.</p>
         </div>
       </div>''',
     css='''.brief-prev{font-size:16px;line-height:1.5;color:var(--ink-2);background:var(--white);border-radius:var(--r-sm);padding:14px 16px;overflow-wrap:anywhere}
@@ -60,11 +60,11 @@ P = dict(
   function upd(){
     var r=mark(ta.value.trim()); prev.innerHTML=r.html;
     var y=ans.filter(function(a){return a===1;}).length, done=ans.indexOf(null)===-1;
-    var w=r.n===1?'una parola che usano tutti':r.n+' parole che usano tutti';
-    var gen=r.n?' E ci sono <strong>'+w+'</strong>, evidenziate qui sopra.':'';
-    if(y===3 && r.n<=1){ out.textContent='Brief vero'; sub.innerHTML='Con queste istruzioni un’agenzia può lavorare. Se i risultati non arrivano lo stesso, forse è davvero l’agenzia.'; }
-    else if(y>0){ out.textContent='Brief a metà'; sub.innerHTML='Manca '+(3-y===1?'una risposta':(3-y)+' risposte')+'. Le agenzie riempiono i vuoti con charme ed eleganza.'+gen; }
-    else { out.textContent='Brief da catalogo'; sub.innerHTML=(done?'Nessuna delle tre risposte. ':'')+'Con queste istruzioni anche la migliore agenzia d’Italia produce charme, eleganza, esperienza autentica.'+gen; }
+    var w=r.n===1?'una parola di uso comune':r.n+' parole di uso comune';
+    var gen=r.n?' Il testo contiene <strong>'+w+'</strong>, evidenziate qui sopra.':'';
+    if(y===3 && r.n<=1){ out.textContent='Brief completo'; sub.innerHTML='Con queste istruzioni un’agenzia può lavorare bene. Se i risultati non arrivano comunque, la causa può essere davvero l’agenzia.'; }
+    else if(y>0){ out.textContent='Brief incompleto'; sub.innerHTML='Manca '+(3-y===1?'una risposta':(3-y)+' risposte')+'. Dove mancano risposte, le agenzie tendono a colmare il vuoto con charme ed eleganza.'+gen; }
+    else { out.textContent='Brief generico'; sub.innerHTML=(done?'Nessuna delle tre risposte. ':'')+'Con queste istruzioni anche un’ottima agenzia produce charme, eleganza, esperienza autentica.'+gen; }
   }
   bs.forEach(function(b){ b.addEventListener('click',function(){
     var q=+b.dataset.q; ans[q]=+b.dataset.v;
@@ -72,35 +72,35 @@ P = dict(
   }); });
   ta.addEventListener('input',upd); upd();
 })();''',
-    sig_h2="I dieci segnali che il problema <em>non è l'agenzia.</em>",
-    sig_lead="Spunta quelli in cui ti riconosci. Se sono tanti, la quarta agenzia non ti salverà.",
+    sig_h2="Dieci segnali che la causa <em>non è l'agenzia.</em>",
+    sig_lead="Selezionate quelli che riconoscete nella vostra struttura. Se sono molti, un'altra agenzia difficilmente cambierà il risultato.",
     signals=[
-        ("Il brief sta in tre righe.", "«Fateci conoscere. Valorizzate la struttura. Puntiamo sulla qualità.»", "Con queste istruzioni, chiunque produce la stessa cosa."),
-        ("Trenta secondi muti.", "L'agenzia chiede: «Cosa vi rende speciali?». Tu rispondi: «Cura. Qualità. Attenzione.» E loro scrivono esattamente quello.", "Se non sai dirlo in trenta secondi, non lo sai. E nemmeno loro."),
-        ("Nessuno ti ha fatto domande.", "L'agenzia è partita dal piano editoriale, non da chi sei. E a te è sembrato normale.", "Questa sì che è scarsa. Le altre, forse, aspettavano le tue risposte."),
-        ("Post bellissimi, like dei parenti.", "Il profilo è curato, il feed è ordinato. Le prenotazioni arrivano da altre parti.", "Prenotazioni di nessuno."),
-        ("Bruci soldi su Google.", "Duemila euro di annunci. Cinquanta clic. Due prenotazioni. Clicca chiunque, prenota solo chi sa.", "Pubblicità senza identità è autocombustione."),
-        ("«Ci vuole tempo.»", "Sei mesi di contratto. Poi altri sei. Il tempo è passato. Il risultato no.", "Il tempo non corregge un'istruzione sbagliata. La ripete."),
-        ("Ogni tre anni, tutto nuovo.", "Sito nuovo. Agenzia nuova. Campagna nuova. Ogni volta un sintomo in meno per qualche mese. Poi torna.", "Stai riparando l'ultimo pezzo della catena. Da anni."),
-        ("Il sito è un inventario.", "«Hotel 4 stelle. SPA. Ristorante. Relax.» Cambi il logo e funziona per altri cento.", "L'agenzia ha scritto quello che le hai dato."),
-        ("Tutti scrivono bene. Con l'AI.", "Descrizioni generate, post generati. Scrivono tutti meglio. Dicono tutti le stesse cose.", "Scrivere bene è il nuovo zero. Non differenzia: pareggia."),
-        ("Ogni campagna riparte da zero.", "Nuovo messaggio, nuova idea, nuovo tono. Ogni volta opinioni. Ogni volta un dibattito.", "Chi ha un'identità non dibatte. Deduce."),
+        ("Il brief sta in tre righe.", "«Fateci conoscere. Valorizzate la struttura. Puntiamo sulla qualità.»", "Con queste istruzioni, qualsiasi agenzia produce la stessa cosa."),
+        ("La risposta a «perché voi?».", "L'agenzia chiede: «Cosa vi distingue?». La risposta è «cura, qualità, attenzione», e l'agenzia scrive esattamente questo.", "Se la risposta non è chiara alla struttura, non può esserlo all'agenzia."),
+        ("Nessuna domanda iniziale.", "L'agenzia è partita dal piano editoriale, non dall'identità della struttura. E nessuno l'ha notato.", "Questo è un limite dell'agenzia. Le altre, forse, aspettavano risposte."),
+        ("Contenuti curati, poche prenotazioni.", "Il profilo è ordinato, i contenuti sono di qualità. Le prenotazioni arrivano da altri canali.", "La cura formale non sostituisce un messaggio."),
+        ("Campagne a basso rendimento.", "Duemila euro di annunci, cinquanta clic, due prenotazioni. Clicca chiunque; prenota chi ha capito cosa offrite.", "La pubblicità amplifica un messaggio. Se il messaggio è generico, amplifica quello."),
+        ("«Serve tempo.»", "Sei mesi di contratto, poi altri sei. Il tempo passa, il risultato resta.", "Il tempo non corregge un'istruzione imprecisa: la ripete."),
+        ("Ogni tre anni, tutto da capo.", "Sito nuovo, agenzia nuova, campagna nuova. Per qualche mese il segnale si attenua, poi ritorna.", "Si interviene sull'ultimo passaggio, da anni."),
+        ("Un sito che elenca servizi.", "«Hotel 4 stelle. SPA. Ristorante. Relax.» Con un altro logo varrebbe per cento strutture.", "L'agenzia ha scritto ciò che ha ricevuto."),
+        ("Testi ben scritti, ma uguali.", "Descrizioni e post generati con l'AI. Tutti scrivono meglio, tutti dicono le stesse cose.", "Scrivere bene oggi è il minimo. Non distingue: livella."),
+        ("Ogni campagna riparte da zero.", "Nuovo messaggio, nuova idea, nuovo tono. Ogni volta prevalgono le opinioni.", "Con un'identità definita, le scelte discendono dal posizionamento."),
     ],
-    sig_tail="Non ti serve la quarta agenzia. Ti servono istruzioni. Si chiamano posizionamento.",
-    br_h2="L'agenzia è il sintomo. <em>Il brief vuoto è la malattia.</em>",
-    br_lead="Le agenzie lavorano su promessa e prenotazione. Il primo anello tocca a te: nessuno può scriverlo al posto tuo senza partire da te.",
+    sig_tail="Non serve una quarta agenzia. Servono istruzioni chiare: si chiamano posizionamento.",
+    br_h2="Il risultato dell'agenzia è un segnale. <em>La causa è nel brief.</em>",
+    br_lead="Le agenzie lavorano su promessa e prenotazione. Il primo passaggio spetta alla struttura: nessuno può definirlo dall'esterno senza partire da voi.",
     br_here=2,
-    br_rings=["Quello che sai di essere. Il brief che manca.", "Quello che dici. Dove lavorano le agenzie.", "Quello che incassi. Uguale con tutte e tre."],
-    br_prose='''        <p>La buona notizia: le istruzioni si possono scrivere. Si chiamano posizionamento.</p>
-        <p>E la quarta agenzia, o la terza richiamata, con quelle in mano diventa improvvisamente brava.</p>
-        <p><strong>Non devi cambiare chi esegue. Devi dargli cosa eseguire.</strong></p>''',
-    br_quote="Quando cambi l'esecutore e il risultato non cambia, il problema è nelle istruzioni.",
-    offer_lead="L'analisi è il brief che le agenzie aspettano da anni. Puoi girarla alla tua il giorno dopo.",
-    cand_lead="Sessanta secondi. Guardo il tuo hotel come lo guarderebbe un'agenzia brava: con le domande che non ti hanno fatto.",
+    br_rings=["Chi siete, e per quale ospite. Il brief che manca.", "Cosa dite all'ospite. Dove lavorano le agenzie.", "Cosa incassate. Uguale con tutte e tre."],
+    br_prose='''        <p>Le istruzioni si possono scrivere. Si chiamano posizionamento.</p>
+        <p>Con quelle in mano, l'agenzia successiva, o una di quelle precedenti, lavora in modo diverso.</p>
+        <p><strong>Non serve cambiare chi esegue. Serve dargli cosa eseguire.</strong></p>''',
+    br_quote="Quando cambia chi esegue e il risultato resta lo stesso, la causa è nelle istruzioni.",
+    offer_lead="L'analisi è il brief di cui un'agenzia ha bisogno. Potete condividerla con la vostra il giorno dopo la consegna.",
+    cand_lead="Un minuto. Analizzo la struttura come farebbe un'agenzia attenta: con le domande che servono a scrivere il brief.",
     faq=[
-        ("Devo licenziare la mia agenzia?", "No. Devi darle finalmente delle istruzioni. Il posizionamento è il brief che le agenzie aspettano da anni. Molte, con quello in mano, diventano ottime."),
-        ("Come capisco se l'agenzia è scarsa davvero?", "Da una cosa: non ti fa domande. Se te le fa e tu non hai le risposte, cambiarla non serve. Serve trovare le risposte."),
-        ("Chi implementa? Tu o l'agenzia?", "La tua squadra o i tuoi fornitori, con una direzione, finalmente. Io ti do il posizionamento, i testi chiave e gli script. Loro eseguono."),
-        ("Serve rifare il sito?", "Quasi mai da zero. Serve rifare quello che dice. Che costa meno e conta di più."),
+        ("Dobbiamo cambiare agenzia?", "Non necessariamente. Serve darle istruzioni chiare. Il posizionamento è il brief di cui un'agenzia ha bisogno, e molte agenzie, con quello in mano, lavorano molto meglio."),
+        ("Come si capisce se l'agenzia è davvero inadeguata?", "Da un segnale: non fa domande. Se le fa e mancano le risposte, cambiarla non serve. Servono le risposte."),
+        ("Chi si occupa dell'attuazione?", "La vostra squadra o i vostri fornitori, con una direzione chiara. Io fornisco il posizionamento, i testi chiave e gli script; loro eseguono."),
+        ("Serve rifare il sito?", "Quasi mai da zero. Serve rivedere ciò che dice: costa meno e conta di più."),
     ],
 )
