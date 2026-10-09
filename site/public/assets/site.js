@@ -142,8 +142,8 @@
         if (bar) bar.style.width = '100%'; if (f.dataset.save) { try { localStorage.removeItem(f.dataset.save); } catch (e) {} } f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
         if (window.HPtrack) HPtrack('lead', { form: f.getAttribute('name') || f.id });
       };
-      // invio alla funzione del sito (Brevo + notifica): conferma solo se è arrivato davvero.
-      // In più, una copia su Netlify Forms come archivio (la funzione submission-created la salta).
+      // invio a Netlify Forms (archivio + notifica di Netlify) e alla funzione invio (Brevo + notifica).
+      // La funzione submission-created salta questi invii (campo inviato=funzione) per non duplicare.
       // non si controlla data-netlify: Netlify lo toglie dall'HTML pubblicato. Basta il campo form-name.
       if (f.querySelector('input[name="form-name"]') && /(^|\.)(hotelpositioning\.com|netlify\.app)$/.test(location.hostname)) {
         var pg = f.querySelector('input[name="pagina"]'); if (pg) pg.value = location.pathname;
@@ -151,10 +151,11 @@
         var fail = f.querySelector('.send-err');
         var body = new URLSearchParams(new FormData(f)); body.set('inviato', 'funzione'); body = body.toString();
         var post = function(url){ return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body }); };
-        post('/').catch(function(){});
-        post('/.netlify/functions/invio')
-          .then(function(r){ if (!r.ok) throw new Error(r.status); done(); })
-          .catch(function(){
+        // basta che la richiesta arrivi a uno dei due (Netlify Forms o la funzione Brevo) per confermare
+        var ok = function(r){ if (!r.ok) throw new Error(r.status); return true; };
+        Promise.allSettled([post('/').then(ok), post('/.netlify/functions/invio').then(ok)])
+          .then(function(res){
+            if (res.some(function(x){ return x.status === 'fulfilled'; })) { done(); return; }
             if (btn) btn.disabled = false;
             if (!fail) { fail = document.createElement('p'); fail.className = 'form-foot send-err'; fail.setAttribute('role', 'alert'); btn.insertAdjacentElement('afterend', fail); }
             fail.textContent = 'Invio non riuscito. Riprova tra un momento oppure scrivimi a consulting@francescoastolfi.net.';
