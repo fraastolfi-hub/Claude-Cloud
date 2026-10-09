@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Analisi di posizionamento hotel a €697, Hospitality Day · Hotel Positioning</title>
-<meta name="description" content="Perché dovrebbero scegliere te? Cinque documenti, trentanove pagine: il motivo per cui un cliente sceglie il tuo hotel e non quello accanto. €697 + IVA, posti limitati.">
+<title>Hospitality Day: lo smontaggio della tua homepage · Hotel Positioning</title>
+<meta name="description" content="Per chi era all'Hospitality Day: lo smontaggio gratuito della tua homepage, accanto ai concorrenti. Poi, se vuoi, l'analisi completa a €697 + IVA invece di €2.500. Fino al 31 ottobre 2026.">
 <link rel="canonical" href="https://hotelpositioning.com/hday/">
 <meta property="og:title" content="Perché dovrebbero scegliere te?">
-<meta property="og:description" content="L'analisi di posizionamento per chi era all'Hospitality Day: €697 + IVA invece di €2.500. Dieci posti, chiusura il 31 ottobre 2026.">
+<meta property="og:description" content="Lo smontaggio gratuito della tua homepage. Poi, se vuoi, l'analisi completa a €697 + IVA invece di €2.500. Dieci posti, fino al 31 ottobre 2026.">
 <meta property="og:type" content="website">
 <!-- @include head -->
 <!--
   DA AGGIORNARE A MANO
-  · Link di pagamento: https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00 (cerca "buy.stripe.com", compare in tutti i bottoni)
-  · Posti rimasti: cerca data-posti-rimasti
-  · Posti totali (10) e data di chiusura (31 ottobre 2026): nel testo in apertura e nella sezione «Perché €697»
+  · Posti a €697 rimasti: cerca data-posti-rimasti
+  · Scadenza (31 ottobre 2026): hero, sezione «Solo per chi era in sala»
+  · Il link Stripe a €697 (https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00) non è in pagina: va nella mail dello smontaggio
 -->
 <style>
 /* --- hero --- */
@@ -130,7 +130,12 @@
 .hd-offer .hd-compare{margin:0}
 .hd-offer .hd-big small{font:700 14px/1 var(--mono);text-transform:uppercase;letter-spacing:.04em;margin-left:8px;vertical-align:middle}
 .hd-offer > p{max-width:34ch;font-size:18px;line-height:1.45}
-.hd-hero .hd-seats{margin-top:28px}
+.hd-offer .hd-seats{margin-top:0;border-color:#fffdf6}
+.sec.dark .hd-offer{margin:6px 0 30px}
+.hd-hero .hd-cta{margin-top:30px}
+.sec.alt .hd-steps li{background:var(--carta)}
+.apply-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,4vw,56px);align-items:start}
+@media (max-width:900px){.apply-grid{grid-template-columns:minmax(0,1fr)}}
 .hd-steps em{font-style:normal;font-size:16px;line-height:1.4;color:var(--inchiostro-2)}
 .hd-alt{margin:26px auto 0;max-width:60ch;font:400 17px/1.5 var(--text)!important;text-transform:none!important;letter-spacing:0!important;color:#0a0a0a!important}
 .hd-alt a{text-decoration:underline;text-underline-offset:3px;font-weight:700}
@@ -156,7 +161,7 @@
 <header class="hd-top">
   <div class="wrap">
     <a href="/" class="logo" aria-label="Hotel Positioning"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
-    <a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn sm" rel="noopener">€697 + IVA <span class="arr">→</span></a>
+    <a href="#richiedi" class="btn sm">Richiedi lo smontaggio <span class="arr">→</span></a>
   </div>
 </header>
 
@@ -167,36 +172,44 @@
   <div class="wrap">
     <p class="hd-ticket">Hospitality Day · 13 ottobre 2026</p>
     <h1>Perché dovrebbero <em>scegliere te?</em></h1>
-    <p class="lead">In sala hai coperto il logo. Se la tua prima frase vale anche per l'hotel accanto, non hai un motivo: hai un requisito. E sul prezzo vince sempre quello più basso.</p>
-    <div class="hd-offer">
-      <div class="hd-compare" aria-label="Da 2.500 euro a 697 euro più IVA"><span class="hd-old">€2.500</span><span class="hd-big tom">€697<small>+ IVA</small></span></div>
-      <p>L'analisi di posizionamento completa, solo per chi era in sala. <strong>10 posti, fino al 31 ottobre 2026.</strong></p>
-    </div>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-    <div class="hd-seats"><b data-posti-rimasti>7</b><span>Posti<br>rimasti</span></div>
+    <p class="lead">In sala hai coperto il logo da solo. Adesso lo faccio io: metto la prima riga della tua homepage accanto a quella di due o tre concorrenti, e ti dico se l'ospite riesce a distinguerti.</p>
+    <div class="btn-row hd-cta"><a href="#richiedi" class="btn">Richiedi lo smontaggio gratuito <span class="arr">→</span></a></div>
+    <p class="micro hd-note"><b>Gratis, in 3 giorni lavorativi.</b> Per chi era in sala, fino al 31 ottobre 2026.</p>
   </div>
 </section>
 
 <!-- ================= COSA RICEVI ================= -->
-<section class="sec dark">
+<section class="sec alt">
   <div class="wrap">
     <div class="sec-head">
       <span class="num-tag">Cosa ricevi</span>
-      <h2>Cinque documenti. Trentanove pagine. <em>Fine.</em></h2>
-      <p class="lead">Non un abbonamento, non un percorso. Un lavoro che comincia e finisce.</p>
-    </div>
-    <div class="hd-docs">
-      <div class="card o"><h3>1 · Il motivo</h3><p class="x">Una frase. Perché ti scelgono e non l'altro, con sotto i fatti misurati che la reggono.</p></div>
-      <div class="card y"><h3>2 · Chi ci crede</h3><p class="x">L'ospite che a quel motivo tiene al punto di pagarlo. E quello che smetti di rincorrere.</p></div>
-      <div class="card b"><h3>3 · Le parole</h3><p class="x">Homepage, Booking, mail, telefono. Frasi pronte, non «linee guida».</p></div>
-      <div class="card cream"><h3>4 · Come vendere senza svendere</h3><p class="x">Le confezioni, i motivi per prenotare diretto, cosa smettere di regalare in bassa stagione.</p></div>
-      <div class="card y"><h3>5 · Cosa cambiare in casa</h3><p class="x">Le mosse di prodotto che rendono vero il motivo, prima che lo smentiscano le recensioni.</p></div>
+      <h2>Una pagina. <em>Tre risposte.</em></h2>
     </div>
     <ol class="hd-steps">
-      <li><b>1</b><span>Compri e compili il questionario</span><em>Quaranta minuti.</em></li>
-      <li><b>2</b><span>Leggo recensioni e concorrenti</span><em>Almeno 300 recensioni, le scarico e le leggo io.</em></li>
-      <li><b>3</b><span>Consegna e un'ora di chiamata</span><em>In 5 giorni dal questionario.</em></li>
+      <li><b>1</b><span>Il confronto</span><em>La tua prima riga accanto a quella dei concorrenti, con il logo coperto.</em></li>
+      <li><b>2</b><span>Il verdetto</span><em>Posizionato, sostituibile o invisibile. Con il perché.</em></li>
+      <li><b>3</b><span>L'indizio</span><em>Dove sta probabilmente il tuo motivo, nelle recensioni.</em></li>
     </ol>
+    <div class="hd-body"><p>Niente frasi pronte: una frase scritta senza leggere recensioni e concorrenti è un'altra frase da hotel. Quella è il lavoro dell'analisi.</p></div>
+  </div>
+</section>
+
+<!-- ================= IL VANTAGGIO ================= -->
+<section class="sec dark" id="prezzo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Solo per chi era in sala</span>
+      <h2>Dopo lo smontaggio, l'analisi completa <em>a €697 invece di €2.500.</em></h2>
+    </div>
+    <div class="hd-offer">
+      <div class="hd-compare" aria-label="Da 2.500 euro a 697 euro più IVA"><span class="hd-old">€2.500</span><span class="hd-big tom">€697<small>+ IVA</small></span></div>
+      <div class="hd-seats"><b data-posti-rimasti>10</b><span>Posti<br>a €697</span></div>
+    </div>
+    <div class="hd-body">
+      <p>Se il verdetto ti convince, l'analisi trova il motivo e lo scrive. Cinque documenti, 39 pagine, in 5 giorni dal questionario: il motivo in una frase, l'ospite che ci crede, le parole per homepage e Booking, come vendere senza svendere, cosa cambiare in casa.</p>
+      <p class="k">Vale per chi richiede lo smontaggio entro il 31 ottobre 2026. Dieci posti. Nessuna proroga.</p>
+      <p>Perché meno? Quest'inverno riscrivo il metodo e mi servono casi nuovi. Tu paghi meno, io imparo. Se non vuoi andare avanti, ti tieni la pagina: non ti chiamo.</p>
+    </div>
   </div>
 </section>
 
@@ -207,44 +220,24 @@
       <span class="num-tag">La garanzia</span>
       <h2>Inchiodo il tuo posizionamento, <em>o è gratis.</em></h2>
     </div>
-    <div class="hd-grid">
-      <div class="card"><p class="t">Se dai fatti non esce un motivo solo.</p><p class="x">Una frase, non tre concetti. Con i fatti che la reggono e almeno 300 recensioni dei tuoi concorrenti citate. Se non c'è, non la paghi.</p></div>
-      <div class="card"><p class="t">Se il motivo era già sulla tua home.</p><p class="x">Se quello che trovo stava già in prima riga sul tuo sito, te lo dico io per primo e ti restituisco tutto.</p></div>
+    <div class="hd-body">
+      <p>Se dai fatti non esce un motivo solo, o se il motivo era già scritto in prima riga sulla tua home, ti restituisco tutto. E se il problema non è il messaggio ma le camere o la colazione, te lo scrivo e ti restituisco i soldi.</p>
     </div>
-    <div class="hd-body"><p>E se il problema non è il messaggio ma la colazione, le camere o la reception, te lo scrivo e ti restituisco i soldi.</p></div>
     <p class="hd-terms">Quattordici giorni dalla consegna. Per iscritto.</p>
   </div>
 </section>
 
-<!-- ================= PERCHÉ 697 ================= -->
-<section class="sec yel" id="prezzo">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">Perché €697</span>
-      <h2>Non è uno sconto evento. <em>È uno scambio.</em></h2>
+<!-- ================= RICHIEDI ================= -->
+<section class="sec alt" id="richiedi">
+  <div class="wrap apply-grid">
+    <div>
+      <span class="num-tag">Smontaggio gratuito</span>
+      <h2 style="margin:16px 0 18px">La tua homepage, <em>accanto ai concorrenti.</em></h2>
+      <p class="lead">Bastano il sito e due o tre concorrenti. Lo ricevi per email in 3 giorni lavorativi, in ordine di arrivo.</p>
+      <p class="micro" style="margin-top:18px"><b>Per hotel e resort dalle 40 camere.</b> Nessuna telefonata: se vuoi andare avanti, mi ricontatti tu.</p>
     </div>
-    <div class="hd-body">
-      <p>Quest'inverno riscrivo il metodo e mi servono casi nuovi: hotel diversi, mercati diversi. Tu paghi meno, io imparo qualcosa che userò per anni.</p>
-      <p class="k">10 posti. Chiusi il 31 ottobre 2026. Nessuna proroga.</p>
-    </div>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-    <p class="hd-pay">Pagamento in un'unica soluzione · Fattura entro 12 giorni · Consegna 5 giorni dal questionario</p>
-  </div>
-</section>
-
-<!-- ================= DOMANDE ================= -->
-<section class="sec alt">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">Domande</span>
-      <h2>Quelle che mi fai <em>sottovoce.</em></h2>
-    </div>
-    <div class="faq">
-      <details><summary>Funziona anche per un hotel piccolo?</summary><div class="ans"><p>Sotto il milione di fatturato di solito no: il lavoro dopo costa, e senza margine resta un documento nel cassetto. Se sei vicino alla soglia, scrivimi prima di comprare.</p></div></details>
-      <details><summary>Chi lo mette in pratica?</summary><div class="ans"><p>Tu, o chi già lavora per te. L'analisi dice cosa fare e con quali parole. Se poi vuoi che lo segua io, se ne parla dopo, con un altro contratto.</p></div></details>
-      <details><summary>Devo rifare il sito?</summary><div class="ans"><p>Quasi mai. Nove volte su dieci il sito è fatto bene e dice la cosa sbagliata. Cambiano le frasi, non l'impianto.</p></div></details>
-      <details><summary>Quando non me la vendi?</summary><div class="ans"><p>Se il tuo prodotto è sotto la media del mercato, se ti servono prenotazioni entro venerdì, o se il diretto lo hai già alto e cerchi solo un canale in più. In quei casi ti dico di no.</p></div></details>
-      <details><summary>Come pago?</summary><div class="ans"><p>Carta o bonifico, in un'unica soluzione. Fattura entro dodici giorni.</p></div></details>
+    <div>
+<!-- @include form-smontaggio -->
     </div>
   </div>
 </section>
@@ -254,10 +247,9 @@
   <div class="wrap">
     <p>Ti hanno chiesto perché.</p>
     <p>Non hai saputo rispondere.</p>
-    <p>Adesso sai cosa manca.</p>
-    <div class="btn-row"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-    <p class="hd-alt">Non sei ancora sicuro? <a href="/smontaggio/">Comincia dallo smontaggio gratuito della tua homepage</a>: la tua prima riga accanto ai concorrenti, in 3 giorni lavorativi.</p>
-    <p class="micro hd-legal">Booking.com è marchio registrato di Booking Holdings Inc. Questo sito non è affiliato né partner di Booking.com. Le opinioni espresse sono analisi strategica indipendente di Francesco Astolfi.</p>
+    <p>Comincia da qui.</p>
+    <div class="btn-row"><a href="#richiedi" class="btn">Richiedi lo smontaggio gratuito <span class="arr">→</span></a></div>
+    <p class="micro hd-legal">Booking.com è marchio registrato di Booking Holdings Inc. Questo sito non è affiliato né partner di Booking.com.</p>
   </div>
 </section>
 
