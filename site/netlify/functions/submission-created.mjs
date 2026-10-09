@@ -16,7 +16,7 @@
 //                            da virgole tra STRUTTURA, SITO, CAMERE, CONCORRENTI, PROFILO, PUNTEGGIO,
 //                            FONTE, PAGINA, TIPOLOGIA, PREZZO, CANALI, UNICITA, oppure "1" per tutti
 
-import { FORMS, brevo, contact, notification } from '../lib/brevo.mjs';
+import { FORMS, brevo, saveContact, notification } from '../lib/brevo.mjs';
 
 export const handler = async (event) => {
   const { payload } = JSON.parse(event.body || '{}');
@@ -32,7 +32,7 @@ export const handler = async (event) => {
   }
 
   const jobs = [];
-  if (d.email) jobs.push(brevo('/contacts', contact(d, formName, form)));
+  if (d.email) jobs.push(saveContact(d, formName, form));
   if (process.env.NOTIFY_EMAIL && process.env.BREVO_SENDER_EMAIL) jobs.push(brevo('/smtp/email', notification(d, form)));
 
   const results = await Promise.allSettled(jobs);

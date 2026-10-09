@@ -8,7 +8,7 @@
 //   BREVO_API_KEY, NOTIFY_EMAIL, BREVO_SENDER_EMAIL   obbligatorie per la notifica
 //   BREVO_LIST_DEFAULT, BREVO_LIST_*, BREVO_ATTRIBUTES facoltative (vedi lib/brevo.mjs)
 
-import { FORMS, brevo, contact, notification } from '../lib/brevo.mjs';
+import { FORMS, brevo, saveContact, notification } from '../lib/brevo.mjs';
 
 const json = (statusCode, body) => ({ statusCode, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' }, body: JSON.stringify(body) });
 
@@ -22,6 +22,7 @@ export const handler = async (event) => {
   }
   if (event.httpMethod !== 'POST') return json(405, { ok: false });
 
+  console.log('invio ricevuto', event.httpMethod);
   const raw = event.isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString('utf8') : (event.body || '');
   const d = Object.fromEntries(new URLSearchParams(raw));
   if (d['bot-field']) return json(200, { ok: true }); // trappola per i bot: si finge l'invio
@@ -34,10 +35,11 @@ export const handler = async (event) => {
   }
 
   const [saved, mailed] = await Promise.allSettled([
-    brevo('/contacts', contact(d, d['form-name'], form)),
+    saveContact(d, d['form-name'], form),
     brevo('/smtp/email', notification(d, form)),
   ]);
   if (saved.status === 'rejected') console.error(saved.reason);
   if (mailed.status === 'rejected') { console.error(mailed.reason); return json(502, { ok: false, errore: 'notifica' }); }
+  console.log('notifica inviata', d['form-name'], 'contatto salvato:', saved.status === 'fulfilled');
   return json(200, { ok: true, contatto: saved.status === 'fulfilled' });
 };

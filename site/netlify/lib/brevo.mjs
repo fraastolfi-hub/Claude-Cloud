@@ -46,7 +46,8 @@ export async function brevo(path, body) {
 export function contact(d, formName, form) {
   const full = (d.nome || d.nome_ruolo || d.nome_referente || '').trim();
   const [first, ...rest] = full.split(/\s+/);
-  const attributes = { FIRSTNAME: first || '', LASTNAME: rest.join(' ') };
+  // su questo account Brevo nome e cognome si chiamano NOME e COGNOME (non FIRSTNAME/LASTNAME)
+  const attributes = { NOME: first || '', COGNOME: rest.join(' ') };
   const extra = {
     STRUTTURA: d.hotel || d.struttura || d.nome_localita || '', SITO: d.sito || d.url || d.sito_web || '', CAMERE: d.camere || d.numero_camere || '',
     CONCORRENTI: d.concorrenti || '', PROFILO: d.profilo || '', PUNTEGGIO: d.punteggio || '',
@@ -74,4 +75,16 @@ export function notification(d, form) {
     subject: `${form.label}: ${who}`,
     htmlContent: `<div style="font:15px/1.5 -apple-system,Helvetica,Arial,sans-serif;color:#1D1D1F"><p style="font-size:18px;font-weight:600;margin:0 0 14px">${esc(form.label)}</p><table style="border-collapse:collapse">${rows}</table></div>`,
   };
+}
+
+// Salva il contatto. Se Brevo rifiuta un attributo o la lista, riprova con meno dati:
+// meglio un contatto con la sola email che nessun contatto.
+export async function saveContact(d, formName, form) {
+  const full = contact(d, formName, form);
+  const tries = [full, { email: full.email, updateEnabled: true, attributes: { FONTE: form.label }, ...(full.listIds ? { listIds: full.listIds } : {}) }, { email: full.email, updateEnabled: true }];
+  let last;
+  for (const body of tries) {
+    try { return await brevo('/contacts', body); } catch (e) { last = e; console.error('contatto non salvato, riprovo con meno dati:', e.message); }
+  }
+  throw last;
 }
