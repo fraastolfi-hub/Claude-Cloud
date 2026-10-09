@@ -28,7 +28,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
   DA AGGIORNARE A MANO
   · Link di pagamento: https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00 (cerca "buy.stripe.com", compare in tutti i bottoni)
   · Posti rimasti: cerca data-posti-rimasti
-  · Posti totali (10) e data di chiusura (31 ottobre 2026): nel testo della sezione N°13
+  · Posti totali (10) e data di chiusura (31 ottobre 2026): nel testo in apertura e nella sezione «Perché €697»
 -->
 <style>
 /* --- hero --- */
@@ -134,10 +134,21 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 .hd-close .hd-body p:last-child{font:400 clamp(24px,3vw,38px)/1.05 var(--display);text-transform:uppercase;color:var(--giallo);margin-top:22px}
 .hd-band{background:var(--giallo);border-block:var(--bd);padding:clamp(56px,8vw,96px) 0;text-align:center}
 .hd-band p{font:400 clamp(26px,4.4vw,56px)/1.02 var(--display);text-transform:uppercase;letter-spacing:-.02em;color:#0a0a0a}
-.hd-band p:nth-child(2){background:#0a0a0a;color:var(--giallo);display:inline-block;padding:0 .14em;margin:.08em 0}
+.hd-band p:nth-child(2):not(.hd-alt){background:#0a0a0a;color:var(--giallo);display:inline-block;padding:0 .14em;margin:.08em 0}
 .hd-band .btn-row{justify-content:center;margin-top:34px}
 .hd-band .btn{--bg:#0a0a0a;--fg:var(--giallo)}
 .hd-legal{max-width:100ch;margin-top:14px}
+
+/* --- offerta in apertura --- */
+.hd-offer{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.hd-offer .hd-compare{margin:0}
+.hd-offer .hd-big small{font:700 14px/1 var(--mono);text-transform:uppercase;letter-spacing:.04em;margin-left:8px;vertical-align:middle}
+.hd-offer > p{max-width:34ch;font-size:18px;line-height:1.45}
+.hd-hero .hd-seats{margin-top:28px}
+.hd-steps em{font-style:normal;font-size:16px;line-height:1.4;color:var(--inchiostro-2)}
+.hd-alt{margin:26px auto 0;max-width:60ch;font:400 17px/1.5 var(--text)!important;text-transform:none!important;letter-spacing:0!important;color:#0a0a0a!important}
+.hd-alt a{text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.hd-band .hd-legal{margin:22px auto 0;max-width:90ch;font:400 12px/1.6 var(--mono)!important;text-transform:none!important;letter-spacing:.02em!important;color:#3d3b36!important}
 
 /* --- testata minima --- */
 .hd-top{border-bottom:var(--bd);background:var(--carta)}
@@ -160,7 +171,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 <header class="hd-top">
   <div class="wrap">
     <a href="/" class="logo" aria-label="Hotel Positioning"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
-    <a href="#prezzo" class="btn sm">€697 + IVA <span class="arr">→</span></a>
+    <a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn sm" rel="noopener">€697 + IVA <span class="arr">→</span></a>
   </div>
 </header>
 
@@ -171,397 +182,97 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
   <div class="wrap">
     <p class="hd-ticket">Hospitality Day · 13 ottobre 2026</p>
     <h1>Perché dovrebbero <em>scegliere te?</em></h1>
-    <p class="lead">Rispondi adesso. A voce alta. Come se te lo chiedesse un cliente al telefono, e non potessi rimandare.</p>
-    <div class="hd-rules">
-      <div class="card"><p class="t">Se ti serve più di una frase, non è un motivo.</p><p class="x">È un elenco.</p></div>
-      <div class="card"><p class="t">Se potrebbe dirla anche l'hotel qui accanto, non è un motivo.</p><p class="x">È un requisito.</p></div>
+    <p class="lead">In sala hai coperto il logo. Se la tua prima frase vale anche per l'hotel accanto, non hai un motivo: hai un requisito. E sul prezzo vince sempre quello più basso.</p>
+    <div class="hd-offer">
+      <div class="hd-compare" aria-label="Da 2.500 euro a 697 euro più IVA"><span class="hd-old">€2.500</span><span class="hd-big tom">€697<small>+ IVA</small></span></div>
+      <p>L'analisi di posizionamento completa, solo per chi era in sala. <strong>10 posti, fino al 31 ottobre 2026.</strong></p>
     </div>
-    <div class="hd-black"><p>Senza un motivo, l'unica cosa che ti distingue è il prezzo. E sul prezzo vince sempre quello più basso.</p></div>
     <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-    <p class="micro hd-note">Non eri in sala? La domanda funziona lo stesso.</p>
+    <div class="hd-seats"><b data-posti-rimasti>7</b><span>Posti<br>rimasti</span></div>
   </div>
 </section>
 
-<!-- ================= N°01 LA GARA ================= -->
-<section class="sec alt">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°01</span>
-      <h2>Sul prezzo vince sempre <em>quello più basso.</em></h2>
-    </div>
-    <div class="hd-body">
-      <p class="k">Non è una gara che puoi vincere. Puoi solo perderla, o vincerla male.</p>
-      <p>La perdi: prenota dall'altro. La vinci: prenota da te, e ci hai rimesso trenta euro a notte per il gusto di essere scelto.</p>
-      <p>Quello più basso c'è sempre. Ha il mutuo finito, o venti camere in meno da riempire, o il figlio che lavora gratis. Non lo batti.</p>
-      <p class="k">Puoi solo smettere di correre sulla sua pista.</p>
-    </div>
-    <div class="hd-div" aria-hidden="true"></div>
-    <div class="hd-body">
-      <p>E poi c'è la parte che nessuno ti dice.</p>
-      <p>Chi ti sceglie per il prezzo, ti lascia per il prezzo. L'anno dopo trova dieci euro meno da un'altra parte e sparisce.</p>
-      <p>Non ha fatto niente di male. Gli avevi dato un solo motivo, e quel motivo l'ha trovato altrove.</p>
-      <p class="k">Il cliente che arriva per lo sconto non torna mai per la colazione.</p>
-    </div>
-    <div class="hd-div" aria-hidden="true"></div>
-    <div class="hd-body">
-      <p>Un motivo non serve a farti amare. Serve a spostare la domanda che il cliente si fa.</p>
-      <p class="k">Da «quanto costa?» a «è quello giusto per me?»</p>
-      <p>Sono due domande diverse. La prima la vinci al ribasso. La seconda non la vince nessun altro al posto tuo.</p>
-    </div>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-  </div>
-</section>
-
-<!-- ================= N°02 IL CONTO ================= -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°02</span>
-      <h2>La catena è corta. <em>E finisce sempre uguale.</em></h2>
-    </div>
-    <div class="hd-body">
-      <p>Il cliente apre Booking. Vede otto hotel nella tua zona. Le foto si somigliano. Le descrizioni si somigliano. I voti stanno tutti tra 8,4 e 9,1.</p>
-      <p>A quel punto cosa gli resta da guardare?</p>
-      <p class="k">Una cosa sola. Quella che cambia.</p>
-      <p>Non sceglie il più economico perché è tirchio. Sceglie il più economico perché tu non gli hai dato niente da confrontare.</p>
-    </div>
-    <div class="hd-div" aria-hidden="true"></div>
-    <div class="hd-body">
-      <p>E qui entra Booking.</p>
-      <p class="k">Senza un motivo, Booking non è un fornitore. È il tuo reparto commerciale.</p>
-      <p>Ti porta il cliente perché tu non sai portartelo da solo. E ti fattura il 18% per averlo fatto.</p>
-      <p>Non è un sopruso. È un affitto. <strong>Ogni notte paghi l'affitto di un motivo che non hai.</strong></p>
-      <p>E quando provi a disdire (sito nuovo, campagne, sconto sul diretto) scopri che il cliente non ha nessuna ragione per prenotare da te invece che da loro. Perché la ragione non era mai stata scritta da nessuna parte.</p>
-    </div>
-    <div class="hd-div" aria-hidden="true"></div>
-    <div class="hd-body">
-      <p class="k">Quanto ti costa non avere un motivo.</p>
-      <p>Non si vede, e per questo fa più male delle camere vuote. Le camere vuote le noti. Le camere vendute trenta euro sotto no: sono piene, il gestionale è verde, tu sei contento.</p>
-      <p>È come la perdita sotto il pavimento. Non vedi l'acqua. Vedi solo la bolletta, e pensi che sia il prezzo della vita.</p>
-    </div>
-    <div class="hd-calc">
-      <div><span>La differenza che non riesci a chiedere</span><b>30 €</b></div>
-      <div><span>Le tue camere</span><b>× 40</b></div>
-      <div><span>Le notti che vendi in un anno</span><b>× 180</b></div>
-    </div>
-    <div class="hd-total"><span class="hd-big">216.000 €</span><small>All'anno. Da anni.</small></div>
-    <p class="micro">Cambia i numeri con i tuoi. Il risultato non migliora.</p>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-  </div>
-</section>
-
-<!-- ================= N°03 IL TEST DEL LOGO ================= -->
+<!-- ================= COSA RICEVI ================= -->
 <section class="sec dark">
   <div class="wrap">
     <div class="sec-head">
-      <span class="num-tag">N°03</span>
-      <h2>Copri il logo. <em>Se resta in piedi, non ti servo.</em></h2>
-    </div>
-    <div class="hd-body"><p>In sala l'hai fatto in dieci secondi. Rifallo con calma, adesso.</p></div>
-    <ol class="hd-steps">
-      <li><b>1</b><span>Apri la tua homepage.</span></li>
-      <li><b>2</b><span>Copri il logo con il pollice.</span></li>
-      <li><b>3</b><span>Leggi la prima frase.</span></li>
-    </ol>
-    <div class="hd-body">
-      <p class="k">Potrebbe stare sul sito dell'hotel qui accanto?</p>
-      <p>Se no, il motivo ce l'hai. Chiudi la pagina, e buon lavoro davvero. Se sì, hai una vetrina. E le vetrine si confrontano solo sul prezzo.</p>
-    </div>
-    <div class="hd-div" aria-hidden="true"></div>
-    <div class="hd-body">
-      <p>Ho fatto il test su <span class="hl">120</span> homepage di hotel italiani. Prese dai portfolio pubblici delle agenzie che le hanno fatte. Ne ho riconosciute <span class="hl">101</span>.</p>
-      <p class="k">Non le peggiori del mercato. Quelle che qualcuno mostra come lavoro riuscito.</p>
-    </div>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-  </div>
-</section>
-
-<!-- ================= N°04 PERCHÉ NESSUNO TE L'HA DETTO ================= -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°04</span>
-      <h2>Non è cattiveria. <em>È aritmetica.</em></h2>
-    </div>
-    <div class="hd-body"><p>Contali, quelli che ti hanno fatto un'analisi gratis.</p></div>
-    <div class="hd-grid">
-      <div class="card y"><p class="t">L'agenzia web ha guardato il tuo sito.</p><p class="x">Diagnosi: serve un sito nuovo.</p></div>
-      <div class="card b"><p class="t">Il performance ha guardato il traffico.</p><p class="x">Diagnosi: serve più traffico.</p></div>
-      <div class="card o"><p class="t">Il revenue ha guardato le tariffe.</p><p class="x">Diagnosi: serve gestire le tariffe.</p></div>
-      <div class="card"><p class="t">Il fotografo ha guardato le foto.</p><p class="x">Indovina.</p></div>
-    </div>
-    <div class="hd-body"><p>Nessuno ha mentito. Ognuno ha guardato dalla finestra che vende.</p></div>
-    <div class="hd-black"><p>In Italia non esiste un fornitore pagato per dirti di non comprare niente.</p></div>
-    <div class="hd-body">
-      <p>Chi guadagna sull'esecuzione ha un solo esito possibile della diagnosi. Non perché è disonesto. Perché deve mangiare.</p>
-    </div>
-    <div class="hd-div" aria-hidden="true"></div>
-    <div class="hd-body">
-      <p class="k">L'analisi gratuita non è gratuita. È la prima pagina del preventivo.</p>
-      <p>Io te la faccio pagare, e finisce lì. Nessun canone. Nessun contratto dopo. Niente da venderti il mese prossimo.</p>
-      <p>Se ti dicessi di non spendere un euro, il mio fatturato non cambierebbe di un centesimo. È l'unica ragione per cui puoi credermi.</p>
-    </div>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-  </div>
-</section>
-
-<!-- ================= N°05 IL MOTIVO NON SI INVENTA ================= -->
-<section class="sec alt">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°05</span>
-      <h2>Ce l'hai già. <em>Non l'hai ancora letto.</em></h2>
-    </div>
-    <div class="hd-body">
-      <p>Tutti ti chiedono di essere creativo. Raccontati. Emoziona. Trova la tua storia.</p>
-      <p>Poi torni in ufficio, fissi il foglio bianco, squilla il telefono. Il foglio è bianco anche a marzo.</p>
-      <p class="k">Il motivo per cui ti scelgono non è un'idea che ti viene. È un fatto che c'è già e che nessuno ha ancora guardato.</p>
-      <p>Sta in due posti.</p>
-    </div>
-    <div class="hd-grid">
-      <div class="card"><h3>Nelle tue recensioni</h3><p class="x">Quello che i tuoi ospiti raccontano davvero quando tornano a casa. Non quello che scrivi tu sul sito: quello che ricordano loro. Tra le due cose c'è quasi sempre una distanza, ed è lì che stanno i soldi.</p></div>
-      <div class="card y"><h3>Nelle recensioni negative dei tuoi concorrenti</h3><p class="x">Lì c'è la parte buona. Ogni lamentela è un bisogno che nel tuo mercato nessuno serve. È il buco in cui puoi metterti tu.</p></div>
-    </div>
-    <div class="hd-body">
-      <p>Su un caso solo ho scaricato <span class="hl">3.583 recensioni</span>. Due settimane di lettura. Non lo fa nessuno perché è noioso.</p>
-      <p class="k">È noioso e funziona. Le due cose vanno spesso insieme.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= N°06 L'AI ================= -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°06 · Il filtro nuovo</span>
-      <h2>L'AI non guarda quanto sei bello. <em>Cerca qualcosa da citare.</em></h2>
-    </div>
-    <div class="hd-body">
-      <p>Sempre più gente non apre più Booking. Apre ChatGPT e scrive: dove dormo a [tua città] con mia moglie, tre notti, che valga la pena.</p>
-      <p class="k">La macchina risponde con tre nomi. Non con trenta.</p>
-    </div>
-    <div class="card o hd-solo"><p class="big">Prova adesso. Con la tua zona. Poi cercati nella risposta.</p></div>
-    <div class="hd-body">
-      <p>Come sceglie quei tre?</p>
-      <p>Non guarda il tuo sito, non guarda le foto, non guarda quanto hai speso in pubblicità. Cerca una cosa stabile che si ripeta uguale ovunque: sito, recensioni, articoli, elenchi.</p>
-      <p>Se ovunque dici «posizione ideale» e «cordialità familiare», non ha niente da citare. Quindi cita un altro.</p>
-      <p>Non è un problema tecnico. Non si risolve con un plugin.</p>
-      <p class="k">Non c'è niente da dire su di te. Quello è il problema.</p>
-    </div>
-    <div class="hd-black"><p>Booking ti metteva in una lista lunga. La macchina fa una lista da tre. Prima potevi essere generico e stare dentro lo stesso. Adesso no.</p></div>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-  </div>
-</section>
-
-<!-- ================= N°07 COSA TI ARRIVA ================= -->
-<section class="sec dark">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°07</span>
+      <span class="num-tag">Cosa ricevi</span>
       <h2>Cinque documenti. Trentanove pagine. <em>Fine.</em></h2>
-    </div>
-    <div class="hd-body">
-      <p>Non un abbonamento. Non un percorso. Non una call al mese.</p>
-      <p class="k">Un lavoro che comincia e finisce.</p>
+      <p class="lead">Non un abbonamento, non un percorso. Un lavoro che comincia e finisce.</p>
     </div>
     <div class="hd-docs">
-      <div class="card o"><h3>1 · Il motivo</h3><p class="x">Una frase. Perché ti scelgono e non l'altro. Con sotto i fatti misurati che la reggono, uno per uno.</p></div>
-      <div class="card y"><h3>2 · Chi ci crede</h3><p class="x">L'ospite che a quel motivo tiene al punto di pagarlo. E quello che smetti di rincorrere, scritto nero su bianco.</p></div>
+      <div class="card o"><h3>1 · Il motivo</h3><p class="x">Una frase. Perché ti scelgono e non l'altro, con sotto i fatti misurati che la reggono.</p></div>
+      <div class="card y"><h3>2 · Chi ci crede</h3><p class="x">L'ospite che a quel motivo tiene al punto di pagarlo. E quello che smetti di rincorrere.</p></div>
       <div class="card b"><h3>3 · Le parole</h3><p class="x">Homepage, Booking, mail, telefono. Frasi pronte, non «linee guida».</p></div>
       <div class="card cream"><h3>4 · Come vendere senza svendere</h3><p class="x">Le confezioni, i motivi per prenotare diretto, cosa smettere di regalare in bassa stagione.</p></div>
-      <div class="card y"><h3>5 · Cosa cambiare in casa</h3><p class="x">Le mosse di prodotto che rendono vero il motivo. Perché una promessa non mantenuta si legge nelle recensioni, e lì si paga il doppio.</p></div>
+      <div class="card y"><h3>5 · Cosa cambiare in casa</h3><p class="x">Le mosse di prodotto che rendono vero il motivo, prima che lo smentiscano le recensioni.</p></div>
     </div>
-    <div class="hd-body"><p>Ogni riga porta un'etichetta: misurato, dedotto, da confermare.</p></div>
-    <div class="hd-labels">
-      <div><b>Misurato</b><span>L'ho contato, e trovi il dato.</span></div>
-      <div><b>Dedotto</b><span>Lo ricavo, e ti dico da cosa.</span></div>
-      <div><b>Da confermare</b><span>Serve la tua risposta.</span></div>
-    </div>
-    <div class="hd-body"><p class="k">Nessun fornitore ti dice mai quanto è sicuro di quello che afferma. Io te lo dico riga per riga.</p></div>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
+    <ol class="hd-steps">
+      <li><b>1</b><span>Compri e compili il questionario</span><em>Quaranta minuti.</em></li>
+      <li><b>2</b><span>Leggo recensioni e concorrenti</span><em>Almeno 300 recensioni, le scarico e le leggo io.</em></li>
+      <li><b>3</b><span>Consegna e un'ora di chiamata</span><em>In 5 giorni dal questionario.</em></li>
+    </ol>
   </div>
 </section>
 
-<!-- ================= N°08 SILVA SPLENDID ================= -->
+<!-- ================= GARANZIA ================= -->
 <section class="sec">
   <div class="wrap">
     <div class="sec-head">
-      <span class="num-tag">N°08 · Il caso</span>
-      <h2>Da 3,5 a 7 milioni. <em>Non con più pubblicità.</em></h2>
-    </div>
-    <div class="hd-body">
-      <p>Un hotel a Fiuggi. Prima: hotel a Fiuggi. Come gli altri hotel a Fiuggi.</p>
-      <p>Poi un motivo solo, tenuto fermo per cinque anni:</p>
-    </div>
-    <div class="card y hd-solo"><p class="big">«L'hotel del benessere di Fiuggi, con la spa più grande del Lazio.»</p></div>
-    <div class="hd-body"><p>Cinque anni dopo: da circa 3,5 a circa 7 milioni di fatturato.</p></div>
-    <div class="hd-compare" aria-label="Fatturato da circa 3,5 a circa 7 milioni">
-      <span class="hd-big ink">3,5</span><span class="hd-arrow" aria-hidden="true">→</span><span class="hd-big">7</span>
-    </div>
-    <div class="hd-div" aria-hidden="true"></div>
-    <div class="hd-body">
-      <p class="k">Il disclaimer, prima che me lo chiedi.</p>
-      <p>In quegli anni hanno anche ristrutturato. Hanno investito. Hanno lavorato. Il motivo da solo non fa il fatturato, e chi ti dice il contrario ti sta vendendo qualcosa.</p>
-      <p>Ma senza un motivo per pagare di più, la ristrutturazione la paghi tu e basta.</p>
-      <p class="k">Puoi spendere 400.000 euro in camere nuove. Se prima non hai deciso perché dovrebbero scegliere te, hai comprato mobili.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= N°09 MALOURA ================= -->
-<section class="sec alt">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°09</span>
-      <h2>Forse il motivo ce l'hai già <em>e lo tieni nascosto.</em></h2>
-    </div>
-    <div class="hd-body">
-      <p>Nel 2022 una struttura smette di far entrare chi non ha prenotato. Non era marketing. Era che il personale non ce la faceva più.</p>
-      <p>Poi guardo i numeri.</p>
-    </div>
-    <div class="hd-compare">
-      <figure><span class="hd-big ink">4,13</span><figcaption>Google prima</figcaption></figure>
-      <span class="hd-arrow" aria-hidden="true">→</span>
-      <figure><span class="hd-big">4,92</span><figcaption>Google dopo</figcaption></figure>
-    </div>
-    <div class="hd-body">
-      <p>Le 68 recensioni sotto le tre stelle: tutte precedenti. Dal 2023, zero.</p>
-      <p>Quella regola stava in fondo alla pagina contatti. In grigio. Sotto gli orari.</p>
-    </div>
-    <div class="hd-black"><p>Avevano già preso la decisione più importante della loro storia. E la tenevano nascosta come se fosse un difetto.</p></div>
-    <div class="hd-body"><p>A volte il lavoro non è trovarti qualcosa di nuovo. È accorgersi di quello che hai già fatto e portarlo in prima riga.</p></div>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-  </div>
-</section>
-
-<!-- ================= N°10 CHI SONO ================= -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°10</span>
-      <h2>Ho fatto gli errori <em>prima di vendere i consigli.</em></h2>
-    </div>
-    <div class="hd-body">
-      <p>Vent'anni dentro gli hotel, non accanto. TUI. Atahotels. Poi un ristorante aperto da me, portato a 2,5 milioni e venduto.</p>
-      <p>Ho perso soldi miei. Ho chiuso cose che avevo aperto io. Ho fatto turni di notte in reception, non slide sulla reception.</p>
-      <p class="k">Chi non ha mai rischiato niente ti vende consigli. Chi ha rischiato ti vende cicatrici.</p>
-      <p>Costano uguale. Servono in modo molto diverso.</p>
-    </div>
-    <div class="hd-sign"><b>Francesco Astolfi</b><span>Una persona sola. Nessun team, nessun account, nessun canone.</span></div>
-  </div>
-</section>
-
-<!-- ================= N°11 LA GARANZIA ================= -->
-<section class="sec dark">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°11</span>
+      <span class="num-tag">La garanzia</span>
       <h2>Inchiodo il tuo posizionamento, <em>o è gratis.</em></h2>
     </div>
-    <div class="hd-body">
-      <p>Non ti garantisco le prenotazioni. Chi te le garantisce non ha mai gestito un hotel a novembre.</p>
-      <p class="k">Ti garantisco il lavoro. Su due cose che si contano.</p>
-    </div>
     <div class="hd-grid">
-      <div class="card cream"><p class="t">Uno · Se dai fatti non esce un motivo solo.</p><p class="x">Una frase. Non tre concetti, non un moodboard, non «le tue quattro anime». Una frase, con sotto i fatti misurati che la reggono e almeno 300 recensioni dei tuoi concorrenti scaricate e citate parola per parola. Apri il documento. Se quella frase non c'è, non la paghi.</p></div>
-      <div class="card cream"><p class="t">Due · Se il motivo che ti do era già scritto sulla tua home.</p><p class="x">Se quello che trovo stava già in prima riga sul tuo sito, te lo dico io per primo e ti restituisco tutto. Non ti vendo una cosa che avevi già.</p></div>
+      <div class="card"><p class="t">Se dai fatti non esce un motivo solo.</p><p class="x">Una frase, non tre concetti. Con i fatti che la reggono e almeno 300 recensioni dei tuoi concorrenti citate. Se non c'è, non la paghi.</p></div>
+      <div class="card"><p class="t">Se il motivo era già sulla tua home.</p><p class="x">Se quello che trovo stava già in prima riga sul tuo sito, te lo dico io per primo e ti restituisco tutto.</p></div>
     </div>
-    <div class="hd-body">
-      <p class="k">E se il tuo problema non è il messaggio, te lo scrivo e chiudiamo lì.</p>
-      <p>Succede. A volte il problema è la colazione, o le camere, o chi sta in reception ad agosto. In quel caso te lo dico, ti restituisco i soldi, e ti risparmio i tremila euro di campagne che stavi per fare.</p>
-      <p>Un'agenzia quel verdetto non te lo dà mai. Per loro è una vendita persa. Per me è il lavoro.</p>
-    </div>
-    <p class="hd-terms">Quattordici giorni dalla consegna. Per iscritto. Basta dirmi quale delle due condizioni è saltata.</p>
-    <div class="hd-body">
-      <p>Il resto del mercato l'analisi te la regala. E non ci mette nessuna garanzia sopra, perché su una cosa gratis non c'è niente da garantire.</p>
-      <p class="k">Si può garantire solo quello che ha un prezzo.</p>
-    </div>
-    <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
+    <div class="hd-body"><p>E se il problema non è il messaggio ma la colazione, le camere o la reception, te lo scrivo e ti restituisco i soldi.</p></div>
+    <p class="hd-terms">Quattordici giorni dalla consegna. Per iscritto.</p>
   </div>
 </section>
 
-<!-- ================= N°12 NON COMPRARE SE ================= -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num-tag">N°12</span>
-      <h2>Tre casi in cui <em>ti dico di no.</em></h2>
-    </div>
-    <ul class="hd-no">
-      <li><div><h3>Se il tuo prodotto è sotto la media del tuo mercato.</h3><p>Il motivo non aggiusta niente: fa arrivare più gente a vedere il problema, più in fretta. Prima si sistema la casa. Poi si parla.</p></div></li>
-      <li><div><h3>Se ti servono prenotazioni entro venerdì.</h3><p>Questo si vede in una stagione, non in una settimana. Per venerdì c'è Booking, e funziona benissimo. Costa solo il 18%.</p></div></li>
-      <li><div><h3>Se il diretto lo hai già alto e cerchi solo un canale in più.</h3><p>Non ti serve una diagnosi. Ti serve un tecnico, e io non lo sono.</p></div></li>
-    </ul>
-    <p class="micro" style="margin-top:20px">E se sei una catena, sai già di non essere nella stanza giusta.</p>
-  </div>
-</section>
-
-<!-- ================= N°13 PREZZO E POSTI ================= -->
+<!-- ================= PERCHÉ 697 ================= -->
 <section class="sec yel" id="prezzo">
   <div class="wrap">
     <div class="sec-head">
-      <span class="num-tag">N°13</span>
-      <h2>€697 invece di €2.500. <em>E ti dico perché.</em></h2>
+      <span class="num-tag">Perché €697</span>
+      <h2>Non è uno sconto evento. <em>È uno scambio.</em></h2>
     </div>
     <div class="hd-body">
-      <p>Sul sito l'analisi costa 2.500 euro, ed è il suo prezzo. Per chi era in sala il 13 ottobre costa 697 + IVA.</p>
+      <p>Quest'inverno riscrivo il metodo e mi servono casi nuovi: hotel diversi, mercati diversi. Tu paghi meno, io imparo qualcosa che userò per anni.</p>
+      <p class="k">10 posti. Chiusi il 31 ottobre 2026. Nessuna proroga.</p>
     </div>
-    <div class="hd-compare" aria-label="Da 2.500 euro a 697 euro">
-      <span class="hd-old">2.500</span><span class="hd-big tom">€697</span>
-    </div>
-    <div class="hd-body">
-      <p class="k">Non è uno sconto evento.</p>
-      <p>Quest'inverno riscrivo il metodo. Per riscriverlo mi servono casi nuovi, hotel diversi, mercati diversi. 10 analisi a prezzo ridotto sono il modo più onesto che ho per procurarmeli.</p>
-      <p>Tu paghi meno. Io imparo qualcosa che rivendo per anni.</p>
-      <p>Nessuno dei due sta facendo beneficenza. Ed è per questo che regge.</p>
-    </div>
-    <div class="hd-div" aria-hidden="true"></div>
-    <div class="hd-body">
-      <p class="k">10 posti. Chiusi il 31 ottobre 2026.</p>
-      <p>Quando finiscono, finiscono. Nessuna ultima chiamata. Nessuna proroga.</p>
-    </div>
-    <div class="hd-seats"><b data-posti-rimasti>7</b><span>Posti<br>rimasti</span></div>
     <div class="btn-row hd-cta"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
     <p class="hd-pay">Pagamento in un'unica soluzione · Fattura entro 12 giorni · Consegna 5 giorni dal questionario</p>
   </div>
 </section>
 
-<!-- ================= N°14 DOMANDE ================= -->
+<!-- ================= DOMANDE ================= -->
 <section class="sec alt">
   <div class="wrap">
     <div class="sec-head">
-      <span class="num-tag">N°14</span>
-      <h2>Le domande che mi fai <em>sottovoce.</em></h2>
+      <span class="num-tag">Domande</span>
+      <h2>Quelle che mi fai <em>sottovoce.</em></h2>
     </div>
     <div class="faq">
-      <details><summary>Funziona anche per un hotel piccolo?</summary><div class="ans"><p>Sotto il milione di fatturato di solito no. Non per snobismo: il lavoro dopo costa, e senza margine resta un bel documento nel cassetto. Se sei vicino alla soglia, scrivimi prima di comprare.</p></div></details>
-      <details><summary>Quanto tempo mi porta via?</summary><div class="ans"><p>Un questionario, quaranta minuti. Poi un'ora di chiamata alla consegna. Il resto lo faccio io: le recensioni le scarico e le leggo io, non tu.</p></div></details>
-      <details><summary>Chi implementa?</summary><div class="ans"><p>Tu, o chi già lavora per te. L'analisi dice cosa fare e con quali parole. Non serve licenziare nessuno: serve dargli finalmente una direzione. Se poi vuoi che lo segua io, se ne parla dopo. E sarà un altro contratto, non un rinnovo automatico.</p></div></details>
+      <details><summary>Funziona anche per un hotel piccolo?</summary><div class="ans"><p>Sotto il milione di fatturato di solito no: il lavoro dopo costa, e senza margine resta un documento nel cassetto. Se sei vicino alla soglia, scrivimi prima di comprare.</p></div></details>
+      <details><summary>Chi lo mette in pratica?</summary><div class="ans"><p>Tu, o chi già lavora per te. L'analisi dice cosa fare e con quali parole. Se poi vuoi che lo segua io, se ne parla dopo, con un altro contratto.</p></div></details>
       <details><summary>Devo rifare il sito?</summary><div class="ans"><p>Quasi mai. Nove volte su dieci il sito è fatto bene e dice la cosa sbagliata. Cambiano le frasi, non l'impianto.</p></div></details>
-      <details><summary>E se il mio hotel è davvero uguale agli altri?</summary><div class="ans"><p>Non lo è. Ma non è detto che la differenza sia bella: a volte è una regola scomoda, un orario rigido, un servizio che non dai. Quelle sono le migliori.</p></div></details>
+      <details><summary>Quando non me la vendi?</summary><div class="ans"><p>Se il tuo prodotto è sotto la media del mercato, se ti servono prenotazioni entro venerdì, o se il diretto lo hai già alto e cerchi solo un canale in più. In quei casi ti dico di no.</p></div></details>
       <details><summary>Come pago?</summary><div class="ans"><p>Carta o bonifico, in un'unica soluzione. Fattura entro dodici giorni.</p></div></details>
-      <details><summary>E dopo?</summary><div class="ans"><p>Dopo hai cinque documenti e non hai me. È il punto, non un limite.</p></div></details>
     </div>
   </div>
 </section>
 
 <!-- ================= CHIUSURA ================= -->
-<section class="sec dark hd-close">
-  <div class="wrap">
-    <div class="hd-body">
-      <p>Il rischio non è spendere 697 euro.</p>
-      <p>Il rischio è arrivare a marzo con la stessa frase sulla home, lo stesso prezzo del vicino, e la stessa sensazione di aver lavorato tanto per niente.</p>
-      <p>Quella non te la rimborsa nessuno.</p>
-    </div>
-  </div>
-</section>
 <section class="hd-band">
   <div class="wrap">
     <p>Ti hanno chiesto perché.</p>
     <p>Non hai saputo rispondere.</p>
     <p>Adesso sai cosa manca.</p>
     <div class="btn-row"><a href="https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00" class="btn" rel="noopener">Compra l'analisi · €697 + IVA <span class="arr">→</span></a></div>
-    <p class="micro hd-legal" style="margin:28px auto 0;font:400 12px/1.6 var(--mono);text-transform:none;letter-spacing:.02em;color:#3d3b36;background:none;display:block">Booking.com è marchio registrato di Booking Holdings Inc. Questo sito non è affiliato né partner di Booking.com. I dati su commissioni e percentuali di prenotazione si riferiscono a scenari di esempio basati su informazioni pubbliche. Le opinioni espresse sono analisi strategica indipendente di Francesco Astolfi.</p>
+    <p class="hd-alt">Non sei ancora sicuro? <a href="/smontaggio/">Comincia dallo smontaggio gratuito della tua homepage</a>: la tua prima riga accanto ai concorrenti, in 3 giorni lavorativi.</p>
+    <p class="micro hd-legal">Booking.com è marchio registrato di Booking Holdings Inc. Questo sito non è affiliato né partner di Booking.com. Le opinioni espresse sono analisi strategica indipendente di Francesco Astolfi.</p>
   </div>
 </section>
 

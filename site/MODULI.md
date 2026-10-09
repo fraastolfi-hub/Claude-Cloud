@@ -1,19 +1,20 @@
 # Moduli del sito: Netlify Forms + Brevo
 
-I quattro moduli del sito vengono inviati a Netlify Forms. A ogni invio, la funzione `netlify/functions/submission-created.mjs`:
+I moduli del sito vengono inviati a Netlify Forms. A ogni invio, la funzione `netlify/functions/submission-created.mjs`:
 
 1. salva o aggiorna il contatto su **Brevo**, nella lista del modulo;
 2. manda un'**email di notifica** con tutti i campi all'indirizzo indicato in `NOTIFY_EMAIL`. La risposta all'email va direttamente a chi ha compilato il modulo.
 
 | Modulo (nome su Netlify) | Dove si trova | Valore di FONTE su Brevo |
 |---|---|---|
-| `candidatura` (richiesta dell'analisi gratuita; il nome tecnico resta «candidatura») | home e pagine che includono il modulo | Richiesta analisi gratuita |
-| `revisione-homepage` | /smontaggio/ | Revisione della homepage |
+| `revisione-homepage` (Smontaggio della homepage; partial `src/partials/form-smontaggio.html`). Campi: `nome_ruolo`, `hotel`, `url`, `email`, `camere`, `concorrenti`, `riga` (facoltativo), più `pagina` | home (`/#richiedi`), /smontaggio/ e le pagine che includono il partial (/problemi/*, /casi/) | Smontaggio della homepage |
 | `test-posizionamento` | /quiz/ | Test di posizionamento |
 | `strumenti-libro` | /bonus/ | Strumenti del libro |
-| `questionario` | /questionario/ (pagina nascosta, noindex, da mandare a chi acquista l'analisi) | Questionario di posizionamento |
+| `questionario` | /questionario/ (pagina nascosta, noindex, da mandare a chi acquista l'analisi completa) | Questionario di posizionamento |
 
-Configurazione scelta: **una sola lista** per tutti i contatti, con il campo `FONTE` che indica il modulo di provenienza (su Brevo i contatti non hanno tag: si filtra e si segmenta su `FONTE`). Liste separate per modulo restano possibili con le variabili `BREVO_LIST_CANDIDATURA` ecc.
+Il vecchio modulo `candidatura` (la richiesta di analisi in quattro passi) è dismesso dal 9 ottobre 2026, insieme all'offerta che serviva. La funzione lo riconosce ancora, con l'etichetta «Richiesta analisi (vecchio modulo)», solo per gli invii arretrati.
+
+Configurazione scelta: **una sola lista** per tutti i contatti, con il campo `FONTE` che indica il modulo di provenienza (su Brevo i contatti non hanno tag: si filtra e si segmenta su `FONTE`). Liste separate per modulo restano possibili con le variabili `BREVO_LIST_REVISIONE`, `BREVO_LIST_TEST` ecc.
 
 Il filtro anti-spam di Netlify (campo nascosto `bot-field`) scarta gli invii automatici prima che arrivino a Brevo. Tutti gli invii restano consultabili anche su Netlify: Forms.
 
@@ -61,4 +62,4 @@ window.HP_TRACKING = { ga4: 'G-XXXXXXXXXX', metaPixel: '123456789012345' };
 
 Se un ID resta vuoto, quello strumento è disattivato anche con il consenso.
 
-**Eventi già collegati:** a ogni modulo inviato con successo partono `generate_lead` su GA4 e `Lead` su Meta, con il nome del modulo (`candidatura`, `revisione-homepage`, `test-posizionamento`, `strumenti-libro`). Su GA4 segnate `generate_lead` come evento chiave; su Meta usate `Lead` come conversione delle campagne.
+**Eventi già collegati:** a ogni modulo inviato con successo partono `generate_lead` su GA4 e `Lead` su Meta, con il nome del modulo (`revisione-homepage`, `test-posizionamento`, `strumenti-libro`). Su GA4 segnate `generate_lead` come evento chiave; su Meta usate `Lead` come conversione delle campagne.
