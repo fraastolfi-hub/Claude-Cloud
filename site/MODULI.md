@@ -1,6 +1,10 @@
 # Moduli del sito: Netlify Forms + Brevo
 
-I moduli del sito vengono inviati a Netlify Forms. A ogni invio, la funzione `netlify/functions/submission-created.mjs`:
+**Dal 9 ottobre 2026** i moduli del sito inviano a `netlify/functions/invio.mjs` (`/.netlify/functions/invio`), che salva il contatto su Brevo e manda la notifica. La pagina conferma l'invio solo se la notifica è partita; altrimenti mostra l'errore con l'email di Francesco. Una copia va anche a Netlify Forms come archivio, con il campo `inviato=funzione`, e la funzione `submission-created` la salta per non mandare due notifiche. Codice comune in `netlify/lib/brevo.mjs`.
+
+Controllo rapido della configurazione: aprire `https://hotelpositioning.com/.netlify/functions/invio` nel browser. Mostra `true`/`false` per ogni variabile (nessun valore segreto). Servono `true` almeno `BREVO_API_KEY`, `NOTIFY_EMAIL`, `BREVO_SENDER_EMAIL`.
+
+Prima, e per gli invii che arrivano solo da Netlify Forms, la funzione `netlify/functions/submission-created.mjs`:
 
 1. salva o aggiorna il contatto su **Brevo**, nella lista del modulo;
 2. manda un'**email di notifica** con tutti i campi all'indirizzo indicato in `NOTIFY_EMAIL`. La risposta all'email va direttamente a chi ha compilato il modulo.

@@ -142,12 +142,16 @@
         if (bar) bar.style.width = '100%'; if (f.dataset.save) { try { localStorage.removeItem(f.dataset.save); } catch (e) {} } f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
         if (window.HPtrack) HPtrack('lead', { form: f.getAttribute('name') || f.id });
       };
-      // Netlify Forms: invio in background; la funzione submission-created salva su Brevo e manda la notifica
+      // invio alla funzione del sito (Brevo + notifica): conferma solo se è arrivato davvero.
+      // In più, una copia su Netlify Forms come archivio (la funzione submission-created la salta).
       if (f.hasAttribute('data-netlify') && /(^|\.)(hotelpositioning\.com|netlify\.app)$/.test(location.hostname)) {
         var pg = f.querySelector('input[name="pagina"]'); if (pg) pg.value = location.pathname;
         var btn = f.querySelector('[type=submit]'); if (btn) btn.disabled = true;
         var fail = f.querySelector('.send-err');
-        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(f)).toString() })
+        var body = new URLSearchParams(new FormData(f)); body.set('inviato', 'funzione'); body = body.toString();
+        var post = function(url){ return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body }); };
+        post('/').catch(function(){});
+        post('/.netlify/functions/invio')
           .then(function(r){ if (!r.ok) throw new Error(r.status); done(); })
           .catch(function(){
             if (btn) btn.disabled = false;
