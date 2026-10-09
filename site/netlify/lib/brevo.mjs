@@ -113,3 +113,26 @@ export function confirmation(d) {
     htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${p.map((x) => `<p style="margin:0 0 14px">${esc(x)}</p>`).join('')}<p style="margin:22px 0 0">${firma.map(esc).join('<br>')}</p></div>`,
   };
 }
+
+// Mail a chi si registra su /bonus: i link agli strumenti, con ?accesso=1 che li sblocca su qualsiasi dispositivo.
+const STRUMENTI = [
+  ['01', 'I 6 step del posizionamento', 'worksheet'], ['02', 'La matrice delle 4 caselle', 'matrice'],
+  ['03', 'I 200 attributi', 'attributi'], ['04', 'Coerenza in 7 punti di contatto', 'coerenza'],
+  ['05', 'Dal fatto alla trasformazione', 'scala'], ['06', 'I 5 livelli di consapevolezza', 'livelli'],
+  ['07', 'Il Positioning Canvas', 'canvas'],
+];
+export function bonusMail(d) {
+  const nome = ((d.nome || '').trim().split(/\s+/)[0]) || '';
+  const base = 'https://hotelpositioning.com';
+  const links = [...STRUMENTI.map(([n, t, s]) => [n, t, `${base}/bonus/${s}/?accesso=1`]), ['08', 'Il test del posizionamento', `${base}/quiz/`]];
+  const intro = [`Ciao${nome ? ' ' + nome : ''},`, 'ecco gli otto strumenti del libro. Si compilano sul sito, dieci minuti l\'uno, e le risposte restano salvate sul dispositivo che usi.', 'Comincia dal primo: i sei step sono la base, gli altri si appoggiano lì.'];
+  const chiusa = ['Se ti blocchi su uno strumento, rispondi a questa mail.', 'Francesco Astolfi\nHotel Positioning'];
+  return {
+    sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
+    replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    subject: 'Gli otto strumenti del posizionamento',
+    textContent: [...intro, links.map(([n, t, u]) => `${n} · ${t}\n${u}`).join('\n\n'), ...chiusa].join('\n\n'),
+    htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${intro.map((x) => `<p style="margin:0 0 14px">${esc(x)}</p>`).join('')}<ol style="list-style:none;padding:0;margin:18px 0">${links.map(([n, t, u]) => `<li style="margin:0 0 10px"><a href="${u}" style="color:#0a0a0a;font-weight:700">${n} · ${esc(t)}</a></li>`).join('')}</ol>${chiusa.map((x) => `<p style="margin:0 0 14px">${esc(x).replace('\n', '<br>')}</p>`).join('')}</div>`,
+  };
+}

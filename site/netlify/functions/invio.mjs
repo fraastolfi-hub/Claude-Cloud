@@ -8,7 +8,7 @@
 //   BREVO_API_KEY, NOTIFY_EMAIL, BREVO_SENDER_EMAIL   obbligatorie per la notifica
 //   BREVO_LIST_DEFAULT, BREVO_LIST_*, BREVO_ATTRIBUTES facoltative (vedi lib/brevo.mjs)
 
-import { FORMS, brevo, saveContact, notification, confirmation } from '../lib/brevo.mjs';
+import { FORMS, brevo, saveContact, notification, confirmation, bonusMail } from '../lib/brevo.mjs';
 
 const json = (statusCode, body) => ({ statusCode, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' }, body: JSON.stringify(body) });
 
@@ -41,8 +41,9 @@ export const handler = async (event) => {
   if (saved.status === 'rejected') console.error(saved.reason);
   if (mailed.status === 'rejected') { console.error(mailed.reason); return json(502, { ok: false, errore: 'notifica' }); }
   // conferma a chi ha compilato: solo per lo smontaggio; se non parte, la richiesta resta valida
-  if (d['form-name'] === 'revisione-homepage') {
-    try { await brevo('/smtp/email', confirmation(d)); console.log('conferma inviata'); } catch (e) { console.error('conferma non inviata:', e.message); }
+  const reply = d['form-name'] === 'revisione-homepage' ? confirmation(d) : d['form-name'] === 'strumenti-libro' ? bonusMail(d) : null;
+  if (reply) {
+    try { await brevo('/smtp/email', reply); console.log('conferma inviata'); } catch (e) { console.error('conferma non inviata:', e.message); }
   }
   console.log('notifica inviata', d['form-name'], 'contatto salvato:', saved.status === 'fulfilled');
   return json(200, { ok: true, contatto: saved.status === 'fulfilled' });

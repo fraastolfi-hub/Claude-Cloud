@@ -89,6 +89,13 @@
 .mini.ladder span{border-radius:5px 5px 2px 2px}
 .after .tl.in .n{background:var(--mist);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
 .after .tl:first-child.in .n{background:var(--yellow);box-shadow:none}
+
+/* --- strumenti aperti (dopo la registrazione) --- */
+.sheet .go{display:none;margin-top:auto;font:700 13px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;color:#0a0a0a;background:var(--giallo);border:3px solid #0a0a0a;padding:10px 12px;align-self:flex-start}
+.lib-open .sheet .go{display:inline-block}
+.lib-open .sheet{cursor:pointer}
+.lib-note{display:none;margin:0 0 22px;font:700 13px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.lib-open .lib-note{display:block}
 </style>
 <!-- @include tema -->
 </head>
@@ -110,8 +117,8 @@
       <p class="lead">Otto strumenti da compilare: gli stessi che uso con gli hotel che seguo. Lascia nome ed email, inizia quando vuoi.</p>
       <ul class="gets rv">
         <li><b>8</b><span>fogli di lavoro, <strong>dieci minuti l'uno</strong>, da compilare pensando al tuo hotel</span></li>
-        <li><b>1</b><span><strong>email sola</strong> con tutti gli strumenti. Nessun commerciale ti richiama</span></li>
-        <li><b>0 €</b><span>non serve avere il libro. Ti registri una volta e li ricevi tutti</span></li>
+        <li><b>1</b><span><strong>registrazione sola</strong>: gli strumenti si aprono subito, e ti arrivano anche per email. Nessun commerciale ti richiama</span></li>
+        <li><b>0 €</b><span>non serve avere il libro. Entri una volta, resti dentro per sempre</span></li>
       </ul>
     </div>
 
@@ -121,7 +128,7 @@
         <div class="form-head"><span>Bonus del libro</span><span data-prog-txt>0%</span></div>
         <div class="prog"><i></i></div>
         <h2>Gli otto strumenti, via email.</h2>
-        <p class="sub">Te li mando per email entro 24 ore, pronti da compilare.</p>
+        <p class="sub">Si aprono subito qui sul sito, pronti da compilare.</p>
         <div class="field"><label for="b-nome">Nome</label><input id="b-nome" name="nome" autocomplete="given-name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
         <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: gli strumenti arrivano qui.</span></div>
         <div class="field"><label for="b-tipo">Tipo di struttura</label>
@@ -135,64 +142,65 @@
             <option>Altro</option>
           </select><span class="em">Scegli una voce: così ti mando esempi vicini al tuo hotel.</span></div>
         <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento al trattamento dei miei dati per ricevere gli strumenti e comunicazioni via email.</span></label>
-        <button class="btn dark" type="submit">Ricevi gli strumenti <span class="arr">→</span></button>
+        <button class="btn dark" type="submit">Apri gli strumenti <span class="arr">→</span></button>
         <p class="form-foot">Nessuno spam: gli strumenti e, ogni tanto, un aggiornamento utile.<br>Ti cancelli con un clic.</p>
       </div>
       <div class="ok" role="status">
         <div class="tick">✓</div>
-        <p class="big">Richiesta ricevuta.</p>
-        <p>Ti mando gli otto strumenti a <strong data-echo="#b-email">l'indirizzo indicato</strong> entro 24 ore, da me. Se non li vedi, guarda in Promozioni e Spam.</p>
-        <p style="margin-top:12px">Nel frattempo, un esercizio: apri Booking, cerca la tua zona e guarda i risultati come un ospite che non ti conosce.</p>
+        <p class="big" data-ok-title>Sei dentro.</p>
+        <p data-ok-text>Gli otto strumenti sono aperti, qui sotto. Ti mando anche una mail con i link a <strong data-echo="#b-email">l'indirizzo indicato</strong>, così li ritrovi da qualsiasi dispositivo.</p>
+        <a href="#strumenti" class="btn" style="margin-top:16px">Vai agli strumenti <span class="arr">↓</span></a>
       </div>
     </form>
   </div>
 </section>
 
 <!-- ================= GLI OTTO FOGLI ================= -->
-<section class="sec alt">
+<section class="sec alt" id="strumenti">
   <div class="wrap">
     <div class="sec-head">
       <span class="num-tag">Dentro la cassetta</span>
       <h2>Da compilare, non solo da leggere. <em>Otto fogli, dieci minuti l'uno.</em></h2>
       <p class="lead">Leggere un metodo e applicarlo sono due lavori diversi. Per il secondo servono fogli su cui scrivere.</p>
     </div>
+    <p class="lib-note">Sei dentro: apri uno strumento e compilalo. Le risposte restano salvate su questo dispositivo.</p>
     <div class="sheets">
-      <article class="sheet key rv">
+      <article data-href="/bonus/worksheet/" class="sheet key rv">
         <span class="stamp-tag">Si parte da qui</span>
         <div class="bar"><b>01</b><span>10 min</span></div>
         <div class="body"><h3>I 6 step del posizionamento</h3><p>Il metodo del capitolo 6, campo per campo. È la base degli altri sette.</p><div class="lines" aria-hidden="true"><i></i><i></i></div></div>
       </article>
-      <article class="sheet rv d1">
+      <article data-href="/bonus/matrice/" class="sheet rv d1">
         <div class="bar"><b>02</b><span>10 min</span></div>
         <div class="body"><h3>La matrice delle 4 caselle</h3><p>Meglio o peggio, più caro o meno caro: dove il mercato mette il tuo hotel. Spesso non è dove pensi.</p>
           <div class="mini m4 lines" aria-hidden="true"><span>meglio · più caro</span><span class="x">meglio · meno caro</span><span>peggio · più caro</span><span>peggio · meno caro</span></div></div>
       </article>
-      <article class="sheet rv d2">
+      <article data-href="/bonus/attributi/" class="sheet rv d2">
         <div class="bar"><b>03</b><span>10 min</span></div>
         <div class="body"><h3>I 200 attributi</h3><p>Scorri, segni, e alla fine ne restano due o tre: gli attributi da difendere ogni giorno.</p>
           <div class="mini attr lines" aria-hidden="true"><span>silenzio</span><span class="on">cibo</span><span>design</span><span>ritmo</span><span class="on">natura</span><span>etica</span></div></div>
       </article>
-      <article class="sheet rv d3">
+      <article data-href="/bonus/coerenza/" class="sheet rv d3">
         <div class="bar"><b>04</b><span>10 min</span></div>
         <div class="body"><h3>Coerenza in 7 punti di contatto</h3><p>Sette caselle: il posizionamento regge dal sito allo staff, o si perde alla reception?</p>
           <div class="mini m7 lines" aria-hidden="true"><span class="ok"></span><span class="ok"></span><span class="ok"></span><span class="ko"></span><span class="ok"></span><span class="ko"></span><span></span></div></div>
       </article>
-      <article class="sheet rv">
+      <article data-href="/bonus/scala/" class="sheet rv">
         <div class="bar"><b>05</b><span>10 min</span></div>
         <div class="body"><h3>Dal fatto alla trasformazione</h3><p>Un'unicità, portata gradino per gradino fino alla trasformazione che l'ospite vive.</p>
           <div class="mini ladder lines" aria-hidden="true"><span style="height:12px"></span><span style="height:22px"></span><span style="height:32px"></span><span style="height:42px;background:var(--ink)"></span></div></div>
       </article>
-      <article class="sheet rv d1">
+      <article data-href="/bonus/livelli/" class="sheet rv d1">
         <div class="bar"><b>06</b><span>10 min</span></div>
         <div class="body"><h3>I 5 livelli di consapevolezza</h3><p>Dove intercettare l'ospite. E dove il budget si disperde, parlando a chi non è ancora pronto.</p>
           <div class="mini m5 lines" aria-hidden="true"><span>1</span><span>2</span><span class="on">3</span><span>4</span><span>5</span></div></div>
       </article>
-      <article class="sheet rv d2">
+      <article data-href="/bonus/canvas/" class="sheet rv d2">
         <div class="bar"><b>07</b><span>10 min</span></div>
         <div class="body"><h3>Il Positioning Canvas</h3><p>Tutto il posizionamento su una pagina sola. Quella da appendere.</p>
           <div class="mini cvs lines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span class="w"></span></div></div>
       </article>
-      <article class="sheet rv d3">
+      <article data-href="/quiz/" class="sheet rv d3">
         <div class="bar"><b>08</b><span>10 min</span></div>
         <div class="body"><h3>Il test del posizionamento</h3><p>Dieci minuti di domande. Alla fine vedi il profilo del tuo hotel e la casella libera accanto a te.</p><div class="lines" aria-hidden="true"><i></i><i></i></div></div>
       </article>
@@ -206,10 +214,10 @@
     <div class="sec-head" style="margin-bottom:0">
       <span class="num-tag">Cosa succede dopo</span>
       <h2>Tre passi. <em>Nessuna telefonata.</em></h2>
-      <p class="lead">Nessun commerciale ti richiama. Arriva una email, e lavori sul tuo hotel quando vuoi.</p>
+      <p class="lead">Nessun commerciale ti richiama. Entri, e lavori sul tuo hotel quando vuoi.</p>
     </div>
     <div>
-      <div class="tl"><span class="n">1</span><div><span class="when">Entro 24 ore</span><h3>Arriva l'email</h3><p>Contiene gli otto strumenti, pronti da compilare.</p></div></div>
+      <div class="tl"><span class="n">1</span><div><span class="when">Subito</span><h3>Gli strumenti si aprono</h3><p>Qui sul sito, pronti da compilare. Ti arriva anche una mail con i link.</p></div></div>
       <div class="tl"><span class="n">2</span><div><span class="when">La sera stessa</span><h3>Prima il foglio 01</h3><p>I sei step sono la base. Gli altri sette si appoggiano lì.</p></div></div>
       <div class="tl"><span class="n">3</span><div><span class="when">Nel tempo</span><h3>Di tanto in tanto, un aggiornamento</h3><p>Scrivo quando ho qualcosa di utile. Ti cancelli con un clic.</p></div></div>
     </div>
@@ -234,5 +242,35 @@
 </main>
 
 <!-- @include footer -->
+<script>
+(function(){
+  // la library: dopo la registrazione (o con ?accesso=1 dal link della mail) gli strumenti si aprono
+  var KEY = 'library_unlocked';
+  function get(){ try { return localStorage.getItem(KEY) === 'true'; } catch (e) { return false; } }
+  function set(){ try { localStorage.setItem(KEY, 'true'); } catch (e) {} }
+  if (/[?&]accesso=1/.test(location.search)) { set(); try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {} }
+  var root = document.getElementById('strumenti'), form = document.getElementById('bonus-form');
+  function open(){
+    if (root.classList.contains('lib-open')) return;
+    root.classList.add('lib-open');
+    [].forEach.call(root.querySelectorAll('.sheet[data-href]'), function(a){
+      var go = document.createElement('a'); go.className = 'go'; go.href = a.dataset.href;
+      go.textContent = a.dataset.href === '/quiz/' ? 'Fai il test →' : 'Apri lo strumento →';
+      a.querySelector('.body').appendChild(go);
+      a.addEventListener('click', function(e){ if (!e.target.closest('a')) location.href = a.dataset.href; });
+    });
+  }
+  if (get()) {
+    open();
+    if (form) {
+      form.classList.add('sent');
+      var t = form.querySelector('[data-ok-title]'), p = form.querySelector('[data-ok-text]');
+      if (t) t.textContent = 'Sei già dentro.';
+      if (p) p.textContent = 'Gli otto strumenti sono aperti, qui sotto. Le risposte restano salvate su questo dispositivo.';
+    }
+  }
+  if (form) new MutationObserver(function(){ if (form.classList.contains('sent')) { set(); open(); } }).observe(form, { attributes: true, attributeFilter: ['class'] });
+})();
+</script>
 </body>
 </html>
