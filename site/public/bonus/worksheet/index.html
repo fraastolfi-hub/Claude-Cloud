@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--
+  MODELLO DI PAGINA STRUMENTO (/bonus/<slug>/). Per un nuovo strumento copia questo file in
+  src/pages/bonus/<slug>/index.html e cambia solo:
+    1. <title>, meta description, canonical (https://hotelpositioning.com/bonus/<slug>/). Il robots noindex resta.
+    2. <body data-tool-n="0X" data-tool-name="Nome dello strumento">: servono alla scheda "Vai alla library".
+    3. Barra: "0X / 08", il nome (.t-bar__name) e le classi dei quadrati: is-past per quelli prima, is-current per il tuo.
+    4. Il contenuto dentro <div data-t-tool hidden> (resta nascosto finché HPT non verifica lo sblocco).
+       Aggiungi .t-stage--wide al <main> se lo strumento è largo (matrice, canvas).
+    5. Lo <script> in fondo: stato con HPT.store("<slug>_state", {...}) e campi con data-k (vedi /assets/strumenti.js).
+  Non cambiare: include head/tema/cookie-banner, l'ordine dei file /assets (site.js, strumenti.js, poi lo script della pagina), il piè di pagina.
+-->
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I 6 step del posizionamento · Strumenti · Hotel Positioning</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Sei campi, uno per schermata: l'ospite, le alternative, l'unicità, il target, la categoria, il trend. Alla fine, il tuo posizionamento su una riga.">
+<link rel="canonical" href="https://hotelpositioning.com/bonus/worksheet/">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
+<meta name="theme-color" content="#fffdf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=79bb2f11">
+
+<link rel="stylesheet" href="/assets/brutalist.css?v=46f0d0c4">
+
+<link rel="stylesheet" href="/assets/strumenti.css?v=ed67b0e9">
+</head>
+<body class="t-page" data-tool="worksheet" data-tool-n="01" data-tool-name="I 6 step del posizionamento">
+<header class="t-bar">
+  <div class="t-wrap t-bar__in">
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <p class="t-bar__meta">
+      <span class="t-bar__n"><span class="t-bar__word">Strumento </span>01 / 08</span>
+      <span class="t-bar__name">I 6 step del posizionamento</span>
+    </p>
+    <a href="/bonus/#strumenti" class="t-back">← Strumenti</a>
+  </div>
+  <div class="t-steps" aria-hidden="true"><i class="is-current"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</header>
+
+<main id="main" class="t-wrap t-stage">
+  <noscript><p class="t-lead">Questo strumento funziona con JavaScript attivo nel browser.</p></noscript>
+  <div data-t-tool hidden>
+
+    <!-- avanzamento degli step 1-6 (lo mostra lo script solo sugli schermi s1…s6) -->
+    <div class="t-w-progress" data-w-progress hidden>
+      <div class="t-w-progress__bar" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1" aria-label="Avanzamento"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <span class="t-label" data-w-progress-n aria-hidden="true">1 / 6</span>
+    </div>
+
+    <!-- intro -->
+    <section data-screen="intro">
+      <h1 class="t-title">I 6 Step del Posizionamento</h1>
+      <p class="t-lead">Non si legge. Si compila. Un pomeriggio, un po' d'onestà, e la voglia di cancellare finché non regge. Si parte dall'ospite. Mai dal prodotto.</p>
+      <button type="button" class="t-btn t-btn--lg t-btn--block t-cta" data-next>Comincia</button>
+    </section>
+
+    <!-- step 1 -->
+    <section data-screen="s1" hidden>
+      <div class="t-w-head"><span class="t-w-num" aria-hidden="true">1</span><div><span class="t-label">Step 1</span><h1 class="t-w-title">L'ospite: il problema o il desiderio profondo</h1></div></div>
+      <label class="t-w-prompt" for="ws-step1">Cosa vuole davvero il tuo ospite? Non una camera, non la piscina: quelli sono mezzi. Cosa vuole sentire? Chi vuole diventare?</label>
+      <textarea id="ws-step1" class="t-textarea t-w-ta" rows="5" data-k="step1" aria-describedby="ws-step1-hint"></textarea>
+      <p class="t-hint" id="ws-step1-hint">Nessuno vuole una vacanza. Vuole tornare a casa avendo dormito per la prima volta in mesi. Scrivi l'emozione, non il servizio.</p>
+      <p class="t-small" data-req="step1">Serve una risposta per andare avanti.</p>
+      <div class="t-w-nav"><button type="button" class="t-w-back" data-prev>← Indietro</button><button type="button" class="t-btn t-btn--lg" data-next data-needs="step1">Avanti →</button></div>
+    </section>
+
+    <!-- step 2 -->
+    <section data-screen="s2" hidden>
+      <div class="t-w-head"><span class="t-w-num" aria-hidden="true">2</span><div><span class="t-label">Step 2</span><h1 class="t-w-title">Le alternative: contro chi giochi</h1></div></div>
+      <label class="t-w-prompt" for="ws-step2">Se tu non esistessi, dove andrebbe? Elenca solo chi valuta sul serio, non ogni hotel simile. Conta anche «resta a casa».</label>
+      <textarea id="ws-step2" class="t-textarea t-w-ta" rows="5" data-k="step2" aria-describedby="ws-step2-hint"></textarea>
+      <p class="t-hint" id="ws-step2-hint">Raggruppali per approccio, non per stelle.</p>
+      <div class="t-w-nav"><button type="button" class="t-w-back" data-prev>← Indietro</button><button type="button" class="t-btn t-btn--lg" data-next>Avanti →</button></div>
+    </section>
+
+    <!-- step 3 -->
+    <section data-screen="s3" hidden>
+      <div class="t-w-head"><span class="t-w-num" aria-hidden="true">3</span><div><span class="t-label">Step 3</span><h1 class="t-w-title">L'unicità: un fatto, non un'idea</h1></div></div>
+      <p class="t-w-prompt">Qual è l'unica cosa vera che hai tu e non ha nessuno di quei nomi? Verificabile in due secondi. Poi: e allora? perché all'ospite dovrebbe importare?</p>
+      <div class="t-fields">
+        <div class="t-field">
+          <label class="t-label" for="ws-step3">Il fatto</label>
+          <textarea id="ws-step3" class="t-textarea t-w-ta" rows="4" data-k="step3"></textarea>
+          <p class="t-warn" role="status" data-warn="fatto" hidden>Quello è il ritornello di tutti. Cerca il fatto che un concorrente non può rivendicare senza mentire.</p>
+        </div>
+        <div class="t-field">
+          <label class="t-label" for="ws-step3valore">Il valore: perché conta per l'ospite dello Step 1</label>
+          <textarea id="ws-step3valore" class="t-textarea t-w-ta" rows="4" data-k="step3valore"></textarea>
+        </div>
+      </div>
+      <p class="t-small" data-req="step3">Serve una risposta per andare avanti.</p>
+      <div class="t-w-nav"><button type="button" class="t-w-back" data-prev>← Indietro</button><button type="button" class="t-btn t-btn--lg" data-next data-needs="step3">Avanti →</button></div>
+    </section>
+
+    <!-- step 4 -->
+    <section data-screen="s4" hidden>
+      <div class="t-w-head"><span class="t-w-num" aria-hidden="true">4</span><div><span class="t-label">Step 4</span><h1 class="t-w-title">Il target: per chi sei irrinunciabile</h1></div></div>
+      <label class="t-w-prompt" for="ws-step4">Chi desidera quel valore al punto di non poterne fare a meno? Non «coppie 30-45»: quella è un'anagrafe. Definiscilo per cosa ha in testa: cosa teme, cosa desidera, cosa lo fa scappare.</label>
+      <textarea id="ws-step4" class="t-textarea t-w-ta" rows="5" data-k="step4" aria-describedby="ws-step4-hint"></textarea>
+      <p class="t-hint" id="ws-step4-hint">Pochi che ne vanno matti valgono più di tanti vagamente interessati.</p>
+      <div class="t-w-nav"><button type="button" class="t-w-back" data-prev>← Indietro</button><button type="button" class="t-btn t-btn--lg" data-next>Avanti →</button></div>
+    </section>
+
+    <!-- step 5 -->
+    <section data-screen="s5" hidden>
+      <div class="t-w-head"><span class="t-w-num" aria-hidden="true">5</span><div><span class="t-label">Step 5</span><h1 class="t-w-title">La categoria: la casella mentale che occupi</h1></div></div>
+      <p class="t-w-prompt">In una frase: «l'hotel del / per ___». La casella che si apre quando pensa a te.</p>
+      <div class="t-field t-w-gap">
+        <label class="t-label" for="ws-step5">La tua casella</label>
+        <input id="ws-step5" class="t-input t-input--bold" type="text" data-k="step5" placeholder="l'hotel del / per ___">
+        <p class="t-warn" role="status" data-warn="categoria" hidden>Così non hai scelto niente. Serve una casella che nessuno in zona presidia.</p>
+      </div>
+      <p class="t-label t-w-gap" id="ws-modo">Come la occupi</p>
+      <div class="t-options" role="radiogroup" aria-labelledby="ws-modo">
+        <button type="button" role="radio" aria-checked="false" class="t-option t-opt" data-k="modo" data-v="1"><span class="t-opt__key" aria-hidden="true">1</span><span>Modo 1 · Leader di una categoria che esiste già</span></button>
+        <button type="button" role="radio" aria-checked="false" class="t-option t-opt" data-k="modo" data-v="2"><span class="t-opt__key" aria-hidden="true">2</span><span>Modo 2 · Una tua sottocategoria, e ci sei numero uno su una misura precisa</span></button>
+        <button type="button" role="radio" aria-checked="false" class="t-option t-opt" data-k="modo" data-v="3"><span class="t-opt__key" aria-hidden="true">3</span><span>Modo 3 · Una categoria nuova che crei tu (raro, caro, senza rivali)</span></button>
+      </div>
+      <div class="t-w-nav"><button type="button" class="t-w-back" data-prev>← Indietro</button><button type="button" class="t-btn t-btn--lg" data-next>Avanti →</button></div>
+    </section>
+
+    <!-- step 6 -->
+    <section data-screen="s6" hidden>
+      <div class="t-w-head"><span class="t-w-num" aria-hidden="true">6</span><div><span class="t-label">Step 6</span><h1 class="t-w-title">Il trend: l'onda (se c'è)</h1></div></div>
+      <label class="t-w-prompt" for="ws-step6">C'è un'onda reale che spinge nella tua direzione? Agganciati: turbo gratis. Se non c'è, lascia vuoto. Non inventarne una finta.</label>
+      <textarea id="ws-step6" class="t-textarea t-w-ta" rows="4" data-k="step6"></textarea>
+      <div class="t-w-nav"><button type="button" class="t-w-back" data-prev>← Indietro</button><button type="button" class="t-btn t-btn--lg" data-next>Avanti →</button></div>
+    </section>
+
+    <!-- due prove -->
+    <section data-screen="prove" hidden>
+      <h1 class="t-title t-title--sm">Due prove spietate</h1>
+      <p class="t-lead">Prima di innamorarti della tua idea.</p>
+
+      <section class="t-card t-card--thick t-w-test" aria-labelledby="ws-contrario">
+        <div class="t-card__h t-card__h--ink"><h2 class="t-label" id="ws-contrario">Test del contrario</h2></div>
+        <div class="t-w-test__b">
+          <p class="t-text">Un concorrente potrebbe dire l'esatto opposto senza sembrare scemo? Se no, è una banalità travestita.</p>
+          <label class="t-checkrow t-w-gap"><input type="checkbox" data-k="regge"><span>Regge</span></label>
+          <label class="t-label t-w-gap" for="ws-riscrittura">Se no, riscrivi qui la tua frase</label>
+          <textarea id="ws-riscrittura" class="t-textarea t-ta" rows="3" data-k="riscrittura"></textarea>
+        </div>
+      </section>
+
+      <section class="t-card t-card--thick t-w-test" aria-labelledby="ws-limiti-h">
+        <div class="t-card__h t-card__h--ink"><h2 class="t-label" id="ws-limiti-h">Test dei limiti</h2></div>
+        <div class="t-w-test__b">
+          <label class="t-text" for="ws-limiti">Scrivi cosa NON fai. E per chi NON sei.</label>
+          <textarea id="ws-limiti" class="t-textarea t-ta" rows="4" data-k="limiti"></textarea>
+        </div>
+      </section>
+
+      <div class="t-w-nav"><button type="button" class="t-w-back" data-prev>← Indietro</button><button type="button" class="t-btn t-btn--lg" data-next>Vedi il risultato →</button></div>
+    </section>
+
+    <!-- risultato -->
+    <section data-screen="output" hidden>
+      <h1 class="t-title t-title--sm">Il tuo posizionamento, su una riga</h1>
+
+      <div class="t-w-line">
+        <label class="t-w-line__q" for="ws-motivo">C'è un solo, vero motivo per cui un ospite sceglie me e non un altro:</label>
+        <input id="ws-motivo" class="t-input t-input--bold" type="text" data-k="motivo" placeholder="___">
+      </div>
+
+      <section class="t-block" aria-labelledby="ws-riepilogo">
+        <h2 class="t-label" id="ws-riepilogo">Riepilogo</h2>
+        <dl class="t-w-sum" data-w-sum></dl>
+      </section>
+
+      <div class="t-actions">
+        <button type="button" class="t-btn t-btn--lg t-btn--paper t-btn--block" data-w-download>Scarica il riepilogo</button>
+        <a href="/bonus/canvas/" class="t-btn t-btn--lg t-btn--block">Passa al Positioning Canvas →</a>
+        <button type="button" class="t-w-back t-w-back--center" data-prev>← Indietro</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="t-wrap t-foot"><p>Francesco Astolfi · Hotel Positioning · <a href="/privacy-policy/">Privacy policy</a></p></footer>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
+  <button type="button" class="cc-x" data-cc="reject" aria-label="Chiudi e rifiuta i cookie non necessari">✕</button>
+  <p class="cc-t" id="cc-t">Cookie e privacy</p>
+  <p class="cc-p">Usiamo cookie tecnici, necessari al sito. Con il tuo consenso usiamo anche cookie di statistica (Google Analytics) e di marketing (Pixel di Meta) per misurare le visite e l’efficacia delle campagne. Puoi cambiare idea in qualsiasi momento. Dettagli nella <a href="/privacy-policy/#cookie">privacy policy</a>.</p>
+  <div class="cc-opts" id="cc-opts" hidden>
+    <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Tecnici</b> Necessari al funzionamento del sito. Sempre attivi.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistica</b> Google Analytics: visite e pagine più lette, in forma aggregata.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-mkt"><span><b>Marketing</b> Pixel di Meta: misura delle campagne su Facebook e Instagram e pubblico per gli annunci.</span></label>
+  </div>
+  <div class="cc-btns">
+    <button type="button" class="btn sm" data-cc="reject">Rifiuta</button>
+    <button type="button" class="btn sm" data-cc="accept">Accetta tutti</button>
+    <button type="button" class="cc-more" data-cc="custom" id="cc-custom">Personalizza</button>
+    <button type="button" class="btn sm" data-cc="save" id="cc-save" hidden>Salva le scelte</button>
+  </div>
+</div>
+<script src="/assets/consent.js?v=a0a1b866"></script>
+
+<script src="/assets/site.js?v=b2bbac6a"></script>
+<script src="/assets/strumenti.js?v=24999ac1"></script>
+<script>
+/* Strumento 01 · I 6 step del posizionamento.
+   Stato in localStorage "worksheet_state" (stessa chiave e stessi campi del vecchio sito: step1…step6, step3valore, motivo
+   li leggono anche scala, livelli, canvas e coerenza). */
+(function(){
+  if (!window.HPT || !HPT.unlocked()) return;
+  var ORDER = ['intro', 's1', 's2', 's3', 's4', 's5', 's6', 'prove', 'output'];
+  var MODI = {
+    '1': 'Modo 1 · Leader di una categoria che esiste già',
+    '2': 'Modo 2 · Una tua sottocategoria, e ci sei numero uno su una misura precisa',
+    '3': 'Modo 3 · Una categoria nuova che crei tu (raro, caro, senza rivali)'
+  };
+  // frasi che dicono tutti ("meglio", "qualità", "cura"…): segnalate, mai bloccanti
+  var FATTO_VUOTO = /(^|[^a-zàèéìòù])(meglio|qualità|cura|gentile|gentili|professionale|professionali)(?=$|[^a-zàèéìòù])|più curat|più gentil/i;
+  // categorie che non scelgono niente ("4 stelle", "per tutti"…)
+  var CATEGORIA_VUOTA = /stelle|ogni esigenza|per tutti|per tutte/i;
+  var VUOTO = 'Da compilare';
+
+  var st = HPT.store('worksheet_state', {
+    screen: 'intro', step1: '', step2: '', step3: '', step3valore: '', step4: '', step5: '',
+    modo: '', step6: '', regge: false, riscrittura: '', limiti: '', motivo: ''
+  });
+  var s = st.state;
+  if (ORDER.indexOf(s.screen) < 0) s.screen = 'intro';
+
+  var root = HPT.$('[data-t-tool]');
+  HPT.bind(root, st);
+
+  var prog = HPT.$('[data-w-progress]'), bar = HPT.$('[role=progressbar]', prog), progN = HPT.$('[data-w-progress-n]', prog);
+  var sq = HPT.$$('i', bar);
+
+  function filled(k){ return String(s[k] || '').trim() !== ''; }
+
+  function refresh(){
+    // campi obbligatori: "Avanti" disattivato e messaggio finché il campo è vuoto
+    HPT.$$('[data-needs]', root).forEach(function(b){ b.disabled = !filled(b.getAttribute('data-needs')); });
+    HPT.$$('[data-req]', root).forEach(function(p){ p.hidden = filled(p.getAttribute('data-req')); });
+    HPT.$('[data-warn=fatto]', root).hidden = !FATTO_VUOTO.test(s.step3);
+    HPT.$('[data-warn=categoria]', root).hidden = !CATEGORIA_VUOTA.test(s.step5);
+    if (s.screen === 'output') summary();
+  }
+
+  function show(name, focus){
+    s.screen = name; st.save();
+    var n = /^s\d$/.test(name) ? Number(name.slice(1)) : 0;
+    prog.hidden = !n;
+    if (n) {
+      bar.setAttribute('aria-valuenow', n);
+      sq.forEach(function(el, i){ el.className = i + 1 < n ? 'is-done' : (i + 1 === n ? 'is-current' : ''); });
+      progN.textContent = n + ' / 6';
+    }
+    HPT.screen(name, focus);
+    refresh();
+  }
+
+  function summary(){
+    var modo = MODI[s.modo] || '';
+    var rows = [
+      ["1 · L'ospite", s.step1],
+      ['2 · Le alternative', s.step2],
+      ['3 · Il fatto', s.step3],
+      ['3 · Il valore', s.step3valore],
+      ['4 · Il target', s.step4],
+      ['5 · La categoria', [String(s.step5 || '').trim(), modo].filter(Boolean).join(' · ')],
+      ['6 · Il trend', s.step6]
+    ];
+    var dl = HPT.$('[data-w-sum]', root);
+    dl.textContent = '';
+    rows.forEach(function(r){
+      var row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+      row.className = 't-w-sum__row';
+      var v = String(r[1] || '').trim();
+      dt.textContent = r[0];
+      dd.textContent = v || VUOTO;
+      if (!v) dd.className = 'is-empty';
+      row.appendChild(dt); row.appendChild(dd); dl.appendChild(row);
+    });
+  }
+
+  function scarica(){
+    var o = function(v){ v = String(v || '').trim(); return v || '(da compilare)'; };
+    HPT.download('i-miei-6-step.txt', [
+      'I 6 STEP DEL POSIZIONAMENTO · Hotel Positioning',
+      '',
+      "1. L'ospite: " + o(s.step1),
+      '2. Le alternative: ' + o(s.step2),
+      "3. L'unicità, il fatto: " + o(s.step3),
+      '   Il valore: ' + o(s.step3valore),
+      '4. Il target: ' + o(s.step4),
+      '5. La categoria: ' + o(s.step5),
+      '   ' + (MODI[s.modo] || 'Come la occupi: (da compilare)'),
+      '6. Il trend: ' + o(s.step6),
+      '',
+      'DUE PROVE',
+      'Test del contrario: ' + (s.regge ? 'regge' : 'da rivedere') + (String(s.riscrittura || '').trim() ? '. Riscrittura: ' + s.riscrittura.trim() : ''),
+      'Test dei limiti: ' + o(s.limiti),
+      '',
+      'IL TUO POSIZIONAMENTO, SU UNA RIGA',
+      "C'è un solo, vero motivo per cui un ospite sceglie me e non un altro: " + o(s.motivo)
+    ]);
+  }
+
+  st.on(refresh);
+  root.addEventListener('click', function(e){
+    var b = e.target.closest('[data-next],[data-prev],[data-w-download]');
+    if (!b || b.disabled) return;
+    var i = ORDER.indexOf(s.screen);
+    if (b.hasAttribute('data-next')) show(ORDER[Math.min(i + 1, ORDER.length - 1)], true);
+    else if (b.hasAttribute('data-prev')) show(ORDER[Math.max(i - 1, 0)], true);
+    else scarica();
+  });
+
+  show(s.screen, false);
+})();
+</script>
+</body>
+</html>
