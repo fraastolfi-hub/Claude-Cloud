@@ -95,8 +95,8 @@ P = dict(
         <p>Con quelle in mano, la prossima agenzia, o una delle precedenti, lavora in modo diverso.</p>
         <p><strong>Non serve cambiare chi esegue. Serve dargli cosa eseguire.</strong></p>''',
     br_quote="Quando cambia chi esegue e il risultato resta lo stesso, la causa è nelle istruzioni.",
-    offer_lead="L'analisi è il brief che serve a un'agenzia. Puoi girarla alla tua il giorno dopo la consegna.",
-    cand_lead="Un minuto. Guardo il tuo hotel come farebbe un'agenzia attenta: con le domande che servono a scrivere il brief.",
+    offer_lead="Lo smontaggio ti dice se la tua homepage è sostituibile. L'analisi completa è il brief che serve a un'agenzia: puoi girarla alla tua il giorno dopo la consegna.",
+    cand_lead="Un minuto. Leggo la prima riga della tua homepage come farebbe un'agenzia attenta, accanto a quella dei tuoi concorrenti.",
     faq=[
         ("Devo cambiare agenzia?", "Non per forza. Devi darle istruzioni chiare. Il posizionamento è il brief che le serve, e molte agenzie, con quello in mano, lavorano molto meglio."),
         ("Come capisco se l'agenzia è davvero inadeguata?", "Da un segnale: non fa domande. Se le fa e mancano le risposte, cambiarla non serve. Servono le risposte."),

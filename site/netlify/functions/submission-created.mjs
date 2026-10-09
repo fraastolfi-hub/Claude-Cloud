@@ -17,8 +17,8 @@
 const API = 'https://api.brevo.com/v3';
 
 const FORMS = {
-  'candidatura': { label: 'Richiesta analisi gratuita', list: 'BREVO_LIST_CANDIDATURA' },
-  'revisione-homepage': { label: 'Revisione della homepage', list: 'BREVO_LIST_REVISIONE' },
+  'candidatura': { label: 'Richiesta analisi (vecchio modulo)', list: 'BREVO_LIST_CANDIDATURA' },
+  'revisione-homepage': { label: 'Smontaggio della homepage', list: 'BREVO_LIST_REVISIONE' },
   'test-posizionamento': { label: 'Test di posizionamento', list: 'BREVO_LIST_TEST' },
   'strumenti-libro': { label: 'Strumenti del libro', list: 'BREVO_LIST_BONUS' },
   'questionario': { label: 'Questionario di posizionamento', list: 'BREVO_LIST_QUESTIONARIO' },
@@ -28,7 +28,7 @@ const FORMS = {
 const LABELS = {
   nome: 'Nome', nome_ruolo: 'Nome e ruolo', email: 'Email', telefono: 'Telefono',
   hotel: 'Struttura', struttura: 'Struttura', sito: 'Sito', url: 'Homepage', camere: 'Camere',
-  concorrenti: 'Concorrenti', tipologia: 'Tipologia', prezzo: 'Prezzo medio a notte', canali: 'Canali di prenotazione', unicita: 'Unicità più importante', pubblicazione: 'Pubblicazione', riga: 'Prima riga della homepage',
+  concorrenti: 'Concorrenti', tipologia: 'Tipologia', prezzo: 'Prezzo medio a notte', canali: 'Canali di prenotazione', unicita: 'Unicità più importante', pubblicazione: 'Pubblicazione', riga: "Cosa vorrebbe che l'ospite capisse",
   profilo: 'Profilo del test', punteggio: 'Punteggio', pagina: 'Pagina', privacy: 'Privacy',
   // questionario dell'analisi completa
   nome_localita: 'Nome e località', numero_camere: 'Numero camere', stagionalita: 'Stagionalità', adr: 'ADR (€)',

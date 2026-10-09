@@ -72,7 +72,7 @@ P = dict(
     proof_k="Tariffa media",
     proof_big="circa ×2",
     offer_lead="Uno dei cinque documenti dell'analisi completa si chiama «Come vendere senza svendere». Si parte sempre dal motivo.",
-    cand_lead="Un minuto. Guardo il tuo hotel, le tue tariffe e quelle dei vicini. Poi ti dico cosa manca.",
+    cand_lead="Un minuto. Metto la prima riga della tua homepage accanto a quella dei vicini. Se l'ospite non vede la differenza, non la paga.",
     faq=[
         ("Nella mia zona il mercato non accetta tariffe più alte.", "Spesso nella stessa zona c'è un hotel simile che chiede di più e resta pieno. Il prezzo che regge dipende dal motivo che l'ospite riconosce, più che dalle camere."),
         ("Se alzo le tariffe, perdo prenotazioni?", "Con un motivo chiaro perdi soprattutto quelle meno adatte al tuo hotel. Senza, le perdi e basta. Per questo il posizionamento viene prima del listino."),

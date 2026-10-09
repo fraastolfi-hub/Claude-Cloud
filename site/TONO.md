@@ -4,10 +4,15 @@
 >
 > - **Tu, non voi.** Si parla al titolare o al direttore, una persona: «il tuo hotel», «i tuoi concorrenti», «ti rispondo entro 48 ore». Francesco parla in prima persona («io», «faccio a mano»).
 > - **Concreto e breve, come ristomachine.it/mappa-della-zona.** Frasi corte. Esempi veri e visibili (la navetta dalla stazione, la colazione fino all'una, il check-out alle 18) al posto dei concetti. Un paragrafo dice una cosa. Se una frase si può togliere senza perdere informazione, si toglie.
-> - **Un'unica richiesta: l'analisi gratuita.** Si chiama «analisi gratuita di posizionamento». Il bottone dice «Richiedi l'analisi gratuita» (o, se stretto, «Richiedi l'analisi») e porta a `/#richiedi`. Mai «candidatura», «candidati», «candida la struttura», «selezione», «posti».
-> - **I fatti dell'offerta, sempre uguali:** gratis; fatta a mano da Francesco; massimo 5 al mese; solo hotel e resort dalle 40 camere in su; la ricevi in 48-72 ore; dopo, se vuoi, Francesco costruisce il posizionamento su misura, ma sei tu a ricontattarlo (lui non chiama); un documento di 20-25 pagine sul tuo hotel e sui tuoi concorrenti; niente accessi né password; il documento resta tuo.
+> - **Aggiornamento 9 ottobre 2026: la scala dell'offerta.** Gratis la diagnosi, a pagamento la cura.
+>   1. **Smontaggio della homepage** (gratis). È l'unica richiesta del sito. Bottone: «Richiedi lo smontaggio gratuito» (se stretto: «Richiedi lo smontaggio»), porta a `/#richiedi` (in /smontaggio/ al form della pagina). Fatti fissi: gratis; fatto a mano da Francesco; massimo 6 al mese; solo hotel e resort dalle 40 camere in su; lo ricevi in 3 giorni lavorativi; una pagina; nessuna call. Contenuto: la prima riga della tua homepage accanto a quella di 2-3 concorrenti, con il logo coperto; un verdetto (posizionato, sostituibile o invisibile); un indizio su dove sta il tuo motivo, preso dalle recensioni. **Non** contiene frasi pronte né alternative: quelle sono il lavoro dell'analisi.
+>   2. **Analisi di posizionamento** (a pagamento): **€2.500 + IVA**. Cinque documenti, 39 pagine (il motivo; chi ci crede; le parole; come vendere senza svendere; cosa cambiare in casa). Consegna in 5 giorni dal questionario. Garanzia: **«Inchiodo il tuo posizionamento, o è gratis.»** Vuol dire: se dai fatti non esce un motivo solo (una frase, con i fatti misurati e almeno 300 recensioni dei concorrenti citate), o se il motivo era già scritto in prima riga sulla tua home, ti restituisco tutto; se il problema non è il messaggio, te lo scrivo e ti restituisco i soldi. Entro 14 giorni dalla consegna, per iscritto. Il prezzo si scrive solo su /analisi/ e /hday/; altrove si dice «l'analisi completa» e si rimanda a /analisi/.
+>   3. **Accompagnamento** su misura: solo se il cliente ricontatta Francesco. Lui non chiama e non manda preventivi.
+>   - Si arriva all'analisi dopo lo smontaggio, quando il cliente ricontatta Francesco. Chi vuole saltarlo scrive a consulting@francescoastolfi.net.
+>   - **/hday/** è l'offerta per chi era all'Hospitality Day del 13 ottobre 2026: €697 + IVA invece di €2.500, 10 posti, entro il 31 ottobre 2026, pagamento Stripe.
+>   - Non esiste più l'«analisi gratuita». Mai «candidatura», «candidati», «selezione». Restano come risorse secondarie il test (/quiz/), i bonus del libro (/bonus/), la library e il libro.
 > - Le domande dirette al lettore sono ammesse quando sono vere e concrete («Di cosa è il numero 1 il tuo hotel, nella tua zona?»).
-> - Restano: il dato prima dell'aggettivo, niente sarcasmo, niente metafore mediche, onestà sui casi, niente lineette lunghe, il prezzo dell'analisi completa (€697 + IVA) solo nella pagina /analisi/.
+> - Restano: il dato prima dell'aggettivo, niente sarcasmo, niente metafore mediche, onestà sui casi, niente lineette lunghe, il prezzo dell'analisi completa solo in /analisi/ e /hday/.
 
 
 Vale per il sito, le email, LinkedIn, le presentazioni e i documenti dell'analisi.
@@ -54,11 +59,11 @@ Sono del libro e sono concrete, quindi restano:
 | struttura, hotel, resort | albergo di famiglia, alberghetto |
 | ospite | cliente target, utente |
 | segnale, causa | sintomo, malattia, travestimento |
-| analisi, diagnosi | TAC, smontaggio |
-| revisione della homepage | ti smonto la homepage |
+| analisi, smontaggio della homepage | TAC, radiografia |
+| smontaggio della homepage | ti smonto la homepage, revisione gratuita |
 | canali OTA, commissioni | "regalare soldi a Booking" |
 | posizionamento, riconoscibilità | brand awareness, storytelling, emozionale |
-| candidatura, su candidatura | gratis!, ultimi posti! |
+| richiedi, massimo 6 al mese | candidatura, gratis!, ultimi posti! |
 | "rispondo entro 48 ore" | "se ti scarto ti spiego perché" |
 
 ## Prima e dopo

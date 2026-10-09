@@ -161,22 +161,22 @@
   });
   // exit intent: un messaggio per pagina, al massimo una volta per visita, mai per 3 giorni dopo una chiusura
   var EXIT = {
-    '/': ['Prima di andare', 'Ti basta un minuto per richiederla.', 'L\'analisi gratuita del tuo hotel, fatta a mano da me. Massimo 5 al mese, dalle 40 camere in su.', 'Richiedi l\'analisi gratuita', '#richiedi', 'No, grazie'],
-    '/metodo/': ['Prima di andare', 'Il metodo applicato al tuo hotel.', 'Analisi gratuita, fatta a mano da me. Massimo 5 al mese, dalle 40 camere in su.', 'Richiedi l\'analisi gratuita', '/#richiedi', 'No, grazie'],
-    '/analisi/': ['Prima di andare', 'Ti basta un minuto per richiederla.', 'Analisi gratuita, fatta a mano da me. La ricevi in 48-72 ore.', 'Richiedi l\'analisi gratuita', '/#richiedi', 'Ci penso'],
-    '/problemi/booking/': ['Prima di andare', 'Meno OTA parte dal posizionamento.', 'Analisi gratuita del tuo hotel e dei tuoi concorrenti. La ricevi in 48-72 ore.', 'Richiedi l\'analisi gratuita', '#richiedi', 'Ci penso'],
+    '/': ['Prima di andare', 'Ti basta un minuto per richiederlo.', 'Lo smontaggio gratuito della tua homepage, accanto ai concorrenti. Fatto a mano da me, massimo 6 al mese.', 'Richiedi lo smontaggio', '#richiedi', 'No, grazie'],
+    '/metodo/': ['Prima di andare', 'Il primo passo è sulla tua homepage.', 'Lo smontaggio gratuito: la tua prima riga accanto ai concorrenti, con il logo coperto. In 3 giorni lavorativi.', 'Richiedi lo smontaggio', '/#richiedi', 'No, grazie'],
+    '/analisi/': ['Prima di andare', 'Comincia dallo smontaggio, gratis.', 'La tua homepage accanto ai concorrenti, un verdetto e dove cercare il motivo. In 3 giorni lavorativi.', 'Richiedi lo smontaggio', '/#richiedi', 'Ci penso'],
+    '/problemi/booking/': ['Prima di andare', 'Meno OTA parte dal posizionamento.', 'Smontaggio gratuito della tua homepage, accanto ai concorrenti. In 3 giorni lavorativi.', 'Richiedi lo smontaggio', '#richiedi', 'Ci penso'],
     '/problemi/prezzi/': ['Prima di andare', 'Sette domande sul tuo posizionamento.', 'Due minuti per capire se il limite al prezzo è il mercato o il tuo hotel.', 'Fai il test', '/quiz/', 'No, grazie'],
-    '/problemi/sostituibili/': ['Prima di andare', 'La revisione gratuita della tua homepage.', 'Titolo e sottotitolo letti riga per riga, con tre alternative pronte.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
-    '/problemi/agenzie/': ['Prima di andare', 'Un brief chiaro parte dalla homepage.', 'Revisione gratuita di titolo e sottotitolo: il primo pezzo di un buon brief.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
-    '/problemi/valore/': ['Prima di andare', 'Il valore del brand si costruisce.', 'Analisi gratuita del tuo hotel. La ricevi in 48-72 ore.', 'Richiedi l\'analisi gratuita', '#richiedi', 'Ci penso'],
-    '/problemi/apertura/': ['Prima di andare', 'Il posizionamento si decide prima di aprire.', 'Dopo, cambiarlo costa molto di più. Analisi gratuita, in 48-72 ore.', 'Richiedi l\'analisi gratuita', '#richiedi', 'Ci penso'],
-    '/casi/': ['Prima di andare', 'Il prossimo caso può essere il tuo hotel.', 'Analisi gratuita, fatta a mano da me. Massimo 5 al mese.', 'Richiedi l\'analisi gratuita', '#richiedi', 'Ci penso'],
-    '/francesco/': ['Prima di andare', 'La revisione gratuita della tua homepage.', 'In tre giorni lavorativi ti dico cosa comunica oggi la tua homepage, e cosa no.', 'Richiedi la revisione', '/smontaggio/', 'No, grazie'],
+    '/problemi/sostituibili/': ['Prima di andare', 'Copri il logo: si capisce chi sei?', 'Lo smontaggio gratuito mette la tua prima riga accanto ai concorrenti. In 3 giorni lavorativi.', 'Richiedi lo smontaggio', '/smontaggio/', 'No, grazie'],
+    '/problemi/agenzie/': ['Prima di andare', 'Un brief chiaro parte dalla homepage.', 'Lo smontaggio gratuito ti dice se la tua prima riga si distingue dai concorrenti: il primo pezzo di un buon brief.', 'Richiedi lo smontaggio', '/smontaggio/', 'No, grazie'],
+    '/problemi/valore/': ['Prima di andare', 'Il valore del brand si costruisce.', 'Comincia dallo smontaggio gratuito della tua homepage. In 3 giorni lavorativi.', 'Richiedi lo smontaggio', '#richiedi', 'Ci penso'],
+    '/problemi/apertura/': ['Prima di andare', 'Il posizionamento si decide prima di aprire.', 'Dopo, cambiarlo costa molto di più. Comincia dallo smontaggio gratuito.', 'Richiedi lo smontaggio', '#richiedi', 'Ci penso'],
+    '/casi/': ['Prima di andare', 'Il prossimo caso può essere il tuo hotel.', 'Comincia dallo smontaggio gratuito della homepage. Massimo 6 al mese.', 'Richiedi lo smontaggio', '/#richiedi', 'Ci penso'],
+    '/francesco/': ['Prima di andare', 'Lo smontaggio gratuito della tua homepage.', 'In tre giorni lavorativi ti dico se l\'ospite riesce a distinguerti dai concorrenti.', 'Richiedi lo smontaggio', '/smontaggio/', 'No, grazie'],
     '/libro/': ['Prima di andare', 'I bonus del libro, gratis.', 'Gli otto fogli di lavoro che uso con gli hotel che seguo, via email.', 'Scarica i bonus', '/bonus/', 'No, grazie'],
     '/library/': ['Prima di andare', 'E il tuo hotel, dove si trova?', 'Sette domande per capire se oggi è invisibile, sostituibile o posizionato. Due minuti.', 'Fai il test', '/quiz/', 'No, grazie'],
     '/risorse/': ['Prima di andare', 'Il punto di partenza più semplice.', 'Sette domande, due minuti, nessuna email obbligatoria.', 'Fai il test', '/quiz/', 'No, grazie'],
     '/quiz/': ['Mancano due minuti', 'Il risultato arriva alla fine del test.', 'Rispondi alle domande per vedere il profilo del tuo hotel.', 'Completa il test', '#close', 'Esci'],
-    '/smontaggio/': ['Prima di andare', 'Bastano quattro campi.', 'Nessuna chiamata. Ricevi la revisione entro tre giorni lavorativi.', 'Richiedi la revisione', '#form', 'No, grazie']
+    '/smontaggio/': ['Prima di andare', 'Bastano pochi campi.', 'Nessuna chiamata. Ricevi lo smontaggio entro tre giorni lavorativi.', 'Richiedi lo smontaggio', '#form', 'No, grazie']
   };
   var exitEl = document.getElementById('exit'), path = location.pathname.replace(/index\.html$/, '');
   // confronto sulla parte finale dell'indirizzo: funziona anche se il sito sta in una sottocartella

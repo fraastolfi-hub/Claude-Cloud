@@ -127,6 +127,9 @@ h1 em,h2 em,.sec.dark h1 em,.sec.dark h2 em,.pmband h2 em{color:var(--inchiostro
 .logo{font:400 17px/1 var(--display);text-transform:uppercase;letter-spacing:-.01em}
 .nav-links{font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--inchiostro)}
 .nav-links a[aria-current="page"]{background:var(--giallo);padding:3px 6px;margin:-3px -6px}
+.nav-links a{white-space:nowrap}
+@media (max-width:1240px){.nav-links{gap:20px}}
+@media (max-width:1140px){.nav-links a[href="/risorse/"]{display:none}}
 .mobile-menu{background:var(--carta)}
 .mobile-menu a{font-family:var(--display);font-weight:400;text-transform:uppercase}
 .foot .big{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--giallo)}

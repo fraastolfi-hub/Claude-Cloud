@@ -113,11 +113,11 @@ P = dict(
       <h3 style="margin:12px 0 8px">Una posizione scelta prima di aprire.</h3>
       <p>Un caso da imprenditore, non da consulente: un locale che ho inventato io, cinque sedi, una posizione decisa prima della prima cucina. Da zero a 2,5 milioni di euro di fatturato. Per questo ti consiglio di decidere la posizione prima di aprire.</p>
     </article>''',
-    offer_lead="Vale anche per un hotel non ancora aperto: è il momento in cui l'analisi rende di più.",
-    cand_lead="Un minuto. Il sito non serve: scrivi il nome del progetto e la città. Il resto lo vediamo dopo.",
-    cand_extra='''      <p class="note-box" style="margin-top:22px">Puoi richiedere l'analisi gratuita anche se il tuo hotel non è ancora aperto: è il momento in cui rende di più.</p>''',
+    offer_lead="Vale anche per un hotel non ancora aperto: è il momento in cui il posizionamento rende di più.",
+    cand_lead="Un minuto. Se hai già un sito, leggo la prima riga della tua homepage come la legge un ospite che non ti conosce.",
+    cand_extra='''      <p class="note-box" style="margin-top:22px">Il tuo hotel non ha ancora un sito? Lo smontaggio parte dalla homepage, quindi non serve. Scrivimi a <a href="mailto:consulting@francescoastolfi.net">consulting@francescoastolfi.net</a>: partiamo dall'analisi completa, ed è il momento in cui rende di più.</p>''',
     faq=[
-        ("Non ho ancora un sito. Ha senso richiedere l'analisi?", "Sì, è il momento migliore. Prima delle fondamenta si decide dove costruire. Vale anche per l'identità."),
+        ("Non ho ancora un sito. Ha senso partire adesso?", "Sì, è il momento migliore. Prima delle fondamenta si decide dove costruire. Vale anche per l'identità. Senza homepage lo smontaggio non serve: scrivimi a consulting@francescoastolfi.net e partiamo dall'analisi completa."),
         ("Il concept l'ha già definito l'architetto.", "L'architetto decide come il tuo hotel appare. Il posizionamento decide perché l'ospite lo sceglie. Se il motivo arriva prima, il progetto ne tiene conto. Se arriva dopo, si rifà."),
         ("Non è troppo presto?", "No. È tardi il giorno dopo l'apertura: da lì ogni correzione costa il triplo."),
         ("Vale anche per un hotel più piccolo?", "Sì, spesso di più: un hotel di 40 camere può scegliere una nicchia precisa; uno di 200 deve tenere insieme più segmenti."),

@@ -70,7 +70,7 @@ P = dict(
     br_quote="Booking ti mette in una lista. Un assistente AI sceglie.",
     proof_extra='''    <p class="note-box rv" style="margin-top:26px"><strong>Sulle vendite dirette il caso è un altro.</strong> Veridia Resort, <em>the nature resort of Chia</em>, vende diretto oltre il 60%. Non ho un confronto di fatturato prima e dopo, quindi non lo presento.</p>''',
     offer_lead="Prima di toccare sito e campagne, devi sapere cosa dire all'ospite perché prenoti da te.",
-    cand_lead="Un minuto. Bastano il nome del tuo hotel e il sito: il resto lo guardo io, OTA comprese.",
+    cand_lead="Un minuto. Bastano il tuo hotel, il sito e 2-3 concorrenti. Leggo la tua prima riga come la legge l'ospite che ha appena chiuso Booking.",
     faq=[
         ("Devo uscire da Booking?", "No. Booking resta un canale, ma smette di essere il principale. Quando l'ospite cerca il tuo hotel per nome, il diretto cresce. Il lavoro è dargli un motivo per farlo."),
         ("Devo rifare il sito?", "No. Si cambiano titolo, presentazione e testi chiave. Un sito nuovo viene dopo, e solo se serve."),

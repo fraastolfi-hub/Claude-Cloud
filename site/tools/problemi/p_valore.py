@@ -81,8 +81,8 @@ P = dict(
         <p>E può cambiare il multiplo: da immobiliare ad aziendale.</p>
         <p><strong>È l'unica riga che dipende solo da te.</strong> E puoi iniziare a costruirla subito.</p>''',
     br_quote="Un'estetica si ammortizza. Un'identità si rivaluta.",
-    offer_lead="L'analisi è il primo documento della riga 5: il posizionamento del tuo hotel, messo per iscritto.",
-    cand_lead="Un minuto. Guardo il tuo hotel come farebbe un acquirente: cosa c'è oltre l'immobile.",
+    offer_lead="L'analisi completa è il primo documento della riga 5: il posizionamento del tuo hotel, messo per iscritto.",
+    cand_lead="Un minuto. Leggo la tua homepage come farebbe un acquirente: c'è un motivo oltre l'immobile?",
     faq=[
         ("Il perito sbaglia a non considerare il brand?", "No. Valuta ciò che si può trasferire. Il lavoro è rendere il brand trasferibile: scritto, applicato dalla squadra, visibile nelle prenotazioni dirette."),
         ("Cosa vuol dire «identità scritta»?", "Un posizionamento messo su una pagina, applicato nei testi, negli script e nelle scelte, verificabile nei numeri del diretto. Finché sta nella testa di una persona, non vale nulla per nessun altro."),
