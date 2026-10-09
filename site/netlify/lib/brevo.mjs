@@ -88,3 +88,28 @@ export async function saveContact(d, formName, form) {
   }
   throw last;
 }
+
+// Mail di conferma a chi richiede lo smontaggio. Testo approvato da Francesco il 9 ottobre 2026.
+// Versione /hday: in più il paragrafo sull'offerta dell'Hospitality Day.
+export function confirmation(d) {
+  const nome = ((d.nome_ruolo || d.nome || '').split(',')[0].trim().split(/\s+/)[0]) || '';
+  const hotel = (d.hotel || '').trim() || 'il tuo hotel';
+  const hday = /\/hday/.test(d.pagina || '');
+  const p = [
+    `Ciao${nome ? ' ' + nome : ''},`,
+    `ho ricevuto la richiesta di smontaggio per ${hotel}.`,
+    'Nei prossimi 3 giorni lavorativi metto la prima riga della tua homepage accanto a quella dei concorrenti che mi hai indicato, con il logo coperto. Ti mando una pagina con il verdetto (posizionato, sostituibile o invisibile) e un indizio su dove cercare il tuo motivo.',
+    'Nel frattempo prova tu: copri il logo sulla tua homepage e su quella di un concorrente, e leggi le due prime frasi. Se si possono scambiare, sai già da dove partiamo.',
+    'Nessuna telefonata. Se hai qualcosa da aggiungere, rispondi a questa mail.',
+  ];
+  if (hday) p.push("Ci siamo visti all'Hospitality Day: con lo smontaggio ti mando anche il link per l'analisi completa a €697 + IVA invece di €2.500. Vale fino al 31 ottobre, se dopo il verdetto vuoi andare avanti.");
+  const firma = ['Francesco Astolfi', 'Hotel Positioning'];
+  return {
+    sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
+    replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    subject: `Ho ricevuto la tua richiesta${nome ? ', ' + nome : ''}`,
+    textContent: p.join('\n\n') + '\n\n' + firma.join('\n'),
+    htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${p.map((x) => `<p style="margin:0 0 14px">${esc(x)}</p>`).join('')}<p style="margin:22px 0 0">${firma.map(esc).join('<br>')}</p></div>`,
+  };
+}
