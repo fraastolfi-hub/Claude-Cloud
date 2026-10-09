@@ -144,7 +144,8 @@
       };
       // invio alla funzione del sito (Brevo + notifica): conferma solo se è arrivato davvero.
       // In più, una copia su Netlify Forms come archivio (la funzione submission-created la salta).
-      if (f.hasAttribute('data-netlify') && /(^|\.)(hotelpositioning\.com|netlify\.app)$/.test(location.hostname)) {
+      // non si controlla data-netlify: Netlify lo toglie dall'HTML pubblicato. Basta il campo form-name.
+      if (f.querySelector('input[name="form-name"]') && /(^|\.)(hotelpositioning\.com|netlify\.app)$/.test(location.hostname)) {
         var pg = f.querySelector('input[name="pagina"]'); if (pg) pg.value = location.pathname;
         var btn = f.querySelector('[type=submit]'); if (btn) btn.disabled = true;
         var fail = f.querySelector('.send-err');
