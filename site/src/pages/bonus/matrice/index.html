@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La matrice delle 4 caselle · Strumenti · Hotel Positioning</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Le quattro caselle del posizionamento e la casella-trappola al centro: tre domande per capire dove sta il tuo hotel.">
+<link rel="canonical" href="https://hotelpositioning.com/bonus/matrice/">
+<!-- @include head -->
+<!-- @include tema -->
+<link rel="stylesheet" href="/assets/strumenti.css">
+<style>
+  /* il dettaglio vive sempre nel DOM (aria-controls valido), nascosto finché non apri una casella */
+  .t-detail[hidden]{display:none}
+  .t-matrice-q .t-options{margin-top:14px}
+  .t-matrice-reset{display:block;margin-left:auto;margin-right:auto}
+  /* su telefono la casella "Il centro" copre gli "Apri +" delle caselle d'angolo: li allontano dal centro */
+  @media (max-width:560px){
+    .t-cell--unico,.t-cell--caro{padding-bottom:46px}
+    .t-cell--poco,.t-cell--meno{padding-top:46px}
+  }
+  /* in stampa strumenti.css nasconde tutti i button: qui le caselle e le risposte scelte devono restare */
+  @media print{
+    .t-page .t-matrix .t-cell{display:flex!important}
+    .t-page .t-matrix .t-cell__toggle{display:none}
+    .t-page .t-opt.is-selected{display:grid!important}
+  }
+  @media (max-width:380px){
+    .t-cell__name{font-size:13px}
+    .t-matrix__center .t-cell .t-cell__name{font-size:12px}
+  }
+</style>
+</head>
+<body class="t-page" data-tool="matrice" data-tool-n="02" data-tool-name="La matrice delle 4 caselle">
+<header class="t-bar">
+  <div class="t-wrap t-bar__in">
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <p class="t-bar__meta">
+      <span class="t-bar__n"><span class="t-bar__word">Strumento </span>02 / 08</span>
+      <span class="t-bar__name">La matrice delle 4 caselle</span>
+    </p>
+    <a href="/bonus/#strumenti" class="t-back">← Strumenti</a>
+  </div>
+  <div class="t-steps" aria-hidden="true"><i class="is-past"></i><i class="is-current"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</header>
+
+<main id="main" class="t-wrap t-stage t-stage--wide">
+  <noscript><p class="t-lead">Questo strumento funziona con JavaScript attivo nel browser.</p></noscript>
+  <div data-t-tool hidden>
+
+    <h1 class="t-title">La matrice delle 4 caselle</h1>
+    <p class="t-lead">Due domande disegnano tutte le posizioni. Il lavoro dell'ospite lo fai meglio o peggio degli altri? E glielo fai pagare di più o di meno? Ma la casella non la scegli tu: la sceglie l'ospite. E dipende da una cosa sola: ha fame, o è sazio?</p>
+
+    <!-- matrice -->
+    <section class="t-block" aria-label="La matrice">
+      <div class="t-matrix">
+        <div class="t-matrix__y">
+          <span class="t-axis t-axis--v">Costi di più</span>
+          <span class="t-axis t-axis--v">Costi meno</span>
+        </div>
+
+        <div class="t-matrix__board">
+          <button type="button" class="t-cell t-cell--unico" data-cell="unico" aria-expanded="false" aria-controls="matrice-dettaglio"><span class="t-cell__name"></span><span class="t-cell__toggle"></span></button>
+          <button type="button" class="t-cell t-cell--caro" data-cell="caro" aria-expanded="false" aria-controls="matrice-dettaglio"><span class="t-cell__name"></span><span class="t-cell__toggle"></span></button>
+          <button type="button" class="t-cell t-cell--poco" data-cell="poco" aria-expanded="false" aria-controls="matrice-dettaglio"><span class="t-cell__name"></span><span class="t-cell__toggle"></span></button>
+          <button type="button" class="t-cell t-cell--meno" data-cell="meno" aria-expanded="false" aria-controls="matrice-dettaglio"><span class="t-cell__name"></span><span class="t-cell__toggle"></span></button>
+          <div class="t-matrix__center">
+            <button type="button" class="t-cell t-cell--centro" data-cell="centro" aria-expanded="false" aria-controls="matrice-dettaglio"><span class="t-cell__name"></span><span class="t-cell__toggle"></span></button>
+          </div>
+        </div>
+
+        <span aria-hidden="true"></span>
+        <div class="t-matrix__x">
+          <span class="t-axis">← Peggio</span>
+          <span class="t-axis">Meglio →</span>
+        </div>
+      </div>
+
+      <div id="matrice-dettaglio" class="t-card t-card--pad t-detail" hidden>
+        <h2 class="t-h3" data-d-nome></h2>
+        <p class="t-strong" data-d-sintesi></p>
+        <div class="t-stack" data-d-blocchi></div>
+      </div>
+    </section>
+
+    <!-- diagnostico -->
+    <section class="t-block t-block--rule" aria-labelledby="mx-diag">
+      <h2 class="t-h2" id="mx-diag">Dove pende il tuo ospite?</h2>
+      <p class="t-text t-intro">Non si sceglie a naso. Si sceglie leggendo l'ospite. Apri le tue recensioni prima di rispondere.</p>
+
+      <div class="t-list">
+        <div class="t-card t-card--pad t-q t-matrice-q" data-q="d1" role="group" aria-labelledby="mx-d1-t mx-d1-q">
+          <div class="t-q__head"><span class="t-badge" aria-hidden="true">1</span><span class="t-label" id="mx-d1-t">Domanda 1 · Dove soffre?</span></div>
+          <p class="t-q__text" id="mx-d1-q">Nelle recensioni, cosa torna più spesso?</p>
+          <div class="t-options">
+            <button type="button" class="t-option t-opt" data-k="d1" data-v="A"><span class="t-opt__key" aria-hidden="true">A</span><span>Un rimpianto, un bisogno grosso che in zona nessuno copre → ha fame</span></button>
+            <button type="button" class="t-option t-opt" data-k="d1" data-v="B"><span class="t-opt__key" aria-hidden="true">B</span><span>Servizi che l'ospite subisce, paga e non usa → è sazio</span></button>
+          </div>
+        </div>
+
+        <div class="t-card t-card--pad t-q t-matrice-q" data-q="d2" role="group" aria-labelledby="mx-d2-t mx-d2-q">
+          <div class="t-q__head"><span class="t-badge" aria-hidden="true">2</span><span class="t-label" id="mx-d2-t">Domanda 2 · Hai il forno?</span></div>
+          <p class="t-q__text" id="mx-d2-q">Hai un vantaggio strutturale vero (qualcosa che nessuno in zona ha) che ti fa costare meno a parità di qualità?</p>
+          <div class="t-options">
+            <button type="button" class="t-option t-opt" data-k="d2" data-v="A"><span class="t-opt__key" aria-hidden="true">A</span><span>Sì, verificabile</span></button>
+            <button type="button" class="t-option t-opt" data-k="d2" data-v="B"><span class="t-opt__key" aria-hidden="true">B</span><span>No (o me lo sto raccontando)</span></button>
+          </div>
+        </div>
+
+        <div class="t-card t-card--pad t-q t-matrice-q" data-q="d3" role="group" aria-labelledby="mx-d3-t mx-d3-q">
+          <div class="t-q__head"><span class="t-badge" aria-hidden="true">3</span><span class="t-label" id="mx-d3-t">Domanda 3 · Sei l'unico?</span></div>
+          <p class="t-q__text" id="mx-d3-q">Sei l'unico per posizione o circostanza: l'unico sul lago, l'unico aperto, l'unica vista?</p>
+          <div class="t-options">
+            <button type="button" class="t-option t-opt" data-k="d3" data-v="A"><span class="t-opt__key" aria-hidden="true">A</span><span>Sì</span></button>
+            <button type="button" class="t-option t-opt" data-k="d3" data-v="B"><span class="t-opt__key" aria-hidden="true">B</span><span>No</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- verdetto (compare dalla prima risposta) -->
+    <section class="t-block" data-verdetto hidden aria-live="polite">
+      <div class="t-card t-card--thick t-card--pad">
+        <span class="t-label">Il verdetto</span>
+        <div data-v-win hidden>
+          <h2 class="t-verdict"><span class="t-hl" data-v-nome></span></h2>
+          <p class="t-text" data-v-testo></p>
+          <div class="t-pair">
+            <div>
+              <span class="t-label">Il prezzo da pagare</span>
+              <p class="t-text" data-v-prezzo></p>
+            </div>
+            <div>
+              <span class="t-label">L'errore da evitare</span>
+              <p class="t-text" data-v-errore></p>
+            </div>
+          </div>
+        </div>
+        <p class="t-text" data-v-manca hidden>Manca ancora una risposta. Rispondi alle tre domande e la casella si accende.</p>
+
+        <a href="/bonus/worksheet/" class="t-btn t-btn--lg t-btn--block t-cta">Ora mettila alla prova nei 6 step →</a>
+        <button type="button" class="t-link t-matrice-reset" data-reset>Ricomincia</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="t-wrap t-foot"><p>Francesco Astolfi · Hotel Positioning · <a href="/privacy-policy/">Privacy policy</a></p></footer>
+<!-- @include cookie-banner -->
+<script src="/assets/site.js"></script>
+<script src="/assets/strumenti.js"></script>
+<script>
+/* Strumento 02 · La matrice delle 4 caselle.
+   Stato in localStorage "matrice_state" (stessa chiave e stessi campi del vecchio sito): { d1, d2, d3 } con "A" o "B".
+   La casella aperta non si salva (come nell'originale). */
+(function(){
+  if (!window.HPT || !HPT.unlocked()) return;
+
+  var CELLS = {
+    caro: {
+      nome: 'Meglio, e costi di più',
+      sintesi: 'Fai il lavoro meglio di tutti. E lo fai pagare.',
+      blocchi: [
+        ['Funziona su', 'Chi ha fame: un bisogno vero, ancora scoperto, e i soldi per togliersi il pensiero.'],
+        ['Esempio', 'La trattoria che fa solo il pesce. Non la pizza, non la carne, non il menu bambini. Quel pesce lì non lo fa nessuno. Costa. E torni lo stesso.'],
+        ['Il prezzo da pagare', "Rinunci al mercato di tutti. Chi guarda la tariffa, chi vuole l'animazione, chi cerca il tutto compreso: lì saluti."],
+        ['La trappola', 'Provarci su un ospite sazio. Gli offri un «di più» che non gli serve. Come vendere una seconda fetta a chi è già pieno.']
+      ],
+      prezzo: "Rinunci al mercato di tutti. Chi guarda la tariffa, chi vuole l'animazione, chi cerca il tutto compreso: lì saluti.",
+      errore: 'Provarci su un ospite sazio: gli offri un «di più» che non gli serve.'
+    },
+    meno: {
+      nome: 'Meglio, e costi meno',
+      sintesi: 'Fai meglio e costi meno. Sulla carta è il paradiso: piaci a tutti.',
+      blocchi: [
+        ['La realtà', 'È un miraggio. Per darne di più spendendo di meno serve un «forno» che gli altri non hanno: una scala, una macchina, un vantaggio strutturale vero.'],
+        ["L'avvertenza", "L'indipendente quasi mai ce l'ha. O hai davvero il forno che nessuno ha nel raggio di trenta chilometri, o te lo stai raccontando. Di solito è la seconda."]
+      ],
+      prezzo: 'Ti serve un vantaggio strutturale vero, e va difeso ogni giorno. Senza quello, il conto non torna.',
+      errore: 'Raccontarti un forno che non hai. Se non regge, torna al «meglio, e costi di più».'
+    },
+    poco: {
+      nome: 'Meno roba, prezzo onesto',
+      sintesi: 'Meno servizi degli hotel pieni di tutto. E costi molto meno. Sembra una resa: è una delle mosse più forti che ci siano.',
+      blocchi: [
+        ['Funziona su', 'Il sazio, stufo di pagare per quello che non usa. E chi con te non prenotava proprio (troppo caro, troppa roba, mai partito).'],
+        ['La mossa', 'La rinuncia in vetrina. Niente reception, niente colazione, niente minibar. Una camera bella, e stop. Metà prezzo. Come il chiosco della piadina: un banco, una griglia, tre ingredienti, e la fila alle otto di sera.'],
+        ["L'errore mortale", 'Togliere i servizi e tenere il prezzo. Se dai di meno e fai pagare uguale, non hai una posizione. Hai solo un hotel che dà di meno.']
+      ],
+      prezzo: 'Metti la rinuncia in vetrina e abbassi davvero il prezzo. Perdi chi vuole il tutto compreso.',
+      errore: 'Togliere i servizi e tenere il prezzo. Così non hai una posizione: hai solo un hotel che dà di meno.'
+    },
+    unico: {
+      nome: "L'unico aperto",
+      sintesi: 'Fai il lavoro peggio. E lo fai pagare di più. La casella dove nessuno vorrebbe stare, e che funziona lo stesso.',
+      blocchi: [
+        ['A un patto solo', "Che l'ospite non abbia scelta. L'hotel dentro l'aeroporto alle due di notte. L'unico bar aperto del paese ad agosto. La camera con l'unica vista sul lago."],
+        ['La verità', 'Non è una posizione che costruisci. È una che erediti. E dura finché dura: il giorno che apre il secondo bar, la rendita finisce.'],
+        ['La mossa', 'Usa i soldi di oggi per costruirti, con calma, una delle altre tre. Prima che te la tolgano.']
+      ],
+      prezzo: 'Vivi di una rendita che non controlli. Il giorno che apre il secondo bar, finisce.',
+      errore: 'Credere che sia una posizione costruita. Non costruire nulla mentre incassi.'
+    },
+    centro: {
+      nome: 'Il centro',
+      sintesi: "Poco meglio, poco più caro. Buono un po' tutto. Il famoso «rapporto qualità-prezzo»: la frase di chi non ha niente da dire.",
+      blocchi: [
+        ["L'immagine", "È il mare d'agosto: cento ombrelloni uguali, in fila. Nessuno ricorda dove si era messo."],
+        ['Cosa succede', "Chi sta al centro non viene scelto: viene ripiegato. Ti prenotano quando l'altro era pieno."],
+        ['La verità', "Non è il posto sicuro. È il posto invisibile. E all'invisibile resta una leva sola: il prezzo."]
+      ],
+      prezzo: "Paghi tutto in prezzo. È l'unica leva che ti resta.",
+      errore: 'Restare qui pensando che sia il posto sicuro. È il posto invisibile.'
+    }
+  };
+
+  var VERDETTI = {
+    unico: 'È una rendita, non una posizione. Incassa oggi, ma costruisciti una delle altre caselle prima che qualcuno ti tolga il monopolio.',
+    poco: 'Il sazio è stufo di pagare per quello che non usa. Metti la rinuncia in vetrina, ma non tenere il prezzo alto se togli i servizi.',
+    caro: "Il caso tipico dell'indipendente: c'è fame, e tu non hai un forno speciale. Fai il lavoro meglio di tutti su una cosa sola, e fattelo pagare.",
+    meno: 'Sicuro che il forno sia vero e non un racconto? Se regge davvero, domini. Se no, torna al «meglio, e costi di più».',
+    centro: "Attento: così sei nella casella affollata. Invisibile. Ti resta solo il prezzo. Rileggi l'ospite e scegli un lato."
+  };
+
+  function verdict(a){
+    if (a.d3 === 'A') return 'unico';
+    if (a.d1 === 'B') return 'poco';
+    if (a.d1 === 'A' && a.d2 === 'B') return 'caro';
+    if (a.d1 === 'A' && a.d2 === 'A') return 'meno';
+    if (a.d3 === 'B' && !a.d1) return 'centro';
+    return null;
+  }
+
+  var st = HPT.store('matrice_state', {});
+  var s = st.state;
+  var root = HPT.$('[data-t-tool]');
+  var open = null;
+
+  HPT.bind(root, st);
+
+  var cells = HPT.$$('[data-cell]', root);
+  var det = HPT.$('#matrice-dettaglio');
+  var ver = HPT.$('[data-verdetto]', root);
+
+  function txt(sel, ctx, v){ HPT.$(sel, ctx).textContent = v; }
+
+  function renderDetail(){
+    cells.forEach(function(b){
+      var k = b.getAttribute('data-cell'), on = open === k;
+      b.setAttribute('aria-expanded', on ? 'true' : 'false');
+      b.classList.toggle('is-open', on);
+      HPT.$('.t-cell__toggle', b).textContent = on ? 'Chiudi −' : 'Apri +';
+    });
+    det.hidden = !open;
+    if (!open) return;
+    var c = CELLS[open];
+    det.classList.toggle('t-card--alt', open === 'centro');
+    txt('[data-d-nome]', det, c.nome);
+    txt('[data-d-sintesi]', det, c.sintesi);
+    var box = HPT.$('[data-d-blocchi]', det);
+    box.textContent = '';
+    c.blocchi.forEach(function(b){
+      var d = document.createElement('div');
+      var l = document.createElement('span'); l.className = 't-label'; l.textContent = b[0];
+      var p = document.createElement('p'); p.className = 't-text'; p.textContent = b[1];
+      d.appendChild(l); d.appendChild(p); box.appendChild(d);
+    });
+  }
+
+  function render(){
+    var win = verdict(s);
+    cells.forEach(function(b){ b.classList.toggle('is-win', win === b.getAttribute('data-cell')); });
+    ['d1', 'd2', 'd3'].forEach(function(id){
+      HPT.$('[data-q="' + id + '"]', root).classList.toggle('is-done', !!s[id]);
+    });
+    var risposte = Object.keys(s).length;
+    ver.hidden = risposte === 0;
+    HPT.$('[data-v-win]', ver).hidden = !win;
+    HPT.$('[data-v-manca]', ver).hidden = !!win;
+    if (win) {
+      txt('[data-v-nome]', ver, CELLS[win].nome);
+      txt('[data-v-testo]', ver, VERDETTI[win]);
+      txt('[data-v-prezzo]', ver, CELLS[win].prezzo);
+      txt('[data-v-errore]', ver, CELLS[win].errore);
+    }
+  }
+
+  cells.forEach(function(b){
+    HPT.$('.t-cell__name', b).textContent = CELLS[b.getAttribute('data-cell')].nome;
+    b.addEventListener('click', function(){
+      var k = b.getAttribute('data-cell');
+      open = open === k ? null : k;
+      renderDetail();
+    });
+  });
+
+  HPT.$('[data-reset]', root).addEventListener('click', function(){
+    if (HPT.reset(st, 'Vuoi ricominciare da capo?')) {
+      var h = HPT.$('#mx-diag');
+      h.setAttribute('tabindex', '-1');
+      h.focus();
+    }
+  });
+
+  st.on(render);
+  renderDetail();
+  render();
+})();
+</script>
+</body>
+</html>

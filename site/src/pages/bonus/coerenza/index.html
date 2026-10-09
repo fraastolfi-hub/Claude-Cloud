@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coerenza in 7 punti di contatto · Strumenti · Hotel Positioning</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Sette anelli del viaggio dell'ospite: verifica dove la promessa del tuo hotel viene confermata e dove viene smentita.">
+<link rel="canonical" href="https://hotelpositioning.com/bonus/coerenza/">
+<!-- @include head -->
+<!-- @include tema -->
+<link rel="stylesheet" href="/assets/strumenti.css">
+<style>
+/* 04 · coerenza: solo quello che manca in strumenti.css */
+.t-coerenza-check .t-check__box{display:inline-block;width:22px;text-align:center}
+.t-coerenza-check > span:last-child{min-width:0}
+.t-chain__name{min-width:0}
+@media (max-width:420px){
+  .t-chain__row{flex-direction:column;align-items:flex-start;gap:6px}
+}
+@media print{
+  /* qui i controlli e i giudizi sono bottoni: in stampa restano visibili quelli scelti */
+  .t-page .t-coerenza-check.is-selected,.t-page .t-vbtn.is-on{display:grid!important;box-shadow:none}
+  .t-page .t-vbtn.is-on{display:block!important}
+  .t-pin{position:static}
+}
+</style>
+</head>
+<body class="t-page" data-tool="coerenza" data-tool-n="04" data-tool-name="Coerenza in 7 punti di contatto">
+<header class="t-bar">
+  <div class="t-wrap t-bar__in">
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <p class="t-bar__meta">
+      <span class="t-bar__n"><span class="t-bar__word">Strumento </span>04 / 08</span>
+      <span class="t-bar__name">Coerenza in 7 punti di contatto</span>
+    </p>
+    <a href="/bonus/#strumenti" class="t-back">← Strumenti</a>
+  </div>
+  <div class="t-steps" aria-hidden="true"><i class="is-past"></i><i class="is-past"></i><i class="is-past"></i><i class="is-current"></i><i></i><i></i><i></i><i></i></div>
+</header>
+
+<main id="main" class="t-wrap t-stage">
+  <noscript><p class="t-lead">Questo strumento funziona con JavaScript attivo nel browser.</p></noscript>
+  <div data-t-tool hidden>
+
+    <!-- intro -->
+    <section data-screen="intro">
+      <h1 class="t-title">Coerenza in 7 punti di contatto</h1>
+      <p class="t-lead">Il viaggio dell'ospite è una catena. Il brand è forte quanto l'anello più debole. Ogni anello conferma la tua promessa, o la smentisce. Il neutro non esiste. Prima di controllare gli anelli, scrivi contro cosa li controlli.</p>
+
+      <div class="t-card t-card--thick t-card--pad t-block">
+        <label class="t-label" for="coerenza-promessa">La tua promessa, in una riga</label>
+        <p class="t-hint" id="coerenza-promessa-hint">Chi sei e per chi. Es: «l'hotel del silenzio, per chi vive mesi ad alta pressione».</p>
+        <input id="coerenza-promessa" class="t-input t-input--y t-field-gap" type="text" data-k="promessa" maxlength="220" placeholder="La tua promessa, in una riga" aria-describedby="coerenza-promessa-hint">
+      </div>
+
+      <button type="button" class="t-btn t-btn--lg t-btn--block t-cta" data-go="anelli">Percorri la catena</button>
+    </section>
+
+    <!-- i sette anelli -->
+    <section data-screen="anelli" hidden>
+      <div class="t-pin t-pin--promise">
+        <label class="t-label" for="coerenza-promessa-pin">La tua promessa</label>
+        <input id="coerenza-promessa-pin" class="t-input t-input--y" type="text" data-k="promessa" maxlength="220" placeholder="Chi sei e per chi.">
+      </div>
+
+      <h1 class="t-title t-title--sm">I sette anelli</h1>
+      <p class="t-hint">Ogni anello si giudica contro la promessa qui sopra.</p>
+      <div class="t-meter" aria-hidden="true" data-c-meter></div>
+
+      <div class="t-list" data-c-rings></div>
+
+      <button type="button" class="t-btn t-btn--lg t-btn--block t-cta" data-go="catena">Vedi la tua catena →</button>
+    </section>
+
+    <!-- la catena -->
+    <section data-screen="catena" hidden>
+      <button type="button" class="t-link t-link--top" data-go="anelli">← Torna agli anelli</button>
+      <div class="t-pin t-pin--promise">
+        <label class="t-label" for="coerenza-promessa-pin2">La tua promessa</label>
+        <input id="coerenza-promessa-pin2" class="t-input t-input--y" type="text" data-k="promessa" maxlength="220" placeholder="Chi sei e per chi.">
+      </div>
+
+      <h1 class="t-title">La tua catena</h1>
+      <p class="t-rule-line">Il brand è forte quanto l'anello più debole.</p>
+
+      <ol class="t-chain" data-c-chain></ol>
+
+      <p class="t-verdict-line" data-c-verdict></p>
+
+      <div class="t-card t-card--pad t-card--flag t-block">
+        <span class="t-label">Il rimedio</span>
+        <p class="t-text">Il rimedio contro lo sfilacciamento è banale e quasi nessuno lo usa: una pagina sola con la versione approvata del tuo messaggio: la frase in una riga, il paragrafo-ascensore, i due-tre temi di valore coi fatti, i tuoi vanti. Da lì esce ogni sito, ogni mail, ogni risposta.</p>
+      </div>
+
+      <button type="button" class="t-btn t-btn--lg t-btn--block t-cta" data-c-download>Scarica il report della catena</button>
+    </section>
+
+  </div>
+</main>
+
+<footer class="t-wrap t-foot"><p>Francesco Astolfi · Hotel Positioning · <a href="/privacy-policy/">Privacy policy</a></p></footer>
+<!-- @include cookie-banner -->
+<script src="/assets/site.js"></script>
+<script src="/assets/strumenti.js"></script>
+<script>
+/* Strumento 04 · Coerenza in 7 punti di contatto.
+   Stato in localStorage "coerenza_state" (stessa chiave e stessi campi del vecchio sito):
+   promessa (stringa), stati { n: "conferma" | "sistemare" }, check { "n-testo del controllo": true }.
+   In più: screen (intro | anelli | catena), per riaprire dove eri.
+   Se la promessa è vuota, la propone dal worksheet (worksheet_state, poi worksheet, sei_step_state). */
+(function(){
+  if (!window.HPT || !HPT.unlocked()) return;
+
+  var ANELLI = [
+    { n: 1, nome: 'Il sito (la promessa dichiarata)', controlli: [
+      "Nelle prime cinque parole c'è un fatto, non un aggettivo generico («benvenuti nella nostra struttura immersa nel verde»).",
+      "C'è una frase in una riga che dice chi sei e per chi.",
+      'Vince «tu / il tuo», non «noi / il nostro».'
+    ]},
+    { n: 2, nome: 'La mail di conferma', nota: "È l'anello che quasi tutti tradiscono: sito caldo, mail gelida.", controlli: [
+      'Parla la stessa lingua del sito, non fredda e istituzionale, sputata dal gestionale.',
+      'Ripete la promessa almeno con un tocco, non è solo un modulo burocratico.'
+    ]},
+    { n: 3, nome: "L'accoglienza e lo staff",
+      nota: 'Il test spietato: chiedi a un collaboratore, uno qualsiasi: «in dieci secondi, perché un ospite dovrebbe scegliere noi e non l\'hotel accanto?». Se risponde con la stessa frase chiara che diresti tu, hai un brand. Se balbetta «perché siamo accoglienti e curati», il posizionamento vive solo nella tua testa.',
+      controlli: [
+      'Il collaboratore risponde con la stessa frase chiara che diresti tu.',
+      'Lo staff sa raccontare la promessa al telefono.',
+      'Lo staff sa raccontare la promessa al check-in.'
+    ]},
+    { n: 4, nome: 'La camera e la notte', controlli: [
+      'La promessa è fisicamente vera, non solo scritta sul sito.',
+      "Non c'è niente che la tradisca (il rumore che non doveva esserci).",
+      'Ogni dettaglio della camera dice la stessa parola del posizionamento.'
+    ]},
+    { n: 5, nome: 'La tavola / la colazione', controlli: [
+      'Cresce dalle tue radici, non è un innesto aggiunto «per riempire» (la serata karaoke del giovedì).',
+      'Un ospite non noterebbe stonature rispetto a chi dici di essere.'
+    ]},
+    { n: 6, nome: 'Il check-out e il dopo', controlli: [
+      "Il saluto e ciò che l'ospite si porta via dicono ancora chi sei (un souvenir locale, non il gadget col logo).",
+      'Chiedi la recensione nel momento giusto, senza infastidire durante il soggiorno.'
+    ]},
+    { n: 7, nome: 'La voce pubblica (campagne, social, risposte alle recensioni)', controlli: [
+      'Campagne e social dicono la stessa cosa del sito, non quattro lingue diverse (tu, la reception, l\'agenzia, lo stagista).',
+      'Le risposte alle recensioni suonano come te, non come un copincolla.',
+      'Ripeti la promessa abbastanza spesso, con storie diverse ma lo stesso fondo, e senza urgenza finta.'
+    ]}
+  ];
+  var SCREENS = ['intro', 'anelli', 'catena'];
+
+  // come il vecchio sito: primo campo presente tra motivo, frase, step6, categoria, step5, promessa
+  function leggiWorksheet(){
+    var keys = ['worksheet_state', 'worksheet', 'sei_step_state'];
+    for (var i = 0; i < keys.length; i++) {
+      var o = HPT.read(keys[i]);
+      if (!o || typeof o !== 'object') continue;
+      var f = ['motivo', 'frase', 'step6', 'categoria', 'step5', 'promessa'], v;
+      for (var j = 0; j < f.length; j++) { if (o[f[j]] != null) { v = o[f[j]]; break; } }
+      if (typeof v === 'string' && v.trim()) return v.trim();
+    }
+    return '';
+  }
+
+  var st = HPT.store('coerenza_state', { promessa: '', stati: {}, check: {}, screen: 'intro' });
+  var s = st.state;
+  if (!s.stati || typeof s.stati !== 'object') s.stati = {};
+  if (!s.check || typeof s.check !== 'object') s.check = {};
+  if (typeof s.promessa !== 'string') s.promessa = '';
+  if (SCREENS.indexOf(s.screen) < 0) s.screen = 'intro';
+  if (!s.promessa) s.promessa = leggiWorksheet();
+
+  var root = HPT.$('[data-t-tool]');
+  var sync = HPT.bind(root, st);
+  var meter = HPT.$('[data-c-meter]', root), rings = HPT.$('[data-c-rings]', root);
+  var chain = HPT.$('[data-c-chain]', root), verdict = HPT.$('[data-c-verdict]', root);
+
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function stato(n){ return s.stati[n]; }
+  function ckey(a, c){ return a.n + '-' + c; }
+
+  // anelli: costruiti una volta, poi aggiornati da paint()
+  var meterSq = [], meterN, ringEls = [];
+  ANELLI.forEach(function(a){ var q = el('span', 't-meter__sq'); meterSq.push(q); meter.appendChild(q); });
+  meterN = el('span', 't-meter__n'); meter.appendChild(meterN);
+
+  ANELLI.forEach(function(a){
+    var sec = el('section', 't-card t-ring');
+    sec.setAttribute('aria-labelledby', 'c-ring-' + a.n);
+    var head = el('div', 't-ring__head');
+    var badge = el('span', 't-badge t-badge--lg', String(a.n)); badge.setAttribute('aria-hidden', 'true');
+    var hw = el('div');
+    hw.appendChild(el('span', 't-label', 'Anello ' + a.n));
+    var h = el('h2', 't-h3', a.nome); h.id = 'c-ring-' + a.n;
+    hw.appendChild(h);
+    head.appendChild(badge); head.appendChild(hw);
+    var body = el('div', 't-ring__body');
+    body.appendChild(el('p', 't-strong', 'Conferma la tua promessa, o la smentisce?'));
+    if (a.nota) body.appendChild(el('p', 't-note', a.nota));
+    var opts = el('div', 't-options'), checks = [];
+    a.controlli.forEach(function(c){
+      var b = el('button', 't-option t-check t-coerenza-check');
+      b.type = 'button';
+      var box = el('span', 't-check__box'); box.setAttribute('aria-hidden', 'true');
+      b.appendChild(box); b.appendChild(el('span', '', c));
+      b.addEventListener('click', function(){
+        var k = ckey(a, c);
+        if (s.check[k]) delete s.check[k]; else s.check[k] = true;
+        st.save(); paint();
+      });
+      checks.push({ b: b, box: box, k: ckey(a, c) });
+      opts.appendChild(b);
+    });
+    body.appendChild(opts);
+    var vs = el('div', 't-verdicts');
+    var ok = el('button', 't-vbtn t-vbtn--ok', '✓ Conferma'); ok.type = 'button';
+    var bad = el('button', 't-vbtn t-vbtn--bad', '✕ Da sistemare'); bad.type = 'button';
+    function giudica(v){
+      if (stato(a.n) === v) delete s.stati[a.n]; else s.stati[a.n] = v;
+      st.save(); paint();
+    }
+    ok.addEventListener('click', function(){ giudica('conferma'); });
+    bad.addEventListener('click', function(){ giudica('sistemare'); });
+    vs.appendChild(ok); vs.appendChild(bad);
+    body.appendChild(vs);
+    sec.appendChild(head); sec.appendChild(body);
+    rings.appendChild(sec);
+    ringEls.push({ a: a, sec: sec, checks: checks, ok: ok, bad: bad });
+  });
+
+  function conti(){
+    var sist = 0, conf = 0;
+    ANELLI.forEach(function(a){ if (stato(a.n) === 'sistemare') sist++; else if (stato(a.n) === 'conferma') conf++; });
+    return { sist: sist, conf: conf, giud: sist + conf };
+  }
+
+  function paint(){
+    var c = conti();
+    ANELLI.forEach(function(a, i){
+      var v = stato(a.n);
+      meterSq[i].className = 't-meter__sq' + (v === 'conferma' ? ' is-ok' : '') + (v === 'sistemare' ? ' is-bad' : '');
+      var r = ringEls[i];
+      r.sec.classList.toggle('is-ok', v === 'conferma');
+      r.sec.classList.toggle('is-bad', v === 'sistemare');
+      r.ok.classList.toggle('is-on', v === 'conferma'); r.ok.setAttribute('aria-pressed', v === 'conferma' ? 'true' : 'false');
+      r.bad.classList.toggle('is-on', v === 'sistemare'); r.bad.setAttribute('aria-pressed', v === 'sistemare' ? 'true' : 'false');
+      r.checks.forEach(function(x){
+        var on = !!s.check[x.k];
+        x.b.classList.toggle('is-selected', on);
+        x.b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        x.box.textContent = on ? '✓' : '○';
+      });
+    });
+    meterN.textContent = c.giud + '/' + ANELLI.length;
+
+    chain.textContent = '';
+    ANELLI.forEach(function(a){
+      var v = stato(a.n);
+      var li = el('li', 't-chain__row' + (v === 'conferma' ? ' is-ok' : '') + (v === 'sistemare' ? ' is-bad' : ''));
+      li.appendChild(el('span', 't-chain__name', a.n + '. ' + a.nome));
+      li.appendChild(el('span', 't-chain__st', v === 'conferma' ? '✓ Conferma' : v === 'sistemare' ? '✕ Da sistemare' : 'Non giudicato'));
+      chain.appendChild(li);
+    });
+    verdict.textContent = c.sist === 0 && c.conf === 7
+      ? 'Catena intera. Raro. Tienila così: è lavoro di ogni giorno, non un traguardo.'
+      : 'Hai ' + c.sist + ' anelli che smentiscono la promessa. Sistemane uno per volta.';
+  }
+
+  function scarica(){
+    var c = conti();
+    var r = ['LA TUA CATENA · Coerenza in 7 punti di contatto', ''];
+    r.push('Promessa: ' + (String(s.promessa || '').trim() || '(non scritta)'), '');
+    r.push("Il brand è forte quanto l'anello più debole.", '');
+    ANELLI.forEach(function(a){
+      var v = stato(a.n);
+      r.push(a.n + '. ' + a.nome + ': ' + (v === 'conferma' ? 'CONFERMA' : v === 'sistemare' ? 'DA SISTEMARE' : 'non giudicato'));
+      a.controlli.forEach(function(ct){ r.push('   [' + (s.check[ckey(a, ct)] ? 'x' : ' ') + '] ' + ct); });
+      r.push('');
+    });
+    r.push(c.sist === 0 && c.conf === 7
+      ? 'Catena intera. Raro. Tienila così: è lavoro di ogni giorno, non un traguardo.'
+      : 'Anelli da sistemare: ' + c.sist + '. Sistemane uno per volta.');
+    HPT.download('la-mia-catena.txt', r);
+  }
+
+  function show(name, focus){
+    s.screen = name; st.save();
+    sync();
+    paint();
+    HPT.screen(name, focus);
+  }
+
+  root.addEventListener('click', function(e){
+    var b = e.target.closest('[data-go],[data-c-download]');
+    if (!b) return;
+    if (b.hasAttribute('data-c-download')) scarica();
+    else show(b.getAttribute('data-go'), true);
+  });
+
+  show(s.screen, false);
+})();
+</script>
+</body>
+</html>
