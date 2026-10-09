@@ -305,7 +305,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
     });
     verdict.textContent = c.sist === 0 && c.conf === 7
       ? 'Catena intera. Raro. Tienila così: è lavoro di ogni giorno, non un traguardo.'
-      : 'Hai ' + c.sist + ' anelli che smentiscono la promessa. Sistemane uno per volta.';
+      : (c.sist === 1 ? 'Hai 1 anello che smentisce la promessa. Sistemalo.' : 'Hai ' + c.sist + ' anelli che smentiscono la promessa. Sistemane uno per volta.');
   }
 
   function scarica(){

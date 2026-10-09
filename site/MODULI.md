@@ -4,6 +4,8 @@
 
 Per lo smontaggio (`revisione-homepage`) la funzione manda anche una **mail di conferma a chi ha compilato** (testo in `netlify/lib/brevo.mjs`, funzione `confirmation`; versione con l'offerta Hospitality Day se la richiesta arriva da /hday/). Parte solo se Brevo accetta le chiamate dalla funzione: su Brevo va spento il blocco degli IP sconosciuti.
 
+Per i bonus (`strumenti-libro`) la funzione manda a chi si registra la mail con i link ai 7 strumenti (`bonusMail`), con `?accesso=1` che li sblocca su qualsiasi dispositivo. Sulla pagina /bonus/ gli strumenti si aprono subito dopo l'invio (chiave `library_unlocked` in localStorage, la stessa del vecchio sito). Gli strumenti stanno in `/bonus/<slug>/` (worksheet, matrice, attributi, coerenza, scala, livelli, canvas), noindex, con CSS e JS comuni in `assets/strumenti.css` e `assets/strumenti.js`.
+
 Controllo rapido della configurazione: aprire `https://hotelpositioning.com/.netlify/functions/invio` nel browser. Mostra `true`/`false` per ogni variabile (nessun valore segreto). Servono `true` almeno `BREVO_API_KEY`, `NOTIFY_EMAIL`, `BREVO_SENDER_EMAIL`.
 
 Prima, e per gli invii che arrivano solo da Netlify Forms, la funzione `netlify/functions/submission-created.mjs`:
