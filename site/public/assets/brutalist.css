@@ -259,3 +259,5 @@ h3 .strike,.card .strike{white-space:normal}
 @media (max-width:1100px){.foot-grid{grid-template-columns:1fr 1fr 1fr}.foot-grid > div:first-child{grid-column:1/-1}}
 @media (max-width:640px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:420px){.foot-grid{grid-template-columns:1fr}}
+
+.ff-hday{display:none}
