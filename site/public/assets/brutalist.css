@@ -60,7 +60,7 @@ h1 em,h2 em,.sec.dark h1 em,.sec.dark h2 em,.pmband h2 em{color:var(--inchiostro
 
 /* bottoni: rettangoli con ombra dura */
 .btn{--bg:var(--giallo);--fg:#0a0a0a;font:700 15px/1.15 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:15px 24px;border:var(--bd);box-shadow:var(--o-sm);transition:transform .12s,box-shadow .12s}
-.btn:hover{--bg:var(--giallo);transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--inchiostro)}
+.btn:hover,.btn.dark:hover{--bg:var(--giallo);--fg:#0a0a0a;transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--inchiostro)}
 .btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--inchiostro)}
 .btn.ghost,.sec.dark .btn.ghost,.card.ink .btn.ghost{--bg:var(--carta);--fg:var(--inchiostro);box-shadow:var(--o-sm)}
 .btn.ghost:hover{--bg:var(--carta)}
