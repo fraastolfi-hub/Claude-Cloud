@@ -30,6 +30,10 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 .t-coerenza-check .t-check__box{display:inline-block;width:22px;text-align:center}
 .t-coerenza-check > span:last-child{min-width:0}
 .t-chain__name{min-width:0}
+@media (max-width:600px){
+  /* brutalist.css ingrandisce gli h2 con !important: il nome dell'anello resta un h3 visivo */
+  .t-page .t-ring h2.t-h3{font-size:clamp(17px,5.4vw,21px)!important;line-height:1.12}
+}
 @media (max-width:420px){
   .t-chain__row{flex-direction:column;align-items:flex-start;gap:6px}
 }
