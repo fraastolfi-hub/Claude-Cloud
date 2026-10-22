@@ -77,6 +77,13 @@ PAGINE = {
         "nav": "Il quartiere",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
+    "faq": {
+        "url": "/domande-frequenti/",
+        "title": "Domande frequenti · Tocq Hotel Milano",
+        "description": "Tutte le risposte su Tocq Hotel Milano: prenotazione, camere, colazione, sale meeting, come arrivare dalla stazione Garibaldi e dagli aeroporti, il quartiere.",
+        "nav": "Domande frequenti",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
     "contatti": {
         "url": "/contatti/",
         "title": "Contatti · Tocq Hotel Milano, Porta Garibaldi",
@@ -338,6 +345,7 @@ def footer():
         <a href="contatti.html#aziende">Tariffe aziendali</a>
         <a href="quartiere.html">Il quartiere e le aziende</a>
         <a href="posizione.html">Come arrivare</a>
+        <a href="faq.html">Domande frequenti</a>
       </div>
     </div>
     <div class="footer__base">
@@ -438,16 +446,27 @@ Aggiornato il {AGGIORNATO}.
 def main():
     import mappa
     pezzi = mappa.blocchi()
+    import faq as faq_pagina
+    corpi = {}
     for key in PAGINE:
         corpo = (SRC / f"{key}.html").read_text()
         if pezzi:
             for segnaposto, testo in pezzi.items():
                 if segnaposto.startswith("<!--"):
                     corpo = corpo.replace(segnaposto, testo)
-        faq = estrai_faq(corpo)
+        corpi[key] = corpo
+    for key in PAGINE:
+        if key == "faq":
+            corpo = corpi[key].replace("<!-- @faq-tutte -->", faq_pagina.pagina(corpi))
+            import re as _re  # le domande scritte solo per la pagina FAQ sono già state raccolte: il modello si toglie
+            corpo = _re.sub(r"\s*<!-- domande scritte solo per questa pagina.*?</template>", "", corpo, flags=_re.S)
+            faq = estrai_faq(corpo)  # lo schema FAQPage sta solo sulla pagina FAQ
+        else:
+            corpo = faq_pagina.accorcia(corpi[key], key)
+            faq = []
         html = head(key, faq) + header(key) + '\n<main id="contenuto">\n' + corpo + "</main>\n" + footer()
         (OUT / f"{key}.html").write_text(html)
-        print(f"{key}.html · {len(faq)} FAQ")
+        print(f"{key}.html · {len(estrai_faq(corpo))} FAQ")
     (OUT / "sitemap.xml").write_text(sitemap())
     (OUT / "robots.txt").write_text(robots())
     (OUT / "llms.txt").write_text(llms())

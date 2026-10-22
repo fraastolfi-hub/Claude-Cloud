@@ -434,3 +434,28 @@ if (radar) {
     traccia('mappa_filtro', { categoria: f });
   });
 }
+
+// Pagina FAQ: ricerca immediata fra le domande e le risposte
+var cerca = document.getElementById('faq-cerca');
+if (cerca) {
+  var voci = document.querySelectorAll('.faq-pagina .faq__item');
+  var gruppi = document.querySelectorAll('.faq-gruppo');
+  var esito = document.getElementById('faq-esito');
+  function normalizza(t) { return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  var testi = [].map.call(voci, function (d) { return normalizza(d.textContent); });
+  var timer;
+  cerca.addEventListener('input', function () {
+    var q = normalizza(cerca.value.trim());
+    var trovate = 0;
+    voci.forEach(function (d, i) {
+      var ok = !q || q.split(/\s+/).every(function (w) { return testi[i].indexOf(w) > -1; });
+      d.classList.toggle('is-nascosta', !ok);
+      if (q && ok && trovate < 1) d.open = true;
+      if (ok) trovate++;
+    });
+    gruppi.forEach(function (g) { g.classList.toggle('is-vuoto', !g.querySelector('.faq__item:not(.is-nascosta)')); });
+    esito.textContent = q ? (trovate ? trovate + (trovate === 1 ? ' risposta' : ' risposte') : 'Nessuna risposta: chiama la reception, +39 02 62071') : '';
+    clearTimeout(timer);
+    if (q) timer = setTimeout(function () { traccia('faq_ricerca', { testo: q, risultati: trovate }); }, 800);
+  });
+}

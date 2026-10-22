@@ -31,6 +31,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/quartiere/"/>
   </url>
   <url>
+    <loc>https://www.tocq.it/domande-frequenti/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/domande-frequenti/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/domande-frequenti/"/>
+  </url>
+  <url>
     <loc>https://www.tocq.it/contatti/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/contatti/"/>
