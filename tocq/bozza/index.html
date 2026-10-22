@@ -3,62 +3,272 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tocq Hotel Milano · Base a Porta Garibaldi</title>
-  <meta name="description" content="Hotel 4 stelle a Porta Garibaldi, a 200 metri dalla stazione. Sei sale fino a 100 persone nello stesso edificio delle camere, cuscino e lato della camera scelti prima di arrivare, colazione da asporto per chi parte all'alba.">
+  <title>Tocq Hotel Milano · 4 stelle a Porta Garibaldi</title>
+  <meta name="description" content="Hotel 4 stelle a 200 m dalla stazione di Porta Garibaldi: 133 camere, 6 sale meeting, cuscino e lato della camera scelti prenotando sul sito.">
+  <!-- BOZZA: togliere noindex al lancio -->
   <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.tocq.it/">
+  <link rel="alternate" hreflang="it" href="https://www.tocq.it/">
+  <link rel="alternate" hreflang="en" href="https://www.tocq.it/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.tocq.it/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tocq Hotel Milano">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Tocq Hotel Milano · 4 stelle a Porta Garibaldi">
+  <meta property="og:description" content="Hotel 4 stelle a 200 m dalla stazione di Porta Garibaldi: 133 camere, 6 sale meeting, cuscino e lato della camera scelti prenotando sul sito.">
+  <meta property="og:url" content="https://www.tocq.it/">
+  <meta property="og:image" content="https://www.tocq.it/assets/img/foto/tocq-hotel-milano-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#000000">
+  <meta name="geo.region" content="IT-MI">
+  <meta name="geo.placename" content="Milano, Porta Garibaldi">
+  <meta name="geo.position" content="45.4824;9.1876">
+  <link rel="icon" href="assets/img/simbolo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Futura Std (brand book) va servito con licenza web in produzione; nella bozza il sostituto è Jost -->
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/img/simbolo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Hotel",
-    "name": "Tocq Hotel",
-    "starRating": { "@type": "Rating", "ratingValue": "4" },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Via A. De Tocqueville 7/D",
-      "postalCode": "20154",
-      "addressLocality": "Milano",
-      "addressCountry": "IT"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.tocq.it/#pagina",
+      "url": "https://www.tocq.it/",
+      "name": "Tocq Hotel Milano · 4 stelle a Porta Garibaldi",
+      "description": "Hotel 4 stelle a 200 m dalla stazione di Porta Garibaldi: 133 camere, 6 sale meeting, cuscino e lato della camera scelti prenotando sul sito.",
+      "inLanguage": "it-IT",
+      "dateModified": "2026-10-22",
+      "about": {
+        "@id": "https://www.tocq.it/#hotel"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.tocq.it/#sito",
+        "url": "https://www.tocq.it/",
+        "name": "Tocq Hotel Milano"
+      }
     },
-    "telephone": "+39 02 62071",
-    "email": "info@tocq.it",
-    "numberOfRooms": 133,
-    "url": "https://www.tocq.it/",
-    "amenityFeature": [
-      { "@type": "LocationFeatureSpecification", "name": "Reception 24 ore", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Sei sale meeting, fino a 100 persone a platea", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Menu dei cuscini", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Colazione da asporto", "value": true }
-    ]
-  }
+    {
+      "@type": "Hotel",
+      "@id": "https://www.tocq.it/#hotel",
+      "name": "Tocq Hotel Milano",
+      "alternateName": "Tocq Hotel",
+      "description": "Hotel 4 stelle a Porta Garibaldi, Milano, a 200 metri dalla stazione: 133 camere insonorizzate rinnovate nel 2021 e 6 sale meeting nello stesso edificio.",
+      "url": "https://www.tocq.it/",
+      "telephone": "+39 02 62071",
+      "email": "info@tocq.it",
+      "image": "https://www.tocq.it/assets/img/foto/tocq-hotel-milano-og.jpg",
+      "logo": "https://www.tocq.it/assets/img/logo-verticale.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Alexis De Tocqueville 7/D",
+        "postalCode": "20154",
+        "addressLocality": "Milano",
+        "addressRegion": "MI",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.4824,
+        "longitude": 9.1876
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Tocq+Hotel+Milano",
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "4"
+      },
+      "numberOfRooms": 133,
+      "petsAllowed": true,
+      "availableLanguage": [
+        "it",
+        "en",
+        "de",
+        "fr",
+        "es"
+      ],
+      "currenciesAccepted": "EUR",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Reception 24 ore",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Guardia notturna",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Wifi ad alta velocità in tutto l'hotel",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "6 sale meeting",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Menu dei cuscini",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Colazione da asporto",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Colazione a buffet con opzioni halal, senza glutine e vegane",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Camere insonorizzate",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Smart TV 55 pollici",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Deposito bagagli",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Parcheggio convenzionato nelle vicinanze",
+          "value": true
+        }
+      ],
+      "containsPlace": [
+        {
+          "@id": "https://www.tocq.it/meeting-eventi/#sala-duomo"
+        },
+        {
+          "@id": "https://www.tocq.it/meeting-eventi/#sala-scala"
+        },
+        {
+          "@id": "https://www.tocq.it/meeting-eventi/#sala-brera"
+        },
+        {
+          "@id": "https://www.tocq.it/meeting-eventi/#sala-porta-nuova"
+        },
+        {
+          "@id": "https://www.tocq.it/meeting-eventi/#sala-castello"
+        },
+        {
+          "@id": "https://www.tocq.it/meeting-eventi/#sala-arena"
+        }
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Fattore Italia srl",
+        "vatID": "IT08581970962"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto dista il Tocq Hotel dalla stazione di Milano Porta Garibaldi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Circa 200 metri, tre minuti a piedi. Dalla stazione partono treni regionali e ad alta velocità, il passante ferroviario e il Malpensa Express; alla fermata Garibaldi c'è la metropolitana."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Il Tocq è in centro a Milano?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. È a Porta Garibaldi, nel quartiere di Porta Nuova, a 2,5 km dal Duomo. È vicino agli uffici di Piazza Gae Aulenti (70 m), alla stazione Garibaldi (200 m) e a Corso Como (50 m)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Il Tocq Hotel ha sale riunioni?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì: sei sale nello stesso edificio delle camere, da 20 a 100 persone a platea. La più grande, Sala Duomo, misura 106 m². Il preventivo arriva entro 24 ore lavorative."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso scegliere il cuscino?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. Prenotando sul sito scegli fra neckroll, kapok, lattice anticervicale e piuma d'oca, e lo trovi sul letto quando arrivi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso avere una camera silenziosa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. Le camere sul lato corte non danno sulla strada: indicalo nel configuratore quando prenoti sul sito."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Se parto prima che apra la sala colazione?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Indica l'ora di partenza: la colazione da asporto è pronta alla reception."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Come arrivo da Malpensa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con il Malpensa Express fino a Milano Porta Garibaldi, poi 200 metri a piedi. Malpensa è a 49 km, Linate a 9 km."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gli animali sono ammessi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì, il Tocq accoglie gli animali domestici. Le condizioni si confermano alla prenotazione."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
 
 <div class="bozza-bar">BOZZA DI LAVORO · non pubblicare · i segnaposto tratteggiati vanno confermati dalla direzione (vedi PROGETTO.md, §13)</div>
 
+<a class="skip" href="#contenuto">Vai al contenuto</a>
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale.svg" alt="Tocq Hotel Milano" width="92" height="44"></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale.svg" alt="Tocq Hotel Milano, home" width="92" height="44"></a>
     <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
-    <nav class="nav" id="nav">
-      <a href="camere.html">Soggiorna</a>
+    <nav class="nav" id="nav" aria-label="Principale">
+      <a href="camere.html">Camere</a>
       <a href="meeting.html">Meeting ed eventi</a>
       <a href="posizione.html">La posizione</a>
       <a href="contatti.html">Contatti</a>
-      <span class="lang">IT · <a href="#" title="Inglese al lancio">EN</a></span>
+      <span class="lang">IT · <a href="#" title="Inglese al lancio" lang="en">EN</a></span>
       <a class="btn btn--primary btn--small" href="camere.html#prenota">Prenota</a>
     </nav>
   </div>
 </header>
 
-<main>
-
+<main id="contenuto">
   <!-- 1 · HERO: la frase per il pubblico, cap. 8 -->
   <section class="hero">
     <div class="wrap hero__grid">
@@ -75,6 +285,11 @@
           <a class="btn btn--primary" href="camere.html#prenota">Prenota una camera</a>
           <a class="btn" href="meeting.html#preventivo">Organizza un evento</a>
         </div>
+        <ul class="proof" aria-label="Cosa dicono gli ospiti">
+          <li><b>8,8/10</b> su Expedia, 973 recensioni</li>
+          <li><b>4,60/5</b> il voto di chi viaggia per lavoro, Google 2025</li>
+          <li><b>8,98</b> pulizia e comfort, Booking</li>
+        </ul>
       </div>
       <div class="photo photo--tall"><span>Foto · l'ingresso su Via Tocqueville con le torri di Porta Nuova sullo sfondo, luce del mattino, una persona con trolley</span></div>
     </div>
@@ -105,6 +320,27 @@
     </div>
   </section>
 
+
+  <section class="section section--tight inbreve" aria-labelledby="inbreve-titolo">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">In breve</p>
+        <h2 id="inbreve-titolo">Il Tocq Hotel Milano, in nove righe.</h2>
+        <p class="muted small">Dati del factsheet dell'hotel e della presentazione MICE. Aggiornati al 22 ottobre 2026.</p>
+      </div>
+      <dl class="facts">
+          <dt>Categoria</dt><dd>Hotel 4 stelle, riaperto nel 2021 dopo la ristrutturazione completa</dd>
+          <dt>Indirizzo</dt><dd>Via Alexis De Tocqueville 7/D, 20154 Milano</dd>
+          <dt>Zona</dt><dd>Porta Garibaldi, fra Porta Nuova e Corso Como</dd>
+          <dt>Stazione</dt><dd>Milano Porta Garibaldi a 200 metri: treni, passante, Malpensa Express, metro</dd>
+          <dt>Camere</dt><dd>133 insonorizzate: 14 Comfort, 63 Superior, 35 Executive, 21 Junior Suite</dd>
+          <dt>Sale meeting</dt><dd>6, da 20 a 100 persone a platea, nello stesso edificio delle camere</dd>
+          <dt>Reception</dt><dd>Aperta 24 ore, con guardia notturna</dd>
+          <dt>Colazione</dt><dd>A buffet, con opzioni halal, senza glutine e vegane; da asporto per chi parte presto</dd>
+          <dt>Su richiesta</dt><dd>Menu dei cuscini, camera sul lato corte, deposito bagagli</dd>
+      </dl>
+    </div>
+  </section>
   <!-- 3 · DUE PERCORSI, STESSO PESO (cap. 13.1) -->
   <section class="section">
     <div class="wrap">
@@ -156,6 +392,22 @@
           <li><span><b>Il check-in anticipato</b>, quando la camera è pronta. <span class="todo">Chi prenota qui ha la precedenza.</span></span></li>
         </ul>
         <div class="btns mt-32"><a class="btn btn--light" href="camere.html#configura">Prepara la tua notte</a></div>
+      </div>
+    </div>
+    <div class="wrap mt-48">
+      <div class="table-scroll table-scroll--dark">
+        <table class="compare">
+          <caption>Stessa camera, due modi di prenotarla</caption>
+          <thead><tr><th scope="col"></th><th scope="col">Su un'agenzia online</th><th scope="col">Su tocq.it</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">La camera</th><td>Una tipologia</td><td>Tipologia e lato: corte silenziosa o Via Tocqueville</td></tr>
+            <tr><th scope="row">Il cuscino</th><td>Quello standard</td><td>Neckroll, kapok, lattice o piuma d'oca, già sul letto</td></tr>
+            <tr><th scope="row">Se parti all'alba</th><td>Lo chiedi al banco</td><td>Colazione da asporto pronta all'ora che indichi</td></tr>
+            <tr><th scope="row">L'arrivo</th><td>Dalle 14, se la camera è pronta</td><td><span class="todo">Precedenza nel check-in anticipato</span></td></tr>
+            <tr><th scope="row">Il prezzo</th><td>Tariffa della piattaforma</td><td><span class="todo">Stessa tariffa o migliore</span></td></tr>
+            <tr><th scope="row">Chi ti risponde</th><td>L'assistenza della piattaforma</td><td>La reception, 24 ore: +39 02 62071</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -242,6 +494,50 @@
     </div>
   </section>
 
+
+  <section class="section" id="domande">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Domande frequenti</p>
+        <h2>Prima di prenotare.</h2>
+        <p class="muted">Risposte brevi, con i numeri. Se manca la tua domanda, la reception risponde 24 ore su 24: <a href="tel:+390262071">+39 02 62071</a>.</p>
+      </div>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>Quanto dista il Tocq Hotel dalla stazione di Milano Porta Garibaldi?</summary>
+          <div>Circa 200 metri, tre minuti a piedi. Dalla stazione partono treni regionali e ad alta velocità, il passante ferroviario e il Malpensa Express; alla fermata Garibaldi c'è la metropolitana.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Il Tocq è in centro a Milano?</summary>
+          <div>No. È a Porta Garibaldi, nel quartiere di Porta Nuova, a 2,5 km dal Duomo. È vicino agli uffici di Piazza Gae Aulenti (70 m), alla stazione Garibaldi (200 m) e a Corso Como (50 m).</div>
+        </details>
+        <details class="faq__item">
+          <summary>Il Tocq Hotel ha sale riunioni?</summary>
+          <div>Sì: sei sale nello stesso edificio delle camere, da 20 a 100 persone a platea. La più grande, Sala Duomo, misura 106 m². Il preventivo arriva entro 24 ore lavorative.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Posso scegliere il cuscino?</summary>
+          <div>Sì. Prenotando sul sito scegli fra neckroll, kapok, lattice anticervicale e piuma d'oca, e lo trovi sul letto quando arrivi.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Posso avere una camera silenziosa?</summary>
+          <div>Sì. Le camere sul lato corte non danno sulla strada: indicalo nel configuratore quando prenoti sul sito.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Se parto prima che apra la sala colazione?</summary>
+          <div>Indica l'ora di partenza: la colazione da asporto è pronta alla reception.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Come arrivo da Malpensa?</summary>
+          <div>Con il Malpensa Express fino a Milano Porta Garibaldi, poi 200 metri a piedi. Malpensa è a 49 km, Linate a 9 km.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Gli animali sono ammessi?</summary>
+          <div>Sì, il Tocq accoglie gli animali domestici. Le condizioni si confermano alla prenotazione.</div>
+        </details>
+      </div>
+    </div>
+  </section>
   <!-- 9 · IL DUOMO, DETTO PRIMA: toglie la recensione "30 minuti dal centro" -->
   <section class="section section--tight section--alt">
     <div class="wrap split">
@@ -252,46 +548,50 @@
       <p class="muted mt-0">Siamo a Porta Garibaldi, non in centro storico. Lo diciamo prima, così scegli sapendo cosa trovi: il treno, gli uffici di Porta Nuova e la Fiera vicini, il Duomo raggiungibile ma non sotto casa.</p>
     </div>
   </section>
-
 </main>
 
 <div class="pattern pattern--salmone" aria-hidden="true"></div>
 <footer class="footer">
   <div class="wrap">
     <div class="footer__grid">
-      <div class="footer__logo"><img src="assets/img/logo-verticale-neg.svg" alt="Tocq Hotel Milano" width="81" height="110"></div>
+      <div class="footer__logo"><img src="assets/img/logo-verticale-neg.svg" alt="Tocq Hotel Milano" width="81" height="110" loading="lazy"></div>
       <div>
-        <h4>Tocq Hotel</h4>
-        <span>Via A. De Tocqueville 7/D</span>
-        <span>20154 Milano</span>
+        <h2 class="footer__h">Tocq Hotel Milano</h2>
+        <address>Via Alexis De Tocqueville 7/D<br>20154 Milano</address>
+        <span>Hotel 4 stelle · 133 camere</span>
         <span>Reception aperta 24 ore</span>
       </div>
       <div>
-        <h4>Scrivi o chiama</h4>
+        <h2 class="footer__h">Scrivi o chiama</h2>
         <a href="tel:+390262071">+39 02 62071</a>
         <a href="mailto:info@tocq.it">info@tocq.it</a>
         <a href="mailto:mice@tocq.it">mice@tocq.it</a>
       </div>
       <div>
-        <h4>Soggiorna</h4>
-        <a href="camere.html">Camere</a>
+        <h2 class="footer__h">Soggiorna</h2>
+        <a href="camere.html">Camere e suite</a>
         <a href="camere.html#colazione">Colazione</a>
-        <a href="camere.html#prenota">Prenota</a>
+        <a href="camere.html#prenota">Prenota sul sito</a>
       </div>
       <div>
-        <h4>Lavora</h4>
-        <a href="meeting.html">Meeting ed eventi</a>
+        <h2 class="footer__h">Lavora</h2>
+        <a href="meeting.html">Sale meeting</a>
         <a href="meeting.html#preventivo">Richiedi un preventivo</a>
         <a href="contatti.html#aziende">Tariffe aziendali</a>
-        <a href="posizione.html">La posizione</a>
+        <a href="posizione.html">Come arrivare</a>
       </div>
     </div>
     <div class="footer__base">
-      <span>© 2026 Tocq Hotel · Fattore Italia srl · P.IVA 08581970962</span>
-      <span>Privacy · Cookie</span>
+      <span>© 2026 Tocq Hotel Milano · Fattore Italia srl · P.IVA 08581970962</span>
+      <span>Pagina aggiornata il 22 ottobre 2026 · Privacy · Cookie</span>
     </div>
   </div>
 </footer>
+
+<div class="sticky-cta" aria-label="Azioni rapide">
+  <a class="btn btn--primary" href="camere.html#prenota">Prenota</a>
+  <a class="btn" href="meeting.html#preventivo">Preventivo evento</a>
+</div>
 
 <script src="assets/app.js"></script>
 </body>

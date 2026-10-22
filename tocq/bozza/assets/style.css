@@ -349,3 +349,73 @@ fieldset.field { border: 0; padding: 0; margin: 0; }
 .split > *, .reason > *, .hero__grid > *, .config > *, .grid-2 > *, .grid-3 > *, .grid-4 > *, .footer__grid > * { min-width: 0; }
 @media (max-width: 640px) { .todo { white-space: normal; } }
 [hidden] { display: none !important; }
+
+/* Accessibilità: salto al contenuto */
+.skip { position: absolute; left: -9999px; top: 0; background: var(--nero); color: var(--bianco); padding: 10px 16px; z-index: 50; }
+.skip:focus { left: 8px; top: 8px; }
+
+/* Footer: titoli di colonna (h2 per una gerarchia corretta, stile da etichetta) */
+.footer__h { font: 500 11px var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--corallo); margin: 0 0 8px; }
+.footer address { font-style: normal; color: var(--nero-20); }
+
+/* Prova sociale sotto le call to action */
+.proof { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 14px; color: var(--ink-2); }
+.proof b { color: var(--nero); font-weight: 700; margin-right: 4px; }
+
+/* In breve: i fatti in forma di elenco, facili da citare per motori e assistenti AI */
+.inbreve { background: var(--bianco); }
+.facts { display: grid; grid-template-columns: 150px 1fr; margin: 0; border-top: 2px solid var(--nero); }
+.facts dt, .facts dd { padding: 12px 0; border-bottom: 1px solid var(--line); margin: 0; }
+.facts dt { font: 500 11px/1.6 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); padding-top: 15px; }
+@media (max-width: 640px) { .facts { grid-template-columns: 1fr; } .facts dt { border-bottom: 0; padding-bottom: 0; } }
+
+/* Tabelle di confronto */
+.mt-48 { margin-top: 48px; }
+.compare { width: 100%; border-collapse: collapse; min-width: 620px; font-size: 15px; }
+.compare caption { text-align: left; font: 500 12px var(--sans); letter-spacing: .16em; text-transform: uppercase; padding: 0 0 14px; color: var(--corallo-50); }
+.compare th, .compare td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--nero-80); vertical-align: top; }
+.compare thead th { font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--nero-50); }
+.compare tbody th { font-weight: 500; color: var(--bianco); width: 22%; }
+.compare td { color: var(--nero-50); }
+.compare td:last-child { color: var(--corallo); font-weight: 500; }
+.table-scroll--dark { background: transparent; border-top: 1px solid var(--corallo); }
+.compare--light tbody th { color: var(--nero); }
+.compare--light th, .compare--light td { border-color: var(--line); }
+.compare--light td { color: var(--ink-2); }
+.compare--light td:last-child { color: var(--nero); background: var(--corallo-50); }
+.compare--light thead th:last-child { color: var(--nero); background: var(--corallo); }
+
+/* Passi del processo MICE */
+.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 2px solid var(--nero); }
+.steps li { counter-increment: s; padding: 22px 20px 0 0; display: grid; gap: 8px; align-content: start; }
+.steps li::before { content: "0" counter(s); font: 700 28px var(--sans); color: var(--verde); }
+.steps b { font-size: 18px; }
+.steps span { color: var(--ink-2); font-size: 15px; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; gap: 24px; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* FAQ */
+.faq { border-top: 2px solid var(--nero); }
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__item summary { cursor: pointer; list-style: none; padding: 18px 40px 18px 0; font-weight: 500; font-size: 17px; position: relative; }
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after { content: "+"; position: absolute; right: 4px; top: 14px; font-size: 24px; font-weight: 300; }
+.faq__item[open] summary::after { content: "−"; }
+.faq__item > div { padding: 0 0 20px; color: var(--ink-2); max-width: 62ch; }
+
+/* Foto vere */
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.photo figcaption { position: relative; z-index: 1; font: 500 11px/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--bianco); padding: 10px 14px; margin: 12px; background: rgba(0,0,0,.55); }
+figure.photo { margin: 0; overflow: hidden; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.gallery .photo { min-height: 220px; }
+.gallery .photo--wide { grid-column: span 2; }
+@media (max-width: 760px) { .gallery { grid-template-columns: 1fr 1fr; } .gallery .photo--wide { grid-column: span 2; } }
+
+/* Barra di prenotazione su mobile */
+.sticky-cta { display: none; }
+@media (max-width: 760px) {
+  .sticky-cta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--bianco); border-top: 1px solid var(--line); }
+  .sticky-cta .btn { justify-content: center; padding: 14px 10px; }
+  body { padding-bottom: 76px; }
+}
