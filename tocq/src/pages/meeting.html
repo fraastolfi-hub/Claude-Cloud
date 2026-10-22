@@ -46,16 +46,26 @@
       <p class="kicker">Le sale</p>
       <h2>Le capienze, prima che tu le chieda.</h2>
       <p class="lead mb-32">Per ogni sala: metri quadri, misure, persone per allestimento. Planimetria e foto nella scheda scaricabile.</p>
+      <div class="persone" id="persone">
+        <div class="persone__testa">
+          <label for="persone-range">Quante persone siete?</label>
+          <output id="persone-out" for="persone-range">40</output>
+        </div>
+        <input type="range" id="persone-range" min="10" max="100" step="5" value="40" aria-describedby="persone-esito">
+        <div class="persone__scala" aria-hidden="true"><span>10</span><span>50</span><span>100</span></div>
+        <p id="persone-esito" class="persone__esito" aria-live="polite"></p>
+        <a class="btn btn--primary" id="persone-cta" href="#preventivo">Preventivo per 40 persone</a>
+      </div>
       <div class="table-scroll">
         <table class="data">
           <thead><tr><th>Sala</th><th>m²</th><th>Misure (m)</th><th>Platea</th><th>Banchi di scuola</th><th>Ferro di cavallo</th><th>Tavolo unico</th><th>Cabaret</th><th>Cocktail</th></tr></thead>
           <tbody>
-            <tr><td>Duomo</td><td class="n">106</td><td class="n">9,2 × 10,7</td><td class="n">100</td><td class="n">45</td><td class="n">30</td><td class="n">30</td><td class="n">42</td><td class="n">90</td></tr>
-            <tr><td>Scala</td><td class="n">55</td><td class="n">8,9 × 5,2</td><td class="n">50</td><td class="n">22</td><td class="n">25</td><td class="n">25</td><td class="n">—</td><td class="n">50</td></tr>
-            <tr><td>Brera</td><td class="n">53</td><td class="n">5,4 × 5,3</td><td class="n">50</td><td class="n">22</td><td class="n">25</td><td class="n">25</td><td class="n">—</td><td class="n">50</td></tr>
-            <tr><td>Porta Nuova</td><td class="n">32</td><td class="n">9,1 × 5,9</td><td class="n">20</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">—</td><td class="n">12</td></tr>
-            <tr><td>Castello</td><td class="n">32</td><td class="n">4,1 × 6,0</td><td class="n">20</td><td class="n">12</td><td class="n">12</td><td class="n">12</td><td class="n">—</td><td class="n">12</td></tr>
-            <tr><td>Arena</td><td class="n">32</td><td class="n">4,5 × 6,0</td><td class="n">20</td><td class="n">12</td><td class="n">12</td><td class="n">12</td><td class="n">—</td><td class="n">12</td></tr>
+            <tr data-sala="Duomo" data-platea="100" data-scuola="45" data-ferro="30" data-tavolo="30" data-cabaret="42" data-cocktail="90"><td>Duomo</td><td class="n">106</td><td class="n">9,2 × 10,7</td><td class="n">100</td><td class="n">45</td><td class="n">30</td><td class="n">30</td><td class="n">42</td><td class="n">90</td></tr>
+            <tr data-sala="Scala" data-platea="50" data-scuola="22" data-ferro="25" data-tavolo="25" data-cabaret="0" data-cocktail="50"><td>Scala</td><td class="n">55</td><td class="n">8,9 × 5,2</td><td class="n">50</td><td class="n">22</td><td class="n">25</td><td class="n">25</td><td class="n">—</td><td class="n">50</td></tr>
+            <tr data-sala="Brera" data-platea="50" data-scuola="22" data-ferro="25" data-tavolo="25" data-cabaret="0" data-cocktail="50"><td>Brera</td><td class="n">53</td><td class="n">5,4 × 5,3</td><td class="n">50</td><td class="n">22</td><td class="n">25</td><td class="n">25</td><td class="n">—</td><td class="n">50</td></tr>
+            <tr data-sala="Porta Nuova" data-platea="20" data-scuola="10" data-ferro="10" data-tavolo="10" data-cabaret="0" data-cocktail="12"><td>Porta Nuova</td><td class="n">32</td><td class="n">9,1 × 5,9</td><td class="n">20</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">—</td><td class="n">12</td></tr>
+            <tr data-sala="Castello" data-platea="20" data-scuola="12" data-ferro="12" data-tavolo="12" data-cabaret="0" data-cocktail="12"><td>Castello</td><td class="n">32</td><td class="n">4,1 × 6,0</td><td class="n">20</td><td class="n">12</td><td class="n">12</td><td class="n">12</td><td class="n">—</td><td class="n">12</td></tr>
+            <tr data-sala="Arena" data-platea="20" data-scuola="12" data-ferro="12" data-tavolo="12" data-cabaret="0" data-cocktail="12"><td>Arena</td><td class="n">32</td><td class="n">4,5 × 6,0</td><td class="n">20</td><td class="n">12</td><td class="n">12</td><td class="n">12</td><td class="n">—</td><td class="n">12</td></tr>
           </tbody>
         </table>
       </div>

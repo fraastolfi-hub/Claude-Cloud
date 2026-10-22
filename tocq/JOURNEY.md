@@ -272,18 +272,19 @@ Ogni pagina segue la stessa grammatica: **promessa → fatti → prova → scelt
 
 ---
 
-## 11. Cosa cambia rispetto alla bozza attuale
+## 11. Stato della costruzione nella bozza
 
-| Elemento | Oggi nella bozza | Da fare |
-|---|---|---|
-| Ante del simbolo all'ingresso e nella CTA finale | — | Nuovo (SVG del simbolo già pronto, `assets/img/simbolo.svg`) |
-| Selettore di intenzione | — | Nuovo, con riordino delle sezioni |
-| Luce che cambia per capitolo | Fondi fissi | Nuovo, dissolvenza al cambio capitolo |
-| Configuratore breve in home | Solo link | Nuovo, con passaggio delle scelte nell'URL |
-| Ora agganciata nella giornata | Linea statica | Nuovo, solo desktop |
-| Cifre a palette nel tabellone | Statiche | Nuovo |
-| Cursore "Quante persone siete?" | — | Nuovo, pagina meeting |
-| "Dove devi andare domani?" | Filtri | Nuovo, pagina posizione |
-| CTA finale con il simbolo aperto | Footer | Nuovo, S14 |
-| Foto colazione da asporto, squadra, sale | Segnaposto | Shooting o file più leggeri dal Drive |
-| In breve, FAQ, confronto, prove, barra mobile | Presenti | Restano, riordinati secondo §3 |
+| Elemento | Stato |
+|---|---|
+| Ante del simbolo all'ingresso | Costruito (una volta per sessione, disattivato con "riduci movimento") |
+| Selettore di intenzione | Costruito: riordina la home (le sale salgono subito dopo il bivio), evidenzia la card giusta, inverte i bottoni della barra mobile, ricorda la scelta |
+| Capitoli con la luce dell'ora | Costruito: sera corallo, notte nera, alba verde, ritorno bianco |
+| Indicatore dell'ora del capitolo | Costruito, solo su schermi larghi |
+| Configuratore breve in home | Costruito: le scelte passano alla pagina camere già compilate |
+| Squadra: un nome apre la sua citazione | Costruito (mancano citazioni dedicate per Marco, Oliver, Andrea) |
+| Call to action finale fra le ante aperte | Costruito: le ante si aprono quando la sezione entra nello schermo |
+| "Quante persone siete?" (meeting) | Costruito: evidenzia sale e allestimenti possibili, propone la sala più piccola che basta, precompila il preventivo |
+| "Dove devi andare domani?" (posizione) | Costruito: risponde con mezzo e tempo presi dalla tabella |
+| Piano di misurazione | Costruito: gli eventi finiscono nel `dataLayer`, pronti per GA4 / Tag Manager |
+| Cifre a palette nel tabellone | Non costruito: rinviato, il valore non giustifica il movimento |
+| Foto colazione da asporto, squadra, sale | Da scattare, o da caricare più leggere nel Drive |

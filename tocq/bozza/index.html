@@ -269,6 +269,8 @@
 </header>
 
 <main id="contenuto">
+  <div class="ora-capitolo" aria-hidden="true"><span class="ora-capitolo__ora">18:40</span><span class="ora-capitolo__nome">Arrivo</span></div>
+
   <!-- 1 · HERO: la frase per il pubblico, cap. 8 -->
   <section class="hero">
     <div class="wrap hero__grid">
@@ -320,6 +322,50 @@
     </div>
   </section>
 
+  <!-- CAPITOLO · IL BIVIO: il visitatore dichiara perché è qui, la home si riordina -->
+  <section class="section" id="bivio">
+    <div class="wrap">
+      <p class="kicker">Perché sei a Milano</p>
+      <h2>Due motivi, un indirizzo.</h2>
+      <fieldset class="intent">
+        <legend class="sr-only">Perché sei a Milano</legend>
+        <label><input type="radio" name="intento" value="soggiorno" checked><span>Sono qui per dormire e lavorare</span></label>
+        <label><input type="radio" name="intento" value="evento"><span>Sto organizzando un evento</span></label>
+      </fieldset>
+      <p class="intent__note muted small" aria-live="polite">La pagina mette prima quello che ti serve. Puoi cambiare quando vuoi.</p>
+      <div class="grid-2 mt-32">
+        <article class="card card--path" data-percorso="soggiorno">
+          <figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-camera-scrivania-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-scrivania-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-scrivania-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Camera del Tocq Hotel Milano vista dalla scrivania, con tavolino, due poltrone e letto matrimoniale" width="1600" height="1068" loading="lazy" decoding="async"></figure>
+          <div class="card__body">
+            <span class="num">01 · SOGGIORNA</span>
+            <h3>Una notte vera, prima della giornata che conta.</h3>
+            <ul>
+              <li>133 camere insonorizzate, rifatte nel 2021</li>
+              <li>Cuscino, materasso e lato della camera scelti prenotando</li>
+              <li>Colazione in sala o da portare via</li>
+            </ul>
+            <a class="btn" href="camere.html">Vedi le camere</a>
+          </div>
+        </article>
+        <article class="card card--path" data-percorso="evento">
+          <div class="photo"><span>Foto · Sala Duomo allestita a platea, schermo acceso, prima che entrino i partecipanti</span></div>
+          <div class="card__body">
+            <span class="num">02 · MEETING ED EVENTI</span>
+            <h3>La riunione e il letto nello stesso edificio.</h3>
+            <ul>
+              <li>Sei sale, da 20 a 100 persone a platea</li>
+              <li>Mezza giornata, giornata intera, residenziale</li>
+              <li>Preventivo entro <span class="todo">24 ore lavorative</span></li>
+            </ul>
+            <a class="btn" href="meeting.html">Vedi le sale</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- con l'intenzione "evento", la sezione #sale viene spostata qui -->
+  <div id="posto-sale-evento" hidden></div>
 
   <section class="section section--tight inbreve" aria-labelledby="inbreve-titolo">
     <div class="wrap split">
@@ -341,58 +387,58 @@
       </dl>
     </div>
   </section>
-  <!-- 3 · DUE PERCORSI, STESSO PESO (cap. 13.1) -->
-  <section class="section">
+
+
+  <!-- CAPITOLO · LA SERA (corallo): 18:40 e 20:00 -->
+  <section class="section capitolo capitolo--sera" data-ora="18:40" data-capitolo="La sera">
     <div class="wrap">
-      <p class="kicker">Perché sei a Milano</p>
-      <h2 class="mb-32">Due motivi, un indirizzo.</h2>
-      <div class="grid-2">
-        <article class="card card--path">
-          <figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-camera-scrivania-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-scrivania-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-scrivania-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Camera del Tocq Hotel Milano vista dalla scrivania, con tavolino, due poltrone e letto matrimoniale" width="1600" height="1068" loading="lazy" decoding="async"></figure>
-          <div class="card__body">
-            <span class="num">01 · SOGGIORNA</span>
-            <h3>Una notte vera, prima della giornata che conta.</h3>
-            <ul>
-              <li>Camere rifatte nel 2021, spaziose</li>
-              <li>Cuscino, materasso e lato della camera scelti prenotando</li>
-              <li>Colazione in sala o da portare via</li>
-            </ul>
-            <a class="btn" href="camere.html">Vedi le camere</a>
-          </div>
-        </article>
-        <article class="card card--path">
-          <div class="photo"><span>Foto · sala allestita a platea, schermo acceso, prima che entrino i partecipanti</span></div>
-          <div class="card__body">
-            <span class="num">02 · MEETING ED EVENTI</span>
-            <h3>La riunione e il letto nello stesso edificio.</h3>
-            <ul>
-              <li>Sei sale, fino a 100 persone a platea, nello stesso edificio</li>
-              <li>Mezza giornata, giornata intera, residenziale</li>
-              <li>Preventivo entro <span class="todo">24 ore lavorative</span></li>
-            </ul>
-            <a class="btn" href="meeting.html">Vedi le sale</a>
-          </div>
-        </article>
+      <p class="kicker">Una giornata da qui · La sera</p>
+      <h2>Fai quello che sei venuto a fare. Senza perdere tempo, e senza perdere la notte.</h2>
+      <div class="split mt-32">
+        <ol class="momenti">
+          <li><time>18:40</time><div><h3>Arrivo</h3><p>Scendi dal treno a Garibaldi. Duecento metri col trolley e sei in camera. Se arrivi prima delle 14, le valigie restano alla reception.</p></div></li>
+          <li><time>20:00</time><div><h3>La sera</h3><p>Corso Como è a 50 metri, Gae Aulenti a 70. Al ritorno, la guardia notturna è all'ingresso.</p></div></li>
+        </ol>
+        <figure class="photo photo--tall"><img src="assets/img/foto/tocq-hotel-milano-camera-sera-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-sera-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-sera-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Camera del Tocq Hotel Milano la sera, con lampada ad arco accesa e letto rifatto" width="1600" height="1068" loading="lazy" decoding="async"></figure>
       </div>
     </div>
   </section>
 
-  <!-- 4 · IL MOTIVO PER PRENOTARE DIRETTO (cap. 10, 13.5): scelta, non sconto -->
-  <section class="section section--dark">
+  <!-- CAPITOLO · LA NOTTE (nero): 23:00, configuratore breve e confronto -->
+  <section class="section section--dark capitolo capitolo--notte" id="notte" data-ora="23:00" data-capitolo="La notte">
     <div class="wrap reason">
       <div>
-        <p class="kicker">Perché prenotare qui</p>
+        <p class="kicker">23:00 · La notte</p>
         <p class="reason__big">Su Booking prenoti una camera.<br>Qui scegli il cuscino, il materasso e il lato da cui dormi.</p>
+        <p class="lead mt-32">Tre scelte, dieci secondi. Le ritrovi già compilate quando scegli le date.</p>
       </div>
-      <div>
-        <ul class="ticklist">
-          <li><span><b>Il cuscino.</b> Neckroll, kapok, lattice o piuma d'oca. Lo trovi sul letto quando arrivi.</span></li>
-          <li><span><b>Il lato.</b> Corte interna se domani hai una riunione, Via Tocqueville se la sera esci.</span></li>
-          <li><span><b>La colazione da asporto.</b> Se parti prima che apra la sala, la prepariamo la sera prima.</span></li>
-          <li><span><b>Il check-in anticipato</b>, quando la camera è pronta. <span class="todo">Chi prenota qui ha la precedenza.</span></span></li>
-        </ul>
-        <div class="btns mt-32"><a class="btn btn--light" href="camere.html#configura">Prepara la tua notte</a></div>
-      </div>
+      <form class="mini-config" id="mini-config" action="camere.html" onsubmit="return false">
+        <fieldset class="field">
+          <legend>Il cuscino</legend>
+          <div class="choices choices--dark">
+            <label><input type="radio" name="cuscino" value="Piuma d'oca" checked> Piuma d'oca</label>
+            <label><input type="radio" name="cuscino" value="Lattice"> Lattice</label>
+            <label><input type="radio" name="cuscino" value="Kapok"> Kapok</label>
+            <label><input type="radio" name="cuscino" value="Neckroll"> Neckroll</label>
+          </div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Il lato</legend>
+          <div class="choices choices--dark">
+            <label><input type="radio" name="lato" value="Corte interna, silenziosa" checked> Corte, silenziosa</label>
+            <label><input type="radio" name="lato" value="Via Tocqueville"> Via Tocqueville</label>
+          </div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>La colazione</legend>
+          <div class="choices choices--dark">
+            <label><input type="radio" name="colazione" value="In sala" checked> In sala</label>
+            <label><input type="radio" name="colazione" value="Da asporto"> Da asporto, parto presto</label>
+          </div>
+        </fieldset>
+        <p class="mini-config__riepilogo" aria-live="polite"><span id="mini-riepilogo">Piuma d'oca · Corte, silenziosa · In sala</span></p>
+        <a class="btn btn--primary" id="mini-vai" href="camere.html#configura">Scegli le date</a>
+      </form>
     </div>
     <div class="wrap mt-48">
       <div class="table-scroll table-scroll--dark">
@@ -412,50 +458,49 @@
     </div>
   </section>
 
-  <!-- 5 · LA GIORNATA: la mappa del lavoro dell'ospite (JTBD, cap. 6) -->
-  <section class="section">
-    <div class="wrap">
-      <p class="kicker">Una giornata da qui</p>
-      <h2>Fai quello che sei venuto a fare. Senza perdere tempo, e senza perdere la notte.</h2>
-      <p class="lead mb-32">Come la raccontano gli ospiti che tornano una volta al mese.</p>
-      <ol class="timeline">
-        <li><time>18:40</time><p>Scendi dal treno a Garibaldi. Duecento metri col trolley e sei in camera.</p></li>
-        <li><time>20:00</time><p>Cena in Corso Como, a due passi. Al ritorno la guardia notturna è all'ingresso.</p></li>
-        <li><time>23:00</time><p>Camera sul lato corte, cuscino scelto prenotando. Si dorme.</p></li>
-        <li><time>06:30</time><p>La colazione da asporto ti aspetta alla reception. Il Malpensa Express parte a 200 metri.</p></li>
-        <li><time>+30 gg</time><p>Torni. Stessa camera, stessa fattura, qualcuno a colazione si ricorda il tuo nome.</p></li>
-      </ol>
-      <p class="note"><b>Nota</b>Orari esemplificativi. Colazione da asporto, guardia notturna e precedenza nel check-in sono già realtà secondo le recensioni; "stessa camera la volta dopo" è una mossa del cap. 10 da adottare.</p>
+  <!-- CAPITOLO · L'ALBA (verde chiaro): 06:30, colazione da asporto e squadra -->
+  <section class="section capitolo capitolo--alba" data-ora="06:30" data-capitolo="L'alba">
+    <div class="wrap split">
+      <figure class="photo photo--tall"><img src="assets/img/foto/tocq-hotel-milano-colazione-muffin-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-colazione-muffin-800.webp 800w, assets/img/foto/tocq-hotel-milano-colazione-muffin-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Muffin con crema e fiori eduli servito al Tocq Hotel Milano, con tulipani gialli sullo sfondo" width="1600" height="2133" loading="lazy" decoding="async"></figure>
+      <div>
+        <p class="kicker">06:30 · L'alba</p>
+        <h2>Se parti all'alba, la colazione te la portiamo via noi.</h2>
+        <p class="lead">Indichi l'ora quando prenoti: alle sei la trovi pronta alla reception. Il Malpensa Express parte a 200 metri.</p>
+        <dl class="facts mt-32">
+          <dt>Buffet</dt><dd>Italiano e internazionale, con opzioni halal, senza glutine e vegane</dd>
+          <dt>Da asporto</dt><dd>Pronta all'ora di partenza, alla reception</dd>
+          <dt>Ospiti esterni</dt><dd>Benvenuti, a <span class="todo">16 €</span></dd>
+        </dl>
+      </div>
     </div>
   </section>
 
-  <!-- 6 · LA SQUADRA (cap. 3.6): un cast, non un eroe -->
-  <section class="section section--alt">
+  <section class="section capitolo capitolo--alba capitolo--continua">
     <div class="wrap split">
       <div>
         <p class="kicker">Chi trovi</p>
         <h2>A colazione qualcuno ti chiama per nome.</h2>
-        <p class="lead">La squadra di sala è la stessa dal 2021. Gli ospiti la citano per nome su Google, Booking e TripAdvisor.</p>
-        <ul class="names">
-          <li>Rosetta <small>coordina la colazione</small></li>
-          <li>Maria <small>sala</small></li>
-          <li>Marco <small>sala e bar</small></li>
-          <li>Giorgio <small>sala</small></li>
-          <li>Oliver <small>reception</small></li>
-          <li>Andrea <small>reception</small></li>
+        <p class="lead">La squadra di sala è la stessa dal 2021. Gli ospiti la citano per nome su Google, Booking e TripAdvisor. Tocca un nome.</p>
+        <ul class="names names--interattivi">
+          <li><button type="button" data-citazione="0">Rosetta <small>coordina la colazione</small></button></li>
+          <li><button type="button" data-citazione="0">Maria <small>sala</small></button></li>
+          <li><button type="button" data-citazione="0">Giorgio <small>sala</small></button></li>
+          <li><button type="button" data-citazione="1">Marco <small>sala e bar</small></button></li>
+          <li><button type="button" data-citazione="2">Oliver <small>reception</small></button></li>
+          <li><button type="button" data-citazione="2">Andrea <small>reception</small></button></li>
         </ul>
-        <p class="note"><b>Da confermare</b>Chi fa parte oggi della squadra e chi è d'accordo a comparire per nome sul sito.</p>
+        <p class="note"><b>Da confermare</b>Chi fa parte oggi della squadra e chi è d'accordo a comparire per nome sul sito. Le citazioni per Marco, Oliver e Andrea vanno scelte fra le recensioni che li nominano.</p>
       </div>
-      <div>
-        <blockquote class="quote">
+      <div class="citazioni" aria-live="polite">
+        <blockquote class="quote is-attiva" data-id="0">
           <p>"What I enjoy the most is the excellent service provided during breakfast by Rosetta and her staff, especially Giorgio and Maria. They make you feel like home."</p>
           <cite>TripAdvisor · 5★ · "I travel every month to Milan for business"</cite>
         </blockquote>
-        <blockquote class="quote mt-32">
+        <blockquote class="quote" data-id="1">
           <p>"Il TOCQ rimane il mio preferito… una vera seconda casa."</p>
           <cite>TripAdvisor</cite>
         </blockquote>
-        <blockquote class="quote mt-32">
+        <blockquote class="quote" data-id="2">
           <p>"Sempre molto comodo per i miei meeting lavorativi."</p>
           <cite>Google · 4★</cite>
         </blockquote>
@@ -463,8 +508,8 @@
     </div>
   </section>
 
-  <!-- 7 · MICE: metà del motivo per cui il sito esiste -->
-  <section class="section section--dark">
+  <!-- LE SALE: con l'intenzione "evento" sale subito dopo il bivio -->
+  <section class="section section--dark" id="sale">
     <div class="wrap">
       <p class="kicker">Meeting ed eventi</p>
       <h2>Dormi dove ti riunisci.</h2>
@@ -481,19 +526,32 @@
       </div>
     </div>
   </section>
+  <div id="posto-sale-soggiorno" hidden></div>
 
-  <!-- 8 · LE RECENSIONI, scelte fra chi lavora -->
-  <section class="section">
+  <!-- CAPITOLO · IL RITORNO (bianco): +30 giorni e le prove -->
+  <section class="section capitolo capitolo--ritorno" data-ora="+30 gg" data-capitolo="Il ritorno">
     <div class="wrap">
-      <div class="grid-3">
+      <p class="kicker">+30 giorni · Il ritorno</p>
+      <h2>Torni. Stessa camera, stessa fattura, qualcuno si ricorda il tuo nome.</h2>
+      <div class="grid-3 mt-32">
         <div class="stat"><b>8,8 / 10</b><span>su Expedia e Hotels.com, 973 recensioni di ospiti verificati</span></div>
-        <div class="stat"><b>8,98</b><span>pulizia e comfort su Booking</span></div>
+        <div class="stat"><b>4,60 / 5</b><span>il voto di chi viaggia per lavoro su Google, 2025</span></div>
         <div class="stat"><b>8,96</b><span>posizione su Booking, contro 8,29 e 8,18 dei due hotel attaccati alla stazione</span></div>
       </div>
-      <p class="note"><b>Da aggiornare</b>Numeri all'ottobre 2026. Al lancio si aggiornano, e poi ogni trimestre.</p>
+      <p class="note"><b>Da confermare</b>"Stessa camera la volta dopo" e la fattura unica sono mosse del cap. 10 da adottare. Voti all'ottobre 2026: si aggiornano al lancio e poi ogni trimestre.</p>
     </div>
   </section>
 
+  <!-- DETTO PRIMA: la risposta onesta all'unica obiezione dei turisti -->
+  <section class="section section--tight section--alt">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Detto prima</p>
+        <h3 class="h-medio">Il Duomo è a 2,5 km: 30 minuti a piedi, o <span class="todo">15</span> di metro.</h3>
+      </div>
+      <p class="muted mt-0">Siamo a Porta Garibaldi, non in centro storico. Lo diciamo prima, così scegli sapendo cosa trovi: il treno, gli uffici di Porta Nuova e la Fiera vicini, il Duomo raggiungibile ma non sotto casa.</p>
+    </div>
+  </section>
 
   <section class="section" id="domande">
     <div class="wrap split">
@@ -538,14 +596,21 @@
       </div>
     </div>
   </section>
-  <!-- 9 · IL DUOMO, DETTO PRIMA: toglie la recensione "30 minuti dal centro" -->
-  <section class="section section--tight section--alt">
-    <div class="wrap split">
-      <div>
-        <p class="kicker">Detto prima</p>
-        <h3>Il Duomo è a 2,5 km: 30 minuti a piedi, o <span class="todo">15</span> di metro.</h3>
+
+  <!-- LA PORTA APERTA: la call to action finale, dentro le ante del simbolo -->
+  <section class="finale" aria-labelledby="finale-titolo">
+    <div class="wrap finale__grid">
+      <svg class="anta anta--sx" viewBox="375.5 161 33.5 154" aria-hidden="true"><path d="M 380.664062 191.074219 L 403.855469 171.890625 L 403.855469 284.871094 L 380.664062 304.054688 Z M 408.953125 161.054688 L 375.5625 188.671875 L 375.5625 314.890625 L 408.953125 287.273438 Z M 408.953125 161.054688"/></svg>
+      <div class="finale__centro">
+        <p class="kicker">Tocq Hotel Milano · Porta Garibaldi</p>
+        <h2 id="finale-titolo">Il treno a 200 metri. La sala al piano. Il cuscino già scelto.</h2>
+        <div class="btns">
+          <a class="btn btn--primary" href="camere.html#prenota">Prenota una camera</a>
+          <a class="btn btn--light" href="meeting.html#preventivo">Richiedi un preventivo</a>
+        </div>
+        <p class="finale__tel">Preferisci parlare con qualcuno? <a href="tel:+390262071">+39 02 62071</a>, la reception risponde 24 ore su 24.</p>
       </div>
-      <p class="muted mt-0">Siamo a Porta Garibaldi, non in centro storico. Lo diciamo prima, così scegli sapendo cosa trovi: il treno, gli uffici di Porta Nuova e la Fiera vicini, il Duomo raggiungibile ma non sotto casa.</p>
+      <svg class="anta anta--dx" viewBox="440 161 33.5 154" aria-hidden="true"><path d="M 445.125 284.871094 L 445.125 171.890625 L 468.316406 191.074219 L 468.316406 304.054688 Z M 440.023438 161.054688 L 440.023438 287.273438 L 473.414062 314.890625 L 473.414062 188.671875 Z M 440.023438 161.054688"/></svg>
     </div>
   </section>
 </main>

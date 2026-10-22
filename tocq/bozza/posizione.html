@@ -177,6 +177,16 @@
     <div class="wrap">
       <p class="kicker">Da qui a dove devi andare</p>
       <h2 class="mb-32">Le distanze, con i mezzi veri.</h2>
+      <form class="finder" id="finder" onsubmit="return false">
+        <label for="dove">Dove devi andare domani?</label>
+        <div class="finder__riga">
+          <select id="dove"><option value="">Scegli una destinazione</option></select>
+        </div>
+        <div class="finder__esito" id="finder-esito" aria-live="polite" hidden>
+          <p class="finder__risposta"></p>
+          <a class="btn btn--primary" href="camere.html#prenota">Dormi a 200 m dal treno</a>
+        </div>
+      </form>
       <div class="filters" data-filters="dest">
         <button data-filter="tutti" aria-pressed="true">Tutte</button>
         <button data-filter="lavoro" aria-pressed="false">Lavoro</button>

@@ -142,3 +142,189 @@ if (config) {
     setTimeout(function () { dd.classList.remove('is-updated'); }, 400);
   });
 }
+
+// ---------------------------------------------------------------------------
+// Percorso (JOURNEY.md)
+// ---------------------------------------------------------------------------
+
+// Misura: ogni evento del piano di misurazione finisce nel dataLayer (GA4 / Tag Manager al lancio)
+window.dataLayer = window.dataLayer || [];
+function traccia(evento, dati) { window.dataLayer.push(Object.assign({ event: evento }, dati || {})); }
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a');
+  if (!a) return;
+  var h = a.getAttribute('href') || '';
+  if (h.indexOf('tel:') === 0) traccia('chiamata_reception');
+  else if (h.indexOf('#prenota') > -1) traccia('clic_prenota', { da: a.closest('section, header, .sticky-cta') ? (a.closest('section, header, .sticky-cta').id || a.closest('section, header, .sticky-cta').className.split(' ')[0]) : '' });
+  else if (h.indexOf('#preventivo') > -1) traccia('clic_preventivo');
+  else if (h.indexOf('google.com/maps') > -1) traccia('tragitto_aperto');
+});
+document.querySelectorAll('form[data-demo]').forEach(function (f) {
+  f.addEventListener('submit', function () {
+    var fonte = (f.querySelector('input[name="fonte"]') || {}).value || 'prenotazione';
+    traccia(fonte.indexOf('preventivo') > -1 ? 'richiesta_preventivo_mice' : fonte.indexOf('download') > -1 ? 'download_presentazione' : 'invio_form', { fonte: fonte });
+  });
+});
+
+// Il bivio: l'intenzione riordina la home e la barra mobile, e resta ricordata per la visita
+var bivio = document.querySelector('.intent');
+if (bivio) {
+  var sale = document.getElementById('sale');
+  var postoEvento = document.getElementById('posto-sale-evento');
+  var postoSoggiorno = document.getElementById('posto-sale-soggiorno');
+  function applicaIntento(v, daUtente) {
+    if (sale && postoEvento && postoSoggiorno) {
+      if (v === 'evento') postoEvento.parentNode.insertBefore(sale, postoEvento);
+      else postoSoggiorno.parentNode.insertBefore(sale, postoSoggiorno);
+    }
+    document.querySelectorAll('[data-percorso]').forEach(function (c) { c.setAttribute('data-attivo', c.getAttribute('data-percorso') === v ? 'true' : 'false'); });
+    var barraM = document.querySelector('.sticky-cta');
+    if (barraM) {
+      var prenota = barraM.querySelector('a[href*="#prenota"]');
+      var prev = barraM.querySelector('a[href*="#preventivo"]');
+      if (v === 'evento') { barraM.insertBefore(prev, prenota); prev.className = 'btn btn--primary'; prenota.className = 'btn'; }
+      else { barraM.insertBefore(prenota, prev); prenota.className = 'btn btn--primary'; prev.className = 'btn'; }
+    }
+    try { localStorage.setItem('tocq-intento', v); } catch (e) {}
+    if (daUtente) traccia('intenzione_scelta', { intenzione: v });
+  }
+  var salvato = null;
+  try { salvato = localStorage.getItem('tocq-intento'); } catch (e) {}
+  if (salvato === 'evento' || salvato === 'soggiorno') {
+    var r = bivio.querySelector('input[value="' + salvato + '"]');
+    if (r) r.checked = true;
+    applicaIntento(salvato, false);
+  } else applicaIntento('soggiorno', false);
+  bivio.addEventListener('change', function (e) { applicaIntento(e.target.value, true); });
+}
+
+// Indicatore dell'ora: segue il capitolo più presente nello schermo
+var ora = document.querySelector('.ora-capitolo');
+if (ora && 'IntersectionObserver' in window) {
+  var attivi = new Map();
+  var oraTxt = ora.querySelector('.ora-capitolo__ora');
+  var nomeTxt = ora.querySelector('.ora-capitolo__nome');
+  var ossOra = new IntersectionObserver(function (voci) {
+    voci.forEach(function (v) { if (v.isIntersecting) attivi.set(v.target, v.intersectionRatio); else attivi.delete(v.target); });
+    var migliore = null, max = 0;
+    attivi.forEach(function (r, el) { if (r > max) { max = r; migliore = el; } });
+    if (migliore) {
+      oraTxt.textContent = migliore.getAttribute('data-ora');
+      nomeTxt.textContent = migliore.getAttribute('data-capitolo');
+      ora.classList.toggle('is-notte', migliore.classList.contains('section--dark'));
+    }
+    ora.classList.toggle('is-visible', !!migliore);
+  }, { threshold: [0, .25, .5, .75] });
+  document.querySelectorAll('[data-ora]').forEach(function (c) { ossOra.observe(c); });
+}
+
+// Configuratore breve: riepilogo e passaggio delle scelte alla pagina camere
+var mini = document.getElementById('mini-config');
+if (mini) {
+  var riep = document.getElementById('mini-riepilogo');
+  var vai = document.getElementById('mini-vai');
+  function aggiornaMini() {
+    var d = new FormData(mini);
+    var lato = d.get('lato') === 'Corte interna, silenziosa' ? 'Corte, silenziosa' : d.get('lato');
+    riep.textContent = [d.get('cuscino'), lato, d.get('colazione')].join(' · ');
+    var q = new URLSearchParams({ cuscino: d.get('cuscino'), lato: d.get('lato'), colazione: d.get('colazione') });
+    vai.href = 'camere.html?' + q.toString() + '#configura';
+  }
+  mini.addEventListener('change', function () { aggiornaMini(); traccia('uso_configuratore', { dove: 'home' }); });
+  aggiornaMini();
+}
+
+// Pagina camere: le scelte arrivate dalla home precompilano il configuratore
+if (config && location.search) {
+  var p = new URLSearchParams(location.search);
+  ['cuscino', 'lato', 'colazione'].forEach(function (k) {
+    var v = p.get(k);
+    if (!v) return;
+    var r = config.querySelector('input[name="' + k + '"][value="' + v.replace(/"/g, '') + '"]');
+    if (r) r.checked = true;
+  });
+  config.dispatchEvent(new Event('change'));
+}
+if (config) config.addEventListener('change', function (e) { if (e.isTrusted) traccia('uso_configuratore', { dove: 'camere' }); });
+
+// Squadra: un nome apre la citazione che lo riguarda
+var nomi = document.querySelectorAll('.names--interattivi button');
+nomi.forEach(function (b, i) {
+  b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+  b.addEventListener('click', function () {
+    nomi.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    document.querySelectorAll('.citazioni .quote').forEach(function (q) { q.classList.toggle('is-attiva', q.getAttribute('data-id') === b.getAttribute('data-citazione')); });
+  });
+});
+
+// La porta aperta: le ante si aprono quando la call to action finale entra nello schermo
+var finale = document.querySelector('.finale');
+if (finale) {
+  if ('IntersectionObserver' in window && !riduci) {
+    new IntersectionObserver(function (v, o) { if (v[0].isIntersecting) { finale.classList.add('is-aperta'); o.disconnect(); } }, { threshold: .35 }).observe(finale);
+  } else finale.classList.add('is-aperta');
+}
+
+// Meeting: "Quante persone siete?" accende le sale giuste e precompila il preventivo
+var range = document.getElementById('persone-range');
+if (range) {
+  var out = document.getElementById('persone-out');
+  var esito = document.getElementById('persone-esito');
+  var cta = document.getElementById('persone-cta');
+  var nomiAll = { platea: 'platea', scuola: 'banchi di scuola', ferro: 'ferro di cavallo', tavolo: 'tavolo unico', cabaret: 'cabaret', cocktail: 'in piedi' };
+  var colonne = { platea: 3, scuola: 4, ferro: 5, tavolo: 6, cabaret: 7, cocktail: 8 };
+  function aggiornaPersone() {
+    var n = +range.value;
+    out.textContent = n;
+    var adatte = [];
+    document.querySelectorAll('tr[data-sala]').forEach(function (tr) {
+      var ok = [];
+      Object.keys(nomiAll).forEach(function (k) {
+        var cella = tr.children[colonne[k]];
+        var cap = +tr.getAttribute('data-' + k);
+        var va = cap >= n;
+        if (cella) cella.classList.toggle('is-ok', va);
+        if (va) ok.push(nomiAll[k]);
+      });
+      tr.classList.toggle('is-adatta', ok.length > 0);
+      tr.classList.toggle('is-esclusa', ok.length === 0);
+      if (ok.length) adatte.push('<b>' + tr.getAttribute('data-sala') + '</b> (' + ok.join(', ') + ')');
+    });
+    esito.innerHTML = adatte.length
+      ? 'Per ' + n + ' persone: ' + adatte.join(' · ') + '.'
+      : 'Per ' + n + ' persone in un allestimento solo serve unire più spazi: scrivici e ti proponiamo la soluzione.';
+    // la sala proposta è la più piccola che basta, non la più grande
+    var prima = [].slice.call(document.querySelectorAll('tr.is-adatta')).sort(function (x, y) { return (+x.getAttribute('data-platea')) - (+y.getAttribute('data-platea')); })[0];
+    cta.textContent = prima ? 'Preventivo per ' + n + ' persone in Sala ' + prima.getAttribute('data-sala') : 'Preventivo per ' + n + ' persone';
+  }
+  range.addEventListener('input', aggiornaPersone);
+  range.addEventListener('change', function () { traccia('selettore_persone', { persone: +range.value }); });
+  cta.addEventListener('click', function () {
+    var campo = document.getElementById('p-persone');
+    if (campo) campo.value = range.value;
+  });
+  aggiornaPersone();
+}
+
+// Posizione: "Dove devi andare domani?" risponde con mezzo e tempo presi dalla tabella
+var dove = document.getElementById('dove');
+if (dove) {
+  var righe = document.querySelectorAll('#dest tbody tr');
+  righe.forEach(function (tr, i) {
+    var o = document.createElement('option');
+    o.value = i;
+    o.textContent = tr.children[0].textContent.trim();
+    dove.appendChild(o);
+  });
+  var box = document.getElementById('finder-esito');
+  dove.addEventListener('change', function () {
+    if (dove.value === '') { box.hidden = true; return; }
+    var tr = righe[+dove.value];
+    var nome = tr.children[0].textContent.trim();
+    var come = tr.children[2].textContent.trim();
+    var tempo = tr.children[3].textContent.trim();
+    box.querySelector('.finder__risposta').innerHTML = '<b>' + nome + '</b><br>' + come + ' · ' + tempo + ' dal Tocq.';
+    box.hidden = false;
+    traccia('destinazione_cercata', { destinazione: nome });
+  });
+}
