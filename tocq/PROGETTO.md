@@ -282,3 +282,11 @@ Ogni segnaposto tratteggiato nella bozza rimanda a una di queste.
 12. **Booking engine e CRM in uso**, per collegare form e tracciamento.
 13. **Brand:** file del lettering proprietario (font o tracciati vettoriali); licenza web di Futura Std; marchio in positivo in formato vettoriale originale (in cartella c'è solo il negativo); pittogrammi in vettoriale. Dettagli in `BRAND.md`.
 14. **Foto:** quali scatti dell'archivio (cartelle "Tocq Hotel Photos & Videos", "Foto Sale Costantino", "Per Mission") sono approvati per il web.
+
+## 14. Spunti presi da hoteltocqmilano.it (pagina "Concerti San Siro Estate 2026")
+
+- **Motore di prenotazione:** Blastness, `id_albergo=16496`, `dc=6326`. Il form "Verifica le date" della bozza apre già le disponibilità reali con le date scelte. Da verificare con Blastness il parametro per il codice aziendale e come passare le scelte del configuratore.
+- **Promesse già pubbliche, quindi non più "da confermare" nella bozza:** tariffa diretta migliore garantita, cancellazione gratuita, custodia bagagli prima del check-in e dopo il check-out.
+- **Dati:** M5 lilla a 2 minuti a piedi, San Siro in 15 minuti senza cambi. La pagina riporta su Booking 8,7/10 con oltre 3.200 recensioni e posizione 9,1 (aprile 2026); l'analisi di ottobre misura 8,5 e 8,96. Nella bozza restano i numeri dell'analisi, più recenti: da allineare al lancio.
+- **Foto:** hall con poltrone in velluto verde (copre il vuoto "hall"), cuscini sistemati sul letto, Corso Como, Corso Garibaldi, skyline di Porta Nuova al tramonto. Le prime due sono dell'hotel; le altre del quartiere, da verificare la licenza come per le altre foto di città.
+- **Struttura:** le tre schede del quartiere con i minuti a piedi (Corso Como 1, Corso Garibaldi 4, Porta Nuova 6) sono entrate nel capitolo "La sera". Il tono "movida" della pagina concerti resta fuori: nella bozza la sera si vive, la notte è sul lato corte.

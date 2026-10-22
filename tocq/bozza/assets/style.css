@@ -774,3 +774,69 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 .field .choices input, .choices input[type="radio"], .choices input[type="checkbox"] {
   appearance: auto; -webkit-appearance: auto; min-height: 0; width: auto; padding: 0; border: 0; background: none; box-shadow: none;
 }
+
+/* ==========================================================================
+   Più immagini, meno bianco
+   ========================================================================== */
+.section { padding: clamp(48px, 7vw, 96px) 0; }
+.section--tight { padding: clamp(32px, 5vw, 56px) 0; }
+.section--verde .muted, .section--verde p { color: var(--verde-20); }
+.section--verde h3, .section--verde .h-medio { color: var(--bianco); }
+.section--verde .todo { color: var(--corallo-20); border-color: var(--corallo-50); }
+
+/* Hero a tutta altezza: la foto arriva al bordo dello schermo */
+@media (min-width: 861px) {
+  .hero--bleed { padding: 0; }
+  .hero--bleed .hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: stretch; min-height: min(88vh, 860px); }
+  .hero--bleed .hero__grid > div:first-child { padding-block: clamp(40px, 6vw, 80px); }
+  .hero--bleed .photo--tall { aspect-ratio: auto; height: auto; min-height: 100%; margin-right: calc(-1 * (max(0px, (100vw - var(--wrap)) / 2) + var(--gutter))); }
+}
+
+/* Fascia fotografica a tutta larghezza */
+.band { position: relative; min-height: clamp(360px, 70vh, 720px); display: flex; align-items: flex-end; overflow: hidden; color: var(--bianco); }
+.band--basso { min-height: clamp(300px, 52vh, 560px); }
+.band__img { position: absolute; inset: 0; margin: 0; }
+.band__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.72) 100%); }
+.band__testo { position: relative; z-index: 1; padding-block: clamp(32px, 6vw, 72px); width: 100%; }
+.band__testo .kicker { color: var(--corallo-50); }
+.band__frase { font: 700 clamp(28px, 4.4vw, 56px)/1.08 var(--sans); max-width: 18ch; margin: 0; text-wrap: balance; }
+
+/* In breve su fondo verde chiaro, con foto */
+.inbreve--foto { background: var(--verde-20); border-top: 0; }
+.inbreve--foto .facts { border-top-color: var(--nero); }
+.inbreve--foto .facts dt, .inbreve--foto .facts dd { border-bottom-color: var(--verde-50); }
+.inbreve--foto .photo { min-height: 0; aspect-ratio: 3 / 2; }
+
+/* Galleria scorrevole della cucina */
+.strip-section { background: var(--corallo-20); padding: clamp(48px, 7vw, 88px) 0; }
+.strip-testa { margin-bottom: 28px; }
+.strip { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter))) 12px; scrollbar-width: thin; scrollbar-color: var(--nero-50) transparent; }
+.strip:focus-visible { outline-offset: -2px; }
+.strip .photo { flex: 0 0 auto; height: clamp(300px, 46vh, 460px); min-height: 0; aspect-ratio: 3 / 4; scroll-snap-align: start; }
+.strip .photo--largo { aspect-ratio: 4 / 3; }
+
+/* Sezione con foto di fondo (la scala dell'hotel) */
+.section--foto { position: relative; overflow: hidden; }
+.section__foto { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: .28; filter: grayscale(1); }
+.section--foto > .wrap { position: relative; z-index: 1; }
+
+/* Mosaico delle camere */
+.mosaico { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: clamp(360px, 52vw, 620px); }
+.mosaico .photo { min-height: 0; height: 100%; }
+.mosaico__grande { grid-row: span 2; }
+@media (max-width: 760px) { .mosaico { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; height: auto; } .mosaico__grande { grid-column: span 2; grid-row: auto; aspect-ratio: 3 / 2; } .mosaico .photo:not(.mosaico__grande) { aspect-ratio: 1; } }
+
+/* Card del bivio: le foto verticali si ritagliano al centro */
+.card--path .photo img { object-position: center 40%; }
+
+/* Il quartiere: tre schede con foto e minuti a piedi */
+.quartiere { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.quartiere article { display: grid; gap: 6px; align-content: start; }
+.quartiere .photo { min-height: 0; aspect-ratio: 4 / 5; margin-bottom: 10px; }
+.quartiere h3 { margin: 0; }
+.quartiere p:not(.kicker) { margin: 0; color: var(--ink-2); font-weight: 400; }
+.quartiere .kicker { margin: 0; }
+@media (max-width: 760px) { .quartiere { grid-template-columns: 1fr; } .quartiere .photo { aspect-ratio: 3 / 2; } }
+.reason .photo { min-height: 0; aspect-ratio: 3 / 2; }
+.reason .photo figcaption { background: rgba(0,0,0,.6); }

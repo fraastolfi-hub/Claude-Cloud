@@ -328,3 +328,33 @@ if (dove) {
     traccia('destinazione_cercata', { destinazione: nome });
   });
 }
+
+// Prenotazione: apre il motore ufficiale Blastness con le date scelte (stesso collegamento della pagina concerti del Tocq)
+var prenotaForm = document.getElementById('prenota-form');
+if (prenotaForm) {
+  var oggi = new Date();
+  function isoData(d) { return d.toISOString().slice(0, 10); }
+  var arrivo = document.getElementById('b-in'), partenza = document.getElementById('b-out');
+  if (arrivo && !arrivo.value) { arrivo.value = isoData(oggi); arrivo.min = isoData(oggi); }
+  if (partenza && !partenza.value) { var dom = new Date(oggi); dom.setDate(dom.getDate() + 1); partenza.value = isoData(dom); }
+  if (arrivo && partenza) arrivo.addEventListener('change', function () {
+    if (partenza.value <= arrivo.value) { var d = new Date(arrivo.value); d.setDate(d.getDate() + 1); partenza.value = isoData(d); }
+    partenza.min = arrivo.value;
+  });
+  var vai = document.getElementById('b-vai');
+  function aggiornaLink() {
+    var q = new URLSearchParams({
+      id_albergo: '16496', dc: '6326', language: 'it', currency: 'EUR',
+      checkin_date: arrivo.value, checkout_date: partenza.value,
+      rooms: '1', adults_1: document.getElementById('b-ad').value, children_1: '0'
+    });
+    var codice = (document.getElementById('b-code') || {}).value;
+    if (codice) q.set('promo_code', codice); // nome del parametro da verificare con Blastness
+    vai.href = 'https://book.blastness.com/results?' + q.toString();
+  }
+  prenotaForm.addEventListener('input', aggiornaLink);
+  prenotaForm.addEventListener('change', aggiornaLink);
+  prenotaForm.addEventListener('submit', function (e) { e.preventDefault(); });
+  vai.addEventListener('click', function () { traccia('prenotazione_avviata', { checkin: arrivo.value, checkout: partenza.value }); });
+  aggiornaLink();
+}
