@@ -56,3 +56,17 @@ Disabili, uomini, donne, guardaroba, ascensore, bagagli, scale, frecce direziona
 3. **Licenza web** di Futura Std, o decisione di usare Futura PT da Adobe Fonts.
 4. **Pittogrammi** in vettoriale.
 5. **Foto approvate** per il web: l'archivio in Drive ha oltre cento scatti con nomi di file non descrittivi.
+
+## Sistema di interazione (rifinitura finale)
+
+- **Una curva, tre durate:** `cubic-bezier(.2,.7,.2,1)`; 150 ms per colori e filetti, 240 ms per spostamenti, 600–900 ms solo per le ante del simbolo.
+- **Nessuna ombra:** la profondità viene da filetti, piani di colore (nero, corallo 20%, verde 20%) e foto, come nel brand book.
+- **Firma:** le due ante del simbolo si aprono sulla foto dell'hero, una volta per sessione; disattivate con "riduci movimento".
+- **Bottoni:** freccia direzionale (dai pittogrammi) che avanza di 4 px; i secondari si riempiono di nero al passaggio.
+- **Link:** sottolineatura sottile che si rinforza; nel menu, filetto che cresce da sinistra.
+- **Segnaposto foto:** pattern verde del brand book con la didascalia "Da scattare", invece del grigio.
+- **Etichette:** filetto di 24 px prima di ogni etichetta di sezione.
+- **Statistiche:** filetto corto di 32 px sopra il numero, nero su chiaro e corallo su nero.
+- **Testo:** Futura Light solo da 17 px in su; sotto, Regular. Titoli bilanciati (`text-wrap: balance`).
+- **Mobile:** foto dell'hero in testa; tabellone su due righe per voce; tabelle di confronto trasformate in schede; barra fissa che compare solo dopo i bottoni dell'hero e sparisce sopra form e footer.
+- **Focus sempre visibile:** 2 px nero su chiaro, corallo su nero; bersagli di tocco ≥ 44 px.

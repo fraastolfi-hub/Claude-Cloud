@@ -419,3 +419,235 @@ figure.photo { margin: 0; overflow: hidden; }
   .sticky-cta .btn { justify-content: center; padding: 14px 10px; }
   body { padding-bottom: 76px; }
 }
+
+/* ==========================================================================
+   Rifinitura finale
+   Regole: un solo accento di colore per schermata; nessuna ombra (il brand
+   book è piatto: la profondità viene da filetti, piani di colore e foto);
+   movimento solo dove porta informazione, 150–300 ms, una curva sola.
+   ========================================================================== */
+
+:root {
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --t-fast: 150ms;
+  --t: 240ms;
+  --t-slow: 600ms;
+  --header-h: 80px;
+}
+html { scroll-padding-top: calc(var(--header-h) + 16px); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+::selection { background: var(--corallo); color: var(--nero); }
+
+/* Tipografia: Light solo sopra i 17 px, Regular sotto, per tenere il disegno leggibile su ogni schermo */
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-feature-settings: "kern", "liga"; }
+h1, h2, h3, .reason__big { text-wrap: balance; }
+p, li, dd, .faq__item > div { text-wrap: pretty; }
+h1 { letter-spacing: -0.02em; line-height: 1.02; }
+h2 { letter-spacing: -0.012em; line-height: 1.08; }
+.small, .muted.small, .card p.small, .proof, .stat span, .timeline p, .steps span, .upfront p, .data, .compare, .note, .footer { font-weight: 400; }
+.lead { font-weight: 300; }
+.kicker { display: flex; align-items: center; gap: 12px; }
+.kicker::before { content: ""; width: 24px; height: 1px; background: currentColor; opacity: .6; }
+.footer .kicker::before { display: none; }
+
+/* Ritmo verticale: multipli di 8 */
+.section { padding: clamp(64px, 10vw, 128px) 0; }
+.section--tight { padding: clamp(40px, 6vw, 72px) 0; }
+h2 + .lead { margin-top: -4px; }
+
+/* Barra della bozza: presente ma discreta */
+.bozza-bar { font-size: 11px; letter-spacing: .08em; padding: 5px var(--gutter); background: #8a5a14; }
+
+/* Header: il filetto compare solo quando la pagina scorre */
+.header { border-bottom-color: transparent; transition: border-color var(--t) var(--ease), background-color var(--t) var(--ease); }
+.header.is-scrolled { border-bottom-color: var(--line); }
+.nav a:not(.btn) { position: relative; padding: 6px 0; transition: color var(--t-fast) var(--ease); text-decoration: none !important; }
+.nav a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform var(--t) var(--ease); }
+.nav a:not(.btn):hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); }
+.logo { transition: opacity var(--t-fast) var(--ease); }
+.logo:hover { opacity: .7; }
+
+/* Focus: sempre visibile, mai il contorno blu del browser */
+:focus-visible { outline: 2px solid var(--nero); outline-offset: 3px; }
+.section--dark :focus-visible, .board :focus-visible, .footer :focus-visible, .config__summary :focus-visible { outline-color: var(--corallo); }
+
+/* Bottoni: freccia direzionale (pittogrammi del brand book) che avanza al passaggio */
+.btn { transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease); }
+.btn:not(.btn--small)::after { content: "→"; display: inline-block; font-weight: 400; letter-spacing: 0; transition: transform var(--t) var(--ease); }
+.btn:hover::after { transform: translateX(4px); }
+.btn:hover { filter: none; }
+.btn:not(.btn--primary):not(.btn--light):hover { background: var(--nero); color: var(--bianco); }
+.btn--light:hover { background: var(--bianco); color: var(--nero); }
+.section--dark .btn--primary:hover, .config__summary .btn--primary:hover { background: var(--corallo-80); border-color: var(--corallo-80); }
+.btn:active { transform: translateY(1px); }
+
+/* Link nel testo: sottolineatura sottile che si rinforza */
+main p a, main dd a, .faq__item a, .board__foot a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); transition: text-decoration-color var(--t-fast) var(--ease); }
+main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text-decoration-color: currentColor; }
+
+/* Hero: titolo su due righe esatte, foto in proporzione 4:5 */
+.hero h1 { max-width: none; }
+.hero__grid { align-items: stretch; }
+.hero__grid > div:first-child { display: flex; flex-direction: column; justify-content: center; }
+.hero .photo--tall { min-height: 0; aspect-ratio: 4 / 5; }
+.hero__promises li { padding: 10px 0; border-bottom: 1px solid var(--line); margin: 0; font-size: 18px; font-weight: 400; }
+.hero__promises { gap: 0; border-top: 1px solid var(--line); }
+@media (max-width: 860px) {
+  .hero { padding-top: 0; }
+  .hero__grid { gap: 28px; }
+  .hero__grid > .photo--tall { order: -1; aspect-ratio: auto; height: 46vh; min-height: 280px; margin: 0 calc(var(--gutter) * -1); }
+  .hero__grid > div:first-child { justify-content: flex-start; }
+  .hero__promises li { grid-template-columns: 72px 1fr; font-size: 16px; }
+  .br-d { display: none; }
+}
+
+/* Firma: le due ante del simbolo che si aprono sulla foto, una volta per sessione */
+.doors { position: relative; overflow: hidden; }
+.doors::before, .doors::after { content: ""; position: absolute; top: 0; bottom: 0; width: 50.5%; background: var(--nero); z-index: 2; transition: transform 900ms var(--ease); }
+.doors::before { left: 0; transform-origin: left; }
+.doors::after { right: 0; transform-origin: right; }
+.doors.is-open::before { transform: perspective(1200px) rotateY(-82deg); }
+.doors.is-open::after { transform: perspective(1200px) rotateY(82deg); }
+.doors.is-done::before, .doors.is-done::after { display: none; }
+@media (prefers-reduced-motion: reduce) { .doors::before, .doors::after { display: none; } }
+
+/* Foto: proporzioni coerenti, nessuno zoom (sono prove, non decorazioni) */
+.photo img { transition: opacity var(--t-slow) var(--ease); }
+.card--path .photo { min-height: 0; aspect-ratio: 3 / 2; }
+.grid-4 .card--path .photo { aspect-ratio: 4 / 3; }
+.gallery .photo { min-height: 0; aspect-ratio: 4 / 3; }
+.gallery .photo--wide { aspect-ratio: auto; }
+.photo figcaption { font-size: 10px; background: rgba(0,0,0,.62); backdrop-filter: blur(6px); }
+
+/* Segnaposto foto: il pattern del brand book al posto del grigio piatto, la didascalia come lista dello shooting */
+.photo:not(:has(img)) { background: var(--verde-20) url("img/pattern-verde20-verde50.svg") 0 0 / 47.36px auto repeat; }
+.photo:not(:has(img)) span { background: var(--bianco); color: var(--nero-80); border-left: 2px solid var(--verde); font-size: 10px; letter-spacing: .12em; }
+.photo:not(:has(img)) span::before { content: "Da scattare · "; color: var(--verde); }
+.section--dark .photo:not(:has(img)) { background: #111 url("img/pattern-nero80-nero50.svg") 0 0 / 47.36px auto repeat; }
+
+/* Card: il filetto si scurisce, il bottone risponde; tutta la card resta leggibile come blocco */
+.card { transition: border-color var(--t) var(--ease); }
+.card--path:hover, .grid-4 .card--path:hover { border-color: var(--nero); }
+.card--path h3 { font-size: 22px; font-weight: 700; }
+.card--path .card__body { padding: 4px 28px 28px; }
+.card .num { display: flex; align-items: center; gap: 10px; }
+
+/* Prova sociale: tre voti come una riga di dati, non come badge */
+.proof { gap: 0; border-top: 1px solid var(--line); margin-top: 32px; padding-top: 16px; }
+.proof li { padding-right: 24px; margin-right: 24px; border-right: 1px solid var(--line); }
+.proof li:last-child { border-right: 0; margin-right: 0; }
+@media (max-width: 640px) { .proof { display: grid; gap: 6px; } .proof li { border: 0; margin: 0; padding: 0; } }
+
+/* Tabellone: su mobile la riga diventa destinazione + tempo, con il mezzo sotto */
+.board td.t .todo, .board .todo { white-space: nowrap; }
+.board tbody tr { transition: background-color var(--t-fast) var(--ease); }
+.board tbody tr:hover { background: #111; }
+@media (max-width: 640px) {
+  .board thead { display: none; }
+  .board tbody tr { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; padding: 12px 0; border-bottom: 1px solid #242424; }
+  .board td { border: 0; padding: 0; }
+  .board td:nth-child(1) { grid-column: 1; grid-row: 1; font-weight: 500; }
+  .board td:nth-child(2) { grid-column: 1; grid-row: 2; color: var(--nero-50); font-size: 13px; margin-top: 2px; }
+  .board td.t { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: 16px; }
+}
+
+/* Tabelle di confronto: su mobile diventano schede, una per riga, nessuno scorrimento laterale */
+@media (max-width: 760px) {
+  .compare { min-width: 0; }
+  .compare thead { display: none; }
+  .compare tbody tr { display: grid; grid-template-columns: 1fr; padding: 16px 0; border-bottom: 1px solid var(--nero-80); }
+  .compare--light tbody tr { border-color: var(--line); }
+  .compare th, .compare td { border: 0; padding: 2px 0; width: auto; }
+  .compare tbody th { font-size: 16px; padding-bottom: 8px; }
+  .compare td::before { content: attr(data-label); display: block; font: 500 10px/1.6 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--nero-50); }
+  .compare td + td { margin-top: 8px; }
+  .compare--light td:last-child { padding: 8px 10px; }
+  .table-scroll { overflow: visible; }
+  .table-scroll .data { min-width: 640px; }
+  .table-scroll:has(.data) { overflow-x: auto; }
+}
+
+/* Tabelle dati: riga evidenziata al passaggio, numeri allineati a destra */
+.data tbody tr { transition: background-color var(--t-fast) var(--ease); }
+.data tbody tr:hover { background: var(--corallo-20); }
+.data td.n { text-align: right; }
+.data th:not(:first-child) { text-align: right; }
+#dest th, #dest td { text-align: left; }
+.data tbody tr[hidden] { display: none; }
+
+/* Filtri */
+.filters button { transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease); }
+.filters button:hover { background: var(--corallo-20); }
+.filters button[aria-pressed="true"]:hover { background: var(--nero); }
+
+/* FAQ: risposta che scende morbida, segno che ruota */
+.faq__item summary { transition: color var(--t-fast) var(--ease); }
+.faq__item summary:hover { color: var(--nero-80); }
+.faq__item summary::after { transition: transform var(--t) var(--ease); }
+.faq__item[open] summary::after { content: "+"; transform: rotate(45deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .faq__item[open] > div { animation: faq-in var(--t) var(--ease); }
+}
+@keyframes faq-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+/* Form: campi alti uguali, freccia della select disegnata, focus netto */
+.field input, .field select, .field textarea { min-height: 50px; font-weight: 400; transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease); appearance: none; -webkit-appearance: none; }
+.field select { background: var(--bianco) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E") right 16px center / 12px no-repeat; padding-right: 40px; }
+.field input:hover, .field select:hover, .field textarea:hover { border-color: var(--nero-80); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--nero); box-shadow: inset 0 0 0 1px var(--nero); }
+.field input::placeholder, .field textarea::placeholder { color: var(--nero-50); }
+.choices label { transition: border-color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease); min-height: 44px; }
+.choices label:hover { border-color: var(--nero); }
+.choices label:has(input:checked) { background: var(--corallo-20); }
+.choices label:has(input:focus-visible) { outline: 2px solid var(--nero); outline-offset: 2px; }
+.form__ok { border-left: 3px solid var(--verde); }
+.section--dark .field input, .section--dark .field select { border-color: var(--nero-80); }
+
+/* Configuratore: il valore cambiato lampeggia appena, per dire "ricevuto" */
+.config__summary dd { transition: color var(--t) var(--ease); }
+.config__summary dd.is-updated { color: var(--bianco); }
+.config__summary { border-top: 3px solid var(--corallo); }
+
+/* Citazioni: la virgoletta come segno grafico, non come carattere */
+.quote { position: relative; }
+.quote p { font-size: clamp(18px, 1.8vw, 21px); }
+
+/* Nomi della squadra */
+.names li { transition: background-color var(--t-fast) var(--ease); }
+.names li:hover { background: var(--corallo-20); }
+
+/* Statistiche: numero grande, filetto corallo corto sopra invece che a tutta larghezza */
+.stat { border-top: 0; position: relative; padding-top: 18px; }
+.stat::before { content: ""; position: absolute; top: 0; left: 0; width: 32px; height: 2px; background: var(--nero); }
+.section--dark .stat::before, .section--verde .stat::before { background: var(--corallo); }
+
+/* Ingresso dei contenuti: salgono di 12 px e compaiono, una volta sola; senza JS è tutto visibile */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal { opacity: 0; transform: translateY(12px); transition: opacity 500ms var(--ease), transform 500ms var(--ease); }
+  .js .reveal.is-in { opacity: 1; transform: none; }
+}
+
+/* Barra mobile: entra solo quando i bottoni dell'hero non si vedono più, sparisce sopra i form */
+@media (max-width: 760px) {
+  .sticky-cta { transform: translateY(110%); transition: transform var(--t) var(--ease); box-shadow: none; }
+  .sticky-cta.is-visible { transform: none; }
+  .sticky-cta .btn::after { content: none; }
+}
+
+/* Footer */
+.footer a { transition: color var(--t-fast) var(--ease); }
+.footer a:hover { color: var(--corallo); }
+.footer__grid > div { font-weight: 400; }
+
+/* Segnaposto: leggibili ma meno invadenti */
+.todo { border-color: rgba(183, 121, 31, .55); }
+
+/* Stampa: niente barre, niente fondi */
+@media print { .bozza-bar, .header, .sticky-cta, .pattern, .footer { display: none; } .section--dark, .board { background: #fff; color: #000; } }
+
+/* Hero: la foto resta dentro la sua colonna, il titolo sta su due righe */
+.hero__grid { grid-template-columns: 1.15fr .85fr; align-items: center; }
+.hero .photo--tall { width: 100%; height: auto; }
+@media (min-width: 861px) { .hero h1 { font-size: clamp(44px, 4.7vw, 66px); } }
+@media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+.sticky-cta .btn { white-space: nowrap; font-size: 12px; }

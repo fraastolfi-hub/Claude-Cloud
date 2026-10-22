@@ -336,7 +336,7 @@ def footer():
 
 <div class="sticky-cta" aria-label="Azioni rapide">
   <a class="btn btn--primary" href="camere.html#prenota">Prenota</a>
-  <a class="btn" href="meeting.html#preventivo">Preventivo evento</a>
+  <a class="btn" href="meeting.html#preventivo" aria-label="Richiedi un preventivo per un evento">Preventivo</a>
 </div>
 
 <script src="assets/app.js"></script>
