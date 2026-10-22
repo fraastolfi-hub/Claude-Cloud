@@ -1039,3 +1039,8 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 .tema-notte .inbreve--foto .facts dt, .tema-notte .inbreve--foto .facts dd { border-bottom-color: #2a2927; }
 /* le sezioni consecutive sullo stesso nero si separano con un filetto sottile */
 .tema-notte main > section + section:not(.section--dark):not(.board):not(.band):not(.finale):not(.section--verde) { border-top: 1px solid #1d1c1b; }
+.radar__tocq { pointer-events: none; }
+.radar__punto circle { transition: none; }
+.radar__punto--fisso text { opacity: .75; font-size: 13px; fill: #cfcbc5; }
+.radar__punto--fisso.is-attivo text, .radar__punto--fisso:hover text { opacity: 1; fill: #fff; font-size: 15px; }
+.radar__minuti { font-size: 13px; }

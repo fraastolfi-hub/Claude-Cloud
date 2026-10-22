@@ -34,9 +34,9 @@ FATTI = {
     "piva": "08581970962",
     "stelle": 4,
     "camere": 133,
-    # coordinate approssimate: da verificare su Google Maps prima del lancio (PROGETTO.md §13)
-    "lat": 45.4824,
-    "lng": 9.1876,
+    # coordinate dalla scheda OpenStreetMap "Tocq Hotel Milano" (verificate il 22 ottobre 2026)
+    "lat": 45.4827602,
+    "lng": 9.1864205,
     "stazione_m": 200,
 }
 

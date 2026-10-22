@@ -24,6 +24,8 @@ PASSO_M_MIN = 80        # metri al minuto a piedi
 FATTORE_STRADA = 1.3    # dalla linea d'aria al percorso reale
 RAGGIO_M = 1600         # raggio della mappa, in linea d'aria
 CERCHI_MIN = [5, 10, 15]
+# punti con l'etichetta sempre visibile, per orientarsi
+ETICHETTE_FISSE = {"stazione-porta-garibaldi", "piazza-gae-aulenti", "corso-como", "bosco-verticale"}
 
 
 def _metri(h, p):
@@ -45,6 +47,15 @@ def _arricchisci(dati):
         q = dict(p)
         q.update(dx=dx, dy=dy, linea=linea, a_piedi=a_piedi, minuti=max(1, math.ceil(a_piedi / PASSO_M_MIN)))
         out.append(q)
+    # punti nello stesso edificio (es. Accenture e Bending Spoons): si allargano a ventaglio per restare cliccabili
+    posati = []
+    for q in sorted(out, key=lambda q: q["linea"]):
+        vicini = sum(1 for (x, y) in posati if math.hypot(q["dx"] - x, q["dy"] - y) < 30)
+        if vicini:
+            ang = math.radians(60 * vicini)
+            q["dx"] += 34 * math.cos(ang)
+            q["dy"] += 34 * math.sin(ang)
+        posati.append((q["dx"], q["dy"]))
     return sorted(out, key=lambda q: q["linea"])
 
 
@@ -63,14 +74,20 @@ def _maps(q):
     return f"https://www.google.com/maps/dir/?api=1&origin=Tocq+Hotel+Milano&destination={quote(q['nome'] + ', ' + q['indirizzo'])}&travelmode=walking"
 
 
+R_PX = 480
+
+
+def _raggio(m):
+    """Scala a radice quadrata: allarga i primi 500 metri, dove sta quasi tutto, e comprime il resto."""
+    return R_PX * math.sqrt(max(m, 0) / RAGGIO_M)
+
+
 def mappa_svg(punti):
-    r_px = 480
-    scala = r_px / RAGGIO_M
     parti = [f'<svg class="radar" viewBox="-520 -520 1040 1040" role="img" aria-labelledby="radar-titolo radar-desc">',
              '<title id="radar-titolo">Mappa del quartiere del Tocq Hotel Milano</title>',
-             '<desc id="radar-desc">Il Tocq al centro; i cerchi indicano 5, 10 e 15 minuti a piedi; ogni punto è un\'azienda, una fermata, un negozio o un locale alla sua direzione e distanza reali. Il nord è in alto.</desc>']
+             '<desc id="radar-desc">Il Tocq al centro; i cerchi indicano 5, 10 e 15 minuti a piedi, con la scala che allarga i dintorni immediati; ogni punto è un\'azienda, una fermata, un negozio o un locale alla sua direzione e distanza reali. Il nord è in alto.</desc>']
     for mnt in CERCHI_MIN:
-        r = mnt * PASSO_M_MIN / FATTORE_STRADA * scala
+        r = _raggio(mnt * PASSO_M_MIN / FATTORE_STRADA)
         parti.append(f'<circle class="radar__cerchio" r="{r:.1f}"/>')
         parti.append(f'<text class="radar__minuti" x="0" y="{-r - 8:.1f}" text-anchor="middle">{mnt} min</text>')
     parti.append('<line class="radar__asse" x1="0" y1="-500" x2="0" y2="500"/><line class="radar__asse" x1="-500" y1="0" x2="500" y2="0"/>')
@@ -78,10 +95,11 @@ def mappa_svg(punti):
     for q in punti:
         if q["linea"] > RAGGIO_M:
             continue
-        x, y = q["dx"] * scala, -q["dy"] * scala
-        etichetta = q.get("etichetta_fissa")
+        k = _raggio(q["linea"]) / q["linea"] if q["linea"] else 0
+        x, y = q["dx"] * k, -q["dy"] * k
+        fissa = " radar__punto--fisso" if q["id"] in ETICHETTE_FISSE else ""
         parti.append(
-            f'<g class="radar__punto" data-id="{_e(q["id"])}" data-cat="{_e(q["categoria"])}" transform="translate({x:.1f} {y:.1f})" tabindex="0" role="button" aria-label="{_e(q["nome"])}, {_e(_distanza(q))}">'
+            f'<g class="radar__punto{fissa}" data-id="{_e(q["id"])}" data-cat="{_e(q["categoria"])}" transform="translate({x:.1f} {y:.1f})" tabindex="0" role="button" aria-label="{_e(q["nome"])}, {_e(_distanza(q))}">'
             f'<circle r="7"/><text x="12" y="4">{_e(q["nome"])}</text></g>')
     parti.append('<g class="radar__tocq" aria-hidden="true"><circle r="14"/><text y="34" text-anchor="middle">TOCQ</text></g>')
     parti.append('</svg>')

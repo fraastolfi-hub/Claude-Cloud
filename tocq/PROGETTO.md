@@ -290,3 +290,13 @@ Ogni segnaposto tratteggiato nella bozza rimanda a una di queste.
 - **Dati:** M5 lilla a 2 minuti a piedi, San Siro in 15 minuti senza cambi. La pagina riporta su Booking 8,7/10 con oltre 3.200 recensioni e posizione 9,1 (aprile 2026); l'analisi di ottobre misura 8,5 e 8,96. Nella bozza restano i numeri dell'analisi, più recenti: da allineare al lancio.
 - **Foto:** hall con poltrone in velluto verde (copre il vuoto "hall"), cuscini sistemati sul letto, Corso Como, Corso Garibaldi, skyline di Porta Nuova al tramonto. Le prime due sono dell'hotel; le altre del quartiere, da verificare la licenza come per le altre foto di città.
 - **Struttura:** le tre schede del quartiere con i minuti a piedi (Corso Como 1, Corso Garibaldi 4, Porta Nuova 6) sono entrate nel capitolo "La sera". Il tono "movida" della pagina concerti resta fuori: nella bozza la sera si vive, la notte è sul lato corte.
+
+## 15. Pagina "Il quartiere" e pagina "Domande frequenti"
+
+- **Il quartiere** (`/quartiere/`): mappa a "radar" con il Tocq al centro e i cerchi dei 5, 10 e 15 minuti a piedi (scala a radice quadrata, che allarga i dintorni immediati), 47 punti in 5 categorie, elenco sincronizzato, link "Percorso" a Google Maps a piedi. Sotto: la tabella delle 15 sedi aziendali, la guida allo shopping, la guida al food divisa fra colazione, pranzo, aperitivo e cena. Tutto è HTML statico generato da `src/dati/poi.json` (`mappa.py`), con schema ItemList per Google e gli assistenti AI.
+- **Dati verificati il 22 ottobre 2026** su siti ufficiali, guide Michelin, OpenStreetMap e stampa recente; coordinate da OpenStreetMap. Pin approssimati (`coord_precise: false`): fermate della metro, Nike Gae Aulenti, Princi XXV Aprile, Corso Como e Corso Garibaldi (centro strada), KPMG, SAP, Bicerin.
+- **Tolti:** "Anima", ristorante dell'Hotel Milano Verticale (concorrente diretto); Herbert Smith Freehills, Salesforce, Deloitte, Fastweb, LVMH (nessuna sede verificata in zona); High-Tech e Pisacco (chiusi).
+- **Da correggere sulla pagina concerti di hoteltocqmilano.it:** "Federico dal 1929" non risulta in Corso Garibaldi (oggi in Viale Regina Margherita 32, a circa 4 km); il Bicerin è a circa 1,4 km, non sotto casa.
+- **Da verificare prima del lancio:** che Antica Trattoria della Pesa e L'Île Douce siano aperti; l'indirizzo esatto di KPMG (Via Melchiorre Gioia 20) e SAP (Palazzo Lybra).
+- **Coordinate del Tocq** ora prese dalla scheda OpenStreetMap dell'hotel: 45.4827602, 9.1864205.
+- **Domande frequenti** (`/domande-frequenti/`): 37 domande raccolte da tutte le pagine per argomento, con ricerca; nelle altre pagine restano le prime tre. Lo schema FAQPage sta solo qui.
