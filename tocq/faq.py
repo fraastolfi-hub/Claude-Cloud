@@ -11,6 +11,7 @@ import re
 GRUPPI = [
     ("faq", "Prenotare e soggiornare"),
     ("index", "Prima di prenotare"),
+    ("offerte", "Tariffe e offerte"),
     ("camere", "Camere e colazione"),
     ("meeting", "Sale meeting ed eventi"),
     ("posizione", "Come arrivare"),

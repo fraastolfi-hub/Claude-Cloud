@@ -63,6 +63,13 @@ PAGINE = {
         "nav": "Meeting ed eventi",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
+    "offerte": {
+        "url": "/offerte/",
+        "title": "Offerte e tariffe dirette · Tocq Hotel Milano",
+        "description": "Prenota diretto al Tocq Hotel Milano: Direct Flex con cancellazione gratuita fino a 24 ore prima, Direct Save al 10% in meno. Colazione sempre inclusa.",
+        "nav": "Offerte",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
     "posizione": {
         "url": "/posizione/",
         "title": "Hotel vicino alla stazione Garibaldi · Tocq Hotel Milano",
@@ -222,6 +229,18 @@ def schema_pagina(key, faq):
                 "maximumAttendeeCapacity": max(platea, cocktail),
                 "containedInPlace": {"@id": HOTEL_ID},
             })
+    if key == "offerte":
+        grafo.append({
+            "@type": "OfferCatalog",
+            "@id": SITO + "/offerte/#tariffe",
+            "name": "Tariffe dirette del Tocq Hotel Milano",
+            "itemListElement": [
+                {"@type": "Offer", "name": "Direct Flex", "url": SITO + "/offerte/#tariffe", "offeredBy": {"@id": HOTEL_ID},
+                 "description": "Tariffa diretta migliore con colazione inclusa, cancellazione gratuita fino a 24 ore prima dell'arrivo, pagamento in hotel."},
+                {"@type": "Offer", "name": "Direct Save", "url": SITO + "/offerte/#tariffe", "offeredBy": {"@id": HOTEL_ID},
+                 "description": "10% sotto qualsiasi altro canale, colazione inclusa, pagamento alla prenotazione, non modificabile né rimborsabile."},
+            ],
+        })
     b = breadcrumb_ld(key)
     if b:
         grafo.append(b)
@@ -292,7 +311,7 @@ def head(key, faq):
 
 
 def header(key):
-    voci = [("camere", "Camere"), ("meeting", "Meeting ed eventi"), ("quartiere", "Il quartiere"), ("posizione", "Come arrivare"), ("contatti", "Contatti")]
+    voci = [("camere", "Camere"), ("meeting", "Meeting ed eventi"), ("offerte", "Offerte"), ("quartiere", "Il quartiere"), ("posizione", "Come arrivare"), ("contatti", "Contatti")]
     links = "\n".join(
         f'      <a href="{k}.html"{" aria-current=\"page\"" if k == key else ""}>{t}</a>' for k, t in voci
     )
@@ -345,6 +364,7 @@ def footer():
         <a href="contatti.html#aziende">Tariffe aziendali</a>
         <a href="quartiere.html">Il quartiere e le aziende</a>
         <a href="posizione.html">Come arrivare</a>
+        <a href="offerte.html">Offerte e tariffe dirette</a>
         <a href="faq.html">Domande frequenti</a>
       </div>
     </div>
@@ -432,10 +452,12 @@ def llms():
 - Il Tocq non è in centro storico: il Duomo è a 2,5 km.
 - Le camere sul lato corte non danno sulla strada: si chiedono prenotando sul sito.
 - Prenotando sul sito si scelgono cuscino, materasso e lato della camera.
+- Tariffe dirette, colazione inclusa: Direct Flex (cancellazione gratuita fino a 24 ore prima, si paga in hotel) e Direct Save (10% sotto qualsiasi altro canale, prepagata, non rimborsabile).
 
 ## Pagine
 - [Camere e suite]({SITO}/camere/)
 - [Sale meeting ed eventi]({SITO}/meeting-eventi/)
+- [Offerte e tariffe dirette]({SITO}/offerte/)
 - [Posizione e distanze]({SITO}/posizione/)
 - [Contatti]({SITO}/contatti/)
 

@@ -19,6 +19,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/meeting-eventi/"/>
   </url>
   <url>
+    <loc>https://www.tocq.it/offerte/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/offerte/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/offerte/"/>
+  </url>
+  <url>
     <loc>https://www.tocq.it/posizione/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/posizione/"/>
