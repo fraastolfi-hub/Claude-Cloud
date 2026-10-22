@@ -1049,3 +1049,21 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 .hero-full__testo { width: 100%; justify-self: stretch; }
 /* correzione ottica: le lettere grandi hanno uno spazio interno a sinistra che le fa sembrare rientrate */
 .hero-full h1 { margin-left: -0.045em; }
+/* titolo dell'hero un po' più contenuto: due righe esatte */
+.hero-full h1 { font-size: clamp(40px, 6.2vw, 92px); max-width: none; }
+/* "Una finestra su Milano": quasi a schermo intero */
+.band:not(.band--basso) { min-height: clamp(480px, 92vh, 960px); }
+.band:not(.band--basso) .band__img img { object-position: center 30%; }
+
+/* Loghi delle piattaforme di recensioni: simboli monocromatici (Simple Icons) nel colore del testo; Booking.com in forma testuale */
+.logo-piattaforma { display: inline-block; width: 1.05em; height: 1.05em; background: currentColor; vertical-align: -0.16em; margin-right: .45em; -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; }
+.logo-piattaforma--google { --logo: url("img/loghi/google.svg"); }
+.logo-piattaforma--expedia { --logo: url("img/loghi/expedia.svg"); }
+.fonte { display: inline-flex; align-items: center; white-space: nowrap; }
+.fonte--testa { font: 500 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; }
+.fonte--booking { font-weight: 700; letter-spacing: -0.01em; text-transform: none; }
+.fonte--testa.fonte--booking { font-size: 14px; letter-spacing: 0; }
+.fonti-riga { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin: 0; }
+.fonti-riga .fonte { font: 500 14px var(--sans); color: var(--ink); }
+.fonti-riga .fonte--booking { font-weight: 700; }
+.hero-full__barra .fonte { color: var(--nero-20); }
