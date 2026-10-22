@@ -70,6 +70,13 @@ PAGINE = {
         "nav": "La posizione",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
+    "quartiere": {
+        "url": "/quartiere/",
+        "title": "Aziende, ristoranti e shopping vicino al Tocq · Milano",
+        "description": "Mappa del quartiere del Tocq Hotel Milano: le aziende di Porta Nuova, treni e metro, negozi e ristoranti, ciascuno con i minuti a piedi dall'hotel.",
+        "nav": "Il quartiere",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
     "contatti": {
         "url": "/contatti/",
         "title": "Contatti · Tocq Hotel Milano, Porta Garibaldi",
@@ -211,6 +218,11 @@ def schema_pagina(key, faq):
     b = breadcrumb_ld(key)
     if b:
         grafo.append(b)
+    if key == "quartiere":
+        import mappa
+        pezzi = mappa.blocchi()
+        if pezzi:
+            grafo.append(mappa.schema_luoghi(pezzi["_punti"], SITO))
     if faq:
         grafo.append(faq_ld(faq))
     return json.dumps({"@context": "https://schema.org", "@graph": grafo}, ensure_ascii=False, indent=2)
@@ -269,12 +281,11 @@ def head(key, faq):
 </head>
 <body class="tema-notte">
 
-<div class="bozza-bar">BOZZA RISERVATA ALLA DIREZIONE DEL TOCQ HOTEL · non è il sito ufficiale · a cura di Francesco Astolfi · i form non inviano dati · i riquadri tratteggiati sono da confermare</div>
 """
 
 
 def header(key):
-    voci = [("camere", "Camere"), ("meeting", "Meeting ed eventi"), ("posizione", "La posizione"), ("contatti", "Contatti")]
+    voci = [("camere", "Camere"), ("meeting", "Meeting ed eventi"), ("quartiere", "Il quartiere"), ("posizione", "Come arrivare"), ("contatti", "Contatti")]
     links = "\n".join(
         f'      <a href="{k}.html"{" aria-current=\"page\"" if k == key else ""}>{t}</a>' for k, t in voci
     )
@@ -287,7 +298,7 @@ def header(key):
     <nav class="nav" id="nav" aria-label="Principale">
 {links}
       <span class="lang">IT · <a href="#" title="Inglese al lancio" lang="en">EN</a></span>
-      <a class="btn btn--primary btn--small" href="camere.html#prenota">Prenota</a>
+      <a class="btn btn--primary btn--small" href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener" data-prenota>Prenota</a>
     </nav>
   </div>
 </header>
@@ -318,25 +329,26 @@ def footer():
         <h2 class="footer__h">Soggiorna</h2>
         <a href="camere.html">Camere e suite</a>
         <a href="camere.html#colazione">Colazione</a>
-        <a href="camere.html#prenota">Prenota sul sito</a>
+        <a href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener" data-prenota>Prenota sul sito</a>
       </div>
       <div>
         <h2 class="footer__h">Lavora</h2>
         <a href="meeting.html">Sale meeting</a>
         <a href="meeting.html#preventivo">Richiedi un preventivo</a>
         <a href="contatti.html#aziende">Tariffe aziendali</a>
+        <a href="quartiere.html">Il quartiere e le aziende</a>
         <a href="posizione.html">Come arrivare</a>
       </div>
     </div>
     <div class="footer__base">
       <span>© 2026 {f['nome']} · {f['societa']} · P.IVA {f['piva']}</span>
-      <span>Pagina aggiornata il 22 ottobre 2026 · Privacy · Cookie</span>
+      <span>Bozza di lavoro a cura di Francesco Astolfi · non è il sito ufficiale · aggiornata il 22 ottobre 2026</span>
     </div>
   </div>
 </footer>
 
 <div class="sticky-cta" aria-label="Azioni rapide">
-  <a class="btn btn--primary" href="camere.html#prenota">Prenota</a>
+  <a class="btn btn--primary" href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener" data-prenota>Prenota</a>
   <a class="btn" href="meeting.html#preventivo" aria-label="Richiedi un preventivo per un evento">Preventivo</a>
 </div>
 
@@ -424,8 +436,14 @@ Aggiornato il {AGGIORNATO}.
 
 
 def main():
+    import mappa
+    pezzi = mappa.blocchi()
     for key in PAGINE:
         corpo = (SRC / f"{key}.html").read_text()
+        if pezzi:
+            for segnaposto, testo in pezzi.items():
+                if segnaposto.startswith("<!--"):
+                    corpo = corpo.replace(segnaposto, testo)
         faq = estrai_faq(corpo)
         html = head(key, faq) + header(key) + '\n<main id="contenuto">\n' + corpo + "</main>\n" + footer()
         (OUT / f"{key}.html").write_text(html)

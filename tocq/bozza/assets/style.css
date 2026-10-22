@@ -844,7 +844,7 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 /* ==========================================================================
    Hero "La finestra su Milano": foto o video a schermo intero
    ========================================================================== */
-.hero-full { position: relative; padding: 0; min-height: max(600px, calc(100svh - 106px)); display: grid; grid-template-rows: 1fr auto; color: var(--bianco); overflow: hidden; background: var(--nero); }
+.hero-full { position: relative; padding: 0; min-height: max(600px, calc(100svh - 80px)); display: grid; grid-template-rows: 1fr auto; color: var(--bianco); overflow: hidden; background: var(--nero); }
 .hero-full__media { position: absolute; inset: 0; }
 .hero-full__img, .hero-full__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%; }
 .hero-full__ombra { position: absolute; inset: 0; z-index: 1; pointer-events: none; background:
@@ -952,3 +952,62 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 .tema-notte :is(.capitolo--alba, .inbreve--foto) { background-image: url("img/trama-verde.svg"); background-size: 142px auto; }
 .tema-notte .finale { background-image: url("img/trama-corallo.svg"); }
 .tema-notte .section { border-top-color: #1c1b1a; }
+
+/* ==========================================================================
+   Il quartiere: mappa radar, elenco e guide
+   ========================================================================== */
+.mappa { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: start; margin-top: 8px; }
+.mappa__radar { position: sticky; top: 100px; }
+.radar { width: 100%; height: auto; display: block; font-family: var(--sans); }
+.radar__cerchio { fill: none; stroke: rgba(255,255,255,.16); stroke-dasharray: 3 6; }
+.radar__asse { stroke: rgba(255,255,255,.06); }
+.radar__minuti { fill: #8f8b85; font-size: 15px; letter-spacing: .1em; }
+.radar__nord { fill: #8f8b85; font-size: 14px; font-weight: 500; }
+.radar__tocq circle { fill: #d2a275; stroke: #000; stroke-width: 4; }
+.radar__tocq text { fill: #d2a275; font-size: 15px; font-weight: 700; letter-spacing: .2em; }
+.radar__punto { cursor: pointer; outline: none; }
+.radar__punto circle { stroke: #000; stroke-width: 2; transition: r var(--t-fast) var(--ease); }
+.radar__punto text { fill: #fff; font-size: 15px; font-weight: 500; opacity: 0; pointer-events: none; paint-order: stroke; stroke: #000; stroke-width: 4px; transition: opacity var(--t-fast) var(--ease); }
+.radar__punto:hover text, .radar__punto:focus text, .radar__punto.is-attivo text { opacity: 1; }
+.radar__punto:hover circle, .radar__punto:focus circle, .radar__punto.is-attivo circle { r: 11; }
+.radar__punto.is-attivo circle { stroke: #fff; }
+.radar__punto[data-cat="aziende"] circle { fill: #d2a275; }
+.radar__punto[data-cat="trasporti"] circle { fill: #ffffff; }
+.radar__punto[data-cat="luoghi"] circle { fill: #939393; }
+.radar__punto[data-cat="shopping"] circle { fill: #000; stroke: #e9cfb4; stroke-width: 3; }
+.radar__punto[data-cat="food"] circle { fill: #8fb08a; }
+.radar__punto.is-nascosto { display: none; }
+
+.poi-elenco { list-style: none; margin: 0; padding: 0; max-height: 640px; overflow-y: auto; border-top: 2px solid var(--corallo); scrollbar-width: thin; scrollbar-color: #444 transparent; }
+.poi { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 12px 8px 12px 14px; border-bottom: 1px solid #222; cursor: pointer; position: relative; transition: background-color var(--t-fast) var(--ease); }
+.poi::before { content: ""; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; border-radius: 50%; background: #939393; }
+.poi[data-cat="aziende"]::before { background: #d2a275; }
+.poi[data-cat="trasporti"]::before { background: #fff; }
+.poi[data-cat="shopping"]::before { background: none; border: 1.5px solid #e9cfb4; }
+.poi[data-cat="food"]::before { background: #8fb08a; }
+.poi:hover, .poi.is-attivo { background: #151310; }
+.poi.is-nascosto { display: none; }
+.poi__cat { grid-column: 1 / -1; font: 500 10px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #8f8b85; }
+.poi__nome { color: #fff; font-weight: 500; }
+.poi__edificio { grid-column: 1; color: #b9b5af; font-size: 13px; }
+.poi__dist { grid-column: 1; color: #d2a275; font-size: 13px; font-weight: 500; }
+.poi__vai { grid-column: 2; grid-row: 2 / span 3; align-self: center; font: 500 11px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #fff; text-decoration: none; border: 1px solid #555; padding: 8px 10px; }
+.poi__vai:hover { border-color: #d2a275; color: #d2a275; }
+.mappa-filtri button { background: transparent; color: #fff; border-color: #444; }
+.mappa-filtri button:hover { background: #1b1611; }
+.mappa-filtri button[aria-pressed="true"] { background: #d2a275; border-color: #d2a275; color: #000; }
+@media (max-width: 960px) { .mappa { grid-template-columns: 1fr; } .mappa__radar { position: static; } .poi-elenco { max-height: 460px; } }
+
+/* Guide: shopping e food */
+.guida { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.guida__voce { background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.08); padding: 22px; display: grid; gap: 6px; align-content: start; transition: border-color var(--t-fast) var(--ease); }
+.guida__voce:hover { border-color: #d2a275; }
+.guida__voce h3 { margin: 0; font-size: 19px; }
+.guida__voce p { margin: 0; color: var(--ink-2); font-weight: 400; font-size: 15px; }
+.guida__voce .guida__dove { color: #d2a275; font-size: 13px; font-weight: 500; }
+.guida__voce a { font: 500 11px var(--sans); letter-spacing: .12em; text-transform: uppercase; margin-top: 6px; }
+.guida__tipo { font: 500 10px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+.guida__gruppo { margin: 36px 0 14px; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; color: #d2a275; }
+.guida__gruppo:first-child { margin-top: 0; }
+@media (max-width: 960px) { .guida { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .guida { grid-template-columns: 1fr; } }

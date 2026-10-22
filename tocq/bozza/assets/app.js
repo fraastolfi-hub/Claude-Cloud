@@ -155,7 +155,7 @@ document.addEventListener('click', function (e) {
   if (!a) return;
   var h = a.getAttribute('href') || '';
   if (h.indexOf('tel:') === 0) traccia('chiamata_reception');
-  else if (h.indexOf('#prenota') > -1) traccia('clic_prenota', { da: a.closest('section, header, .sticky-cta') ? (a.closest('section, header, .sticky-cta').id || a.closest('section, header, .sticky-cta').className.split(' ')[0]) : '' });
+  else if (a.hasAttribute('data-prenota') || h.indexOf('#prenota') > -1) traccia('clic_prenota', { da: a.closest('section, header, .sticky-cta') ? (a.closest('section, header, .sticky-cta').id || a.closest('section, header, .sticky-cta').className.split(' ')[0]) : '' });
   else if (h.indexOf('#preventivo') > -1) traccia('clic_preventivo');
   else if (h.indexOf('google.com/maps') > -1) traccia('tragitto_aperto');
 });
@@ -180,7 +180,7 @@ if (bivio) {
     document.querySelectorAll('[data-percorso]').forEach(function (c) { c.setAttribute('data-attivo', c.getAttribute('data-percorso') === v ? 'true' : 'false'); });
     var barraM = document.querySelector('.sticky-cta');
     if (barraM) {
-      var prenota = barraM.querySelector('a[href*="#prenota"]');
+      var prenota = barraM.querySelector('a[data-prenota]');
       var prev = barraM.querySelector('a[href*="#preventivo"]');
       if (v === 'evento') { barraM.insertBefore(prev, prenota); prev.className = 'btn btn--primary'; prenota.className = 'btn'; }
       else { barraM.insertBefore(prenota, prev); prenota.className = 'btn btn--primary'; prev.className = 'btn'; }
@@ -344,7 +344,7 @@ if (prenotaForm) {
   var vai = document.getElementById('b-vai');
   function aggiornaLink() {
     var q = new URLSearchParams({
-      id_albergo: '16496', dc: '6326', language: 'it', currency: 'EUR',
+      id_albergo: '16496', dc: '6326', id_stile: '21247', language: 'it', currency: 'EUR',
       checkin_date: arrivo.value, checkout_date: partenza.value,
       rooms: '1', adults_1: document.getElementById('b-ad').value, children_1: '0'
     });
@@ -397,3 +397,40 @@ document.querySelectorAll('[data-trustindex]').forEach(function (box) {
     new IntersectionObserver(function (v, o) { if (v[0].isIntersecting) { o.disconnect(); carica(); } }, { rootMargin: '600px 0px' }).observe(box);
   } else carica();
 });
+
+// Il quartiere: filtri per categoria, punto della mappa ed elenco evidenziati insieme
+var radar = document.querySelector('.radar');
+if (radar) {
+  var puntiMappa = radar.querySelectorAll('.radar__punto');
+  var vociElenco = document.querySelectorAll('.poi');
+  function attiva(id, scorri) {
+    puntiMappa.forEach(function (g) { g.classList.toggle('is-attivo', g.getAttribute('data-id') === id); });
+    vociElenco.forEach(function (li) {
+      var si = li.getAttribute('data-id') === id;
+      li.classList.toggle('is-attivo', si);
+      if (si && scorri) { var lista = li.parentNode; lista.scrollTo({ top: li.offsetTop - lista.offsetTop - 40, behavior: riduci ? 'auto' : 'smooth' }); }
+    });
+    var p = radar.querySelector('.radar__punto[data-id="' + id + '"]');
+    if (p) p.parentNode.appendChild(p); // il punto attivo va in primo piano
+  }
+  puntiMappa.forEach(function (g) {
+    var id = g.getAttribute('data-id');
+    g.addEventListener('click', function () { attiva(id, true); traccia('mappa_punto', { punto: id }); });
+    g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); attiva(id, true); } });
+    g.addEventListener('mouseenter', function () { attiva(id, false); });
+  });
+  vociElenco.forEach(function (li) {
+    var id = li.getAttribute('data-id');
+    li.addEventListener('mouseenter', function () { attiva(id, false); });
+    li.addEventListener('click', function (e) { if (!e.target.closest('a')) attiva(id, false); });
+  });
+  var gruppo = document.querySelector('.mappa-filtri');
+  if (gruppo) gruppo.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    var f = b.getAttribute('data-filtro');
+    gruppo.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    puntiMappa.forEach(function (g) { g.classList.toggle('is-nascosto', f !== 'tutti' && g.getAttribute('data-cat') !== f); });
+    vociElenco.forEach(function (li) { li.classList.toggle('is-nascosto', f !== 'tutti' && li.getAttribute('data-cat') !== f); });
+    traccia('mappa_filtro', { categoria: f });
+  });
+}

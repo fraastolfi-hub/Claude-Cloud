@@ -1,5 +1,5 @@
 /* Varianti B e C dell'hero: solo per il confronto con la proposta A (in home) */
-.hb, .hc { position: relative; min-height: max(600px, calc(100svh - 106px)); background: var(--nero); color: var(--bianco); padding: 0; overflow: hidden; display: grid; }
+.hb, .hc { position: relative; min-height: max(600px, calc(100svh - 80px)); background: var(--nero); color: var(--bianco); padding: 0; overflow: hidden; display: grid; }
 .hb__foto { position: absolute; inset: 0 0 0 42%; }
 .hb__foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 600ms var(--ease); }
 .hb__foto img.is-attiva { opacity: 1; }

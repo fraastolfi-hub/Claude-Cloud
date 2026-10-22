@@ -25,6 +25,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/posizione/"/>
   </url>
   <url>
+    <loc>https://www.tocq.it/quartiere/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/quartiere/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/quartiere/"/>
+  </url>
+  <url>
     <loc>https://www.tocq.it/contatti/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/contatti/"/>
