@@ -1,28 +1,28 @@
   <div class="ora-capitolo" aria-hidden="true"><span class="ora-capitolo__ora">18:40</span><span class="ora-capitolo__nome">Arrivo</span></div>
 
-  <!-- 1 · HERO: la frase per il pubblico, cap. 8 -->
-  <section class="hero hero--bleed">
-    <div class="wrap hero__grid">
-      <div>
-        <p class="kicker">Tocq Hotel · 4 stelle · Porta Garibaldi</p>
-        <h1>Scendi a Garibaldi.<br class="br-d"> Sei arrivato.</h1>
-        <ul class="hero__promises">
-          <li><span class="mono">200 M</span> La stazione di Porta Garibaldi è a 200 metri.</li>
-          <li><span class="mono">SALA</span> La sala riunioni è al piano. Prendi l'ascensore e ci sei.</li>
-          <li><span class="mono">PRIMA</span> Il cuscino lo scegli prima di partire.</li>
-          <li><span class="mono">ALL'ALBA</span> Se parti presto, la colazione te la portiamo via noi.</li>
-        </ul>
-        <div class="btns">
-          <a class="btn btn--primary" href="camere.html#prenota">Prenota una camera</a>
-          <a class="btn" href="meeting.html#preventivo">Organizza un evento</a>
-        </div>
-        <ul class="proof" aria-label="Cosa dicono gli ospiti">
-          <li><b>8,8/10</b> su Expedia, 973 recensioni</li>
-          <li><b>4,60/5</b> il voto di chi viaggia per lavoro, Google 2025</li>
-          <li><b>8,98</b> pulizia e comfort, Booking</li>
-        </ul>
+  <!-- 1 · HERO "La finestra su Milano" (proposta A, HERO.md): foto o video a schermo intero, le ante del simbolo si aprono -->
+  <section class="hero hero-full" id="hero">
+    <div class="hero-full__media doors" data-video-mp4="" data-video-webm="">
+      <!-- quando il video sarà girato: data-video-mp4="assets/video/tocq-hero.mp4" (vedi HERO.md) -->
+      <img class="hero-full__img" src="assets/img/foto/tocq-hotel-milano-camera-vista-torri-porta-nuova-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-vista-torri-porta-nuova-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-vista-torri-porta-nuova-1600.webp 1600w" sizes="100vw" alt="Camera del Tocq Hotel Milano con le torri di Porta Nuova dalla finestra" width="1600" height="1068" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-full__ombra" aria-hidden="true"></div>
+    <div class="wrap hero-full__testo">
+      <p class="kicker">Tocq Hotel · 4 stelle · Porta Garibaldi, Milano</p>
+      <h1>Scendi a Garibaldi.<br>Sei arrivato.</h1>
+      <p class="hero-full__sotto">Il treno a 200 metri. La sala al piano. Il cuscino scelto prima di partire.</p>
+      <div class="btns">
+        <a class="btn btn--primary" href="camere.html#prenota">Prenota una camera</a>
+        <a class="btn btn--light" href="meeting.html#preventivo">Organizza un evento</a>
       </div>
-      <figure class="photo photo--tall doors"><img src="assets/img/foto/tocq-hotel-milano-camera-vista-torri-porta-nuova-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-vista-torri-porta-nuova-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-vista-torri-porta-nuova-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Camera del Tocq Hotel Milano con letto king size, poltrone arancioni e le torri di Porta Nuova dalla finestra" width="1600" height="1068" fetchpriority="high" decoding="async"></figure>
+    </div>
+    <div class="hero-full__barra">
+      <ul class="wrap">
+        <li><b>200 m</b><span>dalla stazione Porta Garibaldi</span></li>
+        <li><b>6 sale</b><span>nello stesso edificio delle camere</span></li>
+        <li><b>4 cuscini</b><span>da scegliere prima di arrivare</span></li>
+        <li><b>8,8/10</b><span>su Expedia, 973 recensioni</span></li>
+      </ul>
     </div>
   </section>
 
@@ -303,7 +303,20 @@
         <div class="stat"><b>4,60 / 5</b><span>il voto di chi viaggia per lavoro su Google, 2025</span></div>
         <div class="stat"><b>8,96</b><span>posizione su Booking, contro 8,29 e 8,18 dei due hotel attaccati alla stazione</span></div>
       </div>
-      <p class="note"><b>Da confermare</b>"Stessa camera la volta dopo" e la fattura unica sono mosse del cap. 10 da adottare. Voti all'ottobre 2026: si aggiornano al lancio e poi ogni trimestre.</p>
+      <!-- Recensioni dal vivo: widget Trustindex caricato solo quando la sezione si avvicina.
+           Basta inserire l'ID del widget in data-trustindex; finché manca restano le citazioni scelte a mano. -->
+      <div class="recensioni-live mt-48" data-trustindex="">
+        <div class="recensioni-live__testa">
+          <p class="kicker">Le recensioni, dal vivo</p>
+          <p class="muted small">Google, Booking, TripAdvisor ed Expedia in un unico flusso, aggiornato in automatico.</p>
+        </div>
+        <div class="recensioni-live__riserva">
+          <blockquote class="quote"><p>"È sempre la mia scelta a Milano: il mio hotel preferito, lo staff è il migliore."</p><cite>Ospite abituale · Booking</cite></blockquote>
+          <blockquote class="quote"><p>"Sempre molto comodo per i miei meeting lavorativi."</p><cite>Google · 4★</cite></blockquote>
+          <blockquote class="quote"><p>"I did email in advance to request a quiet room and I have to say it was super quiet, even with the window open."</p><cite>TripAdvisor · 5★</cite></blockquote>
+        </div>
+      </div>
+      <p class="note"><b>Da confermare</b>"Stessa camera la volta dopo" e la fattura unica sono mosse del cap. 10 da adottare. Voti all'ottobre 2026: si aggiornano al lancio e poi ogni trimestre. Per Trustindex serve l'ID del widget (vedi HERO.md).</p>
     </div>
   </section>
 

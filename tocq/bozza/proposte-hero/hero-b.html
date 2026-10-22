@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hero B · Dal binario alla camera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="proposte.css">
+</head>
+<body>
+<div class="bozza-bar">PROPOSTA HERO VARIANTE · bozza riservata alla direzione · a cura di Francesco Astolfi</div>
+<header class="header"><div class="wrap"><a class="logo" href="../index.html"><img src="../assets/img/logo-orizzontale.svg" alt="Tocq Hotel Milano" width="92" height="44"></a><nav class="nav" style="display:flex"><a href="hero-b.html">Variante B</a><a href="hero-c.html">Variante C</a><a href="../index.html">Variante A (home)</a></nav></div></header>
+
+<main>
+<section class="hero hb" id="hero">
+  <div class="hb__foto">
+    <img class="is-attiva" src="../assets/img/foto/porta-nuova-torre-unicredit-milano-1600.webp" srcset="../assets/img/foto/porta-nuova-torre-unicredit-milano-800.webp 800w, ../assets/img/foto/porta-nuova-torre-unicredit-milano-1600.webp 1600w" sizes="100vw" alt="Porta Nuova uscendo dalla stazione Garibaldi">
+    <img class="" src="../assets/img/foto/tocq-hotel-milano-hall-lounge-1600.webp" srcset="../assets/img/foto/tocq-hotel-milano-hall-lounge-800.webp 800w, ../assets/img/foto/tocq-hotel-milano-hall-lounge-1600.webp 1600w" sizes="100vw" alt="La hall del Tocq">
+    <img class="" src="../assets/img/foto/tocq-hotel-milano-cuscini-sul-letto-1600.webp" srcset="../assets/img/foto/tocq-hotel-milano-cuscini-sul-letto-800.webp 800w, ../assets/img/foto/tocq-hotel-milano-cuscini-sul-letto-1600.webp 1600w" sizes="100vw" alt="Il cuscino sistemato sul letto">
+  </div>
+  <div class="wrap hb__testo">
+    <p class="kicker">Dal binario alla camera</p>
+    <p class="hb__timer" aria-hidden="true"><span id="hb-min">00</span>:<span id="hb-sec">00</span></p>
+    <ol class="hb__tappe">
+      <li class="is-attiva"><b>00:00</b> Scendi dal treno a Porta Garibaldi</li>
+      <li><b>02:10</b> Entri dal portone di Via Tocqueville</li>
+      <li><b>03:00</b> Il cuscino che hai scelto è sul letto</li>
+    </ol>
+    <h1>Scendi a Garibaldi. Sei arrivato.</h1>
+    <div class="btns"><a class="btn btn--primary" href="../camere.html#prenota">Prenota una camera</a><a class="btn btn--light" href="../meeting.html#preventivo">Organizza un evento</a></div>
+  </div>
+</section>
+</main>
+<script>
+(function(){
+  var fotos=[].slice.call(document.querySelectorAll('.hb__foto img')), tappe=[].slice.call(document.querySelectorAll('.hb__tappe li'));
+  var m=document.getElementById('hb-min'), s=document.getElementById('hb-sec');
+  var riduci=matchMedia('(prefers-reduced-motion: reduce)').matches, t=riduci?180:0;
+  function disegna(){ m.textContent=String(Math.floor(t/60)).padStart(2,'0'); s.textContent=String(t%60).padStart(2,'0');
+    var k=t<130?0:t<180?1:2; fotos.forEach(function(f,i){f.classList.toggle('is-attiva',i===k)}); tappe.forEach(function(l,i){l.classList.toggle('is-attiva',i<=k)}); }
+  disegna(); if(riduci) return;
+  var iv=setInterval(function(){ t+=2; if(t>=180){t=180;disegna();clearInterval(iv);setTimeout(function(){t=0;location.reload()},6000);return;} disegna(); },70);
+})();
+</script>
+</body></html>

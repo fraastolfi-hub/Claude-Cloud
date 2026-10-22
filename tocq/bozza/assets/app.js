@@ -358,3 +358,42 @@ if (prenotaForm) {
   vai.addEventListener('click', function () { traccia('prenotazione_avviata', { checkin: arrivo.value, checkout: partenza.value }); });
   aggiornaLink();
 }
+
+// Hero: quando il video sarà pronto basta indicarne il file in data-video-mp4 / data-video-webm.
+// Il video parte muto e in loop solo se l'utente non ha chiesto meno movimento né risparmio dati; la foto resta come poster.
+document.querySelectorAll('[data-video-mp4]').forEach(function (box) {
+  var mp4 = box.getAttribute('data-video-mp4'), webm = box.getAttribute('data-video-webm');
+  var risparmio = navigator.connection && navigator.connection.saveData;
+  if (!(mp4 || webm) || riduci || risparmio) return;
+  var img = box.querySelector('img');
+  var v = document.createElement('video');
+  v.className = 'hero-full__video';
+  v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true; v.setAttribute('playsinline', '');
+  v.setAttribute('aria-hidden', 'true');
+  if (img) v.poster = img.currentSrc || img.src;
+  if (webm) { var s1 = document.createElement('source'); s1.src = webm; s1.type = 'video/webm'; v.appendChild(s1); }
+  if (mp4) { var s2 = document.createElement('source'); s2.src = mp4; s2.type = 'video/mp4'; v.appendChild(s2); }
+  box.appendChild(v);
+  var btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'hero-full__pausa'; btn.textContent = 'Pausa';
+  btn.addEventListener('click', function () { if (v.paused) { v.play(); btn.textContent = 'Pausa'; } else { v.pause(); btn.textContent = 'Riproduci'; } });
+  box.parentNode.appendChild(btn);
+});
+
+// Trustindex: il widget si carica solo quando la sezione si avvicina allo schermo, così non pesa sulla prima schermata.
+// Uso: data-trustindex="ID_DEL_WIDGET" (il codice che Trustindex dà nello snippet loader.js?ID).
+document.querySelectorAll('[data-trustindex]').forEach(function (box) {
+  var id = box.getAttribute('data-trustindex');
+  if (!id) return;
+  function carica() {
+    var s = document.createElement('script');
+    s.src = 'https://cdn.trustindex.io/loader.js?' + encodeURIComponent(id);
+    s.defer = true; s.async = true;
+    box.appendChild(s);
+    box.classList.add('is-live');
+    traccia('recensioni_live_caricate');
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (v, o) { if (v[0].isIntersecting) { o.disconnect(); carica(); } }, { rootMargin: '600px 0px' }).observe(box);
+  } else carica();
+});

@@ -840,3 +840,49 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 @media (max-width: 760px) { .quartiere { grid-template-columns: 1fr; } .quartiere .photo { aspect-ratio: 3 / 2; } }
 .reason .photo { min-height: 0; aspect-ratio: 3 / 2; }
 .reason .photo figcaption { background: rgba(0,0,0,.6); }
+
+/* ==========================================================================
+   Hero "La finestra su Milano": foto o video a schermo intero
+   ========================================================================== */
+.hero-full { position: relative; padding: 0; min-height: max(600px, calc(100svh - 106px)); display: grid; grid-template-rows: 1fr auto; color: var(--bianco); overflow: hidden; background: var(--nero); }
+.hero-full__media { position: absolute; inset: 0; }
+.hero-full__img, .hero-full__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%; }
+.hero-full__ombra { position: absolute; inset: 0; z-index: 1; pointer-events: none; background:
+  linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.45) 38%, rgba(0,0,0,0) 68%),
+  linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.55) 100%); }
+.hero-full__media.doors::before, .hero-full__media.doors::after { z-index: 2; }
+.hero-full__testo { position: relative; z-index: 3; align-self: center; padding-block: clamp(56px, 10vh, 120px) 40px; }
+.hero-full .kicker { color: var(--corallo-50); }
+.hero-full h1 { font-size: clamp(48px, 8.4vw, 124px); line-height: .96; letter-spacing: -0.025em; max-width: 11ch; margin-bottom: 24px; }
+.hero-full__sotto { font-size: clamp(18px, 1.8vw, 22px); font-weight: 300; max-width: 34ch; color: var(--nero-20); margin-bottom: 32px; }
+.hero-full .btn--primary { background: var(--corallo); border-color: var(--corallo); color: var(--nero); }
+.hero-full .btn--primary:hover { background: var(--corallo-80); border-color: var(--corallo-80); }
+.hero-full__barra { position: relative; z-index: 3; border-top: 1px solid rgba(255,255,255,.25); background: rgba(0,0,0,.35); backdrop-filter: blur(8px); }
+.hero-full__barra ul { list-style: none; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.hero-full__barra li { display: grid; gap: 2px; padding: 18px 16px 18px 0; border-right: 1px solid rgba(255,255,255,.18); margin-right: 16px; }
+.hero-full__barra li:last-child { border-right: 0; }
+.hero-full__barra b { font: 700 22px/1 var(--sans); color: var(--corallo); }
+.hero-full__barra span { font-size: 13px; color: var(--nero-20); font-weight: 400; }
+.hero-full__pausa { position: absolute; z-index: 4; right: max(16px, env(safe-area-inset-right, 0px)); top: 16px; background: rgba(0,0,0,.45); color: var(--bianco); border: 1px solid rgba(255,255,255,.4); font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; padding: 8px 12px; cursor: pointer; }
+@media (max-width: 760px) {
+  .hero-full { min-height: calc(100svh - 120px); }
+  .hero-full__img, .hero-full__video { object-position: 78% 50%; }
+  .hero-full__ombra { background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.35) 40%, rgba(0,0,0,.82) 100%); }
+  .hero-full__testo { align-self: end; padding-block: 120px 24px; }
+  .hero-full__barra ul { grid-template-columns: 1fr 1fr; }
+  .hero-full__barra li { padding: 12px 8px 12px 0; margin-right: 8px; }
+  .hero-full__barra li:nth-child(2n) { border-right: 0; }
+  .hero-full__barra b { font-size: 18px; }
+  .hero-full .btns { display: grid; }
+  .hero-full .btn { justify-content: center; }
+}
+
+/* Recensioni dal vivo (Trustindex) con riserva di citazioni scelte a mano */
+.recensioni-live { border-top: 2px solid var(--nero); padding-top: 24px; }
+.recensioni-live__testa { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.recensioni-live__testa p { margin: 0; }
+.recensioni-live__riserva { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.recensioni-live__riserva .quote { background: var(--corallo-20); padding: 24px; border-top: 0; }
+.recensioni-live__riserva .quote p { font-size: 18px; }
+.recensioni-live.is-live .recensioni-live__riserva { display: none; }
+@media (max-width: 860px) { .recensioni-live__riserva { grid-template-columns: 1fr; } }

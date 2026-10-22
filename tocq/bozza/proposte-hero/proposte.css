@@ -1,0 +1,27 @@
+/* Varianti B e C dell'hero: solo per il confronto con la proposta A (in home) */
+.hb, .hc { position: relative; min-height: max(600px, calc(100svh - 106px)); background: var(--nero); color: var(--bianco); padding: 0; overflow: hidden; display: grid; }
+.hb__foto { position: absolute; inset: 0 0 0 42%; }
+.hb__foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 600ms var(--ease); }
+.hb__foto img.is-attiva { opacity: 1; }
+.hb__foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0) 30%); }
+.hb__testo { position: relative; z-index: 1; align-self: center; padding-block: 48px; }
+.hb .kicker { color: var(--corallo-50); }
+.hb__timer { font: 700 clamp(80px, 13vw, 200px)/.9 var(--sans); color: var(--corallo); margin: 0 0 16px; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+.hb__tappe { list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 8px; max-width: 420px; }
+.hb__tappe li { color: var(--nero-50); transition: color 300ms var(--ease); font-size: 17px; }
+.hb__tappe li.is-attiva { color: var(--bianco); }
+.hb__tappe b { font-weight: 500; color: var(--corallo); margin-right: 10px; }
+.hb h1 { font-size: clamp(32px, 4vw, 52px); max-width: 14ch; }
+.hb .btn--primary, .hc .btn--primary { background: var(--corallo); border-color: var(--corallo); color: var(--nero); }
+@media (max-width: 760px) { .hb__foto { inset: 0; opacity: .45; } .hb__foto::after { background: linear-gradient(180deg, rgba(0,0,0,.3), #000); } }
+
+.hc__griglia { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; padding-block: 48px; }
+.hc .kicker { color: var(--corallo-50); }
+.hc h1 { font-size: clamp(44px, 6.4vw, 96px); line-height: .98; }
+.hc__sotto { color: var(--nero-20); font-size: 19px; max-width: 36ch; margin-bottom: 32px; }
+.hc__simbolo { width: 100%; max-height: calc(100svh - 200px); }
+.hc__img { transform-origin: center; animation: hc-zoom 14s ease-in-out infinite alternate; }
+@keyframes hc-zoom { from { transform: scale(1); } to { transform: scale(1.08); } }
+@media (prefers-reduced-motion: reduce) { .hc__img { animation: none; } }
+@media (max-width: 760px) { .hc__griglia { grid-template-columns: 1fr; } .hc__simbolo { order: -1; max-height: 46svh; } }
+@media (max-width: 920px) { .header .nav { position: static; flex-direction: row; padding: 0; border: 0; gap: 12px; background: none; } .header .nav a { font-size: 10px; } }

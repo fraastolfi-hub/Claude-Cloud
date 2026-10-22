@@ -4,6 +4,7 @@ Lavoro per il cliente Tocq, fuori dal sito Hotel Positioning (non viene pubblica
 
 - `PROGETTO.md` – il progetto: dati di partenza, concept "Base a Garibaldi", obiettivi, alberatura, contenuti pagina per pagina, funzioni, tono, misure, fasi, domande aperte per la direzione.
 - `JOURNEY.md` – il progetto di esperienza: percorso, racconto, sezioni, transizioni, interazioni e punti di conversione.
+- `HERO.md` – le tre proposte per la prima schermata, il brief del video e le recensioni Trustindex.
 - `BRAND.md` – le regole del brand book applicate al sito, con i colori in esadecimale e i file mancanti.
 - `bozza/` – bozza navigabile della fase 1 (home, camere, meeting ed eventi, posizione, contatti). HTML statico: si apre `bozza/index.html` nel browser, senza build.
 
