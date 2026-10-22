@@ -237,7 +237,8 @@ def head(key, faq):
   <title>{p['title']}</title>
   <meta name="description" content="{p['description']}">
   <!-- BOZZA: togliere noindex al lancio -->
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow">
   <link rel="canonical" href="{SITO}{p['url']}">
   <link rel="alternate" hreflang="it" href="{SITO}{p['url']}">
   <link rel="alternate" hreflang="en" href="{SITO}/en{p['url']}">
@@ -268,7 +269,7 @@ def head(key, faq):
 </head>
 <body>
 
-<div class="bozza-bar">BOZZA DI LAVORO · non pubblicare · i segnaposto tratteggiati vanno confermati dalla direzione (vedi PROGETTO.md, §13)</div>
+<div class="bozza-bar">BOZZA RISERVATA ALLA DIREZIONE DEL TOCQ HOTEL · non è il sito ufficiale · a cura di Francesco Astolfi · i form non inviano dati · i riquadri tratteggiati sono da confermare</div>
 """
 
 
