@@ -383,41 +383,137 @@ document.querySelectorAll('[data-trustindex]').forEach(function (box) {
   } else carica();
 });
 
-// Il quartiere: filtri per categoria, punto della mappa ed elenco evidenziati insieme
-var radar = document.querySelector('.radar');
-if (radar) {
-  var puntiMappa = radar.querySelectorAll('.radar__punto');
-  var vociElenco = document.querySelectorAll('.poi');
-  function attiva(id, scorri) {
-    puntiMappa.forEach(function (g) { g.classList.toggle('is-attivo', g.getAttribute('data-id') === id); });
-    vociElenco.forEach(function (li) {
+// Il quartiere: mappa vera da trascinare e ingrandire, temi, punti ed elenco evidenziati insieme
+var qmap = document.querySelector('.qmap');
+if (qmap) {
+  var vista = qmap.querySelector('.qmap__vista'), piano = qmap.querySelector('.qmap__piano');
+  var LATO = +qmap.getAttribute('data-lato'), HX = +qmap.getAttribute('data-hx'), HY = +qmap.getAttribute('data-hy');
+  var puntiQ = [].slice.call(qmap.querySelectorAll('.qmap__punto'));
+  var vociQ = [].slice.call(document.querySelectorAll('.poi'));
+  var st = { k: 1, x: 0, y: 0 }, MAXK = 2.4;
+  function pos(el) { return { x: parseFloat(el.style.left), y: parseFloat(el.style.top) }; }
+  function minK() { return Math.max(vista.clientWidth, vista.clientHeight) / LATO; }
+  function limita() {
+    var w = vista.clientWidth, h = vista.clientHeight;
+    st.k = Math.min(MAXK, Math.max(minK(), st.k));
+    st.x = Math.min(0, Math.max(w - LATO * st.k, st.x));
+    st.y = Math.min(0, Math.max(h - LATO * st.k, st.y));
+  }
+  function disegna(anima) {
+    limita();
+    piano.style.transition = anima && !riduci ? 'transform .45s cubic-bezier(.2,.7,.2,1)' : 'none';
+    piano.style.transform = 'translate(' + st.x + 'px,' + st.y + 'px) scale(' + st.k + ')';
+    piano.style.setProperty('--k', st.k);
+    qmap.classList.toggle('is-vicino', st.k > 1.15);
+  }
+  function zoomIn(f, cx, cy, anima) {
+    var k2 = Math.min(MAXK, Math.max(minK(), st.k * f));
+    st.x = cx - (cx - st.x) * k2 / st.k; st.y = cy - (cy - st.y) * k2 / st.k; st.k = k2;
+    disegna(anima);
+  }
+  function inquadra(punti, anima) {
+    var xs = [HX], ys = [HY];
+    punti.forEach(function (p) { var c = pos(p); xs.push(c.x); ys.push(c.y); });
+    var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs), y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
+    var w = vista.clientWidth, h = vista.clientHeight, pad = 70;
+    st.k = Math.min(1.6, (w - pad * 2) / Math.max(x1 - x0, 1), (h - pad * 2) / Math.max(y1 - y0, 1));
+    st.k = Math.max(minK(), st.k);
+    st.x = w / 2 - (x0 + x1) / 2 * st.k; st.y = h / 2 - (y0 + y1) / 2 * st.k;
+    disegna(anima);
+  }
+  function inVista(el) {
+    var c = pos(el), x = st.x + c.x * st.k, y = st.y + c.y * st.k;
+    return x > 40 && y > 40 && x < vista.clientWidth - 40 && y < vista.clientHeight - 40;
+  }
+  function seleziona(id, daMappa) {
+    var punto = null;
+    puntiQ.forEach(function (p) { var si = p.getAttribute('data-id') === id; p.classList.toggle('is-attivo', si); if (si) punto = p; });
+    vociQ.forEach(function (li) {
       var si = li.getAttribute('data-id') === id;
       li.classList.toggle('is-attivo', si);
-      if (si && scorri) { var lista = li.parentNode; lista.scrollTo({ top: li.offsetTop - lista.offsetTop - 40, behavior: riduci ? 'auto' : 'smooth' }); }
+      if (si && daMappa) { var l = li.parentNode; l.scrollTo({ top: li.offsetTop - l.offsetTop - 40, behavior: riduci ? 'auto' : 'smooth' }); }
     });
-    var p = radar.querySelector('.radar__punto[data-id="' + id + '"]');
-    if (p) p.parentNode.appendChild(p); // il punto attivo va in primo piano
+    if (punto && !daMappa && !inVista(punto)) {
+      var c = pos(punto);
+      st.x = vista.clientWidth / 2 - c.x * st.k; st.y = vista.clientHeight / 2 - c.y * st.k; disegna(true);
+    }
   }
-  puntiMappa.forEach(function (g) {
-    var id = g.getAttribute('data-id');
-    g.addEventListener('click', function () { attiva(id, true); traccia('mappa_punto', { punto: id }); });
-    g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); attiva(id, true); } });
-    g.addEventListener('mouseenter', function () { attiva(id, false); });
+  // trascinamento con mouse o dito, pizzico con due dita
+  var dita = {}, mosso = 0, pizzico = null;
+  vista.addEventListener('pointerdown', function (e) {
+    dita[e.pointerId] = { x: e.clientX, y: e.clientY }; mosso = 0;
   });
-  vociElenco.forEach(function (li) {
-    var id = li.getAttribute('data-id');
-    li.addEventListener('mouseenter', function () { attiva(id, false); });
-    li.addEventListener('click', function (e) { if (!e.target.closest('a')) attiva(id, false); });
+  vista.addEventListener('pointermove', function (e) {
+    var d = dita[e.pointerId]; if (!d) return;
+    var ids = Object.keys(dita);
+    if (ids.length === 2) {
+      var a = dita[ids[0]], b = dita[ids[1]];
+      d.x = e.clientX; d.y = e.clientY;
+      var dist = Math.hypot(a.x - b.x, a.y - b.y), r = vista.getBoundingClientRect();
+      if (pizzico) zoomIn(dist / pizzico, (a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top, false);
+      pizzico = dist; mosso = 99; return;
+    }
+    st.x += e.clientX - d.x; st.y += e.clientY - d.y; mosso += Math.abs(e.clientX - d.x) + Math.abs(e.clientY - d.y);
+    // la cattura parte solo quando si trascina davvero, così il tocco su un punto resta un clic
+    if (mosso > 4 && !vista.hasPointerCapture(e.pointerId)) { vista.setPointerCapture(e.pointerId); qmap.classList.add('is-trascina'); }
+    d.x = e.clientX; d.y = e.clientY; disegna(false);
   });
-  var gruppo = document.querySelector('.mappa-filtri');
-  if (gruppo) gruppo.addEventListener('click', function (e) {
+  function fine(e) { delete dita[e.pointerId]; pizzico = null; if (!Object.keys(dita).length) qmap.classList.remove('is-trascina'); }
+  vista.addEventListener('pointerup', fine); vista.addEventListener('pointercancel', fine);
+  vista.addEventListener('wheel', function (e) {
+    if (!e.ctrlKey && !e.metaKey) { qmap.classList.add('is-suggerisci'); clearTimeout(qmap._t); qmap._t = setTimeout(function () { qmap.classList.remove('is-suggerisci'); }, 1400); return; }
+    e.preventDefault(); var r = vista.getBoundingClientRect();
+    zoomIn(Math.exp(-e.deltaY * 0.004), e.clientX - r.left, e.clientY - r.top, false);
+  }, { passive: false });
+  vista.addEventListener('dblclick', function (e) { var r = vista.getBoundingClientRect(); zoomIn(1.6, e.clientX - r.left, e.clientY - r.top, true); });
+  vista.tabIndex = 0;
+  vista.addEventListener('keydown', function (e) {
+    var m = { ArrowLeft: [80, 0], ArrowRight: [-80, 0], ArrowUp: [0, 80], ArrowDown: [0, -80] }[e.key];
+    if (m) { e.preventDefault(); st.x += m[0]; st.y += m[1]; disegna(true); }
+    if (e.key === '+' || e.key === '=') zoomIn(1.4, vista.clientWidth / 2, vista.clientHeight / 2, true);
+    if (e.key === '-') zoomIn(1 / 1.4, vista.clientWidth / 2, vista.clientHeight / 2, true);
+  });
+  qmap.querySelector('.qmap__comandi').addEventListener('click', function (e) {
     var b = e.target.closest('button'); if (!b) return;
-    var f = b.getAttribute('data-filtro');
-    gruppo.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-    puntiMappa.forEach(function (g) { g.classList.toggle('is-nascosto', f !== 'tutti' && g.getAttribute('data-cat') !== f); });
-    vociElenco.forEach(function (li) { li.classList.toggle('is-nascosto', f !== 'tutti' && li.getAttribute('data-cat') !== f); });
-    traccia('mappa_filtro', { categoria: f });
+    var z = +b.getAttribute('data-zoom');
+    if (z) zoomIn(z > 0 ? 1.5 : 1 / 1.5, vista.clientWidth / 2, vista.clientHeight / 2, true);
+    else inquadra(puntiQ.filter(function (p) { return !p.classList.contains('is-nascosto'); }), true);
   });
+  puntiQ.forEach(function (p) {
+    var id = p.getAttribute('data-id');
+    p.addEventListener('click', function () { if (mosso > 6) return; seleziona(id, true); traccia('mappa_punto', { punto: id }); });
+    p.addEventListener('mouseenter', function () { seleziona(id, false); });
+  });
+  vociQ.forEach(function (li) {
+    var id = li.getAttribute('data-id');
+    li.addEventListener('mouseenter', function () { seleziona(id, false); });
+    li.addEventListener('click', function (e) { if (!e.target.closest('a')) seleziona(id, false); });
+  });
+  // temi: si vedono i punti del tema, i treni restano come riferimento, la mappa si inquadra da sola
+  var gruppo = document.querySelector('.mappa-filtri');
+  function tema(f, daUtente) {
+    if (gruppo) gruppo.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-filtro') === f ? 'true' : 'false'); });
+    qmap.setAttribute('data-tema', f);
+    var visibili = [];
+    puntiQ.forEach(function (p) {
+      var c = p.getAttribute('data-cat'), si = f === 'tutti' || c === f;
+      p.classList.toggle('is-nascosto', !si && c !== 'trasporti');
+      p.classList.toggle('is-riferimento', !si && c === 'trasporti');
+      if (si) visibili.push(p);
+    });
+    vociQ.forEach(function (li) { li.classList.toggle('is-nascosto', f !== 'tutti' && li.getAttribute('data-cat') !== f); });
+    inquadra(f === 'tutti' ? puntiQ.filter(function (p) { return pos(p).x && Math.hypot(pos(p).x - HX, pos(p).y - HY) < 430; }) : visibili, daUtente);
+    if (daUtente) traccia('mappa_filtro', { categoria: f });
+  }
+  if (gruppo) gruppo.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) tema(b.getAttribute('data-filtro'), true); });
+  document.querySelectorAll('[data-tema]').forEach(function (a) {
+    if (a === qmap) return;
+    a.addEventListener('click', function () { tema(a.getAttribute('data-tema'), true); });
+  });
+  window.addEventListener('resize', function () { disegna(false); });
+  var base = qmap.querySelector('.qmap__base');
+  function avvia() { tema('tutti', false); }
+  if (base.complete) avvia(); else base.addEventListener('load', avvia);
 }
 
 // Pagina FAQ: ricerca immediata fra le domande e le risposte

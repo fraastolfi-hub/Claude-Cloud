@@ -1,8 +1,8 @@
 """Tocq · mappa del quartiere e guide, generate dai dati verificati in src/dati/poi.json.
 
 Tutto esce come HTML statico (leggibile da Google e dagli assistenti AI); assets/app.js aggiunge
-solo filtri ed evidenziazione. La mappa è un "radar" centrato sul Tocq: ogni punto sta alla sua
-direzione e distanza reali, con i cerchi dei minuti a piedi. Non usa mappe di terzi.
+solo filtri ed evidenziazione. La mappa usa una base OpenStreetMap ripassata in nero con i colori
+del marchio, con i cerchi dei minuti a piedi, i nomi dei quartieri e ogni punto alla sua posizione reale.
 """
 import html
 import json
@@ -28,7 +28,8 @@ FATTORE_STRADA = 1.3    # dalla linea d'aria al percorso reale
 RAGGIO_M = 1600         # raggio della mappa, in linea d'aria
 CERCHI_MIN = [5, 10, 15]
 # punti con l'etichetta sempre visibile, per orientarsi
-ETICHETTE_FISSE = {"stazione-porta-garibaldi", "piazza-gae-aulenti", "corso-como", "bosco-verticale"}
+ETICHETTE_FISSE = {"stazione-porta-garibaldi", "piazza-gae-aulenti", "corso-como", "bosco-verticale", "stazione-centrale"}
+ETICHETTA_A_SINISTRA = {"stazione-porta-garibaldi"}  # per non sovrapporsi a Gae Aulenti
 
 
 def _metri(h, p):
@@ -77,36 +78,64 @@ def _maps(q):
     return f"https://www.google.com/maps/dir/?api=1&origin=Tocq+Hotel+Milano&destination={quote(q['nome'] + ', ' + q['indirizzo'])}&travelmode=walking"
 
 
-R_PX = 480
+# Base della mappa: 7×7 tasselli OpenStreetMap a zoom 16 (scaricati una volta, ripassati in nero
+# con i colori del marchio), da x 34437 e y 23447. Ogni punto si posa con la stessa proiezione dei tasselli.
+BASE_IMG = "assets/img/mappa/quartiere-z16.webp"
+BASE_Z, BASE_X0, BASE_Y0, BASE_LATO = 16, 34437, 23447, 1792
+# nomi dei quartieri, per orientarsi anche senza punti (posizione indicativa del nome, non un confine)
+ZONE = [("Isola", 45.4893, 9.1878), ("Porta Nuova", 45.4822, 9.1968), ("Brera", 45.4728, 9.1872),
+        ("Moscova", 45.4772, 9.1838), ("Paolo Sarpi", 45.4802, 9.1772), ("Centrale", 45.4878, 9.2035)]
 
 
-def _raggio(m):
-    """Scala a radice quadrata: allarga i primi 500 metri, dove sta quasi tutto, e comprime il resto."""
-    return R_PX * math.sqrt(max(m, 0) / RAGGIO_M)
+def _px(lat, lng):
+    n = 2 ** BASE_Z * 256
+    x = (lng + 180) / 360 * n - BASE_X0 * 256
+    y = (1 - math.log(math.tan(math.radians(lat)) + 1 / math.cos(math.radians(lat))) / math.pi) / 2 * n - BASE_Y0 * 256
+    return x, y
 
 
-def mappa_svg(punti):
-    parti = [f'<svg class="radar" viewBox="-520 -520 1040 1040" role="img" aria-labelledby="radar-titolo radar-desc">',
-             '<title id="radar-titolo">Mappa del quartiere del Tocq Hotel Milano</title>',
-             '<desc id="radar-desc">Il Tocq al centro; i cerchi indicano 5, 10 e 15 minuti a piedi, con la scala che allarga i dintorni immediati; ogni punto è un\'azienda, una fermata, un negozio o un locale alla sua direzione e distanza reali. Il nord è in alto.</desc>']
+def _metri_px(lat):
+    return 156543.03392 * math.cos(math.radians(lat)) / 2 ** BASE_Z
+
+
+def mappa_interattiva(punti, hotel):
+    """Mappa vera del quartiere: base OpenStreetMap, cerchi dei minuti a piedi, nomi dei quartieri e i punti.
+    Senza JavaScript resta un'immagine con i punti; app.js aggiunge trascinamento, zoom e temi."""
+    hx, hy = _px(hotel["lat"], hotel["lng"])
+    mpx = _metri_px(hotel["lat"])
+    cerchi = []
     for mnt in CERCHI_MIN:
-        r = _raggio(mnt * PASSO_M_MIN / FATTORE_STRADA)
-        parti.append(f'<circle class="radar__cerchio" r="{r:.1f}"/>')
-        parti.append(f'<text class="radar__minuti" x="0" y="{-r - 8:.1f}" text-anchor="middle">{mnt} min</text>')
-    parti.append('<line class="radar__asse" x1="0" y1="-500" x2="0" y2="500"/><line class="radar__asse" x1="-500" y1="0" x2="500" y2="0"/>')
-    parti.append('<text class="radar__nord" x="0" y="-500" text-anchor="middle">N</text>')
+        r = mnt * PASSO_M_MIN / FATTORE_STRADA / mpx
+        cerchi.append(f'<circle class="qmap__cerchio" cx="{hx:.1f}" cy="{hy:.1f}" r="{r:.1f}"/>'
+                      f'<text class="qmap__minuti" x="{hx:.1f}" y="{hy - r - 10:.1f}" text-anchor="middle">{mnt} min a piedi</text>')
+    zone = "".join(f'<span class="qmap__zona" style="left:{x:.0f}px;top:{y:.0f}px">{_e(n)}</span>'
+                   for n, la, ln in ZONE for x, y in [_px(la, ln)])
+    segni = []
     for q in punti:
-        if q["linea"] > RAGGIO_M:
+        x, y = _px(q["lat"], q["lng"])
+        if not (0 <= x <= BASE_LATO and 0 <= y <= BASE_LATO):
             continue
-        k = _raggio(q["linea"]) / q["linea"] if q["linea"] else 0
-        x, y = q["dx"] * k, -q["dy"] * k
-        fissa = " radar__punto--fisso" if q["id"] in ETICHETTE_FISSE else ""
-        parti.append(
-            f'<g class="radar__punto{fissa}" data-id="{_e(q["id"])}" data-cat="{_e(q["categoria"])}" transform="translate({x:.1f} {y:.1f})" tabindex="0" role="button" aria-label="{_e(q["nome"])}, {_e(_distanza(q))}">'
-            f'<circle r="7"/><text x="12" y="4">{_e(q["nome"])}</text></g>')
-    parti.append('<g class="radar__tocq" aria-hidden="true"><circle r="14"/><text y="34" text-anchor="middle">TOCQ</text></g>')
-    parti.append('</svg>')
-    return "\n".join(parti)
+        fissa = " qmap__punto--fisso" if q["id"] in ETICHETTE_FISSE else ""
+        fissa += " qmap__punto--sx" if q["id"] in ETICHETTA_A_SINISTRA else ""
+        segni.append(
+            f'<button type="button" class="qmap__punto{fissa}" data-id="{_e(q["id"])}" data-cat="{_e(q["categoria"])}" '
+            f'style="left:{x:.1f}px;top:{y:.1f}px" aria-label="{_e(q["nome"])}, {_e(_distanza(q))}">'
+            f'<span class="qmap__pin" aria-hidden="true"></span><span class="qmap__nome">{_e(q["nome"])}<small>{_e(_distanza(q))}</small></span></button>')
+    return (
+        f'<div class="qmap" data-lato="{BASE_LATO}" data-hx="{hx:.1f}" data-hy="{hy:.1f}" role="region" aria-label="Mappa del quartiere del Tocq Hotel Milano">'
+        f'<div class="qmap__vista">'
+        f'<div class="qmap__piano" style="width:{BASE_LATO}px;height:{BASE_LATO}px">'
+        f'<img class="qmap__base" src="{BASE_IMG}" width="{BASE_LATO}" height="{BASE_LATO}" alt="" decoding="async" draggable="false">'
+        f'<svg class="qmap__anelli" viewBox="0 0 {BASE_LATO} {BASE_LATO}" aria-hidden="true">{"".join(cerchi)}</svg>'
+        f'{zone}{"".join(segni)}'
+        f'<span class="qmap__tocq" style="left:{hx:.1f}px;top:{hy:.1f}px" aria-hidden="true"><span class="qmap__tocq-pin"></span><b>TOCQ</b></span>'
+        f'</div></div>'
+        f'<div class="qmap__comandi" role="group" aria-label="Zoom della mappa">'
+        f'<button type="button" data-zoom="1" aria-label="Avvicina">+</button><button type="button" data-zoom="-1" aria-label="Allontana">−</button>'
+        f'<button type="button" data-zoom="0" aria-label="Torna al Tocq"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button></div>'
+        f'<p class="qmap__aiuto" aria-hidden="true">Trascina per spostarti · usa + e − per lo zoom</p>'
+        f'<p class="qmap__crediti">Mappa © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</p>'
+        f'</div>')
 
 
 def elenco(punti):
@@ -231,7 +260,7 @@ def blocchi():
     punti = _arricchisci(dati)
     conta = {k: sum(1 for q in punti if q["categoria"] == k and q["linea"] <= RAGGIO_M) for k in CATEGORIE}
     return {
-        "<!-- @mappa -->": mappa_svg(punti),
+        "<!-- @mappa -->": mappa_interattiva(punti, dati["hotel"]),
         "<!-- @elenco -->": elenco(punti),
         "<!-- @filtri -->": filtri(),
         "<!-- @aziende -->": loghi_aziende(punti) + tabella_aziende(punti),
