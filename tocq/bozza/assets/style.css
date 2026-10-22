@@ -1029,3 +1029,13 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 @media (max-width: 860px) { .faq-gruppo { grid-template-columns: 1fr; gap: 12px; } .faq-indice { position: static; } }
 .faq__tutte { margin: 16px 0 0; }
 .faq__tutte a { font: 500 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+
+/* Meno fondi: due neri che si alternano, trame solo nella notte e nella chiusura */
+.tema-notte :is(.board, .footer, .section--alt, #domande, .capitolo--ritorno, .capitolo--sera, .strip-section, .capitolo--alba, .inbreve--foto) { background-image: none; }
+.tema-notte :is(.capitolo--sera, .strip-section, .capitolo--alba, .inbreve--foto, .section--alt) { background-color: #0c0c0c; }
+.tema-notte .capitolo--notte { background-image: url("img/trama-nero.svg"); background-size: 142px auto; }
+.tema-notte .finale { background-image: url("img/trama-corallo.svg"); background-size: 142px auto; }
+.tema-notte .momenti li { border-bottom-color: #2a2927; }
+.tema-notte .inbreve--foto .facts dt, .tema-notte .inbreve--foto .facts dd { border-bottom-color: #2a2927; }
+/* le sezioni consecutive sullo stesso nero si separano con un filetto sottile */
+.tema-notte main > section + section:not(.section--dark):not(.board):not(.band):not(.finale):not(.section--verde) { border-top: 1px solid #1d1c1b; }
