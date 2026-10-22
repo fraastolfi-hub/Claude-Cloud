@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contatti · Tocq Hotel Milano</title>
+  <meta name="description" content="Reception 24 ore, meeting ed eventi, accordi aziendali. Via A. De Tocqueville 7/D, Milano.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="bozza-bar">BOZZA DI LAVORO · non pubblicare · i segnaposto tratteggiati vanno confermati dalla direzione (vedi PROGETTO.md, §13)</div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html">TOCQ<small>PORTA GARIBALDI · MILANO</small></a>
+    <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="camere.html">Soggiorna</a>
+      <a href="meeting.html">Meeting ed eventi</a>
+      <a href="posizione.html">La posizione</a>
+      <a href="contatti.html" aria-current="page">Contatti</a>
+      <span class="lang">IT · <a href="#" title="Inglese al lancio">EN</a></span>
+      <a class="btn btn--primary btn--small" href="camere.html#prenota">Prenota</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Contatti</p>
+      <h1>Una domanda, una persona.</h1>
+      <p class="lead">Reception aperta 24 ore. Per eventi e accordi aziendali ti risponde direttamente chi se ne occupa.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap grid-3">
+      <div class="card"><span class="num">RECEPTION · 24 ORE</span><h3><span class="todo todo--quiet">+39 02 000 0000</span></h3><p class="muted small"><span class="todo todo--quiet">info@tocq.it</span><br>Prenotazioni, richieste per il soggiorno, oggetti dimenticati.</p></div>
+      <div class="card"><span class="num">MEETING ED EVENTI</span><h3><span class="todo todo--quiet">Nome Cognome</span></h3><p class="muted small"><span class="todo todo--quiet">eventi@tocq.it</span><br>Lun–ven <span class="todo todo--quiet">9–18</span>. Preventivo entro 24 ore lavorative.</p></div>
+      <div class="card" id="aziende"><span class="num">ACCORDI AZIENDALI</span><h3><span class="todo todo--quiet">Nome Cognome</span></h3><p class="muted small"><span class="todo todo--quiet">sales@tocq.it</span><br>Tariffa dedicata, fattura unica, stessa camera ogni volta.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Scrivici</p>
+        <h2>Di cosa hai bisogno?</h2>
+        <p class="muted">Scegli il motivo: la richiesta arriva direttamente alla persona giusta.</p>
+        <h3 class="mt-32">Come arrivare</h3>
+        <p class="muted small">In treno: stazione di Porta Garibaldi, 350 metri a piedi.<br>In metro: Garibaldi, linee <span class="todo">M2 e M5</span>.<br>In auto: garage convenzionato a <span class="todo">25 € al giorno</span>, condizioni scritte nella conferma.</p>
+      </div>
+      <form class="form" data-demo>
+        <input type="hidden" name="fonte" value="sito-contatti">
+        <fieldset class="field">
+          <legend>Motivo</legend>
+          <div class="choices">
+            <label><input type="radio" name="motivo" checked> Un soggiorno</label>
+            <label><input type="radio" name="motivo"> Un evento o un gruppo</label>
+            <label><input type="radio" name="motivo"> Una tariffa per la mia azienda</label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <div class="field"><label for="c-nome">Nome</label><input id="c-nome" required></div>
+          <div class="field"><label for="c-mail">Email</label><input id="c-mail" type="email" required></div>
+        </div>
+        <div class="field"><label for="c-msg">Messaggio</label><textarea id="c-msg"></textarea></div>
+        <div><button class="btn btn--primary" type="submit">Invia</button></div>
+        <p class="form__ok">Messaggio ricevuto. Nella versione finale: chi ti risponde e entro quando.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="grid-4">
+      <div>
+        <h4>Tocq Hotel</h4>
+        <span>Via A. De Tocqueville 7/D</span>
+        <span>20154 Milano</span>
+        <span>Reception aperta 24 ore</span>
+      </div>
+      <div>
+        <h4>Scrivi o chiama</h4>
+        <a href="#"><span class="todo">+39 02 000 0000</span></a>
+        <a href="#"><span class="todo">info@tocq.it</span></a>
+        <a href="#"><span class="todo">eventi@tocq.it</span></a>
+      </div>
+      <div>
+        <h4>Soggiorna</h4>
+        <a href="camere.html">Camere</a>
+        <a href="camere.html#colazione">Colazione</a>
+        <a href="camere.html#prenota">Prenota</a>
+      </div>
+      <div>
+        <h4>Lavora</h4>
+        <a href="meeting.html">Meeting ed eventi</a>
+        <a href="meeting.html#preventivo">Richiedi un preventivo</a>
+        <a href="contatti.html#aziende">Tariffe aziendali</a>
+        <a href="posizione.html">La posizione</a>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 Tocq Hotel · P.IVA <span class="todo">00000000000</span></span>
+      <span>Privacy · Cookie</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

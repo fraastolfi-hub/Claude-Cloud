@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camere · Tocq Hotel Milano Porta Garibaldi</title>
+  <meta name="description" content="Camere rifatte nel 2021 a Porta Garibaldi. Scegli cuscino, materasso e lato della camera prenotando sul sito. Colazione da asporto per chi parte all'alba.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="bozza-bar">BOZZA DI LAVORO · non pubblicare · i segnaposto tratteggiati vanno confermati dalla direzione (vedi PROGETTO.md, §13)</div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html">TOCQ<small>PORTA GARIBALDI · MILANO</small></a>
+    <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="camere.html" aria-current="page">Soggiorna</a>
+      <a href="meeting.html">Meeting ed eventi</a>
+      <a href="posizione.html">La posizione</a>
+      <a href="contatti.html">Contatti</a>
+      <span class="lang">IT · <a href="#" title="Inglese al lancio">EN</a></span>
+      <a class="btn btn--primary btn--small" href="camere.html#prenota">Prenota</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="kicker">Soggiorna · Camere e suite</p>
+        <h1>Stanotte dormi. Domani lavori.</h1>
+        <p class="lead">Camere rifatte nel 2021, spaziose, e un menu dei cuscini che gli ospiti citano nelle recensioni. Pulizia e comfort 8,98 su Booking.</p>
+        <div class="btns mt-32">
+          <a class="btn btn--primary" href="#configura">Prepara la tua notte</a>
+          <a class="btn" href="#prenota">Verifica le date</a>
+        </div>
+      </div>
+      <div class="photo photo--tall"><span>Foto · dettaglio letto con i quattro cuscini del menu allineati, luce laterale</span></div>
+    </div>
+  </section>
+
+  <!-- Tipologie: nomi e metrature da confermare -->
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">Le camere</p>
+      <h2 class="mb-32">Quattro tipologie, la stessa notte.</h2>
+      <div class="grid-4">
+        <article class="card card--path">
+          <div class="photo"><span>Foto · Comfort</span></div>
+          <div class="card__body"><h3><span class="todo todo--quiet">Comfort</span></h3><p class="muted small mono">≈ <span class="todo todo--quiet">18 m²</span> · matrimoniale o due letti</p><p class="small">Per una o due notti di lavoro.</p></div>
+        </article>
+        <article class="card card--path">
+          <div class="photo"><span>Foto · Superior con scrivania</span></div>
+          <div class="card__body"><h3><span class="todo todo--quiet">Superior</span></h3><p class="muted small mono">≈ <span class="todo todo--quiet">22 m²</span> · scrivania ampia</p><p class="small">La più prenotata da chi resta da lunedì a giovedì.</p></div>
+        </article>
+        <article class="card card--path">
+          <div class="photo"><span>Foto · Deluxe, vista torri</span></div>
+          <div class="card__body"><h3><span class="todo todo--quiet">Deluxe</span></h3><p class="muted small mono">≈ <span class="todo todo--quiet">26 m²</span> · piani alti</p><p class="small">Più spazio e i piani più tranquilli.</p></div>
+        </article>
+        <article class="card card--path">
+          <div class="photo"><span>Foto · Suite, zona giorno</span></div>
+          <div class="card__body"><h3><span class="todo todo--quiet">Suite</span></h3><p class="muted small mono">≈ <span class="todo todo--quiet">40 m²</span> · zona giorno</p><p class="small">Per ricevere qualcuno senza scendere in hall.</p></div>
+        </article>
+      </div>
+      <p class="note"><b>Da confermare</b>Nomi delle tipologie, metrature, quante camere per tipologia danno sulla corte e quante su Via Tocqueville (PROGETTO.md §13, punto 4).</p>
+    </div>
+  </section>
+
+  <!-- Configuratore: il motivo per prenotare diretto, reso visibile -->
+  <section class="section section--alt" id="configura">
+    <div class="wrap">
+      <p class="kicker">Solo prenotando qui</p>
+      <h2>Prepara la tua notte.</h2>
+      <p class="lead mb-32">Su Booking prenoti una camera. Qui scegli il cuscino, il materasso e il lato da cui dormi. Lo trovi pronto quando arrivi.</p>
+      <div class="config">
+        <form class="form" id="configuratore" onsubmit="return false">
+          <fieldset class="field">
+            <legend>Il cuscino</legend>
+            <div class="choices">
+              <label><input type="radio" name="cuscino" value="Piuma d'oca" checked> Piuma d'oca</label>
+              <label><input type="radio" name="cuscino" value="Lattice"> Lattice</label>
+              <label><input type="radio" name="cuscino" value="Kapok"> Kapok</label>
+              <label><input type="radio" name="cuscino" value="Neckroll"> Neckroll, per la cervicale</label>
+            </div>
+          </fieldset>
+          <fieldset class="field">
+            <legend>Il materasso <span class="todo">opzioni</span></legend>
+            <div class="choices">
+              <label><input type="radio" name="materasso" value="Standard" checked> Standard</label>
+              <label><input type="radio" name="materasso" value="Più rigido"> Più rigido</label>
+              <label><input type="radio" name="materasso" value="Più morbido"> Più morbido</label>
+            </div>
+          </fieldset>
+          <fieldset class="field">
+            <legend>Il lato della camera</legend>
+            <div class="choices">
+              <label><input type="radio" name="lato" value="Corte interna, silenziosa" checked> Corte interna · domani ho una giornata importante</label>
+              <label><input type="radio" name="lato" value="Via Tocqueville"> Via Tocqueville · la sera esco</label>
+              <label><input type="radio" name="lato" value="Piano alto"> Piano alto</label>
+            </div>
+          </fieldset>
+          <fieldset class="field">
+            <legend>La colazione</legend>
+            <div class="choices">
+              <label><input type="radio" name="colazione" value="In sala" checked> In sala</label>
+              <label><input type="radio" name="colazione" value="Da asporto"> Da asporto · parto prima che apra la sala</label>
+            </div>
+          </fieldset>
+          <div class="field" id="cfg-partenza-wrap" hidden>
+            <label for="cfg-partenza">Pronta per le</label>
+            <select id="cfg-partenza" name="partenza">
+              <option>05:30</option><option>06:00</option><option selected>06:30</option><option>07:00</option>
+            </select>
+          </div>
+          <fieldset class="field">
+            <legend>L'arrivo</legend>
+            <div class="choices">
+              <label><input type="radio" name="arrivo" value="Standard" checked> Dalle <span class="todo todo--quiet">14:00</span></label>
+              <label><input type="radio" name="arrivo" value="Check-in anticipato, se la camera è pronta"> Arrivo la mattina, chiedo il check-in anticipato</label>
+            </div>
+          </fieldset>
+        </form>
+        <aside class="config__summary" aria-live="polite">
+          <h3>La tua notte al Tocq</h3>
+          <dl>
+            <dt>Cuscino</dt><dd id="sum-cuscino">—</dd>
+            <dt>Materasso</dt><dd id="sum-materasso">—</dd>
+            <dt>Lato</dt><dd id="sum-lato">—</dd>
+            <dt>Colazione</dt><dd id="sum-colazione">—</dd>
+            <dt>Arrivo</dt><dd id="sum-arrivo">—</dd>
+          </dl>
+          <a class="btn btn--primary" href="#prenota">Scegli le date</a>
+        </aside>
+      </div>
+      <p class="note"><b>Per lo sviluppo</b>Le scelte passano al booking engine come servizi selezionabili (meglio) o richieste speciali, e arrivano alla governante nel report degli arrivi. Da verificare con il fornitore del motore.</p>
+    </div>
+  </section>
+
+  <!-- Colazione -->
+  <section class="section" id="colazione">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Colazione</p>
+        <h2>La giornata comincia da persona, non da numero di camera.</h2>
+        <p>Rosetta coordina la sala dal 2021. Con lei Maria, Marco e Giorgio.</p>
+        <p class="muted">Aperta anche a chi non dorme qui: <b>16 €</b>. Un ospite di TripAdvisor ci è venuto apposta e l'ha paragonata a quella di un cinque stelle.</p>
+      </div>
+      <div>
+        <div class="table-scroll">
+          <table class="data" style="min-width:0">
+            <tbody>
+              <tr><td>Lunedì–venerdì</td><td class="n"><span class="todo">06:30–10:30</span></td></tr>
+              <tr><td>Sabato, domenica e festivi</td><td class="n"><span class="todo">07:00–11:00</span></td></tr>
+              <tr><td>Da asporto</td><td class="n">dalle <span class="todo">05:30</span>, alla reception</td></tr>
+              <tr><td>Ospiti esterni</td><td class="n"><span class="todo">16 €</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="photo mt-32"><span>Foto · sacchetto della colazione da asporto sul banco della reception, ore 6, fuori ancora buio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Le regole della casa, dette prima (Mosse 1-4, cap. 10) -->
+  <section class="section section--alt">
+    <div class="wrap">
+      <p class="kicker">Detto prima, non scoperto dopo</p>
+      <h2 class="mb-32">Le regole della casa.</h2>
+      <div class="upfront">
+        <div><h3>Il silenzio si chiede una volta</h3><p>Il lato corte e i piani alti sono per chi lo chiede nel configuratore. Da giovedì a domenica li assegniamo prima a chi ha una riunione o un treno presto.</p></div>
+        <div><h3>Il clima</h3><p><span class="todo">Regola unica da definire con la direzione</span>. Una frase sola per tutto il banco, scritta qui e nella conferma di prenotazione. Se in camera fa caldo, il ventilatore e il cambio di lato sono già pronti.</p></div>
+        <div><h3>Le valigie, sempre</h3><p>Prima del check-in, dopo il check-out, anche quando torni tre giorni dopo. Senza chiedere.</p></div>
+        <div><h3>Il parcheggio, per iscritto</h3><p>Garage convenzionato a <span class="todo">25 € al giorno</span>. Le condizioni sono queste, non cambiano alla partenza.</p></div>
+        <div><h3>In camera</h3><p>Una caraffa d'acqua filtrata, bicchieri di vetro, due cialde di caffè a testa, il listino del minibar in vista. <span class="todo">La borraccia Tocq è tua.</span></p></div>
+        <div><h3>La fattura</h3><p>Una fattura sola, con i dati dell'azienda presi alla prenotazione. Se torni, la stessa camera della volta prima, quando è libera.</p></div>
+      </div>
+      <p class="note"><b>Nota</b>Questi sono gli impegni delle mosse 1–4 del capitolo 10. Si pubblicano solo quando la direzione li ha adottati: il sito promette la notte, e qualcuno viene a verificarla.</p>
+    </div>
+  </section>
+
+  <!-- Booking engine -->
+  <section class="section section--dark" id="prenota">
+    <div class="wrap">
+      <p class="kicker">Prenota</p>
+      <h2>Verifica le date.</h2>
+      <form class="form mt-32" data-demo style="max-width:860px">
+        <div class="row">
+          <div class="field"><label for="b-in" style="color:#9a9890">Arrivo</label><input id="b-in" type="date"></div>
+          <div class="field"><label for="b-out" style="color:#9a9890">Partenza</label><input id="b-out" type="date"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="b-ad" style="color:#9a9890">Adulti</label><select id="b-ad"><option>1</option><option selected>2</option><option>3</option></select></div>
+          <div class="field"><label for="b-code" style="color:#9a9890">Codice aziendale</label><input id="b-code" placeholder="Se la tua azienda ha un accordo"></div>
+        </div>
+        <div><button class="btn btn--primary" type="submit">Mostra camere e tariffe</button></div>
+        <p class="form__ok" style="color:var(--ink)">Nella versione finale qui si apre il booking engine con le scelte del configuratore già compilate.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="grid-4">
+      <div>
+        <h4>Tocq Hotel</h4>
+        <span>Via A. De Tocqueville 7/D</span>
+        <span>20154 Milano</span>
+        <span>Reception aperta 24 ore</span>
+      </div>
+      <div>
+        <h4>Scrivi o chiama</h4>
+        <a href="#"><span class="todo">+39 02 000 0000</span></a>
+        <a href="#"><span class="todo">info@tocq.it</span></a>
+        <a href="#"><span class="todo">eventi@tocq.it</span></a>
+      </div>
+      <div>
+        <h4>Soggiorna</h4>
+        <a href="camere.html">Camere</a>
+        <a href="camere.html#colazione">Colazione</a>
+        <a href="camere.html#prenota">Prenota</a>
+      </div>
+      <div>
+        <h4>Lavora</h4>
+        <a href="meeting.html">Meeting ed eventi</a>
+        <a href="meeting.html#preventivo">Richiedi un preventivo</a>
+        <a href="contatti.html#aziende">Tariffe aziendali</a>
+        <a href="posizione.html">La posizione</a>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 Tocq Hotel · P.IVA <span class="todo">00000000000</span></span>
+      <span>Privacy · Cookie</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

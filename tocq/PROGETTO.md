@@ -1,0 +1,221 @@
+# Tocq Hotel Milano · progetto della bozza del nuovo sito
+
+Fonte: *Analisi di posizionamento, Hotel Positioning OS v7*, ottobre 2026 (3.297 recensioni contate, 1.805 lette per intero, report OTB 2026, sei concorrenti).
+Questo documento traduce l'analisi in un progetto di sito: concept, obiettivi, alberatura, contenuti pagina per pagina, funzioni, tono, misure, fasi e domande aperte.
+La bozza navigabile è in `bozza/` (si apre `bozza/index.html` nel browser, senza build).
+
+---
+
+## 1. Il punto di partenza, in sei numeri
+
+| Dato | Valore | Cosa vuol dire per il sito |
+|---|---|---|
+| Notti vendute da sito e app nel 2026 | **434, l'1,4%** | Il sito parte quasi da zero: ogni prenotazione spostata da Booking o Expedia è ricavo in più. |
+| Prenotazioni dal sito a tariffa standard | **−64% sul 2025** | Il "Prenota diretto. Costa sempre meno" non funziona: serve un motivo, non uno sconto. |
+| Quota MICE sul ricavo camere | **37%**, prezzo medio 310 € | Il MICE non va in fondo al menu: è metà del motivo per cui il sito esiste. |
+| Ricavo da clientela business (MICE, corporate, consortia) | **47%** | Il sito parla a chi è a Milano per fare qualcosa. |
+| Notti corporate individuali | **−20%** | Il viaggiatore d'affari che prenota da solo è il cliente che si sta perdendo, e quello che vota meglio (4,60 contro 4,35). |
+| Occupazione di agosto | **40%** | Il leisure serve a riempire i vuoti (agosto, weekend), non a definire l'identità. |
+
+Il sito di oggi racconta un'altra fase: "rifugio urbano", "Milano Centro" nei titoli, offerte "Stanchi di stare tra le 4 solite mura domestiche?", il PDF "Tocq Safe COVID-19 2021", ultimo articolo del blog ad aprile 2021.
+
+## 2. Il concept
+
+> **Scendi a Garibaldi. Sei arrivato.**
+> Il sito della base di chi è a Milano per fare qualcosa: lavorare, riunirsi, partire, andare a un evento.
+
+- **Le tre parole (filtro interno):** Base a Garibaldi. Ogni contenuto passa da qui. "Milano romantica con giro in centro"? No. L'orario del Malpensa Express? Sì.
+- **La categoria:** non "hotel 4 stelle Milano centro", ma *la base per chi è a Milano per fare qualcosa*.
+- **Il motivo per prenotare diretto:** *Su Booking prenoti una camera. Qui scegli il cuscino, il materasso e il lato da cui dormi.* Accesso e scelta, non sconto.
+- **La combinazione che solo il Tocq ha:** camera nuova e grande, a piedi dal treno, sei sale sotto le camere, una squadra di colazione che ti chiama per nome.
+
+## 3. I tre compiti del sito, in quest'ordine
+
+1. **Generare richieste MICE e gruppi.** KPI: richieste di preventivo, download della presentazione.
+2. **Riportare sul diretto il viaggiatore d'affari individuale.** KPI: prenotazioni dirette online, richieste di tariffa aziendale.
+3. **Riempire i vuoti** (agosto, fine settimana) con offerte legate agli eventi della città. KPI: prenotazioni delle offerte.
+
+Due percorsi con lo stesso peso fin dalla home: **Soggiorna** e **Meeting ed eventi**. Il messaggio della home è comune ai due: la posizione a Garibaldi e una squadra che risolve.
+
+## 4. Chi parla il sito, e a chi non parla
+
+**Best-fit (le pagine sono costruite per loro):**
+- chi lavora in Porta Nuova e torna ("I travel every month to Milan for business");
+- chi parte all'alba (treno, volo, Malpensa Express);
+- chi viene per un evento raggiungibile da Garibaldi: F1 a Monza, San Siro, concerti, Fiera, Design Week;
+- chi organizza una riunione e deve far dormire le persone.
+
+**Bad-fit (niente pagine, foto o pacchetti pensati per loro):** il turista che vuole uscire in Piazza Duomo, chi cerca il lusso di design, chi vuole la movida e il silenzio insieme senza chiedere il lato corte, chi sceglie solo per prezzo all'ultimo minuto. Non si mandano via: il weekend delle coppie resta come *resa*, con il lato corte garantito.
+
+## 5. Tono di voce: il Custode, con un accento milanese
+
+Gli ospiti premiano chi toglie attriti e puniscono chi li lascia soli con un problema. L'accento milanese è nel ritmo: **orari, metri, nomi. Niente atmosfere.**
+
+| Regola | Esempio |
+|---|---|
+| Il dato prima dell'aggettivo | "350 metri dal binario", non "posizione strategica" |
+| Un nome prima di una categoria | "La colazione te la prepara Rosetta", non "il nostro staff attento" |
+| Dire prima quello che si scoprirebbe dopo | "Il Duomo è a 25 minuti a piedi. Lo diciamo prima." |
+| Il green si dice solo con un dono accanto | "Ti diamo la caraffa", non "ti togliamo la bottiglia" |
+
+**Parole bandite** (da controllare in ogni testo prima della pubblicazione):
+
+| Categoria | Parole | Perché |
+|---|---|---|
+| Solo vostre | rifugio urbano, movida, Milano centro, nel vivo di | Richiamano i due temi più delicati: il rumore e la distanza dal Duomo |
+| Lontane dal carattere | raffinato, esclusivo, lusso, trend | Il Custode non impressiona: risolve |
+| Le dicono tutti | esperienza, il posto giusto, mettiti comodo, scopri di più | Passano il test del logo di chiunque |
+| Fuori tempo | mura domestiche, prigioniero, libertà, safe | Lessico 2020–2021 |
+| Solo con un gesto accanto | green, eco, sostenibile | Oggi accompagnano una sottrazione |
+
+Anche le etichette dei bottoni seguono la regola: "Vedi le camere", "Calcola il tragitto", "Scarica la scheda sale", mai "Scopri di più".
+
+## 6. L'alberatura
+
+Fase 1 in **grassetto** (presente nella bozza), fase 2 in corsivo.
+
+```
+HOME · "Base a Garibaldi"
+├── Soggiorna
+│   ├── **Camere e suite** · con la scelta di cuscino, materasso e lato della camera
+│   ├── **Colazione** · orari, da asporto per chi parte presto, aperta agli esterni
+│   ├── Bar e ristorante
+│   └── **Prenota** · booking engine con i vantaggi del canale diretto
+├── Meeting ed eventi
+│   ├── **Le sale** · una scheda per sala: capienze per allestimento, planimetria, dotazioni, foto
+│   ├── **Formule** · mezza giornata, giornata intera, residenziale con camere
+│   ├── **Gruppi e blocchi camere**
+│   ├── *Eventi ospitati* · casi reali e referenze
+│   ├── **Richiedi un preventivo**
+│   └── **Scarica presentazione e fact sheet**
+├── *Business travel*
+│   ├── *Tariffe aziendali e convenzioni* · richiesta accordo corporate
+│   └── *Servizi per chi lavora* · wifi, spazi, fattura unica, early check-in, late check-out
+├── La posizione
+│   ├── **Come arrivare** · stazione di Porta Garibaldi, metro, aeroporti
+│   ├── **Porta Nuova e le aziende vicine**
+│   ├── *Fiere, congressi, stadio ed eventi* · una pagina per destinazione
+│   └── **Mappa**
+├── *Offerte* · legate agli eventi della città e ai fine settimana
+├── *Il Tocq* · la squadra, la storia del progetto, la sostenibilità che dà
+└── **Contatti**
+```
+
+URL proposti (fase 1): `/`, `/camere/`, `/meeting/`, `/posizione/`, `/contatti/`; inglese sotto `/en/` con gli stessi slug tradotti.
+URL fase 2 (dai CEP, pensati per Google e per gli assistenti AI): `/hotel-fiera-milano-rho/`, `/hotel-san-siro/`, `/hotel-gran-premio-monza/`, `/hotel-mico-congressi/`, `/hotel-malpensa-express/`, `/business-travel/`.
+
+## 7. Le pagine della fase 1, sezione per sezione
+
+### 7.1 Home · `bozza/index.html`
+
+| # | Sezione | Contenuto | Fonte nell'analisi |
+|---|---|---|---|
+| 1 | Hero | "Scendi a Garibaldi. Sei arrivato." + le quattro promesse (treno, sala, cuscino, colazione all'alba). Due bottoni di pari peso: *Prenota una camera* / *Organizza un evento* | Cap. 8, 13.1 |
+| 2 | Tabellone | Distanze in stile orario ferroviario: binario, metro, Malpensa Express, Porta Nuova, Fiera, San Siro, Monza | Cap. 13.4 |
+| 3 | Due percorsi | Soggiorna / Meeting ed eventi, stessa larghezza | Cap. 13.1 |
+| 4 | Il motivo diretto | "Su Booking prenoti una camera. Qui scegli il cuscino, il materasso e il lato da cui dormi." Quattro vantaggi | Cap. 10, 13.5 |
+| 5 | Una giornata dal Tocq | La mappa del lavoro dell'ospite in 5 momenti con orari (arrivo, sera, notte, alba, ritorno) | Cap. 6 (JTBD) |
+| 6 | La squadra | Nomi e citazioni vere dalle recensioni | Cap. 3.6 |
+| 7 | Sale sotto le camere | Teaser MICE: 6 sale fino a 200 persone, preventivo in 24 ore, scheda scaricabile | Cap. 4, 13.3 |
+| 8 | Le recensioni | Expedia 8,8 su 973 + citazioni scelte fra quelle di chi lavora (non "movida") | Cap. 13.5 |
+| 9 | Il Duomo, detto prima | Riga onesta sulla distanza dal centro storico | Cap. 3.1, 13.4 |
+
+### 7.2 Camere · `bozza/camere.html`
+- Le tipologie (nomi e metrature da confermare).
+- **Il configuratore della notte**: cuscino (Neckroll, Kapok, lattice, piuma d'oca), materasso, lato della camera (corte / via Tocqueville), colazione in sala o da asporto con l'orario di partenza, richiesta di check-in anticipato. Nella bozza è una demo; in produzione i campi passano al booking engine come richieste speciali o, meglio, come pacchetti/servizi del motore.
+- **Colazione**: orari, da asporto, aperta agli esterni a 16 €.
+- **Le regole della casa, dette prima**: il clima (regola unica, una frase sola, da decidere con la direzione), il lato corte, il deposito bagagli sempre, la fattura unica.
+- La dotazione che dà: caraffa d'acqua filtrata, bicchieri veri, due cialde, listino minibar in vista, borraccia Tocq (tutto da confermare: è la Mossa 3).
+
+### 7.3 Meeting ed eventi · `bozza/meeting.html`
+- Hero "Dormi dove ti riunisci."
+- Le sei sale in tabella: capienze per platea, banchi di scuola, ferro di cavallo, banchetto; mq; luce naturale. **Tutti i numeri sono segnaposto.**
+- Formule: mezza giornata, giornata intera, residenziale.
+- Gruppi e blocchi camere.
+- **Preventivo rapido** (date, persone, allestimento, camere, servizi) con il tempo di risposta dichiarato.
+- **Download** presentazione e fact sheet in cambio di nome, azienda, email.
+- Ogni richiesta e download entra nel CRM con la fonte (campo nascosto `fonte` già nel form).
+
+### 7.4 La posizione · `bozza/posizione.html`
+- "A Milano sei già dove devi essere."
+- Tabella delle destinazioni filtrabile per motivo: *lavorare*, *partire*, *eventi*, *tempo libero*.
+- Mappa (segnaposto: in produzione Google Maps o Mapbox con i punti della tabella).
+- Il centro storico detto con onestà: tempi reali, senza promettere il "centro".
+
+### 7.5 Contatti · `bozza/contatti.html`
+- Indirizzo, telefono, email, reception h24.
+- Tre richieste distinte, perché vanno a persone diverse: soggiorno, evento/gruppo, tariffa aziendale.
+- Come arrivare in tre righe.
+
+## 8. Funzioni
+
+| Funzione | Fase | Note tecniche |
+|---|---|---|
+| Booking engine con personalizzazione | 1 | Verificare con il fornitore attuale se cuscino, lato e colazione da asporto possono essere *servizi* selezionabili, non solo note libere |
+| Preventivo MICE | 1 | Form breve, risposta dichiarata, ingresso nel CRM con fonte |
+| Download presentazione | 1 | Gate leggero (nome, azienda, email), PDF da produrre |
+| Richiesta tariffa aziendale | 1 (form contatti) → 2 (pagina dedicata) | |
+| Recensioni in vista | 1 | Widget o numeri aggiornati a mano ogni trimestre |
+| Richiesta recensione automatica post soggiorno | 1 (CRM, fuori dal sito) | Entro 24 ore dal check-out, verso Google e TripAdvisor (Mossa 5) |
+| Pagine destinazione (CEP) | 2 | Una per destinazione, con tempi verificati |
+| Lingue | IT + EN al lancio; DE, FR, ES in fase 2 | Le lingue più presenti nelle recensioni |
+| Tour virtuale delle sale | 2 | |
+| Dati strutturati | 1 | `Hotel`, `MeetingRoom`, `FAQPage` in JSON-LD (già nella home della bozza, da completare) |
+
+## 9. Misurare dal primo giorno
+
+Tre eventi tracciati (GA4 o equivalente), tutti con la fonte di provenienza:
+1. `prenotazione_diretta` (conversione dal booking engine, con ricavo);
+2. `richiesta_preventivo_mice`;
+3. `download_presentazione`.
+Più due secondari: `richiesta_tariffa_aziendale`, `uso_configuratore`.
+Base di partenza: 434 notti da sito e app nel 2026. Gli obiettivi si fissano con il revenue.
+
+## 10. Prima del sito: rendere vero, prima di dirlo
+
+Il sito promette la notte. Le cinque mosse del capitolo 10 vanno avviate prima o insieme al lancio, altrimenti il sito accelera le recensioni negative:
+
+1. **La camera si assegna, non capita** (lato corte o piani alti a chi chiede silenzio, gio–dom, e ott–apr quando il clima è fermo).
+2. **Una regola dell'aria, una spiegazione sola** (e togliere "aria condizionata" dalle schede nei mesi in cui non c'è).
+3. **Il green che dà** (caraffa, bicchieri, due cialde, listino minibar, borraccia).
+4. **La regola del banco** (valigie sempre accettate, parcheggio scritto, camera declassata = differenza restituita).
+5. **Riattivare la voce degli ospiti soddisfatti** nel nuovo CRM.
+
+Nella bozza queste mosse compaiono già come promesse: sono segnate *da confermare* finché la direzione non le adotta.
+
+## 11. Interventi rapidi sul sito attuale (prima del nuovo)
+
+- Archiviare il PDF "Tocq Safe COVID-19 2021".
+- Ritirare le offerte "mura domestiche" e "prigioniero a casa".
+- Sostituire "Milano Centro" nei titoli con Porta Garibaldi e Porta Nuova.
+- Cambiare "Prenota diretto. Costa sempre meno" con il motivo della scelta (cuscino, materasso, lato).
+
+## 12. Fasi e calendario indicativo
+
+| Fase | Contenuti | Durata indicativa |
+|---|---|---|
+| 0 · Raccolta | Risposte alle domande aperte (§13), brand book, foto, piantine sale, accesso al booking engine | 2 settimane |
+| 1 · Bozza approvata | Questa bozza, rivista con la direzione: testi, struttura, segnaposto chiusi | 1–2 settimane |
+| 2 · Design | Applicazione del brand book Tocq (la bozza usa una palette provvisoria), shooting mirato (lista foto nei segnaposto) | 3 settimane |
+| 3 · Sviluppo fase 1 | Home, camere + booking, meeting + preventivo + download, posizione, contatti. IT + EN | 4 settimane |
+| 4 · Lancio e misura | Tracciamento, CRM, richiesta recensioni | 1 settimana |
+| 5 · Fase 2 | Pagine destinazione, business travel, eventi ospitati, altre lingue, tour sale | nei mesi successivi |
+
+Momento consigliato per il lancio: prima della stagione fiere di gennaio–febbraio 2027, così la fase 2 (pagine Fiera, Salone del Mobile ad aprile) arriva in tempo per la primavera.
+
+## 13. Domande aperte per la direzione
+
+Ogni segnaposto tratteggiato nella bozza rimanda a una di queste.
+
+1. **Distanze e linee:** metri e minuti a piedi dal binario di Porta Garibaldi; linee metro da confermare (M2, M5); tempi per Malpensa, Linate, Rho Fiera, MiCo, San Siro, Monza.
+2. **Le sei sale:** nomi attuali (nel brand book: Duomo, La Scala, Brera, Arena, Castello; nota: una sala chiamata "Duomo" contraddice il "non vendiamo il Duomo", valutare), capienze per allestimento, mq, luce naturale, planimetrie.
+3. **Tempo di risposta ai preventivi** che il commerciale può garantire (la bozza dice 24 ore lavorative).
+4. **Tipologie di camera:** nomi, metrature, quante danno sulla corte e quante su Via Tocqueville, quali sono sotto i motori del tetto.
+5. **Menu cuscini e materassi:** opzioni attuali, e se il booking engine può raccoglierle come servizi.
+6. **Colazione:** orari in settimana e nel weekend, orario minimo per quella da asporto, prezzo per esterni (16 € è il dato dalle recensioni).
+7. **La squadra:** chi c'è oggi, e chi è d'accordo a comparire per nome sul sito (Rosetta, Maria, Marco, Giorgio, Oliver, Andrea).
+8. **Il clima:** la regola dell'aria (impianto o Green Key?) e la frase unica da usare.
+9. **Borraccia Tocq:** è mai stata prodotta?
+10. **Eventi ospitati citabili** (convegni, aziende, Giochi 2026) e relative autorizzazioni.
+11. **Telefono, email, orari del commerciale MICE** e del ricevimento.
+12. **Booking engine e CRM in uso**, per collegare form e tracciamento.

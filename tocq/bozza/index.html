@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tocq Hotel Milano · Base a Porta Garibaldi</title>
+  <meta name="description" content="Hotel 4 stelle a Porta Garibaldi, a 350 metri dalla stazione. Sei sale fino a 200 persone sopra le camere, cuscino e lato della camera scelti prima di arrivare, colazione da asporto per chi parte all'alba.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Tocq Hotel",
+    "starRating": { "@type": "Rating", "ratingValue": "4" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via A. De Tocqueville 7/D",
+      "postalCode": "20154",
+      "addressLocality": "Milano",
+      "addressCountry": "IT"
+    },
+    "url": "https://www.tocq.it/",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Reception 24 ore", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Sale meeting fino a 200 persone", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Menu dei cuscini", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Colazione da asporto", "value": true }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div class="bozza-bar">BOZZA DI LAVORO · non pubblicare · i segnaposto tratteggiati vanno confermati dalla direzione (vedi PROGETTO.md, §13)</div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html">TOCQ<small>PORTA GARIBALDI · MILANO</small></a>
+    <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="camere.html">Soggiorna</a>
+      <a href="meeting.html">Meeting ed eventi</a>
+      <a href="posizione.html">La posizione</a>
+      <a href="contatti.html">Contatti</a>
+      <span class="lang">IT · <a href="#" title="Inglese al lancio">EN</a></span>
+      <a class="btn btn--primary btn--small" href="camere.html#prenota">Prenota</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1 · HERO: la frase per il pubblico, cap. 8 -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="kicker">Tocq Hotel · 4 stelle · Porta Garibaldi</p>
+        <h1>Scendi a Garibaldi. Sei arrivato.</h1>
+        <ul class="hero__promises">
+          <li><span class="mono">5 MIN</span> Il treno è a cinque minuti a piedi.</li>
+          <li><span class="mono">SALA</span> La sala riunioni è al piano. Prendi l'ascensore e ci sei.</li>
+          <li><span class="mono">PRIMA</span> Il cuscino lo scegli prima di partire.</li>
+          <li><span class="mono">ALL'ALBA</span> Se parti presto, la colazione te la portiamo via noi.</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn--primary" href="camere.html#prenota">Prenota una camera</a>
+          <a class="btn" href="meeting.html#preventivo">Organizza un evento</a>
+        </div>
+      </div>
+      <div class="photo photo--tall"><span>Foto · l'ingresso su Via Tocqueville con le torri di Porta Nuova sullo sfondo, luce del mattino, una persona con trolley</span></div>
+    </div>
+  </section>
+
+  <!-- 2 · IL TABELLONE: la posizione come orario, non come "centro" -->
+  <section class="board" aria-label="Distanze dal Tocq">
+    <div class="wrap">
+      <div class="board__head">
+        <p class="kicker">Partenze dal Tocq · a piedi e con i mezzi</p>
+        <span class="board__clock" data-clock>MILANO</span>
+      </div>
+      <div class="board-scroll">
+        <table>
+          <thead><tr><th>Destinazione</th><th>Come</th><th>Tempo</th><th class="hide-s">Per</th></tr></thead>
+          <tbody>
+            <tr><td>Stazione Porta Garibaldi</td><td>a piedi, 350 m</td><td class="t">5 min</td><td class="hide-s">treni, passante, alta velocità</td></tr>
+            <tr><td>Metro Garibaldi</td><td>linee <span class="todo">M2 · M5</span></td><td class="t">5 min</td><td class="hide-s">tutta la città</td></tr>
+            <tr><td>Malpensa</td><td>Malpensa Express da Garibaldi</td><td class="t"><span class="todo todo--quiet">45 min</span></td><td class="hide-s">voli dell'alba</td></tr>
+            <tr><td>Porta Nuova · Gae Aulenti</td><td>a piedi</td><td class="t"><span class="todo todo--quiet">8 min</span></td><td class="hide-s">uffici e sedi</td></tr>
+            <tr><td>Fiera Milano Rho</td><td>treno o metro da Garibaldi</td><td class="t"><span class="todo todo--quiet">25 min</span></td><td class="hide-s">fiere e saloni</td></tr>
+            <tr><td>San Siro · Ippodromo</td><td>metro lilla M5</td><td class="t"><span class="todo todo--quiet">20 min</span></td><td class="hide-s">partite e concerti</td></tr>
+            <tr><td>Autodromo di Monza</td><td>treno da Garibaldi</td><td class="t"><span class="todo todo--quiet">30 min</span></td><td class="hide-s">Gran Premio di F1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small mono" style="color:#77756f;margin:14px 0 0">Tempi segnaposto: da verificare uno per uno prima della pubblicazione · <a href="posizione.html" style="color:#f2c94c">Vedi tutte le destinazioni</a></p>
+    </div>
+  </section>
+
+  <!-- 3 · DUE PERCORSI, STESSO PESO (cap. 13.1) -->
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">Perché sei a Milano</p>
+      <h2 class="mb-32">Due motivi, un indirizzo.</h2>
+      <div class="grid-2">
+        <article class="card card--path">
+          <div class="photo"><span>Foto · camera con letto rifatto, scrivania con laptop aperto, finestra sul cortile interno</span></div>
+          <div class="card__body">
+            <span class="num">01 · SOGGIORNA</span>
+            <h3>Una notte vera, prima della giornata che conta.</h3>
+            <ul>
+              <li>Camere rifatte nel 2021, spaziose</li>
+              <li>Cuscino, materasso e lato della camera scelti prenotando</li>
+              <li>Colazione in sala o da portare via</li>
+            </ul>
+            <a class="btn" href="camere.html">Vedi le camere</a>
+          </div>
+        </article>
+        <article class="card card--path">
+          <div class="photo"><span>Foto · sala allestita a platea, schermo acceso, prima che entrino i partecipanti</span></div>
+          <div class="card__body">
+            <span class="num">02 · MEETING ED EVENTI</span>
+            <h3>La riunione e il letto nello stesso edificio.</h3>
+            <ul>
+              <li>Sei sale fino a 200 persone, nello stesso edificio</li>
+              <li>Mezza giornata, giornata intera, residenziale</li>
+              <li>Preventivo entro <span class="todo">24 ore lavorative</span></li>
+            </ul>
+            <a class="btn" href="meeting.html">Vedi le sale</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · IL MOTIVO PER PRENOTARE DIRETTO (cap. 10, 13.5): scelta, non sconto -->
+  <section class="section section--dark">
+    <div class="wrap reason">
+      <div>
+        <p class="kicker">Perché prenotare qui</p>
+        <p class="reason__big">Su Booking prenoti una camera.<br>Qui scegli il cuscino, il materasso e il lato da cui dormi.</p>
+      </div>
+      <div>
+        <ul class="ticklist">
+          <li><span><b>Il cuscino.</b> Neckroll, kapok, lattice o piuma d'oca. Lo trovi sul letto quando arrivi.</span></li>
+          <li><span><b>Il lato.</b> Corte interna se domani hai una riunione, Via Tocqueville se la sera esci.</span></li>
+          <li><span><b>La colazione da asporto.</b> Se parti prima che apra la sala, la prepariamo la sera prima.</span></li>
+          <li><span><b>Il check-in anticipato</b>, quando la camera è pronta. <span class="todo">Chi prenota qui ha la precedenza.</span></span></li>
+        </ul>
+        <div class="btns mt-32"><a class="btn btn--light" href="camere.html#configura">Prepara la tua notte</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · LA GIORNATA: la mappa del lavoro dell'ospite (JTBD, cap. 6) -->
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">Una giornata da qui</p>
+      <h2>Fai quello che sei venuto a fare. Senza perdere tempo, e senza perdere la notte.</h2>
+      <p class="lead mb-32">Come la raccontano gli ospiti che tornano una volta al mese.</p>
+      <ol class="timeline">
+        <li><time>18:40</time><p>Scendi dal Frecciarossa a Garibaldi. Cinque minuti col trolley e sei in camera.</p></li>
+        <li><time>20:00</time><p>Cena in Corso Como, a due passi. Al ritorno la guardia notturna è all'ingresso.</p></li>
+        <li><time>23:00</time><p>Camera sul lato corte, cuscino scelto prenotando. Si dorme.</p></li>
+        <li><time>06:30</time><p>La colazione da asporto ti aspetta alla reception. Il primo Malpensa Express è a cinque minuti.</p></li>
+        <li><time>+30 gg</time><p>Torni. Stessa camera, stessa fattura, qualcuno a colazione si ricorda il tuo nome.</p></li>
+      </ol>
+      <p class="note"><b>Nota</b>Orari esemplificativi. Colazione da asporto, guardia notturna e precedenza nel check-in sono già realtà secondo le recensioni; "stessa camera la volta dopo" è una mossa del cap. 10 da adottare.</p>
+    </div>
+  </section>
+
+  <!-- 6 · LA SQUADRA (cap. 3.6): un cast, non un eroe -->
+  <section class="section section--alt">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Chi trovi</p>
+        <h2>A colazione qualcuno ti chiama per nome.</h2>
+        <p class="lead">La squadra di sala è la stessa dal 2021. Gli ospiti la citano per nome su Google, Booking e TripAdvisor.</p>
+        <ul class="names">
+          <li>Rosetta <small>coordina la colazione</small></li>
+          <li>Maria <small>sala</small></li>
+          <li>Marco <small>sala e bar</small></li>
+          <li>Giorgio <small>sala</small></li>
+          <li>Oliver <small>reception</small></li>
+          <li>Andrea <small>reception</small></li>
+        </ul>
+        <p class="note"><b>Da confermare</b>Chi fa parte oggi della squadra e chi è d'accordo a comparire per nome sul sito.</p>
+      </div>
+      <div>
+        <blockquote class="quote">
+          <p>"What I enjoy the most is the excellent service provided during breakfast by Rosetta and her staff, especially Giorgio and Maria. They make you feel like home."</p>
+          <cite>TripAdvisor · 5★ · "I travel every month to Milan for business"</cite>
+        </blockquote>
+        <blockquote class="quote mt-32">
+          <p>"Il TOCQ rimane il mio preferito… una vera seconda casa."</p>
+          <cite>TripAdvisor</cite>
+        </blockquote>
+        <blockquote class="quote mt-32">
+          <p>"Sempre molto comodo per i miei meeting lavorativi."</p>
+          <cite>Google · 4★</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · MICE: metà del motivo per cui il sito esiste -->
+  <section class="section section--dark">
+    <div class="wrap">
+      <p class="kicker">Meeting ed eventi</p>
+      <h2>Dormi dove ti riunisci.</h2>
+      <p class="lead mb-32">Convegni, formazione, cene aziendali. I partecipanti scendono dalla camera e sono in sala. Gli ospiti da fuori arrivano a piedi dal treno.</p>
+      <div class="grid-4">
+        <div class="stat"><b>6</b><span>sale nello stesso edificio delle camere</span></div>
+        <div class="stat"><b>200</b><span>persone nella sala più grande</span></div>
+        <div class="stat"><b><span class="todo todo--quiet">24 h</span></b><span>per ricevere il preventivo, nei giorni lavorativi</span></div>
+        <div class="stat"><b>350 m</b><span>dalla stazione di Porta Garibaldi</span></div>
+      </div>
+      <div class="btns mt-32">
+        <a class="btn btn--primary" href="meeting.html#preventivo">Richiedi un preventivo</a>
+        <a class="btn btn--light" href="meeting.html#scarica">Scarica la presentazione delle sale</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · LE RECENSIONI, scelte fra chi lavora -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid-3">
+        <div class="stat"><b>8,8 / 10</b><span>su Expedia e Hotels.com, 973 recensioni di ospiti verificati</span></div>
+        <div class="stat"><b>8,98</b><span>pulizia e comfort su Booking</span></div>
+        <div class="stat"><b>8,96</b><span>posizione su Booking, contro 8,29 e 8,18 dei due hotel attaccati alla stazione</span></div>
+      </div>
+      <p class="note"><b>Da aggiornare</b>Numeri all'ottobre 2026. Al lancio si aggiornano, e poi ogni trimestre.</p>
+    </div>
+  </section>
+
+  <!-- 9 · IL DUOMO, DETTO PRIMA: toglie la recensione "30 minuti dal centro" -->
+  <section class="section section--tight section--alt">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Detto prima</p>
+        <h3>Il Duomo è a 20–30 minuti a piedi, o <span class="todo">15</span> di metro.</h3>
+      </div>
+      <p class="muted mt-0">Siamo a Porta Garibaldi, non in centro storico. Lo diciamo prima, così scegli sapendo cosa trovi: il treno, gli uffici di Porta Nuova e la Fiera vicini, il Duomo raggiungibile ma non sotto casa.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="grid-4">
+      <div>
+        <h4>Tocq Hotel</h4>
+        <span>Via A. De Tocqueville 7/D</span>
+        <span>20154 Milano</span>
+        <span>Reception aperta 24 ore</span>
+      </div>
+      <div>
+        <h4>Scrivi o chiama</h4>
+        <a href="#"><span class="todo">+39 02 000 0000</span></a>
+        <a href="#"><span class="todo">info@tocq.it</span></a>
+        <a href="#"><span class="todo">eventi@tocq.it</span></a>
+      </div>
+      <div>
+        <h4>Soggiorna</h4>
+        <a href="camere.html">Camere</a>
+        <a href="camere.html#colazione">Colazione</a>
+        <a href="camere.html#prenota">Prenota</a>
+      </div>
+      <div>
+        <h4>Lavora</h4>
+        <a href="meeting.html">Meeting ed eventi</a>
+        <a href="meeting.html#preventivo">Richiedi un preventivo</a>
+        <a href="contatti.html#aziende">Tariffe aziendali</a>
+        <a href="posizione.html">La posizione</a>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 Tocq Hotel · P.IVA <span class="todo">00000000000</span></span>
+      <span>Privacy · Cookie</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
