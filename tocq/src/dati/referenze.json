@@ -1,0 +1,212 @@
+{
+ "unicredit": {
+  "logo": "unicredit-logo.png",
+  "logo_fonte": "https://www.unicredit.it/etc/designs/ucpublic/it/img/logoHiRes.png",
+  "logo_scuro": false
+ },
+ "accenture": {
+  "logo": "accenture-logo.svg",
+  "logo_fonte": "https://www.accenture.com/it-it",
+  "logo_scuro": false
+ },
+ "bending-spoons": {
+  "logo": "bending-spoons-logo.svg",
+  "logo_fonte": "https://bendingspoons.com/_next/static/media/bsp-logotype.0a3.jbkx-aafu.svg",
+  "logo_scuro": true
+ },
+ "google": {
+  "logo": "google-logo.svg",
+  "logo_fonte": "https://www.gstatic.com/marketing-cms/assets/images/f5/d3/a7f9db7045429cb6dc6be56bdcbe/google-logo-about.svg",
+  "logo_scuro": false
+ },
+ "microsoft": {
+  "logo": "microsoft-logo.png",
+  "logo_fonte": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png",
+  "logo_scuro": false
+ },
+ "bnp-paribas": {
+  "logo": "bnp-paribas-logo.png",
+  "logo_fonte": "https://bnl.it/images/bnlsite/loghi/BNL-logo-Mega-Menu-Def.png",
+  "logo_scuro": false
+ },
+ "unipol": {
+  "logo": "unipol-logo.svg",
+  "logo_fonte": "https://www.unipol.com/it",
+  "logo_scuro": false
+ },
+ "coima": {
+  "logo": "coima-logo.png",
+  "logo_fonte": "https://coima.com/app/uploads/2026/07/coimacom-header-logo.png",
+  "logo_scuro": false
+ },
+ "regione-lombardia": {
+  "logo": "regione-lombardia-logo.svg",
+  "logo_fonte": "https://www.regione.lombardia.it/content/dam/rl/immagini/loghi/header/regione-lombardia.svg",
+  "logo_scuro": false
+ },
+ "intesa-sanpaolo-gioia22": {
+  "logo": "intesa-sanpaolo-gioia22-logo.svg",
+  "logo_fonte": "https://group.intesasanpaolo.com/content/dam/portalgroup/nuove-immagini/immagini-cross/loghi/logo_isp.svg",
+  "logo_scuro": true
+ },
+ "kpmg": {
+  "logo": "kpmg-logo.svg",
+  "logo_fonte": "https://kpmg.com/content/experience-fragments/kpmgpublic/it/it/site/header/master/_jcr_content/root/header_v2/logo.coreimg.svg/1748521056232/logo.svg",
+  "logo_scuro": false
+ },
+ "amazon": {
+  "logo": "amazon-logo.svg",
+  "logo_fonte": "https://assets.aboutamazon.com/48/8c/1bc5933b414d82435b08581f742d/logo-1.svg",
+  "logo_scuro": false
+ },
+ "samsung": {
+  "logo": "samsung-logo.svg",
+  "logo_fonte": "https://www.samsung.com/it/district-business/",
+  "logo_scuro": false
+ },
+ "sap": {
+  "logo": "sap-logo.svg",
+  "logo_fonte": "https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg",
+  "logo_scuro": false
+ },
+ "10-corso-como": {
+  "logo": "10-corso-como-logo.png",
+  "logo_fonte": "https://10corsocomo.com/cdn/shop/files/logo-1.png",
+  "logo_scuro": false
+ },
+ "eataly-smeraldo": {
+  "logo": "eataly-smeraldo-logo.svg",
+  "logo_fonte": "https://www.eataly.it/mobify/bundle/389/client/images/logo.svg",
+  "logo_scuro": false
+ },
+ "nike-porta-nuova": {
+  "logo": "nike-porta-nuova-logo.png",
+  "logo_fonte": "https://www.nike.com/apple-touch-icon.png",
+  "logo_scuro": false
+ },
+ "mercato-centrale": {
+  "logo": "mercato-centrale-logo.png",
+  "logo_fonte": "https://mercatocentrale.it/wp-content/uploads/2020/02/logo-mc-milano.png",
+  "logo_scuro": false
+ },
+ "libreria-fondazione-feltrinelli": {
+  "foto": "libreria-fondazione-feltrinelli.webp",
+  "foto_wh": [
+   800,
+   500
+  ],
+  "foto_fonte": "https://fondazionefeltrinelli.it/wp-content/uploads/2023/06/credits-obbligatori-filippo-romano_-ingresso-nuova-sede-fondazione-giangiacomo-feltrinelli-scaled-e1739464106538.jpg",
+  "logo": "libreria-fondazione-feltrinelli-logo.svg",
+  "logo_fonte": "https://fondazionefeltrinelli.it/wp-content/themes/theme_feltrinelli/img/logo-fondazione-feltrinelli.svg",
+  "logo_scuro": false
+ },
+ "cantine-isola": {
+  "foto": "cantine-isola.webp",
+  "foto_wh": [
+   480,
+   320
+  ],
+  "foto_fonte": "https://www.cantineisola.com/images/mescita-480.jpg",
+  "logo": "cantine-isola-logo.png",
+  "logo_fonte": "https://www.cantineisola.com/images/cantineisola-bianco.png",
+  "logo_scuro": true
+ },
+ "ratana": {
+  "foto": "ratana.webp",
+  "foto_wh": [
+   638,
+   800
+  ],
+  "foto_fonte": "https://www.ratana.it/wp-content/uploads/2023/12/cibi-ratana.jpg",
+  "logo": "ratana-logo.png",
+  "logo_fonte": "https://ratana.it/wp-content/uploads/2023/05/logo-e1683720395505.webp",
+  "logo_scuro": false
+ },
+ "berton": {
+  "foto": "berton.webp",
+  "foto_wh": [
+   800,
+   422
+  ],
+  "foto_fonte": "https://ristoranteberton.com/wp-content/uploads/2023/11/ristorante-andrea-berton-table-kitchen-2048x1081.webp"
+ },
+ "il-liberty": {
+  "foto": "il-liberty.webp",
+  "foto_wh": [
+   700,
+   550
+  ],
+  "foto_fonte": "https://il-liberty.it/wp-content/uploads/2026/06/mondeghili_il_liberty.jpg",
+  "logo": "il-liberty-logo.png",
+  "logo_fonte": "https://il-liberty.it/wp-content/uploads/2026/04/logo-liberty.png",
+  "logo_scuro": false
+ },
+ "antica-trattoria-della-pesa": {
+  "logo": "antica-trattoria-della-pesa-logo.png",
+  "logo_fonte": "https://images.squarespace-cdn.com/content/v1/688c949055ae6e1f8c03bd77/8282f034-63af-46a9-b46b-a88aaab59fcd/PNG+LOGO.png?format=1500w",
+  "logo_scuro": false
+ },
+ "ceresio-7": {
+  "foto": "ceresio-7.webp",
+  "foto_wh": [
+   800,
+   533
+  ],
+  "foto_fonte": "https://ceresio7.com/wp-content/uploads/2026/05/pool-info.webp",
+  "logo": "ceresio-7-logo.svg",
+  "logo_fonte": "https://ceresio7.com/wp-content/uploads/2026/05/logo-scuro.svg",
+  "logo_scuro": false
+ },
+ "dry-milano": {
+  "foto": "dry-milano.webp",
+  "foto_wh": [
+   533,
+   800
+  ],
+  "foto_fonte": "https://static.wixstatic.com/media/43c816_f5a8ca4acab041aaa7b8d1044806bcb1~mv2.jpg",
+  "logo": "dry-milano-logo.png",
+  "logo_fonte": "https://static.wixstatic.com/media/c3716c_7577b1e0c9e24b279e1c695e5e48cfcd~mv2.png",
+  "logo_scuro": true
+ },
+ "berbere-isola": {
+  "foto": "berbere-isola.webp",
+  "foto_wh": [
+   800,
+   533
+  ],
+  "foto_fonte": "https://www.berberepizza.it/wp-content/uploads/2021/04/AlbertoBlasetti-5936-scaled.jpg",
+  "logo": "berbere-isola-logo.png",
+  "logo_fonte": "https://www.berberepizza.it/wp-content/uploads/2022/05/LOGO_BERBERE_NERO.png",
+  "logo_scuro": false
+ },
+ "radetzky": {
+  "foto": "radetzky.webp",
+  "foto_wh": [
+   800,
+   420
+  ],
+  "foto_fonte": "https://www.radetzky.it/wp-content/uploads/2021/12/radetzky1.png",
+  "logo": "radetzky-logo.png",
+  "logo_fonte": "https://www.radetzky.it/wp-content/uploads/2021/12/LOGO_w.png",
+  "logo_scuro": true
+ },
+ "princi-xxv-aprile": {
+  "foto": "princi-xxv-aprile.webp",
+  "foto_wh": [
+   800,
+   416
+  ],
+  "foto_fonte": "https://princi.it/wp-content/uploads/2022/10/princi_artigianodelpane_homepage_01-1024x533.jpg"
+ },
+ "cafezal-brera": {
+  "foto": "cafezal-brera.webp",
+  "foto_wh": [
+   533,
+   800
+  ],
+  "foto_fonte": "https://cafezal.it/cdn/shop/files/DSC02282.jpg",
+  "logo": "cafezal-brera-logo.png",
+  "logo_fonte": "https://cafezal.it/cdn/shop/files/Cafezal-LOGOTIPO.png",
+  "logo_scuro": false
+ }
+}

@@ -1087,3 +1087,27 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 .offerte-teaser { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18); }
 .offerte-teaser p { margin: 0; max-width: 60ch; }
 .offerta .todo, .board__foot .todo { white-space: normal; display: inline; overflow-wrap: anywhere; }
+
+/* ===== Il quartiere: foto e loghi delle referenze ===== */
+.guida__voce { padding: 0 0 22px; overflow: hidden; }
+.guida__voce > :not(.guida__foto) { margin-left: 22px; margin-right: 22px; }
+.guida__foto { position: relative; margin: 0 0 12px; aspect-ratio: 3 / 2; overflow: hidden; background: #1a1a1a; }
+.guida__foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.guida__voce:hover .guida__foto > img { transform: scale(1.04); }
+.guida__foto .guida__logo { position: absolute; left: 14px; bottom: 14px; }
+.guida__foto--logo { display: grid; place-items: center; background: #f3efe9; }
+.guida__foto--logo .guida__logo { position: static; background: none; padding: 0; box-shadow: none; }
+.guida__foto--logo .guida__logo img { max-height: 64px; max-width: 64%; }
+.guida__foto--logo:has(.guida__logo--scuro) { background: #161616; }
+.guida__foto--iniziali { display: grid; place-items: center; background: #161616 url("img/trama-nero.svg") center / 180px; }
+.guida__foto--iniziali span { font: 500 44px/1 var(--sans); letter-spacing: .08em; color: var(--corallo); }
+.guida__logo { display: inline-flex; align-items: center; background: #f3efe9; padding: 8px 12px; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+.guida__logo--scuro { background: #111; }
+.guida__logo img { display: block; max-height: 26px; max-width: 120px; width: auto; height: auto; object-fit: contain; }
+.aziende-loghi { list-style: none; margin: 0 0 32px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.azienda { display: grid; grid-template-rows: 72px auto; place-items: center; gap: 6px; padding: 18px 12px 14px; background: #f3efe9; color: #111; }
+.azienda:has(.azienda__logo--scuro) { background: #161616; color: #f3efe9; }
+.azienda__logo img { display: block; max-height: 40px; max-width: 120px; width: auto; height: auto; object-fit: contain; }
+.azienda__logo--testo { font: 500 14px/1.25 var(--sans); text-align: center; letter-spacing: .02em; }
+.azienda__min { font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; opacity: .7; }
+.aziende-loghi { background: none; border: 0; gap: 2px; } .azienda { outline: 1px solid rgba(255,255,255,.06); }

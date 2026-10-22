@@ -10,6 +10,9 @@ import math
 from pathlib import Path
 
 DATI = Path(__file__).parent / "src" / "dati" / "poi.json"
+# foto e loghi dai siti ufficiali dei locali e delle aziende (fonte di ogni file in referenze.json)
+REFERENZE = Path(__file__).parent / "src" / "dati" / "referenze.json"
+IMG_REF = "assets/img/referenze/"
 
 CATEGORIE = {
     "aziende": "Aziende",
@@ -127,6 +130,17 @@ def filtri():
     return '<div class="filters mappa-filtri" role="group" aria-label="Mostra sulla mappa">' + "".join(bott) + "</div>"
 
 
+def loghi_aziende(punti):
+    ref = _referenze()
+    voci = []
+    for q in punti:
+        if q["categoria"] != "aziende":
+            continue
+        logo = _logo(q, ref, "azienda__logo") or f'<span class="azienda__logo azienda__logo--testo">{_e(q["nome"].split(" (")[0].split(" — ")[0])}</span>'
+        voci.append(f'<li class="azienda" data-id="{_e(q["id"])}">{logo}<span class="azienda__min">{q["minuti"]} min</span></li>')
+    return '<ul class="aziende-loghi" aria-label="Aziende a pochi minuti a piedi">' + "".join(voci) + "</ul>"
+
+
 def tabella_aziende(punti):
     righe = "".join(
         f'<tr><td>{_e(q["nome"])}</td><td>{_e(q.get("edificio") or q["indirizzo"])}</td><td>{_e(q.get("tipo") or "")}</td><td class="n">{q["minuti"]} min</td></tr>'
@@ -135,27 +149,63 @@ def tabella_aziende(punti):
             f'<tbody>{righe}</tbody></table></div>')
 
 
-def _scheda(q):
+def _referenze():
+    return json.loads(REFERENZE.read_text()) if REFERENZE.exists() else {}
+
+
+def _logo(q, ref, classe):
+    r = ref.get(q["id"], {})
+    if not r.get("logo"):
+        return ""
+    scuro = f" {classe}--scuro" if r.get("logo_scuro") else ""
+    return f'<span class="{classe}{scuro}"><img src="{IMG_REF}{r["logo"]}" alt="{_e(q["nome"])}" loading="lazy" decoding="async"></span>'
+
+
+def _iniziali(nome):
+    import unicodedata
+    articoli = {"l", "il", "lo", "la", "i", "gli", "le", "the", "de", "del", "della"}
+    parole = [w for w in nome.replace("'", " ").replace("’", " ").split() if w[:1].isalnum() and w.lower() not in articoli]
+    sigla = "".join(w[0] for w in parole[:2]).upper()
+    return unicodedata.normalize("NFKD", sigla).encode("ascii", "ignore").decode() or sigla
+
+
+def _testata(q, ref):
+    """Foto del locale se c'è; altrimenti il logo; altrimenti le iniziali, senza inventare immagini."""
+    r = ref.get(q["id"], {})
+    logo = _logo(q, ref, "guida__logo")
+    if r.get("foto"):
+        w, h = r["foto_wh"]
+        return (f'<figure class="guida__foto"><img src="{IMG_REF}{r["foto"]}" alt="{_e(q["nome"])}, {_e(q["indirizzo"])}" width="{w}" height="{h}" loading="lazy" decoding="async">'
+                f'{logo}</figure>')
+    if logo:
+        return f'<div class="guida__foto guida__foto--logo">{logo}</div>'
+    return f'<div class="guida__foto guida__foto--iniziali" aria-hidden="true"><span>{_e(_iniziali(q["nome"]))}</span></div>'
+
+
+def _scheda(q, ref=None):
+    ref = ref if ref is not None else _referenze()
     tipo = f'<span class="guida__tipo">{_e(q.get("tipo") or "")}</span>' if q.get("tipo") else ""
-    return (f'<article class="guida__voce" data-id="{_e(q["id"])}">{tipo}<h3>{_e(q["nome"])}</h3>'
+    return (f'<article class="guida__voce" data-id="{_e(q["id"])}">{_testata(q, ref)}{tipo}<h3>{_e(q["nome"])}</h3>'
             f'<p>{_e(q.get("descrizione"))}</p><p class="guida__dove">{_e(q["indirizzo"])} · {_e(_distanza(q))}</p>'
             f'<a href="{_e(_maps(q))}" target="_blank" rel="noopener">Percorso a piedi</a></article>')
 
 
 def guida_shopping(punti):
     voci = [q for q in punti if q["categoria"] == "shopping"]
-    return '<div class="guida">' + "".join(_scheda(q) for q in voci) + "</div>"
+    ref = _referenze()
+    return '<div class="guida">' + "".join(_scheda(q, ref) for q in voci) + "</div>"
 
 
 def guida_food(punti):
+    ref = _referenze()
     out = []
     for tipo, titolo in TIPI_FOOD:
         voci = [q for q in punti if q["categoria"] == "food" and (q.get("tipo") or "").lower() == tipo]
         if voci:
-            out.append(f'<h3 class="guida__gruppo">{titolo}</h3><div class="guida">' + "".join(_scheda(q) for q in voci) + "</div>")
+            out.append(f'<h3 class="guida__gruppo">{titolo}</h3><div class="guida">' + "".join(_scheda(q, ref) for q in voci) + "</div>")
     altri = [q for q in punti if q["categoria"] == "food" and (q.get("tipo") or "").lower() not in dict(TIPI_FOOD)]
     if altri:
-        out.append('<h3 class="guida__gruppo">Altri indirizzi</h3><div class="guida">' + "".join(_scheda(q) for q in altri) + "</div>")
+        out.append('<h3 class="guida__gruppo">Altri indirizzi</h3><div class="guida">' + "".join(_scheda(q, ref) for q in altri) + "</div>")
     return "\n".join(out)
 
 
@@ -184,7 +234,7 @@ def blocchi():
         "<!-- @mappa -->": mappa_svg(punti),
         "<!-- @elenco -->": elenco(punti),
         "<!-- @filtri -->": filtri(),
-        "<!-- @aziende -->": tabella_aziende(punti),
+        "<!-- @aziende -->": loghi_aziende(punti) + tabella_aziende(punti),
         "<!-- @shopping -->": guida_shopping(punti),
         "<!-- @food -->": guida_food(punti),
         "<!-- @conta-aziende -->": str(conta["aziende"]),
