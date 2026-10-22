@@ -300,3 +300,39 @@ Ogni segnaposto tratteggiato nella bozza rimanda a una di queste.
 - **Da verificare prima del lancio:** che Antica Trattoria della Pesa e L'Île Douce siano aperti; l'indirizzo esatto di KPMG (Via Melchiorre Gioia 20) e SAP (Palazzo Lybra).
 - **Coordinate del Tocq** ora prese dalla scheda OpenStreetMap dell'hotel: 45.4827602, 9.1864205.
 - **Domande frequenti** (`/domande-frequenti/`): 37 domande raccolte da tutte le pagine per argomento, con ricerca; nelle altre pagine restano le prime tre. Lo schema FAQPage sta solo qui.
+- **Foto e loghi delle referenze** (ottobre 2026): ogni scheda della guida ha la foto del locale presa dal suo sito ufficiale, con il logo sopra; dove la foto manca c'è il logo, dove manca anche il logo ci sono le iniziali (mai immagini inventate o di stock). Le aziende hanno una parete di loghi sopra la tabella. Fonte di ogni file in `src/dati/referenze.json`. **Prima della pubblicazione va chiesto il permesso a ciascun locale e azienda.** Scartati: il logo trovato per Berton (era quello BMW), i simboli di Maire e Princi, le foto generiche o di altre sedi (Intesa mostrava la torre di Torino, Amazon un magazzino, Unipol la sede di Bologna), l'illustrazione di Mercato Centrale. Da fornire: foto di Corso Garibaldi, Mercato Comunale Isola, L'Île Douce, Bicerin (il sito bicerinmilano.com oggi rimanda a un sito di scommesse: non linkarlo).
+
+## 16. Pagina "Offerte"
+
+Ricalca tocq.it/offerte e tocq.it/prenota-diretto con i contenuti che lì ci sono davvero: le due tariffe dirette, **Direct Flex** (cancellazione gratuita fino a 24 ore prima, nessun anticipo, si paga in hotel) e **Direct Save −10%** (10% sotto qualsiasi altro canale, prepagata, non rimborsabile), colazione sempre inclusa; poi cosa si ottiene solo prenotando sul sito e le offerte a pacchetto. Schema OfferCatalog, FAQ dedicate, voce "Offerte" nel menu e richiamo in home sotto la tabella "agenzia o sito".
+
+Da chiedere alla direzione:
+- i pacchetti citati su tocq.it/offerte ("una giornata di puro fitness e relax", "le colline piemontesi"): contenuto, partner, prezzo, validità; oggi sulla pagina non c'è il dettaglio;
+- i collegamenti diretti alle due tariffe nel booking engine: su tocq.it il pulsante sotto "Direct Flex" porta a un codice tariffa "NOT REF" (non rimborsabile), quindi probabilmente è invertito;
+- il punteggio Booking.com: prenota-diretto dice 8,6, la pagina concerti 8,7, l'analisi 8,5.
+
+## 17. Nove lingue
+
+Il sito sarà in **italiano, inglese, francese, tedesco, portoghese, spagnolo, russo, arabo e cinese**. La bozza è costruita per accoglierle senza rifare nulla.
+
+**Come funziona (già nel codice)**
+- `lingue.py` è l'unico posto con le regole: codice, nome nella propria lingua, direzione del testo, prefisso dell'URL, codice lingua del booking engine, indirizzi delle pagine in ogni lingua.
+- **Indirizzi:** `/en/rooms/`, `/fr/chambres/`, `/de/zimmer/`, `/es/habitaciones/`, `/pt/quartos/`; per russo, arabo e cinese parole inglesi in alfabeto latino (`/ru/nomera/`, `/ar/rooms/`, `/zh/rooms/`), perché gli URL in cirillico, arabo o cinese si rompono quando vengono copiati e incollati.
+- **Una lingua va online solo quando la pagina esiste:** basta mettere la pagina tradotta in `src/pages/<codice>/`. Da quel momento il build aggiunge da solo hreflang, sitemap, og:locale e attiva la voce nel selettore. Nessun link a pagine che non ci sono.
+- **Selettore lingue** nel menu: le nove lingue, ciascuna scritta nella propria; quelle non ancora tradotte si vedono ma sono spente.
+- **Testi fissi** (menu, footer, pulsanti): in `src/i18n/<codice>.json`, generati dal build con le chiavi da riempire; ogni chiave vuota resta in italiano.
+- **Arabo:** la pagina si specchia da destra a sinistra (`dir="rtl"`); provata su home, offerte e quartiere senza rotture. Numeri, telefoni e orari restano da sinistra a destra.
+- **Caratteri:** Jost (nella bozza) e Futura coprono latino e cirillico: per il sito vero serve **Futura PT con cirillico**. Arabo e cinese hanno un carattere dedicato (Noto Kufi Arabic, Noto Sans SC), caricato solo sulle loro pagine. In arabo niente spaziatura fra le lettere (spezza la scrittura), in arabo e cinese niente maiuscoletto.
+- **Booking engine:** il link Prenota passa la lingua della pagina a Blastness.
+
+**Da decidere o verificare**
+- **Cinese:** oggi esiste tocqhotelmilano.cn. Proposta: `/zh/` su tocq.it per chi parla cinese fuori dalla Cina, e il .cn tenuto per la Cina continentale (ricerca Baidu, ospitato in Cina, licenza ICP), con un link fra i due.
+- **Codici lingua di Blastness** per russo, arabo e cinese (`rus`, `ara`, `chi` messi in attesa di conferma) e se il booking engine è tradotto in tutte e nove le lingue: se no, l'ospite russo o arabo arriva al pagamento in inglese, e va detto sul pulsante.
+- **Arabo e cinese su tocq.it oggi:** esiste già `/ar/`; da capire chi l'ha tradotto e se riusarlo.
+
+**Come tradurre**
+- Traduttori madrelingua, non traduzione automatica pubblicata così: il tono del Tocq (frasi brevi, numeri, niente aggettivi vuoti) si perde facilmente. Titoli e frasi di chiusura vanno riscritti nella lingua, non tradotti parola per parola.
+- La lista di parole vietate vale anche nelle altre lingue: va preparata per ciascuna (per esempio "luxury", "exclusive", "experience" in inglese) prima di dare il lavoro ai traduttori.
+- **Parole chiave per mercato:** gli stranieri cercano "hotel near Porta Garibaldi", "hotel near Milano Centrale", "hotel near Fiera Milano Rho". Le meta description vanno scritte per la ricerca di ciascun paese, non tradotte.
+- **Restano da estrarre dal codice:** i testi della mappa e delle guide (descrizioni dei locali, categorie, "min a piedi"), i titoli dei gruppi della pagina FAQ, i messaggi dei form, i testi alternativi delle foto.
+- Ordine consigliato: inglese al lancio con l'italiano (business internazionale e fiere), poi tedesco e francese, poi spagnolo e portoghese, infine russo, arabo e cinese, che hanno anche il lavoro tecnico in più.

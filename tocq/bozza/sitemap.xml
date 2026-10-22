@@ -4,48 +4,48 @@
     <loc>https://www.tocq.it/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/"/>
   </url>
   <url>
     <loc>https://www.tocq.it/camere/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/camere/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/camere/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/camere/"/>
   </url>
   <url>
     <loc>https://www.tocq.it/meeting-eventi/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/meeting-eventi/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/meeting-eventi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/meeting-eventi/"/>
   </url>
   <url>
     <loc>https://www.tocq.it/offerte/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/offerte/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/offerte/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/offerte/"/>
   </url>
   <url>
     <loc>https://www.tocq.it/posizione/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/posizione/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/posizione/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/posizione/"/>
   </url>
   <url>
     <loc>https://www.tocq.it/quartiere/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/quartiere/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/quartiere/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/quartiere/"/>
   </url>
   <url>
     <loc>https://www.tocq.it/domande-frequenti/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/domande-frequenti/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/domande-frequenti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/domande-frequenti/"/>
   </url>
   <url>
     <loc>https://www.tocq.it/contatti/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/contatti/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.tocq.it/en/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/contatti/"/>
   </url>
 </urlset>

@@ -344,7 +344,7 @@ if (prenotaForm) {
   var vai = document.getElementById('b-vai');
   function aggiornaLink() {
     var q = new URLSearchParams({
-      id_albergo: '16496', dc: '6326', id_stile: '21247', language: 'it', currency: 'EUR',
+      id_albergo: '16496', dc: '6326', id_stile: '21247', language: (document.documentElement.lang || 'it').slice(0, 2), currency: 'EUR',
       checkin_date: arrivo.value, checkout_date: partenza.value,
       rooms: '1', adults_1: document.getElementById('b-ad').value, children_1: '0'
     });
@@ -459,3 +459,12 @@ if (cerca) {
     if (q) timer = setTimeout(function () { traccia('faq_ricerca', { testo: q, risultati: trovate }); }, 800);
   });
 }
+
+/* Selettore lingue: si chiude cliccando fuori o con Esc */
+(function () {
+  var l = document.querySelector('.lingue');
+  if (!l) return;
+  document.addEventListener('click', function (e) { if (l.open && !l.contains(e.target)) l.open = false; });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && l.open) { l.open = false; l.querySelector('summary').focus(); } });
+})();
+

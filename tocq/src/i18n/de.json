@@ -1,0 +1,81 @@
+{
+ "_nota": "Traduzione Deutsch. Riempire i valori vuoti; l'italiano di riferimento è in it.json. Regole di tono in PROGETTO.md §16.",
+ "ui": {
+  "salta": "",
+  "logo_alt": "",
+  "menu": "",
+  "nav_aria": "",
+  "nav_camere": "",
+  "nav_meeting": "",
+  "nav_offerte": "",
+  "nav_quartiere": "",
+  "nav_posizione": "",
+  "nav_contatti": "",
+  "lingua": "",
+  "lingua_presto": "",
+  "prenota": "",
+  "f_hotel": "",
+  "f_camere": "",
+  "f_reception": "",
+  "f_scrivi": "",
+  "f_soggiorna": "",
+  "f_camere_suite": "",
+  "f_colazione": "",
+  "f_prenota": "",
+  "f_lavora": "",
+  "f_sale": "",
+  "f_preventivo": "",
+  "f_aziendali": "",
+  "f_quartiere": "",
+  "f_arrivare": "",
+  "f_offerte": "",
+  "f_faq": "",
+  "f_piva": "",
+  "f_bozza": "",
+  "cta_aria": "",
+  "cta_preventivo": "",
+  "cta_preventivo_aria": ""
+ },
+ "pagine": {
+  "index": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "camere": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "meeting": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "offerte": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "posizione": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "quartiere": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "faq": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "contatti": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  }
+ }
+}

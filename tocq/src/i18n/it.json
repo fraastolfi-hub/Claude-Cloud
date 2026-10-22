@@ -1,0 +1,81 @@
+{
+ "_nota": "Riferimento italiano: generato dal build, non modificare a mano.",
+ "ui": {
+  "salta": "Vai al contenuto",
+  "logo_alt": "Tocq Hotel Milano, home",
+  "menu": "Menu",
+  "nav_aria": "Principale",
+  "nav_camere": "Camere",
+  "nav_meeting": "Meeting ed eventi",
+  "nav_offerte": "Offerte",
+  "nav_quartiere": "Il quartiere",
+  "nav_posizione": "Come arrivare",
+  "nav_contatti": "Contatti",
+  "lingua": "Lingua",
+  "lingua_presto": "In traduzione",
+  "prenota": "Prenota",
+  "f_hotel": "Hotel 4 stelle",
+  "f_camere": "camere",
+  "f_reception": "Reception aperta 24 ore",
+  "f_scrivi": "Scrivi o chiama",
+  "f_soggiorna": "Soggiorna",
+  "f_camere_suite": "Camere e suite",
+  "f_colazione": "Colazione",
+  "f_prenota": "Prenota sul sito",
+  "f_lavora": "Lavora",
+  "f_sale": "Sale meeting",
+  "f_preventivo": "Richiedi un preventivo",
+  "f_aziendali": "Tariffe aziendali",
+  "f_quartiere": "Il quartiere e le aziende",
+  "f_arrivare": "Come arrivare",
+  "f_offerte": "Offerte e tariffe dirette",
+  "f_faq": "Domande frequenti",
+  "f_piva": "P.IVA",
+  "f_bozza": "Bozza di lavoro a cura di Francesco Astolfi · non è il sito ufficiale · aggiornata il 22 ottobre 2026",
+  "cta_aria": "Azioni rapide",
+  "cta_preventivo": "Preventivo",
+  "cta_preventivo_aria": "Richiedi un preventivo per un evento"
+ },
+ "pagine": {
+  "index": {
+   "title": "Tocq Hotel Milano · 4 stelle a Porta Garibaldi",
+   "description": "Hotel 4 stelle a 200 m dalla stazione di Porta Garibaldi: 133 camere, 6 sale meeting, cuscino e lato della camera scelti prenotando sul sito.",
+   "nav": ""
+  },
+  "camere": {
+   "title": "Camere e suite a Porta Garibaldi · Tocq Hotel Milano",
+   "description": "133 camere insonorizzate a Porta Garibaldi: Comfort, Superior, Executive, Junior Suite. Scegli cuscino, lato della camera e colazione da asporto.",
+   "nav": "Camere"
+  },
+  "meeting": {
+   "title": "Sale meeting a Porta Nuova, Milano · Tocq Hotel",
+   "description": "6 sale meeting fino a 100 persone a platea, nello stesso edificio delle 133 camere, a 200 m dalla stazione Garibaldi. Preventivo entro 24 ore.",
+   "nav": "Meeting ed eventi"
+  },
+  "offerte": {
+   "title": "Offerte e tariffe dirette · Tocq Hotel Milano",
+   "description": "Prenota diretto al Tocq Hotel Milano: Direct Flex con cancellazione gratuita fino a 24 ore prima, Direct Save al 10% in meno. Colazione sempre inclusa.",
+   "nav": "Offerte"
+  },
+  "posizione": {
+   "title": "Hotel vicino alla stazione Garibaldi · Tocq Hotel Milano",
+   "description": "Distanze reali dal Tocq: stazione Garibaldi 200 m, Gae Aulenti 70 m, Centrale 1,5 km, Duomo 2,5 km, Linate 9 km, Malpensa 49 km. Fiera, MiCo, San Siro.",
+   "nav": "La posizione"
+  },
+  "quartiere": {
+   "title": "Aziende, ristoranti e shopping vicino al Tocq · Milano",
+   "description": "Mappa del quartiere del Tocq Hotel Milano: le aziende di Porta Nuova, treni e metro, negozi e ristoranti, ciascuno con i minuti a piedi dall'hotel.",
+   "nav": "Il quartiere"
+  },
+  "faq": {
+   "title": "Domande frequenti · Tocq Hotel Milano",
+   "description": "Tutte le risposte su Tocq Hotel Milano: prenotazione, camere, colazione, sale meeting, come arrivare dalla stazione Garibaldi e dagli aeroporti, il quartiere.",
+   "nav": "Domande frequenti"
+  },
+  "contatti": {
+   "title": "Contatti · Tocq Hotel Milano, Porta Garibaldi",
+   "description": "Tocq Hotel Milano, Via De Tocqueville 7/D. Reception 24 ore +39 02 62071, info@tocq.it. Meeting ed eventi: mice@tocq.it.",
+   "nav": "Contatti"
+  }
+ }
+}

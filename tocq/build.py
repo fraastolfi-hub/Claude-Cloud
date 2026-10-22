@@ -11,6 +11,7 @@ e per gli assistenti AI, che premiano i dati coerenti e ripetuti).
 
 Uso: python3 tocq/build.py
 """
+import lingue
 import json
 from pathlib import Path
 
@@ -265,10 +266,28 @@ def estrai_faq(corpo):
     return faq
 
 
-def head(key, faq):
+# caratteri in più per gli alfabeti che Jost (e Futura) non coprono
+FONT_LINGUA = {
+    "ar": '  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">\n',
+    "zh": '  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">\n',
+}
+
+
+def alternate(key):
+    """hreflang verso le lingue in cui la pagina esiste davvero, più x-default sull'italiano."""
+    righe = [f'  <link rel="alternate" hreflang="{l["hreflang"]}" href="{SITO}{lingue.URL[key][l["codice"]]}">'
+             for l in lingue.LINGUE if lingue.attiva(l["codice"], key)]
+    righe.append(f'  <link rel="alternate" hreflang="x-default" href="{SITO}{lingue.URL[key]["it"]}">')
+    return "\n".join(righe)
+
+
+def head(key, faq, codice="it"):
     p = PAGINE[key]
+    l = lingue.PER_CODICE[codice]
+    og_alt = "\n".join(f'  <meta property="og:locale:alternate" content="{x["og"]}">'
+                       for x in lingue.LINGUE if x["codice"] != codice and lingue.attiva(x["codice"], key))
     return f"""<!doctype html>
-<html lang="it">
+<html lang="{l['hreflang']}" dir="{l['dir']}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -278,12 +297,11 @@ def head(key, faq):
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
   <meta name="googlebot" content="noindex, nofollow">
   <link rel="canonical" href="{SITO}{p['url']}">
-  <link rel="alternate" hreflang="it" href="{SITO}{p['url']}">
-  <link rel="alternate" hreflang="en" href="{SITO}/en{p['url']}">
-  <link rel="alternate" hreflang="x-default" href="{SITO}{p['url']}">
+{alternate(key)}
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{FATTI['nome']}">
-  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale" content="{l['og']}">
+{og_alt}
   <meta property="og:title" content="{p['title']}">
   <meta property="og:description" content="{p['description']}">
   <meta property="og:url" content="{SITO}{p['url']}">
@@ -300,7 +318,7 @@ def head(key, faq):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Futura Std (brand book) va servito con licenza web in produzione; nella bozza il sostituto è Jost -->
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+{FONT_LINGUA.get(codice, "")}  <link rel="stylesheet" href="assets/style.css">
   <script type="application/ld+json">
 {schema_pagina(key, faq)}
   </script>
@@ -310,29 +328,52 @@ def head(key, faq):
 """
 
 
-def header(key):
-    voci = [("camere", "Camere"), ("meeting", "Meeting ed eventi"), ("offerte", "Offerte"), ("quartiere", "Il quartiere"), ("posizione", "Come arrivare"), ("contatti", "Contatti")]
+def prenota_url(codice="it"):
+    return f"https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int={lingue.PER_CODICE[codice]['blastness']}&amp;id_stile=21247"
+
+
+def selettore_lingue(key, codice, t):
+    """Tutte e nove le lingue, ciascuna scritta nella propria; quelle non ancora tradotte restano visibili ma spente."""
+    voci = []
+    for l in lingue.LINGUE:
+        attr = f'lang="{l["hreflang"]}" dir="{l["dir"]}"'
+        if l["codice"] == codice:
+            voci.append(f'<li><a {attr} aria-current="true">{l["nome"]}</a></li>')
+        elif lingue.attiva(l["codice"], key):
+            voci.append(f'<li><a {attr} hreflang="{l["hreflang"]}" href="{SITO}{lingue.URL[key][l["codice"]]}">{l["nome"]}</a></li>')
+        else:
+            voci.append(f'<li><span {attr} aria-disabled="true" title="{t["lingua_presto"]}: {SITO}{lingue.URL[key][l["codice"]]}">{l["nome"]}</span></li>')
+    corrente = lingue.PER_CODICE[codice]["codice"].upper()
+    return (f'<details class="lingue"><summary aria-label="{t["lingua"]}: {lingue.PER_CODICE[codice]["nome"]}">{corrente}</summary>'
+            f'<ul class="lingue__menu">{"".join(voci)}</ul></details>')
+
+
+def header(key, codice="it"):
+    t = lingue.ui(codice)
+    voci = [("camere", t["nav_camere"]), ("meeting", t["nav_meeting"]), ("offerte", t["nav_offerte"]), ("quartiere", t["nav_quartiere"]), ("posizione", t["nav_posizione"]), ("contatti", t["nav_contatti"])]
     links = "\n".join(
-        f'      <a href="{k}.html"{" aria-current=\"page\"" if k == key else ""}>{t}</a>' for k, t in voci
+        f'      <a href="{k}.html"{" aria-current=\"page\"" if k == key else ""}>{v}</a>' for k, v in voci
     )
     return f"""
-<a class="skip" href="#contenuto">Vai al contenuto</a>
+<a class="skip" href="#contenuto">{t['salta']}</a>
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale-neg.svg" alt="Tocq Hotel Milano, home" width="92" height="44"></a>
-    <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
-    <nav class="nav" id="nav" aria-label="Principale">
+    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale-neg.svg" alt="{t['logo_alt']}" width="92" height="44"></a>
+    <button class="nav-toggle" aria-controls="nav" aria-expanded="false">{t['menu']}</button>
+    <nav class="nav" id="nav" aria-label="{t['nav_aria']}">
 {links}
-      <span class="lang">IT · <a href="#" title="Inglese al lancio" lang="en">EN</a></span>
-      <a class="btn btn--primary btn--small" href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener" data-prenota>Prenota</a>
+      {selettore_lingue(key, codice, t)}
+      <a class="btn btn--primary btn--small" href="{prenota_url(codice)}" target="_blank" rel="noopener" data-prenota>{t['prenota']}</a>
     </nav>
   </div>
 </header>
 """
 
 
-def footer():
+def footer(codice="it"):
     f = FATTI
+    t = lingue.ui(codice)
+    pren = prenota_url(codice)
     return f"""
 <div class="pattern pattern--salmone" aria-hidden="true"></div>
 <footer class="footer">
@@ -342,42 +383,42 @@ def footer():
       <div>
         <h2 class="footer__h">Tocq Hotel Milano</h2>
         <address>{f['via']}<br>{f['cap']} {f['citta']}</address>
-        <span>Hotel 4 stelle · {f['camere']} camere</span>
-        <span>Reception aperta 24 ore</span>
+        <span>{t['f_hotel']} · {f['camere']} {t['f_camere']}</span>
+        <span>{t['f_reception']}</span>
       </div>
       <div>
-        <h2 class="footer__h">Scrivi o chiama</h2>
+        <h2 class="footer__h">{t['f_scrivi']}</h2>
         <a href="tel:{f['tel_href']}">{f['telefono']}</a>
         <a href="mailto:{f['email']}">{f['email']}</a>
         <a href="mailto:{f['email_mice']}">{f['email_mice']}</a>
       </div>
       <div>
-        <h2 class="footer__h">Soggiorna</h2>
-        <a href="camere.html">Camere e suite</a>
-        <a href="camere.html#colazione">Colazione</a>
-        <a href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener" data-prenota>Prenota sul sito</a>
+        <h2 class="footer__h">{t['f_soggiorna']}</h2>
+        <a href="camere.html">{t['f_camere_suite']}</a>
+        <a href="camere.html#colazione">{t['f_colazione']}</a>
+        <a href="{pren}" target="_blank" rel="noopener" data-prenota>{t['f_prenota']}</a>
       </div>
       <div>
-        <h2 class="footer__h">Lavora</h2>
-        <a href="meeting.html">Sale meeting</a>
-        <a href="meeting.html#preventivo">Richiedi un preventivo</a>
-        <a href="contatti.html#aziende">Tariffe aziendali</a>
-        <a href="quartiere.html">Il quartiere e le aziende</a>
-        <a href="posizione.html">Come arrivare</a>
-        <a href="offerte.html">Offerte e tariffe dirette</a>
-        <a href="faq.html">Domande frequenti</a>
+        <h2 class="footer__h">{t['f_lavora']}</h2>
+        <a href="meeting.html">{t['f_sale']}</a>
+        <a href="meeting.html#preventivo">{t['f_preventivo']}</a>
+        <a href="contatti.html#aziende">{t['f_aziendali']}</a>
+        <a href="quartiere.html">{t['f_quartiere']}</a>
+        <a href="posizione.html">{t['f_arrivare']}</a>
+        <a href="offerte.html">{t['f_offerte']}</a>
+        <a href="faq.html">{t['f_faq']}</a>
       </div>
     </div>
     <div class="footer__base">
-      <span>© 2026 {f['nome']} · {f['societa']} · P.IVA {f['piva']}</span>
-      <span>Bozza di lavoro a cura di Francesco Astolfi · non è il sito ufficiale · aggiornata il 22 ottobre 2026</span>
+      <span>© 2026 {f['nome']} · {f['societa']} · {t['f_piva']} {f['piva']}</span>
+      <span>{t['f_bozza']}</span>
     </div>
   </div>
 </footer>
 
-<div class="sticky-cta" aria-label="Azioni rapide">
-  <a class="btn btn--primary" href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener" data-prenota>Prenota</a>
-  <a class="btn" href="meeting.html#preventivo" aria-label="Richiedi un preventivo per un evento">Preventivo</a>
+<div class="sticky-cta" aria-label="{t['cta_aria']}">
+  <a class="btn btn--primary" href="{pren}" target="_blank" rel="noopener" data-prenota>{t['prenota']}</a>
+  <a class="btn" href="meeting.html#preventivo" aria-label="{t['cta_preventivo_aria']}">{t['cta_preventivo']}</a>
 </div>
 
 <script src="assets/app.js"></script>
@@ -386,15 +427,21 @@ def footer():
 """
 
 
+def alternate_sitemap(key):
+    righe = [f'    <xhtml:link rel="alternate" hreflang="{l["hreflang"]}" href="{SITO}{lingue.URL[key][l["codice"]]}"/>'
+             for l in lingue.LINGUE if lingue.attiva(l["codice"], key)]
+    righe.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{SITO}{lingue.URL[key]["it"]}"/>')
+    return "\n".join(righe)
+
+
 def sitemap():
     voci = "".join(
         f"""  <url>
     <loc>{SITO}{p['url']}</loc>
     <lastmod>{AGGIORNATO}</lastmod>
-    <xhtml:link rel="alternate" hreflang="it" href="{SITO}{p['url']}"/>
-    <xhtml:link rel="alternate" hreflang="en" href="{SITO}/en{p['url']}"/>
+{alternate_sitemap(k)}
   </url>
-""" for p in PAGINE.values())
+""" for k, p in PAGINE.items())
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {voci}</urlset>
@@ -466,6 +513,7 @@ Aggiornato il {AGGIORNATO}.
 
 
 def main():
+    lingue.modelli(PAGINE)
     import mappa
     pezzi = mappa.blocchi()
     import faq as faq_pagina
