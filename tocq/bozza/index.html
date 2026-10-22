@@ -4,11 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tocq Hotel Milano · Base a Porta Garibaldi</title>
-  <meta name="description" content="Hotel 4 stelle a Porta Garibaldi, a 350 metri dalla stazione. Sei sale fino a 200 persone sopra le camere, cuscino e lato della camera scelti prima di arrivare, colazione da asporto per chi parte all'alba.">
+  <meta name="description" content="Hotel 4 stelle a Porta Garibaldi, a 200 metri dalla stazione. Sei sale fino a 100 persone nello stesso edificio delle camere, cuscino e lato della camera scelti prima di arrivare, colazione da asporto per chi parte all'alba.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Futura Std (brand book) va servito con licenza web in produzione; nella bozza il sostituto è Jost -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/img/simbolo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
   <script type="application/ld+json">
   {
@@ -23,10 +25,13 @@
       "addressLocality": "Milano",
       "addressCountry": "IT"
     },
+    "telephone": "+39 02 62071",
+    "email": "info@tocq.it",
+    "numberOfRooms": 133,
     "url": "https://www.tocq.it/",
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Reception 24 ore", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Sale meeting fino a 200 persone", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Sei sale meeting, fino a 100 persone a platea", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Menu dei cuscini", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Colazione da asporto", "value": true }
     ]
@@ -39,7 +44,7 @@
 
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="index.html">TOCQ<small>PORTA GARIBALDI · MILANO</small></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale.svg" alt="Tocq Hotel Milano" width="92" height="44"></a>
     <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
     <nav class="nav" id="nav">
       <a href="camere.html">Soggiorna</a>
@@ -61,7 +66,7 @@
         <p class="kicker">Tocq Hotel · 4 stelle · Porta Garibaldi</p>
         <h1>Scendi a Garibaldi. Sei arrivato.</h1>
         <ul class="hero__promises">
-          <li><span class="mono">5 MIN</span> Il treno è a cinque minuti a piedi.</li>
+          <li><span class="mono">200 M</span> La stazione di Porta Garibaldi è a 200 metri.</li>
           <li><span class="mono">SALA</span> La sala riunioni è al piano. Prendi l'ascensore e ci sei.</li>
           <li><span class="mono">PRIMA</span> Il cuscino lo scegli prima di partire.</li>
           <li><span class="mono">ALL'ALBA</span> Se parti presto, la colazione te la portiamo via noi.</li>
@@ -86,17 +91,17 @@
         <table>
           <thead><tr><th>Destinazione</th><th>Come</th><th>Tempo</th><th class="hide-s">Per</th></tr></thead>
           <tbody>
-            <tr><td>Stazione Porta Garibaldi</td><td>a piedi, 350 m</td><td class="t">5 min</td><td class="hide-s">treni, passante, alta velocità</td></tr>
+            <tr><td>Stazione Porta Garibaldi</td><td>a piedi, 200 m</td><td class="t">3 min</td><td class="hide-s">treni, passante, alta velocità</td></tr>
             <tr><td>Metro Garibaldi</td><td>linee <span class="todo">M2 · M5</span></td><td class="t">5 min</td><td class="hide-s">tutta la città</td></tr>
-            <tr><td>Malpensa</td><td>Malpensa Express da Garibaldi</td><td class="t"><span class="todo todo--quiet">45 min</span></td><td class="hide-s">voli dell'alba</td></tr>
-            <tr><td>Porta Nuova · Gae Aulenti</td><td>a piedi</td><td class="t"><span class="todo todo--quiet">8 min</span></td><td class="hide-s">uffici e sedi</td></tr>
+            <tr><td>Malpensa · 49 km</td><td>Malpensa Express da Garibaldi</td><td class="t"><span class="todo todo--quiet">45 min</span></td><td class="hide-s">voli dell'alba</td></tr>
+            <tr><td>Porta Nuova · Gae Aulenti</td><td>a piedi, 70 m</td><td class="t">1 min</td><td class="hide-s">uffici e sedi</td></tr>
             <tr><td>Fiera Milano Rho</td><td>treno o metro da Garibaldi</td><td class="t"><span class="todo todo--quiet">25 min</span></td><td class="hide-s">fiere e saloni</td></tr>
             <tr><td>San Siro · Ippodromo</td><td>metro lilla M5</td><td class="t"><span class="todo todo--quiet">20 min</span></td><td class="hide-s">partite e concerti</td></tr>
             <tr><td>Autodromo di Monza</td><td>treno da Garibaldi</td><td class="t"><span class="todo todo--quiet">30 min</span></td><td class="hide-s">Gran Premio di F1</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="small mono" style="color:#77756f;margin:14px 0 0">Tempi segnaposto: da verificare uno per uno prima della pubblicazione · <a href="posizione.html" style="color:#f2c94c">Vedi tutte le destinazioni</a></p>
+      <p class="board__foot">Distanze dal factsheet Tocq 2025; i tempi tratteggiati vanno verificati prima della pubblicazione · <a href="posizione.html">Vedi tutte le destinazioni</a></p>
     </div>
   </section>
 
@@ -125,7 +130,7 @@
             <span class="num">02 · MEETING ED EVENTI</span>
             <h3>La riunione e il letto nello stesso edificio.</h3>
             <ul>
-              <li>Sei sale fino a 200 persone, nello stesso edificio</li>
+              <li>Sei sale, fino a 100 persone a platea, nello stesso edificio</li>
               <li>Mezza giornata, giornata intera, residenziale</li>
               <li>Preventivo entro <span class="todo">24 ore lavorative</span></li>
             </ul>
@@ -162,10 +167,10 @@
       <h2>Fai quello che sei venuto a fare. Senza perdere tempo, e senza perdere la notte.</h2>
       <p class="lead mb-32">Come la raccontano gli ospiti che tornano una volta al mese.</p>
       <ol class="timeline">
-        <li><time>18:40</time><p>Scendi dal Frecciarossa a Garibaldi. Cinque minuti col trolley e sei in camera.</p></li>
+        <li><time>18:40</time><p>Scendi dal treno a Garibaldi. Duecento metri col trolley e sei in camera.</p></li>
         <li><time>20:00</time><p>Cena in Corso Como, a due passi. Al ritorno la guardia notturna è all'ingresso.</p></li>
         <li><time>23:00</time><p>Camera sul lato corte, cuscino scelto prenotando. Si dorme.</p></li>
-        <li><time>06:30</time><p>La colazione da asporto ti aspetta alla reception. Il primo Malpensa Express è a cinque minuti.</p></li>
+        <li><time>06:30</time><p>La colazione da asporto ti aspetta alla reception. Il Malpensa Express parte a 200 metri.</p></li>
         <li><time>+30 gg</time><p>Torni. Stessa camera, stessa fattura, qualcuno a colazione si ricorda il tuo nome.</p></li>
       </ol>
       <p class="note"><b>Nota</b>Orari esemplificativi. Colazione da asporto, guardia notturna e precedenza nel check-in sono già realtà secondo le recensioni; "stessa camera la volta dopo" è una mossa del cap. 10 da adottare.</p>
@@ -214,9 +219,9 @@
       <p class="lead mb-32">Convegni, formazione, cene aziendali. I partecipanti scendono dalla camera e sono in sala. Gli ospiti da fuori arrivano a piedi dal treno.</p>
       <div class="grid-4">
         <div class="stat"><b>6</b><span>sale nello stesso edificio delle camere</span></div>
-        <div class="stat"><b>200</b><span>persone nella sala più grande</span></div>
+        <div class="stat"><b>100</b><span>persone a platea nella Sala Duomo, la più grande</span></div>
         <div class="stat"><b><span class="todo todo--quiet">24 h</span></b><span>per ricevere il preventivo, nei giorni lavorativi</span></div>
-        <div class="stat"><b>350 m</b><span>dalla stazione di Porta Garibaldi</span></div>
+        <div class="stat"><b>200 m</b><span>dalla stazione di Porta Garibaldi</span></div>
       </div>
       <div class="btns mt-32">
         <a class="btn btn--primary" href="meeting.html#preventivo">Richiedi un preventivo</a>
@@ -242,7 +247,7 @@
     <div class="wrap split">
       <div>
         <p class="kicker">Detto prima</p>
-        <h3>Il Duomo è a 20–30 minuti a piedi, o <span class="todo">15</span> di metro.</h3>
+        <h3>Il Duomo è a 2,5 km: 30 minuti a piedi, o <span class="todo">15</span> di metro.</h3>
       </div>
       <p class="muted mt-0">Siamo a Porta Garibaldi, non in centro storico. Lo diciamo prima, così scegli sapendo cosa trovi: il treno, gli uffici di Porta Nuova e la Fiera vicini, il Duomo raggiungibile ma non sotto casa.</p>
     </div>
@@ -250,9 +255,11 @@
 
 </main>
 
+<div class="pattern pattern--salmone" aria-hidden="true"></div>
 <footer class="footer">
   <div class="wrap">
-    <div class="grid-4">
+    <div class="footer__grid">
+      <div class="footer__logo"><img src="assets/img/logo-verticale-neg.svg" alt="Tocq Hotel Milano" width="81" height="110"></div>
       <div>
         <h4>Tocq Hotel</h4>
         <span>Via A. De Tocqueville 7/D</span>
@@ -261,9 +268,9 @@
       </div>
       <div>
         <h4>Scrivi o chiama</h4>
-        <a href="#"><span class="todo">+39 02 000 0000</span></a>
-        <a href="#"><span class="todo">info@tocq.it</span></a>
-        <a href="#"><span class="todo">eventi@tocq.it</span></a>
+        <a href="tel:+390262071">+39 02 62071</a>
+        <a href="mailto:info@tocq.it">info@tocq.it</a>
+        <a href="mailto:mice@tocq.it">mice@tocq.it</a>
       </div>
       <div>
         <h4>Soggiorna</h4>
@@ -280,7 +287,7 @@
       </div>
     </div>
     <div class="footer__base">
-      <span>© 2026 Tocq Hotel · P.IVA <span class="todo">00000000000</span></span>
+      <span>© 2026 Tocq Hotel · Fattore Italia srl · P.IVA 08581970962</span>
       <span>Privacy · Cookie</span>
     </div>
   </div>

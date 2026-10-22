@@ -8,7 +8,9 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Futura Std (brand book) va servito con licenza web in produzione; nella bozza il sostituto è Jost -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/img/simbolo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -17,7 +19,7 @@
 
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="index.html">TOCQ<small>PORTA GARIBALDI · MILANO</small></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale.svg" alt="Tocq Hotel Milano" width="92" height="44"></a>
     <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
     <nav class="nav" id="nav">
       <a href="camere.html">Soggiorna</a>
@@ -58,16 +60,18 @@
         <table class="data" id="dest">
           <thead><tr><th>Destinazione</th><th>Perché ci vai</th><th>Come</th><th>Tempo</th></tr></thead>
           <tbody>
-            <tr data-tags="lavoro"><td>Porta Nuova · Gae Aulenti · Isola</td><td>Uffici e sedi aziendali</td><td>A piedi</td><td class="n"><span class="todo">8 min</span></td></tr>
-            <tr data-tags="partire lavoro"><td>Stazione di Porta Garibaldi</td><td>Treni regionali, passante, alta velocità</td><td>A piedi, 350 m</td><td class="n">5 min</td></tr>
-            <tr data-tags="partire"><td>Malpensa</td><td>Voli, anche all'alba</td><td>Malpensa Express da Garibaldi</td><td class="n"><span class="todo">45 min</span></td></tr>
-            <tr data-tags="partire"><td>Linate</td><td>Voli nazionali ed europei</td><td>Metro <span class="todo">M4</span> o taxi</td><td class="n"><span class="todo">25 min</span></td></tr>
+            <tr data-tags="lavoro"><td>Piazza Gae Aulenti · Porta Nuova</td><td>Uffici e sedi aziendali</td><td>A piedi, 70 m</td><td class="n">1 min</td></tr>
+            <tr data-tags="partire lavoro"><td>Stazione di Porta Garibaldi</td><td>Treni regionali, passante, alta velocità</td><td>A piedi, 200 m</td><td class="n">3 min</td></tr>
+            <tr data-tags="partire"><td>Milano Centrale</td><td>Alta velocità, aeroporti</td><td>1,5 km · metro <span class="todo">M2</span> o a piedi</td><td class="n"><span class="todo">10 min</span></td></tr>
+            <tr data-tags="partire"><td>Malpensa · 49 km</td><td>Voli, anche all'alba</td><td>Malpensa Express da Garibaldi</td><td class="n"><span class="todo">45 min</span></td></tr>
+            <tr data-tags="partire"><td>Linate · 9 km</td><td>Voli nazionali ed europei</td><td>Metro <span class="todo">M4</span> o taxi</td><td class="n"><span class="todo">25 min</span></td></tr>
             <tr data-tags="lavoro eventi"><td>Fiera Milano Rho</td><td>Fiere e saloni</td><td>Treno o metro da Garibaldi</td><td class="n"><span class="todo">25 min</span></td></tr>
             <tr data-tags="lavoro eventi"><td>Allianz MiCo</td><td>Congressi</td><td>Metro <span class="todo">M5</span></td><td class="n"><span class="todo">20 min</span></td></tr>
             <tr data-tags="eventi"><td>Stadio di San Siro · Ippodromo</td><td>Partite e concerti</td><td>Metro lilla M5</td><td class="n"><span class="todo">20 min</span></td></tr>
             <tr data-tags="eventi"><td>Autodromo di Monza</td><td>Gran Premio di F1</td><td>Treno da Garibaldi</td><td class="n"><span class="todo">30 min</span></td></tr>
-            <tr data-tags="libero"><td>Corso Como · Isola</td><td>Cena, aperitivo</td><td>A piedi</td><td class="n"><span class="todo">2 min</span></td></tr>
-            <tr data-tags="libero"><td>Duomo e centro storico</td><td>Tempo libero</td><td>Metro, o a piedi</td><td class="n"><span class="todo">15 min</span> · 20–30 a piedi</td></tr>
+            <tr data-tags="libero"><td>Corso Como</td><td>Cena, aperitivo</td><td>A piedi, 50 m</td><td class="n">1 min</td></tr>
+            <tr data-tags="libero"><td>Bosco Verticale · Biblioteca degli Alberi</td><td>Una passeggiata prima di cena</td><td>A piedi, 100 m</td><td class="n">2 min</td></tr>
+            <tr data-tags="libero"><td>Duomo e centro storico</td><td>Tempo libero</td><td>2,5 km · metro, o a piedi</td><td class="n"><span class="todo">15 min</span> · 20–30 a piedi</td></tr>
           </tbody>
         </table>
       </div>
@@ -91,7 +95,7 @@
     <div class="wrap split">
       <div>
         <p class="kicker">Detto prima</p>
-        <h2>Il centro storico è a mezz'ora a piedi.</h2>
+        <h2>Il Duomo è a 2,5 km.</h2>
       </div>
       <div>
         <p>Siamo a Porta Garibaldi, non in Piazza Duomo. Se vieni a Milano per il centro storico, ci sono hotel più vicini. Se vieni per lavorare, per una fiera, per un treno presto o un concerto a San Siro, sei già dove devi essere.</p>
@@ -103,9 +107,11 @@
 
 </main>
 
+<div class="pattern pattern--salmone" aria-hidden="true"></div>
 <footer class="footer">
   <div class="wrap">
-    <div class="grid-4">
+    <div class="footer__grid">
+      <div class="footer__logo"><img src="assets/img/logo-verticale-neg.svg" alt="Tocq Hotel Milano" width="81" height="110"></div>
       <div>
         <h4>Tocq Hotel</h4>
         <span>Via A. De Tocqueville 7/D</span>
@@ -114,9 +120,9 @@
       </div>
       <div>
         <h4>Scrivi o chiama</h4>
-        <a href="#"><span class="todo">+39 02 000 0000</span></a>
-        <a href="#"><span class="todo">info@tocq.it</span></a>
-        <a href="#"><span class="todo">eventi@tocq.it</span></a>
+        <a href="tel:+390262071">+39 02 62071</a>
+        <a href="mailto:info@tocq.it">info@tocq.it</a>
+        <a href="mailto:mice@tocq.it">mice@tocq.it</a>
       </div>
       <div>
         <h4>Soggiorna</h4>
@@ -133,7 +139,7 @@
       </div>
     </div>
     <div class="footer__base">
-      <span>© 2026 Tocq Hotel · P.IVA <span class="todo">00000000000</span></span>
+      <span>© 2026 Tocq Hotel · Fattore Italia srl · P.IVA 08581970962</span>
       <span>Privacy · Cookie</span>
     </div>
   </div>

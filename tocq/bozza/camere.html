@@ -8,7 +8,9 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Futura Std (brand book) va servito con licenza web in produzione; nella bozza il sostituto è Jost -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/img/simbolo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -17,7 +19,7 @@
 
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="index.html">TOCQ<small>PORTA GARIBALDI · MILANO</small></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale.svg" alt="Tocq Hotel Milano" width="92" height="44"></a>
     <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
     <nav class="nav" id="nav">
       <a href="camere.html" aria-current="page">Soggiorna</a>
@@ -51,26 +53,27 @@
   <section class="section">
     <div class="wrap">
       <p class="kicker">Le camere</p>
-      <h2 class="mb-32">Quattro tipologie, la stessa notte.</h2>
+      <h2>133 camere, quattro tipologie, la stessa notte.</h2>
+      <p class="lead mb-32">Insonorizzate, rifatte nel 2021. In tutte: wifi veloce, smart TV 55", minibar, cassaforte, bollitore per caffè e tè.</p>
       <div class="grid-4">
         <article class="card card--path">
           <div class="photo"><span>Foto · Comfort</span></div>
-          <div class="card__body"><h3><span class="todo todo--quiet">Comfort</span></h3><p class="muted small mono">≈ <span class="todo todo--quiet">18 m²</span> · matrimoniale o due letti</p><p class="small">Per una o due notti di lavoro.</p></div>
+          <div class="card__body"><h3>Comfort</h3><p class="muted small mono">14 camere · <span class="todo todo--quiet">m²</span></p><p class="small">Per una o due notti di lavoro.</p></div>
         </article>
         <article class="card card--path">
           <div class="photo"><span>Foto · Superior con scrivania</span></div>
-          <div class="card__body"><h3><span class="todo todo--quiet">Superior</span></h3><p class="muted small mono">≈ <span class="todo todo--quiet">22 m²</span> · scrivania ampia</p><p class="small">La più prenotata da chi resta da lunedì a giovedì.</p></div>
+          <div class="card__body"><h3>Superior</h3><p class="muted small mono">63 camere · <span class="todo todo--quiet">m²</span></p><p class="small">La più prenotata da chi resta da lunedì a giovedì.</p></div>
         </article>
         <article class="card card--path">
-          <div class="photo"><span>Foto · Deluxe, vista torri</span></div>
-          <div class="card__body"><h3><span class="todo todo--quiet">Deluxe</span></h3><p class="muted small mono">≈ <span class="todo todo--quiet">26 m²</span> · piani alti</p><p class="small">Più spazio e i piani più tranquilli.</p></div>
+          <div class="photo"><span>Foto · Executive, vista torri</span></div>
+          <div class="card__body"><h3>Executive</h3><p class="muted small mono">35 camere · <span class="todo todo--quiet">m²</span></p><p class="small">Più spazio per lavorare in camera.</p></div>
         </article>
         <article class="card card--path">
-          <div class="photo"><span>Foto · Suite, zona giorno</span></div>
-          <div class="card__body"><h3><span class="todo todo--quiet">Suite</span></h3><p class="muted small mono">≈ <span class="todo todo--quiet">40 m²</span> · zona giorno</p><p class="small">Per ricevere qualcuno senza scendere in hall.</p></div>
+          <div class="photo"><span>Foto · Junior Suite, zona giorno</span></div>
+          <div class="card__body"><h3>Junior Suite</h3><p class="muted small mono">21 suite · <span class="todo todo--quiet">m²</span></p><p class="small">Per ricevere qualcuno senza scendere in hall.</p></div>
         </article>
       </div>
-      <p class="note"><b>Da confermare</b>Nomi delle tipologie, metrature, quante camere per tipologia danno sulla corte e quante su Via Tocqueville (PROGETTO.md §13, punto 4).</p>
+      <p class="note"><b>Da confermare</b>Tipologie e numeri dal factsheet 2025. Mancano metrature, letti, e quante camere per tipologia danno sulla corte e quante su Via Tocqueville (PROGETTO.md §13, punto 4). Le Smart Working Suite del factsheet vanno collocate in una tipologia.</p>
     </div>
   </section>
 
@@ -151,6 +154,7 @@
         <p class="kicker">Colazione</p>
         <h2>La giornata comincia da persona, non da numero di camera.</h2>
         <p>Rosetta coordina la sala dal 2021. Con lei Maria, Marco e Giorgio.</p>
+        <p class="muted">Buffet italiano e internazionale, con una selezione orientale, halal, senza glutine e vegana.</p>
         <p class="muted">Aperta anche a chi non dorme qui: <b>16 €</b>. Un ospite di TripAdvisor ci è venuto apposta e l'ha paragonata a quella di un cinque stelle.</p>
       </div>
       <div>
@@ -208,9 +212,11 @@
 
 </main>
 
+<div class="pattern pattern--salmone" aria-hidden="true"></div>
 <footer class="footer">
   <div class="wrap">
-    <div class="grid-4">
+    <div class="footer__grid">
+      <div class="footer__logo"><img src="assets/img/logo-verticale-neg.svg" alt="Tocq Hotel Milano" width="81" height="110"></div>
       <div>
         <h4>Tocq Hotel</h4>
         <span>Via A. De Tocqueville 7/D</span>
@@ -219,9 +225,9 @@
       </div>
       <div>
         <h4>Scrivi o chiama</h4>
-        <a href="#"><span class="todo">+39 02 000 0000</span></a>
-        <a href="#"><span class="todo">info@tocq.it</span></a>
-        <a href="#"><span class="todo">eventi@tocq.it</span></a>
+        <a href="tel:+390262071">+39 02 62071</a>
+        <a href="mailto:info@tocq.it">info@tocq.it</a>
+        <a href="mailto:mice@tocq.it">mice@tocq.it</a>
       </div>
       <div>
         <h4>Soggiorna</h4>
@@ -238,7 +244,7 @@
       </div>
     </div>
     <div class="footer__base">
-      <span>© 2026 Tocq Hotel · P.IVA <span class="todo">00000000000</span></span>
+      <span>© 2026 Tocq Hotel · Fattore Italia srl · P.IVA 08581970962</span>
       <span>Privacy · Cookie</span>
     </div>
   </div>

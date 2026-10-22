@@ -3,6 +3,8 @@
 Fonte: *Analisi di posizionamento, Hotel Positioning OS v7*, ottobre 2026 (3.297 recensioni contate, 1.805 lette per intero, report OTB 2026, sei concorrenti).
 Questo documento traduce l'analisi in un progetto di sito: concept, obiettivi, alberatura, contenuti pagina per pagina, funzioni, tono, misure, fasi e domande aperte.
 La bozza navigabile è in `bozza/` (si apre `bozza/index.html` nel browser, senza build).
+La bozza applica il Brand Book Tocq v1.0 (2018): le regole sono in `BRAND.md`.
+I dati dell'hotel vengono dal factsheet 2025 e dalla presentazione MICE (rev. 2), cartella Drive del cliente.
 
 ---
 
@@ -27,7 +29,9 @@ Il sito di oggi racconta un'altra fase: "rifugio urbano", "Milano Centro" nei ti
 - **Le tre parole (filtro interno):** Base a Garibaldi. Ogni contenuto passa da qui. "Milano romantica con giro in centro"? No. L'orario del Malpensa Express? Sì.
 - **La categoria:** non "hotel 4 stelle Milano centro", ma *la base per chi è a Milano per fare qualcosa*.
 - **Il motivo per prenotare diretto:** *Su Booking prenoti una camera. Qui scegli il cuscino, il materasso e il lato da cui dormi.* Accesso e scelta, non sconto.
-- **La combinazione che solo il Tocq ha:** camera nuova e grande, a piedi dal treno, sei sale sotto le camere, una squadra di colazione che ti chiama per nome.
+- **La combinazione che solo il Tocq ha:** camera nuova e grande, a piedi dal treno, sei sale nello stesso edificio delle camere, una squadra di colazione che ti chiama per nome.
+
+> **Correzione rispetto all'analisi.** L'analisi parla di "sei sale fino a 200 persone" e di "circa 350 metri" dalla stazione. I materiali dell'hotel dicono altro: la sala più grande (Duomo) ospita **100 persone a platea** (260 posti a platea in tutto, sulle sei sale) e la stazione di Porta Garibaldi è a **200 metri**. La bozza usa i dati dell'hotel. Da verificare con la direzione se esiste una configurazione da 200 (sale unite, terrazza, Veranda).
 
 ## 3. I tre compiti del sito, in quest'ordine
 
@@ -196,7 +200,7 @@ Nella bozza queste mosse compaiono già come promesse: sono segnate *da conferma
 |---|---|---|
 | 0 · Raccolta | Risposte alle domande aperte (§13), brand book, foto, piantine sale, accesso al booking engine | 2 settimane |
 | 1 · Bozza approvata | Questa bozza, rivista con la direzione: testi, struttura, segnaposto chiusi | 1–2 settimane |
-| 2 · Design | Applicazione del brand book Tocq (la bozza usa una palette provvisoria), shooting mirato (lista foto nei segnaposto) | 3 settimane |
+| 2 · Design | Brand book già applicato alla bozza (`BRAND.md`); restano licenza Futura web, lettering, scelta delle foto dall'archivio e shooting mirato (lista foto nei segnaposto) | 2–3 settimane |
 | 3 · Sviluppo fase 1 | Home, camere + booking, meeting + preventivo + download, posizione, contatti. IT + EN | 4 settimane |
 | 4 · Lancio e misura | Tracciamento, CRM, richiesta recensioni | 1 settimana |
 | 5 · Fase 2 | Pagine destinazione, business travel, eventi ospitati, altre lingue, tour sale | nei mesi successivi |
@@ -207,15 +211,31 @@ Momento consigliato per il lancio: prima della stagione fiere di gennaio–febbr
 
 Ogni segnaposto tratteggiato nella bozza rimanda a una di queste.
 
-1. **Distanze e linee:** metri e minuti a piedi dal binario di Porta Garibaldi; linee metro da confermare (M2, M5); tempi per Malpensa, Linate, Rho Fiera, MiCo, San Siro, Monza.
-2. **Le sei sale:** nomi attuali (nel brand book: Duomo, La Scala, Brera, Arena, Castello; nota: una sala chiamata "Duomo" contraddice il "non vendiamo il Duomo", valutare), capienze per allestimento, mq, luce naturale, planimetrie.
+**Già chiuse dai materiali dell'hotel** (factsheet 2025, presentazione MICE rev. 2):
+- camere: 133, di cui 14 Comfort, 63 Superior, 35 Executive, 21 Junior Suite;
+- sale: Duomo, Scala, Brera, Porta Nuova, Castello, Arena, con capienze per allestimento, misure e m² (in `bozza/meeting.html`);
+- distanze: stazione Garibaldi 200 m, Gae Aulenti 70 m, Corso Como 50 m, Bosco Verticale 100 m, Centrale 1,5 km, Duomo 2,5 km, Linate 9 km, Malpensa 49 km;
+- contatti: +39 02 62071, info@tocq.it, mice@tocq.it; società: Fattore Italia srl, P.IVA 08581970962;
+- colazione: buffet italiano e internazionale con selezione orientale, halal, senza glutine e vegana.
+
+**Incoerenze fra i materiali dell'hotel e il posizionamento** (da decidere con la direzione):
+- factsheet e presentazione MICE usano proprio il lessico da abbandonare: "urban retreat", "in the heart of Corso Como", "trendiest district", "refined", "experience". Vanno riscritti insieme al sito;
+- il factsheet elenca l'aria condizionata fra le dotazioni senza limiti: è il tema di 23 recensioni Booking (mossa 2);
+- il factsheet cita ristorante Clorofilla, Veranda, terrazza, Smart Working Suite, Virgin Active vicino, hotel pet-friendly: da decidere cosa entra nel sito e dove (Smart Working Suite e terrazza servono al percorso business e MICE).
+
+**Ancora aperte:**
+
+1. **Tempi e linee:** linee metro da Garibaldi (M2, M5); tempi per Malpensa, Linate, Rho Fiera, MiCo, San Siro, Monza, Duomo in metro.
+2. **Le sei sale:** planimetrie e foto per sala; luce naturale; se esiste una configurazione oltre i 100 posti. Valutare il nome "Duomo" per la sala principale, che contraddice il "non vendiamo il Duomo".
 3. **Tempo di risposta ai preventivi** che il commerciale può garantire (la bozza dice 24 ore lavorative).
-4. **Tipologie di camera:** nomi, metrature, quante danno sulla corte e quante su Via Tocqueville, quali sono sotto i motori del tetto.
+4. **Tipologie di camera:** metrature e letti; quante danno sulla corte e quante su Via Tocqueville; quali sono sotto i motori del tetto; cosa sono le Smart Working Suite.
 5. **Menu cuscini e materassi:** opzioni attuali, e se il booking engine può raccoglierle come servizi.
 6. **Colazione:** orari in settimana e nel weekend, orario minimo per quella da asporto, prezzo per esterni (16 € è il dato dalle recensioni).
 7. **La squadra:** chi c'è oggi, e chi è d'accordo a comparire per nome sul sito (Rosetta, Maria, Marco, Giorgio, Oliver, Andrea).
 8. **Il clima:** la regola dell'aria (impianto o Green Key?) e la frase unica da usare.
 9. **Borraccia Tocq:** è mai stata prodotta?
 10. **Eventi ospitati citabili** (convegni, aziende, Giochi 2026) e relative autorizzazioni.
-11. **Telefono, email, orari del commerciale MICE** e del ricevimento.
+11. **Nome e orari del commerciale MICE**; email per gli accordi aziendali.
 12. **Booking engine e CRM in uso**, per collegare form e tracciamento.
+13. **Brand:** file del lettering proprietario (font o tracciati vettoriali); licenza web di Futura Std; marchio in positivo in formato vettoriale originale (in cartella c'è solo il negativo); pittogrammi in vettoriale. Dettagli in `BRAND.md`.
+14. **Foto:** quali scatti dell'archivio (cartelle "Tocq Hotel Photos & Videos", "Foto Sale Costantino", "Per Mission") sono approvati per il web.
