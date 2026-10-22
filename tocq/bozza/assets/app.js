@@ -1,12 +1,21 @@
 // Tocq · bozza. Solo comportamento dimostrativo: nessun dato viene inviato.
 
-// Menu mobile
+// Menu mobile: si apre a tutto schermo, le voci entrano una dopo l'altra; si chiude con Esc o scegliendo una voce
 document.querySelectorAll('.nav-toggle').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var nav = document.getElementById(btn.getAttribute('aria-controls'));
-    var open = nav.classList.toggle('is-open');
+  var nav = document.getElementById(btn.getAttribute('aria-controls'));
+  var testo = btn.querySelector('.nav-toggle__testo');
+  [].forEach.call(nav.children, function (el, i) { el.style.setProperty('--i', i); });
+  function imposta(open) {
+    nav.classList.toggle('is-open', open);
+    document.documentElement.classList.toggle('menu-aperto', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+    if (testo) testo.textContent = btn.getAttribute(open ? 'data-chiudi' : 'data-apri');
+    if (open) traccia('menu_aperto', {});
+  }
+  btn.addEventListener('click', function () { imposta(!nav.classList.contains('is-open')); });
+  nav.addEventListener('click', function (e) { var a = e.target.closest('a[href]'); if (a && nav.classList.contains('is-open')) imposta(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('is-open')) { imposta(false); btn.focus(); } });
+  window.addEventListener('resize', function () { if (window.innerWidth > 920 && nav.classList.contains('is-open')) imposta(false); });
 });
 
 // Orologio del tabellone

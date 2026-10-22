@@ -46,6 +46,7 @@ UI = {"it": {
     "salta": "Vai al contenuto",
     "logo_alt": "Tocq Hotel Milano, home",
     "menu": "Menu",
+    "chiudi": "Chiudi",
     "nav_aria": "Principale",
     "nav_camere": "Camere",
     "nav_meeting": "Meeting ed eventi",

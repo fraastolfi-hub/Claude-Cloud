@@ -360,9 +360,10 @@ def header(key, codice="it"):
 <header class="header">
   <div class="wrap">
     <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale-neg.svg" alt="{t['logo_alt']}" width="92" height="44"></a>
-    <button class="nav-toggle" aria-controls="nav" aria-expanded="false">{t['menu']}</button>
+    <button class="nav-toggle" aria-controls="nav" aria-expanded="false" data-apri="{t['menu']}" data-chiudi="{t['chiudi']}"><span class="nav-toggle__icona" aria-hidden="true"><i></i><i></i></span><span class="nav-toggle__testo">{t['menu']}</span></button>
     <nav class="nav" id="nav" aria-label="{t['nav_aria']}">
 {links}
+      <a class="nav__tel" href="tel:{FATTI['tel_href']}">{FATTI['telefono']}<small>{t['f_reception']}</small></a>
       {selettore_lingue(key, codice, t)}
       <a class="btn btn--primary btn--small" href="{prenota_url(codice)}" target="_blank" rel="noopener" data-prenota>{t['prenota']}</a>
     </nav>
