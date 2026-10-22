@@ -114,22 +114,13 @@ if ('IntersectionObserver' in window && !riduci) {
   });
 }
 
-// Barra mobile: compare quando i bottoni dell'hero escono dallo schermo, sparisce sopra i form e il footer
+// Barra mobile: Prenota e Chiama sempre in fondo allo schermo; si toglie solo mentre si scrive in un campo,
+// perché la tastiera la spingerebbe sopra il form
 var barra = document.querySelector('.sticky-cta');
-if (barra && 'IntersectionObserver' in window) {
-  var bloccanti = new Set();
-  var primoCta = document.querySelector('.hero .btns');
-  // i bottoni dell'hero contano finché non sono passati sopra lo schermo (controllo sullo scroll:
-  // regge anche i salti diretti alle ancore, che un IntersectionObserver non sempre vede)
-  function heroVisibile() { return !!primoCta && primoCta.getBoundingClientRect().bottom > 0; }
-  function aggiornaBarra() { barra.classList.toggle('is-visible', !heroVisibile() && bloccanti.size === 0); }
-  window.addEventListener('scroll', aggiornaBarra, { passive: true });
-  var oss = new IntersectionObserver(function (voci) {
-    voci.forEach(function (v) { if (v.isIntersecting) bloccanti.add(v.target); else bloccanti.delete(v.target); });
-    aggiornaBarra();
-  });
-  document.querySelectorAll('main form, .footer').forEach(function (el) { oss.observe(el); });
-  aggiornaBarra();
+if (barra) {
+  barra.classList.add('is-visible');
+  document.addEventListener('focusin', function (e) { if (e.target.matches('input, textarea, select')) barra.classList.remove('is-visible'); });
+  document.addEventListener('focusout', function () { barra.classList.add('is-visible'); });
 }
 
 // Configuratore: il valore appena cambiato si accende un istante, per dire "ricevuto"
@@ -155,6 +146,7 @@ document.addEventListener('click', function (e) {
   if (!a) return;
   var h = a.getAttribute('href') || '';
   if (h.indexOf('tel:') === 0) traccia('chiamata_reception');
+  else if (a.hasAttribute('data-chiama')) traccia('clic_chiama', { da: 'barra_mobile' });
   else if (a.hasAttribute('data-prenota') || h.indexOf('#prenota') > -1) traccia('clic_prenota', { da: a.closest('section, header, .sticky-cta') ? (a.closest('section, header, .sticky-cta').id || a.closest('section, header, .sticky-cta').className.split(' ')[0]) : '' });
   else if (h.indexOf('#preventivo') > -1) traccia('clic_preventivo');
   else if (h.indexOf('google.com/maps') > -1) traccia('tragitto_aperto');
@@ -178,13 +170,6 @@ if (bivio) {
       else postoSoggiorno.parentNode.insertBefore(sale, postoSoggiorno);
     }
     document.querySelectorAll('[data-percorso]').forEach(function (c) { c.setAttribute('data-attivo', c.getAttribute('data-percorso') === v ? 'true' : 'false'); });
-    var barraM = document.querySelector('.sticky-cta');
-    if (barraM) {
-      var prenota = barraM.querySelector('a[data-prenota]');
-      var prev = barraM.querySelector('a[href*="#preventivo"]');
-      if (v === 'evento') { barraM.insertBefore(prev, prenota); prev.className = 'btn btn--primary'; prenota.className = 'btn'; }
-      else { barraM.insertBefore(prenota, prev); prenota.className = 'btn btn--primary'; prev.className = 'btn'; }
-    }
     try { localStorage.setItem('tocq-intento', v); } catch (e) {}
     if (daUtente) traccia('intenzione_scelta', { intenzione: v });
   }

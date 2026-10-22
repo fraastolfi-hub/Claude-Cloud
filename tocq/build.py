@@ -291,6 +291,7 @@ def head(key, faq, codice="it"):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
   <title>{p['title']}</title>
   <meta name="description" content="{p['description']}">
   <!-- BOZZA: togliere noindex al lancio -->
@@ -418,7 +419,7 @@ def footer(codice="it"):
 
 <div class="sticky-cta" aria-label="{t['cta_aria']}">
   <a class="btn btn--primary" href="{pren}" target="_blank" rel="noopener" data-prenota>{t['prenota']}</a>
-  <a class="btn" href="meeting.html#preventivo" aria-label="{t['cta_preventivo_aria']}">{t['cta_preventivo']}</a>
+  <a class="btn btn--chiama" href="tel:{f['tel_href']}" aria-label="{t['cta_chiama_aria']}" data-chiama><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>{t['cta_chiama']}</a>
 </div>
 
 <script src="assets/app.js"></script>

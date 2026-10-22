@@ -1159,3 +1159,16 @@ html:lang(zh-Hans) { --sans: var(--sans-zh); }
 .lingue__menu li { text-align: start; }
 .nav .lingue__menu a:not(.btn), .lingue__menu span { text-align: left; }
 html[dir="rtl"] .nav .lingue__menu a:not(.btn), html[dir="rtl"] .lingue__menu span { text-align: right; }
+
+/* Barra mobile Prenota + Chiama, sempre visibile */
+@media (max-width: 760px) {
+  .sticky-cta { grid-template-columns: 1.4fr 1fr; }
+  .sticky-cta .btn--chiama { gap: 8px; color: #f3efe9; border-color: rgba(243,239,233,.5); }
+  .sticky-cta .btn--chiama svg { flex: none; }
+}
+/* Safari su iPhone colora di blu bottoni e sommari se non hanno uno stile completo */
+button, summary { -webkit-appearance: none; appearance: none; -webkit-tap-highlight-color: transparent; }
+a { -webkit-tap-highlight-color: rgba(210,162,117,.25); }
+.nav-toggle, .tema-notte .nav-toggle { color: #f3efe9; -webkit-text-fill-color: #f3efe9; background: transparent; border: 1px solid rgba(243,239,233,.6); border-radius: 0; }
+.tema-notte .nav a:not(.btn), .tema-notte .lingue summary { -webkit-text-fill-color: currentColor; }
+a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; }

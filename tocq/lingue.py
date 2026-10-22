@@ -75,8 +75,8 @@ UI = {"it": {
     "f_piva": "P.IVA",
     "f_bozza": "Bozza di lavoro a cura di Francesco Astolfi · non è il sito ufficiale · aggiornata il 22 ottobre 2026",
     "cta_aria": "Azioni rapide",
-    "cta_preventivo": "Preventivo",
-    "cta_preventivo_aria": "Richiedi un preventivo per un evento",
+    "cta_chiama": "Chiama",
+    "cta_chiama_aria": "Chiama la reception, risponde 24 ore su 24",
 }}
 
 
