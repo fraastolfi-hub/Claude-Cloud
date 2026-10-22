@@ -1044,3 +1044,8 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 .radar__punto--fisso text { opacity: .75; font-size: 13px; fill: #cfcbc5; }
 .radar__punto--fisso.is-attivo text, .radar__punto--fisso:hover text { opacity: 1; fill: #fff; font-size: 15px; }
 .radar__minuti { font-size: 13px; }
+
+/* Hero: il blocco di testo occupa tutta la larghezza del contenitore, così titolo, testo e barra partono dallo stesso margine */
+.hero-full__testo { width: 100%; justify-self: stretch; }
+/* correzione ottica: le lettere grandi hanno uno spazio interno a sinistra che le fa sembrare rientrate */
+.hero-full h1 { margin-left: -0.045em; }
