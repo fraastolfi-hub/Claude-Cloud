@@ -175,6 +175,49 @@ Tre eventi tracciati (GA4 o equivalente), tutti con la fonte di provenienza:
 Più due secondari: `richiesta_tariffa_aziendale`, `uso_configuratore`.
 Base di partenza: 434 notti da sito e app nel 2026. Gli obiettivi si fissano con il revenue.
 
+## 9 bis. SEO e GEO: cosa c'è già nella bozza
+
+**Una sola fonte dei fatti.** `build.py` contiene indirizzo, telefono, numeri di camere e sale e distanze una volta sola, e li scrive in pagine, dati strutturati e `llms.txt`. Google e gli assistenti AI (ChatGPT, Perplexity, Gemini, Claude) premiano i dati coerenti e ripetuti in modo identico.
+
+| Elemento | Dove |
+|---|---|
+| Title ≤ 60 caratteri e description ≤ 155, uno per pagina, costruiti sulle ricerche dei CEP ("hotel vicino stazione Garibaldi", "sale meeting Porta Nuova") | head di ogni pagina |
+| URL definitivi, canonical, hreflang it/en/x-default | `/`, `/camere/`, `/meeting-eventi/`, `/posizione/`, `/contatti/` |
+| Open Graph e Twitter card, immagine 1200×630 | `assets/img/foto/tocq-hotel-milano-og.jpg` |
+| Dati strutturati JSON-LD in un unico grafo: Hotel (geo, stelle, 133 camere, servizi, animali ammessi), WebPage, BreadcrumbList, FAQPage, 4 HotelRoom, 6 MeetingRoom con m² e capienza | head di ogni pagina |
+| Blocco "In breve": i fatti in forma di elenco, la forma che gli assistenti AI citano più volentieri | home, camere, meeting, posizione |
+| FAQ visibili scritte come le domande vere (29 in tutto), riprese uguali in FAQPage | fondo di ogni pagina |
+| Tabelle HTML per distanze, sale e confronti | posizione, meeting, home |
+| Un solo H1 per pagina, gerarchia dei titoli corretta, salto al contenuto, testi alternativi descrittivi su tutte le immagini | tutte |
+| Immagini WebP a 800 e 1600 px con srcset, dimensioni dichiarate, caricamento differito, nomi file descrittivi | `assets/img/foto/` |
+| `sitemap.xml` con hreflang, `robots.txt` che ammette i crawler AI, `llms.txt` con la scheda dell'hotel | `bozza/` |
+| Data di aggiornamento visibile e in `dateModified` | footer e dati strutturati |
+
+**Al lancio:** togliere `noindex` dall'head (è in `build.py`); verificare le coordinate su Google Maps; aggiornare la scheda Google Business Profile con le stesse identiche parole (nome, indirizzo, telefono, categoria "Hotel", servizi, foto); pubblicare la versione inglese con gli stessi dati; validare i dati strutturati con il Rich Results Test di Google.
+
+**Nota sulle valutazioni:** i voti di Expedia, Booking e Google compaiono nel testo con la fonte, ma non come `aggregateRating` nei dati strutturati: Google non accetta recensioni di terzi segnate dall'hotel stesso.
+
+## 9 ter. Elementi persuasivi
+
+Tutti costruiti su fatti veri; dove il fatto dipende da una decisione della direzione, è segnato "da confermare".
+
+- **Prova sociale accanto ai bottoni:** 8,8/10 su Expedia (973 recensioni), 4,60/5 dei viaggiatori d'affari su Google, 8,98 su pulizia e comfort.
+- **Confronto "agenzia online / tocq.it":** il motivo per prenotare diretto in sei righe (camera, cuscino, colazione all'alba, arrivo, prezzo, chi risponde).
+- **Confronto per chi organizza:** centro congressi, hotel di catena in stazione, Tocq.
+- **Processo MICE in 4 passi**, con una persona sola dalla richiesta al check-out: abbassa l'attrito di chi deve chiedere un preventivo.
+- **Impegno piccolo prima di quello grande:** il configuratore della notte prima delle date.
+- **Onestà che crea fiducia:** "Detto prima" (il Duomo a 2,5 km, le regole della casa).
+- **Citazioni vere vicino alle decisioni:** "C'era il menù cuscini, quindi colpa mia a non averli richiesti" accanto al form di prenotazione.
+- **Barra fissa su mobile** con Prenota e Preventivo evento.
+- Niente scarsità finta, niente conti alla rovescia: non sono nel carattere del Custode e danneggiano la fiducia.
+
+## 9 quater. Foto
+
+Inserite 15 foto dalla cartella Drive del cliente: 9 camere (shooting 2021), 4 piatti, 2 del quartiere. Mancano:
+- **sale meeting, hall, bar, colazione a buffet, squadra, esterno:** le foto ci sono nel Drive ("Tocq Hotel Photos & Videos", serie TEAM, HALL, BREAKFAST, BAR, e le cartelle delle sale), ma il connettore Drive non scarica file sopra i 6 MB circa. Servono copie esportate più piccole (lato lungo 2500 px) o un download manuale;
+- **licenza** delle foto del quartiere (Porta Nuova, Bosco Verticale): sembrano foto stock, da verificare;
+- **abbinamento** fra la serie 2021 (Cozy, Stylish, Roomy, Snuggle) e le tipologie attuali (Comfort, Superior, Executive, Junior Suite).
+
 ## 10. Prima del sito: rendere vero, prima di dirlo
 
 Il sito promette la notte. Le cinque mosse del capitolo 10 vanno avviate prima o insieme al lancio, altrimenti il sito accelera le recensioni negative:
