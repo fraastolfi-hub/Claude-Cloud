@@ -886,3 +886,69 @@ main p a:hover, main dd a:hover, .faq__item a:hover, .board__foot a:hover { text
 .recensioni-live__riserva .quote p { font-size: 18px; }
 .recensioni-live.is-live .recensioni-live__riserva { display: none; }
 @media (max-width: 860px) { .recensioni-live__riserva { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   Tema notte: il nero è il colore dominante
+   I ruoli si invertono su tutto il sito (fondo scuro, testo chiaro) e tornano
+   ai valori originali dentro le sezioni che erano già nere, così nessun
+   componente finisce con testo nero su fondo nero.
+   ========================================================================== */
+.tema-notte {
+  --bianco: #0c0c0c;          /* superficie */
+  --nero: #f3efe9;            /* inchiostro: bianco caldo */
+  --nero-80: #cfcbc5;
+  --nero-50: #8f8b85;
+  --nero-20: #2b2a28;
+  --paper: #0c0c0c;
+  --paper-2: #141413;
+  --ink: #f3efe9;
+  --ink-2: #b9b5af;
+  --line: #2a2927;
+  --corallo-20: #1b1611;      /* corallo e verde chiari diventano toni scuri caldi e freddi */
+  --corallo-50: #3a2c20;
+  --verde: #a9b8a5;           /* verde usato come testo: più chiaro per leggersi sul nero */
+  --verde-20: #121612;
+  --verde-50: #2c352b;
+  color-scheme: dark;
+}
+.tema-notte :is(.section--dark, .board, .footer, .finale, .config__summary, .hero-full, .band, .section--verde) {
+  --bianco: #ffffff; --nero: #000000; --nero-80: #484848; --nero-50: #939393; --nero-20: #d6d6d6;
+  --paper: #ffffff; --ink: #000000; --ink-2: #484848; --line: #d6d6d6;
+  --corallo-20: #f7ebe0; --corallo-50: #e9cfb4; --verde: #5d6f5d; --verde-20: #dadbd5; --verde-50: #a7ada0;
+}
+/* le sezioni nere restano un nero più profondo della superficie */
+.tema-notte .section--dark, .tema-notte .board, .tema-notte .finale { background-color: #000; }
+.tema-notte .section--verde { background-color: #5d6f5d; }
+
+/* Header scuro con marchio in negativo */
+.tema-notte .header { background: rgba(10, 10, 10, .92); }
+.tema-notte .header.is-scrolled { border-bottom-color: #222; }
+
+/* Bottone principale: corallo, come accento unico sul nero */
+.tema-notte .btn--primary { background: #d2a275; border-color: #d2a275; color: #000; }
+.tema-notte .btn--primary:hover { background: #dbb38e; border-color: #dbb38e; }
+.tema-notte .btn:not(.btn--primary):not(.btn--light):hover { background: #f3efe9; color: #000; }
+
+/* Dettagli che avevano un colore pensato per il chiaro */
+.tema-notte .note { color: #e0b25a; background: rgba(224, 178, 90, .07); border-left-color: #b7791f; }
+.tema-notte .todo { color: #e0b25a; border-color: rgba(224, 178, 90, .5); background: rgba(224, 178, 90, .06); }
+.tema-notte .hero__promises .mono, .tema-notte .card .num, .tema-notte .steps li::before { color: #d2a275; }
+.tema-notte .field select, .tema-notte .finder select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23f3efe9' stroke-width='1.5'/%3E%3C/svg%3E"); }
+.tema-notte .compare--light thead th:last-child { color: #000; }
+.tema-notte .compare--light td:last-child { color: #f3efe9; }
+.tema-notte .card { background: #111110; border-color: #232220; }
+.tema-notte .card--path:hover { border-color: #d2a275; }
+.tema-notte .data tbody tr:hover { background: #17130f; }
+.tema-notte .data tbody tr.is-esclusa td { color: #3d3b38; }
+.tema-notte .photo:not(:has(img)) { background-color: #121612; background-image: url("img/trama-verde.svg"); }
+.tema-notte .photo:not(:has(img)) span { background: #0c0c0c; color: #cfcbc5; }
+.tema-notte ::selection { background: #d2a275; color: #000; }
+.tema-notte .sticky-cta { background: #0c0c0c; border-top-color: #222; }
+.tema-notte .proof b { color: #f3efe9; }
+
+/* Trame dal pattern del brand book, tono su tono, a scala più grande del motivo originale */
+.tema-notte :is(.board, .capitolo--notte, .footer, .section--alt, #domande, .capitolo--ritorno, .finale) { background-image: url("img/trama-nero.svg"); background-size: 142px auto; }
+.tema-notte :is(.capitolo--sera, .strip-section) { background-image: url("img/trama-corallo.svg"); background-size: 142px auto; }
+.tema-notte :is(.capitolo--alba, .inbreve--foto) { background-image: url("img/trama-verde.svg"); background-size: 142px auto; }
+.tema-notte .finale { background-image: url("img/trama-corallo.svg"); }
+.tema-notte .section { border-top-color: #1c1b1a; }

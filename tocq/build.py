@@ -253,7 +253,7 @@ def head(key, faq):
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#0c0c0c">
   <meta name="geo.region" content="IT-MI">
   <meta name="geo.placename" content="Milano, Porta Garibaldi">
   <meta name="geo.position" content="{FATTI['lat']};{FATTI['lng']}">
@@ -267,7 +267,7 @@ def head(key, faq):
 {schema_pagina(key, faq)}
   </script>
 </head>
-<body>
+<body class="tema-notte">
 
 <div class="bozza-bar">BOZZA RISERVATA ALLA DIREZIONE DEL TOCQ HOTEL · non è il sito ufficiale · a cura di Francesco Astolfi · i form non inviano dati · i riquadri tratteggiati sono da confermare</div>
 """
@@ -282,7 +282,7 @@ def header(key):
 <a class="skip" href="#contenuto">Vai al contenuto</a>
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale.svg" alt="Tocq Hotel Milano, home" width="92" height="44"></a>
+    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale-neg.svg" alt="Tocq Hotel Milano, home" width="92" height="44"></a>
     <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
     <nav class="nav" id="nav" aria-label="Principale">
 {links}
