@@ -167,31 +167,6 @@ document.querySelectorAll('form[data-demo]').forEach(function (f) {
   });
 });
 
-// Il bivio: l'intenzione riordina la home e la barra mobile, e resta ricordata per la visita
-var bivio = document.querySelector('.intent');
-if (bivio) {
-  var sale = document.getElementById('sale');
-  var postoEvento = document.getElementById('posto-sale-evento');
-  var postoSoggiorno = document.getElementById('posto-sale-soggiorno');
-  function applicaIntento(v, daUtente) {
-    if (sale && postoEvento && postoSoggiorno) {
-      if (v === 'evento') postoEvento.parentNode.insertBefore(sale, postoEvento);
-      else postoSoggiorno.parentNode.insertBefore(sale, postoSoggiorno);
-    }
-    document.querySelectorAll('[data-percorso]').forEach(function (c) { c.setAttribute('data-attivo', c.getAttribute('data-percorso') === v ? 'true' : 'false'); });
-    try { localStorage.setItem('tocq-intento', v); } catch (e) {}
-    if (daUtente) traccia('intenzione_scelta', { intenzione: v });
-  }
-  var salvato = null;
-  try { salvato = localStorage.getItem('tocq-intento'); } catch (e) {}
-  if (salvato === 'evento' || salvato === 'soggiorno') {
-    var r = bivio.querySelector('input[value="' + salvato + '"]');
-    if (r) r.checked = true;
-    applicaIntento(salvato, false);
-  } else applicaIntento('soggiorno', false);
-  bivio.addEventListener('change', function (e) { applicaIntento(e.target.value, true); });
-}
-
 // Indicatore dell'ora: segue il capitolo più presente nello schermo
 var ora = document.querySelector('.ora-capitolo');
 if (ora && 'IntersectionObserver' in window) {

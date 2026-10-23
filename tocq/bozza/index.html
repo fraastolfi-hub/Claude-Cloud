@@ -265,50 +265,6 @@
     </div>
   </section>
 
-  <!-- CAPITOLO · IL BIVIO: il visitatore dichiara perché è qui, la home si riordina -->
-  <section class="section" id="bivio">
-    <div class="wrap">
-      <p class="kicker">Perché sei a Milano</p>
-      <h2>Due motivi, un indirizzo.</h2>
-      <fieldset class="intent">
-        <legend class="sr-only">Perché sei a Milano</legend>
-        <label><input type="radio" name="intento" value="soggiorno" checked><span>Sono qui per dormire e lavorare</span></label>
-        <label><input type="radio" name="intento" value="evento"><span>Sto organizzando un evento</span></label>
-      </fieldset>
-      <p class="intent__note muted small" aria-live="polite">La pagina mette prima quello che ti serve. Puoi cambiare quando vuoi.</p>
-      <div class="grid-2 mt-32">
-        <article class="card card--path" data-percorso="soggiorno">
-          <figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-camera-scrivania-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-scrivania-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-scrivania-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Camera del Tocq Hotel Milano vista dalla scrivania, con tavolino, due poltrone e letto matrimoniale" width="1600" height="1068" loading="lazy" decoding="async"></figure>
-          <div class="card__body">
-            <span class="num">01 · SOGGIORNA</span>
-            <h3>Una notte vera, prima della giornata che conta.</h3>
-            <ul>
-              <li>133 camere insonorizzate, rifatte nel 2021</li>
-              <li>Cuscino, materasso e lato della camera scelti prenotando</li>
-              <li>Colazione in sala o da portare via</li>
-            </ul>
-            <a class="btn" href="camere.html">Vedi le camere</a>
-          </div>
-        </article>
-        <article class="card card--path" data-percorso="evento">
-          <figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-pranzo-di-lavoro-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-pranzo-di-lavoro-800.webp 800w, assets/img/foto/tocq-hotel-milano-pranzo-di-lavoro-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Tagliatelle ai funghi e vino bianco, pranzo di lavoro servito al Tocq Hotel Milano" width="1600" height="2133" loading="lazy" decoding="async"><figcaption>Pranzi di lavoro e cene su richiesta</figcaption></figure>
-          <div class="card__body">
-            <span class="num">02 · MEETING ED EVENTI</span>
-            <h3>La riunione e il letto nello stesso edificio.</h3>
-            <ul>
-              <li>Sei sale, da 20 a 100 persone a platea</li>
-              <li>Mezza giornata, giornata intera, residenziale</li>
-              <li>Preventivo entro <span class="todo">24 ore lavorative</span></li>
-            </ul>
-            <a class="btn" href="meeting.html">Vedi le sale</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- con l'intenzione "evento", la sezione #sale viene spostata qui -->
-  <div id="posto-sale-evento" hidden></div>
 
   <section class="section inbreve inbreve--foto" aria-labelledby="inbreve-titolo">
     <div class="wrap split">
@@ -477,7 +433,7 @@
     </div>
   </section>
 
-  <!-- LE SALE: con l'intenzione "evento" sale subito dopo il bivio -->
+  <!-- LE SALE -->
   <section class="section section--dark section--foto" id="sale">
     <div class="section__foto" style="background-image: url('assets/img/foto/tocq-hotel-milano-scala-design-1600.webp')" aria-hidden="true"></div>
     <div class="wrap">
@@ -496,7 +452,6 @@
       </div>
     </div>
   </section>
-  <div id="posto-sale-soggiorno" hidden></div>
 
   <!-- CAPITOLO · IL RITORNO (bianco): +30 giorni e le prove -->
   <section class="section capitolo capitolo--ritorno" data-ora="+30 gg" data-capitolo="Il ritorno">

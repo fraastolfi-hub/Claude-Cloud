@@ -92,6 +92,8 @@ Ogni sezione ha **un solo messaggio**, un titolo di 8 parole al massimo, un dato
 
 ### Capitolo 2 · Il bivio
 
+> **Tolto il 23 ottobre 2026** su indicazione di Francesco: la scelta "dormire e lavorare / organizzare un evento" ripeteva i due bottoni dell'hero ("Prenota una camera", "Organizza un evento") senza aggiungere nulla. La home passa dalla banda "Una finestra su Milano" a "In breve"; le sale restano nella loro posizione.
+
 **S3 · Perché sei a Milano**
 - **Messaggio:** "Due motivi, un indirizzo."
 - **Interazione chiave: il selettore di intenzione.** Un controllo a due posizioni, "Sono qui per dormire e lavorare" / "Sto organizzando un evento". Non nasconde nulla: cambia **l'ordine e i bottoni** del resto della home.
