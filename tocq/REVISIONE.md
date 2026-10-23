@@ -110,3 +110,14 @@ Il problema è che mappa, tabella, guida shopping e guida food stanno tutte in f
 4. **Camere** (date in alto, tipologie, configuratore corto).
 5. **Meeting** e **Come arrivare**.
 6. **Le quattro pagine nuove** (Mangiare, Servizi, Galleria, Planet) nascono già con queste regole.
+
+## Stato (23 ottobre 2026)
+
+Fatto, in quest'ordine:
+1. **Note di lavoro nascoste** di default, con il pulsante "Mostra le note di lavoro" nel footer (o `?note=1` nell'indirizzo). Cancellazione corretta: 24 ore, come confermato dalla direzione.
+2. **Home**: da 19 a 12 schermate sul telefono, da 1.169 a 524 parole. Hero, tabellone a 4 righe, tre motivi, camere, vantaggi della prenotazione diretta, meeting, mangiare, recensioni, quartiere, scheda chiudibile. Le domande frequenti della home sono passate nella pagina FAQ.
+3. **Quartiere** in pagine separate: principale (6,5 schermate, era 21) con mappa e tre porte; Aziende, Mangiare e bere, Shopping, ciascuna con la sua mappa e schede corte; guida al cibo filtrata per momento della giornata.
+4. **Camere**: da 13 a 7 schermate; date subito sotto l'hero, configuratore a tre scelte. Le "regole della casa" sono tolte finché la direzione non le adotta (restano nella storia del progetto).
+5. **Meeting**: da 14 a 9,6 schermate; tolti striscia dei numeri, "In breve", la striscia foto senza testo ed "Eventi ospitati" (torna quando ci sono eventi veri da citare).
+6. **Come arrivare**: "Come arrivo da…" in apertura, mappa vera con treni e metro, tolti "In breve" e "Detto prima".
+7. **Ritmo**: il build guarda anche la sezione dopo, così una sezione nera fissa (la mappa) non ne ha un'altra nera prima; gli hero di solo testo diventano chiari.

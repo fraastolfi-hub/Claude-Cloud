@@ -586,7 +586,7 @@ Aggiornato il {AGGIORNATO}.
 # Ritmo delle sezioni: due sezioni nere di fila pesano. Le sezioni con foto, trama o colore propri
 # restano come sono; quelle semplici si alternano nero, chiaro, nero, e le chiare a loro volta
 # alternano fondo pieno e fondo con il motivo del marchio.
-TONO_FOTO = ("hero-full", "band", "section--foto", "finale", "capitolo--notte")
+TONO_FOTO = ("hero-full", "band", "section--foto", "finale", "capitolo--notte", "planet-hero", "hero--bleed")
 TONO_SCURO = ("hero", "board", "mappa-sezione")
 SCURE_PER_SCELTA = ('id="tariffe"',)  # sezioni disegnate per il nero: restano nere anche se ne segue un'altra
 TONO_COLORE = ("section--verde",)
@@ -594,27 +594,41 @@ TONO_COLORE = ("section--verde",)
 
 def ritmo(corpo):
     import re
-    stato = {"prima": "scuro", "chiare": 0}
+    trovate = list(re.finditer(r'\n  <section class="([^"]*)"([^>]*)', corpo))
 
-    def tono(m):
+    def fisso(m):
         classi, resto = m.group(1).split(), m.group(2)
         if any(c in classi for c in TONO_FOTO):
-            stato["prima"] = "foto"
-        elif any(c in classi for c in TONO_SCURO) or any(x in resto for x in SCURE_PER_SCELTA):
-            stato["prima"] = "scuro"
-        elif any(c in classi for c in TONO_COLORE):
-            stato["prima"] = "colore"
-        elif stato["prima"] in ("scuro", "foto"):
-            classi = [c for c in classi if c != "section--dark"]
-            classi.append("tono-chiaro")
-            if stato["chiare"] % 2:
-                classi.append("tono-trama")
-            stato["chiare"] += 1
-            stato["prima"] = "chiaro"
+            return "foto"
+        if "faq-hero" in classi:  # hero di solo testo: segue il ritmo come una sezione semplice
+            return None
+        if any(c in classi for c in TONO_SCURO) or any(x in resto for x in SCURE_PER_SCELTA):
+            return "scuro"
+        if any(c in classi for c in TONO_COLORE):
+            return "colore"
+        return None
+
+    fissi = [fisso(m) for m in trovate]
+    toni, prima = [], "scuro"
+    for k, f in enumerate(fissi):
+        if f:
+            tono = f
         else:
-            stato["prima"] = "scuro"
-        return f'\n  <section class="{" ".join(classi)}"{resto}'
-    return re.sub(r'\n  <section class="([^"]*)"([^>]*)', tono, corpo)
+            tono = "chiaro" if prima in ("scuro", "foto") else "scuro"
+            # guarda avanti: se dopo viene una sezione nera fissa, questa si schiarisce (meglio due chiare che due nere)
+            if tono == "scuro" and k + 1 < len(fissi) and fissi[k + 1] in ("scuro", "foto"):
+                tono = "chiaro"
+        toni.append(tono)
+        prima = tono
+    out, ultimo, chiare = [], 0, 0
+    for m, f, tono in zip(trovate, fissi, toni):
+        classi, resto = m.group(1).split(), m.group(2)
+        if not f and tono == "chiaro":
+            classi = [c for c in classi if c != "section--dark"] + ["tono-chiaro"] + (["tono-trama"] if chiare % 2 else [])
+            chiare += 1
+        out.append(corpo[ultimo:m.start()] + f'\n  <section class="{" ".join(classi)}"{resto}')
+        ultimo = m.end()
+    return "".join(out) + corpo[ultimo:]
 
 
 def main():

@@ -1430,3 +1430,4 @@ html:not(.mostra-note) .todo { font: inherit; letter-spacing: inherit; }
   #tipologie .card--path .small { font-size: 13px; }
 }
 html:not(.mostra-note) .todo--vuoto { display: none; }
+@media (min-width: 961px) { .vantaggi--quattro { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
