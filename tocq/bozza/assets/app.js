@@ -426,6 +426,7 @@ if (qmap) {
   function seleziona(id, daMappa) {
     var punto = null;
     puntiQ.forEach(function (p) { var si = p.getAttribute('data-id') === id; p.classList.toggle('is-attivo', si); if (si) punto = p; });
+    document.querySelectorAll('.guida__voce').forEach(function (c) { c.classList.toggle('is-attivo', c.getAttribute('data-id') === id); });
     vociQ.forEach(function (li) {
       var si = li.getAttribute('data-id') === id;
       li.classList.toggle('is-attivo', si);
@@ -508,10 +509,28 @@ if (qmap) {
     if (a === qmap) return;
     a.addEventListener('click', function () { tema(a.getAttribute('data-tema'), true); });
   });
+  document.querySelectorAll('.guida__voce').forEach(function (c) {
+    c.addEventListener('mouseenter', function () { seleziona(c.getAttribute('data-id'), false); });
+  });
   window.addEventListener('resize', function () { disegna(false); });
   var base = qmap.querySelector('.qmap__base');
-  function avvia() { tema('tutti', false); }
+  var iniziale = qmap.closest('[data-tema-iniziale]');
+  function avvia() { tema(iniziale ? iniziale.getAttribute('data-tema-iniziale') : 'tutti', false); }
   if (base.complete) avvia(); else base.addEventListener('load', avvia);
+}
+
+// Guida al mangiare: un momento alla volta (colazione, pranzo, aperitivo, cena)
+var momenti = document.querySelector('.momenti-filtri');
+if (momenti) {
+  var schede = document.querySelectorAll('.guida--momenti .guida__voce');
+  function momento(m, daUtente) {
+    momenti.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-momento') === m ? 'true' : 'false'); });
+    schede.forEach(function (s) { s.classList.toggle('is-nascosto', m !== 'tutti' && s.getAttribute('data-tipo') !== m); });
+    if (daUtente) traccia('guida_momento', { momento: m });
+  }
+  var primo = momenti.querySelector('[aria-pressed="true"]');
+  momento(primo ? primo.getAttribute('data-momento') : 'tutti', false);
+  momenti.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) momento(b.getAttribute('data-momento'), true); });
 }
 
 // Galleria: filtri per area e foto a schermo intero, con frecce, tastiera e scorrimento del dito

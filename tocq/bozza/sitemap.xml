@@ -37,6 +37,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/quartiere/"/>
   </url>
   <url>
+    <loc>https://www.tocq.it/quartiere/aziende/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/quartiere/aziende/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/quartiere/aziende/"/>
+  </url>
+  <url>
+    <loc>https://www.tocq.it/quartiere/mangiare/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/quartiere/mangiare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/quartiere/mangiare/"/>
+  </url>
+  <url>
+    <loc>https://www.tocq.it/quartiere/shopping/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/quartiere/shopping/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/quartiere/shopping/"/>
+  </url>
+  <url>
     <loc>https://www.tocq.it/all-day-eating/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/all-day-eating/"/>

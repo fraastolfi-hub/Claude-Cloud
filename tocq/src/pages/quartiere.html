@@ -3,39 +3,40 @@
       <div>
         <p class="kicker">Il quartiere · Porta Nuova, Garibaldi, Isola, Corso Como</p>
         <h1>Il tuo ufficio è qui sotto.</h1>
-        <p class="lead">Il Tocq sta in mezzo al distretto degli affari di Milano: <!-- @conta-aziende --> sedi aziendali, i treni e la metro, <!-- @conta-food --> indirizzi dove mangiare e bere e <!-- @conta-shopping --> negozi, tutti a pochi minuti a piedi.</p>
+        <p class="lead">Uffici, treni, ristoranti e negozi: quasi tutto entro 10 minuti a piedi dal Tocq.</p>
         <div class="btns mt-32">
           <a class="btn btn--primary" href="#mappa">Apri la mappa</a>
-          <a class="btn" href="#mangiare">La guida al food</a>
         </div>
       </div>
       <figure class="photo photo--tall"><img src="assets/img/foto/porta-nuova-skyline-tramonto-1600.webp" srcset="assets/img/foto/porta-nuova-skyline-tramonto-800.webp 800w, assets/img/foto/porta-nuova-skyline-tramonto-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 50vw" alt="Skyline di Porta Nuova al tramonto con la torre UniCredit, il quartiere del Tocq Hotel Milano" width="1600" height="1600" fetchpriority="high" decoding="async"></figure>
     </div>
   </section>
 
-  <!-- MAPPA: il Tocq al centro, ogni punto alla sua direzione e distanza reali -->
+  <!-- MAPPA: tutto il quartiere, con i temi -->
   <section class="section section--dark mappa-sezione" id="mappa">
     <div class="wrap">
       <p class="kicker">La mappa</p>
-      <h2>Tutto a minuti, non a fermate.</h2>
-      <p class="lead mb-32">I cerchi segnano 5, 10 e 15 minuti a piedi dal portone del Tocq. Scegli un tema, trascina la mappa, tocca un punto o un nome; "Percorso" apre le indicazioni a piedi.</p>
+      <h2>Tutto a pochi minuti a piedi.</h2>
+      <p class="lead mb-32">Scegli un tema, trascina la mappa, tocca un punto.</p>
       <!-- @filtri -->
       <div class="mappa">
         <div class="mappa__carta"><!-- @mappa --></div>
         <div class="mappa__elenco"><!-- @elenco --></div>
       </div>
-      <p class="board__foot">Distanze a piedi stimate dalla linea d'aria (+30% per le strade, 80 metri al minuto). Indirizzi verificati a ottobre 2026. Base cartografica © OpenStreetMap contributors.</p>
+      <p class="board__foot">Minuti a piedi stimati (80 metri al minuto, +30% per le strade). Base cartografica © OpenStreetMap contributors.</p>
     </div>
   </section>
 
-  <!-- AZIENDE: per chi viaggia per lavoro -->
-  <section class="section" id="aziende">
+  <!-- TRE PORTE: ogni tema ha la sua pagina -->
+  <section class="section">
     <div class="wrap">
-      <p class="kicker">Per chi lavora in Porta Nuova</p>
-      <h2>Le sedi a due passi.</h2>
-      <p class="lead mb-32">Se la tua riunione è in una di queste sedi, dal Tocq ci arrivi a piedi, senza taxi e senza metro. Per accordi aziendali e tariffe dedicate: <a href="contatti.html#aziende">scrivici</a>.</p>
-      <p class="mb-32"><a class="btn" href="#mappa" data-tema="aziende">Vedi le sedi sulla mappa</a></p>
-      <!-- @aziende -->
+      <p class="kicker">Scegli cosa cerchi</p>
+      <h2>Lavoro, mangiare, shopping.</h2>
+      <div class="grid-3 mt-32 motivi">
+        <a class="motivo" href="quartiere-aziende.html"><figure class="photo"><img src="assets/img/foto/porta-nuova-torre-unicredit-milano-1600.webp" srcset="assets/img/foto/porta-nuova-torre-unicredit-milano-800.webp 800w, assets/img/foto/porta-nuova-torre-unicredit-milano-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Le torri di Porta Nuova, sede di molte aziende vicino al Tocq Hotel Milano" width="1600" height="1067" loading="lazy" decoding="async"></figure><h3>Aziende</h3><p><!-- @conta-aziende --> sedi aziendali a meno di 15 minuti: UniCredit, Accenture, Microsoft, Google.</p><span class="motivo__vai">Le sedi</span></a>
+        <a class="motivo" href="quartiere-mangiare.html"><figure class="photo"><img src="assets/img/foto/corso-garibaldi-ristorante-1600.webp" srcset="assets/img/foto/corso-garibaldi-ristorante-800.webp 800w, assets/img/foto/corso-garibaldi-ristorante-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Un ristorante in Corso Garibaldi, vicino al Tocq Hotel Milano" width="1600" height="1067" loading="lazy" decoding="async"></figure><h3>Mangiare e bere</h3><p><!-- @conta-food --> indirizzi scelti, dalla colazione all'ultimo bicchiere.</p><span class="motivo__vai">La guida</span></a>
+        <a class="motivo" href="quartiere-shopping.html"><figure class="photo"><img src="assets/img/foto/corso-como-milano-fontana-1600.webp" srcset="assets/img/foto/corso-como-milano-fontana-800.webp 800w, assets/img/foto/corso-como-milano-fontana-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Corso Como, la via dello shopping a 50 metri dal Tocq Hotel Milano" width="800" height="800" loading="lazy" decoding="async"></figure><h3>Shopping</h3><p><!-- @conta-shopping --> negozi fra Corso Como, Corso Garibaldi e Gae Aulenti.</p><span class="motivo__vai">I negozi</span></a>
+      </div>
     </div>
   </section>
 
@@ -44,29 +45,6 @@
     <div class="band__testo wrap">
       <p class="kicker">Corso Como · a 50 metri</p>
       <p class="band__frase">Finita la riunione, il quartiere è sotto casa.</p>
-    </div>
-  </section>
-
-  <!-- SHOPPING -->
-  <section class="section capitolo--sera" id="shopping">
-    <div class="wrap">
-      <p class="kicker">La guida allo shopping</p>
-      <h2>Un'ora libera, a piedi.</h2>
-      <p class="lead mb-32">Moda, design, libri e cibo da portare a casa, fra Corso Como, Corso Garibaldi e Gae Aulenti.</p>
-      <p class="mb-32"><a class="btn" href="#mappa" data-tema="shopping">Vedi i negozi sulla mappa</a></p>
-      <!-- @shopping -->
-    </div>
-  </section>
-
-  <!-- FOOD -->
-  <section class="section capitolo--alba" id="mangiare">
-    <div class="wrap">
-      <p class="kicker">La guida al food</p>
-      <h2>Dalla colazione all'ultimo bicchiere.</h2>
-      <p class="lead mb-32">Gli indirizzi che consigliamo a chi dorme da noi, dal caffè prima della riunione alla cena. Se serve un tavolo, lo prenota la reception.</p>
-      <p class="mb-32"><a class="btn" href="#mappa" data-tema="food">Vedi i locali sulla mappa</a></p>
-      <!-- @food -->
-      <p class="board__foot">Foto e loghi dai siti ufficiali di locali e aziende, citati come referenze. <span class="todo todo--quiet">Da autorizzare con ciascuno prima della pubblicazione</span></p>
     </div>
   </section>
 

@@ -72,6 +72,21 @@
    "description": "Mappa del quartiere del Tocq Hotel Milano: le aziende di Porta Nuova, treni e metro, negozi e ristoranti, ciascuno con i minuti a piedi dall'hotel.",
    "nav": "Il quartiere"
   },
+  "quartiere-aziende": {
+   "title": "Aziende vicino al Tocq Hotel Milano · Porta Nuova",
+   "description": "Le sedi aziendali di Porta Nuova a piedi dal Tocq Hotel Milano: UniCredit, Accenture, Microsoft, Google, Bending Spoons e altre, con i minuti a piedi.",
+   "nav": "Aziende"
+  },
+  "quartiere-mangiare": {
+   "title": "Dove mangiare vicino a Porta Garibaldi · Tocq Hotel Milano",
+   "description": "Ristoranti, bar e colazioni a pochi minuti a piedi dal Tocq Hotel Milano, fra Corso Como, Corso Garibaldi e Isola: colazione, pranzo, aperitivo, cena.",
+   "nav": "Mangiare e bere"
+  },
+  "quartiere-shopping": {
+   "title": "Shopping a Corso Como e Gae Aulenti · Tocq Hotel Milano",
+   "description": "Negozi a pochi minuti a piedi dal Tocq Hotel Milano: 10 Corso Como, Eataly, Feltrinelli, Nike e le vie di Corso Garibaldi e Gae Aulenti.",
+   "nav": "Shopping"
+  },
   "mangiare": {
    "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
    "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",

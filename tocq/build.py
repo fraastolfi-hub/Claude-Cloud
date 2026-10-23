@@ -85,6 +85,27 @@ PAGINE = {
         "nav": "Il quartiere",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
+    "quartiere-aziende": {
+        "url": "/quartiere/aziende/",
+        "title": "Aziende vicino al Tocq Hotel Milano · Porta Nuova",
+        "description": "Le sedi aziendali di Porta Nuova a piedi dal Tocq Hotel Milano: UniCredit, Accenture, Microsoft, Google, Bending Spoons e altre, con i minuti a piedi.",
+        "nav": "Aziende",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
+    "quartiere-mangiare": {
+        "url": "/quartiere/mangiare/",
+        "title": "Dove mangiare vicino a Porta Garibaldi · Tocq Hotel Milano",
+        "description": "Ristoranti, bar e colazioni a pochi minuti a piedi dal Tocq Hotel Milano, fra Corso Como, Corso Garibaldi e Isola: colazione, pranzo, aperitivo, cena.",
+        "nav": "Mangiare e bere",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
+    "quartiere-shopping": {
+        "url": "/quartiere/shopping/",
+        "title": "Shopping a Corso Como e Gae Aulenti · Tocq Hotel Milano",
+        "description": "Negozi a pochi minuti a piedi dal Tocq Hotel Milano: 10 Corso Como, Eataly, Feltrinelli, Nike e le vie di Corso Garibaldi e Gae Aulenti.",
+        "nav": "Shopping",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
     "mangiare": {
         "url": "/all-day-eating/",
         "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
@@ -202,7 +223,9 @@ def breadcrumb_ld(key):
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Tocq Hotel Milano", "item": SITO + "/"},
-            {"@type": "ListItem", "position": 2, "name": p["nav"], "item": SITO + p["url"]},
+            *([{"@type": "ListItem", "position": 2, "name": PAGINE["quartiere"]["nav"], "item": SITO + PAGINE["quartiere"]["url"]}]
+              if key.startswith("quartiere-") else []),
+            {"@type": "ListItem", "position": 3 if key.startswith("quartiere-") else 2, "name": p["nav"], "item": SITO + p["url"]},
         ],
     }
 
@@ -283,11 +306,13 @@ def schema_pagina(key, faq):
     b = breadcrumb_ld(key)
     if b:
         grafo.append(b)
-    if key == "quartiere":
+    if key.startswith("quartiere"):
         import mappa
         pezzi = mappa.blocchi()
         if pezzi:
-            grafo.append(mappa.schema_luoghi(pezzi["_punti"], SITO))
+            cat = {"quartiere-aziende": "aziende", "quartiere-mangiare": "food", "quartiere-shopping": "shopping"}.get(key)
+            punti = [q for q in pezzi["_punti"] if cat is None or q["categoria"] == cat]
+            grafo.append(mappa.schema_luoghi(punti, SITO))
     if faq:
         grafo.append(faq_ld(faq))
     return json.dumps({"@context": "https://schema.org", "@graph": grafo}, ensure_ascii=False, indent=2)

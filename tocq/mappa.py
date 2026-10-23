@@ -212,10 +212,12 @@ def _testata(q, ref):
 
 
 def _scheda(q, ref=None):
+    """Scheda corta: foto, tipo, nome, minuti a piedi, una riga, percorso. L'indirizzo resta nei dati strutturati."""
     ref = ref if ref is not None else _referenze()
-    tipo = f'<span class="guida__tipo">{_e(q.get("tipo") or "")}</span>' if q.get("tipo") else ""
-    return (f'<article class="guida__voce" data-id="{_e(q["id"])}">{_testata(q, ref)}{tipo}<h3>{_e(q["nome"])}</h3>'
-            f'<p>{_e(q.get("descrizione"))}</p><p class="guida__dove">{_e(q["indirizzo"])} · {_e(_distanza(q))}</p>'
+    tipo = (q.get("tipo") or "").lower()
+    etichetta = f'<span class="guida__tipo">{_e(q.get("tipo"))}</span>' if q.get("tipo") else ""
+    return (f'<article class="guida__voce" data-id="{_e(q["id"])}" data-tipo="{_e(tipo)}">{_testata(q, ref)}{etichetta}<h3>{_e(q["nome"])}</h3>'
+            f'<p class="guida__min">{q["minuti"]} min a piedi</p><p>{_e(q.get("descrizione"))}</p>'
             f'<a href="{_e(_maps(q))}" target="_blank" rel="noopener">Percorso a piedi</a></article>')
 
 
@@ -226,16 +228,14 @@ def guida_shopping(punti):
 
 
 def guida_food(punti):
+    """Una griglia sola, filtrabile per momento della giornata (assets/app.js): si vedono 3-4 schede alla volta."""
     ref = _referenze()
-    out = []
-    for tipo, titolo in TIPI_FOOD:
-        voci = [q for q in punti if q["categoria"] == "food" and (q.get("tipo") or "").lower() == tipo]
-        if voci:
-            out.append(f'<h3 class="guida__gruppo">{titolo}</h3><div class="guida">' + "".join(_scheda(q, ref) for q in voci) + "</div>")
-    altri = [q for q in punti if q["categoria"] == "food" and (q.get("tipo") or "").lower() not in dict(TIPI_FOOD)]
-    if altri:
-        out.append('<h3 class="guida__gruppo">Altri indirizzi</h3><div class="guida">' + "".join(_scheda(q, ref) for q in altri) + "</div>")
-    return "\n".join(out)
+    voci = [q for q in punti if q["categoria"] == "food"]
+    presenti = [(k, v) for k, v in TIPI_FOOD if any((q.get("tipo") or "").lower() == k for q in voci)]
+    bott = '<button type="button" data-momento="tutti" aria-pressed="false">Tutti</button>' + "".join(
+        f'<button type="button" data-momento="{k}" aria-pressed="{"true" if i == 0 else "false"}">{v}</button>' for i, (k, v) in enumerate(presenti))
+    return (f'<div class="filters momenti-filtri" role="group" aria-label="Scegli il momento">{bott}</div>'
+            '<div class="guida guida--momenti">' + "".join(_scheda(q, ref) for q in voci) + "</div>")
 
 
 def schema_luoghi(punti, sito):
@@ -263,7 +263,7 @@ def blocchi():
         "<!-- @mappa -->": mappa_interattiva(punti, dati["hotel"]),
         "<!-- @elenco -->": elenco(punti),
         "<!-- @filtri -->": filtri(),
-        "<!-- @aziende -->": loghi_aziende(punti) + tabella_aziende(punti),
+        "<!-- @aziende -->": loghi_aziende(punti),
         "<!-- @shopping -->": guida_shopping(punti),
         "<!-- @food -->": guida_food(punti),
         "<!-- @conta-aziende -->": str(conta["aziende"]),
