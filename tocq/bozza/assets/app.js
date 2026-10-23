@@ -18,6 +18,20 @@ document.querySelectorAll('.nav-toggle').forEach(function (btn) {
   window.addEventListener('resize', function () { if (window.innerWidth > 920 && nav.classList.contains('is-open')) imposta(false); });
 });
 
+// Note di lavoro della bozza ("da confermare"): nascoste per leggere il sito come un ospite,
+// si mostrano con il pulsante nel footer o con ?note=1 nell'indirizzo, e la scelta resta ricordata
+(function () {
+  var mostra = /[?&]note=1/.test(location.search);
+  try { mostra = mostra || localStorage.getItem('tocq-note') === '1'; } catch (e) {}
+  function imposta(v) {
+    document.documentElement.classList.toggle('mostra-note', v);
+    document.querySelectorAll('.note-toggle').forEach(function (b) { b.setAttribute('aria-pressed', v ? 'true' : 'false'); b.textContent = v ? 'Nascondi le note di lavoro' : 'Mostra le note di lavoro'; });
+    try { localStorage.setItem('tocq-note', v ? '1' : '0'); } catch (e) {}
+  }
+  imposta(mostra);
+  document.addEventListener('click', function (e) { if (e.target.closest('.note-toggle')) imposta(!document.documentElement.classList.contains('mostra-note')); });
+})();
+
 // Orologio del tabellone
 document.querySelectorAll('[data-clock]').forEach(function (el) {
   function tick() {

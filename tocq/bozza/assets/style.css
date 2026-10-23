@@ -1350,3 +1350,46 @@ a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !im
 html.lightbox-aperta { overflow: hidden; }
 .todo { white-space: normal; }
 .lightbox { background: #050505; }
+
+/* Note di lavoro nascoste di default: il sito si legge come lo vedrà l'ospite */
+html:not(.mostra-note) .note { display: none; }
+html:not(.mostra-note) .todo { border: 0 !important; background: none !important; color: inherit !important; padding: 0; }
+html:not(.mostra-note) .todo::after { content: none; display: none; }
+.note-toggle { background: none; border: 0; padding: 0; font: inherit; color: var(--corallo); -webkit-text-fill-color: var(--corallo); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+
+/* ===== Home semplificata: motivi, tipologie, vantaggi, anteprima del quartiere, scheda ===== */
+.motivo, .tipologia { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; }
+.motivo .photo, .tipologia .photo { margin: 0 0 6px; aspect-ratio: 4 / 3; overflow: hidden; min-height: 0; }
+.motivo .photo img, .tipologia .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.motivo:hover .photo img, .tipologia:hover .photo img { transform: scale(1.04); }
+.motivo h3 { margin: 0; font-size: clamp(21px, 2.2vw, 26px); }
+.motivo p { margin: 0; color: var(--ink-2); }
+.motivo__vai { font: 500 12px var(--sans); letter-spacing: .14em; text-transform: uppercase; margin-top: 4px; text-decoration: underline; text-underline-offset: 5px; }
+.tipologia b { font-size: 19px; font-weight: 500; }
+.tipologia span { color: var(--ink-2); font-size: 15px; margin-top: -6px; }
+.vantaggi { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.vantaggi li { display: flex; flex-direction: column; gap: 6px; padding-top: 18px; border-top: 2px solid var(--corallo); }
+.vantaggi b { font-size: clamp(20px, 2vw, 24px); font-weight: 500; }
+.vantaggi span { color: var(--ink-2); }
+@media (max-width: 760px) { .vantaggi { grid-template-columns: 1fr; gap: 18px; } }
+.anteprima-mappa { display: block; overflow: hidden; border: 1px solid var(--line); }
+.anteprima-mappa img { display: block; width: 100%; height: auto; transition: transform .8s var(--ease); }
+.anteprima-mappa:hover img { transform: scale(1.03); }
+.scheda summary { cursor: pointer; list-style: none; font: 500 13px var(--sans); letter-spacing: .14em; text-transform: uppercase; display: inline-flex; gap: 10px; align-items: center; }
+.scheda summary::-webkit-details-marker { display: none; }
+.scheda summary::after { content: "+"; font-size: 18px; letter-spacing: 0; }
+.scheda[open] summary::after { content: "−"; }
+@media (max-width: 760px) {
+  .tipologie { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tipologia b { font-size: 16px; } .tipologia span { font-size: 13px; }
+  .motivo .photo { aspect-ratio: 16 / 9; }
+  .motivi { gap: 32px; }
+}
+html:not(.mostra-note) .todo { font: inherit; letter-spacing: inherit; }
+@media (max-width: 760px) {
+  .gallery > .photo:nth-child(3):last-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  #sale .grid-4 { grid-template-columns: 1fr 1fr; gap: 20px 16px; }
+  .section .grid-3:has(> .stat) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .section .grid-3 > .stat b { font-size: 22px; }
+  .section .grid-3 > .stat span:not(.fonte) { font-size: 12px; }
+}

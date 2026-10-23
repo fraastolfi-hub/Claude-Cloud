@@ -457,7 +457,7 @@ def footer(codice="it"):
     </div>
     <div class="footer__base">
       <span>© 2026 {f['nome']} · {f['societa']} · {t['f_piva']} {f['piva']}</span>
-      <span>{t['f_bozza']}</span>
+      <span>{t['f_bozza']} · <button type="button" class="note-toggle" aria-pressed="false">Mostra le note di lavoro</button></span>
     </div>
   </div>
 </footer>
