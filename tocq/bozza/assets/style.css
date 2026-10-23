@@ -1417,3 +1417,16 @@ html:not(.mostra-note) .todo { font: inherit; letter-spacing: inherit; }
   .guida__voce h3 { font-size: 17px; }
   .guida__voce p:not(.guida__min) { font-size: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 }
+/* Camere: modulo date in una riga, subito sotto l'hero */
+.prenota-veloce { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) 110px minmax(0, 1fr) auto; gap: 16px; align-items: end; }
+.prenota-veloce .field { margin: 0; }
+.prenota-veloce .btn { height: 52px; justify-content: center; white-space: nowrap; }
+.prenota-veloce__nota { color: var(--ink-2); }
+@media (max-width: 860px) { .prenota-veloce { grid-template-columns: 1fr 1fr; } .prenota-veloce .btn { grid-column: 1 / -1; } }
+@media (max-width: 760px) {
+  #tipologie .grid-4 { grid-template-columns: 1fr 1fr; gap: 12px; }
+  #tipologie .card--path .card__body { padding: 0 12px 14px; gap: 4px; }
+  #tipologie .card--path h3 { font-size: 17px; margin: 0; }
+  #tipologie .card--path .small { font-size: 13px; }
+}
+html:not(.mostra-note) .todo--vuoto { display: none; }

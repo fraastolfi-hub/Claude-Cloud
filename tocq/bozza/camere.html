@@ -304,73 +304,66 @@
   <section class="hero hero--bleed">
     <div class="wrap hero__grid">
       <div>
-        <p class="kicker">Soggiorna · Camere e suite</p>
+        <p class="kicker">Camere e suite</p>
         <h1>Stanotte dormi. Domani lavori.</h1>
-        <p class="lead">Camere rifatte nel 2021, spaziose, e un menu dei cuscini che gli ospiti citano nelle recensioni. Pulizia e comfort 8,98 su Booking.</p>
+        <p class="lead">133 camere silenziose, rifatte nel 2021. Il cuscino lo scegli tu.</p>
         <div class="btns mt-32">
-          <a class="btn btn--primary" href="#configura">Prepara la tua notte</a>
-          <a class="btn" href="#prenota">Verifica le date</a>
+          <a class="btn btn--primary" href="#prenota">Verifica le date</a>
+          <a class="btn" href="#configura">Scegli il cuscino</a>
         </div>
       </div>
       <figure class="photo photo--tall"><img src="assets/img/foto/tocq-hotel-milano-camera-letto-king-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-letto-king-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-letto-king-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Camera del Tocq Hotel Milano con parete verde petrolio, testiera imbottita e parquet a spina di pesce" width="1600" height="1068" fetchpriority="high" decoding="async"></figure>
     </div>
   </section>
 
-
-  <section class="section section--tight inbreve tono-chiaro" aria-labelledby="inbreve-titolo">
-    <div class="wrap split">
-      <div>
-        <p class="kicker">In breve</p>
-        <h2 id="inbreve-titolo">Le camere del Tocq, in breve.</h2>
-      </div>
-      <dl class="facts">
-          <dt>Quante</dt><dd>133, tutte insonorizzate e rinnovate nel 2021</dd>
-          <dt>Tipologie</dt><dd>Comfort (14), Superior (63), Executive (35), Junior Suite (21)</dd>
-          <dt>In ogni camera</dt><dd>Wifi veloce, smart TV 55", minibar, cassaforte, bollitore per caffè e tè</dd>
-          <dt>Su richiesta</dt><dd>Menu dei cuscini, lato corte, colazione da asporto, check-in anticipato</dd>
-          <dt>Check-in / check-out</dt><dd><span class="todo">dalle 14:00 / entro le 12:00</span></dd>
-          <dt>Cancellazione</dt><dd>Gratuita fino a 24 ore prima dell'arrivo, con la tariffa Direct Flex</dd>
-      </dl>
+  <!-- PRENOTA: le date subito, non in fondo alla pagina -->
+  <section class="section section--tight tono-chiaro" id="prenota">
+    <div class="wrap">
+      <form class="form prenota-veloce" id="prenota-form">
+        <div class="field"><label for="b-in">Arrivo</label><input id="b-in" type="date"></div>
+        <div class="field"><label for="b-out">Partenza</label><input id="b-out" type="date"></div>
+        <div class="field"><label for="b-ad">Adulti</label><select id="b-ad"><option>1</option><option selected>2</option><option>3</option></select></div>
+        <div class="field"><label for="b-code">Codice aziendale</label><input id="b-code" placeholder="Facoltativo"></div>
+        <a class="btn btn--primary" id="b-vai" href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener">Mostra le tariffe</a>
+      </form>
+      <p class="small mt-32 prenota-veloce__nota">Colazione inclusa · cancellazione gratuita fino a 24 ore prima · il cuscino scelto, già sul letto.</p>
     </div>
   </section>
-  <!-- Tipologie: nomi e metrature da confermare -->
+
+  <!-- TIPOLOGIE -->
   <section class="section" id="tipologie">
     <div class="wrap">
       <p class="kicker">Le camere</p>
-      <h2>133 camere, quattro tipologie, la stessa notte.</h2>
-      <p class="lead mb-32">Insonorizzate, rifatte nel 2021. In tutte: wifi veloce, smart TV 55", minibar, cassaforte, bollitore per caffè e tè.</p>
+      <h2>Quattro tipologie, tutte silenziose.</h2>
+      <p class="lead mb-32">In ogni camera: wifi veloce, smart TV 55", minibar, cassaforte, caffè e tè.</p>
       <div class="grid-4">
         <article class="card card--path">
           <figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-camera-comfort-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-comfort-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-comfort-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 25vw" alt="Camera Comfort del Tocq Hotel Milano con letto matrimoniale, armadio aperto e angolo caffè" width="1600" height="1068" loading="lazy" decoding="async"></figure>
-          <div class="card__body"><h3>Comfort</h3><p class="muted small mono">14 camere · <span class="todo todo--quiet">m²</span></p><p class="small">Per una o due notti di lavoro.</p></div>
+          <div class="card__body"><h3>Comfort</h3><p class="muted small mono">14 camere<span class="todo todo--vuoto"> · m²</span></p><p class="small">Per una o due notti di lavoro.</p></div>
         </article>
         <article class="card card--path">
           <figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-camera-superior-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-superior-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-superior-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 25vw" alt="Camera Superior del Tocq Hotel Milano con letto matrimoniale, poltrona e finestra" width="1600" height="1068" loading="lazy" decoding="async"></figure>
-          <div class="card__body"><h3>Superior</h3><p class="muted small mono">63 camere · <span class="todo todo--quiet">m²</span></p><p class="small">La più prenotata da chi resta da lunedì a giovedì.</p></div>
+          <div class="card__body"><h3>Superior</h3><p class="muted small mono">63 camere<span class="todo todo--vuoto"> · m²</span></p><p class="small">La più prenotata da chi resta da lunedì a giovedì.</p></div>
         </article>
         <article class="card card--path">
           <figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-camera-executive-armadio-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-executive-armadio-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-executive-armadio-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 25vw" alt="Camera Executive del Tocq Hotel Milano con armadio aperto, cassaforte e angolo caffè" width="1600" height="1068" loading="lazy" decoding="async"></figure>
-          <div class="card__body"><h3>Executive</h3><p class="muted small mono">35 camere · <span class="todo todo--quiet">m²</span></p><p class="small">Più spazio per lavorare in camera.</p></div>
+          <div class="card__body"><h3>Executive</h3><p class="muted small mono">35 camere<span class="todo todo--vuoto"> · m²</span></p><p class="small">Più spazio per lavorare in camera.</p></div>
         </article>
         <article class="card card--path">
           <figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-junior-suite-salotto-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-junior-suite-salotto-800.webp 800w, assets/img/foto/tocq-hotel-milano-junior-suite-salotto-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 25vw" alt="Junior Suite del Tocq Hotel Milano con divano, scrivania e zona giorno separata dal letto" width="1600" height="1068" loading="lazy" decoding="async"></figure>
-          <div class="card__body"><h3>Junior Suite</h3><p class="muted small mono">21 suite · <span class="todo todo--quiet">m²</span></p><p class="small">Per ricevere qualcuno senza scendere in hall.</p></div>
+          <div class="card__body"><h3>Junior Suite</h3><p class="muted small mono">21 suite<span class="todo todo--vuoto"> · m²</span></p><p class="small">Per ricevere qualcuno senza scendere in hall.</p></div>
         </article>
       </div>
-      <div class="gallery mt-32">
-        <figure class="photo photo--wide"><img src="assets/img/foto/tocq-hotel-milano-camera-luminosa-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-luminosa-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-luminosa-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 66vw" alt="Camera luminosa del Tocq Hotel Milano con poltrone in velluto verde e calle bianche" width="1600" height="1068" loading="lazy" decoding="async"></figure>
-        <figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-camera-sera-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-camera-sera-800.webp 800w, assets/img/foto/tocq-hotel-milano-camera-sera-1600.webp 1600w" sizes="(max-width: 760px) 50vw, 33vw" alt="Camera del Tocq Hotel Milano la sera, con lampada ad arco accesa e letto rifatto" width="1600" height="1068" loading="lazy" decoding="async"></figure>
-      </div>
-      <p class="note"><b>Da confermare</b>Tipologie e numeri dal factsheet 2025. Le foto vengono dallo shooting 2021 (serie Cozy, Stylish, Roomy, Snuggle): l'abbinamento con Comfort, Superior, Executive e Junior Suite è da verificare. Mancano metrature, letti, e quante camere per tipologia danno sulla corte e quante su Via Tocqueville (PROGETTO.md §13, punto 4). Le Smart Working Suite del factsheet vanno collocate in una tipologia.</p>
+      <p class="note"><b>Da confermare</b>Metrature, letti e prezzo "da" per tipologia; l'abbinamento delle foto alle tipologie (PROGETTO.md §13, punto 4).</p>
     </div>
   </section>
 
-  <!-- Configuratore: il motivo per prenotare diretto, reso visibile -->
-  <section class="section section--alt tono-chiaro tono-trama" id="configura">
+  <!-- CONFIGURATORE: tre scelte, il motivo per prenotare qui -->
+  <section class="section tono-chiaro tono-trama" id="configura">
     <div class="wrap">
-      <p class="kicker">Solo prenotando qui</p>
-      <h2>Prepara la tua notte.</h2>
-      <p class="lead mb-32">Su Booking prenoti una camera. Qui scegli il cuscino, il materasso e il lato da cui dormi. Lo trovi pronto quando arrivi.</p>
+      <p class="kicker">Solo prenotando su tocq.it</p>
+      <h2>Qui scegli il cuscino. Su Booking no.</h2>
+      <p class="lead mb-32">Tre scelte, dieci secondi. Lo trovi pronto quando arrivi.</p>
       <div class="config">
         <form class="form" id="configuratore" onsubmit="return false">
           <fieldset class="field">
@@ -383,26 +376,17 @@
             </div>
           </fieldset>
           <fieldset class="field">
-            <legend>Il materasso <span class="todo">opzioni</span></legend>
-            <div class="choices">
-              <label><input type="radio" name="materasso" value="Standard" checked> Standard</label>
-              <label><input type="radio" name="materasso" value="Più rigido"> Più rigido</label>
-              <label><input type="radio" name="materasso" value="Più morbido"> Più morbido</label>
-            </div>
-          </fieldset>
-          <fieldset class="field">
             <legend>Il lato della camera</legend>
             <div class="choices">
-              <label><input type="radio" name="lato" value="Corte interna, silenziosa" checked> Corte interna · domani ho una giornata importante</label>
-              <label><input type="radio" name="lato" value="Via Tocqueville"> Via Tocqueville · la sera esco</label>
-              <label><input type="radio" name="lato" value="Piano alto"> Piano alto</label>
+              <label><input type="radio" name="lato" value="Corte interna, silenziosa" checked> Corte, silenziosa</label>
+              <label><input type="radio" name="lato" value="Via Tocqueville"> Via Tocqueville</label>
             </div>
           </fieldset>
           <fieldset class="field">
             <legend>La colazione</legend>
             <div class="choices">
               <label><input type="radio" name="colazione" value="In sala" checked> In sala</label>
-              <label><input type="radio" name="colazione" value="Da asporto"> Da asporto · parto prima che apra la sala</label>
+              <label><input type="radio" name="colazione" value="Da asporto"> Da asporto, parto presto</label>
             </div>
           </fieldset>
           <div class="field" id="cfg-partenza-wrap" hidden>
@@ -411,22 +395,14 @@
               <option>05:30</option><option>06:00</option><option selected>06:30</option><option>07:00</option>
             </select>
           </div>
-          <fieldset class="field">
-            <legend>L'arrivo</legend>
-            <div class="choices">
-              <label><input type="radio" name="arrivo" value="Standard" checked> Dalle <span class="todo todo--quiet">14:00</span></label>
-              <label><input type="radio" name="arrivo" value="Check-in anticipato, se la camera è pronta"> Arrivo la mattina, chiedo il check-in anticipato</label>
-            </div>
-          </fieldset>
+          <p class="small muted">Altre richieste, come il materasso più rigido o il check-in anticipato, le scrivi quando prenoti.</p>
         </form>
         <aside class="config__summary" aria-live="polite">
-          <h3>La tua notte al Tocq</h3>
+          <h3>La tua camera</h3>
           <dl>
             <dt>Cuscino</dt><dd id="sum-cuscino">—</dd>
-            <dt>Materasso</dt><dd id="sum-materasso">—</dd>
             <dt>Lato</dt><dd id="sum-lato">—</dd>
             <dt>Colazione</dt><dd id="sum-colazione">—</dd>
-            <dt>Arrivo</dt><dd id="sum-arrivo">—</dd>
           </dl>
           <a class="btn btn--primary" href="#prenota">Scegli le date</a>
         </aside>
@@ -435,56 +411,12 @@
     </div>
   </section>
 
-  <!-- Colazione -->
-  <section class="section" id="colazione">
-    <div class="wrap split">
-      <div>
-        <p class="kicker">Colazione</p>
-        <h2>La giornata comincia da persona, non da numero di camera.</h2>
-        <p>Rosetta coordina la sala dal 2021. Con lei Maria, Marco e Giorgio.</p>
-        <p class="muted">Buffet italiano e internazionale, con una selezione orientale, halal, senza glutine e vegana.</p>
-        <p class="muted">Aperta anche a chi non dorme qui: <b>16 €</b>. Un ospite di TripAdvisor ci è venuto apposta e l'ha paragonata a quella di un cinque stelle.</p>
-      </div>
-      <div>
-        <div class="table-scroll">
-          <table class="data" style="min-width:0">
-            <tbody>
-              <tr><td>Lunedì–venerdì</td><td class="n"><span class="todo">06:30–10:30</span></td></tr>
-              <tr><td>Sabato, domenica e festivi</td><td class="n"><span class="todo">07:00–11:00</span></td></tr>
-              <tr><td>Da asporto</td><td class="n">dalle <span class="todo">05:30</span>, alla reception</td></tr>
-              <tr><td>Ospiti esterni</td><td class="n"><span class="todo">16 €</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <figure class="photo photo--tall mt-32"><img src="assets/img/foto/tocq-hotel-milano-colazione-muffin-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-colazione-muffin-800.webp 800w, assets/img/foto/tocq-hotel-milano-colazione-muffin-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Muffin con crema e fiori eduli servito al Tocq Hotel Milano, con tulipani gialli sullo sfondo" width="1600" height="2133" loading="lazy" decoding="async"><figcaption>Manca la foto della colazione da asporto: da scattare</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- Le regole della casa, dette prima (Mosse 1-4, cap. 10) -->
-  <section class="section section--alt tono-chiaro">
-    <div class="wrap">
-      <p class="kicker">Detto prima, non scoperto dopo</p>
-      <h2 class="mb-32">Le regole della casa.</h2>
-      <div class="upfront">
-        <div><h3>Il silenzio si chiede una volta</h3><p>Il lato corte e i piani alti sono per chi lo chiede nel configuratore. Da giovedì a domenica li assegniamo prima a chi ha una riunione o un treno presto.</p></div>
-        <div><h3>Il clima</h3><p><span class="todo">Regola unica da definire con la direzione</span>. Una frase sola per tutto il banco, scritta qui e nella conferma di prenotazione. Se in camera fa caldo, il ventilatore e il cambio di lato sono già pronti.</p></div>
-        <div><h3>Le valigie, sempre</h3><p>Prima del check-in, dopo il check-out, anche quando torni tre giorni dopo. Senza chiedere.</p></div>
-        <div><h3>Il parcheggio, per iscritto</h3><p>Garage convenzionato a <span class="todo">25 € al giorno</span>. Le condizioni sono queste, non cambiano alla partenza.</p></div>
-        <div><h3>In camera</h3><p>Una caraffa d'acqua filtrata, bicchieri di vetro, due cialde di caffè a testa, il listino del minibar in vista. <span class="todo">La borraccia Tocq è tua.</span></p></div>
-        <div><h3>La fattura</h3><p>Una fattura sola, con i dati dell'azienda presi alla prenotazione. Se torni, la stessa camera della volta prima, quando è libera.</p></div>
-      </div>
-      <p class="note"><b>Nota</b>Questi sono gli impegni delle mosse 1–4 del capitolo 10. Si pubblicano solo quando la direzione li ha adottati: il sito promette la notte, e qualcuno viene a verificarla.</p>
-    </div>
-  </section>
-
-
   <section class="section" id="domande">
     <div class="wrap split">
       <div>
-        <p class="kicker">Prima di prenotare</p>
+        <p class="kicker">Domande frequenti</p>
         <h2>Sulle camere.</h2>
-        <p class="muted">Risposte brevi, con i numeri. Se manca la tua domanda, la reception risponde 24 ore su 24: <a href="tel:+390262071">+39 02 62071</a>.</p>
+        <p class="muted">La reception risponde 24 ore su 24: <a href="tel:+390262071">+39 02 62071</a>. La colazione e il ristorante sono nella pagina <a href="mangiare.html">Mangiare</a>.</p>
       </div>
       <div class="faq">
         <details class="faq__item">
@@ -503,40 +435,7 @@
         
         
         
-      </div>
-    </div>
-  </section>
-  <!-- Booking engine -->
-  <section class="section tono-chiaro tono-trama" id="prenota">
-    <div class="wrap">
-      <p class="kicker">Prenota</p>
-      <h2>Verifica le date.</h2>
-      <div class="split mt-32">
-      <form class="form" id="prenota-form">
-        <div class="row">
-          <div class="field"><label for="b-in" style="color:#9a9890">Arrivo</label><input id="b-in" type="date"></div>
-          <div class="field"><label for="b-out" style="color:#9a9890">Partenza</label><input id="b-out" type="date"></div>
-        </div>
-        <div class="row">
-          <div class="field"><label for="b-ad" style="color:#9a9890">Adulti</label><select id="b-ad"><option>1</option><option selected>2</option><option>3</option></select></div>
-          <div class="field"><label for="b-code" style="color:#9a9890">Codice aziendale</label><input id="b-code" placeholder="Se la tua azienda ha un accordo"></div>
-        </div>
-        <div><a class="btn btn--primary" id="b-vai" href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener">Mostra camere e tariffe</a></div>
-        <p class="small" style="color:var(--ink-2)">Si apre il motore di prenotazione ufficiale del Tocq (Blastness) con le date scelte. Tariffa diretta migliore garantita, cancellazione gratuita. Le scelte del configuratore vanno passate al motore come richieste: da impostare con il fornitore.</p>
-      </form>
-      <div>
-        <h3>Prenotando qui, in più:</h3>
-        <ul class="ticklist">
-          <li><span>Il cuscino, il materasso e il lato della camera scelti da te.</span></li>
-          <li><span>La colazione da asporto, pronta all'ora che indichi.</span></li>
-          <li><span><span class="todo">Precedenza nel check-in anticipato</span>.</span></li>
-          <li><span>Un numero che risponde 24 ore: +39 02 62071.</span></li>
-        </ul>
-        <blockquote class="quote mt-32">
-          <p>"C'era il menù cuscini, quindi colpa mia a non averli richiesti."</p>
-          <cite>Un ospite, su Booking · ora lo scegli prima di arrivare</cite>
-        </blockquote>
-      </div>
+        
       </div>
     </div>
   </section>

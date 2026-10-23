@@ -70,14 +70,14 @@ if (config) {
   function update() {
     var data = new FormData(config);
     out.cuscino.textContent = data.get('cuscino') || '—';
-    out.materasso.textContent = data.get('materasso') || '—';
+    if (out.materasso) out.materasso.textContent = data.get('materasso') || '—';
     out.lato.textContent = data.get('lato') || '—';
     var col = data.get('colazione');
     partenza.hidden = col !== 'Da asporto';
     out.colazione.textContent = col === 'Da asporto'
       ? 'Da asporto, pronta per le ' + (data.get('partenza') || '—')
       : (col || '—');
-    out.arrivo.textContent = data.get('arrivo') || 'Standard';
+    if (out.arrivo) out.arrivo.textContent = data.get('arrivo') || 'Standard';
   }
   config.addEventListener('change', update);
   config.addEventListener('input', update);
