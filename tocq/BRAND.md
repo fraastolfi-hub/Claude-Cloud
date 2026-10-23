@@ -70,3 +70,11 @@ Disabili, uomini, donne, guardaroba, ascensore, bagagli, scale, frecce direziona
 - **Testo:** Futura Light solo da 17 px in su; sotto, Regular. Titoli bilanciati (`text-wrap: balance`).
 - **Mobile:** foto dell'hero in testa; tabellone su due righe per voce; tabelle di confronto trasformate in schede; barra fissa che compare solo dopo i bottoni dell'hero e sparisce sopra form e footer.
 - **Focus sempre visibile:** 2 px nero su chiaro, corallo su nero; bersagli di tocco ≥ 44 px.
+
+## Ritmo delle sezioni (23 ottobre 2026)
+
+Due sezioni nere di fila pesano. Il build (`ritmo()` in build.py) assegna i toni da solo:
+- restano come sono le sezioni con foto, trama o colore propri (hero, bande foto, sale, notte, finale, verde) e quelle disegnate per il nero (mappa del quartiere, tariffe dirette);
+- le sezioni semplici si alternano nero, chiaro, nero;
+- le chiare alternano bianco caldo pieno (`#f6f2ec`) e bianco caldo con il motivo corallo del marchio in trasparenza.
+Sul chiaro il corallo come testo diventa `#8a6038`, perché il corallo pieno non si legge sul bianco.

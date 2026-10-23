@@ -1263,3 +1263,45 @@ a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !im
   .header .nav, .header .nav.is-open, .header .nav > *, .header .nav.is-open > *, .header .nav::before { transition: none; }
 }
 @media (max-width: 920px) { .header .nav { background: linear-gradient(rgba(10,10,10,.86), rgba(10,10,10,.86)), #0a0a0a url("img/trama-nero.svg") center / 260px; } }
+
+/* ==========================================================================
+   Ritmo: sezioni chiare fra le nere (classi assegnate dal build, vedi build.py ritmo())
+   tono-chiaro = bianco caldo pieno · tono-trama = bianco caldo con il motivo del marchio
+   ========================================================================== */
+.tema-notte .tono-chiaro {
+  --bianco: #f6f2ec; --nero: #000000; --nero-80: #484848; --nero-50: #8a8580; --nero-20: #d9d3cb;
+  --paper: #f6f2ec; --paper-2: #efe6da; --ink: #0c0c0c; --ink-2: #4a4743; --line: #ddd5ca;
+  --corallo-20: #f7ebe0; --corallo-50: #e9cfb4; --verde: #5d6f5d; --verde-20: #dadbd5; --verde-50: #a7ada0;
+  background: #f6f2ec; color: #0c0c0c; color-scheme: light; border-top: 0 !important;
+}
+.tema-notte .tono-chiaro.tono-trama {
+  background: linear-gradient(rgba(246,242,236,.9), rgba(246,242,236,.9)), #f6f2ec url("img/pattern-salmone20-salmone50.svg") center / 142px auto;
+}
+/* testi in corallo: sul chiaro serve il tono scuro del corallo per leggersi */
+.tema-notte .tono-chiaro :is(.kicker, .guida__gruppo, .guida__dove, .qmap__nome small, .board__foot a) { color: #8a6038; }
+.tema-notte .tono-chiaro .kicker::before { background: #8a6038; }
+.tema-notte .tono-chiaro :is(h1, h2, h3, .lead, p, li, dd, dt, td, th, summary) { -webkit-text-fill-color: currentColor; }
+.tema-notte .tono-chiaro .btn:not(.btn--primary) { color: #0c0c0c; border-color: #0c0c0c; }
+.tema-notte .tono-chiaro .btn:not(.btn--primary):not(.btn--light):hover { background: #0c0c0c; color: #f6f2ec; }
+.tema-notte .tono-chiaro .card { background: #fffdf9; border-color: #e3dbd0; }
+.tema-notte .tono-chiaro .card--path:hover { border-color: #0c0c0c; }
+.tema-notte .tono-chiaro .data tbody tr:hover { background: #efe6da; }
+.tema-notte .tono-chiaro .todo { color: #7a4d0b; border-color: rgba(122,77,11,.45); background: rgba(183,121,31,.08); }
+.tema-notte .tono-chiaro .note { color: #6b4408; background: rgba(183,121,31,.08); }
+.tema-notte .tono-chiaro :is(.momenti li, .facts dt, .facts dd, .inbreve--foto .facts dt, .inbreve--foto .facts dd) { border-bottom-color: #ddd5ca; }
+.tema-notte .tono-chiaro .facts { border-top-color: #0c0c0c; }
+.tema-notte .tono-chiaro .guida__voce { background: #fffdf9; border-color: #e3dbd0; }
+.tema-notte .tono-chiaro .guida__voce:hover { border-color: #0c0c0c; }
+.tema-notte .tono-chiaro .guida__voce p { color: #4a4743; }
+.tema-notte .tono-chiaro .guida__tipo { color: #6b6762; }
+.tema-notte .tono-chiaro .faq__item { border-color: #ddd5ca; }
+.tema-notte .tono-chiaro .offerta { background: #fffdf9; }
+.tema-notte .tono-chiaro .photo:not(:has(img)) { background-color: #efe6da; background-image: url("img/pattern-salmone20-salmone50.svg"); }
+.tema-notte .tono-chiaro .photo:not(:has(img)) span { background: #f6f2ec; color: #4a4743; }
+.tema-notte .tono-chiaro ::selection { background: #0c0c0c; color: #f6f2ec; }
+.tema-notte .tono-chiaro .field :is(input, select, textarea) { background: #fffdf9; color: #0c0c0c; border-color: #cfc6ba; }
+.tema-notte .tono-chiaro .field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230c0c0c' stroke-width='1.5'/%3E%3C/svg%3E"); }
+.tema-notte .tono-chiaro .filters button { color: #0c0c0c; border-color: #cfc6ba; background: transparent; }
+.tema-notte .tono-chiaro .filters button[aria-pressed="true"] { background: #0c0c0c; color: #f6f2ec; border-color: #0c0c0c; }
+.tema-notte .tono-chiaro .field select { background-repeat: no-repeat; background-position: right 12px center; background-size: 12px 8px; background-color: #fffdf9; }
+.tema-notte .tono-chiaro :is(.muted, .small, .micro, .form-note, .board__foot) { color: #5f5b56; }

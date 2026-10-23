@@ -514,6 +514,40 @@ Aggiornato il {AGGIORNATO}.
 """
 
 
+# Ritmo delle sezioni: due sezioni nere di fila pesano. Le sezioni con foto, trama o colore propri
+# restano come sono; quelle semplici si alternano nero, chiaro, nero, e le chiare a loro volta
+# alternano fondo pieno e fondo con il motivo del marchio.
+TONO_FOTO = ("hero-full", "band", "section--foto", "finale", "capitolo--notte")
+TONO_SCURO = ("hero", "board", "mappa-sezione")
+SCURE_PER_SCELTA = ('id="tariffe"',)  # sezioni disegnate per il nero: restano nere anche se ne segue un'altra
+TONO_COLORE = ("section--verde",)
+
+
+def ritmo(corpo):
+    import re
+    stato = {"prima": "scuro", "chiare": 0}
+
+    def tono(m):
+        classi, resto = m.group(1).split(), m.group(2)
+        if any(c in classi for c in TONO_FOTO):
+            stato["prima"] = "foto"
+        elif any(c in classi for c in TONO_SCURO) or any(x in resto for x in SCURE_PER_SCELTA):
+            stato["prima"] = "scuro"
+        elif any(c in classi for c in TONO_COLORE):
+            stato["prima"] = "colore"
+        elif stato["prima"] in ("scuro", "foto"):
+            classi = [c for c in classi if c != "section--dark"]
+            classi.append("tono-chiaro")
+            if stato["chiare"] % 2:
+                classi.append("tono-trama")
+            stato["chiare"] += 1
+            stato["prima"] = "chiaro"
+        else:
+            stato["prima"] = "scuro"
+        return f'\n  <section class="{" ".join(classi)}"{resto}'
+    return re.sub(r'\n  <section class="([^"]*)"([^>]*)', tono, corpo)
+
+
 def main():
     lingue.modelli(PAGINE)
     import mappa
@@ -536,7 +570,8 @@ def main():
         else:
             corpo = faq_pagina.accorcia(corpi[key], key)
             faq = []
-        html = head(key, faq) + header(key) + '\n<main id="contenuto">\n' + corpo + "</main>\n" + footer()
+        corpo = ritmo("\n" + corpo)
+        html = head(key, faq) + header(key) + '\n<main id="contenuto">' + corpo + "</main>\n" + footer()
         (OUT / f"{key}.html").write_text(html)
         print(f"{key}.html · {len(estrai_faq(corpo))} FAQ")
     (OUT / "sitemap.xml").write_text(sitemap())
