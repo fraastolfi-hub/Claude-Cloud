@@ -339,3 +339,13 @@ Il sito sarà in **italiano, inglese, francese, tedesco, portoghese, spagnolo, r
 
 **Mappa interattiva del quartiere** (ottobre 2026): base vera OpenStreetMap (strade, piazze, stazioni, nomi delle vie) ripassata in nero con i colori del marchio, con i nomi dei quartieri (Isola, Porta Nuova, Brera, Moscova, Paolo Sarpi, Centrale), i cerchi dei 5, 10 e 15 minuti a piedi e ogni punto alla sua posizione reale. Si trascina, si ingrandisce (+ e −, doppio clic, pizzico sul telefono, Ctrl + rotellina), si sceglie un tema (Aziende, Treni e metro, Da vedere, Shopping, Mangiare e bere) e la mappa si inquadra da sola; i treni restano sempre come riferimento. Ogni sezione della pagina ha "Vedi sulla mappa", che apre il tema giusto. Senza JavaScript resta un'immagine con i punti.
 - **Licenza:** i dati OpenStreetMap sono liberi con l'attribuzione "© OpenStreetMap contributors" (già in pagina). I tasselli della bozza sono stati scaricati una volta sola dai server di openstreetmap.org, che non vanno usati per un sito in produzione: al lancio la base va rigenerata da un fornitore di tasselli (MapTiler, Stadia, Thunderforest) o esportata in proprio, con lo stesso stile scuro.
+
+## 18. Pagine Mangiare, Servizi, Galleria, Planet (23 ottobre 2026)
+
+Rifatte da tocq.it/all-day-eating, /servizi, /galleria e /planet, con gli stessi indirizzi (nessun link perso) e già con le regole di REVISIONE.md: sezioni corte, un'idea e un bottone ciascuna.
+- **Mangiare** (`/all-day-eating/`): colazione con orari e prezzo per esterni, pranzo, Clorofilla (18:30–23:00), Veranda per eventi, FAQ; dati strutturati Restaurant e FoodEstablishment con gli orari.
+- **Servizi**: le quattro cose che contano (reception 24 ore, garage a 50 m, palestra e piscina convenzionate, lavorare in camera), poi le richieste, tre recensioni TripAdvisor riportate su tocq.it.
+- **Galleria**: 28 foto (24 nuove dal sito attuale) con filtri per area e visione a schermo intero (frecce, tastiera, scorrimento del dito).
+- **Planet**: la pagina di tocq.it è solo in inglese e con i testi dentro le immagini; qui è in italiano e in testo vero. Le parole "green", "eco", "sostenibile" non compaiono: ci sono solo gesti concreti.
+
+Da chiedere alla direzione: orari del pranzo; se l'offerta smart working e le offerte "Notte fuori con cena" e "Weekend break" di /servizi sono ancora attive; anno della certificazione Green Key e il marchio; un piccolo grazie concreto per chi rinuncia al cambio asciugamani; il nome esatto della palestra convenzionata (su tocq.it "Virgin Club Collection Corso Como"); i nomi dello staff da mostrare (tocq.it cita Maria, Marco, Cristina; la home cita Rosetta, Giorgio, Maria). "Da Varrone", la steakhouse accanto citata su /servizi, può entrare nella guida del quartiere.

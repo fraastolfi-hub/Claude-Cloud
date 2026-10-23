@@ -25,7 +25,7 @@
   "f_scrivi": "Scrivi o chiama",
   "f_soggiorna": "Soggiorna",
   "f_camere_suite": "Camere e suite",
-  "f_colazione": "Colazione",
+  "f_colazione": "Colazione e ristorante",
   "f_prenota": "Prenota sul sito",
   "f_lavora": "Lavora",
   "f_sale": "Sale meeting",
@@ -71,6 +71,26 @@
    "title": "Aziende, ristoranti e shopping vicino al Tocq · Milano",
    "description": "Mappa del quartiere del Tocq Hotel Milano: le aziende di Porta Nuova, treni e metro, negozi e ristoranti, ciascuno con i minuti a piedi dall'hotel.",
    "nav": "Il quartiere"
+  },
+  "mangiare": {
+   "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
+   "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",
+   "nav": "Mangiare"
+  },
+  "servizi": {
+   "title": "Servizi, parcheggio e palestra · Tocq Hotel Milano",
+   "description": "Reception 24 ore, garage convenzionato a 50 metri, palestra e piscina a prezzo convenzionato in Corso Como, animali ammessi, baby-sitting, stireria.",
+   "nav": "Servizi"
+  },
+  "galleria": {
+   "title": "Foto del Tocq Hotel Milano · camere, hall, ristorante",
+   "description": "Le foto del Tocq Hotel Milano a Porta Garibaldi: camere e bagni, hall e bar, ristorante, Veranda e piatti della cucina.",
+   "nav": "Galleria"
+  },
+  "planet": {
+   "title": "Planet: meno plastica, carta e sprechi · Tocq Hotel Milano",
+   "description": "Cosa fa il Tocq Hotel Milano: zero plastica, niente carta in camera, luci LED, lavanderia a basso consumo, dispenser riciclati. E tre gesti per gli ospiti.",
+   "nav": "Planet"
   },
   "faq": {
    "title": "Domande frequenti · Tocq Hotel Milano",

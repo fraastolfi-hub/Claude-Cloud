@@ -85,6 +85,34 @@ PAGINE = {
         "nav": "Il quartiere",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
+    "mangiare": {
+        "url": "/all-day-eating/",
+        "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
+        "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",
+        "nav": "Mangiare",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
+    "servizi": {
+        "url": "/servizi/",
+        "title": "Servizi, parcheggio e palestra · Tocq Hotel Milano",
+        "description": "Reception 24 ore, garage convenzionato a 50 metri, palestra e piscina a prezzo convenzionato in Corso Como, animali ammessi, baby-sitting, stireria.",
+        "nav": "Servizi",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
+    "galleria": {
+        "url": "/galleria/",
+        "title": "Foto del Tocq Hotel Milano · camere, hall, ristorante",
+        "description": "Le foto del Tocq Hotel Milano a Porta Garibaldi: camere e bagni, hall e bar, ristorante, Veranda e piatti della cucina.",
+        "nav": "Galleria",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
+    "planet": {
+        "url": "/planet/",
+        "title": "Planet: meno plastica, carta e sprechi · Tocq Hotel Milano",
+        "description": "Cosa fa il Tocq Hotel Milano: zero plastica, niente carta in camera, luci LED, lavanderia a basso consumo, dispenser riciclati. E tre gesti per gli ospiti.",
+        "nav": "Planet",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
     "faq": {
         "url": "/domande-frequenti/",
         "title": "Domande frequenti · Tocq Hotel Milano",
@@ -230,6 +258,16 @@ def schema_pagina(key, faq):
                 "maximumAttendeeCapacity": max(platea, cocktail),
                 "containedInPlace": {"@id": HOTEL_ID},
             })
+    if key == "mangiare":
+        grafo += [
+            {"@type": "Restaurant", "@id": SITO + "/all-day-eating/#clorofilla", "name": "Clorofilla",
+             "description": "Wine bar con cucina del Tocq Hotel Milano: piatti di stagione, tradizione italiana con un tocco internazionale, aperitivo e cena.",
+             "servesCuisine": ["Italiana", "Internazionale"], "openingHours": "Mo-Su 18:30-23:00",
+             "telephone": FATTI["telefono"], "address": indirizzo_ld(), "containedInPlace": {"@id": HOTEL_ID}},
+            {"@type": "FoodEstablishment", "@id": SITO + "/all-day-eating/#colazione", "name": "Colazione del Tocq Hotel Milano",
+             "description": "Colazione a buffet italiana, americana, asiatica e halal, con opzioni senza glutine e vegane; da asporto dalle 5:30; aperta agli ospiti esterni a 16 €.",
+             "openingHours": ["Mo-Fr 06:30-10:30", "Sa-Su 07:00-11:00"], "address": indirizzo_ld(), "containedInPlace": {"@id": HOTEL_ID}},
+        ]
     if key == "offerte":
         grafo.append({
             "@type": "OfferCatalog",
@@ -400,7 +438,10 @@ def footer(codice="it"):
       <div>
         <h2 class="footer__h">{t['f_soggiorna']}</h2>
         <a href="camere.html">{t['f_camere_suite']}</a>
-        <a href="camere.html#colazione">{t['f_colazione']}</a>
+        <a href="mangiare.html">{t['f_colazione']}</a>
+        <a href="servizi.html">{t['nav_servizi']}</a>
+        <a href="galleria.html">{t['nav_galleria']}</a>
+        <a href="planet.html">{t['nav_planet']}</a>
         <a href="{pren}" target="_blank" rel="noopener" data-prenota>{t['f_prenota']}</a>
       </div>
       <div>

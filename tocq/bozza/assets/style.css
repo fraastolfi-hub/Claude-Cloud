@@ -1312,3 +1312,41 @@ a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !im
   .header .nav > a.nav__secondaria { display: block; font-size: 17px; letter-spacing: .04em; color: #b9b5af; padding: 10px 0; border-bottom: 0; }
   .header .nav > a.nav__secondaria:first-of-type, .header .nav > a:not(.nav__secondaria) + a.nav__secondaria { margin-top: 18px; }
 }
+
+/* ===== Pagine Mangiare, Servizi, Galleria, Planet ===== */
+.servizi-principali .card h3 { margin: 0 0 8px; }
+.lista-semplice { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.lista-semplice li { padding: 14px 0 14px 28px; border-bottom: 1px solid var(--line); position: relative; font-size: 18px; }
+.lista-semplice li::before { content: ""; position: absolute; left: 2px; top: 23px; width: 12px; height: 1.5px; background: var(--corallo); }
+.citazione { margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.citazione p { margin: 0; font-size: 19px; line-height: 1.45; }
+.citazione footer { font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); margin-top: auto; }
+.impegni { list-style: none; margin: 0; padding: 0; counter-reset: imp; border-top: 2px solid var(--ink); }
+.impegni li { counter-increment: imp; display: grid; grid-template-columns: 56px minmax(0, 1fr) minmax(0, 1.4fr); gap: 4px 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.impegni li::before { content: counter(imp, decimal-leading-zero); font: 500 14px var(--sans); letter-spacing: .12em; color: #8fb08a; }
+.impegni b { font-size: clamp(20px, 2.2vw, 26px); font-weight: 500; }
+.impegni span { color: var(--ink-2); }
+@media (max-width: 760px) { .impegni li { grid-template-columns: 40px 1fr; } .impegni span { grid-column: 2; } }
+.planet-hero { background: #0c0c0c url("img/trama-verde.svg") center / 142px auto; }
+.planet-hero .kicker { color: #a7ada0; }
+.galleria-filtri { margin-bottom: 24px; }
+.galleria { list-style: none; margin: 0; padding: 0; columns: 3 280px; column-gap: 12px; }
+.galleria__voce { break-inside: avoid; margin: 0 0 12px; }
+.galleria__voce.is-nascosto { display: none; }
+.galleria__voce a { display: block; overflow: hidden; position: relative; cursor: zoom-in; }
+.galleria__voce img { display: block; width: 100%; height: auto; transition: transform .7s var(--ease), opacity .3s; }
+.galleria__voce a:hover img { transform: scale(1.03); }
+.galleria__voce a::after { content: attr(data-didascalia); position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px; font-size: 14px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.7)); opacity: 0; transition: opacity .3s; }
+.galleria__voce a:hover::after, .galleria__voce a:focus-visible::after { opacity: 1; }
+.lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(5,5,5,.96); display: grid; grid-template-rows: 1fr auto; place-items: center; padding: 56px 16px 16px; opacity: 0; visibility: hidden; transition: opacity .3s, visibility 0s .3s; }
+.lightbox.is-open { opacity: 1; visibility: visible; transition: opacity .3s; }
+.lightbox img { max-width: min(1400px, 100%); max-height: calc(100vh - 140px); width: auto; height: auto; object-fit: contain; }
+.lightbox p { margin: 12px 0 0; color: #f3efe9; font-size: 15px; }
+.lightbox button { position: absolute; background: rgba(20,20,20,.8); color: #f3efe9; -webkit-text-fill-color: #f3efe9; border: 1px solid rgba(255,255,255,.2); width: 48px; height: 48px; font: 300 26px/1 var(--sans); cursor: pointer; }
+.lightbox button:hover { color: #d2a275; border-color: #d2a275; }
+.lightbox__chiudi { top: 12px; right: 12px; }
+.lightbox__prec { left: 12px; top: 50%; transform: translateY(-50%); }
+.lightbox__succ { right: 12px; top: 50%; transform: translateY(-50%); }
+html.lightbox-aperta { overflow: hidden; }
+.todo { white-space: normal; }
+.lightbox { background: #050505; }

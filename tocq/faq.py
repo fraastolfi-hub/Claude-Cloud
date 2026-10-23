@@ -13,6 +13,8 @@ GRUPPI = [
     ("index", "Prima di prenotare"),
     ("offerte", "Tariffe e offerte"),
     ("camere", "Camere e colazione"),
+    ("mangiare", "Mangiare e bere"),
+    ("servizi", "Servizi e parcheggio"),
     ("meeting", "Sale meeting ed eventi"),
     ("posizione", "Come arrivare"),
     ("quartiere", "Il quartiere"),

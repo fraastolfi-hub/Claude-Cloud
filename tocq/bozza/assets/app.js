@@ -500,6 +500,49 @@ if (qmap) {
   if (base.complete) avvia(); else base.addEventListener('load', avvia);
 }
 
+// Galleria: filtri per area e foto a schermo intero, con frecce, tastiera e scorrimento del dito
+var galleria = document.getElementById('galleria');
+if (galleria) {
+  var voci = [].slice.call(galleria.querySelectorAll('.galleria__voce'));
+  var gf = document.querySelector('.galleria-filtri');
+  if (gf) gf.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    var f = b.getAttribute('data-filtro');
+    gf.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    voci.forEach(function (v) { v.classList.toggle('is-nascosto', f !== 'tutte' && v.getAttribute('data-cat') !== f); });
+    traccia('galleria_filtro', { categoria: f });
+  });
+  var lb = document.createElement('div');
+  lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Foto');
+  lb.innerHTML = '<img alt=""><p></p><button type="button" class="lightbox__chiudi" aria-label="Chiudi">×</button><button type="button" class="lightbox__prec" aria-label="Foto precedente">‹</button><button type="button" class="lightbox__succ" aria-label="Foto successiva">›</button>';
+  document.body.appendChild(lb);
+  var lbImg = lb.querySelector('img'), lbTxt = lb.querySelector('p'), corrente = 0, origine = null;
+  function visibili() { return voci.filter(function (v) { return !v.classList.contains('is-nascosto'); }); }
+  function mostra(i) {
+    var vv = visibili(); corrente = (i + vv.length) % vv.length;
+    var a = vv[corrente].querySelector('a');
+    lbImg.src = a.getAttribute('href'); lbImg.alt = a.querySelector('img').alt; lbTxt.textContent = a.getAttribute('data-didascalia');
+  }
+  function apri(i) { origine = document.activeElement; mostra(i); lb.classList.add('is-open'); document.documentElement.classList.add('lightbox-aperta'); lb.querySelector('.lightbox__chiudi').focus(); }
+  function chiudi() { lb.classList.remove('is-open'); document.documentElement.classList.remove('lightbox-aperta'); if (origine) origine.focus(); }
+  galleria.addEventListener('click', function (e) {
+    var a = e.target.closest('a'); if (!a) return; e.preventDefault();
+    apri(visibili().indexOf(a.parentNode)); traccia('galleria_foto', { foto: a.getAttribute('data-didascalia') });
+  });
+  lb.addEventListener('click', function (e) {
+    if (e.target.closest('.lightbox__prec')) mostra(corrente - 1);
+    else if (e.target.closest('.lightbox__succ')) mostra(corrente + 1);
+    else if (e.target.closest('.lightbox__chiudi') || e.target === lb) chiudi();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') chiudi(); if (e.key === 'ArrowLeft') mostra(corrente - 1); if (e.key === 'ArrowRight') mostra(corrente + 1);
+  });
+  var x0 = null;
+  lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) { if (x0 === null) return; var d = e.changedTouches[0].clientX - x0; if (Math.abs(d) > 50) mostra(corrente + (d < 0 ? 1 : -1)); x0 = null; });
+}
+
 // Pagina FAQ: ricerca immediata fra le domande e le risposte
 var cerca = document.getElementById('faq-cerca');
 if (cerca) {

@@ -37,6 +37,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/quartiere/"/>
   </url>
   <url>
+    <loc>https://www.tocq.it/all-day-eating/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/all-day-eating/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/all-day-eating/"/>
+  </url>
+  <url>
+    <loc>https://www.tocq.it/servizi/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/servizi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/servizi/"/>
+  </url>
+  <url>
+    <loc>https://www.tocq.it/galleria/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/galleria/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/galleria/"/>
+  </url>
+  <url>
+    <loc>https://www.tocq.it/planet/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/planet/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/planet/"/>
+  </url>
+  <url>
     <loc>https://www.tocq.it/domande-frequenti/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/domande-frequenti/"/>

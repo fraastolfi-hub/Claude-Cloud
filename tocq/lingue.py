@@ -71,7 +71,7 @@ UI = {"it": {
     "f_scrivi": "Scrivi o chiama",
     "f_soggiorna": "Soggiorna",
     "f_camere_suite": "Camere e suite",
-    "f_colazione": "Colazione",
+    "f_colazione": "Colazione e ristorante",
     "f_prenota": "Prenota sul sito",
     "f_lavora": "Lavora",
     "f_sale": "Sale meeting",
