@@ -351,10 +351,13 @@ def selettore_lingue(key, codice, t):
 
 def header(key, codice="it"):
     t = lingue.ui(codice)
-    voci = [("camere", t["nav_camere"]), ("meeting", t["nav_meeting"]), ("offerte", t["nav_offerte"]), ("quartiere", t["nav_quartiere"]), ("posizione", t["nav_posizione"]), ("contatti", t["nav_contatti"])]
-    links = "\n".join(
-        f'      <a href="{k}.html"{" aria-current=\"page\"" if k == key else ""}>{v}</a>' for k, v in voci
-    )
+    # menu principale (sempre visibile) e voci secondarie (solo nel menu mobile; su desktop stanno nel footer)
+    principali = [("camere", t["nav_camere"]), ("mangiare", t["nav_mangiare"]), ("meeting", t["nav_meeting"]), ("offerte", t["nav_offerte"]), ("quartiere", t["nav_quartiere"]), ("contatti", t["nav_contatti"])]
+    secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"]), ("posizione", t["nav_posizione"])]
+    def voce(k, v, classe=""):
+        return f'      <a href="{k}.html"{classe}{" aria-current=\"page\"" if k == key else ""}>{v}</a>'
+    links = "\n".join([voce(k, v) for k, v in principali if k in PAGINE] +
+                       [voce(k, v, ' class="nav__secondaria"') for k, v in secondarie if k in PAGINE])
     return f"""
 <a class="skip" href="#contenuto">{t['salta']}</a>
 <header class="header">

@@ -1305,3 +1305,10 @@ a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !im
 .tema-notte .tono-chiaro .filters button[aria-pressed="true"] { background: #0c0c0c; color: #f6f2ec; border-color: #0c0c0c; }
 .tema-notte .tono-chiaro .field select { background-repeat: no-repeat; background-position: right 12px center; background-size: 12px 8px; background-color: #fffdf9; }
 .tema-notte .tono-chiaro :is(.muted, .small, .micro, .form-note, .board__foot) { color: #5f5b56; }
+
+/* voci secondarie del menu: solo nel menu mobile (su desktop sono nel footer) */
+.nav .nav__secondaria { display: none; }
+@media (max-width: 920px) {
+  .header .nav > a.nav__secondaria { display: block; font-size: 17px; letter-spacing: .04em; color: #b9b5af; padding: 10px 0; border-bottom: 0; }
+  .header .nav > a.nav__secondaria:first-of-type, .header .nav > a:not(.nav__secondaria) + a.nav__secondaria { margin-top: 18px; }
+}

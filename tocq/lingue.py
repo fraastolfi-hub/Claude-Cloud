@@ -38,6 +38,10 @@ URL = {
     "posizione": {"it": "/posizione/", "en": "/en/location/", "fr": "/fr/acces/", "de": "/de/lage/", "pt": "/pt/localizacao/", "es": "/es/ubicacion/", "ru": "/ru/location/", "ar": "/ar/location/", "zh": "/zh/location/"},
     "quartiere": {"it": "/quartiere/", "en": "/en/neighbourhood/", "fr": "/fr/quartier/", "de": "/de/viertel/", "pt": "/pt/bairro/", "es": "/es/barrio/", "ru": "/ru/neighbourhood/", "ar": "/ar/neighbourhood/", "zh": "/zh/neighbourhood/"},
     "faq":       {"it": "/domande-frequenti/", "en": "/en/faq/", "fr": "/fr/faq/", "de": "/de/faq/", "pt": "/pt/faq/", "es": "/es/preguntas-frecuentes/", "ru": "/ru/faq/", "ar": "/ar/faq/", "zh": "/zh/faq/"},
+    "mangiare":  {"it": "/all-day-eating/", "en": "/en/all-day-eating/", "fr": "/fr/restaurant/", "de": "/de/restaurant/", "pt": "/pt/restaurante/", "es": "/es/restaurante/", "ru": "/ru/restaurant/", "ar": "/ar/restaurant/", "zh": "/zh/restaurant/"},
+    "servizi":   {"it": "/servizi/", "en": "/en/services/", "fr": "/fr/services/", "de": "/de/service/", "pt": "/pt/servicos/", "es": "/es/servicios/", "ru": "/ru/services/", "ar": "/ar/services/", "zh": "/zh/services/"},
+    "galleria":  {"it": "/galleria/", "en": "/en/gallery/", "fr": "/fr/galerie/", "de": "/de/galerie/", "pt": "/pt/galeria/", "es": "/es/galeria/", "ru": "/ru/gallery/", "ar": "/ar/gallery/", "zh": "/zh/gallery/"},
+    "planet":    {"it": "/planet/", "en": "/en/planet/", "fr": "/fr/planete/", "de": "/de/planet/", "pt": "/pt/planeta/", "es": "/es/planeta/", "ru": "/ru/planet/", "ar": "/ar/planet/", "zh": "/zh/planet/"},
     "contatti":  {"it": "/contatti/", "en": "/en/contact/", "fr": "/fr/contact/", "de": "/de/kontakt/", "pt": "/pt/contactos/", "es": "/es/contacto/", "ru": "/ru/contacts/", "ar": "/ar/contact/", "zh": "/zh/contact/"},
 }
 
@@ -49,6 +53,10 @@ UI = {"it": {
     "chiudi": "Chiudi",
     "nav_aria": "Principale",
     "nav_camere": "Camere",
+    "nav_mangiare": "Mangiare",
+    "nav_servizi": "Servizi",
+    "nav_galleria": "Galleria",
+    "nav_planet": "Planet",
     "nav_meeting": "Meeting ed eventi",
     "nav_offerte": "Offerte",
     "nav_quartiere": "Il quartiere",
