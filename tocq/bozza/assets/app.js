@@ -32,6 +32,15 @@ document.querySelectorAll('.nav-toggle').forEach(function (btn) {
   document.addEventListener('click', function (e) { if (e.target.closest('.note-toggle')) imposta(!document.documentElement.classList.contains('mostra-note')); });
 })();
 
+// Menu a discesa: si apre al passaggio del mouse (CSS) o con la freccia, si chiude cliccando fuori o con Esc
+document.querySelectorAll('.nav__gruppo').forEach(function (g) {
+  var b = g.querySelector('.nav__apri');
+  function imposta(v) { g.classList.toggle('is-open', v); b.setAttribute('aria-expanded', v ? 'true' : 'false'); }
+  b.addEventListener('click', function (e) { e.stopPropagation(); imposta(!g.classList.contains('is-open')); });
+  document.addEventListener('click', function (e) { if (!g.contains(e.target)) imposta(false); });
+  g.addEventListener('keydown', function (e) { if (e.key === 'Escape') { imposta(false); b.focus(); } });
+});
+
 // Orologio del tabellone
 document.querySelectorAll('[data-clock]').forEach(function (el) {
   function tick() {

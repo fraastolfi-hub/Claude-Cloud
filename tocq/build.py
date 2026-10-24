@@ -416,10 +416,20 @@ def header(key, codice="it"):
     t = lingue.ui(codice)
     # menu principale (sempre visibile) e voci secondarie (solo nel menu mobile; su desktop stanno nel footer)
     principali = [("posizione", t["nav_posizione"]), ("camere", t["nav_camere"]), ("mangiare", t["nav_mangiare"]), ("meeting", t["nav_meeting"]), ("offerte", t["nav_offerte"]), ("contatti", t["nav_contatti"])]
-    secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"]), ("arrivare", t["nav_arrivare"])]
+    secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"])]
+    # sottopagine con menu a discesa (su mobile appaiono rientrate sotto la voce madre)
+    sottomenu = {"posizione": [("quartiere-aziende", t["sub_lavoro"]), ("quartiere-mangiare", t["sub_mangiare"]),
+                               ("quartiere-shopping", t["sub_shopping"]), ("arrivare", t["sub_arrivare"])]}
     def voce(k, v, classe=""):
-        return f'      <a href="{k}.html"{classe}{" aria-current=\"page\"" if k == key else ""}>{v}</a>'
-    links = "\n".join([voce(k, v) for k, v in principali if k in PAGINE] +
+        corrente = k == key or any(k2 == key for k2, _ in sottomenu.get(k, []))
+        return f'      <a href="{k}.html"{classe}{" aria-current=\"page\"" if corrente else ""}>{v}</a>'
+    def gruppo(k, v):
+        figli = [(k2, v2) for k2, v2 in sottomenu[k] if k2 in PAGINE]
+        voci = "".join(f'<li><a href="{k2}.html"{" aria-current=\"page\"" if k2 == key else ""}>{v2}</a></li>' for k2, v2 in figli)
+        return (f'      <div class="nav__gruppo">{voce(k, v).strip()}'
+                f'<button type="button" class="nav__apri" aria-expanded="false" aria-controls="sub-{k}" aria-label="{t["sottomenu"]}: {v}"></button>'
+                f'<ul class="nav__sub" id="sub-{k}">{voci}</ul></div>')
+    links = "\n".join([gruppo(k, v) if k in sottomenu else voce(k, v) for k, v in principali if k in PAGINE] +
                        [voce(k, v, ' class="nav__secondaria"') for k, v in secondarie if k in PAGINE])
     return f"""
 <a class="skip" href="#contenuto">{t['salta']}</a>
