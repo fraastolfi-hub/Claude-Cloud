@@ -351,3 +351,7 @@ Rifatte da tocq.it/all-day-eating, /servizi, /galleria e /planet, con gli stessi
 Da chiedere alla direzione: orari del pranzo; se l'offerta smart working e le offerte "Notte fuori con cena" e "Weekend break" di /servizi sono ancora attive; anno della certificazione Green Key e il marchio; un piccolo grazie concreto per chi rinuncia al cambio asciugamani; i nomi dello staff da mostrare (tocq.it cita Maria, Marco, Cristina; la home cita Rosetta, Giorgio, Maria). "Da Varrone", la steakhouse accanto citata su /servizi, può entrare nella guida del quartiere.
 
 **Confermato dalla direzione (23 ottobre 2026):** cancellazione gratuita fino a 24 ore prima dell'arrivo (tariffa Direct Flex); la palestra convenzionata è il Virgin Active Collection di Corso Como; il quartiere si divide in pagine separate.
+
+## 19. H1 per la ricerca (24 ottobre 2026)
+
+Su indicazione di Francesco, in ogni pagina l'H1 è la frase con la parola chiave (scritta piccola, al posto dell'occhiello: "Tocq Hotel Milano · hotel 4 stelle a Porta Garibaldi", "Camere e suite a Porta Garibaldi, Milano", "Ristoranti e bar vicino a Porta Garibaldi"…), mentre il titolo grande ("Scendi a Garibaldi. Sei arrivato.") resta identico ma è un paragrafo con classe `.titolo`. Un solo H1 per pagina, visibile (niente testo nascosto), coerente con il `<title>` della pagina. Le pagine nuove seguono lo stesso schema: `<h1 class="kicker">` + `<p class="titolo">`.

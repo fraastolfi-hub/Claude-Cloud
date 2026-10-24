@@ -1480,3 +1480,13 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
   .header .btn--small { padding-left: 14px; padding-right: 14px; }
 }
 @media (min-width: 921px) and (max-width: 980px) { .nav { gap: 9px; } .header .wrap { gap: 12px; } }
+
+/* H1 per la ricerca: la frase con la parola chiave è l'H1 (piccola, al posto dell'occhiello);
+   il titolo grande resta identico ma è un paragrafo con classe .titolo */
+.hero h1.kicker, .hero-full h1.kicker, .faq-hero h1.kicker { font: 500 12px/1.4 var(--sans); letter-spacing: .18em; max-width: none; margin: 0 0 16px; text-wrap: wrap; }
+.titolo { font-size: clamp(40px, 6.6vw, 78px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; margin: 0 0 .5em; text-wrap: balance; color: var(--ink); }
+@media (min-width: 861px) { .hero .titolo { font-size: clamp(44px, 4.7vw, 66px); } }
+.hero-full .titolo { font-size: clamp(40px, 6.2vw, 92px); line-height: .96; letter-spacing: -0.025em; margin: 0 0 24px -0.045em; color: #fff; }
+.faq-hero .titolo { font-size: clamp(44px, 6vw, 84px); }
+[dir="rtl"] .hero-full .titolo { margin-left: 0; margin-right: -0.045em; }
+:lang(ar) .titolo { line-height: 1.4; }
