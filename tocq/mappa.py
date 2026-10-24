@@ -39,6 +39,15 @@ def _metri(h, p):
     return dx, dy
 
 
+def _minuti(metri):
+    """Minuti a piedi arrotondati al più vicino; 0 vuol dire "meno di un minuto"."""
+    return 0 if metri < 60 else max(1, round(metri / PASSO_M_MIN))
+
+
+def _min_testo(q):
+    return "meno di 1 min" if q["minuti"] == 0 else f"{q['minuti']} min"
+
+
 def _arricchisci(dati):
     h = dati["hotel"]
     out = []
@@ -47,9 +56,11 @@ def _arricchisci(dati):
             continue
         dx, dy = _metri(h, p)
         linea = math.hypot(dx, dy)
-        a_piedi = linea * FATTORE_STRADA
+        # distanza a piedi: il percorso reale sulle strade (piedi_m, dal router pedonale OpenStreetMap) quando c'è,
+        # altrimenti la stima dalla linea d'aria
+        a_piedi = p.get("piedi_m") or linea * FATTORE_STRADA
         q = dict(p)
-        q.update(dx=dx, dy=dy, linea=linea, a_piedi=a_piedi, minuti=max(1, math.ceil(a_piedi / PASSO_M_MIN)))
+        q.update(dx=dx, dy=dy, linea=linea, a_piedi=a_piedi, minuti=_minuti(a_piedi))
         out.append(q)
     # punti nello stesso edificio (es. Accenture e Bending Spoons): si allargano a ventaglio per restare cliccabili
     posati = []
@@ -60,7 +71,7 @@ def _arricchisci(dati):
             q["dx"] += 34 * math.cos(ang)
             q["dy"] += 34 * math.sin(ang)
         posati.append((q["dx"], q["dy"]))
-    return sorted(out, key=lambda q: q["linea"])
+    return sorted(out, key=lambda q: q["a_piedi"])
 
 
 def _e(s):
@@ -70,7 +81,7 @@ def _e(s):
 def _distanza(q):
     m = q["a_piedi"]
     metri = f"{round(m / 10) * 10:.0f} m" if m < 1000 else f"{m / 1000:.1f} km".replace(".", ",")
-    return f"{q['minuti']} min a piedi · {metri}"
+    return f"{_min_testo(q)} a piedi · {metri}"
 
 
 def _maps(q):
@@ -166,13 +177,13 @@ def loghi_aziende(punti):
         if q["categoria"] != "aziende":
             continue
         logo = _logo(q, ref, "azienda__logo") or f'<span class="azienda__logo azienda__logo--testo">{_e(q["nome"].split(" (")[0].split(" — ")[0])}</span>'
-        voci.append(f'<li class="azienda" data-id="{_e(q["id"])}">{logo}<span class="azienda__min">{q["minuti"]} min</span></li>')
+        voci.append(f'<li class="azienda" data-id="{_e(q["id"])}">{logo}<span class="azienda__min">{_min_testo(q)}</span></li>')
     return '<ul class="aziende-loghi" aria-label="Aziende a pochi minuti a piedi">' + "".join(voci) + "</ul>"
 
 
 def tabella_aziende(punti):
     righe = "".join(
-        f'<tr><td>{_e(q["nome"])}</td><td>{_e(q.get("edificio") or q["indirizzo"])}</td><td>{_e(q.get("tipo") or "")}</td><td class="n">{q["minuti"]} min</td></tr>'
+        f'<tr><td>{_e(q["nome"])}</td><td>{_e(q.get("edificio") or q["indirizzo"])}</td><td>{_e(q.get("tipo") or "")}</td><td class="n">{_min_testo(q)}</td></tr>'
         for q in punti if q["categoria"] == "aziende")
     return ('<div class="table-scroll"><table class="data"><thead><tr><th>Azienda</th><th>Sede</th><th>Settore</th><th>A piedi</th></tr></thead>'
             f'<tbody>{righe}</tbody></table></div>')
@@ -217,7 +228,7 @@ def _scheda(q, ref=None):
     tipo = (q.get("tipo") or "").lower()
     etichetta = f'<span class="guida__tipo">{_e(q.get("tipo"))}</span>' if q.get("tipo") else ""
     return (f'<article class="guida__voce" data-id="{_e(q["id"])}" data-tipo="{_e(tipo)}">{_testata(q, ref)}{etichetta}<h3>{_e(q["nome"])}</h3>'
-            f'<p class="guida__min">{q["minuti"]} min a piedi</p><p>{_e(q.get("descrizione"))}</p>'
+            f'<p class="guida__min">{_min_testo(q)} a piedi</p><p>{_e(q.get("descrizione"))}</p>'
             f'<a href="{_e(_maps(q))}" target="_blank" rel="noopener">Percorso a piedi</a></article>')
 
 
