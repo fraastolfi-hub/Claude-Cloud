@@ -6,16 +6,16 @@
   "menu": "Menu",
   "chiudi": "Chiudi",
   "nav_aria": "Principale",
-  "nav_camere": "Camere",
-  "nav_mangiare": "Mangiare",
-  "nav_servizi": "Servizi",
-  "nav_galleria": "Galleria",
-  "nav_planet": "Planet",
-  "nav_meeting": "Meeting ed eventi",
-  "nav_offerte": "Offerte",
-  "nav_quartiere": "Il quartiere",
-  "nav_posizione": "Come arrivare",
-  "nav_contatti": "Contatti",
+  "nav_camere": "Camere silenziose",
+  "nav_mangiare": "Colazione e cena",
+  "nav_servizi": "Garage e servizi",
+  "nav_galleria": "Guarda il Tocq",
+  "nav_planet": "Meno sprechi",
+  "nav_meeting": "Sale meeting",
+  "nav_offerte": "Miglior prezzo",
+  "nav_quartiere": "Tutto a piedi",
+  "nav_posizione": "A 200 m dal treno",
+  "nav_contatti": "Contatti 24h",
   "lingua": "Lingua",
   "lingua_presto": "In traduzione",
   "prenota": "Prenota",
@@ -25,15 +25,15 @@
   "f_scrivi": "Scrivi o chiama",
   "f_soggiorna": "Soggiorna",
   "f_camere_suite": "Camere e suite",
-  "f_colazione": "Colazione e ristorante",
+  "f_colazione": "Colazione e cena",
   "f_prenota": "Prenota sul sito",
   "f_lavora": "Lavora",
   "f_sale": "Sale meeting",
   "f_preventivo": "Richiedi un preventivo",
   "f_aziendali": "Tariffe aziendali",
-  "f_quartiere": "Il quartiere e le aziende",
-  "f_arrivare": "Come arrivare",
-  "f_offerte": "Offerte e tariffe dirette",
+  "f_quartiere": "Tutto a piedi: aziende e locali",
+  "f_arrivare": "A 200 m dal treno",
+  "f_offerte": "Miglior prezzo, prenotando qui",
   "f_faq": "Domande frequenti",
   "f_piva": "P.IVA",
   "f_bozza": "Bozza di lavoro a cura di Francesco Astolfi · non è il sito ufficiale · aggiornata il 22 ottobre 2026",
@@ -50,27 +50,27 @@
   "camere": {
    "title": "Camere e suite a Porta Garibaldi · Tocq Hotel Milano",
    "description": "133 camere insonorizzate a Porta Garibaldi: Comfort, Superior, Executive, Junior Suite. Scegli cuscino, lato della camera e colazione da asporto.",
-   "nav": "Camere"
+   "nav": "Camere silenziose"
   },
   "meeting": {
    "title": "Sale meeting a Porta Nuova, Milano · Tocq Hotel",
    "description": "6 sale meeting fino a 100 persone a platea, nello stesso edificio delle 133 camere, a 200 m dalla stazione Garibaldi. Preventivo entro 24 ore.",
-   "nav": "Meeting ed eventi"
+   "nav": "Sale meeting"
   },
   "offerte": {
    "title": "Offerte e tariffe dirette · Tocq Hotel Milano",
    "description": "Prenota diretto al Tocq Hotel Milano: Direct Flex con cancellazione gratuita fino a 24 ore prima, Direct Save al 10% in meno. Colazione sempre inclusa.",
-   "nav": "Offerte"
+   "nav": "Miglior prezzo"
   },
   "posizione": {
    "title": "Hotel vicino alla stazione Garibaldi · Tocq Hotel Milano",
    "description": "Distanze reali dal Tocq: stazione Garibaldi 200 m, Gae Aulenti 70 m, Centrale 1,5 km, Duomo 2,5 km, Linate 9 km, Malpensa 49 km. Fiera, MiCo, San Siro.",
-   "nav": "La posizione"
+   "nav": "A 200 m dal treno"
   },
   "quartiere": {
    "title": "Aziende, ristoranti e shopping vicino al Tocq · Milano",
    "description": "Mappa del quartiere del Tocq Hotel Milano: le aziende di Porta Nuova, treni e metro, negozi e ristoranti, ciascuno con i minuti a piedi dall'hotel.",
-   "nav": "Il quartiere"
+   "nav": "Tutto a piedi"
   },
   "quartiere-aziende": {
    "title": "Aziende vicino al Tocq Hotel Milano · Porta Nuova",
@@ -90,22 +90,22 @@
   "mangiare": {
    "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
    "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",
-   "nav": "Mangiare"
+   "nav": "Colazione e cena"
   },
   "servizi": {
    "title": "Servizi, parcheggio e palestra · Tocq Hotel Milano",
    "description": "Reception 24 ore, garage convenzionato a 50 metri, palestra e piscina a prezzo convenzionato in Corso Como, animali ammessi, baby-sitting, stireria.",
-   "nav": "Servizi"
+   "nav": "Garage e servizi"
   },
   "galleria": {
    "title": "Foto del Tocq Hotel Milano · camere, hall, ristorante",
    "description": "Le foto del Tocq Hotel Milano a Porta Garibaldi: camere e bagni, hall e bar, ristorante, Veranda e piatti della cucina.",
-   "nav": "Galleria"
+   "nav": "Guarda il Tocq"
   },
   "planet": {
-   "title": "Planet: meno plastica, carta e sprechi · Tocq Hotel Milano",
+   "title": "Meno plastica, carta e sprechi · Tocq Hotel Milano",
    "description": "Cosa fa il Tocq Hotel Milano: zero plastica, niente carta in camera, luci LED, lavanderia a basso consumo, dispenser riciclati. E tre gesti per gli ospiti.",
-   "nav": "Planet"
+   "nav": "Meno sprechi"
   },
   "faq": {
    "title": "Domande frequenti · Tocq Hotel Milano",
@@ -115,7 +115,7 @@
   "contatti": {
    "title": "Contatti · Tocq Hotel Milano, Porta Garibaldi",
    "description": "Tocq Hotel Milano, Via De Tocqueville 7/D. Reception 24 ore +39 02 62071, info@tocq.it. Meeting ed eventi: mice@tocq.it.",
-   "nav": "Contatti"
+   "nav": "Contatti 24h"
   }
  }
 }
