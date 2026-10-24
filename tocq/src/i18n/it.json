@@ -14,7 +14,8 @@
   "nav_meeting": "Sale meeting",
   "nav_offerte": "Miglior prezzo",
   "nav_quartiere": "Il quartiere",
-  "nav_posizione": "A 200 m dal treno",
+  "nav_posizione": "Posizione",
+  "nav_arrivare": "A 200 m dal treno",
   "nav_contatti": "Contatti 24h",
   "lingua": "Lingua",
   "lingua_presto": "In traduzione",
@@ -31,7 +32,7 @@
   "f_sale": "Sale meeting",
   "f_preventivo": "Richiedi un preventivo",
   "f_aziendali": "Tariffe aziendali",
-  "f_quartiere": "Il quartiere: aziende e locali",
+  "f_quartiere": "Posizione e quartiere",
   "f_arrivare": "A 200 m dal treno",
   "f_offerte": "Miglior prezzo, prenotando qui",
   "f_faq": "Domande frequenti",
@@ -63,19 +64,19 @@
    "nav": "Miglior prezzo"
   },
   "posizione": {
-   "title": "Hotel vicino alla stazione Garibaldi · Tocq Hotel Milano",
-   "description": "Distanze reali dal Tocq: stazione Garibaldi 200 m, Gae Aulenti 70 m, Centrale 1,5 km, Duomo 2,5 km, Linate 9 km, Malpensa 49 km. Fiera, MiCo, San Siro.",
-   "nav": "A 200 m dal treno"
+   "title": "Posizione: hotel a Porta Garibaldi, Milano · Tocq Hotel",
+   "description": "Il Tocq Hotel Milano è a 200 m dalla stazione Porta Garibaldi, 70 m da Porta Nuova e 50 m da Corso Como. Mappa del quartiere con aziende, ristoranti e negozi.",
+   "nav": "Posizione"
   },
-  "quartiere": {
-   "title": "Aziende, ristoranti e shopping vicino al Tocq · Milano",
-   "description": "Mappa del quartiere del Tocq Hotel Milano: le aziende di Porta Nuova, treni e metro, negozi e ristoranti, ciascuno con i minuti a piedi dall'hotel.",
-   "nav": "Il quartiere"
+  "arrivare": {
+   "title": "Come arrivare al Tocq Hotel Milano · stazione Garibaldi",
+   "description": "Distanze reali dal Tocq: stazione Garibaldi 200 m, Centrale 1,5 km, Duomo 2,5 km, Linate 9 km, Malpensa 49 km con il Malpensa Express. Fiera, MiCo, San Siro.",
+   "nav": "Come arrivare"
   },
   "quartiere-aziende": {
    "title": "Aziende vicino al Tocq Hotel Milano · Porta Nuova",
    "description": "Le sedi aziendali di Porta Nuova a piedi dal Tocq Hotel Milano: UniCredit, Accenture, Microsoft, Google, Bending Spoons e altre, con i minuti a piedi.",
-   "nav": "Aziende"
+   "nav": "Per chi lavora"
   },
   "quartiere-mangiare": {
    "title": "Dove mangiare vicino a Porta Garibaldi · Tocq Hotel Milano",

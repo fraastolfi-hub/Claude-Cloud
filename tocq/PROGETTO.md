@@ -355,3 +355,9 @@ Da chiedere alla direzione: orari del pranzo; se l'offerta smart working e le of
 ## 19. H1 per la ricerca (24 ottobre 2026)
 
 Su indicazione di Francesco, in ogni pagina l'H1 è la frase con la parola chiave (scritta piccola, al posto dell'occhiello: "Tocq Hotel Milano · hotel 4 stelle a Porta Garibaldi", "Camere e suite a Porta Garibaldi, Milano", "Ristoranti e bar vicino a Porta Garibaldi"…), mentre il titolo grande ("Scendi a Garibaldi. Sei arrivato.") resta identico ma è un paragrafo con classe `.titolo`. Un solo H1 per pagina, visibile (niente testo nascosto), coerente con il `<title>` della pagina. Le pagine nuove seguono lo stesso schema: `<h1 class="kicker">` + `<p class="titolo">`.
+
+## 20. Posizione come prima voce del menu (24 ottobre 2026)
+
+Su indicazione di Francesco la posizione diventa la prima voce del menu, **"Posizione"** (`/posizione/`): racconta dove siamo (stazione 200 m, Porta Nuova 70 m, Corso Como 50 m, il Duomo a 15 minuti di metro), con la mappa e le porte alle sottopagine:
+- **Per chi lavora** `/posizione/lavoro/` · **Mangiare e bere** `/posizione/mangiare/` · **Shopping** `/posizione/shopping/` · **Come arrivare** `/posizione/come-arrivare/`.
+La vecchia pagina "Il quartiere" confluisce in Posizione; la vecchia "Come arrivare" è ora la sottopagina omonima. Al lancio servono i reindirizzamenti 301 dagli indirizzi attuali di tocq.it (/location/ → /posizione/).

@@ -15,6 +15,7 @@
   "nav_offerte": "",
   "nav_quartiere": "",
   "nav_posizione": "",
+  "nav_arrivare": "",
   "nav_contatti": "",
   "lingua": "",
   "lingua_presto": "",
@@ -67,7 +68,7 @@
    "description": "",
    "nav": ""
   },
-  "quartiere": {
+  "arrivare": {
    "title": "",
    "description": "",
    "nav": ""

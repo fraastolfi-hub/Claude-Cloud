@@ -73,34 +73,34 @@ PAGINE = {
     },
     "posizione": {
         "url": "/posizione/",
-        "title": "Hotel vicino alla stazione Garibaldi · Tocq Hotel Milano",
-        "description": "Distanze reali dal Tocq: stazione Garibaldi 200 m, Gae Aulenti 70 m, Centrale 1,5 km, Duomo 2,5 km, Linate 9 km, Malpensa 49 km. Fiera, MiCo, San Siro.",
-        "nav": "A 200 m dal treno",
+        "title": "Posizione: hotel a Porta Garibaldi, Milano · Tocq Hotel",
+        "description": "Il Tocq Hotel Milano è a 200 m dalla stazione Porta Garibaldi, 70 m da Porta Nuova e 50 m da Corso Como. Mappa del quartiere con aziende, ristoranti e negozi.",
+        "nav": "Posizione",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
-    "quartiere": {
-        "url": "/quartiere/",
-        "title": "Aziende, ristoranti e shopping vicino al Tocq · Milano",
-        "description": "Mappa del quartiere del Tocq Hotel Milano: le aziende di Porta Nuova, treni e metro, negozi e ristoranti, ciascuno con i minuti a piedi dall'hotel.",
-        "nav": "Il quartiere",
+    "arrivare": {
+        "url": "/posizione/come-arrivare/",
+        "title": "Come arrivare al Tocq Hotel Milano · stazione Garibaldi",
+        "description": "Distanze reali dal Tocq: stazione Garibaldi 200 m, Centrale 1,5 km, Duomo 2,5 km, Linate 9 km, Malpensa 49 km con il Malpensa Express. Fiera, MiCo, San Siro.",
+        "nav": "Come arrivare",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "quartiere-aziende": {
-        "url": "/quartiere/aziende/",
+        "url": "/posizione/lavoro/",
         "title": "Aziende vicino al Tocq Hotel Milano · Porta Nuova",
         "description": "Le sedi aziendali di Porta Nuova a piedi dal Tocq Hotel Milano: UniCredit, Accenture, Microsoft, Google, Bending Spoons e altre, con i minuti a piedi.",
-        "nav": "Aziende",
+        "nav": "Per chi lavora",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "quartiere-mangiare": {
-        "url": "/quartiere/mangiare/",
+        "url": "/posizione/mangiare/",
         "title": "Dove mangiare vicino a Porta Garibaldi · Tocq Hotel Milano",
         "description": "Ristoranti, bar e colazioni a pochi minuti a piedi dal Tocq Hotel Milano, fra Corso Como, Corso Garibaldi e Isola: colazione, pranzo, aperitivo, cena.",
         "nav": "Mangiare e bere",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "quartiere-shopping": {
-        "url": "/quartiere/shopping/",
+        "url": "/posizione/shopping/",
         "title": "Shopping a Corso Como e Gae Aulenti · Tocq Hotel Milano",
         "description": "Negozi a pochi minuti a piedi dal Tocq Hotel Milano: 10 Corso Como, Eataly, Feltrinelli, Nike e le vie di Corso Garibaldi e Gae Aulenti.",
         "nav": "Shopping",
@@ -223,9 +223,9 @@ def breadcrumb_ld(key):
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Tocq Hotel Milano", "item": SITO + "/"},
-            *([{"@type": "ListItem", "position": 2, "name": PAGINE["quartiere"]["nav"], "item": SITO + PAGINE["quartiere"]["url"]}]
-              if key.startswith("quartiere-") else []),
-            {"@type": "ListItem", "position": 3 if key.startswith("quartiere-") else 2, "name": p["nav"], "item": SITO + p["url"]},
+            *([{"@type": "ListItem", "position": 2, "name": PAGINE["posizione"]["nav"], "item": SITO + PAGINE["posizione"]["url"]}]
+              if key.startswith("quartiere-") or key == "arrivare" else []),
+            {"@type": "ListItem", "position": 3 if key.startswith("quartiere-") or key == "arrivare" else 2, "name": p["nav"], "item": SITO + p["url"]},
         ],
     }
 
@@ -306,7 +306,7 @@ def schema_pagina(key, faq):
     b = breadcrumb_ld(key)
     if b:
         grafo.append(b)
-    if key.startswith("quartiere"):
+    if key.startswith("quartiere") or key == "posizione":
         import mappa
         pezzi = mappa.blocchi()
         if pezzi:
@@ -415,8 +415,8 @@ def selettore_lingue(key, codice, t):
 def header(key, codice="it"):
     t = lingue.ui(codice)
     # menu principale (sempre visibile) e voci secondarie (solo nel menu mobile; su desktop stanno nel footer)
-    principali = [("camere", t["nav_camere"]), ("mangiare", t["nav_mangiare"]), ("meeting", t["nav_meeting"]), ("offerte", t["nav_offerte"]), ("quartiere", t["nav_quartiere"]), ("contatti", t["nav_contatti"])]
-    secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"]), ("posizione", t["nav_posizione"])]
+    principali = [("posizione", t["nav_posizione"]), ("camere", t["nav_camere"]), ("mangiare", t["nav_mangiare"]), ("meeting", t["nav_meeting"]), ("offerte", t["nav_offerte"]), ("contatti", t["nav_contatti"])]
+    secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"]), ("arrivare", t["nav_arrivare"])]
     def voce(k, v, classe=""):
         return f'      <a href="{k}.html"{classe}{" aria-current=\"page\"" if k == key else ""}>{v}</a>'
     links = "\n".join([voce(k, v) for k, v in principali if k in PAGINE] +
@@ -474,8 +474,8 @@ def footer(codice="it"):
         <a href="meeting.html">{t['f_sale']}</a>
         <a href="meeting.html#preventivo">{t['f_preventivo']}</a>
         <a href="contatti.html#aziende">{t['f_aziendali']}</a>
-        <a href="quartiere.html">{t['f_quartiere']}</a>
-        <a href="posizione.html">{t['f_arrivare']}</a>
+        <a href="posizione.html">{t['f_quartiere']}</a>
+        <a href="arrivare.html">{t['f_arrivare']}</a>
         <a href="offerte.html">{t['f_offerte']}</a>
         <a href="faq.html">{t['f_faq']}</a>
       </div>

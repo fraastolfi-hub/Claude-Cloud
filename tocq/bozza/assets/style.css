@@ -1490,3 +1490,9 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .faq-hero .titolo { font-size: clamp(44px, 6vw, 84px); }
 [dir="rtl"] .hero-full .titolo { margin-left: 0; margin-right: -0.045em; }
 :lang(ar) .titolo { line-height: 1.4; }
+@media (max-width: 960px) { .porte { grid-template-columns: 1fr 1fr; gap: 24px 14px; } }
+@media (max-width: 760px) {
+  .porte .motivo .photo { aspect-ratio: 4 / 3; }
+  .porte .motivo h3 { font-size: 18px; }
+  .porte .motivo p { font-size: 14px; }
+}

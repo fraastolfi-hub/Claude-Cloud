@@ -1,126 +1,80 @@
   <section class="hero hero--bleed">
     <div class="wrap hero__grid">
       <div>
-        <h1 class="kicker">Hotel vicino alla stazione di Porta Garibaldi, Milano</h1>
+        <h1 class="kicker">Hotel a Porta Garibaldi, Milano · posizione e quartiere</h1>
         <p class="titolo">A Milano sei già dove devi essere.</p>
-        <p class="lead">Via Tocqueville, fra la stazione di Porta Garibaldi e Corso Como. Il punto di partenza per quello che ti porta a Milano: gli uffici, il treno, la Fiera, lo stadio.</p>
-        <div class="btns mt-32"><a class="btn btn--primary" href="quartiere.html#mappa">Aziende, ristoranti e negozi sulla mappa</a></div>
+        <p class="lead">Fra la stazione di Porta Garibaldi, i grattacieli di Porta Nuova e Corso Como. Il quartiere degli affari di Milano, a piedi.</p>
+        <div class="btns mt-32">
+          <a class="btn btn--primary" href="#mappa">Apri la mappa</a>
+          <a class="btn" href="arrivare.html">Come arrivare</a>
+        </div>
       </div>
-      <figure class="photo photo--tall"><img src="assets/img/foto/porta-nuova-torre-unicredit-milano-1600.webp" srcset="assets/img/foto/porta-nuova-torre-unicredit-milano-800.webp 800w, assets/img/foto/porta-nuova-torre-unicredit-milano-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 45vw" alt="Torre UniCredit e grattacieli di Porta Nuova a Milano, a pochi passi dal Tocq Hotel" width="1600" height="1067" fetchpriority="high" decoding="async"><figcaption>Porta Nuova, a 70 metri dal Tocq</figcaption></figure>
+      <figure class="photo photo--tall"><img src="assets/img/foto/porta-nuova-skyline-tramonto-1600.webp" srcset="assets/img/foto/porta-nuova-skyline-tramonto-800.webp 800w, assets/img/foto/porta-nuova-skyline-tramonto-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 50vw" alt="Skyline di Porta Nuova al tramonto con la torre UniCredit, il quartiere del Tocq Hotel Milano" width="1600" height="1600" fetchpriority="high" decoding="async"></figure>
     </div>
   </section>
 
-  <!-- COME ARRIVO DA: le quattro domande di chi arriva -->
+  <!-- IL RACCONTO: tre distanze che spiegano la posizione -->
   <section class="section">
     <div class="wrap">
-      <p class="kicker">Come arrivo da…</p>
-      <h2>Quattro modi di arrivare.</h2>
-      <ul class="vantaggi vantaggi--quattro mt-32">
-        <li><b>Malpensa · 49 km</b><span>Malpensa Express fino a Porta Garibaldi, <span class="todo todo--quiet">circa 40 minuti</span>, poi 200 metri a piedi.</span></li>
-        <li><b>Milano Centrale · 1,5 km</b><span>Metro M2 verde, due fermate fino a Garibaldi. Oppure 20 minuti a piedi.</span></li>
-        <li><b>Linate · 9 km</b><span>Taxi, <span class="todo todo--quiet">circa 20 minuti</span>. In metro: <span class="todo">percorso da confermare</span>.</span></li>
-        <li><b>In auto</b><span>Garage convenzionato a 50 metri, 25 € al giorno.</span></li>
+      <p class="kicker">Dal portone del Tocq</p>
+      <h2>Il treno, gli uffici, la sera. Tutto qui.</h2>
+      <ul class="vantaggi mt-32">
+        <li><b>Stazione Garibaldi · 200 m</b><span>Treni, Malpensa Express, metro M2 e M5. Fiera, San Siro e Centrale senza taxi.</span></li>
+        <li><b>Porta Nuova · 70 m</b><span>Piazza Gae Aulenti e le torri degli uffici: UniCredit, Accenture, Microsoft, Google.</span></li>
+        <li><b>Corso Como · 50 m</b><span>Negozi, aperitivo e ristoranti, poi Corso Garibaldi e l'Isola.</span></li>
       </ul>
+      <p class="muted mt-32">Il Duomo? 15 minuti di metro.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <p class="kicker">Da qui a dove devi andare</p>
-      <h2 class="mb-32">Le distanze, con i mezzi veri.</h2>
-      <form class="finder" id="finder" onsubmit="return false">
-        <label for="dove">Dove devi andare domani?</label>
-        <div class="finder__riga">
-          <select id="dove"><option value="">Scegli una destinazione</option></select>
-        </div>
-        <div class="finder__esito" id="finder-esito" aria-live="polite" hidden>
-          <p class="finder__risposta"></p>
-          <a class="btn btn--primary" href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener" data-prenota>Dormi a 200 m dal treno</a>
-        </div>
-      </form>
-      <div class="filters" data-filters="dest">
-        <button data-filter="tutti" aria-pressed="true">Tutte</button>
-        <button data-filter="lavoro" aria-pressed="false">Lavoro</button>
-        <button data-filter="partire" aria-pressed="false">Partire</button>
-        <button data-filter="eventi" aria-pressed="false">Eventi</button>
-        <button data-filter="libero" aria-pressed="false">Tempo libero</button>
-      </div>
-      <div class="table-scroll">
-        <table class="data" id="dest">
-          <thead><tr><th>Destinazione</th><th>Perché ci vai</th><th>Come</th><th>Tempo</th></tr></thead>
-          <tbody>
-            <tr data-tags="lavoro"><td>Piazza Gae Aulenti · Porta Nuova</td><td>Uffici e sedi aziendali</td><td>A piedi, 70 m</td><td class="n">1 min</td></tr>
-            <tr data-tags="partire lavoro"><td>Stazione di Porta Garibaldi</td><td>Treni regionali, passante, alta velocità</td><td>A piedi, 200 m</td><td class="n">3 min</td></tr>
-            <tr data-tags="partire"><td>Milano Centrale</td><td>Alta velocità, aeroporti</td><td>1,5 km · metro <span class="todo">M2</span> o a piedi</td><td class="n"><span class="todo">10 min</span></td></tr>
-            <tr data-tags="partire"><td>Malpensa · 49 km</td><td>Voli, anche all'alba</td><td>Malpensa Express da Garibaldi</td><td class="n"><span class="todo">45 min</span></td></tr>
-            <tr data-tags="partire"><td>Linate · 9 km</td><td>Voli nazionali ed europei</td><td>Metro <span class="todo">M4</span> o taxi</td><td class="n"><span class="todo">25 min</span></td></tr>
-            <tr data-tags="lavoro eventi"><td>Fiera Milano Rho</td><td>Fiere e saloni</td><td>Treno o metro da Garibaldi</td><td class="n"><span class="todo">25 min</span></td></tr>
-            <tr data-tags="lavoro eventi"><td>Allianz MiCo</td><td>Congressi</td><td>Metro <span class="todo">M5</span></td><td class="n"><span class="todo">20 min</span></td></tr>
-            <tr data-tags="eventi"><td>Stadio di San Siro · Ippodromo</td><td>Partite e concerti</td><td>M5 lilla da Garibaldi, senza cambi</td><td class="n">15 min</td></tr>
-            <tr data-tags="eventi"><td>Autodromo di Monza</td><td>Gran Premio di F1</td><td>Treno da Garibaldi</td><td class="n"><span class="todo">30 min</span></td></tr>
-            <tr data-tags="libero"><td>Corso Como</td><td>Cena, aperitivo</td><td>A piedi, 50 m</td><td class="n">1 min</td></tr>
-            <tr data-tags="libero"><td>Bosco Verticale · Biblioteca degli Alberi</td><td>Una passeggiata prima di cena</td><td>A piedi, 100 m</td><td class="n">2 min</td></tr>
-            <tr data-tags="libero"><td>Duomo e centro storico</td><td>Tempo libero</td><td>2,5 km · metro, o a piedi</td><td class="n"><span class="todo">15 min</span> · 20–30 a piedi</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note"><b>Da verificare</b>Ogni tempo e ogni linea, uno per uno, prima della pubblicazione (PROGETTO.md §13, punto 1). In fase 2 ogni destinazione importante diventa una pagina: "hotel vicino a Fiera Milano", "hotel per San Siro", "hotel per il Gran Premio di Monza".</p>
-    </div>
-  </section>
-
-
-  <!-- MAPPA: la stessa del quartiere, con treni e metro in primo piano -->
+  <!-- MAPPA: tutto il quartiere, con i temi -->
   <section class="section section--dark mappa-sezione" id="mappa">
     <div class="wrap">
       <p class="kicker">La mappa</p>
-      <h2>Il Tocq, la stazione e la metro.</h2>
-      <div class="mappa mappa--sola mt-32">
-        <div class="mappa__carta" data-tema-iniziale="trasporti"><!-- @mappa --></div>
+      <h2>Tutto a pochi minuti a piedi.</h2>
+      <p class="lead mb-32">Scegli un tema, trascina la mappa, tocca un punto.</p>
+      <!-- @filtri -->
+      <div class="mappa">
+        <div class="mappa__carta"><!-- @mappa --></div>
+        <div class="mappa__elenco"><!-- @elenco --></div>
       </div>
-      <p class="board__foot">Via Alexis De Tocqueville 7/D, 20154 Milano · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Tocq+Hotel+Milano" target="_blank" rel="noopener">Calcola il percorso</a> · Base cartografica © OpenStreetMap contributors.</p>
+      <p class="board__foot">Minuti a piedi stimati (80 metri al minuto, +30% per le strade). Base cartografica © OpenStreetMap contributors.</p>
     </div>
   </section>
 
-
-  <section class="band band--basso" aria-label="Bosco Verticale">
-    <figure class="band__img"><img src="assets/img/foto/bosco-verticale-milano-porta-nuova-1600.webp" srcset="assets/img/foto/bosco-verticale-milano-porta-nuova-800.webp 800w, assets/img/foto/bosco-verticale-milano-porta-nuova-1600.webp 1600w" sizes="100vw" alt="Bosco Verticale a Porta Nuova, a 100 metri dal Tocq Hotel Milano" width="1600" height="1060" loading="lazy" decoding="async"></figure>
-    <div class="band__testo wrap">
-      <p class="kicker">Bosco Verticale · a 100 metri</p>
-      <p class="band__frase">Prima di cena, due passi fra le torri.</p>
+  <!-- TRE PORTE: ogni tema ha la sua pagina -->
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">Il quartiere</p>
+      <h2>Il quartiere, per quello che ti serve.</h2>
+      <div class="grid-4 mt-32 motivi porte">
+        <a class="motivo" href="quartiere-aziende.html"><figure class="photo"><img src="assets/img/foto/porta-nuova-torre-unicredit-milano-1600.webp" srcset="assets/img/foto/porta-nuova-torre-unicredit-milano-800.webp 800w, assets/img/foto/porta-nuova-torre-unicredit-milano-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Le torri di Porta Nuova, sede di molte aziende vicino al Tocq Hotel Milano" width="1600" height="1067" loading="lazy" decoding="async"></figure><h3>Per chi lavora</h3><p><!-- @conta-aziende --> sedi aziendali a meno di 15 minuti: UniCredit, Accenture, Microsoft, Google.</p><span class="motivo__vai">Le sedi</span></a>
+        <a class="motivo" href="quartiere-mangiare.html"><figure class="photo"><img src="assets/img/foto/corso-garibaldi-ristorante-1600.webp" srcset="assets/img/foto/corso-garibaldi-ristorante-800.webp 800w, assets/img/foto/corso-garibaldi-ristorante-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Un ristorante in Corso Garibaldi, vicino al Tocq Hotel Milano" width="1600" height="1067" loading="lazy" decoding="async"></figure><h3>Mangiare e bere</h3><p><!-- @conta-food --> indirizzi scelti, dalla colazione all'ultimo bicchiere.</p><span class="motivo__vai">La guida</span></a>
+        <a class="motivo" href="quartiere-shopping.html"><figure class="photo"><img src="assets/img/foto/corso-como-milano-fontana-1600.webp" srcset="assets/img/foto/corso-como-milano-fontana-800.webp 800w, assets/img/foto/corso-como-milano-fontana-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Corso Como, la via dello shopping a 50 metri dal Tocq Hotel Milano" width="800" height="800" loading="lazy" decoding="async"></figure><h3>Shopping</h3><p><!-- @conta-shopping --> negozi fra Corso Como, Corso Garibaldi e Gae Aulenti.</p><span class="motivo__vai">I negozi</span></a>
+        <a class="motivo" href="arrivare.html"><figure class="photo"><img src="assets/img/foto/bosco-verticale-milano-porta-nuova-1600.webp" srcset="assets/img/foto/bosco-verticale-milano-porta-nuova-800.webp 800w, assets/img/foto/bosco-verticale-milano-porta-nuova-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 25vw" alt="Il Bosco Verticale a Porta Nuova, a 100 metri dal Tocq Hotel Milano" width="1600" height="1060" loading="lazy" decoding="async"></figure><h3>Come arrivare</h3><p>Da Malpensa, Linate, Centrale o in auto. E le distanze per fiere, stadio e Duomo.</p><span class="motivo__vai">Treni e metro</span></a>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="domande">
+  <section class="section section--alt" id="domande">
     <div class="wrap split">
       <div>
         <p class="kicker">Domande frequenti</p>
-        <h2>Come si arriva.</h2>
-        <p class="muted">Risposte brevi, con i numeri. Se manca la tua domanda, la reception risponde 24 ore su 24: <a href="tel:+390262071">+39 02 62071</a>.</p>
+        <h2>Sul quartiere.</h2>
+        <p class="muted">Per un consiglio sul momento, la reception risponde 24 ore su 24: <a href="tel:+390262071">+39 02 62071</a>.</p>
       </div>
       <div class="faq">
         <details class="faq__item">
-          <summary>Qual è l'hotel 4 stelle più vicino alla stazione di Porta Garibaldi?</summary>
-          <div>Il Tocq Hotel Milano è a circa 200 metri dalla stazione di Milano Porta Garibaldi, in Via Alexis De Tocqueville 7/D: tre minuti a piedi.</div>
+          <summary>Quali aziende hanno sede vicino al Tocq Hotel Milano?</summary>
+          <div>Il Tocq è a Porta Garibaldi, nel distretto di Porta Nuova: le sedi aziendali della mappa, fra cui la torre UniCredit in Piazza Gae Aulenti, sono raggiungibili a piedi in pochi minuti.</div>
         </details>
         <details class="faq__item">
-          <summary>Come si arriva dal Tocq alla Fiera Milano di Rho?</summary>
-          <div>In treno o in metropolitana partendo dalla stazione di Porta Garibaldi, a 200 metri dall'hotel.</div>
+          <summary>Dove si mangia vicino al Tocq?</summary>
+          <div>Fra Corso Como, Corso Garibaldi e l'Isola, a pochi minuti a piedi: la guida qui sopra divide gli indirizzi fra colazione, pranzo di lavoro, aperitivo e cena.</div>
         </details>
         <details class="faq__item">
-          <summary>Come si arriva allo stadio di San Siro?</summary>
-          <div>Con la metropolitana lilla M5 dalla fermata Garibaldi, a pochi minuti a piedi dall'hotel.</div>
-        </details>
-        <details class="faq__item">
-          <summary>Come si arriva all'Autodromo di Monza per il Gran Premio?</summary>
-          <div>In treno dalla stazione di Porta Garibaldi verso Monza.</div>
-        </details>
-        <details class="faq__item">
-          <summary>Quanto dista il Duomo?</summary>
-          <div>2,5 km: circa 30 minuti a piedi, o pochi minuti di metropolitana.</div>
-        </details>
-        <details class="faq__item">
-          <summary>Quanto dista Milano Centrale?</summary>
-          <div>1,5 km.</div>
+          <summary>Dove fare shopping vicino a Porta Garibaldi?</summary>
+          <div>In Corso Como, Corso Garibaldi e Piazza Gae Aulenti, tutti a pochi minuti a piedi dal Tocq.</div>
         </details>
       </div>
     </div>

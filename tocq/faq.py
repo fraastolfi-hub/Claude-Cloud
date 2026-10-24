@@ -16,8 +16,8 @@ GRUPPI = [
     ("mangiare", "Mangiare e bere"),
     ("servizi", "Servizi e parcheggio"),
     ("meeting", "Sale meeting ed eventi"),
-    ("posizione", "Come arrivare"),
-    ("quartiere", "Il quartiere"),
+    ("posizione", "La posizione e il quartiere"),
+    ("arrivare", "Come arrivare"),
     ("contatti", "Contatti"),
 ]
 VISIBILI = 3
