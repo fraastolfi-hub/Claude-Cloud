@@ -110,7 +110,7 @@ PAGINE = {
         "url": "/all-day-eating/",
         "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
         "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",
-        "nav": "Cucina tutto il giorno",
+        "nav": "All Day Eating",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "servizi": {
