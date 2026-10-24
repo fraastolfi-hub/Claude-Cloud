@@ -55,7 +55,7 @@ UI = {"it": {
     "menu": "Menu",
     "chiudi": "Chiudi",
     "nav_aria": "Principale",
-    "nav_camere": "Camere silenziose",
+    "nav_camere": "Camere",
     "nav_mangiare": "Cucina tutto il giorno",
     "nav_servizi": "Garage e servizi",
     "nav_galleria": "Guarda il Tocq",

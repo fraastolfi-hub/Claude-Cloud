@@ -6,7 +6,7 @@
   "menu": "Menu",
   "chiudi": "Chiudi",
   "nav_aria": "Principale",
-  "nav_camere": "Camere silenziose",
+  "nav_camere": "Camere",
   "nav_mangiare": "Cucina tutto il giorno",
   "nav_servizi": "Garage e servizi",
   "nav_galleria": "Guarda il Tocq",
@@ -51,7 +51,7 @@
   "camere": {
    "title": "Camere e suite a Porta Garibaldi · Tocq Hotel Milano",
    "description": "133 camere insonorizzate a Porta Garibaldi: Comfort, Superior, Executive, Junior Suite. Scegli cuscino, lato della camera e colazione da asporto.",
-   "nav": "Camere silenziose"
+   "nav": "Camere"
   },
   "meeting": {
    "title": "Sale meeting a Porta Nuova, Milano · Tocq Hotel",

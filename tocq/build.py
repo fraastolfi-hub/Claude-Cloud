@@ -54,7 +54,7 @@ PAGINE = {
         "url": "/camere/",
         "title": "Camere e suite a Porta Garibaldi · Tocq Hotel Milano",
         "description": "133 camere insonorizzate a Porta Garibaldi: Comfort, Superior, Executive, Junior Suite. Scegli cuscino, lato della camera e colazione da asporto.",
-        "nav": "Camere silenziose",
+        "nav": "Camere",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "meeting": {
