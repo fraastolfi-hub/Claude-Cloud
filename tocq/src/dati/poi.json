@@ -2,7 +2,12 @@
  "hotel": {
   "lat": 45.4827602,
   "lng": 9.1864205,
-  "source": "OpenStreetMap node 2272639843 'Tocq Hotel Milano', 7d Via Alessio di Tocqueville, via Nominatim (https://nominatim.openstreetmap.org/search?format=json&q=Tocq%20Hotel%20Milano)"
+  "source": "OpenStreetMap node 2272639843 'Tocq Hotel Milano', 7d Via Alessio di Tocqueville, via Nominatim (https://nominatim.openstreetmap.org/search?format=json&q=Tocq%20Hotel%20Milano)",
+  "partenza_percorsi": {
+   "lat": 45.4827602,
+   "lng": 9.1864205,
+   "fonte": "Nominatim nodo OSM 2272639843 'Tocq Hotel Milano', 7d Via Alessio di Tocqueville (query '7/D'); query '7' da' il nodo indirizzo 2947879580 a 45.48284,9.186129. Percorsi calcolati dalla porta su Via Tocqueville (45.4826623,9.1863307, punto della way 268400875 a ~13 m dal nodo; agganciato dal router a 45.482662,9.186331). Il nodo hotel stesso viene agganciato da OSRM a un marciapiede scollegato che gonfiava ogni distanza di ~200-500 m. Distanze: FOSSGIS routed-foot (table == route verificato su 5 coppie)."
+  }
  },
  "poi": [
   {
@@ -18,7 +23,9 @@
    "descrizione": "Sede legale e direzione generale del gruppo bancario, nella torre più alta di Porta Nuova.",
    "fonte": "https://www.unicreditgroup.eu/en/worldwide/our-worldwide-presence/europe/italy/unicredit.html",
    "verificato": "2026-10-22",
-   "distanza_m": 298
+   "distanza_m": 298,
+   "piedi_m": 353,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Centroide dell'edificio (nessun punto indirizzo per Piazza Gae Aulenti 3); agganciato al podio della piazza, ingresso effettivo sul lato piazza: valore approssimato. [FLAG: punto di accesso approssimato]"
   },
   {
    "id": "accenture",
@@ -33,7 +40,9 @@
    "descrizione": "Sede milanese della società di consulenza, nella torre degli anni Cinquanta ristrutturata da COIMA.",
    "fonte": "https://en.wikipedia.org/wiki/Bonnet_Tower",
    "verificato": "2026-10-22",
-   "distanza_m": 76
+   "distanza_m": 76,
+   "piedi_m": 114,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Ingresso Via privata Nino Bonnet 10 = angolo Bonnet/Tocqueville (nodo indirizzo 10 a 45.4826585,9.1852885, ~8 m). Percorso: Via Tocqueville verso ovest 88 m + Via Bonnet 26 m. Il router verso il nodo OSM 'Accenture' (cortile interno) dava 365 m perche' i vialetti interni di Corso Como Place sono collegati in OSM solo dal lato sud: artefatto dati, scartato. [FLAG: artefatto OSM corretto (vedi nota)]"
   },
   {
    "id": "bending-spoons",
@@ -48,7 +57,9 @@
    "descrizione": "Quartier generale della società italiana di app e software, nello stesso complesso di Accenture.",
    "fonte": "https://lei.bloomberg.com/leis/view/8156003EE5CFCCBBEB31",
    "verificato": "2026-10-22",
-   "distanza_m": 76
+   "distanza_m": 76,
+   "piedi_m": 43,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Misurato al fronte su Via Tocqueville del complesso Bonnet 10 (stessa via dell'hotel, ~43 m). Il nodo OSM 'Bending Spoons' sta 35 m dentro l'isolato (45.482518,9.1859416): il router gli dava 505 m per lo stesso difetto dei vialetti interni scollegati. Posizione esatta della porta non verificata: in ogni caso <100 m. [FLAG: artefatto OSM corretto (vedi nota)]"
   },
   {
    "id": "google",
@@ -63,7 +74,9 @@
    "descrizione": "Uffici milanesi di Google nel quartiere Isola, accanto al Bosco Verticale.",
    "fonte": "https://about.google/company-info/locations/",
    "verificato": "2026-10-22",
-   "distanza_m": 455
+   "distanza_m": 455,
+   "piedi_m": 781,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "microsoft",
@@ -78,7 +91,9 @@
    "descrizione": "Sede italiana di Microsoft, edificio di Herzog & de Meuron aperto nel 2017 con piano terra accessibile al pubblico.",
    "fonte": "https://news.microsoft.com/it-it/dovesiamo/",
    "verificato": "2026-10-22",
-   "distanza_m": 268
+   "distanza_m": 268,
+   "piedi_m": 364,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "bnp-paribas",
@@ -87,13 +102,15 @@
    "tipo": "banca",
    "edificio": "Torre Diamante",
    "indirizzo": "Piazza Lina Bo Bardi 3, 20124 Milano",
-   "lat": 45.480994,
-   "lng": 9.196241,
+   "lat": 45.4810602,
+   "lng": 9.1964284,
    "coord_precise": true,
    "descrizione": "Sede italiana del gruppo BNP Paribas dal 2016; contratto di locazione esteso al 2038.",
    "fonte": "https://financecommunity.it/bnp-paribas-e-coima-sgr-coinvestono-nella-torre-diamante-gli-advisor-coinvolti/",
    "verificato": "2026-10-22",
-   "distanza_m": 790
+   "distanza_m": 790,
+   "piedi_m": 993,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "unipol",
@@ -108,7 +125,9 @@
    "descrizione": "Torre progettata da Mario Cucinella che ospita la sede milanese del gruppo assicurativo.",
    "fonte": "https://www.architecturalrecord.com/articles/17507-in-milan-mario-cucinella-realizes-a-vertical-outpost-for-italian-insurer-unipol",
    "verificato": "2026-10-22",
-   "distanza_m": 417
+   "distanza_m": 417,
+   "piedi_m": 512,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "coima",
@@ -123,7 +142,9 @@
    "descrizione": "Sede della società di gestione immobiliare che ha sviluppato gran parte di Porta Nuova.",
    "fonte": "https://www.fuorisalone.it/en/brand/2745/COIMA",
    "verificato": "2026-10-22",
-   "distanza_m": 481
+   "distanza_m": 481,
+   "piedi_m": 580,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Nessun risultato Nominatim per Piazza Gae Aulenti 12: tenute le coordinate di poi.json. [FLAG: coord non trovate: tenute quelle di poi.json]"
   },
   {
    "id": "regione-lombardia",
@@ -132,13 +153,15 @@
    "tipo": "pubblica amministrazione",
    "edificio": "Palazzo Lombardia",
    "indirizzo": "Piazza Città di Lombardia 1, 20124 Milano",
-   "lat": 45.4867636,
-   "lng": 9.1965414,
+   "lat": 45.4869021,
+   "lng": 9.1957701,
    "coord_precise": true,
    "descrizione": "Sede della Giunta regionale; il belvedere al 39° piano apre periodicamente al pubblico su prenotazione.",
    "fonte": "https://www.en.regione.lombardia.it/wps/portal/site/en-regione-lombardia/institution/headquarter",
    "verificato": "2026-10-22",
-   "distanza_m": 906
+   "distanza_m": 906,
+   "piedi_m": 1182,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "intesa-sanpaolo-gioia22",
@@ -147,13 +170,15 @@
    "tipo": "banca",
    "edificio": "Gioia 22",
    "indirizzo": "Via Melchiorre Gioia 22, 20124 Milano",
-   "lat": 45.4853277,
-   "lng": 9.1970304,
+   "lat": 45.4852352,
+   "lng": 9.1963135,
    "coord_precise": true,
    "descrizione": "Torre di 26 piani che ospita circa 3.000 persone di Isybank, Fideuram, Eurizon e Intesa Sanpaolo Vita.",
    "fonte": "https://group.intesasanpaolo.com/content/dam/portalgroup/repository-documenti/newsroom/isybank/it/4_Gioia22_Scheggia_di_vetro_nello_skyline_di_Milano_it.pdf",
    "verificato": "2026-10-22",
-   "distanza_m": 875
+   "distanza_m": 875,
+   "piedi_m": 989,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "kpmg",
@@ -168,7 +193,9 @@
    "descrizione": "Uffici milanesi della società di revisione e consulenza nella nuova torre di Gioia 20.",
    "fonte": "https://kpmg.com/it/it/media/press-releases/2022/07/torre-di-Gioia-20-nuovo-building-KPMG-Milano.html",
    "verificato": "2026-10-22",
-   "distanza_m": 787
+   "distanza_m": 787,
+   "piedi_m": 977,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Nessun numero civico 20 di Via Melchiorre Gioia in Nominatim: tenute le coordinate di poi.json. [FLAG: coord non trovate: tenute quelle di poi.json]"
   },
   {
    "id": "amazon",
@@ -183,7 +210,9 @@
    "descrizione": "Uffici direzionali italiani di Amazon in un complesso degli anni Settanta ristrutturato.",
    "fonte": "https://press.aboutamazon.com/it/2021/9/amazon-investe-sugli-uffici-corporate-di-milano-e-supera-i-1-200-dipendenti-a-tempo-indeterminato-attualmente-aperte-oltre-200-nuove-posizioni-a-tempo-indeterminato-nel-capoluogo-meneghino",
    "verificato": "2026-10-22",
-   "distanza_m": 341
+   "distanza_m": 341,
+   "piedi_m": 447,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "samsung",
@@ -198,7 +227,9 @@
    "descrizione": "Sede italiana di Samsung con showroom B2B aperto nei giorni feriali.",
    "fonte": "https://www.samsung.com/it/district-business",
    "verificato": "2026-10-22",
-   "distanza_m": 713
+   "distanza_m": 713,
+   "piedi_m": 896,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "maire",
@@ -207,13 +238,15 @@
    "tipo": "ingegneria / energia",
    "edificio": "Torri Garibaldi",
    "indirizzo": "Via Gaetano De Castillia 6A, 20124 Milano",
-   "lat": 45.4850518,
-   "lng": 9.1880333,
+   "lat": 45.4847935,
+   "lng": 9.1885195,
    "coord_precise": true,
    "descrizione": "Sede operativa milanese del gruppo di ingegneria, nelle torri accanto alla stazione Garibaldi.",
    "fonte": "https://www.italia-informa.com/public/italiainforma/ComunicatiStampa/mairetecnimont/965_122244_2023_oneinfo.pdf",
    "verificato": "2026-10-22",
-   "distanza_m": 284
+   "distanza_m": 284,
+   "piedi_m": 402,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Centroide dell'ufficio 'Maire' (way 497625703, Torri Garibaldi su Piazza Freud/Viale Sturzo). Il punto vecchio di poi.json (6A De Castillia, non trovato in Nominatim) dava 616 m perche' agganciato oltre la ferrovia. [FLAG: artefatto OSM corretto (vedi nota)]"
   },
   {
    "id": "sap",
@@ -228,7 +261,9 @@
    "descrizione": "Sede di SAP Italia dal 2025, edificio progettato da Park Associati tra Porta Nuova e Isola.",
    "fonte": "https://parkassociati.com/en/projects/lybra",
    "verificato": "2026-10-22",
-   "distanza_m": 716
+   "distanza_m": 716,
+   "piedi_m": 1000,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "stazione-porta-garibaldi",
@@ -243,7 +278,9 @@
    "descrizione": "Stazione ferroviaria per treni regionali, alta velocità e Passante; fermata del Malpensa Express sulla linea per Milano Centrale.",
    "fonte": "https://www.trenord.it/linee-e-orari/il-nostro-servizio/malpensa-express/",
    "verificato": "2026-10-22",
-   "distanza_m": 213
+   "distanza_m": 213,
+   "piedi_m": 391,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Ingresso principale su Piazza Freud (nodo stazione). Accesso Passante (nodo 2344518513) a 328 m."
   },
   {
    "id": "metro-garibaldi-fs",
@@ -252,13 +289,15 @@
    "tipo": "metropolitana M2 / M5",
    "edificio": null,
    "indirizzo": "Piazza Sigmund Freud, 20154 Milano",
-   "lat": 45.4833333,
-   "lng": 9.1877778,
+   "lat": 45.4836759,
+   "lng": 9.1867655,
    "coord_precise": false,
    "descrizione": "Fermata di interscambio delle linee M2 (verde) e M5 (lilla), collegata alla stazione ferroviaria.",
    "fonte": "https://en.wikipedia.org/wiki/Garibaldi_FS_(Milan_Metro)",
    "verificato": "2026-10-22",
-   "distanza_m": 124
+   "distanza_m": 124,
+   "piedi_m": 266,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Ingresso metro su Viale Luigi Sturzo (nodo 3770158938); ingresso su Piazza Freud (1954441866) a 333 m. Il rapporto >2x e' una deviazione d'isolato (si esce su Corso Como e si risale fino a Viale Sturzo), non la ferrovia: percorso plausibile. [FLAG: >2x linea d'aria]"
   },
   {
    "id": "metro-gioia",
@@ -267,13 +306,15 @@
    "tipo": "metropolitana M2",
    "edificio": null,
    "indirizzo": "Via Melchiorre Gioia, 20124 Milano",
-   "lat": 45.4847222,
-   "lng": 9.1952778,
+   "lat": 45.4849317,
+   "lng": 9.1949587,
    "coord_precise": false,
    "descrizione": "Fermata della linea M2 sul lato est di Porta Nuova, vicina a Gioia 22 e Palazzo Lombardia.",
    "fonte": "https://en.wikipedia.org/wiki/Gioia_(Milan_Metro)",
    "verificato": "2026-10-22",
-   "distanza_m": 724
+   "distanza_m": 724,
+   "piedi_m": 877,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Ingresso piu' a ovest (Via Sassetti); ingresso Via Pirelli a 845 m."
   },
   {
    "id": "metro-isola",
@@ -282,13 +323,15 @@
    "tipo": "metropolitana M5",
    "edificio": null,
    "indirizzo": "Via Federico Confalonieri, 20124 Milano",
-   "lat": 45.4872,
-   "lng": 9.19111,
+   "lat": 45.4870157,
+   "lng": 9.1913255,
    "coord_precise": false,
    "descrizione": "Fermata della linea M5 nel quartiere Isola, a nord del Bosco Verticale.",
    "fonte": "https://it.wikipedia.org/wiki/Isola_(metropolitana_di_Milano)",
    "verificato": "2026-10-22",
-   "distanza_m": 614
+   "distanza_m": 614,
+   "piedi_m": 927,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "stazione-centrale",
@@ -297,13 +340,15 @@
    "tipo": "treni / Malpensa Express",
    "edificio": null,
    "indirizzo": "Piazza Duca d'Aosta, 20124 Milano",
-   "lat": 45.4858786,
-   "lng": 9.2042617,
+   "lat": 45.4852009,
+   "lng": 9.2037959,
    "coord_precise": true,
    "descrizione": "Principale stazione ferroviaria della città, capolinea del Malpensa Express e delle linee ad alta velocità.",
    "fonte": "https://www.trenord.it/en/routes-and-timetables/journey/our-lines/malpensa-milano-centrale-airport-line/",
    "verificato": "2026-10-22",
-   "distanza_m": 1433
+   "distanza_m": 1433,
+   "piedi_m": 1658,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Piede della facciata su Piazza Duca d'Aosta (approssimato). Al nodo della stazione (interno) 1730 m. [FLAG: punto di accesso approssimato]"
   },
   {
    "id": "piazza-gae-aulenti",
@@ -312,13 +357,15 @@
    "tipo": "piazza / architettura",
    "edificio": null,
    "indirizzo": "Piazza Gae Aulenti, 20154 Milano",
-   "lat": 45.4834778,
-   "lng": 9.1902248,
+   "lat": 45.4833113,
+   "lng": 9.1889145,
    "coord_precise": true,
    "descrizione": "Piazza pedonale sopraelevata progettata da César Pelli e inaugurata nel 2012, al centro di Porta Nuova.",
    "fonte": "https://en.wikipedia.org/wiki/Piazza_Gae_Aulenti",
    "verificato": "2026-10-22",
-   "distanza_m": 307
+   "distanza_m": 307,
+   "piedi_m": 267,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Vertice ovest del poligono della piazza (lato scale da Corso Como/Viale della Liberazione); l'altro vertice ovest dava 304 m."
   },
   {
    "id": "bosco-verticale",
@@ -327,13 +374,15 @@
    "tipo": "architettura",
    "edificio": "Bosco Verticale",
    "indirizzo": "Via Gaetano De Castillia 11 / Via Federico Confalonieri 6, 20124 Milano",
-   "lat": 45.4858333,
-   "lng": 9.1902778,
+   "lat": 45.4856111,
+   "lng": 9.1904001,
    "coord_precise": true,
    "descrizione": "Due torri residenziali di Boeri Studio con alberi e arbusti sulle facciate; visibili dall'esterno.",
    "fonte": "https://www.hines.com/properties/porta-nuova-isola---bosco-verticale-milan",
    "verificato": "2026-10-22",
-   "distanza_m": 455
+   "distanza_m": 455,
+   "piedi_m": 659,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Nodo 'Vertical Forest' su Via De Castillia (torre sud)."
   },
   {
    "id": "bam-biblioteca-degli-alberi",
@@ -342,13 +391,15 @@
    "tipo": "parco",
    "edificio": null,
    "indirizzo": "Via Gaetano De Castillia 28, 20124 Milano",
-   "lat": 45.4845218,
-   "lng": 9.1920546,
+   "lat": 45.4841978,
+   "lng": 9.18963,
    "coord_precise": true,
    "descrizione": "Parco pubblico tra Porta Nuova e Isola gestito dalla Fondazione Riccardo Catella, con programma culturale gratuito.",
    "fonte": "https://bam.milano.it/en/la-storia/",
    "verificato": "2026-10-22",
-   "distanza_m": 481
+   "distanza_m": 481,
+   "piedi_m": 402,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Vertice ovest del parco (lato Gae Aulenti/De Castillia), accesso piu' vicino."
   },
   {
    "id": "corso-como",
@@ -357,13 +408,15 @@
    "tipo": "via pedonale",
    "edificio": null,
    "indirizzo": "Corso Como, 20154 Milano",
-   "lat": 45.4817426,
-   "lng": 9.1872468,
+   "lat": 45.4824539,
+   "lng": 9.187291,
    "coord_precise": false,
    "descrizione": "Via pedonale che collega Piazza XXV Aprile alla stazione Garibaldi, con negozi, bar e locali serali.",
    "fonte": "https://it.wikipedia.org/wiki/Corso_Como",
    "verificato": "2026-10-22",
-   "distanza_m": 130
+   "distanza_m": 130,
+   "piedi_m": 90,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Punto piu' vicino: incrocio Via Tocqueville / Corso Como (Tocqueville sbocca su Corso Como). Inizio del tratto pedonale a 123 m."
   },
   {
    "id": "porta-garibaldi-arco",
@@ -372,13 +425,15 @@
    "tipo": "monumento / piazza",
    "edificio": null,
    "indirizzo": "Piazza XXV Aprile, 20121 Milano",
-   "lat": 45.4808333,
-   "lng": 9.1869444,
+   "lat": 45.4807648,
+   "lng": 9.1869656,
    "coord_precise": true,
    "descrizione": "Arco neoclassico ottocentesco al centro della piazza, all'inizio di Corso Garibaldi e Corso Como.",
    "fonte": "https://en.wikipedia.org/wiki/Porta_Garibaldi_(Milan)",
    "verificato": "2026-10-22",
-   "distanza_m": 218
+   "distanza_m": 218,
+   "piedi_m": 283,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "cimitero-monumentale",
@@ -387,13 +442,15 @@
    "tipo": "museo a cielo aperto",
    "edificio": null,
    "indirizzo": "Piazzale Cimitero Monumentale, 20154 Milano",
-   "lat": 45.485831,
-   "lng": 9.179056,
+   "lat": 45.4848,
+   "lng": 9.1779,
    "coord_precise": true,
    "descrizione": "Cimitero ottocentesco con sculture e edicole funerarie; ingresso gratuito, chiuso il lunedì.",
    "fonte": "https://www.museionline.info/milano-musei-e-monumenti/cimitero-monumentale-di-milano",
    "verificato": "2026-10-22",
-   "distanza_m": 668
+   "distanza_m": 668,
+   "piedi_m": 896,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Ingresso principale (Famedio) approssimato a meta' del lato sud su Piazzale Cimitero Monumentale. [FLAG: punto di accesso approssimato]"
   },
   {
    "id": "grattacielo-pirelli",
@@ -408,7 +465,9 @@
    "descrizione": "Grattacielo di Gio Ponti del 1960, sede del Consiglio regionale; aperto in occasioni come le Giornate FAI.",
    "fonte": "https://www.milanofree.it/turismo/monumenti/pirellone-milano-storia-architettura-e-come-visitarlo.html",
    "verificato": "2026-10-22",
-   "distanza_m": 1174
+   "distanza_m": 1174,
+   "piedi_m": 1378,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Centroide dell'edificio, agganciato a 34 m: approssimato. [FLAG: punto di accesso approssimato]"
   },
   {
    "id": "10-corso-como",
@@ -423,7 +482,9 @@
    "descrizione": "Concept store fondato nel 1990 da Carla Sozzani con abbigliamento, design, libri, galleria e caffè in cortile.",
    "fonte": "https://www.10corsocomo.com/",
    "verificato": "2026-10-22",
-   "distanza_m": 125
+   "distanza_m": 125,
+   "piedi_m": 160,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Porta su strada (coordinate poi.json, confermate vicino al nodo '10 Corso Como' in cortile a 45.4818588,9.1877780)."
   },
   {
    "id": "eataly-smeraldo",
@@ -438,7 +499,9 @@
    "descrizione": "Mercato alimentare italiano con ristoranti interni nell'ex Teatro Smeraldo; aperto tutti i giorni 8-23.",
    "fonte": "https://www.eataly.net/it_it/negozi/milano-smeraldo",
    "verificato": "2026-10-22",
-   "distanza_m": 269
+   "distanza_m": 269,
+   "piedi_m": 362,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "nike-porta-nuova",
@@ -453,7 +516,9 @@
    "descrizione": "Negozio monomarca di abbigliamento e calzature sportive affacciato su Piazza Gae Aulenti.",
    "fonte": "https://www.inter.it/it/notizie/inter-nike-store-milano-porta-nuova-21-maggio-2026",
    "verificato": "2026-10-22",
-   "distanza_m": 307
+   "distanza_m": 307,
+   "piedi_m": 380,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Nessun nodo Nike / civico 6 in Nominatim: tenuto il centroide di Piazza Gae Aulenti di poi.json (il vertice ovest della piazza e' a 267 m). [FLAG: coord non trovate: tenute quelle di poi.json]"
   },
   {
    "id": "corso-garibaldi",
@@ -462,13 +527,15 @@
    "tipo": "moda",
    "edificio": null,
    "indirizzo": "Corso Garibaldi, 20121 Milano",
-   "lat": 45.476,
-   "lng": 9.184,
+   "lat": 45.4802,
+   "lng": 9.1865,
    "coord_precise": false,
    "descrizione": "Via di negozi tra Moscova e Brera con marchi streetwear e outdoor come Supreme, Carhartt WIP e Stüssy.",
    "fonte": "https://www.nssmag.com/en/fashion/41308/shopping-gen-z-milano-corso-garibaldi-supreme",
    "verificato": "2026-10-22",
-   "distanza_m": 775
+   "distanza_m": 775,
+   "piedi_m": 375,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Punto piu' vicino: estremita' nord su Piazza XXV Aprile (punto approssimato). Il tratto con i negozi citati (verso Moscova) e' piu' a sud: Largo La Foppa ~600 m. [FLAG: punto di accesso approssimato]"
   },
   {
    "id": "mercato-comunale-isola",
@@ -483,7 +550,9 @@
    "descrizione": "Mercato coperto storico del 1946, riaperto con banchi alimentari e cucina dal mattino alla sera.",
    "fonte": "https://www.ilgiorno.it/cosa-fare/mercato-isola-milano-piazzale-lagosta-riapertura-532b0534",
    "verificato": "2026-10-22",
-   "distanza_m": 823
+   "distanza_m": 823,
+   "piedi_m": 1154,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "mercato-centrale",
@@ -498,7 +567,9 @@
    "descrizione": "Mercato gastronomico su due piani dentro la Stazione Centrale, con botteghe di artigiani del cibo.",
    "fonte": "https://www.scattidigusto.it/il-mercato-centrale-milano-ha-riaperto-dopo-le-pulizie-straordinarie",
    "verificato": "2026-10-22",
-   "distanza_m": 1465
+   "distanza_m": 1465,
+   "piedi_m": 1826,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "libreria-fondazione-feltrinelli",
@@ -513,7 +584,9 @@
    "descrizione": "Libreria specializzata in saggistica al piano terra della Fondazione, che organizza anche incontri e dibattiti.",
    "fonte": "https://fondazionefeltrinelli.it/en/about-us/",
    "verificato": "2026-10-22",
-   "distanza_m": 215
+   "distanza_m": 215,
+   "piedi_m": 309,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "cantine-isola",
@@ -528,7 +601,9 @@
    "descrizione": "Enoteca storica fondata nel 1896 con vendita di bottiglie e calici al banco; chiusa il lunedì.",
    "fonte": "https://www.theinfatuation.com/milan/reviews/cantine-isola",
    "verificato": "2026-10-22",
-   "distanza_m": 807
+   "distanza_m": 807,
+   "piedi_m": 943,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "ratana",
@@ -537,14 +612,16 @@
    "tipo": "pranzo",
    "edificio": null,
    "indirizzo": "Via Gaetano De Castillia 28, 20124 Milano",
-   "lat": 45.4857472,
-   "lng": 9.1930965,
+   "lat": 45.4853531,
+   "lng": 9.1929089,
    "coord_precise": true,
    "descrizione": "Cucina milanese e lombarda dello chef Cesare Battisti in un ex deposito tranviario davanti alla BAM; segnalato dalla Guida Michelin.",
    "fonte": "https://guide.michelin.com/ch/it/lombardia/milano/ristorante/ratana",
    "verificato": "2026-10-22",
    "prezzo": "€€€",
-   "distanza_m": 617
+   "distanza_m": 617,
+   "piedi_m": 835,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "berton",
@@ -553,14 +630,16 @@
    "tipo": "cena",
    "edificio": null,
    "indirizzo": "Via Mike Bongiorno 13, 20124 Milano",
-   "lat": 45.4821805,
-   "lng": 9.1944159,
+   "lat": 45.4818022,
+   "lng": 9.1944257,
    "coord_precise": true,
    "descrizione": "Ristorante di Andrea Berton con una stella Michelin (guida 2026), cucina italiana contemporanea.",
    "fonte": "https://guide.michelin.com/ch/it/lombardia/milano/ristorante/berton",
    "verificato": "2026-10-22",
    "prezzo": "€€€€",
-   "distanza_m": 627
+   "distanza_m": 627,
+   "piedi_m": 796,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "il-liberty",
@@ -569,14 +648,16 @@
    "tipo": "pranzo",
    "edificio": null,
    "indirizzo": "Viale Monte Grappa 6, 20124 Milano",
-   "lat": 45.4804651,
-   "lng": 9.1912581,
+   "lat": 45.4805429,
+   "lng": 9.1915001,
    "coord_precise": true,
    "descrizione": "Cucina creativa in un palazzo Liberty vicino a Porta Nuova; aperto a pranzo e cena dal lunedì al venerdì.",
    "fonte": "https://guide.michelin.com/ch/it/lombardia/milano/ristorante/il-liberty",
    "verificato": "2026-10-22",
    "prezzo": "€€€",
-   "distanza_m": 455
+   "distanza_m": 455,
+   "piedi_m": 513,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "antica-trattoria-della-pesa",
@@ -592,7 +673,9 @@
    "fonte": "https://en.wikipedia.org/wiki/Viale_Pasubio",
    "verificato": "2026-10-22",
    "prezzo": null,
-   "distanza_m": 212
+   "distanza_m": 212,
+   "piedi_m": 298,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "ceresio-7",
@@ -608,7 +691,9 @@
    "fonte": "https://www.italia.it/en/lombardia/milano/where-to-eat/ceresio-7-pools---restaurant",
    "verificato": "2026-10-22",
    "prezzo": "€€€",
-   "distanza_m": 484
+   "distanza_m": 484,
+   "piedi_m": 716,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "dry-milano",
@@ -624,7 +709,9 @@
    "fonte": "https://www.gamberorosso.it/luoghi/locali/pizzeria/dry-milano",
    "verificato": "2026-10-22",
    "prezzo": "€€",
-   "distanza_m": 440
+   "distanza_m": 440,
+   "piedi_m": 594,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "berbere-isola",
@@ -640,7 +727,9 @@
    "fonte": "https://www.berberepizza.it/",
    "verificato": "2026-10-22",
    "prezzo": "€€",
-   "distanza_m": 635
+   "distanza_m": 635,
+   "piedi_m": 956,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "radetzky",
@@ -656,7 +745,9 @@
    "fonte": "https://spottedbylocals.com/milan/radetzky-cafe",
    "verificato": "2026-10-22",
    "prezzo": null,
-   "distanza_m": 493
+   "distanza_m": 493,
+   "piedi_m": 601,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: Nessun civico 105 / nodo Radetzky in Nominatim: tenute le coordinate di poi.json (Largo La Foppa). [FLAG: coord non trovate: tenute quelle di poi.json]"
   },
   {
    "id": "princi-xxv-aprile",
@@ -665,14 +756,16 @@
    "tipo": "colazione",
    "edificio": null,
    "indirizzo": "Piazza XXV Aprile 5, 20121 Milano",
-   "lat": 45.4812,
-   "lng": 9.1858,
+   "lat": 45.4808802,
+   "lng": 9.1861377,
    "coord_precise": false,
    "descrizione": "Panetteria e caffetteria con lievitati, pizza e focacce sfornati durante la giornata, di fronte a Eataly.",
    "fonte": "https://www.gamberorosso.it/ristoranti/scheda-bar/princi",
    "verificato": "2026-10-22",
    "prezzo": "€",
-   "distanza_m": 180
+   "distanza_m": 180,
+   "piedi_m": 329,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "ile-douce",
@@ -688,7 +781,9 @@
    "fonte": "https://flawless.life/it/italia/milano/lile-douce",
    "verificato": "2026-10-22",
    "prezzo": null,
-   "distanza_m": 721
+   "distanza_m": 721,
+   "piedi_m": 1005,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "cafezal-brera",
@@ -704,7 +799,9 @@
    "fonte": "https://www.gamberorosso.it/notizie/rubriche/storie/cafezal-milano-caffe-specialty/",
    "verificato": "2026-10-22",
    "prezzo": null,
-   "distanza_m": 481
+   "distanza_m": 481,
+   "piedi_m": 642,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
   },
   {
    "id": "bicerin",
@@ -713,14 +810,58 @@
    "tipo": "aperitivo",
    "edificio": null,
    "indirizzo": "Via Panfilo Castaldi 24, 20124 Milano",
-   "lat": 45.4770843,
-   "lng": 9.2022109,
+   "lat": 45.4768818,
+   "lng": 9.2024307,
    "coord_precise": false,
    "descrizione": "Wine bar con oltre 600 etichette, in gran parte di piccoli produttori, e salotto con poltrone e divani.",
    "fonte": "https://spottedbylocals.com/milan/bicerin",
    "verificato": "2026-10-22",
    "prezzo": null,
-   "distanza_m": 1383
+   "distanza_m": 1383,
+   "piedi_m": 1562,
+   "piedi_fonte": "Percorso a piedi FOSSGIS routed-foot (OpenStreetMap), ottobre 2026: "
+  }
+ ],
+ "riferimenti_a_piedi": [
+  {
+   "nome": "Corso Como (punto piu' vicino)",
+   "piedi_m": 90,
+   "nota": "Incrocio Via Tocqueville/Corso Como; inizio tratto pedonale 123 m"
+  },
+  {
+   "nome": "Piazza Gae Aulenti (punto piu' vicino)",
+   "piedi_m": 267,
+   "nota": "Vertice ovest della piazza"
+  },
+  {
+   "nome": "Bosco Verticale",
+   "piedi_m": 659,
+   "nota": "Torre sud, Via De Castillia"
+  },
+  {
+   "nome": "Stazione Porta Garibaldi (ingresso principale)",
+   "piedi_m": 391,
+   "nota": "Piazza Freud; accesso Passante 328 m"
+  },
+  {
+   "nome": "Metro Garibaldi FS (ingresso)",
+   "piedi_m": 266,
+   "nota": "Ingresso Viale Sturzo; ingresso Piazza Freud 333 m"
+  },
+  {
+   "nome": "Eataly Smeraldo (Piazza XXV Aprile)",
+   "piedi_m": 362,
+   "nota": "Nodo Eataly Smeraldo"
+  },
+  {
+   "nome": "Milano Centrale (ingresso)",
+   "piedi_m": 1658,
+   "nota": "Piede facciata su Piazza Duca d'Aosta (approssimato); 1730 m al nodo stazione"
+  },
+  {
+   "nome": "Duomo (piazza)",
+   "piedi_m": 2284,
+   "nota": "Angolo nord-ovest di Piazza del Duomo; centro lato nord 2324 m"
   }
  ]
 }

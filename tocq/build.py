@@ -74,7 +74,7 @@ PAGINE = {
     "posizione": {
         "url": "/posizione/",
         "title": "Posizione: hotel a Porta Garibaldi, Milano · Tocq Hotel",
-        "description": "Il Tocq Hotel Milano è a 200 m dalla stazione Porta Garibaldi, 70 m da Porta Nuova e 50 m da Corso Como. Mappa del quartiere con aziende, ristoranti e negozi.",
+        "description": "Il Tocq Hotel Milano è a 5 minuti a piedi dalla stazione Porta Garibaldi, a un minuto da Corso Como e dalle torri di Porta Nuova. Mappa del quartiere con aziende, ristoranti e negozi.",
         "nav": "Posizione",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
@@ -567,7 +567,7 @@ def llms():
 - Indirizzo: {f['via']}, {f['cap']} {f['citta']}
 - Telefono: {f['telefono']} (reception 24 ore) · Email: {f['email']} · Eventi: {f['email_mice']}
 - Categoria: 4 stelle · Riapertura dopo ristrutturazione: aprile 2021
-- Distanze: stazione Porta Garibaldi 200 m · Corso Como 50 m · Piazza Gae Aulenti 70 m · Bosco Verticale 100 m · Milano Centrale 1,5 km · Duomo 2,5 km · Linate 9 km · Malpensa 49 km (Malpensa Express da Garibaldi)
+- Distanze a piedi (percorso reale): stazione Porta Garibaldi 5 minuti (200 m in linea d'aria) · metro Garibaldi 3 minuti · Corso Como 1 minuto · Accenture e Bending Spoons davanti all'hotel · Piazza Gae Aulenti e UniCredit 4 minuti · Bosco Verticale 8 minuti · Milano Centrale 1,5 km · Duomo 2,5 km · Linate 9 km · Malpensa 49 km (Malpensa Express da Garibaldi)
 - Servizi: reception 24 ore con guardia notturna, menu dei cuscini (neckroll, kapok, lattice, piuma d'oca), colazione a buffet con opzioni halal, senza glutine e vegane, colazione da asporto, deposito bagagli, animali ammessi, parcheggio convenzionato
 
 ## Camere

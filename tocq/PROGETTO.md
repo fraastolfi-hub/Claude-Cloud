@@ -361,3 +361,13 @@ Su indicazione di Francesco, in ogni pagina l'H1 è la frase con la parola chiav
 Su indicazione di Francesco la posizione diventa la prima voce del menu, **"Posizione"** (`/posizione/`): racconta dove siamo (stazione 200 m, Porta Nuova 70 m, Corso Como 50 m, il Duomo a 15 minuti di metro), con la mappa e le porte alle sottopagine:
 - **Per chi lavora** `/posizione/lavoro/` · **Mangiare e bere** `/posizione/mangiare/` · **Shopping** `/posizione/shopping/` · **Come arrivare** `/posizione/come-arrivare/`.
 La vecchia pagina "Il quartiere" confluisce in Posizione; la vecchia "Come arrivare" è ora la sottopagina omonima. Al lancio servono i reindirizzamenti 301 dagli indirizzi attuali di tocq.it (/location/ → /posizione/).
+
+## 21. Distanze verificate (24 ottobre 2026)
+
+Tutte le 47 distanze del quartiere sono ora percorsi a piedi reali (router pedonale FOSSGIS su dati OpenStreetMap), dalla strada davanti al portone di Via Tocqueville 7/D fino all'ingresso di ciascun indirizzo; i minuti sono a 80 metri al minuto, arrotondati, con "meno di 1 min" sotto i 60 metri. Dati e fonti in `src/dati/poi.json` (`piedi_m`, `piedi_fonte`).
+
+Cosa cambia rispetto ai numeri del factsheet usati finora:
+- **Stazione Porta Garibaldi**: 200 m è la distanza in linea d'aria; a piedi sono 390 m fino all'ingresso principale (5 minuti), 270 m fino alla metro Garibaldi (3 minuti).
+- **Piazza Gae Aulenti**: 270 m, 3 minuti (non 70 m). Le torri più vicine sono quelle di Corso Como Place: Bending Spoons davanti all'hotel (meno di un minuto), Accenture a un minuto.
+- **Corso Como**: 90 m, un minuto (non 50 m). **Bosco Verticale**: 660 m, 8 minuti (non 100 m).
+- **Da decidere con la direzione**: la promessa "Il treno a 200 metri" (hero, finale, schede). È vera in linea d'aria; a piedi l'ospite conta 5 minuti.
