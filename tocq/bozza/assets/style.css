@@ -1473,3 +1473,10 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .perche .impegni li::before { color: #8a6038; }
 .tema-notte :not(.tono-chiaro) > .wrap > .impegni li::before, .section:not(.tono-chiaro) .impegni li::before { color: #d2a275; }
 @media (max-width: 960px) { .base__extra { display: none !important; } }
+.header .logo { flex-shrink: 0; }
+@media (min-width: 921px) and (max-width: 1080px) {
+  .nav { gap: 12px; }
+  .nav > a:not(.btn) { font-size: 11px; letter-spacing: .02em; }
+  .header .btn--small { padding-left: 14px; padding-right: 14px; }
+}
+@media (min-width: 921px) and (max-width: 980px) { .nav { gap: 9px; } .header .wrap { gap: 12px; } }

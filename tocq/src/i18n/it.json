@@ -7,13 +7,13 @@
   "chiudi": "Chiudi",
   "nav_aria": "Principale",
   "nav_camere": "Camere silenziose",
-  "nav_mangiare": "Colazione e cena",
+  "nav_mangiare": "Cucina tutto il giorno",
   "nav_servizi": "Garage e servizi",
   "nav_galleria": "Guarda il Tocq",
-  "nav_planet": "Meno sprechi",
+  "nav_planet": "Il nostro impegno",
   "nav_meeting": "Sale meeting",
   "nav_offerte": "Miglior prezzo",
-  "nav_quartiere": "Tutto a piedi",
+  "nav_quartiere": "Il quartiere",
   "nav_posizione": "A 200 m dal treno",
   "nav_contatti": "Contatti 24h",
   "lingua": "Lingua",
@@ -25,13 +25,13 @@
   "f_scrivi": "Scrivi o chiama",
   "f_soggiorna": "Soggiorna",
   "f_camere_suite": "Camere e suite",
-  "f_colazione": "Colazione e cena",
+  "f_colazione": "Cucina tutto il giorno",
   "f_prenota": "Prenota sul sito",
   "f_lavora": "Lavora",
   "f_sale": "Sale meeting",
   "f_preventivo": "Richiedi un preventivo",
   "f_aziendali": "Tariffe aziendali",
-  "f_quartiere": "Tutto a piedi: aziende e locali",
+  "f_quartiere": "Il quartiere: aziende e locali",
   "f_arrivare": "A 200 m dal treno",
   "f_offerte": "Miglior prezzo, prenotando qui",
   "f_faq": "Domande frequenti",
@@ -70,7 +70,7 @@
   "quartiere": {
    "title": "Aziende, ristoranti e shopping vicino al Tocq · Milano",
    "description": "Mappa del quartiere del Tocq Hotel Milano: le aziende di Porta Nuova, treni e metro, negozi e ristoranti, ciascuno con i minuti a piedi dall'hotel.",
-   "nav": "Tutto a piedi"
+   "nav": "Il quartiere"
   },
   "quartiere-aziende": {
    "title": "Aziende vicino al Tocq Hotel Milano · Porta Nuova",
@@ -90,7 +90,7 @@
   "mangiare": {
    "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
    "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",
-   "nav": "Colazione e cena"
+   "nav": "Cucina tutto il giorno"
   },
   "servizi": {
    "title": "Servizi, parcheggio e palestra · Tocq Hotel Milano",
@@ -105,7 +105,7 @@
   "planet": {
    "title": "Meno plastica, carta e sprechi · Tocq Hotel Milano",
    "description": "Cosa fa il Tocq Hotel Milano: zero plastica, niente carta in camera, luci LED, lavanderia a basso consumo, dispenser riciclati. E tre gesti per gli ospiti.",
-   "nav": "Meno sprechi"
+   "nav": "Il nostro impegno"
   },
   "faq": {
    "title": "Domande frequenti · Tocq Hotel Milano",

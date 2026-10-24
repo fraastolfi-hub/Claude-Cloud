@@ -82,7 +82,7 @@ PAGINE = {
         "url": "/quartiere/",
         "title": "Aziende, ristoranti e shopping vicino al Tocq · Milano",
         "description": "Mappa del quartiere del Tocq Hotel Milano: le aziende di Porta Nuova, treni e metro, negozi e ristoranti, ciascuno con i minuti a piedi dall'hotel.",
-        "nav": "Tutto a piedi",
+        "nav": "Il quartiere",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "quartiere-aziende": {
@@ -110,7 +110,7 @@ PAGINE = {
         "url": "/all-day-eating/",
         "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
         "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",
-        "nav": "Colazione e cena",
+        "nav": "Cucina tutto il giorno",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "servizi": {
@@ -131,7 +131,7 @@ PAGINE = {
         "url": "/planet/",
         "title": "Meno plastica, carta e sprechi · Tocq Hotel Milano",
         "description": "Cosa fa il Tocq Hotel Milano: zero plastica, niente carta in camera, luci LED, lavanderia a basso consumo, dispenser riciclati. E tre gesti per gli ospiti.",
-        "nav": "Meno sprechi",
+        "nav": "Il nostro impegno",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "faq": {
