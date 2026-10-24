@@ -24,25 +24,30 @@
     </div>
   </section>
 
-  <!-- 2 · IL TABELLONE: la posizione come orario, non come "centro" -->
-  <section class="board" aria-label="Distanze dal Tocq">
+  <!-- LA TUA BASE A GARIBALDI: da qui lavori, incontri, mangi, fai shopping e raggiungi tutta Milano -->
+  <section class="section base" id="base">
     <div class="wrap">
-      <div class="board__head">
-        <p class="kicker">Partenze dal Tocq · a piedi e con i mezzi</p>
-        <span class="board__clock" data-clock>MILANO</span>
+      <p class="kicker">Porta Garibaldi · Porta Nuova</p>
+      <h2>La tua base a Garibaldi.</h2>
+      <p class="lead">Da qui lavori, incontri, mangi bene, fai shopping e raggiungi tutta Milano. Quasi sempre a piedi.</p>
+      <div class="base__griglia mt-32">
+        <a class="base__voce" href="quartiere-aziende.html"><figure class="photo"><img src="assets/img/foto/porta-nuova-skyline-tramonto-1600.webp" srcset="assets/img/foto/porta-nuova-skyline-tramonto-800.webp 800w, assets/img/foto/porta-nuova-skyline-tramonto-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 25vw" alt="Lo skyline di Porta Nuova al tramonto, gli uffici a pochi minuti a piedi dal Tocq Hotel Milano" width="800" height="800" loading="lazy" decoding="async"></figure><span class="base__min">1 min</span><h3>Lavorare</h3><p>Gli uffici di Porta Nuova a 70 metri: UniCredit, Accenture, Microsoft, Google.</p></a>
+        <a class="base__voce" href="meeting.html"><figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-veranda-sala-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-veranda-sala-800.webp 800w, assets/img/foto/tocq-hotel-milano-veranda-sala-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 25vw" alt="La Veranda del Tocq Hotel Milano allestita per un incontro di lavoro" width="1600" height="901" loading="lazy" decoding="async"></figure><span class="base__min">in ascensore</span><h3>Incontri di lavoro</h3><p>Sei sale fino a 100 persone, sotto le camere. Dalla camera alla riunione.</p></a>
+        <a class="base__voce" href="quartiere-mangiare.html"><figure class="photo"><img src="assets/img/foto/corso-garibaldi-ristorante-1600.webp" srcset="assets/img/foto/corso-garibaldi-ristorante-800.webp 800w, assets/img/foto/corso-garibaldi-ristorante-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 25vw" alt="Un ristorante di Corso Garibaldi, a 4 minuti a piedi dal Tocq Hotel Milano" width="1600" height="1067" loading="lazy" decoding="async"></figure><span class="base__min">4 min</span><h3>Mangiare bene</h3><p>Corso Garibaldi e l'Isola: trattorie, pizzerie, cocktail bar. Il tavolo lo prenotiamo noi.</p></a>
+        <a class="base__voce" href="quartiere-shopping.html"><figure class="photo"><img src="assets/img/foto/corso-como-milano-fontana-1600.webp" srcset="assets/img/foto/corso-como-milano-fontana-800.webp 800w, assets/img/foto/corso-como-milano-fontana-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 25vw" alt="Corso Como, la via dello shopping a 50 metri dal Tocq Hotel Milano" width="800" height="800" loading="lazy" decoding="async"></figure><span class="base__min">1 min</span><h3>Shopping</h3><p>Corso Como a 50 metri, Gae Aulenti a 70: moda, design, Eataly, Feltrinelli.</p></a>
+        <a class="base__voce base__voce--muoversi" href="posizione.html">
+          <span class="base__min">200 m dalla stazione</span><h3>Tutta Milano, dalla stazione Garibaldi</h3>
+          <ul class="base__partenze">
+            <li><span>Milano Centrale</span><b>5 min</b></li>
+            <li><span>Fiera Milano Rho</span><b><span class="todo todo--quiet">25 min</span></b></li>
+            <li><span>San Siro · stadio</span><b>15 min</b></li>
+            <li><span>Malpensa</span><b><span class="todo todo--quiet">45 min</span></b></li>
+            <li class="base__extra"><span>Duomo</span><b>15 min</b></li>
+            <li class="base__extra"><span>Autodromo di Monza</span><b><span class="todo todo--quiet">30 min</span></b></li>
+          </ul>
+          <span class="motivo__vai">Tutte le destinazioni</span>
+        </a>
       </div>
-      <div class="board-scroll">
-        <table>
-          <thead><tr><th>Destinazione</th><th>Come</th><th>Tempo</th><th class="hide-s">Per</th></tr></thead>
-          <tbody>
-            <tr><td>Stazione Porta Garibaldi</td><td>a piedi, 200 m</td><td class="t">3 min</td><td class="hide-s">treni, passante, alta velocità</td></tr>
-            <tr><td>Metro Garibaldi</td><td>M5 lilla · <span class="todo">M2</span></td><td class="t">2 min</td><td class="hide-s">tutta la città</td></tr>
-            <tr><td>Malpensa · 49 km</td><td>Malpensa Express da Garibaldi</td><td class="t"><span class="todo todo--quiet">45 min</span></td><td class="hide-s">voli dell'alba</td></tr>
-            <tr><td>Fiera Milano Rho</td><td>treno o metro da Garibaldi</td><td class="t"><span class="todo todo--quiet">25 min</span></td><td class="hide-s">fiere e saloni</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="board__foot"><a href="posizione.html">Tutte le destinazioni: San Siro, Monza, Linate, Duomo</a></p>
     </div>
   </section>
 
@@ -55,19 +60,6 @@
   </section>
 
 
-
-  <!-- TRE MOTIVI: perché il Tocq, in tre schede -->
-  <section class="section">
-    <div class="wrap">
-      <p class="kicker">Perché il Tocq</p>
-      <h2>Tre motivi, in breve.</h2>
-      <div class="grid-3 mt-32 motivi">
-        <a class="motivo" href="posizione.html"><figure class="photo"><img src="assets/img/foto/porta-nuova-skyline-tramonto-1600.webp" srcset="assets/img/foto/porta-nuova-skyline-tramonto-800.webp 800w, assets/img/foto/porta-nuova-skyline-tramonto-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Skyline di Porta Nuova al tramonto, a pochi minuti a piedi dal Tocq Hotel Milano" width="800" height="800" loading="lazy" decoding="async"></figure><h3>Il treno a 200 metri</h3><p>Stazione Garibaldi, metro, Malpensa Express. Gli uffici di Porta Nuova a 70 metri.</p><span class="motivo__vai">Come arrivare</span></a>
-        <a class="motivo" href="camere.html#configura"><figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-cuscini-sul-letto-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-cuscini-sul-letto-800.webp 800w, assets/img/foto/tocq-hotel-milano-cuscini-sul-letto-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Il cuscino scelto dall'ospite, già sul letto al Tocq Hotel Milano" width="1600" height="1066" loading="lazy" decoding="async"></figure><h3>Il cuscino lo scegli tu</h3><p>Quattro cuscini e il lato silenzioso della camera, scelti prima di arrivare.</p><span class="motivo__vai">Prepara la camera</span></a>
-        <a class="motivo" href="meeting.html"><figure class="photo"><img src="assets/img/foto/tocq-hotel-milano-scala-design-1600.webp" srcset="assets/img/foto/tocq-hotel-milano-scala-design-800.webp 800w, assets/img/foto/tocq-hotel-milano-scala-design-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="La scala del Tocq Hotel Milano che porta alle sale meeting" width="1500" height="2000" loading="lazy" decoding="async"></figure><h3>Le sale sotto le camere</h3><p>Sei sale fino a 100 persone. Dalla camera alla riunione in ascensore.</p><span class="motivo__vai">Le sale</span></a>
-      </div>
-    </div>
-  </section>
 
   <!-- LE CAMERE -->
   <section class="section">
@@ -156,31 +148,24 @@
     </div>
   </section>
 
-  <!-- IL QUARTIERE -->
-  <section class="section">
-    <div class="wrap split">
-      <a class="anteprima-mappa" href="quartiere.html"><img src="assets/img/mappa/quartiere-anteprima.webp" alt="Mappa del quartiere del Tocq Hotel Milano con aziende, ristoranti e negozi a pochi minuti a piedi" width="960" height="640" loading="lazy" decoding="async"></a>
-      <div>
-        <p class="kicker">Il quartiere</p>
-        <h2>Il tuo ufficio è qui sotto.</h2>
-        <p class="lead"><!-- @conta-aziende --> sedi aziendali, <!-- @conta-food --> indirizzi per mangiare e <!-- @conta-shopping --> negozi, a pochi minuti a piedi.</p>
-        <div class="btns mt-32"><a class="btn" href="quartiere.html">Apri la mappa</a></div>
+  <!-- PERCHÉ SCEGLIERE IL TOCQ: le ragioni in una lista sola, con i dati dell'hotel per chi confronta -->
+  <section class="section perche" id="perche">
+    <div class="wrap">
+      <p class="kicker">In breve</p>
+      <h2>Perché scegliere il Tocq Hotel?</h2>
+      <ol class="impegni mt-32">
+        <li><b>Il treno a 200 metri</b><span>Stazione Garibaldi, metro M2 e M5, Malpensa Express. Niente taxi.</span></li>
+        <li><b>Camere silenziose</b><span>133 camere insonorizzate, rifatte nel 2021. Il lato corte, se domani hai una riunione.</span></li>
+        <li><b>Il cuscino lo scegli tu</b><span>Quattro cuscini: trovi il tuo già sul letto.</span></li>
+        <li><b>Le sale sotto le camere</b><span>Sei sale fino a 100 persone, nello stesso edificio.</span></li>
+        <li><b>Colazione anche all'alba</b><span>Buffet dalle 6:30, da asporto dalle 5:30. Halal, senza glutine e vegana.</span></li>
+        <li><b>Qualcuno risponde sempre</b><span>Reception 24 ore su 24, con la guardia notturna all'ingresso.</span></li>
+      </ol>
+      <div class="btns mt-32">
+        <a class="btn btn--primary" href="https://book.blastness.com/?id_albergo=16496&amp;dc=6326&amp;lingua_int=ita&amp;id_stile=21247" target="_blank" rel="noopener" data-prenota>Prenota una camera</a>
       </div>
-    </div>
-  </section>
-
-  <!-- DETTO PRIMA -->
-  <section class="section section--tight section--verde">
-    <div class="wrap">
-      <p class="h-medio">Detto prima: il Duomo è a 2,5 km, 15 minuti di metro. Siamo a Porta Garibaldi, non in centro storico.</p>
-    </div>
-  </section>
-
-  <!-- SCHEDA: i dati essenziali per chi confronta e per i motori di ricerca, chiusi di default -->
-  <section class="section section--tight scheda-sezione">
-    <div class="wrap">
-      <details class="scheda">
-        <summary>Scheda dell'hotel</summary>
+      <details class="scheda mt-48">
+        <summary>Tutti i dati dell'hotel</summary>
         <dl class="facts mt-32">
           <dt>Categoria</dt><dd>Hotel 4 stelle, riaperto nel 2021 dopo la ristrutturazione completa</dd>
           <dt>Indirizzo</dt><dd>Via Alexis De Tocqueville 7/D, 20154 Milano</dd>
@@ -194,6 +179,13 @@
         </dl>
         <p class="mt-32"><a href="faq.html">Tutte le domande frequenti</a></p>
       </details>
+    </div>
+  </section>
+
+  <!-- DETTO PRIMA -->
+  <section class="section section--tight section--verde">
+    <div class="wrap">
+      <p class="h-medio">Detto prima: il Duomo è a 2,5 km, 15 minuti di metro. Siamo a Porta Garibaldi, non in centro storico.</p>
     </div>
   </section>
 

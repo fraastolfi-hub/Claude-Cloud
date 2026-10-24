@@ -1444,3 +1444,32 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 @media (max-width: 920px) {
   .header .nav > a.nav__secondaria:not(.btn):not(.nav__tel) { font-size: 17px; letter-spacing: .03em; color: #b9b5af; padding: 9px 0; border-bottom: 0; }
 }
+
+/* ===== Home: "La tua base a Garibaldi" e "Perché scegliere il Tocq" ===== */
+.base__griglia { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.base__voce { display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: inherit; }
+.base__voce .photo { margin: 0 0 6px; aspect-ratio: 16 / 10; min-height: 0; overflow: hidden; }
+.base__voce .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.base__voce:hover .photo img { transform: scale(1.04); }
+.base__voce h3 { margin: 0; font-size: clamp(20px, 2vw, 24px); }
+.base__voce p { margin: 0; color: var(--ink-2); }
+.base__min { font: 500 11px var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #8a6038; }
+.base__voce--muoversi { grid-column: 3; grid-row: 1 / span 2; background: #0a0a0a; color: #f3efe9; padding: 28px; justify-content: flex-start; }
+.base__voce--muoversi .base__min { color: #d2a275; }
+.base__voce--muoversi h3 { color: #f3efe9; margin-bottom: 12px; }
+.base__partenze { list-style: none; margin: 0 0 16px; padding: 0; border-top: 1px solid rgba(255,255,255,.18); }
+.base__partenze li { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 16px; }
+.base__partenze b { font-weight: 500; color: #d2a275; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.base__voce--muoversi .motivo__vai { margin-top: auto; color: #f3efe9; }
+.base__voce--muoversi:hover { outline: 1px solid #d2a275; }
+@media (max-width: 960px) {
+  .base__griglia { grid-template-columns: 1fr 1fr; gap: 20px 14px; }
+  .base__voce--muoversi { grid-column: 1 / -1; grid-row: auto; }
+}
+@media (max-width: 560px) {
+  .base__voce h3 { font-size: 18px; }
+  .base__voce p { font-size: 14px; }
+}
+.perche .impegni li::before { color: #8a6038; }
+.tema-notte :not(.tono-chiaro) > .wrap > .impegni li::before, .section:not(.tono-chiaro) .impegni li::before { color: #d2a275; }
+@media (max-width: 960px) { .base__extra { display: none !important; } }
