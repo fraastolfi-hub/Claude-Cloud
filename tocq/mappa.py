@@ -255,6 +255,21 @@ def guida_food(punti):
             '<div class="guida guida--momenti">' + "".join(_scheda(q, ref) for q in voci) + "</div>")
 
 
+def guida_ids(punti, ids):
+    """Schede per una lista di punti scelti a mano (landing di Porta Nuova e Centrale), nell'ordine dato."""
+    ref = _referenze()
+    per_id = {q["id"]: q for q in punti}
+    return '<div class="guida">' + "".join(_scheda(per_id[i], ref) for i in ids if i in per_id) + "</div>"
+
+
+def tempi_ids(punti, ids):
+    """Striscia di tempi a piedi: nome e minuti, nell'ordine dato."""
+    per_id = {q["id"]: q for q in punti}
+    voci = "".join(f'<li><b>{_min_testo(per_id[i])}</b><span>{_e(per_id[i]["nome"].split(" – ")[0].split(" (")[0])}</span></li>'
+                   for i in ids if i in per_id)
+    return f'<ul class="tempi">{voci}</ul>'
+
+
 def schema_luoghi(punti, sito):
     """ItemList di luoghi con distanza a piedi: utile a Google e agli assistenti AI per le domande 'vicino a'."""
     elementi = []

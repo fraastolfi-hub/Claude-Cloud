@@ -106,6 +106,22 @@ PAGINE = {
         "nav": "Shopping",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
+    "portanuova": {
+        "url": "/posizione/porta-nuova/",
+        "title": "Hotel a Porta Nuova, Milano: tutto a piedi · Tocq Hotel",
+        "description": "Il Tocq Hotel Milano è dentro Porta Nuova: Corso Como a 1 minuto, Piazza Gae Aulenti a 3, il Bosco Verticale a 8. Cosa vedere, dove mangiare e lavorare, a piedi.",
+        "nav": "Porta Nuova",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+        "landing": True,
+    },
+    "centrale": {
+        "url": "/posizione/stazione-centrale/",
+        "title": "Hotel vicino alla Stazione Centrale di Milano · Tocq Hotel",
+        "description": "Dalla Stazione Centrale al Tocq Hotel Milano: due fermate di metro M2 fino a Garibaldi, poi 3 minuti a piedi. Treni, Malpensa Express, bus per gli aeroporti e cosa c'è intorno.",
+        "nav": "Stazione Centrale",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+        "landing": True,
+    },
     "eventi": {
         "url": "/fiere-ed-eventi/",
         "title": "Hotel per fiere, congressi e concerti a Milano · Tocq Hotel",
@@ -256,6 +272,7 @@ def hotel_ld():
 
 # pagine figlie: la voce madre nel breadcrumb
 GENITORE = {"quartiere-aziende": "posizione", "quartiere-mangiare": "posizione", "quartiere-shopping": "posizione", "arrivare": "posizione",
+            "portanuova": "posizione", "centrale": "posizione",
             "fiera": "eventi", "mico": "eventi", "sansiro": "eventi", "monza": "eventi"}
 
 
@@ -464,7 +481,7 @@ def header_landing(key, codice="it"):
 <header class="header header--landing">
   <div class="wrap">
     <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale-neg.svg" alt="{t['logo_alt']}" width="92" height="44"></a>
-    <a class="header__su" href="eventi.html">{t['tutti_eventi']}</a>
+    <a class="header__su" href="{GENITORE.get(key, 'index')}.html">{t['nav_' + GENITORE[key]] if key in GENITORE else 'Tocq Hotel Milano'}</a>
     <div class="header__azioni">
       <a class="header__tel" href="tel:{FATTI['tel_href']}">{FATTI['telefono']}</a>
       <a class="btn btn--primary btn--small" href="{prenota_url(codice)}" target="_blank" rel="noopener" data-prenota>{t['prenota']}</a>
@@ -481,7 +498,8 @@ def header(key, codice="it"):
     secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"])]
     # sottopagine con menu a discesa (su mobile appaiono rientrate sotto la voce madre)
     sottomenu = {"posizione": [("quartiere-aziende", t["sub_lavoro"]), ("quartiere-mangiare", t["sub_mangiare"]),
-                               ("quartiere-shopping", t["sub_shopping"]), ("arrivare", t["sub_arrivare"])],
+                               ("quartiere-shopping", t["sub_shopping"]), ("portanuova", t["sub_portanuova"]),
+                               ("centrale", t["sub_centrale"]), ("arrivare", t["sub_arrivare"])],
                  "eventi": [("fiera", t["sub_fiera"]), ("mico", t["sub_mico"]), ("sansiro", t["sub_sansiro"]), ("monza", t["sub_monza"])]}
     def voce(k, v, classe=""):
         corrente = k == key or any(k2 == key for k2, _ in sottomenu.get(k, []))
@@ -723,6 +741,10 @@ def main():
             for segnaposto, testo in pezzi.items():
                 if segnaposto.startswith("<!--"):
                     corpo = corpo.replace(segnaposto, testo)
+        if pezzi and "_punti" in pezzi:  # schede e tempi per punti scelti: <!-- @guida:id1,id2 --> e <!-- @tempi:id1,id2 -->
+            import re as _re
+            corpo = _re.sub(r"<!-- @guida:([\w,-]+) -->", lambda m: mappa.guida_ids(pezzi["_punti"], m.group(1).split(",")), corpo)
+            corpo = _re.sub(r"<!-- @tempi:([\w,-]+) -->", lambda m: mappa.tempi_ids(pezzi["_punti"], m.group(1).split(",")), corpo)
         corpi[key] = corpo
     for key in PAGINE:
         if key == "faq":

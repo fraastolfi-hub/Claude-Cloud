@@ -16,6 +16,8 @@
   "nav_quartiere": "",
   "nav_posizione": "",
   "nav_eventi": "",
+  "sub_portanuova": "",
+  "sub_centrale": "",
   "sub_fiera": "",
   "sub_mico": "",
   "sub_sansiro": "",
@@ -95,6 +97,16 @@
    "nav": ""
   },
   "quartiere-shopping": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "portanuova": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "centrale": {
    "title": "",
    "description": "",
    "nav": ""

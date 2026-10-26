@@ -16,6 +16,8 @@
   "nav_quartiere": "Il quartiere",
   "nav_posizione": "Posizione",
   "nav_eventi": "Fiere ed eventi",
+  "sub_portanuova": "Porta Nuova",
+  "sub_centrale": "Stazione Centrale",
   "sub_fiera": "Fiera Milano Rho",
   "sub_mico": "Congressi al MiCo",
   "sub_sansiro": "Concerti a San Siro",
@@ -98,6 +100,16 @@
    "title": "Shopping a Corso Como e Gae Aulenti · Tocq Hotel Milano",
    "description": "Negozi a pochi minuti a piedi dal Tocq Hotel Milano: 10 Corso Como, Eataly, Feltrinelli, Nike e le vie di Corso Garibaldi e Gae Aulenti.",
    "nav": "Shopping"
+  },
+  "portanuova": {
+   "title": "Hotel a Porta Nuova, Milano: tutto a piedi · Tocq Hotel",
+   "description": "Il Tocq Hotel Milano è dentro Porta Nuova: Corso Como a 1 minuto, Piazza Gae Aulenti a 4, il Bosco Verticale a 8. Cosa vedere, dove mangiare e lavorare, a piedi.",
+   "nav": "Porta Nuova"
+  },
+  "centrale": {
+   "title": "Hotel vicino alla Stazione Centrale di Milano · Tocq Hotel",
+   "description": "Dalla Stazione Centrale al Tocq Hotel Milano: due fermate di metro M2 fino a Garibaldi, poi 3 minuti a piedi. Treni, Malpensa Express, bus per gli aeroporti e cosa c'è intorno.",
+   "nav": "Stazione Centrale"
   },
   "eventi": {
    "title": "Hotel per fiere, congressi e concerti a Milano · Tocq Hotel",
