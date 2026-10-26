@@ -15,3 +15,12 @@ Le foto sono riquadri con una didascalia che fa anche da lista per lo shooting.
 ## Come si modifica
 
 Le pagine di `bozza/` sono generate: si modifica il corpo in `src/pages/<pagina>.html` (o i fatti, i meta e i dati strutturati in `build.py`) e poi si lancia `python3 tocq/build.py`. Il generatore scrive anche `sitemap.xml`, `robots.txt` e `llms.txt`.
+
+## Lavorare sul proprio computer
+
+1. **Scaricare il progetto**
+   - con Git: `git clone https://github.com/fraastolfi-hub/Claude-Cloud.git` e poi `git checkout claude/exciting-cannon-5mcwws`;
+   - senza Git: su GitHub scegliere il ramo `claude/exciting-cannon-5mcwws`, poi **Code → Download ZIP**.
+2. **Vedere il sito**: aprire `tocq/bozza/index.html` nel browser (doppio clic). Funziona senza server.
+3. **Modificare e rigenerare**: i testi stanno in `tocq/src/pages/*.html`, i dati in `tocq/src/dati/`, lo stile in `tocq/bozza/assets/style.css`. Dopo ogni modifica: `python3 tocq/build.py` (serve Python 3; Pillow solo per rigenerare foto e mappe: `pip install pillow`).
+4. **Continuare con Claude Code**: aprire Claude Code nella cartella del progetto scaricato, sullo stesso ramo. Il contesto del lavoro è nei file `PROGETTO.md`, `REVISIONE.md`, `BRAND.md` e `JOURNEY.md`.
