@@ -1,0 +1,317 @@
+{
+ "meta": {
+  "hotel": "Tocq Hotel Milano, Via Alexis de Tocqueville 7/D",
+  "origine": {
+   "metro": "Garibaldi FS (M2, M5) - 3 min a piedi",
+   "stazione": "Milano Porta Garibaldi (superficie: regionali, S11, Malpensa Express; Passante sotterraneo: S1,S2,S5,S6,S12,S13) - 5 min a piedi"
+  },
+  "aggiornato": "2026-10-26",
+  "nota": "Tempi a bordo indicativi; verificare su atm.it / trenord.it / app. Frequenze M2/M5: ATM indica circa 3-4 min feriali (M5), M5 attiva 5:40-24:00 circa."
+ },
+ "destinazioni": [
+  {
+   "id": 1,
+   "destinazione": "Stadio San Siro (Giuseppe Meazza)",
+   "diretto": true,
+   "linee": [
+    "M5"
+   ],
+   "da": "Garibaldi FS (M5, direzione San Siro Stadio)",
+   "scendere": "San Siro Stadio (capolinea)",
+   "fermate": 10,
+   "fermate_elenco": "Monumentale, Cenisio, Gerusalemme, Domodossola, Tre Torri, Portello, Lotto, Segesta, San Siro Ippodromo, San Siro Stadio",
+   "tempo_bordo_min": "17-20 (stima; l'intera M5 Bignami-San Siro <26 min)",
+   "frequenza": "3-4 min feriali, 4-6 min festivi (fonte terza); potenziata nei giorni partita/concerto",
+   "arrivo_a_piedi": "2-5 min dalla stazione ai cancelli; alternativa M1 Lotto + 15-20 min a piedi (viale Caprilli)",
+   "fonti": [
+    "https://www.acmilan.com/it/club/le-sedi/san-siro/indicazioni",
+    "https://www.milanofree.it/milano/trasporti/metropolitana-m5-la-linea-lilla-di-milano.html",
+    "https://www.fanpage.it/milano/metro-lilla-milano-orari-fermate-e-mappa-della-linea-m5"
+   ],
+   "confidenza": "alta"
+  },
+  {
+   "id": 2,
+   "destinazione": "Ippodromo SNAI San Siro (Galoppo) - concerti I-Days",
+   "diretto": true,
+   "linee": [
+    "M5"
+   ],
+   "da": "Garibaldi FS (M5, dir. San Siro Stadio)",
+   "scendere": "Lotto (7 fermate) o Segesta (8) indicate da Live Nation come stazioni di riferimento; anche San Siro Ippodromo (9). Live Nation per chi parte da Garibaldi indica San Siro Stadio",
+   "fermate": "7-10",
+   "tempo_bordo_min": "12-18",
+   "frequenza": "come M5",
+   "arrivo_a_piedi": "ingresso festival Via Diomede 1 / Piazzale Lotto: pochi minuti da Lotto; a fine concerto San Siro Ippodromo e Segesta CHIUSE in uscita",
+   "ultime_corse_evento": "M5 verso Bignami 00:04 (info Live Nation 2026, puo cambiare)",
+   "fonti": [
+    "https://www.livenation.it/en/mobilita/milano-ippodromo-snai-san-siro-2026",
+    "https://www.idays.it/en/info/come-arrivare-ippodromo-san-siro"
+   ],
+   "confidenza": "alta"
+  },
+  {
+   "id": "2b",
+   "destinazione": "Ippodromo SNAI La Maura (concerti grandi: I-Days 2026, Bad Bunny 2026)",
+   "diretto": true,
+   "linee": [
+    "M5"
+   ],
+   "da": "Garibaldi FS (M5)",
+   "scendere": "San Siro Stadio (indicazione Live Nation da Garibaldi); in alternativa M1 Bonola/Lampugnano (serve cambio)",
+   "fermate": 10,
+   "tempo_bordo_min": "17-20",
+   "arrivo_a_piedi": "lungo: le fermate tram/filobus di riferimento sono a circa 30 min a piedi; da M1 Bonola/bus 64-69: 7-21 min a seconda dell'ingresso (Yellow / PIT)",
+   "nota": "In uscita chiuse M5 San Siro Ippodromo e Segesta, M1 Uruguay",
+   "fonti": [
+    "https://www.livenation.it/en/mobilita/milano-ippodromo-la-maura-2026"
+   ],
+   "confidenza": "media (camminata variabile secondo ingresso)"
+  },
+  {
+   "id": 3,
+   "destinazione": "Fiera Milano Rho (stazione Rho Fiera / metro Rho Fieramilano)",
+   "diretto": true,
+   "linee": [
+    "S5 (Varese-Treviglio)",
+    "S6 (Novara-Treviglio/Pioltello)",
+    "S11 (Rho-Como)",
+    "treni regionali per Novara/Torino, Domodossola, Varese, Arona, Luino"
+   ],
+   "da": "Porta Garibaldi Passante (binari sotterranei) per S5/S6; Porta Garibaldi superficie per S11 (secondo Trenord) e regionali",
+   "scendere": "Rho Fiera Milano (stazione FS)",
+   "fermate": "S5/S6: 4 fermate (Lancetti, Villapizzone, Certosa, Rho Fiera)",
+   "tempo_bordo_min": "circa 15 (S5) / 15-20",
+   "frequenza": "S5 e S6 ogni 30 min ciascuna = circa ogni 15 min combinati; S11 ogni 30 min (fermata Rho Fiera solo feriali secondo bit.fieramilano.it); regionali aggiuntivi",
+   "arrivo_a_piedi": "5-10 min dalla stazione agli ingressi (Porta Est / Sud); dalla M1 Rho Fieramilano accesso diretto all'ingresso Est",
+   "alternativa_metro": "M2 fino a Cadorna (3 fermate) + M1 fino a Rho Fieramilano: circa 35-40 min, un cambio",
+   "biglietto": "STIBM Mi1-Mi3 (circa 2,20 EUR) per treno o metro",
+   "nota": "Durante grandi fiere (es. Salone) alcuni treni AV/Frecce fermano a Rho Fiera: da verificare caso per caso. Lavori RFI Rho-Certosa giu-set 2026 conclusi.",
+   "fonti": [
+    "https://bit.fieramilano.it/en/utility/come-arrivare.html",
+    "https://fieramilano.it/en/partner/trenord.html",
+    "https://www.trenord.it/en/routes-and-timetables/journey/our-lines/como-milano-rho-s11-line/",
+    "https://www.milanofree.it/milano/trasporti/passante-ferroviario-milano-linea-s11.html"
+   ],
+   "confidenza": "alta per linee; tempi/frequenze da verificare su orario in vigore"
+  },
+  {
+   "id": 4,
+   "destinazione": "Allianz MiCo (Viale Scarampo / Gate 2 Viale Eginardo / Gate 16 Piazzale Carlo Magno)",
+   "diretto": true,
+   "linee": [
+    "M5"
+   ],
+   "da": "Garibaldi FS (M5, dir. San Siro Stadio)",
+   "scendere": "Portello (6 fermate) - 50 m dagli ingressi principali secondo MiCo; alternative Domodossola (600 m), Tre Torri (700 m)",
+   "fermate": 6,
+   "tempo_bordo_min": "9-11",
+   "arrivo_a_piedi": "1-3 min. Ala Sud: Gate 1,2,3,4,11,12,16 (Scarampo/Eginardo/Colleoni); Ala Nord: Gate 5-10 (Scarampo/Teodorico). Gate 16 Piazzale Carlo Magno e' nel lato Colleoni/area pedonale: da Portello pochi minuti, da Tre Torri circa 700 m",
+   "nota": "Lotto (M1/M5) e' a 800 m: inutile da Garibaldi, Portello e' piu vicina. MiCo stessa consiglia M2->Garibaldi->M5 Portello",
+   "fonti": [
+    "https://micomilano.it/en/getting-here"
+   ],
+   "confidenza": "alta"
+  },
+  {
+   "id": 5,
+   "destinazione": "Fiera Milano City / Portello (padiglioni città, Miart, ecc.)",
+   "diretto": true,
+   "linee": [
+    "M5"
+   ],
+   "da": "Garibaldi FS",
+   "scendere": "Portello (6 fermate)",
+   "fermate": 6,
+   "tempo_bordo_min": "9-11",
+   "arrivo_a_piedi": "1-5 min; alternativa M1 Amendola (700 m) richiede cambio",
+   "nota": "Gran parte di fieramilanocity coincide ormai con Allianz MiCo (stesso complesso)",
+   "fonti": [
+    "https://micomilano.it/en/getting-here"
+   ],
+   "confidenza": "alta"
+  },
+  {
+   "id": 6,
+   "destinazione": "Autodromo Nazionale Monza",
+   "diretto": "treno diretto fino a Monza o Biassono-Lesmo Parco; poi navetta o a piedi",
+   "linee": [
+    "S7 Milano P.Garibaldi-Molteno-Lecco (ferma Villasanta e Biassono-Lesmo Parco)",
+    "S8 Milano P.Garibaldi-Carnate-Lecco (ferma Monza)",
+    "S11 Rho-P.Garibaldi-Como (ferma Monza)",
+    "regionali per Lecco/Sondrio (ferma Monza)"
+   ],
+   "da": "Porta Garibaldi superficie (S7, S8, regionali) o Passante (S11)",
+   "scendere": "Monza (FS) oppure Biassono-Lesmo Parco",
+   "tempo_bordo_min": "Monza circa 12-17; Biassono-Lesmo Parco circa 30-35",
+   "frequenza": "per Monza piu treni ogni ora (S8+S11+regionali, intervalli fino a 20 min secondo TicketOne); S7 circa ogni ora",
+   "arrivo_a_piedi": "Da Monza FS: navetta dedicata 'Linea Nera' fino al Gate G (nel 2026 biglietto combinato GP Monza Treno+Navetta Nera 10 EUR A/R) - a piedi circa 30+ min. Da Biassono-Lesmo Parco: circa 10 min a piedi verso curve di Lesmo / tribuna Serraglio",
+   "weekend_gp": "Nel 2026 (4-6 set): 21 corse straordinarie domenica Milano P.Garibaldi-Biassono senza fermate intermedie, treni straordinari Centrale-Monza, Day Pass Trenord 13 EUR, pacchetti Gite in treno. Per il 2027 (3-5 set) offerte non ancora pubblicate.",
+   "fonti": [
+    "https://siviaggia.it/idee-di-viaggio/gran-premio-italia-monza-treno-biglietto/598048/",
+    "https://moveo.telepass.com/gp-monza-2026-viabilita/",
+    "https://www.automoto.it/formula1/f1-autodromo-monza-gp-italia-2026-guida-logistica-treni-parcheggi.html",
+    "https://www.trenitalia.com/it/informazioni/lavori-programmati/20260905-gran-premio-d-italia-di-formula-1-a-monza.html",
+    "https://www.trenord.it/giteintreno/esperienze/gran-premio-f1-monza/",
+    "https://en.wikipedia.org/wiki/Biassono%E2%80%93Lesmo_Parco_railway_station"
+   ],
+   "confidenza": "media: monzanet.it non letto direttamente; Villasanta come accesso non verificato"
+  },
+  {
+   "id": 7,
+   "destinazione": "Milano Centrale",
+   "diretto": true,
+   "linee": [
+    "M2"
+   ],
+   "da": "Garibaldi FS (M2, dir. Cologno/Gessate)",
+   "scendere": "Centrale FS",
+   "fermate": 2,
+   "fermate_elenco": "Gioia, Centrale FS",
+   "tempo_bordo_min": "4",
+   "frequenza": "M2 circa 3-5 min",
+   "arrivo_a_piedi": "interno stazione",
+   "fonti": [
+    "https://www.milanofree.it/milano/trasporti/linea-m2-verde-milano-mappa-orari-fermate-e-info-utili.html"
+   ],
+   "confidenza": "alta"
+  },
+  {
+   "id": 8,
+   "destinazione": "Duomo",
+   "diretto": false,
+   "linee": [
+    "M2+M1 via Cadorna",
+    "M2+M3 via Centrale",
+    "Passante S + M3 via Repubblica"
+   ],
+   "opzioni": [
+    "M2 (dir. Abbiategrasso/Assago) 3 fermate fino a Cadorna + M1 (dir. Sesto) 3 fermate Cairoli, Cordusio, Duomo: circa 15 min",
+    "M2 2 fermate fino a Centrale + M3 (dir. San Donato) 4 fermate Repubblica, Turati, Montenapoleone, Duomo: circa 15 min",
+    "Passante (qualsiasi S verso est) 1 fermata a Repubblica + M3 3 fermate: circa 12-15 min, cambio piu lungo"
+   ],
+   "tempo_bordo_min": "12-16 totali con cambio",
+   "arrivo_a_piedi": "0 min (uscita in piazza). A piedi dall'hotel circa 30 min (2,3 km)",
+   "nota": "Nessun collegamento diretto; equivalenti in tempo. M2 ha chiusure estive periodiche (es. 2025 Cadorna-Garibaldi 19/7-7/9).",
+   "fonti": [
+    "https://www.atm.it/en/ViaggiaConNoi/InfoTraffico/Pages/M2closureCadornaGaribaldi.aspx"
+   ],
+   "confidenza": "alta (rete); tempi stimati"
+  },
+  {
+   "id": 9,
+   "destinazione": "Navigli / Darsena (Porta Genova)",
+   "diretto": true,
+   "linee": [
+    "M2"
+   ],
+   "da": "Garibaldi FS (M2, dir. Abbiategrasso/Assago)",
+   "scendere": "Porta Genova FS",
+   "fermate": 6,
+   "fermate_elenco": "Moscova, Lanza, Cadorna, Sant'Ambrogio, Sant'Agostino, Porta Genova",
+   "tempo_bordo_min": "11",
+   "arrivo_a_piedi": "2-5 min al Naviglio Grande / Darsena",
+   "fonti": [
+    "https://www.rome2rio.com/s/Milano-Porta-Genova/Garibaldi-FS",
+    "https://www.milanofree.it/milano/trasporti/linea-m2-verde-milano-mappa-orari-fermate-e-info-utili.html"
+   ],
+   "confidenza": "alta"
+  },
+  {
+   "id": 10,
+   "destinazione": "Città Studi / Politecnico (Leonardo) / Lambrate",
+   "diretto": true,
+   "linee": [
+    "M2"
+   ],
+   "da": "Garibaldi FS (M2, dir. Cologno/Gessate)",
+   "scendere": "Piola (Politecnico Leonardo, 5 fermate) o Lambrate FS (6)",
+   "fermate": "5 (Piola) / 6 (Lambrate)",
+   "fermate_elenco": "Gioia, Centrale, Caiazzo, Loreto, Piola, Lambrate FS",
+   "tempo_bordo_min": "9-11",
+   "arrivo_a_piedi": "Piola -> Politecnico Piazza Leonardo da Vinci circa 5 min",
+   "extra": "Politecnico Bovisa: Passante S1/S2/S12/S13 da P.Garibaldi a Milano Bovisa (2 fermate, circa 5-6 min) oppure Malpensa Express (ferma a Bovisa)",
+   "confidenza": "alta"
+  },
+  {
+   "id": 11,
+   "destinazione": "Aeroporto di Malpensa",
+   "diretto": true,
+   "linee": [
+    "Malpensa Express (corse da/per Milano Centrale)"
+   ],
+   "da": "Milano Porta Garibaldi (stazione di superficie, 5 min a piedi)",
+   "scendere": "Malpensa Terminal 1, poi Terminal 2",
+   "fermate": "Treni :25 da Centrale: P.Garibaldi, Bovisa, Saronno, Rescaldina, Castellanza, Busto Arsizio, Ferno-Lonate, T1, T2. Treni :55: P.Garibaldi, Bovisa, Saronno, Busto Arsizio, T1, T2",
+   "tempo_bordo_min": "circa 40-47 (Centrale-Malpensa 51 min; P.Garibaldi circa 10 min dopo Centrale; es. 14:55 Centrale -> 15:05 Garibaldi -> 15:52 T2)",
+   "frequenza": "ogni 30 min (partenze da Garibaldi circa ai minuti :05 e :35, da verificare), dalle 5:25 alle 23:25 da Centrale",
+   "biglietto": "15 EUR corsa singola, 25 EUR A/R",
+   "nota": "Le corse da Cadorna NON passano da Garibaldi",
+   "fonti": [
+    "https://www.trenord.it/linee-e-orari/il-nostro-servizio/malpensa-express/",
+    "https://www.e656.net/orario/treno-tn/2954.html"
+   ],
+   "confidenza": "alta"
+  },
+  {
+   "id": 12,
+   "destinazione": "Aeroporto di Linate",
+   "diretto": false,
+   "linee": [
+    "Passante S (S5/S6 o altre S dir. est) + M4"
+   ],
+   "opzioni": [
+    "Passante da P.Garibaldi a Dateo (Repubblica, Porta Venezia, Dateo = 3 fermate, circa 6 min) + M4 dir. Linate (Susa, Argonne, Forlanini FS, Repetti, Linate = 5 fermate, circa 10 min). Totale circa 25 min con cambio",
+    "Alternativa: S5/S6 fino a Milano Forlanini + M4 2 fermate (da verificare)",
+    "Alternativa solo metro: M2 fino a Sant'Ambrogio (4 fermate) + M4 dir. Linate: piu lunga"
+   ],
+   "tempo_bordo_min": "circa 16-18 a bordo, 25 totali",
+   "frequenza": "M4 circa ogni 2-3 min in punta (fonte 2022 indicava 7 min); Passante ogni pochi minuti nel tratto centrale",
+   "biglietto": "STIBM Mi1-Mi3 valido su Passante + M4",
+   "fonti": [
+    "https://www.trenord.it/news/trenord-informa/notizie/da-tutta-la-lombardia-a-linate-ora-e-tutto-collegato/",
+    "https://www.theflightclub.it/2022/12/metropolitana-linate-informazioni-arrivare-milano/"
+   ],
+   "confidenza": "alta per percorso; frequenze M4 da aggiornare"
+  },
+  {
+   "id": 13,
+   "destinazione": "Aeroporto Bergamo Orio al Serio",
+   "diretto": false,
+   "linee": [
+    "M2 fino a Centrale + bus navetta aeroportuale (Orio Shuttle/Autostradale, Terravision, Flibco)"
+   ],
+   "da": "Garibaldi FS -> Centrale FS (2 fermate) -> pullman da Piazza Luigi di Savoia",
+   "tempo_bordo_min": "bus circa 50-60 min (traffico)",
+   "frequenza": "circa ogni 20 min, dalle 3:00 circa a mezzanotte (varia per operatore)",
+   "biglietto": "circa 10-12 EUR",
+   "alternativa": "treno da P.Garibaldi a Bergamo (linea via Carnate, circa 1 h) + bus ATB per l'aeroporto",
+   "nota": "Collegamento ferroviario Bergamo-Orio (5,3 km) in costruzione: RFI indicava attivazione fine 2026, MIT completamento entro 2027; servizio previsto 'Bergamo aeroporto-Milano Centrale' ogni 30 min. Non ancora attivo alla data: da ricontrollare.",
+   "fonti": [
+    "https://travel.thewom.it/destinazioni/news-lowcost/aeroporto-di-orio-al-serio.html",
+    "https://micomilano.it/en/getting-here",
+    "https://www.rfi.it/it/news-e-media/comunicati-stampa-e-news/2026/2/23/rfi---lombardia--il-punto-sui-lavori-nel-territorio-di-bergamo.html"
+   ],
+   "confidenza": "media"
+  },
+  {
+   "id": 14,
+   "destinazione": "Rho-Pero / MIND (ex area Expo)",
+   "diretto": true,
+   "linee": [
+    "S5",
+    "S6",
+    "S11 (feriali)",
+    "regionali"
+   ],
+   "da": "Porta Garibaldi",
+   "scendere": "Rho Fiera Milano (stessa stazione della fiera)",
+   "tempo_bordo_min": "circa 15",
+   "arrivo_a_piedi": "MIND raggiungibile dalla stazione Rho Fiera / M1 Rho Fieramilano (accesso lato Expo); circa 10-15 min a piedi secondo l'edificio",
+   "fonti": [
+    "https://fieramilano.it/en/partner/trenord.html"
+   ],
+   "confidenza": "media (walking non verificato)"
+  }
+ ]
+}

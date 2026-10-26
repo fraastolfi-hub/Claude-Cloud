@@ -1,0 +1,593 @@
+{
+ "meta": {
+  "aggiornato": "2026-10-26",
+  "finestra": "2026-10-26 -> 2027-12-31",
+  "legenda_confidenza": {
+   "confirmed": "organizzatore ufficiale o ente pubblico",
+   "announced": "annunciato, fonte stampa/terza coerente",
+   "rumoured": "fonte singola non ufficiale o voce"
+  }
+ },
+ "eventi": [
+  {
+   "data_inizio": "2026-10-28",
+   "data_fine": "2026-10-29",
+   "nome": "Viscom Italia",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati/dec-n-2656-all-a-fiere-internazionali-2026-2-aggiornamento.pdf",
+   "confidenza": "confirmed",
+   "note": ""
+  },
+  {
+   "data_inizio": "2026-11-03",
+   "data_fine": "2026-11-08",
+   "nome": "EICMA 2026 (pubblico 5-8 nov; 3-4 stampa/operatori)",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.motorbox.com/moto/magazine-moto/eicma-2026-date-biglietti-novita-e-parcheggi-gratis",
+   "confidenza": "confirmed",
+   "note": "anche nel calendario regionale 2026"
+  },
+  {
+   "data_inizio": "2026-11-17",
+   "data_fine": "2026-11-20",
+   "nome": "SIMEI + Enovitis Business + BeverTech",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati/dec-n-2656-all-a-fiere-internazionali-2026-2-aggiornamento.pdf",
+   "confidenza": "confirmed",
+   "note": ""
+  },
+  {
+   "data_inizio": "2026-12-05",
+   "data_fine": "2026-12-13",
+   "nome": "AF - L'Artigiano in Fiera",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati/dec-n-2656-all-a-fiere-internazionali-2026-2-aggiornamento.pdf",
+   "confidenza": "confirmed",
+   "note": "fiera al pubblico, grande affluenza"
+  },
+  {
+   "data_inizio": "2027-01-20",
+   "data_fine": "2027-01-22",
+   "nome": "PTE Promotion Trade Exhibition",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-01-21",
+   "data_fine": "2027-01-24",
+   "nome": "Milano Home (ex HOMI)",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-02-02",
+   "data_fine": "2027-02-04",
+   "nome": "Milano Unica (+ Ideabiella, Shirt Avenue, Moda In)",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-02-06",
+   "data_fine": "2027-02-08",
+   "nome": "MIDO - occhialeria",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-02-09",
+   "data_fine": "2027-02-11",
+   "nome": "BIT - Borsa Internazionale del Turismo",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-02-17",
+   "data_fine": "2027-02-19",
+   "nome": "Myplant & Garden",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-02-20",
+   "data_fine": "2027-02-22",
+   "nome": "Milano Fashion & Jewels + Si' Sposaitalia + The One Milano",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-02-21",
+   "data_fine": "2027-02-23",
+   "nome": "MICAM Milano + MIPEL",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-02-23",
+   "data_fine": "2027-02-25",
+   "nome": "Lineapelle",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-04-13",
+   "data_fine": "2027-04-18",
+   "nome": "Salone del Mobile.Milano 2027 + Euroluce + Salone Complemento + Workplace3.0",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.salonemilano.it/en/articles/salone-del-mobile-2027-dates",
+   "confidenza": "confirmed",
+   "note": "65a edizione con Euroluce; date anche nel calendario regionale"
+  },
+  {
+   "data_inizio": "2027-05-11",
+   "data_fine": "2027-05-13",
+   "nome": "Made in Steel + ISSA Pulire",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-05-11",
+   "data_fine": "2027-05-14",
+   "nome": "Lamiera",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-05-25",
+   "data_fine": "2027-05-28",
+   "nome": "Print4All",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-07-06",
+   "data_fine": "2027-07-08",
+   "nome": "Milano Unica (estate)",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-09-11",
+   "data_fine": "2027-09-13",
+   "nome": "Milano Fashion & Jewels",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-09-12",
+   "data_fine": "2027-09-14",
+   "nome": "MICAM Milano + MIPEL",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-09-14",
+   "data_fine": "2027-09-16",
+   "nome": "Lineapelle + Simac Tanning Tech",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-10-04",
+   "data_fine": "2027-10-08",
+   "nome": "EMO Milano 2027 - macchine utensili (mondiale)",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-10-22",
+   "data_fine": "2027-10-26",
+   "nome": "HOST Milano 2027",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-11-09",
+   "data_fine": "2027-11-14",
+   "nome": "EICMA 2027",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-11-16",
+   "data_fine": "2027-11-19",
+   "nome": "Vitrum",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-11-17",
+   "data_fine": "2027-11-19",
+   "nome": "Sicurezza + GEE Global Elevator Exhibition + Smart Building Expo",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-11-17",
+   "data_fine": "2027-11-20",
+   "nome": "MADE expo",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-12-04",
+   "data_fine": "2027-12-12",
+   "nome": "AF - L'Artigiano in Fiera",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "date dal calendario ufficiale Regione Lombardia 2027 (1° aggiornamento)"
+  },
+  {
+   "data_inizio": "2027-04-09",
+   "data_fine": "2027-04-11",
+   "nome": "miart - arte moderna e contemporanea",
+   "sede": "Milano (Allianz MiCo / fieramilanocity)",
+   "categoria": "fiera",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati-fiere-2027/Dec-n-12526-All-A-Fiere-internazionali-2027-1-agg-.pdf",
+   "confidenza": "announced",
+   "note": "calendario regionale indica 'Milano'"
+  },
+  {
+   "data_inizio": "2028-05-08",
+   "data_fine": "2028-05-11",
+   "nome": "TUTTOFOOD (prossima edizione dopo maggio 2026: nessuna edizione 2027 trovata)",
+   "sede": "Fiera Milano Rho",
+   "categoria": "fiera",
+   "fonte": "https://www.expobeds.com/events/milan-it/food and beverage",
+   "confidenza": "rumoured",
+   "note": "fuori finestra; solo fonti terze"
+  },
+  {
+   "data_inizio": null,
+   "data_fine": null,
+   "nome": "MCE Mostra Convegno Expocomfort: biennale, ultima 24-27 mar 2026; nessuna edizione nel 2027",
+   "sede": "Fiera Milano Rho",
+   "categoria": "nota",
+   "fonte": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati/dec-n-2656-all-a-fiere-internazionali-2026-2-aggiornamento.pdf",
+   "confidenza": "confirmed",
+   "note": ""
+  },
+  {
+   "data_inizio": "2026-11-05",
+   "data_fine": "2026-11-08",
+   "nome": "52° Congresso Nazionale SIRM (radiologia), gate 16",
+   "sede": "Allianz MiCo",
+   "categoria": "congresso",
+   "fonte": "https://cvs.solutions.iqvia.com/event/detail/EMT-26-11359",
+   "confidenza": "rumoured",
+   "note": "scheda EMT 'to be reviewed'"
+  },
+  {
+   "data_inizio": "2026-11-11",
+   "data_fine": "2026-11-12",
+   "nome": "A@W Architect@Work Milano",
+   "sede": "Allianz MiCo",
+   "categoria": "evento",
+   "fonte": "https://www.architectatwork.com/cs/events/a@w-milan/practical",
+   "confidenza": "announced",
+   "note": ""
+  },
+  {
+   "data_inizio": "2026-11-26",
+   "data_fine": "2026-11-28",
+   "nome": "SIOT 2026 - 109° Congresso Nazionale Ortopedia e Traumatologia",
+   "sede": "Allianz MiCo",
+   "categoria": "congresso",
+   "fonte": "https://efort.org/locations/allianz-mico-convention-centre",
+   "confidenza": "announced",
+   "note": "fonte aggregatore EFORT"
+  },
+  {
+   "data_inizio": "2026-12-03",
+   "data_fine": "2026-12-05",
+   "nome": "EACVI 2026 - imaging cardiovascolare (ESC), Gate 4",
+   "sede": "Allianz MiCo",
+   "categoria": "congresso",
+   "fonte": "https://www.escardio.org/events/congresses/eacvi-congress/helpful-information/",
+   "confidenza": "confirmed",
+   "note": ""
+  },
+  {
+   "data_inizio": "2027-02-18",
+   "data_fine": "2027-02-20",
+   "nome": "EAPCI 2027 (ESC, cardiologia interventistica)",
+   "sede": "Allianz MiCo",
+   "categoria": "congresso",
+   "fonte": "https://www.escardio.org/events/congresses/eapci-congress/helpful-information/",
+   "confidenza": "confirmed",
+   "note": ""
+  },
+  {
+   "data_inizio": "2027-05-06",
+   "data_fine": "2027-05-08",
+   "nome": "ITI World Symposium 2027 (implantologia, 5.000+ partecipanti)",
+   "sede": "Milano (sede MiCo non confermata)",
+   "categoria": "congresso",
+   "fonte": "https://worldsymposium.iti.org/",
+   "confidenza": "announced",
+   "note": "citta e date ufficiali; sede da verificare"
+  },
+  {
+   "data_inizio": "2027-05-21",
+   "data_fine": "2027-05-25",
+   "nome": "ESTRO 2027 (radioterapia oncologica, circa 8.800 delegati)",
+   "sede": "Allianz MiCo",
+   "categoria": "congresso",
+   "fonte": "https://www.expobeds.com/event/estro/2027",
+   "confidenza": "announced",
+   "note": "fonte terza"
+  },
+  {
+   "data_inizio": "2027-09-11",
+   "data_fine": "2027-09-15",
+   "nome": "ERS Congress 2027 (European Respiratory Society) - fonti 11-14 o 11-15 set",
+   "sede": "Allianz MiCo",
+   "categoria": "congresso",
+   "fonte": "https://www.ersnet.org/congress-and-events/congress",
+   "confidenza": "announced",
+   "note": "data fine discordante"
+  },
+  {
+   "data_inizio": "2027-09-25",
+   "data_fine": "2027-09-29",
+   "nome": "CIRSE 2027 (radiologia interventistica)",
+   "sede": "Allianz MiCo",
+   "categoria": "congresso",
+   "fonte": "https://cvs.solutions.iqvia.com/event/detail/EMT-26-12393",
+   "confidenza": "announced",
+   "note": "database EMT"
+  },
+  {
+   "data_inizio": "2027-10-11",
+   "data_fine": "2027-10-13",
+   "nome": "ECOC 2027 (comunicazioni ottiche)",
+   "sede": "Allianz MiCo",
+   "categoria": "congresso",
+   "fonte": "https://www.expobeds.com/event/ecoc/2027/book",
+   "confidenza": "rumoured",
+   "note": "solo sito alberghiero non affiliato"
+  },
+  {
+   "data_inizio": "2027-06-10",
+   "data_fine": "2027-06-10",
+   "nome": "Zucchero",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/131219-zucchero-a-san-siro-nel-2027-data-del-concerto-e-prezzi-dei-biglietti.htm",
+   "confidenza": "announced",
+   "note": "giovedi 10 giugno"
+  },
+  {
+   "data_inizio": "2027-06-12",
+   "data_fine": "2027-06-12",
+   "nome": "Annalisa",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.sorrisi.com/musica/concerti/annalisa-annuncia-un-concerto-a-san-siro-il-12-giugno-2027/",
+   "confidenza": "announced",
+   "note": ""
+  },
+  {
+   "data_inizio": "2027-06-15",
+   "data_fine": "2027-06-15",
+   "nome": "Achille Lauro",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.lapresse.it/spettacoli/musica/2026/03/30/achille-lauro-nel-2027-il-tour-negli-stadi-ecco-le-date-dei-concerti/",
+   "confidenza": "announced",
+   "note": ""
+  },
+  {
+   "data_inizio": "2027-06-17",
+   "data_fine": "2027-06-17",
+   "nome": "Pinguini Tattici Nucleari (1a data)",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/119890-pinguini-tattici-nucleari-a-san-siro-nel-2027-info-data-prezzi-dei-biglietti.htm",
+   "confidenza": "announced",
+   "note": ""
+  },
+  {
+   "data_inizio": "2027-06-18",
+   "data_fine": "2027-06-18",
+   "nome": "Pinguini Tattici Nucleari (2a data)",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/119890-pinguini-tattici-nucleari-a-san-siro-nel-2027-info-data-prezzi-dei-biglietti.htm",
+   "confidenza": "announced",
+   "note": ""
+  },
+  {
+   "data_inizio": "2027-06-20",
+   "data_fine": "2027-06-20",
+   "nome": "Ultimo",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/131221-ultimo-a-san-siro-nel-2027-data-del-concerto-e-prezzi-dei-biglietti.htm",
+   "confidenza": "announced",
+   "note": "domenica 20 giugno"
+  },
+  {
+   "data_inizio": "2027-06-21",
+   "data_fine": "2027-06-21",
+   "nome": "Ultimo (data aggiunta)",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/131221-ultimo-a-san-siro-nel-2027-data-del-concerto-e-prezzi-dei-biglietti.htm",
+   "confidenza": "announced",
+   "note": "raddoppio annunciato"
+  },
+  {
+   "data_inizio": "2027-06-23",
+   "data_fine": "2027-06-23",
+   "nome": "Olly (Olly Stadi 27)",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/127992-olly-a-san-siro-nel-2027-data-del-concerto-e-prezzi-dei-biglietti.htm",
+   "confidenza": "announced",
+   "note": ""
+  },
+  {
+   "data_inizio": "2027-07-24",
+   "data_fine": "2027-07-24",
+   "nome": "Karol G",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/123459-karol-g-in-concerto-a-san-siro-viajando-per-el-mundo-tropitour.htm",
+   "confidenza": "announced",
+   "note": ""
+  },
+  {
+   "data_inizio": null,
+   "data_fine": null,
+   "nome": "Vasco Rossi (50 anni carriera) e Laura Pausini a San Siro 2027",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "concerto",
+   "fonte": "https://www.ilgiorno.it/milano/cultura/sch-concerti-san-siro-estate-2025-srkrqyvt",
+   "confidenza": "rumoured",
+   "note": "voci 2025, nessuna data"
+  },
+  {
+   "data_inizio": null,
+   "data_fine": null,
+   "nome": "Calcio: AC Milan e Inter giocano in casa a San Siro circa ogni settimana (Serie A ago-mag + coppe europee/Coppa Italia), ~40-50 partite/anno complessive",
+   "sede": "Stadio San Siro (Meazza)",
+   "categoria": "calcio",
+   "fonte": "https://www.acmilan.com/it/club/le-sedi/san-siro/indicazioni",
+   "confidenza": "confirmed",
+   "note": "calendari su acmilan.com / inter.it"
+  },
+  {
+   "data_inizio": "2027-06-13",
+   "data_fine": "2027-06-13",
+   "nome": "Blink-182 + Pierce The Veil (I-Days)",
+   "sede": "Ippodromo SNAI San Siro (I-Days Milano 2027)",
+   "categoria": "concerto",
+   "fonte": "https://www.rollingstone.it/?p=1032322",
+   "confidenza": "announced",
+   "note": "unica data italiana"
+  },
+  {
+   "data_inizio": "2027-06-19",
+   "data_fine": "2027-06-19",
+   "nome": "Fontaines D.C. (I-Days)",
+   "sede": "Ippodromo SNAI San Siro (I-Days Milano 2027)",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/136796-fontaines-d-c-agli-i-days-milano-2027-la-data-del-concerto.htm",
+   "confidenza": "announced",
+   "note": "fonte singola"
+  },
+  {
+   "data_inizio": "2027-07-14",
+   "data_fine": "2027-07-14",
+   "nome": "Sombr (I-Days)",
+   "sede": "I-Days Milano 2027 (sede da verificare)",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/136797-sombr-agli-i-days-2027-la-data-del-concerto.htm",
+   "confidenza": "announced",
+   "note": "fonte singola"
+  },
+  {
+   "data_inizio": null,
+   "data_fine": null,
+   "nome": "Bresh (I-Days 2027, data non comunicata)",
+   "sede": "I-Days Milano 2027",
+   "categoria": "concerto",
+   "fonte": "https://www.mentelocale.it/milano/136796-fontaines-d-c-agli-i-days-milano-2027-la-data-del-concerto.htm",
+   "confidenza": "rumoured",
+   "note": ""
+  },
+  {
+   "data_inizio": "2026-09-04",
+   "data_fine": "2026-09-06",
+   "nome": "Formula 1 Gran Premio d'Italia 2026 (GIA' SVOLTO)",
+   "sede": "Autodromo Nazionale Monza",
+   "categoria": "motori",
+   "fonte": "https://siviaggia.it/idee-di-viaggio/gran-premio-italia-monza-treno-biglietto/598048/",
+   "confidenza": "confirmed",
+   "note": "passato"
+  },
+  {
+   "data_inizio": "2027-09-03",
+   "data_fine": "2027-09-05",
+   "nome": "Formula 1 Gran Premio d'Italia 2027 - weekend Sprint (14° round)",
+   "sede": "Autodromo Nazionale Monza",
+   "categoria": "motori",
+   "fonte": "https://www.automoto.it/formula1/f1-calendario-2027-date-sprint-monaco-monza.html",
+   "confidenza": "confirmed",
+   "note": "calendario F1 2027 pubblicato 16/9/2026; biglietti su TicketOne"
+  }
+ ]
+}
