@@ -65,7 +65,7 @@ UI = {"it": {
     "nav_camere": "Camere",
     "nav_mangiare": "All Day Eating",
     "nav_servizi": "Garage e servizi",
-    "nav_galleria": "Guarda il Tocq",
+    "nav_galleria": "Foto del Tocq",
     "nav_planet": "Il nostro impegno",
     "nav_meeting": "Sale meeting",
     "nav_offerte": "Miglior prezzo",

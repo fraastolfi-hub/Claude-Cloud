@@ -179,7 +179,7 @@ PAGINE = {
         "url": "/galleria/",
         "title": "Foto del Tocq Hotel Milano · camere, hall, ristorante",
         "description": "Le foto del Tocq Hotel Milano a Porta Garibaldi: camere e bagni, hall e bar, ristorante, Veranda e piatti della cucina.",
-        "nav": "Guarda il Tocq",
+        "nav": "Foto del Tocq",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "planet": {

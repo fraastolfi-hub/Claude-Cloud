@@ -9,7 +9,7 @@
   "nav_camere": "Camere",
   "nav_mangiare": "All Day Eating",
   "nav_servizi": "Garage e servizi",
-  "nav_galleria": "Guarda il Tocq",
+  "nav_galleria": "Foto del Tocq",
   "nav_planet": "Il nostro impegno",
   "nav_meeting": "Sale meeting",
   "nav_offerte": "Miglior prezzo",
@@ -149,7 +149,7 @@
   "galleria": {
    "title": "Foto del Tocq Hotel Milano · camere, hall, ristorante",
    "description": "Le foto del Tocq Hotel Milano a Porta Garibaldi: camere e bagni, hall e bar, ristorante, Veranda e piatti della cucina.",
-   "nav": "Guarda il Tocq"
+   "nav": "Foto del Tocq"
   },
   "planet": {
    "title": "Meno plastica, carta e sprechi · Tocq Hotel Milano",
