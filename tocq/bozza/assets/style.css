@@ -1651,3 +1651,21 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .dotazioni .ticklist { margin: 0; }
 @media (max-width: 760px) { .dotazioni { gap: 32px; } }
 .sale .sala .card__body { padding-top: 18px; }
+
+/* Fiere ed eventi: una scheda per destinazione */
+.mete { gap: 2px; }
+.meta { display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 3vw, 40px); border: 1px solid var(--line); }
+.meta h3 { margin: 0; font-size: clamp(24px, 2.4vw, 32px); }
+.meta h3 a { color: inherit; text-decoration: none; }
+.meta__tempo { display: flex; align-items: baseline; gap: 12px; margin: 0; }
+.meta__tempo b { font: 500 clamp(36px, 4vw, 52px)/1 var(--sans); letter-spacing: -.02em; }
+.meta__tempo span { font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; opacity: .7; }
+.meta__eti { font: 500 10px var(--sans); letter-spacing: .14em; text-transform: uppercase; opacity: .6; margin: 8px 0 0; }
+.prossimi { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 6px; }
+.prossimi time { display: inline-block; min-width: 8.5em; font: 500 13px var(--sans); opacity: .75; }
+.meta .btn { align-self: flex-start; margin-top: auto; }
+.header__su { font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: inherit; text-decoration: none; opacity: .8; margin-right: auto; margin-left: 28px; }
+.header__su::before { content: "← "; }
+@media (max-width: 560px) { .header__su { display: none; } }
+.meta__tempo { flex-wrap: wrap; row-gap: 4px; }
+.meta__tempo b { white-space: nowrap; }

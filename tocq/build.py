@@ -106,8 +106,15 @@ PAGINE = {
         "nav": "Shopping",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
+    "eventi": {
+        "url": "/fiere-ed-eventi/",
+        "title": "Hotel per fiere, congressi e concerti a Milano · Tocq Hotel",
+        "description": "Dal Tocq Hotel Milano senza cambi: Fiera Milano Rho in 15 minuti di treno, Allianz MiCo in 10 di metro, San Siro con la M5, Monza in treno. Calendari e prenotazione.",
+        "nav": "Fiere ed eventi",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
     "fiera": {
-        "url": "/fiera-milano-rho/",
+        "url": "/fiere-ed-eventi/fiera-milano-rho/",
         "title": "Hotel per Fiera Milano Rho: 15 minuti di treno · Tocq Hotel",
         "description": "Dal Tocq Hotel Milano alla Fiera di Rho in treno senza cambi, 15 minuti da Porta Garibaldi. La sera sei a Corso Como. Calendario fiere 2026-2027 e prenotazione.",
         "nav": "Fiera Milano Rho",
@@ -115,7 +122,7 @@ PAGINE = {
         "landing": True,
     },
     "sansiro": {
-        "url": "/san-siro/",
+        "url": "/fiere-ed-eventi/san-siro/",
         "title": "Hotel per concerti a San Siro: M5 diretta · Tocq Hotel Milano",
         "description": "Concerti allo stadio San Siro e agli I-Days all'Ippodromo: dal Tocq Hotel Milano la M5 lilla senza cambi. Dopo il live sei a Corso Como. Calendario 2027.",
         "nav": "Concerti a San Siro",
@@ -123,7 +130,7 @@ PAGINE = {
         "landing": True,
     },
     "mico": {
-        "url": "/allianz-mico/",
+        "url": "/fiere-ed-eventi/allianz-mico/",
         "title": "Hotel per congressi all'Allianz MiCo · Tocq Hotel Milano",
         "description": "Dal Tocq Hotel Milano all'Allianz MiCo in 10 minuti di metro M5, senza cambi: si scende a Portello, a 50 metri dal centro congressi. Calendario congressi 2026-2027.",
         "nav": "Allianz MiCo",
@@ -131,7 +138,7 @@ PAGINE = {
         "landing": True,
     },
     "monza": {
-        "url": "/gran-premio-monza/",
+        "url": "/fiere-ed-eventi/gran-premio-monza/",
         "title": "Hotel per il Gran Premio di Monza 2027 · Tocq Hotel Milano",
         "description": "Gran Premio d'Italia di Formula 1, 3-5 settembre 2027: da Porta Garibaldi il treno per Monza senza cambi. La sera sei a Corso Como. Prenota il weekend.",
         "nav": "Gran Premio di Monza",
@@ -247,6 +254,11 @@ def hotel_ld():
     }
 
 
+# pagine figlie: la voce madre nel breadcrumb
+GENITORE = {"quartiere-aziende": "posizione", "quartiere-mangiare": "posizione", "quartiere-shopping": "posizione", "arrivare": "posizione",
+            "fiera": "eventi", "mico": "eventi", "sansiro": "eventi", "monza": "eventi"}
+
+
 def breadcrumb_ld(key):
     p = PAGINE[key]
     if not p["nav"]:
@@ -255,9 +267,9 @@ def breadcrumb_ld(key):
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Tocq Hotel Milano", "item": SITO + "/"},
-            *([{"@type": "ListItem", "position": 2, "name": PAGINE["posizione"]["nav"], "item": SITO + PAGINE["posizione"]["url"]}]
-              if key.startswith("quartiere-") or key == "arrivare" else []),
-            {"@type": "ListItem", "position": 3 if key.startswith("quartiere-") or key == "arrivare" else 2, "name": p["nav"], "item": SITO + p["url"]},
+            *([{"@type": "ListItem", "position": 2, "name": PAGINE[GENITORE[key]]["nav"], "item": SITO + PAGINE[GENITORE[key]]["url"]}]
+              if key in GENITORE else []),
+            {"@type": "ListItem", "position": 3 if key in GENITORE else 2, "name": p["nav"], "item": SITO + p["url"]},
         ],
     }
 
@@ -452,6 +464,7 @@ def header_landing(key, codice="it"):
 <header class="header header--landing">
   <div class="wrap">
     <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale-neg.svg" alt="{t['logo_alt']}" width="92" height="44"></a>
+    <a class="header__su" href="eventi.html">{t['tutti_eventi']}</a>
     <div class="header__azioni">
       <a class="header__tel" href="tel:{FATTI['tel_href']}">{FATTI['telefono']}</a>
       <a class="btn btn--primary btn--small" href="{prenota_url(codice)}" target="_blank" rel="noopener" data-prenota>{t['prenota']}</a>
@@ -464,11 +477,12 @@ def header_landing(key, codice="it"):
 def header(key, codice="it"):
     t = lingue.ui(codice)
     # menu principale (sempre visibile) e voci secondarie (solo nel menu mobile; su desktop stanno nel footer)
-    principali = [("posizione", t["nav_posizione"]), ("camere", t["nav_camere"]), ("mangiare", t["nav_mangiare"]), ("meeting", t["nav_meeting"]), ("offerte", t["nav_offerte"]), ("contatti", t["nav_contatti"])]
+    principali = [("posizione", t["nav_posizione"]), ("camere", t["nav_camere"]), ("mangiare", t["nav_mangiare"]), ("meeting", t["nav_meeting"]), ("eventi", t["nav_eventi"]), ("offerte", t["nav_offerte"]), ("contatti", t["nav_contatti"])]
     secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"])]
     # sottopagine con menu a discesa (su mobile appaiono rientrate sotto la voce madre)
     sottomenu = {"posizione": [("quartiere-aziende", t["sub_lavoro"]), ("quartiere-mangiare", t["sub_mangiare"]),
-                               ("quartiere-shopping", t["sub_shopping"]), ("arrivare", t["sub_arrivare"])]}
+                               ("quartiere-shopping", t["sub_shopping"]), ("arrivare", t["sub_arrivare"])],
+                 "eventi": [("fiera", t["sub_fiera"]), ("mico", t["sub_mico"]), ("sansiro", t["sub_sansiro"]), ("monza", t["sub_monza"])]}
     def voce(k, v, classe=""):
         corrente = k == key or any(k2 == key for k2, _ in sottomenu.get(k, []))
         return f'      <a href="{k}.html"{classe}{" aria-current=\"page\"" if corrente else ""}>{v}</a>'
@@ -533,6 +547,7 @@ def footer(codice="it"):
         <a href="meeting.html">{t['f_sale']}</a>
         <a href="meeting.html#preventivo">{t['f_preventivo']}</a>
         <a href="contatti.html#aziende">{t['f_aziendali']}</a>
+        <a href="eventi.html">{t['nav_eventi']}</a>
         <a href="fiera.html">Fiera Milano Rho</a>
         <a href="sansiro.html">Concerti a San Siro</a>
         <a href="mico.html">Congressi all'Allianz MiCo</a>

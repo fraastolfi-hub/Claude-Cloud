@@ -138,5 +138,18 @@ def calendario(chiave, oggi=None):
             f'{_e(agg)}. Controlla sempre il sito dell\'evento prima di partire.</p>')
 
 
+def prossimi(chiave, n=3, oggi=None):
+    """Le prossime date di una sede, in breve, per la pagina che raccoglie fiere ed eventi."""
+    oggi = oggi or dt.date.today()
+    eventi = [e for e in json.loads(DATI.read_text())["eventi"]
+              if CALENDARI[chiave](e) and e.get("data_fine") and _data(e["data_fine"]) >= oggi]
+    eventi.sort(key=lambda e: e["data_inizio"])
+    righe = "".join(f'<li><time datetime="{e["data_inizio"]}">{_intervallo(_data(e["data_inizio"]), _data(e["data_fine"]))}</time> {_e(_nome(e)[0])}</li>'
+                    for e in eventi[:n])
+    return f'<ul class="prossimi">{righe}</ul>' if righe else ""
+
+
 def blocchi():
-    return {f"<!-- @calendario-{k} -->": calendario(k) for k in CALENDARI}
+    b = {f"<!-- @calendario-{k} -->": calendario(k) for k in CALENDARI}
+    b.update({f"<!-- @prossimi-{k} -->": prossimi(k) for k in CALENDARI})
+    return b

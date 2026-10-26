@@ -394,3 +394,9 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 
 - **Meeting**: scheda per ognuna delle sei sale (foto vere di Duomo, Scala, Brera, Porta Nuova da tocq.it; Castello e Arena con segnaposto, perché su tocq.it hanno solo foto di repertorio), dotazioni incluse e su richiesta, purificatore Dyson Pure Humidify in ogni sala. Non usate le immagini di repertorio di tocq.it (persone, flûte, pubblicità Dyson). Capienze: resta la presentazione MICE rev. 2; le differenze con tocq.it sono segnate in nota.
 - **Hero**: le due ante non ruotano più in 3D (la prospettiva le deformava ai bordi e sparivano di colpo); ora scorrono via in piano e si tolgono a movimento finito.
+
+## 25. Categoria "Fiere ed eventi" (26 ottobre 2026)
+
+- Nuova pagina madre `/fiere-ed-eventi/` (voce di menu con tendina) che raccoglie le quattro landing: per ognuna tempo e mezzo, due righe, le prossime date dal calendario e il pulsante. Le landing passano sotto la categoria: `/fiere-ed-eventi/fiera-milano-rho/`, `/fiere-ed-eventi/san-siro/`, `/fiere-ed-eventi/allianz-mico/`, `/fiere-ed-eventi/gran-premio-monza/` (stessa logica nelle altre lingue), con breadcrumb a tre livelli.
+- Le landing tengono l'intestazione ridotta per le campagne, con in più il ritorno "← Fiere ed eventi" (nascosto su mobile).
+- Camere: tolti i nomi della serie 2021 (Cozy, Stylish, Roomy, Snuggle), che confondevano.

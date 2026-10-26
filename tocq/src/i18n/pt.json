@@ -15,6 +15,12 @@
   "nav_offerte": "",
   "nav_quartiere": "",
   "nav_posizione": "",
+  "nav_eventi": "",
+  "sub_fiera": "",
+  "sub_mico": "",
+  "sub_sansiro": "",
+  "sub_monza": "",
+  "tutti_eventi": "",
   "nav_arrivare": "",
   "sub_lavoro": "",
   "sub_mangiare": "",
@@ -89,6 +95,11 @@
    "nav": ""
   },
   "quartiere-shopping": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "eventi": {
    "title": "",
    "description": "",
    "nav": ""

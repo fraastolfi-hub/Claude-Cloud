@@ -15,6 +15,12 @@
   "nav_offerte": "Miglior prezzo",
   "nav_quartiere": "Il quartiere",
   "nav_posizione": "Posizione",
+  "nav_eventi": "Fiere ed eventi",
+  "sub_fiera": "Fiera Milano Rho",
+  "sub_mico": "Congressi al MiCo",
+  "sub_sansiro": "Concerti a San Siro",
+  "sub_monza": "Gran Premio di Monza",
+  "tutti_eventi": "Fiere ed eventi",
   "nav_arrivare": "Come arrivare",
   "sub_lavoro": "Per chi lavora",
   "sub_mangiare": "Mangiare e bere",
@@ -92,6 +98,11 @@
    "title": "Shopping a Corso Como e Gae Aulenti · Tocq Hotel Milano",
    "description": "Negozi a pochi minuti a piedi dal Tocq Hotel Milano: 10 Corso Como, Eataly, Feltrinelli, Nike e le vie di Corso Garibaldi e Gae Aulenti.",
    "nav": "Shopping"
+  },
+  "eventi": {
+   "title": "Hotel per fiere, congressi e concerti a Milano · Tocq Hotel",
+   "description": "Dal Tocq Hotel Milano senza cambi: Fiera Milano Rho in 15 minuti di treno, Allianz MiCo in 10 di metro, San Siro con la M5, Monza in treno. Calendari e prenotazione.",
+   "nav": "Fiere ed eventi"
   },
   "fiera": {
    "title": "Hotel per Fiera Milano Rho: 15 minuti di treno · Tocq Hotel",
