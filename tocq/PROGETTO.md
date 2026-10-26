@@ -404,3 +404,8 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 ## 26. "Comodo per…" al posto di "Fiere ed eventi" (26 ottobre 2026)
 
 - La categoria si chiama "Comodo per…" (URL `/comodo-per/`) e raccoglie sei landing: Fiera Milano Rho, Allianz MiCo, San Siro, Monza, Stazione Centrale, Porta Nuova (`/comodo-per/<pagina>/`).
+
+## 27. Privacy policy (26 ottobre 2026)
+
+- Pagina `/privacy-policy/` con il testo di tocq.it/privacy-policy riordinato per sezioni, indice a lato, link nel piede di ogni pagina e sotto ogni modulo. Il modulo di download della presentazione ha ora una casella facoltativa e separata per la newsletter.
+- **Da aggiornare con il consulente privacy prima del lancio** (nota visibile con "Mostra le note di lavoro"): titolare come società (Fattore Italia srl), tempi di conservazione, moduli e newsletter, Google Analytics 4 e Tag Manager con consenso, widget recensioni e mappe, trasferimenti extra UE, banner cookie, un solo indirizzo email per i diritti.

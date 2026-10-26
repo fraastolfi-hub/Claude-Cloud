@@ -15,6 +15,7 @@
   "nav_offerte": "",
   "nav_quartiere": "",
   "nav_posizione": "",
+  "f_privacy": "",
   "nav_eventi": "",
   "sub_portanuova": "",
   "sub_centrale": "",
@@ -107,6 +108,11 @@
    "nav": ""
   },
   "centrale": {
+   "title": "",
+   "description": "",
+   "nav": ""
+  },
+  "privacy": {
    "title": "",
    "description": "",
    "nav": ""

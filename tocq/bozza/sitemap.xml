@@ -67,6 +67,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/comodo-per/stazione-centrale/"/>
   </url>
   <url>
+    <loc>https://www.tocq.it/privacy-policy/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tocq.it/privacy-policy/"/>
+  </url>
+  <url>
     <loc>https://www.tocq.it/comodo-per/</loc>
     <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.tocq.it/comodo-per/"/>

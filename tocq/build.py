@@ -122,6 +122,13 @@ PAGINE = {
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
         "landing": True,
     },
+    "privacy": {
+        "url": "/privacy-policy/",
+        "title": "Privacy policy e cookie policy · Tocq Hotel Milano",
+        "description": "Informativa sul trattamento dei dati personali (art. 13 GDPR) e cookie policy del Tocq Hotel Milano.",
+        "nav": "Privacy policy",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+    },
     "eventi": {
         "url": "/comodo-per/",
         "title": "Hotel comodo per Fiera, MiCo, San Siro e Centrale · Tocq Hotel",
@@ -577,7 +584,7 @@ def footer(codice="it"):
       </div>
     </div>
     <div class="footer__base">
-      <span>© 2026 {f['nome']} · {f['societa']} · {t['f_piva']} {f['piva']}</span>
+      <span>© 2026 {f['nome']} · {f['societa']} · {t['f_piva']} {f['piva']} · <a href="privacy.html">{t['f_privacy']}</a></span>
       <span>{t['f_bozza']} · <button type="button" class="note-toggle" aria-pressed="false">Mostra le note di lavoro</button></span>
     </div>
   </div>
