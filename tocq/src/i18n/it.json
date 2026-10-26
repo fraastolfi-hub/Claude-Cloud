@@ -93,6 +93,16 @@
    "description": "Negozi a pochi minuti a piedi dal Tocq Hotel Milano: 10 Corso Como, Eataly, Feltrinelli, Nike e le vie di Corso Garibaldi e Gae Aulenti.",
    "nav": "Shopping"
   },
+  "fiera": {
+   "title": "Hotel per Fiera Milano Rho: 15 minuti di treno · Tocq Hotel",
+   "description": "Dal Tocq Hotel Milano alla Fiera di Rho in treno senza cambi, 15 minuti da Porta Garibaldi. La sera sei a Corso Como. Calendario fiere 2026-2027 e prenotazione.",
+   "nav": "Fiera Milano Rho"
+  },
+  "sansiro": {
+   "title": "Hotel per concerti a San Siro: M5 diretta · Tocq Hotel Milano",
+   "description": "Concerti allo stadio San Siro e agli I-Days all'Ippodromo: dal Tocq Hotel Milano la M5 lilla senza cambi. Dopo il live sei a Corso Como. Calendario 2027.",
+   "nav": "Concerti a San Siro"
+  },
   "mangiare": {
    "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
    "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",

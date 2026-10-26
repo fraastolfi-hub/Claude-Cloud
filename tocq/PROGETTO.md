@@ -371,3 +371,15 @@ Cosa cambia rispetto ai numeri del factsheet usati finora:
 - **Piazza Gae Aulenti**: 270 m, 3 minuti (non 70 m). Le torri più vicine sono quelle di Corso Como Place: Bending Spoons davanti all'hotel (meno di un minuto), Accenture a un minuto.
 - **Corso Como**: 90 m, un minuto (non 50 m). **Bosco Verticale**: 660 m, 8 minuti (non 100 m).
 - **Da decidere con la direzione**: la promessa "Il treno a 200 metri" (hero, finale, schede). È vera in linea d'aria; a piedi l'ospite conta 5 minuti.
+
+## 22. Landing per campagne e ricerca (26 ottobre 2026)
+
+Pagine d'ingresso per i grandi motivi di viaggio raggiungibili da Garibaldi senza cambi, costruite con il metodo landing-hospitality (brief, struttura approvata, copy, controllo):
+- **Fiera Milano Rho** `/fiera-milano-rho/` · idea: "Alla Fiera in treno, senza cambi. La sera sei a Milano." (S5/S6, 15 minuti)
+- **San Siro, stadio e Ippodromo** `/san-siro/` · idea: "Vicino al palco non basta." (M5 lilla diretta, poi Corso Como)
+
+Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), prova sociale nella prima schermata, il percorso dal portone, il calendario con "Prenota le notti" già sulle date (fiera: dalla sera prima all'ultimo giorno, una persona; concerto: la notte dell'evento, due persone), la sera nel quartiere, recensioni vere per obiezione, confronto onesto, FAQ con schema FAQPage, chiusura con scarsità vera e cancellazione gratuita.
+- **Dati**: `src/dati/linee.json` (linee e tempi ATM/Trenord) ed `src/dati/eventi.json` (calendari con fonte e affidabilità). Il pulsante Prenota compare solo per date confermate o annunciate da fonti affidabili; gli eventi passati spariscono da soli al build. **Da aggiornare ogni trimestre.**
+- **Per le campagne**: usare gli indirizzi con i parametri UTM (es. `/fiera-milano-rho/?utm_source=google&utm_medium=cpc&utm_campaign=fiera-salone-2027`); il testo degli annunci riprende il titolo della pagina (message-match).
+- **Da confermare**: check-out flessibile dopo il concerto (promesso su hoteltocqmilano.it); un'eventuale tariffa per espositori.
+- **Prossime**: Allianz MiCo (congressi, M5 Portello, 10 minuti) e Autodromo di Monza (Gran Premio 3-5 settembre 2027).

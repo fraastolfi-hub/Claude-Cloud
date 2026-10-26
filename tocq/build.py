@@ -106,6 +106,22 @@ PAGINE = {
         "nav": "Shopping",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
+    "fiera": {
+        "url": "/fiera-milano-rho/",
+        "title": "Hotel per Fiera Milano Rho: 15 minuti di treno · Tocq Hotel",
+        "description": "Dal Tocq Hotel Milano alla Fiera di Rho in treno senza cambi, 15 minuti da Porta Garibaldi. La sera sei a Corso Como. Calendario fiere 2026-2027 e prenotazione.",
+        "nav": "Fiera Milano Rho",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+        "landing": True,
+    },
+    "sansiro": {
+        "url": "/san-siro/",
+        "title": "Hotel per concerti a San Siro: M5 diretta · Tocq Hotel Milano",
+        "description": "Concerti allo stadio San Siro e agli I-Days all'Ippodromo: dal Tocq Hotel Milano la M5 lilla senza cambi. Dopo il live sei a Corso Como. Calendario 2027.",
+        "nav": "Concerti a San Siro",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+        "landing": True,
+    },
     "mangiare": {
         "url": "/all-day-eating/",
         "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
@@ -412,6 +428,23 @@ def selettore_lingue(key, codice, t):
             f'<ul class="lingue__menu">{"".join(voci)}</ul></details>')
 
 
+def header_landing(key, codice="it"):
+    """Landing per le campagne: niente menu che porti fuori, solo marchio, telefono e Prenota."""
+    t = lingue.ui(codice)
+    return f"""
+<a class="skip" href="#contenuto">{t['salta']}</a>
+<header class="header header--landing">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/img/logo-orizzontale-neg.svg" alt="{t['logo_alt']}" width="92" height="44"></a>
+    <div class="header__azioni">
+      <a class="header__tel" href="tel:{FATTI['tel_href']}">{FATTI['telefono']}</a>
+      <a class="btn btn--primary btn--small" href="{prenota_url(codice)}" target="_blank" rel="noopener" data-prenota>{t['prenota']}</a>
+    </div>
+  </div>
+</header>
+"""
+
+
 def header(key, codice="it"):
     t = lingue.ui(codice)
     # menu principale (sempre visibile) e voci secondarie (solo nel menu mobile; su desktop stanno nel footer)
@@ -484,6 +517,8 @@ def footer(codice="it"):
         <a href="meeting.html">{t['f_sale']}</a>
         <a href="meeting.html#preventivo">{t['f_preventivo']}</a>
         <a href="contatti.html#aziende">{t['f_aziendali']}</a>
+        <a href="fiera.html">Fiera Milano Rho</a>
+        <a href="sansiro.html">Concerti a San Siro</a>
         <a href="posizione.html">{t['f_quartiere']}</a>
         <a href="arrivare.html">{t['f_arrivare']}</a>
         <a href="offerte.html">{t['f_offerte']}</a>
@@ -644,7 +679,9 @@ def ritmo(corpo):
 def main():
     lingue.modelli(PAGINE)
     import mappa
-    pezzi = mappa.blocchi()
+    pezzi = mappa.blocchi() or {}
+    import eventi
+    pezzi.update(eventi.blocchi())
     import faq as faq_pagina
     corpi = {}
     for key in PAGINE:
@@ -660,11 +697,15 @@ def main():
             import re as _re  # le domande scritte solo per la pagina FAQ sono già state raccolte: il modello si toglie
             corpo = _re.sub(r"\s*<!-- domande scritte solo per questa pagina.*?</template>", "", corpo, flags=_re.S)
             faq = estrai_faq(corpo)  # lo schema FAQPage sta solo sulla pagina FAQ
+        elif PAGINE[key].get("landing"):
+            corpo = corpi[key]  # nelle landing le domande restano tutte, con il loro schema FAQPage
+            faq = estrai_faq(corpo)
         else:
             corpo = faq_pagina.accorcia(corpi[key], key)
             faq = []
         corpo = ritmo("\n" + corpo)
-        html = head(key, faq) + header(key) + '\n<main id="contenuto">' + corpo + "</main>\n" + footer()
+        testa = header_landing(key) if PAGINE[key].get("landing") else header(key)
+        html = head(key, faq) + testa + '\n<main id="contenuto">' + corpo + "</main>\n" + footer()
         (OUT / f"{key}.html").write_text(html)
         print(f"{key}.html · {len(estrai_faq(corpo))} FAQ")
     (OUT / "sitemap.xml").write_text(sitemap())
