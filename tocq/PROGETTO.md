@@ -409,3 +409,9 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 
 - Pagina `/privacy-policy/` con il testo di tocq.it/privacy-policy riordinato per sezioni, indice a lato, link nel piede di ogni pagina e sotto ogni modulo. Il modulo di download della presentazione ha ora una casella facoltativa e separata per la newsletter.
 - **Da aggiornare con il consulente privacy prima del lancio** (nota visibile con "Mostra le note di lavoro"): titolare come società (Fattore Italia srl), tempi di conservazione, moduli e newsletter, Google Analytics 4 e Tag Manager con consenso, widget recensioni e mappe, trasferimenti extra UE, banner cookie, un solo indirizzo email per i diritti.
+
+## 28. Stazione Centrale, Porta Nuova, Green Key e Instagram (26 ottobre 2026)
+
+- **Landing Stazione Centrale** (`/comodo-per/stazione-centrale/`): tragitto M2 (2 fermate, circa 4 min, più 3 min a piedi), cosa parte dalla Centrale (AV, Malpensa Express che ferma anche a Garibaldi, bus aeroporti da Piazza Luigi di Savoia, interscambio M3), sei luoghi intorno alla stazione, confronto onesto, FAQ. Fonti nella ricerca del 26 ottobre (Trenord, Terravision, Memoriale della Shoah, Wikipedia, MilanoFree); i punti deboli sono segnati in nota.
+- **Landing Porta Nuova** (`/comodo-per/porta-nuova/`): tempi a piedi reali, luoghi vicini e sei nuovi punti in `poi.json` (Stecca 3.0, Fondazione Catella, Isola Pepe Verde, Casa della Memoria, Blue Note, Belvedere di Palazzo Lombardia), mappa, numeri del quartiere (COIMA 2024, Boeri). Non aggiunti: UniCredit Pavilion (manca il punto su OpenStreetMap), Torre Solaria e Piazza Alvar Aalto (nessuna fonte oltre la mappa).
+- **Piede**: link Instagram con icona; riga Green Key con il marchio e rimando alla pagina Il nostro impegno. Il marchio è caricato da tocq.it (`/wp-content/uploads/2024/12/green-key.jpg`): al lancio va copiato fra i file del sito. Schema Hotel con `sameAs` (Instagram, Facebook, LinkedIn).

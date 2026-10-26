@@ -248,6 +248,8 @@ def hotel_ld():
         "@id": HOTEL_ID,
         "name": FATTI["nome"],
         "alternateName": "Tocq Hotel",
+        "sameAs": ["https://www.instagram.com/tocqhotelmilano/", "https://www.facebook.com/tocqhotelmilano",
+                   "https://www.linkedin.com/company/tocq-hotel-milano-corso-como/"],
         "description": "Hotel 4 stelle a Porta Garibaldi, Milano, a 3 minuti a piedi dalla metro Garibaldi: 133 camere insonorizzate rinnovate nel 2021 e 6 sale meeting nello stesso edificio.",
         "url": SITO + "/",
         "telephone": FATTI["telefono"],
@@ -557,6 +559,7 @@ def footer(codice="it"):
         <a href="tel:{f['tel_href']}">{f['telefono']}</a>
         <a href="mailto:{f['email']}">{f['email']}</a>
         <a href="mailto:{f['email_mice']}">{f['email_mice']}</a>
+        <a class="footer__social" href="https://www.instagram.com/tocqhotelmilano/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
       </div>
       <div>
         <h2 class="footer__h">{t['f_soggiorna']}</h2>
@@ -577,12 +580,18 @@ def footer(codice="it"):
         <a href="sansiro.html">Concerti a San Siro</a>
         <a href="mico.html">Congressi all'Allianz MiCo</a>
         <a href="monza.html">Gran Premio di Monza</a>
+        <a href="centrale.html">Stazione Centrale</a>
+        <a href="portanuova.html">Porta Nuova</a>
         <a href="posizione.html">{t['f_quartiere']}</a>
         <a href="arrivare.html">{t['f_arrivare']}</a>
         <a href="offerte.html">{t['f_offerte']}</a>
         <a href="faq.html">{t['f_faq']}</a>
       </div>
     </div>
+    <a class="footer__greenkey" href="planet.html">
+      <img src="https://www.tocq.it/wp-content/uploads/2024/12/green-key.jpg" alt="Marchio Green Key" width="50" height="63" loading="lazy">
+      <span>{t['f_greenkey']}</span>
+    </a>
     <div class="footer__base">
       <span>© 2026 {f['nome']} · {f['societa']} · {t['f_piva']} {f['piva']} · <a href="privacy.html">{t['f_privacy']}</a></span>
       <span>{t['f_bozza']} · <button type="button" class="note-toggle" aria-pressed="false">Mostra le note di lavoro</button></span>

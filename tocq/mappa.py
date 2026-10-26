@@ -259,7 +259,7 @@ def guida_ids(punti, ids):
     """Schede per una lista di punti scelti a mano (landing di Porta Nuova e Centrale), nell'ordine dato."""
     ref = _referenze()
     per_id = {q["id"]: q for q in punti}
-    return '<div class="guida">' + "".join(_scheda(per_id[i], ref) for i in ids if i in per_id) + "</div>"
+    return '<div class="guida guida--compatta">' + "".join(_scheda(per_id[i], ref) for i in ids if i in per_id) + "</div>"
 
 
 def tempi_ids(punti, ids):
