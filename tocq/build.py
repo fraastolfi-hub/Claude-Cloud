@@ -46,7 +46,7 @@ PAGINE = {
     "index": {
         "url": "/",
         "title": "Tocq Hotel Milano · 4 stelle a Porta Garibaldi",
-        "description": "Hotel 4 stelle a 200 m dalla stazione di Porta Garibaldi: 133 camere, 6 sale meeting, cuscino e lato della camera scelti prenotando sul sito.",
+        "description": "Hotel 4 stelle a Porta Garibaldi, la metro a 3 minuti: 133 camere, 6 sale meeting, cuscino e lato della camera scelti prenotando sul sito.",
         "nav": None,
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
@@ -60,7 +60,7 @@ PAGINE = {
     "meeting": {
         "url": "/meeting-eventi/",
         "title": "Sale meeting a Porta Nuova, Milano · Tocq Hotel",
-        "description": "6 sale meeting fino a 100 persone a platea, nello stesso edificio delle 133 camere, a 200 m dalla stazione Garibaldi. Preventivo entro 24 ore.",
+        "description": "6 sale meeting fino a 100 persone a platea, nello stesso edificio delle 133 camere, a 3 minuti dalla metro Garibaldi. Preventivo entro 24 ore.",
         "nav": "Sale meeting",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
@@ -81,7 +81,7 @@ PAGINE = {
     "arrivare": {
         "url": "/posizione/come-arrivare/",
         "title": "Come arrivare al Tocq Hotel Milano · stazione Garibaldi",
-        "description": "Distanze reali dal Tocq: stazione Garibaldi 200 m, Centrale 1,5 km, Duomo 2,5 km, Linate 9 km, Malpensa 49 km con il Malpensa Express. Fiera, MiCo, San Siro.",
+        "description": "Distanze reali dal Tocq: metro Garibaldi 3 minuti a piedi, stazione 5, Centrale 1,5 km, Duomo 2,5 km, Linate 9 km, Malpensa 49 km con il Malpensa Express. Fiera, MiCo, San Siro.",
         "nav": "Come arrivare",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
@@ -218,7 +218,7 @@ def hotel_ld():
         "@id": HOTEL_ID,
         "name": FATTI["nome"],
         "alternateName": "Tocq Hotel",
-        "description": "Hotel 4 stelle a Porta Garibaldi, Milano, a 200 metri dalla stazione: 133 camere insonorizzate rinnovate nel 2021 e 6 sale meeting nello stesso edificio.",
+        "description": "Hotel 4 stelle a Porta Garibaldi, Milano, a 3 minuti a piedi dalla metro Garibaldi: 133 camere insonorizzate rinnovate nel 2021 e 6 sale meeting nello stesso edificio.",
         "url": SITO + "/",
         "telephone": FATTI["telefono"],
         "email": FATTI["email"],
@@ -614,13 +614,13 @@ def llms():
     camere = "\n".join(f"- {n}: {q} camere. {d}" for n, q, d in CAMERE)
     return f"""# {f['nome']}
 
-> Hotel 4 stelle a Porta Garibaldi, Milano, a {f['stazione_m']} metri dalla stazione di Milano Porta Garibaldi. {f['camere']} camere insonorizzate rinnovate nel 2021 e 6 sale meeting nello stesso edificio. È la base per chi è a Milano per lavorare, riunirsi, partire presto o andare a un evento raggiungibile da Garibaldi (Fiera Milano Rho, MiCo, San Siro, Autodromo di Monza).
+> Hotel 4 stelle a Porta Garibaldi, Milano, a 3 minuti a piedi dalla metro Garibaldi (M2, M5) e 5 dalla stazione di Milano Porta Garibaldi. {f['camere']} camere insonorizzate rinnovate nel 2021 e 6 sale meeting nello stesso edificio. È la base per chi è a Milano per lavorare, riunirsi, partire presto o andare a un evento raggiungibile da Garibaldi (Fiera Milano Rho, MiCo, San Siro, Autodromo di Monza).
 
 ## Fatti
 - Indirizzo: {f['via']}, {f['cap']} {f['citta']}
 - Telefono: {f['telefono']} (reception 24 ore) · Email: {f['email']} · Eventi: {f['email_mice']}
 - Categoria: 4 stelle · Riapertura dopo ristrutturazione: aprile 2021
-- Distanze a piedi (percorso reale): stazione Porta Garibaldi 5 minuti (200 m in linea d'aria) · metro Garibaldi 3 minuti · Corso Como 1 minuto · Accenture e Bending Spoons davanti all'hotel · Piazza Gae Aulenti e UniCredit 4 minuti · Bosco Verticale 8 minuti · Milano Centrale 1,5 km · Duomo 2,5 km · Linate 9 km · Malpensa 49 km (Malpensa Express da Garibaldi)
+- Distanze a piedi (percorso reale): stazione Porta Garibaldi 5 minuti · metro Garibaldi 3 minuti · Corso Como 1 minuto · Accenture e Bending Spoons davanti all'hotel · Piazza Gae Aulenti e UniCredit 4 minuti · Bosco Verticale 8 minuti · Milano Centrale 1,5 km · Duomo 2,5 km · Linate 9 km · Malpensa 49 km (Malpensa Express da Garibaldi)
 - Servizi: reception 24 ore con guardia notturna, menu dei cuscini (neckroll, kapok, lattice, piuma d'oca), colazione a buffet con opzioni halal, senza glutine e vegane, colazione da asporto, deposito bagagli, animali ammessi, parcheggio convenzionato
 
 ## Camere
