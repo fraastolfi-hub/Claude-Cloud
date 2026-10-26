@@ -1,5 +1,21 @@
 // Tocq · bozza. Solo comportamento dimostrativo: nessun dato viene inviato.
 
+// Ogni pagina nuova si apre dall'inizio, anche quando il sito è dentro una cornice (come la bozza online
+// su claude.ai, dove lo scorrimento appartiene alla cornice). Con "Indietro" o con un'ancora (#…) si rispetta la posizione.
+(function () {
+  var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || {};
+  if (location.hash || nav.type === 'back_forward' || nav.type === 'reload') return;
+  function inCima() {
+    var html = document.documentElement, prima = html.style.scrollPaddingTop;
+    html.style.scrollPaddingTop = '0px';  // il margine per l'intestazione fissa qui non serve
+    window.scrollTo(0, 0);
+    try { html.scrollIntoView({ block: 'start', behavior: 'instant' }); } catch (e) { html.scrollIntoView(true); }
+    html.style.scrollPaddingTop = prima;
+  }
+  inCima();
+  window.addEventListener('load', inCima, { once: true });
+})();
+
 // Menu mobile: si apre a tutto schermo, le voci entrano una dopo l'altra; si chiude con Esc o scegliendo una voce
 document.querySelectorAll('.nav-toggle').forEach(function (btn) {
   var nav = document.getElementById(btn.getAttribute('aria-controls'));
