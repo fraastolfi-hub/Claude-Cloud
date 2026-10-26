@@ -400,3 +400,7 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 - Nuova pagina madre `/fiere-ed-eventi/` (voce di menu con tendina) che raccoglie le quattro landing: per ognuna tempo e mezzo, due righe, le prossime date dal calendario e il pulsante. Le landing passano sotto la categoria: `/fiere-ed-eventi/fiera-milano-rho/`, `/fiere-ed-eventi/san-siro/`, `/fiere-ed-eventi/allianz-mico/`, `/fiere-ed-eventi/gran-premio-monza/` (stessa logica nelle altre lingue), con breadcrumb a tre livelli.
 - Le landing tengono l'intestazione ridotta per le campagne, con in più il ritorno "← Fiere ed eventi" (nascosto su mobile).
 - Camere: tolti i nomi della serie 2021 (Cozy, Stylish, Roomy, Snuggle), che confondevano.
+
+## 26. "Comodo per…" al posto di "Fiere ed eventi" (26 ottobre 2026)
+
+- La categoria si chiama "Comodo per…" (URL `/comodo-per/`) e raccoglie sei landing: Fiera Milano Rho, Allianz MiCo, San Siro, Monza, Stazione Centrale, Porta Nuova (`/comodo-per/<pagina>/`).

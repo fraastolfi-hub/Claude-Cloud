@@ -107,7 +107,7 @@ PAGINE = {
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "portanuova": {
-        "url": "/posizione/porta-nuova/",
+        "url": "/comodo-per/porta-nuova/",
         "title": "Hotel a Porta Nuova, Milano: tutto a piedi · Tocq Hotel",
         "description": "Il Tocq Hotel Milano è dentro Porta Nuova: Corso Como a 1 minuto, Piazza Gae Aulenti a 3, il Bosco Verticale a 8. Cosa vedere, dove mangiare e lavorare, a piedi.",
         "nav": "Porta Nuova",
@@ -115,7 +115,7 @@ PAGINE = {
         "landing": True,
     },
     "centrale": {
-        "url": "/posizione/stazione-centrale/",
+        "url": "/comodo-per/stazione-centrale/",
         "title": "Hotel vicino alla Stazione Centrale di Milano · Tocq Hotel",
         "description": "Dalla Stazione Centrale al Tocq Hotel Milano: due fermate di metro M2 fino a Garibaldi, poi 3 minuti a piedi. Treni, Malpensa Express, bus per gli aeroporti e cosa c'è intorno.",
         "nav": "Stazione Centrale",
@@ -123,14 +123,14 @@ PAGINE = {
         "landing": True,
     },
     "eventi": {
-        "url": "/fiere-ed-eventi/",
-        "title": "Hotel per fiere, congressi e concerti a Milano · Tocq Hotel",
-        "description": "Dal Tocq Hotel Milano senza cambi: Fiera Milano Rho in 15 minuti di treno, Allianz MiCo in 10 di metro, San Siro con la M5, Monza in treno. Calendari e prenotazione.",
-        "nav": "Fiere ed eventi",
+        "url": "/comodo-per/",
+        "title": "Hotel comodo per Fiera, MiCo, San Siro e Centrale · Tocq Hotel",
+        "description": "Dal Tocq Hotel Milano senza cambi: Fiera Milano Rho in 15 minuti di treno, Allianz MiCo in 10 di metro, San Siro con la M5, Monza in treno, la Stazione Centrale a due fermate, Porta Nuova a piedi.",
+        "nav": "Comodo per…",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "fiera": {
-        "url": "/fiere-ed-eventi/fiera-milano-rho/",
+        "url": "/comodo-per/fiera-milano-rho/",
         "title": "Hotel per Fiera Milano Rho: 15 minuti di treno · Tocq Hotel",
         "description": "Dal Tocq Hotel Milano alla Fiera di Rho in treno senza cambi, 15 minuti da Porta Garibaldi. La sera sei a Corso Como. Calendario fiere 2026-2027 e prenotazione.",
         "nav": "Fiera Milano Rho",
@@ -138,7 +138,7 @@ PAGINE = {
         "landing": True,
     },
     "sansiro": {
-        "url": "/fiere-ed-eventi/san-siro/",
+        "url": "/comodo-per/san-siro/",
         "title": "Hotel per concerti a San Siro: M5 diretta · Tocq Hotel Milano",
         "description": "Concerti allo stadio San Siro e agli I-Days all'Ippodromo: dal Tocq Hotel Milano la M5 lilla senza cambi. Dopo il live sei a Corso Como. Calendario 2027.",
         "nav": "Concerti a San Siro",
@@ -146,7 +146,7 @@ PAGINE = {
         "landing": True,
     },
     "mico": {
-        "url": "/fiere-ed-eventi/allianz-mico/",
+        "url": "/comodo-per/allianz-mico/",
         "title": "Hotel per congressi all'Allianz MiCo · Tocq Hotel Milano",
         "description": "Dal Tocq Hotel Milano all'Allianz MiCo in 10 minuti di metro M5, senza cambi: si scende a Portello, a 50 metri dal centro congressi. Calendario congressi 2026-2027.",
         "nav": "Allianz MiCo",
@@ -154,7 +154,7 @@ PAGINE = {
         "landing": True,
     },
     "monza": {
-        "url": "/fiere-ed-eventi/gran-premio-monza/",
+        "url": "/comodo-per/gran-premio-monza/",
         "title": "Hotel per il Gran Premio di Monza 2027 · Tocq Hotel Milano",
         "description": "Gran Premio d'Italia di Formula 1, 3-5 settembre 2027: da Porta Garibaldi il treno per Monza senza cambi. La sera sei a Corso Como. Prenota il weekend.",
         "nav": "Gran Premio di Monza",
@@ -272,7 +272,7 @@ def hotel_ld():
 
 # pagine figlie: la voce madre nel breadcrumb
 GENITORE = {"quartiere-aziende": "posizione", "quartiere-mangiare": "posizione", "quartiere-shopping": "posizione", "arrivare": "posizione",
-            "portanuova": "posizione", "centrale": "posizione",
+            "portanuova": "eventi", "centrale": "eventi",
             "fiera": "eventi", "mico": "eventi", "sansiro": "eventi", "monza": "eventi"}
 
 
@@ -498,9 +498,9 @@ def header(key, codice="it"):
     secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"])]
     # sottopagine con menu a discesa (su mobile appaiono rientrate sotto la voce madre)
     sottomenu = {"posizione": [("quartiere-aziende", t["sub_lavoro"]), ("quartiere-mangiare", t["sub_mangiare"]),
-                               ("quartiere-shopping", t["sub_shopping"]), ("portanuova", t["sub_portanuova"]),
-                               ("centrale", t["sub_centrale"]), ("arrivare", t["sub_arrivare"])],
-                 "eventi": [("fiera", t["sub_fiera"]), ("mico", t["sub_mico"]), ("sansiro", t["sub_sansiro"]), ("monza", t["sub_monza"])]}
+                               ("quartiere-shopping", t["sub_shopping"]), ("arrivare", t["sub_arrivare"])],
+                 "eventi": [("fiera", t["sub_fiera"]), ("mico", t["sub_mico"]), ("sansiro", t["sub_sansiro"]), ("monza", t["sub_monza"]),
+                            ("centrale", t["sub_centrale"]), ("portanuova", t["sub_portanuova"])]}
     def voce(k, v, classe=""):
         corrente = k == key or any(k2 == key for k2, _ in sottomenu.get(k, []))
         return f'      <a href="{k}.html"{classe}{" aria-current=\"page\"" if corrente else ""}>{v}</a>'

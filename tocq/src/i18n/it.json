@@ -15,14 +15,14 @@
   "nav_offerte": "Miglior prezzo",
   "nav_quartiere": "Il quartiere",
   "nav_posizione": "Posizione",
-  "nav_eventi": "Fiere ed eventi",
+  "nav_eventi": "Comodo per…",
   "sub_portanuova": "Porta Nuova",
   "sub_centrale": "Stazione Centrale",
   "sub_fiera": "Fiera Milano Rho",
   "sub_mico": "Congressi al MiCo",
   "sub_sansiro": "Concerti a San Siro",
   "sub_monza": "Gran Premio di Monza",
-  "tutti_eventi": "Fiere ed eventi",
+  "tutti_eventi": "Comodo per…",
   "nav_arrivare": "Come arrivare",
   "sub_lavoro": "Per chi lavora",
   "sub_mangiare": "Mangiare e bere",
@@ -103,7 +103,7 @@
   },
   "portanuova": {
    "title": "Hotel a Porta Nuova, Milano: tutto a piedi · Tocq Hotel",
-   "description": "Il Tocq Hotel Milano è dentro Porta Nuova: Corso Como a 1 minuto, Piazza Gae Aulenti a 4, il Bosco Verticale a 8. Cosa vedere, dove mangiare e lavorare, a piedi.",
+   "description": "Il Tocq Hotel Milano è dentro Porta Nuova: Corso Como a 1 minuto, Piazza Gae Aulenti a 3, il Bosco Verticale a 8. Cosa vedere, dove mangiare e lavorare, a piedi.",
    "nav": "Porta Nuova"
   },
   "centrale": {
@@ -112,9 +112,9 @@
    "nav": "Stazione Centrale"
   },
   "eventi": {
-   "title": "Hotel per fiere, congressi e concerti a Milano · Tocq Hotel",
-   "description": "Dal Tocq Hotel Milano senza cambi: Fiera Milano Rho in 15 minuti di treno, Allianz MiCo in 10 di metro, San Siro con la M5, Monza in treno. Calendari e prenotazione.",
-   "nav": "Fiere ed eventi"
+   "title": "Hotel comodo per Fiera, MiCo, San Siro e Centrale · Tocq Hotel",
+   "description": "Dal Tocq Hotel Milano senza cambi: Fiera Milano Rho in 15 minuti di treno, Allianz MiCo in 10 di metro, San Siro con la M5, Monza in treno, la Stazione Centrale a due fermate, Porta Nuova a piedi.",
+   "nav": "Comodo per…"
   },
   "fiera": {
    "title": "Hotel per Fiera Milano Rho: 15 minuti di treno · Tocq Hotel",

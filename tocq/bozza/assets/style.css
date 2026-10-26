@@ -1675,3 +1675,11 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .tempi li { display: grid; gap: 6px; padding: 18px 16px; border-top: 1px solid var(--line); }
 .tempi b { font: 500 clamp(26px, 2.6vw, 34px)/1 var(--sans); letter-spacing: -.01em; }
 .tempi span { font-size: 14px; opacity: .8; }
+
+/* Meeting: dotazioni con icone */
+.dotazioni { display: grid; gap: 40px; }
+.dot__gruppo h3 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 14px; opacity: .75; }
+.dot { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 2px; }
+.dot li { display: flex; align-items: center; gap: 14px; padding: 16px; background: rgba(0,0,0,.035); min-height: 72px; font-size: 15px; line-height: 1.35; }
+.dot__ico { flex: 0 0 28px; color: var(--corallo); }
+.tono-trama .dot li, .section--alt .dot li { background: rgba(255,255,255,.6); }
