@@ -138,8 +138,9 @@ document.querySelectorAll('.doors').forEach(function (el) {
   if (riduci || vista) { el.classList.add('is-done'); return; }
   var img = el.querySelector('img');
   function apri() {
-    requestAnimationFrame(function () { el.classList.add('is-open'); });
-    setTimeout(function () { el.classList.add('is-done'); }, 1000);
+    if (el.classList.contains('is-open')) return;
+    requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.add('is-open'); }); });
+    setTimeout(function () { el.classList.add('is-done'); }, 1300);
     try { sessionStorage.setItem('tocq-ante', '1'); } catch (e) {}
   }
   if (img && !img.complete) { img.addEventListener('load', apri, { once: true }); setTimeout(apri, 1200); }

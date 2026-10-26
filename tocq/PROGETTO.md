@@ -389,3 +389,8 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 
 - **Camere**: una tipologia per riga, foto a tutta larghezza (grande + seconda affiancata), scheda con superficie, letto, ospiti, descrizione e pulsante di prenotazione dedicato. Metrature e letti da tocq.it/camere: Comfort (Cozy) 20 m² queen, Superior (Stylish) 22 m² matrimoniale con 4 cuscini, Executive (Roomy) 24 m² con bollitore, Junior Suite (Snuggle) 38 m² con zona living. Da confermare: ospiti massimi, doccia o vasca, la seconda foto di ogni tipologia, prezzo "da". La Family & Friends (44 m², terrazzino) è su tocq.it ma non nel conteggio delle 133 camere: non inserita.
 - **Per chi lavora**: ogni azienda mostra logo, nome, via e minuti/metri a piedi (percorso reale), ordinate dalla più vicina; la distanza apre il percorso a piedi su Google Maps.
+
+## 24. Meeting completata da tocq.it/meeting e apertura dell'hero (26 ottobre 2026)
+
+- **Meeting**: scheda per ognuna delle sei sale (foto vere di Duomo, Scala, Brera, Porta Nuova da tocq.it; Castello e Arena con segnaposto, perché su tocq.it hanno solo foto di repertorio), dotazioni incluse e su richiesta, purificatore Dyson Pure Humidify in ogni sala. Non usate le immagini di repertorio di tocq.it (persone, flûte, pubblicità Dyson). Capienze: resta la presentazione MICE rev. 2; le differenze con tocq.it sono segnate in nota.
+- **Hero**: le due ante non ruotano più in 3D (la prospettiva le deformava ai bordi e sparivano di colpo); ora scorrono via in piano e si tolgono a movimento finito.
