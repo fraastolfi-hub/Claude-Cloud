@@ -42,12 +42,24 @@ def _intervallo(a, b):
 
 
 def _nome(e):
-    """Nome pulito per il calendario; quello che è fra parentesi diventa una nota piccola."""
-    m = re.match(r"^(.*?)\s*\((.*)\)\s*$", e["nome"])
+    """Nome pulito per il calendario; trattini, parentesi e "gate" diventano una nota piccola."""
+    nome, note = e["nome"], []
+    prima, _, dopo = nome.partition(" - ")
+    if dopo:
+        if len(prima) <= 4:          # "AF - L'Artigiano in Fiera"
+            nome = dopo
+        else:
+            nome = prima
+            if not dopo.lower().startswith("fonti"):
+                note.append(dopo)
+    m = re.search(r"\s*\(([^)]*)\)", nome)
     if m:
-        return m.group(1), m.group(2)
-    prima, _, dopo = e["nome"].partition(" - ")
-    return (dopo, "") if dopo and len(prima) <= 4 else (prima, dopo)
+        note.insert(0, m.group(1))
+        nome = (nome[:m.start()] + nome[m.end():]).strip()
+    nome, _, gate = nome.partition(", gate")
+    if gate:
+        note.append("gate" + gate)
+    return nome.strip(" ,"), " · ".join(n.strip() for n in note if n.strip())
 
 
 def _prenotabile(e):
@@ -98,7 +110,7 @@ def calendario(chiave, oggi=None):
             mese_prima = (a.year, a.month)
         nome, nota = _nome(e)
         sede = _sede_breve(e)
-        dettaglio = " · ".join(x for x in (sede, nota) if x)
+        dettaglio = " · ".join(x for x in (sede, nota) if x and not (x == nota and nota in sede))
         if _prenotabile(e):
             stato = "" if e["confidenza"] == "confirmed" else '<span class="calendario__stato">data annunciata</span>'
             azione = (f'<a class="btn btn--primary btn--small" href="{_link(e, tipo)}" target="_blank" rel="noopener" '

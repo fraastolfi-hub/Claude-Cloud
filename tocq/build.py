@@ -122,6 +122,22 @@ PAGINE = {
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
         "landing": True,
     },
+    "mico": {
+        "url": "/allianz-mico/",
+        "title": "Hotel per congressi all'Allianz MiCo · Tocq Hotel Milano",
+        "description": "Dal Tocq Hotel Milano all'Allianz MiCo in 10 minuti di metro M5, senza cambi: si scende a Portello, a 50 metri dal centro congressi. Calendario congressi 2026-2027.",
+        "nav": "Allianz MiCo",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+        "landing": True,
+    },
+    "monza": {
+        "url": "/gran-premio-monza/",
+        "title": "Hotel per il Gran Premio di Monza 2027 · Tocq Hotel Milano",
+        "description": "Gran Premio d'Italia di Formula 1, 3-5 settembre 2027: da Porta Garibaldi il treno per Monza senza cambi. La sera sei a Corso Como. Prenota il weekend.",
+        "nav": "Gran Premio di Monza",
+        "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
+        "landing": True,
+    },
     "mangiare": {
         "url": "/all-day-eating/",
         "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
@@ -519,6 +535,8 @@ def footer(codice="it"):
         <a href="contatti.html#aziende">{t['f_aziendali']}</a>
         <a href="fiera.html">Fiera Milano Rho</a>
         <a href="sansiro.html">Concerti a San Siro</a>
+        <a href="mico.html">Congressi all'Allianz MiCo</a>
+        <a href="monza.html">Gran Premio di Monza</a>
         <a href="posizione.html">{t['f_quartiere']}</a>
         <a href="arrivare.html">{t['f_arrivare']}</a>
         <a href="offerte.html">{t['f_offerte']}</a>
