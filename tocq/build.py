@@ -589,7 +589,7 @@ def footer(codice="it"):
       </div>
     </div>
     <a class="footer__greenkey" href="planet.html">
-      <img src="https://www.tocq.it/wp-content/uploads/2024/12/green-key.jpg" alt="Marchio Green Key" width="50" height="63" loading="lazy">
+      <span class="footer__gk-badge" aria-hidden="true">Green<br>Key</span>
       <span>{t['f_greenkey']}</span>
     </a>
     <div class="footer__base">

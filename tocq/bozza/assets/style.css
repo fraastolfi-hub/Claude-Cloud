@@ -1708,3 +1708,5 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .footer__greenkey:hover span { text-decoration: underline; }
 /* Landing: niente riquadri con le iniziali quando manca la foto */
 .guida--compatta .guida__foto--iniziali { display: none; }
+/* segnaposto del marchio Green Key finché non c'è il file ufficiale fra gli asset */
+.footer__gk-badge { flex: 0 0 56px; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #2e7d32; color: #fff; font: 600 10px/1.1 var(--sans); letter-spacing: .08em; text-transform: uppercase; text-align: center; }
