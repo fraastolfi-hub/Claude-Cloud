@@ -370,7 +370,7 @@ Cosa cambia rispetto ai numeri del factsheet usati finora:
 - **Stazione Porta Garibaldi**: 200 m è la distanza in linea d'aria; a piedi sono 390 m fino all'ingresso principale (5 minuti), 270 m fino alla metro Garibaldi (3 minuti).
 - **Piazza Gae Aulenti**: 270 m, 3 minuti (non 70 m). Le torri più vicine sono quelle di Corso Como Place: Bending Spoons davanti all'hotel (meno di un minuto), Accenture a un minuto.
 - **Corso Como**: 90 m, un minuto (non 50 m). **Bosco Verticale**: 660 m, 8 minuti (non 100 m).
-- **Da decidere con la direzione**: la promessa "Il treno a 200 metri" (hero, finale, schede). È vera in linea d'aria; a piedi l'ospite conta 5 minuti.
+- **Deciso (26 ottobre 2026)**: la promessa diventa "La metro a 3 minuti" (vedi §22).
 
 ## 22. Landing per campagne e ricerca (26 ottobre 2026)
 
