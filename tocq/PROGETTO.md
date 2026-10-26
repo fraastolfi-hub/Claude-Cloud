@@ -384,3 +384,8 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 - **Confermato dalla direzione (26 ottobre 2026):** check-out flessibile la mattina dopo concerti e Gran Premio (scritto su San Siro e Monza); nessuna tariffa dedicata per espositori o delegati, quindi le sezioni gruppi di Fiera e MiCo parlano di blocco camere, lista nomi e referente, senza prezzo speciale.
 - **Promessa di marca (26 ottobre 2026):** "Il treno a 200 metri" diventa "La metro a 3 minuti" (percorso reale fino all'ingresso M2/M5). La stazione resta "5 minuti a piedi"; i 200 metri in linea d'aria spariscono da copy, meta e llms.txt.
 - **Prossime**: Allianz MiCo (congressi, M5 Portello, 10 minuti) e Autodromo di Monza (Gran Premio 3-5 settembre 2027).
+
+## 23. Camere e "Per chi lavora" (26 ottobre 2026)
+
+- **Camere**: una tipologia per riga, foto a tutta larghezza (grande + seconda affiancata), scheda con superficie, letto, ospiti, descrizione e pulsante di prenotazione dedicato. Metrature e letti da tocq.it/camere: Comfort (Cozy) 20 m² queen, Superior (Stylish) 22 m² matrimoniale con 4 cuscini, Executive (Roomy) 24 m² con bollitore, Junior Suite (Snuggle) 38 m² con zona living. Da confermare: ospiti massimi, doccia o vasca, la seconda foto di ogni tipologia, prezzo "da". La Family & Friends (44 m², terrazzino) è su tocq.it ma non nel conteggio delle 133 camere: non inserita.
+- **Per chi lavora**: ogni azienda mostra logo, nome, via e minuti/metri a piedi (percorso reale), ordinate dalla più vicina; la distanza apre il percorso a piedi su Google Maps.

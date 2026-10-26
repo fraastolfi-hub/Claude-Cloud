@@ -193,11 +193,11 @@ SALE = [  # nome, m², misure, platea, scuola, ferro di cavallo, tavolo unico, c
     ("Arena", 32, "4,5 × 6,0", 20, 12, 12, 12, None, 12),
 ]
 
-CAMERE = [  # tipologia, numero, descrizione
-    ("Comfort", 14, "Camera insonorizzata per una o due notti di lavoro."),
-    ("Superior", 63, "La tipologia più diffusa: insonorizzata, con scrivania."),
-    ("Executive", 35, "Più spazio per lavorare in camera."),
-    ("Junior Suite", 21, "Zona giorno separata, per ricevere senza scendere in hall."),
+CAMERE = [  # tipologia, numero, descrizione (metrature e letti da tocq.it/camere)
+    ("Comfort", 14, "20 m², letto queen: camera insonorizzata per una o due notti di lavoro."),
+    ("Superior", 63, "22 m², letto matrimoniale con 4 cuscini, arredi su misura: la tipologia più diffusa."),
+    ("Executive", 35, "24 m², letto matrimoniale e bollitore con infusi: più spazio per lavorare in camera."),
+    ("Junior Suite", 21, "38 m², zona living separata dal letto, per ricevere senza scendere in hall."),
 ]
 
 
@@ -238,7 +238,7 @@ def hotel_ld():
                 "Reception 24 ore", "Guardia notturna", "Wifi ad alta velocità in tutto l'hotel",
                 "6 sale meeting", "Menu dei cuscini", "Colazione da asporto",
                 "Colazione a buffet con opzioni halal, senza glutine e vegane",
-                "Camere insonorizzate", "Smart TV 55 pollici", "Deposito bagagli",
+                "Camere insonorizzate", "Smart TV", "Deposito bagagli",
                 "Parcheggio convenzionato nelle vicinanze",
             ]
         ],
@@ -297,7 +297,7 @@ def schema_pagina(key, faq):
                 "containedInPlace": {"@id": HOTEL_ID},
                 "amenityFeature": [
                     {"@type": "LocationFeatureSpecification", "name": a, "value": True}
-                    for a in ["Insonorizzata", "Wifi", "Smart TV 55 pollici", "Minibar", "Cassaforte", "Bollitore per caffè e tè", "Scelta del cuscino"]
+                    for a in ["Insonorizzata", "Wifi", "Smart TV", "Minibar", "Cassaforte", "Bollitore per caffè e tè", "Scelta del cuscino"]
                 ],
             }
             for nome, n, desc in CAMERE

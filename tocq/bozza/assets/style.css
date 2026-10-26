@@ -1592,3 +1592,48 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .calendario__altre summary::after { content: "+"; letter-spacing: 0; }
 .calendario__altre[open] summary::after { content: "−"; }
 .calendario__altre .calendario { border-top: 0; }
+
+/* Per chi lavora: logo a sinistra, via e distanza a piedi a fianco */
+.aziende-loghi { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2px; }
+.azienda { grid-template-rows: none; grid-template-columns: 132px 1fr; place-items: center start; gap: 20px; padding: 18px 20px; text-align: left; }
+.azienda > .azienda__logo { justify-self: center; }
+.azienda__dati { display: grid; gap: 4px; min-width: 0; }
+.azienda__nome { font: 500 15px/1.25 var(--sans); }
+.azienda__via { font: 400 14px/1.35 var(--sans); opacity: .75; }
+.azienda__min { font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; opacity: 1; color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; justify-self: start; padding-bottom: 1px; }
+.azienda__min:hover { opacity: .7; }
+@media (max-width: 520px) { .aziende-loghi { grid-template-columns: 1fr; } .azienda { grid-template-columns: 96px 1fr; gap: 14px; padding: 16px; } .azienda__logo img { max-width: 92px; max-height: 34px; } }
+
+/* Camere: una tipologia per riga, foto grandi e scheda dettagliata */
+.tipologie { display: grid; gap: clamp(56px, 8vw, 112px); margin-top: 48px; }
+.tipologia { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: center; }
+.tipologia--inversa .tipologia__foto { order: 2; }
+.tipologia__foto { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tipologia__grande { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
+.tipologia__piccola { aspect-ratio: 16 / 9; grid-column: 2; }
+.tipologia--inversa .tipologia__piccola { grid-column: 1; }
+.tipologia__testo h3 { font-size: clamp(30px, 3.4vw, 44px); margin: 6px 0 4px; }
+.tipologia__per { font-size: 18px; margin: 0 0 20px; opacity: .8; }
+.tipologia__dati { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0 28px; margin: 0 0 20px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tipologia__dati dt { font: 500 10px var(--sans); letter-spacing: .14em; text-transform: uppercase; opacity: .65; margin: 0; }
+.tipologia__dati dd { margin: 2px 0 0; font: 500 18px var(--sans); }
+.tipologia__punti { list-style: none; padding: 0; margin: 16px 0 24px; display: grid; gap: 6px; }
+.tipologia__punti li { padding-left: 18px; position: relative; }
+.tipologia__punti li::before { content: ""; position: absolute; left: 0; top: .6em; width: 8px; height: 1px; background: currentColor; }
+@media (max-width: 860px) {
+  .tipologia { grid-template-columns: 1fr; }
+  .tipologia--inversa .tipologia__foto { order: 0; }
+  .tipologia__piccola { display: none; }
+  .tipologia__dati { gap: 0 20px; }
+}
+/* foto a tutta larghezza (grande + seconda affiancata), scheda sotto su due colonne */
+.tipologia { grid-template-columns: 1fr; align-items: start; gap: 28px; }
+.tipologia__foto { grid-template-columns: 2fr 1fr; gap: 8px; }
+.tipologia__grande, .tipologia__piccola { grid-column: auto; aspect-ratio: auto; height: clamp(300px, 42vw, 560px); }
+.tipologia__testo { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(24px, 4vw, 64px); }
+.tipologia__corpo > p:first-of-type { margin-top: 0; }
+@media (max-width: 860px) {
+  .tipologia__foto { grid-template-columns: 1fr; }
+  .tipologia__grande { height: auto; aspect-ratio: 3 / 2; }
+  .tipologia__testo { grid-template-columns: 1fr; gap: 0; }
+}

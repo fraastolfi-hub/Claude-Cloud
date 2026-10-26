@@ -177,8 +177,14 @@ def loghi_aziende(punti):
         if q["categoria"] != "aziende":
             continue
         logo = _logo(q, ref, "azienda__logo") or f'<span class="azienda__logo azienda__logo--testo">{_e(q["nome"].split(" (")[0].split(" — ")[0])}</span>'
-        voci.append(f'<li class="azienda" data-id="{_e(q["id"])}">{logo}<span class="azienda__min">{_min_testo(q)}</span></li>')
-    return '<ul class="aziende-loghi" aria-label="Aziende a pochi minuti a piedi">' + "".join(voci) + "</ul>"
+        via = q["indirizzo"].split(", 2")[0]  # via e civico, senza CAP e città
+        voci.append((q["a_piedi"],
+                     f'<li class="azienda" data-id="{_e(q["id"])}">{logo}<div class="azienda__dati">'
+                     f'<b class="azienda__nome">{_e(q["nome"].split(" (")[0].split(" – ")[0])}</b>'
+                     f'<span class="azienda__via">{_e(via)}</span>'
+                     f'<a class="azienda__min" href="{_maps(q)}" target="_blank" rel="noopener">{_distanza(q)}</a></div></li>'))
+    voci.sort(key=lambda v: v[0])
+    return '<ul class="aziende-loghi" aria-label="Aziende a pochi minuti a piedi">' + "".join(v for _, v in voci) + "</ul>"
 
 
 def tabella_aziende(punti):
