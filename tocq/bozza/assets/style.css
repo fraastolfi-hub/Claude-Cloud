@@ -1717,3 +1717,7 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .planet-hero__gk { float: right; width: clamp(80px, 10vw, 120px); height: auto; margin: 0 0 16px 24px; }
 @media (max-width: 560px) { .planet-hero__gk { width: 64px; margin: 4px 0 8px 16px; } }
 .footer__greenkey img.footer__gk { background: none; padding: 0; border-radius: 0; }
+
+/* Hero: il video entra in dissolvenza quando parte davvero, sopra la foto che fa da attesa */
+.hero-full__video { opacity: 0; transition: opacity 900ms var(--ease); }
+.hero-full__video.is-in { opacity: 1; }

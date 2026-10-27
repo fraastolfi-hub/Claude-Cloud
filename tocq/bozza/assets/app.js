@@ -382,6 +382,7 @@ document.querySelectorAll('[data-video-mp4]').forEach(function (box) {
   if (img) v.poster = img.currentSrc || img.src;
   if (webm) { var s1 = document.createElement('source'); s1.src = webm; s1.type = 'video/webm'; v.appendChild(s1); }
   if (mp4) { var s2 = document.createElement('source'); s2.src = mp4; s2.type = 'video/mp4'; v.appendChild(s2); }
+  v.addEventListener('playing', function () { v.classList.add('is-in'); }, { once: true });
   box.appendChild(v);
   var btn = document.createElement('button');
   btn.type = 'button'; btn.className = 'hero-full__pausa'; btn.textContent = 'Pausa';
