@@ -96,7 +96,13 @@
  "nike-porta-nuova": {
   "logo": "nike-porta-nuova-logo.png",
   "logo_fonte": "https://www.nike.com/apple-touch-icon.png",
-  "logo_scuro": false
+  "logo_scuro": false,
+  "foto": "nike-porta-nuova-foto.webp",
+  "foto_wh": [
+   554,
+   369
+  ],
+  "foto_fonte": "Fornita da Francesco Astolfi, ottobre 2026 (licenza da verificare; immagine piccola, 640 px)"
  },
  "mercato-centrale": {
   "logo": "mercato-centrale-logo.png",
