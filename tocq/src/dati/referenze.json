@@ -320,5 +320,13 @@
    533
   ],
   "foto_fonte": "Stessa foto usata nel sito (assets/img/foto/corso-como-milano-fontana-800.webp); licenza come le altre stock"
+ },
+ "cimitero-monumentale": {
+  "foto": "cimitero-monumentale-foto.webp",
+  "foto_wh": [
+   900,
+   600
+  ],
+  "foto_fonte": "Fornita da Francesco Astolfi, ottobre 2026 (licenza da verificare; edicola Campari, Ultima Cena di Giannino Castiglioni)"
  }
 }
