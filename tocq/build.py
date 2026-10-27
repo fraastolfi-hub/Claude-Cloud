@@ -249,6 +249,7 @@ def hotel_ld():
         "@id": HOTEL_ID,
         "name": FATTI["nome"],
         "alternateName": "Tocq Hotel",
+        "award": "Green Key, eco-label internazionale per le strutture turistiche (dal 2024)",
         "checkinTime": "14:00",
         "checkoutTime": "12:00",
         "sameAs": ["https://www.instagram.com/tocqhotelmilano/", "https://www.facebook.com/tocqhotelmilano",
