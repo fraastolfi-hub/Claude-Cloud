@@ -307,7 +307,7 @@ Ogni segnaposto tratteggiato nella bozza rimanda a una di queste.
 Ricalca tocq.it/offerte e tocq.it/prenota-diretto con i contenuti che lì ci sono davvero: le due tariffe dirette, **Direct Flex** (cancellazione gratuita fino a 24 ore prima, nessun anticipo, si paga in hotel) e **Direct Save −10%** (10% sotto qualsiasi altro canale, prepagata, non rimborsabile), colazione sempre inclusa; poi cosa si ottiene solo prenotando sul sito e le offerte a pacchetto. Schema OfferCatalog, FAQ dedicate, voce "Offerte" nel menu e richiamo in home sotto la tabella "agenzia o sito".
 
 Da chiedere alla direzione:
-- i pacchetti citati su tocq.it/offerte ("una giornata di puro fitness e relax", "le colline piemontesi"): contenuto, partner, prezzo, validità; oggi sulla pagina non c'è il dettaglio;
+- ~~i pacchetti "fitness e relax" e "colline piemontesi"~~: esclusi dal sito su indicazione del 27 ottobre 2026. (Nota originale: oggi sulla pagina non c'è il dettaglio;
 - i collegamenti diretti alle due tariffe nel booking engine: su tocq.it il pulsante sotto "Direct Flex" porta a un codice tariffa "NOT REF" (non rimborsabile), quindi probabilmente è invertito;
 - il punteggio Booking.com: prenota-diretto dice 8,6, la pagina concerti 8,7, l'analisi 8,5.
 
