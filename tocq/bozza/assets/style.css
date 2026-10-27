@@ -1721,3 +1721,11 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 /* Hero: il video entra in dissolvenza quando parte davvero, sopra la foto che fa da attesa */
 .hero-full__video { opacity: 0; transition: opacity 900ms var(--ease); }
 .hero-full__video.is-in { opacity: 1; }
+
+/* Recensioni in home: loghi ufficiali a colori su targhetta chiara (sono pensati per fondo bianco) */
+.stat__logo { display: block; box-sizing: content-box; height: 22px; width: auto; max-width: calc(100% - 28px); padding: 9px 14px; background: #fff; border-radius: 6px; margin-bottom: 16px; }
+.stat__logo--booking { height: 18px; padding: 11px 14px; }
+@media (max-width: 760px) {
+  .stat__logo { height: 15px; padding: 7px 9px; max-width: calc(100% - 18px); margin-bottom: 10px; }
+  .stat__logo--booking { height: 12px; padding: 8.5px 9px; }
+}
