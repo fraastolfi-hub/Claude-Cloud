@@ -85,7 +85,13 @@
  "eataly-smeraldo": {
   "logo": "eataly-smeraldo-logo.svg",
   "logo_fonte": "https://www.eataly.it/mobify/bundle/389/client/images/logo.svg",
-  "logo_scuro": false
+  "logo_scuro": false,
+  "foto": "eataly-smeraldo-foto.webp",
+  "foto_wh": [
+   900,
+   600
+  ],
+  "foto_fonte": "Fornita da Francesco Astolfi, ottobre 2026 (licenza da verificare)"
  },
  "nike-porta-nuova": {
   "logo": "nike-porta-nuova-logo.png",
