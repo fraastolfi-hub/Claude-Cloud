@@ -68,6 +68,30 @@ document.querySelectorAll('.nav__apri2').forEach(function (b) {
   });
 });
 
+// Pagina Camere: galleria di ogni tipologia (frecce, contatore; su mobile si sfoglia col dito)
+document.querySelectorAll('.galleria-camera').forEach(function (g) {
+  var strip = g.querySelector('.tipologia__foto');
+  var foto = strip.children.length;
+  var conta = g.querySelector('.galleria-camera__conta');
+  var btn = g.querySelectorAll('.galleria-camera__btn');
+  conta.innerHTML = '<b>1</b> / ' + foto;
+  function aggiorna() {
+    var i = Math.round(strip.scrollLeft / strip.clientWidth);
+    conta.querySelector('b').textContent = i + 1;
+    btn[0].disabled = i <= 0;
+    btn[1].disabled = i >= foto - 1;
+  }
+  btn.forEach(function (b) {
+    b.addEventListener('click', function () { strip.scrollBy({ left: strip.clientWidth * Number(b.dataset.dir), behavior: 'smooth' }); });
+  });
+  strip.addEventListener('scroll', function () { window.requestAnimationFrame(aggiorna); }, { passive: true });
+  strip.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { strip.scrollBy({ left: strip.clientWidth }); e.preventDefault(); }
+    if (e.key === 'ArrowLeft') { strip.scrollBy({ left: -strip.clientWidth }); e.preventDefault(); }
+  });
+  aggiorna();
+});
+
 // Orologio del tabellone
 document.querySelectorAll('[data-clock]').forEach(function (el) {
   function tick() {

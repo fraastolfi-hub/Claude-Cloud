@@ -1380,8 +1380,6 @@ html:not(.mostra-note) .todo::after { content: none; display: none; }
 .scheda summary::after { content: "+"; font-size: 18px; letter-spacing: 0; }
 .scheda[open] summary::after { content: "−"; }
 @media (max-width: 760px) {
-  .tipologie { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .tipologia b { font-size: 16px; } .tipologia span { font-size: 13px; }
   .motivo .photo { aspect-ratio: 16 / 9; }
   .motivi { gap: 32px; }
 }
@@ -1766,4 +1764,41 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 @media (max-width: 760px) {
   .camere-home { grid-template-columns: 1fr; gap: 28px; }
   .camera-home b { font-size: 22px; }
+}
+
+/* Pagina Camere: le foto di ogni tipologia diventano una galleria a tutta larghezza da sfogliare */
+.galleria-camera { position: relative; min-width: 0; }
+.tipologia > * { min-width: 0; }
+.galleria-camera .tipologia__foto { display: flex; gap: 0; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; outline: none; }
+.galleria-camera .tipologia__foto::-webkit-scrollbar { display: none; }
+.galleria-camera .tipologia__grande, .galleria-camera .tipologia__piccola { display: block; flex: 0 0 100%; margin: 0; height: clamp(320px, 50vw, 680px); aspect-ratio: auto; scroll-snap-align: start; }
+.galleria-camera img { width: 100%; height: 100%; object-fit: cover; }
+.galleria-camera__nav { position: absolute; right: 16px; bottom: 16px; display: flex; align-items: center; gap: 4px; background: rgba(12,12,12,.72); color: #f3efe9; padding: 4px; backdrop-filter: blur(6px); }
+.galleria-camera__btn { background: none; border: 0; color: inherit; font: 400 26px/1 var(--sans); width: 40px; height: 40px; cursor: pointer; }
+.galleria-camera__btn:hover { color: #d2a275; }
+.galleria-camera__btn:disabled { opacity: .3; cursor: default; }
+.galleria-camera__conta { font: 500 12px var(--sans); letter-spacing: .12em; min-width: 44px; text-align: center; }
+@media (max-width: 760px) {
+  .galleria-camera { margin: 0 calc(var(--gutter) * -1); }
+  .galleria-camera .tipologia__grande, .galleria-camera .tipologia__piccola { height: auto; aspect-ratio: 4 / 3; }
+  .galleria-camera__nav { right: 12px; bottom: 12px; }
+  .galleria-camera__btn { width: 34px; height: 34px; font-size: 22px; }
+}
+
+/* Pagina Camere: il menu dei cuscini (solo informativo, la scelta si fa in prenotazione) */
+.cuscini { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+.cuscino { padding: 28px 24px 28px 0; border-bottom: 1px solid var(--line); }
+.cuscino + .cuscino { padding-left: 24px; border-left: 1px solid var(--line); }
+.cuscino__materia { font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--corallo); margin: 0 0 12px; }
+.cuscino h3 { font-size: clamp(20px, 1.8vw, 24px); margin: 0 0 10px; }
+.cuscino p { margin: 0 0 12px; }
+.cuscino__per { font-size: 15px; color: var(--ink-2); }
+.cuscino__per b { display: block; font: 500 10px var(--sans); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 4px; color: var(--ink); }
+@media (max-width: 980px) {
+  .cuscini { grid-template-columns: 1fr 1fr; }
+  .cuscino:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 560px) {
+  .cuscini { grid-template-columns: 1fr; }
+  .cuscino, .cuscino + .cuscino { padding: 22px 0; border-left: 0; }
 }
