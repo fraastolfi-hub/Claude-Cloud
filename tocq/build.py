@@ -53,7 +53,7 @@ PAGINE = {
     "camere": {
         "url": "/camere/",
         "title": "Camere e suite a Porta Garibaldi · Tocq Hotel Milano",
-        "description": "133 camere insonorizzate a Porta Garibaldi: Comfort, Superior, Executive, Junior Suite. Scegli cuscino, lato della camera e colazione da asporto.",
+        "description": "Camere insonorizzate a Porta Garibaldi da 129 € a notte, colazione inclusa: Comfort, Superior, Executive, Junior Suite e Family Room. Scegli cuscino e lato della camera.",
         "nav": "Camere",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
@@ -223,11 +223,12 @@ SALE = [  # nome, m², misure, platea, scuola, ferro di cavallo, tavolo unico, c
     ("Arena", 32, "4,5 × 6,0", 20, 12, 12, 12, None, 12),
 ]
 
-CAMERE = [  # tipologia, numero, descrizione (metrature e letti da tocq.it/camere)
-    ("Comfort", 14, "20 m², letto queen: camera insonorizzata per una o due notti di lavoro."),
-    ("Superior", 63, "22 m², letto matrimoniale con 4 cuscini, arredi su misura: la tipologia più diffusa."),
-    ("Executive", 35, "24 m², letto matrimoniale e bollitore con infusi: più spazio per lavorare in camera."),
-    ("Junior Suite", 21, "38 m², zona living separata dal letto, per ricevere senza scendere in hall."),
+CAMERE = [  # tipologia, numero, descrizione, prezzo "da" a notte (direzione, 27 ottobre 2026)
+    ("Comfort", 14, "20 m², letto queen: camera insonorizzata per una o due notti di lavoro.", 129),
+    ("Superior", 63, "22 m², letto matrimoniale con 4 cuscini, arredi su misura: la tipologia più diffusa.", 149),
+    ("Executive", 35, "24 m², letto matrimoniale e bollitore con infusi: più spazio per lavorare in camera.", 179),
+    ("Junior Suite", 21, "38 m², zona living separata dal letto, per ricevere senza scendere in hall.", 199),
+    ("Family Room", None, "44 m², due camere comunicanti e un terrazzino riservato, per famiglie e piccoli gruppi.", 239),
 ]
 
 
@@ -331,14 +332,15 @@ def schema_pagina(key, faq):
                 "@type": "HotelRoom",
                 "@id": SITO + "/camere/#" + nome.lower().replace(" ", "-"),
                 "name": nome,
-                "description": f"{desc} {n} camere di questa tipologia al Tocq Hotel Milano.",
+                "description": f"{desc}" + (f" {n} camere di questa tipologia al Tocq Hotel Milano." if n else ""),
+                "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": prezzo, "description": "Prezzo a notte a partire da, colazione inclusa, prenotando sul sito"},
                 "containedInPlace": {"@id": HOTEL_ID},
                 "amenityFeature": [
                     {"@type": "LocationFeatureSpecification", "name": a, "value": True}
                     for a in ["Insonorizzata", "Wifi", "Smart TV", "Minibar", "Cassaforte", "Bollitore per caffè e tè", "Scelta del cuscino"]
                 ],
             }
-            for nome, n, desc in CAMERE
+            for nome, n, desc, prezzo in CAMERE
         ]
     if key == "meeting":
         for nome, mq, misure, platea, scuola, ferro, tavolo, cabaret, cocktail in SALE:
@@ -660,7 +662,7 @@ def llms():
     sale = "\n".join(
         f"- Sala {n}: {mq} m², {pl} persone a platea, {sc} a banchi di scuola, {fc} a ferro di cavallo, {ck} in piedi"
         for n, mq, _, pl, sc, fc, _, _, ck in SALE)
-    camere = "\n".join(f"- {n}: {q} camere. {d}" for n, q, d in CAMERE)
+    camere = "\n".join(f"- {n}: " + (f"{q} camere. " if q else "") + f"{d} Da {p} € a notte, colazione inclusa." for n, q, d, p in CAMERE)
     return f"""# {f['nome']}
 
 > Hotel 4 stelle a Porta Garibaldi, Milano, a 3 minuti a piedi dalla metro Garibaldi (M2, M5) e 5 dalla stazione di Milano Porta Garibaldi. {f['camere']} camere insonorizzate rinnovate nel 2021 e 6 sale meeting nello stesso edificio. È la base per chi è a Milano per lavorare, riunirsi, partire presto o andare a un evento raggiungibile da Garibaldi (Fiera Milano Rho, MiCo, San Siro, Autodromo di Monza).
