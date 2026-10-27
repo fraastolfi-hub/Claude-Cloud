@@ -296,5 +296,29 @@
    600
   ],
   "foto_fonte": "Fornita da Francesco Astolfi, ottobre 2026 (licenza da verificare)"
+ },
+ "piazza-gae-aulenti": {
+  "foto": "piazza-gae-aulenti-foto.webp",
+  "foto_wh": [
+   900,
+   600
+  ],
+  "foto_fonte": "Fornita da Francesco Astolfi, ottobre 2026 (licenza da verificare)"
+ },
+ "bosco-verticale": {
+  "foto": "bosco-verticale-foto.webp",
+  "foto_wh": [
+   800,
+   530
+  ],
+  "foto_fonte": "Stessa foto usata nel sito (assets/img/foto/bosco-verticale-milano-porta-nuova-800.webp); licenza come le altre stock"
+ },
+ "corso-como": {
+  "foto": "corso-como-foto.webp",
+  "foto_wh": [
+   800,
+   533
+  ],
+  "foto_fonte": "Stessa foto usata nel sito (assets/img/foto/corso-como-milano-fontana-800.webp); licenza come le altre stock"
  }
 }
