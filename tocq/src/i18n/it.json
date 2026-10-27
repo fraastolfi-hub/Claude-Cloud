@@ -17,14 +17,14 @@
   "nav_posizione": "Posizione",
   "f_privacy": "Privacy e cookie",
   "f_greenkey": "Dal 2024 il Tocq ha il Green Key, l'eco-label internazionale per le strutture turistiche. Cosa facciamo in concreto, nella pagina del nostro impegno.",
-  "nav_eventi": "Comodo per…",
+  "nav_eventi": "Da qui raggiungi",
   "sub_portanuova": "Porta Nuova",
   "sub_centrale": "Stazione Centrale",
   "sub_fiera": "Fiera Milano Rho",
   "sub_mico": "Congressi al MiCo",
   "sub_sansiro": "Concerti a San Siro",
   "sub_monza": "Gran Premio di Monza",
-  "tutti_eventi": "Comodo per…",
+  "tutti_eventi": "Tutte le destinazioni",
   "nav_arrivare": "Come arrivare",
   "sub_lavoro": "Per chi lavora",
   "sub_mangiare": "Mangiare e bere",
@@ -121,7 +121,7 @@
   "eventi": {
    "title": "Hotel comodo per Fiera, MiCo, San Siro e Centrale · Tocq Hotel",
    "description": "Dal Tocq Hotel Milano senza cambi: Fiera Milano Rho in 15 minuti di treno, Allianz MiCo in 10 di metro, San Siro con la M5, Monza in treno, la Stazione Centrale a due fermate, Porta Nuova a piedi.",
-   "nav": "Comodo per…"
+   "nav": "Da qui raggiungi"
   },
   "fiera": {
    "title": "Hotel per Fiera Milano Rho: 15 minuti di treno · Tocq Hotel",

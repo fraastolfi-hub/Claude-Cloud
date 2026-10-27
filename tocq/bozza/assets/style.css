@@ -1729,3 +1729,12 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
   .stat__logo { height: 15px; padding: 7px 9px; max-width: calc(100% - 18px); margin-bottom: 10px; }
   .stat__logo--booking { height: 12px; padding: 8.5px 9px; }
 }
+
+/* Menu Posizione: sezione "Da qui raggiungi" con titoletto e filetto */
+.nav__sub-titolo { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.14); }
+.nav .nav__sub .nav__sub-titolo a:not(.btn) { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #d2a275; padding-top: 8px; padding-bottom: 6px; }
+.nav .nav__sub .nav__sub-titolo a:not(.btn):hover { background: none; color: #f3efe9; }
+@media (max-width: 920px) {
+  .nav__sub-titolo { border-top-color: rgba(210,162,117,.35); margin-top: 10px; padding-top: 6px; }
+  .header .nav__sub .nav__sub-titolo a { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #d2a275; }
+}

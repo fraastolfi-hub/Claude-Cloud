@@ -107,7 +107,7 @@ PAGINE = {
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "portanuova": {
-        "url": "/comodo-per/porta-nuova/",
+        "url": "/posizione/porta-nuova/",
         "title": "Hotel a Porta Nuova, Milano: tutto a piedi · Tocq Hotel",
         "description": "Il Tocq Hotel Milano è dentro Porta Nuova: Corso Como a 1 minuto, Piazza Gae Aulenti a 3, il Bosco Verticale a 8. Cosa vedere, dove mangiare e lavorare, a piedi.",
         "nav": "Porta Nuova",
@@ -115,7 +115,7 @@ PAGINE = {
         "landing": True,
     },
     "centrale": {
-        "url": "/comodo-per/stazione-centrale/",
+        "url": "/posizione/stazione-centrale/",
         "title": "Hotel vicino alla Stazione Centrale di Milano · Tocq Hotel",
         "description": "Dalla Stazione Centrale al Tocq Hotel Milano: due fermate di metro M2 fino a Garibaldi, poi 3 minuti a piedi. Treni, Malpensa Express, bus per gli aeroporti e cosa c'è intorno.",
         "nav": "Stazione Centrale",
@@ -130,14 +130,14 @@ PAGINE = {
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "eventi": {
-        "url": "/comodo-per/",
+        "url": "/posizione/da-qui-raggiungi/",
         "title": "Hotel comodo per Fiera, MiCo, San Siro e Centrale · Tocq Hotel",
         "description": "Dal Tocq Hotel Milano senza cambi: Fiera Milano Rho in 15 minuti di treno, Allianz MiCo in 10 di metro, San Siro con la M5, Monza in treno, la Stazione Centrale a due fermate, Porta Nuova a piedi.",
-        "nav": "Comodo per…",
+        "nav": "Da qui raggiungi",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "fiera": {
-        "url": "/comodo-per/fiera-milano-rho/",
+        "url": "/posizione/fiera-milano-rho/",
         "title": "Hotel per Fiera Milano Rho: 15 minuti di treno · Tocq Hotel",
         "description": "Dal Tocq Hotel Milano alla Fiera di Rho in treno senza cambi, 15 minuti da Porta Garibaldi. La sera sei a Corso Como. Calendario fiere 2026-2027 e prenotazione.",
         "nav": "Fiera Milano Rho",
@@ -145,7 +145,7 @@ PAGINE = {
         "landing": True,
     },
     "sansiro": {
-        "url": "/comodo-per/san-siro/",
+        "url": "/posizione/san-siro/",
         "title": "Hotel per concerti a San Siro: M5 diretta · Tocq Hotel Milano",
         "description": "Concerti allo stadio San Siro e agli I-Days all'Ippodromo: dal Tocq Hotel Milano la M5 lilla senza cambi. Dopo il live sei a Corso Como. Calendario 2027.",
         "nav": "Concerti a San Siro",
@@ -153,7 +153,7 @@ PAGINE = {
         "landing": True,
     },
     "mico": {
-        "url": "/comodo-per/allianz-mico/",
+        "url": "/posizione/allianz-mico/",
         "title": "Hotel per congressi all'Allianz MiCo · Tocq Hotel Milano",
         "description": "Dal Tocq Hotel Milano all'Allianz MiCo in 10 minuti di metro M5, senza cambi: si scende a Portello, a 50 metri dal centro congressi. Calendario congressi 2026-2027.",
         "nav": "Allianz MiCo",
@@ -161,7 +161,7 @@ PAGINE = {
         "landing": True,
     },
     "monza": {
-        "url": "/comodo-per/gran-premio-monza/",
+        "url": "/posizione/gran-premio-monza/",
         "title": "Hotel per il Gran Premio di Monza 2027 · Tocq Hotel Milano",
         "description": "Gran Premio d'Italia di Formula 1, 3-5 settembre 2027: da Porta Garibaldi il treno per Monza senza cambi. La sera sei a Corso Como. Prenota il weekend.",
         "nav": "Gran Premio di Monza",
@@ -286,21 +286,20 @@ def hotel_ld():
 # pagine figlie: la voce madre nel breadcrumb
 GENITORE = {"quartiere-aziende": "posizione", "quartiere-mangiare": "posizione", "quartiere-shopping": "posizione", "arrivare": "posizione",
             "portanuova": "eventi", "centrale": "eventi",
-            "fiera": "eventi", "mico": "eventi", "sansiro": "eventi", "monza": "eventi"}
+            "fiera": "eventi", "mico": "eventi", "sansiro": "eventi", "monza": "eventi", "eventi": "posizione"}
 
 
 def breadcrumb_ld(key):
     p = PAGINE[key]
     if not p["nav"]:
         return None
+    catena = [key]
+    while catena[0] in GENITORE:
+        catena.insert(0, GENITORE[catena[0]])
     return {
         "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Tocq Hotel Milano", "item": SITO + "/"},
-            *([{"@type": "ListItem", "position": 2, "name": PAGINE[GENITORE[key]]["nav"], "item": SITO + PAGINE[GENITORE[key]]["url"]}]
-              if key in GENITORE else []),
-            {"@type": "ListItem", "position": 3 if key in GENITORE else 2, "name": p["nav"], "item": SITO + p["url"]},
-        ],
+        "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Tocq Hotel Milano", "item": SITO + "/"}] + [
+            {"@type": "ListItem", "position": i + 2, "name": PAGINE[k]["nav"], "item": SITO + PAGINE[k]["url"]} for i, k in enumerate(catena)],
     }
 
 
@@ -508,19 +507,21 @@ def header_landing(key, codice="it"):
 def header(key, codice="it"):
     t = lingue.ui(codice)
     # menu principale (sempre visibile) e voci secondarie (solo nel menu mobile; su desktop stanno nel footer)
-    principali = [("posizione", t["nav_posizione"]), ("camere", t["nav_camere"]), ("mangiare", t["nav_mangiare"]), ("meeting", t["nav_meeting"]), ("eventi", t["nav_eventi"]), ("offerte", t["nav_offerte"]), ("contatti", t["nav_contatti"])]
+    principali = [("posizione", t["nav_posizione"]), ("camere", t["nav_camere"]), ("mangiare", t["nav_mangiare"]), ("meeting", t["nav_meeting"]), ("offerte", t["nav_offerte"]), ("contatti", t["nav_contatti"])]
     secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"])]
     # sottopagine con menu a discesa (su mobile appaiono rientrate sotto la voce madre)
     sottomenu = {"posizione": [("quartiere-aziende", t["sub_lavoro"]), ("quartiere-mangiare", t["sub_mangiare"]),
-                               ("quartiere-shopping", t["sub_shopping"]), ("arrivare", t["sub_arrivare"])],
-                 "eventi": [("fiera", t["sub_fiera"]), ("mico", t["sub_mico"]), ("sansiro", t["sub_sansiro"]), ("monza", t["sub_monza"]),
-                            ("centrale", t["sub_centrale"]), ("portanuova", t["sub_portanuova"])]}
+                               ("quartiere-shopping", t["sub_shopping"]), ("arrivare", t["sub_arrivare"]),
+                               # seconda sezione del menu Posizione: le mete raggiungibili senza cambi
+                               ("eventi", t["nav_eventi"], "titolo"),
+                               ("fiera", t["sub_fiera"]), ("mico", t["sub_mico"]), ("sansiro", t["sub_sansiro"]), ("monza", t["sub_monza"]),
+                               ("centrale", t["sub_centrale"]), ("portanuova", t["sub_portanuova"])]}
     def voce(k, v, classe=""):
-        corrente = k == key or any(k2 == key for k2, _ in sottomenu.get(k, []))
+        corrente = k == key or any(v2[0] == key for v2 in sottomenu.get(k, []))
         return f'      <a href="{k}.html"{classe}{" aria-current=\"page\"" if corrente else ""}>{v}</a>'
     def gruppo(k, v):
-        figli = [(k2, v2) for k2, v2 in sottomenu[k] if k2 in PAGINE]
-        voci = "".join(f'<li><a href="{k2}.html"{" aria-current=\"page\"" if k2 == key else ""}>{v2}</a></li>' for k2, v2 in figli)
+        figli = [f for f in sottomenu[k] if f[0] in PAGINE]
+        voci = "".join(f'<li{" class=\"nav__sub-titolo\"" if len(f) > 2 else ""}><a href="{f[0]}.html"{" aria-current=\"page\"" if f[0] == key else ""}>{f[1]}</a></li>' for f in figli)
         return (f'      <div class="nav__gruppo">{voce(k, v).strip()}'
                 f'<button type="button" class="nav__apri" aria-expanded="false" aria-controls="sub-{k}" aria-label="{t["sottomenu"]}: {v}"></button>'
                 f'<ul class="nav__sub" id="sub-{k}">{voci}</ul></div>')
