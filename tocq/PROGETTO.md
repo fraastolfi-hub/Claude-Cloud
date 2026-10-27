@@ -424,3 +424,4 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 - **Marchio Green Key** (27 ottobre 2026): ridisegnato in vettoriale (`assets/img/marchi/green-key.svg`) dall'immagine inviata da Francesco, con i colori ufficiali Pantone 354 e 300; è nel piede di ogni pagina e in testa a Il nostro impegno. Al lancio meglio sostituirlo con il file vettoriale ufficiale del programma Green Key, se l'hotel ce l'ha.
 - **Offerte**: tolti i pacchetti "fitness e relax" e "colline piemontesi"; la sezione ora è "Aziende e meeting".
 - **Capienze delle sale** (27 ottobre 2026): valgono i dati della presentazione MICE (rev. 2); quelli diversi di tocq.it sono superati.
+- **Parcheggio** (27 ottobre 2026): garage convenzionato a 26 € al giorno, confermato.
