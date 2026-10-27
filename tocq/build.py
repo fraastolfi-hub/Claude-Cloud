@@ -161,10 +161,10 @@ PAGINE = {
         "landing": True,
     },
     "monza": {
-        "url": "/posizione/gran-premio-monza/",
-        "title": "Hotel per il Gran Premio di Monza 2027 · Tocq Hotel Milano",
+        "url": "/posizione/autodromo-monza/",
+        "title": "Hotel per Autodromo e Gran Premio di Monza · Tocq Hotel",
         "description": "Gran Premio d'Italia di Formula 1, 3-5 settembre 2027: da Porta Garibaldi il treno per Monza senza cambi. La sera sei a Corso Como. Prenota il weekend.",
-        "nav": "Gran Premio di Monza",
+        "nav": "Autodromo di Monza",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
         "landing": True,
     },
@@ -585,7 +585,7 @@ def footer(codice="it"):
         <a href="fiera.html">Fiera Milano Rho</a>
         <a href="sansiro.html">Concerti a San Siro</a>
         <a href="mico.html">Congressi all'Allianz MiCo</a>
-        <a href="monza.html">Gran Premio di Monza</a>
+        <a href="monza.html">Autodromo di Monza</a>
         <a href="centrale.html">Stazione Centrale</a>
         <a href="portanuova.html">Porta Nuova</a>
         <a href="posizione.html">{t['f_quartiere']}</a>
