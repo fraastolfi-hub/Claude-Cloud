@@ -420,7 +420,7 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 
 - **Prezzi "da" a notte, colazione inclusa** (direzione): Comfort 129 €, Superior 149 €, Executive 179 €, Junior Suite 199 €, Family Room 239 €. Sono in pagina Camere, nelle schede della home, nei dati per Google (`HotelRoom` con `offers`), in llms.txt e nella descrizione della pagina Camere.
 - **Family Room** aggiunta come quinta tipologia: 44 m², due camere comunicanti, terrazzino riservato (da tocq.it/camere). Da confermare: quante sono, ospiti massimi, letti, foto vere (oggi due foto generiche); non è nel conteggio delle 133 camere.
-- **Contatti, accordi aziendali** (27 ottobre 2026): Alessandra Rondelli, Sales Manager, alessandra.rondelli@fattoritalia.it. Meeting ed eventi: Patricia Varga, mice@tocq.it. Resta da confermare l'orario del reparto (in bozza lun–ven 9–18).
+- **Contatti, accordi aziendali** (27 ottobre 2026): Alessandra Rondelli, Sales Manager, alessandra.rondelli@fattoritalia.it. Meeting ed eventi: Patricia Varga, mice@tocq.it. Orario del reparto lun–ven 9–18, confermato.
 - **Marchio Green Key** (27 ottobre 2026): ridisegnato in vettoriale (`assets/img/marchi/green-key.svg`) dall'immagine inviata da Francesco, con i colori ufficiali Pantone 354 e 300; è nel piede di ogni pagina e in testa a Il nostro impegno. Al lancio meglio sostituirlo con il file vettoriale ufficiale del programma Green Key, se l'hotel ce l'ha.
 - **Offerte**: tolti i pacchetti "fitness e relax" e "colline piemontesi"; la sezione ora è "Aziende e meeting".
 - **Capienze delle sale** (27 ottobre 2026): valgono i dati della presentazione MICE (rev. 2); quelli diversi di tocq.it sono superati.
