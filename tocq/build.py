@@ -249,6 +249,8 @@ def hotel_ld():
         "@id": HOTEL_ID,
         "name": FATTI["nome"],
         "alternateName": "Tocq Hotel",
+        "checkinTime": "14:00",
+        "checkoutTime": "12:00",
         "sameAs": ["https://www.instagram.com/tocqhotelmilano/", "https://www.facebook.com/tocqhotelmilano",
                    "https://www.linkedin.com/company/tocq-hotel-milano-corso-como/"],
         "description": "Hotel 4 stelle a Porta Garibaldi, Milano, a 3 minuti a piedi dalla metro Garibaldi: 133 camere insonorizzate rinnovate nel 2021 e 6 sale meeting nello stesso edificio.",
@@ -669,6 +671,7 @@ def llms():
 
 ## Fatti
 - Indirizzo: {f['via']}, {f['cap']} {f['citta']}
+- Check-in dalle 14:00, check-out fino alle 12:00; reception aperta 24 ore
 - Telefono: {f['telefono']} (reception 24 ore) · Email: {f['email']} · Eventi: {f['email_mice']}
 - Categoria: 4 stelle · Riapertura dopo ristrutturazione: aprile 2021
 - Distanze a piedi (percorso reale): stazione Porta Garibaldi 5 minuti · metro Garibaldi 3 minuti · Corso Como 1 minuto · Accenture e Bending Spoons davanti all'hotel · Piazza Gae Aulenti e UniCredit 4 minuti · Bosco Verticale 8 minuti · Milano Centrale 1,5 km · Duomo 2,5 km · Linate 9 km · Malpensa 49 km (Malpensa Express da Garibaldi)
