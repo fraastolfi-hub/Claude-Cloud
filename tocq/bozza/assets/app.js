@@ -598,6 +598,19 @@ if (qmap) {
     c.addEventListener('mouseenter', function () { seleziona(c.getAttribute('data-id'), false); });
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && scheda && !scheda.hidden) chiudi(); });
+  // la lista delle aziende sotto la mappa: passando si accende il pin, cliccando si apre la sede sulla mappa
+  function vai(id) {
+    var punto = puntiQ.filter(function (p) { return p.getAttribute('data-id') === id; })[0];
+    if (!punto) return;
+    qmap.scrollIntoView({ behavior: riduci ? 'auto' : 'smooth', block: 'center' });
+    seleziona(id, false); apri(punto); inquadra([punto], true);
+    traccia('mappa_da_lista', { punto: id });
+  }
+  document.querySelectorAll('.azienda[data-id]').forEach(function (li) {
+    var id = li.getAttribute('data-id');
+    li.addEventListener('mouseenter', function () { if (scheda && !scheda.hidden) return; seleziona(id, false); });
+    li.addEventListener('click', function (e) { if (e.target.closest('a')) return; vai(id); });
+  });
   window.addEventListener('resize', function () { disegna(false); });
   var base = qmap.querySelector('.qmap__base');
   var iniziale = qmap.closest('[data-tema-iniziale]');

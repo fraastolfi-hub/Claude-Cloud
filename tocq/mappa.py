@@ -204,7 +204,8 @@ def loghi_aziende(punti):
                      f'<li class="azienda" data-id="{_e(q["id"])}">{logo}<div class="azienda__dati">'
                      f'<b class="azienda__nome">{_e(q["nome"].split(" (")[0].split(" – ")[0])}</b>'
                      f'<span class="azienda__via">{_e(via)}</span>'
-                     f'<a class="azienda__min" href="{_maps(q)}" target="_blank" rel="noopener">{_distanza(q)}</a></div></li>'))
+                     f'<a class="azienda__min" href="{_maps(q)}" target="_blank" rel="noopener">{_distanza(q)}</a>'
+                     f'<button type="button" class="azienda__mappa" data-vai="{_e(q["id"])}">Vedi sulla mappa</button></div></li>'))
     voci.sort(key=lambda v: v[0])
     return '<ul class="aziende-loghi" aria-label="Aziende a pochi minuti a piedi">' + "".join(v for _, v in voci) + "</ul>"
 

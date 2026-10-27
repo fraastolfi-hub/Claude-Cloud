@@ -1848,3 +1848,10 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .qmap:not([data-tema="aziende"]) .qmap__pin--logo img { display: none; }
 .qmap:not([data-tema="aziende"]) .qmap__punto--logo .qmap__nome { left: 30px; }
 .qmap__pin:not(.qmap__pin--logo) { width: 18px; height: 18px; }
+
+/* Lista aziende collegata alla mappa */
+.azienda[data-id] { cursor: pointer; transition: background .2s; }
+.azienda[data-id]:hover, .azienda[data-id].is-attivo { background: #fff; box-shadow: inset 3px 0 0 var(--corallo); }
+.azienda__mappa { justify-self: start; margin-top: 6px; padding: 0; background: none; border: 0; cursor: pointer; font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #8a6038; }
+.azienda__mappa::before { content: "◎ "; }
+.azienda__mappa:hover { color: #111; }
