@@ -7,7 +7,7 @@
   "chiudi": "Chiudi",
   "nav_aria": "Principale",
   "nav_camere": "Camere",
-  "nav_mangiare": "All Day Eating",
+  "nav_mangiare": "Ristorante e bar",
   "nav_servizi": "Garage e servizi",
   "nav_galleria": "Foto del Tocq",
   "nav_planet": "Il nostro impegno",
@@ -41,7 +41,7 @@
   "f_scrivi": "Scrivi o chiama",
   "f_soggiorna": "Soggiorna",
   "f_camere_suite": "Camere e suite",
-  "f_colazione": "All Day Eating",
+  "f_colazione": "Ristorante e bar",
   "f_prenota": "Prenota sul sito",
   "f_lavora": "Lavora",
   "f_sale": "Sale meeting",
@@ -146,7 +146,7 @@
   "mangiare": {
    "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
    "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",
-   "nav": "All Day Eating"
+   "nav": "Ristorante e bar"
   },
   "servizi": {
    "title": "Servizi, parcheggio e palestra · Tocq Hotel Milano",

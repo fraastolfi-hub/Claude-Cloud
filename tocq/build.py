@@ -169,10 +169,10 @@ PAGINE = {
         "landing": True,
     },
     "mangiare": {
-        "url": "/all-day-eating/",
+        "url": "/ristorante-e-bar/",
         "title": "Ristorante e colazione · Tocq Hotel Milano, Porta Garibaldi",
         "description": "Colazione dalle 6:30 (anche da asporto e per ospiti esterni a 16 €), pranzo a buffet, aperitivo e cena al Clorofilla dalle 18:30 alle 23. La Veranda per eventi.",
-        "nav": "All Day Eating",
+        "nav": "Ristorante e bar",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "servizi": {
@@ -357,11 +357,11 @@ def schema_pagina(key, faq):
             })
     if key == "mangiare":
         grafo += [
-            {"@type": "Restaurant", "@id": SITO + "/all-day-eating/#clorofilla", "name": "Clorofilla",
+            {"@type": "Restaurant", "@id": SITO + "/ristorante-e-bar/#clorofilla", "name": "Clorofilla",
              "description": "Wine bar con cucina del Tocq Hotel Milano: piatti di stagione, tradizione italiana con un tocco internazionale, aperitivo e cena.",
              "servesCuisine": ["Italiana", "Internazionale"], "openingHours": "Mo-Su 18:30-23:00",
              "telephone": FATTI["telefono"], "address": indirizzo_ld(), "containedInPlace": {"@id": HOTEL_ID}},
-            {"@type": "FoodEstablishment", "@id": SITO + "/all-day-eating/#colazione", "name": "Colazione del Tocq Hotel Milano",
+            {"@type": "FoodEstablishment", "@id": SITO + "/ristorante-e-bar/#colazione", "name": "Colazione del Tocq Hotel Milano",
              "description": "Colazione a buffet italiana, americana, asiatica e halal, con opzioni senza glutine e vegane; da asporto dalle 5:30; aperta agli ospiti esterni a 16 €.",
              "openingHours": ["Mo-Fr 06:30-10:30", "Sa-Su 07:00-11:00"], "address": indirizzo_ld(), "containedInPlace": {"@id": HOTEL_ID}},
         ]

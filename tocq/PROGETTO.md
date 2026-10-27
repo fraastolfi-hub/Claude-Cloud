@@ -438,3 +438,4 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 - **Foto Mangiare bene in home e scheda Osteria Brunello** (27 ottobre 2026): ingresso di Osteria Brunello la sera, immagine inviata da Francesco (`osteria-brunello-corso-garibaldi`, anche in `referenze/`). Da confermare l'autorizzazione del locale.
 
 - **Menu, ottobre 2026.** "Comodo per…" esce dal menu principale e diventa la seconda sezione del menu Posizione, con il titoletto "Da qui raggiungi" (Fiera, MiCo, San Siro, Monza, Centrale, Porta Nuova). Gli URL italiani passano sotto /posizione/ (hub /posizione/da-qui-raggiungi/, landing /posizione/fiera-milano-rho/ ecc.); il breadcrumb è Posizione › Da qui raggiungi › meta. Gli URL delle altre lingue restano da rivedere con le traduzioni.
+- **Menu, ottobre 2026.** "All Day Eating" diventa "Ristorante e bar" (menu, footer, home, link dalle camere); URL italiano /ristorante-e-bar/, inglese /en/restaurant-and-bar/.
