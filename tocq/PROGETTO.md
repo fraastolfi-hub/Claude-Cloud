@@ -427,4 +427,4 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 - **Parcheggio** (27 ottobre 2026): garage convenzionato a 26 € al giorno, confermato.
 - **Green Key** (27 ottobre 2026): certificazione dal 2024; anno in Il nostro impegno, nel piede e nei dati per Google (`award`).
 - **Il nostro impegno** (27 ottobre 2026): nessun omaggio per chi rinuncia al cambio degli asciugamani (non previsto dalla direzione); tolta la nota.
-- **Metrature** (27 ottobre 2026, direzione): Superior 22 m², Executive 24 m², Junior Suite 34 m², Family Room 40 m²; Comfort 20 m² resta il dato di tocq.it.
+- **Metrature** (27 ottobre 2026, direzione): Superior 22 m², Executive 24 m², Junior Suite 34 m², Family Room 40 m², Comfort 20 m² (tutte confermate).
