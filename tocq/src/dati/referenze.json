@@ -107,7 +107,13 @@
  "mercato-centrale": {
   "logo": "mercato-centrale-logo.png",
   "logo_fonte": "https://mercatocentrale.it/wp-content/uploads/2020/02/logo-mc-milano.png",
-  "logo_scuro": false
+  "logo_scuro": false,
+  "foto": "mercato-centrale-foto.webp",
+  "foto_wh": [
+   900,
+   600
+  ],
+  "foto_fonte": "Fornita da Francesco Astolfi, ottobre 2026 (licenza da verificare)"
  },
  "libreria-fondazione-feltrinelli": {
   "foto": "libreria-fondazione-feltrinelli.webp",
