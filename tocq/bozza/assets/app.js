@@ -575,7 +575,7 @@ if (qmap) {
   vociQ.forEach(function (li) {
     var id = li.getAttribute('data-id');
     li.addEventListener('mouseenter', function () { seleziona(id, false); });
-    li.addEventListener('click', function (e) { if (!e.target.closest('a')) seleziona(id, false); });
+    li.addEventListener('click', function (e) { if (!e.target.closest('a')) vai(id); });
   });
   // temi: si vedono i punti del tema, i treni restano come riferimento, la mappa si inquadra da sola
   var gruppo = document.querySelector('.mappa-filtri');
@@ -606,7 +606,9 @@ if (qmap) {
   function vai(id) {
     var punto = puntiQ.filter(function (p) { return p.getAttribute('data-id') === id; })[0];
     if (!punto) return;
-    qmap.scrollIntoView({ behavior: riduci ? 'auto' : 'smooth', block: 'center' });
+    var r = qmap.getBoundingClientRect();
+    // risale alla mappa solo se non è già sullo schermo (in Posizione mappa e lista stanno affiancate)
+    if (r.top < 0 || r.bottom > window.innerHeight + 40) qmap.scrollIntoView({ behavior: riduci ? 'auto' : 'smooth', block: 'center' });
     seleziona(id, false); apri(punto); inquadra([punto], true);
     traccia('mappa_da_lista', { punto: id });
   }

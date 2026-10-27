@@ -183,7 +183,8 @@ def elenco(punti):
             f'<span class="poi__cat">{_e(CATEGORIE.get(q["categoria"], q["categoria"]))}</span>'
             f'<b class="poi__nome">{_e(q["nome"])}</b>{ed}'
             f'<span class="poi__dist">{_e(_distanza(q))}</span>'
-            f'<a class="poi__vai" href="{_e(_maps(q))}" target="_blank" rel="noopener">Percorso</a></li>')
+            f'<a class="poi__vai" href="{_e(_maps(q))}" target="_blank" rel="noopener">Percorso</a>'
+            f'<button type="button" class="vai-mappa poi__mappa" data-vai="{_e(q["id"])}">Vedi sulla mappa</button></li>')
     return '<ol class="poi-elenco" id="poi-elenco">\n' + "\n".join(righe) + "\n</ol>"
 
 

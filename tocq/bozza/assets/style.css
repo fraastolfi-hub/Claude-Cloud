@@ -1863,3 +1863,5 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .qmap__scheda.is-senza-img { grid-template-columns: 1fr; }
 .qmap__scheda-logo.is-foto { padding: 0; overflow: hidden; }
 .qmap__scheda-logo.is-foto img { object-fit: cover; }
+.poi__mappa { grid-column: 1; justify-self: start; margin-top: 4px; }
+.poi.is-attivo { background: rgba(210,162,117,.08); }
