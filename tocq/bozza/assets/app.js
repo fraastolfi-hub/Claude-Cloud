@@ -445,6 +445,7 @@ document.querySelectorAll('[data-trustindex]').forEach(function (box) {
 
 // Il quartiere: mappa vera da trascinare e ingrandire, temi, punti ed elenco evidenziati insieme
 var qmap = document.querySelector('.qmap');
+if (!qmap) document.querySelectorAll('.vai-mappa').forEach(function (b) { b.remove(); });
 if (qmap) {
   var vista = qmap.querySelector('.qmap__vista'), piano = qmap.querySelector('.qmap__piano');
   var LATO = +qmap.getAttribute('data-lato'), HX = +qmap.getAttribute('data-hx'), HY = +qmap.getAttribute('data-hy');
@@ -492,8 +493,11 @@ if (qmap) {
     var id = punto.getAttribute('data-id');
     linee.forEach(function (l) { l.classList.toggle('is-visibile', l.getAttribute('data-id') === id); });
     if (!scheda) return;
-    var logo = punto.getAttribute('data-logo');
-    scheda.querySelector('.qmap__scheda-logo').innerHTML = logo ? '<img src="' + logo + '" alt="">' : '';
+    var logo = punto.getAttribute('data-logo'), foto = punto.getAttribute('data-foto');
+    var box = scheda.querySelector('.qmap__scheda-logo');
+    box.innerHTML = logo || foto ? '<img src="' + (logo || foto) + '" alt="">' : '';
+    box.classList.toggle('is-foto', !logo && !!foto);
+    scheda.classList.toggle('is-senza-img', !logo && !foto);
     scheda.querySelector('.qmap__scheda-nome').textContent = punto.getAttribute('data-nome') || '';
     scheda.querySelector('.qmap__scheda-via').textContent = punto.getAttribute('data-via') || '';
     scheda.querySelector('.qmap__scheda-dist').textContent = punto.getAttribute('data-dist') || '';
@@ -610,6 +614,12 @@ if (qmap) {
     var id = li.getAttribute('data-id');
     li.addEventListener('mouseenter', function () { if (scheda && !scheda.hidden) return; seleziona(id, false); });
     li.addEventListener('click', function (e) { if (e.target.closest('a')) return; vai(id); });
+  });
+  // schede di ristoranti e negozi: il pulsante "Vedi sulla mappa" (nascosto se il punto non è sulla mappa)
+  document.querySelectorAll('.guida__voce .vai-mappa').forEach(function (b) {
+    var id = b.getAttribute('data-vai');
+    if (!puntiQ.some(function (p) { return p.getAttribute('data-id') === id; })) { b.remove(); return; }
+    b.addEventListener('click', function () { vai(id); });
   });
   window.addEventListener('resize', function () { disegna(false); });
   var base = qmap.querySelector('.qmap__base');

@@ -141,7 +141,8 @@ def mappa_interattiva(punti, hotel):
                if logo else '<span class="qmap__pin" aria-hidden="true"></span>')
         nome = q["nome"].split(" (")[0].split(" – ")[0]
         dati = (f' data-nome="{_e(nome)}" data-via="{_e(q["indirizzo"].split(", 2")[0])}" data-dist="{_e(_distanza(q))}" data-maps="{_e(_maps(q))}"'
-                + (f' data-logo="{IMG_REF}{logo}"' if logo else ""))
+                + (f' data-logo="{IMG_REF}{logo}"' if logo else "")
+                + (f' data-foto="{IMG_REF}{ref[q["id"]]["foto"]}"' if not logo and ref.get(q["id"], {}).get("foto") else ""))
         segni.append(
             f'<button type="button" class="qmap__punto{fissa}{" qmap__punto--logo" if logo else ""}" data-id="{_e(q["id"])}" data-cat="{_e(q["categoria"])}"{dati} '
             f'style="left:{x:.1f}px;top:{y:.1f}px" aria-label="{_e(q["nome"])}, {_e(_distanza(q))}">'
@@ -205,7 +206,7 @@ def loghi_aziende(punti):
                      f'<b class="azienda__nome">{_e(q["nome"].split(" (")[0].split(" – ")[0])}</b>'
                      f'<span class="azienda__via">{_e(via)}</span>'
                      f'<a class="azienda__min" href="{_maps(q)}" target="_blank" rel="noopener">{_distanza(q)}</a>'
-                     f'<button type="button" class="azienda__mappa" data-vai="{_e(q["id"])}">Vedi sulla mappa</button></div></li>'))
+                     f'<button type="button" class="azienda__mappa vai-mappa" data-vai="{_e(q["id"])}">Vedi sulla mappa</button></div></li>'))
     voci.sort(key=lambda v: v[0])
     return '<ul class="aziende-loghi" aria-label="Aziende a pochi minuti a piedi">' + "".join(v for _, v in voci) + "</ul>"
 
@@ -258,7 +259,8 @@ def _scheda(q, ref=None):
     etichetta = f'<span class="guida__tipo">{_e(q.get("tipo"))}</span>' if q.get("tipo") else ""
     return (f'<article class="guida__voce" data-id="{_e(q["id"])}" data-tipo="{_e(tipo)}">{_testata(q, ref)}{etichetta}<h3>{_e(q["nome"])}</h3>'
             f'<p class="guida__min">{_min_testo(q)} a piedi</p><p>{_e(q.get("descrizione"))}</p>'
-            f'<a href="{_e(_maps(q))}" target="_blank" rel="noopener">Percorso a piedi</a></article>')
+            f'<span class="guida__azioni"><button type="button" class="vai-mappa" data-vai="{_e(q["id"])}">Vedi sulla mappa</button>'
+            f'<a href="{_e(_maps(q))}" target="_blank" rel="noopener">Percorso a piedi</a></span></article>')
 
 
 def guida_shopping(punti):

@@ -1855,3 +1855,11 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .azienda__mappa { justify-self: start; margin-top: 6px; padding: 0; background: none; border: 0; cursor: pointer; font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #8a6038; }
 .azienda__mappa::before { content: "◎ "; }
 .azienda__mappa:hover { color: #111; }
+.guida__azioni { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; margin-top: 6px; }
+.guida__azioni a { margin-top: 0; }
+.vai-mappa { padding: 0; background: none; border: 0; cursor: pointer; font: 500 11px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--corallo); }
+.vai-mappa::before { content: "◎ "; }
+.vai-mappa:hover { text-decoration: underline; }
+.qmap__scheda.is-senza-img { grid-template-columns: 1fr; }
+.qmap__scheda-logo.is-foto { padding: 0; overflow: hidden; }
+.qmap__scheda-logo.is-foto img { object-fit: cover; }
