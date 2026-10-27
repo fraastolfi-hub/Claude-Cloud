@@ -182,12 +182,12 @@
   "logo_scuro": false
  },
  "radetzky": {
-  "foto": "radetzky.webp",
+  "foto": "radetzky-foto.webp",
   "foto_wh": [
-   800,
-   420
+   900,
+   600
   ],
-  "foto_fonte": "https://www.radetzky.it/wp-content/uploads/2021/12/radetzky1.png",
+  "foto_fonte": "Fornita da Francesco Astolfi, ottobre 2026 (licenza da verificare)",
   "logo": "radetzky-logo.png",
   "logo_fonte": "https://www.radetzky.it/wp-content/uploads/2021/12/LOGO_w.png",
   "logo_scuro": true
