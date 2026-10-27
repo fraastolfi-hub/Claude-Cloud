@@ -208,5 +208,13 @@
   "logo": "cafezal-brera-logo.png",
   "logo_fonte": "https://cafezal.it/cdn/shop/files/Cafezal-LOGOTIPO.png",
   "logo_scuro": false
+ },
+ "osteria-brunello": {
+  "foto": "osteria-brunello-foto.webp",
+  "foto_wh": [
+   800,
+   533
+  ],
+  "foto_fonte": "Immagine inviata da Francesco Astolfi, 27 ottobre 2026 (ingresso di Osteria Brunello, Corso Garibaldi 117)"
  }
 }
