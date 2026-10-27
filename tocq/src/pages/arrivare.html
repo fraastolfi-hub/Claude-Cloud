@@ -69,15 +69,21 @@
   </section>
 
 
-  <!-- MAPPA: la stessa del quartiere, con treni e metro in primo piano -->
-  <section class="section section--dark mappa-sezione" id="mappa">
+  <!-- SCHEMA: il Tocq, la metro, la stazione e il garage (la mappa grande è in Posizione) -->
+  <section class="section section--alt" id="schema">
     <div class="wrap">
-      <p class="kicker">La mappa</p>
-      <h2>Il Tocq, la stazione e la metro.</h2>
-      <div class="mappa mappa--sola mt-32">
-        <div class="mappa__carta" data-tema-iniziale="trasporti"><!-- @mappa --></div>
-      </div>
-      <p class="board__foot">Via Alexis De Tocqueville 7/D, 20154 Milano · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Tocq+Hotel+Milano" target="_blank" rel="noopener">Calcola il percorso</a> · Base cartografica © OpenStreetMap contributors.</p>
+      <p class="kicker">Dal portone</p>
+      <h2>Il Tocq, la metro e la stazione.</h2>
+      <ol class="schema mt-32" aria-label="Distanze a piedi dal Tocq">
+        <li class="schema__tappa schema__tappa--tocq"><b>Tocq Hotel Milano</b><span>Via Alexis De Tocqueville 7/D</span></li>
+        <li class="schema__tratto"><span>1 min · 50 m</span></li>
+        <li class="schema__tappa"><b>Garage convenzionato</b><span>26 € al giorno</span></li>
+        <li class="schema__tratto"><span>3 min · 270 m</span></li>
+        <li class="schema__tappa"><b>Metro Garibaldi FS</b><span>M2 verde · M5 lilla</span></li>
+        <li class="schema__tratto"><span>5 min · 390 m</span></li>
+        <li class="schema__tappa"><b>Stazione Porta Garibaldi</b><span>Treni, Passante, Malpensa Express</span></li>
+      </ol>
+      <p class="board__foot mt-32">Ogni tempo è a piedi dal portone del Tocq. <a href="posizione.html#mappa">Apri la mappa del quartiere</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Tocq+Hotel+Milano" target="_blank" rel="noopener">Calcola il percorso in Google Maps</a></p>
     </div>
   </section>
 
@@ -98,6 +104,14 @@
         <p class="muted">Risposte brevi, con i numeri. Se manca la tua domanda, la reception risponde 24 ore su 24: <a href="tel:+390262071">+39 02 62071</a>.</p>
       </div>
       <div class="faq">
+        <details class="faq__item">
+          <summary>Come arrivo dall'aeroporto di Malpensa?</summary>
+          <div>Con il Malpensa Express fino alla stazione di Porta Garibaldi, poi 5 minuti a piedi fino all'hotel.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Dove parcheggio se arrivo in auto?</summary>
+          <div>Nel garage convenzionato a 50 metri dall'hotel, a 26 € al giorno.</div>
+        </details>
         <details class="faq__item">
           <summary>Qual è l'hotel 4 stelle più vicino alla stazione di Porta Garibaldi?</summary>
           <div>Il Tocq Hotel Milano è a cinque minuti a piedi dalla stazione di Milano Porta Garibaldi, in Via Alexis De Tocqueville 7/D. Dall'ingresso della metro Garibaldi sono tre minuti.</div>
@@ -120,7 +134,7 @@
         </details>
         <details class="faq__item">
           <summary>Quanto dista Milano Centrale?</summary>
-          <div>1,5 km.</div>
+          <div>1,5 km: due fermate della metro M2 verde fino a Garibaldi FS, oppure circa 20 minuti a piedi.</div>
         </details>
       </div>
     </div>

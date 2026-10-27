@@ -1865,3 +1865,28 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .qmap__scheda-logo.is-foto img { object-fit: cover; }
 .poi__mappa { grid-column: 1; justify-self: start; margin-top: 4px; }
 .poi.is-attivo { background: rgba(210,162,117,.08); }
+
+/* Come arrivare: schema lineare Tocq → garage → metro → stazione (al posto della seconda mappa) */
+.schema { list-style: none; margin: 0; padding: 0; display: flex; align-items: stretch; gap: 0; }
+.schema__tappa { flex: 1 1 0; display: flex; flex-direction: column; gap: 6px; padding: 18px 16px; border: 1px solid var(--line); background: var(--bianco, #fff); }
+.schema__tappa b { font: 500 18px/1.2 var(--sans); color: var(--ink); }
+.schema__tappa span { font-size: 14px; color: var(--ink-2); }
+.schema__tappa--tocq { border-color: #d2a275; background: rgba(210,162,117,.12); }
+.schema__tappa--tocq b { color: #8a6038; }
+.schema__tratto { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; padding: 0 8px; position: relative; min-width: 96px; }
+.schema__tratto::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 2px dashed #d2a275; }
+.schema__tratto span { position: relative; background: #111; padding: 3px 8px; font: 500 11px var(--sans); letter-spacing: .1em; text-transform: uppercase; color: #e9cfb4; white-space: nowrap; }
+@media (max-width: 900px) {
+  .schema { flex-direction: column; }
+  .schema__tratto { min-width: 0; min-height: 44px; justify-content: flex-start; padding: 0 0 0 24px; }
+  .schema__tratto::before { left: 24px; right: auto; top: 0; bottom: 0; border-top: 0; border-left: 2px dashed #d2a275; }
+  .schema__tratto span { margin-left: 12px; }
+}
+/* Posizione: rimando breve a Come arrivare */
+.arrivo-breve { display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; align-items: center; padding: 20px 24px; border: 1px solid var(--line); border-left: 3px solid var(--corallo); text-decoration: none; color: inherit; background: rgba(210,162,117,.06); transition: background .2s; }
+.arrivo-breve:hover { background: rgba(210,162,117,.14); }
+.arrivo-breve__domanda { font: 500 19px/1.25 var(--sans); }
+.arrivo-breve__tempi { grid-column: 1; font-size: 15px; color: var(--ink-2); }
+.arrivo-breve__tempi b { font-weight: 500; color: var(--ink); }
+.arrivo-breve__vai { grid-column: 2; grid-row: 1 / span 2; font: 500 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--corallo); white-space: nowrap; }
+@media (max-width: 640px) { .arrivo-breve { grid-template-columns: 1fr; } .arrivo-breve__vai { grid-column: 1; grid-row: auto; } }
