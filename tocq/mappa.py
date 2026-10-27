@@ -12,6 +12,8 @@ from pathlib import Path
 DATI = Path(__file__).parent / "src" / "dati" / "poi.json"
 # foto e loghi dai siti ufficiali dei locali e delle aziende (fonte di ogni file in referenze.json)
 REFERENZE = Path(__file__).parent / "src" / "dati" / "referenze.json"
+# percorsi a piedi reali dal portone (FOSSGIS routed-foot): si disegnano quando si sceglie un punto
+PERCORSI = Path(__file__).parent / "src" / "dati" / "percorsi.json"
 IMG_REF = "assets/img/referenze/"
 
 CATEGORIE = {
@@ -121,29 +123,49 @@ def mappa_interattiva(punti, hotel):
                       f'<text class="qmap__minuti" x="{hx:.1f}" y="{hy - r - 10:.1f}" text-anchor="middle">{mnt} min a piedi</text>')
     zone = "".join(f'<span class="qmap__zona" style="left:{x:.0f}px;top:{y:.0f}px">{_e(n)}</span>'
                    for n, la, ln in ZONE for x, y in [_px(la, ln)])
-    segni = []
+    ref = _referenze()
+    percorsi = json.loads(PERCORSI.read_text()) if PERCORSI.exists() else {}
+    segni, linee, occupati = [], [], []
     for q in punti:
         x, y = _px(q["lat"], q["lng"])
+        # due sedi allo stesso indirizzo (Accenture e Bending Spoons): il secondo pin scivola di lato
+        while any(abs(x - ox) < 30 and abs(y - oy) < 20 for ox, oy in occupati):
+            y += 22
+        occupati.append((x, y))
         if not (0 <= x <= BASE_LATO and 0 <= y <= BASE_LATO):
             continue
         fissa = " qmap__punto--fisso" if q["id"] in ETICHETTE_FISSE else ""
         fissa += " qmap__punto--sx" if q["id"] in ETICHETTA_A_SINISTRA else ""
+        logo = ref.get(q["id"], {}).get("logo") if q["categoria"] == "aziende" else None
+        pin = (f'<span class="qmap__pin qmap__pin--logo" aria-hidden="true"><img src="{IMG_REF}{logo}" alt="" loading="lazy" decoding="async"></span>'
+               if logo else '<span class="qmap__pin" aria-hidden="true"></span>')
+        nome = q["nome"].split(" (")[0].split(" – ")[0]
+        dati = (f' data-nome="{_e(nome)}" data-via="{_e(q["indirizzo"].split(", 2")[0])}" data-dist="{_e(_distanza(q))}" data-maps="{_e(_maps(q))}"'
+                + (f' data-logo="{IMG_REF}{logo}"' if logo else ""))
         segni.append(
-            f'<button type="button" class="qmap__punto{fissa}" data-id="{_e(q["id"])}" data-cat="{_e(q["categoria"])}" '
+            f'<button type="button" class="qmap__punto{fissa}{" qmap__punto--logo" if logo else ""}" data-id="{_e(q["id"])}" data-cat="{_e(q["categoria"])}"{dati} '
             f'style="left:{x:.1f}px;top:{y:.1f}px" aria-label="{_e(q["nome"])}, {_e(_distanza(q))}">'
-            f'<span class="qmap__pin" aria-hidden="true"></span><span class="qmap__nome">{_e(q["nome"])}<small>{_e(_distanza(q))}</small></span></button>')
+            f'{pin}<span class="qmap__nome">{_e(nome)}<small>{_e(_distanza(q))}</small></span></button>')
+        tratto = percorsi.get(q["id"])
+        if tratto:
+            d = "M" + " L".join(f"{px:.1f} {py:.1f}" for px, py in (_px(la, ln) for ln, la in tratto["coords"]))
+            linee.append(f'<path class="qmap__percorso" data-id="{_e(q["id"])}" d="{d}"/>')
     return (
         f'<div class="qmap" data-lato="{BASE_LATO}" data-hx="{hx:.1f}" data-hy="{hy:.1f}" role="region" aria-label="Mappa del quartiere del Tocq Hotel Milano">'
         f'<div class="qmap__vista">'
         f'<div class="qmap__piano" style="width:{BASE_LATO}px;height:{BASE_LATO}px">'
         f'<img class="qmap__base" src="{BASE_IMG}" width="{BASE_LATO}" height="{BASE_LATO}" alt="" decoding="async" draggable="false">'
         f'<svg class="qmap__anelli" viewBox="0 0 {BASE_LATO} {BASE_LATO}" aria-hidden="true">{"".join(cerchi)}</svg>'
+        f'<svg class="qmap__percorsi" viewBox="0 0 {BASE_LATO} {BASE_LATO}" aria-hidden="true">{"".join(linee)}</svg>'
         f'{zone}{"".join(segni)}'
         f'<span class="qmap__tocq" style="left:{hx:.1f}px;top:{hy:.1f}px" aria-hidden="true"><span class="qmap__tocq-pin"></span><b>TOCQ</b></span>'
         f'</div></div>'
         f'<div class="qmap__comandi" role="group" aria-label="Zoom della mappa">'
         f'<button type="button" data-zoom="1" aria-label="Avvicina">+</button><button type="button" data-zoom="-1" aria-label="Allontana">−</button>'
         f'<button type="button" data-zoom="0" aria-label="Torna al Tocq"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button></div>'
+        f'<div class="qmap__scheda" hidden aria-live="polite"><button type="button" class="qmap__chiudi" aria-label="Chiudi">×</button>'
+        f'<span class="qmap__scheda-logo"></span><b class="qmap__scheda-nome"></b><span class="qmap__scheda-via"></span>'
+        f'<span class="qmap__scheda-dist"></span><a class="qmap__scheda-maps" target="_blank" rel="noopener">Apri il percorso in Google Maps</a></div>'
         f'<p class="qmap__aiuto" aria-hidden="true">Trascina per spostarti · usa + e − per lo zoom</p>'
         f'<p class="qmap__crediti">Mappa © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</p>'
         f'</div>')

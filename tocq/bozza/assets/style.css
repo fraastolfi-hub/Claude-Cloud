@@ -1811,3 +1811,40 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .band__pannello { display: inline-block; max-width: 560px; padding: clamp(24px, 3vw, 40px); background: rgba(12,12,12,.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-left: 2px solid var(--corallo); }
 .band__pannello .band__frase { font-size: clamp(26px, 3.4vw, 44px); max-width: none; }
 @media (max-width: 760px) { .band--veranda { min-height: 560px; } .band__pannello { display: block; } }
+
+/* Mappa del quartiere, ottobre 2026: più grande, pin con i loghi, percorso a piedi e scheda al clic */
+.mappa-sezione .mappa--sola { width: 100vw; margin-left: calc(50% - 50vw); }
+.mappa-sezione .mappa--sola .qmap { border-left: 0; border-right: 0; }
+.mappa--sola .qmap__vista { height: clamp(480px, 80vh, 860px); }
+.qmap__pin--logo { width: 76px; height: 34px; border-radius: 17px; background: #fff !important; border: 2px solid #d2a275 !important; display: grid; place-items: center; overflow: hidden; padding: 5px 10px; box-shadow: 0 4px 14px rgba(0,0,0,.55); }
+.qmap__pin--logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.qmap__punto--logo .qmap__nome { left: 86px; }
+.qmap__punto--logo:hover .qmap__pin, .qmap__punto--logo.is-attivo .qmap__pin, .qmap__punto--logo:focus-visible .qmap__pin { transform: scale(1.18); border-color: #fff !important; }
+.qmap__percorsi { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
+.qmap__percorso { fill: none; stroke: #d2a275; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; opacity: 0; stroke-dasharray: 2 10; }
+.qmap__percorso.is-visibile { opacity: 1; animation: qmap-passi 1.2s linear infinite; }
+@keyframes qmap-passi { to { stroke-dashoffset: -24; } }
+@media (prefers-reduced-motion: reduce) { .qmap__percorso.is-visibile { animation: none; } }
+.qmap__scheda { position: absolute; left: 16px; bottom: 16px; z-index: 7; width: min(340px, calc(100% - 32px)); display: grid; grid-template-columns: auto 1fr; column-gap: 14px; row-gap: 2px; align-items: center; padding: 16px 18px; background: rgba(12,12,12,.95); color: #f3efe9; border-left: 2px solid #d2a275; box-shadow: 0 12px 32px rgba(0,0,0,.5); }
+.qmap__scheda[hidden] { display: none; }
+.qmap__scheda-logo { grid-row: span 3; width: 84px; height: 48px; border-radius: 8px; background: #fff; display: grid; place-items: center; padding: 8px 10px; }
+.qmap__scheda-logo:empty { display: none; }
+.qmap__scheda-logo img { width: 100%; height: 100%; object-fit: contain; }
+.qmap__scheda-nome { font: 500 18px/1.2 var(--sans); padding-right: 24px; }
+.qmap__scheda-via { font-size: 14px; color: #bdb6ad; }
+.qmap__scheda-dist { font: 500 12px var(--sans); letter-spacing: .1em; text-transform: uppercase; color: #d2a275; }
+.qmap__scheda-maps { grid-column: 1 / -1; margin-top: 12px; font: 500 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #f3efe9; }
+.qmap__scheda-maps::after { content: " →"; }
+.qmap__chiudi { position: absolute; right: 8px; top: 6px; background: none; border: 0; color: #bdb6ad; font-size: 24px; line-height: 1; cursor: pointer; padding: 4px 6px; }
+.qmap__chiudi:hover { color: #fff; }
+@media (max-width: 760px) {
+  .mappa--sola .qmap__vista { height: 72vh; min-height: 440px; }
+  .qmap__pin--logo { width: 52px; height: 24px; padding: 3px 6px; border-width: 1.5px !important; }
+  .qmap__punto--logo .qmap__nome { left: 60px; }
+  .qmap__scheda { left: 8px; right: 8px; bottom: 8px; width: auto; }
+}
+/* i loghi solo sulla mappa delle aziende; altrove le sedi tornano puntini, per non affollare */
+.qmap:not([data-tema="aziende"]) .qmap__pin--logo { width: 18px; height: 18px; padding: 0; border-radius: 50%; background: #d2a275 !important; border: 2px solid #0a0a0a !important; }
+.qmap:not([data-tema="aziende"]) .qmap__pin--logo img { display: none; }
+.qmap:not([data-tema="aziende"]) .qmap__punto--logo .qmap__nome { left: 30px; }
+.qmap__pin:not(.qmap__pin--logo) { width: 18px; height: 18px; }

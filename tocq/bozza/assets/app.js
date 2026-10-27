@@ -485,6 +485,29 @@ if (qmap) {
     var c = pos(el), x = st.x + c.x * st.k, y = st.y + c.y * st.k;
     return x > 40 && y > 40 && x < vista.clientWidth - 40 && y < vista.clientHeight - 40;
   }
+  var linee = [].slice.call(qmap.querySelectorAll('.qmap__percorso'));
+  var scheda = qmap.querySelector('.qmap__scheda');
+  // clic su un punto: percorso a piedi disegnato e scheda con indirizzo, minuti e link a Maps
+  function apri(punto) {
+    var id = punto.getAttribute('data-id');
+    linee.forEach(function (l) { l.classList.toggle('is-visibile', l.getAttribute('data-id') === id); });
+    if (!scheda) return;
+    var logo = punto.getAttribute('data-logo');
+    scheda.querySelector('.qmap__scheda-logo').innerHTML = logo ? '<img src="' + logo + '" alt="">' : '';
+    scheda.querySelector('.qmap__scheda-nome').textContent = punto.getAttribute('data-nome') || '';
+    scheda.querySelector('.qmap__scheda-via').textContent = punto.getAttribute('data-via') || '';
+    scheda.querySelector('.qmap__scheda-dist').textContent = punto.getAttribute('data-dist') || '';
+    scheda.querySelector('.qmap__scheda-maps').href = punto.getAttribute('data-maps') || '#';
+    scheda.hidden = false;
+    var c = pos(punto), x = (c.x + HX) / 2, y = (c.y + HY) / 2;
+    if (!inVista(punto)) { st.x = vista.clientWidth / 2 - x * st.k; st.y = vista.clientHeight / 2 - y * st.k; disegna(true); }
+  }
+  function chiudi() {
+    linee.forEach(function (l) { l.classList.remove('is-visibile'); });
+    if (scheda) scheda.hidden = true;
+    puntiQ.forEach(function (p) { p.classList.remove('is-attivo'); });
+  }
+  if (scheda) scheda.querySelector('.qmap__chiudi').addEventListener('click', chiudi);
   function seleziona(id, daMappa) {
     var punto = null;
     puntiQ.forEach(function (p) { var si = p.getAttribute('data-id') === id; p.classList.toggle('is-attivo', si); if (si) punto = p; });
@@ -542,8 +565,8 @@ if (qmap) {
   });
   puntiQ.forEach(function (p) {
     var id = p.getAttribute('data-id');
-    p.addEventListener('click', function () { if (mosso > 6) return; seleziona(id, true); traccia('mappa_punto', { punto: id }); });
-    p.addEventListener('mouseenter', function () { seleziona(id, false); });
+    p.addEventListener('click', function () { if (mosso > 6) return; seleziona(id, true); apri(p); traccia('mappa_punto', { punto: id }); });
+    p.addEventListener('mouseenter', function () { if (scheda && !scheda.hidden) return; seleziona(id, false); });
   });
   vociQ.forEach(function (li) {
     var id = li.getAttribute('data-id');
@@ -574,6 +597,7 @@ if (qmap) {
   document.querySelectorAll('.guida__voce').forEach(function (c) {
     c.addEventListener('mouseenter', function () { seleziona(c.getAttribute('data-id'), false); });
   });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && scheda && !scheda.hidden) chiudi(); });
   window.addEventListener('resize', function () { disegna(false); });
   var base = qmap.querySelector('.qmap__base');
   var iniziale = qmap.closest('[data-tema-iniziale]');
