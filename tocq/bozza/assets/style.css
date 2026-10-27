@@ -1803,3 +1803,11 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
   .cuscino, .cuscino + .cuscino { padding: 22px 0; border-left: 0; }
 }
 .cuscino__icona { display: block; width: 72px; height: 72px; color: var(--corallo); margin: 0 0 16px; }
+
+/* Ristorante, la Veranda: foto più alta e pannello scuro dietro il testo per leggerlo bene */
+.band--veranda { min-height: clamp(520px, 88vh, 900px); }
+.band--veranda .band__img img { object-position: center 45%; }
+.band--veranda::after { background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.35) 100%); }
+.band__pannello { display: inline-block; max-width: 560px; padding: clamp(24px, 3vw, 40px); background: rgba(12,12,12,.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-left: 2px solid var(--corallo); }
+.band__pannello .band__frase { font-size: clamp(26px, 3.4vw, 44px); max-width: none; }
+@media (max-width: 760px) { .band--veranda { min-height: 560px; } .band__pannello { display: block; } }
