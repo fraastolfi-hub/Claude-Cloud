@@ -201,12 +201,12 @@
   "foto_fonte": "https://princi.it/wp-content/uploads/2022/10/princi_artigianodelpane_homepage_01-1024x533.jpg"
  },
  "cafezal-brera": {
-  "foto": "cafezal-brera.webp",
+  "foto": "cafezal-brera-foto.webp",
   "foto_wh": [
-   533,
-   800
+   900,
+   600
   ],
-  "foto_fonte": "https://cafezal.it/cdn/shop/files/DSC02282.jpg",
+  "foto_fonte": "Fornita da Francesco Astolfi, ottobre 2026 (licenza da verificare)",
   "logo": "cafezal-brera-logo.png",
   "logo_fonte": "https://cafezal.it/cdn/shop/files/Cafezal-LOGOTIPO.png",
   "logo_scuro": false
