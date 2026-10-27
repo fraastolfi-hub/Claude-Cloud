@@ -429,3 +429,4 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 - **Il nostro impegno** (27 ottobre 2026): nessun omaggio per chi rinuncia al cambio degli asciugamani (non previsto dalla direzione); tolta la nota.
 - **Metrature** (27 ottobre 2026, direzione): Superior 22 m², Executive 24 m², Junior Suite 34 m², Family Room 40 m², Comfort 20 m² (tutte confermate).
 - **Family Room** (27 ottobre 2026, direzione): due Superior comunicanti, sempre con balcone; fino a 4 adulti, 5 solo con un bambino sotto i 2 anni nel letto dei genitori. Rientra quindi nelle 133 camere. Il terrazzino citato su tocq.it è un balcone. Restano: quante sono, letti, bagni, foto.
+- **Accappatoi** (27 ottobre 2026): in camera di default solo nelle Junior Suite, su richiesta in tutte le altre.
