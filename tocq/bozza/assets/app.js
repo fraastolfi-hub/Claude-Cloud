@@ -57,6 +57,17 @@ document.querySelectorAll('.nav__gruppo').forEach(function (g) {
   g.addEventListener('keydown', function (e) { if (e.key === 'Escape') { imposta(false); b.focus(); } });
 });
 
+// Gruppo annidato del menu (su mobile): apre e chiude "Sei a Milano per…"
+document.querySelectorAll('.nav__apri2').forEach(function (b) {
+  b.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var li = b.closest('.nav__sub-titolo');
+    var v = !li.classList.contains('is-open');
+    li.classList.toggle('is-open', v);
+    b.setAttribute('aria-expanded', v ? 'true' : 'false');
+  });
+});
+
 // Orologio del tabellone
 document.querySelectorAll('[data-clock]').forEach(function (el) {
   function tick() {

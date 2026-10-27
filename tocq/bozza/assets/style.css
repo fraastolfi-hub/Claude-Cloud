@@ -1732,12 +1732,25 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 
 /* Menu Posizione: sezione "Da qui raggiungi" con titoletto e filetto */
 .nav__sub-titolo { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.14); }
-.nav .nav__sub .nav__sub-titolo a:not(.btn) { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #d2a275; padding-top: 8px; padding-bottom: 6px; }
-.nav .nav__sub .nav__sub-titolo a:not(.btn):hover { background: none; color: #f3efe9; }
+.nav .nav__sub .nav__sub-testa a:not(.btn) { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #d2a275; padding-top: 8px; padding-bottom: 6px; }
+.nav .nav__sub .nav__sub-testa a:not(.btn):hover { background: none; color: #f3efe9; }
 @media (max-width: 920px) {
   .nav__sub-titolo { border-top-color: rgba(210,162,117,.35); margin-top: 10px; padding-top: 6px; }
-  .header .nav__sub .nav__sub-titolo a { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #d2a275; }
+  .header .nav__sub .nav__sub-testa a { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #d2a275; }
 }
 
 /* Hero su mobile: la foto va da bordo a bordo (prima restava una fascia vuota a destra) */
 @media (max-width: 860px) { .hero__grid > .photo--tall { width: calc(100% + var(--gutter) * 2); max-width: none; } }
+
+/* Menu Posizione: gruppo annidato "Sei a Milano per…" (aperto su desktop, a fisarmonica su mobile) */
+.nav__sub-testa { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.nav__sub2 { list-style: none; margin: 0; padding: 0; }
+.nav__apri2 { display: none; background: none; border: 0; cursor: pointer; color: #d2a275; padding: 8px 4px; }
+.nav__apri2::after { content: ""; display: block; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+.nav__sub-titolo.is-open .nav__apri2::after { transform: translateY(1px) rotate(-135deg); }
+@media (max-width: 920px) {
+  .nav__apri2 { display: block; }
+  .nav__sub-testa { padding-right: 4px; }
+  .nav__sub-titolo:not(.is-open) .nav__sub2 { display: none; }
+  .nav__sub2 { padding: 2px 0 4px 14px; }
+}

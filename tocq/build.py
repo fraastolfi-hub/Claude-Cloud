@@ -130,10 +130,10 @@ PAGINE = {
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "eventi": {
-        "url": "/posizione/da-qui-raggiungi/",
+        "url": "/posizione/sei-a-milano-per/",
         "title": "Hotel comodo per Fiera, MiCo, San Siro e Centrale · Tocq Hotel",
         "description": "Dal Tocq Hotel Milano senza cambi: Fiera Milano Rho in 15 minuti di treno, Allianz MiCo in 10 di metro, San Siro con la M5, Monza in treno, la Stazione Centrale a due fermate, Porta Nuova a piedi.",
-        "nav": "Da qui raggiungi",
+        "nav": "Sei a Milano per…",
         "og_image": "assets/img/foto/tocq-hotel-milano-og.jpg",
     },
     "fiera": {
@@ -285,7 +285,7 @@ def hotel_ld():
 
 # pagine figlie: la voce madre nel breadcrumb
 GENITORE = {"quartiere-aziende": "posizione", "quartiere-mangiare": "posizione", "quartiere-shopping": "posizione", "arrivare": "posizione",
-            "portanuova": "eventi", "centrale": "eventi",
+            "portanuova": "posizione", "centrale": "posizione",
             "fiera": "eventi", "mico": "eventi", "sansiro": "eventi", "monza": "eventi", "eventi": "posizione"}
 
 
@@ -511,17 +511,34 @@ def header(key, codice="it"):
     secondarie = [("servizi", t["nav_servizi"]), ("galleria", t["nav_galleria"]), ("planet", t["nav_planet"])]
     # sottopagine con menu a discesa (su mobile appaiono rientrate sotto la voce madre)
     sottomenu = {"posizione": [("quartiere-aziende", t["sub_lavoro"]), ("quartiere-mangiare", t["sub_mangiare"]),
-                               ("quartiere-shopping", t["sub_shopping"]), ("arrivare", t["sub_arrivare"]),
-                               # seconda sezione del menu Posizione: le mete raggiungibili senza cambi
-                               ("eventi", t["nav_eventi"], "titolo"),
-                               ("fiera", t["sub_fiera"]), ("mico", t["sub_mico"]), ("sansiro", t["sub_sansiro"]), ("monza", t["sub_monza"]),
-                               ("centrale", t["sub_centrale"]), ("portanuova", t["sub_portanuova"])]}
+                               ("quartiere-shopping", t["sub_shopping"]), ("portanuova", t["sub_portanuova"]),
+                               ("arrivare", t["sub_arrivare"]), ("centrale", t["sub_centrale"]),
+                               # gruppo annidato: il motivo del viaggio (su mobile chiuso, si apre al tocco)
+                               ("eventi", t["nav_eventi"], [("fiera", t["sub_fiera"]), ("mico", t["sub_mico"]),
+                                                            ("sansiro", t["sub_sansiro"]), ("monza", t["sub_monza"])])]}
+    def tutte(k):
+        for f in sottomenu.get(k, []):
+            yield f[0]
+            if len(f) > 2:
+                yield from (f2[0] for f2 in f[2])
+    def li(k2, v2):
+        return f'<li><a href="{k2}.html"{" aria-current=\"page\"" if k2 == key else ""}>{v2}</a></li>'
     def voce(k, v, classe=""):
-        corrente = k == key or any(v2[0] == key for v2 in sottomenu.get(k, []))
+        corrente = k == key or key in tutte(k)
         return f'      <a href="{k}.html"{classe}{" aria-current=\"page\"" if corrente else ""}>{v}</a>'
     def gruppo(k, v):
-        figli = [f for f in sottomenu[k] if f[0] in PAGINE]
-        voci = "".join(f'<li{" class=\"nav__sub-titolo\"" if len(f) > 2 else ""}><a href="{f[0]}.html"{" aria-current=\"page\"" if f[0] == key else ""}>{f[1]}</a></li>' for f in figli)
+        voci = ""
+        for f in sottomenu[k]:
+            if f[0] not in PAGINE:
+                continue
+            if len(f) > 2:
+                aperto = key == f[0] or any(f2[0] == key for f2 in f[2])
+                figli = "".join(li(*f2) for f2 in f[2] if f2[0] in PAGINE)
+                voci += (f'<li class="nav__sub-titolo{" is-open" if aperto else ""}"><div class="nav__sub-testa">{li(f[0], f[1])[4:-5]}'
+                         f'<button type="button" class="nav__apri2" aria-expanded="{"true" if aperto else "false"}" aria-controls="sub-{f[0]}" aria-label="{t["sottomenu"]}: {f[1]}"></button></div>'
+                         f'<ul class="nav__sub2" id="sub-{f[0]}">{figli}</ul></li>')
+            else:
+                voci += li(f[0], f[1])
         return (f'      <div class="nav__gruppo">{voce(k, v).strip()}'
                 f'<button type="button" class="nav__apri" aria-expanded="false" aria-controls="sub-{k}" aria-label="{t["sottomenu"]}: {v}"></button>'
                 f'<ul class="nav__sub" id="sub-{k}">{voci}</ul></div>')
@@ -586,10 +603,10 @@ def footer(codice="it"):
         <a href="sansiro.html">Concerti a San Siro</a>
         <a href="mico.html">Congressi all'Allianz MiCo</a>
         <a href="monza.html">Autodromo di Monza</a>
-        <a href="centrale.html">Stazione Centrale</a>
-        <a href="portanuova.html">Porta Nuova</a>
         <a href="posizione.html">{t['f_quartiere']}</a>
+        <a href="portanuova.html">Porta Nuova</a>
         <a href="arrivare.html">{t['f_arrivare']}</a>
+        <a href="centrale.html">Dalla Stazione Centrale</a>
         <a href="offerte.html">{t['f_offerte']}</a>
         <a href="faq.html">{t['f_faq']}</a>
       </div>
