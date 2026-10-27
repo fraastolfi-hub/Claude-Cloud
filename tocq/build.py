@@ -228,7 +228,7 @@ CAMERE = [  # tipologia, numero, descrizione, prezzo "da" a notte (direzione, 27
     ("Superior", 63, "22 m², letto matrimoniale con 4 cuscini, arredi su misura: la tipologia più diffusa.", 149),
     ("Executive", 35, "24 m², letto matrimoniale e bollitore con infusi: più spazio per lavorare in camera.", 179),
     ("Junior Suite", 21, "34 m², zona living separata dal letto, per ricevere senza scendere in hall.", 199),
-    ("Family Room", None, "40 m², due camere Superior comunicanti con balcone: fino a 4 adulti, più un bambino sotto i 2 anni nel letto dei genitori.", 239),
+    ("Family Room", None, "40 m², due camere Superior comunicanti con balcone, due letti matrimoniali e due bagni: fino a 4 adulti, più un bambino sotto i 2 anni nel letto dei genitori.", 239),
 ]
 
 
