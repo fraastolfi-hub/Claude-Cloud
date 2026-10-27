@@ -426,3 +426,4 @@ Ogni landing: intestazione ridotta (marchio, telefono, Prenota, niente menu), pr
 - **Capienze delle sale** (27 ottobre 2026): valgono i dati della presentazione MICE (rev. 2); quelli diversi di tocq.it sono superati.
 - **Parcheggio** (27 ottobre 2026): garage convenzionato a 26 € al giorno, confermato.
 - **Green Key** (27 ottobre 2026): certificazione dal 2024; anno in Il nostro impegno, nel piede e nei dati per Google (`award`).
+- **Il nostro impegno** (27 ottobre 2026): nessun omaggio per chi rinuncia al cambio degli asciugamani (non previsto dalla direzione); tolta la nota.
