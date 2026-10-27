@@ -1738,3 +1738,6 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
   .nav__sub-titolo { border-top-color: rgba(210,162,117,.35); margin-top: 10px; padding-top: 6px; }
   .header .nav__sub .nav__sub-titolo a { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #d2a275; }
 }
+
+/* Hero su mobile: la foto va da bordo a bordo (prima restava una fascia vuota a destra) */
+@media (max-width: 860px) { .hero__grid > .photo--tall { width: calc(100% + var(--gutter) * 2); max-width: none; } }
