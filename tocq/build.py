@@ -593,7 +593,7 @@ def footer(codice="it"):
       </div>
     </div>
     <a class="footer__greenkey" href="planet.html">
-      <span class="footer__gk-badge" aria-hidden="true">Green<br>Key</span>
+      <img class="footer__gk" src="assets/img/marchi/green-key.svg" alt="Marchio Green Key" width="44" height="55" loading="lazy">
       <span>{t['f_greenkey']}</span>
     </a>
     <div class="footer__base">

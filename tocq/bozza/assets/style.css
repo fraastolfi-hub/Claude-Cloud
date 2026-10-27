@@ -1712,3 +1712,8 @@ html:not(.mostra-note) .todo--vuoto { display: none; }
 .footer__gk-badge { flex: 0 0 56px; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #2e7d32; color: #fff; font: 600 10px/1.1 var(--sans); letter-spacing: .08em; text-transform: uppercase; text-align: center; }
 .tipologia__prezzo { margin: -8px 0 20px; font-size: 15px; }
 .tipologia__prezzo b { font: 500 22px var(--sans); color: var(--corallo); }
+.footer__gk { flex: 0 0 44px; width: 44px; height: auto; }
+.planet-hero__wrap { position: relative; }
+.planet-hero__gk { float: right; width: clamp(80px, 10vw, 120px); height: auto; margin: 0 0 16px 24px; }
+@media (max-width: 560px) { .planet-hero__gk { width: 64px; margin: 4px 0 8px 16px; } }
+.footer__greenkey img.footer__gk { background: none; padding: 0; border-radius: 0; }
