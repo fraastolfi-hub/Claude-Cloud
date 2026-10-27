@@ -275,8 +275,8 @@ def guida_food(punti):
     ref = _referenze()
     voci = [q for q in punti if q["categoria"] == "food"]
     presenti = [(k, v) for k, v in TIPI_FOOD if any((q.get("tipo") or "").lower() == k for q in voci)]
-    bott = '<button type="button" data-momento="tutti" aria-pressed="false">Tutti</button>' + "".join(
-        f'<button type="button" data-momento="{k}" aria-pressed="{"true" if i == 0 else "false"}">{v}</button>' for i, (k, v) in enumerate(presenti))
+    bott = '<button type="button" data-momento="tutti" aria-pressed="true">Tutti</button>' + "".join(
+        f'<button type="button" data-momento="{k}" aria-pressed="false">{v}</button>' for k, v in presenti)
     return (f'<div class="filters momenti-filtri" role="group" aria-label="Scegli il momento">{bott}</div>'
             '<div class="guida guida--momenti">' + "".join(_scheda(q, ref) for q in voci) + "</div>")
 
