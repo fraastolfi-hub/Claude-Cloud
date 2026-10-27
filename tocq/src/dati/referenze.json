@@ -10,9 +10,10 @@
   "logo_scuro": false
  },
  "bending-spoons": {
-  "logo": "bending-spoons-logo.svg",
+  "logo": "bending-spoons-logo-scuro.svg",
   "logo_fonte": "https://bendingspoons.com/_next/static/media/bsp-logotype.0a3.jbkx-aafu.svg",
-  "logo_scuro": true
+  "logo_scuro": false,
+  "nota_logo": "Logo ufficiale bianco ricolorato in nero per il fondo chiaro."
  },
  "google": {
   "logo": "google-logo.svg",
@@ -45,9 +46,10 @@
   "logo_scuro": false
  },
  "intesa-sanpaolo-gioia22": {
-  "logo": "intesa-sanpaolo-gioia22-logo.svg",
+  "logo": "intesa-sanpaolo-gioia22-logo-scuro.svg",
   "logo_fonte": "https://group.intesasanpaolo.com/content/dam/portalgroup/nuove-immagini/immagini-cross/loghi/logo_isp.svg",
-  "logo_scuro": true
+  "logo_scuro": false,
+  "nota_logo": "Logo ufficiale bianco ricolorato in nero per il fondo chiaro."
  },
  "kpmg": {
   "logo": "kpmg-logo.svg",
