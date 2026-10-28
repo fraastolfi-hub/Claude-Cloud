@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>La tua verifica · Hotel Positioning</title>
+<meta name="description" content="L'esito della verifica gratuita della pagina della tua campagna.">
+<!-- @include head -->
+<style>
+.ve{padding:clamp(40px,6vw,88px) 0;background-color:var(--carta);background-image:radial-gradient(var(--punto) 1.7px,transparent 1.7px);background-size:24px 24px;min-height:60vh}
+.ve .wrap{max-width:860px;display:flex;flex-direction:column;gap:40px}
+.ve-status{font:700 14px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.ve-box{background:var(--carta);border:var(--bd);box-shadow:var(--o-2xl);padding:clamp(24px,5vw,44px);display:flex;flex-direction:column;gap:14px}
+.ve-verdict{background:var(--giallo)}
+.ve-verdict.no{background:var(--carta)}
+.ve-verdict .k{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.ve-verdict h1{font:400 clamp(38px,6.4vw,76px)/.95 var(--display);letter-spacing:-.02em;text-transform:uppercase}
+.ve-verdict p{font-size:clamp(18px,2vw,21px);line-height:1.5;max-width:64ch}
+.ve-sub{font:400 clamp(20px,2.4vw,26px)/1.1 var(--display);text-transform:uppercase;margin-bottom:18px}
+.ve-points{list-style:none;display:flex;flex-direction:column;gap:20px}
+.ve-point{display:grid;grid-template-columns:44px 1fr;gap:18px;background:var(--carta);border:var(--bd);box-shadow:var(--o-md);padding:24px}
+.ve-point>div{display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.55;min-width:0}
+.ve-point b.n{width:44px;height:44px;display:grid;place-items:center;background:var(--giallo);border:2px solid var(--inchiostro);font:700 16px var(--mono)}
+.ve-point h3{font:400 20px/1.1 var(--display);text-transform:uppercase}
+.ve-quote{background:#f4efe2;border:2px solid var(--inchiostro);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.ve-quote blockquote{font-size:17px;font-style:italic;overflow-wrap:anywhere}
+.ve-quote figcaption{font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--inchiostro-3)}
+.ve-next{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.ve-next h2{font:400 clamp(26px,3.6vw,40px)/1.02 var(--display);text-transform:uppercase}
+.ve-cal{width:100%;border:var(--bd);box-shadow:var(--o-2xl);background:#fff}
+.ve-cal iframe{display:block;width:100%;height:700px;border:0}
+@media (max-width:600px){.ve-point{grid-template-columns:1fr}}
+</style>
+<!-- @include tema -->
+</head>
+<body>
+<!-- @include header -->
+<main id="main" class="ve">
+  <div class="wrap" id="ve">
+    <p class="ve-status" role="status">Carico la tua verifica…</p>
+  </div>
+</main>
+<!-- @include footer -->
+<script>
+(function(){
+  var root = document.getElementById('ve'), t = new URLSearchParams(location.search).get('t') || '';
+  var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var host = function(u){ try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return u; } };
+  var chiama = function(body){ return fetch('/.netlify/functions/verifica-esito', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(function(r){ return r.json(); }).catch(function(){ return { ok: false, errore: 'network' }; }); };
+  var prenotata = false;
+
+  function errore(code){
+    root.innerHTML = '<div class="ve-box"><h1 class="ve-sub">' + (code === 'not_found' ? "Questa verifica non c'è." : 'Non riesco a caricarla.') + '</h1><p>' +
+      (code === 'not_found' ? "Il link potrebbe essere incompleto. Aprilo di nuovo dall'email, oppure rispondi a quella email." : 'Controlla la connessione e ricarica la pagina.') +
+      '</p><p><a href="mailto:consulting@francescoastolfi.net">consulting@francescoastolfi.net</a></p></div>';
+  }
+
+  function prossimo(e){
+    if (e.esito !== 'si') {
+      return '<section class="ve-next" aria-labelledby="ve-n"><h2 id="ve-n">Se vuoi lavorarci da solo, il metodo è nel libro.</h2><p class="lead">Come si trova il motivo per cui un ospite dovrebbe scegliere te, e come si scrive. Quando la pagina o la campagna cambiano, rimandamela.</p><a class="btn" href="' + esc(e.libro_url) + '" target="_blank" rel="noopener">Il libro · 19,90 € su Amazon <span class="arr">→</span></a></section>';
+    }
+    if (prenotata) return '<section class="ve-next" aria-labelledby="ve-n"><h2 id="ve-n">Call prenotata. Ci sentiamo lì.</h2><p class="lead">Ti è arrivata la conferma da Calendly. Se devi spostarla, usa il link in quella email.</p></section>';
+    var cal = '';
+    if (e.calendly_url) {
+      try {
+        var u = new URL(e.calendly_url);
+        u.searchParams.set('embed_domain', location.hostname); u.searchParams.set('embed_type', 'Inline'); u.searchParams.set('hide_gdpr_banner', '1');
+        if (e.nome) u.searchParams.set('name', e.nome); u.searchParams.set('email', e.email);
+        cal = '<div class="ve-cal"><iframe title="Prenota la call di 60 minuti" src="' + esc(u.toString()) + '" loading="lazy"></iframe></div>';
+      } catch (x) {}
+    }
+    if (!cal) cal = '<a class="btn" href="mailto:consulting@francescoastolfi.net?subject=' + encodeURIComponent('Call per la sfida') + '">Scrivimi per la call <span class="arr">→</span></a>';
+    return '<section class="ve-next" aria-labelledby="ve-n"><h2 id="ve-n">Se ti tornano, prenotiamo la call.</h2><p class="lead">60 minuti: scegliamo la campagna, raccolgo offerta, prezzi e foto. Poi decidi tu se si gioca. La soluzione, il motivo per cui scegliere te in una riga, parte da lì.</p>' + cal + '</section>';
+  }
+
+  function mostra(e){
+    var si = e.esito === 'si';
+    root.innerHTML =
+      '<header class="ve-box ve-verdict' + (si ? '' : ' no') + '"><p class="k">Verifica · ' + esc(host(e.url_pagina)) + '</p><h1>' + (si ? 'Sì, posso batterla.' : 'No, per ora non la metto in gara.') + '</h1><p>' + esc(e.motivo) + '</p></header>' +
+      '<section aria-labelledby="ve-p"><h2 id="ve-p" class="ve-sub">' + (si ? 'Dove la tua pagina perde ospiti' : 'Perché, punto per punto') + '</h2><ol class="ve-points">' +
+      e.punti.map(function(p, i){
+        return '<li class="ve-point"><b class="n" aria-hidden="true">' + (i + 1) + '</b><div><h3>' + esc(p.titolo) + '</h3><figure class="ve-quote"><blockquote>«' + esc(p.citazione) + '»</blockquote><figcaption>Dalla tua pagina</figcaption></figure><p><strong>Cosa vede l\'ospite.</strong> ' + esc(p.cosa_vede_l_ospite) + '</p><p><strong>Perché perde.</strong> ' + esc(p.perche_perde) + '</p></div></li>';
+      }).join('') + '</ol></section>' + prossimo(e);
+  }
+
+  if (!/^[a-f0-9]{36}$/.test(t)) return errore('not_found');
+  chiama({ azione: 'carica', token: t }).then(function(r){
+    if (!r.ok) return errore(r.errore);
+    prenotata = r.esito.call_prenotata; mostra(r.esito);
+    // Calendly avvisa la pagina quando la prenotazione è fatta
+    addEventListener('message', function(m){
+      if (m.origin !== 'https://calendly.com' || !m.data || m.data.event !== 'calendly.event_scheduled') return;
+      prenotata = true; chiama({ azione: 'call_prenotata', token: t }); mostra(r.esito);
+    });
+  });
+})();
+</script>
+</body>
+</html>

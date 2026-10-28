@@ -10,6 +10,7 @@
 >   3. **Accompagnamento** su misura: solo se il cliente ricontatta Francesco. Lui non chiama e non manda preventivi.
 >   - Si arriva all'analisi dopo lo smontaggio, quando il cliente ricontatta Francesco. Chi vuole saltarlo scrive a consulting@francescoastolfi.net.
 >   - **/hday/** è l'offerta per chi era all'Hospitality Day del 13 ottobre 2026: €697 + IVA invece di €2.500, 10 posti, entro il 31 ottobre 2026, pagamento Stripe.
+>   - **Accanto alla scala, dal 28 ottobre 2026: la sfida** (/sfida/). Landing per una campagna, €997 + IVA (prezzo solo su /sfida/), test A/B di 30 giorni contro la pagina dell'hotel, rimborso totale se il sito dell'hotel vince o pareggia. Ha una sua richiesta, la **verifica gratuita** («Chiedi la verifica gratis», «Verifica se posso vincere»): esiste solo su /sfida/ e non sostituisce lo smontaggio, che resta la richiesta del resto del sito.
 >   - Non esiste più l'«analisi gratuita». Mai «candidatura», «candidati», «selezione». Restano come risorse secondarie il test (/quiz/), i bonus del libro (/bonus/), la library e il libro.
 > - Le domande dirette al lettore sono ammesse quando sono vere e concrete («Di cosa è il numero 1 il tuo hotel, nella tua zona?»).
 > - Restano: il dato prima dell'aggettivo, niente sarcasmo, niente metafore mediche, onestà sui casi, niente lineette lunghe, il prezzo dell'analisi completa solo in /analisi/ e /hday/.

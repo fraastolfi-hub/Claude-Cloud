@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La sfida: la mia landing contro la pagina del tuo hotel · Hotel Positioning</title>
+<meta name="description" content="Scrivo la landing per una campagna del tuo hotel e la metto in test A/B contro la tua pagina per 30 giorni, a metà traffico. Se il tuo sito vince o pareggia, ti rimborso tutto. Prima una verifica gratuita: ti dico se posso vincere.">
+<link rel="canonical" href="https://hotelpositioning.com/sfida/">
+<meta property="og:title" content="Metto la mia pagina contro il tuo sito. Se perdo, paghi zero.">
+<meta property="og:description" content="Una landing per una campagna, test A/B di 30 giorni contro la tua pagina, rimborso totale se perdo. Prima una verifica gratuita.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
+<meta name="theme-color" content="#fffdf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=79bb2f11">
+
+<style>
+/* --- hero --- */
+.sf-hero{padding:clamp(40px,7vw,96px) 0 clamp(64px,8vw,104px);background-color:var(--carta);background-image:radial-gradient(var(--punto) 1.7px,transparent 1.7px);background-size:24px 24px;border-bottom:var(--bd)}
+.sf-hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) clamp(200px,32vw,400px);gap:clamp(32px,5vw,64px);align-items:start}
+.sf-hero h1{font:400 clamp(40px,6vw,80px)/.93 var(--display);letter-spacing:-.02em;text-transform:uppercase;margin:22px 0 24px}
+.sf-hero h1 em{font-style:normal;background:var(--giallo);padding:0 .14em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.sf-hero .lead{max-width:60ch}
+.sf-benefits{list-style:none;display:flex;flex-direction:column;gap:12px;margin:26px 0 30px;max-width:620px;font-size:17px;line-height:1.45}
+.sf-benefits li{display:flex;gap:12px;align-items:flex-start}
+.sf-tick{flex:none;display:inline-grid;place-items:center;width:26px;height:26px;background:var(--giallo);border:2px solid var(--inchiostro);margin-top:1px}
+.sf-tick svg{width:18px;height:18px}
+.sf-hero .micro{margin-top:16px}
+.sf-photo{position:relative;margin:0 0 40px;max-width:400px;width:100%;justify-self:end}
+.sf-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border:var(--bd);box-shadow:var(--o-2xl);background:var(--carta)}
+.sf-photo blockquote{position:absolute;left:-16px;right:24px;bottom:-40px;transform:rotate(-.8deg);background:var(--giallo);border:var(--bd);box-shadow:var(--o-md);padding:16px 18px;font:400 clamp(17px,1.8vw,22px)/1.1 var(--display)}
+.sf-photo figcaption{position:absolute;left:-9999px}
+/* --- striscia nomi --- */
+.sf-strip{background:var(--inchiostro);color:var(--carta);border-bottom:var(--bd)}
+.sf-strip .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 36px;padding-top:22px;padding-bottom:22px}
+.sf-strip a{color:var(--giallo);font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;min-height:44px;display:inline-flex;align-items:center;text-decoration:none}
+.sf-strip ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 30px;font:400 clamp(17px,1.8vw,23px)/1 var(--display);text-transform:uppercase}
+/* --- tre vantaggi --- */
+.sf-grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+/* --- confronto con due telefoni --- */
+.sf-versus{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:28px;align-items:center;max-width:860px}
+.sf-versus figure{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+.sf-versus figcaption{max-width:300px;font:13px/1.55 var(--mono);color:var(--inchiostro-3)}
+.sf-vs{width:64px;height:64px;display:grid;place-items:center;transform:rotate(-6deg);background:var(--pomodoro);color:#fff;border:var(--bd);box-shadow:var(--o-xs);font:400 24px var(--display)}
+.sf-phone{display:block;width:100%;max-width:300px;border:var(--bd);border-radius:28px;padding:10px;background:#0a0a0a;box-shadow:var(--o-2xl);transition:transform .12s,box-shadow .12s;text-decoration:none}
+.sf-phone .scr{display:block;border-radius:18px;overflow:hidden;aspect-ratio:577/900;background:#f4efe2}
+.sf-phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.sf-phone.off{filter:grayscale(1);box-shadow:var(--o-md)}
+@media (hover:hover){a.sf-phone:hover,.sf-ex a:hover .sf-phone{transform:translate(-3px,-3px);box-shadow:13px 13px 0 #0a0a0a}}
+.sf-gen{display:flex;flex-direction:column;gap:12px;padding:0 0 18px;background:#f4f2ee;color:#6e6a62;font-family:Georgia,'Times New Roman',serif;text-align:center}
+.sf-gen .bar{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#fff;border-bottom:1px solid #ddd8cf;color:#8a857c}
+.sf-gen .logo-ph{width:84px;height:14px;background:#b9b3a8}
+.sf-gen .img{height:34%;display:grid;place-items:center;background:#d6d1c7;color:#a49e92}
+.sf-gen .h{font-size:22px;line-height:1.15;padding:0 18px}
+.sf-gen .t{font-size:13px;line-height:1.5;padding:0 20px}
+.sf-gen .m{font:11px/1.7 system-ui,sans-serif;padding:0 18px;color:#6e6a62}
+.sf-gen .b{align-self:center;color:#5c5a54;font:11px system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;border:1px solid #a49e92;padding:9px 16px}
+/* --- esempi reali --- */
+.sf-ex{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:8px}
+.sf-ex a{display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;text-decoration:none;color:inherit}
+.sf-ex li:nth-child(2){transform:translateY(-36px)}
+.sec.dark .sf-ex .sf-phone{border-color:#fffdf6;box-shadow:10px 10px 0 var(--giallo)}
+@media (hover:hover){.sec.dark .sf-ex a:hover .sf-phone{box-shadow:13px 13px 0 var(--giallo)}}
+.sf-ex .meta{display:flex;flex-direction:column;gap:8px;align-items:center;max-width:300px}
+.sf-ex .k{font:700 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#b9b4a9}
+.sf-ex .n{font:400 22px/1.05 var(--display);text-transform:uppercase}
+.sf-ex q{font-style:italic;font-size:16px;line-height:1.45;color:#d8d4ca}
+.sf-ex .go{color:var(--giallo);font:700 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:underline;text-underline-offset:5px}
+/* --- referenze --- */
+.sf-ledger{list-style:none;background:var(--carta);border:var(--bd);box-shadow:var(--o-2xl)}
+.sf-ledger li{display:flex;flex-wrap:wrap;gap:10px 32px;align-items:baseline;padding:24px 26px;border-bottom:var(--bd)}
+.sf-ledger li:last-child{border-bottom:0}
+.sf-ledger .who{flex:1 1 230px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.sf-ledger h3{font:400 23px/1.02 var(--display);text-transform:uppercase}
+.sf-ledger .role{font:700 12px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--inchiostro-3)}
+.sf-ledger p{flex:2 1 340px;min-width:0;font-size:16px;line-height:1.5;color:var(--inchiostro-2)}
+.sf-ledger .num{flex:0 0 auto;min-width:150px;text-align:right;font:400 28px/1 var(--display);font-variant-numeric:tabular-nums}
+@media (hover:hover){.sf-ledger li{transition:background-color .14s}.sf-ledger li:hover{background:#fff6cf}}
+/* --- regole e tabellone --- */
+.sf-rules-top{display:flex;flex-wrap:wrap;gap:32px 56px;align-items:center;margin-bottom:32px}
+.sf-rules-top>div:first-child{flex:1 1 380px;min-width:0}
+.sf-board{flex:1 1 400px;min-width:0;max-width:500px;display:flex;flex-direction:column;gap:12px}
+.sf-board .card-b{background:#0a0a0a;color:#fffdf6;border:3px solid #fffdf6;box-shadow:10px 10px 0 var(--giallo)}
+.sf-board .hd,.sf-board dl>div{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:12px var(--mono);letter-spacing:.05em;text-transform:uppercase}
+.sf-board .hd{padding:16px 22px;border-bottom:3px solid #fffdf6;font-weight:700;color:var(--giallo)}
+.sf-board .hd span+span{color:#b9b4a9}
+.sf-board .score{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#fffdf6}
+.sf-board .score>div{padding:24px 22px;display:flex;flex-direction:column;gap:8px;color:#d8d4ca;background:#0a0a0a}
+.sf-board .lab{font:700 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.sf-board .pct{font:400 clamp(38px,5vw,52px)/1 var(--display);font-variant-numeric:tabular-nums}
+.sf-board .unit{font-size:14px;line-height:1.4}
+.sf-board dl{padding:16px 22px;border-top:3px solid #fffdf6;display:grid;gap:10px;color:#d8d4ca}
+.sf-board dd{font-weight:700}
+.sf-board .y{color:var(--giallo)}
+.sf-board figcaption{font:12px/1.6 var(--mono);color:#b9b4a9}
+/* l'unico movimento della pagina: la colonna della landing si riempie di giallo all'ingresso */
+.sf-board .win{position:relative;isolation:isolate;transition:color .25s ease-out .45s}
+.sf-board .win::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--giallo);clip-path:inset(100% 0 0 0);transition:clip-path .7s cubic-bezier(.16,1,.3,1) .15s}
+.sf-board.in .win{color:#0a0a0a}
+.sf-board.in .win::before{clip-path:inset(0)}
+.sf-board .stamp{position:absolute;top:-16px;right:-10px;transform:rotate(-6deg) scale(.6);opacity:0;background:#0a0a0a;color:var(--giallo);border:2px solid #0a0a0a;padding:3px 8px;font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;transition:transform .3s cubic-bezier(.34,1.56,.64,1) .8s,opacity .2s ease-out .8s}
+.sf-board.in .stamp{opacity:1;transform:rotate(-6deg) scale(1)}
+@media (prefers-reduced-motion:reduce){.sf-board .win{color:#0a0a0a}.sf-board .win::before{clip-path:inset(0)}.sf-board .stamp{opacity:1;transform:rotate(-6deg)}}
+.sf-steps{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.sf-steps li{border:3px solid #fffdf6;padding:24px;display:flex;flex-direction:column;gap:10px}
+.sf-steps li p{color:#d8d4ca;font-size:16px;line-height:1.5}
+.sf-steps li.last{background:var(--giallo);color:#0a0a0a}
+.sf-steps li.last p{color:#0a0a0a}
+.sf-steps b{width:44px;height:44px;display:grid;place-items:center;background:var(--giallo);color:#0a0a0a;border:3px solid #fffdf6;font:700 17px var(--mono)}
+.sf-steps li.last b{background:#fffdf6;border-color:#0a0a0a}
+.sf-steps h3{font:400 20px/1.05 var(--display);text-transform:uppercase}
+/* --- prezzo --- */
+.sf-price{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.sf-price>div:first-child{flex:1 1 400px;min-width:0}
+.sf-price .card{flex:1 1 360px;min-width:0;max-width:480px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.sf-price .eur{font:400 60px/1 var(--display);letter-spacing:-.02em}
+.sf-price .eur small{font:14px var(--mono);letter-spacing:.04em;color:var(--inchiostro-3)}
+/* --- modulo della verifica --- */
+.vf{background:var(--carta);border:var(--bd);box-shadow:var(--o-2xl);scroll-margin-top:96px}
+.vf-prog{display:flex;align-items:center;gap:14px;padding:14px 22px;border-bottom:2px solid var(--inchiostro);font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.vf-prog span+span{flex:1;height:10px;border:2px solid var(--inchiostro)}
+.vf-prog i{display:block;height:100%;background:var(--inchiostro);transition:width .16s}
+.vf-screen{padding:clamp(22px,4vw,34px);outline:none}
+.vf-screen form{display:flex;flex-direction:column;gap:16px}
+.vf-q{display:block;font:400 clamp(21px,2.5vw,27px)/1.08 var(--display);text-transform:uppercase}
+.vf-hint{font-size:15px;line-height:1.5;color:var(--inchiostro-3)}
+.vf input[type=url],.vf input[type=email],.vf input[type=text]{width:100%;font:inherit;font-size:18px;padding:15px 16px;min-height:56px;border:var(--bd);background:var(--carta);color:var(--inchiostro);border-radius:0}
+.vf input:focus{outline:3px solid var(--azzurro);outline-offset:2px}
+.vf fieldset{border:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.vf .opts{display:grid;gap:10px}
+.vf .opts.two{grid-template-columns:1fr 1fr}
+.vf .opt{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:center;min-height:52px;border:2px solid var(--inchiostro);padding:12px 14px;font-weight:600;cursor:pointer;background:var(--carta)}
+.vf .opt:has(input:checked){background:var(--giallo);box-shadow:var(--o-xs)}
+.vf .opt input{width:20px;height:20px;accent-color:var(--inchiostro)}
+.vf .check{font-size:15px}
+.vf-err{background:var(--pomodoro);color:#0a0a0a;border:2px solid var(--inchiostro);padding:12px 16px;font-weight:600;font-size:15px;line-height:1.45}
+.vf-link{background:none;border:0;padding:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px;min-height:44px}
+.vf-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.vf-done{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.vf-done .sticker{transform:rotate(-3deg)}
+.vf-done h3{font:400 clamp(24px,3vw,32px)/1.02 var(--display);text-transform:uppercase}
+.vf-done ol{padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.5}
+.sf-promises{border-top:2px solid var(--inchiostro);border-bottom:2px solid var(--inchiostro);padding:16px 0;margin:18px 0}
+/* --- adattamento --- */
+@media (max-width:860px){.sf-ex{gap:20px}.sf-ex li:nth-child(2){transform:translateY(-20px)}}
+@media (max-width:760px){.sf-versus{grid-template-columns:1fr;gap:20px}.sf-vs{justify-self:center}}
+@media (max-width:600px){
+  .sf-hero{padding-top:24px}
+  .sf-hero .wrap{grid-template-columns:1fr;gap:24px}
+  .sf-photo{order:-1;justify-self:stretch;max-width:none;margin:0}
+  .sf-photo img{aspect-ratio:16/10;object-position:50% 22%}
+  .sf-photo blockquote{position:relative;left:auto;right:auto;bottom:auto;margin:-16px 12px 0;padding:10px 14px;font-size:16px}
+  .sf-ex{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;margin:0 calc(-1*var(--gut));padding:4px var(--gut) 24px;scroll-padding:0 var(--gut);scrollbar-width:none}
+  .sf-ex::-webkit-scrollbar{display:none}
+  .sf-ex li{flex:0 0 78%;scroll-snap-align:start}
+  .sf-ex li:nth-child(2){transform:none}
+  .sec.dark .sf-ex .sf-phone{box-shadow:6px 6px 0 var(--giallo)}
+  .sf-ledger .num{text-align:left;min-width:0}
+  .vf .opts.two{grid-template-columns:1fr}
+}
+</style>
+<link rel="stylesheet" href="/assets/brutalist.css?v=46f0d0c4">
+
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="readbar" aria-hidden="true"></div>
+<div role="region" aria-label="Novità"><a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
+  <div class="ticker-track" aria-hidden="true">
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
+  </div>
+</a></div>
+<header class="nav">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <nav class="nav-links" aria-label="Principale">
+      <a href="/metodo/">Il metodo</a>
+      <a href="/analisi/">L'analisi</a>
+      <a aria-current="page" href="/sfida/">La sfida</a>
+      <a href="/casi/">Casi</a>
+      <a href="/libro/">Libro</a>
+      <a href="/risorse/">Risorse gratuite</a>
+      <a href="/francesco/">Chi sono</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn sm" href="/#richiedi">Richiedi lo smontaggio <span class="arr">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Apri il menu"><i></i></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mm" aria-label="Menu mobile">
+    <a href="/metodo/">Il metodo</a>
+    <a href="/analisi/">L'analisi di posizionamento</a>
+    <a aria-current="page" href="/sfida/">La sfida: la landing per una campagna</a>
+    <a href="/casi/">Casi</a>
+    <a href="/libro/">Il libro</a>
+    <a href="/risorse/">Risorse gratuite</a>
+    <a href="/francesco/">Chi sono</a>
+    <a class="btn" href="/#richiedi">Richiedi lo smontaggio gratuito <span class="arr">→</span></a>
+  </nav>
+</header>
+
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="sf-hero" id="inizio">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Una scommessa, non un preventivo</span>
+      <h1>Metto la mia pagina contro il tuo sito. <em>Se perdo, paghi zero.</em></h1>
+      <p class="lead">Stessa campagna, stesso prezzo, stesso traffico diviso a metà per 30 giorni. Cambiano solo le parole. Vince chi porta più prenotazioni. Non serve fidarsi di me: basta guardare il conteggio.</p>
+      <ul class="sf-benefits">
+        <li><span class="sf-tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12l4 4 10-10"/></svg></span><span><strong>Più prenotazioni dalla stessa campagna.</strong> La pagina parla solo a chi ha cliccato l'annuncio, non a tutti.</span></li>
+        <li><span class="sf-tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12l4 4 10-10"/></svg></span><span><strong>Meno ospiti che confrontano il prezzo.</strong> Il motivo per cui scegliere te, scritto con le parole dei tuoi ospiti.</span></li>
+        <li><span class="sf-tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12l4 4 10-10"/></svg></span><span><strong>Nessun rischio.</strong> Se dopo 30 giorni il tuo sito vince o pareggia, ti rimborso tutto.</span></li>
+        <li><span class="sf-tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12l4 4 10-10"/></svg></span><span><strong>Online in circa 14 giorni.</strong> Sul tuo dominio, accanto al sito che hai già: non rifai niente.</span></li>
+      </ul>
+      <div class="btn-row">
+        <a href="#verifica" class="btn">Accetta la sfida <span class="arr">→</span></a>
+        <a href="#regole" class="btn ghost">Leggi le regole</a>
+      </div>
+      <p class="micro">Prima una verifica gratuita: ti dico se posso batterlo. Se no, finisce lì.</p>
+    </div>
+    <figure class="sf-photo">
+      <img src="/assets/img/francesco.webp" alt="Francesco Astolfi, in camicia bianca davanti a un muro di mattoni, guarda in camera" width="560" height="748" fetchpriority="high">
+      <blockquote>I consulenti vendono consigli. Gli operatori vendono cicatrici.</blockquote>
+      <figcaption>Francesco Astolfi</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sf-strip" aria-label="Referenze">
+  <div class="wrap">
+    <a href="#referenze">Ho lavorato per e con →</a>
+    <ul><li>Atahotels</li><li>TUI.it</li><li>Silva Splendid</li><li>Veridia Resort</li><li>Tocq Hotel</li></ul>
+  </div>
+</section>
+
+<!-- ================= N°01 PERCHÉ POSSO SCOMMETTERE ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>Il tuo sito parla a tutti. <em>Chi clicca l'annuncio è uno.</em></h2>
+      <p class="lead">Il sito deve servire lo sposo, il congressista e la famiglia con il cane. La landing ne serve uno solo: quello che ha appena cliccato. Parte in vantaggio. Io aggiungo il resto.</p>
+    </div>
+    <div class="sf-grid3">
+      <div class="card rv"><h3>Una sola promessa</h3><p>Quella dell'annuncio, ripresa nelle prime parole. Chi arriva non deve cercare niente.</p></div>
+      <div class="card rv d1"><h3>Le parole degli ospiti</h3><p>Prese dalle tue recensioni, non dal dizionario dell'hotellerie. «Comfort» e «relax» non li scrive nessuno.</p></div>
+      <div class="card rv d2"><h3>Un'uscita sola</h3><p>Niente menu, niente «scopri di più». O prenoti, o chiedi. Tutto il resto è una porta verso Booking.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°02 LE DUE PAGINE IN GARA ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>Le due pagine in gara. <em>Su quale cliccheresti tu?</em></h2>
+    </div>
+    <div class="sf-versus">
+      <figure>
+        <span class="chip">Pagina A · il sito tipico</span>
+        <div class="sf-phone off" aria-hidden="true"><div class="scr sf-gen">
+          <div class="bar"><span class="logo-ph"></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
+          <div class="img"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14"/><circle cx="9" cy="10" r="1.6"/><path d="M3 17l5-5 4 4 3-3 6 6"/></svg></div>
+          <p class="h">Benvenuti nel nostro hotel</p>
+          <p class="t">Una struttura elegante immersa nel verde, ideale per famiglie, coppie e viaggi di lavoro.</p>
+          <p class="m">Camere · Ristorante · Spa · Meeting · Matrimoni · Offerte · Contatti</p>
+          <span class="b">Scopri di più</span>
+        </div></div>
+        <figcaption>Esempio costruito: un saluto, tre aggettivi, nove uscite. Parla a tutti, non convince nessuno.</figcaption>
+      </figure>
+      <span class="sf-vs" aria-hidden="true">VS</span>
+      <figure>
+        <span class="chip y">Pagina B · una landing vera</span>
+        <a class="sf-phone" href="https://hoteltocqmilano.it/" target="_blank" rel="noopener"><span class="scr"><img src="/assets/img/sfida-tocq.jpg" alt="La landing di Tocq Hotel Milano per i concerti a San Siro, vista da telefono" width="577" height="1200" loading="lazy"></span></a>
+        <figcaption>Tocq Hotel, Milano: un concerto, una promessa, un'uscita sola.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°03 ESEMPI REALI ================= -->
+<section class="sec dark" id="esempi">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°03</span>
+      <h2>Tre hotel, tre campagne, <em>tre pagine.</em></h2>
+      <p class="lead">Ognuna parla a un solo ospite e risponde a una sola domanda: perché questo hotel, per questa occasione. Aprile dal telefono, come le vede chi arriva dall'annuncio.</p>
+    </div>
+    <ul class="sf-ex" aria-label="Tre landing di esempio">
+      <li><a href="https://offerte.silvasplendid.it/" target="_blank" rel="noopener"><span class="sf-phone"><span class="scr"><img src="/assets/img/sfida-silva.jpg" alt="La landing di Silva Splendid vista da telefono" width="577" height="1200" loading="lazy"></span></span><span class="meta"><span class="k">Fiuggi · Anniversari e occasioni speciali</span><span class="n">Silva Splendid</span><q>La vostra occasione speciale: senza distrazioni, senza fretta, senza compromessi.</q><span class="go">Apri la pagina ↗</span></span></a></li>
+      <li><a href="https://stay.veridiaresort.com/" target="_blank" rel="noopener"><span class="sf-phone"><span class="scr"><img src="/assets/img/sfida-veridia.jpg" alt="La landing di Veridia Resort vista da telefono" width="577" height="1200" loading="lazy"></span></span><span class="meta"><span class="k">Chia, Sardegna · Mercato estero, natura</span><span class="n">Veridia Resort</span><q>Silence, Wild Nature, and the Cleanest Sea in Italy.</q><span class="go">Apri la pagina ↗</span></span></a></li>
+      <li><a href="https://hoteltocqmilano.it/" target="_blank" rel="noopener"><span class="sf-phone"><span class="scr"><img src="/assets/img/sfida-tocq.jpg" alt="La landing di Tocq Hotel vista da telefono" width="577" height="1200" loading="lazy"></span></span><span class="meta"><span class="k">Milano · Concerti a San Siro, estate 2026</span><span class="n">Tocq Hotel</span><q>Il concerto finisce a San Siro. La serata continua a Corso Como.</q><span class="go">Apri la pagina ↗</span></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= N°04 REFERENZE ================= -->
+<section class="sec alt" id="referenze">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°04</span>
+      <h2>Scommetto su cose <em>che ho già fatto.</em></h2>
+      <p class="lead">Vent'anni tra ospitalità e viaggi, da una parte e dall'altra del banco: dentro le catene, dentro le OTA, con i miei soldi.</p>
+    </div>
+    <ul class="sf-ledger rv">
+      <li><div class="who"><h3>Atahotels</h3><span class="role">Gruppo di 20 hotel · Responsabile marketing</span></div><p>Una catena vera, venti hotel diversi, la stessa domanda ogni giorno: cosa dice questo hotel che gli altri non dicono?</p><span class="num">20 hotel</span></li>
+      <li><div class="who"><h3>TUI.it</h3><span class="role">Gruppo TUI · Da stagista a responsabile marketing</span></div><p>Ho lanciato l'OTA da zero. So come ragiona chi oggi ti porta via l'ospite, perché quella macchina l'ho costruita.</p><span class="num">€0 → 30M</span></li>
+      <li><div class="who"><h3>Silva Splendid</h3><span class="role">Fiuggi · Posizionamento</span></div><p>L'Hotel Benessere di Fiuggi. Tariffa media circa raddoppiata, recensioni Booking da 8,6 a 9. Insieme a una ristrutturazione vera: il posizionamento ha dato la direzione.</p><span class="num">×2 tariffa</span></li>
+      <li><div class="who"><h3>Veridia Resort</h3><span class="role">Chia, Sardegna · Riposizionamento</span></div><p>The nature resort of Chia. Il nome del luogo, preso e tenuto. Il riposizionamento è recente: nessun prima e dopo di fatturato da mostrare.</p><span class="num">60%+ dirette</span></li>
+      <li><div class="who"><h3>Yume Ramen</h3><span class="role">Cinque locali · Fondatore</span></div><p>Non un cliente: un'impresa mia, inventata e costruita con i miei soldi, da zero a 2,5 milioni.</p><span class="num">€2,5M</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= N°05 LE REGOLE ================= -->
+<section class="sec dark" id="regole">
+  <div class="wrap">
+    <div class="sf-rules-top">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="num-tag">N°05</span>
+        <h2>Le regole della sfida. <em>Scritte prima, uguali per tutte e due.</em></h2>
+      </div>
+      <figure class="sf-board" id="tabellone">
+        <div class="card-b">
+          <div class="hd"><span>Test A/B · giorno 30 di 30</span><span>[Nome campagna]</span></div>
+          <div class="score">
+            <div><span class="lab">Il tuo sito</span><span class="pct">[A]%</span><span class="unit">prenotazioni su visite</span></div>
+            <div class="win"><span class="stamp">La mia scommessa</span><span class="lab">La landing</span><span class="pct">[B]%</span><span class="unit">prenotazioni su visite</span></div>
+          </div>
+          <dl><div><dt>Visite per pagina</dt><dd>≥ 1.000</dd></div><div><dt>Prezzo e offerta</dt><dd>Invariati</dd></div><div><dt>Se A ≥ B</dt><dd class="y">Rimborso totale</dd></div></dl>
+        </div>
+        <figcaption>Così ti arriva il risultato. I numeri li riempie il tuo test.</figcaption>
+      </figure>
+    </div>
+    <ol class="sf-steps">
+      <li><b>1</b><h3>Verifica, poi call</h3><p>Gratis ti dico se posso vincere. Se sì, in una call di 60 minuti raccolgo offerta, prezzi e foto.</p></li>
+      <li><b>2</b><h3>Scrivo lo sfidante</h3><p>Approvi i testi per iscritto, poi il design nel tuo brand. Online sul tuo dominio in circa 14 giorni.</p></li>
+      <li><b>3</b><h3>Metà traffico a testa</h3><p>Per 30 giorni, almeno 1.000 visite per pagina. Prezzo e offerta non si toccano.</p></li>
+      <li class="last"><b>4</b><h3>Si conta</h3><p>Prenotazioni o richieste diviso visite. Se il tuo sito vince o pareggia, ti rimborso tutto.</p></li>
+    </ol>
+    <p class="micro" style="margin-top:28px">Sotto le 1.000 visite il test si allunga finché i numeri bastano. Non incluso: gestione campagne, budget media, foto e video.</p>
+  </div>
+</section>
+
+<!-- ================= N°06 PREZZO ================= -->
+<section class="sec white" id="prezzo">
+  <div class="wrap sf-price">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="num-tag">N°06</span>
+        <h2>Il rischio <em>lo prendo io.</em></h2>
+        <p class="lead">Tu metti la campagna che faresti comunque. Io metto il mio lavoro. Se dopo 30 giorni il tuo sito ha fatto meglio, la landing va offline e i soldi tornano a te.</p>
+      </div>
+    </div>
+    <div class="card">
+      <span class="kicker"><b>Una landing per una campagna</b></span>
+      <p class="eur">997 € <small>+ IVA</small></p>
+      <ul class="check-list">
+        <li>La frase-radice: il motivo per cui scegliere te, in una riga</li>
+        <li>Copy, design e pubblicazione sul tuo dominio</li>
+        <li>Booking engine o modulo, pixel Meta, 5 annunci</li>
+        <li>Test A/B di 30 giorni, con rimborso se perdo</li>
+      </ul>
+      <a href="#verifica" class="btn dark">Accetta la sfida <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOMANDE ================= -->
+<section class="sec alt" id="domande">
+  <div class="wrap narrow">
+    <div class="sec-head">
+      <span class="num-tag">N°07</span>
+      <h2>Dov'è <em>il trucco?</em></h2>
+    </div>
+    <div class="faq">
+      <details><summary>E se perdi davvero?</summary><div class="ans"><p>Ti rimborso tutto e la landing va offline. Ti resta quello che il test ha detto sulla tua pagina.</p></div></details>
+      <details><summary>Cosa ricevo dalla verifica gratuita?</summary><div class="ans"><p>Una risposta: posso battere la tua pagina, sì o no. E i due o tre punti in cui oggi perde ospiti, con le sue parole esatte. La soluzione, cioè il motivo per cui scegliere te in una riga, è il primo pezzo del lavoro.</p></div></details>
+      <details><summary>Che differenza c'è con lo smontaggio della homepage?</summary><div class="ans"><p>Lo <a href="/smontaggio/">smontaggio</a> guarda la tua homepage e ti dice se sei posizionato, sostituibile o invisibile. La verifica guarda la pagina di una campagna e ti dice se posso batterla in un test.</p></div></details>
+      <details><summary>Chi conta le prenotazioni?</summary><div class="ans"><p>Lo stesso strumento per tutte e due le pagine, deciso insieme prima di partire. Vedi i numeri quando li vedo io.</p></div></details>
+      <details><summary>E se ho poco traffico?</summary><div class="ans"><p>Servono almeno 1.000 visite per pagina. Sotto soglia il test si allunga finché i numeri bastano per dire chi ha vinto.</p></div></details>
+      <details><summary>Ho già un'agenzia. Devo cambiarla?</summary><div class="ans"><p>No. Io porto il motivo e i testi. Le campagne restano a chi le fa oggi.</p></div></details>
+      <details><summary>Funziona con il mio booking engine?</summary><div class="ans"><p>La pagina porta al tuo booking engine o a un modulo di richiesta. Lo verifichiamo nella prima call.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LA VERIFICA ================= -->
+<section class="sec form-sec" id="verifica" data-sticky-stop>
+  <div class="wrap split">
+    <div>
+      <div class="sec-head" style="margin-bottom:24px">
+        <span class="sticker">Gratis · senza call</span>
+        <h2>Prima ti dico <em>se posso vincere.</em></h2>
+        <p class="lead">Mandami la campagna e la pagina dove arriva. Entro due giorni lavorativi ricevi una risposta secca: posso battere il tuo sito, sì o no. Con i due o tre punti in cui la tua pagina perde oggi.</p>
+      </div>
+      <p><strong>Se è no, te lo dico e finisce lì. Se è sì, si gioca.</strong></p>
+      <ul class="sf-benefits sf-promises">
+        <li><span class="sf-tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12l4 4 10-10"/></svg></span><span><strong>La landing resta tua:</strong> dominio, testi e file.</span></li>
+        <li><span class="sf-tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12l4 4 10-10"/></svg></span><span><strong>Lavori direttamente con me,</strong> dall'inizio alla fine.</span></li>
+      </ul>
+      <p class="micro">Il test chiede almeno 2.000 visite in 30 giorni: 1.000 per pagina.</p>
+    </div>
+
+    <div class="vf" id="vf" data-sending="0">
+      <div class="vf-prog" aria-hidden="true"><span data-passo>Passo 1 di 2</span><span><i style="width:50%"></i></span></div>
+      <div class="vf-screen" tabindex="-1">
+
+        <form data-fase="url" novalidate>
+          <label for="vf-url" class="vf-q">Qual è la pagina dove arriva la campagna?</label>
+          <p class="vf-hint">Quella che vede chi clicca l'annuncio. Non il link di Booking.</p>
+          <input id="vf-url" type="url" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="www.tuohotel.it/offerte">
+          <p class="vf-err" role="alert" hidden></p>
+          <button class="btn dark" type="submit">Avanti <span class="arr">→</span></button>
+        </form>
+
+        <form data-fase="email" novalidate hidden>
+          <label for="vf-email" class="vf-q">Dove ti mando la risposta?</label>
+          <p class="vf-hint">Pagina: <strong data-host></strong> <button type="button" class="vf-link" data-vai="url">cambia</button></p>
+          <input id="vf-email" type="email" inputmode="email" autocomplete="email" placeholder="nome@tuohotel.it">
+          <div class="vf-trap" aria-hidden="true"><label>Sito web <input name="sito_web" tabindex="-1" autocomplete="off"></label></div>
+          <label class="check"><input type="checkbox" id="vf-consenso"><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento a essere ricontattato via email per la verifica.</span></label>
+          <p class="vf-err" role="alert" hidden></p>
+          <button class="btn dark" type="submit">Avanti <span class="arr">→</span></button>
+        </form>
+
+        <form data-fase="dettagli" novalidate hidden>
+          <fieldset>
+            <legend class="vf-q">Quale campagna vuoi mettere in gara?</legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="tipo" value="pacchetti"><span>Pacchetti e offerte</span></label>
+              <label class="opt"><input type="radio" name="tipo" value="bassa_stagione"><span>Bassa stagione</span></label>
+              <label class="opt"><input type="radio" name="tipo" value="matrimoni_eventi"><span>Matrimoni ed eventi</span></label>
+              <label class="opt"><input type="radio" name="tipo" value="mice_gruppi"><span>MICE e gruppi</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend class="vf-q">Quante visite al mese porta la campagna?</legend>
+            <div class="opts two">
+              <label class="opt"><input type="radio" name="traffico" value="meno_2000"><span>Meno di 2.000</span></label>
+              <label class="opt"><input type="radio" name="traffico" value="2000_5000"><span>2.000 – 5.000</span></label>
+              <label class="opt"><input type="radio" name="traffico" value="oltre_5000"><span>Più di 5.000</span></label>
+              <label class="opt"><input type="radio" name="traffico" value="non_so"><span>Non lo so ancora</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend class="vf-q">Quando parte la campagna?</legend>
+            <div class="opts two">
+              <label class="opt"><input type="radio" name="avvio" value="subito"><span>Subito</span></label>
+              <label class="opt"><input type="radio" name="avvio" value="30_giorni"><span>Entro 30 giorni</span></label>
+              <label class="opt"><input type="radio" name="avvio" value="60_giorni"><span>Entro 60 giorni</span></label>
+              <label class="opt"><input type="radio" name="avvio" value="non_ho_fretta"><span>Non ho fretta</span></label>
+            </div>
+          </fieldset>
+          <div class="field"><label for="vf-nome">Il tuo nome</label><input id="vf-nome" type="text" autocomplete="name" placeholder="Giulia Rossi"></div>
+          <p class="vf-err" role="alert" hidden></p>
+          <button class="btn dark" type="submit">Verifica se posso vincere <span class="arr">→</span></button>
+        </form>
+
+        <div class="vf-done" data-fase="inviata" hidden>
+          <span class="sticker">Ricevuta</span>
+          <h3>Entro due giorni lavorativi ti dico se posso vincere.</h3>
+          <ol>
+            <li><strong>Adesso</strong> guardo <strong data-host></strong> come la vede chi arriva dall'annuncio.</li>
+            <li><strong>Entro due giorni lavorativi</strong> ti arriva una email da <strong>consulting@francescoastolfi.net</strong>, firmata da me: sì o no, con i punti in cui la pagina perde.</li>
+            <li><strong>Se è sì</strong>, dalla stessa email prenoti la call. Se è no, finisce lì.</li>
+          </ol>
+          <p class="vf-hint">Non vedi l'email? Controlla nello spam e segna l'indirizzo come sicuro.</p>
+        </div>
+
+        <div class="vf-done" data-fase="duplicata" hidden>
+          <span class="sticker">Già ricevuta</span>
+          <h3>Questa pagina l'ho già in verifica.</h3>
+          <p>La risposta arriva, o è già arrivata, da <strong>consulting@francescoastolfi.net</strong> all'indirizzo che hai indicato. Se non la trovi, guarda nello spam o rispondi a quella email.</p>
+        </div>
+
+        <div class="vf-done" data-fase="filtrata" hidden>
+          <span class="sticker">Per ora no</span>
+          <h3>Con meno di 2.000 visite al mese non si chiude la scommessa.</h3>
+          <p>Il test mette la mia pagina contro la tua a metà traffico per 30 giorni e chiede almeno 1.000 visite per pagina. Sotto quella soglia nessuna delle due vince davvero, e non ti faccio pagare una sfida che non si può chiudere.</p>
+          <p>Se vuoi lavorare da solo sul motivo per cui un ospite dovrebbe scegliere te, il metodo è tutto nel libro. Te l'ho scritto anche per email.</p>
+          <a class="btn" href="https://www.amazon.it/dp/B0HL3Z4XL7/" target="_blank" rel="noopener">Il libro · 19,90 € su Amazon <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PASSO ACCANTO ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div>
+        <p class="kicker" style="color:var(--ink)"><b>Non fai ancora campagne?</b> · Lo smontaggio della homepage</p>
+        <h3 style="margin-top:14px">Parti dalla homepage: ti dico se l'ospite riesce a distinguerti.</h3>
+        <p>Gratis, fatto a mano da me, in 3 giorni lavorativi. La prima riga della tua homepage accanto a quella di due o tre concorrenti, con il logo coperto.</p>
+      </div>
+      <a href="/smontaggio/" class="btn dark">Com'è fatto lo smontaggio <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="big">Senza un posizionamento chiaro, l’unica leva che resta è il prezzo.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Il metodo</h2>
+        <ul>
+          <li><a href="/metodo/">I sei passaggi</a></li>
+          <li><a href="/analisi/">L'analisi di posizionamento</a></li>
+          <li><a aria-current="page" href="/sfida/">La sfida: la landing per una campagna</a></li>
+          <li><a href="/casi/">Casi</a></li>
+          <li><a href="/smontaggio/">Lo smontaggio della homepage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Problemi che risolve</h2>
+        <ul>
+          <li><a href="/problemi/booking/">Troppe commissioni OTA</a></li>
+          <li><a href="/problemi/prezzi/">Tariffe che non salgono</a></li>
+          <li><a href="/problemi/sostituibili/">Un hotel uguale agli altri</a></li>
+          <li><a href="/problemi/agenzie/">Agenzie che non bastano</a></li>
+          <li><a href="/problemi/valore/">Il valore del brand</a></li>
+          <li><a href="/problemi/apertura/">Un hotel da aprire</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Risorse gratuite</h2>
+        <ul>
+          <li><a href="/quiz/">Il test di posizionamento</a></li>
+          <li><a href="/bonus/">Gli 8 strumenti del libro</a></li>
+          <li><a href="/library/">La library dei posizionamenti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Francesco</h2>
+        <ul>
+          <li><a href="/francesco/">Chi sono</a></li>
+          <li><a href="/libro/">Il libro</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+      <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
+    </div>
+  </div>
+</footer>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
+  <button type="button" class="cc-x" data-cc="reject" aria-label="Chiudi e rifiuta i cookie non necessari">✕</button>
+  <p class="cc-t" id="cc-t">Cookie e privacy</p>
+  <p class="cc-p">Usiamo cookie tecnici, necessari al sito. Con il tuo consenso usiamo anche cookie di statistica (Google Analytics) e di marketing (Pixel di Meta) per misurare le visite e l’efficacia delle campagne. Puoi cambiare idea in qualsiasi momento. Dettagli nella <a href="/privacy-policy/#cookie">privacy policy</a>.</p>
+  <div class="cc-opts" id="cc-opts" hidden>
+    <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Tecnici</b> Necessari al funzionamento del sito. Sempre attivi.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistica</b> Google Analytics: visite e pagine più lette, in forma aggregata.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-mkt"><span><b>Marketing</b> Pixel di Meta: misura delle campagne su Facebook e Instagram e pubblico per gli annunci.</span></label>
+  </div>
+  <div class="cc-btns">
+    <button type="button" class="btn sm" data-cc="reject">Rifiuta</button>
+    <button type="button" class="btn sm" data-cc="accept">Accetta tutti</button>
+    <button type="button" class="cc-more" data-cc="custom" id="cc-custom">Personalizza</button>
+    <button type="button" class="btn sm" data-cc="save" id="cc-save" hidden>Salva le scelte</button>
+  </div>
+</div>
+<script src="/assets/consent.js?v=a0a1b866"></script>
+
+<div class="exit" id="exit" role="dialog" aria-modal="true" aria-labelledby="exit-t" hidden>
+  <div class="exit-card">
+    <button type="button" class="exit-x" data-exit-close aria-label="Chiudi">✕</button>
+    <span class="exit-k" id="exit-k"></span>
+    <p class="exit-t" id="exit-t"></p>
+    <p class="exit-p" id="exit-p"></p>
+    <div class="exit-btns"><a class="btn" id="exit-cta" href="#"></a></div>
+    <button type="button" class="exit-no" data-exit-close id="exit-no"></button>
+  </div>
+</div>
+
+<script src="/assets/site.js?v=b2bbac6a"></script>
+
+<div class="sticky-cta" role="region" aria-label="La verifica della sfida"><a href="#verifica" class="btn">Chiedi la verifica gratis <span class="arr">→</span></a></div>
+<script>
+(function(){
+  // tabellone: la colonna della landing si riempie una volta, quando entra nello schermo
+  var tab = document.getElementById('tabellone');
+  if (tab) {
+    if (!('IntersectionObserver' in window)) tab.classList.add('in');
+    else { var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting) { tab.classList.add('in'); io.disconnect(); } }, { threshold: .5 }); io.observe(tab); }
+  }
+
+  // modulo della verifica in due passi: /.netlify/functions/verifica-invio (vedi VERIFICA.md)
+  var box = document.getElementById('vf'); if (!box) return;
+  var screen = box.querySelector('.vf-screen'), passo = box.querySelector('[data-passo]'), barra = box.querySelector('.vf-prog i'), prog = box.querySelector('.vf-prog');
+  var lead = null, urlVal = '';
+  var ERR = {
+    url_invalid: "Questo indirizzo non sembra una pagina web. Copialo dalla barra del browser, per esempio www.tuohotel.it/offerte.",
+    url_ota: "Questo è un link a un portale (Booking, Expedia, Google…). Mi serve la pagina del tuo sito dove arriva la campagna: è quella che metto in gara.",
+    email_invalid: "Controlla l'email: sembra mancare qualcosa.",
+    consenso_required: "Per risponderti mi serve il consenso al trattamento dei dati.",
+    campi_mancanti: "Scegli la campagna, le visite, quando parte e scrivi il tuo nome.",
+    rate_limited: "Hai già inviato diverse richieste oggi. Riprova domani o scrivimi a consulting@francescoastolfi.net.",
+    not_found: "La richiesta è scaduta. Ricarica la pagina e ricomincia: ci vogliono trenta secondi.",
+    network: "Non riesco a contattare il server. Controlla la connessione e riprova: i dati sono ancora qui."
+  };
+  var errore = function(c){ return ERR[c] || "Qualcosa non ha funzionato. Riprova tra un momento oppure scrivimi a consulting@francescoastolfi.net."; };
+  var hostDi = function(u){ try { return new URL(/^https?:\/\//i.test(u) ? u : 'https://' + u).hostname.replace(/^www\./, ''); } catch (e) { return u; } };
+  var fasi = box.querySelectorAll('[data-fase]');
+  function vai(f){
+    fasi.forEach(function(el){ el.hidden = el.dataset.fase !== f; });
+    box.querySelectorAll('.vf-err').forEach(function(e){ e.hidden = true; });
+    var n = f === 'url' || f === 'email' ? 1 : 2;
+    prog.hidden = !(f === 'url' || f === 'email' || f === 'dettagli');
+    passo.textContent = 'Passo ' + n + ' di 2'; barra.style.width = n === 1 ? '50%' : '100%';
+    box.querySelectorAll('[data-host]').forEach(function(h){ h.textContent = hostDi(urlVal); });
+    requestAnimationFrame(function(){
+      screen.focus({ preventScroll: true });
+      if (box.getBoundingClientRect().top < 88) box.scrollIntoView({ block: 'start' });
+    });
+  }
+  function mostra(form, c){ var e = form.querySelector('.vf-err'); e.textContent = errore(c); e.hidden = false; }
+  function chiama(body){
+    return fetch('/.netlify/functions/verifica-invio', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function(r){ return r.json().catch(function(){ return { ok: false, errore: 'network' }; }); })
+      .catch(function(){ return { ok: false, errore: 'network' }; });
+  }
+  function occupato(form, si, testo){ var b = form.querySelector('[type=submit]'); b.disabled = si; b.setAttribute('aria-busy', si ? 'true' : 'false'); if (testo) b.firstChild.textContent = testo; }
+  box.querySelectorAll('[data-vai]').forEach(function(b){ b.addEventListener('click', function(){ vai(b.dataset.vai); }); });
+
+  box.querySelector('[data-fase=url]').addEventListener('submit', function(e){
+    e.preventDefault();
+    var s = this.querySelector('input').value.trim();
+    if (!s || s.indexOf('.') < 0 || /\s/.test(s)) return mostra(this, 'url_invalid');
+    if (/(^|[\/.])(booking|expedia|airbnb|tripadvisor|trivago|agoda|google)\.|(^|[\/.])goo\.gl/i.test(s)) return mostra(this, 'url_ota');
+    urlVal = s; vai('email');
+  });
+
+  box.querySelector('[data-fase=email]').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = this, email = f.querySelector('#vf-email').value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return mostra(f, 'email_invalid');
+    if (!f.querySelector('#vf-consenso').checked) return mostra(f, 'consenso_required');
+    var q = new URLSearchParams(location.search), utm = {};
+    ['source', 'medium', 'campaign', 'content'].forEach(function(k){ var v = q.get('utm_' + k); if (v) utm[k] = v; });
+    occupato(f, true, 'Salvo… ');
+    chiama({ azione: 'passo1', url: urlVal, email: email, consenso: true, utm: utm, sito_web: f.querySelector('[name=sito_web]').value })
+      .then(function(r){
+        occupato(f, false, 'Avanti ');
+        if (!r.ok) { if (/^url_/.test(r.errore)) { vai('url'); return mostra(box.querySelector('[data-fase=url]'), r.errore); } return mostra(f, r.errore); }
+        lead = { id: r.id, token: r.token };
+        if (window.HPtrack) HPtrack('lead', { form: 'verifica-sfida' });
+        vai(r.duplicata ? 'duplicata' : 'dettagli');
+      });
+  });
+
+  box.querySelector('[data-fase=dettagli]').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = this, val = function(n){ var x = f.querySelector('input[name=' + n + ']:checked'); return x ? x.value : ''; };
+    var tipo = val('tipo'), traffico = val('traffico'), avvio = val('avvio'), nome = f.querySelector('#vf-nome').value.trim();
+    if (!tipo || !traffico || !avvio || !nome) return mostra(f, 'campi_mancanti');
+    if (!lead) return mostra(f, 'not_found');
+    occupato(f, true, 'Invio… ');
+    chiama({ azione: 'passo2', id: lead.id, token: lead.token, tipo_campagna: tipo, traffico: traffico, avvio: avvio, nome: nome })
+      .then(function(r){
+        occupato(f, false, 'Verifica se posso vincere ');
+        if (!r.ok) return mostra(f, r.errore);
+        vai(r.filtrata ? 'filtrata' : 'inviata');
+      });
+  });
+})();
+</script>
+</body>
+</html>
