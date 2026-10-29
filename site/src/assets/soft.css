@@ -289,3 +289,5 @@ h3 .strike,.card .strike{white-space:normal}
 .logo-mark{--line:var(--inchiostro)}
 .sec.dark .btn.ghost:hover,.sec.dark .btn.ghost:focus{--bg:#fff;--fg:#262521}
 .card.ink .btn.ghost:hover,.pmband .btn.ghost:hover,.bookband .btn.ghost:hover{--bg:#262521;--fg:#faf7f4}
+/* apertura più vicina al menu: il titolo si legge tutto senza scorrere */
+.hero{padding-top:clamp(36px,4.5vw,64px)}
