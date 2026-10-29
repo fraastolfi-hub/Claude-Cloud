@@ -266,3 +266,20 @@
   .sf-scene{gap:var(--space-4);padding-top:var(--space-section);padding-bottom:var(--space-section)}
   .sf-tac,.sf-metric,.sf-price,.sf-why3{padding:22px}
 }
+
+/* il conto con il margine: 70% di costi, poi il canale, poi quello che resta */
+.sf-cmp__sub{margin:0;font-size:17px;line-height:1.6;color:var(--ink-2);max-width:720px}
+.sf-bar::after{content:none}
+.sf-seg{position:absolute;top:0;bottom:0;border-right:var(--border-strong) solid var(--ink);box-sizing:border-box}
+.sf-seg:last-child{border-right:0}
+.sf-seg--fix{background:var(--surface-sand)}
+.sf-seg--ota{background:var(--tomato)}
+.sf-seg--range{background:repeating-linear-gradient(135deg,var(--tomato) 0 6px,var(--green) 6px 12px)}
+.sf-seg--mar{background:var(--green)}
+.sf-seg__t{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--ink-3);white-space:nowrap}
+.sf-bar{background:var(--surface-white)}
+.sf-legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14px;line-height:1.4;color:var(--ink-2)}
+.sf-legend span{display:inline-flex;align-items:center;gap:8px}
+.sf-sw{position:static;display:inline-block;width:16px;height:16px;border:var(--border-soft) solid var(--ink);border-radius:5px;flex:0 0 auto}
+.sf-cmp__val--good{color:var(--ink)}
+.sf-cmp__cap{display:block;margin-bottom:4px;font-family:var(--font-text);font-weight:600;font-size:13px;letter-spacing:0;color:var(--ink-3)}
