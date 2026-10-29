@@ -171,12 +171,7 @@ h1 em,h2 em,.pmband h2 em{font-style:normal;background:var(--giallo);color:#2625
 .exit-x,.cc-x{border:1.5px solid var(--inchiostro);border-radius:50%;background:#fff}
 .cc-opt{background:var(--surface-sand);border:1.5px solid var(--line-soft);border-radius:12px}
 
-/* homepage: lo skyline resta quello del sito */
-.skyline svg > g:first-of-type{fill:var(--cenere);stroke:#262521;stroke-width:3}
-.skyline svg > g:nth-of-type(2){fill:#262521;opacity:.35}
-.skyline svg > rect[fill="#FFDD00"]{fill:var(--giallo);stroke:#262521;stroke-width:3}
-.skyline svg rect{rx:0}
-.skyline svg > g:first-of-type{fill:#e3ddd4}
+/* homepage: lo skyline è disegnato nella pagina, con i colori del sistema */
 .pmband::before,.bb-stage::before,.bb-shadow{display:none}
 .pm-steps li{border:2px solid transparent;border-radius:16px}
 .pm-steps li.on{background:#2f2d29;border-color:#faf7f4;box-shadow:3px 3px 0 #faf7f4}
