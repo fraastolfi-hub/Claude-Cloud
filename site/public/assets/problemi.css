@@ -167,13 +167,6 @@ mark.gen{background:linear-gradient(transparent 70%,var(--yellow) 70%,var(--yell
 
 @media (prefers-reduced-motion:reduce){.sig{transition:none}}
 
-/* ---------- versione morbida: la fascia N°03 ora è gialla ----------
-   style.css colora ancora .lead, .muted, .kicker e h2 em di .sec.dark con i grigi
-   della vecchia fascia nera: qui si riportano all'inchiostro (contrasto sul giallo). */
-.sec.dark .lead,.sec.dark .pull,.sec.dark .muted,.sec.dark .kicker{color:var(--inchiostro-2)}
-.sec.dark h1 em,.sec.dark h2 em{color:#262521}
-.sec.dark .kicker b,.sec.dark .micro b{color:#262521}
-.sec.dark .btn.ghost,.sec.dark .btn.ghost:hover{--bg:#fff;box-shadow:none}
-.sec.dark .prose,.sec.dark .prose p{color:#262521}
+/* firma sotto la citazione della fascia N°03 */
 .big-quote .who{display:block;margin-top:14px;font:600 15px/1.3 var(--text);letter-spacing:0;color:var(--inchiostro-3)}
 .tool-row .tgl{justify-self:start}
