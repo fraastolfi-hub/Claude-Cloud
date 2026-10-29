@@ -195,7 +195,7 @@
 .sf-cmp{padding:44px;display:flex;flex-direction:column;gap:var(--space-3)}
 .sf-cmp__head{display:flex;flex-direction:column;gap:12px}
 .hp-page .sf-cmp__h{font-family:var(--font-display);font-weight:800;font-size:clamp(24px,2.4vw,32px);line-height:1.15;color:var(--ink)}
-.sf-cmp__row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) calc(clamp(22px,2.2vw,30px)*5.2);gap:var(--space-3);align-items:center;padding:14px 0;border-top:var(--border-hair) solid var(--line)}
+.sf-cmp__row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) calc(clamp(22px,2.2vw,30px)*5.8);gap:var(--space-3);align-items:center;padding:14px 0;border-top:var(--border-hair) solid var(--line)}
 .sf-cmp__label{display:flex;flex-direction:column;gap:2px}
 .sf-bar{position:relative;height:36px;border:var(--border-strong) solid var(--ink);border-radius:var(--radius-md);background:var(--surface-sand);overflow:hidden}
 .sf-bar::after{content:"1.000.000 €";position:absolute;right:12px;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--ink-3)}
@@ -211,3 +211,6 @@
   .sf-cmp__row .sf-bar{grid-column:1/-1;grid-row:2}
 }
 .sf-cmp__val.hp-cost{color:var(--cost-display)}
+
+.sf-bar__cost--range{background:repeating-linear-gradient(135deg,var(--tomato) 0 6px,var(--surface-sand) 6px 12px)}
+.sf-cmp__val--range{font-size:clamp(18px,1.8vw,25px)}
