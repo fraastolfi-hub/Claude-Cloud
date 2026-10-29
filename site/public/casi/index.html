@@ -28,8 +28,8 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 /* --- confronto in apertura: tre colonne, righe allineate --- */
 .cmp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(44px,5vw,64px)}
 @media (max-width:900px){.cmp{grid-template-columns:minmax(0,1fr)}}
-.cmp a{display:grid;grid-template-rows:subgrid;grid-row:span 5;gap:0;text-decoration:none;color:inherit;background:var(--mist);border-radius:var(--r);padding:clamp(22px,2.4vw,28px);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
-.cmp a:hover{transform:translateY(-2px);box-shadow:var(--sh-lg)}
+.cmp a{display:grid;grid-template-rows:subgrid;grid-row:span 5;gap:0;text-decoration:none;color:inherit;background:var(--white);border:2px solid var(--ink);border-radius:20px;box-shadow:var(--o-sm);padding:clamp(22px,2.4vw,28px);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.cmp a:hover{transform:translate(-2px,-2px);box-shadow:var(--o-xl)}
 .cmp a > *{padding:12px 0;border-top:1px solid var(--line)}
 .cmp a > :first-child{padding-top:0;border-top:0}
 .cmp .t{font:700 22px/1.15 var(--display);letter-spacing:-.02em}
@@ -45,24 +45,24 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 #silva{background:var(--mist)}
 .case-head{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,40px);align-items:end;margin-bottom:clamp(32px,4vw,52px)}
 .case-n{font:700 clamp(80px,11vw,160px)/.8 var(--display);letter-spacing:-.06em;color:var(--line)}
-.sec.dark .case-n{color:#3A3A3C}
+.sec.dark .case-n{color:var(--inchiostro)}
 .case-head h2{margin:14px 0 0}
 @media (max-width:640px){.case-head{grid-template-columns:1fr;gap:6px}}
 
 /* --- 1. prima / 2. dopo --- */
 .ba{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r);overflow:hidden;background:var(--white)}
 #veridia .ba{background:var(--mist)}
-.sec.dark .ba{background:#1C1C1E}
+.sec.dark .ba{background:#fff;color:var(--inchiostro)}
 .ba > div{padding:clamp(24px,3vw,36px)}
 .ba > div + div{border-left:1px solid var(--line)}
 .stp{display:block;font:600 14px var(--text);color:var(--muted)}
 .line-q{display:block;font:700 clamp(24px,2.6vw,34px)/1.1 var(--display);letter-spacing:-.03em;margin:12px 0 16px;quotes:"«" "»"}
 .ba .pre .line-q{color:var(--muted)}
 .ba p{font-size:16.5px;line-height:1.5;color:var(--ink-2)}
-.sec.dark .ba p{color:#D2D2D7}
+.sec.dark .ba p{color:var(--ink-2)}
 .ba p + p{margin-top:8px}
 .ba p strong{color:var(--ink)}
-.sec.dark .ba p strong{color:#F5F5F7}
+.sec.dark .ba p strong{color:var(--ink)}
 @media (max-width:760px){.ba{grid-template-columns:1fr}.ba > div + div{border-left:0;border-top:1px solid var(--line)}}
 
 /* --- 3. numeri --- */
@@ -81,14 +81,15 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 @media (max-width:760px){.yn{grid-template-columns:1fr}}
 .yn > div{padding:clamp(24px,3vw,36px);border-radius:var(--r);background:var(--white)}
 #veridia .yn > div{background:var(--mist)}
-.yn > div + div,#veridia .yn > div + div{background:var(--night);color:#F5F5F7}
-.sec.dark .yn > div{background:#1C1C1E;color:#F5F5F7}
+.yn > div{border:2px solid var(--ink)}
+.yn > div + div,#veridia .yn > div + div{background:var(--pink-soft);color:var(--ink)}
+.sec.dark .yn > div{background:#fff;color:var(--ink)}
+.sec.dark .yn > div + div{background:var(--pink-soft)}
 .yn h3{margin-bottom:16px}
 .yn .check-list li{font-size:16.5px}
-.yn > div + div .check-list.no li::before{background-color:#2C2C2E;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M7 7l6 6M13 7l-6 6' fill='none' stroke='%23A1A1A6' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E")}
 
-.declare{display:flex;gap:12px;align-items:flex-start;background:#1C1C1E;color:#D2D2D7;padding:16px 20px;border-radius:var(--r-sm);font:500 16px/1.45 var(--text);max-width:64ch;margin-bottom:16px}
-.declare::before{content:"";flex:none;width:8px;height:8px;margin-top:.5em;border-radius:50%;background:var(--yellow)}
+.declare{display:flex;gap:12px;align-items:flex-start;background:#fff;color:var(--ink);border:2px solid var(--ink);padding:16px 20px;border-radius:16px;font:500 16px/1.45 var(--text);max-width:64ch;margin-bottom:16px}
+.declare::before{content:"";flex:none;width:10px;height:10px;margin-top:.45em;border-radius:50%;background:var(--tomato);border:2px solid var(--ink)}
 .mid-cta{margin-top:clamp(40px,5vw,56px)}
 .pull small{display:block;margin-top:12px;font:400 14px var(--text);letter-spacing:0;color:var(--muted)}
 
@@ -98,12 +99,21 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 #richiedi .field legend.lab{font:500 14px var(--text)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink)}
 .next{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,64px);align-items:start}
 @media (max-width:900px){.next{grid-template-columns:1fr}}
-.ghost-case{border:1px dashed #C7C7CC;padding:26px;margin-top:32px;border-radius:var(--r)}
+.ghost-case{border:2px dashed var(--line-field);padding:26px;margin-top:32px;border-radius:20px;background:var(--white)}
 .ghost-case dl{display:grid;gap:14px}
 .ghost-case dt{font:600 13px var(--text);color:var(--muted);margin-bottom:2px}
 .ghost-case dd{font:600 18px/1.3 var(--display);letter-spacing:-.015em}
+/* versione morbida: la fascia gialla (.sec.dark) con testo inchiostro */
+section.sec.dark{--line:rgba(38,37,33,.22);--muted:#57534c;--grey:#e3ddd4}
+section.sec.dark .kicker,section.sec.dark .lead,section.sec.dark .muted{color:var(--inchiostro-2)}
+section.sec.dark h1 em,section.sec.dark h2 em{color:var(--inchiostro)}
+section.sec.dark .stat{background:#fff!important;color:var(--inchiostro)}
+section.sec.dark .stat span{color:var(--inchiostro-2)}
+section.sec.dark .check-list li::before{background-color:var(--green)!important}
+section.sec.dark .check-list.no li::before{background-color:var(--pomodoro)!important}
+.nums .stat span{color:var(--ink-2)}
 </style>
-<link rel="stylesheet" href="/assets/soft.css?v=a295431f">
+<link rel="stylesheet" href="/assets/soft.css?v=ba949c79">
 
 </head>
 <body>

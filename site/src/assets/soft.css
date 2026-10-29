@@ -267,3 +267,18 @@ h3 .strike,.card .strike{white-space:normal}
 @media (max-width:640px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:420px){.foot-grid{grid-template-columns:1fr}}
 .ff-hday{display:none}
+
+/* fasce gialle (ex sezioni scure): annulla i grigi e i riquadri neri che style.css dà a .sec.dark */
+.sec.dark{--line:#262521;--muted:#57534c;--grey:#e3ddd4;--inchiostro-3:#57534c;--ink:#262521;--ink-2:#262521}
+.sec.dark .muted,.sec.dark .kicker,.sec.dark .lead,.sec.dark .pull,.sec.dark .micro{color:#262521}
+.sec.dark h1 em,.sec.dark h2 em{color:#262521}
+.sec.dark .kicker b,.sec.dark .micro b{color:#262521}
+.sec.dark .card,.sec.dark .stat,.sec.dark .note-box,.sec.dark .cta-band{background:#fff;color:#262521;border-color:#262521}
+.sec.dark .card.o,.sec.dark .card.y{--ink:#262521;--muted:#57534c}
+.sec.dark .btn.ghost{box-shadow:3px 3px 0 #262521}
+.sec.dark .faq details{color:#262521}
+.sec.dark .steps-list li::before,.sec.dark .tl .n{background:#fff!important;color:#262521!important;box-shadow:none}
+.sec.dark .tl:first-of-type .n{background:var(--yellow-soft)!important}
+.sec.dark .form{--muted:#6b665d;--line:#e3ddd4;color:#262521}
+/* kicker in testo semplice: abbastanza contrasto anche sul giallo */
+.kicker{color:var(--inchiostro-2)}

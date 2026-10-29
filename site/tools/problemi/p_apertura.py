@@ -108,7 +108,7 @@ P = dict(
         <p>Prima dell'apertura il posizionamento rende di più: orienta camere, servizi, prezzo e parole prima che diventino definitivi.</p>
         <p><strong>Dopo, costa il triplo.</strong></p>''',
     br_quote="Prima la bussola. Poi i muri. L'ordine conta.",
-    proof_extra='''    <article class="card y rv" style="margin-top:20px;box-shadow:none;border-radius:28px">
+    proof_extra='''    <article class="card y rv" style="margin-top:20px">
       <p class="kicker"><b>Caso</b> · Yume Ramen · 5 locali</p>
       <h3 style="margin:12px 0 8px">Una posizione scelta prima di aprire.</h3>
       <p>Un caso da imprenditore, non da consulente: un locale che ho inventato io, cinque sedi, una posizione decisa prima della prima cucina. Da zero a 2,5 milioni di euro di fatturato. Per questo ti consiglio di decidere la posizione prima di aprire.</p>

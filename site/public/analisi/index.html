@@ -136,7 +136,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 .cmp thead th{font:700 clamp(20px,2vw,26px)/1.1 var(--sans);letter-spacing:-.02em;vertical-align:bottom}
 .cmp thead th small{display:block;font:700 12px var(--mono);letter-spacing:0;color:var(--muted);margin-bottom:8px}
 .cmp thead th.paid{background:var(--ink);color:var(--paper)}
-.cmp thead th.paid small{color:#A1A1A6}
+.cmp thead th.paid small{color:var(--ink-0)}
 .cmp tbody th{font:700 12px/1.3 var(--mono);letter-spacing:0;width:20%;background:var(--paper-2)}
 .cmp td.paid{background:var(--cream-y)}
 .cmp .price{font:700 clamp(30px,3vw,42px)/1 var(--sans);letter-spacing:-.04em}
@@ -200,38 +200,38 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 .road .btn{width:100%}
 .road .verdict{font:700 14px var(--mono);border-top:2px dashed currentColor;padding-top:12px}
 .final-q{font:700 clamp(30px,4vw,56px)/1.02 var(--sans);letter-spacing:-.045em;max-width:18ch;margin:60px 0 18px}
-.report-fig{margin:0 0 clamp(36px,5vw,64px);border:1px solid var(--line);box-shadow:var(--sh-lg);background:#E4E0D8;border-radius:var(--r-sm)}
+.report-fig{margin:0 0 clamp(36px,5vw,64px);border:1px solid var(--line);box-shadow:var(--sh-lg);background:var(--surface-sand);border-radius:var(--r-sm)}
 .report-fig img{width:100%;height:auto;display:block}
 .report-fig figcaption{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);background:var(--paper);padding:14px 18px;font:400 14px/1.5 var(--mono);color:var(--muted)}
 
 /* --- Essenziale: rifiniture dell'analisi --- */
 /* hero: lo scontrino */
-.receipt{border:0;border-radius:28px;background:var(--white);box-shadow:0 0 0 1px rgba(0,0,0,.06),var(--sh-lg);font-family:var(--text)}
+.receipt{border:2px solid var(--ink-0);border-radius:24px;background:#fff;box-shadow:5px 5px 0 var(--ink-0);font-family:var(--text)}
 .receipt .r-head{font:500 13px/1.4 var(--text);color:var(--muted);border-bottom:1px solid var(--line)}
 .receipt li{border-bottom:1px solid var(--line)}
 .receipt li b{font:600 16px/1.25 var(--text)}
-.receipt li em{border:0;background:var(--mist);border-radius:980px;padding:5px 10px;font:500 13px/1 var(--text)}
+.receipt li em{border:0;background:var(--yellow-soft);border-radius:999px;padding:5px 10px;font:500 13px/1 var(--text)}
 .receipt .tot small{font:400 14px var(--text);color:var(--muted)}
 .receipt .tot b{font-family:var(--display)}
 .receipt .tot b small{font:500 15px var(--text);letter-spacing:0;color:var(--muted)}
 .receipt .or{background:var(--mist);border:0;border-radius:var(--r-sm);padding:14px 16px;font-size:14px;color:var(--ink-2)}
 .receipt .or strong{color:var(--ink);font-weight:600;display:inline-flex;align-items:center;gap:7px}
-.receipt .or strong::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 1px rgba(0,0,0,.18)}
-.receipt .stamp-tag{background:var(--night);color:#F5F5F7;top:-13px}
+.receipt .or strong::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 1.5px var(--ink-0)}
+.receipt .stamp-tag{background:var(--giallo);color:var(--ink-0);top:-16px}
 /* N°01 */
 .see .card.y{box-shadow:none}
 .see .card li::before{content:"→ ";font-family:var(--text);font-weight:400;color:var(--muted)}
 /* N°02: prima / dopo */
-.ba-toggle{border:0;background:var(--mist);border-radius:980px;padding:3px}
-.ba-toggle button{border-radius:980px;padding:8px 18px;font:500 14px var(--text);color:var(--ink-2)}
+.ba-toggle{border:2px solid var(--ink-0);background:#fff;border-radius:999px;padding:3px}
+.ba-toggle button{border-radius:999px;padding:8px 18px;min-height:40px;font:700 15px var(--display);color:var(--ink-0);cursor:pointer}
 .ba-toggle button + button{border-left:0}
-.ba-toggle button[aria-pressed="true"],.ba-toggle button.on[aria-pressed="true"]{background:var(--white);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.ba-toggle button[aria-pressed="true"],.ba-toggle button.on[aria-pressed="true"]{background:var(--giallo);color:var(--ink-0);box-shadow:none}
 .ba-hint{font:400 14px/1.4 var(--text)}
 .ba,.ba-grid.v-prima .ba,.ba-grid.v-dopo .ba{border:0;background:var(--mist);border-radius:var(--r);padding:26px 26px 24px;box-shadow:none}
 .ba .n{font:600 13px var(--text);color:var(--muted)}
-.ba .st i{font:500 12px/1 var(--text);border:0;border-radius:980px;padding:5px 9px;margin-top:1px}
+.ba .st i{font:700 12px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;border:0;border-radius:999px;padding:5px 9px;margin-top:1px}
 .ba .pr i{background:var(--white);color:var(--muted)}
-.ba .do i{background:var(--night);color:#F5F5F7}
+.ba .do i{background:var(--giallo);color:var(--ink-0)}
 .ba .moral{font:600 15px/1.45 var(--text);border-top:1px solid var(--line);padding-top:12px}
 /* N°03 */
 .filters .when{font:500 13px var(--text);color:var(--muted)}
@@ -243,10 +243,10 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 .doc .dn,.doc:nth-child(n) .dn{width:40px;height:40px;border:0;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);font:700 16px var(--display);color:var(--ink)}
 .doc:first-child .dn{background:var(--yellow);box-shadow:none}
 .doc li{padding-left:18px}
-.doc li::before{content:"";width:5px;height:5px;border-radius:50%;background:#AEAEB2;top:.62em}
-.doc.total{background:var(--night)}
-.doc.total b.big{font-family:var(--display);color:#F5F5F7}
-.doc.total .btn{--bg:#F5F5F7;--fg:#1D1D1F}
+.doc li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink-3s);top:.6em}
+.doc.total{background:var(--giallo);color:var(--ink-0)}
+.doc.total b.big{font-family:var(--display);font-weight:800;color:var(--ink-0)}
+.doc.total .btn{--bg:#fff;--fg:var(--ink-0)}
 .doc.total .btn:hover{--bg:#fff}
 /* N°05: il caso */
 .disclaimer{background:var(--mist);color:var(--ink);border:0;border-radius:var(--r);gap:16px}
@@ -293,37 +293,72 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
   .cmp tfoot td,.cmp tfoot td:nth-child(3){background:none;border-radius:0;padding:6px 0}
 }
 /* N°08: garanzia */
-.seal{background:var(--night);color:#F5F5F7;border:0;box-shadow:var(--sh-lg)}
+.seal{background:var(--giallo);color:var(--ink-0);border:2px solid var(--ink-0);border-radius:24px;box-shadow:5px 5px 0 var(--ink-0)}
 .seal b{font-family:var(--display)}
-.seal span{font:500 13px/1.3 var(--text);color:#A1A1A6;display:inline-flex;align-items:center;gap:7px}
-.seal span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+.seal span{font:700 13px/1.3 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-0);display:inline-flex;align-items:center;gap:7px}
+.seal span::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px var(--ink-0)}
 .risk-row .lab{font:600 15px/1.3 var(--text)}
 .risk-row .lab small{font-size:13px;color:var(--muted);opacity:1}
-.risk-track{border:0;background:var(--white);border-radius:980px;overflow:hidden}
-.risk-track i{background:var(--ink);border-radius:980px}
+.risk-track{border:2px solid var(--ink-0);background:#fff;border-radius:999px;overflow:hidden}
+.risk-track i{background:var(--tomato);border-radius:999px}
 .risk-track span{left:16px;font:600 15px var(--text)}
 .risk-row.me .risk-track{background:var(--white);box-shadow:inset 0 0 0 2px var(--ink)}
 .risk-row .note{font:400 13px/1.4 var(--text);color:var(--muted);margin-top:-2px}
 .risk-row .note b{color:var(--ink);font-weight:600}
 /* N°10: richiesta */
-.slots li,.slots li:nth-child(odd){border:0;background:var(--white);border-radius:var(--r-sm)}
-.slots li:first-child{background:var(--night);color:#F5F5F7}
+.slots li,.slots li:nth-child(odd){border:2px solid var(--ink-0);background:#fff;border-radius:16px}
+.slots li:first-child{background:var(--giallo);color:var(--ink-0)}
 .slots li b{font-family:var(--display)}
-.slots li span{font:500 11px var(--text);color:var(--muted)}
-.slots li:first-child span{color:#A1A1A6}
+.slots li span{font:600 12px var(--text);color:var(--ink-2s)}
+.slots li:first-child span{color:var(--ink-0)}
 .side .tl.in .n{background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
 .side h3 + .tl.in .n{background:var(--yellow);box-shadow:none}
 /* N°12: tre strade */
 .road.card.y{box-shadow:inset 0 0 0 2px var(--ink);background:var(--white)}
 .road .rn{width:40px;height:40px;border:0;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);font:700 16px var(--display)}
 .road.card.y .rn{background:var(--mist);box-shadow:none}
-.road.card.ink .rn{background:#2C2C2E;color:#F5F5F7;box-shadow:none}
+.road.card.ink .rn{background:var(--giallo);color:var(--ink-0);box-shadow:none}
 .road .verdict{font:500 14px var(--text);color:var(--muted);border-top:1px solid var(--line)}
-.road.card.ink .verdict{border-color:#3A3A3C}
-.road.card.ink .btn{--bg:#F5F5F7;--fg:#1D1D1F}
+.road.card.ink .verdict{border-color:#57534c;color:#c4bdb1}
+.road.card.ink .btn{--bg:var(--giallo);--fg:var(--ink-0)}
 .final-q{font-family:var(--display)}
+/* --- versione morbida (29 ottobre 2026): rifiniture locali --- */
+/* fasce gialle (.sec.dark): style.css lascia testi chiari e schede scure, qui si riportano a inchiostro */
+.sec.dark .lead,.sec.dark .pull,.sec.dark .prose p{color:var(--ink-0)}
+.sec.dark h2 em{color:var(--ink-0)}
+.sec.dark .card,.sec.dark .card.p{background:#fff;color:var(--ink-0)}
+.sec.dark .card.o{background:var(--pink-soft)}
+.sec.dark .card.m{background:var(--teal-soft)}
+.sec.dark .card h3,.sec.dark .card p,.sec.dark .card li{color:var(--ink-0)}
+.filters .when{color:var(--ink-3s)}
+.sec.dark .filters .card.o .when{color:var(--ink-0)}
+/* il caso: prima / dopo, bussola */
+.case{border:2px solid var(--ink-0);box-shadow:4px 4px 0 var(--ink-0);border-radius:24px}
+.case .before{border-radius:0;border-right:1px solid var(--line-soft)}
+@media (max-width:900px){.case .before{border-right:0;border-bottom:1px solid var(--line-soft)}}
+.compass{border:2px solid var(--ink-0);border-radius:20px}
+/* tabella: colonna a pagamento in giallo, non nera */
+.cmp thead th.paid{background:var(--giallo);color:var(--ink-0)}
+.cmp td.paid,.cmp tfoot td:nth-child(3){background:var(--yellow-soft)}
+.cmp tfoot td:nth-child(3) .btn{--bg:#fff;--fg:var(--ink-0);box-shadow:3px 3px 0 var(--ink-0)}
+.cmp tfoot td:nth-child(3) .btn:hover{--bg:#fff;box-shadow:5px 5px 0 var(--ink-0)}
+@media (max-width:760px){.cmp tbody tr{border:2px solid var(--ink-0);border-radius:16px;background:#fff}}
+/* rischio: la barra del costo è un riempimento pomodoro, il testo resta inchiostro */
+.risk-track span{color:var(--ink-0)}
+.risk-row.me .risk-track{background:var(--teal-soft);box-shadow:none}
+/* tre strade: il verdetto è una riga, non un riquadro */
+.road .verdict{border:0;border-top:1px solid var(--line-soft);border-radius:0;padding:12px 0 0;color:var(--ink-2s)}
+.road.card.ink .verdict{border-top:1px solid #57534c}
+.road.card.y{background:#fff;box-shadow:4px 4px 0 var(--ink-0)!important;border:2px solid var(--ink-0)!important}
+.road.card.y .rn{background:var(--yellow-tint)}
+.road .rn{box-shadow:none;border:2px solid var(--ink-0)}
+.road.card.ink .rn{border-color:#faf7f4}
+.road:not(.y):not(.ink){background:var(--surface-sand)}
+.doc.total .kicker{color:var(--ink-0)}
+.seal span{display:block}
+.seal span::before{display:inline-block;vertical-align:.1em;margin-right:7px}
 </style>
-<link rel="stylesheet" href="/assets/soft.css?v=a295431f">
+<link rel="stylesheet" href="/assets/soft.css?v=ba949c79">
 
 </head>
 <body>
@@ -489,9 +524,9 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
     </div>
     <div class="grid-2" style="margin-top:56px;align-items:center">
       <div class="prose rv">
-        <p class="pull" style="color:var(--paper)">Un assistente AI racconta bene solo ciò che è già chiaro.</p>
-        <p style="margin-top:18px;color:#D2D2D7">Molti hotel scrivono già le descrizioni con l'AI. Risultato: scrivono tutti bene e dicono tutti le stesse cose. <strong>Scrivere bene non basta più.</strong></p>
-        <p style="color:#D2D2D7">L'AI può scrivere i testi al posto tuo. Non può decidere chi sei.</p>
+        <p class="pull">Un assistente AI racconta bene solo ciò che è già chiaro.</p>
+        <p style="margin-top:18px">Molti hotel scrivono già le descrizioni con l'AI. Risultato: scrivono tutti bene e dicono tutti le stesse cose. <strong>Scrivere bene non basta più.</strong></p>
+        <p>L'AI può scrivere i testi al posto tuo. Non può decidere chi sei.</p>
       </div>
       <div class="mirror rv d1" style="margin-top:0">
         <div class="card m"><h3>Hotel posizionato</h3><ul><li>L'AI lo trova.</li><li>L'AI lo descrive con precisione.</li><li>L'AI lo consiglia.</li><li>L'ospite arriva già convinto.</li></ul></div>
@@ -524,7 +559,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
         <ul><li>Come motivare €140 quando il vicino ne chiede €85</li><li>I pacchetti per l'ospite giusto</li><li>I motivi per prenotare diretto</li><li>Cosa smettere di regalare in bassa stagione</li></ul></article>
       <article class="doc rv d1"><span class="dn">5</span><h3>Cosa cambiare in casa</h3>
         <ul><li>Le mosse di prodotto che rendono vero il motivo</li><li>Per esempio la navetta dalla stazione, la colazione fino all'una, il check-out alle 18</li><li>Una promessa non mantenuta si legge nelle recensioni</li></ul></article>
-      <article class="doc total rv d2"><span class="kicker" style="color:#A1A1A6">In totale</span><b class="big">39</b><p>pagine. Consegna in 5 giorni dal questionario compilato. Il questionario ti prende quaranta minuti: le recensioni le leggo io.</p><a href="/#richiedi" class="btn">Parti dallo smontaggio <span class="arr">→</span></a></article>
+      <article class="doc total rv d2"><span class="kicker">In totale</span><b class="big">39</b><p>pagine. Consegna in 5 giorni dal questionario compilato. Il questionario ti prende quaranta minuti: le recensioni le leggo io.</p><a href="/#richiedi" class="btn">Parti dallo smontaggio <span class="arr">→</span></a></article>
     </div>
   </div>
 </section>
@@ -704,7 +739,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
       <li>Non vuoi rinunciare a nessun segmento di ospiti.</li>
       <li>Ti aspetti che decida e faccia tutto io.</li>
     </ul>
-    <p class="pull rv" style="margin-top:44px;color:var(--paper)">In tutti gli altri casi, parti dallo smontaggio.</p>
+    <p class="pull rv" style="margin-top:44px">In tutti gli altri casi, parti dallo smontaggio.</p>
   </div>
 </section>
 

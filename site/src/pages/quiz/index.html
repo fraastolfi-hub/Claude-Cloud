@@ -97,53 +97,58 @@
 .profiles .card.g{background:var(--grey)}
 
 /* --- Essenziale: rifiniture del quiz --- */
-.qz{border:0;border-radius:28px;box-shadow:0 0 0 1px rgba(0,0,0,.06),var(--sh-lg)}
+.qz{border:2px solid var(--inchiostro);border-radius:24px;box-shadow:var(--o-xl)}
 .qz-top{background:var(--white);color:var(--muted);border-bottom:0;font:500 14px var(--text);padding:20px clamp(20px,3.4vw,44px) 14px}
 .qz-top .dots{gap:7px}
 .qz-top .dots i{width:8px;height:8px;border:0;border-radius:50%;background:var(--mist-2)}
 .qz-top .dots i.done{background:var(--ink)}
-.qz-top .dots i.now{background:var(--yellow);box-shadow:0 0 0 1px rgba(0,0,0,.18)}
-.qz-bar{height:3px;border:0;background:var(--mist-2);margin:0 clamp(20px,3.4vw,44px);border-radius:3px;overflow:hidden}
-.qz-bar i{background:var(--ink);border:0;border-radius:3px;transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.qz-top .dots i{width:10px;height:10px}
+.qz-top .dots i.now{background:var(--yellow);box-shadow:0 0 0 1.5px var(--inchiostro)}
+.qz-bar{height:10px;border:1.5px solid var(--inchiostro);background:var(--surface-sand);margin:0 clamp(20px,3.4vw,44px);border-radius:999px;overflow:hidden}
+.qz-bar i{background:var(--giallo);border:0;border-radius:999px;transition:width .45s cubic-bezier(.2,.8,.2,1)}
 .qz-stage{padding:clamp(24px,3.4vw,44px)}
-.qz-opt{background:var(--mist);border:0;border-radius:var(--r-sm);padding:14px 18px 14px 14px;font:500 17px/1.4 var(--text);color:var(--ink);transition:background .2s,color .2s}
-.qz-opt .key{border:0;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);font:600 14px var(--text);color:var(--ink)}
-.qz-opt:hover{transform:none;background:var(--mist-2)}
+.qz-opt{background:var(--white);border-radius:12px;padding:14px 18px 14px 14px;font:500 17px/1.4 var(--text);color:var(--ink);transition:background .2s,color .2s}
+.qz-opt .key{border:1.5px solid var(--inchiostro);border-radius:10px;background:var(--surface-sand);box-shadow:none;font:800 15px var(--display);color:var(--ink)}
+.qz-opt:hover{transform:none;background:var(--yellow-soft)}
 .qz-opt:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.qz-opt[aria-pressed="true"]{background:var(--night);color:#F5F5F7;transform:none}
-.qz-opt[aria-pressed="true"] .key{background:var(--yellow);color:#1D1D1F;box-shadow:none}
+.qz-opt[aria-pressed="true"]{background:var(--giallo)!important;color:var(--inchiostro);transform:none;box-shadow:2px 2px 0 var(--inchiostro)}
+.qz-opt[aria-pressed="true"] .key{background:var(--white);color:var(--inchiostro)}
 .qz-foot{border-top:1px solid var(--line);font:400 13px/1.4 var(--text);padding:16px clamp(20px,3.4vw,44px)}
-.qz-back{border:0;border-radius:980px;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);padding:8px 15px;font:500 14px var(--text);color:var(--ink)}
-.qz-back:hover:not(:disabled){transform:none;background:var(--mist)}
+.qz-back{border:2px solid var(--inchiostro);border-radius:12px;background:var(--white);box-shadow:2px 2px 0 var(--inchiostro);padding:8px 15px;font:700 15px var(--display);color:var(--ink)}
+.qz-back:hover:not(:disabled){transform:none;background:var(--yellow-soft)}
+.qz-back:disabled{box-shadow:none}
 .qz kbd{font:500 12px var(--text);border:0;background:var(--mist);border-radius:6px;padding:2px 6px}
 /* risultato */
-.res-label{font:500 15px var(--text);color:var(--muted)}
-.res-name span{background:linear-gradient(transparent 80%,var(--res,var(--yellow)) 80%,var(--res,var(--yellow)) 94%,transparent 94%);border:0;box-shadow:none;border-radius:0;padding:0 .02em}
+.res-label{font:700 13px var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.res-name span{background:var(--res,var(--yellow));border:2px solid var(--inchiostro);box-shadow:var(--o-md);border-radius:16px;padding:.02em .16em .1em}
 .res-hook{font-family:var(--display)}
-.meter{margin:72px 0 8px}
-.meter-track{border:0;height:8px;gap:3px}
+.qz-res .meter{margin:72px 0 8px;height:auto;border:0;background:none;border-radius:0;overflow:visible}
+.meter-track{border:1.5px solid var(--inchiostro);border-radius:999px;overflow:hidden;height:14px;gap:0}
 .meter-track i,.meter-track i:last-child{border:0}
-.meter-track i:nth-child(1){background:var(--mist-2);border-radius:980px 0 0 980px}
-.meter-track i:nth-child(2){background:#D2D2D7}
-.meter-track i:nth-child(3){background:#AEAEB2;border-radius:0 980px 980px 0}
-.meter-lab{font:500 13px var(--text);color:var(--muted);margin-top:10px}
+.meter-track i + i{border-left:1.5px solid var(--inchiostro)}
+.meter-track i:nth-child(1){background:var(--pink-soft)}
+.meter-track i:nth-child(2){background:var(--yellow-tint)}
+.meter-track i:nth-child(3){background:var(--green)}
+.meter-lab{font:700 13px var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--inchiostro-3);margin-top:10px}
 .meter-lab span{padding-left:0}
-.meter-pin{top:-5px}
-.meter-pin::before{left:-9px;top:0;width:18px;height:18px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 3px #fff,0 2px 8px rgba(0,0,0,.25)}
-.meter-pin b{bottom:14px;background:var(--night);color:#F5F5F7;font:600 13px/1 var(--text);padding:6px 10px;border-radius:980px}
+.meter-pin{top:-5px;z-index:1}
+.meter-pin::before{left:-11px;top:0;width:22px;height:22px;border-radius:50%;background:var(--white);border:2px solid var(--inchiostro);box-sizing:border-box;box-shadow:2px 2px 0 var(--inchiostro)}
+.meter-pin b{bottom:16px;background:var(--white);color:var(--inchiostro);border:2px solid var(--inchiostro);font:800 14px/1 var(--display);padding:6px 10px;border-radius:999px;box-shadow:2px 2px 0 var(--inchiostro)}
 .res-diag p strong{background:none;padding:0;font-weight:600}
-.weak li{border:0;background:var(--mist);border-radius:var(--r-sm);padding:16px 18px 16px 58px}
-.weak li::before{left:16px;top:15px;width:28px;height:28px;border-radius:50%;background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);font:600 13px var(--text)}
+.weak li{background:var(--surface-sand);border-radius:14px;padding:16px 18px 16px 58px}
+.weak li::before{left:14px;top:15px;width:30px;height:30px;border-radius:10px;background:var(--pink-soft);color:var(--ink);border:1.5px solid var(--inchiostro);box-sizing:border-box;font:800 14px var(--display)}
 .weak li b{font-weight:600}
 .weak li em{font:400 13px/1.45 var(--text)}
 .res-cta{border-top:1px solid var(--line)}
-.res-mail .form{background:var(--mist);box-shadow:none;border-radius:var(--r)}
+.res-mail .form{background:var(--yellow-soft);border-radius:20px}
 .res-again{border-top:1px solid var(--line)}
 /* profili */
 .profiles .card.g,.profiles .card.y,.profiles .card.o{background:var(--white);box-shadow:none}
-.profiles .card .tag{border:0;border-radius:980px;background:var(--mist);padding:7px 12px;font:500 13px/1 var(--text);display:inline-flex;align-items:center;gap:7px}
-.profiles .card.o .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+.profiles .card .tag{border:1.5px solid var(--inchiostro);border-radius:999px;background:var(--white);padding:7px 12px;font:500 13px/1 var(--text);display:inline-flex;align-items:center;gap:7px}
+.profiles .card.o .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 1.5px var(--inchiostro)}
 .chips .chip{background:var(--mist)}
+/* il tema globale colora .check.err con il pomodoro (--red): qui il testo d'errore usa --cost-text */
+.form .check.err{color:var(--cost-text)}
 </style>
 <!-- @include tema -->
 </head>
@@ -337,7 +342,7 @@
   ];
 
   var P = {
-    inv:{ name:'Invisibile', col:'var(--grey)',
+    inv:{ name:'Invisibile', col:'var(--pink-soft)',
       hook:'Su Booking è uno dei cinquanta rettangoli. L\'ospite non la distingue.',
       diag:'<p>Il tuo hotel non è poco conosciuto: è difficile da distinguere. L\'ospite scorre le offerte e, se tutto sembra uguale, sceglie <strong>sul prezzo.</strong></p><p>La qualità può essere alta, ma non si vede. Quello che ti rende unico non è ancora un messaggio.</p><p>Succede a molti, e si può cambiare. Il primo passo è trovare il motivo per cui l\'ospite dovrebbe scegliere te.</p>',
       cta:'<h3>Il primo passo: definire il posizionamento.</h3><p>Prima di spendere in altro marketing, ti serve il motivo per cui l\'ospite dovrebbe scegliere il tuo hotel. Lo smontaggio della homepage è il primo passo: la tua prima riga accanto a quella di 2-3 concorrenti, con il logo coperto, e un indizio su dove sta il tuo motivo.</p><div class="btn-row"><a href="/#richiedi" class="btn">Richiedi lo smontaggio gratuito <span class="arr">→</span></a><a href="/analisi/" class="btn ghost">L\'analisi completa</a></div><p class="micro"><b>Gratis, fatto a mano da me.</b> Massimo 6 al mese, per hotel e resort dalle 40 camere in su. Lo ricevi in 3 giorni lavorativi.</p>' },
@@ -345,7 +350,7 @@
       hook:'Gli ospiti la apprezzano, ma somiglia ancora agli hotel vicini.',
       diag:'<p>Il tuo hotel ha qualcosa di vero. Gli ospiti lo sentono, alcuni lo scrivono nelle recensioni. Ma non è ancora una frase, quindi non lavora per te.</p><p>Finché il motivo resta implicito, l\'ospite ti confronta con chi ha la stessa piscina a trecento metri. <strong>E basta un hotel vicino che costa meno.</strong></p><p>Una camera nuova dura finché il vicino non ristruttura. Un posizionamento chiaro resta.</p>',
       cta:'<h3>Il passo successivo: scegliere un motivo.</h3><p>Un motivo solo, e tutta la comunicazione costruita attorno. Lo smontaggio della homepage ti dice dove cercarlo. L\'analisi completa lo trova e lo mette per iscritto.</p><div class="btn-row"><a href="/#richiedi" class="btn">Richiedi lo smontaggio gratuito <span class="arr">→</span></a><a href="/analisi/" class="btn ghost">L\'analisi completa</a></div><p class="micro"><b>Gratis, fatto a mano da me.</b> Massimo 6 al mese, per hotel e resort dalle 40 camere in su. Lo ricevi in 3 giorni lavorativi.</p>' },
-    pos:{ name:'Posizionata', col:'var(--orange)',
+    pos:{ name:'Posizionata', col:'var(--green)',
       hook:'Ha un motivo preciso per essere scelta, e lo comunica.',
       diag:'<p>L\'ospite che arriva sa già cosa troverà. Chi cerca altro va altrove, ed è giusto così.</p><p>Una cautela: il test misura le tue risposte, non cosa pensano gli ospiti. <strong>Controlla che le recensioni dicano quello che dici tu.</strong> Se coincidono, il posizionamento è solido.</p><p>Ora va mantenuto: quando arriva un nuovo concorrente, una nuova agenzia o la voglia di fare sconti.</p>',
       cta:'<h3>Il passo successivo: mantenere la posizione.</h3><p>Guarda come la mantengono gli hotel che ci sono riusciti, e usa il metodo per verificarla quando il mercato cambia.</p><div class="btn-row"><a href="/library/" class="btn">La library dei posizionamenti <span class="arr">→</span></a><a href="/libro/" class="btn ghost">Il libro · 19,90 €</a></div>' }
