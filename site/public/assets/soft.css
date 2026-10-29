@@ -274,6 +274,8 @@ h3 .strike,.card .strike{white-space:normal}
 .sec.dark h1 em,.sec.dark h2 em{color:#262521}
 .sec.dark .kicker b,.sec.dark .micro b{color:#262521}
 .sec.dark .card,.sec.dark .stat,.sec.dark .note-box,.sec.dark .cta-band{background:#fff;color:#262521;border-color:#262521}
+.sec.dark .card.b{background:var(--lilac-soft)}.sec.dark .card.m{background:var(--teal-soft)}.sec.dark .card.o{background:var(--pink-soft)}
+.card.p{background:var(--surface-sand)}
 .sec.dark .card.o,.sec.dark .card.y{--ink:#262521;--muted:#57534c}
 .sec.dark .btn.ghost{box-shadow:3px 3px 0 #262521}
 .sec.dark .faq details{color:#262521}
