@@ -18,7 +18,7 @@
    - niente rotazioni, niente animazioni continue; movimento solo su reveal e hover leggeri
    - le variabili storiche (--orange, --paper, --mono, --b, --sh…) restano come alias, così le pagine
      scritte col sistema precedente ereditano lo stile nuovo senza riscriverle
-   Dal 7 ottobre 2026 il sito usa il design system "Brutalist": assets/brutalist.css si carica per ultimo
+   Dal 29 ottobre 2026 il sito usa la versione "morbida" del design system: assets/soft.css si carica per ultimo
    (partial tema.html) e ridisegna questi componenti. Togliendo quell include si torna a "Essenziale".
    ========================================================= */
 :root{

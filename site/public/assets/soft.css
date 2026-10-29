@@ -288,3 +288,9 @@ h3 .strike,.card .strike{white-space:normal}
 .btn.ghost{box-shadow:3px 3px 0 #262521}
 .btn.ghost:hover{box-shadow:5px 5px 0 #262521}
 .pmband .btn.ghost,.bookband .btn.ghost{box-shadow:3px 3px 0 #faf7f4}
+/* errori nei moduli: testo inchiostro su fondo rosa, mai pomodoro come testo */
+.field.err .em{color:var(--inchiostro)}
+.check.err,fieldset.err .check{color:var(--cost-text)}
+.logo-mark{--line:var(--inchiostro)}
+.sec.dark .btn.ghost:hover,.sec.dark .btn.ghost:focus{--bg:#fff;--fg:#262521}
+.card.ink .btn.ghost:hover,.pmband .btn.ghost:hover,.bookband .btn.ghost:hover{--bg:#262521;--fg:#faf7f4}
