@@ -15,7 +15,7 @@ Una categoria, una persona, un metodo, una scala.
 - **Categoria:** brand positioning per hotel indipendenti. Non marketing, non agenzia, non revenue.
 - **Persona:** Francesco Astolfi, vent'anni da ogni lato del tavolo, operatore e non consulente ("vendo cicatrici").
 - **Metodo:** Hotel Positioning, in sei passaggi. Il libro lo racconta, l'analisi lo applica.
-- **Scala:** gratis (quiz, smontaggio, strumenti, library) → libro (€19,90) → analisi completa (€2.500 + IVA; €697 + IVA su /hday/ per chi era all'Hospitality Day) → accompagnamento su misura, solo se è l'hotel a ricontattare Francesco. L'ingresso gratuito per tutti è lo smontaggio della homepage.
+- **Scala:** gratis (quiz, smontaggio, strumenti, library) → libro (€19,90) → analisi completa (€697 + IVA dal 29 ottobre 2026) → accompagnamento su misura, solo se è l'hotel a ricontattare Francesco. L'ingresso gratuito per tutti è lo smontaggio della homepage.
 
 Ogni pagina ha **un'azione principale** e al massimo una secondaria, presa dal gradino subito sotto della scala.
 
@@ -24,7 +24,7 @@ Ogni pagina ha **un'azione principale** e al massimo una secondaria, presa dal g
 ```
 /                         Home · categoria + metodo + prova + scala        → CTA: Richiedi lo smontaggio gratuito (/#richiedi)
 ├── /metodo/              Il metodo in 6 passaggi (pagina pilastro SEO)     → Analisi · sec.: Libro
-├── /analisi/             L'analisi completa: €2.500 + IVA + garanzia         → Acquista · sec.: Smontaggio
+├── /analisi/             L'analisi completa: €697 + IVA + garanzia         → Acquista · sec.: Smontaggio
 │   └── /problemi/        Sei ingressi per sintomo (destinazioni delle ads)
 │       ├── booking/      "Ogni anno regali €150.000 a Booking"             → Modulo dello smontaggio (#richiedi)
 │       ├── prezzi/       "Il tuo prezzo è fermo al 2022"
@@ -74,7 +74,7 @@ Vedi [TONO.md](TONO.md), e prima di tutto gli aggiornamenti del 7 e 9 ottobre 20
 | Veridia | The nature resort of Chia. Vendite dirette sopra il 60%. Nessun prima/dopo di fatturato | — |
 | Clienti attuali | Veridia Resort (Chia), Silva Splendid (Fiuggi), Tocq Hotel (Milano), Radisson Blu Bergamo ChorusLife | — |
 | Palco | Hospitality Day 2026 | — |
-| Analisi | Dal 9 ottobre 2026 non esiste più un'analisi gratis. Analisi di posizionamento completa: €2.500 + IVA (prezzo solo su /analisi/ e /hday/; altrove «l'analisi completa» con link a /analisi/), 5 documenti, 39 pagine, consegna in 5 giorni dal questionario, garanzia «Inchiodo il tuo posizionamento, o è gratis» entro 14 giorni dalla consegna. Si arriva dopo lo smontaggio, quando l'hotel ricontatta Francesco; chi vuole saltarlo scrive a consulting@francescoastolfi.net. /hday/: €697 + IVA, 10 posti, entro il 31 ottobre 2026. Dettagli in TONO.md | "4 a settimana, entro 72 ore" (vecchia landing `analisi-gratuita.html`) |
+| Analisi | Dal 9 ottobre 2026 non esiste più un'analisi gratis. Analisi di posizionamento completa: €697 + IVA (dal 29 ottobre 2026), 6 documenti con i primi 90 giorni, consegna in 2 giorni dal questionario, garanzia «Se non ti convince, ti pago io»: rimborso totale + €500 entro 30 giorni dalla consegna. Si arriva dopo lo smontaggio, quando l'hotel decide; chi vuole saltarlo scrive a consulting@francescoastolfi.net. /hday/: €697 + IVA, 10 posti, entro il 31 ottobre 2026. Dettagli in TONO.md | "4 a settimana, entro 72 ore" (vecchia landing `analisi-gratuita.html`) |
 | Lettura recensioni | In cinque lingue (italiano, inglese, russo, arabo, cinese), con il supporto dell'AI per le traduzioni: dirlo sempre così, mai come conoscenza diretta delle lingue | — |
 | Smontaggio | Smontaggio della homepage: gratis, fatto a mano da Francesco, massimo 6 al mese, solo hotel e resort dalle 40 camere, lo ricevi in 3 giorni lavorativi, una pagina, nessuna call. La prima riga della homepage accanto a 2-3 concorrenti con il logo coperto, un verdetto (posizionato / sostituibile / invisibile), un indizio su dove sta il motivo. Niente frasi pronte né alternative. È l'unica richiesta del sito: modulo in homepage (`/#richiedi`), in /smontaggio/ e nelle pagine /problemi/ e /casi/ | — |
 | Libro | 120 pagine, 8 figure, 6 passaggi, €19,90 su Amazon (https://www.amazon.it/dp/B0HL3Z4XL7/), anche Kindle, rimborso Amazon 14 giorni. Bonus gratuiti: gli 8 strumenti (non esiste un capitolo gratuito) | — |

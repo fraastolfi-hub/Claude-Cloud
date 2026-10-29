@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Brand positioning per hotel e resort · Hotel Positioning</title>
+<title>Posizionamento per hotel e resort · Hotel Positioning</title>
 <meta name="description" content="Posizionamento per hotel e resort dalle 40 camere. Comincia dallo smontaggio gratuito della homepage: la tua prima riga accanto ai concorrenti, con il logo coperto, un verdetto e dove cercare il tuo motivo. Fatto a mano da Francesco Astolfi, massimo 6 al mese.">
 <link rel="canonical" href="https://hotelpositioning.com/">
 <meta property="og:title" content="Posizionarsi è scegliere. Anche cosa non essere · Hotel Positioning">
@@ -77,8 +77,9 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 .terms{margin-top:clamp(36px,4vw,48px);display:flex;flex-wrap:wrap;gap:8px}
 .sec.alt .terms .chip{background:var(--white)}
 /* i casi in tre numeri */
-.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media (max-width:860px){.proof{grid-template-columns:1fr}}
+.proof{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.proof .tile{grid-column:span 2}.proof .tile:nth-child(n+4){grid-column:span 3}
+@media (max-width:860px){.proof{grid-template-columns:1fr}.proof .tile,.proof .tile:nth-child(n+4){grid-column:auto}}
 .proof .tile{background:var(--mist);border-radius:var(--r);padding:clamp(26px,3vw,38px);display:flex;flex-direction:column;gap:10px}
 .proof .k{font:600 14px var(--text);color:var(--muted)}
 .proof .big{font:700 clamp(48px,5vw,72px)/1 var(--display);letter-spacing:-.045em}
@@ -277,7 +278,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 <section class="hero-c">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>Posizionamento per hotel e resort</span>
-    <h1><span class="line"><span>Posizionarsi è scegliere.</span></span><span class="line"><span><span class="hl in">Anche cosa non essere.</span></span></span></h1>
+    <h1><span class="line"><span>Copri il logo.</span></span><span class="line"><span><span class="hl in">Il tuo sito sembra ancora il tuo?</span></span></span></h1>
     <p class="lead">Quando qualcuno cerca dove dormire dalle tue parti, il primo nome che gli viene in mente non è il tuo. Così finisci dove si confronta solo il prezzo: su Booking.</p>
     <div class="btn-row">
       <a href="#richiedi" class="btn">Richiedi lo smontaggio gratuito <span class="arr">→</span></a>
@@ -460,8 +461,8 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
         <span class="num-tag">Se vuoi andare avanti</span>
         <h3>L’analisi completa trova il motivo e lo scrive.</h3>
         <p>Lo smontaggio ti mostra il problema. Non ti do frasi pronte: una frase scritta senza leggere recensioni e concorrenti è un’altra frase da hotel.</p>
-        <p>L’analisi completa sono cinque documenti: il motivo in una frase, l’ospite che ci crede, le parole pronte per homepage, Booking e telefono, come vendere senza svendere, cosa cambiare in casa.</p>
-        <p><strong>Con una garanzia: inchiodo il tuo posizionamento, o è gratis.</strong></p>
+        <p>L’analisi completa sono sei documenti: il motivo in una frase, l’ospite che ci crede, le parole pronte per homepage, Booking e telefono, come vendere senza svendere, cosa cambiare in casa, e i primi 90 giorni già scritti.</p>
+        <p><strong>Con una garanzia: se non ti convince, ti rimborso tutto. E ti do altri 500 €.</strong></p>
         <a href="/analisi/" class="btn ghost">Com’è fatta l’analisi <span class="arr">→</span></a>
       </div>
     </div>
@@ -483,9 +484,11 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
       <h2>Prima la direzione. <em>Poi gli investimenti.</em></h2>
     </div>
     <div class="proof">
-      <div class="tile dark rv"><span class="k">Silva Splendid, Fiuggi</span><span class="big">€7M+</span><p>Fatturato annuo, da €3,5M in cinque anni. Da «hotel 4 stelle con SPA» a «L’Hotel Benessere di Fiuggi».<sup>1</sup></p></div>
+      <div class="tile dark rv"><span class="k">Silva Splendid, Fiuggi</span><span class="big">€7M</span><p>Fatturato annuo, da €5,6M in cinque anni. Da «hotel 4 stelle con SPA» a «L’Hotel Benessere di Fiuggi».<sup>1</sup></p></div>
       <div class="tile rv d1" style="background:var(--white)"><span class="k">Silva Splendid, Fiuggi</span><span class="big">×2</span><p>Tariffa media, circa. Con un target più preciso, non più ampio.</p></div>
       <div class="tile rv d2" style="background:var(--white)"><span class="k">Veridia Resort, Chia</span><span class="big">&gt;60%</span><p>Vendite dirette. Non uno dei cento resort sul mare: il nature resort di Chia.</p></div>
+      <div class="tile rv" style="background:var(--white)"><span class="k">Silva Splendid, Fiuggi</span><span class="big">5,8%</span><p>Il costo di ogni ospite diretto. Booking ne chiede 15.</p></div>
+      <div class="tile rv d1" style="background:var(--white)"><span class="k">Tocq Hotel, Milano</span><span class="big">7%</span><p>Il costo di acquisizione di un hotel di città, che vive di aziende ed eventi.</p></div>
     </div>
     <p class="proof-note"><sup>1</sup> Risultato di posizionamento e ristrutturazione insieme: il posizionamento ha dato la direzione, gli investimenti della proprietà l’hanno resa credibile. <a href="/casi/">I casi per intero ›</a></p>
   </div>
@@ -498,7 +501,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
     <div>
       <span class="num-tag">Chi lo fa</span>
       <h2 style="margin:16px 0 22px">Francesco Astolfi. <em>Vent’anni di hotel, da ogni lato.</em></h2>
-      <p class="me-body rv">Ho portato TUI.it da zero a trenta milioni. Ho guidato il marketing di Ata Hotels. Ho lavorato in un’agenzia per hotel e aperto dieci locali con capitale mio. Ogni smontaggio e ogni analisi li faccio io, a mano. Per questo gli smontaggi gratuiti sono al massimo sei al mese.</p>
+      <p class="me-body rv">Ho portato TUI.it da zero a trenta milioni. Ho guidato il marketing di Atahotels. Ho lavorato in un’agenzia per hotel e aperto dieci locali con capitale mio. Ogni smontaggio e ogni analisi li faccio io, a mano. Per questo gli smontaggi gratuiti sono al massimo sei al mese.</p>
       <blockquote class="big-quote rv" style="margin-top:30px">I consulenti vendono consigli. Gli operatori vendono cicatrici.</blockquote>
       <div class="me-row rv">
         <a href="/francesco/" class="btn ghost">La mia storia</a>
@@ -516,16 +519,16 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
       <h3>Perché è gratis.</h3>
       <p>Perché lo smontaggio ti mostra il problema, non la soluzione. È il mio modo di presentarmi: invece di raccontarti come lavoro, te lo faccio vedere sulla tua homepage.</p>
       <p>Se il verdetto ti convince, la soluzione è l’analisi completa. Se no, ti tieni la pagina, e va bene così.</p>
-      <span class="no-sell">Non ti chiamo e non ti mando preventivi. Se vuoi andare avanti, mi scrivi tu.</span>
+      <span class="no-sell">Non ti mando preventivi a sorpresa e non insisto. Se vuoi andare avanti, me lo dici tu.</span>
     </div>
     <div>
       <div class="sec-head" style="margin-bottom:32px">
         <span class="num-tag">Come funziona</span>
-        <h2 style="font-size:clamp(30px,3.8vw,50px)">Tre passi. <em>Nessuna telefonata.</em></h2>
+        <h2 style="font-size:clamp(30px,3.8vw,50px)">Tre passi. <em>Il primo dura un minuto.</em></h2>
       </div>
       <div class="tl"><div class="n">1</div><div><span class="when">Un minuto</span><h3>Richiedi lo smontaggio</h3><p>Hotel, sito e due o tre concorrenti.</p></div></div>
       <div class="tl"><div class="n">2</div><div><span class="when">In 3 giorni lavorativi</span><h3>Ricevi lo smontaggio</h3><p>Una pagina: il confronto, il verdetto, l’indizio su dove cercare il motivo.</p></div></div>
-      <div class="tl"><div class="n">3</div><div><span class="when">Decidi tu</span><h3>L’analisi completa, o ti tieni la pagina</h3><p>Se vuoi, trovo il tuo motivo e lo scrivo, con la garanzia. Ma mi ricontatti tu: io non ti chiamo. Altrimenti la pagina resta tua.</p></div></div>
+      <div class="tl"><div class="n">3</div><div><span class="when">Decidi tu</span><h3>L’analisi completa, o ti tieni la pagina</h3><p>Se vuoi, trovo il tuo motivo e lo scrivo, con la garanzia. Decidi tu se e quando. Altrimenti la pagina resta tua.</p></div></div>
     </div>
   </div>
 </section>
@@ -566,13 +569,13 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
       <h2>Le domande che mi fanno tutti.</h2>
     </div>
     <div class="faq">
-      <details><summary>Quanto costa?</summary><div class="ans"><p>Lo smontaggio niente: nessun contratto, nessuna seconda parte a pagamento per leggere il verdetto. Se vuoi andare avanti, <a href="/analisi/">l’analisi completa</a> ha un prezzo chiaro, scritto nella sua pagina, e una garanzia: inchiodo il tuo posizionamento, o è gratis.</p></div></details>
+      <details><summary>Quanto costa?</summary><div class="ans"><p>Lo smontaggio niente: nessun contratto, nessuna seconda parte a pagamento per leggere il verdetto. Se vuoi andare avanti, <a href="/analisi/">l’analisi completa</a> ha un prezzo chiaro, €697 + IVA, e una garanzia: se non ti convince, ti rimborso tutto e ti do altri 500 €.</p></div></details>
       <details><summary>Perché non mi dai subito una frase nuova?</summary><div class="ans"><p>Perché una frase scritta senza aver letto recensioni e concorrenti è un’altra frase da hotel. Prima si trova il motivo: è il lavoro dell’analisi completa.</p></div></details>
       <details><summary>Servono accessi al PMS, al booking engine o ad Analytics?</summary><div class="ans"><p>No. Lavoro su quello che vede l’ospite: il tuo sito, quelli dei concorrenti, le recensioni.</p></div></details>
       <details><summary>Quanto tempo mi chiede?</summary><div class="ans"><p>Un minuto per la richiesta. Il resto lo faccio io: ricevi lo smontaggio in 3 giorni lavorativi.</p></div></details>
       <details><summary>Perché massimo 6 al mese?</summary><div class="ans"><p>Perché li faccio io, a mano, sito per sito. Di più, fatti bene, non se ne fanno.</p></div></details>
       <details><summary>E se il mio hotel ha meno di 40 camere?</summary><div class="ans"><p>Lo smontaggio è pensato per hotel e resort dalle 40 camere. Per strutture più piccole ci sono <a href="/quiz/">il test di posizionamento</a> e <a href="/bonus/">gli strumenti gratuiti del libro</a>.</p></div></details>
-      <details><summary>E se dopo non voglio andare avanti?</summary><div class="ans"><p>La pagina resta tua. Non ti chiamo per insistere: se vuoi l’analisi completa, mi ricontatti tu.</p></div></details>
+      <details><summary>E se dopo non voglio andare avanti?</summary><div class="ans"><p>La pagina resta tua. Non insisto: se vuoi l’analisi completa, me lo dici tu.</p></div></details>
     </div>
   </div>
 </section>
@@ -614,7 +617,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
         <div class="field"><label for="s-riga">Facoltativo: cosa vorresti che l'ospite capisse del tuo hotel, e che oggi la homepage non dice?</label><textarea id="s-riga" name="riga" rows="2"></textarea></div>
         <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento a essere ricontattato via email per lo smontaggio della homepage.</span></label>
         <button class="btn dark" type="submit">Richiedi lo smontaggio gratuito <span class="arr">→</span></button>
-        <p class="form-foot">Gratis · senza call · lo ricevi in 3 giorni lavorativi.<br><span class="ff-cap">Massimo 6 al mese, solo hotel e resort dalle 40 camere.</span><span class="ff-hday">Solo i primi 10 di chi era in sala, dalle 40 camere.</span></p>
+        <p class="form-foot">Gratis · senza impegno · lo ricevi in 3 giorni lavorativi.<br><span class="ff-cap">Massimo 6 al mese, solo hotel e resort dalle 40 camere.</span><span class="ff-hday">Solo i primi 10 di chi era in sala, dalle 40 camere.</span></p>
       </div>
       <div class="ok" role="status">
         <div class="tick">✓</div>

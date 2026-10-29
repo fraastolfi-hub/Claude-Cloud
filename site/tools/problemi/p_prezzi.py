@@ -71,7 +71,7 @@ P = dict(
     br_quote="Il mercato paga i motivi che riconosce. Non le camere.",
     proof_k="Tariffa media",
     proof_big="circa ×2",
-    offer_lead="Uno dei cinque documenti dell'analisi completa si chiama «Come vendere senza svendere». Si parte sempre dal motivo.",
+    offer_lead="Uno dei sei documenti dell'analisi completa si chiama «Come vendere senza svendere». Si parte sempre dal motivo.",
     cand_lead="Un minuto. Metto la prima riga della tua homepage accanto a quella dei vicini. Se l'ospite non vede la differenza, non la paga.",
     faq=[
         ("Nella mia zona il mercato non accetta tariffe più alte.", "Spesso nella stessa zona c'è un hotel simile che chiede di più e resta pieno. Il prezzo che regge dipende dal motivo che l'ospite riconosce, più che dalle camere."),
