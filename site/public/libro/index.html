@@ -25,17 +25,32 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 </script>
 <style>
 /* --- apertura: una colonna centrata, copertina grande, prezzo, numeri --- */
-.hero{text-align:center;padding-top:clamp(56px,7vw,96px)}
-.hero .eyebrow{justify-content:center}
-.hero h1{margin:18px auto 22px;font-size:clamp(44px,7vw,96px);max-width:14ch}
-.hero .lead{margin:0 auto 14px;max-width:36ch}
-.book-stage{display:flex;flex-direction:column;align-items:center;margin:clamp(40px,5vw,60px) 0 0}
-.book-img{width:min(420px,74vw);height:auto;transition:transform .4s cubic-bezier(.5,1.8,.5,1)}
+/* --- landing: testata con il solo logo --- */
+.lp-top{background:var(--surface-cream);border-bottom:1px solid var(--line-soft)}
+.lp-top .wrap{display:flex;align-items:center;min-height:64px}
+/* --- apertura: testo a sinistra, copertina a destra (sul telefono la copertina viene prima) --- */
+.hero{padding-top:clamp(36px,5vw,72px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hero .eyebrow{justify-content:flex-start}
+.hero h1{margin:18px 0 22px;font-size:clamp(40px,5.4vw,76px);max-width:14ch}
+.hero .lead{margin:0 0 14px;max-width:36ch}
+.book-stage{display:flex;flex-direction:column;align-items:center;margin:0}
+.book-img{width:min(420px,100%);height:auto;transition:transform .4s cubic-bezier(.5,1.8,.5,1)}
 .book-img:hover{transform:translateY(-4px)}
-.book-stage .price-tag{margin-top:clamp(28px,4vw,40px);font:600 21px/1.3 var(--text);letter-spacing:-.015em;color:var(--ink)}
-.book-stage .price-tag small{font:400 19px var(--text);color:var(--ink-2);margin-left:4px}
-.hero .btn-row{justify-content:center;margin-top:22px}
-.hero .micro{max-width:52ch;margin:20px auto 0}
+.book-stage .price-tag{margin-top:22px;font:700 21px/1.3 var(--display);color:var(--ink)}
+.book-stage .price-tag small{font:400 17px var(--text);color:var(--ink-2);margin-left:6px}
+.hero .btn-row{justify-content:flex-start;margin-top:22px}
+.hero .micro{max-width:52ch;margin:20px 0 0}
+@media (max-width:860px){
+  .hero{text-align:center;padding-top:24px}
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+  .book-stage{order:-1}
+  .book-img{width:min(190px,46vw)}
+  .book-stage .price-tag{display:none}
+  .hero h1{margin:12px auto 14px}
+  .hero .eyebrow,.hero .btn-row{justify-content:center}
+  .hero h1,.hero .lead,.hero .micro{margin-left:auto;margin-right:auto}
+}
 .hero-stats{max-width:880px;margin:clamp(56px,7vw,80px) auto 0;padding-top:34px;border-top:1px solid var(--line);grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .hero-stats .stat{border-radius:16px;padding:18px 14px;text-align:center;box-shadow:var(--o-sm)!important}
 .hero-stats .stat b{color:var(--ink);font-size:clamp(34px,3.4vw,44px);letter-spacing:-.035em}
@@ -120,63 +135,37 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 .receipt .foot-r{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 -26px;padding:16px 26px 22px;background:var(--giallo)}
 .receipt .foot-r .chip{color:var(--ink)}
 @media (max-width:860px){.receipt{justify-self:start}}
+.lp-foot{padding:28px 0}
+.lp-foot .legal{border:0;padding:0;margin:0}
 </style>
 <link rel="stylesheet" href="/assets/soft.css?v=a0d6e20f">
 
 </head>
 <body>
 <a class="skip" href="#main">Vai al contenuto</a>
-<div class="readbar" aria-hidden="true"></div>
-<div role="region" aria-label="Novità"><a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
-  <div class="ticker-track" aria-hidden="true">
-    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
-  </div>
-</a></div>
-<header class="nav">
-  <div class="wrap">
-    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
-    <nav class="nav-links" aria-label="Principale">
-      <a href="/metodo/">Il metodo</a>
-      <a href="/analisi/">L'analisi</a>
-      <a href="/casi/">Casi</a>
-      <a aria-current="page" href="/libro/">Libro</a>
-      <a href="/risorse/">Risorse gratuite</a>
-      <a href="/francesco/">Chi sono</a>
-    </nav>
-    <div class="nav-right">
-      <a class="btn sm" href="/#richiedi">Richiedi lo smontaggio <span class="arr">→</span></a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Apri il menu"><i></i></button>
-    </div>
-  </div>
-  <nav class="mobile-menu" id="mm" aria-label="Menu mobile">
-    <a href="/metodo/">Il metodo</a>
-    <a href="/analisi/">L'analisi di posizionamento</a>
-    <a href="/casi/">Casi</a>
-    <a aria-current="page" href="/libro/">Il libro</a>
-    <a href="/risorse/">Risorse gratuite</a>
-    <a href="/francesco/">Chi sono</a>
-    <a class="btn" href="/#richiedi">Richiedi lo smontaggio gratuito <span class="arr">→</span></a>
-  </nav>
-</header>
-
+<header class="lp-top"><div class="wrap"><a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a></div></header>
 
 <main id="main">
 
 <!-- ================= APERTURA ================= -->
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span>Il libro · Manuale di posizionamento alberghiero</span>
-    <h1><span class="line"><span>Un metodo in sei passaggi</span></span><span class="line"><span><em>per far scegliere il tuo hotel.</em></span></span></h1>
-    <p class="lead">Come uscire dal confronto con gli hotel simili e farti scegliere <strong>al tuo prezzo.</strong></p>
-    <div class="book-stage rv d1">
-      <img class="book-img" src="/assets/img/libro-hotel-positioning.webp" srcset="/assets/img/libro-hotel-positioning.webp 420w, /assets/img/libro-hotel-positioning@2x.webp 840w" sizes="(max-width:600px) 74vw, 420px" width="420" height="658" alt="Copertina del libro Hotel Positioning. Come l'ospite sceglie un hotel (e perché non sceglie il tuo), di Francesco Astolfi">
-      <span class="price-tag">19,90 €<small>su Amazon</small></span>
+    <div class="hero-grid">
+      <div class="hero-txt">
+        <span class="eyebrow"><span class="dot"></span>Il libro · Manuale di posizionamento alberghiero</span>
+        <h1><span class="line"><span>Un metodo in sei passaggi</span></span><span class="line"><span><em>per far scegliere il tuo hotel.</em></span></span></h1>
+        <p class="lead">Come uscire dal confronto con gli hotel simili e farti scegliere <strong>al tuo prezzo.</strong></p>
+        <div class="btn-row">
+          <a href="https://www.amazon.it/dp/B0HL3Z4XL7/" class="btn" rel="noopener">Ordina su Amazon · 19,90 € <span class="arr">→</span></a>
+          <a href="/bonus/" class="btn ghost">Scarica i bonus</a>
+        </div>
+        <p class="micro"><b>Cartaceo o Kindle.</b> Se non ti è utile, Amazon lo rimborsa entro 14 giorni.</p>
+      </div>
+      <div class="book-stage">
+        <img class="book-img" src="/assets/img/libro-hotel-positioning.webp" srcset="/assets/img/libro-hotel-positioning.webp 420w, /assets/img/libro-hotel-positioning@2x.webp 840w" sizes="(max-width:860px) 52vw, 400px" width="420" height="658" fetchpriority="high" alt="Copertina del libro Hotel Positioning. Come l'ospite sceglie un hotel (e perché non sceglie il tuo), di Francesco Astolfi">
+        <span class="price-tag">19,90 €<small>su Amazon</small></span>
+      </div>
     </div>
-    <div class="btn-row">
-      <a href="https://www.amazon.it/dp/B0HL3Z4XL7/" class="btn" rel="noopener">Ordina su Amazon · 19,90 € <span class="arr">→</span></a>
-      <a href="/bonus/" class="btn ghost">Scarica i bonus</a>
-    </div>
-    <p class="micro"><b>Cartaceo o Kindle.</b> Se non ti è utile, Amazon lo rimborsa entro 14 giorni.</p>
     <div class="stat-row hero-stats rv">
       <div class="stat"><b data-count="120">120</b><span>pagine. Due sere.</span></div>
       <div class="stat"><b data-count="6">6</b><span>passaggi, nell'ordine giusto</span></div>
@@ -390,54 +379,10 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 
 </main>
 
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <p class="big">Senza un posizionamento chiaro, l’unica leva che resta è il prezzo.</p>
-      </div>
-      <div>
-        <h2 class="foot-h">Il metodo</h2>
-        <ul>
-          <li><a href="/metodo/">I sei passaggi</a></li>
-          <li><a href="/analisi/">L'analisi di posizionamento</a></li>
-          <li><a href="/casi/">Casi</a></li>
-          <li><a href="/smontaggio/">Lo smontaggio della homepage</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="foot-h">Problemi che risolve</h2>
-        <ul>
-          <li><a href="/problemi/booking/">Troppe commissioni OTA</a></li>
-          <li><a href="/problemi/prezzi/">Tariffe che non salgono</a></li>
-          <li><a href="/problemi/sostituibili/">Un hotel uguale agli altri</a></li>
-          <li><a href="/problemi/agenzie/">Agenzie che non bastano</a></li>
-          <li><a href="/problemi/valore/">Il valore del brand</a></li>
-          <li><a href="/problemi/apertura/">Un hotel da aprire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="foot-h">Risorse gratuite</h2>
-        <ul>
-          <li><a href="/quiz/">Il test di posizionamento</a></li>
-          <li><a href="/bonus/">Gli 8 strumenti del libro</a></li>
-          <li><a href="/library/">La library dei posizionamenti</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="foot-h">Francesco</h2>
-        <ul>
-          <li><a href="/francesco/">Chi sono</a></li>
-          <li><a aria-current="page" href="/libro/">Il libro</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="legal">
-      <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
-      <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
-    </div>
-  </div>
-</footer>
+<footer class="foot lp-foot"><div class="wrap"><div class="legal">
+  <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+  <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
+</div></div></footer>
 <div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
   <button type="button" class="cc-x" data-cc="reject" aria-label="Chiudi e rifiuta i cookie non necessari">✕</button>
   <p class="cc-t" id="cc-t">Cookie e privacy</p>
@@ -468,7 +413,6 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 </div>
 
 <script src="/assets/site.js?v=b2bbac6a"></script>
-
 <script>
 (function(){
   var box=document.getElementById('miniRects'), cap=document.getElementById('miniCap'), btn=document.getElementById('findMe');
