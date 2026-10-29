@@ -146,7 +146,7 @@
       // La funzione submission-created salta questi invii (campo inviato=funzione) per non duplicare.
       // non si controlla data-netlify: Netlify lo toglie dall'HTML pubblicato. Basta il campo form-name.
       if (f.querySelector('input[name="form-name"]') && /(^|\.)(hotelpositioning\.com|netlify\.app)$/.test(location.hostname)) {
-        var pg = f.querySelector('input[name="pagina"]'); if (pg) pg.value = location.pathname;
+        var pg = f.querySelector('input[name="pagina"]'); if (pg) pg.value = location.pathname + location.search;
         var btn = f.querySelector('[type=submit]'); if (btn) btn.disabled = true;
         var fail = f.querySelector('.send-err');
         var body = new URLSearchParams(new FormData(f)); body.set('inviato', 'funzione'); body = body.toString();

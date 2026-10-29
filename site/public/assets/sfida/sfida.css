@@ -1,0 +1,186 @@
+/* La scommessa (/sfida/) · impaginazione.
+   Dipende da tokens.css e bundle.css. Solo variabili dei token: nessun colore o font scritto a mano.
+   Le regole .hp-page … neutralizzano style.css (caricato dal partial head). */
+
+/* ---------- Neutralizzazione di style.css ---------- */
+/* style.css mette box-sizing:border-box ovunque; bundle.css e la V9 lavorano con content-box (specificità zero: vincono le classi hp- che dichiarano border-box). Il banner cookie resta com'è. */
+:where(.hp-page) :where(*:not(.cc,.cc *)),:where(.hp-page) :where(*:not(.cc *))::before,:where(.hp-page) :where(*:not(.cc *))::after{box-sizing:content-box}
+.hp-page{overflow-x:hidden}
+.hp-page a{color:inherit}
+.hp-page img,.hp-page svg{max-width:none}
+.hp-page h1,.hp-page h2,.hp-page h3{line-height:1.1}
+.hp-page ::selection{background:var(--yellow);color:var(--ink)}
+.hp-page .field{margin:0}
+.hp-page .field label{display:block;margin:0;font:inherit;color:inherit}
+.hp-page .field input{width:100%;transition:none}
+.hp-page .field .em{font-family:var(--font-text);font-size:13px;font-weight:600;color:var(--cost-text);margin:0}
+.hp-page .field.err input{border-color:var(--cost-text);background:var(--surface-white)}
+.hp-page .check{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;margin:0;font-family:var(--font-text);font-size:15px;line-height:1.5;color:var(--ink-2)}
+.hp-page .check input{width:20px;height:20px;margin-top:2px;accent-color:var(--ink)}
+.hp-page .check.err{color:var(--cost-text)}
+.hp-page .cc{font-family:var(--font-text)}
+
+/* utilità */
+.hp-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sf-center{text-align:center}
+.sf-small{font-size:15px;line-height:1.5;color:var(--ink-3)}
+.sf-muted{color:var(--ink-2)}
+.sf-strong{font-weight:700}
+.sf-ink{color:var(--ink)}
+.sf-ic{width:16px;height:16px;flex:0 0 auto;fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- 1 · Nastro ---------- */
+.hp-page .hp-ticker{position:relative}
+
+/* ---------- 2 · Testata ---------- */
+.sf-top{display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px}
+.sf-logo{display:inline-flex;align-items:center;gap:10px;border:var(--border-soft) solid var(--ink);border-radius:var(--radius-pill);padding:7px 18px 7px 8px;background:var(--surface-white)}
+.sf-logo__mark{width:30px;height:30px;border-radius:9px;background:var(--lilac);border:var(--border-soft) solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:15px;line-height:1}
+.sf-logo__mark--s{width:26px;height:26px;border-radius:8px;font-size:13px}
+.sf-logo__name{font-family:var(--font-display);font-weight:700;font-size:16px;line-height:1.2}
+.sf-nav{display:flex;flex-wrap:wrap;column-gap:var(--space-4);font-family:var(--font-display);font-weight:600;font-size:16px;line-height:1.2}
+.sf-nav a{text-decoration:none;padding:12px 0}
+.sf-nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.sf-nav a:focus-visible,.sf-foot a:focus-visible,.sf-foot__btn:focus-visible,.check a:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+/* ---------- 3 · Apertura ---------- */
+.sf-hero{display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:center;padding-top:var(--space-7);padding-bottom:120px}
+.sf-hero__text{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.sf-hero__lead{margin:0;max-width:540px}
+.sf-btns{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:6px}
+.sf-hero__media{flex:1 1 420px;min-width:0;display:flex;justify-content:center}
+.sf-photo{width:min(430px,calc(100% - 60px));margin:28px 30px 10px}
+.sf-st{position:absolute}
+.sf-st--name{top:0;right:10%;--hp-tilt:-2deg}
+.sf-st--tile{top:15%;left:-2%;background:var(--teal);--hp-tilt:-5deg;animation-delay:-1.8s}
+.sf-st--tile svg{stroke-width:1.6}
+.sf-st--coin{top:50%;right:-4%;--hp-tilt:8deg;animation-delay:-3.6s}
+.sf-st--open{bottom:4%;right:-2%;font-size:14px}
+
+/* entrata dell'apertura (come la V9) */
+.sf-in{animation:hp-su .9s cubic-bezier(.2,.8,.2,1) both}
+.sf-in--1{animation-delay:.05s}.sf-in--2{animation-delay:.15s}.sf-in--3{animation-delay:.28s}.sf-in--4{animation-delay:.4s}
+
+/* ---------- 4 · Marco ---------- */
+.sf-marco{display:flex;flex-wrap:wrap;gap:64px;align-items:center;padding-top:96px;padding-bottom:96px}
+.sf-marco__story{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.sf-marco__quote{margin:0;font-size:19px;line-height:1.65;color:var(--ink-2)}
+.sf-person{display:flex;align-items:center;gap:14px}
+.sf-person__avatar{width:44px;height:44px;flex:0 0 auto;border-radius:50%;background:var(--pink);border:var(--border-soft) solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800}
+.sf-person__who{display:flex;flex-direction:column;line-height:1.4}
+.sf-person__name{font-family:var(--font-display);font-weight:700}
+.sf-person__role{font-size:15px;color:var(--ink-3)}
+.hp-page .sf-marco__h{flex:1 1 460px;min-width:0;font-size:clamp(32px,3.6vw,46px);line-height:1.1}
+
+/* ---------- 5 · Il conto ---------- */
+.sf-conto{display:flex;flex-direction:column;gap:var(--space-7);padding-top:120px;padding-bottom:120px}
+.sf-grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:var(--space-3)}
+.sf-leak{display:flex;flex-direction:column;gap:14px}
+.sf-leak p{margin:0;font-size:16px;line-height:1.6;color:var(--ink-2)}
+.hp-page .sf-h3{font-size:21px;line-height:1.2}
+.sf-example{padding:44px;display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:center}
+.sf-example__big{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.sf-example__tag{align-self:flex-start}
+.hp-page .hp-pill--cost.sf-example__tag{color:var(--ink)}
+.sf-example__big .hp-cost-display{overflow-wrap:normal;white-space:nowrap}
+.sf-example__rows{flex:1 1 380px;min-width:0;display:flex;flex-direction:column}
+.sf-row-total{align-items:center;padding-top:16px;padding-bottom:16px}
+.sf-total{font-size:16px;white-space:nowrap}
+.sf-note{font-size:13px;line-height:1.6;color:var(--ink-3)}
+
+/* ---------- 6 · La scommessa ---------- */
+.sf-bet{display:flex;flex-direction:column;gap:var(--space-6)}
+.sf-bet__head{text-align:center;display:flex;flex-direction:column;gap:var(--space-2);align-items:center}
+.hp-page .sf-bet__h{font-size:clamp(36px,4.6vw,60px);line-height:.96;max-width:940px}
+.sf-bet__sub{margin:0;font-size:19px;max-width:600px}
+.sf-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:var(--space-4)}
+.sf-side{padding:14px;display:flex;flex-direction:column;gap:18px}
+.sf-side__inner{display:flex;flex-direction:column;gap:14px}
+.sf-side__inner .hp-pill{align-self:flex-start}
+.sf-side__inner--teal{background:var(--teal-soft)}
+.sf-side__inner--sand{background:var(--surface-sand)}
+.sf-side__list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1.3}
+.sf-side__title{font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1.3}
+.sf-side__text{margin:0;font-size:16px;line-height:1.6;color:var(--ink-2)}
+.sf-side__foot{margin:0 14px 12px;font-size:16px;line-height:1.6;color:var(--ink-2)}
+.sf-side__foot--icon{display:flex;gap:10px;align-items:flex-start}
+.sf-side__foot--icon .sf-ic{margin-top:4px;stroke-width:1.8}
+.sf-steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:18px}
+.sf-steps li{background:var(--yellow-soft);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.5}
+.sf-steps__n{font-family:var(--font-display);font-weight:900;font-size:30px;line-height:1}
+.sf-bet__close{margin:0;text-align:center;font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.35}
+
+/* ---------- 7 · Clienti ---------- */
+.sf-clients{padding-top:120px;padding-bottom:40px}
+.sf-clients__h{padding:0 var(--space-4) 64px}
+.sf-clients__list{display:flex;flex-direction:column;gap:32px}
+.sf-case{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.sf-case--rev{flex-wrap:wrap-reverse}
+.sf-case__text{flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.sf-tags{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.hp-page .sf-case__h{font-size:32px;line-height:1.1}
+.sf-case__p{margin:0;font-size:17px;line-height:1.65;color:var(--ink-2)}
+.sf-case__panel{flex:1 1 440px;min-width:0}
+.sf-stat{padding:22px var(--space-4);display:flex;flex-direction:column;align-items:center;gap:4px}
+.sf-stat--wide{padding-left:32px;padding-right:32px}
+.sf-stat__n{font-family:var(--font-display);font-weight:900;font-size:56px;line-height:1}
+.sf-stat__n--xl{font-size:64px}
+.sf-stat__l{font-weight:600;font-size:15px;line-height:1.4}
+.hp-page .hp-panel .sf-stat--tilt-r{transform:rotate(2deg)}
+
+/* ---------- 8 · Libro e bio ---------- */
+.sf-bio{display:flex;flex-wrap:wrap;gap:var(--space-7);align-items:center;padding-top:96px;padding-bottom:120px}
+.sf-book{flex:1 1 380px;min-width:0;padding:40px;display:flex;flex-direction:column;gap:20px}
+.sf-book__pill{align-self:flex-start;background:var(--yellow)}
+.sf-book__quote{margin:0;font-family:var(--font-display);font-weight:800;font-size:32px;line-height:1.15}
+.sf-bio__text{flex:1.3 1 460px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.hp-page .sf-bio__h{font-size:clamp(32px,3.6vw,46px);line-height:1.05}
+.sf-bio__p{margin:0;font-size:18px;line-height:1.7;color:var(--ink-2)}
+.sf-bio__line{margin:0;font-family:var(--font-display);font-weight:700;font-size:21px;line-height:1.35}
+
+/* ---------- 9 · Domande ---------- */
+.sf-faq{display:flex;flex-wrap:wrap;gap:var(--space-7);align-items:flex-start}
+.hp-page .sf-faq__h{flex:1 1 260px;font-size:clamp(34px,3.8vw,50px);line-height:1}
+.sf-faq__list{flex:2 1 520px;min-width:0;display:flex;flex-direction:column}
+.sf-faq__list details:last-child{border-bottom:0}
+.sf-faq__list summary{line-height:1.3}
+.sf-faq__list summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+
+/* ---------- 10 · Form ---------- */
+.sf-contact{display:flex;flex-wrap:wrap;gap:var(--space-7);align-items:flex-start;padding-top:112px;padding-bottom:128px}
+.sf-contact__text{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.hp-page .sf-contact__h{font-size:clamp(34px,3.8vw,50px);line-height:1.05}
+.sf-contact__p{margin:0;font-size:18px;line-height:1.6;color:var(--ink-2)}
+.sf-form{flex:1.3 1 480px;min-width:0}
+.sf-form__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:var(--space-2)}
+.sf-form__full{grid-column:1/-1}
+.sf-form__foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:6px}
+.sf-form__note{font-size:14px;line-height:1.5;color:var(--ink-3)}
+.sf-form .ok{display:none;padding:var(--space-4);border:var(--border-strong) solid var(--ink);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);background:var(--surface-white)}
+.sf-form.sent .fields{display:none}
+.sf-form.sent .ok{display:block}
+.sf-ok__big{margin:0 0 6px;font-family:var(--font-display);font-weight:800;font-size:32px;line-height:1.1}
+.sf-form .ok p{margin:0}
+
+/* ---------- Piè di pagina ---------- */
+.sf-foot{background:var(--surface-white);border-top:var(--border-hair) solid var(--line)}
+.sf-foot__in{padding-top:36px;padding-bottom:36px;display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:space-between;align-items:center;font-size:15px;line-height:1.5;color:var(--ink-2)}
+.sf-foot__logo{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;color:var(--ink)}
+.sf-foot a,.hp-page .sf-foot__btn{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- Telefono ---------- */
+@media (max-width:640px){
+  .sf-hero{padding-top:var(--space-3);padding-bottom:var(--space-section)}
+  .sf-nav{column-gap:var(--space-3)}
+  .sf-example{padding:var(--space-4) 22px}
+  .hp-page .hp-panel{padding:32px 20px}
+  .sf-book{padding:var(--space-4)}
+  .sf-marco{gap:var(--space-6)}
+  .sf-stat__n{font-size:48px}
+  .sf-stat__n--xl{font-size:56px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .sf-in{animation:none !important}
+  .hp-page .field input{transition:none}
+}

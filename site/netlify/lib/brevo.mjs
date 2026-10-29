@@ -9,6 +9,7 @@ export const FORMS = {
   'test-posizionamento': { label: 'Test di posizionamento', list: 'BREVO_LIST_TEST' },
   'strumenti-libro': { label: 'Strumenti del libro', list: 'BREVO_LIST_BONUS' },
   'questionario': { label: 'Questionario di posizionamento', list: 'BREVO_LIST_QUESTIONARIO' },
+  'scommessa': { label: 'La scommessa (landing /sfida/)', list: 'BREVO_LIST_SCOMMESSA' },
 };
 
 // etichette leggibili per l'email di notifica

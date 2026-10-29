@@ -69,9 +69,9 @@ def asset_versions() -> dict:
     Così dopo ogni pubblicazione il browser scarica i file nuovi invece di usare quelli in cache."""
     import hashlib
     out = {}
-    for f in (SRC / "assets").glob("*"):
+    for f in (SRC / "assets").rglob("*"):
         if f.suffix in (".css", ".js"):
-            out["/assets/" + f.name] = hashlib.sha1(f.read_bytes()).hexdigest()[:8]
+            out["/assets/" + f.relative_to(SRC / "assets").as_posix()] = hashlib.sha1(f.read_bytes()).hexdigest()[:8]
     return out
 
 

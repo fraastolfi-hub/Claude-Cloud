@@ -1,0 +1,56 @@
+/* Hotel Positioning Soft · token (generato dal design system, 29 ottobre 2026). Solo per /sfida/. */
+@font-face{font-family:'Outfit';font-weight:100 900;font-display:swap;src:url(/assets/fonts/outfit.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:300 900;font-display:swap;src:url(/assets/fonts/figtree.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:italic;font-weight:300 900;font-display:swap;src:url(/assets/fonts/figtree-italic.woff2) format('woff2')}
+:root{
+  --surface-cream:#faf7f4;
+  --surface-white:#ffffff;
+  --surface-sand:#f3efe9;
+  --ink:#262521;
+  --ink-2:#57534c;
+  --ink-3:#6b665d;
+  --line:#e3ddd4;
+  --line-field:#8f887c;
+  --yellow:#ffd22e;
+  --yellow-soft:#fff7d1;
+  --yellow-tint:#ffeaa0;
+  --lilac:#8f8cff;
+  --lilac-soft:#d8d6ff;
+  --teal:#22a094;
+  --teal-soft:#bfe8e3;
+  --pink:#ff93c7;
+  --pink-soft:#ffd3ea;
+  --green:#5fd08a;
+  --tomato:#ff5a3c;
+  --cost-text:#c8361c;
+  --cost-display:#e2452a;
+  --cost-soft:#ffe1d9;
+  --focus:#ffe58a;
+  --font-display:"Outfit", "Helvetica Neue", Arial, sans-serif;
+  --font-text:"Figtree", "Helvetica Neue", Arial, sans-serif;
+  --space-1:8px;
+  --space-2:16px;
+  --space-3:24px;
+  --space-4:28px;
+  --space-6:48px;
+  --space-7:56px;
+  --space-section:112px;
+  --content-max:1200px;
+  --radius-sm:10px;
+  --radius-md:12px;
+  --radius-tile:14px;
+  --radius-lg:20px;
+  --radius-xl:24px;
+  --radius-photo:36px;
+  --radius-pill:999px;
+  --border-strong:2px;
+  --border-photo:2.5px;
+  --border-soft:1.5px;
+  --border-hair:1px;
+  --shadow-sm:3px 3px 0 #262521;
+  --shadow-sm-hover:5px 5px 0 #262521;
+  --shadow-md:4px 4px 0 #262521;
+  --shadow-md-hover:4px 8px 0 #262521;
+  --shadow-lg:6px 6px 0 #262521;
+  --shadow-focus:0 0 0 3px #ffe58a;
+}

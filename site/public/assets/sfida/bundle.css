@@ -1,0 +1,92 @@
+/* Hotel Positioning Soft — componenti CSS.
+   Dipende da tokens.css (variabili --surface-*, --ink*, --yellow…, --radius-*, --shadow-*, --border-*, --font-*).
+   Font: Google Fonts — Outfit 600/700/800/900 + Figtree 400/500/600/700.
+   Nessun JavaScript: ogni componente è HTML + queste classi. */
+
+/* ---------- Base ---------- */
+.hp-page{margin:0;background:var(--surface-cream);color:var(--ink);font-family:var(--font-text);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.hp-page h1,.hp-page h2,.hp-page h3{margin:0;font-family:var(--font-display);font-weight:800;letter-spacing:-0.02em;text-wrap:balance;hyphens:none;overflow-wrap:normal}
+.hp-wrap{max-width:var(--content-max);margin:0 auto;padding-left:var(--space-4);padding-right:var(--space-4)}
+.hp-section{padding-top:var(--space-section);padding-bottom:var(--space-section)}
+.hp-section--white{background:var(--surface-white)}
+.hp-section--yellow{background:var(--yellow)}
+.hp-up{text-transform:uppercase}
+.hp-num{font-variant-numeric:tabular-nums lining-nums}
+.hp-kicker{font-size:17px;color:var(--ink-3)}
+.hp-lead{font-size:20px;line-height:1.55;color:var(--ink-2)}
+.hp-display-xl{font-family:var(--font-display);font-weight:800;font-size:clamp(58px,7.4vw,100px);line-height:.92;letter-spacing:-0.02em;text-transform:uppercase}
+.hp-h2{font-family:var(--font-display);font-weight:800;font-size:clamp(36px,4.2vw,54px);line-height:1;letter-spacing:-0.02em}
+.hp-cost{color:var(--cost-text);font-weight:700}
+.hp-cost-display{font-family:var(--font-display);font-weight:900;font-size:clamp(60px,7.6vw,96px);line-height:1;letter-spacing:-0.03em;color:var(--cost-display);font-variant-numeric:tabular-nums}
+
+/* ---------- Bottone ---------- */
+.hp-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;box-sizing:border-box;padding:15px 24px;border:var(--border-strong) solid var(--ink);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);background:var(--surface-white);color:var(--ink);font-family:var(--font-display);font-weight:700;font-size:17px;line-height:1.2;text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.hp-btn--primary{background:var(--yellow)}
+.hp-btn:hover{transform:translate(-2px,-2px);box-shadow:var(--shadow-sm-hover)}
+.hp-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.hp-btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* ---------- Card ---------- */
+.hp-card{background:var(--surface-white);border:var(--border-strong) solid var(--ink);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:var(--space-4)}
+.hp-card--lift{transition:transform .25s ease,box-shadow .25s ease}
+.hp-card--lift:hover{transform:translateY(-4px);box-shadow:var(--shadow-md-hover)}
+.hp-card--soft{border:var(--border-soft) solid var(--line);box-shadow:none}
+.hp-card__inner{border-radius:var(--radius-md);padding:30px}
+
+/* ---------- Pillola ---------- */
+.hp-pill{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border:var(--border-strong) solid var(--ink);border-radius:var(--radius-pill);background:var(--surface-white);font-family:var(--font-display);font-weight:700;font-size:15px;line-height:1.2}
+.hp-pill--shadow{box-shadow:var(--shadow-sm)}
+.hp-pill--tag{font-size:13px;border-color:transparent}
+.hp-pill--yellow{background:var(--yellow-tint)} .hp-pill--lilac{background:var(--lilac-soft)} .hp-pill--teal{background:var(--teal-soft)} .hp-pill--pink{background:var(--pink-soft)} .hp-pill--green{background:var(--green)} .hp-pill--cost{background:var(--cost-soft);color:var(--cost-text)}
+.hp-pill--tag.hp-pill--yellow{border-color:var(--yellow-tint)} .hp-pill--tag.hp-pill--lilac{border-color:var(--lilac-soft)} .hp-pill--tag.hp-pill--teal{border-color:var(--teal-soft)} .hp-pill--tag.hp-pill--pink{border-color:var(--pink-soft)} .hp-pill--tag.hp-pill--cost{border-color:var(--cost-soft)}
+
+/* ---------- Piastrella icona ---------- */
+.hp-tile{width:52px;height:52px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;border:var(--border-strong) solid var(--ink);border-radius:var(--radius-tile)}
+.hp-tile svg{width:24px;height:24px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hp-tile--yellow{background:var(--yellow-tint)} .hp-tile--lilac{background:var(--lilac-soft)} .hp-tile--teal{background:var(--teal-soft)} .hp-tile--pink{background:var(--pink-soft)}
+.hp-tile--sticker{width:82px;height:82px;border-radius:20px;box-shadow:var(--shadow-sm)}
+.hp-tile--sticker svg{width:40px;height:40px}
+
+/* ---------- Nastro ---------- */
+.hp-ticker{overflow:hidden;background:var(--yellow);border-bottom:var(--border-soft) solid var(--ink);padding:8px 0}
+.hp-ticker__track{display:flex;gap:26px;width:max-content;white-space:nowrap;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;animation:hp-ticker 45s linear infinite}
+@keyframes hp-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- Cornice foto con adesivi ---------- */
+.hp-photo{position:relative;width:min(430px,100%);aspect-ratio:1/1.1}
+.hp-photo__frame{position:absolute;inset:10% 4% 0 8%;overflow:hidden;background:var(--lilac);border:var(--border-photo) solid var(--ink);border-radius:var(--radius-photo) var(--radius-photo) 50% 50% / var(--radius-photo) var(--radius-photo) 22% 22%;box-shadow:var(--shadow-lg)}
+.hp-photo__frame img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:104%;width:auto;display:block}
+.hp-photo__sticker{position:absolute;animation:hp-float 5.5s ease-in-out infinite}
+.hp-coin{width:84px;height:84px;border-radius:50%;background:var(--yellow);border:var(--border-photo) solid var(--ink);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:22px}
+@keyframes hp-float{0%,100%{transform:translateY(0) rotate(var(--hp-tilt,0deg))}50%{transform:translateY(-7px) rotate(var(--hp-tilt,0deg))}}
+
+/* ---------- FAQ ---------- */
+.hp-faq details{border-bottom:var(--border-hair) solid var(--line);padding:18px 0}
+.hp-faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:44px;cursor:pointer;list-style:none;font-family:var(--font-display);font-weight:600;font-size:19px}
+.hp-faq summary::-webkit-details-marker{display:none}
+.hp-faq__plus{flex:0 0 auto;width:32px;height:32px;border-radius:50%;border:var(--border-soft) solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:19px;transition:transform .2s ease}
+.hp-faq details[open] .hp-faq__plus{transform:rotate(45deg)}
+.hp-faq p{margin:10px 0 0;font-size:17px;line-height:1.65;color:var(--ink-2)}
+
+/* ---------- Form ---------- */
+.hp-field{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px}
+.hp-field input,.hp-field textarea,.hp-field select{min-height:48px;box-sizing:border-box;padding:13px 14px;border:var(--border-soft) solid var(--line-field);border-radius:var(--radius-sm);background:var(--surface-white);color:var(--ink);font:inherit;font-weight:400;font-size:16px}
+.hp-field input:focus,.hp-field textarea:focus,.hp-field select:focus{outline:none;border-color:var(--ink);box-shadow:var(--shadow-focus)}
+
+/* ---------- Riquadro di costo ---------- */
+.hp-cost-row{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:var(--border-hair) solid var(--line);font-size:16px}
+.hp-cost-row:last-child{border-bottom:0}
+
+/* ---------- Pannello colorato (clienti) ---------- */
+.hp-panel{border-radius:var(--radius-xl);padding:var(--space-6);display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.hp-panel--lilac{background:var(--lilac)} .hp-panel--teal{background:var(--teal)} .hp-panel--pink{background:var(--pink)} .hp-panel--yellow{background:var(--yellow)}
+.hp-panel .hp-card:nth-child(odd){transform:rotate(-2deg)} .hp-panel .hp-card:nth-child(even){transform:rotate(2deg)}
+
+/* ---------- Comparsa allo scorrimento ---------- */
+@keyframes hp-su{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.hp-reveal{animation:hp-su linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+
+@media (prefers-reduced-motion:reduce){
+.hp-ticker__track,.hp-photo__sticker,.hp-reveal{animation:none !important}
+.hp-btn,.hp-card--lift,.hp-faq__plus{transition:none}
+}
