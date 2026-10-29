@@ -27,7 +27,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
 
 <link rel="stylesheet" href="/assets/sfida/tokens.css?v=be3037c6">
 <link rel="stylesheet" href="/assets/sfida/bundle.css?v=f49af2c9">
-<link rel="stylesheet" href="/assets/sfida/sfida.css?v=deeec493">
+<link rel="stylesheet" href="/assets/sfida/sfida.css?v=2dc78fc5">
 </head>
 <body class="hp-page">
 
@@ -75,7 +75,7 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
       </div>
       <span class="hp-pill hp-pill--shadow hp-photo__sticker sf-st sf-st--name">Francesco</span>
       <div class="hp-tile hp-tile--sticker hp-photo__sticker sf-st sf-st--tile" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 13v-2M11 13V9M15 13V7"/><path d="m9 21 3-4 3 4"/></svg></div>
-      <div class="hp-coin hp-photo__sticker sf-st sf-st--coin" aria-hidden="true">−15%</div>
+      <div class="hp-coin hp-photo__sticker sf-st sf-st--coin" aria-hidden="true">5,8%</div>
       <span class="hp-pill hp-pill--green hp-pill--shadow sf-st sf-st--open"><svg class="sf-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Scommessa aperta</span>
     </div>
   </div>
@@ -121,21 +121,30 @@ window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
     </article>
   </div>
 
-  <div class="hp-card hp-card--soft hp-reveal sf-example">
-    <div class="sf-example__big">
+  <div class="hp-card hp-card--soft hp-reveal sf-cmp">
+    <div class="sf-cmp__head">
       <span class="hp-pill hp-pill--tag hp-pill--cost sf-example__tag">Esempio · un anno</span>
-      <span class="sf-small">1.000.000 € di camere, il 60% venduto da Booking e simili</span>
-      <span class="hp-cost-display">−90.000 €</span>
-      <span class="sf-small">in commissioni, per ospiti che non diventano mai davvero tuoi</span>
+      <h3 class="sf-cmp__h">Su 1.000.000 € di camere vendute</h3>
     </div>
-    <div class="sf-example__rows">
-      <div>
-        <div class="hp-cost-row"><span class="sf-muted">Commissioni ai portali (ipotesi: 15% di 600.000 €)</span><span class="hp-num hp-cost">−90.000 €</span></div>
-        <div class="hp-cost-row"><span class="sf-muted">di cui per ospiti che tornano (ipotesi: uno su due)</span><span class="hp-num hp-cost">−45.000 €</span></div>
-        <div class="hp-cost-row sf-row-total"><span class="sf-strong">Lo stesso fatturato, al 5,8% del Silva Splendid</span><span class="hp-pill hp-pill--green hp-num sf-total">−34.800 €</span></div>
+    <div class="sf-cmp__row">
+      <div class="sf-cmp__label"><span class="sf-strong">Se le vendi tutte su Booking</span><span class="sf-small">commissione del 15%</span></div>
+      <div class="sf-bar" role="img" aria-label="Su un milione di euro, 150.000 euro vanno a Booking">
+        <span class="sf-bar__cost sf-bar__cost--ota" style="width:15%"></span>
       </div>
-      <span class="sf-note">Esempio con numeri ipotetici. Il 5,8% è il risultato di un hotel preciso, non una promessa.</span>
+      <span class="sf-cmp__val hp-num hp-cost">150.000 €</span>
     </div>
+    <div class="sf-cmp__row">
+      <div class="sf-cmp__label"><span class="sf-strong">Se le vendi sul tuo sito, con le mie campagne</span><span class="sf-small">il 5,8% del Silva Splendid</span></div>
+      <div class="sf-bar" role="img" aria-label="Su un milione di euro, 58.000 euro vanno in pubblicità">
+        <span class="sf-bar__cost sf-bar__cost--dir" style="width:5.8%"></span>
+      </div>
+      <span class="sf-cmp__val hp-num">58.000 €</span>
+    </div>
+    <div class="sf-cmp__total">
+      <span>Ti restano <strong>92.000 € in più</strong>. E gli ospiti diventano tuoi.</span>
+      <span class="hp-pill hp-pill--green hp-num sf-total">+92.000 €</span>
+    </div>
+    <span class="sf-note">Esempio con numeri ipotetici: nessun hotel vende tutto da un solo canale. Il 5,8% è il risultato del Silva Splendid, non una promessa.</span>
   </div>
 </section>
 

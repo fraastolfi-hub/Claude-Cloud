@@ -190,3 +190,24 @@
 .hp-page .sf-h1{font-size:clamp(34px,4vw,58px);line-height:1.14;text-transform:none}
 .hp-page .sf-h1 br{display:block;content:"";margin-top:.18em}
 .hp-page .sf-h1 .hp-hl{background:var(--yellow);color:var(--ink);padding:0 .12em;border-radius:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* il conto: un milione di camere, quanto se ne va a Booking e quanto con le campagne */
+.sf-cmp{padding:44px;display:flex;flex-direction:column;gap:var(--space-3)}
+.sf-cmp__head{display:flex;flex-direction:column;gap:12px}
+.hp-page .sf-cmp__h{font-family:var(--font-display);font-weight:800;font-size:clamp(24px,2.4vw,32px);line-height:1.15;color:var(--ink)}
+.sf-cmp__row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) calc(clamp(22px,2.2vw,30px)*5.2);gap:var(--space-3);align-items:center;padding:14px 0;border-top:var(--border-hair) solid var(--line)}
+.sf-cmp__label{display:flex;flex-direction:column;gap:2px}
+.sf-bar{position:relative;height:36px;border:var(--border-strong) solid var(--ink);border-radius:var(--radius-md);background:var(--surface-sand);overflow:hidden}
+.sf-bar::after{content:"1.000.000 €";position:absolute;right:12px;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--ink-3)}
+.sf-bar__cost{position:absolute;left:0;top:0;bottom:0;border-right:var(--border-strong) solid var(--ink)}
+.sf-bar__cost--ota{background:var(--tomato)}
+.sf-bar__cost--dir{background:var(--green)}
+.sf-cmp__val{font-family:var(--font-display);font-weight:900;font-size:clamp(22px,2.2vw,30px);line-height:1;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;text-align:right;min-width:0}
+.sf-cmp__total{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--space-2);padding-top:var(--space-2);border-top:var(--border-strong) solid var(--ink);font-size:18px}
+.sf-cmp__total strong{font-weight:700}
+@media (max-width:760px){
+  .sf-cmp{padding:var(--space-4) 22px}
+  .sf-cmp__row{grid-template-columns:minmax(0,1fr) auto;row-gap:10px}
+  .sf-cmp__row .sf-bar{grid-column:1/-1;grid-row:2}
+}
+.sf-cmp__val.hp-cost{color:var(--cost-display)}
