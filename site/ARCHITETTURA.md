@@ -16,6 +16,7 @@ Una categoria, una persona, un metodo, una scala.
 - **Persona:** Francesco Astolfi, vent'anni da ogni lato del tavolo, operatore e non consulente ("vendo cicatrici").
 - **Metodo:** Hotel Positioning, in sei passaggi. Il libro lo racconta, l'analisi lo applica.
 - **Scala:** gratis (quiz, smontaggio, strumenti, library) → libro (€19,90) → analisi completa (€2.500 + IVA; €697 + IVA su /hday/ per chi era all'Hospitality Day) → accompagnamento su misura, solo se è l'hotel a ricontattare Francesco. L'ingresso gratuito per tutti è lo smontaggio della homepage.
+- **Accanto alla scala, dal 28 ottobre 2026: la sfida** (/sfida/). Per chi fa già campagne: una landing per una campagna, €997 + IVA, in test A/B contro la pagina dell'hotel per 30 giorni a metà traffico; se il sito dell'hotel vince o pareggia, rimborso totale. Si entra con una verifica gratuita propria (sì o no sulla pagina della campagna), diversa dallo smontaggio. Vedi VERIFICA.md.
 
 Ogni pagina ha **un'azione principale** e al massimo una secondaria, presa dal gradino subito sotto della scala.
 
@@ -32,6 +33,8 @@ Ogni pagina ha **un'azione principale** e al massimo una secondaria, presa dal g
 │       ├── agenzie/      "Tre agenzie, stesso risultato"
 │       ├── valore/       "Quanto vale davvero il tuo hotel?"
 │       └── apertura/     "Sto aprendo: non voglio nascere commodity"
+├── /sfida/               La landing per una campagna, test A/B, rimborso   → Verifica gratuita (#verifica) · sec.: Smontaggio
+│   └── /verifica/        esito/?t=… (per l'hotel) · rivedi/?id=…&t=… (per Francesco), noindex
 ├── /casi/                Silva Splendid · Veridia · Yume Ramen             → Analisi
 ├── /libro/               Pagina di vendita del libro                        → Amazon · sec.: Strumenti gratis
 ├── /risorse/             Hub degli strumenti gratuiti: "parti da qui"
@@ -51,7 +54,7 @@ Servono alle campagne: chi clicca su "commissioni Booking" deve trovare la sua f
 
 ## Navigazione
 
-- **Barra in alto:** Il metodo · Casi · Libro · Risorse gratis · Chi sono · [Richiedi lo smontaggio]
+- **Barra in alto:** Il metodo · L'analisi · La sfida · Casi · Libro · Risorse gratis · Chi sono · [Richiedi lo smontaggio]
 - **Ticker:** novità del libro, collegato a `/libro/`
 - **Footer:** quattro colonne (Metodo, Risorse, Libro e Francesco, Contatti e note legali) con una frase-manifesto.
 - **CTA fissa su mobile:** solo sulle pagine con form (analisi, sintomi, smontaggio).
@@ -79,6 +82,7 @@ Vedi [TONO.md](TONO.md), e prima di tutto gli aggiornamenti del 7 e 9 ottobre 20
 | Smontaggio | Smontaggio della homepage: gratis, fatto a mano da Francesco, massimo 6 al mese, solo hotel e resort dalle 40 camere, lo ricevi in 3 giorni lavorativi, una pagina, nessuna call. La prima riga della homepage accanto a 2-3 concorrenti con il logo coperto, un verdetto (posizionato / sostituibile / invisibile), un indizio su dove sta il motivo. Niente frasi pronte né alternative. È l'unica richiesta del sito: modulo in homepage (`/#richiedi`), in /smontaggio/ e nelle pagine /problemi/ e /casi/ | — |
 | Libro | 120 pagine, 8 figure, 6 passaggi, €19,90 su Amazon (https://www.amazon.it/dp/B0HL3Z4XL7/), anche Kindle, rimborso Amazon 14 giorni. Bonus gratuiti: gli 8 strumenti (non esiste un capitolo gratuito) | — |
 | Acquisto analisi | https://buy.stripe.com/aFa8wI5uaduM6LM3fr3AY00 | — |
+| La sfida | Landing per una campagna: €997 + IVA (prezzo solo su /sfida/). Frase-radice, copy, design, pubblicazione sul dominio dell'hotel, booking engine o modulo, pixel Meta, 5 annunci, test A/B di 30 giorni a metà traffico (almeno 1.000 visite per pagina; sotto soglia il test si allunga). Se il sito dell'hotel vince o pareggia: rimborso totale e landing offline. Online in circa 14 giorni. Non inclusi: gestione campagne, budget media, foto e video. Ingresso: verifica gratuita, risposta entro 2 giorni lavorativi, bozza preparata con l'AI e rivista da Francesco; sotto le 2.000 visite al mese il no arriva subito | — |
 | Dati legali | Francesco Astolfi, Via Cupa 5, 47923 Rimini (RN), P. IVA 04283940403, consulting@francescoastolfi.net | — |
 
 ## Cose da decidere (per Francesco)

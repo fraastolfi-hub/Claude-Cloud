@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rivedi la verifica · Hotel Positioning</title>
+<meta name="description" content="Revisione interna della verifica.">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { ga4: '', metaPixel: '' };</script>
+<meta name="theme-color" content="#fffdf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=79bb2f11">
+
+<style>
+.vr{padding:clamp(32px,5vw,72px) 0}
+.vr .wrap{max-width:860px;display:flex;flex-direction:column;gap:26px}
+.vr h1{font:400 clamp(28px,4vw,44px)/1 var(--display);text-transform:uppercase;overflow-wrap:anywhere}
+.vr .k{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.vr-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border:2px solid var(--inchiostro);background:var(--carta)}
+.vr-facts>div{padding:10px 14px;border:1px solid #0a0a0a33;min-width:0}
+.vr-facts .wide{grid-column:1/-1}
+.vr-facts dt{font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--inchiostro-3)}
+.vr-facts dd{font-weight:600;overflow-wrap:anywhere}
+.vr-facts a{display:inline-block;padding:10px 0;font-weight:700;text-underline-offset:5px}
+.vr-warn{border:2px solid var(--pomodoro);background:#ffe3dc;padding:12px 16px;font-size:15px;line-height:1.5}
+.vr-ok{border:2px solid var(--inchiostro);background:#fff6cf;padding:12px 16px;font-weight:600}
+.vr-err{background:var(--pomodoro);border:2px solid var(--inchiostro);padding:12px 16px;font-weight:600}
+.vr form{display:flex;flex-direction:column;gap:20px}
+.vr fieldset{border:0;display:grid;gap:10px;min-width:0}
+.vr .opt{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:center;min-height:52px;border:2px solid var(--inchiostro);padding:12px 14px;font-weight:600;cursor:pointer;background:var(--carta)}
+.vr .opt:has(input:checked){background:var(--giallo)}
+.vr .punto{border:var(--bd);box-shadow:var(--o-md);background:var(--carta);padding:20px;display:flex;flex-direction:column;gap:12px;position:relative}
+.vr .punto legend{background:var(--inchiostro);color:var(--giallo);padding:4px 10px;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.vr label.l{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:6px}
+.vr input[type=text],.vr textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:2px solid var(--inchiostro);background:#fff;border-radius:0}
+.vr textarea{min-height:90px;resize:vertical}
+.vr .acts{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.vr .lnk{background:none;border:0;padding:0;min-height:44px;font:inherit;font-weight:700;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.vr .lnk:disabled,.vr .btn:disabled{opacity:.5;cursor:not-allowed}
+.vr .rm{position:absolute;top:2px;right:14px}
+@media (max-width:600px){.vr .acts .btn{width:100%;justify-content:center}}
+</style>
+<link rel="stylesheet" href="/assets/brutalist.css?v=46f0d0c4">
+
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="readbar" aria-hidden="true"></div>
+<div role="region" aria-label="Novità"><a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
+  <div class="ticker-track" aria-hidden="true">
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
+  </div>
+</a></div>
+<header class="nav">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <nav class="nav-links" aria-label="Principale">
+      <a href="/metodo/">Il metodo</a>
+      <a href="/analisi/">L'analisi</a>
+      <a href="/sfida/">La sfida</a>
+      <a href="/casi/">Casi</a>
+      <a href="/libro/">Libro</a>
+      <a href="/risorse/">Risorse gratuite</a>
+      <a href="/francesco/">Chi sono</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn sm" href="/#richiedi">Richiedi lo smontaggio <span class="arr">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Apri il menu"><i></i></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mm" aria-label="Menu mobile">
+    <a href="/metodo/">Il metodo</a>
+    <a href="/analisi/">L'analisi di posizionamento</a>
+    <a href="/sfida/">La sfida: la landing per una campagna</a>
+    <a href="/casi/">Casi</a>
+    <a href="/libro/">Il libro</a>
+    <a href="/risorse/">Risorse gratuite</a>
+    <a href="/francesco/">Chi sono</a>
+    <a class="btn" href="/#richiedi">Richiedi lo smontaggio gratuito <span class="arr">→</span></a>
+  </nav>
+</header>
+
+<main id="main" class="vr">
+  <div class="wrap" id="vr"><p class="k" role="status">Carico la bozza…</p></div>
+</main>
+<script>
+(function(){
+  var root = document.getElementById('vr'), q = new URLSearchParams(location.search), id = q.get('id') || '', token = q.get('t') || '';
+  var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var host = function(u){ try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return u; } };
+  var MSG = { not_found: "Link non valido: aprilo di nuovo dall'email.", gia_inviata: 'Questa verifica è già stata inviata.', bozza_non_valida: 'Compila esito, motivo e ogni campo dei punti (da 2 a 3).', invio_non_riuscito: "L'email non è partita: le modifiche sono salvate, riprova tra un momento.", network: 'Errore di rete. Le modifiche sono ancora qui: riprova.' };
+  var VUOTO = function(){ return { titolo: '', citazione: '', cosa_vede_l_ospite: '', perche_perde: '' }; };
+  var v = null, bozza = null, mod = false, lavoro = null, msg = null;
+
+  function chiama(azione){
+    lavoro = azione; disegna();
+    return fetch('/.netlify/functions/verifica-admin', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ azione: azione, id: id, token: token, bozza: bozza }) })
+      .then(function(r){ return r.json(); }).catch(function(){ return { ok: false, errore: 'network' }; })
+      .then(function(r){
+        lavoro = null;
+        if (!r.ok) { msg = { ok: false, t: MSG[r.errore] || 'Qualcosa non ha funzionato.' }; return disegna(); }
+        v = r.verifica; bozza = v.bozza ? JSON.parse(JSON.stringify(v.bozza)) : { esito: 'si', motivo: '', punti: [VUOTO(), VUOTO()], nota_per_francesco: '' }; mod = false;
+        msg = azione === 'salva' ? { ok: true, t: 'Bozza salvata.' } : azione === 'invia' ? { ok: true, t: 'Inviata a ' + v.email + '.' } : azione === 'rigenera' ? { ok: true, t: "Nuova analisi avviata: ti arriva un'email quando è pronta." } : null;
+        disegna();
+      });
+  }
+
+  function campo(i, k, etichetta, lungo, dis){
+    var idc = 'p' + i + '-' + k, val = esc(bozza.punti[i][k]);
+    return '<div><label class="l" for="' + idc + '">' + etichetta + '</label>' + (lungo ? '<textarea id="' + idc + '" data-p="' + i + '" data-k="' + k + '"' + dis + '>' + val + '</textarea>' : '<input type="text" id="' + idc + '" data-p="' + i + '" data-k="' + k + '" value="' + val + '"' + dis + '>') + '</div>';
+  }
+
+  function disegna(){
+    if (!v) { root.innerHTML = msg ? '<p class="vr-err">' + esc(msg.t) + '</p>' : '<p class="k" role="status">Carico la bozza…</p>'; return; }
+    var inviata = v.stato === 'inviata', analisi = v.stato === 'in_analisi', dis = inviata ? ' disabled' : '', occ = lavoro ? ' disabled' : '';
+    var h = '<header><p class="k">Verifica · ' + (inviata ? 'inviata' : analisi ? 'analisi in corso' : v.stato === 'da_rivedere' ? 'senza bozza' : 'da rivedere') + '</p><h1>' + esc(host(v.url_pagina)) + '</h1></header>' +
+      '<dl class="vr-facts"><div><dt>Nome</dt><dd>' + esc(v.nome || '—') + '</dd></div><div><dt>Email</dt><dd>' + esc(v.email) + '</dd></div><div><dt>Campagna</dt><dd>' + esc(v.campagna || '—') + '</dd></div><div><dt>Traffico</dt><dd>' + esc(v.traffico || '—') + '</dd></div><div><dt>Partenza</dt><dd>' + esc(v.avvio || '—') + '</dd></div><div class="wide"><dt>Pagina</dt><dd><a href="' + esc(v.url_pagina) + '" target="_blank" rel="noopener">Apri la pagina dell\'hotel ↗</a></dd></div></dl>';
+    if (v.errore_analisi) h += '<p class="vr-warn"><strong>L\'analisi automatica non è riuscita:</strong> ' + esc(v.errore_analisi) + '. Scrivi tu l\'esito qui sotto, oppure riprova.</p>';
+    if (bozza.nota_per_francesco && !inviata) h += '<p class="vr-warn"><strong>Da controllare:</strong> ' + esc(bozza.nota_per_francesco) + '</p>';
+    if (analisi) {
+      h += '<div class="punto"><p>L\'analisi è in corso. Ti arriva un\'email quando la bozza è pronta.</p><button type="button" class="btn" data-a="carica"' + occ + '>Ricarica</button></div>';
+    } else {
+      h += '<form id="vr-form" novalidate><fieldset' + dis + '><legend class="l">Esito</legend>' +
+        ['si', 'no'].map(function(x){ return '<label class="opt"><input type="radio" name="esito" value="' + x + '"' + (bozza.esito === x ? ' checked' : '') + '><span>' + (x === 'si' ? 'Sì, posso batterla' : 'No, per ora non la metto in gara') + '</span></label>'; }).join('') + '</fieldset>' +
+        '<div><label class="l" for="vr-motivo">Motivo (lo legge l\'albergatore)</label><textarea id="vr-motivo"' + dis + '>' + esc(bozza.motivo) + '</textarea></div>' +
+        bozza.punti.map(function(p, i){
+          return '<fieldset class="punto"' + dis + '><legend>Punto ' + (i + 1) + '</legend>' + (bozza.punti.length > 2 && !inviata ? '<button type="button" class="lnk rm" data-rm="' + i + '">Togli</button>' : '') +
+            campo(i, 'titolo', 'Titolo', false, '') + campo(i, 'citazione', 'Citazione esatta dalla pagina', true, '') + campo(i, 'cosa_vede_l_ospite', "Cosa vede l'ospite", true, '') + campo(i, 'perche_perde', 'Perché perde', true, '') + '</fieldset>';
+        }).join('') +
+        (bozza.punti.length < 3 && !inviata ? '<button type="button" class="btn ghost" data-add>+ Aggiungi un punto</button>' : '') +
+        (msg ? '<p class="' + (msg.ok ? 'vr-ok' : 'vr-err') + '" role="' + (msg.ok ? 'status' : 'alert') + '">' + esc(msg.t) + '</p>' : '') +
+        (inviata
+          ? '<p class="vr-ok">Inviata il ' + esc(new Date(v.inviata).toLocaleString('it-IT')) + '. <a href="' + esc(v.link_esito) + '" target="_blank" rel="noopener">Vedi la pagina dell\'esito ↗</a></p>'
+          : '<div class="acts"><button type="submit" class="btn dark"' + occ + '>' + (lavoro === 'invia' ? 'Invio…' : (mod ? 'Salva e invia a ' : 'Approva e invia a ') + esc(v.email)) + '</button><button type="button" class="btn ghost" data-a="salva"' + (lavoro || !mod ? ' disabled' : '') + '>Salva senza inviare</button><button type="button" class="lnk" data-a="rigenera"' + occ + '>Rifai l\'analisi con l\'AI</button></div>') +
+        '</form>';
+    }
+    root.innerHTML = h;
+  }
+
+  root.addEventListener('input', function(e){
+    var t = e.target;
+    if (t.dataset.k) bozza.punti[+t.dataset.p][t.dataset.k] = t.value;
+    else if (t.id === 'vr-motivo') bozza.motivo = t.value;
+    else if (t.name === 'esito') bozza.esito = t.value;
+    else return;
+    if (!mod) { mod = true; var b = root.querySelector('[data-a=salva]'); if (b) b.disabled = false; var s = root.querySelector('[type=submit]'); if (s) s.textContent = 'Salva e invia a ' + v.email; }
+  });
+  root.addEventListener('change', function(e){ if (e.target.name === 'esito') { bozza.esito = e.target.value; mod = true; disegna(); } });
+  root.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.a) { msg = null; chiama(b.dataset.a); }
+    else if (b.dataset.rm != null) { bozza.punti.splice(+b.dataset.rm, 1); mod = true; disegna(); }
+    else if (b.hasAttribute('data-add')) { bozza.punti.push(VUOTO()); mod = true; disegna(); }
+  });
+  root.addEventListener('submit', function(e){ e.preventDefault(); msg = null; chiama('invia'); });
+
+  if (!/^[a-f0-9]{24}$/.test(id) || !token) { msg = { ok: false, t: MSG.not_found }; return disegna(); }
+  chiama('carica');
+})();
+</script>
+</body>
+</html>

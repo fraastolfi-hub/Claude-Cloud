@@ -55,6 +55,10 @@ Se qualcosa non arriva: Netlify, poi Logs, poi Functions, poi `submission-create
 - Le email automatiche ai contatti (strumenti del libro, risultato del test) si configurano su Brevo come automazioni sull'ingresso in lista.
 - La privacy policy (/privacy-policy/) descrive già Netlify e Brevo. I caratteri sono ospitati sul sito (assets/fonts), quindi non passa nulla a Google Fonts. Se cambiano fornitori o moduli, va aggiornata.
 
+# La verifica della sfida (/sfida/)
+
+Non passa da `invio.mjs` né da Netlify Forms: ha funzioni sue e un archivio su Netlify Blobs. Tutto il flusso e la configurazione sono in [VERIFICA.md](VERIFICA.md).
+
 # Google Analytics e Pixel di Meta
 
 Gli script partono solo dopo il consenso dato nel banner dei cookie (`src/partials/cookie-banner.html`, `src/assets/consent.js`). Prima della scelta, o dopo un rifiuto, non viene caricato nulla. La scelta dura 6 mesi; il link «Preferenze cookie» nel piè di pagina riapre il banner.
@@ -70,4 +74,4 @@ window.HP_TRACKING = { ga4: 'G-XXXXXXXXXX', metaPixel: '123456789012345' };
 
 Se un ID resta vuoto, quello strumento è disattivato anche con il consenso.
 
-**Eventi già collegati:** a ogni modulo inviato con successo partono `generate_lead` su GA4 e `Lead` su Meta, con il nome del modulo (`revisione-homepage`, `test-posizionamento`, `strumenti-libro`). Su GA4 segnate `generate_lead` come evento chiave; su Meta usate `Lead` come conversione delle campagne.
+**Eventi già collegati:** a ogni modulo inviato con successo partono `generate_lead` su GA4 e `Lead` su Meta, con il nome del modulo (`revisione-homepage`, `test-posizionamento`, `strumenti-libro`). Su /sfida/ l'evento parte al primo passo della verifica, con il nome `verifica-sfida`. Su GA4 segnate `generate_lead` come evento chiave; su Meta usate `Lead` come conversione delle campagne.
