@@ -185,3 +185,8 @@
   .sf-in{animation:none !important}
   .hp-page .field input{transition:none}
 }
+
+/* titolo d'apertura: domanda + risposta, più lungo del titolo della V9 */
+.hp-page .sf-h1{font-size:clamp(34px,4vw,58px);line-height:1.14;text-transform:none}
+.hp-page .sf-h1 br{display:block;content:"";margin-top:.18em}
+.hp-page .sf-h1 .hp-hl{background:var(--yellow);color:var(--ink);padding:0 .12em;border-radius:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
