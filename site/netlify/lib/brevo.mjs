@@ -63,6 +63,7 @@ export function contact(d, formName, form) {
   const want = (process.env.BREVO_ATTRIBUTES || '').trim();
   const keys = want === '1' ? Object.keys(extra) : want.split(',').map((k) => k.trim().toUpperCase()).filter((k) => k in extra);
   for (const k of keys) attributes[k] = extra[k];
+  if (d.camere && ['guida', 'cassetta'].includes(formName)) attributes.CAMERE = d.camere;
   for (const k of Object.keys(attributes)) if (attributes[k] === '') delete attributes[k];
   const id = Number(process.env[form.list] || process.env.BREVO_LIST_DEFAULT);
   const optIn = form.optIn && d[form.optInField] ? Number(process.env[form.optIn]) : 0;
@@ -89,7 +90,8 @@ export function notification(d, form) {
 // meglio un contatto con la sola email che nessun contatto.
 export async function saveContact(d, formName, form) {
   const full = contact(d, formName, form);
-  const tries = [full, { email: full.email, updateEnabled: true, attributes: { FONTE: form.label }, ...(full.listIds ? { listIds: full.listIds } : {}) }, { email: full.email, updateEnabled: true }];
+  const noCamere = full.attributes && 'CAMERE' in full.attributes ? [{ ...full, attributes: Object.fromEntries(Object.entries(full.attributes).filter(([k]) => k !== 'CAMERE')) }] : [];
+  const tries = [full, ...noCamere, { email: full.email, updateEnabled: true, attributes: { FONTE: form.label }, ...(full.listIds ? { listIds: full.listIds } : {}) }, { email: full.email, updateEnabled: true }];
   let last;
   for (const body of tries) {
     try { return await brevo('/contacts', body); } catch (e) { last = e; console.error('contatto non salvato, riprovo con meno dati:', e.message); }
@@ -206,23 +208,24 @@ export async function metaLead(d, headers = {}) {
 export function guidaMail(d) {
   const nome = ((d.nome || '').trim().split(/\s+/)[0]) || '';
   const pdf = 'https://hotelpositioning.com/assets/guida/che-hotel-sei.pdf';
-  const big = d.camere === '40-80' || d.camere === 'oltre 80';
-  const p = [
-    `Ciao${nome ? ' ' + nome : ''},`,
-    'ecco la guida «Il posizionamento, spiegato semplice a chi ha un hotel». Trenta pagine, mezz\'ora di lettura.',
-    'Comincia dalla pagina 2: i cinque conti che paghi ogni anno, e la causa comune. Poi, a pagina 23, la regola più scomoda: prima le operations, dopo il racconto.',
+  const pre = 'C\'è un conto che quasi nessuno fa.';
+  const a = [`Ciao${nome ? ' ' + nome : ''},`, 'ecco la guida:'];
+  const b = [
+    'Comincia da pagina 2: la sera delle fatture.\nPoi, a pagina 5, fermati.',
+    'È il conto dello sconto.\nIl vicino abbassa di dieci euro. Tu abbassi.\nLì c\'è un conto che quasi nessuno fa.\nFallo con i tuoi numeri. Ci vuole un minuto.',
+    'Il resto si legge in mezz\'ora. Con un caffè, meglio.',
+    'Nei prossimi giorni ti scrivo qualche riga.\nPoche, e solo su quello che c\'è nella guida.',
+    'Francesco',
   ];
-  const ps = big
-    ? 'P.S. Se vuoi vedere come ti legge oggi un ospite, ti faccio lo smontaggio gratuito della tua homepage: la tua prima riga accanto a quella di 2-3 concorrenti, con il logo coperto, e un verdetto. https://hotelpositioning.com/#richiedi'
-    : 'P.S. Se dopo la guida vuoi il metodo per scrivere il tuo motivo, è nel libro Hotel Positioning (19,90 €): https://hotelpositioning.com/vai/libro/?da=guida-email1';
-  const para = (x) => `<p style="margin:0 0 14px">${esc(x)}</p>`;
+  const ps = 'Il PDF è tuo. Giralo pure a chi lavora con te alla reception o sui prezzi. Di solito è lì che lo sconto si decide.';
+  const para = (x) => `<p style="margin:0 0 14px">${esc(x).replace(/\n/g, '<br>')}</p>`;
   return {
     sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
     to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
     replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
-    subject: 'La tua guida: il posizionamento, spiegato semplice',
+    subject: 'La tua guida. Fermati a pagina 5.',
     tags: ['guida-email-1'],
-    textContent: [...p, `Apri la guida →\n${pdf}`, 'Francesco', ps].join('\n\n'),
-    htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${p.map(para).join('')}<p style="margin:20px 0 22px"><a href="${pdf}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri la guida (PDF) →</a></p>${para('Francesco')}${para(ps)}</div>`,
+    textContent: [...a, `Apri la guida → ${pdf}`, ...b, `P.S. ${ps}`].join('\n\n'),
+    htmlContent: `<div style="display:none;max-height:0;overflow:hidden;opacity:0">${esc(pre)}</div><div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${a.map(para).join('')}<p style="margin:6px 0 22px"><a href="${pdf}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri la guida →</a></p>${b.map(para).join('')}<p style="margin:0 0 14px"><strong>P.S.</strong> ${esc(ps)}</p></div>`,
   };
 }
