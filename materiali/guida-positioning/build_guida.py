@@ -71,6 +71,57 @@ EXTRA_CSS = """
 .cv2-formula .chip{font-size:8pt;padding:5px 10px;background-color:#fff}
 .cv2-formula .c-loc{background:var(--lsoft)}.cv2-formula .c-cap{background:var(--tsoft)}.cv2-formula .c-ops{background:var(--psoft)}.cv2-formula .c-nar{background:#fff}
 .cv2-band{position:absolute;left:0;right:0;bottom:0;height:16mm;background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 18mm;font:700 8pt var(--d);letter-spacing:.08em;text-transform:uppercase}
+/* ===== pagine 14-20: testo più grande, icone ===== */
+.ico{display:inline-grid;place-items:center;border-radius:50%;border:2px solid var(--ink);flex:none}
+.pf{margin-top:14px}
+.pf-h{display:flex;align-items:center;gap:14px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.pf-l{display:block;font:700 7.6pt/1 var(--d);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:4px}
+.pf-h h3{font-size:17pt}
+.pf-b{margin-top:10px}
+.pf-b p,.two p,.mx p,.cf p{font-size:11.6pt;line-height:1.6}
+.pf-sub{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+.pf-sub>div{padding:4px 0 4px 14px;border-left:4px solid var(--green)}
+.pf-sub .risk{border-left-color:#ff5a3c}
+.pf-sub .kick{display:block;margin-bottom:6px;color:var(--ink)}
+.pf-sub p{font-size:11pt;line-height:1.55}
+.pf-sub.big{grid-template-columns:1fr}
+.pf-sub.big p{font-size:12pt}
+.pf-sep{height:22px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+.two h4{font:800 12.6pt/1.25 var(--d);margin:6px 0 6px}
+.two .num{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--yellow);border:2px solid var(--ink);font:900 11pt var(--d)}
+.two.cases>div{border-top:2px solid var(--ink);padding-top:8px}
+.mxl{display:grid;gap:16px}
+.mx{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.mx-i{display:flex;gap:0}
+.mx-i .ico+.ico{margin-left:-10px}
+.mx h4{font:800 13pt/1.25 var(--d);margin-bottom:5px}
+.mx.all{grid-template-columns:96px 1fr;border-bottom:0;background:var(--ysoft);border-radius:16px;padding:14px}
+.mx.all .mx-i{flex-wrap:wrap;gap:4px}
+.mx.all .mx-i .ico+.ico{margin-left:0}
+.cf{display:grid;grid-template-columns:44mm 1fr;gap:16px;padding:16px 0;border-top:2px solid var(--ink)}
+.cf-ab{display:flex;align-items:baseline;gap:6px}
+.cf-ab b{font:900 26pt/1 var(--d)}
+.cf-ab i{font:900 18pt var(--d);font-style:normal;color:var(--lilac)}
+.cf-d{margin-top:10px;display:inline-flex;flex-direction:column;background:var(--lsoft);border-radius:12px;padding:8px 12px;font:900 18pt/1.05 var(--d)}
+.cf-d small{font:700 9pt/1.3 var(--d);margin-top:3px}
+.cf-r .kick{display:block;margin-bottom:6px}
+.cf-law{margin-top:8px!important}
+.cf-law span{font:800 11.4pt/1.35 var(--d);box-shadow:inset 0 -.38em 0 var(--lsoft)}
+.hr{padding:9px 0}
+.hn{font-size:9.4pt}.hn b{font-size:10pt}
+.hb i b{height:7px}
+.hp b{font-size:17pt}
+.hf{font-size:11.4pt}
+.votes{margin-top:16px;border:2px solid var(--ink);border-radius:18px;padding:14px 18px;background:#fff}
+.votes .kick{display:block;margin-bottom:8px;color:var(--ink)}
+.vt{display:grid;grid-template-columns:52mm 1fr 34px;gap:10px;align-items:end;padding:6px 0}
+.vt span{display:flex;align-items:center;gap:10px;font:800 11pt var(--d)}
+.vt i{display:block;height:24px;border-bottom:1.5px dashed var(--line-field)}
+.vt b{font:800 11pt var(--d);color:var(--ink3)}
+.vt.tot{border-top:2px solid var(--ink);margin-top:4px;padding-top:10px}
+.vt.tot span{font-size:11.6pt}
+.vt-note{margin-top:8px;font-size:9.6pt;color:var(--ink2)}
 /* ===== copertina della parte seconda ===== */
 .op2{background:var(--lilac);padding:0}
 .op2-top{position:absolute;left:18mm;right:18mm;top:14mm;display:flex;justify-content:space-between;align-items:center}
@@ -302,7 +353,7 @@ document.querySelectorAll('[data-hotels]').forEach(box=>{
 P = []
 # 1 · copertina
 P.append(f'''<section class="page cover cv2">
-  <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 28 pagine</span></div>
+  <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 30 pagine</span></div>
   <div class="cv2-body">
     <p class="cv2-kick">Booking. L'agenzia. Il vicino che abbassa.</p>
     <h1 class="cv2-h">Il tuo hotel<br>paga tutti.</h1>
@@ -447,65 +498,83 @@ P.append(page(12, f'''  <span class="tag">03 · La scelta</span>
     <p class="small"><em>*Nello stesso periodo c'è stata una ristrutturazione, con investimenti importanti della proprietà. Il posizionamento ha dato la direzione, gli investimenti l'hanno resa credibile.</em></p>
   </div>'''))
 
-def prof(color, label, title, body, ok, risk):
-    return f'''<div class="prof"><div class="prof-h" style="background:{color}">{label}</div><div class="prof-b"><h3>{title}</h3>{body}<div class="sub"><div class="ok"><span class="kick">Racconto coerente</span>{ok}</div><div class="risk"><span class="kick">Rischio</span>{risk}</div></div></div></div>'''
+# --- icone dei profili (SVG in un cerchio colorato)
+ICONS = {
+ 'loc': '<path d="M24 8c-7 0-12 5-12 12 0 9 12 20 12 20s12-11 12-20c0-7-5-12-12-12z" fill="#fff" stroke="#262521" stroke-width="3"/><circle cx="24" cy="20" r="4.5" fill="#262521"/>',
+ 'cap': '<rect x="10" y="16" width="28" height="24" rx="3" fill="#fff" stroke="#262521" stroke-width="3"/><path d="M8 18 L24 7 L40 18" fill="none" stroke="#262521" stroke-width="3" stroke-linejoin="round"/><rect x="16" y="22" width="6" height="6" fill="#262521"/><rect x="26" y="22" width="6" height="6" fill="#262521"/><rect x="21" y="32" width="6" height="8" fill="#262521"/>',
+ 'ops': '<path d="M12 32 a12 12 0 0 1 24 0 z" fill="#fff" stroke="#262521" stroke-width="3"/><rect x="9" y="32" width="30" height="5" rx="2" fill="#262521"/><circle cx="24" cy="17" r="2.5" fill="#262521"/>',
+ 'nar': '<path d="M9 12 h30 a3 3 0 0 1 3 3 v15 a3 3 0 0 1 -3 3 h-17 l-8 7 v-7 h-5 a3 3 0 0 1 -3 -3 v-15 a3 3 0 0 1 3 -3z" fill="#fff" stroke="#262521" stroke-width="3" stroke-linejoin="round"/><path d="M15 20h18M15 26h12" stroke="#262521" stroke-width="3" stroke-linecap="round"/>',
+}
+def icon(k, bg, size=46):
+    return f'<span class="ico" style="background:{bg};width:{size}px;height:{size}px"><svg viewBox="0 0 48 48" width="{size-12}" height="{size-12}">{ICONS[k]}</svg></span>'
+
+def prof(k, color, label, title, body, ok, risk):
+    return f'''<div class="pf">
+  <div class="pf-h">{icon(k, color)}<div><span class="pf-l">{label}</span><h3>{title}</h3></div></div>
+  <div class="pf-b">{body}</div>
+  <div class="pf-sub"><div class="ok"><span class="kick">✓ Racconto coerente</span><p>{ok}</p></div><div class="risk"><span class="kick">! Rischio</span><p>{risk}</p></div></div>
+</div>'''
 
 P.append(page(13, f'''  <span class="tag">04 · I profili</span>
   <h2>Qual è il motore <span class="hl">del tuo hotel?</span></h2>
-  {svg2(ill_motori(), ' style="height:44mm"')}
+  {svg2(ill_motori(), ' style="height:40mm"')}
   <p class="lead">Ci sono quattro profili, uno per componente. Capire il tuo cambia la risposta a due domande: dove investire, e cosa raccontare.</p>
-  <div class="chips" style="margin:12px 0 4px;gap:8px"><span class="chip c-loc">Profilo location</span><span class="chip c-cap">Profilo capitale</span><span class="chip c-ops">Profilo operations</span><span class="chip c-nar">Profilo narrativa</span></div>
-  {prof('var(--lsoft)', 'Profilo location', 'Il motore è il luogo', '<p>Location da nove o dieci, il resto nella media o sotto. Una piccola struttura a Positano, investimenti modesti, gestione familiare, racconto ancora da fare.</p><p>Il cliente paga per vivere Positano. L\'hotel è il mezzo, non il protagonista.</p>', 'Il luogo come identità. «Siamo Positano.» «La vera Capri.» Arredi, colazione, bar: tutto deve raccontare quel posto. Quello vero, non quello delle cartoline.', 'Dipendi tutto dal turismo della zona. Se la zona cala, non hai un piano B. Col tempo conviene costruire anche altro.')}'''))
+  {prof('loc', 'var(--lsoft)', 'Profilo location', 'Il motore è il luogo', '<p>Location da nove o dieci, il resto nella media o sotto. Una piccola struttura a Positano, investimenti modesti, gestione familiare, racconto ancora da fare.</p><p>Il cliente paga per vivere Positano. L\'hotel è il mezzo, non il protagonista.</p>', 'Il luogo come identità. «Siamo Positano.» «La vera Capri.» Arredi, colazione, bar: tutto deve raccontare quel posto. Quello vero, non quello delle cartoline.', 'Dipendi tutto dal turismo della zona. Se la zona cala, non hai un piano B. Col tempo conviene costruire anche altro.')}'''))
 
-P.append(page(14, f'''  {prof('var(--tsoft)', 'Profilo capitale', 'Il motore è la struttura', '<p>Capitale da nove o dieci, il resto nella media. Un hotel in una zona secondaria con un restauro da diversi milioni, o un edificio nuovo che si fa notare. Gestione ancora in rodaggio.</p><p>Il cliente paga per la bellezza dello spazio, che nella zona non trova altrove.</p>', 'L\'investimento come promessa. «Il posto più bello della regione.» «Un design che non trovi altrove.»', 'Un investimento così chiede tariffe alte per rientrare. Se la reception non è all\'altezza della hall, l\'ospite si sente preso in giro alla prima richiesta.').replace('class="prof"', 'class="prof" style="margin-top:0"', 1)}
-  {prof('var(--psoft)', 'Profilo operations', 'Il motore è il lavoro fatto bene, sempre', '<p>Operations da nove o dieci, il resto nella media. Un hotel in città o sulla costa, in una zona senza cartolina. Struttura curata ma senza grandi investimenti. Prezzi gestiti con attenzione, staff stabile, recensioni seguite una per una, colazione curata, pulizia senza eccezioni.</p><p>Il cliente paga per non pensarci.</p>', 'L\'affidabilità come promessa. Fuori dall\'Italia lo fanno citizenM («il tuo hotel ovunque tu vada») e YOTEL, tutti e due costruiti su una gestione impeccabile.', '«Qualità del servizio» lo scrivono tutti. Per distinguerti devi trasformare l\'eccellenza in cose che si vedono e si possono nominare. Non in aggettivi.')}'''))
+P.append(page(14, f'''  {prof('cap', 'var(--tsoft)', 'Profilo capitale', 'Il motore è la struttura', '<p>Capitale da nove o dieci, il resto nella media. Un hotel in una zona secondaria con un restauro da diversi milioni, o un edificio nuovo che si fa notare. Gestione ancora in rodaggio.</p><p>Il cliente paga per la bellezza dello spazio, che nella zona non trova altrove.</p>', 'L\'investimento come promessa. «Il posto più bello della regione.» «Un design che non trovi altrove.»', 'Un investimento così chiede tariffe alte per rientrare. Se la reception non è all\'altezza della hall, l\'ospite si sente preso in giro alla prima richiesta.')}
+  <div class="pf-sep"></div>
+  {prof('ops', 'var(--psoft)', 'Profilo operations', 'Il motore è il lavoro fatto bene, sempre', '<p>Operations da nove o dieci, il resto nella media. Un hotel in città o sulla costa, in una zona senza cartolina. Struttura curata ma senza grandi investimenti. Prezzi gestiti con attenzione, staff stabile, recensioni seguite una per una, colazione curata, pulizia senza eccezioni.</p><p>Il cliente paga per non pensarci.</p>', 'L\'affidabilità come promessa. Fuori dall\'Italia lo fanno citizenM («il tuo hotel ovunque tu vada») e YOTEL, tutti e due costruiti su una gestione impeccabile.', '«Qualità del servizio» lo scrivono tutti. Per distinguerti devi trasformare l\'eccellenza in cose che si vedono e si possono nominare. Non in aggettivi.')}'''))
 
-P.append(page(15, f'''  <div class="prof" style="margin-top:0"><div class="prof-h" style="background:var(--yellow)">Profilo narrativa</div><div class="prof-b">
-    <h3>Il motore è come ti racconti</h3>
-    <p>Narrativa da nove o dieci, il resto nella media o sotto. Le operations però devono stare almeno a sei o sette. Sotto quella soglia nessun racconto regge.</p>
-    <p><b>Due casi tipici.</b> Il primo: l'hotel di famiglia con una storia vera. «Quattro generazioni.» «Qui dal 1897.» La storia c'è già. La narrativa la mette in parole e la trasforma in promessa.</p>
-    <p>Il secondo: l'hotel senza cartolina, senza grandi investimenti e senza una storia di famiglia, che ha scelto un racconto netto e specifico. Non «hotel di charme per famiglie»: quello lo dicono in cento. Qualcosa come «l'hotel dei triatleti che si allenano al circuito di Misano».</p>
-    <p><b>Due casi italiani.</b> L'Eremito, in Umbria: ritiro con silenzio obbligatorio, menu unico vegetariano, niente wifi, niente televisione. Location difficile, investimenti contenuti. Il racconto fa il lavoro che le altre componenti non possono fare, con tariffe sopra i 300 euro.</p>
-    <p>Sextantio, a Santo Stefano di Sessanio, in Abruzzo: Daniele Kihlgren ha trasformato un borgo quasi abbandonato nel «lusso dell'imperfezione», un albergo diffuso conosciuto in tutto il mondo.</p>
-    <div class="sub"><div class="ok" style="background:var(--ysoft)"><span class="kick">Come si costruisce</span>Scegli un cliente molto preciso. Fagli una promessa netta. Sostienila con scelte che si vedono: menu, orari, servizi, divieti. Il racconto si costruisce con le scelte di ogni giorno, non con gli slogan.</div><div class="risk"><span class="kick">Rischio</span>Un racconto forte che la gestione non mantiene è peggio di nessun racconto. Diventa un contratto da onorare ogni mattina.</div></div>
-  </div></div>
-  <div class="book-box"><div><span class="kick" style="display:block;margin-bottom:4px">Per approfondire</span><p>Come si passa da un fatto vero del tuo hotel a un racconto che regge? È il cuore del libro. Sei passaggi, i casi veri, e otto strumenti per applicarli.</p><a class="btn" href="https://hotelpositioning.com/vai/libro/?da=guida-p15">Il libro su Amazon →</a> <span class="url">hotelpositioning.com/vai/libro</span></div></div>'''))
+P.append(page(15, f'''  <div class="pf"><div class="pf-h">{icon('nar', 'var(--yellow)')}<div><span class="pf-l">Profilo narrativa</span><h3>Il motore è come ti racconti</h3></div></div>
+  <div class="pf-b"><p>Narrativa da nove o dieci, il resto nella media o sotto. Le operations però devono stare almeno a sei o sette. Sotto quella soglia nessun racconto regge.</p></div></div>
+  <div class="two">
+    <div><span class="num">1</span><h4>L'hotel di famiglia con una storia vera</h4><p>«Quattro generazioni.» «Qui dal 1897.» La storia c'è già. La narrativa la mette in parole e la trasforma in promessa.</p></div>
+    <div><span class="num">2</span><h4>L'hotel senza cartolina che sceglie un racconto netto</h4><p>Senza grandi investimenti e senza una storia di famiglia. Non «hotel di charme per famiglie»: quello lo dicono in cento. Qualcosa come «l'hotel dei triatleti che si allenano al circuito di Misano».</p></div>
+  </div>
+  <span class="kick" style="display:block;margin:16px 0 8px">Due casi italiani</span>
+  <div class="two cases">
+    <div><h4>L'Eremito, Umbria</h4><p>Ritiro con silenzio obbligatorio, menu unico vegetariano, niente wifi, niente televisione. Location difficile, investimenti contenuti. Il racconto fa il lavoro che le altre componenti non possono fare, con tariffe sopra i 300 euro.</p></div>
+    <div><h4>Sextantio, Abruzzo</h4><p>A Santo Stefano di Sessanio Daniele Kihlgren ha trasformato un borgo quasi abbandonato nel «lusso dell'imperfezione», un albergo diffuso conosciuto in tutto il mondo.</p></div>
+  </div>'''))
 
-def mix(chips, text):
-    return f'<div class="card"><div class="chips">{chips}</div><p>{text}</p></div>'
-
-P.append(page(16, f'''  <span class="tag">05 · I profili misti</span>
+P.append(page(16, f'''  <div class="pf-sub big" style="margin-top:0"><div class="ok"><span class="kick">✓ Come si costruisce</span><p>Scegli un cliente molto preciso. Fagli una promessa netta. Sostienila con scelte che si vedono: menu, orari, servizi, divieti.</p><p><b>Il racconto si costruisce con le scelte di ogni giorno, non con gli slogan.</b></p></div><div class="risk"><span class="kick">! Rischio</span><p>Un racconto forte che la gestione non mantiene è peggio di nessun racconto. Diventa un contratto da onorare ogni mattina.</p></div></div>
+  <div class="book-box" style="margin-top:20px"><div><span class="kick" style="display:block;margin-bottom:4px">Per approfondire</span><p>Come si passa da un fatto vero del tuo hotel a un racconto che regge? È il cuore del libro. Sei passaggi, i casi veri, e otto strumenti per applicarli.</p><a class="btn" href="https://hotelpositioning.com/vai/libro/?da=guida-p15">Il libro su Amazon →</a> <span class="url">hotelpositioning.com/vai/libro</span></div></div>
+  <span class="tag" style="margin-top:26px">05 · I profili misti</span>
   <h2>I profili puri <span class="hl">sono rari.</span></h2>
   {svg2(ill_venn(), ' style="height:40mm"')}
-  <p class="lead">Quasi tutti gli hotel hanno due o tre componenti alte. Qui il racconto deve parlare dell'incrocio, non di una sola componente.</p>
-  <div class="mixlist">
-    {mix('<span class="chip c-loc">Location alta</span><b>+</b><span class="chip c-cap">Capitale alto</span>', 'Struttura di lusso recente in una location da cartolina. L\'Hotel Caruso, prima di LVMH. Il racconto è vivere il luogo attraverso l\'investimento. Attenzione che la gestione non diventi il punto debole.')}
-    {mix('<span class="chip c-loc">Location alta</span><b>+</b><span class="chip c-nar">Narrativa alta</span>', 'Casa Cipriani a Milano: location forte, e un racconto («l\'ambasciata di Venezia») costruito sulla storia vera della famiglia Cipriani dal 1931. Il racconto non sta sotto la location: la fa crescere.')}
-    {mix('<span class="chip c-ops">Operations alte</span><b>+</b><span class="chip c-nar">Narrativa alta</span>', 'The Pig, in Inghilterra: il fondatore Robin Hutson ha trasformato «l\'imperfezione curata» in un modo di lavorare. Da noi è l\'hotel storico di famiglia in una città d\'arte minore: gestione rigorosa più «quattro generazioni di ospitalità».')}
-    {mix('<span class="chip c-cap">Capitale alto</span><b>+</b><span class="chip c-ops">Operations alte</span>', 'Hotel moderno, investimento serio, gestione professionale, in una zona secondaria. Il racconto è «quello che non ti aspetti dove non te lo aspetti». Qui l\'hotel può diventare il motivo del viaggio.')}
-    <div class="card" style="background:var(--ysoft)"><div class="chips"><span class="chip c-loc">Location</span><span class="chip c-cap">Capitale</span><span class="chip c-ops">Operations</span><span class="chip c-nar">Narrativa</span><b style="font:800 8.4pt var(--d)">tutte e quattro alte</b></div><p>Il lusso dove tutto funziona. Il racconto qui non salva niente: tira fuori il valore che resta sul tavolo. Belmond, Rocco Forte, Baglioni ci investono di continuo. La differenza si misura in milioni di fatturato in più all'anno.</p></div>
+  <p class="lead">Quasi tutti gli hotel hanno due o tre componenti alte. Qui il racconto deve parlare dell'incrocio, non di una sola componente.</p>'''))
+
+def mix(k1, c1, k2, c2, title, text):
+    return f'<div class="mx"><div class="mx-i">{icon(k1, c1, 38)}{icon(k2, c2, 38)}</div><div><h4>{title}</h4><p>{text}</p></div></div>'
+
+P.append(page(17, f'''  <div class="mxl">
+    {mix('loc', 'var(--lsoft)', 'cap', 'var(--tsoft)', 'Location alta + capitale alto', 'Struttura di lusso recente in una location da cartolina. L\'Hotel Caruso, prima di LVMH. Il racconto è vivere il luogo attraverso l\'investimento. Attenzione che la gestione non diventi il punto debole.')}
+    {mix('loc', 'var(--lsoft)', 'nar', 'var(--yellow)', 'Location alta + narrativa alta', 'Casa Cipriani a Milano: location forte, e un racconto («l\'ambasciata di Venezia») costruito sulla storia vera della famiglia Cipriani dal 1931. Il racconto non sta sotto la location: la fa crescere.')}
+    {mix('ops', 'var(--psoft)', 'nar', 'var(--yellow)', 'Operations alte + narrativa alta', 'The Pig, in Inghilterra: il fondatore Robin Hutson ha trasformato «l\'imperfezione curata» in un modo di lavorare. Da noi è l\'hotel storico di famiglia in una città d\'arte minore: gestione rigorosa più «quattro generazioni di ospitalità».')}
+    {mix('cap', 'var(--tsoft)', 'ops', 'var(--psoft)', 'Capitale alto + operations alte', 'Hotel moderno, investimento serio, gestione professionale, in una zona secondaria. Il racconto è «quello che non ti aspetti dove non te lo aspetti». Qui l\'hotel può diventare il motivo del viaggio.')}
+    <div class="mx all"><div class="mx-i">{icon('loc', 'var(--lsoft)', 34)}{icon('cap', 'var(--tsoft)', 34)}{icon('ops', 'var(--psoft)', 34)}{icon('nar', 'var(--yellow)', 34)}</div><div><h4>Tutte e quattro alte</h4><p>Il lusso dove tutto funziona. Il racconto qui non salva niente: tira fuori il valore che resta sul tavolo. Belmond, Rocco Forte, Baglioni ci investono di continuo. La differenza si misura in milioni di fatturato in più all\'anno.</p></div></div>
   </div>'''))
 
-P.append(page(17, f'''  <span class="tag">06 · Nove hotel</span>
+P.append(page(18, f'''  <span class="tag">06 · Nove hotel</span>
   <h2>Stesso hotel. Altro racconto. <span class="hl">Altro conto.</span></h2>
-  <p class="small">Nove hotel inventati, per vedere il metodo al lavoro. Ogni componente da zero a dieci. Il posizionamento di mercato è la somma, da zero a quaranta. Il fatturato dipende dal posizionamento, ma anche da camere, giorni di apertura e tariffa possibile in quel segmento. <b>Esempi per spiegare il metodo. Non sono hotel reali, e non sono risultati promessi.</b></p>
-  <div class="legend" style="margin-top:4px"><span><i style="background:var(--lilac)"></i>Location</span><span><i style="background:var(--teal)"></i>Capitale</span><span><i style="background:var(--pink)"></i>Operations</span><span><i style="background:var(--yellow)"></i>Narrativa</span></div>
+  <p>Nove hotel inventati, per vedere il metodo al lavoro. Ogni componente da zero a dieci. Il posizionamento di mercato è la somma, da zero a quaranta. Il fatturato dipende dal posizionamento, ma anche da camere, giorni di apertura e tariffa possibile in quel segmento.</p>
+  <p class="small"><b>Esempi per spiegare il metodo. Non sono hotel reali, e non sono risultati promessi.</b></p>
+  <div class="legend" style="margin-top:8px"><span><i style="background:var(--lilac)"></i>Location</span><span><i style="background:var(--teal)"></i>Capitale</span><span><i style="background:var(--pink)"></i>Operations</span><span><i style="background:var(--yellow)"></i>Narrativa</span></div>
   <div class="htable" data-htable="A,B|C,D|E|F|G|H,I"></div>'''))
 
-def vs(a, b, sub, text, law=''):
-    head = f'<b>{a}</b>' + (f' <i>→</i> <b>{b}</b>' if b else '') + f'<span>{sub}</span>'
-    return f'<div class="vs2"><div class="vs2-h">{head}</div><p>{text}</p>' + (f'<p class="vs2-law"><span>{law}</span></p>' if law else '') + '</div>'
+def cf(a, b, sub, delta, text, law=''):
+    head = f'<b>{a}</b>' + (f' <i>→</i> <b>{b}</b>' if b else '')
+    return f'''<div class="cf"><div class="cf-l"><div class="cf-ab">{head}</div><div class="cf-d">{delta}</div></div><div class="cf-r"><span class="kick">{sub}</span><p>{text}</p>{f'<p class="cf-law"><span>{law}</span></p>' if law else ''}</div></div>'''
 
-P.append(page(18, f'''  <span class="tag">I confronti</span>
+P.append(page(19, f'''  <span class="tag">I confronti</span>
   <h2>Sei confronti, <span class="hl">una lezione.</span></h2>
-  <div class="vsgrid">
-  {vs('A', 'B', 'stesso hotel, stessa Positano', 'Stesse camere, stesso staff. Cambia solo il racconto. A dice «siamo a Positano, siamo accoglienti», come tutti. B è «la casa positanese autentica»: oggetti del paese, menu solo locale, arredi che raccontano Positano, uscite in barca con i pescatori del porto. Il posizionamento passa da 25 a 30. Nell\'esempio, un milione e mezzo in più con le stesse tre componenti.', 'Il racconto ha fatto crescere la location.')}
-  {vs('C', 'D', 'stesso hotel, stessa Cattolica', 'C è «famiglia e divertimento», come altri cinquanta sulla stessa costa. D è «l\'hotel dei triatleti del circuito di Misano»: deposito bici, nutrizionista sportivo, accordi con il circuito, pacchetti di allenamento, apertura lunga per le gare d\'autunno. Il posizionamento passa da 21 a 27. Nell\'esempio, settecentomila euro in più e trenta giorni di apertura in più.', 'Il racconto ha trasformato un hotel come tanti in uno specialista.')}
-  {vs('A', 'E', 'Positano contro Linate', 'Positano apre 180 giorni l\'anno. Linate 360, con operations eccellenti e un racconto chiaro. Il posizionamento è simile, 25 e 27. Ma Linate fattura quasi il doppio: ha 80 camere contro 25, e lavora il doppio dei giorni.', 'Il posizionamento dice quanto è forte l\'hotel. Il fatturato dipende anche da dimensione e stagione.')}
-  {vs('F', '', 'l\'hotel storico di Mantova', 'Non vince su location e struttura. Ha operations buone e una storia di famiglia vera: quattro generazioni. La storia non è una componente a parte. È la base su cui il racconto costruisce la promessa. Posizionamento 26, un milione e otto con sole 30 camere, da clienti che pagano di più per qualcosa che non si copia.')}
-  {vs('G', '', 'il tre stelle del Conero', '22 camere, quasi solo estate, 440 mila euro. Posizionamento 17. Non sbaglia niente di grave. Ma non ha leve: vive del turismo che passa. Un racconto preciso, come «l\'hotel di chi fa immersioni nel Parco del Conero» o «la casa degli escursionisti del Monte Conero», porterebbe la narrativa da 2 a 8. Nell\'esempio il fatturato supera i 600 mila euro, con clienti che oggi scelgono altrove.')}
-  {vs('H', 'I', 'lo stesso agriturismo nel Monferrato', 'Dieci camere, gestione familiare, la cantina di casa. H vende «esperienza enogastronomica piemontese», come altri cinquanta agriturismi della zona. I è «la residenza del vignaiolo per enologi professionisti»: un workshop all\'anno con una cantina diversa, visite tecniche per gruppi di enologi stranieri, settimane dedicate a un singolo produttore. Il posizionamento passa da 17 a 23. Nell\'esempio, 310 mila euro in più.', 'Il racconto funziona anche nel piccolo. Se è abbastanza preciso.')}
-  </div>'''))
+  {cf('A', 'B', 'Stesso hotel, stessa Positano', '25 → 30<small>+1,5 M€</small>', 'Stesse camere, stesso staff. Cambia solo il racconto. A dice «siamo a Positano, siamo accoglienti», come tutti. B è «la casa positanese autentica»: oggetti del paese, menu solo locale, arredi che raccontano Positano, uscite in barca con i pescatori del porto.', 'Il racconto ha fatto crescere la location.')}
+  {cf('C', 'D', 'Stesso hotel, stessa Cattolica', '21 → 27<small>+700 mila €</small>', 'C è «famiglia e divertimento», come altri cinquanta sulla stessa costa. D è «l\'hotel dei triatleti del circuito di Misano»: deposito bici, nutrizionista sportivo, accordi con il circuito, pacchetti di allenamento, apertura lunga per le gare d\'autunno. E trenta giorni di apertura in più.', 'Il racconto ha trasformato un hotel come tanti in uno specialista.')}
+  {cf('A', 'E', 'Positano contro Linate', '25 · 27<small>fatturato quasi ×2</small>', 'Positano apre 180 giorni l\'anno. Linate 360, con operations eccellenti e un racconto chiaro. Il posizionamento è simile, ma Linate fattura quasi il doppio: ha 80 camere contro 25, e lavora il doppio dei giorni.', 'Il posizionamento dice quanto è forte l\'hotel. Il fatturato dipende anche da dimensione e stagione.')}'''))
+
+P.append(page(20, f'''  {cf('F', '', 'L\'hotel storico di Mantova', '26<small>1,8 M€ con 30 camere</small>', 'Non vince su location e struttura. Ha operations buone e una storia di famiglia vera: quattro generazioni. La storia non è una componente a parte. È la base su cui il racconto costruisce la promessa. Clienti che pagano di più per qualcosa che non si copia.')}
+  {cf('G', '', 'Il tre stelle del Conero', '17 → 23<small>oltre 600 mila €</small>', '22 camere, quasi solo estate, 440 mila euro. Non sbaglia niente di grave. Ma non ha leve: vive del turismo che passa. Un racconto preciso, come «l\'hotel di chi fa immersioni nel Parco del Conero» o «la casa degli escursionisti del Monte Conero», porterebbe la narrativa da 2 a 8. Nell\'esempio, con clienti che oggi scelgono altrove.')}
+  {cf('H', 'I', 'Lo stesso agriturismo nel Monferrato', '17 → 23<small>+310 mila €</small>', 'Dieci camere, gestione familiare, la cantina di casa. H vende «esperienza enogastronomica piemontese», come altri cinquanta agriturismi della zona. I è «la residenza del vignaiolo per enologi professionisti»: un workshop all\'anno con una cantina diversa, visite tecniche per gruppi di enologi stranieri, settimane dedicate a un singolo produttore.', 'Il racconto funziona anche nel piccolo. Se è abbastanza preciso.')}'''))
 
 P.append(page(19, f'''  <span class="tag">Da portare via</span>
   <h2>Quattro cose <span class="hl">da ricordare.</span></h2>
@@ -558,7 +627,15 @@ P.append(page(22, f'''
   <h2>Tre domande <span class="hl">prima di spendere un euro.</span></h2>
   <p class="lead">Rispondi con onestà. Nessuno ti guarda.</p>
   {q(1, 'La gestione tiene?', '<p>Guarda le recensioni degli ultimi due anni su Google, Booking e TripAdvisor. La media è sopra 4,3 su 5 (8,6 su Booking)? Lo staff è formato e stabile? I prezzi seguono il mercato? Rispondi in fretta a recensioni e segnalazioni?</p>', '<div class="no"><b>Se no:</b> il racconto non è la tua priorità adesso. Prima la gestione. Un racconto forte oggi ti farebbe più male che bene.</div><div class="si"><b>Se sì:</b> passa alla domanda due.</div>')}
-  {q(2, 'Qual è il tuo profilo?', '<p>Dai un voto da zero a dieci a ognuna delle quattro componenti. Senza barare. Sommale: è il tuo posizionamento di oggi.</p>', '<div class="n1"><b>Una componente domina</b> (una a nove o dieci, le altre sotto sette): il racconto deve amplificare quella. Sei un profilo location, capitale, operations o narrativa.</div><div class="n2"><b>Due o tre componenti alte:</b> il racconto deve parlare dell\'incrocio. Sei un profilo misto.</div><div class="n3"><b>Tutte tra sei e sette, nessuna che spicca:</b> la leva da costruire è il racconto. È l\'unica che puoi cambiare in fretta, senza grandi investimenti.</div>')}'''))
+  {q(2, 'Qual è il tuo profilo?', '<p>Dai un voto da zero a dieci a ognuna delle quattro componenti. Senza barare. Sommale: è il tuo posizionamento di oggi.</p>', '<div class="n1"><b>Una componente domina</b> (una a nove o dieci, le altre sotto sette): il racconto deve amplificare quella. Sei un profilo location, capitale, operations o narrativa.</div><div class="n2"><b>Due o tre componenti alte:</b> il racconto deve parlare dell\'incrocio. Sei un profilo misto.</div><div class="n3"><b>Tutte tra sei e sette, nessuna che spicca:</b> la leva da costruire è il racconto. È l\'unica che puoi cambiare in fretta, senza grandi investimenti.</div>')}
+  <div class="votes"><span class="kick">I voti del tuo hotel, oggi</span>
+    <div class="vt"><span>{icon('loc','var(--lsoft)',30)}Location</span><i></i><b>/10</b></div>
+    <div class="vt"><span>{icon('cap','var(--tsoft)',30)}Capitale</span><i></i><b>/10</b></div>
+    <div class="vt"><span>{icon('ops','var(--psoft)',30)}Operations</span><i></i><b>/10</b></div>
+    <div class="vt"><span>{icon('nar','var(--yellow)',30)}Narrativa</span><i></i><b>/10</b></div>
+    <div class="vt tot"><span>Posizionamento di oggi</span><i></i><b>/40</b></div>
+    <p class="vt-note">La componente più alta è il tuo motore. Quella più bassa ti dice dove guardare.</p>
+  </div>'''))
 
 P.append(page(23, f'''  {q(3, 'I clienti bastano?', '<p>Pensa al racconto che hai in mente, coerente con il tuo profilo. I clienti raggiungibili, per distanza e per capacità di spesa, bastano a farti stare in piedi?</p><div class="formula" style="margin:12px 0"><span class="kick">Il conto è semplice</span><div class="chips"><span class="chip" style="background:#fff">Camere</span><span class="op">×</span><span class="chip" style="background:#fff">Occupazione obiettivo</span><span class="op">×</span><span class="chip" style="background:#fff">Giorni di apertura</span><span class="op">×</span><span class="chip" style="background:#fff">Tariffa media obiettivo</span></div><div class="res"><span class="op">=</span><span class="chip">Fatturato minimo</span></div></div><p>Poi chiediti: ci sono abbastanza persone, per quel racconto, nel bacino che riesci a raggiungere?</p>', '<div class="si"><b>Se sì:</b> procedi.</div><div class="no"><b>Se no:</b> sposta il racconto su un tema con più clienti, prima di investire.</div>').replace('class="q"', 'class="q" style="margin-top:0"', 1)}'''))
 
@@ -626,7 +703,9 @@ P.append(page(26, f'''  <span class="tag">Il prossimo passo</span>
     <p>Booking si paga.</p><p>L'agenzia si paga.</p><p>Lo sconto si paga.</p><p style="margin-top:4px"><span>Il motivo, una volta sola.</span></p>
   </div>'''))
 
-P = [x.replace('<section class="page', '<section class="page p2', 1) if 9 <= i <= 21 else x for i, x in enumerate(P)]
+_a = next(i for i, x in enumerate(P) if 'op2"' in x and 'Parte seconda' in x)
+_b = next(i for i, x in enumerate(P) if 'op3' in x)
+P = [x.replace('<section class="page', '<section class="page p2', 1) if _a < i < _b else x for i, x in enumerate(P)]
 import re as _re
 P = [_re.sub(r'(<span class="n">)\d+(</span></div>\n</section>)', lambda m, n=i + 1: m.group(1) + str(n) + m.group(2), x) for i, x in enumerate(P)]
 

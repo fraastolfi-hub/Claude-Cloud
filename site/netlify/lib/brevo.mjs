@@ -209,8 +209,8 @@ export function guidaMail(d) {
   const big = d.camere === '40-80' || d.camere === 'oltre 80';
   const p = [
     `Ciao${nome ? ' ' + nome : ''},`,
-    'ecco la guida «Il tuo hotel paga tutti». Ventotto pagine, mezz\'ora di lettura.',
-    'Comincia dalla pagina 2: i cinque conti che paghi ogni anno, e la causa comune. Poi, a pagina 21, la regola più scomoda: prima le operations, dopo il racconto.',
+    'ecco la guida «Il tuo hotel paga tutti». Trenta pagine, mezz\'ora di lettura.',
+    'Comincia dalla pagina 2: i cinque conti che paghi ogni anno, e la causa comune. Poi, a pagina 23, la regola più scomoda: prima le operations, dopo il racconto.',
   ];
   const ps = big
     ? 'P.S. Se vuoi vedere come ti legge oggi un ospite, ti faccio lo smontaggio gratuito della tua homepage: la tua prima riga accanto a quella di 2-3 concorrenti, con il logo coperto, e un verdetto. https://hotelpositioning.com/#richiedi'
