@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Come funziona davvero il positioning di un hotel · Francesco Astolfi</title>
+<style>
+@font-face{font-family:'Outfit';font-weight:100 900;src:url(outfit.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-weight:300 900;src:url(figtree.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:italic;font-weight:300 900;src:url(figtree-italic.woff2) format('woff2')}
+:root{
+  --cream:#faf7f4;--white:#fff;--sand:#f3efe9;--ink:#262521;--ink2:#57534c;--ink3:#6b665d;--line:#e3ddd4;
+  --yellow:#ffd22e;--ysoft:#fff7d1;--ytint:#ffeaa0;--lilac:#8f8cff;--lsoft:#d8d6ff;--teal:#22a094;--tsoft:#bfe8e3;
+  --pink:#ff93c7;--psoft:#ffd3ea;--green:#5fd08a;--tomato:#ff5a3c;--cost:#c8361c;
+  --d:'Outfit',Helvetica,Arial,sans-serif;--t:'Figtree',Helvetica,Arial,sans-serif;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#ddd}
+body{font:400 10.9pt/1.6 var(--t);color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;background:var(--cream);position:relative;overflow:hidden;padding:20mm 18mm 22mm;page-break-after:always;break-after:page;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto}
+.foot{position:absolute;left:18mm;right:18mm;bottom:10mm;display:flex;justify-content:space-between;align-items:center;font:600 7.4pt/1 var(--d);color:var(--ink3);letter-spacing:.02em}
+.foot .n{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--white);display:grid;place-items:center;font:800 8pt var(--d)}
+.logo{display:inline-flex;align-items:center;gap:8px;font:800 11pt/1 var(--d);letter-spacing:-.01em}
+.mark{width:22px;height:18px;flex:none;background:
+  linear-gradient(var(--ink),var(--ink)) 0 7px/5px 11px no-repeat,
+  linear-gradient(var(--ink),var(--ink)) 6px 3px/5px 15px no-repeat,
+  linear-gradient(var(--yellow),var(--yellow)) 12px 1px/5px 17px no-repeat,
+  linear-gradient(var(--ink),var(--ink)) 18px 6px/4px 12px no-repeat}
+.mark.w{background:
+  linear-gradient(#fff,#fff) 0 7px/5px 11px no-repeat,linear-gradient(#fff,#fff) 6px 3px/5px 15px no-repeat,
+  linear-gradient(var(--yellow),var(--yellow)) 12px 1px/5px 17px no-repeat,linear-gradient(#fff,#fff) 18px 6px/4px 12px no-repeat}
+
+/* tipografia */
+.tag{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;border:2px solid var(--ink);border-radius:999px;background:var(--ysoft);padding:4px 11px;font:700 7.6pt/1.2 var(--d);text-transform:uppercase;letter-spacing:.05em}
+h1{font:900 40pt/1.02 var(--d);letter-spacing:-.035em}
+h2{font:800 25pt/1.08 var(--d);letter-spacing:-.03em;margin:10px 0 12px}
+h3{font:800 14pt/1.2 var(--d);letter-spacing:-.02em}
+.hl{background:var(--yellow);border-radius:7px;padding:0 .12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+p+p{margin-top:8px}
+.lead{font-size:12pt;line-height:1.55;color:var(--ink2)}
+.mark-hl{background:var(--ytint);border-radius:4px;padding:0 3px}
+.kick{font:700 7.6pt/1 var(--d);text-transform:uppercase;letter-spacing:.06em;color:var(--ink3)}
+.comp{margin-top:14px}
+.comp .kick{display:block;margin-bottom:5px}
+.comp h3{margin-bottom:6px}
+
+/* blocchi */
+.card{background:var(--white);border:2px solid var(--ink);border-radius:18px;box-shadow:4px 4px 0 var(--ink);padding:14px 16px}
+.rule{background:var(--yellow);border:2px solid var(--ink);border-radius:18px;box-shadow:4px 4px 0 var(--ink);padding:14px 18px;margin:14px 0}
+.rule .kick{color:var(--ink);display:block;margin-bottom:6px}
+.rule b{display:block;font:800 13.5pt/1.25 var(--d);letter-spacing:-.015em}
+.rule p{margin-top:6px}
+.formula{background:var(--ink);color:#fff;border-radius:20px;padding:16px 18px;margin:16px 0;box-shadow:5px 5px 0 var(--yellow)}
+.formula .kick{color:var(--ytint);display:block;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.chip{border-radius:999px;border:2px solid var(--ink);padding:6px 13px;font:800 9.5pt/1 var(--d);letter-spacing:.01em;color:var(--ink)}
+.c-loc{background:var(--lsoft)}.c-cap{background:var(--tsoft)}.c-ops{background:var(--psoft)}.c-nar{background:var(--yellow)}
+.formula .op{font:800 14pt var(--d);color:var(--ytint)}
+.formula .res{display:flex;align-items:center;gap:10px;border-top:1px solid #4a4843;margin-top:12px;padding-top:12px}
+.formula .res .chip{background:var(--yellow);font-size:11pt;padding:8px 15px}
+.formula .res em{font:italic 9pt var(--t);color:#cfcac2}
+
+/* profili */
+.prof{background:var(--white);border:2px solid var(--ink);border-radius:20px;box-shadow:4px 4px 0 var(--ink);overflow:hidden;margin-top:12px}
+.prof-h{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:2px solid var(--ink);font:800 8.4pt/1 var(--d);text-transform:uppercase;letter-spacing:.06em}
+.prof-b{padding:12px 16px 14px}
+.prof-b h3{margin-bottom:6px}
+.sub{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.sub>div{border-radius:14px;padding:10px 12px;font-size:9.6pt;line-height:1.5}
+.sub .ok{background:var(--sand)}
+.sub .risk{background:#ffe1d9}
+.sub .kick{display:block;margin-bottom:5px;color:var(--ink)}
+.sub.one{grid-template-columns:1fr}
+
+/* profili misti */
+.mix{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.mix .card{padding:12px 14px}
+.mix .card p{font-size:9.6pt;line-height:1.5}
+.mix .chips{gap:5px;margin-bottom:8px}
+.mix .chip{font-size:7.6pt;padding:4px 9px}
+.mix .wide{grid-column:1/-1;background:var(--ysoft)}
+
+/* nove hotel */
+.hotels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+.ht{background:var(--white);border:2px solid var(--ink);border-radius:18px;box-shadow:3px 3px 0 var(--ink);padding:11px 13px;display:flex;flex-direction:column;gap:7px}
+.ht-h{display:flex;gap:10px;align-items:flex-start}
+.ht-l{flex:none;width:28px;height:28px;border-radius:9px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;font:900 12pt var(--d)}
+.ht-t{font:800 9.4pt/1.25 var(--d);letter-spacing:-.005em}
+.ht-t small{display:block;font:500 8.6pt/1.3 var(--t);color:var(--ink2);margin-top:2px}
+.bars{display:grid;gap:4px}
+.bar{display:grid;grid-template-columns:62px 1fr 16px;gap:6px;align-items:center;font:700 7pt var(--d);text-transform:uppercase;letter-spacing:.03em;color:var(--ink2)}
+.bar i{display:block;height:9px;border-radius:99px;background:var(--sand);border:1.5px solid var(--ink);overflow:hidden;position:relative}
+.bar i b{position:absolute;inset:0 auto 0 0;border-right:1.5px solid var(--ink)}
+.bar span{font:800 9pt var(--d);color:var(--ink);text-align:right}
+.ht-f{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid var(--line);padding-top:7px}
+.ht-f .pm{font:700 7pt/1.2 var(--d);text-transform:uppercase;letter-spacing:.04em;color:var(--ink3)}
+.ht-f .pm b{display:block;font:900 20pt/1 var(--d);color:var(--ink);letter-spacing:-.03em}
+.ht-f .rev{text-align:right;font:700 7pt/1.2 var(--d);text-transform:uppercase;letter-spacing:.04em;color:var(--ink3)}
+.ht-f .rev b{display:inline-block;margin-top:3px;background:var(--yellow);border:2px solid var(--ink);border-radius:999px;padding:3px 10px;font:900 11pt/1 var(--d);color:var(--ink);letter-spacing:-.01em}
+.legend{display:flex;gap:12px;margin:8px 0 10px;font:600 8pt var(--d);color:var(--ink2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;border:1.5px solid var(--ink);margin-right:5px;vertical-align:-1px}
+
+/* confronti */
+.vs{background:var(--white);border:2px solid var(--ink);border-radius:18px;box-shadow:3px 3px 0 var(--ink);padding:12px 15px;margin-top:11px}
+.vs-h{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.vs-h b{background:var(--ink);color:var(--yellow);border-radius:999px;padding:4px 11px;font:800 8.4pt/1 var(--d);letter-spacing:.03em}
+.vs-h span{font:800 8pt var(--d);color:var(--ink3)}
+.vs p{font-size:9.7pt;line-height:1.52}
+.vs .delta{display:inline-block;margin-top:6px;background:var(--tsoft);border-radius:999px;padding:3px 10px;font:800 8.4pt var(--d)}
+
+/* letture */
+.reads{display:grid;gap:10px;margin-top:6px}
+.read{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;background:var(--white);border:2px solid var(--ink);border-radius:18px;box-shadow:3px 3px 0 var(--ink);padding:13px 15px}
+.read .n{width:40px;height:40px;border-radius:12px;border:2px solid var(--ink);display:grid;place-items:center;font:900 16pt var(--d)}
+.read:nth-child(1) .n{background:var(--lsoft)}.read:nth-child(2) .n{background:var(--tsoft)}.read:nth-child(3) .n{background:var(--psoft)}.read:nth-child(4) .n{background:var(--yellow)}
+.read p{font-size:12.4pt;line-height:1.55}.reads{gap:16px!important}.read{padding:18px 18px!important}
+
+/* domande */
+.q{display:grid;grid-template-columns:44px 1fr;gap:14px;margin-top:14px}
+.q .n{width:44px;height:44px;border-radius:50%;background:var(--yellow);border:2px solid var(--ink);display:grid;place-items:center;font:900 17pt var(--d)}
+.q h3{margin:6px 0 6px}
+.ans{margin-top:8px;display:grid;gap:7px}
+.ans div{border-radius:12px;padding:8px 12px;font-size:9.6pt;line-height:1.5;border-left:5px solid var(--ink)}
+.ans .no{background:#ffe1d9;border-color:var(--tomato)}
+.ans .si{background:#dff5e6;border-color:var(--green)}
+.ans .n1{background:var(--lsoft);border-color:var(--lilac)}
+.ans .n2{background:var(--tsoft);border-color:var(--teal)}
+.ans .n3{background:var(--ysoft);border-color:var(--yellow)}
+
+/* copertina */
+.cover{padding:0;background:var(--cream)}
+.cover-top{display:flex;justify-content:space-between;align-items:center;padding:16mm 18mm 0}
+.cover-top .y{font:700 8pt var(--d);letter-spacing:.06em;color:var(--ink3);text-transform:uppercase}
+.cover-body{padding:14mm 18mm 0;display:flex;flex-direction:column;gap:14px}
+.cover h1{font-size:46pt;line-height:1.0;max-width:15ch}
+.cover-grid{display:grid;grid-template-columns:1fr 88mm;gap:12mm;align-items:end;padding:0 18mm;margin-top:10mm}
+.cover .lead{font-size:12.4pt;margin-bottom:16px}
+.photo{position:relative;background:var(--lilac);border:2px solid var(--ink);border-radius:28px;box-shadow:6px 6px 0 var(--ink);height:122mm;overflow:hidden}
+.photo img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:96%}
+.st{position:absolute;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font:800 8.6pt/1 var(--d)}
+.st-name{top:12px;right:12px;background:#fff;border-radius:999px;padding:6px 12px;transform:rotate(-3deg)}
+.st-coin{bottom:16px;left:12px;width:54px;height:54px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font:900 8pt/1.05 var(--d);text-align:center;transform:rotate(-8deg)}
+.cover-foot{position:absolute;left:18mm;right:18mm;bottom:14mm;display:flex;justify-content:space-between;align-items:flex-end}
+.cover-foot img{height:20mm}
+.cover-foot .addr{text-align:right;font:500 8.6pt/1.5 var(--t);color:var(--ink2)}
+.cover-band{position:absolute;left:0;right:0;top:0;height:7mm;background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 18mm;font:700 7pt var(--d);letter-spacing:.06em;text-transform:uppercase}
+.cover-band b{color:var(--yellow)}
+
+/* chi sono */
+.bio{display:grid;grid-template-columns:62mm 1fr;gap:10mm;align-items:start;margin-top:8px}
+.bio .ph{border:2px solid var(--ink);border-radius:24px;box-shadow:5px 5px 0 var(--ink);overflow:hidden;background:var(--sand)}
+.bio .ph img{display:block;width:100%}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.stats div{border:2px solid var(--ink);border-radius:14px;padding:9px 10px;box-shadow:3px 3px 0 var(--ink)}
+.stats div:nth-child(1){background:var(--ysoft)}.stats div:nth-child(2){background:var(--lsoft)}.stats div:nth-child(3){background:var(--tsoft)}
+.stats b{display:block;font:900 14pt/1 var(--d);letter-spacing:-.02em}
+.stats span{font:600 7.8pt/1.3 var(--d);color:var(--ink2)}
+.quote{font:800 17pt/1.2 var(--d);letter-spacing:-.02em;margin-top:14px}
+.quote .hl{padding:0 .1em}
+
+/* CTA */
+.ctas{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.cta{border:2px solid var(--ink);border-radius:22px;box-shadow:5px 5px 0 var(--ink);padding:16px;display:flex;flex-direction:column;gap:9px}
+.cta.a{background:var(--white)}.cta.b{background:var(--ysoft)}
+.cta h3{font-size:15pt}
+.cta ul{list-style:none;display:grid;gap:6px;font-size:9.6pt;line-height:1.45}
+.cta li{display:grid;grid-template-columns:14px 1fr;gap:8px}
+.cta li::before{content:"";width:12px;height:12px;margin-top:2px;border-radius:50%;background:var(--green);border:1.5px solid var(--ink)}
+.cta .meta{font:600 8.4pt/1.4 var(--d);color:var(--ink3)}
+.btn{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:var(--yellow);border:2px solid var(--ink);border-radius:12px;box-shadow:3px 3px 0 var(--ink);padding:9px 14px;font:800 9.6pt/1 var(--d);color:var(--ink);text-decoration:none;margin-top:auto}
+.cta.b .btn{background:#fff}
+.url{font:600 8pt var(--d);color:var(--ink3)}
+.close{margin-top:auto;background:var(--ink);color:#fff;border-radius:24px;padding:20px 22px;box-shadow:6px 6px 0 var(--yellow)}
+.close b{font:900 22pt/1.1 var(--d);letter-spacing:-.03em}
+.close .hl{color:var(--ink)}
+.box-end{margin-top:14px;background:var(--yellow);border:2px solid var(--ink);border-radius:20px;box-shadow:5px 5px 0 var(--ink);padding:16px 18px}
+.box-end b{display:block;font:900 15pt/1.2 var(--d);letter-spacing:-.02em}
+.box-end p{margin-top:8px}
+.small{font-size:9.6pt;color:var(--ink2)}
+</style>
+</head>
+<body>
+
+<!-- 1 · COPERTINA -->
+<section class="page cover">
+  <div class="cover-band"><span><b>Guida pratica</b> · posizionamento per hotel e resort</span><span>hotelpositioning.com</span></div>
+  <div class="cover-top" style="padding-top:16mm"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="y">Rimini · 2026</span></div>
+  <div class="cover-body">
+    <span class="tag">Le quattro componenti di un hotel</span>
+    <h1>Come funziona davvero <span class="hl">il positioning</span> di un hotel.</h1>
+  </div>
+  <div class="cover-grid">
+    <div>
+      <p class="lead">Una guida pratica per capire che tipo di hotel hai, quale leva fa davvero il tuo fatturato, e come costruire una narrativa coerente con la tua realtà invece che con la moda del momento.</p>
+      <div class="chips" style="gap:6px">
+        <span class="chip c-loc">Location</span><b>+</b><span class="chip c-cap">Capitale</span><b>+</b><span class="chip c-ops">Operations</span><b>+</b><span class="chip c-nar">Narrativa</span>
+      </div>
+      <div class="chips" style="margin-top:8px"><b style="font:900 14pt var(--d)">=</b><span class="chip" style="background:var(--ink);color:#fff">Posizionamento di mercato</span></div>
+    </div>
+    <div class="photo">
+      <img src="cutout.png" alt="">
+      <span class="st st-name">Francesco Astolfi</span>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <img src="firma.png" alt="Firma di Francesco Astolfi">
+    <div class="addr">Hotel Positioning<br>Via Cupa 5, Rimini · hotelpositioning.com</div>
+  </div>
+</section>
+
+<!-- 2 · LE BASI -->
+<section class="page">
+  <span class="tag">01 · Le basi</span>
+  <h2>Un hotel <span class="hl">non è una cosa sola.</span></h2>
+  <p>Un hotel di successo è fatto di quattro componenti che si sommano per determinare quello che il mercato percepisce di te: il tuo Posizionamento di Mercato. Quando mancano tutte, non c'è miracolo di marketing che tenga. Quando ci sono tutte al massimo, il fatturato arriva da solo. Il lavoro vero sta nel capire quale di queste quattro componenti è la tua leva principale, e investire di conseguenza.</p>
+  <p>Le quattro componenti sono: dove si trova il tuo hotel, cosa hai costruito fisicamente, come lavori ogni giorno, come ti racconti al mercato.</p>
+  <div class="formula">
+    <span class="kick">La formula</span>
+    <div class="chips"><span class="chip c-loc">Location</span><span class="op">+</span><span class="chip c-cap">Capitale</span><span class="op">+</span><span class="chip c-ops">Operations</span><span class="op">+</span><span class="chip c-nar">Narrativa</span></div>
+    <div class="res"><span class="op">=</span><span class="chip">Posizionamento di mercato</span><em>percepito dal cliente</em></div>
+  </div>
+  <p>Tutte e quattro contribuiscono al Posizionamento di Mercato. Puoi vincere spingendo su una delle quattro mentre le altre restano medie. Puoi vincere con due o tre alte. Puoi vincere con tutte e quattro alte, che è ovvio ma raro. Non puoi vincere con tutte e quattro basse: questo è il commodity che muore.</p>
+  <p>Importante distinguere due cose che spesso vengono confuse. Il <b>Posizionamento di Mercato</b> è il risultato percepito dal cliente: l'appeal complessivo del tuo hotel sul mercato. La <b>Narrativa</b> è una delle quattro componenti che lo determinano: la scelta deliberata di come racconti il tuo hotel al mondo. Le tre componenti strutturali (location, capitale, operations) richiedono investimenti o anni per cambiare. La narrativa è <span class="mark-hl">l'unica componente su cui puoi lavorare rapidamente</span>, con costo marginale, senza toccare i mattoni.</p>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">2</span></div>
+</section>
+
+<!-- 3 · COMPONENTI 1-2 -->
+<section class="page">
+  <span class="tag">02 · Le componenti</span>
+  <h2>Le quattro <span class="hl">componenti di base.</span></h2>
+  <div class="comp"><span class="kick"><span class="chip c-loc" style="font-size:7pt;padding:3px 8px">Componente 1</span></span>
+    <h3>Dove sei: la location</h3>
+    <p>La location non è solo un indirizzo. È il flusso di clienti che arriva da solo, è il nome che la gente riconosce quando lo pronunci al bar, è la ragione per cui un turista decide di spendere una settimana in una zona invece che in un'altra.</p>
+    <p>Portofino è una location da dieci. Capri è da dieci. Ravello, Positano, Venezia centro storico, il centro di Firenze, Taormina sono tutte da dieci. Qui l'hotel vende prima ancora che il proprietario parli.</p>
+    <p>Rimini, Jesolo, Senigallia, Grado, Caorle sono location da sei o sette. Hanno flussi stabili, estate forte, ma devi lavorare per catturare la tua fetta.</p>
+    <p>Un 4-stelle a Modena, Padova, Verona, Brescia è location da cinque. Flussi business e culturali, nessuna iconicità automatica.</p>
+    <p>Un hotel in un piccolo paese dell'entroterra abruzzese o del Monferrato parte da tre o quattro. Qui la location non ti aiuta: ti ostacola. Chi viene da te lo fa per una ragione specifica.</p>
+  </div>
+  <div class="comp"><span class="kick"><span class="chip c-cap" style="font-size:7pt;padding:3px 8px">Componente 2</span></span>
+    <h3>Cosa hai costruito: il capitale</h3>
+    <p>Il capitale è quanto hai investito nella struttura fisica. Non è solo il valore immobiliare: è la qualità percepita quando il cliente entra in camera, quando usa il bagno, quando mangia al ristorante, quando siede al bar.</p>
+    <p>Un hotel che ha rifatto le camere nel 2024 con investimento serio comunica una cosa. Uno con moquette del 2003 e materasso stanco ne comunica un'altra, qualunque cosa dica la brochure.</p>
+  </div>
+  <div class="rule"><span class="kick">Regola uno</span><b>Il capitale pesa moltissimo nei primi tre minuti dell'esperienza del cliente. Nessuna narrativa salva un bagno brutto.</b></div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">3</span></div>
+</section>
+
+<!-- 4 · COMPONENTI 3-4 -->
+<section class="page">
+  <div class="comp" style="margin-top:0"><span class="kick"><span class="chip c-ops" style="font-size:7pt;padding:3px 8px">Componente 3</span></span>
+    <h3>Come lavori ogni giorno: le operations</h3>
+    <p>Le operations sono il lavoro quotidiano. Qualità del servizio al check-in, pulizia stabile delle camere, puntualità del ristorante, risposta rapida alle recensioni, revenue management attivo che adatta i prezzi, formazione del personale, gestione dei fornitori.</p>
+    <p>Un hotel con componenti medie ma operations eccellenti sopravvive e cresce. Un hotel con componenti alte ma operations scadenti brucia la sua reputazione in diciotto mesi.</p>
+    <p><b>Le operations sono la componente più sottovalutata dai proprietari e la più determinante nel lungo periodo.</b></p>
+  </div>
+  <div class="comp" style="margin-top:20px"><span class="kick"><span class="chip c-nar" style="font-size:7pt;padding:3px 8px">Componente 4</span></span>
+    <h3>Come ti racconti al mercato: la narrativa</h3>
+    <p>La narrativa è la storia che l'hotel racconta al mondo. È la promessa che fai, il segmento che decidi di servire, l'identità distintiva che costruisci. È la ragione precisa per cui un cliente deve scegliere te e pagare il prezzo che chiedi.</p>
+    <p>Un hotel senza narrativa esiste come generico: camere al prezzo che il mercato OTA stabilisce, nessuna ragione specifica per sceglierlo rispetto ad altri. La sua narrativa è zero o quasi. Il Posizionamento di Mercato risulterà basso qualunque cosa facciano le altre tre componenti, perché manca il quarto addendo.</p>
+    <p>Un hotel con narrativa forte dà al cliente una ragione netta per sceglierlo. Può basarsi su asset specifici: la storia dell'hotel e della famiglia, un meccanismo operativo distintivo, un segmento target ultra-specifico, un'opposizione esplicita a categorie dominanti, una visione del mondo chiara.</p>
+    <p>La narrativa non è un'etichetta di marketing superficiale. È una scelta strategica che condiziona cosa offri, chi servi, come ti organizzi operativamente, come comunichi. E, importante, una volta scelta va mantenuta operativamente ogni giorno.</p>
+  </div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">4</span></div>
+</section>
+
+<!-- 5 · LA SCELTA -->
+<section class="page">
+  <span class="tag">03 · La scelta</span>
+  <h2>Due hotel uguali, <span class="hl">narrative diverse.</span></h2>
+  <p>Due hotel con le stesse tre componenti strutturali possono avere narrative completamente diverse.</p>
+  <p>Un hotel 4-stelle con dieci camere su una collina umbra può posizionarsi come «boutique romantico per coppie» oppure come «ritiro silenzioso per professionisti in burnout» oppure come «casa di campagna per matrimoni intimi». Stesse camere, stesso prezzo di costruzione, stesso staff.</p>
+  <div class="chips" style="margin:16px 0 4px;gap:8px">
+    <span class="chip" style="background:var(--psoft)">Boutique romantico per coppie</span>
+    <span class="chip" style="background:var(--tsoft)">Ritiro silenzioso per professionisti in burnout</span>
+    <span class="chip" style="background:var(--lsoft)">Casa di campagna per matrimoni intimi</span>
+  </div>
+  <p style="margin-top:12px"><b>Narrative diverse. Clienti diversi. Prezzi diversi. Posizionamento di Mercato diverso.</b></p>
+  <div class="rule" style="margin-top:22px"><span class="kick">Il punto</span><b>La narrativa giusta non è la più bella. È quella coerente con le altre tre componenti che hai.</b><p>La narrativa deve amplificare quello che hai, oppure costruire valore dove le altre componenti non arrivano.</p></div>
+
+  <span class="tag" style="margin-top:22px">04 · I profili</span>
+  <h2>Qual è il motore <span class="hl">del tuo hotel?</span></h2>
+  <p class="lead">Esistono quattro profili principali, uno per ciascuna delle quattro componenti. Riconoscere il tuo profilo cambia completamente la risposta su dove investire e come costruire la tua narrativa.</p>
+  <div class="chips" style="margin-top:14px;gap:8px">
+    <span class="chip c-loc">Location-driven</span><span class="chip c-cap">Capitale-driven</span><span class="chip c-ops">Operations-driven</span><span class="chip c-nar">Narrativa-driven</span>
+  </div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">5</span></div>
+</section>
+
+<!-- 6 · LOCATION + CAPITALE -->
+<section class="page">
+  <div class="prof" style="margin-top:0">
+    <div class="prof-h" style="background:var(--lsoft)">Profilo location-driven</div>
+    <div class="prof-b">
+      <h3>Il motore è il luogo</h3>
+      <p>Una componente altissima (location nove o dieci) e le altre tre medio-basse. Esempio tipico: una piccola struttura a Positano con capitale investito modesto, operations familiari non da catena internazionale, narrativa ancora da costruire.</p>
+      <p>Il cliente paga per vivere Positano, Capri, Ravello attraverso l'hotel. L'hotel è il tramite, non il protagonista.</p>
+      <div class="sub">
+        <div class="ok"><span class="kick">Narrativa coerente</span>Racconta il luogo come identità dell'hotel. «Siamo Positano». «La vera Capri». «L'anima di Ravello». Tutto l'arredamento, la colazione, il bar, l'esperienza devono raccontare il luogo in modo autentico e specifico, non generico.</div>
+        <div class="risk"><span class="kick">Rischio</span>Dipendenza totale dal flusso turistico della location. Se la location perde attrattiva per qualunque ragione, l'hotel non ha alternative. Vale la pena nel tempo costruire anche altre componenti per non dipendere solo dalla geografia.</div>
+      </div>
+    </div>
+  </div>
+  <div class="prof">
+    <div class="prof-h" style="background:var(--tsoft)">Profilo capitale-driven</div>
+    <div class="prof-b">
+      <h3>Il motore è l'esperienza fisica</h3>
+      <p>Una componente altissima (capitale nove o dieci) e le altre medio-basse. Esempio tipico: hotel in location secondaria con investimento multi-milionario in restoration o nuova costruzione iconica, operations ancora in rodaggio, narrativa ancora da costruire.</p>
+      <p>Il cliente paga per la bellezza dello spazio, l'estetica, la qualità materiale che non trova altrove nella zona.</p>
+      <div class="sub">
+        <div class="ok"><span class="kick">Narrativa coerente</span>Racconta l'investimento come promessa. «Il luogo più bello della regione». «Design che non trovi altrove». «L'esperienza fisica che vale il viaggio».</div>
+        <div class="risk"><span class="kick">Rischio</span>Un investimento così pesante richiede ADR alto per rendere. Se le operations non supportano il livello percepito del capitale, il cliente si sente ingannato la prima volta che chiede qualcosa alla reception e riceve una risposta sotto il livello della lobby.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">6</span></div>
+</section>
+
+<!-- 7 · OPERATIONS -->
+<section class="page">
+  <div class="prof" style="margin-top:0">
+    <div class="prof-h" style="background:var(--psoft)">Profilo operations-driven</div>
+    <div class="prof-b">
+      <h3>Il motore è la qualità esecutiva ripetibile</h3>
+      <p>Una componente altissima (operations nove o dieci) e le altre medio-basse. Esempio tipico: hotel urbano o costiero in location non iconica, capitale modesto ma ben gestito, narrativa basata sull'affidabilità ma non sempre codificata esplicitamente. Revenue management attivo, staff formato stabile, risposta recensioni rigorosa, F&amp;B curato, pulizia impeccabile, pricing dinamico intelligente.</p>
+      <p>Il cliente paga per non pensarci. Per sapere che tutto funziona.</p>
+      <div class="sub">
+        <div class="ok"><span class="kick">Narrativa coerente</span>Racconta l'affidabilità come promessa. «Qui funziona tutto». «L'hotel che pensa a tutto per te». «Zero sorprese, massima qualità». Esempi internazionali: citizenM vende «il tuo hotel ovunque tu vada», costruito su operations tecnologiche impeccabili. YOTEL vende «efficiency premium», costruito sulla stessa logica.</div>
+        <div class="risk"><span class="kick">Rischio</span>Le operations eccellenti sono difficili da comunicare in modo distintivo, perché «qualità del servizio» è un claim che fanno tutti. Serve codificare l'eccellenza in meccanismi riconoscibili e specifici, non in parole generiche.</div>
+      </div>
+    </div>
+  </div>
+  <div class="prof">
+    <div class="prof-h" style="background:var(--yellow)">Profilo narrativa-driven</div>
+    <div class="prof-b">
+      <h3>Il motore è come ti racconti al mercato</h3>
+      <p>Una componente altissima (narrativa nove o dieci) e le altre medio-basse. Operations almeno a sei o sette, perché sotto quella soglia la narrativa non funziona comunque.</p>
+      <p>Due casi principali rientrano in questo profilo. Il primo è l'hotel storico familiare, dove la storia reale della famiglia e dell'immobile è l'asset che la narrativa trasforma in promessa: «quattro generazioni di famiglia», «qui dal 1897», «la memoria del territorio». La storia è vera, la narrativa la codifica e la vende.</p>
+      <p>Il secondo è l'hotel che non ha né location iconica né capitale massivo né storia familiare, ma ha costruito una narrativa radicale e specifica. Non «hotel di charme familiare per famiglie», che è generico. Esempi del livello richiesto: «l'hotel per genitori che vogliono dormire mentre i bambini fanno il campo tennis», «la casa dei triatleti del circuito di Misano», «l'hotel-pacchetto delle coppie che vogliono testare settimane di convivenza prima di sposarsi».</p>
+    </div>
+  </div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">7</span></div>
+</section>
+
+<!-- 8 · NARRATIVA (seguito) -->
+<section class="page">
+  <div class="card" style="background:var(--white)">
+    <span class="kick" style="display:block;margin-bottom:6px">Esempi reali italiani</span>
+    <p><b>Eremito</b>, in Umbria, è un ritiro contemplativo con silenzio obbligato, menu unico vegetariano, niente wifi, niente televisione. La location è dura, il capitale contenuto. La narrativa fa il lavoro che le altre componenti non possono fare, generando un ADR oltre i 300 €.</p>
+    <p><b>Sextantio</b>, a Santo Stefano di Sessanio in Abruzzo, è l'altro esempio puro: Daniele Kihlgren ha costruito il «lusso dell'imperfezione» trasformando un borgo quasi abbandonato in un caso studio della Harvard Business School.</p>
+  </div>
+  <div class="sub one" style="margin-top:14px">
+    <div class="ok" style="border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);background:var(--ysoft);font-size:10.2pt"><span class="kick">Come costruirla</span>Scegli un segmento ultra-specifico. Fai una promessa radicale. Costruisci un'identità forte e difendibile. Fai scelte operative visibili che sostengano la promessa: menu, orari, servizi, divieti. <b>La narrativa forte si costruisce con scelte quotidiane, non con slogan.</b></div>
+    <div class="risk" style="border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font-size:10.2pt"><span class="kick">Rischio</span>Se la narrativa radicale non è sostenuta operativamente ogni giorno, è peggio di non averla. La narrativa diventa un contratto quotidiano che le operations devono onorare.</div>
+  </div>
+
+  <span class="tag" style="margin-top:24px">05 · I profili misti</span>
+  <h2>I profili misti <span class="hl">sono la norma.</span></h2>
+  <p class="lead">Nel mondo reale i profili puri sono rari. La maggior parte degli hotel ha due o tre componenti alte. Qui la narrativa deve raccontare l'intersezione, non uno solo degli elementi.</p>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">8</span></div>
+</section>
+
+<!-- 9 · PROFILI MISTI -->
+<section class="page">
+  <div class="mix">
+    <div class="card"><div class="chips"><span class="chip c-loc">Location alta</span><b>+</b><span class="chip c-cap">Capitale alto</span></div>
+      <p>Luxury property recente in location iconica. L'Hotel Caruso Belmond, prima dell'era LVMH, era questo profilo. La narrativa coerente è l'esperienza totale del luogo attraverso l'investimento: «il modo più ricco di vivere Positano». Qui serve attenzione a non far percepire le operations come il collo di bottiglia dell'esperienza che gli altri due pilastri promettono.</p></div>
+    <div class="card"><div class="chips"><span class="chip c-loc">Location alta</span><b>+</b><span class="chip c-nar">Narrativa alta</span></div>
+      <p>Hotel in location iconica che non si limita a vendere il luogo, ma costruisce anche una narrativa distintiva. Casa Cipriani Milano è questo profilo: location iconica, narrativa «ambasciata regionale di Venezia» basata sulla storia reale della famiglia Cipriani dal 1931. La narrativa amplifica la location invece di esserne subordinata.</p></div>
+    <div class="card"><div class="chips"><span class="chip c-ops">Operations alte</span><b>+</b><span class="chip c-nar">Narrativa alta</span></div>
+      <p>Hotel con eccellenza operativa che si posiziona esplicitamente su un segmento specifico. Esempi internazionali: The Pig Hotels in UK, con il fondatore Robin Hutson che codifica l'imperfezione curata come promessa operativa. L'hotel storico familiare in città d'arte minore rientra qui: operations familiari rigorose più la narrativa «quattro generazioni di ospitalità», basata sulla storia reale.</p></div>
+    <div class="card"><div class="chips"><span class="chip c-cap">Capitale alto</span><b>+</b><span class="chip c-ops">Operations alte</span></div>
+      <p>Hotel contemporaneo urbano o costiero con investimento serio e gestione professionale, in location secondaria. La narrativa coerente è «l'esperienza che non ti aspetti dove non te la aspetti». Qui la narrativa può costruire la destinazione invece di raccontarla. L'hotel diventa la ragione del viaggio.</p></div>
+    <div class="card wide"><div class="chips"><span class="chip c-loc">Location</span><span class="chip c-cap">Capitale</span><span class="chip c-ops">Operations</span><span class="chip c-nar">Narrativa</span><b style="font:800 9pt var(--d)">tutte e quattro alte</b></div>
+      <p>Luxury con componenti tutte eccellenti. La narrativa qui lavora in amplificazione: estrae valore già latente nelle altre tre componenti. Il consulente che aiuta un hotel di questo profilo non lo salva: lo fa rendere ancora di più, catturando valore che oggi resta sul tavolo. Belmond, Rocco Forte, Baglioni investono costantemente nella loro narrativa per questo motivo. Il delta economico è misurabile in milioni di ricavi aggiuntivi all'anno.</p></div>
+  </div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">9</span></div>
+</section>
+
+<!-- 10 · NOVE HOTEL (A-D) -->
+<section class="page">
+  <span class="tag">06 · Nove hotel</span>
+  <h2>Come i fattori <span class="hl">si influenzano a vicenda.</span></h2>
+  <p class="small">La teoria dei profili diventa concreta quando guardi casi concreti. Nove hotel ipotetici con componenti diverse: che Posizionamento di Mercato e che fatturati annuali ragionevoli potrebbero generare. Componenti su scala zero-dieci. Il Posizionamento di Mercato è la somma delle quattro, su scala quattro-quaranta. Il fatturato dipende dal Posizionamento ma anche da numero di camere, giorni operativi annuali, ADR raggiungibile dal segmento. <b>Esempi per spiegare il metodo, non hotel reali.</b></p>
+  <div class="legend"><span><i style="background:var(--lilac)"></i>Location</span><span><i style="background:var(--teal)"></i>Capitale</span><span><i style="background:var(--pink)"></i>Operations</span><span><i style="background:var(--yellow)"></i>Narrativa</span></div>
+  <div class="hotels" data-hotels="A,B,C,D,E,F"></div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">10</span></div>
+</section>
+
+<!-- 11 · NOVE HOTEL (E-I) + CONFRONTI -->
+<section class="page">
+  <div class="hotels" data-hotels="G,H,I"></div>
+  <span class="tag" style="margin-top:16px">I confronti</span>
+  <h2>I confronti <span class="hl">interessanti.</span></h2>
+  <div class="vs"><div class="vs-h"><b>Hotel A</b><span>vs</span><b>Hotel B</b></div>
+    <p>Stesso albergo a Positano, stesse camere, stesse operations. L'unica differenza è la narrativa. L'hotel A racconta genericamente «siamo a Positano, siamo accoglienti» (narrativa a 3). L'hotel B ha costruito «la casa capresina autentica» con collezione di oggetti locali, menu Positano-only, arredamento che racconta la storia del paese, pacchetti con esperienze gestite dai pescatori del porto (narrativa a 8). La narrativa ha amplificato la location iconica.</p>
+    <span class="delta">Posizionamento 25 → 30 · +1,5 M€ dalle stesse altre tre componenti</span></div>
+  <div class="vs"><div class="vs-h"><b>Hotel C</b><span>vs</span><b>Hotel D</b></div>
+    <p>Stesso albergo a Cattolica, stesse camere, stesse operations. L'hotel C è un 4-stelle «famiglia e divertimento» come altri cinquanta sulla stessa costa (narrativa a 3). L'hotel D ha costruito «l'hotel ufficiale dei triatleti del circuito di Misano» con bike storage dedicato, nutrizionista sportivo, convenzioni con il circuito, pacchetti allenamento, apertura estesa a fine stagione per le gare autunnali (narrativa a 9). La narrativa ha trasformato un commodity in specialista.</p>
+    <span class="delta">Posizionamento 21 → 27 · +700.000 € e trenta giorni di apertura in più</span></div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">11</span></div>
+</section>
+
+<!-- 12 · CONFRONTI -->
+<section class="page">
+  <div class="vs" style="margin-top:0"><div class="vs-h"><b>Hotel A</b><span>vs</span><b>Hotel E</b></div>
+    <p>L'hotel di Positano ha una location straordinaria ma opera 180 giorni l'anno (Posizionamento 25). L'hotel business a Milano Linate ha una location meno iconica ma opera 360 giorni l'anno, con operations eccellenti e narrativa chiara (Posizionamento 27). Il business hotel fattura quasi il doppio nonostante il Posizionamento sia simile, perché ha più camere (80 contro 25) e opera il doppio dei giorni.</p>
+    <span class="delta">Il Posizionamento dice quanto è forte l'hotel. Il fatturato dipende anche da dimensione e stagionalità.</span></div>
+  <div class="vs"><div class="vs-h"><b>Hotel F</b></div>
+    <p>L'hotel storico di Mantova non vince su location e capitale, ma ha operations buone e una narrativa altissima basata sulla storia reale della famiglia: quattro generazioni di ospitalità, continuità, memoria del territorio (narrativa a 9). La storia qui non è una componente separata: è l'asset su cui la narrativa costruisce la promessa. Posizionamento 26, con 1,8 M€ di fatturato su sole 30 camere, su un segmento specifico di appassionati di storia che pagano un premio per un'autenticità non replicabile.</p></div>
+  <div class="vs"><div class="vs-h"><b>Hotel G</b></div>
+    <p>Il 3-stelle balneare delle Marche genera 440.000 € con 22 camere, operando quasi solo in stagione estiva. Posizionamento 17: un commodity che sopravvive sul flusso turistico generale. Nessuna narrativa costruita (solo a 2). Non fa errori gravi ma non ha leve. Una narrativa specifica, per esempio «l'hotel ufficiale degli appassionati di immersioni del Parco del Conero» o «la casa degli escursionisti del Monte Conero», porterebbe la narrativa da 2 a 8, il Posizionamento da 17 a 23, il fatturato facilmente oltre i 600.000 €, catturando segmenti premium che oggi scelgono altrove.</p>
+    <span class="delta">Narrativa 2 → 8 · Posizionamento 17 → 23</span></div>
+  <div class="vs"><div class="vs-h"><b>Hotel H</b><span>vs</span><b>Hotel I</b></div>
+    <p>Stesso agriturismo nel Monferrato, stesse dieci camere, stesse operations familiari, stessa cantina di casa. L'hotel H vende una generica «esperienza enogastronomica piemontese» come altri cinquanta agriturismi della zona (narrativa a 3, Posizionamento 17). L'hotel I ha costruito «la residenza del vignaiolo per enologi professionali», con un workshop annuale di tecnica enologica ospitato da una cantina diversa ogni anno, visite tecniche alle principali cantine del Monferrato per gruppi di enologi stranieri, pacchetti personalizzati di una settimana per studiare uno specifico produttore (narrativa a 9, Posizionamento 23).</p>
+    <p>La narrativa ha fatto il lavoro anche nel segmento micro, dove le altre tre componenti sono tutte basse. <b>La leva narrativa non è riservata ai grandi: funziona anche nel piccolissimo, se è abbastanza specifica.</b></p>
+    <span class="delta">Posizionamento 17 → 23 · +310.000 €</span></div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">12</span></div>
+</section>
+
+<!-- 13 · CONFRONTI + LETTURE -->
+<section class="page">
+  <span class="tag">Da portare via</span>
+  <h2>Le quattro letture <span class="hl">da portare via.</span></h2>
+  <div class="reads">
+    <div class="read"><span class="n">1</span><p>Il Posizionamento di Mercato è la somma delle quattro componenti. La narrativa è una di queste quattro, al pari delle altre tre. Può essere la leva primaria oppure amplificare le altre. In entrambi i casi sposta il risultato in modo misurabile.</p></div>
+    <div class="read"><span class="n">2</span><p>Posizionamento di Mercato alto non significa automaticamente fatturato alto. Il fatturato dipende anche da dimensione dell'hotel, giorni operativi, ADR raggiungibile dal segmento. Un hotel piccolo con Posizionamento altissimo può fatturare meno di un hotel grande con Posizionamento medio: vedi Positano contro Milano Linate.</p></div>
+    <div class="read"><span class="n">3</span><p>La location iconica da sola non garantisce il fatturato più alto. Spesso i proprietari di hotel in location secondarie si lamentano della location come se fosse il problema principale, quando il vero problema è altrove: nella narrativa non costruita.</p></div>
+    <div class="read"><span class="n">4</span><p>Hotel con le stesse altre componenti ma narrativa diversa possono avere differenze di fatturato del trenta-sessanta per cento, dalla luxury property al micro-agriturismo. Questo è il valore reale del lavoro sulla narrativa, ed è accessibile a strutture di qualunque dimensione, perché è l'unica componente che non richiede grossi investimenti strutturali.</p></div>
+  </div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">13</span></div>
+</section>
+
+<!-- 14 · LE REGOLE (1) -->
+<section class="page">
+  <span class="tag">07 · Le regole</span>
+  <h2>Due regole che valgono <span class="hl">per tutti i profili.</span></h2>
+  <h3 style="margin-top:6px">1 · Le operations devono tenere la promessa</h3>
+  <p style="margin-top:6px">La narrativa crea aspettative che devono essere mantenute ogni giorno dalla gestione operativa.</p>
+  <div class="ans" style="margin-top:10px">
+    <div class="no">Se prometti silenzio contemplativo e il wifi non funziona nelle stanze, dove hai detto che non c'è, ma al bar sì, hai tradito la promessa.</div>
+    <div class="no">Se prometti cucina del territorio e il cuoco cambia ogni tre mesi, hai tradito la promessa.</div>
+    <div class="no">Se prometti servizio personalizzato e la reception risponde in automatico alle recensioni negative, hai tradito la promessa.</div>
+  </div>
+  <p style="margin-top:12px">La narrativa è una promessa che fai al cliente. Le operations sono il pagamento quotidiano di quella promessa. Se le operations non tengono la promessa, la narrativa amplifica il danno invece di generare valore. I clienti attirati dalla narrativa se ne vanno delusi, scrivono recensioni negative mirate proprio sulle cose che avevi promesso, e la narrativa diventa un boomerang.</p>
+  <div class="rule"><span class="kick">Regola operativa</span><b>Prima le operations. Dopo la narrativa.</b><p>Se le operations del tuo hotel non sono almeno solide (recensioni medie sopra 4,3/5, staff formato stabilmente, revenue management attivo, risposta rapida alle criticità), una narrativa radicale non è la mossa giusta. Prima vanno sistemate le operations. Dopo si lavora sulla narrativa.</p></div>
+  <p class="small">Il caso Selina, catena globale di workation hub fallita nel 2024, è un esempio chiaro: narrativa forte, operations incapaci di sostenerla, una crescita che ha accelerato il crollo.</p>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">14</span></div>
+</section>
+
+<!-- 15 · REGOLE 2 + AUTODIAGNOSI -->
+<section class="page">
+  <h3>2 · La narrativa deve stare dentro il mercato raggiungibile</h3>
+  <p style="margin-top:8px">Esiste anche la trappola opposta. Una narrativa può essere troppo radicale per il mercato accessibile dalla combinazione di location e capitale che hai.</p>
+  <div class="card" style="margin-top:14px;background:var(--white)">
+    <span class="kick" style="display:block;margin-bottom:6px">Il caso Saorsa 1875</span>
+    <p>In Scozia, è stato il primo hotel 100% vegano del Regno Unito. Narrativa radicale perfetta in isolamento. Ma la combinazione (undici camere, Pitlochry remota, prezzo premium per una cucina plant-based rigorosa) ha trovato un mercato troppo piccolo per sostenere il business. Nel 2025 è stato venduto sotto valore e il nuovo gruppo ha reintrodotto i prodotti animali.</p>
+  </div>
+  <div class="rule" style="margin-top:18px"><span class="kick">Il punto</span><b>La narrativa deve restringere abbastanza da creare identità, non così tanto da chiudere il mercato.</b></div>
+  <p>Una narrativa radicale su una location debole e con capacità piccola richiede una verifica preliminare: il bacino di clienti raggiungibili deve sostenere il fatturato minimo di sopravvivenza.</p>
+  <p><b>Molto spesso la soluzione non è radicalizzare meno la narrativa. È trovare una narrativa diversa, radicale ma su un asse con un mercato più ampio.</b></p>
+  <span class="tag" style="margin-top:16px">08 · L'autodiagnosi</span>
+  <h2>Tre domande per capire <span class="hl">che hotel sei.</span></h2>
+  <p class="lead">Prima di investire un euro nella costruzione della narrativa, rispondi onestamente a tre domande.</p>
+  <div class="q"><span class="n">1</span><div>
+    <h3>Le operations tengono?</h3>
+    <p>Guarda le recensioni degli ultimi ventiquattro mesi su Google, Booking e TripAdvisor. La media aggregata è sopra 4,3/5? Lo staff è formato e stabile? Hai un revenue management attivo che adatta i prezzi al mercato? Rispondi tempestivamente a recensioni e segnalazioni?</p>
+    <div class="ans"><div class="no"><b>Se no:</b> la narrativa non è la tua priorità attuale. Devi prima raggiungere la soglia operativa. Una narrativa forte adesso ti farebbe più male che bene.</div><div class="si"><b>Se sì:</b> procedi alla domanda due.</div></div>
+  </div></div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">15</span></div>
+</section>
+
+<!-- 16 · DOMANDE 2-3 -->
+<section class="page">
+  <div class="q" style="margin-top:0"><span class="n">2</span><div>
+    <h3>Qual è il tuo profilo?</h3>
+    <p>Fai un'autodiagnosi onesta sulle quattro componenti. Da zero a dieci su ciascuna, senza barare. Somma i quattro numeri e vedi il tuo Posizionamento di Mercato attuale.</p>
+    <div class="ans">
+      <div class="n1"><b>Una componente chiaramente dominante</b> (una a nove-dieci, le altre sotto sette): la tua narrativa deve raccontare e amplificare quella componente. Sei location-driven, capitale-driven, operations-driven o narrativa-driven.</div>
+      <div class="n2"><b>Due o tre componenti alte:</b> la tua narrativa deve raccontare l'intersezione specifica, non una singola componente. Sei un profilo misto.</div>
+      <div class="n3"><b>Nessuna componente dominante</b>, tutte sopra sei ma nessuna sopra sette: la leva da costruire è la narrativa. È l'unica delle quattro componenti su cui puoi lavorare rapidamente senza grossi investimenti strutturali.</div>
+    </div>
+  </div></div>
+  <div class="q"><span class="n">3</span><div>
+    <h3>Il mercato raggiungibile sostiene il business?</h3>
+    <p>Data la narrativa che stai pensando, coerente con il tuo profilo, il bacino di clienti accessibili geograficamente e per capacità di spesa sostiene il fatturato minimo di sopravvivenza dell'hotel?</p>
+    <p>Un calcolo semplice: numero di camere × occupazione obiettivo × giorni operativi × ADR obiettivo. Il risultato è il tuo fatturato minimo. I clienti potenziali per quella narrativa, nel tuo bacino raggiungibile, sono abbastanza?</p>
+    <div class="ans"><div class="si"><b>Se sì:</b> procedi.</div><div class="no"><b>Se no:</b> calibra la narrativa verso un asse con un mercato più ampio, prima di investire.</div></div>
+  </div></div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">16</span></div>
+</section>
+
+<!-- 17 · PROSSIMO PASSO -->
+<section class="page">
+  <span class="tag">09 · Il prossimo passo</span>
+  <h2>Cosa fare <span class="hl">adesso.</span></h2>
+  <p>Le quattro componenti di un hotel (location, capitale, operations, narrativa) contribuiscono tutte al Posizionamento di Mercato percepito dal cliente. La scelta della narrativa giusta dipende dal profilo del tuo hotel. Un hotel location-driven ha bisogno di una narrativa che racconta il luogo. Un hotel operations-driven ha bisogno di una narrativa che racconta l'affidabilità. Un hotel narrativa-driven ha bisogno di una narrativa radicale, che costruisce valore dove le altre componenti non arrivano da sole.</p>
+  <p>Il consulente giusto non ti vende la stessa narrativa per tutti i casi. Fa prima la diagnosi del tuo profilo, poi sceglie il tipo di narrativa coerente con le altre tre componenti, poi verifica che le operations tengano la promessa e che il mercato sostenga il business.</p>
+  <p>Se dopo le tre domande sei convinto che la narrativa sia la leva su cui investire, il passo successivo è capire quale pattern fa per te. Esistono circa cinquanta pattern di narrativa osservati nel mercato internazionale e italiano. Scegliere quello coerente con il tuo profilo è un lavoro di diagnosi che richiede uno sguardo esterno.</p>
+  <p>Se dopo le tre domande non sei sicuro, o se la risposta alla prima è stata no, la narrativa può aspettare. Lavora prima su quello che serve.</p>
+  <div class="box-end"><b>In entrambi i casi hai fatto il lavoro più importante: hai capito cosa serve davvero al tuo hotel adesso.</b><p>Quasi nessuno lo fa prima di spendere soldi in marketing. Tu l'hai fatto. Questo è già un vantaggio competitivo.</p></div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">17</span></div>
+</section>
+
+<!-- 19 · CHI LO FA -->
+<section class="page">
+  <span class="tag">Chi lo fa</span>
+  <h2>Francesco Astolfi. <span class="hl">Vent'anni di hotel, da ogni lato.</span></h2>
+  <div class="bio">
+    <div class="ph"><img src="francesco.jpg" alt="Francesco Astolfi"></div>
+    <div>
+      <div class="stats" style="margin-top:0">
+        <div><b>0 → 30 M€</b><span>TUI.it</span></div>
+        <div><b>20 hotel</b><span>marketing di Atahotels</span></div>
+        <div><b>10 locali</b><span>aperti con capitale mio</span></div>
+      </div>
+      <p style="font-size:11.4pt">Ho portato TUI.it da zero a trenta milioni. Ho guidato il marketing di Atahotels. Ho lavorato in un'agenzia per hotel e aperto dieci locali con capitale mio.</p>
+      <p style="font-size:11.4pt">Ogni smontaggio e ogni analisi li faccio io, a mano. Per questo gli smontaggi gratuiti sono al massimo sei al mese.</p>
+      <p class="quote">I consulenti vendono consigli. <span class="hl">Gli operatori vendono cicatrici.</span></p>
+      <img src="firma.png" alt="Firma di Francesco Astolfi" style="height:18mm;margin-top:16px">
+    </div>
+  </div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">18</span></div>
+</section>
+
+<!-- 20 · PROSSIMO PASSO -->
+<section class="page">
+  <span class="tag">Il prossimo passo</span>
+  <h2>Due modi <span class="hl">per andare avanti.</span></h2>
+  <p class="lead">Se vuoi sapere come ti vede l'ospite oggi, parti dallo smontaggio. Se vuoi il metodo completo da applicare da solo, parti dal libro.</p>
+  <div class="ctas">
+    <div class="cta a">
+      <span class="tag" style="background:var(--tsoft)">Gratis · fatto a mano</span>
+      <h3>Lo smontaggio della tua homepage</h3>
+      <p class="small">Copro i loghi e leggo le prime righe come un ospite che non vi conosce. Una pagina, scritta da me. Niente accessi, niente password.</p>
+      <ul>
+        <li><span><b>Il confronto:</b> la prima riga della tua homepage accanto a 2-3 concorrenti, con il logo coperto.</span></li>
+        <li><span><b>Il verdetto:</b> posizionato, sostituibile o invisibile. Con il perché.</span></li>
+        <li><span><b>L'indizio:</b> dove sta probabilmente il tuo motivo.</span></li>
+      </ul>
+      <p class="meta">Massimo 6 al mese · hotel e resort dalle 40 camere · in 3 giorni lavorativi</p>
+      <a class="btn" href="https://hotelpositioning.com/#richiedi">Richiedi lo smontaggio gratuito →</a>
+      <span class="url">hotelpositioning.com/#richiedi</span>
+    </div>
+    <div class="cta b">
+      <span class="tag" style="background:#fff">Il libro · 19,90 €</span>
+      <h3>Hotel Positioning. Il metodo in sei passaggi</h3>
+      <p class="small">Il metodo completo per trovare il motivo per cui l'ospite sceglie il tuo hotel, e scriverlo. Con otto strumenti gratis per applicarlo.</p>
+      <ul>
+        <li><span>Il metodo in sei passaggi, dalla diagnosi alle parole.</span></li>
+        <li><span>Otto strumenti gratuiti da usare sul tuo hotel.</span></li>
+        <li><span>Per strutture di ogni dimensione, anche sotto le 40 camere.</span></li>
+      </ul>
+      <a class="btn" href="https://hotelpositioning.com/libro/">Scopri il libro →</a>
+      <span class="url">hotelpositioning.com/libro</span>
+    </div>
+  </div>
+  <div class="close" style="margin-top:18mm"><span class="logo" style="color:#fff;margin-bottom:12px;display:flex"><span class="mark w"></span>Hotel Positioning</span><b>Senza un posizionamento chiaro, <span class="hl">l'unica leva che resta è il prezzo.</span></b></div>
+  <div class="foot"><span>Hotel Positioning · Come funziona davvero il positioning di un hotel</span><span class="n">19</span></div>
+</section>
+
+<script>
+const H={
+ A:['4-stelle a Positano, 25 camere','«Siamo a Positano, siamo accoglienti»',[10,6,6,3],'3,0 M€'],
+ B:['4-stelle a Positano, 25 camere','«La casa capresina autentica»',[10,6,6,8],'4,5 M€'],
+ C:['4-stelle a Cattolica, 50 camere','«Famiglia e divertimento», generico',[6,6,6,3],'1,3 M€'],
+ D:['4-stelle a Cattolica, 50 camere','«Hotel ufficiale dei triatleti del circuito di Misano»',[6,6,6,9],'2,0 M€'],
+ E:['4-stelle business Milano Linate, 80 camere','Operations eccellenti',[5,6,9,7],'5,2 M€'],
+ F:['4-stelle storico a Mantova, 30 camere','«Quattro generazioni di famiglia»',[5,5,7,9],'1,8 M€'],
+ G:['3-stelle balneare Riviera del Conero, 22 camere','«Hotel di famiglia da sempre»',[6,4,5,2],'440.000 €'],
+ H:['Agriturismo nel Monferrato, 10 camere','«Esperienza enogastronomica piemontese»',[4,5,5,3],'490.000 €'],
+ I:['Stesso agriturismo nel Monferrato, 10 camere','«La residenza del vignaiolo per enologi professionali»',[4,5,5,9],'800.000 €']};
+const C=['var(--lilac)','var(--teal)','var(--pink)','var(--yellow)'], N=['Location','Capitale','Operations','Narrativa'];
+document.querySelectorAll('[data-hotels]').forEach(box=>{
+  box.innerHTML=box.dataset.hotels.split(',').map(k=>{const [t,s,v,f]=H[k];const tot=v.reduce((a,b)=>a+b,0);
+   return `<div class="ht"><div class="ht-h"><span class="ht-l">${k}</span><div class="ht-t">${t}<small>${s}</small></div></div>
+   <div class="bars">${v.map((x,i)=>`<div class="bar">${N[i]}<i><b style="width:${x*10}%;background:${C[i]}"></b></i><span>${x}</span></div>`).join('')}</div>
+   <div class="ht-f"><div class="pm">Posizionamento<b>${tot}</b></div><div class="rev">Fatturato annuo stimato<br><b>${f}</b></div></div></div>`}).join('');
+});
+</script>
+</body>
+</html>
