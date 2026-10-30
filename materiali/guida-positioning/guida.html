@@ -221,6 +221,64 @@ p+p{margin-top:8px}
 .mixlist .card p{font-size:10pt}
 .mixlist .chips{gap:5px;margin-bottom:6px}
 .mixlist .chip{font-size:7.4pt;padding:4px 9px}
+/* ===== versione "documento": meno etichette, meno riquadri ===== */
+.page:not(.cover) .tag{background:none;border:0;border-radius:0;padding:0;font:700 7.4pt/1.2 var(--d);letter-spacing:.1em;color:var(--ink3);gap:8px}
+.page:not(.cover) .tag::before{content:"";width:18px;height:2px;background:var(--ink)}
+.conto-n .tag::before{display:none}
+.part{background:none;color:var(--ink);border-radius:0;padding:0 0 4px;border-bottom:2px solid var(--ink);font-size:7.2pt}
+.card,.mixlist .card,.vs,.read,.book-box{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0 0 0 14px!important;border-left:3px solid var(--line)!important}
+.rule{background:none;border:0;box-shadow:none;border-radius:0;padding:4px 0 4px 16px;border-left:5px solid var(--yellow);margin:16px 0}
+.rule .kick{color:var(--ink3)}
+.box-end{background:none;border:0;box-shadow:none;border-radius:0;padding:14px 0 0;border-top:3px solid var(--ink)}
+.prof{background:none;border:0;box-shadow:none;border-radius:0;overflow:visible;margin-top:16px}
+.prof-h{background:none!important;border:0;padding:0 0 4px;border-bottom:2px solid var(--ink)}
+.prof-b{padding:10px 0 0}
+.sub>div{background:none!important;border:0!important;box-shadow:none!important;border-radius:0;padding:2px 0 2px 12px;border-left:3px solid var(--line)!important}
+.sub .risk{border-left-color:#ff5a3c!important}
+.sub .ok{border-left-color:var(--green)!important}
+.ans div{background:none!important;border-radius:0;padding:3px 0 3px 12px;border-left-width:4px}
+.read{grid-template-columns:34px 1fr;gap:12px;padding-left:0!important;border-left:0!important}
+.read .n{width:30px;height:30px;border-radius:50%;font-size:12pt}
+.reads{gap:18px!important}
+.stats div{box-shadow:none;border-width:1.5px}
+.tbl{box-shadow:none}
+.mixlist{gap:14px}
+.ill{box-shadow:none}
+/* parte seconda: carta bianca, testatina, titoli sottolineati in lilla */
+.p2{background:#fff;padding-top:24mm}
+.p2::before{content:"Parte seconda · Come funziona";position:absolute;left:18mm;right:18mm;top:11mm;padding-bottom:6px;border-bottom:1px solid var(--line);font:700 7pt/1 var(--d);letter-spacing:.12em;text-transform:uppercase;color:var(--lilac)}
+.p2 .hl{background:none;border-radius:0;padding:0;box-shadow:inset 0 -.32em 0 var(--lsoft)}
+.p2 h2{font-size:23pt}
+.p2 .part{display:none}
+.p2 .rule{border-left-color:var(--lilac)}
+.p2 .formula{box-shadow:5px 5px 0 var(--lilac)}
+.p2 .foot{border-top:1px solid var(--line);padding-top:6px;bottom:8mm}
+/* pagina 17: tabella dei nove hotel */
+.htable{margin-top:6px;border-top:2px solid var(--ink)}
+.hr{display:grid;grid-template-columns:22px 1.3fr 1.05fr 46px 76px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.hh{font:700 6.8pt/1 var(--d);text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);padding:7px 0}
+.hg{border-bottom:1.5px solid var(--ink)}
+.hg .hr:last-child{border-bottom:0}
+.hl2{width:22px;height:22px;border-radius:7px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;font:900 10pt var(--d)}
+.hn{font-size:8.6pt;line-height:1.35;color:var(--ink2)}
+.hn b{display:block;font:800 9pt/1.3 var(--d);color:var(--ink)}
+.hb{display:grid;gap:3px}
+.hb i{display:grid;grid-template-columns:1fr 12px;gap:5px;align-items:center;font-style:normal}
+.hb i b{display:block;height:6px;border-radius:9px;border:1px solid var(--ink)}
+.hb i em{font:800 7pt var(--d);font-style:normal;text-align:right}
+.hp{font:600 7.4pt var(--d);color:var(--ink3)}
+.hp b{font:900 15pt var(--d);color:var(--ink)}
+.hf{font:900 10.4pt var(--d);text-align:right;white-space:nowrap}
+/* pagina 18: confronti in due colonne */
+.vsgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;margin-top:4px}
+.vs2{border-top:2px solid var(--ink);padding-top:8px}
+.vs2-h{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:5px}
+.vs2-h b{font:900 13pt/1 var(--d)}
+.vs2-h i{font-style:normal;font:800 11pt var(--d);color:var(--lilac)}
+.vs2-h span{font:700 7.2pt/1.2 var(--d);text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);margin-left:4px}
+.vs2 p{font-size:9.2pt;line-height:1.5}
+.vs2-law{margin-top:6px!important}
+.vs2-law span{font:800 9.2pt/1.35 var(--d);box-shadow:inset 0 -.38em 0 var(--lsoft)}
 .ending{margin-top:auto;background:var(--ink);color:#fff;border-radius:24px;padding:18px 22px;box-shadow:6px 6px 0 var(--yellow)}
 .ending p{font:900 19pt/1.12 var(--d);letter-spacing:-.03em}
 .ending p:last-of-type{color:var(--ink)}
@@ -337,7 +395,7 @@ p+p{margin-top:8px}
   <div class="rule" style="margin-top:16px"><span class="kick">Il nome</span><b>Quel motivo ha un nome: posizionamento.</b><p>Nelle prossime pagine vediamo da cosa è fatto, e quale parte puoi cambiare da lunedì.</p></div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">8</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <span class="part">Parte seconda · Come funziona</span>
   <span class="tag">01 · Le basi</span>
   <h2>Un hotel <span class="hl">non è una cosa sola.</span></h2>
@@ -354,7 +412,7 @@ p+p{margin-top:8px}
   <p class="law"><span class="hl">La narrativa è l'unica che puoi cambiare in fretta, senza toccare i mattoni.</span></p>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">9</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <span class="tag">02 · Le componenti</span>
   <h2>Quattro componenti. <span class="hl">Tre costano anni.</span></h2>
   <div class="comp"><span class="kick"><span class="chip c-loc" style="font-size:7pt;padding:3px 8px">Componente 1</span></span><h3>Dove sei: la location</h3><p>La location non è un indirizzo. È il flusso di clienti che arriva da solo. È il nome che la gente riconosce al bar.</p><p><b>Portofino, Capri, Positano, Venezia centro, Taormina:</b> location da dieci. L'hotel vende prima ancora che il proprietario apra bocca.</p><p><b>Rimini, Jesolo, Senigallia, Caorle:</b> da sei o sette. I flussi ci sono, ma la tua fetta te la devi prendere.</p><p><b>Un quattro stelle a Modena, Padova, Brescia:</b> da cinque. Lavoro e cultura, nessuna cartolina.</p><p><b>Un paese dell'entroterra abruzzese o del Monferrato:</b> da tre o quattro. Qui la location non ti aiuta, ti frena. Chi arriva, arriva per un motivo preciso.</p></div>
@@ -362,14 +420,14 @@ p+p{margin-top:8px}
   <div class="rule"><span class="kick">Regola uno</span><b>Il capitale pesa moltissimo nei primi tre minuti. Nessun racconto salva un bagno brutto.</b></div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">10</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <div class="comp" style="margin-top:0"><span class="kick"><span class="chip c-ops" style="font-size:7pt;padding:3px 8px">Componente 3</span></span><h3>Come lavori ogni giorno: le operations</h3><p>Le operations sono il lavoro di tutti i giorni. Il check-in. La pulizia, uguale il lunedì e il sabato. La colazione puntuale. Le risposte alle recensioni. I prezzi che seguono il mercato. Lo staff formato. I fornitori.</p><p>Un hotel nella media con operations eccellenti sopravvive e cresce. Un hotel bellissimo con operations scadenti brucia la reputazione in diciotto mesi.</p><p><b>Sono la componente che i proprietari sottovalutano di più. E quella che conta di più nel lungo periodo.</b></p></div>
   <div style="height:10px"></div>
   <div class="comp"><span class="kick"><span class="chip c-nar" style="font-size:7pt;padding:3px 8px">Componente 4</span></span><h3>Come ti racconti: la narrativa</h3><p>La narrativa è la promessa che fai al mercato. Il cliente che scegli di servire. La ragione precisa per cui deve scegliere te, e pagare il prezzo che chiedi.</p><p>Un hotel senza narrativa è un hotel generico. Il prezzo lo decide Booking. Nessuno ha un motivo per sceglierlo al posto del vicino. Puoi avere location, struttura e staff buoni: il risultato resta basso, perché manca il quarto addendo.</p><p>Una narrativa forte si appoggia su qualcosa di vero. La storia della famiglia. Un modo di lavorare che hai solo tu. Un cliente molto specifico. Una presa di posizione contro quello che fanno tutti.</p><p>Non è uno slogan. È una scelta che decide cosa offri, a chi, come organizzi il lavoro e come comunichi.</p></div>
   <p class="law"><span class="hl">E una volta scelta, va mantenuta ogni giorno.</span></p>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">11</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <span class="tag">03 · La scelta</span>
   <h2>Due hotel uguali. <span class="hl">Due racconti.</span></h2>
   <p>Un quattro stelle, dieci camere, su una collina umbra. Può essere:</p>
@@ -393,7 +451,7 @@ p+p{margin-top:8px}
   </div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">12</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <span class="tag">04 · I profili</span>
   <h2>Qual è il motore <span class="hl">del tuo hotel?</span></h2>
   <p class="lead">Ci sono quattro profili, uno per componente. Capire il tuo cambia la risposta a due domande: dove investire, e cosa raccontare.</p>
@@ -401,12 +459,12 @@ p+p{margin-top:8px}
   <div class="prof"><div class="prof-h" style="background:var(--lsoft)">Profilo location</div><div class="prof-b"><h3>Il motore è il luogo</h3><p>Location da nove o dieci, il resto nella media o sotto. Una piccola struttura a Positano, investimenti modesti, gestione familiare, racconto ancora da fare.</p><p>Il cliente paga per vivere Positano. L'hotel è il mezzo, non il protagonista.</p><div class="sub"><div class="ok"><span class="kick">Racconto coerente</span>Il luogo come identità. «Siamo Positano.» «La vera Capri.» Arredi, colazione, bar: tutto deve raccontare quel posto. Quello vero, non quello delle cartoline.</div><div class="risk"><span class="kick">Rischio</span>Dipendi tutto dal turismo della zona. Se la zona cala, non hai un piano B. Col tempo conviene costruire anche altro.</div></div></div></div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">13</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <div class="prof" style="margin-top:0"><div class="prof-h" style="background:var(--tsoft)">Profilo capitale</div><div class="prof-b"><h3>Il motore è la struttura</h3><p>Capitale da nove o dieci, il resto nella media. Un hotel in una zona secondaria con un restauro da diversi milioni, o un edificio nuovo che si fa notare. Gestione ancora in rodaggio.</p><p>Il cliente paga per la bellezza dello spazio, che nella zona non trova altrove.</p><div class="sub"><div class="ok"><span class="kick">Racconto coerente</span>L'investimento come promessa. «Il posto più bello della regione.» «Un design che non trovi altrove.»</div><div class="risk"><span class="kick">Rischio</span>Un investimento così chiede tariffe alte per rientrare. Se la reception non è all'altezza della hall, l'ospite si sente preso in giro alla prima richiesta.</div></div></div></div>
   <div class="prof"><div class="prof-h" style="background:var(--psoft)">Profilo operations</div><div class="prof-b"><h3>Il motore è il lavoro fatto bene, sempre</h3><p>Operations da nove o dieci, il resto nella media. Un hotel in città o sulla costa, in una zona senza cartolina. Struttura curata ma senza grandi investimenti. Prezzi gestiti con attenzione, staff stabile, recensioni seguite una per una, colazione curata, pulizia senza eccezioni.</p><p>Il cliente paga per non pensarci.</p><div class="sub"><div class="ok"><span class="kick">Racconto coerente</span>L'affidabilità come promessa. Fuori dall'Italia lo fanno citizenM («il tuo hotel ovunque tu vada») e YOTEL, tutti e due costruiti su una gestione impeccabile.</div><div class="risk"><span class="kick">Rischio</span>«Qualità del servizio» lo scrivono tutti. Per distinguerti devi trasformare l'eccellenza in cose che si vedono e si possono nominare. Non in aggettivi.</div></div></div></div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">14</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <div class="prof" style="margin-top:0"><div class="prof-h" style="background:var(--yellow)">Profilo narrativa</div><div class="prof-b">
     <h3>Il motore è come ti racconti</h3>
     <p>Narrativa da nove o dieci, il resto nella media o sotto. Le operations però devono stare almeno a sei o sette. Sotto quella soglia nessun racconto regge.</p>
@@ -419,7 +477,7 @@ p+p{margin-top:8px}
   <div class="book-box"><div><span class="kick" style="display:block;margin-bottom:4px">Per approfondire</span><p>Come si passa da un fatto vero del tuo hotel a un racconto che regge? È il cuore del libro. Sei passaggi, i casi veri, e otto strumenti per applicarli.</p><a class="btn" href="https://hotelpositioning.com/vai/libro/?da=guida-p15">Il libro su Amazon →</a> <span class="url">hotelpositioning.com/vai/libro</span></div></div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">15</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <span class="tag">05 · I profili misti</span>
   <h2>I profili puri <span class="hl">sono rari.</span></h2>
   <p class="lead">Quasi tutti gli hotel hanno due o tre componenti alte. Qui il racconto deve parlare dell'incrocio, non di una sola componente.</p>
@@ -432,25 +490,28 @@ p+p{margin-top:8px}
   </div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">16</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <span class="tag">06 · Nove hotel</span>
   <h2>Stesso hotel. Altro racconto. <span class="hl">Altro conto.</span></h2>
   <p class="small">Nove hotel inventati, per vedere il metodo al lavoro. Ogni componente da zero a dieci. Il posizionamento di mercato è la somma, da zero a quaranta. Il fatturato dipende dal posizionamento, ma anche da camere, giorni di apertura e tariffa possibile in quel segmento. <b>Esempi per spiegare il metodo. Non sono hotel reali, e non sono risultati promessi.</b></p>
-  <div class="legend"><span><i style="background:var(--lilac)"></i>Location</span><span><i style="background:var(--teal)"></i>Capitale</span><span><i style="background:var(--pink)"></i>Operations</span><span><i style="background:var(--yellow)"></i>Narrativa</span></div>
-  <div class="hotels three" data-hotels="A,B,C,D,E,F,G,H,I"></div>
+  <div class="legend" style="margin-top:4px"><span><i style="background:var(--lilac)"></i>Location</span><span><i style="background:var(--teal)"></i>Capitale</span><span><i style="background:var(--pink)"></i>Operations</span><span><i style="background:var(--yellow)"></i>Narrativa</span></div>
+  <div class="htable" data-htable="A,B|C,D|E|F|G|H,I"></div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">17</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <span class="tag">I confronti</span>
-  <div class="vs tight" style="margin-top:6px"><div class="vs-h"><b>A</b><span>contro</span><b>B</b><span>· stesso hotel, stessa Positano</span></div><p>Stesse camere, stesso staff. Cambia solo il racconto. A dice «siamo a Positano, siamo accoglienti», come tutti. B è «la casa positanese autentica»: oggetti del paese, menu solo locale, arredi che raccontano Positano, uscite in barca con i pescatori del porto. Il posizionamento passa da 25 a 30. Nell'esempio, un milione e mezzo in più con le stesse tre componenti.</p><span class="law-s">Il racconto ha fatto crescere la location.</span></div>
-  <div class="vs tight"><div class="vs-h"><b>C</b><span>contro</span><b>D</b><span>· stesso hotel, stessa Cattolica</span></div><p>C è «famiglia e divertimento», come altri cinquanta sulla stessa costa. D è «l'hotel dei triatleti del circuito di Misano»: deposito bici, nutrizionista sportivo, accordi con il circuito, pacchetti di allenamento, apertura lunga per le gare d'autunno. Il posizionamento passa da 21 a 27. Nell'esempio, settecentomila euro in più e trenta giorni di apertura in più.</p><span class="law-s">Il racconto ha trasformato un hotel come tanti in uno specialista.</span></div>
-  <div class="vs tight"><div class="vs-h"><b>A</b><span>contro</span><b>E</b><span>· Positano contro Linate</span></div><p>Positano apre 180 giorni l'anno. Linate 360, con operations eccellenti e un racconto chiaro. Il posizionamento è simile, 25 e 27. Ma Linate fattura quasi il doppio: ha 80 camere contro 25, e lavora il doppio dei giorni.</p><span class="law-s">Il posizionamento dice quanto è forte l'hotel. Il fatturato dipende anche da dimensione e stagione.</span></div>
-  <div class="vs tight"><div class="vs-h"><b>F</b><span>· l'hotel storico di Mantova</span></div><p>Non vince su location e struttura. Ha operations buone e una storia di famiglia vera: quattro generazioni. La storia non è una componente a parte. È la base su cui il racconto costruisce la promessa. Posizionamento 26, un milione e otto con sole 30 camere, da clienti che pagano di più per qualcosa che non si copia.</p></div>
-  <div class="vs tight"><div class="vs-h"><b>G</b><span>· il tre stelle del Conero</span></div><p>22 camere, quasi solo estate, 440 mila euro. Posizionamento 17. Non sbaglia niente di grave. Ma non ha leve: vive del turismo che passa. Un racconto preciso, come «l'hotel di chi fa immersioni nel Parco del Conero» o «la casa degli escursionisti del Monte Conero», porterebbe la narrativa da 2 a 8. Nell'esempio il fatturato supera i 600 mila euro, con clienti che oggi scelgono altrove.</p></div>
-  <div class="vs tight"><div class="vs-h"><b>H</b><span>contro</span><b>I</b><span>· lo stesso agriturismo nel Monferrato</span></div><p>Dieci camere, gestione familiare, la cantina di casa. H vende «esperienza enogastronomica piemontese», come altri cinquanta agriturismi della zona. I è «la residenza del vignaiolo per enologi professionisti»: un workshop all'anno con una cantina diversa, visite tecniche per gruppi di enologi stranieri, settimane dedicate a un singolo produttore. Il posizionamento passa da 17 a 23. Nell'esempio, 310 mila euro in più.</p><span class="law-s">Il racconto funziona anche nel piccolo. Se è abbastanza preciso.</span></div>
+  <h2>Sei confronti, <span class="hl">una lezione.</span></h2>
+  <div class="vsgrid">
+  <div class="vs2"><div class="vs2-h"><b>A</b> <i>→</i> <b>B</b><span>stesso hotel, stessa Positano</span></div><p>Stesse camere, stesso staff. Cambia solo il racconto. A dice «siamo a Positano, siamo accoglienti», come tutti. B è «la casa positanese autentica»: oggetti del paese, menu solo locale, arredi che raccontano Positano, uscite in barca con i pescatori del porto. Il posizionamento passa da 25 a 30. Nell'esempio, un milione e mezzo in più con le stesse tre componenti.</p><p class="vs2-law"><span>Il racconto ha fatto crescere la location.</span></p></div>
+  <div class="vs2"><div class="vs2-h"><b>C</b> <i>→</i> <b>D</b><span>stesso hotel, stessa Cattolica</span></div><p>C è «famiglia e divertimento», come altri cinquanta sulla stessa costa. D è «l'hotel dei triatleti del circuito di Misano»: deposito bici, nutrizionista sportivo, accordi con il circuito, pacchetti di allenamento, apertura lunga per le gare d'autunno. Il posizionamento passa da 21 a 27. Nell'esempio, settecentomila euro in più e trenta giorni di apertura in più.</p><p class="vs2-law"><span>Il racconto ha trasformato un hotel come tanti in uno specialista.</span></p></div>
+  <div class="vs2"><div class="vs2-h"><b>A</b> <i>→</i> <b>E</b><span>Positano contro Linate</span></div><p>Positano apre 180 giorni l'anno. Linate 360, con operations eccellenti e un racconto chiaro. Il posizionamento è simile, 25 e 27. Ma Linate fattura quasi il doppio: ha 80 camere contro 25, e lavora il doppio dei giorni.</p><p class="vs2-law"><span>Il posizionamento dice quanto è forte l'hotel. Il fatturato dipende anche da dimensione e stagione.</span></p></div>
+  <div class="vs2"><div class="vs2-h"><b>F</b><span>l'hotel storico di Mantova</span></div><p>Non vince su location e struttura. Ha operations buone e una storia di famiglia vera: quattro generazioni. La storia non è una componente a parte. È la base su cui il racconto costruisce la promessa. Posizionamento 26, un milione e otto con sole 30 camere, da clienti che pagano di più per qualcosa che non si copia.</p></div>
+  <div class="vs2"><div class="vs2-h"><b>G</b><span>il tre stelle del Conero</span></div><p>22 camere, quasi solo estate, 440 mila euro. Posizionamento 17. Non sbaglia niente di grave. Ma non ha leve: vive del turismo che passa. Un racconto preciso, come «l'hotel di chi fa immersioni nel Parco del Conero» o «la casa degli escursionisti del Monte Conero», porterebbe la narrativa da 2 a 8. Nell'esempio il fatturato supera i 600 mila euro, con clienti che oggi scelgono altrove.</p></div>
+  <div class="vs2"><div class="vs2-h"><b>H</b> <i>→</i> <b>I</b><span>lo stesso agriturismo nel Monferrato</span></div><p>Dieci camere, gestione familiare, la cantina di casa. H vende «esperienza enogastronomica piemontese», come altri cinquanta agriturismi della zona. I è «la residenza del vignaiolo per enologi professionisti»: un workshop all'anno con una cantina diversa, visite tecniche per gruppi di enologi stranieri, settimane dedicate a un singolo produttore. Il posizionamento passa da 17 a 23. Nell'esempio, 310 mila euro in più.</p><p class="vs2-law"><span>Il racconto funziona anche nel piccolo. Se è abbastanza preciso.</span></p></div>
+  </div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">18</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <span class="tag">Da portare via</span>
   <h2>Quattro cose <span class="hl">da ricordare.</span></h2>
   <div class="reads">
@@ -461,7 +522,7 @@ p+p{margin-top:8px}
   </div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">19</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <span class="tag">07 · Le regole</span>
   <h2>Due regole <span class="hl">che valgono per tutti.</span></h2>
   <h3>Regola uno · La gestione deve mantenere la promessa</h3>
@@ -476,7 +537,7 @@ p+p{margin-top:8px}
   <div class="rule" style="margin-top:14px"><span class="kick">Regola operativa</span><b>Prima le operations. Dopo il racconto.</b><p>Se le recensioni non stanno sopra 4,3 su 5 (8,6 su Booking), lo staff non è stabile, i prezzi non seguono il mercato e le criticità non hanno risposta rapida: un racconto forte non è la mossa giusta. Prima si sistema la gestione. Poi si lavora sul racconto.</p></div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">20</span></div>
 </section>
-<section class="page ">
+<section class="page p2 ">
   <h3>Regola due · Il racconto deve stare dentro un mercato che esiste</h3>
   <p style="margin-top:8px">C'è anche la trappola opposta: un racconto così di nicchia che i clienti non bastano.</p>
   <div class="card" style="margin-top:12px"><span class="kick" style="display:block;margin-bottom:6px">Il caso Saorsa 1875</span><p>In Scozia, è stato il primo hotel completamente vegano del Regno Unito. Un racconto perfetto, sulla carta. Ma undici camere, Pitlochry fuori mano e prezzi alti per una cucina vegetale rigorosa hanno trovato un mercato troppo piccolo. I proprietari lo hanno messo in vendita, e l'agenzia incaricata lo presentava anche come hotel da aprire a un'offerta più ampia del solo vegano.</p></div>
@@ -575,13 +636,18 @@ const H={
  A:['4 stelle a Positano, 25 camere','«Siamo a Positano, siamo accoglienti»',[10,6,6,3],'3,0 M€'],
  B:['Stesso hotel','«La casa positanese autentica»',[10,6,6,8],'4,5 M€'],
  C:['4 stelle a Cattolica, 50 camere','«Famiglia e divertimento»',[6,6,6,3],'1,3 M€'],
- D:['Stesso hotel','«L'hotel dei triatleti del circuito di Misano»',[6,6,6,9],'2,0 M€'],
+ D:['Stesso hotel','«L’hotel dei triatleti del circuito di Misano»',[6,6,6,9],'2,0 M€'],
  E:['4 stelle business, Milano Linate, 80 camere','Operations eccellenti',[5,6,9,7],'5,2 M€'],
  F:['4 stelle storico a Mantova, 30 camere','«Quattro generazioni di famiglia»',[5,5,7,9],'1,8 M€'],
  G:['3 stelle sulla Riviera del Conero, 22 camere','«Hotel di famiglia da sempre»',[6,4,5,2],'440.000 €'],
  H:['Agriturismo nel Monferrato, 10 camere','«Esperienza enogastronomica piemontese»',[4,5,5,3],'490.000 €'],
  I:['Stesso agriturismo','«La residenza del vignaiolo per enologi professionisti»',[4,5,5,9],'800.000 €']};
 const C=['var(--lilac)','var(--teal)','var(--pink)','var(--yellow)'], N=['Location','Capitale','Operations','Narrativa'];
+document.querySelectorAll('[data-htable]').forEach(box=>{
+  const head=`<div class="hr hh"><span></span><span>Hotel e racconto</span><span>Le quattro leve</span><span>Posiz.</span><span>Fatturato</span></div>`;
+  box.innerHTML=head+box.dataset.htable.split('|').map(g=>`<div class="hg">`+g.split(',').map(k=>{const [t,s,v,f]=H[k];const tot=v.reduce((a,b)=>a+b,0);
+    return `<div class="hr"><span class="hl2">${k}</span><span class="hn"><b>${t}</b>${s}</span><span class="hb">${v.map((x,i)=>`<i title="${N[i]} ${x}"><b style="width:${x*10}%;background:${C[i]}"></b><em>${x}</em></i>`).join('')}</span><span class="hp"><b>${tot}</b>/40</span><span class="hf">${f}</span></div>`}).join('')+`</div>`).join('');
+});
 document.querySelectorAll('[data-hotels]').forEach(box=>{
   box.innerHTML=box.dataset.hotels.split(',').map(k=>{const [t,s,v,f]=H[k];const tot=v.reduce((a,b)=>a+b,0);
    return `<div class="ht"><div class="ht-h"><span class="ht-l">${k}</span><div class="ht-t">${t}<small>${s}</small></div></div>

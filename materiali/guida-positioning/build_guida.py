@@ -51,6 +51,64 @@ EXTRA_CSS = """
 .mixlist .card p{font-size:10pt}
 .mixlist .chips{gap:5px;margin-bottom:6px}
 .mixlist .chip{font-size:7.4pt;padding:4px 9px}
+/* ===== versione "documento": meno etichette, meno riquadri ===== */
+.page:not(.cover) .tag{background:none;border:0;border-radius:0;padding:0;font:700 7.4pt/1.2 var(--d);letter-spacing:.1em;color:var(--ink3);gap:8px}
+.page:not(.cover) .tag::before{content:"";width:18px;height:2px;background:var(--ink)}
+.conto-n .tag::before{display:none}
+.part{background:none;color:var(--ink);border-radius:0;padding:0 0 4px;border-bottom:2px solid var(--ink);font-size:7.2pt}
+.card,.mixlist .card,.vs,.read,.book-box{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0 0 0 14px!important;border-left:3px solid var(--line)!important}
+.rule{background:none;border:0;box-shadow:none;border-radius:0;padding:4px 0 4px 16px;border-left:5px solid var(--yellow);margin:16px 0}
+.rule .kick{color:var(--ink3)}
+.box-end{background:none;border:0;box-shadow:none;border-radius:0;padding:14px 0 0;border-top:3px solid var(--ink)}
+.prof{background:none;border:0;box-shadow:none;border-radius:0;overflow:visible;margin-top:16px}
+.prof-h{background:none!important;border:0;padding:0 0 4px;border-bottom:2px solid var(--ink)}
+.prof-b{padding:10px 0 0}
+.sub>div{background:none!important;border:0!important;box-shadow:none!important;border-radius:0;padding:2px 0 2px 12px;border-left:3px solid var(--line)!important}
+.sub .risk{border-left-color:#ff5a3c!important}
+.sub .ok{border-left-color:var(--green)!important}
+.ans div{background:none!important;border-radius:0;padding:3px 0 3px 12px;border-left-width:4px}
+.read{grid-template-columns:34px 1fr;gap:12px;padding-left:0!important;border-left:0!important}
+.read .n{width:30px;height:30px;border-radius:50%;font-size:12pt}
+.reads{gap:18px!important}
+.stats div{box-shadow:none;border-width:1.5px}
+.tbl{box-shadow:none}
+.mixlist{gap:14px}
+.ill{box-shadow:none}
+/* parte seconda: carta bianca, testatina, titoli sottolineati in lilla */
+.p2{background:#fff;padding-top:24mm}
+.p2::before{content:"Parte seconda · Come funziona";position:absolute;left:18mm;right:18mm;top:11mm;padding-bottom:6px;border-bottom:1px solid var(--line);font:700 7pt/1 var(--d);letter-spacing:.12em;text-transform:uppercase;color:var(--lilac)}
+.p2 .hl{background:none;border-radius:0;padding:0;box-shadow:inset 0 -.32em 0 var(--lsoft)}
+.p2 h2{font-size:23pt}
+.p2 .part{display:none}
+.p2 .rule{border-left-color:var(--lilac)}
+.p2 .formula{box-shadow:5px 5px 0 var(--lilac)}
+.p2 .foot{border-top:1px solid var(--line);padding-top:6px;bottom:8mm}
+/* pagina 17: tabella dei nove hotel */
+.htable{margin-top:6px;border-top:2px solid var(--ink)}
+.hr{display:grid;grid-template-columns:22px 1.3fr 1.05fr 46px 76px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.hh{font:700 6.8pt/1 var(--d);text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);padding:7px 0}
+.hg{border-bottom:1.5px solid var(--ink)}
+.hg .hr:last-child{border-bottom:0}
+.hl2{width:22px;height:22px;border-radius:7px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;font:900 10pt var(--d)}
+.hn{font-size:8.6pt;line-height:1.35;color:var(--ink2)}
+.hn b{display:block;font:800 9pt/1.3 var(--d);color:var(--ink)}
+.hb{display:grid;gap:3px}
+.hb i{display:grid;grid-template-columns:1fr 12px;gap:5px;align-items:center;font-style:normal}
+.hb i b{display:block;height:6px;border-radius:9px;border:1px solid var(--ink)}
+.hb i em{font:800 7pt var(--d);font-style:normal;text-align:right}
+.hp{font:600 7.4pt var(--d);color:var(--ink3)}
+.hp b{font:900 15pt var(--d);color:var(--ink)}
+.hf{font:900 10.4pt var(--d);text-align:right;white-space:nowrap}
+/* pagina 18: confronti in due colonne */
+.vsgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;margin-top:4px}
+.vs2{border-top:2px solid var(--ink);padding-top:8px}
+.vs2-h{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:5px}
+.vs2-h b{font:900 13pt/1 var(--d)}
+.vs2-h i{font-style:normal;font:800 11pt var(--d);color:var(--lilac)}
+.vs2-h span{font:700 7.2pt/1.2 var(--d);text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);margin-left:4px}
+.vs2 p{font-size:9.2pt;line-height:1.5}
+.vs2-law{margin-top:6px!important}
+.vs2-law span{font:800 9.2pt/1.35 var(--d);box-shadow:inset 0 -.38em 0 var(--lsoft)}
 .ending{margin-top:auto;background:var(--ink);color:#fff;border-radius:24px;padding:18px 22px;box-shadow:6px 6px 0 var(--yellow)}
 .ending p{font:900 19pt/1.12 var(--d);letter-spacing:-.03em}
 .ending p:last-of-type{color:var(--ink)}
@@ -125,13 +183,18 @@ const H={
  A:['4 stelle a Positano, 25 camere','«Siamo a Positano, siamo accoglienti»',[10,6,6,3],'3,0 M€'],
  B:['Stesso hotel','«La casa positanese autentica»',[10,6,6,8],'4,5 M€'],
  C:['4 stelle a Cattolica, 50 camere','«Famiglia e divertimento»',[6,6,6,3],'1,3 M€'],
- D:['Stesso hotel','«L\'hotel dei triatleti del circuito di Misano»',[6,6,6,9],'2,0 M€'],
+ D:['Stesso hotel','«L’hotel dei triatleti del circuito di Misano»',[6,6,6,9],'2,0 M€'],
  E:['4 stelle business, Milano Linate, 80 camere','Operations eccellenti',[5,6,9,7],'5,2 M€'],
  F:['4 stelle storico a Mantova, 30 camere','«Quattro generazioni di famiglia»',[5,5,7,9],'1,8 M€'],
  G:['3 stelle sulla Riviera del Conero, 22 camere','«Hotel di famiglia da sempre»',[6,4,5,2],'440.000 €'],
  H:['Agriturismo nel Monferrato, 10 camere','«Esperienza enogastronomica piemontese»',[4,5,5,3],'490.000 €'],
  I:['Stesso agriturismo','«La residenza del vignaiolo per enologi professionisti»',[4,5,5,9],'800.000 €']};
 const C=['var(--lilac)','var(--teal)','var(--pink)','var(--yellow)'], N=['Location','Capitale','Operations','Narrativa'];
+document.querySelectorAll('[data-htable]').forEach(box=>{
+  const head=`<div class="hr hh"><span></span><span>Hotel e racconto</span><span>Le quattro leve</span><span>Posiz.</span><span>Fatturato</span></div>`;
+  box.innerHTML=head+box.dataset.htable.split('|').map(g=>`<div class="hg">`+g.split(',').map(k=>{const [t,s,v,f]=H[k];const tot=v.reduce((a,b)=>a+b,0);
+    return `<div class="hr"><span class="hl2">${k}</span><span class="hn"><b>${t}</b>${s}</span><span class="hb">${v.map((x,i)=>`<i title="${N[i]} ${x}"><b style="width:${x*10}%;background:${C[i]}"></b><em>${x}</em></i>`).join('')}</span><span class="hp"><b>${tot}</b>/40</span><span class="hf">${f}</span></div>`}).join('')+`</div>`).join('');
+});
 document.querySelectorAll('[data-hotels]').forEach(box=>{
   box.innerHTML=box.dataset.hotels.split(',').map(k=>{const [t,s,v,f]=H[k];const tot=v.reduce((a,b)=>a+b,0);
    return `<div class="ht"><div class="ht-h"><span class="ht-l">${k}</span><div class="ht-t">${t}<small>${s}</small></div></div>
@@ -323,20 +386,23 @@ P.append(page(16, f'''  <span class="tag">05 · I profili misti</span>
 P.append(page(17, f'''  <span class="tag">06 · Nove hotel</span>
   <h2>Stesso hotel. Altro racconto. <span class="hl">Altro conto.</span></h2>
   <p class="small">Nove hotel inventati, per vedere il metodo al lavoro. Ogni componente da zero a dieci. Il posizionamento di mercato è la somma, da zero a quaranta. Il fatturato dipende dal posizionamento, ma anche da camere, giorni di apertura e tariffa possibile in quel segmento. <b>Esempi per spiegare il metodo. Non sono hotel reali, e non sono risultati promessi.</b></p>
-  <div class="legend"><span><i style="background:var(--lilac)"></i>Location</span><span><i style="background:var(--teal)"></i>Capitale</span><span><i style="background:var(--pink)"></i>Operations</span><span><i style="background:var(--yellow)"></i>Narrativa</span></div>
-  <div class="hotels three" data-hotels="A,B,C,D,E,F,G,H,I"></div>'''))
+  <div class="legend" style="margin-top:4px"><span><i style="background:var(--lilac)"></i>Location</span><span><i style="background:var(--teal)"></i>Capitale</span><span><i style="background:var(--pink)"></i>Operations</span><span><i style="background:var(--yellow)"></i>Narrativa</span></div>
+  <div class="htable" data-htable="A,B|C,D|E|F|G|H,I"></div>'''))
 
 def vs(a, b, sub, text, law=''):
-    head = f'<b>{a}</b>' + (f'<span>contro</span><b>{b}</b>' if b else '') + f'<span>· {sub}</span>'
-    return f'<div class="vs tight"><div class="vs-h">{head}</div><p>{text}</p>' + (f'<span class="law-s">{law}</span>' if law else '') + '</div>'
+    head = f'<b>{a}</b>' + (f' <i>→</i> <b>{b}</b>' if b else '') + f'<span>{sub}</span>'
+    return f'<div class="vs2"><div class="vs2-h">{head}</div><p>{text}</p>' + (f'<p class="vs2-law"><span>{law}</span></p>' if law else '') + '</div>'
 
 P.append(page(18, f'''  <span class="tag">I confronti</span>
-  {vs('A', 'B', 'stesso hotel, stessa Positano', 'Stesse camere, stesso staff. Cambia solo il racconto. A dice «siamo a Positano, siamo accoglienti», come tutti. B è «la casa positanese autentica»: oggetti del paese, menu solo locale, arredi che raccontano Positano, uscite in barca con i pescatori del porto. Il posizionamento passa da 25 a 30. Nell\'esempio, un milione e mezzo in più con le stesse tre componenti.', 'Il racconto ha fatto crescere la location.').replace('class="vs tight"', 'class="vs tight" style="margin-top:6px"', 1)}
+  <h2>Sei confronti, <span class="hl">una lezione.</span></h2>
+  <div class="vsgrid">
+  {vs('A', 'B', 'stesso hotel, stessa Positano', 'Stesse camere, stesso staff. Cambia solo il racconto. A dice «siamo a Positano, siamo accoglienti», come tutti. B è «la casa positanese autentica»: oggetti del paese, menu solo locale, arredi che raccontano Positano, uscite in barca con i pescatori del porto. Il posizionamento passa da 25 a 30. Nell\'esempio, un milione e mezzo in più con le stesse tre componenti.', 'Il racconto ha fatto crescere la location.')}
   {vs('C', 'D', 'stesso hotel, stessa Cattolica', 'C è «famiglia e divertimento», come altri cinquanta sulla stessa costa. D è «l\'hotel dei triatleti del circuito di Misano»: deposito bici, nutrizionista sportivo, accordi con il circuito, pacchetti di allenamento, apertura lunga per le gare d\'autunno. Il posizionamento passa da 21 a 27. Nell\'esempio, settecentomila euro in più e trenta giorni di apertura in più.', 'Il racconto ha trasformato un hotel come tanti in uno specialista.')}
   {vs('A', 'E', 'Positano contro Linate', 'Positano apre 180 giorni l\'anno. Linate 360, con operations eccellenti e un racconto chiaro. Il posizionamento è simile, 25 e 27. Ma Linate fattura quasi il doppio: ha 80 camere contro 25, e lavora il doppio dei giorni.', 'Il posizionamento dice quanto è forte l\'hotel. Il fatturato dipende anche da dimensione e stagione.')}
   {vs('F', '', 'l\'hotel storico di Mantova', 'Non vince su location e struttura. Ha operations buone e una storia di famiglia vera: quattro generazioni. La storia non è una componente a parte. È la base su cui il racconto costruisce la promessa. Posizionamento 26, un milione e otto con sole 30 camere, da clienti che pagano di più per qualcosa che non si copia.')}
   {vs('G', '', 'il tre stelle del Conero', '22 camere, quasi solo estate, 440 mila euro. Posizionamento 17. Non sbaglia niente di grave. Ma non ha leve: vive del turismo che passa. Un racconto preciso, come «l\'hotel di chi fa immersioni nel Parco del Conero» o «la casa degli escursionisti del Monte Conero», porterebbe la narrativa da 2 a 8. Nell\'esempio il fatturato supera i 600 mila euro, con clienti che oggi scelgono altrove.')}
-  {vs('H', 'I', 'lo stesso agriturismo nel Monferrato', 'Dieci camere, gestione familiare, la cantina di casa. H vende «esperienza enogastronomica piemontese», come altri cinquanta agriturismi della zona. I è «la residenza del vignaiolo per enologi professionisti»: un workshop all\'anno con una cantina diversa, visite tecniche per gruppi di enologi stranieri, settimane dedicate a un singolo produttore. Il posizionamento passa da 17 a 23. Nell\'esempio, 310 mila euro in più.', 'Il racconto funziona anche nel piccolo. Se è abbastanza preciso.')}'''))
+  {vs('H', 'I', 'lo stesso agriturismo nel Monferrato', 'Dieci camere, gestione familiare, la cantina di casa. H vende «esperienza enogastronomica piemontese», come altri cinquanta agriturismi della zona. I è «la residenza del vignaiolo per enologi professionisti»: un workshop all\'anno con una cantina diversa, visite tecniche per gruppi di enologi stranieri, settimane dedicate a un singolo produttore. Il posizionamento passa da 17 a 23. Nell\'esempio, 310 mila euro in più.', 'Il racconto funziona anche nel piccolo. Se è abbastanza preciso.')}
+  </div>'''))
 
 P.append(page(19, f'''  <span class="tag">Da portare via</span>
   <h2>Quattro cose <span class="hl">da ricordare.</span></h2>
@@ -444,6 +510,8 @@ P.append(page(26, f'''  <span class="tag">Il prossimo passo</span>
     <span class="logo" style="color:#fff;margin-bottom:10px;display:flex"><span class="mark w"></span>Hotel Positioning</span>
     <p>Booking si paga.</p><p>L'agenzia si paga.</p><p>Lo sconto si paga.</p><p style="margin-top:4px"><span>Il motivo, una volta sola.</span></p>
   </div>'''))
+
+P = [x.replace('<section class="page', '<section class="page p2', 1) if 8 <= i <= 20 else x for i, x in enumerate(P)]
 
 html = f'''<!DOCTYPE html>
 <html lang="it">
