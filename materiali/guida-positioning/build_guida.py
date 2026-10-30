@@ -51,6 +51,26 @@ EXTRA_CSS = """
 .mixlist .card p{font-size:10pt}
 .mixlist .chips{gap:5px;margin-bottom:6px}
 .mixlist .chip{font-size:7.4pt;padding:4px 9px}
+/* ===== copertina ===== */
+.cv2{background:var(--yellow);padding:0}
+.cv2-top{position:absolute;left:18mm;right:18mm;top:14mm;display:flex;justify-content:space-between;align-items:center}
+.cv2-meta{font:700 7.6pt var(--d);letter-spacing:.1em;text-transform:uppercase}
+.cv2-body{position:absolute;left:18mm;right:18mm;top:42mm}
+.cv2-kick{font:700 10pt var(--d);letter-spacing:.06em;text-transform:uppercase;padding-bottom:8px;border-bottom:2.5px solid var(--ink);display:inline-block}
+.cover .cv2-h{font:900 82pt/.9 var(--d);letter-spacing:-.05em;margin:12mm 0 9mm;color:var(--ink);max-width:none}
+.cv2-sub{font:500 13pt/1.45 var(--t);max-width:96mm;color:var(--ink)}
+.cv2-photo{position:absolute;right:-6mm;bottom:28mm;width:120mm;height:132mm}
+.cv2-disc{position:absolute;left:12mm;right:0;bottom:0;height:112mm;border-radius:999px 999px 0 0;background:var(--lilac);border:2.5px solid var(--ink);border-bottom:0}
+.cv2-photo img{position:absolute;bottom:0;left:50%;transform:translateX(-46%);height:100%}
+.cv2-bottom{position:absolute;left:18mm;bottom:28mm;width:84mm;display:flex;flex-direction:column;gap:9mm}
+.cv2-author{display:flex;flex-direction:column}
+.cv2-author img{height:17mm;width:auto;align-self:flex-start;margin-left:-3mm}
+.cv2-author span{font:900 15pt/1.1 var(--d);margin-top:2mm}
+.cv2-author small{font:600 8.6pt var(--d);color:var(--ink2)}
+.cv2-formula{display:flex;flex-wrap:wrap;gap:5px}
+.cv2-formula .chip{font-size:8pt;padding:5px 10px;background-color:#fff}
+.cv2-formula .c-loc{background:var(--lsoft)}.cv2-formula .c-cap{background:var(--tsoft)}.cv2-formula .c-ops{background:var(--psoft)}.cv2-formula .c-nar{background:#fff}
+.cv2-band{position:absolute;left:0;right:0;bottom:0;height:16mm;background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 18mm;font:700 8pt var(--d);letter-spacing:.08em;text-transform:uppercase}
 /* ===== versione "documento": meno etichette, meno riquadri ===== */
 .page:not(.cover) .tag{background:none;border:0;border-radius:0;padding:0;font:700 7.4pt/1.2 var(--d);letter-spacing:.1em;color:var(--ink3);gap:8px}
 .page:not(.cover) .tag::before{content:"";width:18px;height:2px;background:var(--ink)}
@@ -205,27 +225,19 @@ document.querySelectorAll('[data-hotels]').forEach(box=>{
 
 P = []
 # 1 · copertina
-P.append(f'''<section class="page cover">
-  <div class="cover-band"><span><b>Guida pratica</b> · posizionamento per hotel e resort</span><span>hotelpositioning.com</span></div>
-  <div class="cover-top" style="padding-top:16mm"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="y">Rimini · 2026</span></div>
-  <div class="cover-body">
-    <span class="tag">Booking. L'agenzia. Il vicino che abbassa.</span>
-    <h1>Il tuo hotel <span class="hl">paga tutti.</span></h1>
+P.append(f'''<section class="page cover cv2">
+  <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 26 pagine</span></div>
+  <div class="cv2-body">
+    <p class="cv2-kick">Booking. L'agenzia. Il vicino che abbassa.</p>
+    <h1 class="cv2-h">Il tuo hotel<br>paga tutti.</h1>
+    <p class="cv2-sub">Che hotel sei, quale leva fa davvero il tuo fatturato, e perché senza un motivo per sceglierti resta solo il prezzo.</p>
   </div>
-  <div class="cover-grid">
-    <div>
-      <p class="lead">Una guida pratica per capire che hotel sei, quale leva fa davvero il tuo fatturato, e perché senza un motivo per sceglierti resta solo il prezzo.</p>
-      <div class="chips" style="gap:6px">
-        <span class="chip c-loc">Location</span><b>+</b><span class="chip c-cap">Capitale</span><b>+</b><span class="chip c-ops">Operations</span><b>+</b><span class="chip c-nar">Narrativa</span>
-      </div>
-      <div class="chips" style="margin-top:8px"><b style="font:900 14pt var(--d)">=</b><span class="chip" style="background:var(--ink);color:#fff">Posizionamento di mercato</span></div>
-    </div>
-    <div class="photo"><img src="cutout.png" alt=""><span class="st st-name">Francesco Astolfi</span></div>
+  <div class="cv2-photo"><span class="cv2-disc"></span><img src="cutout.png" alt=""></div>
+  <div class="cv2-bottom">
+    <div class="cv2-author"><img src="firma.png" alt="Firma di Francesco Astolfi"><span>Francesco Astolfi</span><small>Posizionamento per hotel e resort</small></div>
+    <div class="cv2-formula"><span class="chip c-loc">Location</span><span class="chip c-cap">Capitale</span><span class="chip c-ops">Operations</span><span class="chip c-nar">Narrativa</span></div>
   </div>
-  <div class="cover-foot">
-    <img src="firma.png" alt="Firma di Francesco Astolfi">
-    <div class="addr">Francesco Astolfi · Hotel Positioning<br>Via Cupa 5, Rimini · hotelpositioning.com</div>
-  </div>
+  <div class="cv2-band"><span>Rimini · 2026</span><span>hotelpositioning.com</span></div>
 </section>
 ''')
 
