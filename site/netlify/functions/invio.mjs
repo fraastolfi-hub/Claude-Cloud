@@ -21,7 +21,8 @@ export const handler = async (event) => {
       BREVO_API_KEY: !!env.BREVO_API_KEY, NOTIFY_EMAIL: !!env.NOTIFY_EMAIL, BREVO_SENDER_EMAIL: !!env.BREVO_SENDER_EMAIL,
       BREVO_LIST_DEFAULT: !!env.BREVO_LIST_DEFAULT, BREVO_LIST_REVISIONE: !!env.BREVO_LIST_REVISIONE,
       BREVO_LIST_CASSETTA: !!env.BREVO_LIST_CASSETTA, BREVO_LIST_CASSETTA_SEQUENZA: !!env.BREVO_LIST_CASSETTA_SEQUENZA,
-      META_PIXEL_ID: !!env.META_PIXEL_ID, META_CAPI_TOKEN: !!env.META_CAPI_TOKEN,
+      META_PIXEL_ID: !!env.META_PIXEL_ID, META_CAPI_TOKEN: !!env.META_CAPI_TOKEN, META_TEST_EVENT_CODE: !!env.META_TEST_EVENT_CODE,
+      META_PIXEL_ID_UGUALE_A_GTM: env.META_PIXEL_ID === '28889512877380364',
     });
   }
   if (event.httpMethod !== 'POST') return json(405, { ok: false });
@@ -43,7 +44,9 @@ export const handler = async (event) => {
     brevo('/smtp/email', notification(d, form)),
     d['form-name'] === 'cassetta' ? metaLead(d, event.headers || {}) : Promise.resolve('non serve'),
   ]);
-  if (meta.status === 'rejected') console.error(meta.reason);
+  // esito della Conversions API: nei log della funzione e nella risposta (visibile in Network, senza dati riservati)
+  const metaEsito = meta.status === 'fulfilled' ? meta.value : 'errore: ' + (meta.reason?.message || meta.reason);
+  if (d['form-name'] === 'cassetta') console.log('Meta CAPI:', metaEsito);
   if (saved.status === 'rejected') console.error(saved.reason);
   if (mailed.status === 'rejected') { console.error(mailed.reason); return json(502, { ok: false, errore: 'notifica' }); }
   // conferma a chi ha compilato: solo per lo smontaggio; se non parte, la richiesta resta valida
@@ -52,5 +55,5 @@ export const handler = async (event) => {
     try { await brevo('/smtp/email', reply); console.log('conferma inviata'); } catch (e) { console.error('conferma non inviata:', e.message); }
   }
   console.log('notifica inviata', d['form-name'], 'contatto salvato:', saved.status === 'fulfilled');
-  return json(200, { ok: true, contatto: saved.status === 'fulfilled' });
+  return json(200, { ok: true, contatto: saved.status === 'fulfilled', ...(d['form-name'] === 'cassetta' ? { meta: metaEsito } : {}) });
 };

@@ -176,7 +176,8 @@ export function cassettaMail(d) {
 // Parte solo se chi compila ha accettato i cookie di marketing (campo mkt=1) e se ci sono META_PIXEL_ID e META_CAPI_TOKEN.
 export async function metaLead(d, headers = {}) {
   const pixel = process.env.META_PIXEL_ID, token = process.env.META_CAPI_TOKEN;
-  if (!pixel || !token || d.mkt !== '1') return 'saltato';
+  if (!pixel || !token) return 'saltato: META_PIXEL_ID o META_CAPI_TOKEN mancanti';
+  if (d.mkt !== '1') return 'saltato: niente consenso ai cookie di marketing';
   const { createHash } = await import('node:crypto');
   const sha = (v) => createHash('sha256').update(String(v).trim().toLowerCase()).digest('hex');
   const nome = (d.nome || '').trim().split(/\s+/)[0];
@@ -194,6 +195,7 @@ export async function metaLead(d, headers = {}) {
   const r = await fetch(`https://graph.facebook.com/v21.0/${pixel}/events?access_token=${encodeURIComponent(token)}`, {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body),
   });
-  if (!r.ok) throw new Error(`Meta CAPI ${r.status}: ${await r.text()}`);
-  return 'inviato';
+  const txt = await r.text();
+  if (!r.ok) throw new Error(`Meta CAPI ${r.status}: ${txt.slice(0, 300)}`);
+  return `inviato${body.test_event_code ? ' (con codice di test)' : ''}: ${txt.slice(0, 120)}`;
 }
