@@ -148,7 +148,7 @@
       var done = function(){
         // form con pagina di ringraziamento (data-next): l'evento Lead parte da lì, con lo stesso id
         if (f.dataset.next) {
-          try { sessionStorage.setItem('hp-lead', evId); localStorage.setItem('library_unlocked', 'true'); } catch (e) {}
+          try { sessionStorage.setItem('hp-lead', evId); var cm = f.querySelector('[name="camere"]'); if (cm) sessionStorage.setItem('hp-camere', cm.value); if (f.getAttribute('name') === 'cassetta') localStorage.setItem('library_unlocked', 'true'); } catch (e) {}
           f.classList.add('sent'); location.href = f.dataset.next; return;
         }
         $$('[data-echo]', f).forEach(function(o){ var src = f.querySelector(o.dataset.echo); if (src && src.value.trim()) o.textContent = src.value.trim(); });

@@ -12,6 +12,8 @@ export const FORMS = {
   'scommessa': { label: 'La scommessa (landing /sfida/)', list: 'BREVO_LIST_SCOMMESSA' },
   // campagna Meta per il libro: chi spunta il secondo consenso entra anche nella lista che fa partire la sequenza
   'cassetta': { label: 'La cassetta (landing /cassetta/)', list: 'BREVO_LIST_CASSETTA', optIn: 'BREVO_LIST_CASSETTA_SEQUENZA', optInField: 'consenso_email' },
+  // guida gratuita «Che hotel sei?» (landing /guida/), stessa logica della cassetta
+  'guida': { label: 'La guida «Che hotel sei?» (landing /guida/)', list: 'BREVO_LIST_GUIDA', optIn: 'BREVO_LIST_GUIDA_SEQUENZA', optInField: 'consenso_email' },
 };
 
 // etichette leggibili per l'email di notifica
@@ -189,7 +191,7 @@ export async function metaLead(d, headers = {}) {
   };
   const body = { data: [{
     event_name: 'Lead', event_time: Math.floor(Date.now() / 1000), action_source: 'website',
-    event_source_url: 'https://hotelpositioning.com/cassetta/grazie/', ...(d.evento ? { event_id: d.evento } : {}),
+    event_source_url: `https://hotelpositioning.com/${d['form-name']}/grazie/`, ...(d.evento ? { event_id: d.evento } : {}),
     user_data: user, custom_data: { form: d['form-name'], struttura: d.struttura || '', camere: d.camere || '' },
   }], ...(process.env.META_TEST_EVENT_CODE ? { test_event_code: process.env.META_TEST_EVENT_CODE } : {}) };
   const r = await fetch(`https://graph.facebook.com/v21.0/${pixel}/events?access_token=${encodeURIComponent(token)}`, {
@@ -198,4 +200,29 @@ export async function metaLead(d, headers = {}) {
   const txt = await r.text();
   if (!r.ok) throw new Error(`Meta CAPI ${r.status}: ${txt.slice(0, 300)}`);
   return `inviato${body.test_event_code ? ' (con codice di test)' : ''}: ${txt.slice(0, 120)}`;
+}
+
+// Mail della guida /guida/: il link al PDF, subito. La sequenza successiva parte da Brevo (lista BREVO_LIST_GUIDA_SEQUENZA).
+export function guidaMail(d) {
+  const nome = ((d.nome || '').trim().split(/\s+/)[0]) || '';
+  const pdf = 'https://hotelpositioning.com/assets/guida/che-hotel-sei.pdf';
+  const big = d.camere === '40-80' || d.camere === 'oltre 80';
+  const p = [
+    `Ciao${nome ? ' ' + nome : ''},`,
+    'ecco la guida «Che hotel sei? Le quattro leve che decidono il tuo fatturato». Venti pagine, venti minuti.',
+    'Comincia dalla pagina 2: i cinque conti che paghi ogni anno, e la causa comune. Poi, a pagina 15, la regola più scomoda: prima le operations, dopo la narrativa.',
+  ];
+  const ps = big
+    ? 'P.S. Se vuoi vedere come ti legge oggi un ospite, ti faccio lo smontaggio gratuito della tua homepage: la tua prima riga accanto a quella di 2-3 concorrenti, con il logo coperto, e un verdetto. https://hotelpositioning.com/#richiedi'
+    : 'P.S. Se dopo la guida vuoi il metodo per scrivere il tuo motivo, è nel libro Hotel Positioning (19,90 €): https://hotelpositioning.com/vai/libro/?da=guida-email1';
+  const para = (x) => `<p style="margin:0 0 14px">${esc(x)}</p>`;
+  return {
+    sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
+    replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    subject: 'La tua guida: che hotel sei?',
+    tags: ['guida-email-1'],
+    textContent: [...p, `Apri la guida →\n${pdf}`, 'Francesco', ps].join('\n\n'),
+    htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${p.map(para).join('')}<p style="margin:20px 0 22px"><a href="${pdf}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri la guida (PDF) →</a></p>${para('Francesco')}${para(ps)}</div>`,
+  };
 }

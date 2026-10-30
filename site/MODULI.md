@@ -83,3 +83,12 @@ Landing per Meta ads a freddo: regala gli 8 strumenti del libro, poi propone il 
 - Funzione `invio`: salva il contatto in `BREVO_LIST_CASSETTA`; con il secondo consenso anche in `BREVO_LIST_CASSETTA_SEQUENZA` (la lista che fa partire le mail 2-7 su Brevo). Manda subito la mail 1 (`cassettaMail`).
 - Conversions API: `META_PIXEL_ID` + `META_CAPI_TOKEN` (facoltativo `META_TEST_EVENT_CODE`). Parte solo se chi compila ha accettato i cookie di marketing.
 - Pixel e GA4: gli ID vanno in `src/partials/head.html` (`window.HP_TRACKING`). Partono solo dopo il consenso; gli eventi chiamati prima della scelta aspettano e partono se l'utente accetta.
+
+## Guida /guida/ (dal 30 ottobre 2026)
+
+Lead magnet «Che hotel sei?», stessa infrastruttura della cassetta. Pagine noindex, fuori dal menu.
+
+- `/guida/` · form `guida`: nome, email, camere (in fasce), privacy, `consenso_email` facoltativo. Dopo l'invio porta a `/guida/grazie/`.
+- `/guida/grazie/` · link al PDF e una sola proposta: smontaggio se 40+ camere, libro altrimenti (dal campo camere). Qui parte il Lead (`generate_lead`, form `guida`).
+- PDF: `src/assets/guida/che-hotel-sei.pdf`. Sorgente in `materiali/guida-positioning/` (`node pdf.mjs`, poi copiare il PDF qui).
+- Funzione `invio`: lista `BREVO_LIST_GUIDA`; con il secondo consenso anche `BREVO_LIST_GUIDA_SEQUENZA`. Mail immediata `guidaMail` con il PDF e il P.S. diviso per camere. Conversions API come la cassetta.
