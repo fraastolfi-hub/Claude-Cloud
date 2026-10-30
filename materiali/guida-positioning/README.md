@@ -1,6 +1,6 @@
-# Guida «Come funziona davvero il positioning di un hotel»
+# Guida «Il tuo hotel paga tutti»
 
-PDF rigenerato il 30 ottobre 2026 con il design system morbido del sito.
+Lead magnet della landing /guida/. Copy v2 (30 ottobre 2026), 26 pagine.
 
-- `guida.html` è la sorgente (A4, una sezione per pagina).
-- Per rigenerare il PDF: `node pdf.mjs` in questa cartella (serve Playwright).
+- I testi stanno in `build_guida.py`, lo stile in `base.css`.
+- Rigenerare: `python3 build_guida.py && node pdf.mjs` (serve Playwright), poi copiare `che-hotel-sei.pdf` in `site/src/assets/guida/`.
