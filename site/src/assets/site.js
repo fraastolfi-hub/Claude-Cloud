@@ -137,7 +137,20 @@
         if (first.type !== 'hidden') first.focus(); shake(); return;
       }
       e.preventDefault();
+      // campi per il tracciamento (solo se presenti nel form): id dell'evento Lead, consenso marketing, cookie di Meta
+      var fv = function(n, v){ var i = f.querySelector('input[name="' + n + '"]'); if (i) i.value = v; };
+      var evId = 'lead-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
+      var mkt = window.HPconsent ? HPconsent().mkt : false;
+      var ck = function(n){ var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : ''; };
+      var fbclid = (location.search.match(/[?&]fbclid=([^&#]*)/) || [])[1];
+      fv('evento', evId); fv('mkt', mkt ? '1' : '');
+      if (mkt) { fv('fbp', ck('_fbp')); fv('fbc', ck('_fbc') || (fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : '')); }
       var done = function(){
+        // form con pagina di ringraziamento (data-next): l'evento Lead parte da lì, con lo stesso id
+        if (f.dataset.next) {
+          try { sessionStorage.setItem('hp-lead', evId); localStorage.setItem('library_unlocked', 'true'); } catch (e) {}
+          f.classList.add('sent'); location.href = f.dataset.next; return;
+        }
         $$('[data-echo]', f).forEach(function(o){ var src = f.querySelector(o.dataset.echo); if (src && src.value.trim()) o.textContent = src.value.trim(); });
         if (bar) bar.style.width = '100%'; if (f.dataset.save) { try { localStorage.removeItem(f.dataset.save); } catch (e) {} } f.classList.add('sent'); f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
         if (window.HPtrack) HPtrack('lead', { form: f.getAttribute('name') || f.id });

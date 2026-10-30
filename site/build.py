@@ -44,6 +44,8 @@ REDIRECTS = {
     "/library": "/library/",
     "/francesco": "/francesco/",
     "/privacy-policy": "/privacy-policy/",
+    "/cassetta": "/cassetta/",
+    "/vai/libro": "/vai/libro/",
 }
 
 

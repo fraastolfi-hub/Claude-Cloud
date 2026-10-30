@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ti porto su Amazon · Hotel Positioning</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- Link di passaggio verso Amazon: registra il clic (evento VaiAmazon, con la fonte in ?da=) e rimanda al libro.
+     Usarlo al posto del link Amazon diretto: /vai/libro/?da=grazie, /vai/libro/?da=email3 ... -->
+<noscript><meta http-equiv="refresh" content="0;url=https://www.amazon.it/dp/B0HL3Z4XL7/"></noscript>
+<!-- @include head -->
+<style>#cc{display:none!important}.vai{padding:80px 0;text-align:center}</style>
+<!-- @include tema -->
+</head>
+<body>
+<main class="wrap vai">
+  <p class="lead">Ti porto su Amazon…</p>
+  <p class="micro" style="margin-top:12px"><a href="https://www.amazon.it/dp/B0HL3Z4XL7/" id="vai-link">Se non succede niente, clicca qui.</a></p>
+</main>
+<!-- @include cookie-banner -->
+<script>
+(function(){
+  var URL = 'https://www.amazon.it/dp/B0HL3Z4XL7/';
+  var m = location.search.match(/[?&]da=([^&#]*)/), da = m ? decodeURIComponent(m[1]).slice(0, 40) : 'diretto';
+  var c = null; try { c = JSON.parse(localStorage.getItem('hp-consent')); } catch (e) {}
+  var go = function(){ location.replace(URL); };
+  if (window.HPtrack) HPtrack('VaiAmazon', { da: da });
+  // con il consenso ai cookie di marketing si aspetta che il pixel parta (al massimo 1,5 secondi), altrimenti si va subito
+  if (!(c && (c.mkt || c.stats))) { go(); return; }
+  var t0 = Date.now();
+  (function wait(){ if ((window.fbq && fbq.callMethod) || (window.gtag && window.google_tag_manager) || Date.now() - t0 > 1500) setTimeout(go, 250); else setTimeout(wait, 100); })();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gli 8 strumenti del libro Hotel Positioning, gratis · Hotel Positioning</title>
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Otto fogli di lavoro per trovare il motivo per cui l'ospite sceglie il tuo hotel. Dieci minuti l'uno, gratis. Gli strumenti del libro Hotel Positioning.">
+<link rel="canonical" href="https://hotelpositioning.com/cassetta/">
+<meta property="og:title" content="Apri Booking. Cerca la tua zona. Trova il tuo hotel."><meta property="og:description" content="Otto strumenti per trovare il motivo per cui ti scelgono. Dieci minuti l'uno, gratis."><meta property="og:type" content="website">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/libro-og.jpg">
+<!-- @include head -->
+<style>
+/* landing della campagna: testata con il solo logo, un solo bottone ripetuto */
+.lp-top{background:var(--surface-cream);border-bottom:1px solid var(--line-soft)}
+.lp-top .wrap{display:flex;align-items:center;min-height:64px}
+.lp-foot{padding:28px 0}
+.lp-foot .legal{border:0;padding:0;margin:0}
+
+/* apertura */
+.hero{padding-top:clamp(32px,4.5vw,64px)}
+.ca-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:center}
+.ca-hero .eyebrow{justify-content:flex-start}
+.ca-hero h1{margin:16px 0 18px;font-size:clamp(36px,4.6vw,64px);max-width:15ch}
+.ca-sub{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--ink-2);max-width:40ch}
+.ca-offer{margin:20px 0 0;font:700 clamp(19px,1.7vw,22px)/1.35 var(--display);letter-spacing:-.015em;color:var(--ink);max-width:34ch}
+.ca-hero .btn-row{justify-content:flex-start;margin-top:24px}
+.ca-hero .micro{margin:14px 0 0}
+
+/* la griglia di Booking: cinquanta rettangoli, uno bordato di giallo */
+.ca-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:7px;background:var(--surface-white);padding:clamp(14px,2vw,22px);border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-md)}
+.ca-grid i{aspect-ratio:1.15;border-radius:6px;background:var(--line-soft)}
+.ca-grid i:nth-child(3n){background:var(--mist-2)}
+.ca-grid i.me{background:var(--surface-white);box-shadow:inset 0 0 0 3px var(--yellow),0 0 0 1.5px var(--inchiostro)}
+.ca-grid-cap{margin-top:14px;font-size:15px;color:var(--muted);text-align:center}
+@media (max-width:860px){
+  .ca-hero{grid-template-columns:minmax(0,1fr);gap:28px}
+  .ca-visual{order:-1}
+  .ca-grid{gap:5px;padding:12px}
+}
+
+/* il problema */
+.adjs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.adjs span{border-radius:999px;background:var(--surface-sand);padding:8px 14px;font:500 15px/1 var(--text);color:var(--muted);text-decoration:line-through;text-decoration-color:var(--muted)}
+.ca-narrow{max-width:720px}
+.ca-narrow p{font-size:19px;line-height:1.6;color:var(--ink-2)}
+.ca-narrow p + p{margin-top:14px}
+.ca-law{margin-top:26px!important;font:800 clamp(24px,2.6vw,32px)/1.2 var(--display)!important;letter-spacing:-.025em;color:var(--ink)!important}
+.ca-bridge{margin-top:22px!important;font:700 19px/1.4 var(--display)!important;color:var(--ink)!important}
+.ca-bridge::before{content:"→ ";color:var(--muted)}
+
+/* gli otto strumenti */
+.ca-tools{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;counter-reset:tl}
+.ca-tools li{background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:18px;box-shadow:var(--o-sm);padding:20px 22px;display:grid;grid-template-columns:40px 1fr;gap:6px 16px;align-items:start}
+.ca-tools li::before{counter-increment:tl;content:counter(tl,decimal-leading-zero);grid-row:span 2;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--yellow-soft);border:2px solid var(--inchiostro);font:800 14px var(--display);color:var(--inchiostro)}
+.ca-tools li:first-child::before{background:var(--yellow)}
+.ca-tools h3{font-size:19px;line-height:1.25}
+.ca-tools p{font-size:16px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:760px){.ca-tools{grid-template-columns:1fr}}
+
+/* da dove vengono */
+.ca-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+.ca-proof .stat{text-align:left}
+.ca-note{margin-top:18px;font-size:14px;line-height:1.55;color:var(--muted);max-width:80ch;font-style:italic}
+@media (max-width:760px){.ca-proof{grid-template-columns:1fr}}
+
+/* chi sono */
+.me-row{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(30px,5vw,64px);align-items:start}
+@media (max-width:860px){.me-row{grid-template-columns:1fr}.me-row .photo{max-width:320px}}
+
+/* per chi è */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.fit{grid-template-columns:1fr}}
+.fit .card h3{margin-bottom:16px}
+
+/* form */
+.ca-form-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:start}
+@media (max-width:900px){.ca-form-wrap{grid-template-columns:1fr}}
+.form h2{font-size:clamp(26px,2.6vw,34px);margin-bottom:6px}
+.form .sub{font-size:16px;margin-bottom:20px;color:var(--muted)}
+.form .field select:invalid{color:var(--muted)}
+.form .check + .check{margin-top:10px}
+.form .check.opt span{color:var(--ink-2)}
+.form .check.err{color:var(--cost-text)}
+.form .field.err .em{color:var(--inchiostro)}
+.ca-ps{margin-top:26px;font-size:17px;line-height:1.6;color:var(--ink-2);border-top:1px solid var(--line);padding-top:20px}
+.ca-ps strong{color:var(--ink)}
+@media (max-width:640px){
+  .sec{padding-top:64px;padding-bottom:64px}
+  .ca-narrow p{font-size:18px}
+}
+</style>
+<!-- @include tema -->
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="lp-top"><div class="wrap"><span class="logo" aria-label="Hotel Positioning"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</span></div></header>
+
+<main id="main">
+
+<!-- ================= 1 · APERTURA ================= -->
+<section class="hero">
+  <div class="wrap ca-hero">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Gratis · gli 8 strumenti del libro Hotel Positioning</span>
+      <h1>Apri Booking. Cerca la tua zona. <span class="hl in">Trova il tuo hotel.</span></h1>
+      <p class="ca-sub">Cinquanta rettangoli.<br>Stesse piscine, stesse quattro stelle, stessi aggettivi.<br>Se l'ospite non vede la differenza, sceglie il prezzo.</p>
+      <p class="ca-offer">Otto strumenti per trovare il motivo per cui ti scelgono. Dieci minuti l'uno, gratis.</p>
+      <div class="btn-row">
+        <a href="#form" class="btn">Voglio gli 8 strumenti <span class="arr">→</span></a>
+      </div>
+      <p class="micro">Non serve avere il libro. Nome ed email, e si aprono subito.</p>
+    </div>
+    <div class="ca-visual">
+      <div class="ca-grid" role="img" aria-label="Cinquanta rettangoli tutti uguali, come i risultati di Booking. Uno solo è bordato di giallo: il tuo hotel.">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i class="me"></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <p class="ca-grid-cap">Uno di questi è il tuo hotel. Si vede la differenza?</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2 · IL PROBLEMA ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Quattro parole <em>che usano tutti.</em></h2>
+    </div>
+    <div class="ca-narrow rv">
+      <div class="adjs" aria-label="Gli aggettivi di tutti"><span>Accogliente</span><span>Confortevole</span><span>Immerso nel verde</span><span>A pochi passi dal mare</span></div>
+      <p>Copri il logo della tua homepage. Poi copri quello del vicino. Se le due frasi si possono scambiare, per l'ospite siete lo stesso hotel. Con un altro prezzo.</p>
+      <p>L'ospite non legge. Scorre. E quando tutto si somiglia, l'unica cosa che confronta è la tariffa.</p>
+      <p class="ca-law">Il traffico si compra. Il motivo per essere scelti va costruito.</p>
+      <p class="ca-bridge">Per costruirlo servono fogli su cui scrivere, non un altro corso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 · LA CASSETTA ================= -->
+<section class="sec white" id="strumenti">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">La cassetta</span>
+      <h2>Otto fogli di lavoro. <em>Gli stessi che uso con gli hotel che seguo.</em></h2>
+      <p class="lead">Leggere un metodo e applicarlo sono due lavori diversi. Per il secondo servono fogli da compilare pensando al tuo hotel. Eccoli.</p>
+    </div>
+    <ol class="ca-tools rv">
+      <li><h3>I 6 step del posizionamento</h3><p>Il metodo intero, campo per campo. È la base degli altri sette: si parte da qui.</p></li>
+      <li><h3>La matrice delle 4 caselle</h3><p>Meglio o peggio, più caro o meno caro. Dove il mercato mette il tuo hotel. Spesso non è dove pensi.</p></li>
+      <li><h3>I 200 attributi</h3><p>Scorri, segni, e alla fine ne restano due o tre. Sono quelli da difendere ogni giorno.</p></li>
+      <li><h3>Coerenza in 7 punti di contatto</h3><p>Il motivo regge dal sito allo staff, o si perde alla reception?</p></li>
+      <li><h3>Dal fatto alla trasformazione</h3><p>Un fatto vero del tuo hotel, portato gradino per gradino fino a quello che l'ospite vive.</p></li>
+      <li><h3>I 5 livelli di consapevolezza</h3><p>Dove intercettare l'ospite. E dove il budget si disperde, parlando a chi non è pronto.</p></li>
+      <li><h3>Il Positioning Canvas</h3><p>Tutto il posizionamento su una pagina sola. Quella da appendere in ufficio.</p></li>
+      <li><h3>Il test del posizionamento</h3><p>Dieci minuti di domande. Alla fine vedi il profilo del tuo hotel, e la casella libera accanto a te.</p></li>
+    </ol>
+    <div class="btn-row rv" style="margin-top:36px">
+      <a href="#form" class="btn">Apri la cassetta <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 · COME FUNZIONA ================= -->
+<section class="sec">
+  <div class="wrap grid-2">
+    <div class="sec-head" style="margin-bottom:0">
+      <span class="num-tag">Come funziona</span>
+      <h2>Un minuto per entrare. <em>Dieci minuti a foglio.</em></h2>
+    </div>
+    <div>
+      <div class="tl"><span class="n">1</span><div><h3>Lasci nome ed email</h3><p>Gli strumenti si aprono subito, qui sul sito.</p></div></div>
+      <div class="tl"><span class="n">2</span><div><h3>Ti arriva una mail con i link</h3><p>Li ritrovi da qualsiasi dispositivo.</p></div></div>
+      <div class="tl"><span class="n">3</span><div><h3>Cominci dal foglio 01</h3><p>Le risposte restano salvate sul tuo dispositivo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5 · DA DOVE VENGONO ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Da dove vengono</span>
+      <h2>Non li ho scritti a tavolino. <em>Li ho usati sul campo.</em></h2>
+    </div>
+    <div class="ca-narrow rv">
+      <p>Questi fogli vengono dal metodo del libro, e il metodo viene dagli hotel.</p>
+      <p>Al Silva Splendid di Fiuggi ha portato a una scelta che quasi nessuno ha lo stomaco di fare: meno tipi di ospite, non di più. La tariffa media è circa raddoppiata, e le recensioni su Booking sono salite da 8,6 a 9.*</p>
+      <p>Al Veridia Resort di Chia le vendite dirette sono sopra il 60%.</p>
+    </div>
+    <div class="stat-row ca-proof rv">
+      <div class="stat"><b>~×2</b><span>Tariffa media al Silva Splendid*</span></div>
+      <div class="stat"><b>8,6 → 9</b><span>Recensioni su Booking, Silva Splendid*</span></div>
+      <div class="stat"><b>&gt;60%</b><span>Vendite dirette al Veridia Resort</span></div>
+    </div>
+    <p class="ca-note">*Al Silva c'è stata anche una ristrutturazione, con investimenti importanti della proprietà. Il posizionamento ha dato la direzione, gli investimenti l'hanno resa credibile. Gli strumenti non promettono risultati: ti aiutano a trovare il motivo.</p>
+  </div>
+</section>
+
+<!-- ================= 6 · CHI SONO ================= -->
+<section class="sec white">
+  <div class="wrap me-row">
+    <div class="rv">
+      <div class="photo">
+        <img src="/assets/img/francesco.webp" alt="Francesco Astolfi" loading="lazy" width="800" height="1000">
+        <span class="name">Francesco Astolfi</span>
+      </div>
+    </div>
+    <div>
+      <div class="sec-head" style="margin-bottom:24px">
+        <span class="num-tag">Chi sono</span>
+        <h2>Vent'anni di hotel, <em>da ogni lato.</em></h2>
+      </div>
+      <p class="rv" style="font-size:19px;max-width:40em">Ho portato TUI.it da zero a trenta milioni. Ho guidato il marketing di Atahotels, venti strutture. Ho diretto una web agency che lavorava solo per hotel. Poi ho aperto dieci locali con i miei soldi.</p>
+      <p class="rv" style="font-size:19px;max-width:40em;margin-top:14px">So cosa vuol dire guardare il conto a fine mese e vedere la quota che va in commissioni.</p>
+      <blockquote class="big-quote rv" style="font-size:clamp(24px,2.6vw,34px);margin-top:28px">I consulenti vendono consigli. Gli operatori vendono cicatrici.</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7 · PER CHI È ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Per chi è</span>
+      <h2>Scritti per l'hotel indipendente. <em>Non per tutti.</em></h2>
+    </div>
+    <div class="fit">
+      <div class="card rv">
+        <h3>È per te se</h3>
+        <ul class="check-list">
+          <li>Hai un hotel indipendente, e le commissioni pesano ogni mese.</li>
+          <li>Hai rifatto sito e foto, e i risultati sono rimasti uguali.</li>
+          <li>Vuoi capire cosa hai già, prima di spendere ancora.</li>
+        </ul>
+      </div>
+      <div class="card rv d1">
+        <h3>Non è per te se</h3>
+        <ul class="check-list no">
+          <li>Lavori in una catena con un ufficio marketing.</li>
+          <li>Cerchi un trucco per riempire il mese prossimo.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8 · DOMANDE ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Domande</span>
+      <h2>Prima di iscriverti.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Serve avere il libro?</summary><div class="ans"><p>No. Gli strumenti funzionano da soli. Il libro spiega il metodo che c'è dietro, con i casi.</p></div></details>
+      <details><summary>Quanto tempo mi prende?</summary><div class="ans"><p>Dieci minuti a foglio. Puoi farne uno stasera e uno la settimana prossima.</p></div></details>
+      <details><summary>Cosa succede dopo che mi iscrivo?</summary><div class="ans"><p>Ricevi i link agli strumenti. Poi, per un paio di settimane, ti scrivo qualche mail su come usarli. Ti cancelli con un clic, quando vuoi.</p></div></details>
+      <details><summary>Vale anche per un B&amp;B o un agriturismo?</summary><div class="ans"><p>Sì. Il metodo è lo stesso. Cambiano gli esempi, e per questo nel form ti chiedo che struttura gestisci.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9 · FORM ================= -->
+<section class="sec alt" id="form">
+  <div class="wrap ca-form-wrap">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="num-tag">Gratis</span>
+        <h2>Apri la cassetta.</h2>
+        <p class="lead">Otto strumenti, dieci minuti l'uno. Gratis.</p>
+      </div>
+      <p class="ca-ps"><strong>P.S.</strong> Fai la prova adesso, prima ancora di iscriverti. Copri il logo della tua homepage e leggi la prima riga. Se potrebbe essere di un altro hotel, il foglio 01 è il posto da cui partire.</p>
+    </div>
+    <form class="form rv d1" id="cassetta-form" name="cassetta" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" data-next="/cassetta/grazie/" novalidate>
+      <input type="hidden" name="form-name" value="cassetta"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value="">
+      <p hidden><label>Non compilare: <input name="bot-field"></label></p>
+      <div class="fields">
+        <div class="form-head"><span>La cassetta degli attrezzi</span><span data-prog-txt>0%</span></div>
+        <div class="prog"><i></i></div>
+        <h2>Gli 8 strumenti, subito.</h2>
+        <p class="sub">Si aprono qui sul sito, e ti arrivano anche per email.</p>
+        <div class="field"><label for="c-nome">Nome</label><input id="c-nome" name="nome" autocomplete="given-name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
+        <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: gli strumenti arrivano qui.</span></div>
+        <div class="field"><label for="c-tipo">Tipo di struttura</label>
+          <select id="c-tipo" name="struttura" required>
+            <option value="" selected disabled>Scegli</option>
+            <option>Hotel indipendente</option>
+            <option>Resort o villaggio</option>
+            <option>B&amp;B o affittacamere</option>
+            <option>Agriturismo</option>
+            <option>Catena o gruppo</option>
+            <option>Altro</option>
+          </select><span class="em">Scegli una voce: così ti mando esempi vicini al tuo hotel.</span></div>
+        <div class="field"><label for="c-camere">Quante camere?</label>
+          <select id="c-camere" name="camere" required>
+            <option value="" selected disabled>Scegli</option>
+            <option>meno di 20</option>
+            <option>20-40</option>
+            <option>40-80</option>
+            <option>oltre 80</option>
+          </select><span class="em">Scegli una voce.</span></div>
+        <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento a ricevere gli strumenti via email.</span></label>
+        <label class="check opt"><input type="checkbox" name="consenso_email" value="sì"><span>Voglio ricevere anche le mail successive su posizionamento e libro. <em>(facoltativo)</em></span></label>
+        <button class="btn dark" type="submit" style="margin-top:18px">Voglio gli 8 strumenti <span class="arr">→</span></button>
+        <p class="form-foot">Gratis · si aprono subito · ti cancelli con un clic.</p>
+      </div>
+      <div class="ok" role="status">
+        <div class="tick">✓</div>
+        <p class="big">Sei dentro.</p>
+        <p>Ti porto agli strumenti…</p>
+        <a href="/cassetta/grazie/" class="btn" style="margin-top:16px">Apri la cassetta <span class="arr">→</span></a>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot lp-foot"><div class="wrap"><div class="legal">
+  <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+  <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
+</div></div></footer>
+<!-- @include cookie-banner -->
+<script src="/assets/site.js"></script>
+</body>
+</html>

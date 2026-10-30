@@ -71,3 +71,15 @@ window.HP_TRACKING = { ga4: 'G-XXXXXXXXXX', metaPixel: '123456789012345' };
 Se un ID resta vuoto, quello strumento è disattivato anche con il consenso.
 
 **Eventi già collegati:** a ogni modulo inviato con successo partono `generate_lead` su GA4 e `Lead` su Meta, con il nome del modulo (`revisione-homepage`, `test-posizionamento`, `strumenti-libro`). Su GA4 segnate `generate_lead` come evento chiave; su Meta usate `Lead` come conversione delle campagne.
+
+## Campagna /cassetta/ (dal 30 ottobre 2026)
+
+Landing per Meta ads a freddo: regala gli 8 strumenti del libro, poi propone il libro. Pagine noindex, fuori dal menu.
+
+- `/cassetta/` · form `cassetta`: nome, email, tipo di struttura, camere, privacy (obbligatoria), `consenso_email` (facoltativo, per le mail successive). Dopo l'invio porta a `/cassetta/grazie/` (attributo `data-next`).
+- `/cassetta/grazie/` · strumenti aperti + offerta libro. Qui parte l'evento `Lead` (una volta sola, con lo stesso id inviato dalla Conversions API).
+- `/cassetta/ce-lho/` · pagina del link «Ce l'ho già» delle mail 2-7: su Brevo l'automazione esce al clic su questo link.
+- `/vai/libro/?da=<fonte>` · link di passaggio verso Amazon: evento `VaiAmazon` con la fonte, poi redirect. Usarlo al posto del link Amazon diretto.
+- Funzione `invio`: salva il contatto in `BREVO_LIST_CASSETTA`; con il secondo consenso anche in `BREVO_LIST_CASSETTA_SEQUENZA` (la lista che fa partire le mail 2-7 su Brevo). Manda subito la mail 1 (`cassettaMail`).
+- Conversions API: `META_PIXEL_ID` + `META_CAPI_TOKEN` (facoltativo `META_TEST_EVENT_CODE`). Parte solo se chi compila ha accettato i cookie di marketing.
+- Pixel e GA4: gli ID vanno in `src/partials/head.html` (`window.HP_TRACKING`). Partono solo dopo il consenso; gli eventi chiamati prima della scelta aspettano e partono se l'utente accetta.

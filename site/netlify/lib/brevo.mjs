@@ -10,6 +10,8 @@ export const FORMS = {
   'strumenti-libro': { label: 'Strumenti del libro', list: 'BREVO_LIST_BONUS' },
   'questionario': { label: 'Questionario di posizionamento', list: 'BREVO_LIST_QUESTIONARIO' },
   'scommessa': { label: 'La scommessa (landing /sfida/)', list: 'BREVO_LIST_SCOMMESSA' },
+  // campagna Meta per il libro: chi spunta il secondo consenso entra anche nella lista che fa partire la sequenza
+  'cassetta': { label: 'La cassetta (landing /cassetta/)', list: 'BREVO_LIST_CASSETTA', optIn: 'BREVO_LIST_CASSETTA_SEQUENZA', optInField: 'consenso_email' },
 };
 
 // etichette leggibili per l'email di notifica
@@ -29,8 +31,9 @@ export const LABELS = {
   obiettivo_12_mesi: 'Obiettivo a 12 mesi', chi_comunica: 'Chi comunica, con che tono',
   link_tripadvisor: 'Recensioni TripAdvisor', link_booking: 'Recensioni Booking', link_google: 'Recensioni Google',
   note_materiali: 'Note e materiali', nome_referente: 'Referente',
+  consenso_email: 'Mail successive (consenso)',
 };
-export const SKIP = new Set(['form-name', 'bot-field', 'ip', 'user_agent', 'referrer', 'inviato']);
+export const SKIP = new Set(['form-name', 'bot-field', 'ip', 'user_agent', 'referrer', 'inviato', 'evento', 'mkt', 'fbp', 'fbc']);
 
 export const esc = (v) => String(v ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -60,7 +63,9 @@ export function contact(d, formName, form) {
   for (const k of keys) attributes[k] = extra[k];
   for (const k of Object.keys(attributes)) if (attributes[k] === '') delete attributes[k];
   const id = Number(process.env[form.list] || process.env.BREVO_LIST_DEFAULT);
-  return { email: d.email, attributes, updateEnabled: true, ...(id ? { listIds: [id] } : {}) };
+  const optIn = form.optIn && d[form.optInField] ? Number(process.env[form.optIn]) : 0;
+  const listIds = [id, optIn].filter(Boolean);
+  return { email: d.email, attributes, updateEnabled: true, ...(listIds.length ? { listIds } : {}) };
 }
 
 export function notification(d, form) {
@@ -136,4 +141,59 @@ export function bonusMail(d) {
     textContent: [...intro, links.map(([n, t, u]) => `${n} · ${t}\n${u}`).join('\n\n'), ...chiusa].join('\n\n'),
     htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${intro.map((x) => `<p style="margin:0 0 14px">${esc(x)}</p>`).join('')}<ol style="list-style:none;padding:0;margin:18px 0">${links.map(([n, t, u]) => `<li style="margin:0 0 10px"><a href="${u}" style="color:#0a0a0a;font-weight:700">${n} · ${esc(t)}</a></li>`).join('')}</ol>${chiusa.map((x) => `<p style="margin:0 0 14px">${esc(x).replace('\n', '<br>')}</p>`).join('')}</div>`,
   };
+}
+
+// Mail 1 della campagna /cassetta/: la consegna degli strumenti (testo di funnel-libro-cassetta-v1, email 1, oggetto A).
+// Le mail 2-7 partono dall'automazione su Brevo, solo per chi è nella lista BREVO_LIST_CASSETTA_SEQUENZA.
+export function cassettaMail(d) {
+  const nome = ((d.nome || '').trim().split(/\s+/)[0]) || '';
+  const base = 'https://hotelpositioning.com';
+  const primo = `${base}/bonus/worksheet/?accesso=1`;
+  const altri = [...STRUMENTI.slice(1).map(([n, t, s]) => [n, t, `${base}/bonus/${s}/?accesso=1`]), ['08', 'Il test del posizionamento', `${base}/quiz/`]];
+  const p1 = [
+    `Ciao${nome ? ' ' + nome : ''},`,
+    'i link ai tuoi otto strumenti sono in fondo a questa mail. Prima di aprirli, però, fai una cosa che ti prende due minuti.',
+    'Apri la homepage del tuo hotel e quella di un concorrente vicino.\nCopri i due loghi con la mano.\nLeggi la prima riga di tutti e due.',
+    'Se le puoi scambiare senza che nessuno se ne accorga, hai appena trovato il punto da cui partire.',
+    'Non è un difetto tuo. Succede quasi sempre agli hotel curati: si lavora tanto sul prodotto, e la frase che lo vende la si scrive l\'ultimo giorno, di fretta, copiando un po\' da tutti.',
+    'Il foglio 01 serve a riscriverla partendo dai fatti, non dagli aggettivi.',
+  ];
+  const ps = 'P.S. Domani ti racconto di un hotel che aveva tutto: 118 camere, la SPA più grande del Lazio, il più recensito della zona. Ed era invisibile lo stesso.';
+  const firma = 'A domani,\nFrancesco';
+  const para = (x) => `<p style="margin:0 0 14px">${esc(x).replace(/\n/g, '<br>')}</p>`;
+  return {
+    sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
+    replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    subject: 'I tuoi 8 strumenti [comincia dal 01]',
+    tags: ['cassetta-email-1'],
+    textContent: [...p1, `Apri il foglio 01 →\n${primo}`, 'Gli altri sette:', altri.map(([n, t, u]) => `${n} · ${t}\n${u}`).join('\n\n'), firma, ps].join('\n\n'),
+    htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${p1.map(para).join('')}<p style="margin:20px 0 22px"><a href="${primo}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri il foglio 01 →</a></p><p style="margin:0 0 8px">Gli altri sette:</p><ul style="list-style:none;padding:0;margin:0 0 18px">${altri.map(([n, t, u]) => `<li style="margin:0 0 8px"><a href="${u}" style="color:#0a0a0a">${n} · ${esc(t)}</a></li>`).join('')}</ul>${para(firma)}${para(ps)}</div>`,
+  };
+}
+
+// Conversions API di Meta: l'evento Lead lato server, con lo stesso id del pixel (Meta lo conta una volta sola).
+// Parte solo se chi compila ha accettato i cookie di marketing (campo mkt=1) e se ci sono META_PIXEL_ID e META_CAPI_TOKEN.
+export async function metaLead(d, headers = {}) {
+  const pixel = process.env.META_PIXEL_ID, token = process.env.META_CAPI_TOKEN;
+  if (!pixel || !token || d.mkt !== '1') return 'saltato';
+  const { createHash } = await import('node:crypto');
+  const sha = (v) => createHash('sha256').update(String(v).trim().toLowerCase()).digest('hex');
+  const nome = (d.nome || '').trim().split(/\s+/)[0];
+  const user = {
+    em: [sha(d.email)], ...(nome ? { fn: [sha(nome)] } : {}),
+    client_ip_address: headers['x-nf-client-connection-ip'] || (headers['x-forwarded-for'] || '').split(',')[0].trim() || undefined,
+    client_user_agent: headers['user-agent'] || undefined,
+    ...(d.fbp ? { fbp: d.fbp } : {}), ...(d.fbc ? { fbc: d.fbc } : {}),
+  };
+  const body = { data: [{
+    event_name: 'Lead', event_time: Math.floor(Date.now() / 1000), action_source: 'website',
+    event_source_url: 'https://hotelpositioning.com/cassetta/grazie/', ...(d.evento ? { event_id: d.evento } : {}),
+    user_data: user, custom_data: { form: d['form-name'], struttura: d.struttura || '', camere: d.camere || '' },
+  }], ...(process.env.META_TEST_EVENT_CODE ? { test_event_code: process.env.META_TEST_EVENT_CODE } : {}) };
+  const r = await fetch(`https://graph.facebook.com/v21.0/${pixel}/events?access_token=${encodeURIComponent(token)}`, {
+    method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body),
+  });
+  if (!r.ok) throw new Error(`Meta CAPI ${r.status}: ${await r.text()}`);
+  return 'inviato';
 }

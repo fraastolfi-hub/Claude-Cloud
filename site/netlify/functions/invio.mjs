@@ -7,8 +7,10 @@
 // Variabili d'ambiente (Netlify → Project configuration → Environment variables):
 //   BREVO_API_KEY, NOTIFY_EMAIL, BREVO_SENDER_EMAIL   obbligatorie per la notifica
 //   BREVO_LIST_DEFAULT, BREVO_LIST_*, BREVO_ATTRIBUTES facoltative (vedi lib/brevo.mjs)
+//   BREVO_LIST_CASSETTA, BREVO_LIST_CASSETTA_SEQUENZA   liste della campagna /cassetta/ (la seconda: chi ha dato il consenso alle mail successive)
+//   META_PIXEL_ID, META_CAPI_TOKEN, META_TEST_EVENT_CODE  Conversions API di Meta per l'evento Lead (facoltative)
 
-import { FORMS, brevo, saveContact, notification, confirmation, bonusMail } from '../lib/brevo.mjs';
+import { FORMS, brevo, saveContact, notification, confirmation, bonusMail, cassettaMail, metaLead } from '../lib/brevo.mjs';
 
 const json = (statusCode, body) => ({ statusCode, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' }, body: JSON.stringify(body) });
 
@@ -18,6 +20,8 @@ export const handler = async (event) => {
     return json(200, {
       BREVO_API_KEY: !!env.BREVO_API_KEY, NOTIFY_EMAIL: !!env.NOTIFY_EMAIL, BREVO_SENDER_EMAIL: !!env.BREVO_SENDER_EMAIL,
       BREVO_LIST_DEFAULT: !!env.BREVO_LIST_DEFAULT, BREVO_LIST_REVISIONE: !!env.BREVO_LIST_REVISIONE,
+      BREVO_LIST_CASSETTA: !!env.BREVO_LIST_CASSETTA, BREVO_LIST_CASSETTA_SEQUENZA: !!env.BREVO_LIST_CASSETTA_SEQUENZA,
+      META_PIXEL_ID: !!env.META_PIXEL_ID, META_CAPI_TOKEN: !!env.META_CAPI_TOKEN,
     });
   }
   if (event.httpMethod !== 'POST') return json(405, { ok: false });
@@ -34,14 +38,16 @@ export const handler = async (event) => {
     return json(503, { ok: false, errore: 'configurazione' });
   }
 
-  const [saved, mailed] = await Promise.allSettled([
+  const [saved, mailed, meta] = await Promise.allSettled([
     saveContact(d, d['form-name'], form),
     brevo('/smtp/email', notification(d, form)),
+    d['form-name'] === 'cassetta' ? metaLead(d, event.headers || {}) : Promise.resolve('non serve'),
   ]);
+  if (meta.status === 'rejected') console.error(meta.reason);
   if (saved.status === 'rejected') console.error(saved.reason);
   if (mailed.status === 'rejected') { console.error(mailed.reason); return json(502, { ok: false, errore: 'notifica' }); }
   // conferma a chi ha compilato: solo per lo smontaggio; se non parte, la richiesta resta valida
-  const reply = d['form-name'] === 'revisione-homepage' ? confirmation(d) : d['form-name'] === 'strumenti-libro' ? bonusMail(d) : null;
+  const reply = d['form-name'] === 'revisione-homepage' ? confirmation(d) : d['form-name'] === 'strumenti-libro' ? bonusMail(d) : d['form-name'] === 'cassetta' ? cassettaMail(d) : null;
   if (reply) {
     try { await brevo('/smtp/email', reply); console.log('conferma inviata'); } catch (e) { console.error('conferma non inviata:', e.message); }
   }

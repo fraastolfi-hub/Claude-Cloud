@@ -3,7 +3,8 @@
    - "Rifiuta" e la X valgono quanto "Accetta tutti";
    - la scelta dura 6 mesi, poi il banner ricompare;
    - gli ID si impostano in window.HP_TRACKING (partial head.html): vuoti = disattivati.
-   Eventi: window.HPtrack('lead', { form: 'candidatura' }) li manda a GA4 e Meta, solo se attivi. */
+   Eventi: window.HPtrack('lead', { form: 'candidatura' }, { eventID: '...' }) li manda a GA4 e Meta, solo se attivi.
+   Se la scelta sui cookie non è ancora fatta, l'evento aspetta: parte appena l'utente accetta, si perde se rifiuta. */
 (function(){
   var KEY = 'hp-consent', TTL = 182 * 864e5, cfg = window.HP_TRACKING || {};
   var el = document.getElementById('cc'); if (!el) return;
@@ -32,11 +33,18 @@
   }
   function apply(c){ if (c.stats) loadGA(); if (c.mkt) loadMeta(); }
 
-  window.HPtrack = function(name, params){
+  var pending = [];
+  function send(name, params, opts){
     params = params || {};
     if (loaded.ga && window.gtag) gtag('event', name === 'lead' ? 'generate_lead' : name, params);
-    if (loaded.meta && window.fbq) fbq(name === 'lead' ? 'track' : 'trackCustom', name === 'lead' ? 'Lead' : name, params);
+    if (loaded.meta && window.fbq) fbq(name === 'lead' ? 'track' : 'trackCustom', name === 'lead' ? 'Lead' : name, params, opts && opts.eventID ? { eventID: opts.eventID } : undefined);
+  }
+  window.HPtrack = function(name, params, opts){
+    if (!read()) { pending.push([name, params, opts]); return; }
+    send(name, params, opts);
   };
+  // consenso ai cookie di marketing già dato? (serve al form per la Conversions API)
+  window.HPconsent = function(){ var c = read(); return { stats: !!(c && c.stats), mkt: !!(c && c.mkt) }; };
 
   function open(customize){
     var c = read() || {};
@@ -49,6 +57,7 @@
     // consenso revocato dopo che gli script sono partiti: si ricarica la pagina per fermarli
     if ((had && had.stats && !c.stats && loaded.ga) || (had && had.mkt && !c.mkt && loaded.meta)) { location.reload(); return; }
     apply(c);
+    var q = pending; pending = []; q.forEach(function(a){ send(a[0], a[1], a[2]); });
   }
 
   el.addEventListener('click', function(e){
