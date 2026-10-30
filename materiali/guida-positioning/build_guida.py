@@ -83,6 +83,8 @@ EXTRA_CSS = """
 .op2-toc{position:absolute;left:18mm;right:18mm;bottom:16mm;list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:6px 14px;border-top:2.5px solid var(--ink);padding-top:10px}
 .op2-toc li{font:700 9.4pt/1.3 var(--d)}
 .op2-toc b{display:inline-block;width:26px;font-weight:900}
+.op3{background:var(--teal)}
+.op3 .ill{background:#eaf7f5}
 .ill2{box-shadow:none;border-width:2px;margin:6px 0 14px;background:#f4f3ff}
 /* ===== versione "documento": meno etichette, meno riquadri ===== */
 .page:not(.cover) .tag{background:none;border:0;border-radius:0;padding:0;font:700 7.4pt/1.2 var(--d);letter-spacing:.1em;color:var(--ink3);gap:8px}
@@ -219,7 +221,7 @@ def svg2(inner, h=''):
 
 def ill_hotel_quattro():
     # un hotel fatto di quattro blocchi: le quattro componenti
-    blocks = [(170, 120, 260, 50, LS2, 'Location'), (190, 78, 220, 42, T, 'Capitale'), (210, 42, 180, 36, PK, 'Operations'), (240, 12, 120, 30, Y, 'Narrativa')]
+    blocks = [(200, 130, 200, 38, LS2, 'Location'), (200, 90, 200, 38, T, 'Capitale'), (200, 50, 200, 38, PK, 'Operations'), (200, 10, 200, 38, Y, 'Narrativa')]
     out = '<rect x="0" y="170" width="600" height="30" fill="#e9e7ff"/>'
     for x, y, w, h, c, t in blocks:
         out += f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="8" fill="{c}" stroke="{INK}" stroke-width="3"/><text x="{x+w/2}" y="{y+h/2+6}" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="16" fill="{INK}">{t}</text>'
@@ -257,6 +259,21 @@ def ill_montagna():
     out += f'<g transform="translate(372 150)"><ellipse cx="0" cy="0" rx="22" ry="11" fill="{T}" stroke="{INK}" stroke-width="2.5"/><path d="M20 0 L34 -10 L34 10Z" fill="{T}" stroke="{INK}" stroke-width="2.5"/><circle cx="-10" cy="-2" r="2.5" fill="{INK}"/></g>'
     return out
 
+TEAL = '#22a094'
+
+def ill_lista():
+    # un foglio con le tre domande, due spuntate, e una matita
+    out = '<rect x="0" y="0" width="600" height="200" fill="#eaf7f5"/>'
+    out += f'<rect x="170" y="14" width="260" height="176" rx="14" fill="#fff" stroke="{INK}" stroke-width="3"/><rect x="250" y="6" width="100" height="20" rx="8" fill="{T}" stroke="{INK}" stroke-width="3"/>'
+    for i, (t, ok) in enumerate([('La gestione tiene?', True), ('Qual è il tuo profilo?', True), ('I clienti bastano?', False)]):
+        y = 50 + i * 46
+        out += f'<rect x="192" y="{y}" width="26" height="26" rx="7" fill="{Y if ok else "#fff"}" stroke="{INK}" stroke-width="2.5"/>'
+        if ok:
+            out += f'<path d="M198 {y+13} l6 6 l10 -12" fill="none" stroke="{INK}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>'
+        out += f'<text x="232" y="{y+19}" font-family="Outfit" font-weight="800" font-size="17" fill="{INK}">{i+1} · {t}</text>'
+    out += f'<g transform="rotate(35 470 110)"><rect x="450" y="30" width="26" height="130" rx="4" fill="{Y}" stroke="{INK}" stroke-width="3"/><path d="M450 160 L463 190 L476 160Z" fill="#f6e7c8" stroke="{INK}" stroke-width="3"/><rect x="450" y="22" width="26" height="16" rx="4" fill="#ff93c7" stroke="{INK}" stroke-width="3"/></g>'
+    return out
+
 hotels_js = """
 const H={
  A:['4 stelle a Positano, 25 camere','«Siamo a Positano, siamo accoglienti»',[10,6,6,3],'3,0 M€'],
@@ -285,7 +302,7 @@ document.querySelectorAll('[data-hotels]').forEach(box=>{
 P = []
 # 1 · copertina
 P.append(f'''<section class="page cover cv2">
-  <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 27 pagine</span></div>
+  <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 28 pagine</span></div>
   <div class="cv2-body">
     <p class="cv2-kick">Booking. L'agenzia. Il vicino che abbassa.</p>
     <h1 class="cv2-h">Il tuo hotel<br>paga tutti.</h1>
@@ -525,7 +542,18 @@ P.append(page(21, f'''  {svg2(ill_montagna(), ' style="height:44mm;margin-top:0"
 def q(n, title, body, ans):
     return f'<div class="q"><span class="n">{n}</span><div><h3>{title}</h3>{body}<div class="ans">{ans}</div></div></div>'
 
-P.append(page(22, f'''  <span class="part">Parte terza · Tocca a te</span>
+P.append('''<section class="page cover op2 op3">
+  <div class="op2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Il tuo hotel paga tutti</span></div>
+  <div class="op2-body">
+    <p class="op2-n">Parte terza</p>
+    <h1 class="op2-h">Tocca a te.</h1>
+    <p class="op2-sub">Tre domande per capire che hotel sei, prima di spendere un euro. Poi il passo da fare, e da dove farlo.</p>
+  </div>
+  <div class="op2-ill">''' + svg2(ill_lista()) + '''</div>
+  <ol class="op2-toc"><li><b>08</b>L'autodiagnosi</li><li><b>09</b>Il prossimo passo</li><li><b>·</b>Chi lo fa</li><li><b>·</b>Due modi per andare avanti</li></ol>
+</section>
+''')
+P.append(page(22, f'''
   <span class="tag">08 · L'autodiagnosi</span>
   <h2>Tre domande <span class="hl">prima di spendere un euro.</span></h2>
   <p class="lead">Rispondi con onestà. Nessuno ti guarda.</p>

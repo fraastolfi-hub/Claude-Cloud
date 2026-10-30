@@ -209,7 +209,7 @@ export function guidaMail(d) {
   const big = d.camere === '40-80' || d.camere === 'oltre 80';
   const p = [
     `Ciao${nome ? ' ' + nome : ''},`,
-    'ecco la guida «Il tuo hotel paga tutti». Ventisette pagine, mezz\'ora di lettura.',
+    'ecco la guida «Il tuo hotel paga tutti». Ventotto pagine, mezz\'ora di lettura.',
     'Comincia dalla pagina 2: i cinque conti che paghi ogni anno, e la causa comune. Poi, a pagina 21, la regola più scomoda: prima le operations, dopo il racconto.',
   ];
   const ps = big
