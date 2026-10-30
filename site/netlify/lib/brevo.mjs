@@ -33,7 +33,7 @@ export const LABELS = {
   obiettivo_12_mesi: 'Obiettivo a 12 mesi', chi_comunica: 'Chi comunica, con che tono',
   link_tripadvisor: 'Recensioni TripAdvisor', link_booking: 'Recensioni Booking', link_google: 'Recensioni Google',
   note_materiali: 'Note e materiali', nome_referente: 'Referente',
-  consenso_email: 'Mail successive (consenso)',
+  consenso_email: 'Mail successive (consenso)', sconto_anno: 'Sconto stimato (€/anno, dal calcolatore)',
 };
 export const SKIP = new Set(['form-name', 'bot-field', 'ip', 'user_agent', 'referrer', 'inviato', 'evento', 'mkt', 'fbp', 'fbc']);
 
