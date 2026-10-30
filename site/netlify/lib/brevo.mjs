@@ -209,7 +209,7 @@ export function guidaMail(d) {
   const big = d.camere === '40-80' || d.camere === 'oltre 80';
   const p = [
     `Ciao${nome ? ' ' + nome : ''},`,
-    'ecco la guida «Il tuo hotel paga tutti». Trenta pagine, mezz\'ora di lettura.',
+    'ecco la guida «Il posizionamento, spiegato semplice a chi ha un hotel». Trenta pagine, mezz\'ora di lettura.',
     'Comincia dalla pagina 2: i cinque conti che paghi ogni anno, e la causa comune. Poi, a pagina 23, la regola più scomoda: prima le operations, dopo il racconto.',
   ];
   const ps = big
@@ -220,7 +220,7 @@ export function guidaMail(d) {
     sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
     to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
     replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
-    subject: 'La tua guida: il tuo hotel paga tutti',
+    subject: 'La tua guida: il posizionamento, spiegato semplice',
     tags: ['guida-email-1'],
     textContent: [...p, `Apri la guida →\n${pdf}`, 'Francesco', ps].join('\n\n'),
     htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${p.map(para).join('')}<p style="margin:20px 0 22px"><a href="${pdf}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri la guida (PDF) →</a></p>${para('Francesco')}${para(ps)}</div>`,

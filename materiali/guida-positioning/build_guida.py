@@ -5,8 +5,8 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 CSS = (HERE / "base.css").read_text()
-TITLE = "Il tuo hotel paga tutti"
-FOOT = "Hotel Positioning · Il tuo hotel paga tutti"
+TITLE = "Il posizionamento, spiegato semplice a chi ha un hotel"
+FOOT = "Hotel Positioning · Il posizionamento, spiegato semplice"
 
 EXTRA_CSS = """
 .part{background:var(--ink);color:#fff;border-radius:999px;padding:5px 13px;font:800 7.6pt/1 var(--d);letter-spacing:.08em;text-transform:uppercase;align-self:flex-start;margin-bottom:10px}
@@ -57,7 +57,7 @@ EXTRA_CSS = """
 .cv2-meta{font:700 7.6pt var(--d);letter-spacing:.1em;text-transform:uppercase}
 .cv2-body{position:absolute;left:18mm;right:18mm;top:42mm}
 .cv2-kick{font:700 10pt var(--d);letter-spacing:.06em;text-transform:uppercase;padding-bottom:8px;border-bottom:2.5px solid var(--ink);display:inline-block}
-.cover .cv2-h{font:900 82pt/.9 var(--d);letter-spacing:-.05em;margin:12mm 0 9mm;color:var(--ink);max-width:none}
+.cover .cv2-h{font:900 50pt/1 var(--d);letter-spacing:-.04em;margin:11mm 0 8mm;color:var(--ink);max-width:none;white-space:nowrap}
 .cv2-sub{font:500 13pt/1.45 var(--t);max-width:96mm;color:var(--ink)}
 .cv2-photo{position:absolute;right:-6mm;bottom:28mm;width:120mm;height:132mm}
 .cv2-disc{position:absolute;left:12mm;right:0;bottom:0;height:112mm;border-radius:999px 999px 0 0;background:var(--lilac);border:2.5px solid var(--ink);border-bottom:0}
@@ -356,8 +356,8 @@ P.append(f'''<section class="page cover cv2">
   <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 30 pagine</span></div>
   <div class="cv2-body">
     <p class="cv2-kick">Booking. L'agenzia. Il vicino che abbassa.</p>
-    <h1 class="cv2-h">Il tuo hotel<br>paga tutti.</h1>
-    <p class="cv2-sub">Che hotel sei, quale leva fa davvero il tuo fatturato, e perché senza un motivo per sceglierti resta solo il prezzo.</p>
+    <h1 class="cv2-h">Il posizionamento,<br>spiegato semplice<br>a chi ha un hotel.</h1>
+    <p class="cv2-sub">La guida per capire che hotel sei, prima di spendere un altro euro in marketing.</p>
   </div>
   <div class="cv2-photo"><span class="cv2-disc"></span><img src="cutout.png" alt=""></div>
   <div class="cv2-bottom">
@@ -436,7 +436,7 @@ P.append(page(8, cls='conto', body=f'''  <span class="tag">Il conto totale</span
 # --- parte seconda
 
 P.append('''<section class="page cover op2">
-  <div class="op2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Il tuo hotel paga tutti</span></div>
+  <div class="op2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Il posizionamento, spiegato semplice</span></div>
   <div class="op2-body">
     <p class="op2-n">Parte seconda</p>
     <h1 class="op2-h">Come funziona.</h1>
@@ -612,7 +612,7 @@ def q(n, title, body, ans):
     return f'<div class="q"><span class="n">{n}</span><div><h3>{title}</h3>{body}<div class="ans">{ans}</div></div></div>'
 
 P.append('''<section class="page cover op2 op3">
-  <div class="op2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Il tuo hotel paga tutti</span></div>
+  <div class="op2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Il posizionamento, spiegato semplice</span></div>
   <div class="op2-body">
     <p class="op2-n">Parte terza</p>
     <h1 class="op2-h">Tocca a te.</h1>
