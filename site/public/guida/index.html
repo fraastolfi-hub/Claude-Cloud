@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, follow">
 <meta name="description" content="Paghi Booking, paghi l'agenzia e ogni stagione riparti da zero? Una guida gratuita per capire che hotel sei e quale leva sposta davvero il tuo fatturato.">
 <link rel="canonical" href="https://hotelpositioning.com/guida/">
-<meta property="og:title" content="Paghi Booking. Paghi l'agenzia. E ogni stagione riparti da zero."><meta property="og:description" content="Una guida gratuita per capire che hotel sei, e quale leva sposta davvero il tuo fatturato."><meta property="og:type" content="website">
+<meta property="og:title" content="Booking, l'agenzia, lo sconto. Il tuo hotel paga tutti."><meta property="og:description" content="Una guida gratuita per capire che hotel sei, e quale leva sposta davvero il tuo fatturato."><meta property="og:type" content="website">
 <meta property="og:image" content="https://hotelpositioning.com/assets/img/libro-og.jpg">
 <script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
 window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
@@ -115,6 +115,47 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 .gd-bills b span{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;border:2px solid var(--inchiostro);background:var(--yellow);font:900 13px var(--display);margin-right:10px;vertical-align:2px}
 .gd-bills p{font-size:16.5px;line-height:1.55;color:var(--ink-2)}
 .gd-bills p em{color:var(--ink);font-weight:600}
+.gd-know{margin:18px 0 8px;font:700 16px var(--display)}
+.gd-list{list-style:none;display:grid;gap:7px;max-width:44ch}
+.gd-list li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:17px;line-height:1.45;color:var(--ink-2)}
+.gd-list li::before{content:"";width:16px;height:16px;margin-top:4px;border-radius:50%;background:var(--green);border:2px solid var(--inchiostro)}
+.gd-list b{color:var(--ink)}
+.gd-stack{position:relative;max-width:400px;margin:0 auto;padding:0 0 40px 40px}
+.gd-stack img{display:block;width:78%;height:auto;border:2px solid var(--inchiostro);border-radius:14px}
+.gd-stack .gd-in{position:absolute;right:0;bottom:0;transform:rotate(5deg);box-shadow:var(--o-md)}
+.gd-stack .gd-cv{position:relative;transform:rotate(-3deg);box-shadow:var(--o-xl)}
+.gd-law{margin-top:10px!important;font:800 17px/1.3 var(--display)!important;color:var(--ink)!important}
+.gd-calc{margin-top:16px;background:#fff;border:2px solid var(--inchiostro);border-radius:16px;padding:16px 18px}
+.gd-calc__h{font:800 13px/1 var(--display)!important;text-transform:uppercase;letter-spacing:.05em;color:var(--ink)!important;margin-bottom:12px}
+.gd-calc__row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.gd-calc label{display:flex;flex-direction:column;gap:6px;font:600 14px var(--display);color:var(--ink-2)}
+.gd-calc input{font:700 18px var(--display);padding:10px 12px;border:2px solid var(--inchiostro);border-radius:10px;background:var(--surface-cream);width:100%;box-sizing:border-box}
+.gd-calc input:focus-visible{outline:3px solid var(--yellow);outline-offset:1px}
+.gd-calc__out{margin-top:14px!important;font:700 18px/1.35 var(--display)!important;color:var(--ink)!important}
+.gd-calc__out b{display:inline!important;margin:0!important;font-size:inherit!important;background:var(--yellow);border-radius:6px;padding:0 6px;font-weight:900}
+.gd-calc__note{margin-top:6px!important;font-size:13.5px!important}
+@media (max-width:560px){.gd-calc__row{grid-template-columns:1fr}}
+@media (max-width:860px){.gd-stack{max-width:min(200px,50vw);padding:0}.gd-stack img{width:100%}.gd-stack .gd-in{display:none}}
+.gd-bills li.gd-wide{grid-column:1/-1;background:var(--yellow-soft)}
+.gd-bills li:last-child{grid-column:auto;background:var(--surface-white)}
+.gd-four{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gd-four li{border:2px solid var(--inchiostro);border-radius:18px;box-shadow:var(--o-sm);padding:18px}
+.gd-four b{font:800 19px/1.2 var(--display)}
+.gd-four span{display:block;font:600 14px var(--display);color:var(--ink-2);margin-top:2px}
+.gd-four p{margin-top:10px;font-size:16.5px;color:var(--ink)}
+@media (max-width:900px){.gd-four{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.gd-four{grid-template-columns:1fr}}
+.gd-cmp{background:#fff;border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-md);overflow:hidden;max-width:900px}
+.gd-cmp__row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);border-top:1px solid var(--line)}
+.gd-cmp__row:first-child{border-top:0}
+.gd-cmp__row>span{padding:14px 16px;font-size:16px;line-height:1.45;color:var(--ink-2)}
+.gd-cmp__row>span[role=rowheader]{font:700 14px/1.35 var(--display);color:var(--ink);text-transform:uppercase;letter-spacing:.03em}
+.gd-cmp__row .d{background:var(--yellow-soft);color:var(--ink)}
+.gd-cmp__head>span{font:800 18px var(--display)!important;color:var(--ink)!important;text-transform:none!important}
+.gd-cmp__head .d{background:var(--yellow)!important}
+.gd-cmp .n{font:900 24px/1 var(--display);color:var(--ink)}
+@media (max-width:640px){.gd-cmp__row{grid-template-columns:1fr 1fr}.gd-cmp__row>span[role=rowheader]{grid-column:1/-1;padding-bottom:0}.gd-cmp__head>span:first-child{display:none}}
+.gd-note{margin-top:14px;font-size:15px;color:var(--muted)}
 .gd-one{margin-top:28px;font:800 clamp(24px,2.6vw,32px)/1.2 var(--display);letter-spacing:-.025em}
 @media (max-width:760px){.gd-bills{grid-template-columns:1fr}}
 @media (max-width:860px){.gd-cover{max-width:min(190px,46vw)}.gd-cover img{transform:rotate(2deg)}.gd-cover .gd-formula{display:none}}
@@ -140,19 +181,25 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 <section class="hero">
   <div class="wrap ca-hero">
     <div>
-      <span class="eyebrow"><span class="dot"></span>Gratis · guida pratica, 26 pagine</span>
-      <h1>Paghi Booking. Paghi l'agenzia. <span class="hl in">E ogni stagione riparti da zero.</span></h1>
-      <p class="gd-sub">Non è sfortuna. E non è colpa della zona.<br><em>È un hotel che non ha un motivo per essere scelto.</em></p>
-      <p class="ca-offer">Una guida per capire che hotel sei, e quale leva sposta davvero il tuo fatturato. Mezz'ora di lettura. Gratis.</p>
+      <span class="eyebrow"><span class="dot"></span>Guida gratuita · 26 pagine · per hotel indipendenti</span>
+      <h1>Booking, l'agenzia, lo sconto. <span class="hl in">Il tuo hotel paga tutti.</span></h1>
+      <p class="gd-sub">Quando l'ospite non vede un motivo per sceglierti, sceglie il prezzo.<br>E il prezzo lo decide qualcun altro.</p>
+      <p class="ca-offer">Questa guida ti aiuta a trovare quel motivo. Partendo da quello che il tuo hotel ha già.</p>
+      <p class="gd-know">In mezz'ora sai:</p>
+      <ul class="gd-list">
+        <li><span><b>quale delle quattro leve</b> ti fa pagare commissioni e sconti;</span></li>
+        <li><span><b>se la tua priorità è il racconto</b>, o se prima c'è altro da sistemare;</span></li>
+        <li><span><b>da dove partire lunedì</b>, senza toccare un mattone.</span></li>
+      </ul>
       <div class="btn-row">
-        <a href="#form" class="btn">Voglio la guida <span class="arr">→</span></a>
+        <a href="#form" class="btn">Scopri che hotel sei <span class="arr">→</span></a>
       </div>
-      <p class="micro">Nome ed email. Il PDF ti arriva subito.</p>
+      <p class="micro">Gratis. Nome ed email, il PDF si apre subito.</p>
     </div>
     <div class="ca-visual">
-      <div class="gd-cover">
-        <img src="/assets/guida/copertina.webp" width="620" height="878" fetchpriority="high" alt="Copertina della guida «Il tuo hotel paga tutti», di Francesco Astolfi">
-        <p class="gd-formula" aria-label="Location più capitale più operations più narrativa uguale posizionamento di mercato"><span style="background:var(--lilac-soft)">Location</span>+<span style="background:var(--teal-soft)">Capitale</span>+<span style="background:var(--pink-soft)">Operations</span>+<span style="background:var(--yellow)">Narrativa</span></p>
+      <div class="gd-stack">
+        <img class="gd-in" src="/assets/guida/pagina-nove-hotel.webp" width="620" height="878" loading="lazy" alt="Pagina interna della guida: i nove hotel a confronto, con le quattro leve in barre colorate">
+        <img class="gd-cv" src="/assets/guida/copertina.webp" width="620" height="878" fetchpriority="high" alt="Copertina della guida «Il tuo hotel paga tutti», di Francesco Astolfi">
       </div>
     </div>
   </div>
@@ -162,16 +209,27 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 <section class="sec alt">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Cinque conti <em>che paghi ogni anno.</em></h2>
+      <h2>Cinque conti che paghi ogni anno. <em>Alcuni non li vedi.</em></h2>
     </div>
     <ol class="gd-bills rv">
-      <li><b><span>01</span>Il conto di Booking.</b><p>Il 15-18% su ogni notte. Anche per chi ti avrebbe scelto comunque.</p></li>
-      <li><b><span>02</span>Il conto dell'uguaglianza.</b><p>Copri il logo della tua homepage. Poi quello del vicino. Se le frasi si scambiano, per l'ospite siete lo stesso hotel.</p></li>
-      <li><b><span>03</span>Il conto dello sconto.</b><p>Il vicino abbassa di dieci euro. Tu abbassi. <em>È una gara in cui vince chi perde più margine.</em></p></li>
-      <li><b><span>04</span>Il conto dell'agenzia.</b><p>Ti porta clic. I clic arrivano su una pagina uguale ad altre cinquanta. E l'ospite torna su Booking a confrontare il prezzo.</p></li>
-      <li><b><span>05</span>Il conto del ripartire.</b><p>Ad aprile ricominci da capo. L'ospite dell'anno scorso non ricorda perché ha scelto te. Quindi lo ricompri. Spesso dallo stesso Booking.</p></li>
+      <li><b><span>01</span>Booking.</b><p>Il 15-18% su ogni notte. Anche per chi ti ha cercato per nome.</p><p class="gd-law">Il problema non è pagarlo. È pagarlo per tutti.</p></li>
+      <li><b><span>02</span>Tutti uguali.</b><p>Copri il logo della tua homepage. Poi quello del vicino. Se le frasi si scambiano, per l'ospite siete lo stesso hotel.</p><p class="gd-law">Se sembri uguale, costi di meno.</p></li>
+      <li class="gd-wide"><b><span>03</span>Lo sconto.</b><p>Il vicino abbassa di dieci euro. Tu abbassi. Fai il conto una volta: 10 € × 40 camere × 100 notti.</p><p class="gd-law">Sono 40.000 euro. Il rifacimento dei bagni, regalato.</p>
+        <div class="gd-calc" aria-labelledby="calc-h">
+          <p class="gd-calc__h" id="calc-h">Fallo con i tuoi numeri</p>
+          <div class="gd-calc__row">
+            <label>Sconto a notte (€)<input type="number" inputmode="numeric" min="1" max="500" value="10" id="calc-sconto"></label>
+            <label>Camere<input type="number" inputmode="numeric" min="1" max="2000" value="40" id="calc-camere"></label>
+            <label>Notti di apertura<input type="number" inputmode="numeric" min="1" max="366" value="100" id="calc-notti"></label>
+          </div>
+          <p class="gd-calc__out" aria-live="polite">Lo sconto ti costa <b id="calc-tot">40.000 €</b> l'anno.</p>
+          <p class="gd-calc__note">Il conto supposto a camere piene: con occupazione più bassa il numero scende, ma la logica resta.</p>
+        </div>
+      </li>
+      <li><b><span>04</span>L'agenzia.</b><p>Ti porta clic. Su una pagina uguale ad altre cinquanta. L'ospite guarda, non trova un motivo, torna su Booking.</p><p class="gd-law">Non hai un problema di traffico. Hai un problema di motivo.</p></li>
+      <li><b><span>05</span>Ripartire da zero.</b><p>Ad aprile si rimettono gli ombrelloni. E si ricomprano i clienti. L'ospite dell'anno scorso non ricorda perché ha scelto te.</p><p class="gd-law">Quindi lo ripaghi. Lo stesso ospite. Due volte.</p></li>
     </ol>
-    <p class="gd-one rv">Cinque conti. <span class="hl">Una causa sola.</span></p>
+    <p class="gd-one rv"><em>Cinque conti. Cinque fornitori.</em> <span class="hl">Una causa sola.</span></p>
   </div>
 </section>
 
@@ -181,20 +239,46 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
     <div class="sec-head">
       <h2>Un hotel è fatto di quattro cose. <em>Tre costano anni.</em></h2>
     </div>
-    <div class="ca-narrow rv">
-      <p class="ca-law" style="margin-top:0!important">Location + Capitale + Operations + Narrativa = come ti vede il mercato.</p>
-      <p>Dove sei, non lo cambi. Le camere, le rifai con un mutuo. Lo staff, lo formi in qualche stagione. <strong>Come ti racconti, lo puoi cambiare adesso.</strong> Senza toccare un mattone.</p>
-      <p>Quando il racconto manca, l'ospite confronta l'unica cosa che resta: il prezzo. E chi confronta il prezzo, prenota dove costa meno. Cioè su Booking.</p>
+    <ul class="gd-four rv">
+      <li style="background:var(--lilac-soft)"><b>Dove sei</b> <span>(location)</span><p>Non lo cambi.</p></li>
+      <li style="background:var(--teal-soft)"><b>Cosa hai costruito</b> <span>(capitale)</span><p>Lo rifai con un mutuo.</p></li>
+      <li style="background:var(--pink-soft)"><b>Come lavori</b> <span>(operations)</span><p>Lo sistemi in qualche stagione.</p></li>
+      <li style="background:var(--yellow)"><b>Come ti racconti</b> <span>(narrativa)</span><p><em>Lo puoi cambiare adesso.</em></p></li>
+    </ul>
+    <div class="ca-narrow rv" style="margin-top:28px">
+      <p>Quando il racconto manca, l'ospite confronta l'unica cosa che resta. Il prezzo. E il prezzo più basso, di solito, è su Booking.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= 4 · COSA C'È DENTRO ================= -->
+<!-- ================= 4 · UN ASSAGGIO ================= -->
 <section class="sec alt">
   <div class="wrap">
     <div class="sec-head">
+      <span class="num-tag">Da pagina 18 della guida</span>
+      <h2>Stesso hotel. Stessa Cattolica. <em>Altro racconto.</em></h2>
+    </div>
+    <div class="gd-cmp rv" role="table" aria-label="Hotel C e hotel D a confronto">
+      <div class="gd-cmp__row gd-cmp__head" role="row"><span role="columnheader"><span class="hp-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Voce</span></span><span role="columnheader">Hotel C</span><span role="columnheader" class="d">Hotel D</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Racconto</span><span role="cell">«Famiglia e divertimento», come altri cinquanta sulla costa</span><span role="cell" class="d">«L'hotel dei triatleti del circuito di Misano»</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Camere, staff, struttura</span><span role="cell">50 camere</span><span role="cell" class="d">Le stesse 50 camere</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Cosa fa di diverso</span><span role="cell">Niente</span><span role="cell" class="d">Deposito bici, nutrizionista, accordi con il circuito, apertura lunga per le gare d'autunno</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Posizionamento</span><span role="cell"><b class="n">21</b> / 40</span><span role="cell" class="d"><b class="n">27</b> / 40</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Fatturato nell'esempio</span><span role="cell"><b class="n">1,3 M€</b></span><span role="cell" class="d"><b class="n">2,0 M€</b></span></div>
+    </div>
+    <p class="gd-note rv"><em>Esempio inventato per spiegare il metodo, non un hotel reale.</em> Nella guida ce ne sono nove: da Positano all'agriturismo da dieci camere.</p>
+    <div class="btn-row rv" style="margin-top:24px">
+      <a href="#form" class="btn">Voglio vedere gli altri otto <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5 · COSA C'È DENTRO ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="sec-head">
       <span class="num-tag">Cosa c'è dentro</span>
-      <h2>Ventisei pagine. <em>Nessuna teoria da convegno.</em></h2>
+      <h2>Ventisei pagine. <em>Una diagnosi, non un corso.</em></h2>
     </div>
     <ul class="gd-inside rv">
       <li><p><b>La formula delle quattro componenti.</b> Quale leva fa il tuo fatturato, e quale lo frena.</p></li>
@@ -203,12 +287,29 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
       <li><p><b>Le due trappole.</b> L'hotel che promette e non mantiene. E quello così di nicchia da restare vuoto.</p></li>
       <li><p><b>L'autodiagnosi in tre domande.</b> Alla fine sai se la tua priorità è il racconto, o se prima c'è altro da sistemare.</p></li>
     </ul>
-    <div class="btn-row rv" style="margin-top:32px">
-      <a href="#form" class="btn">Voglio la guida <span class="arr">→</span></a>
-    </div>
   </div>
 </section>
-<!-- ================= 5 · CHI SONO ================= -->
+
+<!-- ================= 6 · UN CASO VERO ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Un caso vero</span>
+      <h2>E fuori <em>dagli esempi?</em></h2>
+    </div>
+    <div class="ca-narrow rv">
+      <p>Al Silva Splendid di Fiuggi il lavoro sul posizionamento ha portato a una scelta che quasi nessuno ha lo stomaco di fare: <em>meno tipi di ospite, non di più.</em></p>
+    </div>
+    <div class="stat-row ca-proof rv">
+      <div class="stat"><b>~×2</b><span>tariffa media*</span></div>
+      <div class="stat"><b>8,6 → 9</b><span>recensioni su Booking*</span></div>
+      <div class="stat"><b>5,6 → 7 M€</b><span>fatturato in cinque anni*</span></div>
+    </div>
+    <p class="ca-note">*Nello stesso periodo c'è stata una ristrutturazione, con investimenti importanti della proprietà. Il posizionamento ha dato la direzione, gli investimenti l'hanno resa credibile. La guida non promette risultati: ti aiuta a capire da dove partire.</p>
+  </div>
+</section>
+
+<!-- ================= 7 · CHI SONO ================= -->
 <section class="sec white">
   <div class="wrap me-row">
     <div class="rv">
@@ -229,7 +330,7 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
   </div>
 </section>
 
-<!-- ================= 6 · PER CHI È ================= -->
+<!-- ================= 8 · PER CHI È ================= -->
 <section class="sec alt">
   <div class="wrap">
     <div class="sec-head">
@@ -256,8 +357,8 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
   </div>
 </section>
 
-<!-- ================= 7 · DOMANDE ================= -->
-<section class="sec">
+<!-- ================= 9 · DOMANDE ================= -->
+<section class="sec white">
   <div class="wrap">
     <div class="sec-head">
       <span class="num-tag">Domande</span>
@@ -272,7 +373,7 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
   </div>
 </section>
 
-<!-- ================= 8 · CHIUSURA E FORM ================= -->
+<!-- ================= 10 · CHIUSURA E FORM ================= -->
 <section class="sec alt" id="form">
   <div class="wrap ca-form-wrap">
     <div>
@@ -280,8 +381,9 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
         <span class="num-tag">Gratis</span>
         <h2>Prima di pagare un'altra agenzia, <em>scopri che hotel sei.</em></h2>
         <p class="lead">Ventisei pagine. Mezz'ora. Gratis.</p>
+        <div class="btn-row" style="justify-content:flex-start;margin-top:18px"><a href="#guida-form" class="btn">Scopri che hotel sei <span class="arr">→</span></a></div>
       </div>
-      <p class="ca-ps"><strong>P.S.</strong> La regola più scomoda della guida è a pagina 20: <em>prima le operations, dopo la narrativa.</em> Se le recensioni non tengono, nessun racconto ti salva. Meglio saperlo adesso che dopo la prossima fattura dell'agenzia.</p>
+      <p class="ca-ps"><strong>P.S.</strong> Fai il conto dello sconto con i tuoi numeri. Dieci euro, per le tue camere, per le tue notti. Se il risultato ti dà fastidio, la guida è scritta per te.</p>
     </div>
     <form class="form rv d1" id="guida-form" name="guida" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" data-next="/guida/grazie/" novalidate>
       <input type="hidden" name="form-name" value="guida"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value="">
@@ -290,7 +392,7 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
         <div class="form-head"><span>La guida · PDF, 26 pagine</span><span data-prog-txt>0%</span></div>
         <div class="prog"><i></i></div>
         <h2>Che hotel sei?</h2>
-        <p class="sub">Il PDF si apre subito, e ti arriva anche per email.</p>
+        <p class="sub">Il PDF si apre subito. Mezz'ora, un caffè.</p>
         <div class="field"><label for="g-nome">Nome</label><input id="g-nome" name="nome" autocomplete="given-name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
         <div class="field"><label for="g-email">Email</label><input id="g-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: la guida arriva qui.</span></div>
         <div class="field"><label for="g-camere">Quante camere ha la tua struttura?</label>
@@ -303,7 +405,7 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
           </select><span class="em">Scegli una voce: così ti mando quello che serve alla tua struttura.</span></div>
         <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento a ricevere la guida via email.</span></label>
         <label class="check opt"><input type="checkbox" name="consenso_email" value="sì"><span>Voglio ricevere anche le mail successive su posizionamento e libro. <em>(facoltativo)</em></span></label>
-        <button class="btn dark" type="submit" style="margin-top:18px">Voglio la guida <span class="arr">→</span></button>
+        <button class="btn dark" type="submit" style="margin-top:18px">Scopri che hotel sei <span class="arr">→</span></button>
         <p class="form-foot">Gratis · il PDF si apre subito · ti cancelli con un clic.</p>
       </div>
       <div class="ok" role="status">
@@ -341,5 +443,14 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 <script src="/assets/consent.js?v=a219769f"></script>
 
 <script src="/assets/site.js?v=0cc1f91c"></script>
+<script>
+(function(){
+  var a=document.getElementById('calc-sconto'),b=document.getElementById('calc-camere'),c=document.getElementById('calc-notti'),o=document.getElementById('calc-tot');
+  if(!a) return;
+  function n(el){var v=parseFloat(String(el.value).replace(',','.'));return isFinite(v)&&v>0?v:0;}
+  function upd(){o.textContent=Math.round(n(a)*n(b)*n(c)).toLocaleString('it-IT')+' €';}
+  [a,b,c].forEach(function(el){el.addEventListener('input',upd);});upd();
+})();
+</script>
 </body>
 </html>
