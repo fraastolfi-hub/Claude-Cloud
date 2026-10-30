@@ -25,6 +25,8 @@
   var c = null; try { c = JSON.parse(localStorage.getItem('hp-consent')); } catch (e) {}
   var go = function(){ location.replace(URL); };
   if (window.HPtrack) HPtrack('VaiAmazon', { da: da });
+  // ?resta=1: niente redirect, per vedere l'evento in Anteprima di GTM / Tag Assistant
+  if (/[?&]resta=1/.test(location.search)) { var l = document.getElementById('vai-link'); if (l) l.textContent = 'Modalità prova: evento VaiAmazon inviato, nessun redirect. Vai su Amazon'; return; }
   // con il consenso ai cookie di marketing si aspetta che il pixel parta (al massimo 1,5 secondi), altrimenti si va subito
   if (!(c && (c.mkt || c.stats))) { go(); return; }
   var t0 = Date.now();
