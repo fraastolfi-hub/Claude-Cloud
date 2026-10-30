@@ -71,6 +71,19 @@ EXTRA_CSS = """
 .cv2-formula .chip{font-size:8pt;padding:5px 10px;background-color:#fff}
 .cv2-formula .c-loc{background:var(--lsoft)}.cv2-formula .c-cap{background:var(--tsoft)}.cv2-formula .c-ops{background:var(--psoft)}.cv2-formula .c-nar{background:#fff}
 .cv2-band{position:absolute;left:0;right:0;bottom:0;height:16mm;background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 18mm;font:700 8pt var(--d);letter-spacing:.08em;text-transform:uppercase}
+/* ===== copertina della parte seconda ===== */
+.op2{background:var(--lilac);padding:0}
+.op2-top{position:absolute;left:18mm;right:18mm;top:14mm;display:flex;justify-content:space-between;align-items:center}
+.op2-body{position:absolute;left:18mm;right:18mm;top:44mm}
+.op2-n{font:700 10pt var(--d);letter-spacing:.1em;text-transform:uppercase;padding-bottom:8px;border-bottom:2.5px solid var(--ink);display:inline-block}
+.cover .op2-h{font:900 76pt/.92 var(--d);letter-spacing:-.05em;margin:12mm 0 8mm;max-width:none;color:var(--ink)}
+.op2-sub{font:500 13pt/1.45 var(--t);max-width:120mm}
+.op2-ill{position:absolute;left:18mm;right:18mm;top:146mm}
+.op2-ill .ill{height:70mm;box-shadow:6px 6px 0 var(--ink);background:#fff}
+.op2-toc{position:absolute;left:18mm;right:18mm;bottom:16mm;list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:6px 14px;border-top:2.5px solid var(--ink);padding-top:10px}
+.op2-toc li{font:700 9.4pt/1.3 var(--d)}
+.op2-toc b{display:inline-block;width:26px;font-weight:900}
+.ill2{box-shadow:none;border-width:2px;margin:6px 0 14px;background:#f4f3ff}
 /* ===== versione "documento": meno etichette, meno riquadri ===== */
 .page:not(.cover) .tag{background:none;border:0;border-radius:0;padding:0;font:700 7.4pt/1.2 var(--d);letter-spacing:.1em;color:var(--ink3);gap:8px}
 .page:not(.cover) .tag::before{content:"";width:18px;height:2px;background:var(--ink)}
@@ -198,6 +211,52 @@ def ill_bagnino():
             poles += f'<rect x="{x-6}" y="96" width="12" height="40" rx="5" fill="#ff93c7" stroke="{INK}" stroke-width="2"/>'
     return svg(sea + sun + poles, bg='#f6e7c8')
 
+
+LIL, LS2 = '#8f8cff', '#d8d6ff'
+
+def svg2(inner, h=''):
+    return f'<div class="ill ill2"{h}><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="200" fill="#f4f3ff"/>{inner}</svg></div>'
+
+def ill_hotel_quattro():
+    # un hotel fatto di quattro blocchi: le quattro componenti
+    blocks = [(170, 120, 260, 50, LS2, 'Location'), (190, 78, 220, 42, T, 'Capitale'), (210, 42, 180, 36, PK, 'Operations'), (240, 12, 120, 30, Y, 'Narrativa')]
+    out = '<rect x="0" y="170" width="600" height="30" fill="#e9e7ff"/>'
+    for x, y, w, h, c, t in blocks:
+        out += f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="8" fill="{c}" stroke="{INK}" stroke-width="3"/><text x="{x+w/2}" y="{y+h/2+6}" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="16" fill="{INK}">{t}</text>'
+    return out
+
+def ill_insegne():
+    out = '<rect x="0" y="168" width="600" height="32" fill="#e9e7ff"/>'
+    for i, (x, sign, c) in enumerate([(40, 'Rifugio romantico', PK), (225, 'Ritiro silenzioso', T), (410, 'Matrimoni piccoli', LS2)]):
+        out += f'<rect x="{x+20}" y="70" width="110" height="98" rx="8" fill="#fff" stroke="{INK}" stroke-width="3"/>'
+        out += ''.join(f'<rect x="{x+34+cx*30}" y="{86+cy*26}" width="20" height="16" rx="3" fill="{S}" stroke="{INK}" stroke-width="1.5"/>' for cx in range(3) for cy in range(3))
+        out += f'<rect x="{x}" y="30" width="150" height="30" rx="15" fill="{c}" stroke="{INK}" stroke-width="3"/><text x="{x+75}" y="50" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="13" fill="{INK}">{sign}</text>'
+        out += f'<line x1="{x+75}" y1="60" x2="{x+75}" y2="70" stroke="{INK}" stroke-width="3"/>'
+    return out
+
+def ill_motori():
+    out = ''
+    for i, (x, c, t, v) in enumerate([(30, LS2, 'Location', 9), (175, T, 'Capitale', 5), (320, PK, 'Operations', 6), (465, Y, 'Narrativa', 4)]):
+        cx = x + 52
+        out += f'<path d="M{cx-44} 140 A44 44 0 0 1 {cx+44} 140" fill="{c}" stroke="{INK}" stroke-width="3"/>'
+        import math
+        a = math.pi * (1 - v / 10)
+        out += f'<line x1="{cx}" y1="140" x2="{cx + 34*math.cos(a):.1f}" y2="{140 - 34*math.sin(a):.1f}" stroke="{INK}" stroke-width="4" stroke-linecap="round"/><circle cx="{cx}" cy="140" r="6" fill="{INK}"/>'
+        out += f'<text x="{cx}" y="172" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="{INK}">{t}</text>'
+    return out
+
+def ill_venn():
+    cs = [(230, 95, LS2, 'Location'), (300, 95, T, 'Capitale'), (230, 140, PK, 'Operations'), (300, 140, Y, 'Narrativa')]
+    out = ''.join(f'<circle cx="{x}" cy="{y}" r="58" fill="{c}" fill-opacity=".75" stroke="{INK}" stroke-width="2.5"/>' for x, y, c, t in cs)
+    out += ''.join(f'<text x="{x + (-100 if x < 265 else 100)}" y="{y + (-30 if y < 120 else 40)}" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="{INK}">{t}</text>' for x, y, c, t in cs)
+    return out.replace('<circle', '<circle transform="translate(35 -18)"').replace('<text', '<text transform="translate(35 -18)"')
+
+def ill_montagna():
+    out = f'<path d="M0 200 L150 60 L240 140 L340 30 L470 150 L600 70 V200Z" fill="{LS2}" stroke="{INK}" stroke-width="3"/><path d="M315 54 L340 30 L365 54 L350 50 L340 60 L328 50Z" fill="#fff" stroke="{INK}" stroke-width="2"/>'
+    out += f'<rect x="250" y="130" width="100" height="58" rx="6" fill="#fff" stroke="{INK}" stroke-width="3"/><path d="M240 132 L300 100 L360 132Z" fill="#ff5a3c" stroke="{INK}" stroke-width="3"/><rect x="290" y="156" width="20" height="32" fill="{S}" stroke="{INK}" stroke-width="2"/>'
+    out += f'<g transform="translate(372 150)"><ellipse cx="0" cy="0" rx="22" ry="11" fill="{T}" stroke="{INK}" stroke-width="2.5"/><path d="M20 0 L34 -10 L34 10Z" fill="{T}" stroke="{INK}" stroke-width="2.5"/><circle cx="-10" cy="-2" r="2.5" fill="{INK}"/></g>'
+    return out
+
 hotels_js = """
 const H={
  A:['4 stelle a Positano, 25 camere','«Siamo a Positano, siamo accoglienti»',[10,6,6,3],'3,0 M€'],
@@ -226,7 +285,7 @@ document.querySelectorAll('[data-hotels]').forEach(box=>{
 P = []
 # 1 · copertina
 P.append(f'''<section class="page cover cv2">
-  <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 26 pagine</span></div>
+  <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 27 pagine</span></div>
   <div class="cv2-body">
     <p class="cv2-kick">Booking. L'agenzia. Il vicino che abbassa.</p>
     <h1 class="cv2-h">Il tuo hotel<br>paga tutti.</h1>
@@ -234,7 +293,7 @@ P.append(f'''<section class="page cover cv2">
   </div>
   <div class="cv2-photo"><span class="cv2-disc"></span><img src="cutout.png" alt=""></div>
   <div class="cv2-bottom">
-    <div class="cv2-author"><img src="firma.png" alt="Firma di Francesco Astolfi"><span>Francesco Astolfi</span><small>Posizionamento per hotel e resort</small></div>
+    <div class="cv2-author"><span>Francesco Astolfi</span><small>Posizionamento per hotel e resort</small></div>
     <div class="cv2-formula"><span class="chip c-loc">Location</span><span class="chip c-cap">Capitale</span><span class="chip c-ops">Operations</span><span class="chip c-nar">Narrativa</span></div>
   </div>
   <div class="cv2-band"><span>Rimini · 2026</span><span>hotelpositioning.com</span></div>
@@ -307,7 +366,19 @@ P.append(page(8, cls='conto', body=f'''  <span class="tag">Il conto totale</span
   <div class="rule" style="margin-top:16px"><span class="kick">Il nome</span><b>Quel motivo ha un nome: posizionamento.</b><p>Nelle prossime pagine vediamo da cosa è fatto, e quale parte puoi cambiare da lunedì.</p></div>'''))
 
 # --- parte seconda
-P.append(page(9, f'''  <span class="part">Parte seconda · Come funziona</span>
+
+P.append('''<section class="page cover op2">
+  <div class="op2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Il tuo hotel paga tutti</span></div>
+  <div class="op2-body">
+    <p class="op2-n">Parte seconda</p>
+    <h1 class="op2-h">Come funziona.</h1>
+    <p class="op2-sub">Da cosa è fatto il motivo per sceglierti. Le quattro componenti, i profili, nove hotel a confronto e le due regole che valgono per tutti.</p>
+  </div>
+  <div class="op2-ill">''' + svg2(ill_hotel_quattro()) + '''</div>
+  <ol class="op2-toc"><li><b>01</b>Le basi</li><li><b>02</b>Le componenti</li><li><b>03</b>La scelta</li><li><b>04</b>I profili</li><li><b>05</b>I profili misti</li><li><b>06</b>Nove hotel</li><li><b>07</b>Le regole</li></ol>
+</section>
+''')
+P.append(page(9, f'''
   <span class="tag">01 · Le basi</span>
   <h2>Un hotel <span class="hl">non è una cosa sola.</span></h2>
   <p>Quello che il mercato pensa del tuo hotel è la somma di quattro cose.</p>
@@ -338,6 +409,7 @@ P.append(page(11, f'''  {comp(3, 'c-ops', 'Come lavori ogni giorno: le operation
 
 P.append(page(12, f'''  <span class="tag">03 · La scelta</span>
   <h2>Due hotel uguali. <span class="hl">Due racconti.</span></h2>
+  {svg2(ill_insegne(), ' style="height:44mm"')}
   <p>Un quattro stelle, dieci camere, su una collina umbra. Può essere:</p>
   <div class="chips" style="margin:10px 0 10px;gap:8px">
     <span class="chip" style="background:var(--psoft)">Il rifugio romantico per coppie</span>
@@ -363,6 +435,7 @@ def prof(color, label, title, body, ok, risk):
 
 P.append(page(13, f'''  <span class="tag">04 · I profili</span>
   <h2>Qual è il motore <span class="hl">del tuo hotel?</span></h2>
+  {svg2(ill_motori(), ' style="height:44mm"')}
   <p class="lead">Ci sono quattro profili, uno per componente. Capire il tuo cambia la risposta a due domande: dove investire, e cosa raccontare.</p>
   <div class="chips" style="margin:12px 0 4px;gap:8px"><span class="chip c-loc">Profilo location</span><span class="chip c-cap">Profilo capitale</span><span class="chip c-ops">Profilo operations</span><span class="chip c-nar">Profilo narrativa</span></div>
   {prof('var(--lsoft)', 'Profilo location', 'Il motore è il luogo', '<p>Location da nove o dieci, il resto nella media o sotto. Una piccola struttura a Positano, investimenti modesti, gestione familiare, racconto ancora da fare.</p><p>Il cliente paga per vivere Positano. L\'hotel è il mezzo, non il protagonista.</p>', 'Il luogo come identità. «Siamo Positano.» «La vera Capri.» Arredi, colazione, bar: tutto deve raccontare quel posto. Quello vero, non quello delle cartoline.', 'Dipendi tutto dal turismo della zona. Se la zona cala, non hai un piano B. Col tempo conviene costruire anche altro.')}'''))
@@ -386,6 +459,7 @@ def mix(chips, text):
 
 P.append(page(16, f'''  <span class="tag">05 · I profili misti</span>
   <h2>I profili puri <span class="hl">sono rari.</span></h2>
+  {svg2(ill_venn(), ' style="height:40mm"')}
   <p class="lead">Quasi tutti gli hotel hanno due o tre componenti alte. Qui il racconto deve parlare dell'incrocio, non di una sola componente.</p>
   <div class="mixlist">
     {mix('<span class="chip c-loc">Location alta</span><b>+</b><span class="chip c-cap">Capitale alto</span>', 'Struttura di lusso recente in una location da cartolina. L\'Hotel Caruso, prima di LVMH. Il racconto è vivere il luogo attraverso l\'investimento. Attenzione che la gestione non diventi il punto debole.')}
@@ -438,7 +512,8 @@ P.append(page(20, f'''  <span class="tag">07 · Le regole</span>
   <p class="small" style="margin-top:8px">Selina, la catena di spazi per lavorare in viaggio, è l'esempio: racconto fortissimo, gestione che non reggeva, crescita troppo veloce. Nel 2024 è finita in amministrazione controllata.</p>
   <div class="rule" style="margin-top:14px"><span class="kick">Regola operativa</span><b>Prima le operations. Dopo il racconto.</b><p>Se le recensioni non stanno sopra 4,3 su 5 (8,6 su Booking), lo staff non è stabile, i prezzi non seguono il mercato e le criticità non hanno risposta rapida: un racconto forte non è la mossa giusta. Prima si sistema la gestione. Poi si lavora sul racconto.</p></div>'''))
 
-P.append(page(21, f'''  <h3>Regola due · Il racconto deve stare dentro un mercato che esiste</h3>
+P.append(page(21, f'''  {svg2(ill_montagna(), ' style="height:44mm;margin-top:0"')}
+  <h3>Regola due · Il racconto deve stare dentro un mercato che esiste</h3>
   <p style="margin-top:8px">C'è anche la trappola opposta: un racconto così di nicchia che i clienti non bastano.</p>
   <div class="card" style="margin-top:12px"><span class="kick" style="display:block;margin-bottom:6px">Il caso Saorsa 1875</span><p>In Scozia, è stato il primo hotel completamente vegano del Regno Unito. Un racconto perfetto, sulla carta. Ma undici camere, Pitlochry fuori mano e prezzi alti per una cucina vegetale rigorosa hanno trovato un mercato troppo piccolo. I proprietari lo hanno messo in vendita, e l'agenzia incaricata lo presentava anche come hotel da aprire a un'offerta più ampia del solo vegano.</p></div>
   <div style="margin-top:14px">{scene("È come aprire una trattoria di solo pesce crudo in montagna.", "Magari è la migliore d'Italia.", "Ma il sabato sera devi riempire i tavoli.")}</div>
@@ -523,7 +598,9 @@ P.append(page(26, f'''  <span class="tag">Il prossimo passo</span>
     <p>Booking si paga.</p><p>L'agenzia si paga.</p><p>Lo sconto si paga.</p><p style="margin-top:4px"><span>Il motivo, una volta sola.</span></p>
   </div>'''))
 
-P = [x.replace('<section class="page', '<section class="page p2', 1) if 8 <= i <= 20 else x for i, x in enumerate(P)]
+P = [x.replace('<section class="page', '<section class="page p2', 1) if 9 <= i <= 21 else x for i, x in enumerate(P)]
+import re as _re
+P = [_re.sub(r'(<span class="n">)\d+(</span></div>\n</section>)', lambda m, n=i + 1: m.group(1) + str(n) + m.group(2), x) for i, x in enumerate(P)]
 
 html = f'''<!DOCTYPE html>
 <html lang="it">

@@ -241,6 +241,19 @@ p+p{margin-top:8px}
 .cv2-formula .chip{font-size:8pt;padding:5px 10px;background-color:#fff}
 .cv2-formula .c-loc{background:var(--lsoft)}.cv2-formula .c-cap{background:var(--tsoft)}.cv2-formula .c-ops{background:var(--psoft)}.cv2-formula .c-nar{background:#fff}
 .cv2-band{position:absolute;left:0;right:0;bottom:0;height:16mm;background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 18mm;font:700 8pt var(--d);letter-spacing:.08em;text-transform:uppercase}
+/* ===== copertina della parte seconda ===== */
+.op2{background:var(--lilac);padding:0}
+.op2-top{position:absolute;left:18mm;right:18mm;top:14mm;display:flex;justify-content:space-between;align-items:center}
+.op2-body{position:absolute;left:18mm;right:18mm;top:44mm}
+.op2-n{font:700 10pt var(--d);letter-spacing:.1em;text-transform:uppercase;padding-bottom:8px;border-bottom:2.5px solid var(--ink);display:inline-block}
+.cover .op2-h{font:900 76pt/.92 var(--d);letter-spacing:-.05em;margin:12mm 0 8mm;max-width:none;color:var(--ink)}
+.op2-sub{font:500 13pt/1.45 var(--t);max-width:120mm}
+.op2-ill{position:absolute;left:18mm;right:18mm;top:146mm}
+.op2-ill .ill{height:70mm;box-shadow:6px 6px 0 var(--ink);background:#fff}
+.op2-toc{position:absolute;left:18mm;right:18mm;bottom:16mm;list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:6px 14px;border-top:2.5px solid var(--ink);padding-top:10px}
+.op2-toc li{font:700 9.4pt/1.3 var(--d)}
+.op2-toc b{display:inline-block;width:26px;font-weight:900}
+.ill2{box-shadow:none;border-width:2px;margin:6px 0 14px;background:#f4f3ff}
 /* ===== versione "documento": meno etichette, meno riquadri ===== */
 .page:not(.cover) .tag{background:none;border:0;border-radius:0;padding:0;font:700 7.4pt/1.2 var(--d);letter-spacing:.1em;color:var(--ink3);gap:8px}
 .page:not(.cover) .tag::before{content:"";width:18px;height:2px;background:var(--ink)}
@@ -307,7 +320,7 @@ p+p{margin-top:8px}
 </head>
 <body>
 <section class="page cover cv2">
-  <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 26 pagine</span></div>
+  <div class="cv2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Guida pratica · 27 pagine</span></div>
   <div class="cv2-body">
     <p class="cv2-kick">Booking. L'agenzia. Il vicino che abbassa.</p>
     <h1 class="cv2-h">Il tuo hotel<br>paga tutti.</h1>
@@ -315,7 +328,7 @@ p+p{margin-top:8px}
   </div>
   <div class="cv2-photo"><span class="cv2-disc"></span><img src="cutout.png" alt=""></div>
   <div class="cv2-bottom">
-    <div class="cv2-author"><img src="firma.png" alt="Firma di Francesco Astolfi"><span>Francesco Astolfi</span><small>Posizionamento per hotel e resort</small></div>
+    <div class="cv2-author"><span>Francesco Astolfi</span><small>Posizionamento per hotel e resort</small></div>
     <div class="cv2-formula"><span class="chip c-loc">Location</span><span class="chip c-cap">Capitale</span><span class="chip c-ops">Operations</span><span class="chip c-nar">Narrativa</span></div>
   </div>
   <div class="cv2-band"><span>Rimini · 2026</span><span>hotelpositioning.com</span></div>
@@ -407,8 +420,18 @@ p+p{margin-top:8px}
   <div class="rule" style="margin-top:16px"><span class="kick">Il nome</span><b>Quel motivo ha un nome: posizionamento.</b><p>Nelle prossime pagine vediamo da cosa è fatto, e quale parte puoi cambiare da lunedì.</p></div>
   <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">8</span></div>
 </section>
+<section class="page cover op2">
+  <div class="op2-top"><span class="logo"><span class="mark"></span>Hotel Positioning</span><span class="cv2-meta">Il tuo hotel paga tutti</span></div>
+  <div class="op2-body">
+    <p class="op2-n">Parte seconda</p>
+    <h1 class="op2-h">Come funziona.</h1>
+    <p class="op2-sub">Da cosa è fatto il motivo per sceglierti. Le quattro componenti, i profili, nove hotel a confronto e le due regole che valgono per tutti.</p>
+  </div>
+  <div class="op2-ill"><div class="ill ill2"><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="200" fill="#f4f3ff"/><rect x="0" y="170" width="600" height="30" fill="#e9e7ff"/><rect x="170" y="120" width="260" height="50" rx="8" fill="#d8d6ff" stroke="#262521" stroke-width="3"/><text x="300.0" y="151.0" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="16" fill="#262521">Location</text><rect x="190" y="78" width="220" height="42" rx="8" fill="#bfe8e3" stroke="#262521" stroke-width="3"/><text x="300.0" y="105.0" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="16" fill="#262521">Capitale</text><rect x="210" y="42" width="180" height="36" rx="8" fill="#ffd3ea" stroke="#262521" stroke-width="3"/><text x="300.0" y="66.0" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="16" fill="#262521">Operations</text><rect x="240" y="12" width="120" height="30" rx="8" fill="#ffd22e" stroke="#262521" stroke-width="3"/><text x="300.0" y="33.0" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="16" fill="#262521">Narrativa</text></svg></div></div>
+  <ol class="op2-toc"><li><b>01</b>Le basi</li><li><b>02</b>Le componenti</li><li><b>03</b>La scelta</li><li><b>04</b>I profili</li><li><b>05</b>I profili misti</li><li><b>06</b>Nove hotel</li><li><b>07</b>Le regole</li></ol>
+</section>
 <section class="page p2 ">
-  <span class="part">Parte seconda · Come funziona</span>
+
   <span class="tag">01 · Le basi</span>
   <h2>Un hotel <span class="hl">non è una cosa sola.</span></h2>
   <p>Quello che il mercato pensa del tuo hotel è la somma di quattro cose.</p>
@@ -422,7 +445,7 @@ p+p{margin-top:8px}
   <p style="margin-top:12px">Due parole che si confondono spesso. Il <b>posizionamento di mercato</b> è il risultato: come ti percepisce il cliente. La <b>narrativa</b> è una delle quattro componenti: come scegli di raccontarti.</p>
   <p>Location, capitale e operations cambiano in anni, o con investimenti importanti.</p>
   <p class="law"><span class="hl">La narrativa è l'unica che puoi cambiare in fretta, senza toccare i mattoni.</span></p>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">9</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">10</span></div>
 </section>
 <section class="page p2 ">
   <span class="tag">02 · Le componenti</span>
@@ -430,18 +453,19 @@ p+p{margin-top:8px}
   <div class="comp"><span class="kick"><span class="chip c-loc" style="font-size:7pt;padding:3px 8px">Componente 1</span></span><h3>Dove sei: la location</h3><p>La location non è un indirizzo. È il flusso di clienti che arriva da solo. È il nome che la gente riconosce al bar.</p><p><b>Portofino, Capri, Positano, Venezia centro, Taormina:</b> location da dieci. L'hotel vende prima ancora che il proprietario apra bocca.</p><p><b>Rimini, Jesolo, Senigallia, Caorle:</b> da sei o sette. I flussi ci sono, ma la tua fetta te la devi prendere.</p><p><b>Un quattro stelle a Modena, Padova, Brescia:</b> da cinque. Lavoro e cultura, nessuna cartolina.</p><p><b>Un paese dell'entroterra abruzzese o del Monferrato:</b> da tre o quattro. Qui la location non ti aiuta, ti frena. Chi arriva, arriva per un motivo preciso.</p></div>
   <div class="comp"><span class="kick"><span class="chip c-cap" style="font-size:7pt;padding:3px 8px">Componente 2</span></span><h3>Cosa hai costruito: il capitale</h3><p>Il capitale è quanto hai investito nella struttura. Non il valore dell'immobile: la qualità che il cliente sente quando entra in camera, apre il bagno, si siede al ristorante.</p><p>Camere rifatte nel 2024 con un investimento serio dicono una cosa. Moquette del 2003 e materasso stanco ne dicono un'altra. Qualunque cosa ci sia scritto sulla brochure.</p></div>
   <div class="rule"><span class="kick">Regola uno</span><b>Il capitale pesa moltissimo nei primi tre minuti. Nessun racconto salva un bagno brutto.</b></div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">10</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">11</span></div>
 </section>
 <section class="page p2 ">
   <div class="comp" style="margin-top:0"><span class="kick"><span class="chip c-ops" style="font-size:7pt;padding:3px 8px">Componente 3</span></span><h3>Come lavori ogni giorno: le operations</h3><p>Le operations sono il lavoro di tutti i giorni. Il check-in. La pulizia, uguale il lunedì e il sabato. La colazione puntuale. Le risposte alle recensioni. I prezzi che seguono il mercato. Lo staff formato. I fornitori.</p><p>Un hotel nella media con operations eccellenti sopravvive e cresce. Un hotel bellissimo con operations scadenti brucia la reputazione in diciotto mesi.</p><p><b>Sono la componente che i proprietari sottovalutano di più. E quella che conta di più nel lungo periodo.</b></p></div>
   <div style="height:10px"></div>
   <div class="comp"><span class="kick"><span class="chip c-nar" style="font-size:7pt;padding:3px 8px">Componente 4</span></span><h3>Come ti racconti: la narrativa</h3><p>La narrativa è la promessa che fai al mercato. Il cliente che scegli di servire. La ragione precisa per cui deve scegliere te, e pagare il prezzo che chiedi.</p><p>Un hotel senza narrativa è un hotel generico. Il prezzo lo decide Booking. Nessuno ha un motivo per sceglierlo al posto del vicino. Puoi avere location, struttura e staff buoni: il risultato resta basso, perché manca il quarto addendo.</p><p>Una narrativa forte si appoggia su qualcosa di vero. La storia della famiglia. Un modo di lavorare che hai solo tu. Un cliente molto specifico. Una presa di posizione contro quello che fanno tutti.</p><p>Non è uno slogan. È una scelta che decide cosa offri, a chi, come organizzi il lavoro e come comunichi.</p></div>
   <p class="law"><span class="hl">E una volta scelta, va mantenuta ogni giorno.</span></p>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">11</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">12</span></div>
 </section>
 <section class="page p2 ">
   <span class="tag">03 · La scelta</span>
   <h2>Due hotel uguali. <span class="hl">Due racconti.</span></h2>
+  <div class="ill ill2" style="height:44mm"><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="200" fill="#f4f3ff"/><rect x="0" y="168" width="600" height="32" fill="#e9e7ff"/><rect x="60" y="70" width="110" height="98" rx="8" fill="#fff" stroke="#262521" stroke-width="3"/><rect x="74" y="86" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="74" y="112" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="74" y="138" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="104" y="86" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="104" y="112" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="104" y="138" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="134" y="86" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="134" y="112" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="134" y="138" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="40" y="30" width="150" height="30" rx="15" fill="#ffd3ea" stroke="#262521" stroke-width="3"/><text x="115" y="50" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="13" fill="#262521">Rifugio romantico</text><line x1="115" y1="60" x2="115" y2="70" stroke="#262521" stroke-width="3"/><rect x="245" y="70" width="110" height="98" rx="8" fill="#fff" stroke="#262521" stroke-width="3"/><rect x="259" y="86" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="259" y="112" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="259" y="138" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="289" y="86" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="289" y="112" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="289" y="138" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="319" y="86" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="319" y="112" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="319" y="138" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="225" y="30" width="150" height="30" rx="15" fill="#bfe8e3" stroke="#262521" stroke-width="3"/><text x="300" y="50" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="13" fill="#262521">Ritiro silenzioso</text><line x1="300" y1="60" x2="300" y2="70" stroke="#262521" stroke-width="3"/><rect x="430" y="70" width="110" height="98" rx="8" fill="#fff" stroke="#262521" stroke-width="3"/><rect x="444" y="86" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="444" y="112" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="444" y="138" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="474" y="86" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="474" y="112" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="474" y="138" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="504" y="86" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="504" y="112" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="504" y="138" width="20" height="16" rx="3" fill="#f3efe9" stroke="#262521" stroke-width="1.5"/><rect x="410" y="30" width="150" height="30" rx="15" fill="#d8d6ff" stroke="#262521" stroke-width="3"/><text x="485" y="50" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="13" fill="#262521">Matrimoni piccoli</text><line x1="485" y1="60" x2="485" y2="70" stroke="#262521" stroke-width="3"/></svg></div>
   <p>Un quattro stelle, dieci camere, su una collina umbra. Può essere:</p>
   <div class="chips" style="margin:10px 0 10px;gap:8px">
     <span class="chip" style="background:var(--psoft)">Il rifugio romantico per coppie</span>
@@ -461,20 +485,21 @@ p+p{margin-top:8px}
     </div>
     <p class="small"><em>*Nello stesso periodo c'è stata una ristrutturazione, con investimenti importanti della proprietà. Il posizionamento ha dato la direzione, gli investimenti l'hanno resa credibile.</em></p>
   </div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">12</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">13</span></div>
 </section>
 <section class="page p2 ">
   <span class="tag">04 · I profili</span>
   <h2>Qual è il motore <span class="hl">del tuo hotel?</span></h2>
+  <div class="ill ill2" style="height:44mm"><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="200" fill="#f4f3ff"/><path d="M38 140 A44 44 0 0 1 126 140" fill="#d8d6ff" stroke="#262521" stroke-width="3"/><line x1="82" y1="140" x2="114.3" y2="129.5" stroke="#262521" stroke-width="4" stroke-linecap="round"/><circle cx="82" cy="140" r="6" fill="#262521"/><text x="82" y="172" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#262521">Location</text><path d="M183 140 A44 44 0 0 1 271 140" fill="#bfe8e3" stroke="#262521" stroke-width="3"/><line x1="227" y1="140" x2="227.0" y2="106.0" stroke="#262521" stroke-width="4" stroke-linecap="round"/><circle cx="227" cy="140" r="6" fill="#262521"/><text x="227" y="172" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#262521">Capitale</text><path d="M328 140 A44 44 0 0 1 416 140" fill="#ffd3ea" stroke="#262521" stroke-width="3"/><line x1="372" y1="140" x2="382.5" y2="107.7" stroke="#262521" stroke-width="4" stroke-linecap="round"/><circle cx="372" cy="140" r="6" fill="#262521"/><text x="372" y="172" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#262521">Operations</text><path d="M473 140 A44 44 0 0 1 561 140" fill="#ffd22e" stroke="#262521" stroke-width="3"/><line x1="517" y1="140" x2="506.5" y2="107.7" stroke="#262521" stroke-width="4" stroke-linecap="round"/><circle cx="517" cy="140" r="6" fill="#262521"/><text x="517" y="172" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#262521">Narrativa</text></svg></div>
   <p class="lead">Ci sono quattro profili, uno per componente. Capire il tuo cambia la risposta a due domande: dove investire, e cosa raccontare.</p>
   <div class="chips" style="margin:12px 0 4px;gap:8px"><span class="chip c-loc">Profilo location</span><span class="chip c-cap">Profilo capitale</span><span class="chip c-ops">Profilo operations</span><span class="chip c-nar">Profilo narrativa</span></div>
   <div class="prof"><div class="prof-h" style="background:var(--lsoft)">Profilo location</div><div class="prof-b"><h3>Il motore è il luogo</h3><p>Location da nove o dieci, il resto nella media o sotto. Una piccola struttura a Positano, investimenti modesti, gestione familiare, racconto ancora da fare.</p><p>Il cliente paga per vivere Positano. L'hotel è il mezzo, non il protagonista.</p><div class="sub"><div class="ok"><span class="kick">Racconto coerente</span>Il luogo come identità. «Siamo Positano.» «La vera Capri.» Arredi, colazione, bar: tutto deve raccontare quel posto. Quello vero, non quello delle cartoline.</div><div class="risk"><span class="kick">Rischio</span>Dipendi tutto dal turismo della zona. Se la zona cala, non hai un piano B. Col tempo conviene costruire anche altro.</div></div></div></div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">13</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">14</span></div>
 </section>
 <section class="page p2 ">
   <div class="prof" style="margin-top:0"><div class="prof-h" style="background:var(--tsoft)">Profilo capitale</div><div class="prof-b"><h3>Il motore è la struttura</h3><p>Capitale da nove o dieci, il resto nella media. Un hotel in una zona secondaria con un restauro da diversi milioni, o un edificio nuovo che si fa notare. Gestione ancora in rodaggio.</p><p>Il cliente paga per la bellezza dello spazio, che nella zona non trova altrove.</p><div class="sub"><div class="ok"><span class="kick">Racconto coerente</span>L'investimento come promessa. «Il posto più bello della regione.» «Un design che non trovi altrove.»</div><div class="risk"><span class="kick">Rischio</span>Un investimento così chiede tariffe alte per rientrare. Se la reception non è all'altezza della hall, l'ospite si sente preso in giro alla prima richiesta.</div></div></div></div>
   <div class="prof"><div class="prof-h" style="background:var(--psoft)">Profilo operations</div><div class="prof-b"><h3>Il motore è il lavoro fatto bene, sempre</h3><p>Operations da nove o dieci, il resto nella media. Un hotel in città o sulla costa, in una zona senza cartolina. Struttura curata ma senza grandi investimenti. Prezzi gestiti con attenzione, staff stabile, recensioni seguite una per una, colazione curata, pulizia senza eccezioni.</p><p>Il cliente paga per non pensarci.</p><div class="sub"><div class="ok"><span class="kick">Racconto coerente</span>L'affidabilità come promessa. Fuori dall'Italia lo fanno citizenM («il tuo hotel ovunque tu vada») e YOTEL, tutti e due costruiti su una gestione impeccabile.</div><div class="risk"><span class="kick">Rischio</span>«Qualità del servizio» lo scrivono tutti. Per distinguerti devi trasformare l'eccellenza in cose che si vedono e si possono nominare. Non in aggettivi.</div></div></div></div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">14</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">15</span></div>
 </section>
 <section class="page p2 ">
   <div class="prof" style="margin-top:0"><div class="prof-h" style="background:var(--yellow)">Profilo narrativa</div><div class="prof-b">
@@ -487,11 +512,12 @@ p+p{margin-top:8px}
     <div class="sub"><div class="ok" style="background:var(--ysoft)"><span class="kick">Come si costruisce</span>Scegli un cliente molto preciso. Fagli una promessa netta. Sostienila con scelte che si vedono: menu, orari, servizi, divieti. Il racconto si costruisce con le scelte di ogni giorno, non con gli slogan.</div><div class="risk"><span class="kick">Rischio</span>Un racconto forte che la gestione non mantiene è peggio di nessun racconto. Diventa un contratto da onorare ogni mattina.</div></div>
   </div></div>
   <div class="book-box"><div><span class="kick" style="display:block;margin-bottom:4px">Per approfondire</span><p>Come si passa da un fatto vero del tuo hotel a un racconto che regge? È il cuore del libro. Sei passaggi, i casi veri, e otto strumenti per applicarli.</p><a class="btn" href="https://hotelpositioning.com/vai/libro/?da=guida-p15">Il libro su Amazon →</a> <span class="url">hotelpositioning.com/vai/libro</span></div></div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">15</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">16</span></div>
 </section>
 <section class="page p2 ">
   <span class="tag">05 · I profili misti</span>
   <h2>I profili puri <span class="hl">sono rari.</span></h2>
+  <div class="ill ill2" style="height:40mm"><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="200" fill="#f4f3ff"/><circle transform="translate(35 -18)" cx="230" cy="95" r="58" fill="#d8d6ff" fill-opacity=".75" stroke="#262521" stroke-width="2.5"/><circle transform="translate(35 -18)" cx="300" cy="95" r="58" fill="#bfe8e3" fill-opacity=".75" stroke="#262521" stroke-width="2.5"/><circle transform="translate(35 -18)" cx="230" cy="140" r="58" fill="#ffd3ea" fill-opacity=".75" stroke="#262521" stroke-width="2.5"/><circle transform="translate(35 -18)" cx="300" cy="140" r="58" fill="#ffd22e" fill-opacity=".75" stroke="#262521" stroke-width="2.5"/><text transform="translate(35 -18)" x="130" y="65" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#262521">Location</text><text transform="translate(35 -18)" x="400" y="65" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#262521">Capitale</text><text transform="translate(35 -18)" x="130" y="180" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#262521">Operations</text><text transform="translate(35 -18)" x="400" y="180" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#262521">Narrativa</text></svg></div>
   <p class="lead">Quasi tutti gli hotel hanno due o tre componenti alte. Qui il racconto deve parlare dell'incrocio, non di una sola componente.</p>
   <div class="mixlist">
     <div class="card"><div class="chips"><span class="chip c-loc">Location alta</span><b>+</b><span class="chip c-cap">Capitale alto</span></div><p>Struttura di lusso recente in una location da cartolina. L'Hotel Caruso, prima di LVMH. Il racconto è vivere il luogo attraverso l'investimento. Attenzione che la gestione non diventi il punto debole.</p></div>
@@ -500,7 +526,7 @@ p+p{margin-top:8px}
     <div class="card"><div class="chips"><span class="chip c-cap">Capitale alto</span><b>+</b><span class="chip c-ops">Operations alte</span></div><p>Hotel moderno, investimento serio, gestione professionale, in una zona secondaria. Il racconto è «quello che non ti aspetti dove non te lo aspetti». Qui l'hotel può diventare il motivo del viaggio.</p></div>
     <div class="card" style="background:var(--ysoft)"><div class="chips"><span class="chip c-loc">Location</span><span class="chip c-cap">Capitale</span><span class="chip c-ops">Operations</span><span class="chip c-nar">Narrativa</span><b style="font:800 8.4pt var(--d)">tutte e quattro alte</b></div><p>Il lusso dove tutto funziona. Il racconto qui non salva niente: tira fuori il valore che resta sul tavolo. Belmond, Rocco Forte, Baglioni ci investono di continuo. La differenza si misura in milioni di fatturato in più all'anno.</p></div>
   </div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">16</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">17</span></div>
 </section>
 <section class="page p2 ">
   <span class="tag">06 · Nove hotel</span>
@@ -508,7 +534,7 @@ p+p{margin-top:8px}
   <p class="small">Nove hotel inventati, per vedere il metodo al lavoro. Ogni componente da zero a dieci. Il posizionamento di mercato è la somma, da zero a quaranta. Il fatturato dipende dal posizionamento, ma anche da camere, giorni di apertura e tariffa possibile in quel segmento. <b>Esempi per spiegare il metodo. Non sono hotel reali, e non sono risultati promessi.</b></p>
   <div class="legend" style="margin-top:4px"><span><i style="background:var(--lilac)"></i>Location</span><span><i style="background:var(--teal)"></i>Capitale</span><span><i style="background:var(--pink)"></i>Operations</span><span><i style="background:var(--yellow)"></i>Narrativa</span></div>
   <div class="htable" data-htable="A,B|C,D|E|F|G|H,I"></div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">17</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">18</span></div>
 </section>
 <section class="page p2 ">
   <span class="tag">I confronti</span>
@@ -521,7 +547,7 @@ p+p{margin-top:8px}
   <div class="vs2"><div class="vs2-h"><b>G</b><span>il tre stelle del Conero</span></div><p>22 camere, quasi solo estate, 440 mila euro. Posizionamento 17. Non sbaglia niente di grave. Ma non ha leve: vive del turismo che passa. Un racconto preciso, come «l'hotel di chi fa immersioni nel Parco del Conero» o «la casa degli escursionisti del Monte Conero», porterebbe la narrativa da 2 a 8. Nell'esempio il fatturato supera i 600 mila euro, con clienti che oggi scelgono altrove.</p></div>
   <div class="vs2"><div class="vs2-h"><b>H</b> <i>→</i> <b>I</b><span>lo stesso agriturismo nel Monferrato</span></div><p>Dieci camere, gestione familiare, la cantina di casa. H vende «esperienza enogastronomica piemontese», come altri cinquanta agriturismi della zona. I è «la residenza del vignaiolo per enologi professionisti»: un workshop all'anno con una cantina diversa, visite tecniche per gruppi di enologi stranieri, settimane dedicate a un singolo produttore. Il posizionamento passa da 17 a 23. Nell'esempio, 310 mila euro in più.</p><p class="vs2-law"><span>Il racconto funziona anche nel piccolo. Se è abbastanza preciso.</span></p></div>
   </div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">18</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">19</span></div>
 </section>
 <section class="page p2 ">
   <span class="tag">Da portare via</span>
@@ -532,7 +558,7 @@ p+p{margin-top:8px}
     <div class="read"><span class="n">3</span><p>La location da cartolina non basta. Molti proprietari in zone secondarie se la prendono con la location. Spesso il problema è altrove: nel racconto che non c'è.</p></div>
     <div class="read"><span class="n">4</span><p>Negli esempi, lo stesso hotel con un racconto diverso fattura dal 35% a oltre il 60% in più. Dal lusso all'agriturismo da dieci camere. Ed è l'unica leva che non chiede di rifare i muri.</p></div>
   </div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">19</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">20</span></div>
 </section>
 <section class="page p2 ">
   <span class="tag">07 · Le regole</span>
@@ -547,9 +573,10 @@ p+p{margin-top:8px}
   <p style="margin-top:12px">Se la gestione non tiene, il racconto non porta valore. Moltiplica il danno. Gli ospiti arrivati per la promessa ripartono delusi. E scrivono recensioni proprio su quello che avevi promesso.</p>
   <p class="small" style="margin-top:8px">Selina, la catena di spazi per lavorare in viaggio, è l'esempio: racconto fortissimo, gestione che non reggeva, crescita troppo veloce. Nel 2024 è finita in amministrazione controllata.</p>
   <div class="rule" style="margin-top:14px"><span class="kick">Regola operativa</span><b>Prima le operations. Dopo il racconto.</b><p>Se le recensioni non stanno sopra 4,3 su 5 (8,6 su Booking), lo staff non è stabile, i prezzi non seguono il mercato e le criticità non hanno risposta rapida: un racconto forte non è la mossa giusta. Prima si sistema la gestione. Poi si lavora sul racconto.</p></div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">20</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">21</span></div>
 </section>
 <section class="page p2 ">
+  <div class="ill ill2" style="height:44mm;margin-top:0"><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="200" fill="#f4f3ff"/><path d="M0 200 L150 60 L240 140 L340 30 L470 150 L600 70 V200Z" fill="#d8d6ff" stroke="#262521" stroke-width="3"/><path d="M315 54 L340 30 L365 54 L350 50 L340 60 L328 50Z" fill="#fff" stroke="#262521" stroke-width="2"/><rect x="250" y="130" width="100" height="58" rx="6" fill="#fff" stroke="#262521" stroke-width="3"/><path d="M240 132 L300 100 L360 132Z" fill="#ff5a3c" stroke="#262521" stroke-width="3"/><rect x="290" y="156" width="20" height="32" fill="#f3efe9" stroke="#262521" stroke-width="2"/><g transform="translate(372 150)"><ellipse cx="0" cy="0" rx="22" ry="11" fill="#bfe8e3" stroke="#262521" stroke-width="2.5"/><path d="M20 0 L34 -10 L34 10Z" fill="#bfe8e3" stroke="#262521" stroke-width="2.5"/><circle cx="-10" cy="-2" r="2.5" fill="#262521"/></g></svg></div>
   <h3>Regola due · Il racconto deve stare dentro un mercato che esiste</h3>
   <p style="margin-top:8px">C'è anche la trappola opposta: un racconto così di nicchia che i clienti non bastano.</p>
   <div class="card" style="margin-top:12px"><span class="kick" style="display:block;margin-bottom:6px">Il caso Saorsa 1875</span><p>In Scozia, è stato il primo hotel completamente vegano del Regno Unito. Un racconto perfetto, sulla carta. Ma undici camere, Pitlochry fuori mano e prezzi alti per una cucina vegetale rigorosa hanno trovato un mercato troppo piccolo. I proprietari lo hanno messo in vendita, e l'agenzia incaricata lo presentava anche come hotel da aprire a un'offerta più ampia del solo vegano.</p></div>
@@ -557,7 +584,7 @@ p+p{margin-top:8px}
   <div class="rule"><span class="kick">Il punto</span><b>Il racconto deve restringere abbastanza da darti un'identità. Non così tanto da chiuderti la porta.</b></div>
   <p>Se la location è debole e le camere sono poche, prima di partire verifica che i clienti raggiungibili bastino a coprire il fatturato minimo.</p>
   <p><b>Spesso la soluzione non è un racconto meno netto. È un racconto altrettanto netto, su un tema con più clienti.</b></p>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">21</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">22</span></div>
 </section>
 <section class="page ">
   <span class="part">Parte terza · Tocca a te</span>
@@ -566,11 +593,11 @@ p+p{margin-top:8px}
   <p class="lead">Rispondi con onestà. Nessuno ti guarda.</p>
   <div class="q"><span class="n">1</span><div><h3>La gestione tiene?</h3><p>Guarda le recensioni degli ultimi due anni su Google, Booking e TripAdvisor. La media è sopra 4,3 su 5 (8,6 su Booking)? Lo staff è formato e stabile? I prezzi seguono il mercato? Rispondi in fretta a recensioni e segnalazioni?</p><div class="ans"><div class="no"><b>Se no:</b> il racconto non è la tua priorità adesso. Prima la gestione. Un racconto forte oggi ti farebbe più male che bene.</div><div class="si"><b>Se sì:</b> passa alla domanda due.</div></div></div></div>
   <div class="q"><span class="n">2</span><div><h3>Qual è il tuo profilo?</h3><p>Dai un voto da zero a dieci a ognuna delle quattro componenti. Senza barare. Sommale: è il tuo posizionamento di oggi.</p><div class="ans"><div class="n1"><b>Una componente domina</b> (una a nove o dieci, le altre sotto sette): il racconto deve amplificare quella. Sei un profilo location, capitale, operations o narrativa.</div><div class="n2"><b>Due o tre componenti alte:</b> il racconto deve parlare dell'incrocio. Sei un profilo misto.</div><div class="n3"><b>Tutte tra sei e sette, nessuna che spicca:</b> la leva da costruire è il racconto. È l'unica che puoi cambiare in fretta, senza grandi investimenti.</div></div></div></div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">22</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">23</span></div>
 </section>
 <section class="page ">
   <div class="q" style="margin-top:0"><span class="n">3</span><div><h3>I clienti bastano?</h3><p>Pensa al racconto che hai in mente, coerente con il tuo profilo. I clienti raggiungibili, per distanza e per capacità di spesa, bastano a farti stare in piedi?</p><div class="formula" style="margin:12px 0"><span class="kick">Il conto è semplice</span><div class="chips"><span class="chip" style="background:#fff">Camere</span><span class="op">×</span><span class="chip" style="background:#fff">Occupazione obiettivo</span><span class="op">×</span><span class="chip" style="background:#fff">Giorni di apertura</span><span class="op">×</span><span class="chip" style="background:#fff">Tariffa media obiettivo</span></div><div class="res"><span class="op">=</span><span class="chip">Fatturato minimo</span></div></div><p>Poi chiediti: ci sono abbastanza persone, per quel racconto, nel bacino che riesci a raggiungere?</p><div class="ans"><div class="si"><b>Se sì:</b> procedi.</div><div class="no"><b>Se no:</b> sposta il racconto su un tema con più clienti, prima di investire.</div></div></div></div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">23</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">24</span></div>
 </section>
 <section class="page ">
   <span class="tag">09 · Il prossimo passo</span>
@@ -583,7 +610,7 @@ p+p{margin-top:8px}
   <p style="margin-top:8px"><a class="btn" href="https://hotelpositioning.com/vai/libro/?da=guida-p24">Prendi il libro su Amazon →</a></p>
   <p style="margin-top:10px">Se invece la prima risposta è stata no, il racconto può aspettare. Sistema prima quello che va sistemato.</p>
   <div class="box-end"><b>In tutti e due i casi hai fatto la cosa più importante: hai capito di cosa ha bisogno il tuo hotel, adesso.</b><p><em>Quasi nessuno lo fa prima di firmare con un'altra agenzia. Tu sì.</em></p></div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">24</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">25</span></div>
 </section>
 <section class="page ">
   <span class="tag">Chi lo fa</span>
@@ -603,7 +630,7 @@ p+p{margin-top:8px}
       <img src="firma.png" alt="Firma di Francesco Astolfi" style="height:18mm;margin-top:6px">
     </div>
   </div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">25</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">26</span></div>
 </section>
 <section class="page ">
   <span class="tag">Il prossimo passo</span>
@@ -640,7 +667,7 @@ p+p{margin-top:8px}
     <span class="logo" style="color:#fff;margin-bottom:10px;display:flex"><span class="mark w"></span>Hotel Positioning</span>
     <p>Booking si paga.</p><p>L'agenzia si paga.</p><p>Lo sconto si paga.</p><p style="margin-top:4px"><span>Il motivo, una volta sola.</span></p>
   </div>
-  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">26</span></div>
+  <div class="foot"><span>Hotel Positioning · Il tuo hotel paga tutti</span><span class="n">27</span></div>
 </section>
 
 <script>
