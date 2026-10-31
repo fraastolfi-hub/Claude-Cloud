@@ -218,66 +218,44 @@
 .pv figcaption b{display:block;font:800 12px var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
 @media (max-width:560px){.pv-row{gap:10px}.pv-lock{font-size:10px;padding:5px 4px}.pv figcaption{font-size:12.5px}}
 .fv-form{max-width:640px}
-/* apertura: la guida, con la formula coperta appoggiata sopra */
-.hv{position:relative;padding:8px 0 70px;max-width:520px;margin-left:auto}
-.hv-book{position:relative;width:min(360px,72%);margin-left:auto;margin-right:6%}
-.hv-book img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:14px;box-shadow:var(--o-xl);transform:rotate(3deg)}
-.hv-badge{position:absolute;right:-30px;top:-30px;width:104px;height:104px;border-radius:50%;display:grid;place-content:center;text-align:center;background:var(--yellow);border:2px solid var(--inchiostro);box-shadow:var(--o-sm);transform:rotate(10deg);font:900 21px/1 var(--display);letter-spacing:-.02em}
-.hv-badge small{display:block;margin-top:5px;font:800 10.5px/1.15 var(--display);letter-spacing:.04em;text-transform:uppercase}
-.hv-f{position:absolute;left:0;bottom:0;width:min(350px,78%);margin:0;background:var(--inchiostro);color:var(--surface-cream);border:2px solid var(--inchiostro);border-radius:18px;box-shadow:6px 6px 0 var(--lilac);padding:18px 20px;transform:rotate(-2deg)}
-.hv-k{display:block;font:800 11px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
-.hv-eq{display:flex;align-items:center;gap:6px}
-.hv-eq i{font:800 16px var(--display);font-style:normal;color:var(--surface-cream);opacity:.7}
-.hv-c{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 10px;border-radius:999px;font:800 14px/1 var(--display);color:var(--inchiostro)}
+/* apertura: foto grande, simboli dei soldi, la guida e la formula coperta */
+.hp{position:relative;width:min(520px,100%);height:600px;margin-left:auto}
+.hp-arch{position:absolute;right:10px;top:10px;width:380px;height:500px;border:2px solid var(--inchiostro);border-radius:190px 190px 26px 26px;background:var(--lilac);overflow:hidden;box-shadow:var(--o-lg)}
+.hp-arch img{position:absolute;left:50%;bottom:0;width:112%;height:auto;transform:translateX(-50%)}
+.hp-m{position:absolute;display:block;filter:drop-shadow(3px 3px 0 var(--inchiostro));animation:hpFloat 5s ease-in-out infinite}
+.hp-m svg{display:block;width:100%;height:auto}
+.hp-coin1{width:74px;left:70px;top:40px;--r:-10deg}
+.hp-coin2{width:48px;right:0;top:150px;--r:12deg;animation-delay:-2.5s}
+.hp-note{width:118px;right:-14px;top:300px;--r:8deg;animation-delay:-1.2s}
+.hp-tag{width:104px;left:58px;top:210px;--r:-8deg;animation-delay:-3.6s}
+@keyframes hpFloat{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-10px) rotate(var(--r,0deg))}}
+.hp-book{position:absolute;left:0;bottom:30px;width:180px;transform:rotate(-7deg)}
+.hp-book img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:10px;box-shadow:var(--o-lg)}
+.hp-badge{position:absolute;right:-30px;top:-26px;width:86px;height:86px;border-radius:50%;display:grid;place-content:center;text-align:center;background:var(--yellow);border:2px solid var(--inchiostro);box-shadow:var(--o-sm);transform:rotate(14deg);font:900 18px/1 var(--display)}
+.hp-badge small{display:block;margin-top:4px;font:800 9px/1.15 var(--display);letter-spacing:.04em;text-transform:uppercase}
+.hp-f{position:absolute;right:0;bottom:0;display:flex;align-items:center;gap:6px;background:var(--inchiostro);border:2px solid var(--inchiostro);border-radius:999px;padding:8px 14px 8px 8px;box-shadow:4px 4px 0 var(--lilac);transform:rotate(-2deg)}
+.hp-f i{font:800 15px var(--display);font-style:normal;color:var(--surface-cream);opacity:.75}
+.hp-f b{font:800 14px/1.1 var(--display);color:var(--yellow);white-space:nowrap}
+.hv-c{display:inline-grid;place-items:center;height:30px;min-width:30px;padding:0 10px;border-radius:999px;font:800 13px/1 var(--display);color:var(--inchiostro)}
 .hv-loc{background:var(--lilac-soft)}
-.hv-q{background:var(--yellow);font-size:17px;padding:0}
-.hv-res{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18)}
-.hv-res i{font:800 18px var(--display);font-style:normal}
-.hv-res span{background:var(--yellow);color:var(--inchiostro);border-radius:999px;padding:7px 14px;font:800 15px/1 var(--display)}
-.hv-f figcaption{margin-top:12px;font-size:13.5px;line-height:1.45;color:var(--surface-cream);opacity:.75}
+.hv-q{background:var(--yellow);font-size:16px;padding:0}
 @media (max-width:860px){
   .ca-visual{order:0}
-  .hv{margin:6px auto 0;max-width:400px;padding:0}
-  .hv-book{width:190px;margin:0 auto}
-  .hv-badge{width:84px;height:84px;right:-46px;top:-18px;font-size:17px}
-  .hv-badge small{font-size:9px}
-  .hv-f{position:relative;width:auto;margin-top:-34px;transform:rotate(-1deg)}
+  .hp{height:440px;width:min(360px,100%);margin:10px auto 0}
+  .hp-arch{width:250px;height:340px;right:6px;top:6px;border-radius:125px 125px 20px 20px}
+  .hp-coin1{width:54px;left:28px;top:30px}
+  .hp-coin2{width:36px;right:-4px;top:110px}
+  .hp-note{width:84px;right:-10px;top:220px}
+  .hp-tag{width:76px;left:24px;top:150px}
+  .hp-book{width:118px;bottom:40px}
+  .hp-badge{width:64px;height:64px;right:-22px;top:-18px;font-size:14px}
+  .hp-badge small{font-size:7.5px}
+  .hp-f{left:0;right:0;justify-content:center;gap:4px;padding:6px 10px;transform:none}
+  .hp-f .hv-c{height:24px;min-width:24px;font-size:11px;padding:0 7px}
+  .hp-f .hv-q{padding:0;font-size:13px}
+  .hp-f b{font-size:12px}
 }
-@media (max-width:380px){.hv-c{padding:0 8px;font-size:13px}.hv-eq{gap:4px}}
-/* animazione: quanto paga l'ospite */
-.px{margin-top:34px;max-width:860px;background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:22px;box-shadow:var(--o-md);padding:clamp(22px,3vw,36px)}
-.px-h{font:800 clamp(22px,2.4vw,30px)/1.15 var(--display);letter-spacing:-.025em}
-.px-viz{padding:104px 10px 0}
-.px-track{position:relative;height:14px;border-radius:999px;background:var(--line-soft);border:2px solid var(--inchiostro)}
-.px-pin{position:absolute;left:var(--p);bottom:8px;transform:translate(-50%,8px);display:grid;justify-items:center;opacity:0;transition:opacity .5s,transform .5s}
-.px-pin b{font:900 clamp(24px,3vw,34px)/1 var(--display);white-space:nowrap}
-.px-pin small{margin-top:4px;font:700 11.5px/1.2 var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);text-align:center;max-width:150px;min-height:2.4em}
-.px-pin i{width:3px;height:16px;margin-top:6px;background:var(--inchiostro)}
-.px-wish b{color:var(--lilac)}
-.px-wish i{background:var(--lilac)}
-.px-gap{position:absolute;top:-2px;bottom:-2px;left:32%;right:21.5%;background:var(--pink);border:2px solid var(--inchiostro);opacity:0;transform:scaleX(0);transform-origin:right;transition:opacity .3s,transform 1s cubic-bezier(.6,0,.2,1)}
-.px-q{position:absolute;top:50%;left:55%;transform:translate(-50%,-50%) scale(.4);opacity:0;transition:opacity .4s,transform .5s cubic-bezier(.3,1.6,.5,1)}
-.px-q i{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--yellow);border:2.5px solid var(--inchiostro);box-shadow:var(--o-sm);font:900 24px var(--display);font-style:normal}
-.px-scale{position:relative;height:16px;margin-top:22px;font:600 12px var(--display);color:var(--muted)}
-.px-scale span{position:absolute;white-space:nowrap}
-.px-scale span:last-child{transform:translateX(-100%)}
-.px-ask{margin-top:22px!important;font:800 clamp(20px,2.2vw,26px)/1.25 var(--display);letter-spacing:-.02em;color:var(--ink);opacity:0;transition:opacity .5s}
-.px-ask em{font-style:normal;background:var(--yellow);border-radius:6px;padding:0 6px}
-.px-ans{margin-top:10px!important;font-size:17px;line-height:1.5;color:var(--ink-2);opacity:0;transition:opacity .5s}
-.px-ans mark{background:var(--pink-soft);border-radius:4px;padding:0 4px;font-weight:700;color:var(--ink)}
-.px-foot{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:20px;opacity:0;transition:opacity .5s}
-.px-replay{border:0;background:none;padding:0;font:600 14px var(--display);text-decoration:underline;text-underline-offset:4px;color:var(--ink-2)}
-.px-note{margin-top:14px;font-size:13px;color:var(--muted);font-style:italic}
-.px.s1 .px-wish,.px.s2 .px-near{opacity:1;transform:translate(-50%,0)}
-.px.s3 .px-q{opacity:1;transform:translate(-50%,-50%) scale(1);animation:pxPulse 1.2s ease-in-out infinite}
-.px.s3 .px-ask{opacity:1}
-.px.s4 .px-q{animation:none;left:32%}
-.px.s4 .px-gap{opacity:1;transform:scaleX(1)}
-.px.s4 .px-ans,.px.s4 .px-foot{opacity:1}
-@keyframes pxPulse{50%{transform:translate(-50%,-50%) scale(1.12)}}
-.px.s4 .px-q{transition:left 1s cubic-bezier(.6,0,.2,1),opacity .4s}
-@media (max-width:560px){.px-viz{padding-top:100px}.px-pin small{font-size:10px;max-width:110px}}
-@media (prefers-reduced-motion:reduce){.px *{transition:none!important;animation:none!important}}
+@media (prefers-reduced-motion:reduce){.hp-m{animation:none;transform:rotate(var(--r,0deg))}}
 .hero-why{margin-top:26px!important;padding-top:20px;border-top:1px solid var(--line);font-size:17px!important;max-width:44ch}
 /* gratis, in email */
 .gm{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:15.5px;line-height:1.45;color:var(--ink-2);max-width:44ch}
@@ -324,17 +302,17 @@
       <p class="gd-sub hero-why">Prima di prenotare, l'ospite fa un conto. Senza saperlo.<br>Quattro voci. Se il totale è basso, sceglie il prezzo.<br>E tu paghi Booking, l'agenzia, lo sconto.</p>
     </div>
     <div class="ca-visual">
-      <div class="hv">
-        <div class="hv-book">
-          <img src="/assets/guida/copertina.webp" srcset="/assets/guida/copertina.webp 620w, /assets/guida/copertina@2x.webp 1040w" sizes="(max-width:860px) 190px, 360px" width="620" height="878" fetchpriority="high" alt="Copertina della guida «Il posizionamento, spiegato semplice a chi ha un hotel», di Francesco Astolfi">
-          <span class="hv-badge">Gratis<small>PDF in email</small></span>
+      <div class="hp">
+        <div class="hp-arch"><img src="/assets/img/francesco-scontornato.webp" width="560" height="748" fetchpriority="high" alt="Francesco Astolfi, autore della guida"></div>
+        <span class="hp-m hp-coin1"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#ffd22e" stroke="#262521" stroke-width="3"/><circle cx="32" cy="32" r="21" fill="none" stroke="#262521" stroke-width="2" stroke-dasharray="3 4"/><text x="32" y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="900" font-size="28" fill="#262521">€</text></svg></span>
+        <span class="hp-m hp-note"><svg viewBox="0 0 110 62" aria-hidden="true"><rect x="2" y="2" width="106" height="58" rx="8" fill="#bfe8e2" stroke="#262521" stroke-width="3"/><rect x="10" y="10" width="90" height="42" rx="5" fill="none" stroke="#262521" stroke-width="1.6"/><circle cx="55" cy="31" r="14" fill="#fff" stroke="#262521" stroke-width="2.5"/><text x="55" y="39" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="900" font-size="20" fill="#262521">€</text></svg></span>
+        <span class="hp-m hp-tag"><svg viewBox="0 0 96 60" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9h56l25 27-25 27H12a9 9 0 0 1-9-9z" fill="#ffc9e2" stroke="#262521" stroke-width="3" stroke-linejoin="round"/><circle cx="72" cy="30" r="5" fill="#fff" stroke="#262521" stroke-width="2.5"/><text x="34" y="39" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="900" font-size="24" fill="#262521">€?</text></svg></span>
+        <span class="hp-m hp-coin2"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#ffd22e" stroke="#262521" stroke-width="3"/><circle cx="32" cy="32" r="21" fill="none" stroke="#262521" stroke-width="2" stroke-dasharray="3 4"/><text x="32" y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="900" font-size="28" fill="#262521">€</text></svg></span>
+        <div class="hp-book">
+          <img src="/assets/guida/copertina.webp" srcset="/assets/guida/copertina.webp 620w, /assets/guida/copertina@2x.webp 1040w" sizes="(max-width:860px) 120px, 180px" width="620" height="878" alt="Copertina della guida «Il posizionamento, spiegato semplice a chi ha un hotel»">
+          <span class="hp-badge">Gratis<small>PDF in email</small></span>
         </div>
-        <figure class="hv-f">
-          <span class="hv-k">La formula del valore</span>
-          <div class="hv-eq" role="img" aria-label="Location più tre voci coperte uguale il valore del tuo hotel"><span class="hv-c hv-loc">Location</span><i>+</i><span class="hv-c hv-q">?</span><i>+</i><span class="hv-c hv-q">?</span><i>+</i><span class="hv-c hv-q">?</span></div>
-          <p class="hv-res"><i>=</i><span>il valore del tuo hotel</span></p>
-          <figcaption>Una voce la conosci già. Le altre tre sono nella guida.</figcaption>
-        </figure>
+        <div class="hp-f" role="img" aria-label="La formula del valore: Location più tre voci coperte uguale il valore del tuo hotel"><span class="hv-c hv-loc">Location</span><i>+</i><span class="hv-c hv-q">?</span><i>+</i><span class="hv-c hv-q">?</span><i>+</i><span class="hv-c hv-q">?</span><i>=</i><b>il valore del tuo hotel</b></div>
       </div>
     </div>
   </div>
