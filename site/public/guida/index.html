@@ -193,6 +193,52 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 .fv-ex p{font-size:16.5px;line-height:1.55;color:var(--ink-2)}
 .fv-ex p b{color:var(--ink)}
 @media (max-width:640px){.fv-ex{grid-template-columns:auto auto auto}.fv-ex p{grid-column:1/-1}}
+/* copri il logo: due homepage uguali */
+.cl{margin:30px 0 26px;max-width:860px}
+.cl-pair{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:start}
+.cl-site{background:#fff;border:2px solid var(--inchiostro);border-radius:16px;box-shadow:var(--o-md);overflow:hidden}
+.cl-bar{display:flex;gap:5px;align-items:center;padding:8px 10px;border-bottom:1.5px solid var(--line);background:var(--surface-sand)}
+.cl-bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.cl-url{margin-left:8px;flex:1;background:#fff;border-radius:6px;padding:3px 8px;font:500 11px var(--text);color:var(--muted);white-space:nowrap;overflow:hidden}
+.cl-url em{font-style:normal;filter:blur(3.5px)}
+.cl-nav{display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
+.cl-logo{font:800 15px var(--display);filter:blur(5px);user-select:none;background:var(--lilac-soft);border-radius:6px;padding:2px 6px}
+.cl-menu{display:flex;gap:6px}.cl-menu i{width:22px;height:5px;border-radius:3px;background:var(--line)}
+.cl-img{height:86px;background:linear-gradient(180deg,#bfe3f2 0 45%,#7cc4d8 45% 62%,#f1dfb8 62%)}
+.cl-body{padding:14px}
+.cl-h{font:800 clamp(16px,1.6vw,19px)/1.2 var(--display);letter-spacing:-.015em;color:var(--ink)}
+.cl-p{margin-top:6px;font-size:13px;line-height:1.4;color:var(--muted)}
+.cl-btn{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:8px;background:var(--line);font:700 12px var(--display);color:var(--ink-2)}
+.cl-vs{align-self:center;font:900 34px var(--display);color:var(--muted)}
+.cl-price{margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font:800 18px var(--display);color:var(--muted)}
+.cl-price.win{color:var(--ink)}
+.cl-price span{background:var(--yellow);border:2px solid var(--inchiostro);border-radius:999px;padding:3px 10px;font:800 12px/1.2 var(--display);text-transform:uppercase;letter-spacing:.04em}
+.cl figcaption{margin-top:14px;font-size:15px;color:var(--muted);font-style:italic}
+@media (max-width:640px){.cl-pair{grid-template-columns:1fr 1fr;gap:10px}.cl-vs{display:none}.cl-img{height:56px}.cl-body{padding:10px}.cl-p,.cl-btn,.cl-menu{display:none}.cl-nav{padding:8px 10px}.cl-bar{padding:6px 8px}.cl-url{display:none}.cl-h{font-size:14px}.cl-price{font-size:15px}}
+/* punteggio su 40 */
+.fv-ex{grid-template-columns:1fr!important}
+.sg{padding:34px 6px 0}
+.sg-track{position:relative;height:14px;border-radius:999px;background:#fff;border:2px solid var(--inchiostro)}
+.sg-fill{position:absolute;left:0;top:0;bottom:0;width:52.5%;border-radius:999px 0 0 999px;background:var(--line)}
+.sg-gain{position:absolute;left:52.5%;top:0;bottom:0;width:15%;background:var(--yellow)}
+.sg-m{position:absolute;top:50%;transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;background:#fff;border:2.5px solid var(--inchiostro)}
+.sg-m.on{background:var(--yellow)}
+.sg-m b{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font:900 22px/1 var(--display)}
+.sg-m i{position:absolute;top:26px;left:50%;transform:translateX(-50%);white-space:nowrap;font:700 12px var(--display);font-style:normal;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-2)}
+.sg-ticks{position:relative;height:16px;margin-top:28px;font:600 12px var(--display);color:var(--muted)}
+.sg-ticks span{position:absolute;transform:translateX(-50%)}
+@media (max-width:640px){.sg-m:not(.on) i{left:auto;right:4px;transform:none}.sg-m.on i{left:4px;transform:none}}
+/* anteprima della guida */
+.pv{margin-top:30px;max-width:820px}
+.pv-h{font:800 13px var(--display);text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+.pv-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pv figure{margin:0}
+.pv-pg{position:relative}
+.pv-pg img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:10px;box-shadow:var(--o-sm);background:#fff}
+.pv-lock{position:absolute;left:8%;right:8%;top:36%;text-align:center;background:var(--yellow);border:2px solid var(--inchiostro);border-radius:10px;padding:8px 6px;font:800 12.5px/1.25 var(--display);box-shadow:var(--o-sm)}
+.pv figcaption{margin-top:8px;font-size:14px;line-height:1.35;color:var(--ink-2)}
+.pv figcaption b{display:block;font:800 12px var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+@media (max-width:560px){.pv-row{gap:10px}.pv-lock{font-size:10px;padding:5px 4px}.pv figcaption{font-size:12.5px}}
 .fv-form{max-width:640px}
 /* gratis, in email */
 .gm{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:15.5px;line-height:1.45;color:var(--ink-2);max-width:44ch}
@@ -264,6 +310,26 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
     </div>
     <div class="ca-narrow rv">
       <p>Copri il logo della tua homepage. Poi quello del vicino.<br>Se le frasi si scambiano, per l'ospite valete uguale.<br>E tra due hotel che valgono uguale, vince quello che costa meno.</p>
+    </div>
+    <figure class="cl rv">
+      <div class="cl-pair" role="img" aria-label="Due homepage di hotel affiancate, con il logo sfocato e la stessa frase: «Accogliente, a due passi dal mare». Una costa 92 euro a notte, l'altra 84: l'ospite sceglie quella che costa meno.">
+        <div class="cl-col"><div class="cl-site">
+          <div class="cl-bar"><i></i><i></i><i></i><span class="cl-url">www.hotel-<em>xxxxxxx</em>.it</span></div>
+          <div class="cl-nav"><span class="cl-logo">Hotel Bellavista</span><span class="cl-menu"><i></i><i></i><i></i></span></div>
+          <div class="cl-img"></div>
+          <div class="cl-body"><p class="cl-h">Accogliente, a due passi dal mare.</p><p class="cl-p">Camere confortevoli, colazione inclusa, wifi gratuito.</p><span class="cl-btn">Prenota ora</span></div>
+        </div><p class="cl-price">92 € a notte</p></div>
+        <span class="cl-vs" aria-hidden="true">=</span>
+        <div class="cl-col"><div class="cl-site">
+          <div class="cl-bar"><i></i><i></i><i></i><span class="cl-url">www.hotel-<em>xxxxxxx</em>.it</span></div>
+          <div class="cl-nav"><span class="cl-logo">Hotel Bellavista</span><span class="cl-menu"><i></i><i></i><i></i></span></div>
+          <div class="cl-img"></div>
+          <div class="cl-body"><p class="cl-h">Accogliente, a due passi dal mare.</p><p class="cl-p">Camere confortevoli, colazione inclusa, wifi gratuito.</p><span class="cl-btn">Prenota ora</span></div>
+        </div><p class="cl-price win">84 € a notte<span>Sceglie questo</span></p></div>
+      </div>
+      <figcaption>Logo coperto, stessa frase: per l'ospite sono lo stesso hotel. Resta solo il prezzo.</figcaption>
+    </figure>
+    <div class="ca-narrow rv">
       <p class="ca-law">Se sembri uguale, costi di meno.</p>
     </div>
   </div>
@@ -282,10 +348,22 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
       <li><p><b>La voce da alzare per prima.</b> E quella da lasciare stare, se prima c'è altro da sistemare.</p></li>
     </ul>
     <div class="fv-ex rv">
-      <div class="fv-sc"><span>Hotel C</span><b>21</b><i>/ 40</i></div>
-      <span class="fv-arr" aria-hidden="true">→</span>
-      <div class="fv-sc on"><span>Hotel D</span><b>27</b><i>/ 40</i></div>
+      <div class="sg" role="img" aria-label="Punteggio su 40: Hotel C 21, Hotel D 27">
+        <div class="sg-track"><span class="sg-fill"></span><span class="sg-gain"></span>
+          <span class="sg-m" style="left:52.5%"><b>21</b><i>Hotel C</i></span>
+          <span class="sg-m on" style="left:67.5%"><b>27</b><i>Hotel D</i></span>
+        </div>
+        <div class="sg-ticks" aria-hidden="true"><span style="left:0">0</span><span style="left:25%">10</span><span style="left:50%">20</span><span style="left:75%">30</span><span style="left:100%">40</span></div>
+      </div>
       <p><b>Esempio dalla guida:</b> stesso hotel a Cattolica, stesse camere, stesso staff. Cambia una sola voce: il punteggio passa da 21 a 27. <em>(Esempio inventato per spiegare il metodo, non un hotel reale.)</em></p>
+    </div>
+    <div class="pv rv">
+      <p class="pv-h">Uno sguardo dentro la guida</p>
+      <div class="pv-row">
+        <figure><div class="pv-pg"><img src="/assets/guida/anteprima-10.webp" width="600" height="849" loading="lazy" alt="Pagina 10 della guida, con la formula coperta"><span class="pv-lock">La formula è coperta. È nella guida.</span></div><figcaption><b>p. 10</b> La formula del valore</figcaption></figure>
+        <figure><div class="pv-pg"><img src="/assets/guida/anteprima-19.webp" width="600" height="849" loading="lazy" alt="Pagina 19 della guida: nove hotel a confronto, con punteggi su 40 e fatturato"></div><figcaption><b>p. 19</b> Nove hotel a confronto</figcaption></figure>
+        <figure><div class="pv-pg"><img src="/assets/guida/anteprima-26.webp" width="600" height="849" loading="lazy" alt="Pagina 26 della guida: le tre domande e il riquadro per il tuo punteggio su 40"></div><figcaption><b>p. 26</b> Il tuo punteggio su 40</figcaption></figure>
+      </div>
     </div>
     <div class="btn-row rv" style="margin-top:28px;flex-direction:column;align-items:flex-start;gap:12px"><a href="#form" class="btn">Calcola il mio punteggio <span class="arr">→</span></a><p class="gm"><svg class="gm-ic" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span><b>Gratis.</b> Il PDF si apre subito e ti arriva anche in email.</span></p></div>
   </div>
