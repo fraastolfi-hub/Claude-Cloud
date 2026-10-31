@@ -90,7 +90,7 @@ Lead magnet «Che hotel sei?», stessa infrastruttura della cassetta. Pagine noi
 
 - `/guida/` · form `guida`: nome, email, camere (in fasce), privacy, `consenso_email` facoltativo. Dopo l'invio porta a `/guida/grazie/`.
 - `/guida/` · dal 31 ottobre 2026 è la v3 corta «La formula del valore del tuo hotel». `/guida/formula/` rimanda qui.
-- `/guida/` · form in due passi (nome+email, poi camere e consenso facoltativo); privacy come riga informativa (campo nascosto `privacy`). Pop-up d'uscita con un secondo form `guida` solo email (niente camere: in Brevo il contatto resta senza CAMERE). Barra fissa su telefono verso `#form`.
+- `/guida/` · form in due passi (nome+email, poi camere e consenso facoltativo); privacy come riga informativa (campo nascosto `privacy`). Pop-up d'uscita con un secondo form `guida`: email e camere. Pagina di ringraziamento senza camere: mostra libro e smontaggio. Mail 6 (template Brevo 81) senza CAMERE: tutte e due le proposte. Barra fissa su telefono verso `#form`.
 - Evento `form_start` (tutti i form `data-hp-form`, una volta per visita, parametri `form` e `posizione` pagina/popup): in GTM serve un trigger Evento personalizzato `form_start` collegato a un tag GA4.
 - `/guida/conti/` · la v2.1 precedente (cinque conti + calcolatore `#conto-sconto`), noindex: la usa la mail 2 della sequenza. Stesso form `guida`; in Brevo si distingue dall'attributo PAGINA.
 - `/guida/grazie/` · link al PDF e una sola proposta: smontaggio se 40+ camere, libro altrimenti (dal campo camere). Qui parte il Lead (`generate_lead`, form `guida`).

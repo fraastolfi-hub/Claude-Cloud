@@ -122,10 +122,11 @@
 <script src="/assets/site.js"></script>
 <script>
 (function(){
-  // un'unica proposta: smontaggio dalle 40 camere in su, libro altrimenti
+  // un'unica proposta: smontaggio dalle 40 camere in su, libro sotto
   var cm = ''; try { cm = sessionStorage.getItem('hp-camere') || ''; } catch (e) {}
   var big = cm === '40-80' || cm === 'oltre 80';
-  [].forEach.call(document.querySelectorAll('[data-offer]'), function(s){ s.hidden = s.getAttribute('data-offer') !== (big ? 'smontaggio' : 'libro'); });
+  // camere non indicate: si mostrano tutte e due le proposte
+  [].forEach.call(document.querySelectorAll('[data-offer]'), function(s){ s.hidden = cm ? s.getAttribute('data-offer') !== (big ? 'smontaggio' : 'libro') : false; });
   var id = null; try { id = sessionStorage.getItem('hp-lead'); sessionStorage.removeItem('hp-lead'); } catch (e) {}
   if (id && window.HPtrack) HPtrack('lead', { form: 'guida' }, { eventID: id });
 })();

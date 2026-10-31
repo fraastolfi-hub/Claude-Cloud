@@ -256,7 +256,6 @@
   .hp-f b{font-size:12px}
 }
 @media (prefers-reduced-motion:reduce){.hp-m{animation:none;transform:rotate(var(--r,0deg))}}
-.hero-why{margin-top:26px!important;padding-top:20px;border-top:1px solid var(--line);font-size:17px!important;max-width:44ch}
 /* gratis, in email */
 .gm{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:15.5px;line-height:1.45;color:var(--ink-2);max-width:44ch}
 .gm-ic{flex:none;width:22px;height:22px;margin-top:-1px;padding:3px;border-radius:7px;background:var(--yellow);color:var(--inchiostro);border:1.5px solid var(--inchiostro);box-sizing:border-box}
@@ -299,7 +298,6 @@
         <a href="#form" class="btn">Voglio la formula <span class="arr">→</span></a>
       </div>
       <p class="gm"><svg class="gm-ic" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span><b>Gratis.</b> Il PDF si apre subito e ti arriva anche in email.</span></p>
-      <p class="gd-sub hero-why">Se il valore è basso, l'ospite sceglie il prezzo.<br>E tu paghi Booking, l'agenzia, lo sconto.</p>
     </div>
     <div class="ca-visual">
       <div class="hp">
@@ -325,7 +323,7 @@
       <h2>Quando il valore è basso, <em>decide il prezzo.</em></h2>
     </div>
     <div class="ca-narrow rv">
-      <p>Copri il logo della tua homepage. Poi quello del vicino.<br>Se le frasi si scambiano, per l'ospite valete uguale.<br>E tra due hotel che valgono uguale, vince quello che costa meno.</p>
+      <p>Copri il logo della tua homepage. Poi quello del vicino.<br>Se le frasi si scambiano, per l'ospite valete uguale.<br>E tra due hotel che valgono uguale, vince quello che costa meno.<br>Così paghi Booking, l'agenzia, lo sconto.</p>
     </div>
     <figure class="cl rv">
       <div class="cl-pair" role="img" aria-label="Due homepage di hotel affiancate, con il logo sfocato e la stessa frase: «Accogliente, a due passi dal mare». Una costa 92 euro a notte, l'altra 84: l'ospite sceglie quella che costa meno.">
@@ -490,6 +488,14 @@
       <input type="hidden" name="form-name" value="guida"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value=""><input type="hidden" name="privacy" value="informativa letta (invio del modulo)">
       <p hidden><label>Non compilare: <input name="bot-field"></label></p>
       <div class="field"><label for="x-email">La tua email</label><input id="x-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: la guida arriva qui.</span></div>
+      <div class="field"><label for="x-camere">Quante camere ha la tua struttura?</label>
+        <select id="x-camere" name="camere" required>
+          <option value="" selected disabled>Scegli</option>
+          <option>meno di 20</option>
+          <option>20-40</option>
+          <option>40-80</option>
+          <option>oltre 80</option>
+        </select><span class="em">Scegli una voce: così ti mando quello che serve alla tua struttura.</span></div>
       <label class="check opt"><input type="checkbox" name="consenso_email" value="sì"><span>Voglio ricevere anche le mail successive su posizionamento e libro. <em>(facoltativo)</em></span></label>
       <button class="btn" type="submit">Mandami la formula gratis <span class="arr">→</span></button>
       <p class="form-foot">Inviando dichiari di aver letto la <a href="/privacy-policy/">privacy policy</a>.</p>
