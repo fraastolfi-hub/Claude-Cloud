@@ -397,7 +397,7 @@ P.append(conto(4, '02', 'Il mare <span class="hl">d\'agosto.</span>', ill_spiagg
   <div class="chips" style="margin:8px 0 10px;gap:6px"><span class="chip" style="background:#fff;text-decoration:line-through;color:var(--ink3)">accogliente</span><span class="chip" style="background:#fff;text-decoration:line-through;color:var(--ink3)">confortevole</span><span class="chip" style="background:#fff;text-decoration:line-through;color:var(--ink3)">immerso nel verde</span><span class="chip" style="background:#fff;text-decoration:line-through;color:var(--ink3)">a due passi dal mare</span></div>
   <div class="card" style="margin-top:4px"><span class="kick" style="display:block;margin-bottom:5px">Il test del logo</span><p>Copri il logo della tua homepage. Poi copri quello del vicino. Se le due frasi si possono scambiare, per l'ospite siete lo stesso hotel.</p></div>
   <div style="margin-top:12px">{lines("E tra due hotel uguali, l'ospite fa l'unica cosa sensata.", "Guarda il prezzo.")}</div>
-  <p class="law"><span class="hl">Se sembri uguale, costi di meno.</span></p>'''))
+  <p class="law"><span class="hl">Se sembri uguale, il prezzo lo fanno i tuoi concorrenti.</span></p>'''))
 
 P.append(conto(5, '03', 'Il vicino abbassa <span class="hl">di dieci euro.</span>', ill_sconto(), f'''  {scene("Lo vedi sul channel manager.", "O te lo dice la ragazza della reception.", "E tu abbassi. Se no, scelgono lui.")}
   {lines("Funziona una settimana.", "Poi lui abbassa ancora.", "Poi tu.", "È una gara in cui vince chi perde più margine.")}
