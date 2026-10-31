@@ -193,7 +193,8 @@
 .cl-nav{display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
 .cl-logo{font:800 15px var(--display);filter:blur(5px);user-select:none;background:var(--lilac-soft);border-radius:6px;padding:2px 6px}
 .cl-menu{display:flex;gap:6px}.cl-menu i{width:22px;height:5px;border-radius:3px;background:var(--line)}
-.cl-img{height:86px;background:linear-gradient(180deg,#bfe3f2 0 45%,#7cc4d8 45% 62%,#f1dfb8 62%)}
+.cl-img{aspect-ratio:2/1;background:var(--mist)}
+.cl-img img{display:block;width:100%;height:100%;object-fit:cover}
 .cl-body{padding:14px}
 .cl-h{font:800 clamp(16px,1.6vw,19px)/1.2 var(--display);letter-spacing:-.015em;color:var(--ink)}
 .cl-p{margin-top:6px;font-size:13px;line-height:1.4;color:var(--muted)}
@@ -203,7 +204,7 @@
 .cl-price.win{color:var(--ink)}
 .cl-price span{background:var(--yellow);border:2px solid var(--inchiostro);border-radius:999px;padding:3px 10px;font:800 12px/1.2 var(--display);text-transform:uppercase;letter-spacing:.04em}
 .cl figcaption{margin-top:14px;font-size:15px;color:var(--muted);font-style:italic}
-@media (max-width:640px){.cl-pair{grid-template-columns:1fr 1fr;gap:10px}.cl-vs{display:none}.cl-img{height:56px}.cl-body{padding:10px}.cl-p,.cl-btn,.cl-menu{display:none}.cl-nav{padding:8px 10px}.cl-bar{padding:6px 8px}.cl-url{display:none}.cl-h{font-size:14px}.cl-price{font-size:15px}}
+@media (max-width:640px){.cl-pair{grid-template-columns:1fr 1fr;gap:10px}.cl-vs{display:none}.cl-body{padding:10px}.cl-p,.cl-btn,.cl-menu{display:none}.cl-nav{padding:8px 10px}.cl-bar{padding:6px 8px}.cl-url{display:none}.cl-h{font-size:14px}.cl-price{font-size:15px}}
 /* punteggio su 40 */
 .fv-ex{grid-template-columns:1fr!important}
 .sg{padding:34px 6px 0}
@@ -304,14 +305,14 @@
         <div class="cl-col"><div class="cl-site">
           <div class="cl-bar"><i></i><i></i><i></i><span class="cl-url">www.hotel-<em>xxxxxxx</em>.it</span></div>
           <div class="cl-nav"><span class="cl-logo">Hotel Bellavista</span><span class="cl-menu"><i></i><i></i><i></i></span></div>
-          <div class="cl-img"></div>
+          <div class="cl-img"><img src="/assets/guida/uguale-1.webp" width="640" height="320" loading="lazy" alt=""></div>
           <div class="cl-body"><p class="cl-h">Accogliente, a due passi dal mare.</p><p class="cl-p">Camere confortevoli, colazione inclusa, wifi gratuito.</p><span class="cl-btn">Prenota ora</span></div>
         </div><p class="cl-price">92 € a notte</p></div>
         <span class="cl-vs" aria-hidden="true">=</span>
         <div class="cl-col"><div class="cl-site">
           <div class="cl-bar"><i></i><i></i><i></i><span class="cl-url">www.hotel-<em>xxxxxxx</em>.it</span></div>
           <div class="cl-nav"><span class="cl-logo">Hotel Bellavista</span><span class="cl-menu"><i></i><i></i><i></i></span></div>
-          <div class="cl-img"></div>
+          <div class="cl-img"><img src="/assets/guida/uguale-2.webp" width="640" height="320" loading="lazy" alt=""></div>
           <div class="cl-body"><p class="cl-h">Accogliente, a due passi dal mare.</p><p class="cl-p">Camere confortevoli, colazione inclusa, wifi gratuito.</p><span class="cl-btn">Prenota ora</span></div>
         </div><p class="cl-price win">84 € a notte<span>Sceglie questo</span></p></div>
       </div>
