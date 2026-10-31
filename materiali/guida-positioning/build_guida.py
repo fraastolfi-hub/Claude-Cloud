@@ -431,7 +431,7 @@ P.append(page(8, cls='conto', body=f'''  <span class="tag">Il conto totale</span
   <p class="law" style="margin-top:12px">È uno solo.</p>
   {scene("Il mercato non vede un motivo per sceglierti.")}
   {lines("E quando il motivo non c'è, decide il prezzo.", "Il prezzo lo decide qualcun altro.")}
-  <div class="rule" style="margin-top:16px"><span class="kick">Il nome</span><b>Quel motivo ha un nome: posizionamento.</b><p>Nelle prossime pagine vediamo da cosa è fatto, e quale parte puoi cambiare da lunedì.</p></div>'''))
+  <div class="rule" style="margin-top:16px"><span class="kick">Il nome</span><b>Quel motivo ha un nome: posizionamento.</b><p>Nelle prossime pagine trovi la formula del valore del tuo hotel, e quale voce puoi cambiare da lunedì.</p></div>'''))
 
 # --- parte seconda
 
@@ -440,7 +440,7 @@ P.append('''<section class="page cover op2">
   <div class="op2-body">
     <p class="op2-n">Parte seconda</p>
     <h1 class="op2-h">Come funziona.</h1>
-    <p class="op2-sub">Da cosa è fatto il motivo per sceglierti. Le quattro componenti, i profili, nove hotel a confronto e le due regole che valgono per tutti.</p>
+    <p class="op2-sub">La formula del valore del tuo hotel: le quattro voci, i profili, nove hotel a confronto e le due regole che valgono per tutti.</p>
   </div>
   <div class="op2-ill">''' + svg2(ill_hotel_quattro()) + '''</div>
   <ol class="op2-toc"><li><b>01</b>Le basi</li><li><b>02</b>Le componenti</li><li><b>03</b>La scelta</li><li><b>04</b>I profili</li><li><b>05</b>I profili misti</li><li><b>06</b>Nove hotel</li><li><b>07</b>Le regole</li></ol>
@@ -452,9 +452,9 @@ P.append(page(9, f'''
   <p>Quello che il mercato pensa del tuo hotel è la somma di quattro cose.</p>
   <div style="margin-top:8px">{lines("Dove sei.", "Cosa hai costruito.", "Come lavori ogni giorno.", "Come ti racconti.")}</div>
   <div class="formula">
-    <span class="kick">La formula</span>
+    <span class="kick">La formula del valore del tuo hotel</span>
     <div class="chips"><span class="chip c-loc">Location</span><span class="op">+</span><span class="chip c-cap">Capitale</span><span class="op">+</span><span class="chip c-ops">Operations</span><span class="op">+</span><span class="chip c-nar">Narrativa</span></div>
-    <div class="res"><span class="op">=</span><span class="chip">Posizionamento di mercato</span><em>come ti vede il cliente</em></div>
+    <div class="res"><span class="op">=</span><span class="chip">Il valore commerciale del tuo hotel</span><em>quanto l'ospite è disposto a pagare per sceglierti</em></div>
   </div>
   {lines("Puoi vincere con una sola componente molto alta e le altre nella media.", "Puoi vincere con due o tre alte.", "Con tutte e quattro alte vinci quasi sempre. Ma succede di rado.", "Con tutte e quattro basse non vinci mai: sei un hotel che si sceglie solo per prezzo.")}
   <p style="margin-top:12px">Due parole che si confondono spesso. Il <b>posizionamento di mercato</b> è il risultato: come ti percepisce il cliente. La <b>narrativa</b> è una delle quattro componenti: come scegli di raccontarti.</p>
@@ -627,13 +627,13 @@ P.append(page(22, f'''
   <h2>Tre domande <span class="hl">prima di spendere un euro.</span></h2>
   <p class="lead">Rispondi con onestà. Nessuno ti guarda.</p>
   {q(1, 'La gestione tiene?', '<p>Guarda le recensioni degli ultimi due anni su Google, Booking e TripAdvisor. La media è sopra 4,3 su 5 (8,6 su Booking)? Lo staff è formato e stabile? I prezzi seguono il mercato? Rispondi in fretta a recensioni e segnalazioni?</p>', '<div class="no"><b>Se no:</b> il racconto non è la tua priorità adesso. Prima la gestione. Un racconto forte oggi ti farebbe più male che bene.</div><div class="si"><b>Se sì:</b> passa alla domanda due.</div>')}
-  {q(2, 'Qual è il tuo profilo?', '<p>Dai un voto da zero a dieci a ognuna delle quattro componenti. Senza barare. Sommale: è il tuo posizionamento di oggi.</p>', '<div class="n1"><b>Una componente domina</b> (una a nove o dieci, le altre sotto sette): il racconto deve amplificare quella. Sei un profilo location, capitale, operations o narrativa.</div><div class="n2"><b>Due o tre componenti alte:</b> il racconto deve parlare dell\'incrocio. Sei un profilo misto.</div><div class="n3"><b>Tutte tra sei e sette, nessuna che spicca:</b> la leva da costruire è il racconto. È l\'unica che puoi cambiare in fretta, senza grandi investimenti.</div>')}
+  {q(2, 'Qual è il tuo profilo?', '<p>Dai un voto da zero a dieci a ognuna delle quattro componenti. Senza barare. Sommale: è il valore del tuo hotel, oggi, su 40.</p>', '<div class="n1"><b>Una componente domina</b> (una a nove o dieci, le altre sotto sette): il racconto deve amplificare quella. Sei un profilo location, capitale, operations o narrativa.</div><div class="n2"><b>Due o tre componenti alte:</b> il racconto deve parlare dell\'incrocio. Sei un profilo misto.</div><div class="n3"><b>Tutte tra sei e sette, nessuna che spicca:</b> la leva da costruire è il racconto. È l\'unica che puoi cambiare in fretta, senza grandi investimenti.</div>')}
   <div class="votes"><span class="kick">I voti del tuo hotel, oggi</span>
     <div class="vt"><span>{icon('loc','var(--lsoft)',30)}Location</span><i></i><b>/10</b></div>
     <div class="vt"><span>{icon('cap','var(--tsoft)',30)}Capitale</span><i></i><b>/10</b></div>
     <div class="vt"><span>{icon('ops','var(--psoft)',30)}Operations</span><i></i><b>/10</b></div>
     <div class="vt"><span>{icon('nar','var(--yellow)',30)}Narrativa</span><i></i><b>/10</b></div>
-    <div class="vt tot"><span>Posizionamento di oggi</span><i></i><b>/40</b></div>
+    <div class="vt tot"><span>Il valore del tuo hotel, oggi</span><i></i><b>/40</b></div>
     <p class="vt-note">La componente più alta è il tuo motore. Quella più bassa ti dice dove guardare.</p>
   </div>'''))
 
