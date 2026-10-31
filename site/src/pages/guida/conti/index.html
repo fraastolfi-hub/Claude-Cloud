@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il tuo hotel paga tutti. La guida gratuita per hotel indipendenti · Hotel Positioning</title>
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Paghi Booking, paghi l'agenzia e ogni stagione riparti da zero? Una guida gratuita per capire che hotel sei e quale leva sposta davvero il tuo fatturato.">
+<link rel="canonical" href="https://hotelpositioning.com/guida/conti/">
+<meta property="og:title" content="Booking, l'agenzia, lo sconto. Il tuo hotel paga tutti."><meta property="og:description" content="Una guida gratuita di 30 pagine per capire che hotel sei, e da dove partire. Si legge in mezz'ora."><meta property="og:type" content="website">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/libro-og.jpg">
+<!-- @include head -->
+<style>
+/* landing della campagna: testata con il solo logo, un solo bottone ripetuto */
+.lp-top{background:var(--surface-cream);border-bottom:1px solid var(--line-soft)}
+.lp-top .wrap{display:flex;align-items:center;min-height:64px}
+.lp-foot{padding:28px 0}
+.lp-foot .legal{border:0;padding:0;margin:0}
+
+/* apertura */
+.hero{padding-top:clamp(32px,4.5vw,64px)}
+.ca-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:center}
+.ca-hero .eyebrow{justify-content:flex-start}
+.ca-hero h1{margin:16px 0 18px;font-size:clamp(36px,4.6vw,64px);max-width:15ch}
+.ca-sub{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--ink-2);max-width:40ch}
+.ca-offer{margin:20px 0 0;font:700 clamp(19px,1.7vw,22px)/1.35 var(--display);letter-spacing:-.015em;color:var(--ink);max-width:34ch}
+.ca-hero .btn-row{justify-content:flex-start;margin-top:24px}
+.ca-hero .micro{margin:14px 0 0}
+
+/* la griglia di Booking: cinquanta rettangoli, uno bordato di giallo */
+.ca-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:7px;background:var(--surface-white);padding:clamp(14px,2vw,22px);border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-md)}
+.ca-grid i{aspect-ratio:1.15;border-radius:6px;background:var(--line-soft)}
+.ca-grid i:nth-child(3n){background:var(--mist-2)}
+.ca-grid i.me{background:var(--surface-white);box-shadow:inset 0 0 0 3px var(--yellow),0 0 0 1.5px var(--inchiostro)}
+.ca-grid-cap{margin-top:14px;font-size:15px;color:var(--muted);text-align:center}
+@media (max-width:860px){
+  .ca-hero{grid-template-columns:minmax(0,1fr);gap:28px}
+  .ca-visual{order:-1}
+  .ca-grid{gap:5px;padding:12px}
+}
+
+/* il problema */
+.adjs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.adjs span{border-radius:999px;background:var(--surface-sand);padding:8px 14px;font:500 15px/1 var(--text);color:var(--muted);text-decoration:line-through;text-decoration-color:var(--muted)}
+.ca-narrow{max-width:720px}
+.ca-narrow p{font-size:19px;line-height:1.6;color:var(--ink-2)}
+.ca-narrow p + p{margin-top:14px}
+.ca-law{margin-top:26px!important;font:800 clamp(24px,2.6vw,32px)/1.2 var(--display)!important;letter-spacing:-.025em;color:var(--ink)!important}
+.ca-bridge{margin-top:22px!important;font:700 19px/1.4 var(--display)!important;color:var(--ink)!important}
+.ca-bridge::before{content:"→ ";color:var(--muted)}
+
+/* gli otto strumenti */
+.ca-tools{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;counter-reset:tl}
+.ca-tools li{background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:18px;box-shadow:var(--o-sm);padding:20px 22px;display:grid;grid-template-columns:40px 1fr;gap:6px 16px;align-items:start}
+.ca-tools li::before{counter-increment:tl;content:counter(tl,decimal-leading-zero);grid-row:span 2;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--yellow-soft);border:2px solid var(--inchiostro);font:800 14px var(--display);color:var(--inchiostro)}
+.ca-tools li:first-child::before{background:var(--yellow)}
+.ca-tools h3{font-size:19px;line-height:1.25}
+.ca-tools p{font-size:16px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:760px){.ca-tools{grid-template-columns:1fr}}
+
+/* da dove vengono */
+.ca-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+.ca-proof .stat{text-align:left}
+.ca-note{margin-top:18px;font-size:14px;line-height:1.55;color:var(--muted);max-width:80ch;font-style:italic}
+@media (max-width:760px){.ca-proof{grid-template-columns:1fr}}
+
+/* chi sono */
+.me-row{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(30px,5vw,64px);align-items:start}
+@media (max-width:860px){.me-row{grid-template-columns:1fr}.me-row .photo{max-width:320px}}
+
+/* per chi è */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.fit{grid-template-columns:1fr}}
+.fit .card h3{margin-bottom:16px}
+
+/* form */
+.ca-form-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:start}
+@media (max-width:900px){.ca-form-wrap{grid-template-columns:1fr}}
+.form h2{font-size:clamp(26px,2.6vw,34px);margin-bottom:6px}
+.form .sub{font-size:16px;margin-bottom:20px;color:var(--muted)}
+.form .field select:invalid{color:var(--muted)}
+.form .check + .check{margin-top:10px}
+.form .check.opt span{color:var(--ink-2)}
+.form .check.err{color:var(--cost-text)}
+.form .field.err .em{color:var(--inchiostro)}
+.ca-ps{margin-top:26px;font-size:17px;line-height:1.6;color:var(--ink-2);border-top:1px solid var(--line);padding-top:20px}
+.ca-ps strong{color:var(--ink)}
+@media (max-width:640px){
+  .sec{padding-top:64px;padding-bottom:64px}
+  .ca-narrow p{font-size:18px}
+}
+
+/* /guida/: copertina del PDF in apertura, cinque conti, causa */
+.gd-cover{position:relative;max-width:360px;margin:0 auto}
+.gd-cover img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:16px;box-shadow:var(--o-xl);transform:rotate(2deg)}
+.gd-cover .gd-formula{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;font:800 15px var(--display)}
+.gd-cover .gd-formula span{border:2px solid var(--inchiostro);border-radius:999px;padding:5px 11px;font:700 13px/1 var(--display)}
+.gd-sub{font-size:clamp(18px,1.6vw,21px);line-height:1.5;color:var(--ink-2)}
+.gd-sub em{color:var(--ink);font-style:italic;font-weight:600}
+.gd-bills{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gd-bills li{background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:18px;box-shadow:var(--o-sm);padding:20px 22px}
+.gd-bills li:last-child{grid-column:1/-1;background:var(--yellow-soft)}
+.gd-bills b{display:block;font:800 19px/1.25 var(--display);margin-bottom:8px}
+.gd-bills b span{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;border:2px solid var(--inchiostro);background:var(--yellow);font:900 13px var(--display);margin-right:10px;vertical-align:2px}
+.gd-bills p{font-size:16.5px;line-height:1.55;color:var(--ink-2)}
+.gd-bills p em{color:var(--ink);font-weight:600}
+.gd-know{margin:18px 0 8px;font:700 16px var(--display)}
+.gd-list{list-style:none;display:grid;gap:7px;max-width:44ch}
+.gd-list li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:17px;line-height:1.45;color:var(--ink-2)}
+.gd-list li::before{content:"";width:16px;height:16px;margin-top:4px;border-radius:50%;background:var(--green);border:2px solid var(--inchiostro)}
+.gd-list b{color:var(--ink)}
+.gd-stack{position:relative;max-width:500px;margin:0 auto;padding:10px 14px 18px}
+.gd-stack img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:14px}
+.gd-stack .gd-in{position:absolute;right:0;bottom:0;transform:rotate(5deg);box-shadow:var(--o-md)}
+.gd-stack .gd-cv{position:relative;transform:rotate(-3deg);box-shadow:var(--o-xl)}
+.gd-law{margin-top:10px!important;font:800 17px/1.3 var(--display)!important;color:var(--ink)!important}
+.gd-calc--sec{margin-top:22px;max-width:760px;border-radius:20px;box-shadow:var(--o-md);padding:22px 24px}
+.gd-calc--sec .gd-calc__h{font-size:clamp(20px,2vw,26px)!important;text-transform:none!important;letter-spacing:-.02em!important;line-height:1.2!important}
+.gd-calc{margin-top:16px;background:#fff;border:2px solid var(--inchiostro);border-radius:16px;padding:16px 18px}
+.gd-calc__h{font:800 13px/1 var(--display)!important;text-transform:uppercase;letter-spacing:.05em;color:var(--ink)!important;margin-bottom:12px}
+.gd-calc__row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.gd-calc label{display:flex;flex-direction:column;gap:6px;font:600 14px var(--display);color:var(--ink-2)}
+.gd-calc input{font:700 18px var(--display);padding:10px 12px;border:2px solid var(--inchiostro);border-radius:10px;background:var(--surface-cream);width:100%;box-sizing:border-box}
+.gd-calc input:focus-visible{outline:3px solid var(--yellow);outline-offset:1px}
+.gd-calc__out{margin-top:14px!important;font:700 18px/1.35 var(--display)!important;color:var(--ink)!important}
+.gd-calc__out b{display:inline!important;margin:0!important;font-size:inherit!important;background:var(--yellow);border-radius:6px;padding:0 6px;font-weight:900}
+.gd-calc__note{margin-top:6px!important;font-size:13.5px!important}
+@media (max-width:560px){.gd-calc__row{grid-template-columns:1fr}}
+@media (max-width:860px){.gd-stack{max-width:min(200px,50vw);padding:4px 6px 10px}.gd-stack img{width:100%}.gd-stack .gd-in{display:none}}
+.gd-bills li.gd-wide{grid-column:1/-1;background:var(--yellow-soft)}
+.gd-bills li:last-child{grid-column:auto;background:var(--surface-white)}
+.gd-four{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gd-four li{border:2px solid var(--inchiostro);border-radius:18px;box-shadow:var(--o-sm);padding:18px}
+.gd-four b{font:800 19px/1.2 var(--display)}
+.gd-four span{display:block;font:600 14px var(--display);color:var(--ink-2);margin-top:2px}
+.gd-four p{margin-top:10px;font-size:16.5px;color:var(--ink)}
+@media (max-width:900px){.gd-four{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.gd-four{grid-template-columns:1fr}}
+.gd-cmp{background:#fff;border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-md);overflow:hidden;max-width:900px}
+.gd-cmp__row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);border-top:1px solid var(--line)}
+.gd-cmp__row:first-child{border-top:0}
+.gd-cmp__row>span{padding:14px 16px;font-size:16px;line-height:1.45;color:var(--ink-2)}
+.gd-cmp__row>span[role=rowheader]{font:700 14px/1.35 var(--display);color:var(--ink);text-transform:uppercase;letter-spacing:.03em}
+.gd-cmp__row .d{background:var(--yellow-soft);color:var(--ink)}
+.gd-cmp__head>span{font:800 18px var(--display)!important;color:var(--ink)!important;text-transform:none!important}
+.gd-cmp__head .d{background:var(--yellow)!important}
+.gd-cmp .n{font:900 24px/1 var(--display);color:var(--ink)}
+@media (max-width:640px){.gd-cmp__row{grid-template-columns:1fr 1fr}.gd-cmp__row>span[role=rowheader]{grid-column:1/-1;padding-bottom:0}.gd-cmp__head>span:first-child{display:none}}
+.gd-note{margin-top:14px;font-size:15px;color:var(--muted)}
+.gd-one{margin-top:28px;font:800 clamp(24px,2.6vw,32px)/1.2 var(--display);letter-spacing:-.025em}
+@media (max-width:760px){.gd-bills{grid-template-columns:1fr}}
+@media (max-width:860px){.gd-cover{max-width:min(190px,46vw)}.gd-cover img{transform:rotate(2deg)}.gd-cover .gd-formula{display:none}}
+.gd-inside{list-style:none;display:grid;gap:12px;max-width:820px}
+.gd-inside li{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:16px;padding:16px 18px}
+.gd-inside li::before{content:"";width:28px;height:28px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='%23262521' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat;border:2px solid var(--inchiostro)}
+.gd-inside p{font-size:17px;line-height:1.55;color:var(--ink-2)}
+.gd-inside b{color:var(--ink)}
+.gd-close{text-align:center}
+.gd-close .btn-row{justify-content:center}
+.gd-close .ca-ps{max-width:680px;margin:30px auto 0;text-align:left}
+/* mappa del posizionamento, uguale alla homepage */
+.pmband{background:var(--night);color:var(--inchiostro);padding:clamp(80px,9vw,128px) 0;overflow:hidden;position:relative}
+.pmband::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 72% 40%,rgba(255,221,0,.08),transparent 65%);pointer-events:none}
+.pm-wrap{position:relative;display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(32px,5vw,72px);align-items:center;max-width:1240px}
+.pmband h2{margin:16px 0 30px;color:var(--inchiostro);font-size:clamp(34px,3.6vw,52px)}
+.pm-steps{list-style:none;display:grid;gap:8px;margin-bottom:32px;counter-reset:pm}
+.pm-steps li{counter-increment:pm;display:grid;grid-template-columns:30px 1fr;column-gap:14px;padding:14px 16px;border-radius:16px;transition:background .4s,opacity .4s;opacity:.45}
+.pm-steps li::before{content:counter(pm);grid-row:span 2;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:600 14px var(--display);background:var(--mist-2);color:var(--inchiostro);transition:background .4s,color .4s}
+.pm-steps li.on{opacity:1;background:var(--mist)}
+.pm-steps li.on::before{background:var(--yellow);color:#262521}
+.pm-steps b{font:600 17px/1.3 var(--display);letter-spacing:-.01em}
+.pm-steps span{font-size:15px;color:var(--inchiostro-2);line-height:1.45}
+.pm-replay{border:0;background:none;color:var(--inchiostro);font:600 15px var(--display);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--inchiostro-3)}
+.pm-replay:hover{text-decoration-color:var(--yellow)}
+.pm-fig{margin:0}
+.pm-fig figcaption{margin-top:12px;font-size:14px;color:var(--inchiostro-3)}
+.pmap{width:100%;height:auto;display:block;font-family:var(--text)}
+.pm-grid line{stroke:var(--cenere);stroke-width:2}
+.pm-grid line.soft{stroke:var(--mist-2);stroke-dasharray:4 8}
+.pm-axis{fill:var(--inchiostro-3);font-size:17px}
+.pm-occ circle{fill:var(--lilac-soft);stroke:var(--inchiostro);stroke-width:2}
+.pm-occ text{fill:var(--inchiostro-2);font-size:17px}
+.pm-dot{fill:#8f887c;transition:fill .8s,opacity .8s}
+.pm-note{fill:var(--inchiostro-3);font-size:16px;font-style:italic;transition:opacity .8s}
+.pm-free .ring{fill:rgba(255,221,0,0);stroke:var(--yellow);stroke-width:2;stroke-dasharray:6 7;opacity:0;transform-box:fill-box;transform-origin:center;transition:opacity .6s,fill .8s}
+.pm-free-t{fill:var(--yellow);font:600 19px var(--text);opacity:0;transition:opacity .6s}
+.pm-path{fill:none;stroke:var(--yellow);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);opacity:.85}
+.pm-you .core{fill:var(--inchiostro);transition:fill .5s}
+.pm-you .halo{fill:rgba(250,247,244,.16);transition:fill .5s}
+.pm-you-t{fill:var(--inchiostro);font:600 19px var(--text);transition:opacity .3s}
+.pmap.s2 .pm-free .ring,.pmap.s2 .pm-free-t{opacity:1}
+.pmap.s2 .pm-free .ring{animation:pmPulse 1.6s ease-in-out infinite}
+.pmap.s3 .pm-free .ring{animation:none;fill:rgba(255,221,0,.12);stroke-dasharray:0}
+.pmap.s3 .pm-dot{opacity:.45}
+.pmap.s3 .pm-note{opacity:.4}
+.pmap.s3 .pm-free-t{opacity:0}
+.pmap.s3 .pm-you .core{fill:var(--yellow)}
+.pmap.s3 .pm-you .halo{fill:rgba(255,221,0,.22)}
+@keyframes pmPulse{50%{transform:scale(1.08)}}
+@media (max-width:980px){.pm-wrap{grid-template-columns:1fr;gap:0}.pm-text{display:contents}.pm-text .num-tag{order:1;justify-self:start}.pmband h2{order:2;margin-bottom:26px}.pm-fig{order:3;margin-bottom:30px}.pm-steps{order:4}.pm-text .btn-row{order:5}}
+@media (max-width:600px){.pm-axis,.pm-occ text,.pm-note{font-size:36px}.pm-free-t,.pm-you-t{font-size:40px}.pm-note{display:none}.pm-occ text{display:none}}
+@media (prefers-reduced-motion:reduce){.pm-free .ring{animation:none!important}}
+</style>
+<!-- @include tema -->
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="lp-top"><div class="wrap"><span class="logo" aria-label="Hotel Positioning"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</span></div></header>
+
+<main id="main">
+
+<!-- ================= 1 · APERTURA ================= -->
+<section class="hero">
+  <div class="wrap ca-hero">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Guida gratuita · 30 pagine · per hotel indipendenti</span>
+      <h1>Booking, l'agenzia, lo sconto. <span class="hl in">Il tuo hotel paga tutti.</span></h1>
+      <p class="gd-sub">Quando l'ospite non vede un motivo per sceglierti, sceglie il prezzo.<br>E il prezzo lo decide qualcun altro.</p>
+      <p class="ca-offer">Questa guida ti aiuta a trovare quel motivo. Partendo da quello che il tuo hotel ha già.</p>
+      <p class="gd-know">In mezz'ora sai:</p>
+      <ul class="gd-list">
+        <li><span><b>quale delle quattro leve</b> ti fa pagare commissioni e sconti;</span></li>
+        <li><span><b>se la tua priorità è il racconto</b>, o se prima c'è altro da sistemare;</span></li>
+        <li><span><b>da dove partire lunedì</b>, senza toccare un mattone.</span></li>
+      </ul>
+      <div class="btn-row">
+        <a href="#form" class="btn">Scopri che hotel sei <span class="arr">→</span></a>
+      </div>
+      <p class="micro">Gratis. Nome ed email, il PDF si apre subito.</p>
+    </div>
+    <div class="ca-visual">
+      <div class="gd-stack">
+        <img class="gd-cv" src="/assets/guida/copertina.webp" srcset="/assets/guida/copertina.webp 620w, /assets/guida/copertina@2x.webp 1040w" sizes="(max-width:860px) 50vw, 500px" width="620" height="878" fetchpriority="high" alt="Copertina della guida «Il posizionamento, spiegato semplice a chi ha un hotel», di Francesco Astolfi">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2 · I CINQUE CONTI ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Cinque conti che paghi ogni anno. <em>Alcuni non li vedi.</em></h2>
+    </div>
+    <ol class="gd-bills rv">
+      <li><b><span>01</span>Booking.</b><p>Il 15-18% su ogni notte. Anche per chi ti ha cercato per nome.</p><p class="gd-law">Il problema non è pagarlo. È pagarlo per tutti.</p></li>
+      <li><b><span>02</span>Tutti uguali.</b><p>Copri il logo della tua homepage. Poi quello del vicino. Se le frasi si scambiano, per l'ospite siete lo stesso hotel.</p><p class="gd-law">Se sembri uguale, costi di meno.</p></li>
+      <li><b><span>03</span>Lo sconto.</b><p>Il vicino abbassa di dieci euro. Tu abbassi. Fai il conto una volta: 10 € × 40 camere × 100 notti.</p><p class="gd-law">Sono 40.000 euro. Il rifacimento dei bagni, regalato.</p>
+      </li>
+      <li><b><span>04</span>L'agenzia.</b><p>Ti porta clic. Su una pagina uguale ad altre cinquanta. L'ospite guarda, non trova un motivo, torna su Booking.</p><p class="gd-law">Non hai un problema di traffico. Hai un problema di motivo.</p></li>
+      <li class="gd-wide"><b><span>05</span>Ripartire da zero.</b><p>Ad aprile si rimettono gli ombrelloni. E si ricomprano i clienti. L'ospite dell'anno scorso non ricorda perché ha scelto te.</p><p class="gd-law">Quindi lo ripaghi. Lo stesso ospite. Due volte.</p></li>
+    </ol>
+    <div class="gd-calc gd-calc--sec rv" id="conto-sconto" aria-labelledby="calc-h">          <p class="gd-calc__h" id="calc-h">Quanto ti costa stare dietro al vicino?</p>
+        <div class="gd-calc__row">
+          <label>Sconto a notte (€)<input type="number" inputmode="numeric" min="1" max="500" value="10" id="calc-sconto"></label>
+          <label>Camere<input type="number" inputmode="numeric" min="1" max="2000" value="40" id="calc-camere"></label>
+          <label>Notti di apertura<input type="number" inputmode="numeric" min="1" max="366" value="100" id="calc-notti"></label>
+        </div>
+        <p class="gd-calc__out" aria-live="polite">Lo sconto ti costa <b id="calc-tot">40.000 €</b> l'anno.</p>
+        <a href="#form" class="btn" style="margin-top:16px">Scopri da dove partire <span class="arr">→</span></a>
+        <p class="gd-calc__note" style="margin-top:12px!important">Il conto suppone camere piene: con un'occupazione più bassa il numero scende, ma la logica resta.</p>
+      </div>
+    <p class="gd-one rv"><em>Cinque conti. Cinque fornitori.</em> <span class="hl">Una causa sola.</span></p>
+  </div>
+</section>
+
+<!-- ================= MAPPA DEL POSIZIONAMENTO (fascia a colore pieno) ================= -->
+<section class="pmband" id="mappa" aria-labelledby="pm-h">
+  <div class="wrap pm-wrap">
+    <div class="pm-text">
+      <span class="num-tag">Cosa fa il posizionamento</span>
+      <h2 id="pm-h">Esci dal gruppo. <em>Prendi la posizione libera.</em></h2>
+      <ol class="pm-steps" id="pmSteps">
+        <li class="on"><b>Oggi</b><span>Il tuo hotel è in mezzo a quelli che si somigliano. L’ospite li confronta sul prezzo. <em>E tu paghi i cinque conti.</em></span></li>
+        <li><b>La posizione libera</b><span>In quasi ogni zona c’è un motivo di scelta che nessuno occupa.</span></li>
+        <li><b>Posizionato</b><span>L’ospite riconosce il tuo hotel e lo sceglie per quel motivo, non per la tariffa.</span></li>
+      </ol>
+      <div class="btn-row"><a href="#form" class="btn">Scopri che hotel sei <span class="arr">→</span></a><button type="button" class="pm-replay" id="pmReplay">Rivedi lo spostamento</button></div>
+    </div>
+    <figure class="pm-fig">
+      <svg class="pmap" viewBox="0 0 1000 600" role="img" aria-labelledby="pm-t pm-d">
+          <title id="pm-t">Mappa del posizionamento</title>
+          <desc id="pm-d">Molti hotel simili sono raggruppati al centro della mappa, dove l’ospite le confronta sul prezzo. Il tuo hotel esce dal gruppo e raggiunge una posizione libera, più riconoscibile.</desc>
+          <g class="pm-grid">
+            <line x1="90" y1="45" x2="90" y2="530"/><line x1="90" y1="530" x2="960" y2="530"/>
+            <line class="soft" x1="90" y1="287" x2="960" y2="287"/><line class="soft" x1="525" y1="45" x2="525" y2="530"/>
+          </g>
+          <text class="pm-axis" x="96" y="30">Riconoscibile per l’ospite ↑</text>
+          <text class="pm-axis" x="960" y="566" text-anchor="end">Prezzo medio →</text>
+          <text class="pm-axis" x="96" y="518">Generico</text>
+          <g class="pm-occ">
+            <circle cx="215" cy="150" r="30"/><text x="215" y="207" text-anchor="middle">La più economica</text>
+            <circle cx="840" cy="120" r="30"/><text x="840" y="177" text-anchor="middle">Il cinque stelle storico</text>
+            <circle cx="430" cy="185" r="30"/><text x="430" y="242" text-anchor="middle">Il resort per famiglie</text>
+          </g>
+          <g class="pm-cluster"><circle class="pm-dot" cx="382" cy="426" r="9"/><circle class="pm-dot" cx="384" cy="392" r="9"/><circle class="pm-dot" cx="335" cy="396" r="9"/><circle class="pm-dot" cx="478" cy="423" r="9"/><circle class="pm-dot" cx="283" cy="441" r="9"/><circle class="pm-dot" cx="282" cy="332" r="9"/><circle class="pm-dot" cx="436" cy="378" r="9"/><circle class="pm-dot" cx="354" cy="477" r="9"/><circle class="pm-dot" cx="439" cy="455" r="9"/><circle class="pm-dot" cx="357" cy="374" r="9"/><circle class="pm-dot" cx="430" cy="342" r="9"/><circle class="pm-dot" cx="403" cy="460" r="9"/><circle class="pm-dot" cx="259" cy="391" r="9"/><circle class="pm-dot" cx="298" cy="415" r="9"/><circle class="pm-dot" cx="322" cy="446" r="9"/><circle class="pm-dot" cx="512" cy="431" r="9"/><circle class="pm-dot" cx="308" cy="473" r="9"/><circle class="pm-dot" cx="503" cy="386" r="9"/><circle class="pm-dot" cx="488" cy="352" r="9"/><circle class="pm-dot" cx="345" cy="432" r="9"/><circle class="pm-dot" cx="541" cy="419" r="9"/><circle class="pm-dot" cx="570" cy="420" r="9"/><circle class="pm-dot" cx="209" cy="385" r="9"/><circle class="pm-dot" cx="473" cy="393" r="9"/><circle class="pm-dot" cx="592" cy="357" r="9"/><circle class="pm-dot" cx="328" cy="343" r="9"/></g>
+          <text class="pm-note" x="400" y="510" text-anchor="middle">«Accogliente» · «A due passi dal mare» · «Confortevole»</text>
+          <g class="pm-free">
+            <circle class="ring" cx="690" cy="215" r="58"/>
+            <text class="pm-free-t" x="690" y="300" text-anchor="middle">Posizione libera</text>
+          </g>
+          <path class="pm-path" id="pmPath" d="M430 410 C 500 360, 560 300, 690 215"/>
+          <g class="pm-you" id="pmYou" transform="translate(430 410)">
+            <circle class="halo" r="26"/><circle class="core" r="12"/>
+          </g>
+          <text class="pm-you-t" id="pmYouT" x="430" y="452" text-anchor="middle">Il tuo hotel</text>
+        </svg>
+      <figcaption>Esempio. Con la guida capisci dove sta il tuo hotel oggi, e quale leva usare per spostarlo.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= 3 · LA CAUSA ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Un hotel è fatto di quattro cose. <em>Tre costano anni.</em></h2>
+    </div>
+    <ul class="gd-four rv">
+      <li style="background:var(--lilac-soft)"><b>Dove sei</b> <span>(location)</span><p>Non lo cambi.</p></li>
+      <li style="background:var(--teal-soft)"><b>Cosa hai costruito</b> <span>(capitale)</span><p>Lo rifai con un mutuo.</p></li>
+      <li style="background:var(--pink-soft)"><b>Come lavori</b> <span>(operations)</span><p>Lo sistemi in qualche stagione.</p></li>
+      <li style="background:var(--yellow)"><b>Come ti racconti</b> <span>(narrativa)</span><p><em>Lo puoi cambiare adesso.</em></p></li>
+    </ul>
+    <div class="ca-narrow rv" style="margin-top:28px">
+      <p>Quando il racconto manca, l'ospite confronta l'unica cosa che resta. Il prezzo. E il prezzo più basso, di solito, è su Booking.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 · UN ASSAGGIO ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Dalle pagine 19-20 della guida</span>
+      <h2>Stesso hotel. Stessa Cattolica. <em>Altro racconto.</em></h2>
+    </div>
+    <div class="gd-cmp rv" role="table" aria-label="Hotel C e hotel D a confronto">
+      <div class="gd-cmp__row gd-cmp__head" role="row"><span role="columnheader"><span class="hp-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Voce</span></span><span role="columnheader">Hotel C</span><span role="columnheader" class="d">Hotel D</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Racconto</span><span role="cell">«Famiglia e divertimento», come altri cinquanta sulla costa</span><span role="cell" class="d">«L'hotel dei triatleti del circuito di Misano»</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Camere, staff, struttura</span><span role="cell">50 camere</span><span role="cell" class="d">Le stesse</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Cosa fa di diverso</span><span role="cell">—</span><span role="cell" class="d">Deposito bici, nutrizionista, accordi con il circuito, apertura lunga per le gare d'autunno</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Posizionamento</span><span role="cell"><b class="n">21</b> / 40</span><span role="cell" class="d"><b class="n">27</b> / 40</span></div>
+      <div class="gd-cmp__row" role="row"><span role="rowheader">Fatturato nell'esempio</span><span role="cell"><b class="n">1,3 M€</b></span><span role="cell" class="d"><b class="n">2,0 M€</b></span></div>
+    </div>
+    <p class="gd-note rv"><em>Esempio inventato per spiegare il metodo, non un hotel reale.</em> Nella guida ce ne sono nove: da Positano all'agriturismo da dieci camere.</p>
+    <div class="btn-row rv" style="margin-top:24px">
+      <a href="#form" class="btn">Voglio vedere gli altri otto <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5 · COSA C'È DENTRO ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Cosa c'è dentro</span>
+      <h2>Trenta pagine. <em>Una diagnosi, non un corso.</em></h2>
+    </div>
+    <ul class="gd-inside rv">
+      <li><p><b>I cinque conti.</b> Booking, tutti uguali, lo sconto, l'agenzia, ripartire da zero. E la causa che li tiene insieme.</p></li>
+      <li><p><b>La formula delle quattro leve.</b> Quale fa il tuo fatturato, e quale lo frena.</p></li>
+      <li><p><b>I quattro profili.</b> Il motore del tuo hotel è il posto, la struttura, la gestione o il racconto? Cambia dove investire.</p></li>
+      <li><p><b>Nove hotel a confronto.</b> Stesso albergo, stesse camere, racconto diverso. <em>(Esempi per spiegare il metodo, non hotel reali.)</em></p></li>
+      <li><p><b>Le due trappole.</b> L'hotel che promette e non mantiene. E quello così di nicchia da restare vuoto.</p></li>
+      <li><p><b>L'autodiagnosi in tre domande.</b> Alla fine sai se la tua priorità è il racconto, o se prima c'è altro da sistemare.</p></li>
+    </ul>
+    <div class="btn-row rv" style="margin-top:28px"><a href="#form" class="btn">Scopri che hotel sei <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= 6 · UN CASO VERO ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Un caso vero</span>
+      <h2>E fuori <em>dagli esempi?</em></h2>
+    </div>
+    <div class="ca-narrow rv">
+      <p>Al Silva Splendid di Fiuggi il lavoro sul posizionamento ha portato a una scelta che quasi nessuno ha lo stomaco di fare: <em>meno tipi di ospite, non di più.</em></p>
+    </div>
+    <div class="stat-row ca-proof rv">
+      <div class="stat"><b>5,6 → 7 M€</b><span>fatturato in cinque anni*</span></div>
+      <div class="stat"><b>~×2</b><span>tariffa media*</span></div>
+      <div class="stat"><b>8,6 → 9</b><span>recensioni su Booking*</span></div>
+    </div>
+    <p class="ca-note">*Nello stesso periodo c'è stata una ristrutturazione, con investimenti importanti della proprietà. Il posizionamento ha dato la direzione, gli investimenti l'hanno resa credibile. La guida non promette risultati: ti aiuta a capire da dove partire.</p>
+  </div>
+</section>
+
+<!-- ================= 7 · CHI SONO ================= -->
+<section class="sec white">
+  <div class="wrap me-row">
+    <div class="rv">
+      <div class="photo">
+        <img src="/assets/img/francesco.webp" alt="Francesco Astolfi" loading="lazy" width="800" height="1000">
+        <span class="name">Francesco Astolfi</span>
+      </div>
+    </div>
+    <div>
+      <div class="sec-head" style="margin-bottom:24px">
+        <span class="num-tag">Chi sono</span>
+        <h2>Vent'anni di hotel, <em>da ogni lato.</em></h2>
+      </div>
+      <p class="rv" style="font-size:19px;max-width:40em">Ho portato TUI.it da zero a trenta milioni. Ho guidato il marketing di Atahotels, venti strutture. Ho diretto una web agency che lavorava solo per hotel. Poi ho aperto dieci locali con i miei soldi.</p>
+      <p class="rv" style="font-size:19px;max-width:40em;margin-top:14px">So cosa vuol dire guardare il conto a fine stagione e vedere quanto è andato in commissioni.</p>
+      <blockquote class="big-quote rv" style="font-size:clamp(24px,2.6vw,34px);margin-top:28px">I consulenti vendono consigli. Gli operatori vendono cicatrici.</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8 · PER CHI È ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Per chi è</span>
+      <h2>Scritta per l'hotel indipendente. <em>Non per tutti.</em></h2>
+    </div>
+    <div class="fit">
+      <div class="card rv">
+        <h3>È per te se</h3>
+        <ul class="check-list">
+          <li>Hai un hotel indipendente, e Booking pesa più di quanto vorresti.</li>
+          <li>Hai pagato un'agenzia o un sito nuovo, e i numeri sono rimasti uguali.</li>
+          <li>Vuoi capire dove mettere i soldi, prima di spenderne altri.</li>
+        </ul>
+      </div>
+      <div class="card rv d1">
+        <h3>Non è per te se</h3>
+        <ul class="check-list no">
+          <li>Lavori in una catena con un ufficio marketing.</li>
+          <li>Cerchi un trucco per riempire il mese prossimo.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9 · DOMANDE ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Domande</span>
+      <h2>Prima di scaricarla.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Quanto è lunga?</summary><div class="ans"><p>Trenta pagine, con molte illustrazioni. Si legge in mezz'ora, con un caffè.</p></div></details>
+      <details><summary>È uguale al libro?</summary><div class="ans"><p>No. La guida ti dice che hotel sei. Il libro ti dà il metodo per scrivere il tuo motivo.</p></div></details>
+      <details><summary>Poi mi chiamate?</summary><div class="ans"><p>No. Ti scrivo qualche email nelle settimane dopo, se me lo permetti. Ti cancelli con un clic.</p></div></details>
+      <details><summary>Vale per un B&amp;B o un agriturismo?</summary><div class="ans"><p>Sì. Nella guida c'è anche un agriturismo da dieci camere.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 · CHIUSURA E FORM ================= -->
+<section class="sec alt" id="form">
+  <div class="wrap ca-form-wrap">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="num-tag">Gratis</span>
+        <h2>Prima di pagare un'altra agenzia, <em>scopri che hotel sei.</em></h2>
+        <p class="lead">Trenta pagine. Mezz'ora. Gratis.</p>
+        <div class="btn-row" style="justify-content:flex-start;margin-top:18px"><a href="#guida-form" class="btn">Scopri che hotel sei <span class="arr">→</span></a></div>
+      </div>
+      <p class="ca-ps"><strong>P.S.</strong> Fai il conto dello sconto con i tuoi numeri. Dieci euro, per le tue camere, per le tue notti. Se il risultato ti dà fastidio, la guida è scritta per te.</p>
+    </div>
+    <form class="form rv d1" id="guida-form" name="guida" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" data-next="/guida/grazie/" novalidate>
+      <input type="hidden" name="form-name" value="guida"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value=""><input type="hidden" name="sconto_anno" value="">
+      <p hidden><label>Non compilare: <input name="bot-field"></label></p>
+      <div class="fields">
+        <div class="form-head"><span>La guida · PDF, 30 pagine</span><span data-prog-txt>0%</span></div>
+        <div class="prog"><i></i></div>
+        <h2>Che hotel sei?</h2>
+        <p class="sub">Il PDF si apre subito, e ti arriva anche per email. Mezz'ora, un caffè.</p>
+        <div class="field"><label for="g-nome">Nome</label><input id="g-nome" name="nome" autocomplete="given-name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
+        <div class="field"><label for="g-email">Email</label><input id="g-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: la guida arriva qui.</span></div>
+        <div class="field"><label for="g-camere">Quante camere ha la tua struttura?</label>
+          <select id="g-camere" name="camere" required>
+            <option value="" selected disabled>Scegli</option>
+            <option>meno di 20</option>
+            <option>20-40</option>
+            <option>40-80</option>
+            <option>oltre 80</option>
+          </select><span class="em">Scegli una voce: così ti mando quello che serve alla tua struttura.</span></div>
+        <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento a ricevere la guida via email.</span></label>
+        <label class="check opt"><input type="checkbox" name="consenso_email" value="sì"><span>Voglio ricevere anche le mail successive su posizionamento e libro. <em>(facoltativo)</em></span></label>
+        <button class="btn dark" type="submit" style="margin-top:18px">Mandami la guida <span class="arr">→</span></button>
+        <p class="form-foot">Gratis · il PDF si apre subito · ti cancelli con un clic.</p>
+      </div>
+      <div class="ok" role="status">
+        <div class="tick">✓</div>
+        <p class="big">Fatto.</p>
+        <p>Ti porto alla guida…</p>
+        <a href="/guida/grazie/" class="btn" style="margin-top:16px">Apri la guida <span class="arr">→</span></a>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot lp-foot"><div class="wrap"><div class="legal">
+  <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+  <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
+</div></div></footer>
+<!-- @include cookie-banner -->
+<script src="/assets/site.js"></script>
+<script>
+(function(){
+  var a=document.getElementById('calc-sconto'),b=document.getElementById('calc-camere'),c=document.getElementById('calc-notti'),o=document.getElementById('calc-tot');
+  if(!a) return;
+  function n(el){var v=parseFloat(String(el.value).replace(',','.'));return isFinite(v)&&v>0?v:0;}
+  function upd(){var v=Math.round(n(a)*n(b)*n(c));o.textContent=v.toLocaleString('it-IT')+' €';var h=document.querySelector('#guida-form input[name="sconto_anno"]');if(h)h.value=v;}
+  [a,b,c].forEach(function(el){el.addEventListener('input',upd);});upd();
+})();
+</script>
+<script>
+(function(){
+  var svg=document.querySelector('.pmap'); if(!svg) return;
+  var path=document.getElementById('pmPath'), you=document.getElementById('pmYou'), lab=document.getElementById('pmYouT');
+  var steps=[].slice.call(document.querySelectorAll('#pmSteps li')), len=path.getTotalLength(), timers=[], raf=0;
+  path.style.setProperty('--len',len);
+  function step(n){ steps.forEach(function(li,i){ li.classList.toggle('on', i===n-1); }); svg.classList.toggle('s2', n>=2); svg.classList.toggle('s3', n>=3); }
+  function place(t){ var p=path.getPointAtLength(len*t); you.setAttribute('transform','translate('+p.x+' '+p.y+')'); lab.setAttribute('x',p.x); lab.setAttribute('y',p.y+(t>.98?88:42)); path.style.strokeDashoffset=len*(1-t); }
+  function reset(){ timers.forEach(clearTimeout); timers=[]; cancelAnimationFrame(raf); step(1); place(0); lab.textContent='Il tuo hotel, oggi'; }
+  function run(){
+    reset();
+    if(HP.reduce){ step(3); place(1); lab.textContent='Il tuo hotel, posizionato'; return; }
+    timers.push(setTimeout(function(){ step(2); }, 900));
+    timers.push(setTimeout(function(){
+      var t0=performance.now(), D=2200;
+      lab.style.opacity=0;
+      (function tick(now){ var k=Math.min(1,(now-t0)/D), e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2; place(e);
+        if(k<1) raf=requestAnimationFrame(tick); else { step(3); lab.textContent='Il tuo hotel, posizionato'; lab.style.opacity=1; } })(t0);
+    }, 2100));
+  }
+  reset();
+  var done=false, io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && !done){ done=true; run(); } }); },{threshold:.45});
+  io.observe(svg);
+  document.getElementById('pmReplay').addEventListener('click', run);
+})();
+</script>
+</body>
+</html>

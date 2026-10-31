@@ -46,6 +46,8 @@ REDIRECTS = {
     "/privacy-policy": "/privacy-policy/",
     "/cassetta": "/cassetta/",
     "/guida": "/guida/",
+    "/guida/formula": "/guida/",
+    "/guida/formula/": "/guida/",
     "/vai/libro": "/vai/libro/",
 }
 

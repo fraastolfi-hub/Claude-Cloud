@@ -89,7 +89,8 @@ Landing per Meta ads a freddo: regala gli 8 strumenti del libro, poi propone il 
 Lead magnet «Che hotel sei?», stessa infrastruttura della cassetta. Pagine noindex, fuori dal menu.
 
 - `/guida/` · form `guida`: nome, email, camere (in fasce), privacy, `consenso_email` facoltativo. Dopo l'invio porta a `/guida/grazie/`.
-- `/guida/formula/` · v3 corta in prova («La formula del valore del tuo hotel»), per traffico freddo. Stesso form `guida`, stessa pagina di ringraziamento; in Brevo si distingue dall'attributo PAGINA (`/guida/formula/`). Si confronta con `/guida/` a parità di annunci.
+- `/guida/` · dal 31 ottobre 2026 è la v3 corta «La formula del valore del tuo hotel». `/guida/formula/` rimanda qui.
+- `/guida/conti/` · la v2.1 precedente (cinque conti + calcolatore `#conto-sconto`), noindex: la usa la mail 2 della sequenza. Stesso form `guida`; in Brevo si distingue dall'attributo PAGINA.
 - `/guida/grazie/` · link al PDF e una sola proposta: smontaggio se 40+ camere, libro altrimenti (dal campo camere). Qui parte il Lead (`generate_lead`, form `guida`).
 - PDF: `src/assets/guida/che-hotel-sei.pdf`. Sorgente in `materiali/guida-positioning/` (`python3 build_guida.py && node pdf.mjs`, poi copiare il PDF qui).
 - Funzione `invio`: lista `BREVO_LIST_GUIDA`; con il secondo consenso anche `BREVO_LIST_GUIDA_SEQUENZA`. Mail immediata `guidaMail` con il PDF e il P.S. diviso per camere. Conversions API come la cassetta.
