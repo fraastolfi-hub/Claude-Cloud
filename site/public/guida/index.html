@@ -171,18 +171,6 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 .gd-close .ca-ps{max-width:680px;margin:30px auto 0;text-align:left}
 /* v3: la formula coperta */
 .ca-hero .gd-sub + .gd-sub{margin-top:14px}
-.fv{margin:0;background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:22px;box-shadow:var(--o-md);padding:clamp(20px,2.6vw,30px)}
-.fv-eq{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-.fv-k{display:inline-grid;place-items:center;min-width:64px;height:56px;padding:0 14px;border:2px solid var(--inchiostro);border-radius:14px;font:800 clamp(17px,1.7vw,21px)/1 var(--display)}
-.fv-loc{background:var(--lilac-soft)}
-.fv-q{background:var(--yellow);font-size:28px}
-.fv-op{font:800 24px var(--display);color:var(--muted)}
-.fv-eqs{font:800 26px var(--display);margin-left:2px}
-.fv-res{flex-basis:100%;margin-top:6px;font:900 clamp(24px,2.6vw,32px)/1.15 var(--display);letter-spacing:-.025em}
-.fv figcaption{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:16px;line-height:1.5;color:var(--ink-2);font-style:italic}
-.fv-cover{max-width:200px;margin:-18px 0 0 auto;position:relative}
-.fv-cover img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:12px;box-shadow:var(--o-xl);transform:rotate(4deg)}
-@media (max-width:860px){.ca-visual{order:0}.fv-cover{display:none}.fv-k{height:48px;min-width:52px}}
 .fv-ex{margin-top:26px;max-width:820px;display:grid;grid-template-columns:auto auto auto 1fr;gap:14px 16px;align-items:center;background:var(--yellow-soft);border:2px solid var(--inchiostro);border-radius:18px;padding:18px 20px}
 .fv-sc{display:grid;justify-items:center;background:#fff;border:2px solid var(--inchiostro);border-radius:14px;padding:8px 14px;min-width:84px}
 .fv-sc.on{background:var(--yellow)}
@@ -241,13 +229,36 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 .pv figcaption b{display:block;font:800 12px var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
 @media (max-width:560px){.pv-row{gap:10px}.pv-lock{font-size:10px;padding:5px 4px}.pv figcaption{font-size:12.5px}}
 .fv-form{max-width:640px}
+/* apertura: la guida, con la formula coperta appoggiata sopra */
+.hv{position:relative;padding:8px 0 70px;max-width:520px;margin-left:auto}
+.hv-book{position:relative;width:min(360px,72%);margin-left:auto;margin-right:6%}
+.hv-book img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:14px;box-shadow:var(--o-xl);transform:rotate(3deg)}
+.hv-badge{position:absolute;right:-30px;top:-30px;width:104px;height:104px;border-radius:50%;display:grid;place-content:center;text-align:center;background:var(--yellow);border:2px solid var(--inchiostro);box-shadow:var(--o-sm);transform:rotate(10deg);font:900 21px/1 var(--display);letter-spacing:-.02em}
+.hv-badge small{display:block;margin-top:5px;font:800 10.5px/1.15 var(--display);letter-spacing:.04em;text-transform:uppercase}
+.hv-f{position:absolute;left:0;bottom:0;width:min(350px,78%);margin:0;background:var(--inchiostro);color:var(--surface-cream);border:2px solid var(--inchiostro);border-radius:18px;box-shadow:6px 6px 0 var(--lilac);padding:18px 20px;transform:rotate(-2deg)}
+.hv-k{display:block;font:800 11px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+.hv-eq{display:flex;align-items:center;gap:6px}
+.hv-eq i{font:800 16px var(--display);font-style:normal;color:var(--surface-cream);opacity:.7}
+.hv-c{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 10px;border-radius:999px;font:800 14px/1 var(--display);color:var(--inchiostro)}
+.hv-loc{background:var(--lilac-soft)}
+.hv-q{background:var(--yellow);font-size:17px;padding:0}
+.hv-res{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18)}
+.hv-res i{font:800 18px var(--display);font-style:normal}
+.hv-res span{background:var(--yellow);color:var(--inchiostro);border-radius:999px;padding:7px 14px;font:800 15px/1 var(--display)}
+.hv-f figcaption{margin-top:12px;font-size:13.5px;line-height:1.45;color:var(--surface-cream);opacity:.75}
+@media (max-width:860px){
+  .ca-visual{order:0}
+  .hv{margin:6px auto 0;max-width:400px;padding:0}
+  .hv-book{width:190px;margin:0 auto}
+  .hv-badge{width:84px;height:84px;right:-46px;top:-18px;font-size:17px}
+  .hv-badge small{font-size:9px}
+  .hv-f{position:relative;width:auto;margin-top:-34px;transform:rotate(-1deg)}
+}
+@media (max-width:380px){.hv-c{padding:0 8px;font-size:13px}.hv-eq{gap:4px}}
 /* gratis, in email */
 .gm{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:15.5px;line-height:1.45;color:var(--ink-2);max-width:44ch}
 .gm-ic{flex:none;width:22px;height:22px;margin-top:-1px;padding:3px;border-radius:7px;background:var(--yellow);color:var(--inchiostro);border:1.5px solid var(--inchiostro);box-sizing:border-box}
 .gm b{color:var(--ink)}
-.fv{position:relative}
-.fv-free{position:absolute;right:-10px;top:-16px;transform:rotate(4deg);background:var(--yellow);border:2px solid var(--inchiostro);border-radius:999px;padding:6px 12px;font:800 12.5px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;box-shadow:var(--o-sm)}
-@media (max-width:860px){.fv-free{right:8px;top:-14px}}
 /* pop-up d'uscita con l'email */
 .ex-form{margin-top:4px}
 .ex-form .field{margin-bottom:12px}
@@ -290,15 +301,18 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
       <p class="gm"><svg class="gm-ic" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span><b>Gratis.</b> Il PDF si apre subito e ti arriva anche in email.</span></p>
     </div>
     <div class="ca-visual">
-      <figure class="fv">
-        <span class="fv-free">Gratis · PDF in email</span>
-        <div class="fv-eq" role="img" aria-label="Location più tre voci coperte uguale il valore del tuo hotel">
-          <span class="fv-k fv-loc">Location</span><span class="fv-op">+</span><span class="fv-k fv-q">?</span><span class="fv-op">+</span><span class="fv-k fv-q">?</span><span class="fv-op">+</span><span class="fv-k fv-q">?</span>
-          <span class="fv-res"><span class="fv-eqs">=</span> il valore del tuo hotel</span>
+      <div class="hv">
+        <div class="hv-book">
+          <img src="/assets/guida/copertina.webp" srcset="/assets/guida/copertina.webp 620w, /assets/guida/copertina@2x.webp 1040w" sizes="(max-width:860px) 190px, 360px" width="620" height="878" fetchpriority="high" alt="Copertina della guida «Il posizionamento, spiegato semplice a chi ha un hotel», di Francesco Astolfi">
+          <span class="hv-badge">Gratis<small>PDF in email</small></span>
         </div>
-        <figcaption>Una voce la conosci già. Tre costano anni. Una si cambia da lunedì.</figcaption>
-      </figure>
-      <div class="fv-cover"><img src="/assets/guida/copertina.webp" srcset="/assets/guida/copertina.webp 620w, /assets/guida/copertina@2x.webp 1040w" sizes="200px" width="620" height="878" fetchpriority="high" alt="Copertina della guida «Il posizionamento, spiegato semplice a chi ha un hotel», di Francesco Astolfi"></div>
+        <figure class="hv-f">
+          <span class="hv-k">La formula del valore</span>
+          <div class="hv-eq" role="img" aria-label="Location più tre voci coperte uguale il valore del tuo hotel"><span class="hv-c hv-loc">Location</span><i>+</i><span class="hv-c hv-q">?</span><i>+</i><span class="hv-c hv-q">?</span><i>+</i><span class="hv-c hv-q">?</span></div>
+          <p class="hv-res"><i>=</i><span>il valore del tuo hotel</span></p>
+          <figcaption>Una voce la conosci già. Le altre tre sono nella guida.</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
