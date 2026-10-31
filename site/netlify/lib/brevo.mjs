@@ -193,7 +193,7 @@ export async function metaLead(d, headers = {}) {
   };
   const body = { data: [{
     event_name: 'Lead', event_time: Math.floor(Date.now() / 1000), action_source: 'website',
-    event_source_url: `https://hotelpositioning.com/${d['form-name']}/grazie/`, ...(d.evento ? { event_id: d.evento } : {}),
+    event_source_url: `https://hotelpositioning.com/${d['form-name'] === 'guida' && /\/guida\/conti\//.test(d.pagina || '') ? 'guida/conti' : d['form-name']}/grazie/`, ...(d.evento ? { event_id: d.evento } : {}),
     user_data: user, custom_data: { form: d['form-name'], struttura: d.struttura || '', camere: d.camere || '' },
   }], ...(process.env.META_TEST_EVENT_CODE ? { test_event_code: process.env.META_TEST_EVENT_CODE } : {}) };
   const r = await fetch(`https://graph.facebook.com/v21.0/${pixel}/events?access_token=${encodeURIComponent(token)}`, {
@@ -209,7 +209,9 @@ export function guidaMail(d) {
   const nome = ((d.nome || '').trim().split(/\s+/)[0]) || '';
   const pdf = 'https://hotelpositioning.com/assets/guida/che-hotel-sei.pdf';
   const pre = 'C\'è un conto che quasi nessuno fa.';
-  const a = [`Ciao${nome ? ' ' + nome : ''},`, 'ecco la formula del valore del tuo hotel. È nella guida:'];
+  // due pagine, due promesse: /guida/conti/ (i cinque conti) e /guida/ (la formula del valore)
+  const conti = /\/guida\/conti\//.test(d.pagina || '');
+  const a = [`Ciao${nome ? ' ' + nome : ''},`, conti ? 'ecco la guida:' : 'ecco la formula del valore del tuo hotel. È nella guida:'];
   const b = [
     'Comincia da pagina 2: la sera delle fatture.\nPoi, a pagina 5, fermati.',
     'È il conto dello sconto.\nIl vicino abbassa di dieci euro. Tu abbassi.\nLì c\'è un conto che quasi nessuno fa.\nFallo con i tuoi numeri. Ci vuole un minuto.',
@@ -223,7 +225,7 @@ export function guidaMail(d) {
     sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
     to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
     replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
-    subject: 'La formula del valore del tuo hotel. Prima, pagina 5.',
+    subject: conti ? 'La tua guida. Fermati a pagina 5.' : 'La formula del valore del tuo hotel. Prima, pagina 5.',
     tags: ['guida-email-1'],
     textContent: [...a, `Apri la guida → ${pdf}`, ...b, `P.S. ${ps}`].join('\n\n'),
     htmlContent: `<div style="display:none;max-height:0;overflow:hidden;opacity:0">${esc(pre)}</div><div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${a.map(para).join('')}<p style="margin:6px 0 22px"><a href="${pdf}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri la guida →</a></p>${b.map(para).join('')}<p style="margin:0 0 14px"><strong>P.S.</strong> ${esc(ps)}</p></div>`,
