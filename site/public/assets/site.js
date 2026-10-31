@@ -222,7 +222,10 @@
     if (cfg[3]) { cta.innerHTML = cfg[3] + ' <span class="arr">→</span>'; cta.href = cfg[4] === '#close' ? '#' : cfg[4]; } else cta.hidden = true;
     var card = exitEl.querySelector('.exit-card');
     document.getElementById('exit-no').textContent = cfg[5];
+    // prova: ?exit=1 nell'indirizzo apre il pop-up dopo un secondo, ignorando le regole qui sotto
+    var force = /[?&]exit=1\b/.test(location.search);
     var blocked = function(){
+      if (force) return false;
       if (Date.now() < armedAt || sstore('hp-exit') || $$('form.sent').length) return true;
       var snooze = parseInt(store('hp-exit-snooze') || '0', 10); if (snooze > Date.now()) return true;
       // non disturbare chi sta compilando un form
@@ -254,6 +257,7 @@
     });
     // desktop: il mouse esce verso la barra del browser
     document.addEventListener('mouseout', function(e){ if (!e.relatedTarget && e.clientY <= 0) open(); });
+    if (force) setTimeout(open, 1000);
     // mobile: dopo metà pagina, una risalita veloce verso l'alto
     var lastY = scrollY, lastT = Date.now(), deep = false;
     addEventListener('scroll', function(){
