@@ -183,6 +183,27 @@
 .fv-ex p b{color:var(--ink)}
 @media (max-width:640px){.fv-ex{grid-template-columns:auto auto auto}.fv-ex p{grid-column:1/-1}}
 .fv-form{max-width:640px}
+/* gratis, in email */
+.gm{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:15.5px;line-height:1.45;color:var(--ink-2);max-width:44ch}
+.gm-ic{flex:none;width:22px;height:22px;margin-top:-1px;padding:3px;border-radius:7px;background:var(--yellow);color:var(--inchiostro);border:1.5px solid var(--inchiostro);box-sizing:border-box}
+.gm b{color:var(--ink)}
+.fv{position:relative}
+.fv-free{position:absolute;right:-10px;top:-16px;transform:rotate(4deg);background:var(--yellow);border:2px solid var(--inchiostro);border-radius:999px;padding:6px 12px;font:800 12.5px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;box-shadow:var(--o-sm)}
+@media (max-width:860px){.fv-free{right:8px;top:-14px}}
+/* pop-up d'uscita con l'email */
+.ex-form{margin-top:4px}
+.ex-form .field{margin-bottom:12px}
+.ex-form .check{font-size:14px}
+.ex-form .btn{width:100%;margin-top:14px;justify-content:center}
+.ex-form .form-foot{margin-top:10px}
+#exit .exit-btns:has(#exit-cta[hidden]){display:none}
+/* barra fissa su telefono */
+.gd-bar{position:fixed;left:0;right:0;bottom:0;z-index:80;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--surface-cream);border-top:2px solid var(--inchiostro);transform:translateY(110%);transition:transform .25s}
+.gd-bar.on{transform:none}
+.gd-bar .btn{width:100%;justify-content:center}
+@media (min-width:861px){.gd-bar{display:none!important}}
+@media (max-width:860px){.lp-foot{padding-bottom:96px}}
+@media (prefers-reduced-motion:reduce){.gd-bar{transition:none}}
 .me-row .ca-proof .stat b{font-size:clamp(24px,2.3vw,32px);white-space:nowrap}
 .me-row .ca-proof{gap:12px}
 </style>
@@ -207,10 +228,11 @@
       <div class="btn-row">
         <a href="#form" class="btn">Voglio la formula <span class="arr">→</span></a>
       </div>
-      <p class="micro">Gratis. Nome ed email, il PDF si apre subito.</p>
+      <p class="gm"><svg class="gm-ic" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span><b>Gratis.</b> Il PDF si apre subito e ti arriva anche in email.</span></p>
     </div>
     <div class="ca-visual">
       <figure class="fv">
+        <span class="fv-free">Gratis · PDF in email</span>
         <div class="fv-eq" role="img" aria-label="Location più tre voci coperte uguale il valore del tuo hotel">
           <span class="fv-k fv-loc">Location</span><span class="fv-op">+</span><span class="fv-k fv-q">?</span><span class="fv-op">+</span><span class="fv-k fv-q">?</span><span class="fv-op">+</span><span class="fv-k fv-q">?</span>
           <span class="fv-res"><span class="fv-eqs">=</span> il valore del tuo hotel</span>
@@ -253,7 +275,7 @@
       <div class="fv-sc on"><span>Hotel D</span><b>27</b><i>/ 40</i></div>
       <p><b>Esempio dalla guida:</b> stesso hotel a Cattolica, stesse camere, stesso staff. Cambia una sola voce: il punteggio passa da 21 a 27. <em>(Esempio inventato per spiegare il metodo, non un hotel reale.)</em></p>
     </div>
-    <div class="btn-row rv" style="margin-top:28px"><a href="#form" class="btn">Calcola il mio punteggio <span class="arr">→</span></a></div>
+    <div class="btn-row rv" style="margin-top:28px;flex-direction:column;align-items:flex-start;gap:12px"><a href="#form" class="btn">Calcola il mio punteggio <span class="arr">→</span></a><p class="gm"><svg class="gm-ic" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span><b>Gratis.</b> Il PDF si apre subito e ti arriva anche in email.</span></p></div>
   </div>
 </section>
 
@@ -292,15 +314,20 @@
 <section class="sec white" id="form">
   <div class="wrap fv-form">
     <form class="form rv" id="guida-form" name="guida" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" data-next="/guida/grazie/" novalidate>
-      <input type="hidden" name="form-name" value="guida"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value=""><input type="hidden" name="sconto_anno" value="">
+      <input type="hidden" name="form-name" value="guida"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value=""><input type="hidden" name="sconto_anno" value=""><input type="hidden" name="privacy" value="informativa letta (invio del modulo)">
       <p hidden><label>Non compilare: <input name="bot-field"></label></p>
       <div class="fields">
-        <div class="form-head"><span>Guida gratuita · PDF, 30 pagine</span><span data-prog-txt>0%</span></div>
+        <div class="form-head"><span>Guida gratuita · PDF in email</span><span data-step-txt>Passo 1 di 2</span></div>
         <div class="prog"><i></i></div>
         <h2>La formula del valore del tuo hotel</h2>
-        <p class="sub">Il PDF si apre subito, e ti arriva anche per email.</p>
+        <p class="sub">Gratis. Il PDF si apre subito, e ti arriva anche in email.</p>
+        <div class="fstep">
         <div class="field"><label for="g-nome">Nome</label><input id="g-nome" name="nome" autocomplete="given-name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
         <div class="field"><label for="g-email">Email</label><input id="g-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: la guida arriva qui.</span></div>
+        <button class="btn dark" type="button" data-next style="margin-top:8px">Continua <span class="arr">→</span></button>
+        <p class="form-foot">Ancora una domanda, poi la guida è tua.</p>
+        </div>
+        <div class="fstep">
         <div class="field"><label for="g-camere">Quante camere ha la tua struttura?</label>
           <select id="g-camere" name="camere" required>
             <option value="" selected disabled>Scegli</option>
@@ -309,10 +336,10 @@
             <option>40-80</option>
             <option>oltre 80</option>
           </select><span class="em">Scegli una voce: così ti mando quello che serve alla tua struttura.</span></div>
-        <label class="check"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento a ricevere la guida via email.</span></label>
         <label class="check opt"><input type="checkbox" name="consenso_email" value="sì"><span>Voglio ricevere anche le mail successive su posizionamento e libro. <em>(facoltativo)</em></span></label>
-        <button class="btn dark" type="submit" style="margin-top:18px">Mandami la formula <span class="arr">→</span></button>
-        <p class="form-foot">Gratis · il PDF si apre subito · ti cancelli con un clic.</p>
+        <button class="btn dark" type="submit" style="margin-top:18px">Mandami la formula gratis <span class="arr">→</span></button>
+        <p class="form-foot">Inviando il modulo dichiari di aver letto la <a href="/privacy-policy/">privacy policy</a>. Ti cancelli con un clic.</p>
+        </div>
       </div>
       <div class="ok" role="status">
         <div class="tick">✓</div>
@@ -330,7 +357,38 @@
   <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
   <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
 </div></div></footer>
+<div class="exit" id="exit" role="dialog" aria-modal="true" aria-labelledby="exit-t" hidden>
+  <div class="exit-card">
+    <button type="button" class="exit-x" data-exit-close aria-label="Chiudi">✕</button>
+    <span class="exit-k" id="exit-k"></span>
+    <p class="exit-t" id="exit-t"></p>
+    <p class="exit-p" id="exit-p"></p>
+    <div class="exit-btns"><a class="btn" id="exit-cta" href="#" hidden></a></div>
+    <form class="ex-form" name="guida" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" data-next="/guida/grazie/" novalidate>
+      <input type="hidden" name="form-name" value="guida"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value=""><input type="hidden" name="privacy" value="informativa letta (invio del modulo)">
+      <p hidden><label>Non compilare: <input name="bot-field"></label></p>
+      <div class="field"><label for="x-email">La tua email</label><input id="x-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: la guida arriva qui.</span></div>
+      <label class="check opt"><input type="checkbox" name="consenso_email" value="sì"><span>Voglio ricevere anche le mail successive su posizionamento e libro. <em>(facoltativo)</em></span></label>
+      <button class="btn" type="submit">Mandami la formula gratis <span class="arr">→</span></button>
+      <p class="form-foot">Inviando dichiari di aver letto la <a href="/privacy-policy/">privacy policy</a>.</p>
+    </form>
+    <button type="button" class="exit-no" data-exit-close id="exit-no"></button>
+  </div>
+</div>
+<div class="gd-bar" id="gdBar" hidden><a href="#form" class="btn">Ricevi la guida gratis in email <span class="arr">→</span></a></div>
 <!-- @include cookie-banner -->
 <script src="/assets/site.js"></script>
+<script>
+(function(){
+  // barra fissa su telefono: dopo l'apertura, finché il form non è sullo schermo
+  var bar = document.getElementById('gdBar'), hero = document.querySelector('.hero'), form = document.getElementById('form');
+  if (!bar || !('IntersectionObserver' in window)) return;
+  bar.hidden = false;
+  var pastHero = false, formIn = false;
+  function upd(){ bar.classList.toggle('on', pastHero && !formIn); }
+  new IntersectionObserver(function(es){ pastHero = !es[0].isIntersecting; upd(); }).observe(hero);
+  new IntersectionObserver(function(es){ formIn = es[0].isIntersecting; upd(); }, { rootMargin: '0px 0px -20% 0px' }).observe(form);
+})();
+</script>
 </body>
 </html>

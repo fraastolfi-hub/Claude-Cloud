@@ -115,7 +115,9 @@
       } } catch (e) {} }
       saveReady = true; f.addEventListener('input', save); f.addEventListener('change', save);
       f.addEventListener('click', function(e){
-        if (e.target.closest('[data-next]')) { e.preventDefault(); next(); }
+        // il form stesso può avere data-next (pagina di ringraziamento): conta solo un pulsante dentro il form
+        var nb = e.target.closest('[data-next]');
+        if (nb && nb !== f) { e.preventDefault(); next(); }
         else if (e.target.closest('[data-prev]')) { e.preventDefault(); show(Math.max(0, cur - 1)); }
       });
       // Invio da tastiera nei passi intermedi: va avanti invece di inviare
@@ -126,6 +128,12 @@
       var ok = req.filter(function(el){ return !missing(el); }).length;
       var p = Math.round(ok / req.length * 100); bar.style.width = p + '%'; if (txt) txt.textContent = p + '%';
     }
+    // inizio compilazione: un evento per form e per visita, per capire chi arriva al form e non lo invia
+    var started = false;
+    f.addEventListener('focusin', function(e){
+      if (started || !e.target.matches('input:not([type=hidden]),select,textarea')) return;
+      started = true; if (window.HPtrack) HPtrack('form_start', { form: f.getAttribute('name') || f.id, posizione: f.closest('#exit') ? 'popup' : 'pagina' });
+    });
     f.addEventListener('input', function(e){ progress(); var w = e.target.closest('fieldset,.field,.check'); if (w) w.classList.remove('err'); });
     f.addEventListener('change', progress);
     f.addEventListener('submit', function(e){
@@ -195,6 +203,7 @@
     '/library/': ['Prima di andare', 'E il tuo hotel, dove si trova?', 'Sette domande per capire se oggi è invisibile, sostituibile o posizionato. Due minuti.', 'Fai il test', '/quiz/', 'No, grazie'],
     '/risorse/': ['Prima di andare', 'Il punto di partenza più semplice.', 'Sette domande, due minuti, nessuna email obbligatoria.', 'Fai il test', '/quiz/', 'No, grazie'],
     '/quiz/': ['Mancano due minuti', 'Il risultato arriva alla fine del test.', 'Rispondi alle domande per vedere il profilo del tuo hotel.', 'Completa il test', '#close', 'Esci'],
+    '/guida/': ['Prima di andare', 'La formula te la mando in email. Gratis.', 'Trenta pagine, dieci minuti per il tuo punteggio su 40. Ti basta l\'email.', '', '', 'No, grazie'],
     '/smontaggio/': ['Prima di andare', 'Bastano pochi campi.', 'Nessuna chiamata. Ricevi lo smontaggio entro tre giorni lavorativi.', 'Richiedi lo smontaggio', '#form', 'No, grazie']
   };
   var exitEl = document.getElementById('exit'), path = location.pathname.replace(/index\.html$/, '');
@@ -209,7 +218,9 @@
     var lastFocus = null, armedAt = Date.now() + 6000;
     ['k','t','p'].forEach(function(id, i){ document.getElementById('exit-' + id).textContent = cfg[i]; });
     var cta = document.getElementById('exit-cta');
-    cta.innerHTML = cfg[3] + ' <span class="arr">→</span>'; cta.href = cfg[4] === '#close' ? '#' : cfg[4];
+    // senza testo del pulsante il pop-up ha un suo form (es. /guida/): il link non serve
+    if (cfg[3]) { cta.innerHTML = cfg[3] + ' <span class="arr">→</span>'; cta.href = cfg[4] === '#close' ? '#' : cfg[4]; } else cta.hidden = true;
+    var card = exitEl.querySelector('.exit-card');
     document.getElementById('exit-no').textContent = cfg[5];
     var blocked = function(){
       if (Date.now() < armedAt || sstore('hp-exit') || $$('form.sent').length) return true;
@@ -221,7 +232,8 @@
     var open = function(){
       if (blocked()) return;
       sstore('hp-exit', '1'); lastFocus = document.activeElement;
-      exitEl.hidden = false; cta.focus();
+      exitEl.hidden = false;
+      if (cfg[3]) cta.focus(); else { card.setAttribute('tabindex', '-1'); card.focus(); }
     };
     var close = function(snooze){
       exitEl.hidden = true;
@@ -235,7 +247,7 @@
       if (exitEl.hidden) return;
       if (e.key === 'Escape') close(true);
       if (e.key === 'Tab') { // tieni il focus dentro il pop-up
-        var f = $$('a,button', exitEl), first = f[0], last = f[f.length - 1];
+        var f = $$('a:not([hidden]),button,input:not([type=hidden]),select', exitEl), first = f[0], last = f[f.length - 1];
         if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
         else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
