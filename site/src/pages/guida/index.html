@@ -245,43 +245,39 @@
 }
 @media (max-width:380px){.hv-c{padding:0 8px;font-size:13px}.hv-eq{gap:4px}}
 /* animazione: quanto paga l'ospite */
-.px{margin-top:34px;max-width:980px;background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:22px;box-shadow:var(--o-md);padding:clamp(20px,3vw,34px)}
-.px-h{font:800 clamp(22px,2.4vw,30px)/1.15 var(--display);letter-spacing:-.025em;margin-bottom:22px}
-.px-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(20px,4vw,48px);align-items:center}
-.px-steps{list-style:none;display:grid;gap:6px;counter-reset:px}
-.px-steps li{display:grid;grid-template-columns:28px 1fr;column-gap:12px;padding:10px 12px;border-radius:14px;opacity:.38;transition:opacity .4s,background .4s}
-.px-steps li::before{content:attr(data-n);grid-row:span 2;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:800 13px var(--display);background:var(--line-soft);border:1.5px solid var(--inchiostro)}
-.px-steps li.on{opacity:1;background:var(--yellow-soft)}
-.px-steps li.done{opacity:.75}
-.px-steps li.on::before{background:var(--yellow)}
-.px-steps b{font:800 16px/1.3 var(--display)}
-.px-steps span{font-size:14.5px;line-height:1.45;color:var(--ink-2)}
-.px-viz{padding:58px 8px 0}
-.px-track{position:relative;height:12px;border-radius:999px;background:var(--line-soft);border:2px solid var(--inchiostro)}
-.px-pin,.px-guest{position:absolute;left:var(--p);transition:left 1.4s cubic-bezier(.6,0,.2,1),opacity .4s}
-.px-pin{bottom:6px;transform:translateX(-50%);display:grid;justify-items:center;opacity:0}
-.px-pin i{order:3;width:2px;height:20px;background:var(--inchiostro)}
-.px-pin b{font:900 18px/1 var(--display)}
-.px-pin small{font:700 11px var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px;order:-1}
+.px{margin-top:34px;max-width:860px;background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:22px;box-shadow:var(--o-md);padding:clamp(22px,3vw,36px)}
+.px-h{font:800 clamp(22px,2.4vw,30px)/1.15 var(--display);letter-spacing:-.025em}
+.px-viz{padding:104px 10px 0}
+.px-track{position:relative;height:14px;border-radius:999px;background:var(--line-soft);border:2px solid var(--inchiostro)}
+.px-pin{position:absolute;left:var(--p);bottom:8px;transform:translate(-50%,8px);display:grid;justify-items:center;opacity:0;transition:opacity .5s,transform .5s}
+.px-pin b{font:900 clamp(24px,3vw,34px)/1 var(--display);white-space:nowrap}
+.px-pin small{margin-top:4px;font:700 11.5px/1.2 var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);text-align:center;max-width:150px;min-height:2.4em}
+.px-pin i{width:3px;height:16px;margin-top:6px;background:var(--inchiostro)}
 .px-wish b{color:var(--lilac)}
-.px-wish i{background:var(--lilac);width:3px}
-.px-guest{top:50%;--p:75%;transform:translate(-50%,-11px);display:grid;justify-items:center;opacity:0}
-.px-guest i{width:22px;height:22px;border-radius:50%;background:var(--yellow);border:2.5px solid var(--inchiostro);box-shadow:0 0 0 4px rgba(255,210,46,.3)}
-.px-guest b{margin-top:8px;font:900 24px/1 var(--display);background:var(--yellow);border:2px solid var(--inchiostro);border-radius:10px;padding:4px 9px}
-.px-guest small{margin-top:4px;font:700 11px var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2);white-space:nowrap}
-.px-gap{position:absolute;top:-2px;bottom:-2px;left:var(--a,75%);right:calc(100% - var(--b,75%));background:var(--pink);border-top:2px solid var(--inchiostro);border-bottom:2px solid var(--inchiostro);opacity:0;transition:left 1.4s cubic-bezier(.6,0,.2,1),right 1.4s cubic-bezier(.6,0,.2,1),opacity .4s,background .4s}
-.px-scale{position:relative;height:16px;margin-top:96px;font:600 12px var(--display);color:var(--muted)}
-.px-scale span{position:absolute;transform:translateX(-50%);white-space:nowrap}
-.px-scale span:first-child{transform:none}.px-scale span:last-child{transform:translateX(-100%)}
-.px-sum{min-height:3em;margin-top:14px!important;font:700 16px/1.45 var(--display);color:var(--ink)}
-.px-sum mark{background:var(--yellow);padding:0 4px;border-radius:4px}
-.px-replay{border:0;background:none;padding:0;margin-top:6px;font:600 14px var(--display);text-decoration:underline;text-underline-offset:4px;color:var(--ink-2)}
-.px-note{margin-top:18px;font-size:13.5px;line-height:1.5;color:var(--muted);font-style:italic}
-.px.s1 .px-wish,.px.s2 .px-near,.px.s3 .px-guest{opacity:1}
-.px.s3 .px-gap{opacity:1}
-.px.s4 .px-gap{background:var(--teal-soft)}
-@media (max-width:760px){.px-grid{grid-template-columns:1fr}.px-steps li{opacity:1;padding:6px 8px}.px-steps li:not(.on){display:none}.px-viz{padding-top:54px}}
-@media (prefers-reduced-motion:reduce){.px-pin,.px-guest,.px-gap{transition:none}}
+.px-wish i{background:var(--lilac)}
+.px-gap{position:absolute;top:-2px;bottom:-2px;left:32%;right:21.5%;background:var(--pink);border:2px solid var(--inchiostro);opacity:0;transform:scaleX(0);transform-origin:right;transition:opacity .3s,transform 1s cubic-bezier(.6,0,.2,1)}
+.px-q{position:absolute;top:50%;left:55%;transform:translate(-50%,-50%) scale(.4);opacity:0;transition:opacity .4s,transform .5s cubic-bezier(.3,1.6,.5,1)}
+.px-q i{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--yellow);border:2.5px solid var(--inchiostro);box-shadow:var(--o-sm);font:900 24px var(--display);font-style:normal}
+.px-scale{position:relative;height:16px;margin-top:22px;font:600 12px var(--display);color:var(--muted)}
+.px-scale span{position:absolute;white-space:nowrap}
+.px-scale span:last-child{transform:translateX(-100%)}
+.px-ask{margin-top:22px!important;font:800 clamp(20px,2.2vw,26px)/1.25 var(--display);letter-spacing:-.02em;color:var(--ink);opacity:0;transition:opacity .5s}
+.px-ask em{font-style:normal;background:var(--yellow);border-radius:6px;padding:0 6px}
+.px-ans{margin-top:10px!important;font-size:17px;line-height:1.5;color:var(--ink-2);opacity:0;transition:opacity .5s}
+.px-ans mark{background:var(--pink-soft);border-radius:4px;padding:0 4px;font-weight:700;color:var(--ink)}
+.px-foot{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:20px;opacity:0;transition:opacity .5s}
+.px-replay{border:0;background:none;padding:0;font:600 14px var(--display);text-decoration:underline;text-underline-offset:4px;color:var(--ink-2)}
+.px-note{margin-top:14px;font-size:13px;color:var(--muted);font-style:italic}
+.px.s1 .px-wish,.px.s2 .px-near{opacity:1;transform:translate(-50%,0)}
+.px.s3 .px-q{opacity:1;transform:translate(-50%,-50%) scale(1);animation:pxPulse 1.2s ease-in-out infinite}
+.px.s3 .px-ask{opacity:1}
+.px.s4 .px-q{animation:none;left:32%}
+.px.s4 .px-gap{opacity:1;transform:scaleX(1)}
+.px.s4 .px-ans,.px.s4 .px-foot{opacity:1}
+@keyframes pxPulse{50%{transform:translate(-50%,-50%) scale(1.12)}}
+.px.s4 .px-q{transition:left 1s cubic-bezier(.6,0,.2,1),opacity .4s}
+@media (max-width:560px){.px-viz{padding-top:100px}.px-pin small{font-size:10px;max-width:110px}}
+@media (prefers-reduced-motion:reduce){.px *{transition:none!important;animation:none!important}}
 .hero-why{margin-top:26px!important;padding-top:20px;border-top:1px solid var(--line);font-size:17px!important;max-width:44ch}
 /* gratis, in email */
 .gm{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:15.5px;line-height:1.45;color:var(--ink-2);max-width:44ch}
@@ -376,26 +372,19 @@
     </div>
     <div class="px rv" id="px" aria-labelledby="px-h">
       <p class="px-h" id="px-h">Quanto vale una notte nel tuo hotel?</p>
-      <div class="px-grid">
-        <ol class="px-steps" id="pxSteps">
-          <li data-n="1"><b>Il prezzo che vorresti</b><span>120 € a notte. Quello che il tuo hotel, secondo te, vale.</span></li>
-          <li data-n="2"><b>Il prezzo dei vicini</b><span>Vendono a 92 €. Per l'ospite siete tutti nello stesso elenco.</span></li>
-          <li data-n="3"><b>Se sembri uguale</b><span>L'ospite confronta solo il prezzo. Ti sceglie a 84 €, se sei il più basso.</span></li>
-          <li data-n="4"><b>Se vede un motivo</b><span>È disposto a pagare 110 €. Più dei vicini, per scegliere proprio te.</span></li>
-        </ol>
-        <div class="px-viz">
-          <div class="px-track" role="img" aria-label="Scala dei prezzi a notte da 60 a 140 euro: il prezzo che vorresti 120 euro, i vicini 92 euro, l'ospite paga 84 euro se sembri uguale e 110 euro se vede un motivo per sceglierti.">
-            <span class="px-gap" id="pxGap"></span>
-            <span class="px-pin px-wish" style="--p:75%"><i></i><b>120 €</b><small>vorresti</small></span>
-            <span class="px-pin px-near" style="--p:40%"><i></i><b>92 €</b><small>i vicini</small></span>
-            <span class="px-guest" id="pxGuest"><i></i><b id="pxGuestT">84 €</b><small>paga l'ospite</small></span>
-          </div>
-          <div class="px-scale" aria-hidden="true"><span style="left:0">60 €</span><span style="left:50%">100 €</span><span style="left:100%">140 €</span></div>
-          <p class="px-sum" id="pxSum" aria-live="polite"></p>
-          <button type="button" class="px-replay" id="pxReplay">Rivedi</button>
+      <div class="px-viz">
+        <div class="px-track" role="img" aria-label="Scala dei prezzi a notte: tu vorresti vendere a 210 euro, gli hotel che all'ospite sembrano simili a te vendono a 145 euro. Se per l'ospite siete uguali, non paga più di 145 euro: 65 euro a notte restano sul tavolo.">
+          <span class="px-gap"></span>
+          <span class="px-pin px-near" style="--p:32%"><b>145 €</b><small>i vicini che ti somigliano</small><i></i></span>
+          <span class="px-pin px-wish" style="--p:78.5%"><b>210 €</b><small>vorresti vendere tu</small><i></i></span>
+          <span class="px-q" id="pxQ"><i>?</i></span>
         </div>
+        <div class="px-scale" aria-hidden="true"><span style="left:0">100 €</span><span style="left:100%">240 €</span></div>
       </div>
-      <p class="px-note">Esempio con prezzi inventati. Il conto annuo suppone 40 camere piene per 100 notti. La formula del valore, nella guida, ti dice quale voce alza quel prezzo.</p>
+      <p class="px-ask">Quanto è disposto a spendere l'ospite, <em>secondo te?</em></p>
+      <p class="px-ans" aria-live="polite">Se per lui siete uguali, non più di 145 €. <mark>65 € a notte</mark> restano sul tavolo.</p>
+      <div class="px-foot"><a href="#form" class="btn">Scopri quanto vale il tuo <span class="arr">→</span></a><button type="button" class="px-replay" id="pxReplay">Rivedi</button></div>
+      <p class="px-note">Esempio con prezzi inventati.</p>
     </div>
   </div>
 </section>
@@ -547,26 +536,16 @@
 </script>
 <script>
 (function(){
+  // «quanto vale una notte»: il tuo prezzo, quello dei vicini, la domanda, poi la risposta
   var box = document.getElementById('px'); if (!box) return;
-  var steps = [].slice.call(document.querySelectorAll('#pxSteps li')), guest = document.getElementById('pxGuest'), gT = document.getElementById('pxGuestT');
-  var gap = document.getElementById('pxGap'), sum = document.getElementById('pxSum'), timers = [];
-  var pct = function(eur){ return ((eur - 60) / 80 * 100) + '%'; };
-  var SUM = ['', 'Questo è il prezzo che vorresti.', 'I vicini vendono a 92 €.', 'Ti mancano <mark>36 € a notte</mark>. Con 40 camere e 100 notti: 144.000 € l\'anno.', 'Lo stesso hotel, <mark>26 € in più a notte</mark>: 104.000 € l\'anno. Senza toccare un mattone.'];
-  function state(n){
-    for (var i = 1; i <= 4; i++) box.classList.toggle('s' + i, n >= i);
-    steps.forEach(function(li, i){ li.classList.toggle('on', i === n - 1); li.classList.toggle('done', i < n - 1); });
-    var g = n >= 4 ? 110 : (n >= 3 ? 84 : 120);
-    guest.style.setProperty('--p', pct(g)); gT.textContent = g + ' €';
-    gap.style.setProperty('--a', pct(n >= 4 ? 92 : 84)); gap.style.setProperty('--b', pct(n >= 4 ? 110 : 120));
-    sum.innerHTML = SUM[n] || '';
-  }
+  var timers = [];
+  function state(n){ for (var i = 1; i <= 4; i++) box.classList.toggle('s' + i, n >= i); }
   function run(){
     timers.forEach(clearTimeout); timers = [];
-    if (window.HP && HP.reduce || matchMedia('(prefers-reduced-motion: reduce)').matches) { state(4); return; }
-    state(0); state(1);
-    [[1300, 2], [2600, 3], [5600, 4]].forEach(function(t){ timers.push(setTimeout(function(){ state(t[1]); }, t[0])); });
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { state(4); return; }
+    state(0);
+    [[200, 1], [1200, 2], [2300, 3], [5000, 4]].forEach(function(t){ timers.push(setTimeout(function(){ state(t[1]); }, t[0])); });
   }
-  state(0);
   if ('IntersectionObserver' in window) {
     var done = false, io = new IntersectionObserver(function(es){ if (es[0].isIntersecting && !done) { done = true; run(); } }, { threshold: .5 });
     io.observe(box);
