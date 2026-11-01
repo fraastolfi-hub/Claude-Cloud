@@ -3,22 +3,27 @@
   base    = "site"
   command = "python3 build.py"
   publish = "public"
+  # niente build (e niente crediti) se il commit non tocca site/ o questo file
+  # (il comando gira dalla base "site", quindi "." = site/)
+  ignore  = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ../netlify.toml"
 
 # Funzione che salva i moduli su Brevo e manda la notifica email (vedi site/netlify/functions)
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-
+# CSS e JS: nessuna regola, vale il default di Netlify (il browser ricontrolla, riscarica solo se cambiati).
+# Una sola regola per percorso: se due regole si sovrappongono, Netlify somma i valori di Cache-Control.
 [[headers]]
   for = "/assets/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
     Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/assets/guida/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
 
 [[headers]]
   for = "/assets/img/*"
