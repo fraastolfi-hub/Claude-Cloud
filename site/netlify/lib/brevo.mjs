@@ -204,30 +204,47 @@ export async function metaLead(d, headers = {}) {
   return `inviato${body.test_event_code ? ' (con codice di test)' : ''}: ${txt.slice(0, 120)}`;
 }
 
-// Mail della guida /guida/: il link al PDF, subito. La sequenza successiva parte da Brevo (lista BREVO_LIST_GUIDA_SEQUENZA).
+// Mail della guida: il link al PDF, subito. La sequenza successiva parte da Brevo (lista BREVO_LIST_GUIDA_SEQUENZA).
+// Due pagine, due promesse: /guida/ (la formula del valore, testo v2) e /guida/conti/ (i cinque conti, testo v1).
 export function guidaMail(d) {
   const nome = ((d.nome || '').trim().split(/\s+/)[0]) || '';
   const pdf = 'https://hotelpositioning.com/assets/guida/che-hotel-sei.pdf';
-  const pre = 'C\'è un conto che quasi nessuno fa.';
-  // due pagine, due promesse: /guida/conti/ (i cinque conti) e /guida/ (la formula del valore)
   const conti = /\/guida\/conti\//.test(d.pagina || '');
-  const a = [`Ciao${nome ? ' ' + nome : ''},`, conti ? 'ecco la guida:' : 'ecco la formula del valore del tuo hotel. È nella guida:'];
-  const b = [
-    'Comincia da pagina 2: la sera delle fatture.\nPoi, a pagina 5, fermati.',
-    'È il conto dello sconto.\nIl vicino abbassa di dieci euro. Tu abbassi.\nLì c\'è un conto che quasi nessuno fa.\nFallo con i tuoi numeri. Ci vuole un minuto.',
-    'Il resto si legge in mezz\'ora. Con un caffè, meglio.',
-    'Nei prossimi giorni ti scrivo qualche riga.\nPoche, e solo su quello che c\'è nella guida.',
-    'Francesco',
-  ];
-  const ps = 'Il PDF è tuo. Giralo pure a chi lavora con te alla reception o sui prezzi. Di solito è lì che lo sconto si decide.';
-  const para = (x) => `<p style="margin:0 0 14px">${esc(x).replace(/\n/g, '<br>')}</p>`;
+  // blocchi: [testo, corsivo]; il pulsante va dopo i blocchi «prima»
+  const v = conti ? {
+    subject: 'La tua guida. Fermati a pagina 5.',
+    pre: 'C\'è un conto che quasi nessuno fa.',
+    prima: [[`Ciao${nome ? ' ' + nome : ''},\necco la guida:`]],
+    dopo: [
+      ['Comincia da pagina 2: la sera delle fatture.\nPoi, a pagina 5, fermati.'],
+      ['È il conto dello sconto.\nIl vicino abbassa di dieci euro. Tu abbassi.\nLì c\'è un conto che quasi nessuno fa.\nFallo con i tuoi numeri. Ci vuole un minuto.'],
+      ['Il resto si legge in mezz\'ora. Con un caffè, meglio.'],
+      ['Nei prossimi giorni ti scrivo qualche riga.\nPoche, e solo su quello che c\'è nella guida.'],
+      ['Francesco'],
+    ],
+    ps: 'Il PDF è tuo. Giralo pure a chi lavora con te alla reception o sui prezzi. Di solito è lì che lo sconto si decide.',
+  } : {
+    // nessun saluto con il nome: apre con una scena, regge anche senza nome (finestra d'uscita)
+    subject: 'Ecco la formula del valore del tuo hotel',
+    pre: 'Non partire da lì. Parti dalle fatture.',
+    prima: [
+      ['La formula è a pagina 10.\nLo so. Vorresti andare subito lì.\nNon farlo.', true],
+      ['Comincia da pagina 2.\nLa sera delle fatture.\nPoi, a pagina 5, fermati.'],
+      ['È il conto dello sconto.\nIl vicino abbassa di dieci euro. Tu abbassi.\nFallo con i tuoi numeri. Ci vuole un minuto.'],
+      ['Quando arrivi a pagina 10, la formula ti sembrerà ovvia.\nÈ il segno che l\'hai capita.'],
+    ],
+    dopo: [['Trenta pagine. Mezz\'ora. Un caffè.'], ['Francesco']],
+    ps: 'La guida ti dice dove sei. Come si cambia, è un\'altra storia. Te la racconto nei prossimi giorni.',
+  };
+  const para = ([x, it]) => `<p style="margin:0 0 14px">${it ? '<em>' : ''}${esc(x).replace(/\n/g, '<br>')}${it ? '</em>' : ''}</p>`;
+  const txt = (l) => l.map(([x]) => x);
   return {
     sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
     to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
     replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
-    subject: conti ? 'La tua guida. Fermati a pagina 5.' : 'La formula del valore del tuo hotel. Prima, pagina 5.',
+    subject: v.subject,
     tags: ['guida-email-1'],
-    textContent: [...a, `Apri la guida → ${pdf}`, ...b, `P.S. ${ps}`].join('\n\n'),
-    htmlContent: `<div style="display:none;max-height:0;overflow:hidden;opacity:0">${esc(pre)}</div><div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${a.map(para).join('')}<p style="margin:6px 0 22px"><a href="${pdf}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri la guida →</a></p>${b.map(para).join('')}<p style="margin:0 0 14px"><strong>P.S.</strong> ${esc(ps)}</p></div>`,
+    textContent: [...txt(v.prima), `Apri la guida → ${pdf}`, ...txt(v.dopo), `P.S. ${v.ps}`].join('\n\n'),
+    htmlContent: `<div style="display:none;max-height:0;overflow:hidden;opacity:0">${esc(v.pre)}</div><div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${v.prima.map(para).join('')}<p style="margin:6px 0 22px"><a href="${pdf}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri la guida →</a></p>${v.dopo.map(para).join('')}<p style="margin:0 0 14px"><strong>P.S.</strong> ${esc(v.ps)}</p></div>`,
   };
 }
