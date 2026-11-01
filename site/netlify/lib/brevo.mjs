@@ -233,7 +233,7 @@ export function guidaMail(d) {
       ['È il conto dello sconto.\nIl vicino abbassa di dieci euro. Tu abbassi.\nFallo con i tuoi numeri. Ci vuole un minuto.'],
       ['Quando arrivi a pagina 10, la formula ti sembrerà ovvia.\nÈ il segno che l\'hai capita.'],
     ],
-    dopo: [['Trenta pagine. Mezz\'ora. Un caffè.'], ['Francesco']],
+    dopo: [['Diciotto pagine. Un quarto d\'ora. Un caffè.'], ['Francesco']],
     ps: 'La guida ti dice dove sei. Come si cambia, è un\'altra storia. Te la racconto nei prossimi giorni.',
   };
   const para = ([x, it]) => `<p style="margin:0 0 14px">${it ? '<em>' : ''}${esc(x).replace(/\n/g, '<br>')}${it ? '</em>' : ''}</p>`;
