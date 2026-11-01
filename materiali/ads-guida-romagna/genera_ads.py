@@ -12,7 +12,7 @@ def ill(name):  # svg interno delle illustrazioni del PDF
     return s[s.index('<svg'):s.rindex('</svg>') + 6]
 def b64(p, mime): return f'data:{mime};base64,' + base64.b64encode(Path(p).read_bytes()).decode()
 OUTFIT = b64(G / 'outfit.woff2', 'font/woff2'); FIG = b64(G / 'figtree.woff2', 'font/woff2'); FIGI = b64(G / 'figtree-italic.woff2', 'font/woff2')
-COVER = b64(SITE / 'guida/copertina@2x.webp', 'image/webp'); CUT = b64(G / 'cutout.png', 'image/png')
+COVER = b64(SITE / 'guida/copertina@2x.webp', 'image/webp'); CUT = b64(G / 'francesco-2026-scontornato.png', 'image/png')
 INK, CR, Y, LI, TE, PK = '#262521', '#faf7f4', '#ffd22e', '#8f8cff', '#22a094', '#ff93c7'
 LS, TS, PS, YS = '#d8d6ff', '#bfe8e3', '#ffd3ea', '#fff1b8'
 
@@ -107,7 +107,8 @@ h1 mark{background:#ffd22e;color:#262521;border-radius:12px;padding:0 .12em;box-
 .note{margin-top:18px;font:italic 500 21px Figtree;color:#6b665d}
 .fr{display:grid;grid-template-columns:420px 1fr;gap:30px;align-items:end}
 .arch{height:520px;border:3px solid INK;border-radius:210px 210px 26px 26px;background:#8f8cff;overflow:hidden;position:relative;box-shadow:8px 8px 0 INK}
-.arch img{position:absolute;top:6%;left:50%;width:118%;transform:translateX(-50%)}
+.arch img{position:absolute;bottom:0;left:50%;width:86%;transform:translateX(-50%)}
+.a2 img{bottom:auto;top:-1%;width:122%}
 .pr2{display:grid;grid-template-columns:1fr 400px;gap:28px;align-items:end}
 .bub{position:relative;background:#fff;border:3px solid INK;border-radius:28px;padding:30px 30px 26px;box-shadow:8px 8px 0 INK;margin-bottom:60px;color:#262521}
 .bub:after{content:"";position:absolute;right:-22px;bottom:46px;width:34px;height:34px;background:#fff;border-right:3px solid INK;border-top:3px solid INK;transform:rotate(45deg)}
