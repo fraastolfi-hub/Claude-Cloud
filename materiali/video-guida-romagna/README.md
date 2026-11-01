@@ -12,3 +12,25 @@ Video tipografici animati, senza audio (la musica si aggiunge da Meta o da Insta
 `_916` = Reels e Stories (1080×1920) · `_45` = feed (1080×1350).
 
 Modificare: `cd progetto && npm i && npx remotion studio`. Testi nei file `src/video/*.tsx`, stile comune in `src/parts.tsx`.
+
+## Reel dal copione (meta-reel-guida-romagna.md)
+
+Cartella `reel/`, tutti 1080×1920 a 30 fps, senza audio, sottotitoli già bruciati.
+
+| File | Reel | Durata | Stato |
+|---|---|---|---|
+| Reel1-MareNonTuo.mp4 | 1 · Il mare non è tuo | 30 s | **modello**: riquadri "ripresa da girare" dove va il girato |
+| Reel2-TreSecondi.mp4 | 2 · Tre secondi | 20 s | pronto |
+| Reel3-Tovagliolo.mp4 | 3 · Il tovagliolo | 22 s | pronto |
+| Reel4-CopriIlLogo.mp4 | 4 · Copri il logo | 20 s | pronto |
+| Reel5-Buttadentro.mp4 | 5 · Il buttadentro | 25 s | **modello**: riquadri "ripresa da girare" |
+| Reel6-SiRicordavaIlMare.mp4 | 6 · Si ricordava il mare | 15 s | pronto (muto per scelta) |
+| Reel7-FormulaCoperta.mp4 | 7 · La formula coperta | 18 s | pronto |
+
+Reel 1 e 5: girare in verticale, mettere il file in `progetto/public/` e rigenerare:
+
+    cd progetto && npm i
+    npx remotion render Reel1-MareNonTuo out.mp4 --props='{"clip":"girato.mp4"}'
+
+Codice dei reel in `progetto/src/reel/`, sottotitoli nell'array `subs` di ogni file.
+La voce fuori campo e la musica vanno aggiunte in montaggio o da Instagram.

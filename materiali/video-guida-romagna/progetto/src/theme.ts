@@ -10,3 +10,6 @@ export const C = {
 };
 export const display = 'Outfit';
 export const text = 'Figtree';
+loadFont({family: 'Caveat', url: staticFile('fonts/caveat.woff2'), weight: '700'});
+export const hand = 'Caveat';
+export const GIALLO_SUB = '#FFE600';
