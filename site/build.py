@@ -46,6 +46,7 @@ REDIRECTS = {
     "/privacy-policy": "/privacy-policy/",
     "/cassetta": "/cassetta/",
     "/guida": "/guida/",
+    "/guida-hotel-romagna": "/guida-hotel-romagna/",
     "/guida/formula": "/guida/",
     "/guida/formula/": "/guida/",
     "/vai/libro": "/vai/libro/",

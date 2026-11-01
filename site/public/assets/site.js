@@ -204,6 +204,7 @@
     '/risorse/': ['Prima di andare', 'Il punto di partenza più semplice.', 'Sette domande, due minuti, nessuna email obbligatoria.', 'Fai il test', '/quiz/', 'No, grazie'],
     '/quiz/': ['Mancano due minuti', 'Il risultato arriva alla fine del test.', 'Rispondi alle domande per vedere il profilo del tuo hotel.', 'Completa il test', '#close', 'Esci'],
     '/guida/': ['Prima di andare', 'Te ne vai senza la formula?', 'Va bene. Ma domani il vicino abbassa ancora.', '', '', 'No, grazie'],
+    '/guida-hotel-romagna/': ['Prima di andare', 'Te ne vai senza la formula?', 'Va bene. Ma domani il vicino di viale abbassa ancora.', '', '', 'No, grazie'],
     '/smontaggio/': ['Prima di andare', 'Bastano pochi campi.', 'Nessuna chiamata. Ricevi lo smontaggio entro tre giorni lavorativi.', 'Richiedi lo smontaggio', '#form', 'No, grazie']
   };
   var exitEl = document.getElementById('exit'), path = location.pathname.replace(/index\.html$/, '');
