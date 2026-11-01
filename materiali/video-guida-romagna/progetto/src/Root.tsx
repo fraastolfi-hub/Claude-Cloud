@@ -11,6 +11,7 @@ import {Reel3} from './reel/Reel3';
 import {Reel4} from './reel/Reel4';
 import {Reel6} from './reel/Reel6';
 import {Reel7} from './reel/Reel7';
+import {Reel2Voce, Reel3Voce, Reel4Voce, Reel7Voce, VOCE} from './reel/Voce';
 
 const FPS = 30;
 const V = [
@@ -33,6 +34,12 @@ export const RemotionRoot: React.FC = () => (
       <Composition id="Reel5-Buttadentro" component={Reel5} width={1080} height={1920} fps={FPS} durationInFrames={25 * FPS} defaultProps={{clip: undefined as string | undefined}} />
       <Composition id="Reel6-SiRicordavaIlMare" component={Reel6} width={1080} height={1920} fps={FPS} durationInFrames={15 * FPS} />
       <Composition id="Reel7-FormulaCoperta" component={Reel7} width={1080} height={1920} fps={FPS} durationInFrames={18 * FPS} />
+    </Folder>
+    <Folder name="Reel-voce">
+      <Composition id="Reel2-TreSecondi-voce" component={Reel2Voce} width={1080} height={1920} fps={FPS} durationInFrames={Math.ceil(VOCE.reel2.dur * FPS)} />
+      <Composition id="Reel3-Tovagliolo-voce" component={Reel3Voce} width={1080} height={1920} fps={FPS} durationInFrames={Math.ceil(VOCE.reel3.dur * FPS)} />
+      <Composition id="Reel4-CopriIlLogo-voce" component={Reel4Voce} width={1080} height={1920} fps={FPS} durationInFrames={Math.ceil(VOCE.reel4.dur * FPS)} />
+      <Composition id="Reel7-FormulaCoperta-voce" component={Reel7Voce} width={1080} height={1920} fps={FPS} durationInFrames={Math.ceil(VOCE.reel7.dur * FPS)} />
     </Folder>
     <Folder name="Feed-4x5">
       {V.map((v) => <Composition key={v.id} id={`${v.id}-45`} component={v.c} width={1080} height={1350} fps={FPS} durationInFrames={Math.round(v.s * FPS)} />)}

@@ -34,3 +34,10 @@ Reel 1 e 5: girare in verticale, mettere il file in `progetto/public/` e rigener
 
 Codice dei reel in `progetto/src/reel/`, sottotitoli nell'array `subs` di ogni file.
 La voce fuori campo e la musica vanno aggiunte in montaggio o da Instagram.
+
+## Reel con la voce (Reel 2, 3, 4, 7)
+
+File `reel/*-voce.mp4`. Voce di Francesco (originali in `voce-originale/`), tagliata battuta per battuta, velocizzata del 7%, ripulita e portata a −16 LUFS.
+La voce detta i tempi: ogni scena parte quando parte la sua battuta (componente `src/reel/Voce.tsx`, tempi in `src/reel/voce.json`).
+Per rifare il taglio dopo una nuova registrazione: `python3 voce.py` (richiede le trascrizioni con i tempi delle parole), poi `npx remotion render Reel2-TreSecondi-voce`.
+Senza musica: si aggiunge da Ads Manager (libreria suoni di Meta) o con Artlist.
