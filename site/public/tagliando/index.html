@@ -422,7 +422,7 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
         motivo: pg.ok ? '' : (pg.messaggio || pg.errore || '') };
       return post(body).then(function(rep){
         $('erCodice').textContent = 'Codice: ' + [pg.ok ? 'pagina ok' : ('pagina ' + (pg.status || '-') + ' ' + (pg.errore || '') + ' ' + (pg.dettaglio || '')), v.ok ? 'velocità ok' : ('velocità ' + (v.status || '-') + ' ' + (v.errore || '') + ' ' + (v.dettaglio || '') + ' ' + (v.ok ? '' : (v.messaggio || ''))), rep.ok ? 'report ok' : ('report ' + (rep.status || '-') + ' ' + (rep.errore || ''))].join(' | ');
-        if (!pg.ok) { $('erTesto').textContent = pg.messaggio || 'La pagina non si è lasciata leggere.'; stato.textContent = 'Il tagliando'; mostra(err); return; }
+        if (!pg.ok) { $('erTesto').textContent = pg.errore === 'configurazione' ? 'Il servizio non è ancora configurato: riprova tra poco.' : (pg.messaggio || 'La pagina non si è lasciata leggere.'); stato.textContent = 'Il tagliando'; mostra(err); return; }
         if (!rep.report) { $('erTesto').textContent = rep.messaggio || 'Qualcosa non ha funzionato dal nostro lato. Riprova tra qualche minuto.'; stato.textContent = 'Il tagliando'; mostra(err); return; }
         risultato(rep.report, shot, rep.ok, dati.email);
         try { (window.dataLayer = window.dataLayer || []).push({ event:'tagliando_completato', messaggio: rep.report.semafori.messaggio }); } catch(e){}
