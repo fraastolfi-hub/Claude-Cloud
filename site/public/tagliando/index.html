@@ -9,6 +9,9 @@
 <meta property="og:title" content="Quanto è efficace il sito del tuo hotel? Fai il tagliando prima di investire in pubblicità.">
 <meta property="og:description" content="Messaggio, prove, velocità e come ti legge l'AI. Il verdetto a schermo, il report completo via email. Gratis.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-tagliando.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
 window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 <meta name="theme-color" content="#fffdf6">
@@ -17,17 +20,19 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 <link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
 <meta property="og:site_name" content="Hotel Positioning">
 <meta property="og:locale" content="it_IT">
-<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-tagliando.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/style.css?v=b3a8d31d">
 
 <style>
 /* Il Tagliando · versione morbida del design system: pannelli bianchi, bordi 2px, ombra piena, semafori verde / giallo / pomodoro */
 .thero{padding:clamp(32px,4vw,56px) 0 clamp(64px,8vw,110px)}
-.thero .split{align-items:start;grid-template-columns:1fr 1fr}
+.thero .split{align-items:start;grid-template-columns:1fr 1fr;grid-template-areas:"testo modulo" "foto modulo";row-gap:32px}
+.thero .split > .testo{grid-area:testo}.thero .split > .tg{grid-area:modulo}.thero .split > .mech{grid-area:foto}
+@media (min-width:901px){.thero .split > .tg{position:sticky;top:90px}}
+.mech{margin:0;max-width:460px}
+.mech img{width:100%;height:auto;aspect-ratio:1086/1448;border:2px solid var(--inchiostro);border-radius:24px;box-shadow:5px 5px 0 var(--inchiostro);background:var(--surface-sand)}
+.mech figcaption{margin-top:14px;font:600 16px/1.45 var(--text)!important;color:var(--ink-2s)}
 .thero h1{margin:22px 0 22px;font-size:clamp(44px,6.2vw,92px)}
 .thero h1 em{color:inherit;font-style:normal;background:linear-gradient(transparent 62%,var(--giallo) 62% 92%,transparent 92%)}
 .thero .lead{margin-bottom:24px}
@@ -114,7 +119,7 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 .area li{padding-left:18px;position:relative}
 .area li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--inchiostro)}
 .area .weight{margin-top:16px;font:600 14px/1.4 var(--text);color:var(--ink-2s)}
-@media (max-width:900px){.areas{grid-template-columns:1fr}.thero .split{grid-template-columns:1fr}}
+@media (max-width:900px){.areas{grid-template-columns:1fr}.thero .split{grid-template-columns:1fr;grid-template-areas:"testo" "modulo" "foto"}.mech{max-width:420px;margin:0 auto}}
 
 /* --- cosa non fa / domande --- */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
@@ -172,7 +177,7 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 <section class="thero">
   <div class="wrap">
     <div class="split">
-      <div>
+      <div class="testo">
         <span class="eyebrow"><span class="dot"></span>Il Tagliando · gratuito · due minuti</span>
         <h1>Quanto è efficace <em>il tuo sito?</em></h1>
         <p class="claim2">O la landing della tua prossima campagna.</p>
@@ -231,6 +236,11 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
           <button type="button" class="again" id="erAgain">Riprova con un altro indirizzo</button>
         </div>
       </div>
+
+      <figure class="mech">
+        <img src="/assets/img/tagliando-francesco.webp" srcset="/assets/img/tagliando-francesco.webp 560w, /assets/img/tagliando-francesco@2x.webp 1086w" sizes="(max-width:900px) 420px, 460px" width="560" height="747" loading="lazy" decoding="async" alt="Francesco Astolfi in tuta da meccanico controlla l'olio di un'auto, nell'officina «Tagliando Hotel».">
+        <figcaption>Il tagliando si fa prima del viaggio lungo. Alla pagina, prima della campagna.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
