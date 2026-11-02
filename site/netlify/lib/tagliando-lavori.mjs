@@ -1,6 +1,6 @@
 // I due controlli lunghi del Tagliando. Girano nella funzione in background e restituiscono
 // sempre un oggetto da salvare: { ok: true, dati, firma, screenshot? } oppure { ok: false, errore, messaggio, dettaglio? }.
-import { urlSicuro, leggiPagina, estrai, prove, leggiMessaggio, velocita, frasiFatteTrovate, firma, Errore } from './tagliando.mjs';
+import { urlSicuro, leggiPagina, estrai, prove, segnaliAi, leggiMessaggio, velocita, frasiFatteTrovate, firma, Errore } from './tagliando.mjs';
 
 export const ID = /^[a-z0-9-]{20,64}$/;
 const pacco = (dati) => ({ dati, firma: firma(dati) });
@@ -17,7 +17,7 @@ export async function esegui(parte, d) {
       const hotel = String(d.hotel || '').slice(0, 120);
       const m = await leggiMessaggio({ url: finale, hotel, pagina });
       const frasi = frasiFatteTrovate(pagina.testo, m.frasi_fatte);
-      return { ok: true, ...pacco({ url, finale, hotel, titolo: pagina.titolo, prove: p, messaggio: m, frasi, ora: Date.now() }) };
+      return { ok: true, ...pacco({ url, finale, hotel, titolo: pagina.titolo, prove: p, ai: segnaliAi(html, pagina), messaggio: m, frasi, ora: Date.now() }) };
     }
     if (parte === 'velocita') {
       const url = await urlSicuro(d.url);

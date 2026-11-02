@@ -26,7 +26,7 @@ Lo stack è quello del sito (Netlify + Brevo) al posto di Lovable + Supabase pre
    - manda la notifica a Francesco.
 3. Se la pagina non si lascia leggere (sito tutto in JavaScript, blocco dei bot), il contatto si salva lo stesso e la notifica arriva a Francesco con il motivo, per rispondere a mano.
 
-Ordine del report: tre semafori, il problema principale (sempre dal messaggio, se giallo o rosso), frasi fatte trovate, 2-4 altri punti con «cosa fare», poi le due uscite. Messaggio verde: il report lo dice e propone il libro, non l'analisi.
+Ordine del report: il verdetto («La tua pagina merita un budget pubblicitario?»: sì / quasi / non ancora), tre semafori, il problema principale (sempre dal messaggio, se giallo o rosso), come ti legge l'AI (cosa risponderebbe un assistente AI a «perché scegliere questo hotel?», benefici capiti, cosa manca, dati strutturati e descrizione), frasi fatte trovate, 2-4 altri punti con «cosa fare», poi le due uscite. Verdetto: messaggio rosso = non ancora; messaggio verde e niente di rosso nel resto = sì; il resto = quasi. Messaggio verde: il report propone il libro, non l'analisi. In chiusura, sempre: gira il report alla tua agenzia, o parlane con Francesco rispondendo alla mail.
 
 La lettura del messaggio usa Claude (`claude-opus-5-5`, effort `low`, risposta in JSON con schema fisso). È attivo il fallback automatico di Anthropic su un altro modello se la richiesta venisse rifiutata. All'AI arriva solo il testo della pagina, mai l'email.
 

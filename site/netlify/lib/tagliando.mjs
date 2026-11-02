@@ -132,6 +132,25 @@ export function prove(html, testoPagina) {
   return r;
 }
 
+// ---------------------------------------------------------------- leggibilità per motori e AI (dall'HTML)
+
+export function segnaliAi(html, pagina) {
+  const tipi = [...html.matchAll(/<script[^>]+application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)].map((m) => m[1]).join(' ');
+  return {
+    datiStrutturati: /"@type"\s*:\s*\[?\s*"(Hotel|Resort|LodgingBusiness|BedAndBreakfast|Hostel|Motel|Campground|VacationRental)"/i.test(tipi),
+    descrizione: (pagina.descrizione || '').trim().length >= 50,
+    titolo: pagina.h1.length > 0,
+    testo: pagina.parole >= 150,
+  };
+}
+
+const SEGNALI_AI = [
+  ['datiStrutturati', 'Dati strutturati per motori e AI (schema.org Hotel)', 'Chiedi alla web agency di aggiungere i dati schema.org Hotel: nome, indirizzo, servizi, foto, recensioni.'],
+  ['descrizione', 'Descrizione della pagina per Google e AI', 'Scrivi una meta description di 140-160 caratteri con il motivo per sceglierti, non con un elenco di servizi.'],
+  ['titolo', 'Un titolo principale (H1) leggibile', 'Metti nel titolo principale cosa trova qui l\'ospite, non solo il nome dell\'hotel.'],
+  ['testo', 'Abbastanza testo leggibile senza JavaScript', 'Fai in modo che i testi principali siano nella pagina, non caricati dopo: le AI spesso leggono solo quelli.'],
+];
+
 // ---------------------------------------------------------------- velocità
 
 export async function velocita(url) {
@@ -157,7 +176,7 @@ export async function velocita(url) {
 
 const SCHEMA = {
   type: 'object', additionalProperties: false,
-  required: ['prima_schermata', 'posizionamento', 'promessa', 'sostituzione', 'frasi_fatte', 'cta_prima_schermata', 'recensioni_visibili', 'problema_principale', 'frase_semaforo'],
+  required: ['prima_schermata', 'posizionamento', 'promessa', 'sostituzione', 'frasi_fatte', 'cta_prima_schermata', 'recensioni_visibili', 'problema_principale', 'frase_semaforo', 'lettura_ai'],
   properties: {
     prima_schermata: { type: 'object', additionalProperties: false, required: ['risposta', 'citazione'], properties: {
       risposta: { type: 'boolean', description: "true se la prima schermata dice all'ospite cosa trova qui e per chi è; false se c'è solo un benvenuto, il nome, uno slogan generico o una foto" },
@@ -180,6 +199,11 @@ const SCHEMA = {
       prova: { type: 'string', description: 'la prova: la frase della pagina citata e cosa succede con il test di sostituzione. Massimo 45 parole' },
       cosa_costa: { type: 'string', description: 'cosa costa all\'hotel, in concreto (confronto sul prezzo, Booking, campagne che portano traffico che non sceglie). Massimo 35 parole' } } },
     frase_semaforo: { type: 'string', description: 'una sola frase, massimo 20 parole, che riassume il messaggio per il semaforo' },
+    lettura_ai: { type: 'object', additionalProperties: false, required: ['esito', 'risposta', 'benefici', 'cosa_manca'], properties: {
+      esito: { type: 'string', enum: ['chiara', 'parziale', 'confusa'], description: "chiara: un assistente AI capisce benefici concreti e il motivo per scegliere proprio questo hotel; parziale: capisce i servizi ma non il motivo; confusa: non capisce nemmeno per chi è" },
+      risposta: { type: 'string', description: "la risposta che darebbe un assistente AI (ChatGPT, Gemini, Perplexity) a «Perché scegliere questo hotel?» usando SOLO questa pagina. Una o due frasi, in terza persona, senza inventare. Massimo 45 parole" },
+      benefici: { type: 'array', items: { type: 'string' }, description: "i benefici concreti per l'ospite che si capiscono dalla pagina, al massimo 4, ognuno in poche parole" },
+      cosa_manca: { type: 'string', description: "cosa un'AI non riesce a capire o a dire di questo hotel (il motivo di scelta, per chi è, una prova). Una frase, massimo 30 parole, al tu" } } },
   },
 };
 
@@ -192,6 +216,7 @@ Cosa valuti:
 3. Promessa distintiva: c'è una ragione che solo questo hotel può dare, specifica e verificabile (un fatto, un numero, un luogo, un servizio preciso)?
 4. Test di sostituzione: togli il nome dell'hotel e metti quello di un concorrente della stessa zona. Se il testo resta vero, regge del tutto. Una piscina, una SPA, "a due passi dal mare" non bastano: li hanno anche gli altri.
 5. Frasi fatte: confronta il testo con questa libreria e trova anche le varianti.
+6. Lettura delle AI: immagina che un ospite chieda a ChatGPT o Gemini «perché scegliere questo hotel?» e che l'assistente abbia solo questa pagina. Cosa risponderebbe? Capisce i benefici concreti e il motivo per scegliere proprio questo hotel?
 ${FRASI_FATTE.map((f) => '- ' + f).join('\n')}
 
 Come scrivi (le risposte finiscono nel report che legge il titolare):
@@ -227,6 +252,7 @@ export async function leggiMessaggio({ url, hotel, pagina }) {
   if (!blocco) throw new Errore('messaggio', "L'AI non ha restituito la lettura.");
   const m = JSON.parse(blocco.text);
   m.frasi_fatte = (m.frasi_fatte || []).slice(0, 12);
+  if (m.lettura_ai) m.lettura_ai.benefici = (m.lettura_ai.benefici || []).slice(0, 4);
   return m;
 }
 
@@ -294,7 +320,7 @@ export function problemiProve(p, m) {
 }
 
 // Il report: messaggio prima di tutto, velocità per ultima. 3-5 problemi in tutto.
-export function componi({ url, hotel, titolo, prove: p, messaggio: m, frasi, velocita: v }) {
+export function componi({ url, hotel, titolo, prove: p, messaggio: m, frasi, ai: segnali, velocita: v }) {
   const semafori = { messaggio: semaforoMessaggio(m, frasi), prove: semaforoProve(p, m), velocita: semaforoVelocita(v) };
   const frasiSemaforo = {
     messaggio: m.frase_semaforo,
@@ -302,10 +328,19 @@ export function componi({ url, hotel, titolo, prove: p, messaggio: m, frasi, vel
     velocita: v ? { rosso: `Da telefono prende ${v.punteggio} su 100: una parte di chi clicca se ne va prima di vedere la pagina.`, giallo: `Da telefono prende ${v.punteggio} su 100: si può migliorare, ma non è il punto principale.`, verde: `Da telefono prende ${v.punteggio} su 100: la velocità non è un problema.` }[semafori.velocita] : 'Non sono riuscito a misurarla questa volta.',
   };
   const altri = [...problemiProve(p, m).slice(0, 3), ...problemiVelocita(v)].slice(0, semafori.messaggio === 'verde' ? 5 : 4);
+  // la domanda centrale del Tagliando: la pagina merita un budget pubblicitario?
+  const verdetto = semafori.messaggio === 'rosso'
+    ? { codice: 'no', titolo: 'Non ancora. Prima di investire, sistema il messaggio.', testo: 'Una campagna porterebbe persone su una pagina che non dice perché scegliere te. Chi arriva confronta il prezzo, e il confronto prezzi lo vince Booking.' }
+    : semafori.messaggio === 'verde' && semafori.prove !== 'rosso' && semafori.velocita !== 'rosso'
+      ? { codice: 'si', titolo: 'Sì, la pagina può reggere una campagna.', testo: 'Il messaggio regge. Sistema i punti qui sotto e misura i risultati dal primo giorno.' }
+      : { codice: 'quasi', titolo: 'Quasi. Prima di investire, qualche modifica.', testo: 'La pagina ha una base. Prima di metterci sopra un budget, sistema i punti qui sotto: ogni clic pagato arriva su una pagina più convincente.' };
+  const lai = m.lettura_ai || null;
+  const ai = lai ? { esito: lai.esito, risposta: lai.risposta, benefici: lai.benefici || [], cosaManca: lai.cosa_manca,
+    segnali: segnali ? SEGNALI_AI.map(([k, nome, fare]) => ({ nome, ok: !!segnali[k], fare })) : [] } : null;
   return {
     url, hotel: hotel || (titolo || '').split(/[|\-–·]/)[0].trim() || new URL(url).hostname,
     data: new Date().toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Rome' }),
-    semafori, frasiSemaforo, frasiFatte: frasi,
+    verdetto, semafori, frasiSemaforo, frasiFatte: frasi, ai,
     principale: semafori.messaggio === 'verde' ? null : { ...m.problema_principale, frase: m.sostituzione.frase_testata, sostituzione: m.sostituzione.spiegazione },
     altri,
     velocita: v ? { punteggio: v.punteggio, lcp: v.lcp } : null,
@@ -337,32 +372,42 @@ export function reportMail(rep, email) {
   const frasi = rep.frasiFatte.length ? card(`${h(`Frasi fatte trovate: ${rep.frasiFatte.length}`)}${p(rep.frasiFatte.slice(0, 8).map((f) => `«${esc(f)}»`).join(' · '))}${p('Sono frasi che usano quasi tutti gli hotel: l\'ospite le legge e passa oltre.', `margin:0;color:${C.muted};font-size:14px`)}`) : '';
   const altri = rep.altri.length ? card(`${h('Gli altri punti')}${rep.altri.map((x, i) => `<div style="margin:0 0 ${i === rep.altri.length - 1 ? 0 : 16}px"><p style="margin:0 0 4px;font:700 17px/1.3 ${TITOLI};color:${C.ink}">${esc(x.titolo)}</p><p style="margin:0;font:15px/1.5 ${FONT};color:${C.ink2}"><b>Cosa fare:</b> ${esc(x.fare)}</p></div>`).join('')}`) : '';
   const verde = s.messaggio === 'verde';
+  const VC = { no: 'rosso', quasi: 'giallo', si: 'verde' };
+  const verdetto = rep.verdetto ? card(`${h('La tua pagina merita un budget pubblicitario?')}<p style="margin:0 0 10px;font:800 24px/1.2 ${TITOLI};color:${C.ink}">${pallino(VC[rep.verdetto.codice])}&nbsp; ${esc(rep.verdetto.titolo)}</p>${p(esc(rep.verdetto.testo), 'margin:0')}`, C.bianco) : '';
+  const AIC = { chiara: 'verde', parziale: 'giallo', confusa: 'rosso' };
+  const AIE = { chiara: 'Ti capisce', parziale: 'Ti capisce a metà', confusa: 'Non ti capisce' };
+  const a = rep.ai;
+  const ai = a ? card(`${h('Come ti legge l\'intelligenza artificiale')}<p style="margin:0 0 12px;font:800 20px/1.25 ${TITOLI};color:${C.ink}">${pallino(AIC[a.esito])}&nbsp; ${AIE[a.esito]}</p>${p('Ospiti e agenzie cominciano a chiedere a ChatGPT, Gemini o Perplexity dove dormire. L\'AI risponde con quello che trova scritto. Ho fatto leggere la tua pagina a un\'AI e le ho chiesto: «Perché un ospite dovrebbe scegliere questo hotel?». Ha risposto così:')}<p style="margin:0 0 14px;padding:12px 14px;background:${C.sabbia};border-radius:10px;font:italic 16px/1.5 ${FONT};color:${C.ink}">«${esc(a.risposta.replace(/^[«"]|[»"]$/g, ''))}»</p>${a.benefici.length ? p('<b>I benefici che ha capito:</b> ' + a.benefici.map(esc).join(' · ')) : p('<b>I benefici che ha capito:</b> nessuno di concreto.')}${p('<b>Cosa non ha capito:</b> ' + esc(a.cosaManca))}${a.segnali.length ? `<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;margin-top:4px">${a.segnali.map((x) => `<tr><td style="padding:6px 10px 6px 0;vertical-align:top;font:700 15px ${FONT};color:${x.ok ? '#2f8f57' : C.rosso}">${x.ok ? '✓' : '✗'}</td><td style="padding:6px 0;font:15px/1.45 ${FONT};color:${C.ink2}">${esc(x.nome)}${x.ok ? '' : `<br><span style="color:${C.muted}">${esc(x.fare)}</span>`}</td></tr>`).join('')}</table>` : ''}`) : '';
+  const libroLink = `<a href="${LINK.libro}" style="color:${C.ink};font-weight:700">Hotel Positioning, su Amazon</a>`;
   const uscite = verde
-    ? card(`${p('<b>Il tuo messaggio regge.</b> Succede di rado, e va detto. Gli altri punti li sistemi da solo o con la tua web agency.')}${p('Se vuoi capire perché funziona e come portarlo nelle campagne, il metodo è nel libro.')}${btn('Scopri il libro', LINK.libro)}`, C.sabbia)
-    : card(`${p('<b>Questi li sistemi da solo. Il messaggio no.</b>')}${p('Il problema del messaggio non si sistema con un pulsante. Si sistema trovando cosa rende diverso il tuo hotel, partendo dalle recensioni dei tuoi ospiti. È quello che fa l\'analisi di posizionamento.')}<p style="margin:0 0 18px">${btn('Scopri l\'analisi di posizionamento', LINK.analisi)}</p>${p(`Se vuoi farlo da te, il metodo è nel libro: <a href="${LINK.libro}" style="color:${C.ink};font-weight:700">Hotel Positioning, su Amazon</a>.`, 'margin:0')}`, C.sabbia);
+    ? card(`${p('<b>E adesso?</b>')}${p('Gira questo report alla tua agenzia: i punti qui sopra si sistemano con le indicazioni di una riga. Il tuo messaggio regge: succede di rado, e va detto.')}${p('Se vuoi parlarne con me prima di lanciare la campagna, rispondi a questa mail.')}${p(`Se vuoi capire perché funziona e come portarlo nelle campagne, il metodo è nel libro: ${libroLink}.`, 'margin:0')}`, C.sabbia)
+    : card(`${p('<b>E adesso?</b>')}${p('Gira questo report alla tua agenzia: velocità e prove si sistemano in pochi giorni, con le indicazioni qui sopra.')}${p('Il messaggio è un\'altra cosa. Non si sistema con un pulsante: va trovato cosa rende diverso il tuo hotel, partendo dalle recensioni dei tuoi ospiti. È quello che fa l\'analisi di posizionamento.')}<p style="margin:0 0 18px">${btn('Scopri l\'analisi di posizionamento', LINK.analisi)}</p>${p('Se vuoi parlarne con me, rispondi a questa mail: la leggo io.')}${p(`Se preferisci farlo da te, il metodo è nel libro: ${libroLink}.`, 'margin:0')}`, C.sabbia);
   const html = `<div style="background:${C.crema};padding:24px 12px"><div style="max-width:600px;margin:0 auto">
 <p style="margin:0 0 4px;font:700 13px/1.3 ${TITOLI};letter-spacing:.04em;text-transform:uppercase;color:${C.muted}">Il Tagliando · Hotel Positioning</p>
 <p style="margin:0 0 6px;font:800 30px/1.1 ${TITOLI};color:${C.ink}">${esc(rep.hotel)}</p>
 <p style="margin:0 0 22px;font:14px/1.5 ${FONT};color:${C.muted}"><a href="${esc(rep.url)}" style="color:${C.muted}">${esc(rep.url.replace(/^https?:\/\//, '').replace(/\/$/, ''))}</a> · ${esc(rep.data)} · lettura da telefono</p>
+${verdetto}
 ${card(`${h('I tre semafori')}<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse">${semafori}</table>`)}
-${principale}${frasi}${altri}${uscite}
-${p(`Per qualsiasi domanda rispondi a questa mail: la leggo io.<br>Francesco Astolfi<br><span style="color:${C.muted}">Hotel Positioning</span>`, 'margin-top:22px')}
-<p style="margin:18px 0 0;font:12px/1.5 ${FONT};color:${C.muted}">Hai ricevuto questo report perché l'hai chiesto su hotelpositioning.com/tagliando. La velocità è misurata con Google PageSpeed Insights da telefono; messaggio e prove sono letti dal testo della pagina, con l'aiuto dell'AI.</p>
+${principale}${ai}${frasi}${altri}${uscite}
+${p(`Francesco Astolfi<br><span style="color:${C.muted}">Hotel Positioning</span>`, 'margin-top:22px')}
+<p style="margin:18px 0 0;font:12px/1.5 ${FONT};color:${C.muted}">Hai ricevuto questo report perché l'hai chiesto su hotelpositioning.com/tagliando. La velocità è misurata con Google PageSpeed Insights da telefono; messaggio, prove e lettura dell'AI vengono dal testo della pagina, letto da un'intelligenza artificiale.</p>
 </div></div>`;
   const txt = [
     `Il Tagliando di ${rep.hotel}`, `${rep.url} · ${rep.data}`, '',
+    ...(rep.verdetto ? ['La tua pagina merita un budget pubblicitario?', rep.verdetto.titolo, rep.verdetto.testo, ''] : []),
     ...['messaggio', 'prove', 'velocita'].map((k) => `${NOMI[k]}: ${ETICHETTE[s[k]]}. ${rep.frasiSemaforo[k]}`), '',
     ...(rep.principale ? [`Il problema principale: ${rep.principale.titolo}`, rep.principale.prova, `Cosa costa: ${rep.principale.cosa_costa}`, ''] : []),
+    ...(a ? ['Come ti legge l\'intelligenza artificiale: ' + AIE[a.esito], `Alla domanda «Perché scegliere questo hotel?» un'AI risponde: «${a.risposta}»`, `Benefici capiti: ${a.benefici.join(' · ') || 'nessuno di concreto'}`, `Cosa non ha capito: ${a.cosaManca}`, ...a.segnali.filter((x) => !x.ok).map((x) => `Da sistemare: ${x.nome}. ${x.fare}`), ''] : []),
     ...(rep.frasiFatte.length ? [`Frasi fatte trovate: ${rep.frasiFatte.join(' · ')}`, ''] : []),
     ...rep.altri.flatMap((x) => [x.titolo, `Cosa fare: ${x.fare}`, '']),
-    verde ? `Il tuo messaggio regge. Il metodo è nel libro: ${LINK.libro}` : `Questi li sistemi da solo. Il messaggio no.\nL'analisi di posizionamento: ${LINK.analisi}\nSe vuoi farlo da te, il libro: ${LINK.libro}`,
+    verde ? `E adesso? Gira questo report alla tua agenzia. Il tuo messaggio regge. Se vuoi parlarne con me, rispondi a questa mail. Il metodo è nel libro: ${LINK.libro}` : `E adesso? Gira questo report alla tua agenzia: velocità e prove si sistemano in pochi giorni. Il messaggio è un'altra cosa: va trovato cosa rende diverso il tuo hotel.\nL'analisi di posizionamento: ${LINK.analisi}\nSe vuoi parlarne con me, rispondi a questa mail. Se preferisci farlo da te, il libro: ${LINK.libro}`,
     '', 'Francesco Astolfi', 'Hotel Positioning',
   ].join('\n');
   return {
     sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
     to: [{ email }],
     replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
-    subject: `Il tagliando di ${rep.hotel}: i tre semafori`,
+    subject: `Il tagliando di ${rep.hotel}: la tua pagina merita un budget?`,
     tags: ['tagliando-report'],
     htmlContent: html, textContent: txt,
   };
