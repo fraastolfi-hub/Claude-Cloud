@@ -14,6 +14,11 @@
 <meta property="og:image:height" content="630">
 <!-- @include head -->
 <style>
+/* landing senza menù né fascia del libro (come /guida/): testata con il solo logo, footer con le sole note legali */
+.lp-top{background:var(--surface-cream);border-bottom:1px solid var(--line-soft)}
+.lp-top .wrap{display:flex;align-items:center;min-height:64px}
+.lp-foot{padding:28px 0}
+.lp-foot .legal{border:0;padding:0;margin:0}
 /* Tagliando Hotel · versione morbida del design system: pannelli bianchi, bordi 2px, ombra piena, semafori verde / giallo / pomodoro */
 .thero{padding:clamp(32px,4vw,56px) 0 clamp(64px,8vw,110px)}
 .thero .split{align-items:start;grid-template-columns:1fr 1fr;grid-template-areas:"testo modulo" "foto modulo";row-gap:32px}
@@ -128,7 +133,7 @@
 <!-- @include tema -->
 </head>
 <body>
-<!-- @include header -->
+<header class="lp-top"><div class="wrap"><span class="logo" aria-label="Hotel Positioning"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</span></div></header>
 
 <main id="main">
 
@@ -285,7 +290,12 @@
 
 </main>
 
-<!-- @include footer -->
+<footer class="foot lp-foot"><div class="wrap"><div class="legal">
+  <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+  <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
+</div></div></footer>
+<!-- @include cookie-banner -->
+<script src="/assets/site.js"></script>
 <script>
 (function(){
   var FN = '/.netlify/functions/tagliando';
