@@ -14,6 +14,9 @@ export const FORMS = {
   'cassetta': { label: 'La cassetta (landing /cassetta/)', list: 'BREVO_LIST_CASSETTA', optIn: 'BREVO_LIST_CASSETTA_SEQUENZA', optInField: 'consenso_email' },
   // guida gratuita «Che hotel sei?» (landing /guida/), stessa logica della cassetta
   'guida': { label: 'La guida «Che hotel sei?» (landing /guida/)', list: 'BREVO_LIST_GUIDA', optIn: 'BREVO_LIST_GUIDA_SEQUENZA', optInField: 'consenso_email' },
+  // Il Tagliando (/tagliando/): il controllo gratuito della pagina. FONTE = «Il Tagliando» è il filtro per la sequenza «errori dell'albergatore»
+  // chi spunta il consenso facoltativo entra anche nella lista che fa partire la sequenza (come cassetta e guida)
+  'tagliando': { label: 'Il Tagliando', list: 'BREVO_LIST_TAGLIANDO', optIn: 'BREVO_LIST_TAGLIANDO_SEQUENZA', optInField: 'consenso_email' },
 };
 
 // etichette leggibili per l'email di notifica
@@ -21,6 +24,7 @@ export const LABELS = {
   nome: 'Nome', nome_ruolo: 'Nome e ruolo', email: 'Email', telefono: 'Telefono',
   hotel: 'Struttura', struttura: 'Struttura', sito: 'Sito', url: 'Homepage', camere: 'Camere',
   concorrenti: 'Concorrenti', tipologia: 'Tipologia', prezzo: 'Prezzo medio a notte', canali: 'Canali di prenotazione', unicita: 'Unicità più importante', pubblicazione: 'Pubblicazione', riga: "Cosa vorrebbe che l'ospite capisse",
+  semafori: 'Semafori (messaggio · prove · velocità)', problema: 'Problema principale', esito: 'Esito',
   profilo: 'Profilo del test', punteggio: 'Punteggio', pagina: 'Pagina', privacy: 'Privacy',
   // questionario dell'analisi completa
   nome_localita: 'Nome e località', numero_camere: 'Numero camere', stagionalita: 'Stagionalità', adr: 'ADR (€)',

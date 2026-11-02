@@ -1,0 +1,9 @@
+{
+  "name": "hotel-positioning-site",
+  "private": true,
+  "type": "module",
+  "description": "Dipendenze delle funzioni Netlify (il sito resta statico, costruito da build.py)",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0"
+  }
+}
