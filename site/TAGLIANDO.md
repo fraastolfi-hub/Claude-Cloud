@@ -1,4 +1,4 @@
-# Il Tagliando (/tagliando/)
+# Tagliando Hotel (/tagliando/)
 
 Strumento gratuito di lead generation: l'albergatore scrive l'indirizzo del sito o della landing, vede subito tre semafori e riceve il report completo via email. Porta all'analisi di posizionamento; il libro è l'alternativa.
 Scheda del sistema (obiettivo, criteri, semafori, uscite): https://claude.ai/artifact/HV2CXp6tBCKLYaE4bTSDyy
@@ -14,14 +14,14 @@ Scheda del sistema (obiettivo, criteri, semafori, uscite): https://claude.ai/art
 | Libreria delle frasi fatte (bozza da completare) | `netlify/lib/frasi-fatte.mjs` |
 | Dipendenza della funzione (SDK di Claude) | `package.json` |
 
-Lo stack è quello del sito (Netlify + Brevo) al posto di Lovable + Supabase previsti nella scheda: niente strumenti nuovi, e i contatti finiscono nella stessa lista Brevo con `FONTE` = «Il Tagliando».
+Lo stack è quello del sito (Netlify + Brevo) al posto di Lovable + Supabase previsti nella scheda: niente strumenti nuovi, e i contatti finiscono nella stessa lista Brevo con `FONTE` = «Tagliando Hotel».
 
 ## Come funziona
 
 1. Il browser avvia insieme due funzioni in background (fino a 15 minuti, Netlify risponde subito 202): `pagina` (legge l'HTML, controlla le prove, l'AI legge il messaggio) e `velocita` (Google PageSpeed Insights, mobile). Ognuna salva il risultato in Netlify Blobs (store `tagliando`); la pagina chiede ogni 3 secondi se è pronto, per al massimo 3 minuti. Le funzioni normali si fermano dopo pochi secondi (codice 504): PageSpeed da solo ne richiede 20-40.
 2. Ogni risultato torna firmato (HMAC). Poi il browser chiama `report`: la funzione verifica le firme, compone il report e:
    - manda il report a chi l'ha chiesto (Brevo, mittente Francesco, tag `tagliando-report`);
-   - salva il contatto su Brevo (`FONTE` = «Il Tagliando», `PROFILO` = i tre semafori);
+   - salva il contatto su Brevo (`FONTE` = «Tagliando Hotel», `PROFILO` = i tre semafori);
    - chi ha spuntato il consenso facoltativo entra anche nella lista della sequenza «errori dell'albergatore»;
    - manda la notifica a Francesco.
 3. Se la pagina non si lascia leggere (sito tutto in JavaScript, blocco dei bot), il contatto si salva lo stesso e la notifica arriva a Francesco con il motivo, per rispondere a mano.
@@ -57,3 +57,9 @@ Controllo rapido: `https://hotelpositioning.com/.netlify/functions/tagliando` mo
 - [ ] Report in PDF (oggi HTML via email) e screenshot della prima schermata dato all'AI (oggi l'AI legge il testo; lo screenshot di PageSpeed compare solo a schermo).
 - [ ] Copy della pagina d'ingresso: prima versione scritta sul tono del sito, da validare.
 - [ ] Collegare la pagina dal menu o da /risorse/ (oggi si raggiunge solo con il link diretto; `?url=` precompila l'indirizzo).
+
+## Copy (2 novembre 2026, proposte v2)
+
+Applicate dal documento `tagliando-v2-proposte.md`: titolo «La campagna è la benzina. La pagina è il motore.», etichetta «Per hotel», test di sostituzione portato nell'hero, l'AI dichiarata nelle domande e non sotto il pulsante, tolto «nessuna chiamata, nessun preventivo», «pagella da trenta voci» al posto di «voto da 0 a 100», foto di Francesco con la riga sui criteri, tre uscite nel report (analisi o smontaggio, libro, guida gratuita) più «parlane con la tua agenzia, o con me».
+
+Restano aperte: un report vero con il logo coperto come prova (serve il permesso dell'hotel, non va inventato) e, se la pagina va negli annunci, una copia senza menù e senza la fascia del libro (la pagina resta indicizzata).

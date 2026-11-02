@@ -19,7 +19,7 @@ Prima, e per gli invii che arrivano solo da Netlify Forms, la funzione `netlify/
 | `test-posizionamento` | /quiz/ | Test di posizionamento |
 | `strumenti-libro` | /bonus/ | Strumenti del libro |
 | `questionario` | /questionario/ (pagina nascosta, noindex, da mandare a chi acquista l'analisi completa) | Questionario di posizionamento |
-| `tagliando` (Il Tagliando; non è un modulo Netlify: passa da `netlify/functions/tagliando.mjs`, vedi TAGLIANDO.md) | /tagliando/ | Il Tagliando |
+| `tagliando` (Tagliando Hotel; non è un modulo Netlify: passa da `netlify/functions/tagliando.mjs`, vedi TAGLIANDO.md) | /tagliando/ | Tagliando Hotel |
 
 Il vecchio modulo `candidatura` (la richiesta di analisi in quattro passi) è dismesso dal 9 ottobre 2026, insieme all'offerta che serviva. La funzione lo riconosce ancora, con l'etichetta «Richiesta analisi (vecchio modulo)», solo per gli invii arretrati.
 

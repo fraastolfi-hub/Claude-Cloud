@@ -14,9 +14,9 @@ export const FORMS = {
   'cassetta': { label: 'La cassetta (landing /cassetta/)', list: 'BREVO_LIST_CASSETTA', optIn: 'BREVO_LIST_CASSETTA_SEQUENZA', optInField: 'consenso_email' },
   // guida gratuita «Che hotel sei?» (landing /guida/), stessa logica della cassetta
   'guida': { label: 'La guida «Che hotel sei?» (landing /guida/)', list: 'BREVO_LIST_GUIDA', optIn: 'BREVO_LIST_GUIDA_SEQUENZA', optInField: 'consenso_email' },
-  // Il Tagliando (/tagliando/): il controllo gratuito della pagina. FONTE = «Il Tagliando» è il filtro per la sequenza «errori dell'albergatore»
+  // Tagliando Hotel (/tagliando/): il controllo gratuito della pagina. FONTE = «Tagliando Hotel» è il filtro per la sequenza «errori dell'albergatore»
   // chi spunta il consenso facoltativo entra anche nella lista che fa partire la sequenza (come cassetta e guida)
-  'tagliando': { label: 'Il Tagliando', list: 'BREVO_LIST_TAGLIANDO', optIn: 'BREVO_LIST_TAGLIANDO_SEQUENZA', optInField: 'consenso_email' },
+  'tagliando': { label: 'Tagliando Hotel', list: 'BREVO_LIST_TAGLIANDO', optIn: 'BREVO_LIST_TAGLIANDO_SEQUENZA', optInField: 'consenso_email' },
 };
 
 // etichette leggibili per l'email di notifica

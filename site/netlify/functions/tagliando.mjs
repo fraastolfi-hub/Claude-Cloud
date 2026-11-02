@@ -1,10 +1,10 @@
-// Il Tagliando (/tagliando/).
+// Tagliando Hotel (/tagliando/).
 //
 // I due controlli lunghi (lettura della pagina con l'AI, PageSpeed) girano in tagliando-background.mjs,
 // che salva il risultato firmato in Netlify Blobs. Questa funzione:
 //   GET  ?id=…&parte=pagina|velocita   → il risultato, o { pronto: false } se non è ancora finito
 //   POST { parte: 'report',   email, hotel, url, pagina, velocita, privacy }
-//        verifica le firme, compone il report, salva il contatto su Brevo (FONTE «Il Tagliando»),
+//        verifica le firme, compone il report, salva il contatto su Brevo (FONTE «Tagliando Hotel»),
 //        manda il report a chi l'ha chiesto e la notifica a Francesco.
 //   GET  → controllo della configurazione (solo sì/no).
 //

@@ -1,4 +1,4 @@
-// Il Tagliando: il controllo gratuito di un sito o di una landing d'hotel prima di metterci sopra una campagna.
+// Tagliando Hotel: il controllo gratuito di un sito o di una landing d'hotel prima di metterci sopra una campagna.
 // Scheda del sistema (obiettivo, aree, semafori, uscite): https://claude.ai/artifact/HV2CXp6tBCKLYaE4bTSDyy
 //
 // Tre aree, in quest'ordine nel report: Messaggio (il cuore, letto dall'AI), Prove e conversione (dall'HTML),
@@ -356,8 +356,9 @@ const FONT = "Figtree,'Helvetica Neue',Helvetica,Arial,sans-serif";
 const TITOLI = "Outfit,'Helvetica Neue',Helvetica,Arial,sans-serif";
 export const LINK = {
   analisi: 'https://hotelpositioning.com/analisi/?utm_source=tagliando&utm_medium=email&utm_campaign=tagliando',
+  guida: 'https://hotelpositioning.com/guida/?utm_source=tagliando&utm_medium=email&utm_campaign=tagliando',
   libro: 'https://www.amazon.it/dp/B0HL3Z4XL7/',
-  smontaggio: 'https://hotelpositioning.com/#richiedi',
+  smontaggio: 'https://hotelpositioning.com/smontaggio/?utm_source=tagliando&utm_medium=email&utm_campaign=tagliando',
 };
 
 export function reportMail(rep, email) {
@@ -381,33 +382,33 @@ export function reportMail(rep, email) {
   const libroLink = `<a href="${LINK.libro}" style="color:${C.ink};font-weight:700">Hotel Positioning, su Amazon</a>`;
   const uscite = verde
     ? card(`${p('<b>E adesso?</b>')}${p('Gira questo report alla tua agenzia: i punti qui sopra si sistemano con le indicazioni di una riga. Il tuo messaggio regge: succede di rado, e va detto.')}${p('Se vuoi parlarne con me prima di lanciare la campagna, rispondi a questa mail.')}${p(`Se vuoi capire perché funziona e come portarlo nelle campagne, il metodo è nel libro: ${libroLink}.`, 'margin:0')}`, C.sabbia)
-    : card(`${p('<b>E adesso?</b>')}${p('Gira questo report alla tua agenzia: velocità e prove si sistemano in pochi giorni, con le indicazioni qui sopra.')}${p('Il messaggio è un\'altra cosa. Non si sistema con un pulsante: va trovato cosa rende diverso il tuo hotel, partendo dalle recensioni dei tuoi ospiti. È quello che fa l\'analisi di posizionamento.')}<p style="margin:0 0 18px">${btn('Scopri l\'analisi di posizionamento', LINK.analisi)}</p>${p('Se vuoi parlarne con me, rispondi a questa mail: la leggo io.')}${p(`Se preferisci farlo da te, il metodo è nel libro: ${libroLink}.`, 'margin:0')}`, C.sabbia);
+    : card(`${p('<b>E adesso?</b>')}${p('Gira questo report alla tua agenzia: velocità e prove si sistemano in pochi giorni, con le indicazioni qui sopra.')}${p('Il messaggio è un\'altra cosa. Non si sistema con un pulsante: va trovato cosa rende diverso il tuo hotel, partendo dalle recensioni dei tuoi ospiti. Tre strade, scegli tu:')}${p(`<b>Vuoi che lo faccia io:</b> l'analisi di posizionamento. Se il tuo hotel ha dalle 40 camere in su, puoi partire dallo <a href="${LINK.smontaggio}" style="color:${C.ink};font-weight:700">smontaggio gratuito della homepage</a>.`, 'margin:0 0 12px')}<p style="margin:0 0 16px">${btn('Scopri l\'analisi di posizionamento', LINK.analisi)}</p>${p(`<b>Vuoi il metodo:</b> il libro, ${libroLink}.`)}${p(`<b>Vuoi capire da solo, gratis:</b> la guida <a href="${LINK.guida}" style="color:${C.ink};font-weight:700">«La formula del valore del tuo hotel»</a>.`)}${p('Se vuoi parlarne con me, rispondi a questa mail: la leggo io.', 'margin:0')}`, C.sabbia);
   const html = `<div style="background:${C.crema};padding:24px 12px"><div style="max-width:600px;margin:0 auto">
-<p style="margin:0 0 4px;font:700 13px/1.3 ${TITOLI};letter-spacing:.04em;text-transform:uppercase;color:${C.muted}">Il Tagliando · Hotel Positioning</p>
+<p style="margin:0 0 4px;font:700 13px/1.3 ${TITOLI};letter-spacing:.04em;text-transform:uppercase;color:${C.muted}">Tagliando Hotel · Hotel Positioning</p>
 <p style="margin:0 0 6px;font:800 30px/1.1 ${TITOLI};color:${C.ink}">${esc(rep.hotel)}</p>
 <p style="margin:0 0 22px;font:14px/1.5 ${FONT};color:${C.muted}"><a href="${esc(rep.url)}" style="color:${C.muted}">${esc(rep.url.replace(/^https?:\/\//, '').replace(/\/$/, ''))}</a> · ${esc(rep.data)} · lettura da telefono</p>
 ${verdetto}
 ${card(`${h('I tre semafori')}<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse">${semafori}</table>`)}
 ${principale}${ai}${frasi}${altri}${uscite}
 ${p(`Francesco Astolfi<br><span style="color:${C.muted}">Hotel Positioning</span>`, 'margin-top:22px')}
-<p style="margin:18px 0 0;font:12px/1.5 ${FONT};color:${C.muted}">Hai ricevuto questo report perché l'hai chiesto su hotelpositioning.com/tagliando. La velocità è misurata con Google PageSpeed Insights da telefono; messaggio, prove e lettura dell'AI vengono dal testo della pagina, letto da un'intelligenza artificiale.</p>
+<p style="margin:18px 0 0;font:12px/1.5 ${FONT};color:${C.muted}">Hai ricevuto questo report perché hai chiesto Tagliando Hotel su hotelpositioning.com/tagliando. La velocità è misurata con Google PageSpeed Insights da telefono; messaggio, prove e lettura dell'AI vengono dal testo della pagina, letto da un'intelligenza artificiale.</p>
 </div></div>`;
   const txt = [
-    `Il Tagliando di ${rep.hotel}`, `${rep.url} · ${rep.data}`, '',
+    `Tagliando Hotel · ${rep.hotel}`, `${rep.url} · ${rep.data}`, '',
     ...(rep.verdetto ? ['La tua pagina merita un budget pubblicitario?', rep.verdetto.titolo, rep.verdetto.testo, ''] : []),
     ...['messaggio', 'prove', 'velocita'].map((k) => `${NOMI[k]}: ${ETICHETTE[s[k]]}. ${rep.frasiSemaforo[k]}`), '',
     ...(rep.principale ? [`Il problema principale: ${rep.principale.titolo}`, rep.principale.prova, `Cosa costa: ${rep.principale.cosa_costa}`, ''] : []),
     ...(a ? ['Come ti legge l\'intelligenza artificiale: ' + AIE[a.esito], `Alla domanda «Perché scegliere questo hotel?» un'AI risponde: «${a.risposta}»`, `Benefici capiti: ${a.benefici.join(' · ') || 'nessuno di concreto'}`, `Cosa non ha capito: ${a.cosaManca}`, ...a.segnali.filter((x) => !x.ok).map((x) => `Da sistemare: ${x.nome}. ${x.fare}`), ''] : []),
     ...(rep.frasiFatte.length ? [`Frasi fatte trovate: ${rep.frasiFatte.join(' · ')}`, ''] : []),
     ...rep.altri.flatMap((x) => [x.titolo, `Cosa fare: ${x.fare}`, '']),
-    verde ? `E adesso? Gira questo report alla tua agenzia. Il tuo messaggio regge. Se vuoi parlarne con me, rispondi a questa mail. Il metodo è nel libro: ${LINK.libro}` : `E adesso? Gira questo report alla tua agenzia: velocità e prove si sistemano in pochi giorni. Il messaggio è un'altra cosa: va trovato cosa rende diverso il tuo hotel.\nL'analisi di posizionamento: ${LINK.analisi}\nSe vuoi parlarne con me, rispondi a questa mail. Se preferisci farlo da te, il libro: ${LINK.libro}`,
+    verde ? `E adesso? Gira questo report alla tua agenzia. Il tuo messaggio regge. Se vuoi parlarne con me, rispondi a questa mail. Il metodo è nel libro: ${LINK.libro}` : `E adesso? Gira questo report alla tua agenzia: velocità e prove si sistemano in pochi giorni. Il messaggio è un'altra cosa: va trovato cosa rende diverso il tuo hotel. Tre strade:\nVuoi che lo faccia io: l'analisi di posizionamento ${LINK.analisi} (dalle 40 camere puoi partire dallo smontaggio gratuito: ${LINK.smontaggio})\nVuoi il metodo: il libro ${LINK.libro}\nVuoi capire da solo, gratis: la guida ${LINK.guida}\nSe vuoi parlarne con me, rispondi a questa mail.`,
     '', 'Francesco Astolfi', 'Hotel Positioning',
   ].join('\n');
   return {
     sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
     to: [{ email }],
     replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
-    subject: `Il tagliando di ${rep.hotel}: la tua pagina merita un budget?`,
+    subject: `Tagliando Hotel: la pagina di ${rep.hotel} merita un budget?`,
     tags: ['tagliando-report'],
     htmlContent: html, textContent: txt,
   };
