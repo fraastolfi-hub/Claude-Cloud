@@ -119,6 +119,12 @@
 .area .weight{margin-top:16px;font:600 14px/1.4 var(--text);color:var(--ink-2s)}
 @media (max-width:900px){.areas{grid-template-columns:1fr}.thero .split{grid-template-columns:1fr;grid-template-areas:"testo" "modulo" "foto"}.mech{max-width:420px;margin:0 auto}}
 
+/* --- slogan finale --- */
+.end-band{background:var(--giallo);border:2px solid var(--inchiostro);border-radius:24px;box-shadow:6px 6px 0 var(--inchiostro);padding:clamp(32px,5vw,64px) clamp(22px,4vw,56px);text-align:center;display:grid;justify-items:center;gap:18px}
+.end-band h2{max-width:20ch;font-size:clamp(32px,4.4vw,58px)}
+.end-band h2 em{font-style:normal;color:inherit;display:block}
+.end-band .lead{color:var(--inchiostro);max-width:none;font-weight:600;margin:0}
+.end-band .btn{--bg:var(--inchiostro);--fg:#fff;border:2px solid var(--inchiostro);font-size:18px;padding:16px 28px;margin-top:6px}
 /* --- cosa non fa / domande --- */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
 @media (max-width:860px){.two{grid-template-columns:1fr}}
@@ -287,6 +293,17 @@
   </div>
 </section>
 
+<!-- ================= SLOGAN FINALE ================= -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="end-band">
+      <h2>La campagna è la benzina. <em>Il tuo sito è il motore.</em></h2>
+      <p class="lead">Assicurati che funzioni bene.</p>
+      <a class="btn" href="#tagliando" id="endCta">Fai il tagliando</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="foot lp-foot"><div class="wrap"><div class="legal">
@@ -407,6 +424,8 @@
 
   function daCapo(){ $('t-url').value = ''; mostra(form); stato.textContent = 'Tagliando Hotel'; $('t-url').focus(); }
   $('rsAgain').addEventListener('click', daCapo);
+  // il bottone finale riporta al modulo e mette il cursore nell'indirizzo
+  $('endCta').addEventListener('click', function(ev){ if (form.hidden) return; ev.preventDefault(); $('tagliando').scrollIntoView({ behavior:'smooth', block:'start' }); setTimeout(function(){ $('t-url').focus({ preventScroll:true }); }, 500); });
   $('erAgain').addEventListener('click', daCapo);
   ['t-url','t-email'].forEach(function(id){ $(id).addEventListener('input', function(){ this.parentNode.classList.remove('err'); }); });
   $('t-privacy').addEventListener('change', function(){ $('t-privacy-l').classList.remove('err'); });
