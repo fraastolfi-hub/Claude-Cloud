@@ -42,6 +42,8 @@ La lettura del messaggio usa Claude (`claude-opus-5-5`, effort `low`, risposta i
 Più quelle di Brevo già in uso (`BREVO_API_KEY`, `BREVO_SENDER_EMAIL`, `NOTIFY_EMAIL`). Per avere i semafori come attributo del contatto, `BREVO_ATTRIBUTES` deve includere `PROFILO`.
 Controllo rapido: `https://hotelpositioning.com/.netlify/functions/tagliando` mostra `true`/`false` per ogni variabile.
 
+**Provare prima di pubblicare (0 crediti):** il branch di sviluppo ha i deploy di branch attivi (Project configuration › Build & deploy › Branches and deploy contexts › «Let me add individual branches»). Ogni push sul branch che tocca `site/` crea un'anteprima su `https://<nome-branch-con-trattini>--<nome-progetto>.netlify.app`: lì si aprono `/tagliando/` e `/.netlify/functions/tagliando`. Le variabili d'ambiente devono valere per tutti i deploy context, non solo per Production.
+
 **Tempo delle funzioni:** il passaggio `pagina` (lettura + AI) richiede di solito 15-30 secondi. Se nei log compaiono timeout, alzare il limite delle funzioni sincrone dalle impostazioni di Netlify.
 
 ## Da fare (decisioni aperte della scheda)
