@@ -1,13 +1,13 @@
-// Il Tagliando (/tagliando/): una funzione, tre passaggi chiamati dalla pagina.
+// Il Tagliando (/tagliando/).
 //
-//   POST { parte: 'pagina',   url, hotel }   legge la pagina, controlla le prove, l'AI legge il messaggio  → risultato firmato
-//   POST { parte: 'velocita', url }          Google PageSpeed Insights, mobile                              → risultato firmato (+ screenshot)
+// I due controlli lunghi (lettura della pagina con l'AI, PageSpeed) girano in tagliando-background.mjs,
+// che salva il risultato firmato in Netlify Blobs. Questa funzione:
+//   GET  ?id=…&parte=pagina|velocita   → il risultato, o { pronto: false } se non è ancora finito
 //   POST { parte: 'report',   email, hotel, url, pagina, velocita, privacy }
 //        verifica le firme, compone il report, salva il contatto su Brevo (FONTE «Il Tagliando»),
 //        manda il report a chi l'ha chiesto e la notifica a Francesco.
 //   GET  → controllo della configurazione (solo sì/no).
 //
-// I primi due passaggi partono insieme dal browser: così nessuna chiamata supera il limite di tempo delle funzioni.
 //
 // Variabili d'ambiente (oltre a quelle di Brevo, vedi functions/invio.mjs):
 //   ANTHROPIC_API_KEY       obbligatoria: lettura del messaggio
@@ -17,15 +17,23 @@
 //   BREVO_LIST_TAGLIANDO_SEQUENZA  lista della sequenza «errori dell'albergatore»: solo chi ha dato il consenso facoltativo
 
 import { FORMS, brevo, saveContact, notification } from '../lib/brevo.mjs';
-import { urlSicuro, leggiPagina, estrai, prove, leggiMessaggio, velocita, frasiFatteTrovate, componi, reportMail, firma, verifica, Errore } from '../lib/tagliando.mjs';
+import { connectLambda, getStore } from '@netlify/blobs';
+import { componi, reportMail, verifica } from '../lib/tagliando.mjs';
+import { ID } from '../lib/tagliando-lavori.mjs';
 
 const json = (statusCode, body) => ({ statusCode, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' }, body: JSON.stringify(body) });
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const pacco = (dati) => ({ dati, firma: firma(dati) });
 
 export const handler = async (event) => {
   const env = process.env;
   if (event.httpMethod === 'GET') {
+    const q = event.queryStringParameters || {};
+    if (q.id) {
+      if (!ID.test(q.id) || !['pagina', 'velocita'].includes(q.parte)) return json(400, { ok: false, errore: 'richiesta' });
+      connectLambda(event);
+      const r = await getStore('tagliando').get(`${q.id}-${q.parte}`, { type: 'json' });
+      return json(200, r ? { pronto: true, ...r } : { pronto: false });
+    }
     return json(200, {
       ANTHROPIC_API_KEY: !!env.ANTHROPIC_API_KEY, PAGESPEED_API_KEY: !!env.PAGESPEED_API_KEY, TAGLIANDO_SECRET: !!env.TAGLIANDO_SECRET,
       BREVO_API_KEY: !!env.BREVO_API_KEY, BREVO_SENDER_EMAIL: !!env.BREVO_SENDER_EMAIL, NOTIFY_EMAIL: !!env.NOTIFY_EMAIL,
@@ -39,25 +47,6 @@ export const handler = async (event) => {
   if (d['bot-field']) return json(200, { ok: true });
 
   try {
-    if (d.parte === 'pagina') {
-      if (!env.ANTHROPIC_API_KEY) return json(503, { ok: false, errore: 'configurazione' });
-      const url = await urlSicuro(d.url);
-      const { html, finale } = await leggiPagina(url);
-      const pagina = estrai(html);
-      if (pagina.parole < 30) throw new Errore('pagina', 'La pagina ha pochissimo testo leggibile: forse si carica tutta con JavaScript. Prova con l\'indirizzo di una landing o di una pagina interna.');
-      const p = prove(html, pagina.testo);
-      const hotel = String(d.hotel || '').slice(0, 120);
-      const m = await leggiMessaggio({ url: finale, hotel, pagina });
-      const frasi = frasiFatteTrovate(pagina.testo, m.frasi_fatte);
-      return json(200, { ok: true, ...pacco({ url, finale, hotel, titolo: pagina.titolo, prove: p, messaggio: m, frasi, ora: Date.now() }) });
-    }
-
-    if (d.parte === 'velocita') {
-      const url = await urlSicuro(d.url);
-      const { screenshot, ...v } = await velocita(url);
-      return json(200, { ok: true, screenshot, ...pacco({ url, ...v, ora: Date.now() }) });
-    }
-
     if (d.parte === 'report') {
       if (!d.email || !EMAIL.test(d.email)) return json(400, { ok: false, errore: 'email' });
       if (!d.privacy) return json(400, { ok: false, errore: 'privacy' });
@@ -94,7 +83,6 @@ export const handler = async (event) => {
 
     return json(400, { ok: false, errore: 'parte' });
   } catch (e) {
-    if (e instanceof Errore) return json(422, { ok: false, errore: e.codice, messaggio: e.message });
     console.error('tagliando', d.parte, e);
     // dettaglio tecnico breve (nessun dato segreto): serve a capire il guasto dallo schermo, senza aprire i log
     const dettaglio = [e?.constructor?.name, e?.status, String(e?.message || '').replace(/sk-[\w-]+/g, '…').slice(0, 160)].filter(Boolean).join(' · ');

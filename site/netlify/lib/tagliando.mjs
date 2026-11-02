@@ -137,7 +137,7 @@ export function prove(html, testoPagina) {
 export async function velocita(url) {
   const q = new URLSearchParams({ url, strategy: 'mobile', category: 'performance', locale: 'it' });
   if (process.env.PAGESPEED_API_KEY) q.set('key', process.env.PAGESPEED_API_KEY);
-  const r = await fetch('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?' + q, { signal: AbortSignal.timeout(50000) })
+  const r = await fetch('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?' + q, { signal: AbortSignal.timeout(120000) })
     .catch(() => { throw new Errore('velocita', 'PageSpeed non ha risposto in tempo.'); });
   if (!r.ok) throw new Errore('velocita', `PageSpeed ha risposto con un errore (${r.status}).`);
   const j = await r.json();
@@ -172,7 +172,7 @@ const SCHEMA = {
       esito: { type: 'string', enum: ['regge_del_tutto', 'regge_in_parte', 'non_regge'], description: 'regge_del_tutto: con il nome di un concorrente il testo resta vero; non_regge: contiene fatti che valgono solo per questo hotel' },
       frase_testata: { type: 'string', description: 'la frase più rappresentativa, copiata alla lettera, su cui hai fatto il test' },
       spiegazione: { type: 'string', description: 'una frase: perché regge o non regge' } } },
-    frasi_fatte: { type: 'array', maxItems: 12, items: { type: 'string' }, description: 'frasi fatte alberghiere trovate nella pagina, copiate alla lettera (anche varianti della libreria)' },
+    frasi_fatte: { type: 'array', items: { type: 'string' }, description: 'frasi fatte alberghiere trovate nella pagina, copiate alla lettera (anche varianti della libreria), al massimo 12' },
     cta_prima_schermata: { type: 'boolean', description: 'true se nella prima parte della pagina c\'è un invito chiaro a prenotare o verificare la disponibilità' },
     recensioni_visibili: { type: 'boolean', description: 'true se la pagina mostra recensioni o voti degli ospiti' },
     problema_principale: { type: 'object', additionalProperties: false, required: ['titolo', 'prova', 'cosa_costa'], properties: {
@@ -203,7 +203,7 @@ Come scrivi (le risposte finiscono nel report che legge il titolare):
 - Se il messaggio funziona, dillo con onestà.`;
 
 export async function leggiMessaggio({ url, hotel, pagina }) {
-  const client = new Anthropic({ timeout: 45000, maxRetries: 1 });
+  const client = new Anthropic({ timeout: 180000, maxRetries: 1 });
   const contenuto = [
     `Indirizzo: ${url}`,
     hotel ? `Nome dell'hotel indicato dal titolare: ${hotel}` : '',
@@ -225,7 +225,9 @@ export async function leggiMessaggio({ url, hotel, pagina }) {
   if (r.stop_reason === 'refusal') throw new Errore('messaggio', "L'AI non ha letto la pagina.");
   const blocco = r.content.find((b) => b.type === 'text');
   if (!blocco) throw new Errore('messaggio', "L'AI non ha restituito la lettura.");
-  return JSON.parse(blocco.text);
+  const m = JSON.parse(blocco.text);
+  m.frasi_fatte = (m.frasi_fatte || []).slice(0, 12);
+  return m;
 }
 
 // ---------------------------------------------------------------- semafori e problemi

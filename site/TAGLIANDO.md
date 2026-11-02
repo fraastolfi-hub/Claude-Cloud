@@ -8,7 +8,8 @@ Scheda del sistema (obiettivo, criteri, semafori, uscite): https://claude.ai/art
 | Pezzo | File |
 |---|---|
 | Pagina, modulo, schermata dei semafori | `src/pages/tagliando/index.html` (design system morbido, come il resto del sito) |
-| Funzione (tre passaggi: `pagina`, `velocita`, `report`) | `netlify/functions/tagliando.mjs` |
+| Controlli lunghi in background (`pagina`, `velocita`), risultato in Netlify Blobs | `netlify/functions/tagliando-background.mjs`, `netlify/lib/tagliando-lavori.mjs` |
+| Risultati pronti (GET), report, configurazione | `netlify/functions/tagliando.mjs` |
 | Analisi, soglie, semafori, report email | `netlify/lib/tagliando.mjs` |
 | Libreria delle frasi fatte (bozza da completare) | `netlify/lib/frasi-fatte.mjs` |
 | Dipendenza della funzione (SDK di Claude) | `package.json` |
@@ -17,7 +18,7 @@ Lo stack è quello del sito (Netlify + Brevo) al posto di Lovable + Supabase pre
 
 ## Come funziona
 
-1. Il browser chiama insieme `pagina` (legge l'HTML, controlla le prove, l'AI legge il messaggio) e `velocita` (Google PageSpeed Insights, mobile). Due chiamate in parallelo, così nessuna supera il limite di tempo delle funzioni.
+1. Il browser avvia insieme due funzioni in background (fino a 15 minuti, Netlify risponde subito 202): `pagina` (legge l'HTML, controlla le prove, l'AI legge il messaggio) e `velocita` (Google PageSpeed Insights, mobile). Ognuna salva il risultato in Netlify Blobs (store `tagliando`); la pagina chiede ogni 3 secondi se è pronto, per al massimo 3 minuti. Le funzioni normali si fermano dopo pochi secondi (codice 504): PageSpeed da solo ne richiede 20-40.
 2. Ogni risultato torna firmato (HMAC). Poi il browser chiama `report`: la funzione verifica le firme, compone il report e:
    - manda il report a chi l'ha chiesto (Brevo, mittente Francesco, tag `tagliando-report`);
    - salva il contatto su Brevo (`FONTE` = «Il Tagliando», `PROFILO` = i tre semafori);
@@ -44,7 +45,7 @@ Controllo rapido: `https://hotelpositioning.com/.netlify/functions/tagliando` mo
 
 **Provare prima di pubblicare (0 crediti):** il branch di sviluppo ha i deploy di branch attivi (Project configuration › Build & deploy › Branches and deploy contexts › «Let me add individual branches»). Ogni push sul branch che tocca `site/` crea un'anteprima su `https://<nome-branch-con-trattini>--<nome-progetto>.netlify.app`: lì si aprono `/tagliando/` e `/.netlify/functions/tagliando`. Le variabili d'ambiente devono valere per tutti i deploy context, non solo per Production.
 
-**Tempo delle funzioni:** il passaggio `pagina` (lettura + AI) richiede di solito 15-30 secondi. Se nei log compaiono timeout, alzare il limite delle funzioni sincrone dalle impostazioni di Netlify.
+**Tempo:** di solito un minuto in tutto. I risultati restano in Netlify Blobs (pochi KB l'uno); si possono svuotare ogni tanto dal pannello di Netlify (Blobs › tagliando).
 
 ## Da fare (decisioni aperte della scheda)
 

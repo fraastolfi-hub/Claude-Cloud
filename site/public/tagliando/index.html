@@ -194,7 +194,7 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
             <li id="stMessaggio"><span class="st" aria-hidden="true"></span><span>Leggo il messaggio<small>Prima schermata, promessa, test di sostituzione</small></span></li>
             <li id="stVelocita"><span class="st" aria-hidden="true"></span><span>Misuro la velocità da telefono<small>Google PageSpeed Insights</small></span></li>
           </ol>
-          <p class="wait">Di solito ci vuole meno di un minuto. Non chiudere la pagina.</p>
+          <p class="wait">Di solito ci vuole un minuto, a volte due. Non chiudere la pagina.</p>
         </div>
 
         <!-- 3. risultato -->
@@ -385,6 +385,31 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
       .then(function(r){ return r.json().catch(function(){ return { ok:false, messaggio: (r.status === 502 || r.status === 504) ? 'Il server ha impiegato troppo tempo a leggere la pagina.' : 'Risposta non valida dal server.', dettaglio: 'risposta non JSON' }; }).then(function(j){ j.status = r.status; return j; }); })
       .catch(function(){ return { ok:false, messaggio:'Connessione interrotta. Riprova.' }; });
   }
+  // i controlli lunghi girano in background: si avviano e poi si chiede ogni 3 secondi se sono pronti (massimo 3 minuti)
+  function nuovoId(){
+    try { return crypto.randomUUID(); } catch(e) { return (Date.now().toString(36) + Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)).slice(0, 40); }
+  }
+  function lavoro_(parte, id, extra){
+    var corpo = Object.assign({ id: id, parte: parte }, extra);
+    return fetch(FN + '-background', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(corpo) })
+      .then(function(r){
+        if (r.status !== 202 && !r.ok) return { ok:false, status:r.status, errore:'avvio', messaggio:'Non sono riuscito ad avviare il controllo.' };
+        var inizio = Date.now();
+        return new Promise(function(fine){
+          (function chiedi(){
+            fetch(FN + '?id=' + encodeURIComponent(id) + '&parte=' + parte, { cache:'no-store' })
+              .then(function(r){ return r.json(); })
+              .then(function(j){
+                if (j.pronto) { delete j.pronto; return fine(j); }
+                if (Date.now() - inizio > 180000) return fine({ ok:false, errore:'tempo', messaggio:'Il controllo ci sta mettendo troppo. Riprova tra qualche minuto.' });
+                setTimeout(chiedi, 3000);
+              })
+              .catch(function(){ if (Date.now() - inizio > 180000) fine({ ok:false, errore:'rete', messaggio:'Connessione interrotta. Riprova.' }); else setTimeout(chiedi, 4000); });
+          })();
+        });
+      })
+      .catch(function(){ return { ok:false, errore:'rete', messaggio:'Connessione interrotta. Riprova.' }; });
+  }
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function valida(){
     var ok = true;
@@ -407,10 +432,11 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
     var t1 = setTimeout(function(){ passo('stPagina', 'ok'); }, 4000);
     var shot = null;
 
-    var pPagina = post({ parte:'pagina', url: dati.url, hotel: dati.hotel }).then(function(j){
+    var id = nuovoId();
+    var pPagina = lavoro_('pagina', id, { url: dati.url, hotel: dati.hotel }).then(function(j){
       clearTimeout(t1); passo('stPagina', j.ok ? 'ok' : 'ko'); passo('stMessaggio', j.ok ? 'ok' : 'ko'); return j;
     });
-    var pVel = post({ parte:'velocita', url: dati.url }).then(function(j){
+    var pVel = lavoro_('velocita', id, { url: dati.url }).then(function(j){
       passo('stVelocita', j.ok ? 'ok' : 'ko'); if (j.ok) shot = j.screenshot; return j;
     });
 
