@@ -96,6 +96,8 @@ export const handler = async (event) => {
   } catch (e) {
     if (e instanceof Errore) return json(422, { ok: false, errore: e.codice, messaggio: e.message });
     console.error('tagliando', d.parte, e);
-    return json(500, { ok: false, errore: 'interno', messaggio: 'Qualcosa non ha funzionato dal nostro lato. Riprova tra qualche minuto.' });
+    // dettaglio tecnico breve (nessun dato segreto): serve a capire il guasto dallo schermo, senza aprire i log
+    const dettaglio = [e?.constructor?.name, e?.status, String(e?.message || '').replace(/sk-[\w-]+/g, '…').slice(0, 160)].filter(Boolean).join(' · ');
+    return json(500, { ok: false, errore: 'interno', dettaglio, messaggio: 'Qualcosa non ha funzionato dal nostro lato. Riprova tra qualche minuto.' });
   }
 };

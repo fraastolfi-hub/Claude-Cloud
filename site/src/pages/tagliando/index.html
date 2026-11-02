@@ -164,7 +164,7 @@
 
         <!-- 4. errore -->
         <div class="tg-body" id="tgErrore" hidden>
-          <div class="errbox" role="alert"><b>Non sono riuscito a fare il tagliando.</b><span id="erTesto"></span></div>
+          <div class="errbox" role="alert"><b>Non sono riuscito a fare il tagliando.</b><span id="erTesto"></span><small id="erCodice" style="display:block;margin-top:8px;font-size:13px;color:var(--ink-2s);word-break:break-word"></small></div>
           <p class="wait">Ho comunque ricevuto la richiesta: se la pagina non si lascia leggere, la guardo io e ti scrivo.</p>
           <button type="button" class="again" id="erAgain">Riprova con un altro indirizzo</button>
         </div>
@@ -256,7 +256,7 @@
   function passo(id, c){ var li = $(id); li.className = c; li.querySelector('.st').textContent = c === 'ok' ? '✓' : c === 'ko' ? '–' : ''; }
   function post(body){
     return fetch(FN, { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(body) })
-      .then(function(r){ return r.json().catch(function(){ return { ok:false, messaggio:'Risposta non valida dal server.' }; }).then(function(j){ j.status = r.status; return j; }); })
+      .then(function(r){ return r.json().catch(function(){ return { ok:false, messaggio: (r.status === 502 || r.status === 504) ? 'Il server ha impiegato troppo tempo a leggere la pagina.' : 'Risposta non valida dal server.', dettaglio: 'risposta non JSON' }; }).then(function(j){ j.status = r.status; return j; }); })
       .catch(function(){ return { ok:false, messaggio:'Connessione interrotta. Riprova.' }; });
   }
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
@@ -295,6 +295,7 @@
         velocita: v.ok ? { dati: v.dati, firma: v.firma } : null,
         motivo: pg.ok ? '' : (pg.messaggio || pg.errore || '') };
       return post(body).then(function(rep){
+        $('erCodice').textContent = 'Codice: ' + [pg.ok ? 'pagina ok' : ('pagina ' + (pg.status || '-') + ' ' + (pg.errore || '') + ' ' + (pg.dettaglio || '')), v.ok ? 'velocità ok' : ('velocità ' + (v.status || '-') + ' ' + (v.errore || '') + ' ' + (v.dettaglio || '') + ' ' + (v.ok ? '' : (v.messaggio || ''))), rep.ok ? 'report ok' : ('report ' + (rep.status || '-') + ' ' + (rep.errore || ''))].join(' | ');
         if (!pg.ok) { $('erTesto').textContent = pg.messaggio || 'La pagina non si è lasciata leggere.'; stato.textContent = 'Il tagliando'; mostra(err); return; }
         if (!rep.report) { $('erTesto').textContent = rep.messaggio || 'Qualcosa non ha funzionato dal nostro lato. Riprova tra qualche minuto.'; stato.textContent = 'Il tagliando'; mostra(err); return; }
         risultato(rep.report, shot, rep.ok, dati.email);
