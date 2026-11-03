@@ -2,7 +2,7 @@
   "summary": {
     "batch": "out",
     "date": "2026-11-03",
-    "n": 10,
+    "n": 16,
     "passed": 0,
     "avg_score": 67.5,
     "benchmarks": {
@@ -43,13 +43,13 @@
           "pass": true
         },
         "palette": {
-          "value": 0.652,
+          "value": 0.678,
           "min": 0.8,
           "pass": false
         }
       },
       "fails": [
-        "solo 65% dei pixel in palette (min 80%)"
+        "solo 68% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
@@ -82,14 +82,14 @@
           "pass": true
         },
         "palette": {
-          "value": 0.717,
+          "value": 0.735,
           "min": 0.8,
           "pass": false
         }
       },
       "fails": [
         "canvas 1080x1920, atteso 1080x1350",
-        "solo 72% dei pixel in palette (min 80%)"
+        "solo 73% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
@@ -118,17 +118,17 @@
           "pass": true
         },
         "ground": {
-          "value": "#D8D6FF",
+          "value": "#FFD22E",
           "pass": true
         },
         "palette": {
-          "value": 0.669,
+          "value": 0.638,
           "min": 0.8,
           "pass": false
         }
       },
       "fails": [
-        "solo 67% dei pixel in palette (min 80%)"
+        "solo 64% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
@@ -157,18 +157,18 @@
           "pass": true
         },
         "ground": {
-          "value": "#D8D6FF",
+          "value": "#FFD22E",
           "pass": true
         },
         "palette": {
-          "value": 0.73,
+          "value": 0.706,
           "min": 0.8,
           "pass": false
         }
       },
       "fails": [
         "canvas 1080x1920, atteso 1080x1350",
-        "solo 73% dei pixel in palette (min 80%)"
+        "solo 71% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
@@ -197,17 +197,17 @@
           "pass": true
         },
         "ground": {
-          "value": "#BFE8E3",
+          "value": "#D8D6FF",
           "pass": true
         },
         "palette": {
-          "value": 0.67,
+          "value": 0.657,
           "min": 0.8,
           "pass": false
         }
       },
       "fails": [
-        "solo 67% dei pixel in palette (min 80%)"
+        "solo 66% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
@@ -236,18 +236,18 @@
           "pass": true
         },
         "ground": {
-          "value": "#BFE8E3",
+          "value": "#D8D6FF",
           "pass": true
         },
         "palette": {
-          "value": 0.73,
+          "value": 0.72,
           "min": 0.8,
           "pass": false
         }
       },
       "fails": [
         "canvas 1080x1920, atteso 1080x1350",
-        "solo 73% dei pixel in palette (min 80%)"
+        "solo 72% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
@@ -276,17 +276,17 @@
           "pass": true
         },
         "ground": {
-          "value": "#FFD22E",
+          "value": "#FAF7F4",
           "pass": true
         },
         "palette": {
-          "value": 0.701,
+          "value": 0.675,
           "min": 0.8,
           "pass": false
         }
       },
       "fails": [
-        "solo 70% dei pixel in palette (min 80%)"
+        "solo 68% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
@@ -315,18 +315,18 @@
           "pass": true
         },
         "ground": {
-          "value": "#FFD22E",
+          "value": "#FAF7F4",
           "pass": true
         },
         "palette": {
-          "value": 0.75,
+          "value": 0.732,
           "min": 0.8,
           "pass": false
         }
       },
       "fails": [
         "canvas 1080x1920, atteso 1080x1350",
-        "solo 75% dei pixel in palette (min 80%)"
+        "solo 73% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
@@ -355,17 +355,17 @@
           "pass": true
         },
         "ground": {
-          "value": "#262521",
+          "value": "#BFE8E3",
           "pass": true
         },
         "palette": {
-          "value": 0.662,
+          "value": 0.678,
           "min": 0.8,
           "pass": false
         }
       },
       "fails": [
-        "solo 66% dei pixel in palette (min 80%)"
+        "solo 68% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
@@ -394,11 +394,90 @@
           "pass": true
         },
         "ground": {
+          "value": "#BFE8E3",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.735,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350",
+        "solo 74% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 60,
+      "pass": false
+    },
+    {
+      "file": "t6_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 72,
+            "R": 72,
+            "B": 65
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
           "value": "#262521",
           "pass": true
         },
         "palette": {
-          "value": 0.725,
+          "value": 0.655,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "solo 66% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 75,
+      "pass": false
+    },
+    {
+      "file": "t6_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 250,
+            "R": 72,
+            "B": 321
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#262521",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.721,
           "min": 0.8,
           "pass": false
         }
@@ -406,6 +485,164 @@
       "fails": [
         "canvas 1080x1920, atteso 1080x1350",
         "solo 72% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 60,
+      "pass": false
+    },
+    {
+      "file": "t7_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 72,
+            "R": 72,
+            "B": 65
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FFD3EA",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.687,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "solo 69% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 75,
+      "pass": false
+    },
+    {
+      "file": "t7_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 250,
+            "R": 72,
+            "B": 321
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FFD3EA",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.741,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350",
+        "solo 74% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 60,
+      "pass": false
+    },
+    {
+      "file": "t8_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 72,
+            "R": 72,
+            "B": 65
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#D8D6FF",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.686,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "solo 69% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 75,
+      "pass": false
+    },
+    {
+      "file": "t8_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 250,
+            "R": 72,
+            "B": 321
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#D8D6FF",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.741,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350",
+        "solo 74% dei pixel in palette (min 80%)"
       ],
       "visual_rubric": null,
       "human": null,
