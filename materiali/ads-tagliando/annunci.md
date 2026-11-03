@@ -183,3 +183,18 @@ Tagliando Hotel legge il tuo sito come lo legge lui: dal telefono, senza conosce
 
 **Titolo:** Il tuo sito, visto dall'A14
 **Descrizione:** Tagliando Hotel · gratis
+
+---
+
+## Campagna su Meta (creata il 3 novembre 2026, in pausa)
+
+Account «Francesco Astolfi Hotel Positioning» (1820080458983180) · pagina «Francesco Astolfi - Marketing e Positioning per Hotel e Ristoranti» · Instagram @webcopywriter. Testi: `meta-ads-tagliando-8.md` di Francesco (versione caricata il 3 novembre), immagini `out/`.
+
+| Oggetto | ID | Impostazioni |
+|---|---|---|
+| Campagna «Tagliando Hotel · Romagna · Lead sito» | 120258953892400197 | Obiettivo lead, budget di campagna 20 €/giorno, costo più basso |
+| Gruppo «Romagna · broad · Lead sito» | 120258953897980197 | Pixel «Fb Hotelpositioning.com», evento Lead · Pesaro, Rimini, Cesena, Forlì, Ravenna (20-25 km) · da 25 anni · Advantage+ pubblico e posizionamenti |
+| T1 Il meccanico · T3 Il verdetto · T4 ChatGPT · T5 Il nome del vicino · T8 Romagna A14 | 120258953948240197 · …952270197 · …954780197 · …955590197 · …958130197 | Fase 1: da accendere al lancio |
+| T2 La benzina · T6 Agenzia · T7 Novembre | 120258953950860197 · …956500197 · …957510197 | Fase 2: restano in pausa |
+
+Ogni creatività: 4:5 nel feed, 9:16 in Stories e Reels, pulsante «Scopri di più», dichiarazione AI attiva (foto creata con AI). Link con UTM `utm_content=t1`…`t8` (T8: `utm_campaign=tagliando-romagna`). Immagini caricate su Meta da GitHub (repository pubblico): nessun file sul sito.
