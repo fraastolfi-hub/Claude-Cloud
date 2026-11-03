@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The positioning test for hotels · Hotel Positioning</title>
+<meta name="description" content="The positioning test for hotels and resorts: seven questions, two minutes. It tells you whether your hotel is invisible, replaceable or positioned today, and where guests struggle to choose it.">
+<link rel="canonical" href="https://hotelpositioning.com/en/quiz/">
+<meta property="og:title" content="The positioning test: invisible, replaceable or positioned.">
+<meta property="og:description" content="Seven questions, two minutes. Where your hotel is recognisable, and where it risks being replaced.">
+<meta property="og:type" content="website">
+<!-- @include head-en -->
+<style>
+/* --- hero --- */
+.qhero{padding:clamp(40px,6vw,84px) 0 clamp(64px,8vw,110px)}
+.qhero .intro{display:grid;gap:22px;justify-items:start;margin-bottom:clamp(30px,4vw,48px)}
+.qhero h1{font-size:clamp(46px,7vw,104px)}
+.qhero .lead{max-width:52ch}
+
+/* --- box del test --- */
+.qz{background:var(--white);border:var(--b);box-shadow:var(--sh-lg);position:relative;overflow:hidden;border-radius:var(--r-sm)}
+.qz-top{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px clamp(18px,3vw,32px);border-bottom:var(--b);background:var(--ink);color:var(--paper);font:700 12px var(--mono);letter-spacing:0;}
+.qz-top .dots{display:flex;gap:6px}
+.qz-top .dots i{width:14px;height:14px;border:1px solid rgba(255,255,255,.16);background:transparent;transition:background .3s}
+.qz-top .dots i.done{background:var(--orange)}
+.qz-top .dots i.now{background:var(--yellow)}
+.qz-bar{height:14px;border-bottom:var(--b);background:var(--paper)}
+.qz-bar i{display:block;height:100%;width:0;background:repeating-linear-gradient(-45deg,var(--orange) 0 8px,var(--orange-dk) 8px 16px);border-right:1px solid var(--line);transition:width .45s cubic-bezier(.5,1.4,.5,1)}
+.qz-stage{padding:clamp(22px,3.4vw,44px)}
+.qz-q{transition:opacity .22s ease,transform .22s ease}
+.qz-q.out{opacity:0;transform:translateX(-36px)}
+.qz-q.out.back{transform:translateX(36px)}
+.qz-q.pre{opacity:0;transform:translateX(36px)}
+.qz-q.pre.back{transform:translateX(-36px)}
+.qz-q .kicker{margin-bottom:14px}
+.qz-q h2{font-size:clamp(26px,3.2vw,42px);letter-spacing:-.03em;line-height:1.08;max-width:24ch;outline:0}
+.qz-q .ctx{margin:14px 0 0;font-size:17px;color:var(--muted);max-width:56ch}
+.qz-opts{list-style:none;display:grid;gap:12px;margin-top:clamp(22px,3vw,32px)}
+.qz-opt{width:100%;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:center;text-align:left;background:var(--paper);border:var(--b);box-shadow:none;padding:14px 16px 14px 14px;font:500 17.5px/1.4 var(--sans);transition:transform .12s,box-shadow .12s,background .2s;border-radius:var(--r-sm)}
+.qz-opt .key{width:40px;height:40px;border:1px solid var(--line);background:var(--white);display:grid;place-items:center;font:700 15px var(--mono);transition:background .2s;border-radius:var(--r-sm)}
+.qz-opt:hover{transform:translate(-2px,-2px);box-shadow:none;background:var(--cream-y)}
+.qz-opt:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.qz-opt[aria-pressed="true"]{background:var(--orange);transform:translate(2px,2px);box-shadow:none}
+.qz-opt[aria-pressed="true"] .key{background:var(--ink);color:var(--paper)}
+.qz-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:14px clamp(18px,3vw,32px);border-top:1px dashed var(--line);font:400 13px/1.4 var(--mono);color:var(--muted)}
+.qz-back{border:1px solid var(--line);background:var(--white);padding:9px 14px;font:700 13px var(--mono);letter-spacing:0;box-shadow:none;transition:transform .12s,box-shadow .12s;border-radius:var(--r-sm)}
+.qz-back:hover:not(:disabled){transform:translate(-2px,-2px);box-shadow:none}
+.qz-back:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
+.qz-foot[hidden],.qz-stage[hidden]{display:none}
+.qz kbd{font:700 12px var(--mono);border:1px solid var(--line);padding:1px 5px;background:var(--paper);color:var(--ink);border-radius:var(--r-sm)}
+@media (max-width:560px){.qz-hint{display:none}.qz-opt{font-size:16.5px;grid-template-columns:34px 1fr;gap:12px}.qz-opt .key{width:34px;height:34px}}
+
+/* --- risultato --- */
+.qz-res{padding:clamp(22px,3.4vw,44px);outline:0}
+.qz-res[hidden]{display:none}
+.res-label{font:700 13px var(--mono);letter-spacing:0;color:var(--muted)}
+.res-name{font-size:clamp(48px,8vw,112px);letter-spacing:-.05em;line-height:.92;margin:12px 0 18px;outline:0}
+.res-name span{display:inline-block;background:var(--res,var(--orange));border:var(--b);box-shadow:var(--sh);padding:.04em .16em .1em;transform:rotate(0deg);border-radius:var(--r-sm)}
+.res-hook{font:700 clamp(22px,2.4vw,30px)/1.2 var(--sans);letter-spacing:-.025em;max-width:30ch}
+.meter{margin:64px 0 8px;position:relative}
+.meter-track{display:grid;grid-template-columns:6fr 5fr 4fr;border:var(--b);height:26px}
+.meter-track i{border-right:var(--b)}
+.meter-track i:last-child{border-right:0}
+.meter-track i:nth-child(1){background:var(--grey)}.meter-track i:nth-child(2){background:var(--yellow)}.meter-track i:nth-child(3){background:var(--orange)}
+.meter-lab{display:grid;grid-template-columns:6fr 5fr 4fr;font:700 11px var(--mono);letter-spacing:0;margin-top:8px}
+.meter-lab span{padding-left:4px}
+.meter-pin{position:absolute;top:-12px;left:0;width:0;transition:left 1s cubic-bezier(.2,.9,.2,1)}
+.meter-pin::before{content:"";position:absolute;left:-3px;top:0;width:6px;height:50px;background:var(--ink)}
+.meter-pin b{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font:700 12px var(--mono);padding:5px 8px;white-space:nowrap}
+.res-body{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,48px);margin-top:36px;align-items:start}
+@media (max-width:860px){.res-body{grid-template-columns:1fr}}
+.res-diag p{margin-bottom:14px;max-width:58ch}
+.res-diag p strong{background:var(--cream-y);padding:0 3px}
+.weak h3{font-size:22px;margin-bottom:14px}
+.weak ol{list-style:none;display:grid;gap:12px;counter-reset:w}
+.weak li{counter-increment:w;border:1px solid var(--line);background:var(--paper);padding:14px 16px 14px 56px;position:relative;font-size:16px;line-height:1.45;border-radius:var(--r-sm)}
+.weak li::before{content:counter(w);position:absolute;left:12px;top:14px;width:30px;height:30px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font:700 14px var(--mono)}
+.weak li b{display:block;font-size:17px;margin-bottom:4px}
+.weak li em{display:block;font-style:normal;font:400 13px/1.45 var(--mono);color:var(--muted);margin-top:6px}
+.res-cta{margin-top:38px;padding-top:30px;border-top:var(--b)}
+.res-cta h3{font-size:clamp(24px,2.6vw,34px);margin-bottom:10px}
+.res-cta > p{max-width:60ch;margin-bottom:22px}
+.res-mail{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px);align-items:start}
+@media (max-width:860px){.res-mail{grid-template-columns:1fr}}
+.res-mail .form{box-shadow:none}
+.res-mail .form .ok{padding:18px 6px}
+.res-mail .form .ok .tick{width:70px;height:70px;font-size:38px}
+.res-mail .form .ok .big{font-size:clamp(24px,2.6vw,32px)}
+.res-again{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;border-top:1px dashed var(--line);padding-top:22px}
+
+/* --- profili --- */
+.profiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.profiles{grid-template-columns:1fr}}
+.profiles .card{display:flex;flex-direction:column;gap:12px}
+.profiles .card .tag{align-self:flex-start;font:700 12px var(--mono);letter-spacing:0;border:1px solid var(--line);padding:6px 9px;background:var(--white);border-radius:var(--r-sm)}
+.profiles .card h3{font-size:clamp(28px,2.8vw,38px);margin:0}
+.profiles .card.g{background:var(--grey)}
+
+/* --- Essenziale: rifiniture del quiz --- */
+.qz{border:2px solid var(--inchiostro);border-radius:24px;box-shadow:var(--o-xl)}
+.qz-top{background:var(--white);color:var(--muted);border-bottom:0;font:500 14px var(--text);padding:20px clamp(20px,3.4vw,44px) 14px}
+.qz-top .dots{gap:7px}
+.qz-top .dots i{width:8px;height:8px;border:0;border-radius:50%;background:var(--mist-2)}
+.qz-top .dots i.done{background:var(--ink)}
+.qz-top .dots i{width:10px;height:10px}
+.qz-top .dots i.now{background:var(--yellow);box-shadow:0 0 0 1.5px var(--inchiostro)}
+.qz-bar{height:10px;border:1.5px solid var(--inchiostro);background:var(--surface-sand);margin:0 clamp(20px,3.4vw,44px);border-radius:999px;overflow:hidden}
+.qz-bar i{background:var(--giallo);border:0;border-radius:999px;transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.qz-stage{padding:clamp(24px,3.4vw,44px)}
+.qz-opt{background:var(--white);border-radius:12px;padding:14px 18px 14px 14px;font:500 17px/1.4 var(--text);color:var(--ink);transition:background .2s,color .2s}
+.qz-opt .key{border:1.5px solid var(--inchiostro);border-radius:10px;background:var(--surface-sand);box-shadow:none;font:800 15px var(--display);color:var(--ink)}
+.qz-opt:hover{transform:none;background:var(--yellow-soft)}
+.qz-opt:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.qz-opt[aria-pressed="true"]{background:var(--giallo)!important;color:var(--inchiostro);transform:none;box-shadow:2px 2px 0 var(--inchiostro)}
+.qz-opt[aria-pressed="true"] .key{background:var(--white);color:var(--inchiostro)}
+.qz-foot{border-top:1px solid var(--line);font:400 13px/1.4 var(--text);padding:16px clamp(20px,3.4vw,44px)}
+.qz-back{border:2px solid var(--inchiostro);border-radius:12px;background:var(--white);box-shadow:2px 2px 0 var(--inchiostro);padding:8px 15px;font:700 15px var(--display);color:var(--ink)}
+.qz-back:hover:not(:disabled){transform:none;background:var(--yellow-soft)}
+.qz-back:disabled{box-shadow:none}
+.qz kbd{font:500 12px var(--text);border:0;background:var(--mist);border-radius:6px;padding:2px 6px}
+/* risultato */
+.res-label{font:700 13px var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.res-name span{background:var(--res,var(--yellow));border:2px solid var(--inchiostro);box-shadow:var(--o-md);border-radius:16px;padding:.02em .16em .1em}
+.res-hook{font-family:var(--display)}
+.qz-res .meter{margin:72px 0 8px;height:auto;border:0;background:none;border-radius:0;overflow:visible}
+.meter-track{border:1.5px solid var(--inchiostro);border-radius:999px;overflow:hidden;height:14px;gap:0}
+.meter-track i,.meter-track i:last-child{border:0}
+.meter-track i + i{border-left:1.5px solid var(--inchiostro)}
+.meter-track i:nth-child(1){background:var(--pink-soft)}
+.meter-track i:nth-child(2){background:var(--yellow-tint)}
+.meter-track i:nth-child(3){background:var(--green)}
+.meter-lab{font:700 13px var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--inchiostro-3);margin-top:10px}
+.meter-lab span{padding-left:0}
+@media (max-width:560px){.meter-lab{font-size:11px;letter-spacing:0}}
+.meter-pin{top:-5px;z-index:1}
+.meter-pin::before{left:-11px;top:0;width:22px;height:22px;border-radius:50%;background:var(--white);border:2px solid var(--inchiostro);box-sizing:border-box;box-shadow:2px 2px 0 var(--inchiostro)}
+.meter-pin b{bottom:16px;background:var(--white);color:var(--inchiostro);border:2px solid var(--inchiostro);font:800 14px/1 var(--display);padding:6px 10px;border-radius:999px;box-shadow:2px 2px 0 var(--inchiostro)}
+.res-diag p strong{background:none;padding:0;font-weight:600}
+.weak li{background:var(--surface-sand);border-radius:14px;padding:16px 18px 16px 58px}
+.weak li::before{left:14px;top:15px;width:30px;height:30px;border-radius:10px;background:var(--pink-soft);color:var(--ink);border:1.5px solid var(--inchiostro);box-sizing:border-box;font:800 14px var(--display)}
+.weak li b{font-weight:600}
+.weak li em{font:400 13px/1.45 var(--text)}
+.res-cta{border-top:1px solid var(--line)}
+.res-mail .form{background:var(--yellow-soft);border-radius:20px}
+.res-again{border-top:1px solid var(--line)}
+/* profili */
+.profiles .card.g,.profiles .card.y,.profiles .card.o{background:var(--white);box-shadow:none}
+.profiles .card .tag{border:1.5px solid var(--inchiostro);border-radius:999px;background:var(--white);padding:7px 12px;font:500 13px/1 var(--text);display:inline-flex;align-items:center;gap:7px}
+.profiles .card.o .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 1.5px var(--inchiostro)}
+.chips .chip{background:var(--mist)}
+/* il tema globale colora .check.err con il pomodoro (--red): qui il testo d'errore usa --cost-text */
+.form .check.err{color:var(--cost-text)}
+/* il tema globale scrive .field.err .em in --cost-text su --cost-soft (contrasto 4,25): qui il testo è inchiostro */
+.form .field.err .em{color:var(--inchiostro)}
+</style>
+<!-- @include tema -->
+</head>
+<body>
+<!-- @include header-en -->
+
+<main id="main">
+
+<!-- ================= HERO + TEST ================= -->
+<section class="qhero">
+  <div class="wrap narrow">
+    <div class="intro">
+      <span class="eyebrow"><span class="dot"></span>Seven questions · free</span>
+      <h1>The positioning <em>test.</em></h1>
+      <p class="lead">Seven questions to find out how recognisable your hotel is today, to a guest who doesn't know it. Two minutes.</p>
+      <p class="micro" style="margin-top:0"><b>Answer honestly, as if you were a guest.</b> Only you see the result.</p>
+    </div>
+
+    <div class="qz" id="test" aria-live="off">
+      <div class="qz-top">
+        <span id="qzCount">Question 1 of 7</span>
+        <span class="dots" id="qzDots" aria-hidden="true"></span>
+      </div>
+      <div class="qz-bar" role="progressbar" aria-label="Test progress" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="qzBar"><i></i></div>
+
+      <div class="qz-stage" id="qzStage">
+        <noscript><p>The test needs JavaScript switched on. Alternatively, you can <a href="/en/#richiedi">request the homepage teardown</a>, which is also free.</p></noscript>
+      </div>
+      <div class="qz-foot" id="qzFoot">
+        <button type="button" class="qz-back" id="qzBack" disabled>← Back</button>
+        <span class="qz-hint">Keyboard: <kbd>1</kbd>–<kbd>4</kbd> to answer, <kbd>↑</kbd><kbd>↓</kbd> to move, <kbd>←</kbd> to go back</span>
+      </div>
+
+      <!-- risultato: statico nel DOM, così il form lo gestisce site.js -->
+      <div class="qz-res" id="qzRes" hidden tabindex="-1">
+        <p class="res-label">Today your hotel is</p>
+        <h2 class="res-name" id="resName" tabindex="-1"><span>…</span></h2>
+        <p class="res-hook" id="resHook"></p>
+
+        <div class="meter" aria-hidden="true">
+          <div class="meter-pin" id="resPin"><b id="resScore">0/14</b></div>
+          <div class="meter-track"><i></i><i></i><i></i></div>
+          <div class="meter-lab"><span>Invisible</span><span>Replaceable</span><span>Positioned</span></div>
+        </div>
+
+        <div class="res-body">
+          <div class="res-diag" id="resDiag"></div>
+          <div class="weak">
+            <h3 id="weakTitle">Where you lose the guest</h3>
+            <ol id="weakList"></ol>
+          </div>
+        </div>
+
+        <div class="res-cta" id="resCta"></div>
+
+        <div class="res-mail">
+          <div>
+            <h3 style="font-size:clamp(22px,2.2vw,28px);margin-bottom:10px">Your result by email.</h3>
+            <p style="font-size:16.5px">To pass it on to whoever makes decisions with you, or to reread it in six months and see what has changed.</p>
+          </div>
+          <form class="form" id="quiz-form" name="test-posizionamento" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" novalidate>
+  <input type="hidden" name="form-name" value="test-posizionamento"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><p hidden><label>Do not fill in: <input name="bot-field"></label></p>
+            <div class="fields">
+              <input type="hidden" name="profilo" id="qzProfilo" value="">
+              <input type="hidden" name="punteggio" id="qzPunteggio" value="">
+              <div class="field"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required><span class="em">Check the address: the result arrives here.</span></div>
+              <label class="check"><input type="checkbox" name="privacy" required><span>I have read the <a href="/en/privacy-policy/">privacy policy</a> and would like to receive the test result by email.</span></label>
+              <button class="btn dark" type="submit">Send me the result <span class="arr">→</span></button>
+            </div>
+            <div class="ok" role="status">
+              <div class="tick">✓</div>
+              <p class="big">Received.</p>
+              <p>Your result is on its way to your inbox. If you can't find it, check your spam folder.</p>
+            </div>
+          </form>
+        </div>
+
+        <div class="res-again">
+          <p class="micro" style="margin:0"><b>A suggestion:</b> take the test again, putting yourself in the guest's shoes. The result often changes.</p>
+          <button type="button" class="btn ghost sm" id="qzAgain">↻ Take the test again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= I TRE PROFILI ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>Three possible profiles. <em>Each one points to a job to be done.</em></h2>
+      <p class="lead">Even the best profile has to be maintained.</p>
+    </div>
+    <div class="profiles">
+      <article class="card g rv">
+        <span class="tag">0-5 points</span>
+        <h3>Invisible</h3>
+        <p>On Booking your hotel is one of fifty rectangles. Guests can't tell it apart from the others, so they decide on price.</p>
+      </article>
+      <article class="card y rv d1">
+        <span class="tag">6-10 points</span>
+        <h3>Replaceable</h3>
+        <p>Your hotel has something true about it. Guests feel it, but can't put it into words. So a cheaper hotel nearby is all it takes.</p>
+      </article>
+      <article class="card o rv d2">
+        <span class="tag">11-14 points</span>
+        <h3>Positioned</h3>
+        <p>A precise reason to be chosen, in one sentence guests recognise as true. It's rare, and it has to be maintained.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DA DOVE VENGONO LE DOMANDE ================= -->
+<section class="sec">
+  <div class="wrap grid-2">
+    <div class="sec-head" style="margin-bottom:0">
+      <span class="num-tag">N°02</span>
+      <h2>Where the questions <em>come from.</em></h2>
+    </div>
+    <div class="prose rv">
+      <p>Each question is a sign I look for when I analyse a hotel for the first time: the thirty-second sentence, the covered logo, interchangeable reviews, the price that drops in September, a message written by the people who run the hotel rather than by its guests.</p>
+      <p><strong>What this test doesn't do:</strong> it doesn't analyse your hotel, it measures your answers. It tells you where to look, not what to write.</p>
+      <p>For that you need the method applied to your hotel, with your reviews and your competitors.</p>
+      <div class="chips" style="margin:24px 0 28px">
+        <span class="chip y">Thirty seconds</span><span class="chip w">Logo covered</span><span class="chip m">Reviews</span><span class="chip b">Price</span><span class="chip o">Where the message comes from</span>
+      </div>
+      <div class="btn-row">
+        <a href="#test" class="btn dark">Back to the test ↑</a>
+        <a href="/en/method/" class="btn ghost">The method in six steps <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @include footer-en -->
+<script>
+(function(){
+  // Domande scritte da zero sul metodo (segnali di /problemi/booking/, sei passaggi, origine del messaggio): DA VALIDARE CON FRANCESCO.
+  // s = punti (0 invisibile, 1 sostituibile, 2 posizionata). w = punto debole mostrato se s < 2.
+  var Q = [
+    { k:'The thirty-second sentence',
+      t:'A guest on the phone asks: “Why should I choose you?” What do you tell them?',
+      a:[ {t:'“A well-kept hotel, quality, great attention to our guests.”', s:0},
+          {t:'We list the facilities: pool, SPA, restaurant, parking.', s:1},
+          {t:'One precise sentence, always the same: who we are for and what you can only find here.', s:2},
+          {t:'It depends who answers: everyone says something different.', s:0} ],
+      w:{t:'There is no thirty-second answer.', d:'If you haven\'t decided it, the front desk can\'t make it up. The sentence is decided once and given to the whole team.'} },
+    { k:'The covered logo',
+      t:'Cover the logo on your homepage. The first sentence that remains…',
+      a:[ {t:'…would work just as well for the hotel next door.', s:0},
+          {t:'…would work for hotels in the area, but not for all of them.', s:1},
+          {t:'…only applies to us: it contains a fact the others don\'t have.', s:2},
+          {t:'We don\'t know exactly what the first sentence on the homepage says.', s:0} ],
+      w:{t:'The homepage describes facilities, not who you are.', d:'Change the logo and the same text works for a hundred other hotels. If you use your competitors\' words, guests can\'t tell you apart.'} },
+    { k:'The reviews',
+      t:'Reread your last twenty reviews. What do they mostly say?',
+      a:[ {t:'Clean. Friendly. Good value for money.', s:0},
+          {t:'The same two or three things keep coming back, in words close to our own.', s:2},
+          {t:'Positive comments, but everyone likes something different: some the breakfast, some the view, some the staff.', s:1} ],
+      w:{t:'Interchangeable reviews.', d:'If the message is generic, so are the reviews. Look for the sentence “the only place where I found…”. If it isn\'t there, guests haven\'t yet seen what makes you different.'} },
+    { k:'The right guest',
+      t:'Which guest is your hotel designed for?',
+      a:[ {t:'Everyone: families, couples, business, groups.', s:0},
+          {t:'Two or three types of guest, depending on the season.', s:1},
+          {t:'One specific guest. To people looking for something else, we sometimes say so before they book.', s:2} ],
+      w:{t:'A guest not yet chosen.', d:'If you speak to everyone, you haven\'t chosen yet. Choosing a guest also means letting others go.'} },
+    { k:'Price',
+      t:'It\'s September and occupancy is dropping. What do you do?',
+      a:[ {t:'We lower our rates and offer a few upgrades.', s:0},
+          {t:'We launch an offer or a package to fill the gaps.', s:1},
+          {t:'We hold our price and target the people who would come specifically for us.', s:2},
+          {t:'We match our competitors, slightly below.', s:0} ],
+      w:{t:'The market gets used to discounts.', d:'And starts expecting them in August too. If your hotel looks like the others, guests choose on price.'} },
+    { k:'OTA channels',
+      t:'Out of a hundred bookings, how many come from OTAs?',
+      a:[ {t:'More than sixty.', s:0},
+          {t:'Between thirty and sixty.', s:1},
+          {t:'Fewer than thirty: the people who choose us search for us by name.', s:2},
+          {t:'We don\'t know exactly.', s:0} ],
+      w:{t:'Heavy dependence on OTAs.', d:'OTAs bring bookings, but the guest stays theirs. Booking isn\'t the cause: what\'s missing is a clear reason to book with you.'} },
+    { k:'Where the message comes from',
+      t:'Where does the message you use today come from?',
+      a:[ {t:'The agency wrote it, or whoever built the website.', s:0},
+          {t:'We decided it ourselves, based on what seems important to us and what the neighbours do.', s:1},
+          {t:'From our guests\' words and the positions our competitors have left open.', s:2} ],
+      w:{t:'A message born on the inside.', d:'What makes you unique is already written down: in your guests\' reviews and in the spaces your competitors leave open. Look for it there.'} }
+  ];
+
+  // val = valore interno per il CRM (in italiano, come sul sito italiano); name = testo a schermo
+  var P = {
+    inv:{ name:'Invisible', val:'Invisibile', col:'var(--pink-soft)',
+      hook:'On Booking it\'s one of fifty rectangles. Guests can\'t tell it apart.',
+      diag:'<p>Your hotel isn\'t little known: it\'s hard to tell apart. Guests scroll through the offers and, if everything looks the same, they choose <strong>on price.</strong></p><p>The quality may be high, but it doesn\'t show. What makes you unique isn\'t a message yet.</p><p>It happens to many hotels, and it can be changed. The first step is finding the reason a guest should choose you.</p>',
+      cta:'<h3>The first step: define your positioning.</h3><p>Before spending on more marketing, you need the reason a guest should choose your hotel. The homepage teardown is the first step: your first line next to those of 2-3 competitors, logos covered, and a lead on where your reason sits.</p><div class="btn-row"><a href="/en/#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a><a href="/en/analysis/" class="btn ghost">The full analysis</a></div><p class="micro"><b>Free, done by hand, by me, in English.</b> Up to 6 a month, for hotels and resorts with 40 rooms or more. You get it within 3 working days.</p>' },
+    sos:{ name:'Replaceable', val:'Sostituibile', col:'var(--yellow)',
+      hook:'Guests appreciate it, but it still looks like the hotels nearby.',
+      diag:'<p>Your hotel has something true about it. Guests feel it, and some write it in their reviews. But it isn\'t a sentence yet, so it doesn\'t work for you.</p><p>As long as the reason stays unspoken, guests compare you with whoever has the same pool three hundred metres away. <strong>And a cheaper hotel nearby is all it takes.</strong></p><p>A new room lasts until the neighbour refurbishes. A clear positioning stays.</p>',
+      cta:'<h3>The next step: choose one reason.</h3><p>One reason only, with all your communication built around it. The homepage teardown tells you where to look for it. The full analysis finds it and puts it in writing.</p><div class="btn-row"><a href="/en/#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a><a href="/en/analysis/" class="btn ghost">The full analysis</a></div><p class="micro"><b>Free, done by hand, by me, in English.</b> Up to 6 a month, for hotels and resorts with 40 rooms or more. You get it within 3 working days.</p>' },
+    pos:{ name:'Positioned', val:'Posizionata', col:'var(--green)',
+      hook:'It has a precise reason to be chosen, and it says so.',
+      diag:'<p>Guests who arrive already know what they will find. People looking for something else go elsewhere, and that\'s as it should be.</p><p>One word of caution: the test measures your answers, not what guests think. <strong>Check that your reviews say what you say.</strong> If they match, your positioning is solid.</p><p>Now it has to be maintained: when a new competitor arrives, a new agency, or the urge to discount.</p>',
+      cta:'<h3>The next step: hold your position.</h3><p>Look at how the hotels that got there hold on to it, and use the method to check your position when the market changes.</p><div class="btn-row"><a href="/en/library/" class="btn">The positioning library <span class="arr">→</span></a><a href="/en/book/" class="btn ghost">The book (in Italian) · €19.90</a></div>' }
+  };
+
+  var stage = document.getElementById('qzStage'), foot = document.getElementById('qzFoot'),
+      back = document.getElementById('qzBack'), count = document.getElementById('qzCount'),
+      dots = document.getElementById('qzDots'), bar = document.getElementById('qzBar'),
+      res = document.getElementById('qzRes'), box = document.getElementById('test');
+  var ans = [], cur = 0, busy = false, started = false;
+  var keys = ['A','B','C','D'];
+  var D = HP.reduce ? 0 : 1;
+
+  dots.innerHTML = Q.map(function(){ return '<i></i>'; }).join('');
+
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  function chrome(i, done){
+    var n = done ? Q.length : i;
+    bar.querySelector('i').style.width = (n / Q.length * 100) + '%';
+    bar.setAttribute('aria-valuenow', n);
+    count.textContent = done ? 'Result' : 'Question ' + (i + 1) + ' of ' + Q.length;
+    Array.prototype.forEach.call(dots.children, function(d, k){
+      d.className = (done || k < i) ? 'done' : (k === i ? 'now' : '');
+    });
+    back.disabled = !done && i === 0;
+  }
+
+  function html(i){
+    var q = Q[i];
+    var o = q.a.map(function(a, k){
+      return '<div class="qz-li"><button type="button" class="qz-opt" data-k="' + k + '" aria-pressed="' + (ans[i] === k) + '"><span class="key" aria-hidden="true">' + keys[k] + '</span><span>' + esc(a.t) + '</span></button></div>';
+    }).join('');
+    return '<div class="qz-q"><p class="kicker"><b>' + String(i + 1).padStart(2, '0') + '</b> ' + esc(q.k) + '</p>' +
+      '<h2 id="qh" tabindex="-1">' + esc(q.t) + '</h2>' +
+      '<div class="qz-opts" role="group" aria-labelledby="qh">' + o + '</div></div>';
+  }
+
+  function show(i, dir){
+    var old = stage.querySelector('.qz-q');
+    function swap(){
+      stage.innerHTML = html(i); cur = i; chrome(i);
+      var q = stage.querySelector('.qz-q');
+      if (D && old) {
+        q.classList.add('pre'); if (dir < 0) q.classList.add('back');
+        void q.offsetWidth; q.classList.remove('pre', 'back');
+      }
+      if (started) { var h = document.getElementById('qh'); h.focus({ preventScroll: true }); }
+      busy = false;
+    }
+    if (D && old) {
+      busy = true; old.classList.add('out'); if (dir < 0) old.classList.add('back');
+      setTimeout(swap, 220);
+    } else swap();
+  }
+
+  function pick(k){
+    if (busy) return;
+    started = true; busy = true;
+    ans[cur] = k;
+    stage.querySelectorAll('.qz-opt').forEach(function(b){ b.setAttribute('aria-pressed', +b.dataset.k === k); });
+    setTimeout(function(){
+      if (cur < Q.length - 1) show(cur + 1, 1); else result();
+    }, D ? 300 : 0);
+  }
+
+  function goBack(){
+    if (busy) return;
+    if (!res.hidden) { res.hidden = true; stage.hidden = false; foot.hidden = false; show(Q.length - 1, -1); return; }
+    if (cur > 0) { started = true; show(cur - 1, -1); }
+  }
+
+  function result(){
+    var score = 0, weak = [];
+    Q.forEach(function(q, i){ var s = q.a[ans[i]].s; score += s; if (s < 2) weak.push({ s: s, i: i }); });
+    weak.sort(function(a, b){ return a.s - b.s || a.i - b.i; });
+    var key = score <= 5 ? 'inv' : (score <= 10 ? 'sos' : 'pos'), p = P[key];
+    var name = document.getElementById('resName');
+    name.querySelector('span').textContent = p.name;
+    name.style.setProperty('--res', p.col);
+    document.getElementById('resHook').textContent = p.hook;
+    document.getElementById('resDiag').innerHTML = p.diag;
+    document.getElementById('resCta').innerHTML = p.cta;
+    document.getElementById('resScore').textContent = score + '/14';
+    document.getElementById('qzProfilo').value = p.val;
+    document.getElementById('qzPunteggio').value = score + '/14 · ' + ans.map(function(a){ return keys[a]; }).join('');
+    var list = document.getElementById('weakList'), wt = document.getElementById('weakTitle');
+    var take = weak.slice(0, key === 'pos' ? 2 : 3);
+    wt.textContent = key === 'pos' ? (take.length ? 'Keep an eye on' : 'No obvious weak points') : 'Where you lose the guest';
+    list.innerHTML = take.length ? take.map(function(w){
+      var q = Q[w.i];
+      return '<li><b>' + esc(q.w.t) + '</b>' + esc(q.w.d) + '<em>Question ' + (w.i + 1) + ' · answer: ' + esc(q.a[ans[w.i]].t) + '</em></li>';
+    }).join('') : '<li><b>Seven answers out of seven from a positioned hotel.</b>Now check that your reviews confirm it. If they say something else, the guest is right.</li>';
+
+    var pin = document.getElementById('resPin');
+    pin.style.left = '0%';
+    var go = function(){
+      stage.hidden = true; foot.hidden = true; res.hidden = false; chrome(0, true); busy = false;
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ pin.style.left = ((score + .5) / 15 * 100) + '%'; }); });
+      document.getElementById('resName').focus({ preventScroll: true });
+      box.scrollIntoView({ behavior: D ? 'smooth' : 'auto', block: 'start' });
+    };
+    var old = stage.querySelector('.qz-q');
+    if (D && old) { old.classList.add('out'); setTimeout(go, 220); } else go();
+  }
+
+  function restart(){
+    ans = []; started = true;
+    var f = document.getElementById('quiz-form'); f.reset(); f.classList.remove('sent');
+    f.querySelectorAll('.err').forEach(function(e){ e.classList.remove('err'); });
+    res.hidden = true; stage.hidden = false; foot.hidden = false;
+    stage.innerHTML = ''; show(0, 1);
+    box.scrollIntoView({ behavior: D ? 'smooth' : 'auto', block: 'start' });
+  }
+
+  stage.addEventListener('click', function(e){
+    var b = e.target.closest('.qz-opt'); if (b) pick(+b.dataset.k);
+  });
+  back.addEventListener('click', goBack);
+  document.getElementById('qzAgain').addEventListener('click', restart);
+
+  // tastiera: 1-4 o A-D rispondono, frecce su/giù si muovono tra le risposte, freccia sinistra torna indietro
+  // attivo se il focus è nel test o da nessuna parte (body), mai mentre si scrive in un campo
+  document.addEventListener('keydown', function(e){
+    if (!res.hidden || e.altKey || e.ctrlKey || e.metaKey) return;
+    var ae = document.activeElement;
+    if (ae && ae !== document.body && !box.contains(ae)) return;
+    if (ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) return;
+    var opts = Array.prototype.slice.call(stage.querySelectorAll('.qz-opt'));
+    var n = '1234'.indexOf(e.key), l = 'abcd'.indexOf(e.key.toLowerCase());
+    var k = n > -1 ? n : l;
+    if (k > -1 && k < opts.length) { e.preventDefault(); started = true; opts[k].focus(); pick(k); return; }
+    var at = opts.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      var d = e.key === 'ArrowDown' ? 1 : -1;
+      var nx = at < 0 ? (d > 0 ? 0 : opts.length - 1) : (at + d + opts.length) % opts.length;
+      opts[nx].focus();
+    } else if (e.key === 'ArrowLeft' || e.key === 'Backspace') {
+      if (cur > 0) { e.preventDefault(); goBack(); }
+    }
+  });
+
+  show(0, 1);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 200 attributes · Tools · Hotel Positioning</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="A checklist of 200 concrete attributes to see where your hotel can really stand apart. A free tool.">
+<link rel="canonical" href="https://hotelpositioning.com/en/tools/attributi/">
+<!-- @include head-en -->
+<!-- @include tema -->
+<link rel="stylesheet" href="/assets/strumenti.css">
+<style>
+/* solo per lo strumento 03 */
+.t-attributi-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.t-attributi-empty{margin-top:8px}
+.t-attributi-cnt{font-variant-numeric:tabular-nums}
+.t-attributi-h{margin:0;font:inherit;line-height:inherit}
+@media (max-width:600px){
+  .t-page h1.t-title{font-size:clamp(30px,10vw,44px)!important}
+}
+</style>
+</head>
+<body class="t-page" data-tool="attributi" data-tool-n="03" data-tool-name="The 200 attributes">
+<header class="t-bar">
+  <div class="t-wrap t-bar__in">
+    <a href="/en/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <p class="t-bar__meta">
+      <span class="t-bar__n"><span class="t-bar__word">Tool </span>03 / 08</span>
+      <span class="t-bar__name">The 200 attributes</span>
+    </p>
+    <a href="/en/tools/#strumenti" class="t-back">← Tools</a>
+  </div>
+  <div class="t-steps" aria-hidden="true"><i class="is-past"></i><i class="is-past"></i><i class="is-current"></i><i></i><i></i><i></i><i></i><i></i></div>
+</header>
+
+<main id="main" class="t-wrap t-stage">
+  <noscript><p class="t-lead">This tool needs JavaScript switched on in your browser.</p></noscript>
+  <div data-t-tool hidden>
+
+    <!-- intro -->
+    <section data-screen="intro">
+      <h1 class="t-title">The 200 attributes</h1>
+      <p class="t-lead">Not a chapter to read. A toolbox to open when you need it. Scroll through. For each one, mark what you have, what you could have, what you will never be. Then choose your handful.</p>
+
+      <section class="t-card t-card--thick t-block" aria-labelledby="at-regole">
+        <div class="t-card__h"><h2 class="t-label" id="at-regole">Three rules</h2></div>
+        <ol class="t-rules">
+          <li><span class="t-badge" aria-hidden="true">1</span><p class="t-text"><strong>Choose a few.</strong> A hotel that claims thirty claims none. Two or three that fit together are worth more than thirty unconnected ones.</p></li>
+          <li><span class="t-badge" aria-hidden="true">2</span><p class="t-text"><strong>State them.</strong> If the guest cannot find an attribute written down, it does not exist for the market.</p></li>
+          <li><span class="t-badge" aria-hidden="true">3</span><p class="t-text"><strong>Keep them.</strong> One stated and then broken is worse than silence: it becomes the one-star review.</p></li>
+        </ol>
+      </section>
+
+      <button type="button" class="t-btn t-btn--lg t-btn--block t-cta" data-go="lista">Start scrolling</button>
+    </section>
+
+    <!-- lista -->
+    <section data-screen="lista" hidden>
+      <h1 class="t-title t-title--sm">The 200 attributes</h1>
+
+      <div class="t-pin">
+        <label class="t-attributi-sr" for="attributi-cerca">Search for an attribute</label>
+        <input id="attributi-cerca" class="t-input" type="search" placeholder="search for an attribute…" autocomplete="off" data-at-q>
+        <p class="t-counter t-attributi-cnt" aria-live="polite" data-at-counter></p>
+        <p class="t-warn" data-at-troppi hidden>You are claiming too much. Two or three that fit together are worth more than thirty unconnected ones. Take away, don’t add.</p>
+      </div>
+
+      <div class="t-cats" data-at-cats></div>
+      <p class="t-text t-attributi-empty" data-at-none hidden>No attribute with these words.</p>
+
+      <button type="button" class="t-btn t-btn--lg t-btn--block t-cta" data-go="manciata" data-at-vedi>See your handful (0) →</button>
+    </section>
+
+    <!-- manciata -->
+    <section data-screen="manciata" hidden>
+      <button type="button" class="t-link t-link--top" data-go="lista">← Back to the list</button>
+      <h1 class="t-title">Your handful</h1>
+
+      <p class="t-lead" data-at-vuota>No stars yet. Go back to the list and choose the few you want to build on.</p>
+      <div class="t-block t-list" data-at-picks hidden></div>
+
+      <section class="t-card t-card--thick t-card--pad t-card--flag t-block" aria-labelledby="at-verifica">
+        <h2 class="t-label" id="at-verifica">Three checking questions</h2>
+        <ol class="t-checklist">
+          <li>1. Do they fit together? Do they describe the same hotel?</li>
+          <li>2. Are they things the guest does not find claimed by others in the area?</li>
+          <li>3. Can you defend them every day, without ever breaking them?</li>
+        </ol>
+      </section>
+
+      <div class="t-actions">
+        <button type="button" class="t-btn t-btn--lg t-btn--block t-btn--paper" data-at-download>Download your handful</button>
+        <a href="/en/tools/worksheet/" class="t-btn t-btn--lg t-btn--block">Take it into Step 3 →</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="t-wrap t-foot"><p>Francesco Astolfi · Hotel Positioning · <a href="/en/privacy-policy/">Privacy policy</a></p></footer>
+<!-- @include cookie-banner-en -->
+<script src="/assets/site.js"></script>
+<script src="/assets/strumenti.js"></script>
+<script>
+/* Strumento 03 · I 200 attributi.
+   Stato in localStorage "attributi_state" (stessa chiave e stessa forma del vecchio sito: una mappa
+   { "testo dell'attributo": { s: "ho" | "potrei" | "mai", star: true|false } }; la leggono scala e canvas).
+   Lo schermo aperto sta a parte in "attributi_screen", per non sporcare la mappa. */
+(function(){
+  if (!window.HPT || !HPT.unlocked()) return;
+  /* dati: src/data/attributi.ts del vecchio sito */
+  var CATEGORIE = [{"nome":"Target and access","items":["Adults only, stated (18+)","Couples only","Women only","Pet friendly with real services (not just “we accept dogs”)","Families with small children (baby monitors, sterilisers, potties)","Families with older children (real outdoor activities)","Well-off over-50s","Digital nomads (weekly or monthly contracts)","Solo-traveller friendly (real single rooms)","LGBTQ+ welcoming, stated","Truly accessible (not just the ramp at the entrance)","No children under 12","Invitation or membership only","Short season and a waiting list (scarcity as value)"]},{"nome":"Silence and disconnection","items":["No TV in the room (stated, not hidden)","No wifi in the room (only in common areas)","Structured digital detox with a protocol","No phones at dinner","Quiet hours respected and communicated","No music in the common areas","No evening entertainment","No loudspeakers by the pool","Quiet check-in (no group welcome drink)","Rooms without clocks","Total blackout (real darkness)"]},{"nome":"Food and drink","items":["Homemade breakfast (not from a supplier)","Bread baked every morning","Own working kitchen garden (not decorative)","Zero imports: only producers within X km","One daily menu (no choice, total trust in the cook)","Resident chef with a name and a face","Dinner reserved for hotel guests","Shared table (you sit with other guests)","Afternoon snack included","Minibar with real local products","Cellar with wines from the region only","No wine list, only the sommelier’s advice","Breakfast always included","Own produce (oil, honey, wine, vegetables, cheese)","Open kitchen","Cookery classes with the chef","On Wednesdays you go to the market with the cook","Dinner by real candlelight","Own products for sale as you leave"]},{"nome":"Wellness and body","items":["Spa without compulsory ambient music","Adults-only pool","Natural thermal pool (not chlorinated)","Treatments with homemade products","Resident doctor or nutritionist","Supported fasting programmes","Yoga every morning (not “on request”)","Guided breathing and meditation","Outdoor Kneipp path","No invasive beauty treatments","Mattresses chosen for each sleeping style","A real pillow menu","Real linen sheets (certified, stated)","Total blackout + silence as a guarantee of sleep","Room temperature you can really adjust","No synthetic fragrances in the room","Naturally filtered air","Natural light in every room","Private sauna in the room or suite","Hot tub with a view","Private steam room","Outdoor shower"]},{"nome":"Nature and the local area","items":["Private trails for guests only","Resident nature guide","Guided mushroom foraging","Truffle hunting with a dog","Birdwatching with a local expert","Night-time astronomy (certified absence of light pollution)","A real private beach","Private lake or fishing pond","Private woodland you can walk through","Synergistic gardens open to visit","Own beekeeping you can watch","Own vineyard with a harvest guests join","Working olive mill open to visit","Educational farm attached","Own horses and stables","Private boat trips","Well-kept botanical garden","Herb gathering with the cook","Zero pesticides (certified)"]},{"nome":"Design and space","items":["One room type only (no hierarchy)","Suite with its own entrance, separate from the main hotel","Limited number of rooms (under 15)","Guaranteed view (every room has the same view)","Bathroom bigger than the bed","Private outdoor space for every room","All local materials (stated, with origin)","Furniture made by local craftspeople (named)","Real local art (not anonymous decorative pictures)","A curated library","No carpets","No visible plastic","Lighting designed by a lighting designer","Signature architecture, communicated","Conservative renovation (not a restyling)","Certified historic building","Silent fridge","Space set aside for meditation or reading"]},{"nome":"Service and relationship","items":["The same contact person for the whole stay","Owner present and visible","Local staff (not from an agency)","Staff who call you by name from the second day","Check-in at any hour with no supplement","Flexible check-out, stated","Itinerary prepared by hand the day before","Restaurant bookings elsewhere made for you (really)","They come to pick you up by car if you miss the bus","Preferences remembered from the previous stay","No satisfaction questionnaire during the stay","No review request during the stay","Replies to emails within 2 hours (stated)","Direct booking only (no OTAs)","No cancellation penalty under 48 hours","Personalised welcome","Handwritten letter on arrival","Local souvenir as you leave (not a gadget with the logo)"]},{"nome":"Ethics and values","items":["Certified carbon neutral","Zero single-use plastic (real)","100% renewable energy","Biodegradable cleaning products","Zero food waste (with donations to the local area)","Transparent supply chain (every product has a published story)","Local suppliers with names and faces","Fair pay for staff (communicated)","Local hiring first (communicated)","Conservative restoration with a public report","No exotic animals in the garden","Active reforestation","Real organic certification"]},{"nome":"Culture and ideas","items":["A real library with thousands of volumes","Selection curated for the destination","Quality magazines","Vinyl and a record player in the lounge","Classical music concerts in the garden","Ceramics, painting and photography workshops","Artist residencies (artists who work in the hotel)","Historic archive of the building open to guests","Evening talks and readings","Musical instruments available","Cinema with curated screenings (not Netflix)","Courses in the local language or dialect","Partnership with a university or fine arts academy"]},{"nome":"Time and rhythm","items":["Breakfast until noon","Dinner in one sitting","No opening hours for the pool","Spa open 24 hours","No rush at check-out","No courtesy call in the morning","No housekeeping visits without an explicit request","Minimum stay of 3 nights (slowness as value)","Weekly packages only"]},{"nome":"Pricing and transparency","items":["All inclusive (no surprises at check-out)","Fixed price all year (no dynamic pricing)","Best price always guaranteed on the direct site","No single supplement","No pet supplement","No late check-out supplement","No hidden resort fee","VAT always included in the price shown","No-questions-asked refund guarantee","Booking with a minimal deposit"]}];
+
+  var SCREENS = ['intro', 'lista', 'manciata'];
+  var SCREEN_KEY = 'attributi_screen';
+  var OPT = [
+    { k: 'ho', label: '✓ I have it' },
+    { k: 'potrei', label: '~ I could' },
+    { k: 'mai', label: '✕ Never' }
+  ];
+
+  var st = HPT.store('attributi_state', {});
+  var marks = st.state;
+  var chiuse = {};
+  var q = '';
+
+  var root = HPT.$('[data-t-tool]');
+  var cats = HPT.$('[data-at-cats]', root);
+  var input = HPT.$('[data-at-q]', root);
+  var rows = {};   // attributo -> { row, tags:{}, star }
+  var secs = [];   // { nome, sec, head, count, body, items:[{t,row}] }
+
+  function m(id){ var v = marks[id]; return v && typeof v === 'object' ? v : {}; }
+  function starOk(x){ return x.s === 'ho' || x.s === 'potrei'; }
+
+  function setStato(id, s){
+    var cur = m(id), nuovo = {};
+    for (var k in cur) nuovo[k] = cur[k];
+    if (cur.s === s) delete nuovo.s; else nuovo.s = s;
+    if (!starOk(nuovo)) nuovo.star = false;
+    marks[id] = nuovo; st.save();
+    paintRow(id); counts();
+  }
+  function toggleStar(id){
+    var cur = m(id);
+    if (!starOk(cur)) return;
+    var nuovo = {};
+    for (var k in cur) nuovo[k] = cur[k];
+    nuovo.star = !cur.star;
+    marks[id] = nuovo; st.save();
+    paintRow(id); counts();
+  }
+
+  function el(tag, cls, txt){ var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+  function build(){
+    CATEGORIE.forEach(function(c, ci){
+      var sec = el('section', 't-cat');
+      var hid = 'at-cat-' + ci, bid = 'at-rows-' + ci;
+      var h = el('h2', 't-attributi-h');
+      var head = el('button', 't-cat__head');
+      head.type = 'button'; head.id = hid;
+      head.setAttribute('aria-controls', bid);
+      head.appendChild(el('span', 't-cat__name', c.nome));
+      var count = el('span', 't-cat__count');
+      head.appendChild(count);
+      h.appendChild(head);
+      sec.appendChild(h);
+      var body = el('div', 't-cat__rows'); body.id = bid;
+      var items = [];
+      c.items.forEach(function(t){
+        var row = el('div', 't-attr');
+        row.appendChild(el('p', 't-attr__t', t));
+        var ctl = el('div', 't-attr__ctl');
+        ctl.setAttribute('role', 'group');
+        ctl.setAttribute('aria-label', t);
+        var tags = {};
+        OPT.forEach(function(o){
+          var b = el('button', 't-tag t-tag--' + o.k, o.label);
+          b.type = 'button';
+          b.addEventListener('click', function(){ setStato(t, o.k); });
+          ctl.appendChild(b); tags[o.k] = b;
+        });
+        var star = el('button', 't-star', '★');
+        star.type = 'button';
+        star.setAttribute('aria-label', 'Add to your handful');
+        star.addEventListener('click', function(){ toggleStar(t); });
+        ctl.appendChild(star);
+        row.appendChild(ctl);
+        body.appendChild(row);
+        rows[t] = { row: row, tags: tags, star: star };
+        items.push({ t: t, row: row });
+        paintRow(t);
+      });
+      sec.appendChild(body);
+      head.addEventListener('click', function(){ chiuse[c.nome] = !chiuse[c.nome]; filter(); });
+      cats.appendChild(sec);
+      secs.push({ nome: c.nome, sec: sec, head: head, count: count, body: body, items: items });
+    });
+  }
+
+  function paintRow(id){
+    var r = rows[id]; if (!r) return;
+    var x = m(id);
+    r.row.className = 't-attr' + (x.s ? ' is-' + x.s : '') + (x.star ? ' is-star' : '');
+    OPT.forEach(function(o){
+      var on = x.s === o.k;
+      r.tags[o.k].setAttribute('aria-pressed', on ? 'true' : 'false');
+      r.tags[o.k].classList.toggle('is-on', on);
+    });
+    r.star.disabled = !starOk(x);
+    r.star.setAttribute('aria-pressed', x.star ? 'true' : 'false');
+    r.star.classList.toggle('is-on', !!x.star);
+  }
+
+  function filter(){
+    var t = q.trim().toLowerCase(), any = false;
+    secs.forEach(function(s){
+      var n = 0;
+      s.items.forEach(function(it){
+        var ok = !t || it.t.toLowerCase().indexOf(t) >= 0;
+        it.row.hidden = !ok; if (ok) n++;
+      });
+      s.sec.hidden = n === 0;
+      if (n) any = true;
+      var aperta = !chiuse[s.nome] || !!t;
+      s.body.hidden = !aperta;
+      s.head.setAttribute('aria-expanded', aperta ? 'true' : 'false');
+      s.count.textContent = n + ' ' + (aperta ? '−' : '+');
+    });
+    HPT.$('[data-at-none]', root).hidden = any;
+  }
+
+  function conta(){
+    var c = { ho: 0, potrei: 0, star: 0 };
+    for (var k in marks) { var x = m(k); if (x.s === 'ho') c.ho++; if (x.s === 'potrei') c.potrei++; if (x.star) c.star++; }
+    return c;
+  }
+  function counts(){
+    var c = conta();
+    HPT.$('[data-at-counter]', root).textContent = 'I have it: ' + c.ho + ' · I could: ' + c.potrei + ' · In your handful: ' + c.star;
+    HPT.$('[data-at-troppi]', root).hidden = !(c.star > 5);
+    HPT.$('[data-at-vedi]', root).textContent = 'See your handful (' + c.star + ') →';
+  }
+
+  function manciata(){
+    return CATEGORIE.map(function(c){
+      return { nome: c.nome, items: c.items.filter(function(i){ return m(i).star; }) };
+    }).filter(function(c){ return c.items.length > 0; });
+  }
+
+  function paintManciata(){
+    var man = manciata(), box = HPT.$('[data-at-picks]', root);
+    box.textContent = '';
+    man.forEach(function(c){
+      var d = el('div');
+      d.appendChild(el('h2', 't-label', c.nome));
+      var ul = el('ul', 't-picks');
+      c.items.forEach(function(i){
+        var li = el('li', 't-pick', i);
+        li.appendChild(el('span', 't-pick__tag', m(i).s === 'ho' ? '· I have it' : '· I could'));
+        ul.appendChild(li);
+      });
+      d.appendChild(ul);
+      box.appendChild(d);
+    });
+    box.hidden = man.length === 0;
+    HPT.$('[data-at-vuota]', root).hidden = man.length > 0;
+    HPT.$('[data-at-download]', root).disabled = man.length === 0;
+  }
+
+  function scarica(){
+    var man = manciata();
+    if (!man.length) return;
+    var righe = ['YOUR HANDFUL · The 200 attributes', ''];
+    man.forEach(function(c){
+      righe.push(c.nome.toUpperCase());
+      c.items.forEach(function(i){ righe.push('  • ' + i + '  [' + (m(i).s === 'ho' ? 'I have it' : 'I could have it') + ']'); });
+      righe.push('');
+    });
+    righe.push('Check:');
+    righe.push('1. Do they fit together? Do they describe the same hotel?');
+    righe.push('2. Are they things the guest does not find claimed by others in the area?');
+    righe.push('3. Can you defend them every day, without ever breaking them?');
+    HPT.download('my-handful.txt', righe);
+  }
+
+  function show(name, focus){
+    if (SCREENS.indexOf(name) < 0) name = 'intro';
+    HPT.write(SCREEN_KEY, name);
+    if (name === 'manciata') paintManciata();
+    if (name === 'lista') counts();
+    HPT.screen(name, focus);
+  }
+
+  build();
+  input.addEventListener('input', function(){ q = input.value; filter(); });
+  filter(); counts();
+
+  root.addEventListener('click', function(e){
+    var b = e.target.closest('[data-go],[data-at-download]');
+    if (!b || b.disabled) return;
+    if (b.hasAttribute('data-at-download')) scarica();
+    else show(b.getAttribute('data-go'), true);
+  });
+
+  show(HPT.read(SCREEN_KEY) || 'intro', false);
+})();
+</script>
+</body>
+</html>
