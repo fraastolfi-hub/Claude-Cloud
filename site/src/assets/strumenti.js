@@ -29,6 +29,7 @@
    HPT.$(sel, ctx) / HPT.$$(sel, ctx)
    ---------------------------------------------------------------------------------------------- */
 (function(){
+  var EN = document.documentElement.lang === 'en';
   var UNLOCK = 'library_unlocked';
   var $ = function(s, c){ return (c || document).querySelector(s); };
   var $$ = function(s, c){ return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
@@ -64,9 +65,9 @@
     box.setAttribute('aria-labelledby', 't-gate-title');
     box.innerHTML = '<div class="t-gate__card">'
       + '<span class="t-gate__n" aria-hidden="true">' + esc(b.toolN || '') + '</span>'
-      + '<h1 class="t-title t-gate__title" id="t-gate-title">' + esc(b.toolName || 'Strumento') + '</h1>'
-      + '<p class="t-lead">Questo strumento sta dentro la library. Entra una volta, resti dentro per sempre.</p>'
-      + '<a class="t-btn t-btn--lg t-gate__cta" href="/bonus/#strumenti">Vai alla library →</a>'
+      + '<h1 class="t-title t-gate__title" id="t-gate-title">' + esc(b.toolName || (EN ? 'Tool' : 'Strumento')) + '</h1>'
+      + '<p class="t-lead">' + (EN ? 'This tool is inside the library. Sign up once and you stay in for good.' : 'Questo strumento sta dentro la library. Entra una volta, resti dentro per sempre.') + '</p>'
+      + '<a class="t-btn t-btn--lg t-gate__cta" href="' + (EN ? '/en/tools/#strumenti' : '/bonus/#strumenti') + '">' + (EN ? 'Go to the library →' : 'Vai alla library →') + '</a>'
       + '</div>';
     tool.parentNode.insertBefore(box, tool);
   }
