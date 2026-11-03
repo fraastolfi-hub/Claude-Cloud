@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!-- Strumento 06 · I 5 livelli di consapevolezza. Modello: /bonus/worksheet/ (vedi il commento in testa a quel file). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 5 levels of awareness · Tools · Hotel Positioning</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="A map of the guest’s five levels of awareness and the right angle for each one. A free tool.">
+<link rel="canonical" href="https://hotelpositioning.com/en/tools/livelli/">
+<!-- @include head-en -->
+<!-- @include tema -->
+<link rel="stylesheet" href="/assets/strumenti.css">
+<style>
+.t-livelli-sugg[hidden]{display:none}
+/* titolo di sezione solo per lettori di schermo: tiene in ordine h1 > h2 > h3 prima delle righe della scala */
+.t-livelli-sr{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+</style>
+</head>
+<body class="t-page" data-tool="livelli" data-tool-n="06" data-tool-name="The 5 levels of awareness">
+<header class="t-bar">
+  <div class="t-wrap t-bar__in">
+    <a href="/en/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <p class="t-bar__meta">
+      <span class="t-bar__n"><span class="t-bar__word">Tool </span>06 / 08</span>
+      <span class="t-bar__name">The 5 levels of awareness</span>
+    </p>
+    <a href="/en/tools/#strumenti" class="t-back">← Tools</a>
+  </div>
+  <div class="t-steps" aria-hidden="true"><i class="is-past"></i><i class="is-past"></i><i class="is-past"></i><i class="is-past"></i><i class="is-past"></i><i class="is-current"></i><i></i><i></i></div>
+</header>
+
+<main id="main" class="t-wrap t-stage">
+  <noscript><p class="t-lead">This tool needs JavaScript switched on in your browser.</p></noscript>
+  <div data-t-tool hidden>
+
+    <!-- intro -->
+    <section data-screen="intro">
+      <h1 class="t-title">The 5 levels of awareness</h1>
+      <p class="t-lead">Guests are not all at the same point. One is not even thinking of going away. One feels tired but does not know where to go. One is already searching for “hotels to switch off”. One knows you and hesitates. You say something different to each. Getting wrong who you are talking to at that moment is the most expensive copy mistake of all.</p>
+      <button type="button" class="t-btn t-btn--lg t-cta" data-go="mappa">See the ladder</button>
+    </section>
+
+    <!-- mappa -->
+    <section data-screen="mappa" hidden>
+      <h1 class="t-title t-title--sm">The ladder of the 5 levels</h1>
+      <p class="t-hint">From the most ready at the top to the least aware at the bottom.</p>
+
+      <h2 class="t-livelli-sr">The levels, from 5 to 1</h2>
+      <div class="t-levels">
+        <div data-l-group="alto" class="t-levels"></div>
+        <div class="t-zone">
+          <div class="t-zone__head">
+            <span class="t-zone__t">Your zone</span>
+            <span class="t-zone__s">this is where demand is born</span>
+          </div>
+          <div class="t-levels" data-l-group="zona"></div>
+        </div>
+        <div data-l-group="basso" class="t-levels"></div>
+      </div>
+
+      <div class="t-card t-card--pad t-card--y t-block">
+        <p class="t-h3">Don’t try to cover all five.</p>
+        <p class="t-text">Focus your copy and content on the two middle levels. That is where new demand is born, the demand that frees you from the OTAs. That is where your best words go.</p>
+      </div>
+
+      <!-- diagnostico -->
+      <section class="t-block t-block--rule" aria-labelledby="lv-dove">
+        <h2 class="t-h2" id="lv-dove">Where your guest is</h2>
+
+        <div class="t-list">
+          <div class="t-card t-card--pad">
+            <div class="t-field">
+              <label class="t-label" for="lv-ricerca">Question 1</label>
+              <textarea id="lv-ricerca" class="t-textarea t-ta" rows="3" data-k="ricerca" placeholder="If your ideal guest opened Google right now, or asked an AI, what would they type?"></textarea>
+            </div>
+
+            <div class="t-field-gap" role="group" aria-labelledby="lv-quale">
+              <span class="t-label" id="lv-quale">Which level does it sound like?</span>
+              <div class="t-picker" data-l-picker>
+                <button type="button" class="t-picker__btn" data-n="1" aria-pressed="false">1</button>
+                <button type="button" class="t-picker__btn" data-n="2" aria-pressed="false">2</button>
+                <button type="button" class="t-picker__btn" data-n="3" aria-pressed="false">3</button>
+                <button type="button" class="t-picker__btn" data-n="4" aria-pressed="false">4</button>
+                <button type="button" class="t-picker__btn" data-n="5" aria-pressed="false">5</button>
+              </div>
+              <div class="t-picked" data-l-picked hidden>
+                <p class="t-label" data-l-picked-t></p>
+                <p class="t-text"><strong>Angle:</strong> <span data-l-picked-a></span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="t-card t-card--pad">
+            <div class="t-field">
+              <label class="t-label" for="lv-social">Question 2</label>
+              <textarea id="lv-social" class="t-textarea t-ta" rows="3" data-k="social" placeholder="And on social media, scrolling during their lunch break, which sentence would stop their thumb?"></textarea>
+            </div>
+          </div>
+
+          <p class="t-note">These are two different jobs. On Google and AI they find you: be the best answer. On social media you interrupt them: stop them by naming the problem they carry right now, the tiredness, the endless weeks. Not your pool.</p>
+        </div>
+      </section>
+
+      <!-- le due aperture -->
+      <section class="t-block t-block--rule" aria-labelledby="lv-aperture">
+        <h2 class="t-h2" id="lv-aperture">Write your two openings</h2>
+        <p class="t-text t-intro">These two are worth more than all the others. They are the levels where you play.</p>
+
+        <div class="t-list">
+          <div class="t-card t-card--thick t-card--pad t-card--y">
+            <div class="t-field">
+              <label class="t-label" for="lv-apertura2">Level 2 · feels the problem</label>
+              <textarea id="lv-apertura2" class="t-textarea t-ta" rows="5" data-k="apertura2" placeholder="Start from the problem, amplify it, then open the solution category."></textarea>
+            </div>
+            <button type="button" class="t-btn t-btn--paper t-btn-sm t-livelli-sugg" data-l-sugg="apertura2" hidden>Use the problem from the worksheet</button>
+          </div>
+
+          <div class="t-card t-card--thick t-card--pad t-card--y">
+            <div class="t-field">
+              <label class="t-label" for="lv-apertura3">Level 3 · looks for the solution</label>
+              <textarea id="lv-apertura3" class="t-textarea t-ta" rows="5" data-k="apertura3" placeholder="Start from your unique mechanism."></textarea>
+            </div>
+            <button type="button" class="t-btn t-btn--paper t-btn-sm t-livelli-sugg" data-l-sugg="apertura3" hidden>Use the fact from the worksheet</button>
+          </div>
+        </div>
+      </section>
+
+      <button type="button" class="t-btn t-btn--lg t-btn--block t-cta" data-l-download>Download your map</button>
+
+      <div class="t-after"><a href="/en/tools/#strumenti" class="t-link">← Library</a></div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="t-wrap t-foot"><p>Francesco Astolfi · Hotel Positioning · <a href="/en/privacy-policy/">Privacy policy</a></p></footer>
+<!-- @include cookie-banner-en -->
+<script src="/assets/site.js"></script>
+<script src="/assets/strumenti.js"></script>
+<script>
+/* Strumento 06 · I 5 livelli di consapevolezza.
+   Stato in localStorage "livelli_state" (stessa chiave e stessi campi del vecchio sito:
+   ricerca, livelloOspite (numero 1-5 o null), social, apertura2, apertura3; in più screen).
+   Legge worksheet_state (fallback worksheet, sei_step_state) per i suggerimenti: step1/problema e step3/fatto/fatti. */
+(function(){
+  if (!window.HPT || !HPT.unlocked()) return;
+
+  var LIVELLI = [
+    { n: 5, nome: 'Ready', testa: 'Comparing dates.',
+      angolo: 'Offer and availability, then get out of the way.', budget: 'Pure harvesting.', raccolta: true },
+    { n: 4, nome: 'Knows your hotel', testa: 'Knows you.', google: '“[your hotel name] reviews”',
+      angolo: 'Start from proof, from the difference, from the objections.',
+      budget: 'Few people, many of them already yours. You are not creating demand: you are harvesting demand already created. Finishing work (website, emails, booking engine, replies to reviews).',
+      raccolta: true },
+    { n: 3, nome: 'Looks for the solution', testa: 'Already looking for a category of answer.',
+      google: '“hotels to switch off”, “quiet hotels Sardinia”',
+      angolo: 'Start from your unique mechanism, from the angle that sets you apart.', zona: true },
+    { n: 2, nome: 'Feels the problem', testa: 'Exhausted, does not know where to go.',
+      google: '“where to go in September to switch off”',
+      angolo: 'Start from the problem, amplify it, then point to a solution category (the PAS framework).', zona: true },
+    { n: 1, nome: 'Not thinking of going away', testa: 'Nothing. They do not even know they want a holiday.',
+      angolo: 'Open with a story, a scenario, an identity. Never with the hotel.',
+      budget: 'It costs a fortune: a vast audience, and you wait for a minority to wake up. It is the game of the big chains and tourism boards. Not yours.',
+      spento: true }
+  ];
+
+  var st = HPT.store('livelli_state', {
+    screen: 'intro', ricerca: '', livelloOspite: null, social: '', apertura2: '', apertura3: ''
+  });
+  var s = st.state;
+  if (s.screen !== 'mappa') s.screen = 'intro';
+  // vecchi salvataggi o valori strani: solo 1-5 o null
+  s.livelloOspite = Number(s.livelloOspite) >= 1 && Number(s.livelloOspite) <= 5 ? Number(s.livelloOspite) : null;
+
+  var root = HPT.$('[data-t-tool]');
+  HPT.bind(root, st);
+
+  function leggiWorksheet(chiavi){
+    var fonti = ['worksheet_state', 'worksheet', 'sei_step_state'];
+    for (var i = 0; i < fonti.length; i++) {
+      var o = HPT.read(fonti[i]);
+      if (!o || typeof o !== 'object') continue;
+      for (var j = 0; j < chiavi.length; j++) {
+        var v = o[chiavi[j]];
+        if (typeof v === 'string' && v.trim()) return v.trim();
+      }
+    }
+    return '';
+  }
+  var SUGG = {
+    apertura2: leggiWorksheet(['step1', 'problema']),
+    apertura3: leggiWorksheet(['step3', 'fatto', 'fatti'])
+  };
+
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  // righe della scala (una volta), poi si aggiornano solo stato attivo e pill
+  var righe = {};
+  LIVELLI.forEach(function(l){
+    var box = el('div', 't-level' + (l.zona ? ' is-zone' : '') + (l.spento ? ' is-off' : ''));
+    var head = el('div', 't-level__head');
+    var num = el('span', 't-level__n', String(l.n)); num.setAttribute('aria-hidden', 'true');
+    var tags = el('span', 't-level__tags');
+    if (l.raccolta) tags.appendChild(el('span', 't-pill', 'Harvesting'));
+    var tuo = el('span', 't-pill t-pill--ink', 'Your guest');
+    head.appendChild(num);
+    head.appendChild(el('h3', 't-level__t', l.n + ' · ' + l.nome));
+    head.appendChild(tags);
+    var dl = el('dl', 't-level__body');
+    function riga(dt, dd, cls){
+      var d = el('div', cls || '');
+      d.appendChild(el('dt', '', dt)); d.appendChild(document.createTextNode(' ')); d.appendChild(el('dd', '', dd));
+      dl.appendChild(d);
+    }
+    riga('On their mind:', l.testa);
+    if (l.google) riga('Google:', l.google);
+    riga('Angle:', l.angolo);
+    if (l.budget) riga('Budget:', l.budget, 't-level__budget');
+    box.appendChild(head); box.appendChild(dl);
+    var group = l.raccolta ? 'alto' : (l.zona ? 'zona' : 'basso');
+    HPT.$('[data-l-group="' + group + '"]', root).appendChild(box);
+    righe[l.n] = { box: box, tuo: tuo, tags: tags };
+  });
+
+  var picker = HPT.$$('[data-l-picker] button', root);
+  var picked = HPT.$('[data-l-picked]', root);
+
+  function refresh(){
+    var n = s.livelloOspite;
+    LIVELLI.forEach(function(l){
+      var r = righe[l.n], on = n === l.n;
+      r.box.classList.toggle('is-active', on);
+      // pill-box vuoto su telefono: lo nasconde il CSS con :empty, quindi niente nodi nascosti dentro
+      if (on && !r.tuo.parentNode) r.tags.appendChild(r.tuo);
+      if (!on && r.tuo.parentNode) r.tags.removeChild(r.tuo);
+    });
+    picker.forEach(function(b){
+      var on = Number(b.getAttribute('data-n')) === n;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.classList.toggle('is-on', on);
+    });
+    var l = LIVELLI.filter(function(x){ return x.n === n; })[0];
+    picked.hidden = !l;
+    if (l) {
+      picked.classList.toggle('is-zone', !!l.zona);
+      HPT.$('[data-l-picked-t]', picked).textContent = l.n + ' · ' + l.nome;
+      HPT.$('[data-l-picked-a]', picked).textContent = l.angolo;
+    }
+    HPT.$$('[data-l-sugg]', root).forEach(function(b){ b.hidden = !SUGG[b.getAttribute('data-l-sugg')]; });
+  }
+
+  function show(name, focus){
+    s.screen = name; st.save();
+    HPT.screen(name, focus);
+  }
+
+  function scarica(){
+    var o = function(v){ v = String(v == null ? '' : v).trim(); return v || '(to fill in)'; };
+    var r = ['YOUR MAP · The 5 levels of awareness', ''];
+    LIVELLI.slice().reverse().forEach(function(l){
+      r.push(l.n + ' · ' + l.nome + (l.zona ? '   YOUR ZONE' : l.raccolta ? '   (harvesting)' : ''));
+      r.push('   On their mind: ' + l.testa);
+      if (l.google) r.push('   Google: ' + l.google);
+      r.push('   Angle: ' + l.angolo);
+      if (l.budget) r.push('   Budget: ' + l.budget);
+      r.push('');
+    });
+    r.push('YOUR TYPICAL GUEST');
+    r.push('   What they would type into Google/AI: ' + o(s.ricerca));
+    r.push('   Level: ' + o(s.livelloOspite));
+    r.push('   Sentence that stops their thumb on social media: ' + o(s.social));
+    r.push('');
+    r.push('THE TWO OPENINGS');
+    r.push('   Level 2 · feels the problem: ' + o(s.apertura2));
+    r.push('   Level 3 · looks for the solution: ' + o(s.apertura3));
+    r.push('');
+    r.push('Don’t try to cover all five. Focus your copy and content on the two middle levels.');
+    HPT.download('my-levels-map.txt', r);
+  }
+
+  st.on(refresh);
+  root.addEventListener('click', function(e){
+    var b = e.target.closest('[data-go],[data-n],[data-l-sugg],[data-l-download]');
+    if (!b) return;
+    if (b.hasAttribute('data-go')) show(b.getAttribute('data-go'), true);
+    else if (b.hasAttribute('data-n')) {
+      var n = Number(b.getAttribute('data-n'));
+      st.set('livelloOspite', s.livelloOspite === n ? null : n);
+    } else if (b.hasAttribute('data-l-sugg')) {
+      var k = b.getAttribute('data-l-sugg');
+      if (!s[k]) st.patch((function(){ var p = {}; p[k] = SUGG[k] + '\n\n'; return p; })());
+    } else scarica();
+  });
+
+  refresh();
+  show(s.screen, false);
+})();
+</script>
+</body>
+</html>

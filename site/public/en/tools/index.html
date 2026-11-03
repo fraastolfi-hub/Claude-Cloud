@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 8 free tools from the book · Hotel Positioning</title>
+<meta name="description" content="Eight worksheets on your hotel’s positioning, ten minutes each. The bonus tools from the book Hotel Positioning, free even if you don’t have the book.">
+<link rel="canonical" href="https://hotelpositioning.com/en/tools/">
+<meta property="og:title" content="The positioning toolbox."><meta property="og:description" content="The eight fill-in tools from the book Hotel Positioning, free."><meta property="og:type" content="website">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
+<meta name="theme-color" content="#fffdf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=b3a8d31d">
+
+<style>
+.opt{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:start}
+@media (max-width:900px){.opt{grid-template-columns:1fr}}
+.gets{list-style:none;display:grid;gap:12px;margin:28px 0 0}
+.gets li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;font-size:18px}
+.gets li b{font:700 22px/1 var(--sans);letter-spacing:-.04em;min-width:64px;text-align:center;border:var(--b);background:var(--white);padding:10px 8px;box-shadow:none;border-radius:var(--r-sm)}
+.gets li:nth-child(1) b{background:var(--yellow)}.gets li:nth-child(2) b{background:var(--mint)}.gets li:nth-child(3) b{background:var(--orange)}
+.form .field select:invalid{color:var(--muted)}
+.form h2{font-size:clamp(26px,2.6vw,34px);margin-bottom:6px}
+.form .sub{font-size:16px;margin-bottom:20px;color:var(--muted)}
+
+/* fogli di lavoro */
+.sheets{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media (max-width:1060px){.sheets{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.sheets{grid-template-columns:1fr}}
+.sheet{background:var(--white);border:var(--b);box-shadow:var(--sh);display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s;border-radius:var(--r-sm)}
+.sheet:nth-child(odd){transform:rotate(-.6deg)}.sheet:nth-child(even){transform:rotate(.6deg)}
+.sheet:hover{transform:translate(-2px,-2px) rotate(0);box-shadow:none}
+.sheet .bar{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:var(--b);padding:9px 12px;font:700 11px var(--mono);letter-spacing:0;background:var(--paper)}
+.sheet .bar b{background:var(--ink);color:var(--paper);padding:3px 6px}
+.sheet .body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.sheet h3{font-size:21px}
+.sheet p{font-size:15.5px;line-height:1.45}
+.sheet .lines{margin-top:auto;padding-top:10px;display:grid;gap:10px}
+.sheet .lines i{display:block;height:2px;background:repeating-linear-gradient(90deg,var(--grey) 0 6px,transparent 6px 10px)}
+.sheet .lines i:nth-child(2){width:70%}
+.sheet.key{background:var(--yellow)}
+.sheet.key .bar{background:var(--orange)}
+.sheet .stamp-tag{top:-16px;right:auto;left:46px}
+.sheet .mini{display:grid;gap:4px}
+.mini.m4{grid-template-columns:1fr 1fr}
+.mini.m4 span{border:1px solid var(--line);height:26px;font:700 9px var(--mono);display:grid;place-items:center;}
+.mini.m4 span.x{background:var(--orange)}
+.mini.m7{grid-template-columns:repeat(7,1fr)}
+.mini.m7 span{border:1px solid var(--line);height:16px}
+.mini.m7 span.ok{background:var(--mint)}.mini.m7 span.ko{background:var(--orange)}
+.mini.ladder{grid-template-columns:repeat(4,1fr);align-items:end}
+.mini.ladder span{border:1px solid var(--line);background:var(--blue);border-radius:var(--r-sm)}
+.mini.m5{grid-template-columns:repeat(5,1fr)}
+.mini.m5 span{border:1px solid var(--line);height:18px;font:700 9px var(--mono);display:grid;place-items:center}
+.mini.m5 span.on{background:var(--yellow)}
+.mini.attr{display:flex;flex-wrap:wrap;gap:4px}
+.mini.attr span{font:700 9px var(--mono);border:1px solid var(--line);padding:2px 4px;}
+.mini.attr span.on{background:var(--orange)}
+.mini.cvs{grid-template-columns:repeat(3,1fr)}
+.mini.cvs span{border:1px solid var(--line);height:16px;background:var(--paper);border-radius:var(--r-sm)}
+.mini.cvs span.w{grid-column:1/-1;background:var(--orange)}
+
+.after .tl{color:var(--ink)}
+.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:760px){.promise{grid-template-columns:1fr}}
+.promise .card p{font-size:16px}
+
+/* --- Essenziale: rifiniture dei bonus --- */
+.hero h1{font-size:clamp(40px,5.4vw,76px)}
+.gets li{font-size:17px}
+.gets li b{border:0;background:var(--mist);border-radius:var(--r-sm);font:700 20px/1 var(--display);letter-spacing:-.03em;padding:12px 10px;min-width:68px}
+.gets li:nth-child(1) b,.gets li:nth-child(2) b,.gets li:nth-child(3) b{background:var(--mist)}
+.sheets{gap:20px}
+.sheet,.sheet:nth-child(odd),.sheet:nth-child(even){transform:none;border:2px solid var(--inchiostro);box-shadow:var(--o-sm);background:var(--white);border-radius:20px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.sheet:hover{transform:translateY(-3px);box-shadow:4px 7px 0 var(--inchiostro)}
+.sheet .bar{background:none;border-bottom:1px solid var(--line);padding:14px 18px 12px;font:500 13px var(--text);color:var(--muted)}
+.sheet .bar b{background:var(--yellow-tint);color:var(--ink);border-radius:999px;padding:5px 10px;font:700 12px/1 var(--display)}
+.sheet .body{padding:18px 18px 20px}
+.sheet p{color:var(--ink-2)}
+.sheet .lines i{height:1px;background:repeating-linear-gradient(90deg,var(--line-field) 0 6px,transparent 6px 10px)}
+.sheet.key{background:var(--yellow-soft)}
+.sheet.key .bar{background:none}
+.sheet .stamp-tag{left:auto;right:14px;top:-14px}
+.mini.m4 span,.mini.m7 span,.mini.m5 span,.mini.cvs span,.mini.ladder span{border:0;background:var(--mist);border-radius:6px}
+.mini.m4 span{font:500 9.5px var(--text);color:var(--ink-2)}
+.mini.m5 span{font:500 10px var(--text);color:var(--ink-2)}
+.mini.m4 span.x,.mini.m5 span.on,.mini.cvs span.w,.mini.attr span.on{background:var(--giallo);color:var(--inchiostro);box-shadow:inset 0 0 0 1.5px var(--inchiostro)}
+.mini.m7 span{background:var(--white);box-shadow:inset 0 0 0 1px var(--line)}
+.mini.m7 span.ok{background:var(--teal-soft);box-shadow:inset 0 0 0 1px var(--teal)}
+.mini.m7 span.ko{background:var(--pomodoro);box-shadow:none}
+.mini.attr span{border:0;background:var(--mist);border-radius:999px;padding:3px 7px;font:500 10px var(--text);color:var(--ink-2)}
+.mini.ladder span{border-radius:6px 6px 2px 2px}
+.after .tl.in .n{background:var(--mist);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.after .tl:first-child.in .n{background:var(--yellow);box-shadow:none}
+
+/* --- strumenti aperti (dopo la registrazione) --- */
+.sheet .go{display:none;margin-top:auto;font:700 15px/1.2 var(--display);text-decoration:none;color:var(--inchiostro);background:var(--giallo);border:2px solid var(--inchiostro);border-radius:12px;box-shadow:2px 2px 0 var(--inchiostro);padding:10px 14px;align-self:flex-start}
+.lib-open .sheet .go{display:inline-block}
+.lib-open .sheet{cursor:pointer}
+.lib-note{display:none;width:fit-content;max-width:100%;margin:0 0 22px;padding:8px 16px;border-radius:14px;background:var(--teal-soft);font:700 13px/1.4 var(--display);text-transform:uppercase;letter-spacing:.04em}
+.lib-open .lib-note{display:block}
+/* il tema globale colora .check.err con il pomodoro (--red): qui il testo d'errore usa --cost-text */
+.form .check.err{color:var(--cost-text)}
+/* il tema globale scrive .field.err .em in --cost-text su --cost-soft (contrasto 4,25): qui il testo è inchiostro */
+.form .field.err .em{color:var(--inchiostro)}
+</style>
+<link rel="stylesheet" href="/assets/soft.css?v=0d866f63">
+
+<link rel="alternate" hreflang="it" href="https://hotelpositioning.com/bonus/">
+<link rel="alternate" hreflang="en" href="https://hotelpositioning.com/en/tools/">
+<link rel="alternate" hreflang="x-default" href="https://hotelpositioning.com/bonus/">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="readbar" aria-hidden="true"></div>
+<div role="region" aria-label="News"><a class="ticker" href="/en/tagliando/" aria-label="New: Tagliando Hotel, the free website check-up for hotels. Find out more">
+  <div class="ticker-track" aria-hidden="true">
+    <span><em>New</em> Tagliando Hotel: the free website check-up for hotels</span><span>21 checks · one verdict</span><span>Does your site deserve an ad budget?</span><span>Find out more ›</span>
+  </div>
+</a></div>
+<header class="nav">
+  <div class="wrap">
+    <a aria-current="page" href="/en/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/en/method/">The method</a>
+      <a href="/en/analysis/">The analysis</a>
+      <a href="/en/cases/">Cases</a>
+      <a href="/en/book/">Book</a>
+      <a href="/en/resources/">Free resources</a>
+      <a href="/en/francesco/">About me</a>
+    </nav>
+    <div class="nav-right">
+      <a class="lang-sw" href="/bonus/" hreflang="it" lang="it" title="Versione italiana">IT</a>
+      <a class="btn sm" href="/en/#richiedi">Request the teardown <span class="arr">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Open the menu"><i></i></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mm" aria-label="Mobile menu">
+    <a href="/en/method/">The method</a>
+    <a href="/en/analysis/">The positioning analysis</a>
+    <a href="/en/cases/">Cases</a>
+    <a href="/en/book/">The book</a>
+    <a href="/en/resources/">Free resources</a>
+    <a href="/en/francesco/">About me</a>
+    <a href="/bonus/" hreflang="it" lang="it">Versione italiana</a>
+    <a class="btn" href="/en/#richiedi">Request the free teardown <span class="arr">→</span></a>
+  </nav>
+</header>
+
+
+<main id="main">
+
+<!-- ================= HERO + FORM ================= -->
+<section class="hero" id="scarica">
+  <div class="wrap opt">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Free · the tools from the book Hotel Positioning</span>
+      <h1>
+        <span class="line"><span>The</span></span>
+        <span class="line"><span>positioning</span></span>
+        <span class="line"><span><em>toolbox.</em></span></span>
+      </h1>
+      <p class="lead">Eight tools to fill in: the same ones I use with the hotels I work with. The book is in Italian; the tools are in English. Leave your name and email, and start whenever you like.</p>
+      <ul class="gets rv">
+        <li><b>8</b><span>worksheets, <strong>ten minutes each</strong>, to fill in with your hotel in mind</span></li>
+        <li><b>1</b><span><strong>single sign-up</strong>: the tools open straight away, and you also get them by email. No salesperson will call you</span></li>
+        <li><b>€0</b><span>you don’t need the book. Sign up once, and you stay in for good</span></li>
+      </ul>
+    </div>
+
+    <form class="form rv d1" id="bonus-form" name="strumenti-libro" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" novalidate>
+  <input type="hidden" name="form-name" value="strumenti-libro"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><p hidden><label>Don’t fill this in: <input name="bot-field"></label></p>
+      <div class="fields">
+        <div class="form-head"><span>Book bonus</span><span data-prog-txt>0%</span></div>
+        <div class="prog"><i></i></div>
+        <h2>The eight tools, by email.</h2>
+        <p class="sub">They open straight away here on the site, ready to fill in.</p>
+        <div class="field"><label for="b-nome">Name</label><input id="b-nome" name="nome" autocomplete="given-name" required><span class="em">I need it to know who I am writing to.</span></div>
+        <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email" required><span class="em">Check the address: the tools will arrive here.</span></div>
+        <div class="field"><label for="b-tipo">Type of property</label>
+          <select id="b-tipo" name="struttura" required>
+            <option value="" selected disabled>Choose</option>
+            <option value="Hotel indipendente">Independent hotel</option>
+            <option value="Resort o villaggio">Resort or holiday village</option>
+            <option value="B&amp;B o affittacamere">B&amp;B or guest house</option>
+            <option value="Agriturismo">Farm stay (agriturismo)</option>
+            <option value="Catena o gruppo">Chain or group</option>
+            <option value="Altro">Other</option>
+          </select><span class="em">Choose one: that way I can send you examples close to your hotel.</span></div>
+        <label class="check"><input type="checkbox" name="privacy" required><span>I have read the <a href="/en/privacy-policy/">privacy policy</a> and I consent to the processing of my data to receive the tools and communications by email.</span></label>
+        <button class="btn dark" type="submit">Open the tools <span class="arr">→</span></button>
+        <p class="form-foot">No spam: the tools and, now and then, a useful update.<br>Unsubscribe with one click.</p>
+      </div>
+      <div class="ok" role="status">
+        <div class="tick">✓</div>
+        <p class="big" data-ok-title>You’re in.</p>
+        <p data-ok-text>The eight tools are open, below. I am also sending an email with the links to <strong data-echo="#b-email">the address you gave</strong>, so you can find them again on any device.</p>
+        <a href="#strumenti" class="btn" style="margin-top:16px">Go to the tools <span class="arr">↓</span></a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ================= GLI OTTO FOGLI ================= -->
+<section class="sec alt" id="strumenti">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Inside the toolbox</span>
+      <h2>To fill in, not just to read. <em>Eight sheets, ten minutes each.</em></h2>
+      <p class="lead">Reading a method and applying it are two different jobs. For the second you need sheets to write on.</p>
+    </div>
+    <p class="lib-note">You’re in: open a tool and fill it in. Your answers stay saved on this device.</p>
+    <div class="sheets">
+      <article data-href="/en/tools/worksheet/" class="sheet key rv">
+        <span class="stamp-tag">Start here</span>
+        <div class="bar"><b>01</b><span>10 min</span></div>
+        <div class="body"><h3>The 6 steps of positioning</h3><p>The method from chapter 6, field by field. It is the base for the other seven.</p><div class="lines" aria-hidden="true"><i></i><i></i></div></div>
+      </article>
+      <article data-href="/en/tools/matrice/" class="sheet rv d1">
+        <div class="bar"><b>02</b><span>10 min</span></div>
+        <div class="body"><h3>The 4-box matrix</h3><p>Better or worse, more or less expensive: where the market puts your hotel. Often it is not where you think.</p>
+          <div class="mini m4 lines" aria-hidden="true"><span>better · costs more</span><span class="x">better · costs less</span><span>worse · costs more</span><span>worse · costs less</span></div></div>
+      </article>
+      <article data-href="/en/tools/attributi/" class="sheet rv d2">
+        <div class="bar"><b>03</b><span>10 min</span></div>
+        <div class="body"><h3>The 200 attributes</h3><p>Scroll, mark, and in the end two or three remain: the attributes to defend every day.</p>
+          <div class="mini attr lines" aria-hidden="true"><span>silence</span><span class="on">food</span><span>design</span><span>rhythm</span><span class="on">nature</span><span>ethics</span></div></div>
+      </article>
+      <article data-href="/en/tools/coerenza/" class="sheet rv d3">
+        <div class="bar"><b>04</b><span>10 min</span></div>
+        <div class="body"><h3>Consistency across 7 touchpoints</h3><p>Seven boxes: does the positioning hold from the website to the staff, or does it get lost at reception?</p>
+          <div class="mini m7 lines" aria-hidden="true"><span class="ok"></span><span class="ok"></span><span class="ok"></span><span class="ko"></span><span class="ok"></span><span class="ko"></span><span></span></div></div>
+      </article>
+      <article data-href="/en/tools/scala/" class="sheet rv">
+        <div class="bar"><b>05</b><span>10 min</span></div>
+        <div class="body"><h3>From fact to transformation</h3><p>One thing that makes you unique, taken rung by rung up to the transformation the guest lives.</p>
+          <div class="mini ladder lines" aria-hidden="true"><span style="height:12px"></span><span style="height:22px"></span><span style="height:32px"></span><span style="height:42px;background:var(--giallo);box-shadow:inset 0 0 0 1.5px var(--inchiostro)"></span></div></div>
+      </article>
+      <article data-href="/en/tools/livelli/" class="sheet rv d1">
+        <div class="bar"><b>06</b><span>10 min</span></div>
+        <div class="body"><h3>The 5 levels of awareness</h3><p>Where to reach the guest. And where the budget leaks away, talking to people who are not ready yet.</p>
+          <div class="mini m5 lines" aria-hidden="true"><span>1</span><span>2</span><span class="on">3</span><span>4</span><span>5</span></div></div>
+      </article>
+      <article data-href="/en/tools/canvas/" class="sheet rv d2">
+        <div class="bar"><b>07</b><span>10 min</span></div>
+        <div class="body"><h3>The Positioning Canvas</h3><p>Your whole positioning on a single page. The one to pin on the wall.</p>
+          <div class="mini cvs lines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span class="w"></span></div></div>
+      </article>
+      <article data-href="/en/quiz/" class="sheet rv d3">
+        <div class="bar"><b>08</b><span>10 min</span></div>
+        <div class="body"><h3>The positioning test</h3><p>Ten minutes of questions. At the end you see your hotel’s profile and the free box next to you.</p><div class="lines" aria-hidden="true"><i></i><i></i></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COSA SUCCEDE DOPO ================= -->
+<section class="sec after">
+  <div class="wrap grid-2">
+    <div class="sec-head" style="margin-bottom:0">
+      <span class="num-tag">What happens next</span>
+      <h2>Three steps. <em>The first is immediate.</em></h2>
+      <p class="lead">You sign up, and work on your hotel whenever you like.</p>
+    </div>
+    <div>
+      <div class="tl"><span class="n">1</span><div><span class="when">Straight away</span><h3>The tools open</h3><p>Here on the site, ready to fill in. You also get an email with the links.</p></div></div>
+      <div class="tl"><span class="n">2</span><div><span class="when">That same evening</span><h3>Sheet 01 first</h3><p>The six steps are the base. The other seven rest on it.</p></div></div>
+      <div class="tl"><span class="n">3</span><div><span class="when">Over time</span><h3>Now and then, an update</h3><p>I write when I have something useful. Unsubscribe with one click.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LIBRO ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div>
+        <p class="kicker" style="color:var(--ink)"><b>The full method</b> · 120 pages · in Italian · €19.90</p>
+        <h3 style="margin-top:12px">The tools are the workbench. The method for using them is in the book.</h3>
+        <p>Six steps, the Silva and Veridia cases, the canvas filled in for a real hotel, two hundred attributes, twelve routes. It costs less than the OTA commission on one night.</p>
+      </div>
+      <a href="/en/book/" class="btn dark">What’s in the book <span class="arr">→</span></a>
+    </div>
+    <p class="micro" style="text-align:center;margin-top:30px">To buy it now (Italian edition): <a href="https://www.amazon.it/dp/B0HL3Z4XL7/" rel="noopener"><b>Hotel Positioning on Amazon · €19.90</b></a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="big">Without clear positioning, price is the only lever left.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">The method</h2>
+        <ul>
+          <li><a href="/en/method/">The six steps</a></li>
+          <li><a href="/en/analysis/">The positioning analysis</a></li>
+          <li><a href="/en/cases/">Cases</a></li>
+          <li><a href="/en/teardown/">The homepage teardown</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Problems it solves</h2>
+        <ul>
+          <li><a href="/en/problems/booking/">Too much OTA commission</a></li>
+          <li><a href="/en/problems/prices/">Rates that won't rise</a></li>
+          <li><a href="/en/problems/replaceable/">A hotel like all the others</a></li>
+          <li><a href="/en/problems/agencies/">Agencies that aren't enough</a></li>
+          <li><a href="/en/problems/value/">Brand value</a></li>
+          <li><a href="/en/problems/opening/">A hotel about to open</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Free resources</h2>
+        <ul>
+          <li><a href="/en/tagliando/">Tagliando Hotel, the website check-up</a></li>
+          <li><a href="/en/quiz/">The positioning test</a></li>
+          <li><a aria-current="page" href="/en/tools/">The book's 8 tools</a></li>
+          <li><a href="/en/library/">The positioning library</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Francesco</h2>
+        <ul>
+          <li><a href="/en/francesco/">About me</a></li>
+          <li><a href="/en/book/">The book (in Italian)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN), Italy · VAT no. IT04283940403</span>
+      <span><a href="/en/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Cookie preferences</button></span>
+    </div>
+  </div>
+</footer>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
+  <button type="button" class="cc-x" data-cc="reject" aria-label="Close and reject non-essential cookies">✕</button>
+  <p class="cc-t" id="cc-t">Cookies and privacy</p>
+  <p class="cc-p">We use technical cookies that the site needs to work. With your consent we also use statistics cookies (Google Analytics) and marketing cookies (Meta Pixel) to measure visits and how well our campaigns work. You can change your mind at any time. Details in the <a href="/en/privacy-policy/#cookie">privacy policy</a>.</p>
+  <div class="cc-opts" id="cc-opts" hidden>
+    <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Technical</b> Needed for the site to work. Always on.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistics</b> Google Analytics: visits and most-read pages, in aggregate form.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-mkt"><span><b>Marketing</b> Meta Pixel: measuring campaigns on Facebook and Instagram and building ad audiences.</span></label>
+  </div>
+  <div class="cc-btns">
+    <button type="button" class="btn sm" data-cc="reject">Reject</button>
+    <button type="button" class="btn sm" data-cc="accept">Accept all</button>
+    <button type="button" class="cc-more" data-cc="custom" id="cc-custom">Customise</button>
+    <button type="button" class="btn sm" data-cc="save" id="cc-save" hidden>Save choices</button>
+  </div>
+</div>
+<script src="/assets/consent.js?v=a219769f"></script>
+
+<div class="exit" id="exit" role="dialog" aria-modal="true" aria-labelledby="exit-t" hidden>
+  <div class="exit-card">
+    <button type="button" class="exit-x" data-exit-close aria-label="Close">✕</button>
+    <span class="exit-k" id="exit-k"></span>
+    <p class="exit-t" id="exit-t"></p>
+    <p class="exit-p" id="exit-p"></p>
+    <div class="exit-btns"><a class="btn" id="exit-cta" href="#"></a></div>
+    <button type="button" class="exit-no" data-exit-close id="exit-no"></button>
+  </div>
+</div>
+
+<script src="/assets/site.js?v=a8abb351"></script>
+
+<script>
+(function(){
+  // la library: dopo la registrazione (o con ?accesso=1 dal link della mail) gli strumenti si aprono
+  var KEY = 'library_unlocked';
+  function get(){ try { return localStorage.getItem(KEY) === 'true'; } catch (e) { return false; } }
+  function set(){ try { localStorage.setItem(KEY, 'true'); } catch (e) {} }
+  if (/[?&]accesso=1/.test(location.search)) { set(); try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {} }
+  var root = document.getElementById('strumenti'), form = document.getElementById('bonus-form');
+  function open(){
+    if (root.classList.contains('lib-open')) return;
+    root.classList.add('lib-open');
+    [].forEach.call(root.querySelectorAll('.sheet[data-href]'), function(a){
+      var go = document.createElement('a'); go.className = 'go'; go.href = a.dataset.href;
+      go.textContent = a.dataset.href === '/en/quiz/' ? 'Take the test →' : 'Open the tool →';
+      a.querySelector('.body').appendChild(go);
+      a.addEventListener('click', function(e){ if (!e.target.closest('a')) location.href = a.dataset.href; });
+    });
+  }
+  if (get()) {
+    open();
+    if (form) {
+      form.classList.add('sent');
+      var t = form.querySelector('[data-ok-title]'), p = form.querySelector('[data-ok-text]');
+      if (t) t.textContent = 'You’re already in.';
+      if (p) p.textContent = 'The eight tools are open, below. Your answers stay saved on this device.';
+    }
+  }
+  if (form) new MutationObserver(function(){ if (form.classList.contains('sent')) { set(); open(); } }).observe(form, { attributes: true, attributeFilter: ['class'] });
+})();
+</script>
+</body>
+</html>

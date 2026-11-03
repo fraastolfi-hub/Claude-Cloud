@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel positioning cases · Hotel Positioning</title>
+<meta name="description" content="Silva Splendid, Veridia Resort, Yume Ramen: for each case the line before, the choice, the numbers, and what the case proves and doesn’t prove.">
+<link rel="canonical" href="https://hotelpositioning.com/en/cases/">
+<meta property="og:title" content="Three cases. What they prove, and what they don’t.">
+<meta property="og:description" content="Silva Splendid, Veridia Resort, Yume Ramen: the line before, the choice, the numbers. And what each case doesn’t prove.">
+<meta property="og:type" content="website">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
+<meta name="theme-color" content="#fffdf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=b3a8d31d">
+
+<style>
+/* --- confronto in apertura: tre colonne, righe allineate --- */
+.cmp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(44px,5vw,64px)}
+@media (max-width:900px){.cmp{grid-template-columns:minmax(0,1fr)}}
+.cmp a{display:grid;grid-template-rows:subgrid;grid-row:span 5;gap:0;text-decoration:none;color:inherit;background:var(--white);border:2px solid var(--ink);border-radius:20px;box-shadow:var(--o-sm);padding:clamp(22px,2.4vw,28px);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.cmp a:hover{transform:translate(-2px,-2px);box-shadow:var(--o-xl)}
+.cmp a > *{padding:12px 0;border-top:1px solid var(--line)}
+.cmp a > :first-child{padding-top:0;border-top:0}
+.cmp .t{font:700 22px/1.15 var(--display);letter-spacing:-.02em}
+.cmp .t small{display:block;margin-top:6px;font:500 14px var(--text);letter-spacing:0;color:var(--muted)}
+.cmp .k{display:block;font:600 13px var(--text);color:var(--muted);margin-bottom:4px}
+.cmp q{font:600 17px/1.3 var(--display);letter-spacing:-.01em;quotes:"«" "»"}
+.cmp .pre q{color:var(--muted)}
+.cmp .n{font:700 34px/1 var(--display);letter-spacing:-.04em}
+.cmp .n span{display:block;margin-top:6px;font:400 14px/1.4 var(--text);letter-spacing:0;color:var(--muted)}
+.cmp .no p{font-size:15px;line-height:1.45;color:var(--ink-2)}
+
+/* --- testata caso --- */
+#silva{background:var(--mist)}
+.case-head{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,40px);align-items:end;margin-bottom:clamp(32px,4vw,52px)}
+.case-n{font:700 clamp(80px,11vw,160px)/.8 var(--display);letter-spacing:-.06em;color:var(--line)}
+.sec.dark .case-n{color:var(--inchiostro)}
+.case-head h2{margin:14px 0 0}
+@media (max-width:640px){.case-head{grid-template-columns:1fr;gap:6px}}
+
+/* --- 1. prima / 2. dopo --- */
+.ba{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r);overflow:hidden;background:var(--white)}
+#veridia .ba{background:var(--mist)}
+.sec.dark .ba{background:#fff;color:var(--inchiostro)}
+.ba > div{padding:clamp(24px,3vw,36px)}
+.ba > div + div{border-left:1px solid var(--line)}
+.stp{display:block;font:600 14px var(--text);color:var(--muted)}
+.line-q{display:block;font:700 clamp(24px,2.6vw,34px)/1.1 var(--display);letter-spacing:-.03em;margin:12px 0 16px;quotes:"«" "»"}
+.ba .pre .line-q{color:var(--muted)}
+.ba p{font-size:16.5px;line-height:1.5;color:var(--ink-2)}
+.sec.dark .ba p{color:var(--ink-2)}
+.ba p + p{margin-top:8px}
+.ba p strong{color:var(--ink)}
+.sec.dark .ba p strong{color:var(--ink)}
+@media (max-width:760px){.ba{grid-template-columns:1fr}.ba > div + div{border-left:0;border-top:1px solid var(--line)}}
+
+/* --- 3. numeri --- */
+.nums-k{margin:28px 0 0}
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:12px}
+@media (max-width:860px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:340px){.nums{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.nums .stat{padding:18px}.nums .stat b{font-size:32px}}
+.nums .stat b{font-size:clamp(36px,4vw,52px)}
+#silva .stat{background:var(--white)}
+#veridia .stat{background:var(--mist)}
+.nums .stat.none b{color:var(--muted)}
+
+/* --- 4. dimostra / non dimostra --- */
+.yn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media (max-width:760px){.yn{grid-template-columns:1fr}}
+.yn > div{padding:clamp(24px,3vw,36px);border-radius:var(--r);background:var(--white)}
+#veridia .yn > div{background:var(--mist)}
+.yn > div{border:2px solid var(--ink)}
+.yn > div + div,#veridia .yn > div + div{background:var(--pink-soft);color:var(--ink)}
+.sec.dark .yn > div{background:#fff;color:var(--ink)}
+.sec.dark .yn > div + div{background:var(--pink-soft)}
+.yn h3{margin-bottom:16px}
+.yn .check-list li{font-size:16.5px}
+
+.declare{display:flex;gap:12px;align-items:flex-start;background:#fff;color:var(--ink);border:2px solid var(--ink);padding:16px 20px;border-radius:16px;font:500 16px/1.45 var(--text);max-width:64ch;margin-bottom:16px}
+.declare::before{content:"";flex:none;width:10px;height:10px;margin-top:.45em;border-radius:50%;background:var(--tomato);border:2px solid var(--ink)}
+.mid-cta{margin-top:clamp(40px,5vw,56px)}
+.pull small{display:block;margin-top:12px;font:400 14px var(--text);letter-spacing:0;color:var(--muted)}
+
+/* --- finale --- */
+#richiedi .field label.check{display:grid;font:400 14.5px/1.45 var(--text);text-transform:none;letter-spacing:0}
+#richiedi .field label.check input{margin:0}
+#richiedi .field legend.lab{font:500 14px var(--text)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink)}
+.next{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,64px);align-items:start}
+@media (max-width:900px){.next{grid-template-columns:1fr}}
+.ghost-case{border:2px dashed var(--line-field);padding:26px;margin-top:32px;border-radius:20px;background:var(--white)}
+.ghost-case dl{display:grid;gap:14px}
+.ghost-case dt{font:600 13px var(--text);color:var(--muted);margin-bottom:2px}
+.ghost-case dd{font:600 18px/1.3 var(--display);letter-spacing:-.015em}
+/* versione morbida: la fascia gialla (.sec.dark) con testo inchiostro */
+section.sec.dark{--line:rgba(38,37,33,.22);--muted:#57534c;--grey:#e3ddd4}
+section.sec.dark .kicker,section.sec.dark .lead,section.sec.dark .muted{color:var(--inchiostro-2)}
+section.sec.dark h1 em,section.sec.dark h2 em{color:var(--inchiostro)}
+section.sec.dark .stat{background:#fff!important;color:var(--inchiostro)}
+section.sec.dark .stat span{color:var(--inchiostro-2)}
+section.sec.dark .check-list li::before{background-color:var(--green)!important}
+section.sec.dark .check-list.no li::before{background-color:var(--pomodoro)!important}
+.nums .stat span{color:var(--ink-2)}
+</style>
+<link rel="stylesheet" href="/assets/soft.css?v=0d866f63">
+
+<link rel="alternate" hreflang="it" href="https://hotelpositioning.com/casi/">
+<link rel="alternate" hreflang="en" href="https://hotelpositioning.com/en/cases/">
+<link rel="alternate" hreflang="x-default" href="https://hotelpositioning.com/casi/">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="readbar" aria-hidden="true"></div>
+<div role="region" aria-label="News"><a class="ticker" href="/en/tagliando/" aria-label="New: Tagliando Hotel, the free website check-up for hotels. Find out more">
+  <div class="ticker-track" aria-hidden="true">
+    <span><em>New</em> Tagliando Hotel: the free website check-up for hotels</span><span>21 checks · one verdict</span><span>Does your site deserve an ad budget?</span><span>Find out more ›</span>
+  </div>
+</a></div>
+<header class="nav">
+  <div class="wrap">
+    <a aria-current="page" href="/en/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/en/method/">The method</a>
+      <a href="/en/analysis/">The analysis</a>
+      <a aria-current="page" href="/en/cases/">Cases</a>
+      <a href="/en/book/">Book</a>
+      <a href="/en/resources/">Free resources</a>
+      <a href="/en/francesco/">About me</a>
+    </nav>
+    <div class="nav-right">
+      <a class="lang-sw" href="/casi/" hreflang="it" lang="it" title="Versione italiana">IT</a>
+      <a class="btn sm" href="/en/#richiedi">Request the teardown <span class="arr">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Open the menu"><i></i></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mm" aria-label="Mobile menu">
+    <a href="/en/method/">The method</a>
+    <a href="/en/analysis/">The positioning analysis</a>
+    <a aria-current="page" href="/en/cases/">Cases</a>
+    <a href="/en/book/">The book</a>
+    <a href="/en/resources/">Free resources</a>
+    <a href="/en/francesco/">About me</a>
+    <a href="/casi/" hreflang="it" lang="it">Versione italiana</a>
+    <a class="btn" href="/en/#richiedi">Request the free teardown <span class="arr">→</span></a>
+  </nav>
+</header>
+
+
+<main id="main">
+
+<!-- ================= APERTURA ================= -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Cases · hotel positioning</span>
+    <h1>
+      <span class="line"><span>Three cases.</span></span>
+      <span class="line"><span>What they prove.</span></span>
+      <span class="line"><span><em>And what they don’t.</em></span></span>
+    </h1>
+    <p class="lead">For each one, always in the same order: the line before, the choice, the numbers, what it proves and what it doesn’t.</p>
+    <div class="btn-row">
+      <a href="#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a>
+    </div>
+
+    <div class="cmp">
+      <a href="#silva">
+        <div class="t">Silva Splendid<small>Fiuggi · 118 rooms ↓</small></div>
+        <div class="pre"><span class="k">Before</span><q>4-star hotel with SPA in Fiuggi.</q></div>
+        <div><span class="k">After</span><q>The Wellness Hotel of Fiuggi.</q></div>
+        <div class="n">€7M<span>annual revenue, up from €5.6M in five years</span></div>
+        <div class="no"><span class="k">Doesn’t prove</span><p>That positioning did it alone: there was also the renovation.</p></div>
+      </a>
+      <a href="#veridia">
+        <div class="t">Veridia Resort<small>Chia · Sardinia ↓</small></div>
+        <div class="pre"><span class="k">Before</span><q>Beach, pool, relaxation.</q></div>
+        <div><span class="k">After</span><q>The nature resort of Chia.</q></div>
+        <div class="n">&gt;60%<span>of sales are direct</span></div>
+        <div class="no"><span class="k">Doesn’t prove</span><p>A before-and-after on revenue: the repositioning is recent.</p></div>
+      </a>
+      <a href="#yume">
+        <div class="t">Yume Ramen<small>Restaurants · 5 venues ↓</small></div>
+        <div class="pre"><span class="k">Before</span><q>Nothing: no venue, no name.</q></div>
+        <div><span class="k">After</span><q>Yume, Japanese for dream.</q></div>
+        <div class="n">€2.5M<span>in revenue, starting from zero</span></div>
+        <div class="no"><span class="k">Doesn’t prove</span><p>That it works for a hotel: it’s restaurants, and the client was me.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 01 SILVA ================= -->
+<section class="sec" id="silva">
+  <div class="wrap">
+    <div class="case-head">
+      <span class="case-n" aria-hidden="true">01</span>
+      <div>
+        <p class="kicker"><b>Case 01</b> · Silva Splendid · Fiuggi · 118 rooms</p>
+        <h2>It spoke to everyone. <em>Now it’s the wellness hotel.</em></h2>
+      </div>
+    </div>
+
+    <div class="ba rv">
+      <div class="pre">
+        <span class="stp">1 · Where it started</span>
+        <q class="line-q">4-star hotel with SPA in Fiuggi.</q>
+        <p>The historic hotel in Fiuggi, the most reviewed in town. Older guests in summer, young couples in winter, then families, children, pets.</p>
+        <p><strong>It spoke to everyone, so nobody remembered it for anything.</strong></p>
+      </div>
+      <div class="post">
+        <span class="stp">2 · The choice</span>
+        <q class="line-q">The Wellness Hotel of Fiuggi.</q>
+        <p>With “The”: not “a” wellness hotel, the reference. The proof is a fact: the largest SPA in Lazio, 1,600 m², more than a hundred treatments, a doctor.</p>
+        <p><strong>And almost out of the family segment.</strong> The trade-off that makes the rest credible.</p>
+      </div>
+    </div>
+
+    <span class="stp nums-k">3 · The numbers</span>
+    <div class="nums rv">
+      <div class="stat"><b>€7M</b><span>annual revenue, up from €5.6M, in five years</span></div>
+      <div class="stat"><b>×2</b><span>average rate, roughly</span></div>
+      <div class="stat"><b>9</b><span>on Booking, up from 8.6</span></div>
+      <div class="stat"><b>1,600</b><span>m² of SPA, the largest in Lazio</span></div>
+    </div>
+
+    <div class="yn">
+      <div class="rv">
+        <h3>4 · What it proves</h3>
+        <ul class="check-list">
+          <li>That you can raise the rate, lose the lower-end guests and see your reviews go up.</li>
+          <li>That even the biggest, most reviewed hotel in the area blends in if it speaks to everyone.</li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <h3>5 · What it doesn’t prove</h3>
+        <ul class="check-list no">
+          <li>That positioning alone doubles revenue. There was also a renovation, paid for by the owners.</li>
+          <li>The result comes from both together: positioning set the direction, the investment made it credible.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 VERIDIA ================= -->
+<section class="sec white" id="veridia">
+  <div class="wrap">
+    <div class="case-head">
+      <span class="case-n" aria-hidden="true">02</span>
+      <div>
+        <p class="kicker"><b>Case 02</b> · Veridia Resort · Chia · Sardinia</p>
+        <h2>A hundred resorts by the sea. <em>Only one in nature.</em></h2>
+      </div>
+    </div>
+
+    <div class="ba rv">
+      <div class="pre">
+        <span class="stp">1 · Where it started</span>
+        <q class="line-q">Beach, pool, relaxation.</q>
+        <p>The same line as a hundred Sardinian resorts. Sold as a package by tour operators, like any family holiday village.</p>
+        <p><strong>Other people set the price.</strong></p>
+      </div>
+      <div class="post">
+        <span class="stp">2 · The choice</span>
+        <q class="line-q">The nature resort of Chia.</q>
+        <p>The place, not the sea. Nothing needed building: the fact was already there, it just had no name.</p>
+        <p><strong>An international soft brand</strong> brings in European guests and leaves the resort independent.</p>
+      </div>
+    </div>
+
+    <span class="stp nums-k">3 · The numbers</span>
+    <div class="nums rv">
+      <div class="stat"><b>&gt;60%</b><span>of sales are direct</span></div>
+      <div class="stat none"><b>n/a</b><span>before-and-after revenue: the repositioning is recent</span></div>
+    </div>
+
+    <div class="yn">
+      <div class="rv">
+        <h3>4 · What it proves</h3>
+        <ul class="check-list">
+          <li>That the distinctive fact is often already there and nobody uses it. Here it was the place.</li>
+          <li>That you can have international distribution without leaving the price to tour operators.</li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <h3>5 · What it doesn’t prove</h3>
+        <ul class="check-list no">
+          <li>A rise in revenue: for now there is no comparison to show.</li>
+          <li>The evidence is something else: the resort has taken back control of its name, category, guest and channels.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta-band mid-cta rv">
+      <div>
+        <h3>Your hotel, with the same structure.</h3>
+        <p>Your opening line next to your competitors’, with the logo covered. A verdict and a clue on where your reason lies. Free, and you receive it within 3 working days.</p>
+      </div>
+      <a href="#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 YUME ================= -->
+<section class="sec dark" id="yume">
+  <div class="wrap">
+    <div class="case-head">
+      <span class="case-n" aria-hidden="true">03</span>
+      <div>
+        <p class="kicker"><b>Case 03</b> · Yume Ramen · 5 restaurants</p>
+        <h2>An entrepreneur’s case. <em>Not a consultant’s.</em></h2>
+      </div>
+    </div>
+    <p class="declare rv">Yume Ramen is my own company, started with my own capital. It isn’t a consulting job, and I don’t present it as one.</p>
+
+    <div class="ba rv">
+      <div class="pre">
+        <span class="stp">1 · Where it started</span>
+        <q class="line-q">Nothing: no venue, no name.</q>
+        <p>Zero customers, zero revenue. The capital at risk was mine.</p>
+      </div>
+      <div class="post">
+        <span class="stp">2 · The choice</span>
+        <q class="line-q">Yume, Japanese for dream.</q>
+        <p>Not a place where you eat ramen: <strong>a place where you stop and think about your own dream.</strong></p>
+        <p>Decided before the first kitchen opened.</p>
+      </div>
+    </div>
+
+    <span class="stp nums-k">3 · The numbers</span>
+    <div class="nums rv">
+      <div class="stat"><b>€2.5M</b><span>in revenue, starting from zero</span></div>
+      <div class="stat"><b>5</b><span>Yume Ramen restaurants</span></div>
+      <div class="stat"><b>+5</b><span>Enzu Asian Food restaurants, from a ghost kitchen launched in 2020</span></div>
+    </div>
+
+    <div class="yn">
+      <div class="rv">
+        <h3>4 · What it proves</h3>
+        <ul class="check-list">
+          <li>That the position is decided before investing, not after.</li>
+          <li>That I know from the inside the decisions of people who risk their own capital.</li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <h3>5 · What it doesn’t prove</h3>
+        <ul class="check-list no">
+          <li>That it works for a hotel: it’s restaurants. The method is the same, the market isn’t.</li>
+          <li>Consulting work: here the client was me.</li>
+          <li>That it always works out. I’ve invested my own capital several times, and it hasn’t always gone well.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RICHIESTA ================= -->
+<section class="sec orange" id="richiedi" data-sticky-stop>
+  <div class="wrap next">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="num-tag">Case 04</span>
+        <h2>The next one could be <em>your hotel.</em></h2>
+        <p class="lead">It starts with the homepage teardown. It’s free and I do it myself, by hand: up to 6 a month, for hotels and resorts with 40 rooms or more. Your opening line next to those of 2-3 competitors, with the logo covered, a verdict and a clue on where your reason lies.</p>
+      </div>
+      <div class="ghost-case rv">
+        <dl>
+          <div><dt>1 · Where you start</dt><dd>The line your hotel uses to introduce itself today.</dd></div>
+          <div><dt>2 · The choice</dt><dd>The one the facts about your hotel and your area point to.</dd></div>
+          <div><dt>3 · What it proves, and what it doesn’t</dt><dd>We write it together, once the numbers are in.</dd></div>
+        </dl>
+      </div>
+      <p class="pull rv" style="margin-top:40px;font-size:clamp(22px,2.4vw,30px)">The compass first. Then the walls. The order matters.<small>Francesco Astolfi</small></p>
+      <p class="micro" style="color:var(--ink)"><b>You receive it within 3 working days, in English.</b> Behind every result there are owners, staff and partners: my contribution is the direction. <a href="/en/analysis/">How the full analysis works</a>.</p>
+    </div>
+    <div class="rv d1">
+          <form class="form" id="smontaggio-form" name="revisione-homepage" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" novalidate>
+  <input type="hidden" name="form-name" value="revisione-homepage"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><p hidden><label>Do not fill in: <input name="bot-field"></label></p>
+      <div class="fields">
+        <div class="form-head"><span>Homepage teardown</span><span data-prog-txt>0%</span></div>
+        <div class="prog"><i></i></div>
+        <div class="field"><label for="s-nome">Name and role</label><input id="s-nome" name="nome_ruolo" autocomplete="name" required placeholder="E.g. Julia Rossi, owner"><span class="em">Write your name and role, so I know who to reply to.</span></div>
+        <div class="row2">
+          <div class="field"><label for="s-hotel">Your hotel's name</label><input id="s-hotel" name="hotel" required placeholder="Hotel, town"><span class="em">Write the name of the hotel.</span></div>
+          <div class="field"><label for="s-url">Website</label><input id="s-url" name="url" inputmode="url" autocomplete="url" required placeholder="www.yourhotel.com"><span class="em">Write the website address.</span></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="s-email">Email</label><input id="s-email" name="email" type="email" autocomplete="email" required><span class="em">Check the address: the teardown arrives here.</span></div>
+          <div class="field"><label for="s-camere">Rooms <small>(40 or more)</small></label><select id="s-camere" name="camere" required><option value="">Choose</option><option>40-80</option><option>80-150</option><option>Oltre 150</option></select><span class="em">Choose the number of rooms.</span></div>
+        </div>
+        <div class="field"><label for="s-conc">2-3 competitors guests compare you with</label><textarea id="s-conc" name="concorrenti" rows="2" required placeholder="Name or website, one per line"></textarea><span class="em">Write at least one competitor: the teardown is a comparison.</span></div>
+        <div class="field"><label for="s-riga">Optional: what would you like guests to understand about your hotel that the homepage doesn't say today?</label><textarea id="s-riga" name="riga" rows="2"></textarea></div>
+        <label class="check"><input type="checkbox" name="privacy" required><span>I have read the <a href="/en/privacy-policy/">privacy policy</a> and agree to be contacted by email about the homepage teardown.</span></label>
+        <button class="btn dark" type="submit">Request the free teardown <span class="arr">→</span></button>
+        <p class="form-foot">Free · no commitment · you get it within 3 working days.<br><span class="ff-cap">Up to 6 a month, only hotels and resorts with 40 rooms or more. Delivered in English.</span></p>
+      </div>
+      <div class="ok" role="status">
+        <div class="tick">✓</div>
+        <p class="big">Request received.</p>
+        <p>I've received the request for <strong data-echo="#s-hotel">your hotel</strong>: I'll write to you within 3 working days. In the meantime, try this: cover the logo on your homepage and on a competitor's, and read the first two sentences. If they can be swapped, that's where the teardown starts.</p>
+      </div>
+    </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="big">Without clear positioning, price is the only lever left.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">The method</h2>
+        <ul>
+          <li><a href="/en/method/">The six steps</a></li>
+          <li><a href="/en/analysis/">The positioning analysis</a></li>
+          <li><a aria-current="page" href="/en/cases/">Cases</a></li>
+          <li><a href="/en/teardown/">The homepage teardown</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Problems it solves</h2>
+        <ul>
+          <li><a href="/en/problems/booking/">Too much OTA commission</a></li>
+          <li><a href="/en/problems/prices/">Rates that won't rise</a></li>
+          <li><a href="/en/problems/replaceable/">A hotel like all the others</a></li>
+          <li><a href="/en/problems/agencies/">Agencies that aren't enough</a></li>
+          <li><a href="/en/problems/value/">Brand value</a></li>
+          <li><a href="/en/problems/opening/">A hotel about to open</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Free resources</h2>
+        <ul>
+          <li><a href="/en/tagliando/">Tagliando Hotel, the website check-up</a></li>
+          <li><a href="/en/quiz/">The positioning test</a></li>
+          <li><a href="/en/tools/">The book's 8 tools</a></li>
+          <li><a href="/en/library/">The positioning library</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Francesco</h2>
+        <ul>
+          <li><a href="/en/francesco/">About me</a></li>
+          <li><a href="/en/book/">The book (in Italian)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN), Italy · VAT no. IT04283940403</span>
+      <span><a href="/en/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Cookie preferences</button></span>
+    </div>
+  </div>
+</footer>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
+  <button type="button" class="cc-x" data-cc="reject" aria-label="Close and reject non-essential cookies">✕</button>
+  <p class="cc-t" id="cc-t">Cookies and privacy</p>
+  <p class="cc-p">We use technical cookies that the site needs to work. With your consent we also use statistics cookies (Google Analytics) and marketing cookies (Meta Pixel) to measure visits and how well our campaigns work. You can change your mind at any time. Details in the <a href="/en/privacy-policy/#cookie">privacy policy</a>.</p>
+  <div class="cc-opts" id="cc-opts" hidden>
+    <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Technical</b> Needed for the site to work. Always on.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistics</b> Google Analytics: visits and most-read pages, in aggregate form.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-mkt"><span><b>Marketing</b> Meta Pixel: measuring campaigns on Facebook and Instagram and building ad audiences.</span></label>
+  </div>
+  <div class="cc-btns">
+    <button type="button" class="btn sm" data-cc="reject">Reject</button>
+    <button type="button" class="btn sm" data-cc="accept">Accept all</button>
+    <button type="button" class="cc-more" data-cc="custom" id="cc-custom">Customise</button>
+    <button type="button" class="btn sm" data-cc="save" id="cc-save" hidden>Save choices</button>
+  </div>
+</div>
+<script src="/assets/consent.js?v=a219769f"></script>
+
+<div class="exit" id="exit" role="dialog" aria-modal="true" aria-labelledby="exit-t" hidden>
+  <div class="exit-card">
+    <button type="button" class="exit-x" data-exit-close aria-label="Close">✕</button>
+    <span class="exit-k" id="exit-k"></span>
+    <p class="exit-t" id="exit-t"></p>
+    <p class="exit-p" id="exit-p"></p>
+    <div class="exit-btns"><a class="btn" id="exit-cta" href="#"></a></div>
+    <button type="button" class="exit-no" data-exit-close id="exit-no"></button>
+  </div>
+</div>
+
+<script src="/assets/site.js?v=a8abb351"></script>
+
+<div class="sticky-cta" role="region" aria-label="Free teardown"><a href="#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a></div>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Positioning Canvas · Tools · Hotel Positioning</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Five boxes to pin down your hotel’s positioning on a single page, to hand to anyone who works with your hotel.">
+<link rel="canonical" href="https://hotelpositioning.com/en/tools/canvas/">
+<!-- @include head-en -->
+<!-- @include tema -->
+<link rel="stylesheet" href="/assets/strumenti.css">
+<style>
+/* canvas: i titoli delle caselle sono h2 (ordine dei titoli), qui li teniamo piccoli anche dove soft.css forza gli h2 */
+.t-page h2.t-box__t{font:800 clamp(16px,1.6vw,18px)/1.2 var(--display)!important;text-transform:none;letter-spacing:-.01em}
+.t-page .t-box--cat h2.t-box__t{font-size:clamp(18px,2vw,21px)!important}
+.t-canvas-head .t-row{margin-top:20px}
+.t-canvas-head .t-credit{margin:0}
+.t-box .t-textarea{width:100%}
+@media print{
+  .t-page h1.t-print__title{font:800 24px/1.05 var(--display)!important;letter-spacing:-.01em}
+  .t-stage{padding:0!important}
+}
+</style>
+</head>
+<body class="t-page" data-tool="canvas" data-tool-n="07" data-tool-name="The Positioning Canvas">
+<header class="t-bar">
+  <div class="t-wrap t-bar__in">
+    <a href="/en/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <p class="t-bar__meta">
+      <span class="t-bar__n"><span class="t-bar__word">Tool </span>07 / 08</span>
+      <span class="t-bar__name">The Positioning Canvas</span>
+    </p>
+    <a href="/en/tools/#strumenti" class="t-back">← Tools</a>
+  </div>
+  <div class="t-steps" aria-hidden="true"><i class="is-past"></i><i class="is-past"></i><i class="is-past"></i><i class="is-past"></i><i class="is-past"></i><i class="is-past"></i><i class="is-current"></i><i></i></div>
+</header>
+
+<main id="main" class="t-wrap t-stage">
+  <noscript><p class="t-lead">This tool needs JavaScript switched on in your browser.</p></noscript>
+  <div data-t-tool hidden>
+
+    <!-- intro -->
+    <section data-screen="intro">
+      <h1 class="t-title">The Positioning Canvas</h1>
+      <p class="t-lead">The six steps are the process. The canvas is where you pin it down: a single, clear page you can reread and hand to the people who work with you. The iron rule: you fill in the four boxes at the top. The fifth, the category, you don’t choose. You derive it.</p>
+      <button type="button" class="t-btn t-btn--lg t-cta" data-go="canvas">Fill in the canvas</button>
+      <div class="t-after"><p class="t-credit">Canvas: April Dunford, Obviously Awesome</p></div>
+    </section>
+
+    <!-- canvas -->
+    <section data-screen="canvas" hidden>
+      <div class="t-noprint">
+        <div class="t-canvas-head">
+          <h1 class="t-title t-title--sm">The Positioning Canvas</h1>
+
+          <div class="t-card t-card--pad t-card--flag t-sugg" data-c-import hidden>
+            <p class="t-text">You have already filled in other tools in the library. I can bring everything here.</p>
+            <div class="t-row">
+              <button type="button" class="t-btn t-btn-sm" data-c-import-yes>Import what you have already filled in</button>
+              <button type="button" class="t-btn t-btn--paper t-btn-sm" data-c-import-no>No, I’ll start from scratch</button>
+            </div>
+          </div>
+
+          <div class="t-row t-row--center t-field-gap">
+            <button type="button" class="t-btn t-btn--paper t-btn-sm" aria-expanded="false" aria-controls="canvas-esempio" data-c-esempio>See an example</button>
+            <p class="t-credit">Canvas: April Dunford, Obviously Awesome</p>
+          </div>
+        </div>
+
+        <div class="t-card t-card--pad t-card--alt t-example" id="canvas-esempio" hidden>
+          <p class="t-label">Example · Silva Splendid, Fiuggi</p>
+          <div class="t-example__grid">
+            <p><strong>Alternatives</strong><br><span data-ex="alternative"></span></p>
+            <p><strong>Distinctive facts</strong><br><span data-ex="fatti"></span></p>
+            <p><strong>Value</strong><br><span data-ex="valore"></span></p>
+            <p><strong>Best-fit guests</strong><br><span data-ex="bestfit"></span> <em>Bad-fit:</em> <span data-ex="badfit"></span></p>
+            <p class="t-example__cat"><strong>Category</strong><br><span data-ex="categoria"></span></p>
+          </div>
+          <button type="button" class="t-btn t-btn-sm" data-c-usa>Use it as a starting point</button>
+        </div>
+
+        <div class="t-canvas">
+          <div class="t-box">
+            <div class="t-box__head"><span class="t-box__n" aria-hidden="true">1</span><h2 class="t-box__t" id="canvas-box-1">Competitive alternatives</h2></div>
+            <div class="t-box__body">
+              <p class="t-hint" id="canvas-hint-1">If you did not exist, what would the guest use instead? Include the status quo (staying at home, a rented apartment, a day spa in town) and the competitors that really make their shortlist: not every similar hotel, only the ones they seriously consider. Group them by approach.</p>
+              <textarea rows="6" class="t-textarea t-ta" data-k="alternative" aria-labelledby="canvas-box-1" aria-describedby="canvas-hint-1"></textarea>
+            </div>
+          </div>
+
+          <div class="t-box">
+            <div class="t-box__head"><span class="t-box__n" aria-hidden="true">2</span><h2 class="t-box__t" id="canvas-box-2">Distinctive facts</h2></div>
+            <div class="t-box__body">
+              <p class="t-hint" id="canvas-hint-2">What only you have: services, size, location, history, skills. Facts, not opinions. It is fine if they are not unique against every alternative: list them.</p>
+              <textarea rows="6" class="t-textarea t-ta" data-k="fatti" aria-labelledby="canvas-box-2" aria-describedby="canvas-hint-2"></textarea>
+              <p class="t-warn" role="status" data-warn="fatti" hidden>That is an opinion. Only verifiable facts go here.</p>
+            </div>
+          </div>
+
+          <div class="t-box">
+            <div class="t-box__head"><span class="t-box__n" aria-hidden="true">3</span><h2 class="t-box__t" id="canvas-box-3">Differentiating value</h2></div>
+            <div class="t-box__body">
+              <p class="t-hint" id="canvas-hint-3">For each fact, without mercy: so what? Why should the guest care? The real value, not the feature. Group them into one to three themes.</p>
+              <textarea rows="6" class="t-textarea t-ta" data-k="valore" aria-labelledby="canvas-box-3" aria-describedby="canvas-hint-3"></textarea>
+              <p class="t-small">It is the same ladder: fact → benefit → transformation.</p>
+            </div>
+          </div>
+
+          <div class="t-box">
+            <div class="t-box__head"><span class="t-box__n" aria-hidden="true">4</span><h2 class="t-box__t">Best-fit guests (and who you exclude)</h2></div>
+            <div class="t-box__body">
+              <label class="t-hint" for="canvas-bestfit">Best-fit: people who care so much about that value they are happy to pay for it.</label>
+              <textarea id="canvas-bestfit" rows="3" class="t-textarea t-ta" data-k="bestfit"></textarea>
+              <label class="t-hint t-field-gap" for="canvas-badfit">Bad-fit: who you exclude on purpose. Saying who you don’t want is as powerful as saying who you do.</label>
+              <textarea id="canvas-badfit" rows="3" class="t-textarea t-ta" data-k="badfit"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <p class="t-note t-block">The category is the consequence of everything above. If it does not hold up against the four boxes, you chose it by gut feeling.</p>
+
+        <div class="t-box t-box--cat" data-c-cat>
+          <div class="t-box__head"><span class="t-box__n" aria-hidden="true">5</span><h2 class="t-box__t" id="canvas-box-5">Market category</h2></div>
+          <div class="t-box__body">
+            <p class="t-hint" id="canvas-hint-5">Now reread the four boxes. The category is their logical consequence: the context that makes your value obvious, the point from which the guest understands who you are. Write it in one line: “the hotel of / for ___”.</p>
+            <textarea rows="2" class="t-textarea t-ta t-ta--cat" data-k="categoria" aria-labelledby="canvas-box-5" aria-describedby="canvas-hint-5"></textarea>
+            <p class="t-warn t-warn--solid" role="status" data-warn="categoria" hidden>That is not a category. It is the crowded box. Reread the four above and derive something nobody in your area holds.</p>
+            <p class="t-cat-out" data-c-cat-out hidden></p>
+          </div>
+        </div>
+
+        <button type="button" class="t-btn t-btn--lg t-btn--block t-cta" data-c-print>Download the canvas (one page)</button>
+
+        <a href="/en/tools/coerenza/" class="t-next">Now check that every touchpoint confirms it →</a>
+
+        <div class="t-after"><a href="/en/tools/#strumenti" class="t-link">← Library</a></div>
+      </div>
+
+      <!-- versione stampabile: una pagina (nascosta a schermo) -->
+      <div class="t-print">
+        <h1 class="t-print__title">The Positioning Canvas</h1>
+        <p class="t-print__credit">Canvas: April Dunford, Obviously Awesome</p>
+        <div class="t-print__grid">
+          <div class="t-print__box"><p class="t-print__h">1 · Competitive alternatives</p><p class="t-print__v" data-p="alternative"></p></div>
+          <div class="t-print__box"><p class="t-print__h">2 · Distinctive facts</p><p class="t-print__v" data-p="fatti"></p></div>
+          <div class="t-print__box"><p class="t-print__h">3 · Differentiating value</p><p class="t-print__v" data-p="valore"></p></div>
+          <div class="t-print__box"><p class="t-print__h">4 · Best-fit / bad-fit guests</p><p class="t-print__v" data-p="ospiti"></p></div>
+        </div>
+        <div class="t-print__cat">
+          <p class="t-print__h">5 · Market category</p>
+          <p class="t-print__catv" data-p="categoria"></p>
+        </div>
+        <p class="t-print__foot">Hotel Positioning · hotelpositioning.com</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="t-wrap t-foot"><p>Francesco Astolfi · Hotel Positioning · <a href="/en/privacy-policy/">Privacy policy</a></p></footer>
+<!-- @include cookie-banner-en -->
+<script src="/assets/site.js"></script>
+<script src="/assets/strumenti.js"></script>
+<script>
+/* Strumento 07 · Il Positioning Canvas.
+   Stato in localStorage "canvas_state" (stessa chiave e stessi campi del vecchio sito: alternative, fatti, valore,
+   bestfit, badfit, categoria; in più "screen" per riaprire dove eri).
+   Importa da worksheet_state (o worksheet), attributi_state (le stelle) e scala_state (fatti e trasformazioni). */
+(function(){
+  if (!window.HPT || !HPT.unlocked()) return;
+
+  var OPINIONI = ['better', 'best', 'more attentive', 'high quality', 'high-quality', 'unique', 'welcoming', 'excellent', 'exclusive', 'charming', 'stunning'];
+  var CATEGORIE_VUOTE = ['stars', '4 star', '4-star', '5-star', 'every need', 'for everyone', 'for everybody', 'for all'];
+  var VUOTO = 'To fill in';
+  var ESEMPIO = {
+    alternative: "· other hotels in Fiuggi with a small spa and a “classic spa town” image\n· wellness in other regions\n· staying at home / a day spa in town",
+    fatti: "· the largest spa in Lazio (4,000 m²)\n· more than 100 treatments\n· spa staff of 20 + 1 doctor\n· garden with outdoor pools\n· 110 rooms\n· the historic reference hotel in Fiuggi\n· more than 6,000 reviews, the most reviewed",
+    valore: "· real regeneration, without queues\n· the original, not the copies\n· detox and health with medical support\n· nature and active wellness",
+    bestfit: "Couples and adults aged 35-55, professionals, looking for quality wellness and escaping the chaos.",
+    badfit: "Families with small children, price-hunting customers.",
+    categoria: "The wellness hotel of Fiuggi: not “a hotel with a spa”, but the hotel of wellbeing."
+  };
+
+  function contiene(t, lista){ var s = String(t || '').toLowerCase(); return lista.some(function(w){ return s.indexOf(w) >= 0; }); }
+  function str(v){ return typeof v === 'string' ? v.trim() : ''; }
+  function primaStringa(o, chiavi){
+    if (!o || typeof o !== 'object') return '';
+    for (var i = 0; i < chiavi.length; i++) { var v = str(o[chiavi[i]]); if (v) return v; }
+    return '';
+  }
+  function unici(xs){ var out = []; xs.forEach(function(x){ if (x && out.indexOf(x) < 0) out.push(x); }); return out; }
+  function elenco(xs){ return unici(xs).map(function(x){ return '· ' + x; }).join('\n'); }
+
+  // quello che si può portare qui dagli altri strumenti (stessa logica del vecchio sito)
+  function costruisciImport(){
+    var w = HPT.read('worksheet_state') || HPT.read('worksheet');
+    var attr = HPT.read('attributi_state');
+    var scala = HPT.read('scala_state');
+    var stelle = attr && typeof attr === 'object' ? Object.keys(attr).filter(function(k){ return attr[k] && attr[k].star; }) : [];
+    var righe = scala && Array.isArray(scala.scale) ? scala.scale : [];
+    var trasformazioni = righe.map(function(x){ return x ? str(x.trasformazione) : ''; }).filter(Boolean);
+    var fattiScala = righe.map(function(x){ return x ? str(x.fatto) : ''; }).filter(Boolean);
+    var out = {}, n = 0;
+    var alternative = primaStringa(w, ['step2', 'alternative', 'concorrenti']);
+    if (alternative) { out.alternative = alternative; n++; }
+    var fatti = [primaStringa(w, ['step3', 'fatto', 'fatti'])].concat(stelle, fattiScala).filter(Boolean);
+    if (fatti.length) { out.fatti = elenco(fatti); n++; }
+    var valore = [primaStringa(w, ['step3valore', 'valore', 'valori'])].concat(trasformazioni).filter(Boolean);
+    if (valore.length) { out.valore = elenco(valore); n++; }
+    var target = primaStringa(w, ['step4', 'target', 'bestfit', 'ospiti']);
+    if (target) { out.bestfit = target; n++; }
+    var cat = primaStringa(w, ['step5', 'categoria']);
+    if (cat) { out.categoria = cat; n++; }
+    return n ? out : null;
+  }
+
+  var st = HPT.store('canvas_state', { screen: 'intro', alternative: '', fatti: '', valore: '', bestfit: '', badfit: '', categoria: '' });
+  var s = st.state;
+  if (s.screen !== 'canvas') s.screen = 'intro';
+
+  var root = HPT.$('[data-t-tool]');
+  var main = HPT.$('#main');
+  HPT.bind(root, st);
+
+  var imp = costruisciImport();
+  var boxImport = HPT.$('[data-c-import]', root);
+  var btnEsempio = HPT.$('[data-c-esempio]', root);
+  var boxEsempio = HPT.$('#canvas-esempio');
+  var catBox = HPT.$('[data-c-cat]', root);
+  var catTa = HPT.$('[data-k=categoria]', root);
+  var catOut = HPT.$('[data-c-cat-out]', root);
+
+  // esempio: stesso testo dell'originale, le righe unite in un paragrafo
+  HPT.$('[data-ex=alternative]', root).textContent = ESEMPIO.alternative.split('\n').join(' · ').replace(/· ·/g, '·');
+  HPT.$('[data-ex=fatti]', root).textContent = ESEMPIO.fatti.split('\n').join(' ');
+  HPT.$('[data-ex=valore]', root).textContent = ESEMPIO.valore.split('\n').join(' ');
+  HPT.$('[data-ex=bestfit]', root).textContent = ESEMPIO.bestfit;
+  HPT.$('[data-ex=badfit]', root).textContent = ESEMPIO.badfit;
+  HPT.$('[data-ex=categoria]', root).textContent = ESEMPIO.categoria;
+  boxImport.hidden = !imp;
+
+  function pieno(k){ return String(s[k] || '').trim().length > 2; }
+  function setP(k, v){ v = String(v || '').trim(); HPT.$('[data-p="' + k + '"]', root).textContent = v || VUOTO; }
+
+  function refresh(){
+    var quattro = ['alternative', 'fatti', 'valore', 'bestfit'].every(pieno);
+    var cat = String(s.categoria || '').trim();
+    var catVuota = !!cat && contiene(cat, CATEGORIE_VUOTE);
+    HPT.$('[data-warn=fatti]', root).hidden = !contiene(s.fatti, OPINIONI);
+    catBox.classList.toggle('is-locked', !quattro);
+    catTa.disabled = !quattro;
+    catTa.placeholder = quattro ? 'The hotel of / for…' : 'Fill in the four boxes above first.';
+    HPT.$('[data-warn=categoria]', root).hidden = !catVuota;
+    catOut.hidden = !cat || catVuota;
+    catOut.textContent = cat;
+    // scheda stampabile
+    setP('alternative', s.alternative);
+    setP('fatti', s.fatti);
+    setP('valore', s.valore);
+    var bf = String(s.bestfit || '').trim(), bad = String(s.badfit || '').trim();
+    setP('ospiti', bf || bad ? bf + (bad ? '\n\nBad-fit: ' + bad : '') : '');
+    setP('categoria', cat);
+  }
+
+  function show(name, focus){
+    s.screen = name; st.save();
+    main.classList.toggle('t-stage--wide', name === 'canvas');
+    HPT.screen(name, focus);
+    refresh();
+  }
+
+  st.on(refresh);
+  root.addEventListener('click', function(e){
+    var b = e.target.closest('button');
+    if (!b || b.disabled) return;
+    if (b.hasAttribute('data-go')) show(b.getAttribute('data-go'), true);
+    else if (b.hasAttribute('data-c-import-yes')) { st.patch(imp); boxImport.hidden = true; btnEsempio.focus(); }
+    else if (b.hasAttribute('data-c-import-no')) { boxImport.hidden = true; btnEsempio.focus(); }
+    else if (b.hasAttribute('data-c-esempio')) {
+      var open = boxEsempio.hidden;
+      boxEsempio.hidden = !open;
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+      b.textContent = open ? 'Hide the example' : 'See an example';
+    }
+    else if (b.hasAttribute('data-c-usa')) st.patch(ESEMPIO);
+    else if (b.hasAttribute('data-c-print')) HPT.print();
+  });
+
+  show(s.screen, false);
+})();
+</script>
+</body>
+</html>

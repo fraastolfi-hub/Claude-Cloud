@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raise hotel rates without losing bookings · Hotel Positioning</title>
+<meta name="description" content="Your hotel keeps improving, but the rate stays where it was? Price follows the reason guests choose you, not the product. Run the numbers for your hotel.">
+<link rel="canonical" href="https://hotelpositioning.com/en/problems/prices/">
+<meta property="og:title" content="Your product improves every year. Your rate doesn't."><meta property="og:description" content="Your hotel keeps improving, but the rate stays where it was? Price follows the reason guests choose you, not the product. Run the numbers for your hotel."><meta property="og:type" content="website">
+<!-- @include head-en -->
+<link rel="stylesheet" href="/assets/problemi.css">
+<style>
+
+</style>
+<!-- @include tema -->
+</head>
+<body>
+<!-- @include header-en -->
+
+<main id="main">
+
+<!-- ================= HERO: il segnale ================= -->
+<section class="ph-hero">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>The problem · Rates that won't rise</span>
+      <h1>Raise your rates without losing bookings.</h1>
+      <p class="pull">Raising rates means losing bookings. <span class="hl or in">Until guests have a reason to pay them.</span></p>
+      <p class="lead">A few kilometres away, a hotel much like yours charges €40 more a night and stays full. The difference is rarely in the product. It's in the reason the guest recognises.</p>
+      <div class="btn-row">
+        <a href="#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a>
+        <a href="#conto" class="btn ghost">Run your own numbers ↓</a>
+      </div>
+      <p class="micro"><b>The homepage teardown: free, and done by hand, by me.</b> Up to 6 a month, in English, delivered within 3 working days.</p>
+    </div>
+    <div class="memo rv d1" aria-label="Three years of investment">
+      <div class="memo-h"><span>Three years of investment</span><span>Your hotel</span></div>
+      <ul>
+        <li><span>Rooms renovated</span><span class="v ok">✓ done</span></li>
+        <li><span>Breakfast reworked</span><span class="v ok">✓ done</span></li>
+        <li><span>Staff trained</span><span class="v ok">✓ done</span></li>
+        <li><span>Reviews improving</span><span class="v ok">✓ done</span></li>
+      </ul>
+      <div class="tot"><span>The rate</span><b>flat for three years</b></div>
+      <p class="memo-f">The product has grown. The rate hasn't.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°01 IL CONTO ================= -->
+<section class="sec white" id="conto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>Price doesn't reward the product. <em>It rewards the reason.</em></h2>
+      <p class="lead">A better product justifies a higher price only if the guest understands why.</p>
+    </div>
+    <div class="grid-2">
+      <div class="prose rv">
+        <p>The market pays for what it understands.</p>
+        <p>The nearby hotel that charges more usually has a clear reason. Or at least it has written one down.</p>
+        <p>You have the product. The reason, perhaps, you've never put into words.</p>
+        <p><strong>To a guest, a premium without a reason is a surcharge.</strong></p>
+        <p>The useful question: what is the difference you can't charge today worth each year?</p>
+      </div>
+      <div class="tool rv d1">
+        <div class="tool-head"><span>The value of the difference</span><em>With your numbers</em></div>
+        <div class="tool-body">
+          <div class="tool-row">
+            <label for="prR">Rooms <output id="prRo" for="prR">30</output></label>
+            <input class="rng" type="range" id="prR" min="5" max="150" step="1" value="30" data-pre="" data-suf="">
+            
+          </div>
+          <div class="tool-row">
+            <label for="prO">Average annual occupancy <output id="prOo" for="prO">60%</output></label>
+            <input class="rng" type="range" id="prO" min="20" max="95" step="1" value="60" data-pre="" data-suf="%">
+            
+          </div>
+          <div class="tool-row">
+            <label for="prD">Extra euros per night <output id="prDo" for="prD">€40</output></label>
+            <input class="rng" type="range" id="prD" min="5" max="100" step="5" value="40" data-pre="€" data-suf="">
+            <small>The gap with a similar hotel in your area.</small>
+          </div>
+        </div>
+        <div class="tool-out" aria-live="polite">
+          <span class="k">Annual value of the difference</span>
+          <b class="tool-big" id="prOut">€262,800</b>
+          <p id="prSub">With the same rooms. Only with a rate guests accept because they understand the reason for it.</p>
+        </div>
+        <p class="tool-note">The calculation holds occupancy steady. That only happens if guests have a reason to pay more: without one, you lose bookings. Example values: enter yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°02 I DIECI SEGNALI ================= -->
+<section class="sec alt" id="segnali">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>Ten signs of <em>a stuck rate.</em></h2>
+      <p class="lead">Select the ones you recognise in your hotel. It's rarely about the price list.</p>
+    </div>
+    <div class="sig-wrap">
+      <aside class="sig-meter" id="sigMeter" aria-label="Signs you recognise">
+        <span class="k">Signs you recognise</span>
+        <span class="score" aria-live="polite"><span id="sigScore">0</span><small>/10</small></span>
+        <div class="sig-bar" id="sigBar" aria-hidden="true"></div>
+        <p class="sig-msg" id="sigMsg" aria-live="polite">Select the signs you recognise in your hotel.</p>
+        <a href="#richiedi" class="btn sm">Request the teardown <span class="arr">→</span></a>
+      </aside>
+      <div class="sig-grid">
+        <article class="sig rv">
+          <span class="n">01</span>
+          <h3>Your average rate has a ceiling.</h3>
+          <p>Above a certain figure, bookings slow down. The product would be worth more, but the guest can't see why.</p>
+          <p class="pk">To a guest, a premium without a reason is a surcharge.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">02</span>
+          <h3>The product grows, the price list doesn't.</h3>
+          <p>Renovated rooms, a reworked breakfast, better reviews. The rate is the one from three years ago.</p>
+          <p class="pk">You invested in the product, not in the reason to pay for it.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">03</span>
+          <h3>Rates never touched.</h3>
+          <p>You're afraid guests will stop coming. A rise mostly loses you the guests least suited to your hotel.</p>
+          <p class="pk">Low rates attract guests who choose on price.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">04</span>
+          <h3>The last-minute discount.</h3>
+          <p>A guest asks for a discount close to the date and gets it: an empty room earns nothing.</p>
+          <p class="pk">Repeated, it teaches the market to wait.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">05</span>
+          <h3>Free upgrades in low season.</h3>
+          <p>The room was empty anyway. But guests learn to wait for a deal, even in July.</p>
+          <p class="pk">A discount, repeated, becomes the price.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">06</span>
+          <h3>Your benchmark is the cheapest hotel.</h3>
+          <p>You look at the hotels nearby and price yourself a little below. The comparison becomes the price.</p>
+          <p class="pk">On price, the chains win: they have costs and volumes an independent doesn't.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">07</span>
+          <h3>“Good value for money.”</h3>
+          <p>It's the most frequent phrase in your reviews. It sounds like a compliment.</p>
+          <p class="pk">It means the deciding factor was price.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">08</span>
+          <h3>The seasonal seesaw.</h3>
+          <p>Discounts in low season, full in high season. Then the cycle starts again.</p>
+          <p class="pk">You react to the season instead of building demand of your own.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">09</span>
+          <h3>The guests lost after a rate rise.</h3>
+          <p>You raise the rate and the guests who only look at price go elsewhere. It feels like a loss.</p>
+          <p class="pk">Often it's a filter: the room goes to the guests who see its value.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">10</span>
+          <h3>Occupancy known, margin per room less so.</h3>
+          <p>Full occupancy is reassuring. How much is left per room and per guest gets looked at less often.</p>
+          <p class="pk">The data is already there: it needs reading together.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°03 PONTE: dal segnale alla causa ================= -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°03</span>
+      <h2>A flat rate is a sign. <em>The cause sits further back.</em></h2>
+      <p class="lead">The price list sits in step three, and that's where you've been working for years. The cause is two steps earlier.</p>
+    </div>
+    <div class="chain3 rv">
+      <div class="ring3"><span class="k">Step one</span><h3>Positioning</h3><p>Who you are, and for which guest.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3"><span class="k">Step two</span><h3>Promise</h3><p>What you tell the guest, and where.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3 here"><span class="k">Step three</span><h3>Booking</h3><p>What you take in. At the rate of three years ago.</p></div>
+    </div>
+    <div class="grid-2" style="align-items:end">
+      <div class="prose rv">
+        <p>Dynamic pricing, packages, promotions: all step three. They help when you have something to sell at the right price.</p>
+        <p>Your rate rises when the comparison changes. If guests put you next to the other hotels in the area, the cheapest wins.</p>
+        <p><strong>If they compare you with a different alternative, the price they consider fair changes too.</strong></p>
+      </div>
+      <div class="rv d1">
+        <p class="big-quote" style="font-size:clamp(26px,2.8vw,38px);margin-bottom:30px">The market pays for reasons it recognises. Not for rooms.<span class="who">Francesco Astolfi</span></p>
+        <a href="/en/method/" class="btn ghost">The method in six steps <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°04 LA PROVA ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°04</span>
+      <h2>First the compass. <em>Then the walls.</em></h2>
+    </div>
+    <article class="proof rv">
+      <div class="l">
+        <p class="kicker"><b>Case</b> · Silva Splendid · Fiuggi</p>
+        <h3>From “4-star hotel with spa” to <span class="hl in">The Wellness Hotel of Fiuggi</span>.</h3>
+        <ol>
+          <li>118 rooms and the largest spa in Lazio. Yet it spoke to everyone, and nobody remembered it.</li>
+          <li>The choice: a fact instead of an adjective, a category with the definite article (in Italian, <em>L’Hotel Benessere di Fiuggi</em>), and almost no families any more.</li>
+          <li>In five years, revenue goes from €5.6 million to €7 million. The average rate roughly doubles.</li>
+        </ol>
+      </div>
+      <div class="r">
+        <span class="kicker">Average rate</span>
+        <b>about ×2</b>
+        <p class="case-honest">Positioning and renovation together: the first set the direction, the owners' investment made it credible. In that order.</p>
+      </div>
+    </article>
+
+    <div class="btn-row rv" style="margin-top:30px"><a href="/en/cases/" class="btn ghost">Read the full cases <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= N°05 L'OFFERTA ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°05</span>
+      <h2>First the teardown. <em>Then, if needed, the analysis.</em></h2>
+      <p class="lead">One of the six documents in the full analysis is called “How to sell without selling yourself short”. It always starts from the reason.</p>
+    </div>
+    <div class="offer">
+      <div class="card rv">
+        <p class="kicker"><b>Homepage teardown</b> · up to 6 a month</p>
+        <p class="price">Free</p>
+        <p>I do it myself, by hand. Only hotels and resorts with 40 rooms or more.</p>
+        <ul class="check-list">
+          <li>The first line of your homepage next to those of 2-3 competitors, with the logos covered.</li>
+          <li>A verdict: positioned, replaceable or invisible.</li>
+          <li>A clue to where your reason lies, taken from your reviews.</li>
+          <li>One page, in English, within 3 working days. No commitment.</li>
+        </ul>
+        <a href="#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a>
+      </div>
+      <div class="card ink rv d1">
+        <p class="kicker"><b>Full analysis</b> · after the teardown</p>
+        <p class="price">€697<small>+ VAT</small></p>
+        <p>Your reason, found and put in writing, with what you need to use it.</p>
+        <ul class="check-list">
+          <li>6 documents: the reason, who believes it, the words, how to sell without selling yourself short, what to change in-house, the first 90 days.</li>
+          <li>Delivered in English, 2 days after the questionnaire.</li>
+          <li>Guarantee: if it doesn't convince you, I refund everything. And I give you another €500.</li>
+        </ul>
+        <a href="/en/analysis/" class="btn">How it works <span class="arr">→</span></a>
+      </div>
+    </div>
+    <p class="offer-more rv"><a href="/en/analysis/">All the details of the full analysis →</a><span class="muted" style="font-weight:400">The six documents, the guarantee, how I work.</span></p>
+  </div>
+</section>
+
+<!-- ================= RICHIEDI ================= -->
+<section class="sec orange" id="richiedi" data-sticky-stop>
+  <div class="wrap cand">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="sticker">Free · up to 6 a month</span>
+        <h2>Request the homepage teardown.</h2>
+        <p class="lead">One minute. I put the first line of your homepage next to your neighbours'. If guests can't see the difference, they won't pay for it.</p>
+      </div>
+      <ul class="check-list">
+        <li>One page: your first line next to those of 2-3 competitors, logos covered. A verdict, and a clue to where your reason lies.</li>
+        <li>Independent hotels and resorts with 40 rooms or more.</li>
+        <li>You get it by email, in English, within 3 working days. No commitment.</li>
+        <li>No ready-made lines or alternatives: those are the work of the full analysis.</li>
+      </ul>
+      <ul class="check-list no" style="margin-top:14px">
+        <li>Not for you if you want instant results, or think positioning is a matter of copywriting.</li>
+      </ul>
+
+    </div>
+    <!-- @include form-smontaggio-en -->
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">FAQ</span>
+      <h2>The questions I'm asked <em>most often.</em></h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>The market in my area won't accept higher rates.</summary><div class="ans"><p>Often, in the same area, there's a similar hotel that charges more and stays full. The price that holds depends on the reason the guest recognises, more than on the rooms.</p></div></details>
+      <details class="rv"><summary>If I raise my rates, will I lose bookings?</summary><div class="ans"><p>With a clear reason, you mostly lose the ones least suited to your hotel. Without one, you simply lose them. That's why positioning comes before the price list.</p></div></details>
+      <details class="rv"><summary>Isn't a revenue manager enough?</summary><div class="ans"><p>A revenue manager works on the price the market accepts. Positioning changes the price the market considers fair. First the compass, then the fine-tuning.</p></div></details>
+      <details class="rv"><summary>Who puts it into practice?</summary><div class="ans"><p>Your team or your suppliers. I provide the direction, the copy and the scripts. The full analysis also covers how to handle the price objection.</p></div></details>
+    </div>
+    <div class="btn-row rv" style="margin-top:36px">
+      <a href="#richiedi" class="btn dark">Request the free teardown <span class="arr">→</span></a>
+      <a href="/en/analysis/" class="btn ghost">The full analysis</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @include footer-en -->
+<!-- @include sticky-candidatura-en -->
+<script>
+/* calcolatore prezzo fermo */
+(function(){
+  var nf=new Intl.NumberFormat('en-GB',{maximumFractionDigits:1});
+  function eur(x){ return '€'+new Intl.NumberFormat('en-GB',{maximumFractionDigits:0}).format(Math.round(x)); }
+  function bind(ids,cb){
+    ids.forEach(function(id){
+      var i=document.getElementById(id), o=document.getElementById(id+'o');
+      function u(){ o.textContent=(i.dataset.pre||'')+nf.format(+i.value)+(i.dataset.suf||''); }
+      i.addEventListener('input',function(){ u(); cb(); }); u();
+    });
+    cb();
+  }
+  function v(id){ return parseFloat(document.getElementById(id).value); }
+  bind(['prR','prO','prD'],function(){
+    var out=v('prR')*365*v('prO')/100*v('prD');
+    document.getElementById('prOut').textContent=eur(out);
+    document.getElementById('prSub').innerHTML='That’s <strong>'+eur(out/12)+'</strong> a month, with the same rooms. Only with a rate guests accept because they understand the reason for it.';
+  });
+})();
+
+/* i dieci segnali: contatore "Vale per me" */
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.sig-btn')), meter=document.getElementById('sigMeter');
+  var out=document.getElementById('sigScore'), msg=document.getElementById('sigMsg'), bar=document.getElementById('sigBar');
+  var M=[
+    'Select the signs you recognise in your hotel.',
+    '<b>One or two.</b> Isolated signs: the cause may be something else.',
+    '<b>Three or four.</b> The signs repeat. It’s worth checking the cause.',
+    '<b>Five or more.</b> There is almost always one cause: no clear positioning.',
+    '<b>Eight or more.</b> You don’t need a new price list. You need a reason for guests to accept your rate.'
+  ];
+  bar.innerHTML=new Array(11).join('<i></i>');
+  var cells=bar.children;
+  function upd(){
+    var n=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true';}).length;
+    out.textContent=n;
+    for(var i=0;i<cells.length;i++) cells[i].classList.toggle('on',i<n);
+    msg.innerHTML=M[n===0?0:n<3?1:n<5?2:n<8?3:4];
+    meter.classList.toggle('hot',n>=5);
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')!=='true';
+      b.setAttribute('aria-pressed',on);
+      b.closest('.sig').classList.toggle('on',on);
+      upd();
+    });
+  });
+  upd();
+})();
+</script>
+</body>
+</html>

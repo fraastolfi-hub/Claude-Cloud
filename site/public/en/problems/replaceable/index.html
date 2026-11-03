@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make a hotel that looks like the others stand out · Hotel Positioning</title>
+<meta name="description" content="Many well-kept hotels look alike. Try the covered-logo test on your homepage and find the reason guests choose you.">
+<link rel="canonical" href="https://hotelpositioning.com/en/problems/replaceable/">
+<meta property="og:title" content="Your guests love your hotel. They just can't say why."><meta property="og:description" content="Many well-kept hotels look alike. Try the covered-logo test on your homepage and find the reason guests choose you."><meta property="og:type" content="website">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
+<meta name="theme-color" content="#fffdf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=b3a8d31d">
+
+<link rel="stylesheet" href="/assets/problemi.css?v=8c1d4104">
+<style>
+.logo3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.lg{background:var(--white);border-radius:var(--r-sm);padding:14px;display:grid;gap:10px;align-content:start;min-width:0}
+.lg-n{font:500 12.5px/1.25 var(--text);color:var(--muted)}
+.lg-l{height:12px;border-radius:6px;background:var(--ink);width:70%}
+.lg:nth-child(2) .lg-l{width:50%}.lg:nth-child(3) .lg-l{width:85%}
+.lg-t{font-size:14px;line-height:1.45;color:var(--ink-2);overflow-wrap:anywhere}
+@media (max-width:560px){.logo3{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="/assets/soft.css?v=0d866f63">
+
+<link rel="alternate" hreflang="it" href="https://hotelpositioning.com/problemi/sostituibili/">
+<link rel="alternate" hreflang="en" href="https://hotelpositioning.com/en/problems/replaceable/">
+<link rel="alternate" hreflang="x-default" href="https://hotelpositioning.com/problemi/sostituibili/">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="readbar" aria-hidden="true"></div>
+<div role="region" aria-label="News"><a class="ticker" href="/en/tagliando/" aria-label="New: Tagliando Hotel, the free website check-up for hotels. Find out more">
+  <div class="ticker-track" aria-hidden="true">
+    <span><em>New</em> Tagliando Hotel: the free website check-up for hotels</span><span>21 checks · one verdict</span><span>Does your site deserve an ad budget?</span><span>Find out more ›</span>
+  </div>
+</a></div>
+<header class="nav">
+  <div class="wrap">
+    <a aria-current="page" href="/en/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/en/method/">The method</a>
+      <a href="/en/analysis/">The analysis</a>
+      <a href="/en/cases/">Cases</a>
+      <a href="/en/book/">Book</a>
+      <a href="/en/resources/">Free resources</a>
+      <a href="/en/francesco/">About me</a>
+    </nav>
+    <div class="nav-right">
+      <a class="lang-sw" href="/problemi/sostituibili/" hreflang="it" lang="it" title="Versione italiana">IT</a>
+      <a class="btn sm" href="/en/#richiedi">Request the teardown <span class="arr">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Open the menu"><i></i></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mm" aria-label="Mobile menu">
+    <a href="/en/method/">The method</a>
+    <a href="/en/analysis/">The positioning analysis</a>
+    <a href="/en/cases/">Cases</a>
+    <a href="/en/book/">The book</a>
+    <a href="/en/resources/">Free resources</a>
+    <a href="/en/francesco/">About me</a>
+    <a href="/problemi/sostituibili/" hreflang="it" lang="it">Versione italiana</a>
+    <a class="btn" href="/en/#richiedi">Request the free teardown <span class="arr">→</span></a>
+  </nav>
+</header>
+
+
+<main id="main">
+
+<!-- ================= HERO: il segnale ================= -->
+<section class="ph-hero">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>The problem · A hotel like all the others</span>
+      <h1>Make your hotel recognisable.</h1>
+      <p class="pull">Your guests love your hotel. They just can't say why. <span class="hl or in">Often your website can't either.</span></p>
+      <p class="lead">Design, photos and a rebrand can be bought, and plenty of hotels have them. What you can't buy is a reason to choose you over another well-kept hotel.</p>
+      <div class="btn-row">
+        <a href="#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a>
+        <a href="#conto" class="btn ghost">Try the covered-logo test ↓</a>
+      </div>
+      <p class="micro"><b>The homepage teardown: free, and done by hand, by me.</b> Up to 6 a month, in English, delivered within 3 working days.</p>
+    </div>
+    <div class="memo rv d1" aria-label="Homepage · logo covered">
+      <div class="memo-h"><span>Homepage · logo covered</span><span>████████</span></div>
+      <ul>
+        <li><span>“Elegance. Charm. An authentic experience.”</span><span class="v "></span></li>
+        <li><span>True of your hotel?</span><span class="v ok">✓ yes</span></li>
+        <li><span>Of the one twenty minutes away?</span><span class="v ok">✓ yes</span></li>
+        <li><span>Of the one in Condé Nast last month?</span><span class="v ok">✓ yes</span></li>
+      </ul>
+      <div class="tot"><span>Positioning</span><b>not recognisable</b></div>
+      <p class="memo-f">The words are correct. But they fit every hotel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°01 IL CONTO ================= -->
+<section class="sec white" id="conto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>A simple test. <em>Cover the logo.</em></h2>
+      <p class="lead">Open your homepage, cover the logo and read the copy. Does it describe your hotel, or the one twenty minutes away as well?</p>
+    </div>
+    <div class="grid-2">
+      <div class="prose rv">
+        <p>A correct logo. Correct photos. Correct materials.</p>
+        <p>It's all correct. <strong>And that's exactly the point.</strong></p>
+        <p>Today, correct is the standard: every boutique hotel has a good logo, every resort has good photos.</p>
+        <p>The difference isn't in how your hotel looks. It's in the reason it exists, put in a way the guest recognises.</p>
+      </div>
+      <div class="tool rv d1">
+        <div class="tool-head"><span>The covered-logo test</span><em>With your homepage</em></div>
+        <div class="tool-body">
+          <div class="tool-row">
+            <label for="sTxt">Paste the first sentence of your homepage</label>
+            <textarea id="sTxt" spellcheck="false">An oasis of elegance and charm just steps from the centre. An authentic, unforgettable experience, with care in every detail.</textarea>
+          </div>
+          <div class="logo3" id="sCards" aria-live="polite">
+            <div class="lg"><span class="lg-n">Your hotel</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
+            <div class="lg"><span class="lg-n">The one twenty minutes away</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
+            <div class="lg"><span class="lg-n">The one in Condé Nast</span><span class="lg-l" aria-hidden="true"></span><p class="lg-t"></p></div>
+          </div>
+          <div class="tool-row">
+            <span class="lab" id="sQ">Does it fit all three?</span>
+            <div class="tgl" role="group" aria-labelledby="sQ">
+              <button type="button" data-v="si" aria-pressed="false">Yes, all three</button>
+              <button type="button" data-v="no" aria-pressed="false">No, only mine</button>
+            </div>
+          </div>
+        </div>
+        <div class="tool-out" aria-live="polite">
+          <span class="k">Stock words of the hotel trade</span>
+          <b class="tool-big" id="sOut">9</b>
+          <p id="sSub">Answer the question above.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°02 I DIECI SEGNALI ================= -->
+<section class="sec alt" id="segnali">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>Ten signs of a hotel that's <em>well kept but replaceable.</em></h2>
+      <p class="lead">Select the ones you recognise in your hotel. It isn't a matter of taste, but of position.</p>
+    </div>
+    <div class="sig-wrap">
+      <aside class="sig-meter" id="sigMeter" aria-label="Signs you recognise">
+        <span class="k">Signs you recognise</span>
+        <span class="score" aria-live="polite"><span id="sigScore">0</span><small>/10</small></span>
+        <div class="sig-bar" id="sigBar" aria-hidden="true"></div>
+        <p class="sig-msg" id="sigMsg" aria-live="polite">Select the signs you recognise in your hotel.</p>
+        <a href="#richiedi" class="btn sm">Request the teardown <span class="arr">→</span></a>
+      </aside>
+      <div class="sig-grid">
+        <article class="sig rv">
+          <span class="n">01</span>
+          <h3>The covered-logo test.</h3>
+          <p>Without the logo, your homepage copy fits a hundred hotels: “Elegance. Charm. An authentic experience.”</p>
+          <p class="pk">That's your competitors' vocabulary, not an identity.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">02</span>
+          <h3>Excellent reviews, but interchangeable.</h3>
+          <p>“Wonderful property. Impeccable staff. We'll be back.” The same words appear in your competitors' reviews. What's missing: “The only place where I found X.”</p>
+          <p class="pk">If nobody writes it, X isn't perceived yet.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">03</span>
+          <h3>The aesthetic edge is temporary.</h3>
+          <p>Your refurbishment is recent. The hotel nearby is renovating now, often with the same studio.</p>
+          <p class="pk">An aesthetic edge expires. An identity stays.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">04</span>
+          <h3>“Boutique hotel” no longer sets you apart.</h3>
+          <p>Twenty years ago it was a position. Today it's a category, and a crowded one.</p>
+          <p class="pk">Saying “boutique hotel” today is almost the same as saying “hotel”.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">05</span>
+          <h3>You describe the destination, not your hotel.</h3>
+          <p>The website talks about Sardinia, Tuscany, the lake.</p>
+          <p class="pk">That way, you promote every competitor in the area too.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">06</span>
+          <h3>Direct bookings aren't growing.</h3>
+          <p>New website, new booking engine, campaigns running. But guests search for “boutique hotel + area”, not for your name.</p>
+          <p class="pk">And in that search, you're one of many.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">07</span>
+          <h3>The answer to “Why you?”</h3>
+          <p>A guest asks: “What makes you different?” You answer: “Care, quality, attention.”</p>
+          <p class="pk">If the answer doesn't fit in thirty seconds, it isn't clear yet.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">08</span>
+          <h3>No filter on guests.</h3>
+          <p>You accept every request. Then you notice that guests don't understand what you offer.</p>
+          <p class="pk">An offer for everyone is specific to no one.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv">
+          <span class="n">09</span>
+          <h3>Your identity depends on one person.</h3>
+          <p>It lives in your head: not in documents, not in the team, not on the website. If you're away for a month, your communication goes generic again.</p>
+          <p class="pk">For management, it's a limit. For ownership, it's a risk to the asset.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+        <article class="sig rv d1">
+          <span class="n">10</span>
+          <h3>Every decision reopens the debate.</h3>
+          <p>New restaurant: which concept? New spa: which philosophy? Every time, you start from scratch.</p>
+          <p class="pk">With a defined identity, decisions follow from the positioning.</p>
+          <button type="button" class="sig-btn" aria-pressed="false">That's us</button>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°03 PONTE: dal segnale alla causa ================= -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°03</span>
+      <h2>Well kept but replaceable. <em>The cause is in step one.</em></h2>
+      <p class="lead">A rebrand decides how your hotel looks. Positioning decides why guests choose it.</p>
+    </div>
+    <div class="chain3 rv">
+      <div class="ring3"><span class="k">Step one</span><h3>Positioning</h3><p>Who you are, and for which guest. This is where an answer is missing.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3 here"><span class="k">Step two</span><h3>Promise</h3><p>What you tell the guest. Logo, photos, materials: all well kept.</p></div>
+      <div class="lk" aria-hidden="true">→</div>
+      <div class="ring3"><span class="k">Step three</span><h3>Booking</h3><p>What you take in. The same as the other well-kept hotels.</p></div>
+    </div>
+    <div class="grid-2" style="align-items:end">
+      <div class="prose rv">
+        <p>You've done good work on the logo, photos, website and materials: that's step two. Step one was left without an answer.</p>
+        <p>A rebrand without positioning gives shape to something that hasn't been decided yet.</p>
+        <p><strong>Design can be bought. The reason has to be found.</strong> It's usually already written, in your guests' own words.</p>
+      </div>
+      <div class="rv d1">
+        <p class="big-quote" style="font-size:clamp(26px,2.8vw,38px);margin-bottom:30px">What makes a hotel unique is already written down: in its guests' reviews.<span class="who">Francesco Astolfi</span></p>
+        <a href="/en/method/" class="btn ghost">The method in six steps <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°04 LA PROVA ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°04</span>
+      <h2>First the compass. <em>Then the walls.</em></h2>
+    </div>
+    <article class="proof rv">
+      <div class="l">
+        <p class="kicker"><b>Case</b> · Silva Splendid · Fiuggi</p>
+        <h3>From “4-star hotel with spa” to <span class="hl in">The Wellness Hotel of Fiuggi</span>.</h3>
+        <ol>
+          <li>118 rooms and the largest spa in Lazio. Yet it spoke to everyone, and nobody remembered it.</li>
+          <li>The choice: a fact instead of an adjective, a category with the definite article (in Italian, <em>L’Hotel Benessere di Fiuggi</em>), and almost no families any more.</li>
+          <li>In five years, revenue goes from €5.6 million to €7 million. The average rate roughly doubles.</li>
+        </ol>
+      </div>
+      <div class="r">
+        <span class="kicker">Booking.com review score</span>
+        <b><s>8.6</s> 9</b>
+        <p class="case-honest">Positioning and renovation together: the first set the direction, the owners' investment made it credible. In that order.</p>
+      </div>
+    </article>
+
+    <div class="btn-row rv" style="margin-top:30px"><a href="/en/cases/" class="btn ghost">Read the full cases <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= N°05 L'OFFERTA ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°05</span>
+      <h2>First the teardown. <em>Then, if needed, the analysis.</em></h2>
+      <p class="lead">The teardown tells you whether your homepage is replaceable and where to look for the reason. It's often already in your reviews: the full analysis puts it in writing.</p>
+    </div>
+    <div class="offer">
+      <div class="card rv">
+        <p class="kicker"><b>Homepage teardown</b> · up to 6 a month</p>
+        <p class="price">Free</p>
+        <p>I do it myself, by hand. Only hotels and resorts with 40 rooms or more.</p>
+        <ul class="check-list">
+          <li>The first line of your homepage next to those of 2-3 competitors, with the logos covered.</li>
+          <li>A verdict: positioned, replaceable or invisible.</li>
+          <li>A clue to where your reason lies, taken from your reviews.</li>
+          <li>One page, in English, within 3 working days. No commitment.</li>
+        </ul>
+        <a href="#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a>
+      </div>
+      <div class="card ink rv d1">
+        <p class="kicker"><b>Full analysis</b> · after the teardown</p>
+        <p class="price">€697<small>+ VAT</small></p>
+        <p>Your reason, found and put in writing, with what you need to use it.</p>
+        <ul class="check-list">
+          <li>6 documents: the reason, who believes it, the words, how to sell without selling yourself short, what to change in-house, the first 90 days.</li>
+          <li>Delivered in English, 2 days after the questionnaire.</li>
+          <li>Guarantee: if it doesn't convince you, I refund everything. And I give you another €500.</li>
+        </ul>
+        <a href="/en/analysis/" class="btn">How it works <span class="arr">→</span></a>
+      </div>
+    </div>
+    <p class="offer-more rv"><a href="/en/analysis/">All the details of the full analysis →</a><span class="muted" style="font-weight:400">The six documents, the guarantee, how I work.</span></p>
+  </div>
+</section>
+
+<!-- ================= RICHIEDI ================= -->
+<section class="sec orange" id="richiedi" data-sticky-stop>
+  <div class="wrap cand">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="sticker">Free · up to 6 a month</span>
+        <h2>Request the homepage teardown.</h2>
+        <p class="lead">One minute. I cover the logo on your homepage and on those of 2-3 competitors. Then I tell you whether your hotel can be recognised.</p>
+      </div>
+      <ul class="check-list">
+        <li>One page: your first line next to those of 2-3 competitors, logos covered. A verdict, and a clue to where your reason lies.</li>
+        <li>Independent hotels and resorts with 40 rooms or more.</li>
+        <li>You get it by email, in English, within 3 working days. No commitment.</li>
+        <li>No ready-made lines or alternatives: those are the work of the full analysis.</li>
+      </ul>
+      <ul class="check-list no" style="margin-top:14px">
+        <li>Not for you if you want instant results, or think positioning is a matter of copywriting.</li>
+      </ul>
+
+    </div>
+        <form class="form" id="smontaggio-form" name="revisione-homepage" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" novalidate>
+  <input type="hidden" name="form-name" value="revisione-homepage"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><p hidden><label>Do not fill in: <input name="bot-field"></label></p>
+      <div class="fields">
+        <div class="form-head"><span>Homepage teardown</span><span data-prog-txt>0%</span></div>
+        <div class="prog"><i></i></div>
+        <div class="field"><label for="s-nome">Name and role</label><input id="s-nome" name="nome_ruolo" autocomplete="name" required placeholder="E.g. Julia Rossi, owner"><span class="em">Write your name and role, so I know who to reply to.</span></div>
+        <div class="row2">
+          <div class="field"><label for="s-hotel">Your hotel's name</label><input id="s-hotel" name="hotel" required placeholder="Hotel, town"><span class="em">Write the name of the hotel.</span></div>
+          <div class="field"><label for="s-url">Website</label><input id="s-url" name="url" inputmode="url" autocomplete="url" required placeholder="www.yourhotel.com"><span class="em">Write the website address.</span></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="s-email">Email</label><input id="s-email" name="email" type="email" autocomplete="email" required><span class="em">Check the address: the teardown arrives here.</span></div>
+          <div class="field"><label for="s-camere">Rooms <small>(40 or more)</small></label><select id="s-camere" name="camere" required><option value="">Choose</option><option>40-80</option><option>80-150</option><option>Oltre 150</option></select><span class="em">Choose the number of rooms.</span></div>
+        </div>
+        <div class="field"><label for="s-conc">2-3 competitors guests compare you with</label><textarea id="s-conc" name="concorrenti" rows="2" required placeholder="Name or website, one per line"></textarea><span class="em">Write at least one competitor: the teardown is a comparison.</span></div>
+        <div class="field"><label for="s-riga">Optional: what would you like guests to understand about your hotel that the homepage doesn't say today?</label><textarea id="s-riga" name="riga" rows="2"></textarea></div>
+        <label class="check"><input type="checkbox" name="privacy" required><span>I have read the <a href="/en/privacy-policy/">privacy policy</a> and agree to be contacted by email about the homepage teardown.</span></label>
+        <button class="btn dark" type="submit">Request the free teardown <span class="arr">→</span></button>
+        <p class="form-foot">Free · no commitment · you get it within 3 working days.<br><span class="ff-cap">Up to 6 a month, only hotels and resorts with 40 rooms or more. Delivered in English.</span></p>
+      </div>
+      <div class="ok" role="status">
+        <div class="tick">✓</div>
+        <p class="big">Request received.</p>
+        <p>I've received the request for <strong data-echo="#s-hotel">your hotel</strong>: I'll write to you within 3 working days. In the meantime, try this: cover the logo on your homepage and on a competitor's, and read the first two sentences. If they can be swapped, that's where the teardown starts.</p>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">FAQ</span>
+      <h2>The questions I'm asked <em>most often.</em></h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>I've already had a rebrand. Isn't that the same thing?</summary><div class="ans"><p>No. A rebrand decides how your hotel looks. Positioning decides why guests choose it. The first without the second is form without content.</p></div></details>
+      <details class="rv"><summary>What if my hotel is already positioned?</summary><div class="ans"><p>It may be. Try the test above: cover the logo. If the homepage fits only you, the position is there. If it fits a hundred hotels, it isn't. The teardown checks this on your homepage, next to your competitors'.</p></div></details>
+      <details class="rv"><summary>Does it work for a group with several hotels?</summary><div class="ans"><p>Yes, and that's where it pays back most: each hotel set apart from the others in the group and from the market. You still start with one.</p></div></details>
+      <details class="rv"><summary>Do I need a new website?</summary><div class="ans"><p>Rarely from scratch. What it says needs revising: that costs less and matters more.</p></div></details>
+    </div>
+    <div class="btn-row rv" style="margin-top:36px">
+      <a href="#richiedi" class="btn dark">Request the free teardown <span class="arr">→</span></a>
+      <a href="/en/analysis/" class="btn ghost">The full analysis</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="big">Without clear positioning, price is the only lever left.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">The method</h2>
+        <ul>
+          <li><a href="/en/method/">The six steps</a></li>
+          <li><a href="/en/analysis/">The positioning analysis</a></li>
+          <li><a href="/en/cases/">Cases</a></li>
+          <li><a href="/en/teardown/">The homepage teardown</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Problems it solves</h2>
+        <ul>
+          <li><a href="/en/problems/booking/">Too much OTA commission</a></li>
+          <li><a href="/en/problems/prices/">Rates that won't rise</a></li>
+          <li><a aria-current="page" href="/en/problems/replaceable/">A hotel like all the others</a></li>
+          <li><a href="/en/problems/agencies/">Agencies that aren't enough</a></li>
+          <li><a href="/en/problems/value/">Brand value</a></li>
+          <li><a href="/en/problems/opening/">A hotel about to open</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Free resources</h2>
+        <ul>
+          <li><a href="/en/tagliando/">Tagliando Hotel, the website check-up</a></li>
+          <li><a href="/en/quiz/">The positioning test</a></li>
+          <li><a href="/en/tools/">The book's 8 tools</a></li>
+          <li><a href="/en/library/">The positioning library</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Francesco</h2>
+        <ul>
+          <li><a href="/en/francesco/">About me</a></li>
+          <li><a href="/en/book/">The book (in Italian)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN), Italy · VAT no. IT04283940403</span>
+      <span><a href="/en/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Cookie preferences</button></span>
+    </div>
+  </div>
+</footer>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
+  <button type="button" class="cc-x" data-cc="reject" aria-label="Close and reject non-essential cookies">✕</button>
+  <p class="cc-t" id="cc-t">Cookies and privacy</p>
+  <p class="cc-p">We use technical cookies that the site needs to work. With your consent we also use statistics cookies (Google Analytics) and marketing cookies (Meta Pixel) to measure visits and how well our campaigns work. You can change your mind at any time. Details in the <a href="/en/privacy-policy/#cookie">privacy policy</a>.</p>
+  <div class="cc-opts" id="cc-opts" hidden>
+    <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Technical</b> Needed for the site to work. Always on.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistics</b> Google Analytics: visits and most-read pages, in aggregate form.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-mkt"><span><b>Marketing</b> Meta Pixel: measuring campaigns on Facebook and Instagram and building ad audiences.</span></label>
+  </div>
+  <div class="cc-btns">
+    <button type="button" class="btn sm" data-cc="reject">Reject</button>
+    <button type="button" class="btn sm" data-cc="accept">Accept all</button>
+    <button type="button" class="cc-more" data-cc="custom" id="cc-custom">Customise</button>
+    <button type="button" class="btn sm" data-cc="save" id="cc-save" hidden>Save choices</button>
+  </div>
+</div>
+<script src="/assets/consent.js?v=a219769f"></script>
+
+<div class="exit" id="exit" role="dialog" aria-modal="true" aria-labelledby="exit-t" hidden>
+  <div class="exit-card">
+    <button type="button" class="exit-x" data-exit-close aria-label="Close">✕</button>
+    <span class="exit-k" id="exit-k"></span>
+    <p class="exit-t" id="exit-t"></p>
+    <p class="exit-p" id="exit-p"></p>
+    <div class="exit-btns"><a class="btn" id="exit-cta" href="#"></a></div>
+    <button type="button" class="exit-no" data-exit-close id="exit-no"></button>
+  </div>
+</div>
+
+<script src="/assets/site.js?v=a8abb351"></script>
+
+<div class="sticky-cta" role="region" aria-label="Free teardown"><a href="#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a></div>
+
+<script>
+/* test del logo coperto */
+(function(){
+  /* parole da vocabolario condiviso: radici che compaiono in quasi tutti i siti di hotel */
+  var STEMS=['elegan','charm','authentic','experienc','unforgettab','unique','excellen','welcom','relax','luxur','refined','curated','care','quality','heart','oasis','immers','comfort','emotion','magic','perfect','ideal','tranquil','peaceful','exclusiv','hospitality','attenti','detail','showcas','style','stylish','boutique','wonderful','impeccab','enchant','evocative','prestig','stunning','breathtak','extraordinar','special','setting','steps','dream','memorable','haven','retreat','nestled','escape','genuine'];
+  function esc(s){ return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function mark(txt){
+    var n=0, html=esc(txt).replace(/[A-Za-zÀ-ÖØ-öø-ÿ]+/g,function(w){
+      var l=w.toLowerCase();
+      for(var i=0;i<STEMS.length;i++){ if(l.indexOf(STEMS[i])===0){ n++; return '<mark class="gen">'+w+'</mark>'; } }
+      return w;
+    });
+    return {html:html,n:n};
+  }
+  var ta=document.getElementById('sTxt'), cards=[].slice.call(document.querySelectorAll('#sCards .lg-t'));
+  var out=document.getElementById('sOut'), sub=document.getElementById('sSub'), choice=null;
+  var bs=[].slice.call(document.querySelectorAll('.tgl button[data-v]'));
+  function upd(){
+    var t=ta.value.trim(), r=mark(t||'…');
+    cards.forEach(function(c){ c.innerHTML=r.html; });
+    out.textContent=t?r.n:'0';
+    var w=r.n===1?'is one word':'are '+r.n+' words';
+    if(choice==='si') sub.innerHTML='Then the copy describes the category, not your hotel. It happens to many hotels, and it can be fixed.';
+    else if(choice==='no') sub.innerHTML=r.n>2?'But there '+w+' that any hotel could use. Reread the sentence through the eyes of a guest who doesn’t know you.':'Good. Now look in your reviews for someone writing “the only place where I found…”. If it’s there, it’s a trace of your positioning.';
+    else sub.innerHTML=r.n?'There '+w+' that any hotel could use. Now answer the question above.':'No stock words. A good sign. Now answer the question above.';
+  }
+  bs.forEach(function(b){ b.addEventListener('click',function(){
+    choice=b.dataset.v; bs.forEach(function(x){ x.setAttribute('aria-pressed',x===b); }); upd();
+  }); });
+  ta.addEventListener('input',upd); upd();
+})();
+
+/* i dieci segnali: contatore "Vale per me" */
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.sig-btn')), meter=document.getElementById('sigMeter');
+  var out=document.getElementById('sigScore'), msg=document.getElementById('sigMsg'), bar=document.getElementById('sigBar');
+  var M=[
+    'Select the signs you recognise in your hotel.',
+    '<b>One or two.</b> Isolated signs: the cause may be something else.',
+    '<b>Three or four.</b> The signs repeat. It’s worth checking the cause.',
+    '<b>Five or more.</b> There is almost always one cause: no clear positioning.',
+    '<b>Eight or more.</b> You don’t need another refurbishment. You need to decide who you are and for which guest. A look depreciates; an identity stays.'
+  ];
+  bar.innerHTML=new Array(11).join('<i></i>');
+  var cells=bar.children;
+  function upd(){
+    var n=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true';}).length;
+    out.textContent=n;
+    for(var i=0;i<cells.length;i++) cells[i].classList.toggle('on',i<n);
+    msg.innerHTML=M[n===0?0:n<3?1:n<5?2:n<8?3:4];
+    meter.classList.toggle('hot',n>=5);
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')!=='true';
+      b.setAttribute('aria-pressed',on);
+      b.closest('.sig').classList.toggle('on',on);
+      upd();
+    });
+  });
+  upd();
+})();
+</script>
+</body>
+</html>

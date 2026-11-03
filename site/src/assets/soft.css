@@ -296,3 +296,5 @@ h3 .strike,.card .strike{white-space:normal}
 .lang-sw{display:inline-grid;place-items:center;min-width:42px;height:36px;padding:0 10px;border:2px solid var(--inchiostro);border-radius:999px;font:800 13px/1 var(--display);letter-spacing:.04em;text-decoration:none;color:var(--inchiostro);background:transparent}
 .lang-sw:hover{background:var(--yellow-soft)}
 @media (max-width:980px){.nav-right .lang-sw{display:none}}
+/* versione inglese: virgolette inglesi al posto delle caporali italiane nelle citazioni */
+html[lang="en"] *{quotes:"\201C" "\201D" "\2018" "\2019"!important}
