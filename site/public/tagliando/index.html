@@ -419,7 +419,16 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
         pagina: pg.ok ? { dati: pg.dati, firma: pg.firma } : null,
         velocita: v.ok ? { dati: v.dati, firma: v.firma } : null,
         motivo: pg.ok ? '' : (pg.messaggio || pg.errore || '') };
+      // tracciamento del lead (come gli altri moduli, site.js): stesso id per pixel e Conversions API, solo con il consenso
+      var evId = 'lead-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
+      var mkt = window.HPconsent ? HPconsent().mkt : false;
+      var ck = function(n){ var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : ''; };
+      var fbclid = (location.search.match(/[?&]fbclid=([^&#]*)/) || [])[1];
+      body.evento = evId; body.mkt = mkt ? '1' : '';
+      if (mkt) { body.fbp = ck('_fbp'); body.fbc = ck('_fbc') || (fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : ''); }
       return post(body).then(function(rep){
+        // il contatto è arrivato (anche se il sito non si è lasciato leggere o la mail del report non è partita): è un lead
+        if (rep.ok || rep.errore === 'invio') { try { if (window.HPtrack) HPtrack('lead', { form: 'tagliando' }, { eventID: evId }); } catch(e){} }
         $('erCodice').textContent = 'Codice: ' + [pg.ok ? 'pagina ok' : ('pagina ' + (pg.status || '-') + ' ' + (pg.errore || '') + ' ' + (pg.dettaglio || '')), v.ok ? 'velocità ok' : ('velocità ' + (v.status || '-') + ' ' + (v.errore || '') + ' ' + (v.dettaglio || '') + ' ' + (v.ok ? '' : (v.messaggio || ''))), rep.ok ? 'report ok' : ('report ' + (rep.status || '-') + ' ' + (rep.errore || ''))].join(' | ');
         if (!pg.ok) { $('erTesto').textContent = pg.errore === 'configurazione' ? 'Il servizio non è ancora configurato: riprova tra poco.' : (pg.messaggio || 'La pagina non si è lasciata leggere.'); stato.textContent = 'Tagliando Hotel'; mostra(err); return; }
         if (!rep.report) { $('erTesto').textContent = rep.messaggio || 'Qualcosa non ha funzionato dal nostro lato. Riprova tra qualche minuto.'; stato.textContent = 'Tagliando Hotel'; mostra(err); return; }

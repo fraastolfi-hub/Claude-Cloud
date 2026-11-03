@@ -16,7 +16,7 @@
 //   BREVO_LIST_TAGLIANDO    facoltativa: lista dedicata (altrimenti BREVO_LIST_DEFAULT)
 //   BREVO_LIST_TAGLIANDO_SEQUENZA  lista della sequenza «errori dell'albergatore»: solo chi ha dato il consenso facoltativo
 
-import { FORMS, brevo, saveContact, notification } from '../lib/brevo.mjs';
+import { FORMS, brevo, saveContact, notification, metaLead } from '../lib/brevo.mjs';
 import { connectLambda, getStore } from '@netlify/blobs';
 import { componi, reportMail, verifica } from '../lib/tagliando.mjs';
 import { ID } from '../lib/tagliando-lavori.mjs';
@@ -55,11 +55,14 @@ export const handler = async (event) => {
       const v = verifica(d.velocita);
       const form = FORMS.tagliando;
       const campi = { 'form-name': 'tagliando', email: d.email, hotel: String(d.hotel || '').slice(0, 120), url: String(d.url || '').slice(0, 300), pagina: '/tagliando/', consenso_email: d.consenso_email ? 'sì' : '' };
+      // evento Lead per la Conversions API di Meta (stesso id del pixel, solo con il consenso marketing: lo controlla metaLead)
+      const lead = () => metaLead({ ...campi, evento: String(d.evento || '').slice(0, 64), mkt: d.mkt === '1' ? '1' : '', fbp: String(d.fbp || '').slice(0, 200), fbc: String(d.fbc || '').slice(0, 300) }, event.headers || {})
+        .then((r) => console.log('Meta CAPI tagliando:', r)).catch((e) => console.error('Meta CAPI tagliando:', e.message));
 
       // pagina non leggibile: il contatto si salva lo stesso e Francesco riceve la notifica, per rispondere a mano
       if (!pg) {
         campi.esito = 'Pagina non letta: ' + String(d.motivo || 'motivo sconosciuto').slice(0, 200);
-        await Promise.allSettled([saveContact(campi, 'tagliando', form), brevo('/smtp/email', notification(campi, form))]);
+        await Promise.allSettled([saveContact(campi, 'tagliando', form), brevo('/smtp/email', notification(campi, form)), lead()]);
         return json(200, { ok: true, report: false });
       }
       if (v && v.url !== pg.url) return json(400, { ok: false, errore: 'risultati' });
@@ -70,10 +73,11 @@ export const handler = async (event) => {
       campi.profilo = `Tagliando: messaggio ${rep.semafori.messaggio}, prove ${rep.semafori.prove}, velocità ${rep.semafori.velocita}`;
       if (rep.principale) campi.problema = rep.principale.titolo;
 
-      const [mail, saved, notif] = await Promise.allSettled([
+      const [mail, saved, notif, capi] = await Promise.allSettled([
         brevo('/smtp/email', reportMail(rep, d.email)),
         saveContact(campi, 'tagliando', form),
         brevo('/smtp/email', notification(campi, form)),
+        lead(),
       ]);
       if (saved.status === 'rejected') console.error('contatto non salvato:', saved.reason?.message);
       if (notif.status === 'rejected') console.error('notifica non inviata:', notif.reason?.message);
