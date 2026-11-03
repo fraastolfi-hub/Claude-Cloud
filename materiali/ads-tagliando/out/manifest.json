@@ -1,0 +1,173 @@
+{
+ "batch": "out",
+ "palette": [
+  "#faf7f4",
+  "#262521",
+  "#ffd22e",
+  "#d8d6ff",
+  "#bfe8e3",
+  "#ffffff"
+ ],
+ "ads": [
+  {
+   "id": "T1_45",
+   "file": "t1_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  },
+  {
+   "id": "T1_916",
+   "file": "t1_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  },
+  {
+   "id": "T2_45",
+   "file": "t2_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  },
+  {
+   "id": "T2_916",
+   "file": "t2_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  },
+  {
+   "id": "T3_45",
+   "file": "t3_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  },
+  {
+   "id": "T3_916",
+   "file": "t3_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  },
+  {
+   "id": "T4_45",
+   "file": "t4_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  },
+  {
+   "id": "T4_916",
+   "file": "t4_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  },
+  {
+   "id": "T5_45",
+   "file": "t5_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  },
+  {
+   "id": "T5_916",
+   "file": "t5_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "route_reason": "tutti gli asset esistono: foto reale di Francesco (approvata), font e colori del brand; nessuna immagine generata",
+   "assets": [
+    "tagliando-francesco@2x.webp",
+    "outfit.woff2",
+    "figtree.woff2"
+   ],
+   "palette_note": "foto reale grande: la quota palette è informativa"
+  }
+ ]
+}

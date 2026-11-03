@@ -1,0 +1,416 @@
+{
+  "summary": {
+    "batch": "out",
+    "date": "2026-11-03",
+    "n": 10,
+    "passed": 0,
+    "avg_score": 67.5,
+    "benchmarks": {
+      "margin_floor": 48,
+      "palette_min": {
+        "A": 0.8,
+        "A-composite": 0.8,
+        "hybrid": 0.0,
+        "B": 0.0
+      },
+      "pass_score": 80
+    }
+  },
+  "ads": [
+    {
+      "file": "t1_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 72,
+            "R": 72,
+            "B": 65
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FAF7F4",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.652,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "solo 65% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 75,
+      "pass": false
+    },
+    {
+      "file": "t1_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 250,
+            "R": 72,
+            "B": 321
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FAF7F4",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.717,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350",
+        "solo 72% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 60,
+      "pass": false
+    },
+    {
+      "file": "t2_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 72,
+            "R": 72,
+            "B": 65
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#D8D6FF",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.669,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "solo 67% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 75,
+      "pass": false
+    },
+    {
+      "file": "t2_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 250,
+            "R": 72,
+            "B": 321
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#D8D6FF",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.73,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350",
+        "solo 73% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 60,
+      "pass": false
+    },
+    {
+      "file": "t3_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 72,
+            "R": 72,
+            "B": 65
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#BFE8E3",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.67,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "solo 67% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 75,
+      "pass": false
+    },
+    {
+      "file": "t3_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 250,
+            "R": 72,
+            "B": 321
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#BFE8E3",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.73,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350",
+        "solo 73% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 60,
+      "pass": false
+    },
+    {
+      "file": "t4_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 72,
+            "R": 72,
+            "B": 65
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FFD22E",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.701,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "solo 70% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 75,
+      "pass": false
+    },
+    {
+      "file": "t4_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 250,
+            "R": 72,
+            "B": 321
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FFD22E",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.75,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350",
+        "solo 75% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 60,
+      "pass": false
+    },
+    {
+      "file": "t5_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 72,
+            "R": 72,
+            "B": 65
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#262521",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.662,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "solo 66% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 75,
+      "pass": false
+    },
+    {
+      "file": "t5_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 250,
+            "R": 72,
+            "B": 321
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#262521",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.725,
+          "min": 0.8,
+          "pass": false
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350",
+        "solo 72% dei pixel in palette (min 80%)"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 60,
+      "pass": false
+    }
+  ]
+}
