@@ -10,7 +10,8 @@ import { lookup } from 'node:dns/promises';
 import { isIP } from 'node:net';
 import Anthropic from '@anthropic-ai/sdk';
 import { esc } from './brevo.mjs';
-import { FRASI_FATTE } from './frasi-fatte.mjs';
+import { FRASI_FATTE, FRASI_FATTE_EN } from './frasi-fatte.mjs';
+import { EN, reportMailEn } from './tagliando-en.mjs';
 
 export const SOGLIE = {
   velocita: { punteggioRosso: 50, punteggioGiallo: 90, lcpRosso: 4000, lcpGiallo: 2500, clsGrave: 0.25, immaginiKb: 300 },
@@ -217,7 +218,7 @@ Cosa valuti:
 4. Test di sostituzione: togli il nome dell'hotel e metti quello di un concorrente della stessa zona. Se il testo resta vero, regge del tutto. Una piscina, una SPA, "a due passi dal mare" non bastano: li hanno anche gli altri.
 5. Frasi fatte: confronta il testo con questa libreria e trova anche le varianti.
 6. Lettura delle AI: immagina che un ospite chieda a ChatGPT o Gemini «perché scegliere questo hotel?» e che l'assistente abbia solo questa pagina. Cosa risponderebbe? Capisce i benefici concreti e il motivo per scegliere proprio questo hotel?
-${FRASI_FATTE.map((f) => '- ' + f).join('\n')}
+${[...FRASI_FATTE, ...FRASI_FATTE_EN].map((f) => '- ' + f).join('\n')}
 
 Come scrivi (le risposte finiscono nel report che legge il titolare):
 - Dai del tu al titolare: "il tuo hotel", "la tua homepage".
@@ -227,7 +228,7 @@ Come scrivi (le risposte finiscono nel report che legge il titolare):
 - Parla delle scelte della pagina, mai dei difetti di chi l'ha scritta.
 - Se il messaggio funziona, dillo con onestà.`;
 
-export async function leggiMessaggio({ url, hotel, pagina }) {
+export async function leggiMessaggio({ url, hotel, pagina, lingua }) {
   const client = new Anthropic({ timeout: 180000, maxRetries: 1 });
   const contenuto = [
     `Indirizzo: ${url}`,
@@ -244,7 +245,7 @@ export async function leggiMessaggio({ url, hotel, pagina }) {
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',
     output_config: { effort: 'low', format: { type: 'json_schema', schema: SCHEMA } },
-    system: SISTEMA,
+    system: lingua === 'en' ? SISTEMA + `\n\nIMPORTANTE: il titolare legge il report in inglese. Scrivi TUTTI i campi di testo in inglese britannico (dai del «you» al titolare), con le stesse regole di stile: frasi corte, niente gergo, niente metafore mediche, niente lineette lunghe. Le citazioni dalla pagina restano nella lingua originale della pagina.` : SISTEMA,
     messages: [{ role: 'user', content: contenuto }],
   });
   if (r.stop_reason === 'refusal') throw new Errore('messaggio', "L'AI non ha letto la pagina.");
@@ -260,7 +261,7 @@ export async function leggiMessaggio({ url, hotel, pagina }) {
 
 export function frasiFatteTrovate(testoPagina, dalAi = []) {
   const t = testoPagina.toLowerCase();
-  const dirette = FRASI_FATTE.filter((f) => t.includes(f.toLowerCase()));
+  const dirette = [...FRASI_FATTE, ...FRASI_FATTE_EN].filter((f) => t.includes(f.toLowerCase()));
   const tutte = [...dirette, ...dalAi.map((f) => f.trim()).filter(Boolean)];
   // una frase contenuta in un'altra già trovata non si conta due volte («ogni comfort» dentro «dotate di ogni comfort»)
   const norm = (f) => f.toLowerCase().replace(/[^a-zàèéìòù ]/g, '').replace(/\s+/g, ' ').trim();
@@ -304,8 +305,9 @@ export function semaforoVelocita(v) {
 
 const sec = (ms) => (ms / 1000).toFixed(1).replace('.', ',');
 
-export function problemiVelocita(v) {
+export function problemiVelocita(v, lingua) {
   if (!v) return [];
+  if (lingua === 'en') return EN.vel(v, SOGLIE.velocita);
   const s = SOGLIE.velocita, out = [];
   if (v.lcp > s.lcpGiallo) out.push({ area: 'Velocità', titolo: `Chi arriva da Instagram aspetta ${sec(v.lcp)} secondi prima di vedere qualcosa`, fare: 'Chiedi alla web agency di alleggerire la prima schermata: l\'immagine grande e gli script che la precedono.' });
   else if (v.punteggio < s.punteggioGiallo) out.push({ area: 'Velocità', titolo: `Il tuo sito su telefono prende ${v.punteggio} su 100`, fare: 'Gira il link di PageSpeed alla web agency: le voci da sistemare sono già in ordine.' });
@@ -314,14 +316,16 @@ export function problemiVelocita(v) {
   return out;
 }
 
-export function problemiProve(p, m) {
+export function problemiProve(p, m, lingua) {
   const ok = { ...p, recensioni: p.recensioni || m?.recensioni_visibili, cta: p.cta || m?.cta_prima_schermata };
+  if (lingua === 'en') return PROVE.filter(([k]) => !ok[k]).map(([k]) => ({ area: 'Proof and conversion', titolo: EN.prove[k][0], fare: EN.prove[k][1] }));
   return PROVE.filter(([k]) => !ok[k]).map(([, titolo, fare]) => ({ area: 'Prove e conversione', titolo, fare }));
 }
 
 // Il report: messaggio prima di tutto, velocità per ultima. 3-5 problemi in tutto.
-export function componi({ url, hotel, titolo, prove: p, messaggio: m, frasi, ai: segnali, velocita: v }) {
+export function componi({ url, hotel, titolo, prove: p, messaggio: m, frasi, ai: segnali, velocita: v, lingua }) {
   const semafori = { messaggio: semaforoMessaggio(m, frasi), prove: semaforoProve(p, m), velocita: semaforoVelocita(v) };
+  if (lingua === 'en') return componiEn({ url, hotel, titolo, p, m, frasi, segnali, v, semafori });
   const frasiSemaforo = {
     messaggio: m.frase_semaforo,
     prove: { rosso: 'Niente recensioni e niente pulsante per prenotare in vista: chi arriva non trova un motivo per fidarsi.', giallo: 'Alcune prove ci sono, altre mancano proprio dove l\'ospite decide.', verde: 'Recensioni, pulsante e contatti sono al loro posto.' }[semafori.prove],
@@ -347,6 +351,25 @@ export function componi({ url, hotel, titolo, prove: p, messaggio: m, frasi, ai:
   };
 }
 
+// versione inglese del report (pagina /en/tagliando/): stessa logica, parole da tagliando-en.mjs
+function componiEn({ url, hotel, titolo, p, m, frasi, segnali, v, semafori }) {
+  const frasiSemaforo = { messaggio: m.frase_semaforo, prove: EN.provePhr[semafori.prove], velocita: v ? EN.velPhr(v.punteggio)[semafori.velocita] : EN.velNone };
+  const altri = [...problemiProve(p, m, 'en').slice(0, 3), ...problemiVelocita(v, 'en')].slice(0, semafori.messaggio === 'verde' ? 5 : 4);
+  const verdetto = semafori.messaggio === 'rosso' ? EN.verdetto.no
+    : semafori.messaggio === 'verde' && semafori.prove !== 'rosso' && semafori.velocita !== 'rosso' ? EN.verdetto.si : EN.verdetto.quasi;
+  const lai = m.lettura_ai || null;
+  const ai = lai ? { esito: lai.esito, risposta: lai.risposta, benefici: lai.benefici || [], cosaManca: lai.cosa_manca,
+    segnali: segnali ? SEGNALI_AI.map(([k]) => ({ nome: EN.segnali[k][0], ok: !!segnali[k], fare: EN.segnali[k][1] })) : [] } : null;
+  return {
+    lingua: 'en', url, hotel: hotel || (titolo || '').split(/[|\-–·]/)[0].trim() || new URL(url).hostname,
+    data: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Rome' }),
+    verdetto, semafori, frasiSemaforo, frasiFatte: frasi, ai,
+    principale: semafori.messaggio === 'verde' ? null : { ...m.problema_principale, frase: m.sostituzione.frase_testata, sostituzione: m.sostituzione.spiegazione },
+    altri,
+    velocita: v ? { punteggio: v.punteggio, lcp: v.lcp } : null,
+  };
+}
+
 // ---------------------------------------------------------------- report via email (design system Hotel Positioning, versione morbida)
 
 const C = { crema: '#faf7f4', bianco: '#ffffff', sabbia: '#f3efe9', ink: '#262521', ink2: '#57534c', muted: '#6b665d', line: '#e3ddd4', giallo: '#ffd22e', verde: '#5fd08a', rosso: '#ff5a3c', grigio: '#c9c3b8' };
@@ -360,6 +383,7 @@ export const LINK = {
 };
 
 export function reportMail(rep, email) {
+  if (rep.lingua === 'en') return reportMailEn(rep, email);
   const pallino = (c) => `<span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:${C[c]};border:2px solid ${C.ink};vertical-align:-3px"></span>`;
   const p = (t, st = '') => `<p style="margin:0 0 14px;font:16px/1.55 ${FONT};color:${C.ink};${st}">${t}</p>`;
   const card = (inner, bg = C.bianco) => `<div style="background:${bg};border:2px solid ${C.ink};border-radius:16px;padding:20px 22px;margin:0 0 18px">${inner}</div>`;

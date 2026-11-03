@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tagliando Hotel: the website check-up for hotels · Hotel Positioning</title>
+<meta name="description" content="For hotels and resorts. Enter the address of your website or landing page: Tagliando Hotel tells you whether it deserves an ad budget. An advanced analysis with Francesco Astolfi's algorithm: 21 checks, one verdict. Free.">
+<link rel="canonical" href="https://hotelpositioning.com/en/tagliando/">
+<meta property="og:title" content="Give your website a check-up. 21 checks, one verdict: does it deserve an ad budget?">
+<meta property="og:description" content="An advanced analysis for hotels, with Francesco Astolfi's algorithm. The verdict on screen, the full report by email. Free.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-tagliando.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
+<meta name="theme-color" content="#fffdf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-tagliando.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=b3a8d31d">
+
+<style>
+/* landing senza menù né fascia del libro (come /guida/): testata con il solo logo, footer con le sole note legali */
+.lp-top{background:var(--surface-cream);border-bottom:1px solid var(--line-soft)}
+.lp-top .wrap{display:flex;align-items:center;min-height:64px}
+.lp-foot{padding:28px 0}
+.lp-foot .legal{border:0;padding:0;margin:0}
+/* Tagliando Hotel · versione morbida del design system: pannelli bianchi, bordi 2px, ombra piena, semafori verde / giallo / pomodoro */
+.thero{padding:clamp(32px,4vw,56px) 0 clamp(64px,8vw,110px)}
+.thero .split{align-items:start;grid-template-columns:1fr 1fr;grid-template-areas:"testo modulo" "foto modulo";row-gap:28px}
+.thero .split > .testo{grid-area:testo}.thero .split > .tg{grid-area:modulo}.thero .split > .mech{grid-area:foto}
+@media (min-width:901px){.thero .split > .tg{position:sticky;top:90px}}
+.mech{margin:0;max-width:460px}
+.mech img{width:100%;height:auto;aspect-ratio:1086/1448;border:2px solid var(--inchiostro);border-radius:24px;box-shadow:5px 5px 0 var(--inchiostro);background:var(--surface-sand)}
+.mech figcaption{margin-top:14px;font:600 16px/1.45 var(--text)!important;color:var(--ink-2s)}
+.mech figcaption span{display:block;margin-top:8px;font-weight:400;font-size:15px}
+.tip{margin-top:20px;padding:14px 16px;border-radius:14px;background:var(--surface-white);border:2px dashed var(--line-field);font:400 16px/1.5 var(--text)}
+.tip b{font-weight:700}
+.thero h1 em{display:inline}
+.thero h1{margin:22px 0 22px;font-size:clamp(40px,4.4vw,66px)}
+.thero h1 em{color:inherit;font-style:normal;background:linear-gradient(transparent 62%,var(--giallo) 62% 92%,transparent 92%)}
+.thero .lead{margin-bottom:20px;font-weight:600;color:var(--inchiostro)}
+.claim2{font:700 clamp(19px,1.8vw,24px)/1.3 var(--display);color:var(--ink-2s);margin:-8px 0 14px}
+.esiti{list-style:none;display:grid;gap:10px;margin:4px 0 22px}
+.esiti li{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:center;font:600 17px/1.35 var(--text)}
+.esiti li i{width:18px;height:18px;border-radius:50%;border:2px solid var(--inchiostro)}
+.esiti li span{font-weight:400;color:var(--ink-2s)}
+.verdict{display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:16px 18px;margin-bottom:14px;border:2px solid var(--inchiostro);border-radius:14px;background:var(--yellow-soft)}
+.verdict .dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--inchiostro)}
+.verdict[data-c=no] .dot{background:var(--pomodoro)}.verdict[data-c=quasi] .dot{background:var(--giallo)}.verdict[data-c=si] .dot{background:var(--verde)}
+.verdict .k{display:block;font:700 12px/1.3 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.verdict p{font:800 20px/1.25 var(--display);margin-top:4px}
+.lights-mini{display:flex;gap:10px;margin-top:6px}
+.lights-mini i{width:16px;height:16px;border-radius:50%;border:2px solid var(--inchiostro)}
+.lights-mini i:nth-child(1){background:var(--pomodoro)}.lights-mini i:nth-child(2){background:var(--giallo)}.lights-mini i:nth-child(3){background:var(--verde)}
+
+/* --- pannello del tagliando --- */
+.tg{background:#fff;border:2px solid var(--inchiostro);border-radius:24px;box-shadow:5px 5px 0 var(--inchiostro);overflow:hidden}
+.tg-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px clamp(18px,2.6vw,28px);border-bottom:2px solid var(--inchiostro);background:var(--yellow-soft);font:700 13px/1.3 var(--display);letter-spacing:.04em;text-transform:uppercase}
+.tg-body{padding:clamp(20px,2.6vw,30px)}
+.tg [hidden]{display:none!important}
+.tg .field{display:grid;gap:6px;margin-bottom:16px}
+.tg .field label{font:600 14px/1.3 var(--text)}
+.tg .field small{font-weight:400;color:var(--muted)}
+.tg .field input{width:100%;font:400 16px var(--text);background:#fff;border:1.5px solid var(--line-field);border-radius:10px;min-height:50px;padding:10px 14px}
+.tg .field input:focus{outline:none;box-shadow:0 0 0 3px var(--focus);border-color:var(--inchiostro)}
+.tg .field .em{display:none}
+.tg .field.err input{border-color:var(--cost-text);background:#fff7f4}
+.tg .field.err .em{display:inline-block;justify-self:start;color:var(--inchiostro);background:var(--cost-soft);padding:3px 10px;border-radius:999px;font:700 13px var(--text)}
+.tg .check{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font:400 15px/1.45 var(--text);margin:4px 0 12px}
+.tg .check.opt{margin-bottom:20px;color:var(--ink-2s)}
+.tg .check input{width:20px;height:20px;margin-top:2px;accent-color:var(--inchiostro)}
+.tg .check.err span{color:var(--cost-text)}
+.tg .btn[type=submit]{--bg:var(--giallo);--fg:#262521;width:100%;border:2px solid var(--inchiostro);font-size:18px;padding:16px 22px}
+.tg .tg-note{margin-top:14px;font:400 14px/1.45 var(--text);color:var(--inchiostro-3)}
+
+/* lavori in corso */
+.steps{list-style:none;display:grid;gap:12px;margin:4px 0 18px}
+.steps li{display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:center;padding:14px 16px;border:2px solid var(--line-soft);border-radius:14px;font:600 16px/1.35 var(--text);transition:border-color .3s,background .3s}
+.steps li small{display:block;font-weight:400;font-size:14px;color:var(--muted)}
+.steps .st{width:26px;height:26px;border-radius:50%;border:2px solid var(--inchiostro);background:#fff;display:grid;place-items:center;font:800 14px var(--display)}
+.steps li.run .st{border-color:var(--line-soft);border-top-color:var(--inchiostro);animation:gira .9s linear infinite}
+.steps li.ok{border-color:var(--inchiostro);background:var(--surface-cream)}
+.steps li.ok .st{background:var(--verde)}
+.steps li.ko .st{background:var(--surface-sand)}
+@media (max-width:560px){.tg-aree{display:none}}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.steps li.run .st{animation:none;border-color:var(--inchiostro);background:var(--yellow-soft)}}
+.wait{font:400 15px/1.5 var(--text);color:var(--muted)}
+
+/* risultato */
+.res-head{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;margin-bottom:18px}
+.res-head h2{font-size:clamp(26px,3vw,36px);line-height:1.08;outline:0}
+.res-head .url{font:400 14px/1.4 var(--text);color:var(--muted);margin-top:6px;word-break:break-all}
+.phone{width:96px;border:2px solid var(--inchiostro);border-radius:16px;overflow:hidden;background:var(--surface-sand);aspect-ratio:9/17}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.lights{list-style:none;display:grid;gap:12px}
+.lights li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;padding:14px 16px;border:2px solid var(--inchiostro);border-radius:14px;background:#fff}
+.lights .dot{width:30px;height:30px;border-radius:50%;border:2px solid var(--inchiostro);background:var(--surface-sand)}
+.lights [data-c=rosso] .dot{background:var(--pomodoro)}.lights [data-c=giallo] .dot{background:var(--giallo)}.lights [data-c=verde] .dot{background:var(--verde)}
+.lights b{font:800 18px/1.2 var(--display);display:block}
+.lights b span{font:600 13px var(--text);color:var(--muted);margin-left:6px}
+.lights p{font:400 15px/1.45 var(--text);color:var(--ink-2s);margin-top:4px}
+.main-pb{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--surface-sand)}
+.main-pb .k{font:700 12px/1.3 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.main-pb p{font:800 20px/1.25 var(--display);margin-top:6px}
+.sent{margin-top:18px;font:400 15px/1.5 var(--text)}
+.sent b{font-weight:700}
+.exits{display:grid;gap:10px;margin-top:18px}
+.exits .btn{width:100%;border:2px solid var(--inchiostro)}
+.exits .btn.y{--bg:var(--giallo);--fg:#262521}
+.again{background:none;border:0;padding:0;margin-top:14px;font:600 15px var(--text);text-decoration:underline;color:var(--inchiostro)}
+.errbox{padding:16px 18px;border-radius:14px;background:var(--cost-soft);font:400 16px/1.5 var(--text);margin-bottom:16px}
+.errbox b{display:block;font:800 18px/1.3 var(--display);margin-bottom:4px}
+
+/* --- cosa controlla --- */
+.areas{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:clamp(28px,4vw,48px)}
+.area{background:#fff;border:2px solid var(--inchiostro);border-radius:20px;box-shadow:4px 4px 0 var(--inchiostro);padding:clamp(20px,2.4vw,28px)}
+.area.first{background:var(--yellow-soft)}
+.area .n{font:800 14px var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.area h3{margin:10px 0 12px}
+.area ul{list-style:none;display:grid;gap:8px;font:400 16px/1.45 var(--text)}
+.area li{padding-left:18px;position:relative}
+.area li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--inchiostro)}
+.area .weight{margin-top:16px;font:600 14px/1.4 var(--text);color:var(--ink-2s)}
+@media (max-width:900px){.areas{grid-template-columns:1fr}.thero .split{grid-template-columns:1fr;grid-template-areas:"testo" "modulo" "foto"}.mech{max-width:420px;margin:0 auto}}
+
+/* --- slogan finale --- */
+.end-band{background:var(--giallo);border:2px solid var(--inchiostro);border-radius:24px;box-shadow:6px 6px 0 var(--inchiostro);padding:clamp(32px,5vw,64px) clamp(22px,4vw,56px);text-align:center;display:grid;justify-items:center;gap:18px}
+.end-band h2{max-width:20ch;font-size:clamp(32px,4.4vw,58px)}
+.end-band h2 em{font-style:normal;color:inherit;display:block}
+.end-band .lead{color:var(--inchiostro);max-width:none;font-weight:600;margin:0}
+.end-band .btn{--bg:var(--inchiostro);--fg:#fff;border:2px solid var(--inchiostro);font-size:18px;padding:16px 28px;margin-top:6px}
+/* --- cosa non fa / domande --- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.qa{display:grid;gap:12px}
+.qa details{background:#fff;border:2px solid var(--inchiostro);border-radius:16px;padding:16px 18px}
+.qa summary{font:700 18px/1.3 var(--display);cursor:pointer;list-style:none}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";float:right;font-weight:800}
+.qa details[open] summary::after{content:"–"}
+.qa details p{margin-top:10px;font:400 16px/1.55 var(--text);color:var(--ink-2s)}
+</style>
+<link rel="stylesheet" href="/assets/soft.css?v=fca76d75">
+
+<link rel="alternate" hreflang="it" href="https://hotelpositioning.com/tagliando/">
+<link rel="alternate" hreflang="en" href="https://hotelpositioning.com/en/tagliando/">
+<link rel="alternate" hreflang="x-default" href="https://hotelpositioning.com/tagliando/">
+</head>
+<body>
+<header class="lp-top"><div class="wrap"><span class="logo" aria-label="Hotel Positioning"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</span></div></header>
+
+<main id="main">
+
+<!-- ================= HERO + STRUMENTO ================= -->
+<section class="thero">
+  <div class="wrap">
+    <div class="split">
+      <div class="testo">
+        <span class="eyebrow"><span class="dot"></span>For hotels · free · two minutes</span>
+        <h1>Give your website <em>a check-up.</em></h1>
+        <p class="claim2">An advanced analysis, with the algorithm I built: 21 checks, one verdict.</p>
+        <p class="lead">Does your website deserve an ad budget? Or does it need fixing first?</p>
+        <ul class="esiti" aria-label="The three possible verdicts">
+          <li><i style="background:var(--verde)"></i><b>Yes. <span>It can carry a campaign.</span></b></li>
+          <li><i style="background:var(--giallo)"></i><b>Almost. <span>A few changes before investing.</span></b></li>
+          <li><i style="background:var(--pomodoro)"></i><b>Not yet. <span>The message needs fixing first.</span></b></li>
+        </ul>
+        <p class="micro">The report arrives by email, in English. Then you talk it over with your agency, or with me.<br><i>Tagliando</i> is Italian for a car’s service check-up.</p>
+      </div>
+
+      <div class="tg" id="tagliando">
+        <div class="tg-top"><span id="tgStato">Tagliando Hotel</span><span class="tg-aree" aria-hidden="true">Message · Proof · Speed · AI</span></div>
+
+        <!-- 1. modulo -->
+        <form class="tg-body" id="tgForm" novalidate>
+          <p hidden><label>Do not fill in: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="field"><label for="t-url">The page address</label><input id="t-url" name="url" inputmode="url" autocomplete="url" required placeholder="www.yourhotel.com or your campaign landing page"><span class="em">Enter the address of your website or landing page.</span></div>
+          <div class="field"><label for="t-hotel">Your hotel's name <small>(optional)</small></label><input id="t-hotel" name="hotel" placeholder="Hotel, town"></div>
+          <div class="field"><label for="t-email">Email <small>(the report arrives here)</small></label><input id="t-email" name="email" type="email" autocomplete="email" required><span class="em">Check the address: the report arrives here.</span></div>
+          <label class="check" id="t-privacy-l"><input type="checkbox" id="t-privacy" name="privacy" required><span>I have read the <a href="/en/privacy-policy/">privacy policy</a> and ask to receive the report by email.</span></label>
+          <label class="check opt"><input type="checkbox" id="t-consenso" name="consenso_email"><span><b>Optional:</b> in the following days, send me a few emails on the most common mistakes on hotel pages. Unsubscribe with one click.</span></label>
+          <button class="btn dark" type="submit">Run the check-up</button>
+          <p class="tg-note">Free. My algorithm runs the analysis, with the same criteria as my positioning analyses.</p>
+        </form>
+
+        <!-- 2. lavori in corso -->
+        <div class="tg-body" id="tgLavoro" hidden aria-live="polite">
+          <ol class="steps">
+            <li id="stPagina"><span class="st" aria-hidden="true"></span><span>Reading the page and the proof<small>Reviews, booking button, contacts</small></span></li>
+            <li id="stMessaggio"><span class="st" aria-hidden="true"></span><span>Reading the message<small>First screen, promise, how AI reads you</small></span></li>
+            <li id="stVelocita"><span class="st" aria-hidden="true"></span><span>Measuring speed on mobile<small>Google PageSpeed Insights</small></span></li>
+          </ol>
+          <p class="wait">It usually takes a minute, sometimes two. Don't close the page.</p>
+        </div>
+
+        <!-- 3. risultato -->
+        <div class="tg-body" id="tgRisultato" hidden>
+          <div class="res-head">
+            <div><h2 id="rsHotel" tabindex="-1">Your check-up</h2><p class="url" id="rsUrl"></p></div>
+            <div class="phone" id="rsPhone" hidden><img id="rsShot" alt="The first screen of the page, on mobile"></div>
+          </div>
+          <div class="verdict" id="rsVerdetto" hidden><span class="dot" aria-hidden="true"></span><div><span class="k">Does it deserve an ad budget?</span><p id="rsVerdettoT"></p></div></div>
+          <ul class="lights" id="rsLights"></ul>
+          <div class="main-pb" id="rsMain" hidden><span class="k">The main problem</span><p id="rsMainT"></p></div>
+          <p class="sent" id="rsSent"></p>
+          <div class="exits" id="rsExits"></div>
+          <button type="button" class="again" id="rsAgain">Check another page</button>
+        </div>
+
+        <!-- 4. errore -->
+        <div class="tg-body" id="tgErrore" hidden>
+          <div class="errbox" role="alert"><b>I couldn't run the check-up.</b><span id="erTesto"></span><small id="erCodice" style="display:block;margin-top:8px;font-size:13px;color:var(--ink-2s);word-break:break-word"></small></div>
+          <p class="wait">I still received your request: if the page can't be read automatically, I'll look at it myself and write to you.</p>
+          <button type="button" class="again" id="erAgain">Try another address</button>
+        </div>
+      </div>
+
+      <figure class="mech">
+        <img src="/assets/img/tagliando-francesco.webp" srcset="/assets/img/tagliando-francesco.webp 560w, /assets/img/tagliando-francesco@2x.webp 1086w" sizes="(max-width:900px) 420px, 460px" width="560" height="747" loading="lazy" decoding="async" alt="Francesco Astolfi in mechanic's overalls checking a car's oil, in the “Tagliando Hotel” garage.">
+        <figcaption>You service the car before a long trip. And the website before a campaign.<span>Francesco Astolfi, twenty years across hospitality and travel.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COSA CONTROLLA ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <span class="kicker"><b>The algorithm</b></span>
+    <h2 style="margin-top:14px;max-width:22ch">21 checks, four areas, one verdict.</h2>
+    <p class="lead" style="margin-top:18px">I built it on the criteria of the positioning analyses I do by hand. Each area weighs differently: the message counts more than speed.</p>
+    <div class="areas">
+      <div class="area first">
+        <span class="n">1 · Weighs most</span>
+        <h3>Message</h3>
+        <ul>
+          <li>Does the first screen give guests an answer, or just “Welcome” and a photo?</li>
+          <li>Is it clear who the hotel is for, and why to choose it?</li>
+          <li>The substitution test: put a competitor's name in place of yours. Is the text still true?</li>
+          <li>How many stock phrases: “in the heart of”, “warm welcome”, “all the comforts”.</li>
+        </ul>
+        <p class="weight">I show you the sentence and the proof. I don't rewrite it: that's the analysis's job.</p>
+      </div>
+      <div class="area">
+        <span class="n">2</span>
+        <h3>Proof and conversion</h3>
+        <ul>
+          <li>Reviews and portal scores, visible on the page.</li>
+          <li>The booking button on the first mobile screen.</li>
+          <li>Why booking with you beats booking on Booking.</li>
+          <li>Tappable phone number, WhatsApp, FAQs, awards.</li>
+        </ul>
+        <p class="weight">Each point comes with a one-line instruction: you can fix it yourself.</p>
+      </div>
+      <div class="area">
+        <span class="n">3</span>
+        <h3>Speed</h3>
+        <ul>
+          <li>The mobile score, from 0 to 100.</li>
+          <li>How many seconds pass before you see anything.</li>
+          <li>Whether the page jumps while it loads.</li>
+          <li>How much the photos weigh.</li>
+        </ul>
+        <p class="weight">Measured with Google PageSpeed. You pass the instructions on to your web agency.</p>
+      </div>
+      <div class="area">
+        <span class="n">4</span>
+        <h3>How AI reads you</h3>
+        <ul>
+          <li>Asked “why choose this hotel?”, what ChatGPT would answer after reading your page.</li>
+          <li>Which benefits it understands, and what it doesn't.</li>
+          <li>Structured data and description for search engines and AI.</li>
+        </ul>
+        <p class="weight">Guests and agencies are starting to ask AI where to stay. It answers with what it finds written.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COSA NON FA + DOMANDE ================= -->
+<section class="sec">
+  <div class="wrap two">
+    <div>
+      <span class="kicker"><b>What it doesn't do</b></span>
+      <h2 style="margin-top:14px">It's not a redesign. <em>It's not a thirty-line scorecard.</em></h2>
+      <div class="prose" style="margin-top:22px">
+        <p>One verdict, three traffic lights and the three to five points that matter. It takes two minutes to read.</p>
+        <p>Speed and proof can be fixed with a practical instruction. The message can't: if it comes out amber or red, the reason a guest should choose your hotel has to be found, not written better. It starts from your guests' reviews.</p>
+        <p>That's why the report ends with the ways to fix things: your agency for the technical points; for the message, the positioning analysis if you want me to do it, delivered in English, or the book (Italian edition) if you want the method. And if you'd like to talk it through with me, just reply to the report email.</p>
+      </div>
+    </div>
+    <div class="qa">
+      <details open><summary>What happens after the check-up?</summary><p>Send the report to your agency: speed and proof can be fixed with the one-line instructions. If the problem is the message, talk to me: reply to the report email, I read it myself.</p></details>
+      <details><summary>How do you decide whether the page deserves a budget?</summary><p>Red message: not yet, because the campaign would bring people to a page that doesn't say why to choose you. Green message and nothing red elsewhere: yes. Everything else: almost, with the changes to make first.</p></details>
+      <details><summary>How much does it cost?</summary><p>Nothing. You leave the page address and your email, and the report arrives there.</p></details>
+      <details><summary>Why on mobile?</summary><p>People who arrive from an ad on Instagram or Google are usually on their phone. The first screen they see decides whether they stay.</p></details>
+      <details><summary>How does the algorithm work?</summary><p>I turned the criteria I use in positioning analyses into 21 checks, with my own rules and thresholds. Speed is measured by Google PageSpeed Insights. Message, proof and the AI reading are assessed by an artificial intelligence on the public text of the page, following those rules. The AI receives only the text of the page, never your email.</p></details>
+      <details><summary>Can I check a landing page instead of the homepage?</summary><p>Yes. In fact, if you are about to launch a campaign, check the very page the ad will lead to.</p></details>
+      <details><summary>Does it work with every website?</summary><p>Almost. If the page is built entirely with JavaScript, sometimes I can't read it. In that case I tell you straight away and look at it myself.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SLOGAN FINALE ================= -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="end-band">
+      <h2>The campaign is the fuel. <em>Your website is the engine.</em></h2>
+      <p class="lead">Make sure it runs well.</p>
+      <a class="btn" href="#tagliando" id="endCta">Run the check-up</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot lp-foot"><div class="wrap"><div class="legal">
+  <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN), Italy · VAT no. IT04283940403</span>
+  <span><a href="/en/privacy-policy/">Privacy policy</a> · <a href="/tagliando/" hreflang="it" lang="it">Versione italiana</a> · <button type="button" class="cc-link" data-cookie-prefs>Cookie preferences</button></span>
+</div></div></footer>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
+  <button type="button" class="cc-x" data-cc="reject" aria-label="Close and reject non-essential cookies">✕</button>
+  <p class="cc-t" id="cc-t">Cookies and privacy</p>
+  <p class="cc-p">We use technical cookies that the site needs to work. With your consent we also use statistics cookies (Google Analytics) and marketing cookies (Meta Pixel) to measure visits and how well our campaigns work. You can change your mind at any time. Details in the <a href="/en/privacy-policy/#cookie">privacy policy</a>.</p>
+  <div class="cc-opts" id="cc-opts" hidden>
+    <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Technical</b> Needed for the site to work. Always on.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistics</b> Google Analytics: visits and most-read pages, in aggregate form.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-mkt"><span><b>Marketing</b> Meta Pixel: measuring campaigns on Facebook and Instagram and building ad audiences.</span></label>
+  </div>
+  <div class="cc-btns">
+    <button type="button" class="btn sm" data-cc="reject">Reject</button>
+    <button type="button" class="btn sm" data-cc="accept">Accept all</button>
+    <button type="button" class="cc-more" data-cc="custom" id="cc-custom">Customise</button>
+    <button type="button" class="btn sm" data-cc="save" id="cc-save" hidden>Save choices</button>
+  </div>
+</div>
+<script src="/assets/consent.js?v=a219769f"></script>
+
+<script src="/assets/site.js?v=a8abb351"></script>
+<script>
+(function(){
+  var FN = '/.netlify/functions/tagliando';
+  var LIBRO = 'https://www.amazon.it/dp/B0HL3Z4XL7/';
+  var ANALISI = '/en/analysis/?utm_source=tagliando&utm_medium=sito&utm_campaign=tagliando-en';
+  var NOMI = { messaggio:'Message', prove:'Proof and conversion', velocita:'Speed' };
+  var ETI = { rosso:'Red', giallo:'Amber', verde:'Green', grigio:'Not measured' };
+  // messaggi d'errore in inglese, dal codice (il server li scrive in italiano)
+  var ERR = { url:'The address doesn\u2019t look valid. Check it and try again.', pagina:'The page couldn\u2019t be read automatically (it may be built entirely with JavaScript, or it blocks automatic readers).', velocita:'The speed test didn\u2019t answer.', messaggio:'The AI didn\u2019t read the page.', configurazione:'The service isn\u2019t configured yet: try again shortly.', tempo:'The check-up is taking too long. Try again in a few minutes.', rete:'The connection dropped. Try again.', avvio:'I couldn\u2019t start the check-up.', interno:'Something went wrong on our side. Try again in a few minutes.', invio:'The report email couldn\u2019t be sent.' };
+  function msg(j){ return (j && ERR[j.errore]) || 'Something went wrong on our side. Try again in a few minutes.'; }
+  var $ = function(id){ return document.getElementById(id); };
+  var form = $('tgForm'), lavoro = $('tgLavoro'), ris = $('tgRisultato'), err = $('tgErrore'), stato = $('tgStato');
+
+  function mostra(el){ [form, lavoro, ris, err].forEach(function(x){ x.hidden = x !== el; }); }
+  function passo(id, c){ var li = $(id); li.className = c; li.querySelector('.st').textContent = c === 'ok' ? '✓' : c === 'ko' ? '–' : ''; }
+  function post(body){
+    return fetch(FN, { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(body) })
+      .then(function(r){ return r.json().catch(function(){ return { ok:false, messaggio: (r.status === 502 || r.status === 504) ? 'The server took too long to read the page.' : 'Invalid response from the server.', dettaglio: 'risposta non JSON' }; }).then(function(j){ j.status = r.status; return j; }); })
+      .catch(function(){ return { ok:false, messaggio:'Connessione interrotta. Riprova.' }; });
+  }
+  // i controlli lunghi girano in background: si avviano e poi si chiede ogni 3 secondi se sono pronti (massimo 3 minuti)
+  function nuovoId(){
+    try { return crypto.randomUUID(); } catch(e) { return (Date.now().toString(36) + Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)).slice(0, 40); }
+  }
+  function lavoro_(parte, id, extra){
+    var corpo = Object.assign({ id: id, parte: parte, lingua: 'en' }, extra);
+    return fetch(FN + '-background', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(corpo) })
+      .then(function(r){
+        if (r.status !== 202 && !r.ok) return { ok:false, status:r.status, errore:'avvio', messaggio:'I couldn\u2019t start the check-up.' };
+        var inizio = Date.now();
+        return new Promise(function(fine){
+          (function chiedi(){
+            fetch(FN + '?id=' + encodeURIComponent(id) + '&parte=' + parte, { cache:'no-store' })
+              .then(function(r){ return r.json(); })
+              .then(function(j){
+                if (j.pronto) { delete j.pronto; return fine(j); }
+                if (Date.now() - inizio > 180000) return fine({ ok:false, errore:'tempo', messaggio:'The check-up is taking too long. Try again in a few minutes.' });
+                setTimeout(chiedi, 3000);
+              })
+              .catch(function(){ if (Date.now() - inizio > 180000) fine({ ok:false, errore:'rete', messaggio:'Connessione interrotta. Riprova.' }); else setTimeout(chiedi, 4000); });
+          })();
+        });
+      })
+      .catch(function(){ return { ok:false, errore:'rete', messaggio:'Connessione interrotta. Riprova.' }; });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function valida(){
+    var ok = true;
+    var u = $('t-url'), e = $('t-email'), p = $('t-privacy');
+    var uOk = /\S+\.\S+/.test(u.value.trim()); u.parentNode.classList.toggle('err', !uOk); ok = ok && uOk;
+    var eOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value.trim()); e.parentNode.classList.toggle('err', !eOk); ok = ok && eOk;
+    $('t-privacy-l').classList.toggle('err', !p.checked); ok = ok && p.checked;
+    if (!ok) { var first = form.querySelector('.err input'); if (first) first.focus(); }
+    return ok;
+  }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if (form.elements['bot-field'].value) return;
+    if (!valida()) return;
+    var dati = { url: $('t-url').value.trim(), hotel: $('t-hotel').value.trim(), email: $('t-email').value.trim(), privacy: true, consenso_email: $('t-consenso').checked };
+    mostra(lavoro); stato.textContent = 'Check-up in progress';
+    passo('stPagina', 'run'); passo('stMessaggio', 'run'); passo('stVelocita', 'run');
+    // la pagina si legge in fretta, il messaggio richiede l'AI: il primo passo si chiude dopo qualche secondo
+    var t1 = setTimeout(function(){ passo('stPagina', 'ok'); }, 4000);
+    var shot = null;
+
+    var id = nuovoId();
+    var pPagina = lavoro_('pagina', id, { url: dati.url, hotel: dati.hotel }).then(function(j){
+      clearTimeout(t1); passo('stPagina', j.ok ? 'ok' : 'ko'); passo('stMessaggio', j.ok ? 'ok' : 'ko'); return j;
+    });
+    var pVel = lavoro_('velocita', id, { url: dati.url }).then(function(j){
+      passo('stVelocita', j.ok ? 'ok' : 'ko'); if (j.ok) shot = j.screenshot; return j;
+    });
+
+    Promise.all([pPagina, pVel]).then(function(r){
+      var pg = r[0], v = r[1];
+      var body = { parte:'report', lingua: 'en', email: dati.email, hotel: dati.hotel, url: dati.url, privacy: true, consenso_email: dati.consenso_email,
+        pagina: pg.ok ? { dati: pg.dati, firma: pg.firma } : null,
+        velocita: v.ok ? { dati: v.dati, firma: v.firma } : null,
+        motivo: pg.ok ? '' : (pg.messaggio || pg.errore || '') };
+      // tracciamento del lead (come gli altri moduli, site.js): stesso id per pixel e Conversions API, solo con il consenso
+      var evId = 'lead-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
+      var mkt = window.HPconsent ? HPconsent().mkt : false;
+      var ck = function(n){ var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : ''; };
+      var fbclid = (location.search.match(/[?&]fbclid=([^&#]*)/) || [])[1];
+      body.evento = evId; body.mkt = mkt ? '1' : '';
+      if (mkt) { body.fbp = ck('_fbp'); body.fbc = ck('_fbc') || (fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : ''); }
+      return post(body).then(function(rep){
+        // il contatto è arrivato (anche se il sito non si è lasciato leggere o la mail del report non è partita): è un lead
+        if (rep.ok || rep.errore === 'invio') { try { if (window.HPtrack) HPtrack('lead', { form: 'tagliando' }, { eventID: evId }); } catch(e){} }
+        $('erCodice').textContent = 'Code: ' + [pg.ok ? 'pagina ok' : ('pagina ' + (pg.status || '-') + ' ' + (pg.errore || '') + ' ' + (pg.dettaglio || '')), v.ok ? 'velocità ok' : ('velocità ' + (v.status || '-') + ' ' + (v.errore || '') + ' ' + (v.dettaglio || '') + ' ' + (v.ok ? '' : (v.messaggio || ''))), rep.ok ? 'report ok' : ('report ' + (rep.status || '-') + ' ' + (rep.errore || ''))].join(' | ');
+        if (!pg.ok) { $('erTesto').textContent = msg(pg); stato.textContent = 'Tagliando Hotel'; mostra(err); return; }
+        if (!rep.report) { $('erTesto').textContent = msg(rep); stato.textContent = 'Tagliando Hotel'; mostra(err); return; }
+        risultato(rep.report, shot, rep.ok, dati.email);
+        try { (window.dataLayer = window.dataLayer || []).push({ event:'tagliando_completato', messaggio: rep.report.semafori.messaggio }); } catch(e){}
+      });
+    });
+  });
+
+  function risultato(rep, shot, inviato, email){
+    stato.textContent = 'Tagliando Hotel · ' + rep.data;
+    $('rsHotel').textContent = rep.hotel;
+    $('rsUrl').textContent = rep.url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+    if (shot) { $('rsShot').src = shot; $('rsPhone').hidden = false; } else { $('rsPhone').hidden = true; }
+    if (rep.verdetto) { $('rsVerdetto').dataset.c = rep.verdetto.codice; $('rsVerdettoT').textContent = rep.verdetto.titolo; $('rsVerdetto').hidden = false; } else { $('rsVerdetto').hidden = true; }
+    $('rsLights').innerHTML = ['messaggio','prove','velocita'].map(function(k){
+      var c = rep.semafori[k];
+      return '<li data-c="' + c + '"><span class="dot" aria-hidden="true"></span><div><b>' + NOMI[k] + '<span>' + ETI[c] + '</span></b><p>' + esc(rep.frasiSemaforo[k]) + '</p></div></li>';
+    }).join('');
+    if (rep.principale) { $('rsMainT').textContent = rep.principale.titolo; $('rsMain').hidden = false; } else { $('rsMain').hidden = true; }
+    $('rsSent').innerHTML = inviato
+      ? 'The full report, with the proof, how AI reads you and what to do point by point, is in your inbox: <b>' + esc(email) + '</b>. Send it to your agency, or reply to the email if you\u2019d like to talk it through with me. If you can\u2019t find it, check your spam folder.'
+      : 'I couldn\u2019t send the report by email. Write to me at <a href="mailto:consulting@francescoastolfi.net">consulting@francescoastolfi.net</a> and I\u2019ll forward it to you.';
+    var verde = rep.semafori.messaggio === 'verde';
+    $('rsExits').innerHTML = verde
+      ? '<a class="btn y" href="' + LIBRO + '" target="_blank" rel="noopener">The method is in the book (Italian edition)</a>'
+      : '<a class="btn y" href="' + ANALISI + '">Want me to do it: the analysis</a><a class="btn ghost" href="' + LIBRO + '" target="_blank" rel="noopener">Want the method: the book (in Italian)</a>';
+    mostra(ris);
+    $('rsHotel').focus();
+  }
+
+  function daCapo(){ $('t-url').value = ''; mostra(form); stato.textContent = 'Tagliando Hotel'; $('t-url').focus(); }
+  $('rsAgain').addEventListener('click', daCapo);
+  // il bottone finale riporta al modulo e mette il cursore nell'indirizzo
+  $('endCta').addEventListener('click', function(ev){ if (form.hidden) return; ev.preventDefault(); $('tagliando').scrollIntoView({ behavior:'smooth', block:'start' }); setTimeout(function(){ $('t-url').focus({ preventScroll:true }); }, 500); });
+  $('erAgain').addEventListener('click', daCapo);
+  ['t-url','t-email'].forEach(function(id){ $(id).addEventListener('input', function(){ this.parentNode.classList.remove('err'); }); });
+  $('t-privacy').addEventListener('change', function(){ $('t-privacy-l').classList.remove('err'); });
+  // ?url= precompila l'indirizzo (per i link dalle email e dalle ads)
+  try { var u = new URLSearchParams(location.search).get('url'); if (u) $('t-url').value = u; } catch(e){}
+})();
+</script>
+</body>
+</html>

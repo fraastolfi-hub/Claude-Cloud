@@ -11,7 +11,7 @@ export const handler = async (event) => {
   if (!ID.test(String(d.id || '')) || !['pagina', 'velocita'].includes(d.parte)) return { statusCode: 400 };
   connectLambda(event);
   const store = getStore('tagliando');
-  const risultato = await esegui(d.parte, d);
+  const risultato = await esegui(d.parte, { ...d, lingua: d.lingua === 'en' ? 'en' : 'it' });
   await store.setJSON(`${d.id}-${d.parte}`, risultato);
   return { statusCode: 200 };
 };

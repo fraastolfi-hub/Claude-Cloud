@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The free homepage teardown · Hotel Positioning</title>
+<meta name="description" content="I put the first line of your hotel's homepage next to two or three competitors, logos covered. I tell you whether you are positioned, replaceable or invisible, and where to look for your reason. Free, no commitment, within 3 working days. Up to 6 a month, hotels with 40 rooms or more. Delivered in English.">
+<link rel="canonical" href="https://hotelpositioning.com/en/teardown/">
+<meta property="og:title" content="The homepage teardown: your first line next to your competitors', logos covered.">
+<meta property="og:description" content="Free, no commitment, within 3 working days. Up to 6 a month, each one done by hand, by me.">
+<meta property="og:type" content="website">
+<!-- @include head-en -->
+<style>
+/* versione morbida (29 ottobre 2026): pannelli 24, bordi 2px, verdetto su lilla, niente fondi neri */
+.shero{padding:clamp(32px,4vw,56px) 0 clamp(64px,8vw,110px);overflow:hidden}
+.shero .split{align-items:start}
+.shero h1{margin:22px 0 22px;font-size:clamp(46px,6.6vw,100px)}
+.shero .lead{margin-bottom:28px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+/* --- la revisione animata --- */
+.rip{position:relative}
+.rip-panel{background:#fff;border:2px solid var(--ink-0);border-radius:24px;box-shadow:5px 5px 0 var(--ink-0);padding:clamp(20px,2.6vw,32px);position:relative}
+.rip > .rip-panel:first-child{overflow:hidden}
+.rip-lab{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 13px/1.3 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3s);margin-bottom:16px;flex-wrap:wrap;padding-right:110px}
+.old{font:800 clamp(23px,2.5vw,34px)/1.22 var(--display);letter-spacing:-.02em;color:var(--ink-0);quotes:"“" "”"}
+.old .w{position:relative;transition:color .4s}
+.old .g{display:inline-block;background:linear-gradient(var(--ink-0),var(--ink-0)) no-repeat 0 92%/100% 0;transition:background-size .4s ease .5s}
+.old .g .t{display:inline-block;position:relative;transition:transform .9s cubic-bezier(.6,-.3,.7,1),opacity .9s ease}
+.old .g .t::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.1em;border-radius:2px;background:var(--tomato);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.rip.s1 .old .g .t::after{transform:scaleX(1);transition-delay:calc(var(--i,0) * .25s)}
+/* le parole generiche cadono (animazione, non etichette) */
+.rip.s2 .old .g .t{transform:translateY(160px) rotate(var(--r,8deg));opacity:0;transition-delay:calc(var(--i,0) * .12s)}
+.rip.s2 .old .g{background-size:100% 3px}
+.rip.s2 .old .f{color:var(--ink-3s)}
+.seen{position:absolute;right:18px;top:18px;background:var(--surface-sand);color:var(--ink-0);border:2px solid var(--ink-0);border-radius:999px;padding:5px 12px;font:700 13px/1.2 var(--display);letter-spacing:.04em;text-transform:uppercase;transition:transform .4s cubic-bezier(.5,1.8,.5,1),background .3s}
+.rip.s1 .seen{background:var(--pink-soft);transform:scale(1.06)}
+.rip-cap{font:400 15px/1.5 var(--text);color:var(--ink-2s);margin-top:14px;opacity:0;transition:opacity .5s .9s}
+.rip.s2 .rip-cap,.rip.static .rip-cap,.rip:not(.js) .rip-cap{opacity:1}
+.rip-arrow{display:flex;align-items:center;justify-content:center;gap:14px;min-height:72px;font:600 15px/1.3 var(--text);color:var(--ink-2s);text-align:left}
+.rip-arrow b{flex:none;width:44px;height:44px;border:2px solid var(--ink-0);border-radius:50%;background:#fff;display:grid;place-items:center;font:700 20px var(--display);color:var(--ink-0);transition:transform .5s cubic-bezier(.5,1.8,.5,1),background .3s}
+.rip.s3 .rip-arrow b{transform:rotate(360deg);background:var(--giallo)}
+.rip-panel.new{background:var(--lilac-soft);color:var(--ink-0)}
+.rip-panel.new .rip-lab{color:var(--ink-0)}
+.rip .nw{white-space:normal;font:800 clamp(25px,2.8vw,38px)/1.18 var(--display);letter-spacing:-.02em;color:var(--ink-0);min-height:3.6em}
+.nw .w{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.9,.2,1)}
+.rip.s3 .nw .w{opacity:1;transform:none}
+.nw .k{background:var(--giallo);border-radius:6px;padding:0 .1em}
+.done-tag{position:absolute;right:18px;top:18px;background:var(--green);color:var(--ink-0);border:2px solid var(--ink-0);border-radius:999px;padding:5px 12px;font:700 13px/1.2 var(--display);letter-spacing:.04em;text-transform:uppercase;transition:transform .45s cubic-bezier(.5,1.8,.5,1)}
+.rip.js .done-tag{transform:scale(0)}
+.rip.s4 .done-tag{transform:scale(1)}
+.why{list-style:none;display:grid;gap:10px;margin-top:20px;border-top:1px solid rgba(38,37,33,.2);padding-top:16px}
+.why li{font:400 16px/1.45 var(--text);color:var(--ink-0);display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;transition:opacity .4s,transform .4s}
+.rip.js .why li{opacity:0;transform:translateX(-10px)}
+.why li b{color:var(--ink-0);background:#fff;border:2px solid var(--ink-0);border-radius:8px;width:26px;height:26px;display:grid;place-items:center;font:800 13px/1 var(--display)}
+.rip.s4 .why li{opacity:1;transform:none}
+.rip.s4 .why li:nth-child(2){transition-delay:.15s}.rip.s4 .why li:nth-child(3){transition-delay:.3s}
+.rip-ctrl{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
+.rip-ctrl button{border:2px solid var(--ink-0);border-radius:999px;background:#fff;color:var(--ink-0);padding:8px 16px;min-height:40px;font:700 15px/1.2 var(--display);box-shadow:2px 2px 0 var(--ink-0);cursor:pointer;transition:transform .15s,box-shadow .15s}
+.rip-ctrl button:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink-0);background:var(--yellow-soft)}
+.rip-ctrl .mono{font:400 14px/1.45 var(--text);color:var(--ink-3s)}
+/* senza JS o con reduced motion: tutto visibile, frase vecchia barrata */
+.rip.static .old .g .t::after{transform:scaleX(1)}
+.rip.static .nw .w,.rip.static .why li{opacity:1;transform:none}
+.rip.static .done-tag{transform:scale(1)}
+
+/* --- cosa ricevi: quattro piastrelle --- */
+.get{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.get li{list-style:none;background:#fff;border:2px solid var(--ink-0);border-radius:20px;box-shadow:4px 4px 0 var(--ink-0);padding:26px 24px 28px}
+.get li:hover{background:#fff}
+.get b{width:44px;height:44px;border:2px solid var(--ink-0);border-radius:14px;display:grid;place-items:center;font:800 16px/1 var(--display);color:var(--ink-0);margin-bottom:20px;background:var(--yellow-tint)}
+.get li:nth-child(2) b{background:var(--lilac-soft)}.get li:nth-child(3) b{background:var(--teal-soft)}.get li:nth-child(4) b{background:var(--pink-soft)}
+.get h3{font-size:21px;margin-bottom:8px}
+.get p{font-size:16px;color:var(--ink-2s)}
+@media (max-width:980px){.get{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.get{grid-template-columns:1fr}}
+
+/* --- per chi --- */
+.who{display:grid;grid-template-columns:1fr 1fr .8fr;gap:22px;align-items:stretch}
+@media (max-width:980px){.who{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.who{grid-template-columns:1fr}}
+.who .card h3{margin:8px 0 16px}
+.who .card .chip{background:var(--teal-soft)!important;border-color:var(--ink-0)}
+.who .card.ink .chip{background:var(--pink-soft)!important;color:var(--ink-0);border-color:#faf7f4}
+.six-m{display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.six-m .n{font:800 clamp(96px,10vw,150px)/.8 var(--display);letter-spacing:-.04em}
+.six-m .slots{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.six-m .slots i{aspect-ratio:1;border:2px solid var(--ink-0);border-radius:50%;background:#fff}
+
+/* --- form --- */
+.form-sec .split{align-items:start}
+.form-sec .steps-list li{font-size:17px}
+</style>
+<!-- @include tema -->
+</head>
+<body>
+<!-- @include header-en -->
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="shero">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Free · your hotel's homepage</span>
+      <h1>
+        <span class="line"><span>The</span></span>
+        <span class="line"><span><em>teardown.</em></span></span>
+      </h1>
+      <p class="lead">Your homepage has three seconds to give a guest a reason to choose you. It often spends them on adjectives.</p>
+      <p style="max-width:48ch;margin-bottom:28px">I put the first line of your homepage next to the first line of <strong>two or three competitors</strong>, logos covered. I tell you whether a guest can tell you apart, and where to look for the reason they should choose you.</p>
+      <div class="btn-row">
+        <a href="#form" class="btn">Request the free teardown <span class="arr">→</span></a>
+      </div>
+      <div class="badges">
+        <span class="chip y">Free</span><span class="chip w">No commitment</span><span class="chip m">Done by hand, by me</span>
+      </div>
+    </div>
+
+    <div class="rip rv d1" id="rip">
+      <div class="rip-panel">
+        <span class="seen">Seen it before</span>
+        <div class="rip-lab"><span>A line shared by many hotels</span></div>
+        <p class="old" id="ripOld"><q><span class="w f">Hotel</span> <span style="white-space:nowrap"><span class="w g" style="--r:-9deg;--i:0"><span class="t">just steps from the sea</span></span><span class="w f">,</span></span> <span class="w g" style="--r:12deg;--i:1"><span class="t">comfortable</span></span> <span class="w f">rooms</span> <span class="w f">and</span> <span class="w g" style="--r:-6deg;--i:2"><span class="t">a warm welcome</span></span></q></p>
+      <p class="rip-cap" aria-hidden="true">Take out the clichés and you are left with “Hotel, rooms and”. It fits any hotel.</p>
+      </div>
+      <div class="rip-arrow" aria-hidden="true"><b>↓</b><span>Next to three competitors, logos covered</span></div>
+      <div class="rip-panel new">
+        <span class="done-tag">Verdict</span>
+        <div class="rip-lab"><span>The verdict</span></div>
+        <p class="nw" id="ripNew">“Replaceable. The same line would sit just as well on the websites of three competitors out of three.”</p>
+        <ul class="why">
+          <li><b>1</b><span>Your line next to your competitors' lines.</span></li>
+          <li><b>2</b><span>A verdict: positioned, replaceable or invisible.</span></li>
+          <li><b>3</b><span>A lead: where your reason sits, in your reviews.</span></li>
+        </ul>
+      </div>
+      <div class="rip-ctrl">
+        <span class="mono">An example. Your teardown arrives within 3 working days.</span>
+        <button type="button" id="ripAgain">↻ Replay the example</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= N°01 COSA RICEVI ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°01</span>
+      <h2>What you get. <em>On one page.</em></h2>
+      <p class="lead">No slides. No quote at the bottom. No ready-made lines: those get written after the reason has been found.</p>
+    </div>
+    <ol class="get rv">
+      <li><b>01</b><h3>The comparison</h3><p>The first line of your homepage next to those of 2-3 competitors, logos covered.</p></li>
+      <li><b>02</b><h3>The verdict</h3><p>Positioned, replaceable or invisible. With the reasons, line by line.</p></li>
+      <li><b>03</b><h3>The lead</h3><p>Where your reason most likely sits: what guests keep repeating in their reviews.</p></li>
+      <li><b>04</b><h3>A single page</h3><p>No commitment. If you want to go further, you tell me.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= N°02 PER CHI ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">N°02</span>
+      <h2>Who it's for. <em>And who it isn't.</em></h2>
+    </div>
+    <div class="who">
+      <div class="card rv">
+        <span class="chip m">It's for you if</span>
+        <h3>Your hotel has something true to say. Your homepage doesn't say it.</h3>
+        <ul class="check-list">
+          <li>Independent hotels and resorts with 40 rooms or more.</li>
+          <li>Guests love you, but can't explain why.</li>
+          <li>You want to know what a guest actually reads in the first three seconds.</li>
+        </ul>
+      </div>
+      <div class="card ink rv d1">
+        <span class="chip o">It's not for you if</span>
+        <h3>You want more followers or someone to run your campaigns.</h3>
+        <ul class="check-list no">
+          <li>This work is about the reason to be chosen, not about visibility.</li>
+          <li>I don't rebuild websites, judge photos or pick colours.</li>
+          <li>I tell you how I see it, not what you'd like to hear.</li>
+        </ul>
+      </div>
+      <div class="card y six-m rv d2">
+        <span class="kicker" style="color:var(--ink)">Teardowns a month</span>
+        <span class="n">6</span>
+        <div class="slots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p>I do six a month, one at a time. When they're gone, the next ones open the following month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORM ================= -->
+<section class="sec form-sec" id="form" data-sticky-stop>
+  <div class="wrap split">
+    <div>
+      <div class="sec-head" style="margin-bottom:30px">
+        <span class="sticker">Free · no commitment</span>
+        <h2>Your homepage, <em>line by line.</em></h2>
+        <p class="lead">You get it within 3 working days, by email, in English. I do it myself.</p>
+      </div>
+      <ol class="steps-list">
+        <li>Send me your website and two or three competitors guests compare you with.</li>
+        <li>I cover the logos and read the opening lines as a guest who doesn't know any of you.</li>
+        <li>You get one page: the comparison, the verdict, and a lead on where to look for your reason.</li>
+      </ol>
+      <p class="micro" style="margin-top:24px"><b>No commitment.</b> If you then want to go further, you tell me.</p>
+    </div>
+
+<!-- @include form-smontaggio-en -->
+  </div>
+</section>
+
+<!-- ================= PASSO SUCCESSIVO ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div>
+        <p class="kicker" style="color:var(--ink)"><b>The next step</b> · The full positioning analysis</p>
+        <h3 style="margin-top:14px">The teardown tells you where to look. The analysis finds the reason.</h3>
+        <p>Six documents: the reason in one sentence, the guest who believes it, ready-to-use wording for your homepage, Booking and the phone, how to sell without discounting, what to change in the hotel itself, and your first 90 days already written. <strong>With a guarantee: if it doesn't convince you, I refund everything. And I give you another €500.</strong></p>
+      </div>
+      <a href="/en/analysis/" class="btn dark">How the analysis works <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @include footer-en -->
+<div class="sticky-cta" role="region" aria-label="Homepage teardown"><a href="#form" class="btn">Request the free teardown <span class="arr">→</span></a></div>
+<script>
+(function(){
+  var rip = document.getElementById('rip'), nw = document.getElementById('ripNew'), again = document.getElementById('ripAgain');
+  if (!HP.reduce) rip.classList.add('js');
+  var KEY = ['Replaceable','three','competitors'];
+  // la frase nuova, parola per parola (resta leggibile anche senza JS)
+  var words = nw.textContent.trim().split(/\s+/);
+  nw.innerHTML = words.map(function(w, i){
+    var bare = w.replace(/[«»“”.,]/g, '');
+    return '<span class="w' + (KEY.indexOf(bare) > -1 ? ' k' : '') + '" style="transition-delay:' + (i * 60) + 'ms">' + w + '</span>';
+  }).join(' ');
+  nw.setAttribute('aria-label', words.join(' '));
+
+  var timers = [];
+  function clear(){ timers.forEach(clearTimeout); timers = []; }
+  function run(){
+    clear();
+    rip.classList.remove('s1','s2','s3','s4','static'); rip.classList.add('js');
+    if (HP.reduce) { rip.classList.add('static','s4'); return; }
+    void rip.offsetWidth;
+    timers.push(setTimeout(function(){ rip.classList.add('s1'); }, 500));   // le parole generiche vengono barrate
+    timers.push(setTimeout(function(){ rip.classList.add('s2'); }, 1700));  // e cadono
+    timers.push(setTimeout(function(){ rip.classList.add('s3'); }, 2700));  // compare la frase nuova
+    timers.push(setTimeout(function(){ rip.classList.add('s4'); }, 2700 + words.length * 60 + 300)); // e il perché
+  }
+  again.addEventListener('click', run);
+
+  // parte quando il pannello entra in vista
+  if ('IntersectionObserver' in window && !HP.reduce) {
+    var io = new IntersectionObserver(function(es){
+      if (es[0].isIntersecting) { io.disconnect(); run(); }
+    }, { threshold: .4 });
+    io.observe(rip);
+  } else run();
+})();
+</script>
+</body>
+</html>

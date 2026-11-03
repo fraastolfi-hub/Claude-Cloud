@@ -54,7 +54,7 @@ export const handler = async (event) => {
       const pg = verifica(d.pagina);
       const v = verifica(d.velocita);
       const form = FORMS.tagliando;
-      const campi = { 'form-name': 'tagliando', email: d.email, hotel: String(d.hotel || '').slice(0, 120), url: String(d.url || '').slice(0, 300), pagina: '/tagliando/', consenso_email: d.consenso_email ? 'sì' : '' };
+      const campi = { 'form-name': 'tagliando', email: d.email, hotel: String(d.hotel || '').slice(0, 120), url: String(d.url || '').slice(0, 300), pagina: d.lingua === 'en' ? '/en/tagliando/' : '/tagliando/', consenso_email: d.consenso_email ? 'sì' : '' };
       // evento Lead per la Conversions API di Meta (stesso id del pixel, solo con il consenso marketing: lo controlla metaLead)
       const lead = () => metaLead({ ...campi, evento: String(d.evento || '').slice(0, 64), mkt: d.mkt === '1' ? '1' : '', fbp: String(d.fbp || '').slice(0, 200), fbc: String(d.fbc || '').slice(0, 300) }, event.headers || {})
         .then((r) => console.log('Meta CAPI tagliando:', r)).catch((e) => console.error('Meta CAPI tagliando:', e.message));

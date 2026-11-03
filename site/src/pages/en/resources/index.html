@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free resources on hotel positioning · Hotel Positioning</title>
+<meta name="description" content="The positioning test, the homepage teardown, the book's 8 tools, the positioning library and the book. From the lightest resource to the most complete.">
+<link rel="canonical" href="https://hotelpositioning.com/en/resources/">
+<meta property="og:title" content="Hotel Positioning resources, in order of effort."><meta property="og:description" content="From the two-minute test to the book: five starting points for working on your hotel's positioning."><meta property="og:type" content="website">
+<!-- @include head-en -->
+<style>
+/* --- da dove parto: pannello bianco, opzioni a righe toccabili --- */
+.picker{background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:24px;box-shadow:var(--o-md);padding:clamp(22px,3vw,34px)}
+.picker-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 13px/1.3 var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--inchiostro-2);border-bottom:1px solid var(--line-soft);padding-bottom:12px;margin-bottom:18px}
+.picker-head b{background:var(--yellow-tint);border-radius:999px;padding:5px 12px;font:700 13px/1 var(--display);color:#262521}
+.q{margin-bottom:20px}
+.q .lab{display:block;font:800 18px/1.3 var(--display);letter-spacing:-.01em;margin-bottom:10px}
+.opts{display:grid;gap:8px}
+.opts.t{grid-template-columns:repeat(3,1fr)}
+@media (max-width:520px){.opts.t{grid-template-columns:1fr}}
+.opts button{text-align:left;display:flex;gap:10px;align-items:center;border:2px solid var(--inchiostro);border-radius:12px;background:var(--white);padding:11px 14px;font:500 16px/1.3 var(--text);color:var(--ink);box-shadow:none;transition:background .2s,box-shadow .15s}
+.opts button::before{content:"";flex:none;width:18px;height:18px;border:2px solid var(--inchiostro);border-radius:50%;background:var(--white);box-sizing:border-box}
+.opts button:hover{background:var(--yellow-soft)!important}
+.opts button[aria-pressed="true"]{background:var(--giallo)!important;font-weight:600;box-shadow:3px 3px 0 var(--inchiostro)}
+.opts button[aria-pressed="true"]::before{background:var(--inchiostro);box-shadow:inset 0 0 0 3px var(--white)}
+.verdict{border:1px solid var(--line-soft)!important;background:var(--surface-sand);border-radius:16px;padding:20px;min-height:150px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.verdict.on{background:var(--yellow-soft);border:2px solid var(--inchiostro)!important;animation:pop2 .35s cubic-bezier(.5,1.8,.5,1)}
+@keyframes pop2{from{transform:scale(.96)}}
+.verdict .k{font:700 13px/1.3 var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--inchiostro-2)}
+.verdict h3{font-size:clamp(24px,2.4vw,30px)}
+.verdict p{font-size:16px;color:var(--inchiostro-2)}
+.verdict .then{font:400 14px/1.5 var(--text);color:var(--inchiostro-2)}
+.verdict .then a{color:var(--ink);font-weight:700}
+.verdict .btn{align-self:flex-start;margin-top:4px}
+.verdict.idle p{font:400 15px/1.5 var(--text);color:var(--inchiostro-3)}
+@media (prefers-reduced-motion:reduce){.verdict.on{animation:none}}
+
+/* --- la scala: piastrelle numerate, schede bianche su crema --- */
+.path{list-style:none;display:grid;gap:18px;position:relative}
+.path::before{content:"";position:absolute;left:39px;top:20px;bottom:20px;width:2px;background:var(--line-soft)}
+@media (max-width:760px){.path::before{left:27px}}
+.rung{display:grid;grid-template-columns:80px 1fr;gap:clamp(14px,2.4vw,28px);align-items:start;position:relative}
+@media (max-width:760px){.rung{grid-template-columns:56px 1fr}}
+.rung .n{width:80px;height:80px;border:2px solid var(--inchiostro);border-radius:16px;background:var(--yellow-soft);display:grid;place-items:center;font:800 32px var(--display);letter-spacing:-.03em;color:#262521;position:relative;z-index:1;transition:background .3s}
+@media (max-width:760px){.rung .n{width:56px;height:56px;border-radius:14px;font-size:24px}}
+.rung.pick .n{background:var(--giallo);box-shadow:3px 3px 0 var(--inchiostro)}
+.rung-card{display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center;background:var(--surface-cream);border:1px solid var(--line-soft);border-radius:20px;padding:clamp(18px,2.4vw,28px);text-decoration:none;color:var(--ink);transition:transform .2s ease,box-shadow .2s ease,border-color .2s,background .25s}
+a.rung-card:hover{transform:translateY(-3px);border-color:var(--inchiostro);box-shadow:var(--o-md)}
+@media (max-width:860px){.rung-card{grid-template-columns:1fr}}
+.rung.pick .rung-card{background:var(--yellow-soft);border:2px solid var(--inchiostro);box-shadow:var(--o-md)}
+.rung .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.rung .chip.o{background:var(--pink-soft)!important;border-color:var(--pink-soft);color:#262521}
+.rung .chip.y{border-color:var(--yellow-tint)}
+.rung h3{font-size:clamp(24px,2.4vw,32px);margin-bottom:8px}
+.rung p{font-size:16.5px;max-width:62ch}
+.rung .aware{font:400 15px/1.5 var(--text);color:var(--inchiostro-2);margin-top:10px}
+.rung .aware b{color:var(--ink)}
+.rung .go{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.rung .go .btn{white-space:nowrap}
+@media (max-width:420px){.rung .go .btn{white-space:normal}}
+@media (prefers-reduced-motion:reduce){a.rung-card:hover{transform:none}}
+.effort{display:flex;gap:5px;align-items:center;font:600 13px var(--text);color:var(--inchiostro-2)}
+.effort i{width:10px;height:10px;border:1.5px solid var(--inchiostro);border-radius:50%;background:var(--white);box-sizing:border-box}
+.effort i.f{background:var(--inchiostro)}
+.effort span{margin-left:6px}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:28px;font:400 15px var(--text);color:var(--inchiostro-2)}
+.legend .effort{color:var(--ink)}
+.legend b{color:var(--ink);font-weight:700}
+
+/* --- il passo successivo: la fascia gialla --- */
+.an-stats{grid-template-columns:repeat(3,1fr)}
+@media (max-width:520px){.an-stats{grid-template-columns:1fr}}
+.an-stats .stat b{font-size:clamp(36px,3.4vw,46px);white-space:nowrap}
+</style>
+<!-- @include tema -->
+</head>
+<body>
+<!-- @include header-en -->
+
+<main id="main">
+
+<!-- ================= HERO + DA DOVE PARTO ================= -->
+<section class="hero">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Resources · four free, one at €19.90</span>
+      <h1>
+        <span class="line"><span>Where</span></span>
+        <span class="line"><span>to start.</span></span>
+        <span class="line"><span><em>Five resources.</em></span></span>
+      </h1>
+      <p class="lead">From the lightest to the most complete. Each one tells you something about your hotel, even if you stop there.</p>
+      <p style="max-width:46ch">Answer two questions and I'll point you to the one to start with. Or look at the list.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a href="#scala" class="btn ghost">All resources ↓</a>
+      </div>
+    </div>
+
+    <div class="picker rv d1" id="picker">
+      <div class="picker-head"><span>Where to start</span><b>2 questions</b></div>
+      <div class="q" role="group" aria-labelledby="q1l">
+        <span class="lab" id="q1l">1. What do you know today about your hotel's positioning?</span>
+        <div class="opts" data-q="a">
+          <button type="button" data-v="a" aria-pressed="false">I don't know if it stands out from the others</button>
+          <button type="button" data-v="b" aria-pressed="false">I know it looks like the others. I don't know how to get out of it</button>
+          <button type="button" data-v="c" aria-pressed="false">I want to work on it myself. I need the tools</button>
+          <button type="button" data-v="d" aria-pressed="false">I want an analysis of my hotel</button>
+        </div>
+      </div>
+      <div class="q" role="group" aria-labelledby="q2l">
+        <span class="lab" id="q2l">2. How much time do you have right now?</span>
+        <div class="opts t" data-q="t">
+          <button type="button" data-v="1" aria-pressed="false">Two minutes</button>
+          <button type="button" data-v="2" aria-pressed="false">An hour</button>
+          <button type="button" data-v="3" aria-pressed="false">A few evenings</button>
+        </div>
+      </div>
+      <div class="verdict idle" id="verdict" aria-live="polite">
+        <p>Answer the two questions: I'll tell you where to start and what comes next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LA SCALA ================= -->
+<section class="sec alt" id="scala">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">The ladder</span>
+      <h2>Five resources. <em>In order of effort.</em></h2>
+      <p class="lead">Sorted by the time they take. And by how clear it already is to you that the problem is positioning, not marketing.</p>
+    </div>
+    <div class="legend"><span class="effort"><i class="f"></i><i></i><i></i><i></i><i></i><span>Effort required</span></span><span>· <b>Right if</b> = the starting point</span></div>
+    <ol class="path">
+      <li class="rung" data-reveal data-r="quiz">
+        <span class="n" aria-hidden="true">1</span>
+        <a class="rung-card" href="/en/quiz/">
+          <div>
+            <div class="meta"><span class="chip y">Free</span><span class="chip w">2 minutes</span><span class="chip w">7 questions</span></div>
+            <h3>The positioning test</h3>
+            <p>Seven questions: how recognisable your hotel is compared with your competitors. You get the result straight away.</p>
+            <p class="aware"><b>Right if</b> you don't yet know whether positioning is the cause.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Effort 1 of 5"><i class="f"></i><i></i><i></i><i></i><i></i></span><span class="btn sm">Take the test <span class="arr">→</span></span></div>
+        </a>
+      </li>
+      <li class="rung" data-reveal data-r="smontaggio">
+        <span class="n" aria-hidden="true">2</span>
+        <a class="rung-card" href="/en/#richiedi">
+          <div>
+            <div class="meta"><span class="chip y">Free</span><span class="chip w">Within 3 working days</span><span class="chip o">6 a month</span></div>
+            <h3>The homepage teardown</h3>
+            <p>The first line of your homepage next to those of 2-3 competitors, logos covered. A verdict: positioned, replaceable or invisible. And a lead on where your reason sits. One page, done by hand, by me, in English, with no commitment.</p>
+            <p class="aware"><b>Right if</b> you suspect your website says what everyone else says.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Effort 2 of 5"><i class="f"></i><i class="f"></i><i></i><i></i><i></i></span><span class="btn sm">Request the teardown <span class="arr">→</span></span></div>
+        </a>
+      </li>
+      <li class="rung" data-reveal data-r="bonus">
+        <span class="n" aria-hidden="true">3</span>
+        <a class="rung-card" href="/en/tools/">
+          <div>
+            <div class="meta"><span class="chip y">Free</span><span class="chip w">10 minutes a sheet</span></div>
+            <h3>The book's 8 tools</h3>
+            <p>Eight sheets to fill in with your hotel in mind: from the six steps to the Positioning Canvas, from the 200 attributes to the final test.</p>
+            <p class="aware"><b>Right if</b> you want to work on it yourself, with a sheet in front of you.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Effort 3 of 5"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></span><span class="btn sm">Get the 8 tools <span class="arr">→</span></span></div>
+        </a>
+      </li>
+      <li class="rung" data-reveal data-r="library">
+        <span class="n" aria-hidden="true">4</span>
+        <a class="rung-card" href="/en/library/">
+          <div>
+            <div class="meta"><span class="chip y">Free</span><span class="chip w">69 patterns</span><span class="chip w">19 categories</span></div>
+            <h3>The positioning library</h3>
+            <p>A pattern is the way a hotel stands out. A category is the field it competes in. Strong positionings combine two or three patterns within a clear category. Filters by destination, size and guest.</p>
+            <p class="aware"><b>Right if</b> you want to see how other hotels set themselves apart, before you choose.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Effort 4 of 5"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span><span class="btn sm">Explore the library <span class="arr">→</span></span></div>
+        </a>
+      </li>
+      <li class="rung" data-reveal data-r="libro">
+        <span class="n" aria-hidden="true">5</span>
+        <a class="rung-card" href="/en/book/">
+          <div>
+            <div class="meta"><span class="chip o">€19.90</span><span class="chip w">120 pages · two evenings</span><span class="chip w">In Italian only</span></div>
+            <h3>The book: Hotel Positioning</h3>
+            <p>The method in six steps. The Silva and Veridia cases, with what they prove and what they don't. The canvas filled in for a real hotel, two hundred attributes, twelve ways. It costs less than the OTA commission on one night. Available in Italian only, paperback or Kindle.</p>
+            <p class="aware"><b>Right if</b> you know positioning is the cause and you need the complete method.</p>
+          </div>
+          <div class="go"><span class="effort" aria-label="Effort 5 of 5"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span><span class="btn sm">About the book <span class="arr">→</span></span></div>
+        </a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= IL GRADINO DOPO ================= -->
+<section class="sec dark" id="analisi">
+  <div class="wrap">
+    <div class="grid-2" style="align-items:center">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="num-tag">The next step</span>
+        <h2>Reading the method is one thing. <em>Applying it to your hotel is another.</em></h2>
+        <p class="lead">The full analysis: six documents on your hotel and your competitors. The reason, who believes it, the words, how to sell without discounting, what to change in the hotel itself, your first 90 days already written. Done by hand, by me, and delivered in English.</p>
+      </div>
+      <div class="rv d1">
+        <div class="stat-row an-stats" style="gap:12px">
+          <div class="stat"><b>6</b><span>documents, with the plan for the first 90 days</span></div>
+          <div class="stat"><b>40+</b><span>rooms: hotels and resorts only</span></div>
+          <div class="stat"><b>2 days</b><span>from the questionnaire</span></div>
+        </div>
+        <p class="micro" style="margin-top:18px">It starts with the <b>homepage teardown</b>, which is free. Guarantee: if it doesn't convince you, I refund everything and give you another €500.</p>
+        <div class="btn-row" style="margin-top:24px">
+          <a href="/en/#richiedi" class="btn">Request the free teardown <span class="arr">→</span></a>
+          <a href="/en/analysis/" class="btn ghost">How the full analysis works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- @include footer-en -->
+<script>
+(function(){
+  var R = {
+    quiz:{name:'The positioning test',url:'/en/quiz/',cta:'Take the test',tag:'2 minutes · free'},
+    smontaggio:{name:'The homepage teardown',url:'/en/#richiedi',cta:'Request the teardown',tag:'free · 6 a month'},
+    bonus:{name:'The book\'s 8 tools',url:'/en/tools/',cta:'Get the 8 tools',tag:'free · 10 minutes a sheet'},
+    library:{name:'The positioning library',url:'/en/library/',cta:'Explore the library',tag:'free · 69 patterns + 19 categories'},
+    libro:{name:'The book Hotel Positioning',url:'/en/book/',cta:'About the book',tag:'€19.90 · two evenings · in Italian'},
+    analisi:{name:'The full analysis',url:'/en/analysis/',cta:'How the analysis works',tag:'6 documents · €697 + VAT'}
+  };
+  // [risorsa, perché, poi]
+  var M = {
+    a1:['quiz','Two minutes, seven questions. The first step is finding out whether positioning is the cause.','smontaggio'],
+    a2:['smontaggio','Send your website and 2-3 competitors in a minute. Within 3 working days I tell you whether your homepage is positioned, replaceable or invisible.','quiz'],
+    a3:['bonus','Eight sheets to fill in. Sheet 08, the test, tells you where your hotel stands.','libro'],
+    b1:['smontaggio','The most visible sign is the first line of your website. Start there: it takes a minute to request.','bonus'],
+    b2:['library','Before you choose, look at how other hotels set themselves apart: 69 different ways.','libro'],
+    b3:['libro','The cause is clear to you. You need the complete method, in the right order. Note: the book is in Italian only.','analisi'],
+    c1:['bonus','You sign up in a minute and fill in the sheets when you have time. Start with sheet 01.','libro'],
+    c2:['bonus','An hour is enough for the first sheets. First the six steps, then the 4-box matrix.','library'],
+    c3:['libro','The tools are the workbench. The method for using them is in the book, which is in Italian only.','bonus'],
+    d1:['smontaggio','This is where it starts. The request takes a minute to fill in, and you get it within 3 working days.','analisi'],
+    d2:['smontaggio','This is where it starts: it tells you whether your homepage is replaceable and where to look for your reason. With the time left over, read how the full analysis works.','analisi'],
+    d3:['analisi','The method applied to your hotel, done by hand, by me, in English. It starts with the teardown, which is free. To see how I work first, there is the book (in Italian).','libro']
+  };
+  var state={a:null,t:null}, v=document.getElementById('verdict');
+  var rungs=[].slice.call(document.querySelectorAll('.rung'));
+  [].slice.call(document.querySelectorAll('#picker .opts')).forEach(function(g){
+    var q=g.dataset.q, bs=[].slice.call(g.querySelectorAll('button'));
+    bs.forEach(function(b){ b.addEventListener('click',function(){
+      bs.forEach(function(x){ x.setAttribute('aria-pressed', x===b); });
+      state[q]=b.dataset.v; render();
+    });});
+  });
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function render(){
+    if(!state.a||!state.t){
+      v.className='verdict idle';
+      v.innerHTML='<p>'+(state.a||state.t?'One answer is missing before I can tell you where to start.':'Answer the two questions: I\'ll tell you where to start and what comes next.')+'</p>';
+      return;
+    }
+    var m=M[state.a+state.t], r=R[m[0]], n=R[m[2]];
+    v.className='verdict'; void v.offsetWidth; v.className='verdict on';
+    v.innerHTML='<span class="k">Starting point · '+esc(r.tag)+'</span><h3>'+esc(r.name)+'</h3><p>'+esc(m[1])+'</p>'+
+      '<a class="btn dark sm" href="'+r.url+'">'+esc(r.cta)+' <span class="arr">→</span></a>'+
+      '<p class="then">Then: <a href="'+n.url+'">'+esc(n.name)+'</a></p>';
+    rungs.forEach(function(el){ el.classList.toggle('pick', el.dataset.r===m[0]); });
+  }
+})();
+</script>
+</body>
+</html>

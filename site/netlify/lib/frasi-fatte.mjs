@@ -23,3 +23,16 @@ export const FRASI_FATTE = [
   'il luogo ideale', 'la scelta ideale', 'la soluzione ideale', 'qualità e cortesia', 'rapporto qualità-prezzo',
   'benvenuti',
 ];
+
+// Versione inglese (siti in inglese): stesso principio, le frasi che usano quasi tutti gli hotel. BOZZA da validare.
+export const FRASI_FATTE_EN = [
+  'a stone\'s throw from', 'just steps from the beach', 'just steps from', 'in the heart of', 'nestled in', 'perfectly located',
+  'ideally located', 'conveniently located', 'surrounded by nature', 'breathtaking views', 'stunning views', 'picturesque setting',
+  'warm welcome', 'warm hospitality', 'family atmosphere', 'feel at home', 'home away from home', 'friendly staff',
+  'attentive staff', 'every need', 'pampered', 'relax and unwind', 'oasis of peace', 'oasis of tranquility', 'haven of peace',
+  'elegant and refined', 'elegance and comfort', 'modern design', 'unique atmosphere', 'unforgettable experience',
+  'unforgettable stay', 'memorable stay', 'unforgettable holiday', 'all the comforts', 'every comfort', 'all modern comforts',
+  'comfortable rooms', 'spacious and bright rooms', 'rich breakfast', 'generous breakfast', 'local flavours', 'typical cuisine',
+  'ideal for families, couples and business travellers', 'the perfect place', 'the ideal choice', 'the perfect choice',
+  'value for money', 'welcome to', 'luxury and comfort', 'something for everyone',
+];

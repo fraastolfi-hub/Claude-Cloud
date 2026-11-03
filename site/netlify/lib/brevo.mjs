@@ -85,7 +85,7 @@ export function notification(d, form) {
     sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Hotel Positioning' },
     to: process.env.NOTIFY_EMAIL.split(',').map((e) => ({ email: e.trim() })).filter((x) => x.email),
     ...(d.email ? { replyTo: { email: d.email, ...((d.nome || d.nome_referente) ? { name: d.nome || d.nome_referente } : {}) } } : {}),
-    subject: `${form.label}: ${who}`,
+    subject: `${/^\/en\//.test(d.pagina || '') ? '[EN] ' : ''}${form.label}: ${who}`,
     htmlContent: `<div style="font:15px/1.5 -apple-system,Helvetica,Arial,sans-serif;color:#1D1D1F"><p style="font-size:18px;font-weight:600;margin:0 0 14px">${esc(form.label)}</p><table style="border-collapse:collapse">${rows}</table></div>`,
   };
 }
@@ -106,6 +106,7 @@ export async function saveContact(d, formName, form) {
 // Mail di conferma a chi richiede lo smontaggio. Testo approvato da Francesco il 9 ottobre 2026.
 // Versione /hday: in più il paragrafo sull'offerta dell'Hospitality Day.
 export function confirmation(d) {
+  if (/^\/en\//.test(d.pagina || '')) return confirmationEn(d);
   const nome = ((d.nome_ruolo || d.nome || '').split(',')[0].trim().split(/\s+/)[0]) || '';
   const hotel = (d.hotel || '').trim() || 'il tuo hotel';
   const hday = /\/hday/.test(d.pagina || '');
@@ -128,6 +129,28 @@ export function confirmation(d) {
   };
 }
 
+// Versione inglese della conferma (richieste da /en/...): lo smontaggio si consegna in inglese.
+function confirmationEn(d) {
+  const nome = ((d.nome_ruolo || d.nome || '').split(',')[0].trim().split(/\s+/)[0]) || '';
+  const hotel = (d.hotel || '').trim() || 'your hotel';
+  const p = [
+    `Hi${nome ? ' ' + nome : ''},`,
+    `I've received the teardown request for ${hotel}.`,
+    'Within the next 3 working days I will put the first line of your homepage next to the first line of the competitors you named, with the logo covered. I will send you one page with the verdict (positioned, replaceable or invisible) and a clue about where to look for your reason.',
+    'In the meantime, try it yourself: cover the logo on your homepage and on a competitor\'s, and read the first two sentences. If they can be swapped, you already know where we start.',
+    'If you want to add anything, just reply to this email.',
+  ];
+  const firma = ['Francesco Astolfi', 'Hotel Positioning'];
+  return {
+    sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
+    replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    subject: `I've received your request${nome ? ', ' + nome : ''}`,
+    textContent: p.join('\n\n') + '\n\n' + firma.join('\n'),
+    htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${p.map((x) => `<p style="margin:0 0 14px">${esc(x)}</p>`).join('')}<p style="margin:22px 0 0">${firma.map(esc).join('<br>')}</p></div>`,
+  };
+}
+
 // Mail a chi si registra su /bonus: i link agli strumenti, con ?accesso=1 che li sblocca su qualsiasi dispositivo.
 const STRUMENTI = [
   ['01', 'I 6 step del posizionamento', 'worksheet'], ['02', 'La matrice delle 4 caselle', 'matrice'],
@@ -135,7 +158,14 @@ const STRUMENTI = [
   ['05', 'Dal fatto alla trasformazione', 'scala'], ['06', 'I 5 livelli di consapevolezza', 'livelli'],
   ['07', 'Il Positioning Canvas', 'canvas'],
 ];
+const STRUMENTI_EN = [
+  ['01', 'The 6 steps of positioning', 'worksheet'], ['02', 'The 4-box matrix', 'matrice'],
+  ['03', 'The 200 attributes', 'attributi'], ['04', 'Consistency across 7 touchpoints', 'coerenza'],
+  ['05', 'From fact to transformation', 'scala'], ['06', 'The 5 levels of awareness', 'livelli'],
+  ['07', 'The Positioning Canvas', 'canvas'],
+];
 export function bonusMail(d) {
+  if (/^\/en\//.test(d.pagina || '')) return bonusMailEn(d);
   const nome = ((d.nome || '').trim().split(/\s+/)[0]) || '';
   const base = 'https://hotelpositioning.com';
   const links = [...STRUMENTI.map(([n, t, s]) => [n, t, `${base}/bonus/${s}/?accesso=1`]), ['08', 'Il test del posizionamento', `${base}/quiz/`]];
@@ -146,6 +176,22 @@ export function bonusMail(d) {
     to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
     replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
     subject: 'Gli otto strumenti del posizionamento',
+    textContent: [...intro, links.map(([n, t, u]) => `${n} · ${t}\n${u}`).join('\n\n'), ...chiusa].join('\n\n'),
+    htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${intro.map((x) => `<p style="margin:0 0 14px">${esc(x)}</p>`).join('')}<ol style="list-style:none;padding:0;margin:18px 0">${links.map(([n, t, u]) => `<li style="margin:0 0 10px"><a href="${u}" style="color:#0a0a0a;font-weight:700">${n} · ${esc(t)}</a></li>`).join('')}</ol>${chiusa.map((x) => `<p style="margin:0 0 14px">${esc(x).replace('\n', '<br>')}</p>`).join('')}</div>`,
+  };
+}
+
+function bonusMailEn(d) {
+  const nome = ((d.nome || '').trim().split(/\s+/)[0]) || '';
+  const base = 'https://hotelpositioning.com';
+  const links = [...STRUMENTI_EN.map(([n, t, s]) => [n, t, `${base}/en/tools/${s}/?accesso=1`]), ['08', 'The positioning test', `${base}/en/quiz/`]];
+  const intro = [`Hi${nome ? ' ' + nome : ''},`, 'here are the eight tools from the book. You fill them in on the site, ten minutes each, and your answers stay saved on the device you use.', 'Start with the first one: the six steps are the foundation, the others build on it.'];
+  const chiusa = ['If you get stuck on a tool, reply to this email.', 'Francesco Astolfi\nHotel Positioning'];
+  return {
+    sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
+    replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    subject: 'The eight positioning tools',
     textContent: [...intro, links.map(([n, t, u]) => `${n} · ${t}\n${u}`).join('\n\n'), ...chiusa].join('\n\n'),
     htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${intro.map((x) => `<p style="margin:0 0 14px">${esc(x)}</p>`).join('')}<ol style="list-style:none;padding:0;margin:18px 0">${links.map(([n, t, u]) => `<li style="margin:0 0 10px"><a href="${u}" style="color:#0a0a0a;font-weight:700">${n} · ${esc(t)}</a></li>`).join('')}</ol>${chiusa.map((x) => `<p style="margin:0 0 14px">${esc(x).replace('\n', '<br>')}</p>`).join('')}</div>`,
   };

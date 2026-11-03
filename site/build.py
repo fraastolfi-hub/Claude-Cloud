@@ -53,6 +53,36 @@ REDIRECTS = {
 }
 
 
+# versione inglese: pagina italiana -> pagina inglese (selettore IT/EN e tag hreflang)
+IT2EN = {
+    "/": "/en/", "/metodo/": "/en/method/", "/analisi/": "/en/analysis/", "/casi/": "/en/cases/",
+    "/libro/": "/en/book/", "/risorse/": "/en/resources/", "/quiz/": "/en/quiz/", "/smontaggio/": "/en/teardown/",
+    "/tagliando/": "/en/tagliando/", "/library/": "/en/library/", "/francesco/": "/en/francesco/",
+    "/privacy-policy/": "/en/privacy-policy/", "/bonus/": "/en/tools/",
+    **{f"/bonus/{t}/": f"/en/tools/{t}/" for t in ("worksheet", "matrice", "attributi", "coerenza", "scala", "livelli", "canvas")},
+    "/problemi/booking/": "/en/problems/booking/", "/problemi/prezzi/": "/en/problems/prices/",
+    "/problemi/sostituibili/": "/en/problems/replaceable/", "/problemi/agenzie/": "/en/problems/agencies/",
+    "/problemi/valore/": "/en/problems/value/", "/problemi/apertura/": "/en/problems/opening/",
+}
+EN2IT = {v: k for k, v in IT2EN.items()}
+
+
+def lingue(html: str, url: str, esistenti: set) -> str:
+    """Selettore IT/EN (@@ALT@@ nei menu) e tag hreflang per le coppie di pagine che esistono davvero."""
+    en = url.startswith("/en/")
+    alt = EN2IT.get(url) if en else IT2EN.get(url)
+    if alt and alt not in esistenti:
+        alt = None
+    html = html.replace("@@ALT@@", alt or ("/" if en else "/en/"))
+    if alt:
+        it_u, en_u = (alt, url) if en else (url, alt)
+        tags = (f'<link rel="alternate" hreflang="it" href="{DOMAIN}{it_u}">\n'
+                f'<link rel="alternate" hreflang="en" href="{DOMAIN}{en_u}">\n'
+                f'<link rel="alternate" hreflang="x-default" href="{DOMAIN}{it_u}">\n')
+        html = html.replace("</head>", tags + "</head>", 1)
+    return html
+
+
 def url_for(rel: Path) -> str:
     """src/pages/libro/index.html -> /libro/ ; pages/foo.html -> /foo.html"""
     p = "/" + rel.as_posix()
@@ -108,11 +138,12 @@ def build():
     shutil.copytree(SRC / "assets", OUT / "assets")
     urls = []
     versions = asset_versions()
+    esistenti = {url_for(p.relative_to(SRC / "pages")) for p in (SRC / "pages").rglob("*.html")}
     for page in sorted((SRC / "pages").rglob("*.html")):
         rel = page.relative_to(SRC / "pages")
         url = url_for(rel)
         html = render(page.read_text(), partials, url)
-        html = bust(social_image(html), versions)
+        html = bust(social_image(lingue(html, url, esistenti)), versions)
         missing = INCLUDE.findall(html)
         if missing:
             sys.exit(f"{rel}: include mancanti {missing}")

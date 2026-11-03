@@ -1,5 +1,6 @@
 /* Hotel Positioning · comportamenti comuni a tutte le pagine */
 (function(){
+  var EN = document.documentElement.lang === 'en';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.HP = { reduce: reduce };
   var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
@@ -92,7 +93,7 @@
     function show(n){
       cur = n;
       steps.forEach(function(s, i){ s.hidden = i !== n; });
-      if (stxt) stxt.textContent = 'Passo ' + (n + 1) + ' di ' + steps.length;
+      if (stxt) stxt.textContent = (EN ? 'Step ' : 'Passo ') + (n + 1) + (EN ? ' of ' : ' di ') + steps.length;
       if (bar) bar.style.width = Math.round(n / steps.length * 100) + '%';
       var sq = f.parentElement.querySelectorAll('.q-steps i');
       for (var i = 0; i < sq.length; i++) { sq[i].className = i < n ? 'done' : (i === n ? 'cur' : ''); }
@@ -179,7 +180,7 @@
             if (res.some(function(x){ return x.status === 'fulfilled'; })) { done(); return; }
             if (btn) btn.disabled = false;
             if (!fail) { fail = document.createElement('p'); fail.className = 'form-foot send-err'; fail.setAttribute('role', 'alert'); btn.insertAdjacentElement('afterend', fail); }
-            fail.textContent = 'Invio non riuscito. Riprova tra un momento oppure scrivimi a consulting@francescoastolfi.net.';
+            fail.textContent = EN ? 'Sending failed. Try again in a moment or write to me at consulting@francescoastolfi.net.' : 'Invio non riuscito. Riprova tra un momento oppure scrivimi a consulting@francescoastolfi.net.';
           });
         return;
       }
@@ -205,13 +206,30 @@
     '/quiz/': ['Mancano due minuti', 'Il risultato arriva alla fine del test.', 'Rispondi alle domande per vedere il profilo del tuo hotel.', 'Completa il test', '#close', 'Esci'],
     '/guida/': ['Prima di andare', 'Te ne vai senza la formula?', 'Va bene. Ma domani il vicino abbassa ancora.', '', '', 'No, grazie'],
     '/guida-hotel-romagna/': ['Prima di andare', 'Te ne vai senza la formula?', 'Va bene. Ma domani il vicino di viale abbassa ancora.', '', '', 'No, grazie'],
-    '/smontaggio/': ['Prima di andare', 'Bastano pochi campi.', 'Nessuna chiamata. Ricevi lo smontaggio entro tre giorni lavorativi.', 'Richiedi lo smontaggio', '#form', 'No, grazie']
+    '/smontaggio/': ['Prima di andare', 'Bastano pochi campi.', 'Nessuna chiamata. Ricevi lo smontaggio entro tre giorni lavorativi.', 'Richiedi lo smontaggio', '#form', 'No, grazie'],
+    // versione inglese: chiavi con /en/ (più lunghe, quindi vincono sulle italiane con lo stesso finale)
+    '/en/': ['Before you go', 'It takes a minute to request it.', 'The free teardown of your homepage, next to your competitors. Done by hand by me, up to 6 a month.', 'Request the teardown', '#richiedi', 'No, thanks'],
+    '/en/method/': ['Before you go', 'The first step is on your homepage.', 'The free teardown: your first line next to your competitors, with the logo covered. Within 3 working days.', 'Request the teardown', '/en/#richiedi', 'No, thanks'],
+    '/en/analysis/': ['Before you go', 'Start with the teardown, free.', 'Your homepage next to your competitors, a verdict and where to look for your reason. Within 3 working days.', 'Request the teardown', '/en/#richiedi', 'Let me think'],
+    '/en/problems/booking/': ['Before you go', 'Fewer OTAs starts with positioning.', 'A free teardown of your homepage, next to your competitors. Within 3 working days.', 'Request the teardown', '#richiedi', 'Let me think'],
+    '/en/problems/prices/': ['Before you go', 'Seven questions on your positioning.', 'Two minutes to see whether the ceiling on your rate is the market or your hotel.', 'Take the test', '/en/quiz/', 'No, thanks'],
+    '/en/problems/replaceable/': ['Before you go', 'Cover the logo: can guests tell who you are?', 'The free teardown puts your first line next to your competitors. Within 3 working days.', 'Request the teardown', '/en/teardown/', 'No, thanks'],
+    '/en/problems/agencies/': ['Before you go', 'A clear brief starts from the homepage.', 'The free teardown tells you whether your first line stands out from your competitors: the first piece of a good brief.', 'Request the teardown', '/en/teardown/', 'No, thanks'],
+    '/en/problems/value/': ['Before you go', 'Brand value is built.', 'Start with the free teardown of your homepage. Within 3 working days.', 'Request the teardown', '#richiedi', 'Let me think'],
+    '/en/problems/opening/': ['Before you go', 'Positioning is decided before you open.', 'Changing it afterwards costs far more. Start with the free teardown.', 'Request the teardown', '#richiedi', 'Let me think'],
+    '/en/cases/': ['Before you go', 'The next case could be your hotel.', 'Start with the free homepage teardown. Up to 6 a month.', 'Request the teardown', '/en/#richiedi', 'Let me think'],
+    '/en/francesco/': ['Before you go', 'The free teardown of your homepage.', 'Within three working days I tell you whether guests can tell you apart from your competitors.', 'Request the teardown', '/en/teardown/', 'No, thanks'],
+    '/en/book/': ['Before you go', 'The book’s tools, free.', 'The eight worksheets I use with the hotels I work with, in English, by email.', 'Get the tools', '/en/tools/', 'No, thanks'],
+    '/en/library/': ['Before you go', 'And your hotel, where does it stand?', 'Seven questions to see whether today it is invisible, replaceable or positioned. Two minutes.', 'Take the test', '/en/quiz/', 'No, thanks'],
+    '/en/resources/': ['Before you go', 'The simplest place to start.', 'Seven questions, two minutes, no email required.', 'Take the test', '/en/quiz/', 'No, thanks'],
+    '/en/quiz/': ['Two minutes left', 'The result comes at the end of the test.', 'Answer the questions to see your hotel’s profile.', 'Finish the test', '#close', 'Leave'],
+    '/en/teardown/': ['Before you go', 'Just a few fields.', 'You get the teardown within three working days.', 'Request the teardown', '#form', 'No, thanks']
   };
   var exitEl = document.getElementById('exit'), path = location.pathname.replace(/index\.html$/, '');
   // confronto sulla parte finale dell'indirizzo: funziona anche se il sito sta in una sottocartella
   var key = Object.keys(EXIT).filter(function(k){ return k !== '/' && path.slice(-k.length) === k; })
     .sort(function(x, y){ return y.length - x.length; })[0];
-  if (!key && document.querySelector('.hero-c') && document.getElementById('richiedi')) key = '/';
+  if (!key && document.querySelector('.hero-c') && document.getElementById('richiedi')) key = EN ? '/en/' : '/';
   var cfg = EXIT[key];
   function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   function sstore(k, v){ try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }

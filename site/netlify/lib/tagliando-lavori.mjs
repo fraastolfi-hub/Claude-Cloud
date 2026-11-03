@@ -15,9 +15,10 @@ export async function esegui(parte, d) {
       if (pagina.parole < 30) throw new Errore('pagina', 'La pagina ha pochissimo testo leggibile: forse si carica tutta con JavaScript. Prova con l\'indirizzo di una landing o di una pagina interna.');
       const p = prove(html, pagina.testo);
       const hotel = String(d.hotel || '').slice(0, 120);
-      const m = await leggiMessaggio({ url: finale, hotel, pagina });
+      const lingua = d.lingua === 'en' ? 'en' : 'it';
+      const m = await leggiMessaggio({ url: finale, hotel, pagina, lingua });
       const frasi = frasiFatteTrovate(pagina.testo, m.frasi_fatte);
-      return { ok: true, ...pacco({ url, finale, hotel, titolo: pagina.titolo, prove: p, ai: segnaliAi(html, pagina), messaggio: m, frasi, ora: Date.now() }) };
+      return { ok: true, ...pacco({ url, finale, hotel, titolo: pagina.titolo, prove: p, ai: segnaliAi(html, pagina), messaggio: m, frasi, lingua, ora: Date.now() }) };
     }
     if (parte === 'velocita') {
       const url = await urlSicuro(d.url);
