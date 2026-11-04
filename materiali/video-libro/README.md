@@ -17,3 +17,10 @@ Traccia originale generata su Artlist (Lyria 3 Pro, 60 s, strumentale), cartella
     npx remotion render Libro-6Passaggi-916 ../libro-6passaggi-916.mp4 --browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell
 
 Codice delle scene: `progetto/src/video/Libro.tsx` (array `SCENE` con le durate).
+
+# Reel 1 «Le pesche di mio nonno» e Reel 2 «La prima pagina» (da reel-libro-v1.md)
+
+`reel1-pesche-916.mp4` (35") e `reel2-prima-pagina-916.mp4` (34"): versione senza riprese, grafica animata sui tempi dello script. Il testo a schermo è il titolo grande, la voce è il sottotitolo in basso. Il primo fotogramma funziona da copertina (titolo già visibile). Codice: `progetto/src/video/Reels.tsx` (array `REEL1` e `REEL2`: durata, frasi della voce, scena).
+
+Servono anche da storyboard per girare la versione vera (Francesco in camera): stessi tempi e stesso testo a schermo.
+Testo sotto il reel e link `?da=reel-pesche` / `?da=reel-prima-pagina`: vedi lo script.
