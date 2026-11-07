@@ -176,3 +176,89 @@ h1 em,h2 em,h3 em,.pmband h2 em,.sec.dark h1 em,.sec.dark h2 em,.hl,.hl.or{
 .pos.free .btn,.pos.free .btn *{color:var(--e-carta)!important}
 /* colori decorativi del sistema precedente: in toni neutri (lo skyline tiene solo la torre gialla) */
 :root{--lilac:#cfcac0;--teal:#cfcac0;--pink:#cfcac0}
+
+/* ================================================================ fase 2a: dettagli scritti nelle singole pagine
+   Il giallo resta solo dove segna "il tuo hotel" negli schemi e nelle piccole etichette. */
+:root{--orange-dk:var(--e-nebbia)}
+
+/* home */
+.pos:not(.free) .st::before{background-color:var(--e-foglio)!important;border:1px solid var(--e-linea-forte)!important;border-radius:50%!important;width:22px!important;height:22px!important}
+.pos.free .st::before{background-color:var(--e-giallo)!important;border:1px solid var(--e-inchiostro)!important;border-radius:50%!important;width:22px!important;height:22px!important}
+
+/* analisi */
+.receipt{border:1px solid var(--e-linea)!important;border-radius:6px!important;box-shadow:none!important;background:var(--e-foglio)!important}
+.receipt .or{background:var(--e-sabbia)!important;border:0!important}
+.receipt .stamp-tag{background:var(--e-giallo)!important;border:0!important;color:var(--e-inchiostro)!important}
+.ba-toggle button[aria-pressed="true"],.ba-toggle button.on[aria-pressed="true"]{background:var(--e-inchiostro)!important;color:var(--e-carta)!important}
+.ba-toggle{border:1px solid var(--e-linea-forte)!important;box-shadow:none!important}
+.doc .dn,.doc:first-child .dn,.doc:nth-child(n) .dn{background:var(--e-carta)!important;border:1px solid var(--e-inchiostro)!important;border-radius:50%!important;font:500 20px/1 var(--serif-t)!important;width:44px!important;height:44px!important}
+.doc.total{background:var(--e-notte)!important;color:var(--e-notte-fg)!important;border-color:var(--e-notte)!important}
+.doc.total .kicker{color:var(--e-notte-fg2)!important}
+.doc.total p{color:var(--e-notte-fg2)}
+.doc.total b.big{font-family:var(--serif-t)!important;font-weight:400!important;color:var(--e-notte-fg)!important;letter-spacing:-.02em}
+.doc.total .btn,.doc.total .btn:hover{--bg:var(--e-carta)!important;--fg:var(--e-inchiostro)!important;border-color:var(--e-carta)}
+.case .after blockquote{background:transparent!important;border:0!important;padding:0!important;font:500 22px/1.25 var(--serif-t);background-image:linear-gradient(var(--e-giallo),var(--e-giallo))!important;background-size:100% .09em!important;background-position:0 92%!important;background-repeat:no-repeat!important;border-radius:0!important}
+.compass b{color:var(--e-inchiostro)!important;font-family:var(--serif-t)!important;font-weight:500!important}
+.cmp,.cmp a{border:1px solid var(--e-linea)!important;box-shadow:none!important;border-radius:6px!important}
+.cmp a:hover{transform:none!important}
+.cmp thead th.paid{background:var(--e-notte)!important;color:var(--e-notte-fg)!important}
+.cmp thead th.paid small{color:var(--e-notte-fg2)!important}
+.cmp tfoot td:nth-child(3) .btn,.cmp tfoot td:nth-child(3) .btn:hover{--bg:var(--e-inchiostro)!important;--fg:var(--e-carta)!important}
+.seal{background:var(--e-foglio)!important;color:var(--e-inchiostro)!important;border:1px solid var(--e-inchiostro)!important;border-radius:50%!important;box-shadow:none!important}
+.seal b{font-family:var(--serif-t)!important;font-weight:500!important;letter-spacing:-.01em!important}
+.seal span{font:600 11px/1.3 var(--display)!important;letter-spacing:.12em!important;color:var(--e-nebbia)!important}
+.seal span::before{background:var(--e-giallo)!important;box-shadow:none!important}
+.risk-track{border:1px solid var(--e-linea-forte)!important;border-radius:4px!important;box-shadow:none!important}
+.risk-row.me .risk-track{background:var(--e-sabbia)!important;border-color:var(--e-inchiostro)!important}
+.slots li,.slots li:first-child,.slots li:nth-child(odd){background:var(--e-foglio)!important;color:var(--e-inchiostro)!important}
+.slots li:first-child{border-color:var(--e-inchiostro)!important}
+.road.card.ink .rn{background:transparent!important;color:var(--e-notte-fg)!important;border:1px solid var(--e-notte-fg2)!important;border-radius:50%!important}
+.road .rn{border:1px solid var(--e-inchiostro)!important;border-radius:50%!important;font-family:var(--serif-t)!important;font-weight:500!important;background:var(--e-carta)!important}
+.road.card.ink .btn,.road.card.ink .btn:hover{--bg:var(--e-carta)!important;--fg:var(--e-inchiostro)!important;border-color:var(--e-carta)!important}
+.road.card.y{box-shadow:none!important;border:1px solid var(--e-inchiostro)!important;background:var(--e-foglio)!important}
+.road .verdict{border-top:1px solid var(--e-linea)!important}
+.final-q{font:500 clamp(30px,3.8vw,52px)/1.08 var(--serif-t)!important;letter-spacing:-.012em!important}
+
+/* metodo */
+.rects{border:1px solid var(--e-linea)!important;border-radius:6px!important;box-shadow:none!important}
+.ex-hotel .tag{background:linear-gradient(currentColor,currentColor) 0 50%/26px 1px no-repeat!important;padding:4px 0 4px 38px!important;font:600 12px/1.3 var(--display)!important;letter-spacing:.14em!important;color:var(--e-nebbia)!important;border-radius:0!important}
+.phrase{background:var(--e-sabbia)!important;border:1px solid var(--e-inchiostro)!important;border-radius:6px!important;box-shadow:none!important}
+.ft .to{background:var(--e-sabbia)!important;border:1px solid var(--e-inchiostro)!important;box-shadow:none!important}
+.uses blockquote{background:var(--e-sabbia)!important;border-radius:4px!important;font-family:var(--serif-t);font-style:italic}
+
+/* chi sono */
+.dodont > div + div,.vs2 > div + div,.step-card.top{background:var(--e-sabbia)!important;color:var(--e-inchiostro)!important;border:1px solid var(--e-inchiostro)!important;box-shadow:none!important}
+.scar,.scar:hover,.step-card,.step-card:hover{transform:none!important;box-shadow:none!important}
+.step-card .ico{border:1px solid var(--e-inchiostro)!important;border-radius:50%!important;background:var(--e-carta)!important;font-family:var(--serif-t)!important}
+
+/* libro */
+.mini-rects.found i.me{box-shadow:none!important}
+.six li:nth-child(3) b{background:linear-gradient(var(--e-giallo),var(--e-giallo)) 0 92%/100% .09em no-repeat!important}
+.cv.wide{background:var(--e-sabbia)!important;border:1px solid var(--e-inchiostro)!important}
+.toc{border:1px solid var(--e-linea)!important;border-radius:6px!important;box-shadow:none!important}
+.tool:nth-child(7){background:var(--e-sabbia)!important;border-color:var(--e-inchiostro)!important}
+.receipt .ln.tot{background:var(--e-notte)!important;color:var(--e-notte-fg)!important;border-top:0!important}
+.receipt .ln.tot *{color:var(--e-notte-fg)!important}
+.receipt .foot-r{background:var(--e-sabbia)!important}
+.cmp thead th,.cmp .price,.receipt .tot b{font-family:var(--serif-t)!important;font-weight:500!important;letter-spacing:-.01em!important}
+.receipt .tot b small{font-family:var(--display)}
+.road .verdict{border:0!important;border-top:1px solid var(--e-linea)!important;border-radius:0!important;padding:12px 0 0!important;background:transparent!important;min-height:0!important}
+.road.card.ink .verdict{border-top-color:var(--e-notte-linea)!important}
+
+/* casi, metodo, chi sono, libro, home: bordi spessi e numeri pesanti scritti nelle pagine */
+.cmp a,.yn > div,.mx,.ft > .from,.ft > .to,.res > div,.uses > div,.scar,.vs2 > div,.cover,.six b,.why-box,.tl .lesson{
+  border:1px solid var(--e-linea)!important;border-radius:6px!important;box-shadow:none!important}
+.ft > .to,.yn > div + div{border-color:var(--e-inchiostro)!important}
+.tl .lesson{border-width:0 0 0 1px!important;border-radius:0!important}
+.declare,.declare::before{border-width:1px!important}
+.declare{border-radius:6px!important}
+.theses,.theses li{border-color:var(--e-linea)!important;border-width:1px!important}
+.theses{border-top-color:var(--e-inchiostro)!important}
+.cmp .t,.cmp .n,.case-n,.line-q,.phrase q,.ft q,.res b,.vs2 b,.theses b,.cover .ct,.proof .big,.bingo-score .count,.bb-specs b,.gets b,.book-stage .price-tag{
+  font-family:var(--serif-t)!important;font-weight:500!important;letter-spacing:-.012em!important}
+.theses li::before,.tool::before{font-family:var(--serif-t)!important;font-weight:500!important}
+.sign-row img{border:0!important;border-radius:50%!important}
+.phrase .kicker b,.phrase .sticker,.phrase .num-tag{background-color:transparent!important}
+.phrase .st{background:transparent!important;border:0!important;padding-left:0!important}
+.sec:not(.alt):not(.dark) + .sec:not(.alt):not(.dark){border-top:1px solid var(--e-linea)}
+.pol-down path{stroke:var(--e-nebbia)!important}
