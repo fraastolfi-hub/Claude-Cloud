@@ -339,3 +339,12 @@ mark.gen{background:linear-gradient(transparent 88%,var(--e-giallo) 88%)!importa
 .hd-band p{color:var(--e-notte-fg)!important}
 .hd-band p:nth-child(2){background:transparent!important;color:var(--e-notte-fg)!important;background-image:linear-gradient(var(--e-giallo),var(--e-giallo))!important;background-size:100% .07em!important;background-position:0 92%!important;background-repeat:no-repeat!important;border-radius:0!important;padding:0!important}
 .hd-band .btn{--bg:var(--e-carta)!important;--fg:var(--e-inchiostro)!important;border-color:var(--e-carta)!important}
+
+/* foto dei casi (home, casi, analisi) */
+.case-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 20px}
+.case-photos figure,.case-photo{margin:0;display:grid;gap:8px}
+.case-photos img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:4px;display:block}
+.case-photo{margin:8px 0 28px}
+.case-photo img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;border-radius:4px;display:block}
+.case-photos figcaption,.case-photo figcaption{font:600 12px/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--e-nebbia)}
+@media (max-width:700px){.case-photos{grid-template-columns:1fr 1fr}.case-photos figure:first-child{grid-column:1/-1}.case-photo img{aspect-ratio:4/3}}
