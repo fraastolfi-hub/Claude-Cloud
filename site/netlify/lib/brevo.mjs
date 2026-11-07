@@ -222,7 +222,7 @@ export function cassettaMail(d) {
     subject: 'I tuoi 8 strumenti [comincia dal 01]',
     tags: ['cassetta-email-1'],
     textContent: [...p1, `Apri il foglio 01 →\n${primo}`, 'Gli altri sette:', altri.map(([n, t, u]) => `${n} · ${t}\n${u}`).join('\n\n'), firma, ps].join('\n\n'),
-    htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${p1.map(para).join('')}<p style="margin:20px 0 22px"><a href="${primo}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri il foglio 01 →</a></p><p style="margin:0 0 8px">Gli altri sette:</p><ul style="list-style:none;padding:0;margin:0 0 18px">${altri.map(([n, t, u]) => `<li style="margin:0 0 8px"><a href="${u}" style="color:#0a0a0a">${n} · ${esc(t)}</a></li>`).join('')}</ul>${para(firma)}${para(ps)}</div>`,
+    htmlContent: `<div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${p1.map(para).join('')}<p style="margin:20px 0 22px"><a href="${primo}" style="display:inline-block;background:#15181c;color:#fcfbf8;font-weight:600;text-decoration:none;padding:13px 20px;border-radius:4px;border:1px solid #15181c">Apri il foglio 01 →</a></p><p style="margin:0 0 8px">Gli altri sette:</p><ul style="list-style:none;padding:0;margin:0 0 18px">${altri.map(([n, t, u]) => `<li style="margin:0 0 8px"><a href="${u}" style="color:#0a0a0a">${n} · ${esc(t)}</a></li>`).join('')}</ul>${para(firma)}${para(ps)}</div>`,
   };
 }
 

@@ -262,3 +262,80 @@ h1 em,h2 em,h3 em,.pmband h2 em,.sec.dark h1 em,.sec.dark h2 em,.hl,.hl.or{
 .phrase .st{background:transparent!important;border:0!important;padding-left:0!important}
 .sec:not(.alt):not(.dark) + .sec:not(.alt):not(.dark){border-top:1px solid var(--e-linea)}
 .pol-down path{stroke:var(--e-nebbia)!important}
+
+/* ================================================================ fase 3: strumenti (/bonus/*), caricati DOPO questo file
+   Il giallo resta come stato "scelto / il tuo" (celle vincenti, stelle, scelte); il resto diventa sabbia e filo. */
+html .t-page{--t-l:1px solid var(--e-linea-forte);--t-bd:1px solid var(--e-inchiostro);--t-row:1px solid var(--e-linea);
+  --t-soft:var(--e-sabbia);--t-alt:var(--e-sabbia);--t-sh-xs:none;--t-sh-sm:none;--t-sh-md:none;--t-sh-lg:none;background:var(--e-carta)}
+html .t-page .t-title,html .t-page .t-h2,html .t-page .t-h3,html .t-page .t-verdict,html .t-page .t-rung__label,html .t-page .t-level__t,
+html .t-page .t-box__t,html .t-page .t-cat-out,html .t-page .t-cell__name,html .t-page .t-gate__n{
+  font-family:var(--serif-t)!important;font-weight:500!important;text-transform:none!important;letter-spacing:-.012em!important}
+html .t-page .t-title{font-size:clamp(34px,4.6vw,56px)!important;line-height:1.05!important}
+html .t-page .t-hl{background:linear-gradient(var(--e-giallo),var(--e-giallo)) 0 92%/100% .09em no-repeat!important;padding:0!important;border-radius:0!important}
+html .t-page .t-label,html .t-page .t-bar__name,html .t-page .t-zone__t,html .t-page .t-zone__s,html .t-page .t-example__grid strong,html .t-page .t-cell__toggle{
+  font:600 12px/1.35 var(--display)!important;letter-spacing:.12em!important}
+html .t-page .t-bar__n{background:transparent!important;border:1px solid var(--e-linea-forte);border-radius:3px!important;font:600 12px/1.2 var(--display)!important;letter-spacing:.12em}
+html .t-page .t-back{border:1px solid var(--e-linea-forte)!important;border-radius:4px!important;box-shadow:none!important;font:600 14px/1.2 var(--display)!important;transform:none!important}
+html .t-page .t-back:hover{background:var(--e-sabbia)!important}
+html .t-page .t-steps i.is-past{background:var(--e-grafite)!important}
+html .t-page .t-steps i.is-current{background:var(--e-inchiostro)!important;box-shadow:none!important}
+html .t-page .t-btn{background:var(--e-inchiostro)!important;color:var(--e-carta)!important;border:1px solid var(--e-inchiostro)!important;border-radius:4px!important;
+  box-shadow:none!important;transform:none!important;font:600 16px/1.2 var(--display)!important}
+html .t-page .t-btn:hover{background:#2b3138!important}
+html .t-page .t-btn--paper,html .t-page .t-btn--ink{background:transparent!important;color:var(--e-inchiostro)!important}
+html .t-page .t-btn--paper:hover,html .t-page .t-btn--ink:hover{background:var(--e-sabbia)!important}
+html .t-page .t-link,html .t-page .t-next{border-bottom-width:1px!important;font-weight:600!important}
+html .t-page .t-link:hover,html .t-page .t-next:hover{background:transparent!important;border-bottom-color:var(--e-giallo)!important}
+html .t-page .t-card,html .t-page .t-gate__card,html .t-page .t-pick,html .t-page .t-zone,html .t-page .t-box--cat{border-radius:6px!important;box-shadow:none!important}
+html .t-page .t-card--y,html .t-page .t-card--flag,html .t-page .t-card__h--ink,html .t-page .t-warn--solid,html .t-page .t-pick,html .t-page .t-picked.is-zone,
+html .t-page .t-example__cat,html .t-page .t-box--cat,html .t-page .t-box--cat .t-box__head,html .t-page .t-zone,html .t-page .t-rung--mid,html .t-page .t-gate__n{
+  background:var(--e-sabbia)!important;color:var(--e-inchiostro)!important}
+html .t-page .t-zone,html .t-page .t-box--cat,html .t-page .t-card--y{border:1px solid var(--e-inchiostro)!important}
+html .t-page .t-cat-out{background:var(--e-foglio)!important;border:1px solid var(--e-inchiostro)!important;border-radius:4px!important;
+  background-image:linear-gradient(var(--e-giallo),var(--e-giallo))!important;background-size:4px 100%!important;background-repeat:no-repeat!important;padding-left:18px!important}
+html .t-page .t-rung--top{background:var(--e-foglio)!important;border:1px solid var(--e-inchiostro)!important;box-shadow:none!important}
+html .t-page .t-badge,html .t-page .t-badge--lg,html .t-page .t-level__n,html .t-page .t-box__n,html .t-page .t-opt__key{
+  border:1px solid var(--e-inchiostro)!important;border-radius:50%!important;background:var(--e-carta)!important;font-family:var(--serif-t)!important;font-weight:500!important}
+html .t-page .t-q.is-done .t-badge,html .t-page .t-level:not(.is-off) .t-zone .t-level__n{background:var(--e-giallo)!important}
+html .t-page .t-picker__btn,html .t-page .t-option,html .t-page .t-star,html .t-page .t-cell{box-shadow:none!important;transform:none!important}
+html .t-page .t-picker__btn,html .t-page .t-star{border:1px solid var(--e-linea-forte)!important;border-radius:4px!important;font-family:var(--serif-t)!important;font-weight:500!important}
+html .t-page .t-matrix__center .t-cell:not(.is-win){background:var(--e-sabbia)!important}
+html .t-page .t-tag--potrei.is-on,html .t-page .t-tag--potrei[aria-pressed="true"],html .t-page .t-tag--mai.is-on,html .t-page .t-tag--mai[aria-pressed="true"]{background:var(--e-sabbia)!important;border-color:var(--e-inchiostro)!important}
+html .t-page .t-warn::before{background:var(--e-giallo)!important;border:0!important;border-radius:50%!important}
+html .t-page .t-note{border-radius:4px!important}
+html .t-page .t-input,html .t-page .t-textarea,html .t-page .t-select{border:1px solid var(--e-linea-forte)!important;border-radius:4px!important}
+html .t-page .t-input--y{background-color:var(--e-sabbia)!important}
+html .t-page :is(.t-option,.t-cell,.t-chain,.t-ring,.t-vbtn,.t-rung,.t-level,.t-box,.t-q,.t-picked,.t-note,.t-matrix__center .t-cell){border-radius:6px!important}
+html .t-page .t-tag{border-radius:3px!important;border-width:1px!important}
+html .t-page .t-chain__row.is-ok{background:var(--e-sabbia)!important;border-left-color:var(--e-giallo)!important}
+html .t-page .t-ring.is-ok .t-ring__head{background:var(--e-sabbia)!important}
+
+/* ================================================================ fase 3: pagine /problemi/* (problemi.css si carica prima di questo file) */
+.memo,.tool,.sig-meter,.ring3,.ring3.here{border:1px solid var(--e-linea)!important;border-radius:6px!important;box-shadow:none!important}
+.memo .tot b,.tool-big,.sig-meter .score,.proof .r b,.offer .price,.ring3 h3{font-family:var(--serif-t)!important;font-weight:500!important;letter-spacing:-.012em!important}
+.tool-head em{background:transparent!important;border:1px solid var(--e-linea-forte);border-radius:3px!important}
+.tgl{border:1px solid var(--e-linea-forte)!important;border-radius:4px!important}
+.tgl button{border-radius:3px!important}
+.tgl button[aria-pressed="true"]{background:var(--e-inchiostro)!important;color:var(--e-carta)!important}
+.sig-meter,.sig-meter.hot{background:var(--e-sabbia)!important}
+.sig-meter.hot{border-color:var(--e-inchiostro)!important}
+.sig-btn{border:1px solid var(--e-linea-forte)!important;border-radius:4px!important}
+.sig-btn[aria-pressed="true"]{background:var(--e-sabbia)!important;border-color:var(--e-inchiostro)!important}
+.sig-btn[aria-pressed="true"]::before{background-color:var(--e-giallo)!important}
+.sig.on{background:var(--e-sabbia)!important}
+.ring3{background:var(--e-sabbia)!important}
+.ring3.here{background:var(--e-foglio)!important;border-color:var(--e-inchiostro)!important}
+.ring3.here::after{background:var(--e-inchiostro)!important;color:var(--e-carta)!important;border-radius:3px!important}
+.proof .r{background:var(--e-notte)!important;color:var(--e-notte-fg)!important;border-left:0!important}
+.proof .r *{color:var(--e-notte-fg)}
+.proof .r .kicker,.proof .r .case-honest,.proof .r b s{color:var(--e-notte-fg2)!important}
+.proof .r .case-honest{border-top-color:var(--e-notte-linea)!important}
+.proof ol li::before{border:1px solid var(--e-inchiostro)!important;border-radius:50%!important;background:var(--e-carta)!important;font-family:var(--serif-t)!important;font-weight:500!important}
+.offer .card.ink .btn{--bg:var(--e-carta)!important;--fg:var(--e-inchiostro)!important}
+mark.gen{background:linear-gradient(transparent 88%,var(--e-giallo) 88%)!important}
+
+/* hday: fascia finale in notte al posto del giallo */
+.hd-band{background:var(--e-notte)!important;color:var(--e-notte-fg)!important}
+.hd-band p{color:var(--e-notte-fg)!important}
+.hd-band p:nth-child(2){background:transparent!important;color:var(--e-notte-fg)!important;background-image:linear-gradient(var(--e-giallo),var(--e-giallo))!important;background-size:100% .07em!important;background-position:0 92%!important;background-repeat:no-repeat!important;border-radius:0!important;padding:0!important}
+.hd-band .btn{--bg:var(--e-carta)!important;--fg:var(--e-inchiostro)!important;border-color:var(--e-carta)!important}
