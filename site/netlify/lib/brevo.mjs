@@ -5,7 +5,7 @@ export const API = 'https://api.brevo.com/v3';
 
 export const FORMS = {
   'candidatura': { label: 'Richiesta analisi (vecchio modulo)', list: 'BREVO_LIST_CANDIDATURA' },
-  'revisione-homepage': { label: 'Smontaggio della homepage', list: 'BREVO_LIST_REVISIONE' },
+  'revisione-homepage': { label: 'Lettura del posizionamento', list: 'BREVO_LIST_REVISIONE' },
   'test-posizionamento': { label: 'Test di posizionamento', list: 'BREVO_LIST_TEST' },
   'strumenti-libro': { label: 'Strumenti del libro', list: 'BREVO_LIST_BONUS' },
   'questionario': { label: 'Questionario di posizionamento', list: 'BREVO_LIST_QUESTIONARIO' },
@@ -22,7 +22,7 @@ export const FORMS = {
 // etichette leggibili per l'email di notifica
 export const LABELS = {
   nome: 'Nome', nome_ruolo: 'Nome e ruolo', email: 'Email', telefono: 'Telefono',
-  hotel: 'Struttura', struttura: 'Struttura', sito: 'Sito', url: 'Homepage', camere: 'Camere',
+  hotel: 'Struttura', struttura: 'Struttura', sito: 'Sito', url: 'Homepage', camere: 'Camere', categoria: 'Categoria',
   concorrenti: 'Concorrenti', tipologia: 'Tipologia', prezzo: 'Prezzo medio a notte', canali: 'Canali di prenotazione', unicita: 'Unicità più importante', pubblicazione: 'Pubblicazione', riga: "Cosa vorrebbe che l'ospite capisse",
   semafori: 'Semafori (messaggio · prove · velocità)', problema: 'Problema principale', esito: 'Esito',
   profilo: 'Profilo del test', punteggio: 'Punteggio', pagina: 'Pagina', privacy: 'Privacy',
@@ -103,7 +103,7 @@ export async function saveContact(d, formName, form) {
   throw last;
 }
 
-// Mail di conferma a chi richiede lo smontaggio. Testo approvato da Francesco il 9 ottobre 2026.
+// Mail di conferma a chi richiede la lettura. Testo approvato da Francesco il 9 ottobre 2026.
 // Versione /hday: in più il paragrafo sull'offerta dell'Hospitality Day.
 export function confirmation(d) {
   if (/^\/en\//.test(d.pagina || '')) return confirmationEn(d);
@@ -112,12 +112,12 @@ export function confirmation(d) {
   const hday = /\/hday/.test(d.pagina || '');
   const p = [
     `Ciao${nome ? ' ' + nome : ''},`,
-    `ho ricevuto la richiesta di smontaggio per ${hotel}.`,
+    `ho ricevuto la richiesta di lettura per ${hotel}.`,
     'Nei prossimi 3 giorni lavorativi metto la prima riga della tua homepage accanto a quella dei concorrenti che mi hai indicato, con il logo coperto. Ti mando una pagina con il verdetto (posizionato, sostituibile o invisibile) e un indizio su dove cercare il tuo motivo.',
     'Nel frattempo prova tu: copri il logo sulla tua homepage e su quella di un concorrente, e leggi le due prime frasi. Se si possono scambiare, sai già da dove partiamo.',
     'Se hai qualcosa da aggiungere, rispondi a questa mail.',
   ];
-  if (hday) p.push("Ci siamo visti all'Hospitality Day: con lo smontaggio ti mando anche il link per l'analisi completa a €697 + IVA invece di €2.500. Vale fino al 31 ottobre, se dopo il verdetto vuoi andare avanti.");
+  if (hday) p.push("Ci siamo visti all'Hospitality Day: con la lettura ti mando anche il link per l'analisi completa a €697 + IVA invece di €2.500. Vale fino al 31 ottobre, se dopo il verdetto vuoi andare avanti.");
   const firma = ['Francesco Astolfi', 'Hotel Positioning'];
   return {
     sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
@@ -129,13 +129,13 @@ export function confirmation(d) {
   };
 }
 
-// Versione inglese della conferma (richieste da /en/...): lo smontaggio si consegna in inglese.
+// Versione inglese della conferma (richieste da /en/...): la lettura si consegna in inglese.
 function confirmationEn(d) {
   const nome = ((d.nome_ruolo || d.nome || '').split(',')[0].trim().split(/\s+/)[0]) || '';
   const hotel = (d.hotel || '').trim() || 'your hotel';
   const p = [
     `Hi${nome ? ' ' + nome : ''},`,
-    `I've received the teardown request for ${hotel}.`,
+    `I've received the positioning read request for ${hotel}.`,
     'Within the next 3 working days I will put the first line of your homepage next to the first line of the competitors you named, with the logo covered. I will send you one page with the verdict (positioned, replaceable or invisible) and a clue about where to look for your reason.',
     'In the meantime, try it yourself: cover the logo on your homepage and on a competitor\'s, and read the first two sentences. If they can be swapped, you already know where we start.',
     'If you want to add anything, just reply to this email.',

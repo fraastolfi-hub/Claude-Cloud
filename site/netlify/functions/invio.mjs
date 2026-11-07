@@ -50,7 +50,7 @@ export const handler = async (event) => {
   if (['cassetta', 'guida'].includes(d['form-name'])) console.log('Meta CAPI:', metaEsito);
   if (saved.status === 'rejected') console.error(saved.reason);
   if (mailed.status === 'rejected') { console.error(mailed.reason); return json(502, { ok: false, errore: 'notifica' }); }
-  // conferma a chi ha compilato: solo per lo smontaggio; se non parte, la richiesta resta valida
+  // conferma a chi ha compilato: solo per la lettura; se non parte, la richiesta resta valida
   const reply = d['form-name'] === 'revisione-homepage' ? confirmation(d) : d['form-name'] === 'strumenti-libro' ? bonusMail(d) : d['form-name'] === 'cassetta' ? cassettaMail(d) : d['form-name'] === 'guida' ? guidaMail(d) : null;
   if (reply) {
     try { await brevo('/smtp/email', reply); console.log('conferma inviata'); } catch (e) { console.error('conferma non inviata:', e.message); }

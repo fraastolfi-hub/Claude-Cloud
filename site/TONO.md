@@ -1,5 +1,7 @@
 # Hotel Positioning · guida di tono
 
+> **Aggiornamento 7 novembre 2026: hotel 4 e 5 stelle.** Il sito parla a hotel e resort 4 e 5 stelle indipendenti (prima: dalle 40 camere in su). Il filtro è la categoria, non il numero di camere; il modulo chiede la categoria. Lo «smontaggio della homepage» si chiama **«lettura del posizionamento»** (femminile: la lettura, gratuita, fatta a mano, la ricevi in 3 giorni); in inglese «positioning read». L'indirizzo /smontaggio/ resta (con /lettura/ che ci porta). Bottone: «Richiedi la lettura gratuita» (se stretto: «Richiedi la lettura»). Restano su tutti gli hotel: il libro, gli strumenti, il quiz, le landing delle campagne (guida, guida Romagna, Tagliando) e /hday/. Prezzo dell'analisi: invariato (€697 + IVA) finché Francesco non decide.
+>
 > **Aggiornamento 7 ottobre 2026: si dà del tu.** Le regole qui sotto valgono con questi cambiamenti, che prevalgono su tutto il resto:
 >
 > - **Tu, non voi.** Si parla al titolare o al direttore, una persona: «il tuo hotel», «i tuoi concorrenti», «ti rispondo entro 48 ore». Francesco parla in prima persona («io», «faccio a mano»).

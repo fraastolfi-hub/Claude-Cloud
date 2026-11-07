@@ -41,6 +41,8 @@ REDIRECTS = {
     "/bonus": "/bonus/",
     "/quiz": "/quiz/",
     "/smontaggio": "/smontaggio/",
+    "/lettura": "/smontaggio/",
+    "/lettura/": "/smontaggio/",
     "/library": "/library/",
     "/francesco": "/francesco/",
     "/privacy-policy": "/privacy-policy/",

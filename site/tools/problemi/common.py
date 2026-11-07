@@ -141,10 +141,10 @@ def page(p):
       <p class="pull">{p["pull"]}</p>
       <p class="lead">{p["lead"]}</p>
       <div class="btn-row">
-        <a href="#richiedi" class="btn">Richiedi lo smontaggio gratuito <span class="arr">→</span></a>
+        <a href="#richiedi" class="btn">Richiedi la lettura gratuita <span class="arr">→</span></a>
         <a href="#conto" class="btn ghost">{p["cta2"]}</a>
       </div>
-      <p class="micro"><b>Lo smontaggio della homepage: gratis, fatto a mano da me.</b> Massimo 6 al mese, lo ricevi in 3 giorni lavorativi.</p>
+      <p class="micro"><b>La lettura del posizionamento: gratis, fatta a mano da me.</b> Massimo 6 al mese, la ricevi in 3 giorni lavorativi.</p>
     </div>
 {p["memo"]}
   </div>
@@ -181,7 +181,7 @@ def page(p):
         <span class="score" aria-live="polite"><span id="sigScore">0</span><small>/10</small></span>
         <div class="sig-bar" id="sigBar" aria-hidden="true"></div>
         <p class="sig-msg" id="sigMsg" aria-live="polite">Seleziona i segnali che riconosci nel tuo hotel.</p>
-        <a href="#richiedi" class="btn sm">Richiedi lo smontaggio <span class="arr">→</span></a>
+        <a href="#richiedi" class="btn sm">Richiedi la lettura <span class="arr">→</span></a>
       </aside>
       <div class="sig-grid">
 {signals(p["signals"])}
@@ -246,24 +246,24 @@ def page(p):
   <div class="wrap">
     <div class="sec-head">
       <span class="num-tag">N°05</span>
-      <h2>Prima lo smontaggio. <em>Poi, se serve, l’analisi.</em></h2>
+      <h2>Prima la lettura. <em>Poi, se serve, l’analisi.</em></h2>
       <p class="lead">{p["offer_lead"]}</p>
     </div>
     <div class="offer">
       <div class="card rv">
-        <p class="kicker"><b>Smontaggio della homepage</b> · massimo 6 al mese</p>
+        <p class="kicker"><b>Lettura del posizionamento</b> · massimo 6 al mese</p>
         <p class="price">Gratis</p>
-        <p>Lo faccio io, a mano. Solo hotel e resort dalle 40 camere in su.</p>
+        <p>Lo faccio io, a mano. Solo hotel e resort 4 e 5 stelle.</p>
         <ul class="check-list">
           <li>La prima riga della tua homepage accanto a quella di 2-3 concorrenti, con il logo coperto.</li>
           <li>Un verdetto: posizionato, sostituibile o invisibile.</li>
           <li>Un indizio su dove sta il tuo motivo, preso dalle recensioni.</li>
           <li>Una pagina, in 3 giorni lavorativi. Senza impegno.</li>
         </ul>
-        <a href="#richiedi" class="btn">Richiedi lo smontaggio gratuito <span class="arr">→</span></a>
+        <a href="#richiedi" class="btn">Richiedi la lettura gratuita <span class="arr">→</span></a>
       </div>
       <div class="card ink rv d1">
-        <p class="kicker"><b>Analisi completa</b> · dopo lo smontaggio</p>
+        <p class="kicker"><b>Analisi completa</b> · dopo la lettura</p>
         <p class="price">€697<small>+ IVA</small></p>
         <p>Il motivo trovato e messo per iscritto, con quello che serve per usarlo.</p>
         <ul class="check-list">
@@ -284,13 +284,13 @@ def page(p):
     <div>
       <div class="sec-head" style="margin-bottom:0">
         <span class="sticker">Gratis · massimo 6 al mese</span>
-        <h2>Richiedi lo smontaggio della homepage.</h2>
+        <h2>Richiedi la lettura del posizionamento.</h2>
         <p class="lead">{p["cand_lead"]}</p>
       </div>
       <ul class="check-list">
         <li>Una pagina: la tua prima riga accanto a quella di 2-3 concorrenti, con il logo coperto. Un verdetto e un indizio su dove sta il tuo motivo.</li>
-        <li>Hotel e resort indipendenti, dalle 40 camere in su.</li>
-        <li>Lo ricevi in 3 giorni lavorativi, per email. Senza impegno.</li>
+        <li>Hotel e resort 4 e 5 stelle indipendenti.</li>
+        <li>La ricevi in 3 giorni lavorativi, per email. Senza impegno.</li>
         <li>Niente frasi pronte né alternative: quelle sono il lavoro dell’analisi completa.</li>
       </ul>
       <ul class="check-list no" style="margin-top:14px">
@@ -313,7 +313,7 @@ def page(p):
 {faq(p["faq"])}
     </div>
     <div class="btn-row rv" style="margin-top:36px">
-      <a href="#richiedi" class="btn dark">Richiedi lo smontaggio gratuito <span class="arr">→</span></a>
+      <a href="#richiedi" class="btn dark">Richiedi la lettura gratuita <span class="arr">→</span></a>
       <a href="/analisi/" class="btn ghost">L’analisi completa</a>
     </div>
   </div>

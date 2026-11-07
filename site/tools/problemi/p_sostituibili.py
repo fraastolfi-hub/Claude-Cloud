@@ -113,11 +113,11 @@ P = dict(
     br_quote="Le unicità di un hotel sono già scritte: nelle recensioni degli ospiti.",
     proof_k="Recensioni Booking",
     proof_big="<s>8,6</s> 9",
-    offer_lead="Lo smontaggio ti dice se la tua homepage è sostituibile e dove cercare il motivo. Spesso è già nelle recensioni: l'analisi completa lo mette per iscritto.",
+    offer_lead="La lettura ti dice se la tua homepage è sostituibile e dove cercare il motivo. Spesso è già nelle recensioni: l'analisi completa lo mette per iscritto.",
     cand_lead="Un minuto. Copro il logo sulla tua homepage e su quella di 2-3 concorrenti. Poi ti dico se il tuo hotel si riconosce.",
     faq=[
         ("Ho già fatto un rebranding. Non è la stessa cosa?", "No. Il rebranding decide come il tuo hotel appare. Il posizionamento decide perché l'ospite lo sceglie. Il primo senza il secondo è una forma senza contenuto."),
-        ("E se il mio hotel fosse già posizionato?", "Può darsi. Fai il test qui sopra: copri il logo. Se la homepage vale solo per te, la posizione c'è. Se vale per cento hotel, no. Lo smontaggio lo verifica sulla tua homepage, accanto a quella dei concorrenti."),
+        ("E se il mio hotel fosse già posizionato?", "Può darsi. Fai il test qui sopra: copri il logo. Se la homepage vale solo per te, la posizione c'è. Se vale per cento hotel, no. La lettura lo verifica sulla tua homepage, accanto a quella dei concorrenti."),
         ("Funziona anche per un gruppo con più hotel?", "Sì, ed è dove rende di più: ogni hotel distinto dagli altri del gruppo e dal mercato. Si parte comunque da uno."),
         ("Devo rifare il sito?", "Quasi mai da zero. Va rivisto ciò che dice: costa meno e conta di più."),
     ],
