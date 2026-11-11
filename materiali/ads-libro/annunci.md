@@ -137,6 +137,8 @@ I primi 8 annunci (link a `/vai/libro`, cioè dritti su Amazon) sono archiviati.
 Le visite alla pagina vengono contate solo da chi accetta i cookie di marketing: il pixel parte dopo il consenso.
 Per accendere: campagna, gruppo e annunci vanno attivati (scrivere «accendi libro»).
 
-Da sbloccare su Meta per pubblici migliori:
-- accettare i termini dei pubblici personalizzati: https://www.facebook.com/customaudiences/app/tos/?act=1820080458983180
-- dare all’account pubblicitario il permesso sui pubblici dell’account Instagram @webcopywriter.
+Pubblici personalizzati (11 novembre 2026), aggiunti come suggerimento al gruppo:
+- «Visitatori sito · 180 giorni» 120259096037860197 (pixel, solo chi accetta i cookie di marketing)
+- «Simile 1% · visitatori sito» 120259096038610197
+
+Ancora da sbloccare: il permesso sui pubblici dell’account Instagram @webcopywriter (errore 2654 su 17841400590280014).
