@@ -18,6 +18,20 @@
     $$('.rv').forEach(function(el){ el.classList.add('in'); });
   }
 
+  // clic sui pulsanti Amazon (pagina libro): evento amazon_click. Se il tracciamento è attivo
+  // si aspetta un attimo prima di uscire dal sito, perché l'evento parta davvero.
+  $$('a[href*="amazon."]').forEach(function(a, i, all){
+    a.addEventListener('click', function(e){
+      if (!window.HPtrack) return;
+      var pos = all.length > 1 ? (i === 0 ? 'alto' : i === all.length - 1 ? 'fondo' : 'centro') : 'unico';
+      HPtrack('amazon_click', { pagina: location.pathname, posizione: pos, value: 19.90, currency: 'EUR' });
+      var c = window.HPconsent ? HPconsent() : {};
+      if (!(c.stats || c.mkt) || e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0 || a.target === '_blank') return;
+      e.preventDefault();
+      setTimeout(function(){ location.href = a.href; }, 300);
+    });
+  });
+
   // nav: ombra, menu mobile, barra di lettura, cta fissa su mobile
   var nav = document.querySelector('.nav'), bar = document.querySelector('.readbar');
   var burger = document.querySelector('.burger');
