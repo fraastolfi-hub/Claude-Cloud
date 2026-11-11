@@ -12,11 +12,11 @@ FOTO = b64(HERE / 'francesco-libro.webp', 'image/webp')
 CARTA, SABBIA, INK, GRAF, NEB, NOTTE, NFG, NFG2, Y = '#fcfbf8', '#f2efe8', '#15181c', '#4a4f57', '#6f747c', '#121a22', '#eef0f2', '#b8c0c8', '#ffd22e'
 
 ADS = [
- dict(id='L1', h='Perché dovrebbero scegliere <mark>il tuo hotel?</mark>', sub='Se la risposta è «posizione, servizio, camere», è la stessa del vicino. Il libro ti porta a quella vera, in sei passaggi.', bg=CARTA),
- dict(id='L2', h='19,90 €. <mark>Meno di una commissione.</mark>', sub='Su una camera da 180 € Booking trattiene circa 30 €, ogni notte. Il libro lo paghi una volta.', bg=NOTTE, dark=True, note='Esempio: commissione del 17% su una camera da 180 €.'),
- dict(id='L3', h='Questo non è un libro <mark>di marketing alberghiero.</mark>', sub='Viene prima: decide perché l’ospite dovrebbe scegliere il tuo hotel. Il marketing, dopo, lo dice.', bg=SABBIA),
- dict(id='L4', h='Sei passaggi. <mark>Alla fine stanno su un foglio.</mark>', sub='Il bisogno, le alternative, le unicità, la persona, la categoria, il trend. Il canvas per compilarlo è gratis con il libro.', bg=CARTA),
- dict(id='L5', h='Più servizi aggiungi, <mark>più assomigli al vicino.</mark>', sub='Il libro spiega perché succede e come uscirne. Con i casi veri, e quello che non dimostrano.', bg=SABBIA),
+ dict(id='L1', h='Il tuo hotel ha una risposta. <mark>Ce l’ha anche il vicino.</mark>', sub='«Posizione, servizio, camere.» Quando le risposte sono uguali, l’ospite confronta il prezzo. Il libro ti porta alla risposta solo tua.', bg=CARTA),
+ dict(id='L2', h='Ogni notte su Booking <mark>costa una volta e mezza questo libro.</mark>', sub='Esempio: camera da 180 €, commissione di circa 30 €. Il libro costa 19,90 €, e lo paghi una volta.', bg=NOTTE, dark=True, hs=66),
+ dict(id='L3', h='Questo non è un libro <mark>di marketing alberghiero.</mark>', sub='Foto, diretto, AI: consigli giusti, inutili finché non sai perché l’ospite dovrebbe scegliere te. Il libro parte da lì.', bg=SABBIA),
+ dict(id='L4', h='Sei passaggi per trovare <mark>perché ti scelgono.</mark>', sub='Bisogno, alternative, unicità, persona, categoria, trend. Alla fine stanno su un foglio solo.', bg=CARTA),
+ dict(id='L5', h='La SPA nuova. Il ristorante rifatto. <mark>Le parole del vicino.</mark>', sub='Sulla homepage: «relax, benessere, posizione strategica». Più servizi aggiungi, più assomigli agli altri.', bg=SABBIA, hs=66),
 ]
 
 CSS = '''
@@ -37,14 +37,14 @@ h1 mark{background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .1em no-repeat;co
 .note{position:absolute;right:72px;bottom:@@NOTEB@@px;font:400 18px/1.3 Figtree;color:#fcfbf8;opacity:.9;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 '''
 FMT = {
- '45': dict(H=1350, TOP=64, HS=74, SS=29, PHT=480, PHB=0, OPOS='38%', TAGB=230, NOTEB=28),
+ '45': dict(H=1350, TOP=60, HS=72, SS=28, PHT=530, PHB=0, OPOS='40%', TAGB=230, NOTEB=28),
  '916': dict(H=1920, TOP=200, HS=80, SS=31, PHT=650, PHB=0, OPOS='86%', TAGB=560, NOTEB=360),
 }
 for a in ADS:
     for f, v in FMT.items():
         dark = a.get('dark')
         css = CSS
-        for k, val in dict(K=NFG2 if dark else NEB, HPX=v['H'], BG=a['bg'], FG=NFG if dark else INK, TOP=v['TOP'], HS=v['HS'], SS=v['SS'],
+        for k, val in dict(K=NFG2 if dark else NEB, HPX=v['H'], BG=a['bg'], FG=NFG if dark else INK, TOP=v['TOP'], HS=a.get('hs', v['HS']) if f=='45' else v['HS'], SS=v['SS'],
                            SUBC=NFG2 if dark else GRAF, PHT=v['PHT'], PHB=v['PHB'], OPOS=v['OPOS'], TAGB=v['TAGB'], NOTEB=v['NOTEB']).items():
             css = css.replace('@@'+k+'@@', str(val))
         css = css.replace('@@SERIF@@', SERIF).replace('@@SANS@@', SANS)

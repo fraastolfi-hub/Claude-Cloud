@@ -62,32 +62,32 @@ const Chiusura: React.FC<{titolo: string}> = ({titolo}) => {
 };
 
 // ---------------------------------------------------------------- R1 · La domanda
-const R1a: React.FC = () => (<Piano bg={CARTA}><Foto /><Kicker /><Title t={'Perché dovrebbero scegliere\n*il tuo hotel?*'} at={0} size={96} /></Piano>);
+const R1a: React.FC = () => (<Piano bg={CARTA}><Foto /><Kicker /><Title t={'Il tuo hotel ha già\n*una risposta.*'} at={0} size={100} /></Piano>);
 const R1b: React.FC = () => {
   const st = useT(0.9, 0.4);
   return (<Piano bg={SABBIA}>
     <p style={{position: 'absolute', left: 72, right: 72, top: 560, margin: 0, font: `500 92px/1.1 ${SERIF}`, color: GRAF, opacity: useT(0, 0.4)}}>
       <span style={{position: 'relative'}}>«Posizione, servizio, camere.»<span style={{position: 'absolute', left: 0, top: '55%', height: 6, width: `${st * 100}%`, background: INK}} /></span>
     </p>
-    <Title t={'È la stessa risposta\n*del vicino.*'} at={1.4} size={96} top={900} />
+    <Title t={'Ce l’ha anche\n*il vicino.*'} at={1.4} size={100} top={900} />
   </Piano>);
 };
-const R1c: React.FC = () => (<Piano bg={NOTTE}><Title t={'E quando le risposte sono uguali, l’ospite confronta\n*il prezzo.*'} at={0.1} size={92} top={620} color={NFG} /></Piano>);
+const R1c: React.FC = () => (<Piano bg={NOTTE}><Title t={'Quando le risposte sono uguali, l’ospite confronta\n*il prezzo.*'} at={0.1} size={92} top={620} color={NFG} /></Piano>);
 const R1d: React.FC = () => {
   const a = useT(0, 0.7);
   return (<Piano bg={CARTA}>
-    <Title t={'Il libro ti porta\nalla risposta *vera.*'} at={0.1} size={90} top={240} />
+    <Title t={'Il libro ti porta\nalla risposta *solo tua.*'} at={0.1} size={90} top={240} />
     <Sub t="Sei passaggi. 120 pagine. Con i casi veri." at={0.7} top={500} />
     <Img src={staticFile('libro.webp')} style={{position: 'absolute', left: 300, top: 700, width: 480, borderRadius: 8, boxShadow: '0 40px 80px rgba(21,24,28,.28)', opacity: a, rotate: `${(1 - a) * 6 - 2}deg`, scale: String(0.9 + 0.1 * a)}} />
   </Piano>);
 };
 // ---------------------------------------------------------------- R2 · La commissione
-const R2a: React.FC = () => (<Piano bg={CARTA}><Foto /><Kicker /><Title t={'Una camera\n*da 180 €.*'} at={0} size={110} /></Piano>);
+const R2a: React.FC = () => (<Piano bg={CARTA}><Foto /><Kicker /><Title t={'Ogni notte su Booking\n*costa una volta e mezza questo libro.*'} at={0} size={84} /></Piano>);
 const R2b: React.FC = () => {
   const s = useS(); const n = Math.round(interpolate(s, [0.4, 1.6], [0, 30], {...clamp, easing: Easing.out(Easing.cubic)}));
   return (<Piano bg={NOTTE}>
     <p style={{position: 'absolute', left: 72, top: 520, margin: 0, font: `500 300px/1 ${SERIF}`, color: NFG}}>{n} €</p>
-    <Title t={'Booking ne trattiene circa 30.\n*Ogni notte.*'} at={1.2} size={84} top={900} color={NFG} />
+    <Title t={'Commissione su una camera da 180 €.\n*Ogni notte.*'} at={1.2} size={84} top={900} color={NFG} />
     <p style={{position: 'absolute', left: 72, bottom: 400, margin: 0, font: `400 28px/1.3 ${SANS}`, color: NFG2, opacity: useT(1.6, 0.4)}}>Esempio: commissione del 17%.</p>
   </Piano>);
 };
@@ -95,7 +95,7 @@ const R2c: React.FC = () => {
   const a = useT(0.3, 0.8); const b = useT(1.2, 0.8);
   const bar = (w: number, col: string) => <div style={{height: 70, width: w, background: col, borderRadius: 4}} />;
   return (<Piano bg={CARTA}>
-    <Title t={'Il libro costa 19,90 €.\n*Una volta.*'} at={0} size={92} top={300} />
+    <Title t={'Il libro: 19,90 €.\n*Una volta.*'} at={0} size={92} top={300} />
     <div style={{position: 'absolute', left: 72, right: 72, top: 760, display: 'grid', gap: 40, font: `600 32px/1.2 ${SANS}`, color: INK}}>
       <div style={{opacity: a}}>Il libro, una volta<div style={{marginTop: 12, display: 'flex', alignItems: 'center', gap: 20}}>{bar(560 * a * 0.66, Y)}<span>19,90 €</span></div></div>
       <div style={{opacity: b}}>La commissione, in un mese di notti<div style={{marginTop: 12, display: 'flex', alignItems: 'center', gap: 20}}>{bar(700 * b, INK)}<span>900 €</span></div></div>
@@ -106,7 +106,7 @@ const R2c: React.FC = () => {
 const R2d: React.FC = () => (<Piano bg={SABBIA}><Title t={'Dentro: come farti scegliere\n*senza abbassare il prezzo.*'} at={0.1} size={90} top={640} /></Piano>);
 // ---------------------------------------------------------------- R3 · Sei passaggi
 const PASSI = ['Il bisogno vero', 'Le alternative', 'Le unicità', 'La persona giusta', 'La categoria', 'Il trend'];
-const R3a: React.FC = () => (<Piano bg={CARTA}><Foto /><Kicker /><Title t={'Sei passaggi.\n*Alla fine stanno su un foglio.*'} at={0} size={92} /></Piano>);
+const R3a: React.FC = () => (<Piano bg={CARTA}><Foto /><Kicker /><Title t={'Sei passaggi per trovare\n*perché ti scelgono.*'} at={0} size={92} /></Piano>);
 const R3b: React.FC = () => (
   <Piano bg={CARTA}>
     <Title t={'Il metodo, *in ordine.*'} at={0} size={80} top={240} />
@@ -121,7 +121,7 @@ const R3b: React.FC = () => (
     </div>
   </Piano>
 );
-const R3c: React.FC = () => (<Piano bg={NOTTE}><Title t={'Salti un passaggio,\nil posizionamento *si ferma in riunione.*'} at={0.1} size={86} top={640} color={NFG} /></Piano>);
+const R3c: React.FC = () => (<Piano bg={NOTTE}><Title t={'Alla fine stanno\n*su un foglio solo.*'} at={0.1} size={96} top={680} color={NFG} /></Piano>);
 
 type Sc = [React.FC, number];
 const montaggio = (sc: Sc[]) => () => {
@@ -129,9 +129,9 @@ const montaggio = (sc: Sc[]) => () => {
   return <Series>{sc.map(([C, d], i) => <Series.Sequence key={i} durationInFrames={Math.round(d * fps)} premountFor={fps}><C /></Series.Sequence>)}</Series>;
 };
 const fine = (t: string): React.FC => () => <Chiusura titolo={t} />;
-export const R1S: Sc[] = [[R1a, 3], [R1b, 3.2], [R1c, 2.6], [R1d, 3], [fine('Hotel Positioning.\n*Il manuale.*'), 3.2]];
+export const R1S: Sc[] = [[R1a, 3], [R1b, 3.2], [R1c, 2.6], [R1d, 3], [fine('Tu, oggi,\n*cosa risponderesti?*'), 3.2]];
 export const R2S: Sc[] = [[R2a, 2.6], [R2b, 3.2], [R2c, 3.6], [R2d, 2.4], [fine('Lo paghi una volta.\n*Lo usi ogni notte.*'), 3.2]];
-export const R3S: Sc[] = [[R3a, 3], [R3b, 5], [R3c, 3], [fine('Sei passaggi.\n*Un foglio.*'), 4]];
+export const R3S: Sc[] = [[R3a, 3], [R3b, 5], [R3c, 3], [fine('Il canvas è\n*gratis con il libro.*'), 4]];
 export const durata = (sc: Sc[]) => sc.reduce((a, [, d]) => a + d, 0);
 export const ReelDomanda = montaggio(R1S);
 export const ReelCommissione = montaggio(R2S);
