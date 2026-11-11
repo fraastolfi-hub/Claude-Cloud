@@ -26,7 +26,7 @@
       if (!window.HPtrack) return;
       var pos = all.length > 1 ? (i === 0 ? 'alto' : i === all.length - 1 ? 'fondo' : 'centro') : 'unico';
       var pag = location.pathname.replace(/^\/|\/$/g, '').replace(/\//g, '-') || 'home';
-      HPtrack('VaiAmazon', { da: pag + '-' + pos, pagina: location.pathname, posizione: pos, value: 19.90, currency: 'EUR' });
+      HPtrack('VaiAmazon', { da: pag + '-' + pos, pagina: location.pathname, posizione: pos, value: 8.80, currency: 'EUR' });
       var c = window.HPconsent ? HPconsent() : {};
       if (!(c.stats || c.mkt) || e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0 || a.target === '_blank') return;
       e.preventDefault();
