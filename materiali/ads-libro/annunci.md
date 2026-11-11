@@ -120,3 +120,17 @@ Fatti usati: 19,90 € su Amazon, cartaceo o Kindle, 120 pagine, metodo in 6 pas
 ## Note
 - Se la foto di Francesco con il libro è generata o ritoccata con l’AI, va attivata la dichiarazione AI dell’annuncio (come per il Tagliando).
 - I reel non hanno audio: su Meta va bene, i testi sono già a schermo. Si può aggiungere musica dalla libreria di Meta.
+
+## Campagna su Meta (creata l’11 novembre 2026, in pausa)
+
+Account «Francesco Astolfi Hotel Positioning» (1820080458983180) · pagina «Francesco Astolfi - Marketing e Positioning per Hotel e Ristoranti» · Instagram @webcopywriter.
+
+| Oggetto | ID | Impostazioni |
+|---|---|---|
+| Campagna «Libro Hotel Positioning · Italia · Traffico Amazon» | 120259095795410197 | Obiettivo traffico, budget di campagna 10 €/giorno, costo più basso |
+| Gruppo «Italia · broad · clic sul libro» | 120259095796680197 | Clic sul link · Italia · da 25 anni · Advantage+ pubblico e posizionamenti |
+| L1 · L2 · L3 · L4 · L5 (immagini) | 120259095805490197 · …805750197 · …806500197 · …807010197 · …807410197 | 4:5 nel feed, 9:16 in Storie e Reel |
+| R1 · R2 · R3 (reel) | 120259095808410197 · …808970197 · …809210197 | Video 9:16, copertina = statica 9:16 dello stesso angolo |
+
+Tutti gli annunci: pulsante «Scopri di più», link `hotelpositioning.com/vai/libro?da=meta-l1…l5 / meta-r1…r3`, dichiarazione AI attiva. Immagini e video caricati su Meta da GitHub (repository pubblico): nessun file sul sito.
+Per accendere: campagna, gruppo e annunci vanno attivati (scrivere «accendi libro»).
