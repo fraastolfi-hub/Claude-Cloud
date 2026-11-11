@@ -121,7 +121,7 @@ Fatti usati: 19,90 € su Amazon, cartaceo o Kindle, 120 pagine, metodo in 6 pas
 - Se la foto di Francesco con il libro è generata o ritoccata con l’AI, va attivata la dichiarazione AI dell’annuncio (come per il Tagliando).
 - I reel non hanno audio: su Meta va bene, i testi sono già a schermo. Si può aggiungere musica dalla libreria di Meta.
 
-## Campagna su Meta (creata l’11 novembre 2026, in pausa)
+## Campagna su Meta (creata l’11 novembre 2026, accesa l’11 novembre 2026)
 
 Account «Francesco Astolfi Hotel Positioning» (1820080458983180) · pagina «Francesco Astolfi - Marketing e Positioning per Hotel e Ristoranti» · Instagram @webcopywriter.
 
@@ -135,7 +135,7 @@ Account «Francesco Astolfi Hotel Positioning» (1820080458983180) · pagina «F
 Tutti gli annunci: pulsante «Scopri di più», link `hotelpositioning.com/libro/?utm_source=meta&utm_medium=paid_social&utm_campaign=libro&utm_content=l1…l5 / r1…r3`, dichiarazione AI attiva. Immagini e video caricati su Meta da GitHub (repository pubblico): nessun file sul sito.
 I primi 8 annunci (link a `/vai/libro`, cioè dritti su Amazon) sono archiviati.
 Le visite alla pagina vengono contate solo da chi accetta i cookie di marketing: il pixel parte dopo il consenso.
-Per accendere: campagna, gruppo e annunci vanno attivati (scrivere «accendi libro»).
+Accesa l’11 novembre 2026: campagna, gruppo e 8 annunci attivi. Ottimizzazione da passare alla conversione «VaiAmazon» (id 2563638480813478, valore 8,80 € = royalty) dopo 20-30 conversioni.
 
 Pubblici personalizzati (11 novembre 2026), aggiunti come suggerimento al gruppo:
 - «Visitatori sito · 180 giorni» 120259096037860197 (pixel, solo chi accetta i cookie di marketing)
