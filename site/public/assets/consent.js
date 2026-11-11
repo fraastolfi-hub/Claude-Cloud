@@ -58,7 +58,7 @@
     if (loaded.meta && window.fbq) {
       var eid = opts && opts.eventID ? { eventID: opts.eventID } : undefined;
       // clic verso Amazon (pulsanti della pagina libro e /vai/libro): evento standard, così una campagna può ottimizzarci sopra
-      if (name === 'amazon_click' || name === 'VaiAmazon') fbq('track', 'InitiateCheckout', Object.assign({ value: 19.90, currency: 'EUR', content_name: 'Libro Hotel Positioning', content_type: 'product' }, params), eid);
+      if (name === 'VaiAmazon') fbq('track', 'InitiateCheckout', Object.assign({ value: 19.90, currency: 'EUR', content_name: 'Libro Hotel Positioning', content_type: 'product' }, params), eid);
       else fbq(name === 'lead' ? 'track' : 'trackCustom', name === 'lead' ? 'Lead' : name, params, eid);
     }
   }
