@@ -1,6 +1,6 @@
 # Annunci Meta · libro «Hotel Positioning»
 
-Destinazione: `https://hotelpositioning.com/vai/libro?da=meta-<id>` (registra la fonte e porta ad Amazon). Pulsante: **Scopri di più**.
+Destinazione: la pagina del libro sul sito, `https://hotelpositioning.com/libro/?utm_source=meta&utm_medium=paid_social&utm_campaign=libro&utm_content=<id>`. Da lì si va su Amazon. Pulsante: **Scopri di più**.
 Testi a schermo ripassati con neurocopy (stesso principio del testo principale di ogni angolo).
 Immagini: `out/<id>_45.png` (feed 4:5) e `out/<id>_916.png` (storie e reel 9:16). Reel: `reel-*.mp4` (9:16, 15 s, senza voce).
 Fatti usati: 19,90 € su Amazon, cartaceo o Kindle, 120 pagine, metodo in 6 passaggi, canvas tra gli strumenti gratuiti, rimborso Amazon entro 14 giorni.
@@ -127,10 +127,16 @@ Account «Francesco Astolfi Hotel Positioning» (1820080458983180) · pagina «F
 
 | Oggetto | ID | Impostazioni |
 |---|---|---|
-| Campagna «Libro Hotel Positioning · Italia · Traffico Amazon» | 120259095795410197 | Obiettivo traffico, budget di campagna 10 €/giorno, costo più basso |
-| Gruppo «Italia · broad · clic sul libro» | 120259095796680197 | Clic sul link · Italia · da 25 anni · Advantage+ pubblico e posizionamenti |
-| L1 · L2 · L3 · L4 · L5 (immagini) | 120259095805490197 · …805750197 · …806500197 · …807010197 · …807410197 | 4:5 nel feed, 9:16 in Storie e Reel |
-| R1 · R2 · R3 (reel) | 120259095808410197 · …808970197 · …809210197 | Video 9:16, copertina = statica 9:16 dello stesso angolo |
+| Campagna «Libro Hotel Positioning · Italia · Pagina libro sul sito» | 120259095795410197 | Obiettivo traffico, budget di campagna 10 €/giorno, costo più basso |
+| Gruppo «Italia · 30-65 · visite pagina libro» | 120259095796680197 | Ottimizzato su visualizzazioni della pagina di destinazione · Italia · minimo 25 anni, suggerimento 30–65 · Advantage+ pubblico e posizionamenti |
+| L1 · L2 · L3 · L4 · L5 (immagini) | 120259095986870197 · …989200197 · …989680197 · …990090197 · …990660197 | 4:5 nel feed, 9:16 in Storie e Reel |
+| R1 · R2 · R3 (reel) | 120259095990900197 · …991150197 · …991410197 | Video 9:16, copertina = statica 9:16 dello stesso angolo |
 
-Tutti gli annunci: pulsante «Scopri di più», link `hotelpositioning.com/vai/libro?da=meta-l1…l5 / meta-r1…r3`, dichiarazione AI attiva. Immagini e video caricati su Meta da GitHub (repository pubblico): nessun file sul sito.
+Tutti gli annunci: pulsante «Scopri di più», link `hotelpositioning.com/libro/?utm_source=meta&utm_medium=paid_social&utm_campaign=libro&utm_content=l1…l5 / r1…r3`, dichiarazione AI attiva. Immagini e video caricati su Meta da GitHub (repository pubblico): nessun file sul sito.
+I primi 8 annunci (link a `/vai/libro`, cioè dritti su Amazon) sono archiviati.
+Le visite alla pagina vengono contate solo da chi accetta i cookie di marketing: il pixel parte dopo il consenso.
 Per accendere: campagna, gruppo e annunci vanno attivati (scrivere «accendi libro»).
+
+Da sbloccare su Meta per pubblici migliori:
+- accettare i termini dei pubblici personalizzati: https://www.facebook.com/customaudiences/app/tos/?act=1820080458983180
+- dare all’account pubblicitario il permesso sui pubblici dell’account Instagram @webcopywriter.
