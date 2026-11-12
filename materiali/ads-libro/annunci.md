@@ -188,7 +188,7 @@ Tutti: descrizione «19,90 € · cartaceo o Kindle», pulsante «Scopri di più
 S2–S5 caricate e attive nel gruppo 120259095796680197: S2 120259116908040197 · S3 120259116908600197 · S4 120259116909420197 · S5 120259116910060197. Link `/libro/?utm_content=s2…s5`.
 Messi in pausa gli 8 annunci precedenti (L1–L5 e R1–R3). S1 caricata e attiva con il testo rivisto: 120259116929680197. Immagini (hash 4:5 60975763f5cf85f54d94a7d082781f57, 9:16 0452f328f90504a26c0a3eccaae34a7a).
 
-### S6 · Il sito nuovo (proposta v2, 12 novembre 2026)
+### S6 · Il sito nuovo (v2, attiva dal 12 novembre 2026, annuncio 120259116995220197)
 - Immagine: «Stai per rifare il sito del tuo hotel? Non farlo.» / «Non ancora. Prima decidi per chi è il tuo hotel e cosa gli offri che gli altri non hanno. Il sito viene dopo.»
 - Testo: Stai per rifare il sito del tuo hotel? Aspetta un attimo.
   Un sito nuovo non serve se l’ospite non capisce che hotel sei. Per famiglie? Per chi viaggia in bici? Per chi cerca silenzio? Se non l’hai scelto tu, il sito non può dirlo. E l’ospite confronta solo il prezzo.
