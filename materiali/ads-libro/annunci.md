@@ -183,3 +183,7 @@ Foto di Francesco + headline + subheadline su fascia gialla, testo nero. File: `
 - Titolo: Hotel Positioning, il libro
 
 Tutti: descrizione «19,90 € · cartaceo o Kindle», pulsante «Scopri di più», link alla pagina /libro/ come gli altri.
+
+### Su Meta (12 novembre 2026)
+S2–S5 caricate e attive nel gruppo 120259095796680197: S2 120259116908040197 · S3 120259116908600197 · S4 120259116909420197 · S5 120259116910060197. Link `/libro/?utm_content=s2…s5`.
+Messi in pausa gli 8 annunci precedenti (L1–L5 e R1–R3). S1 in attesa del testo nuovo; immagini già caricate (hash 4:5 60975763f5cf85f54d94a7d082781f57, 9:16 0452f328f90504a26c0a3eccaae34a7a).
