@@ -142,3 +142,44 @@ Pubblici personalizzati (11 novembre 2026), aggiunti come suggerimento al gruppo
 - «Simile 1% · visitatori sito» 120259096038610197
 
 Ancora da sbloccare: il permesso sui pubblici dell’account Instagram @webcopywriter (errore 2654 su 17841400590280014).
+
+## Versione semplice S1–S5 (12 novembre 2026, da approvare)
+
+Foto di Francesco + headline + subheadline su fascia gialla, testo nero. File: `genera_semplici.py` → `out-semplici/s1…s5_{45,916}.png`. Testi terra terra, frasi corte.
+
+### S1 · La domanda
+- Immagine: «Perché un ospite dovrebbe scegliere il tuo hotel?» / «Se non sai rispondere in una frase, sceglierà quello che costa meno.»
+- Testo: Fai una prova: scrivi in una frase perché un ospite dovrebbe scegliere il tuo hotel e non un altro.
+  Se ti escono «posizione, pulizia, cortesia», sono le parole che usano tutti. E allora l’ospite guarda il prezzo.
+  Nel libro ti spiego come trovare la tua frase. 19,90 € su Amazon.
+- Titolo: Il libro per chi gestisce un hotel
+
+### S2 · Le stesse cose
+- Immagine: «Il tuo hotel e quello accanto dicono le stesse cose.» / «“Bella posizione, ottimo servizio, camere confortevoli.” Così l’ospite guarda solo il prezzo.»
+- Testo: Apri il sito del tuo hotel e quello dell’hotel accanto. Leggi le prime righe.
+  Quasi sempre dicono le stesse cose.
+  Quando tutti dicono lo stesso, l’ospite sceglie chi costa meno. Il libro ti aiuta a dire una cosa che è solo tua.
+- Titolo: Come farti scegliere
+
+### S3 · Gli sconti
+- Immagine: «Smetti di abbassare i prezzi per riempire le camere.» / «Un libro pratico per farti scegliere senza fare sconti.»
+- Testo: Abbassare i prezzi riempie le camere per qualche giorno. Poi lo fanno anche gli altri e sei da capo.
+  C’è un altro modo: dare all’ospite un motivo chiaro per scegliere te.
+  Il libro ti spiega come, passo per passo. 19,90 € su Amazon.
+- Titolo: Farsi scegliere senza sconti
+
+### S4 · Booking
+- Immagine: «Booking ti prende 30 € a notte. Questo libro costa 19,90 €.» / «E ti aiuta a dipendere meno dai portali.»
+- Testo: Una camera da 180 € venduta su Booking: circa 30 € vanno al portale. Ogni notte.
+  Il libro costa 19,90 €, una volta sola.
+  Dentro trovi come farti scegliere per quello che sei, non perché sei in cima alla lista.
+- Titolo: Meno portali, più ospiti tuoi
+
+### S5 · Chi lo ha scritto
+- Immagine: «Ho scritto un libro per chi gestisce un hotel.» / «Sei passi semplici per far capire all’ospite perché scegliere te.»
+- Testo: Ciao, sono Francesco. Lavoro da anni con gli hotel su una domanda sola: perché un ospite dovrebbe scegliere proprio te?
+  Ho messo il metodo in un libro: sei passi semplici, con esempi veri.
+  È scritto per chi gestisce un hotel, non per chi fa marketing. 19,90 € su Amazon.
+- Titolo: Hotel Positioning, il libro
+
+Tutti: descrizione «19,90 € · cartaceo o Kindle», pulsante «Scopri di più», link alla pagina /libro/ come gli altri.
