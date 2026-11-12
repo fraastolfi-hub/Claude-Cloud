@@ -15,6 +15,7 @@ ADS = [
  dict(id='S2', h='Il tuo hotel e quello accanto dicono le stesse cose.', s='«Bella posizione, ottimo servizio, camere confortevoli.» Così l’ospite guarda solo il prezzo.'),
  dict(id='S3', h='Smetti di abbassare i prezzi per riempire le camere.', s='Un libro pratico per farti scegliere senza fare sconti.'),
  dict(id='S4', h='Booking ti prende 30 € a notte. Questo libro costa 19,90 €.', s='E ti aiuta a dipendere meno dai portali.'),
+ dict(id='S6', h='Stai per rifare il sito del tuo hotel? Non farlo.', s='Non ancora. Prima scopri perché un ospite dovrebbe scegliere te. Se no avrai un sito più bello che dice le stesse cose.'),
  dict(id='S5', h='Ho scritto un libro per chi gestisce un hotel.', s='Sei passi semplici per far capire all’ospite perché scegliere te.'),
 ]
 

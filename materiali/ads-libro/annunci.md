@@ -187,3 +187,10 @@ Tutti: descrizione «19,90 € · cartaceo o Kindle», pulsante «Scopri di più
 ### Su Meta (12 novembre 2026)
 S2–S5 caricate e attive nel gruppo 120259095796680197: S2 120259116908040197 · S3 120259116908600197 · S4 120259116909420197 · S5 120259116910060197. Link `/libro/?utm_content=s2…s5`.
 Messi in pausa gli 8 annunci precedenti (L1–L5 e R1–R3). S1 caricata e attiva con il testo rivisto: 120259116929680197. Immagini (hash 4:5 60975763f5cf85f54d94a7d082781f57, 9:16 0452f328f90504a26c0a3eccaae34a7a).
+
+### S6 · Il sito nuovo (proposta, 12 novembre 2026)
+- Immagine: «Stai per rifare il sito del tuo hotel? Non farlo.» / «Non ancora. Prima scopri perché un ospite dovrebbe scegliere te. Se no avrai un sito più bello che dice le stesse cose.»
+- Testo: Stai per rifare il sito del tuo hotel? Aspetta un attimo.
+  Foto nuove, grafica moderna e poi le solite frasi: «posizione strategica, camere confortevoli, colazione abbondante». Il sito è più bello, ma l’ospite continua a scegliere in base al prezzo.
+  Prima devi sapere cosa dire. Poi lo metti sul sito. Il libro ti aiuta a capire cosa dire. 19,90 € su Amazon.
+- Titolo: Prima del sito, leggi questo
