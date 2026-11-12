@@ -21,7 +21,12 @@
   // clic sui pulsanti Amazon: stesso evento VaiAmazon di /vai/libro (in GTM ha già attivatore e tag),
   // con da = pagina-posizione (es. libro-alto). Se il tracciamento è attivo si aspetta un attimo prima
   // di uscire dal sito, perché l'evento parta davvero.
-  $$('a[href*="amazon."]').forEach(function(a, i, all){
+  // i link /vai/amazon (passaggio che conta i clic senza cookie) si portano dietro gli utm con cui si è arrivati
+  var utm = new URLSearchParams();
+  new URLSearchParams(location.search).forEach(function(v, k){ if (/^utm_(source|medium|campaign|content)$/.test(k)) utm.set(k, v); });
+  if (utm.toString()) $$('a[href^="/vai/amazon"]').forEach(function(a){ a.href += (a.href.indexOf('?') > -1 ? '&' : '?') + utm.toString(); });
+
+  $$('a[href*="amazon."], a[href^="/vai/amazon"]').forEach(function(a, i, all){
     a.addEventListener('click', function(e){
       if (!window.HPtrack) return;
       var pos = all.length > 1 ? (i === 0 ? 'alto' : i === all.length - 1 ? 'fondo' : 'centro') : 'unico';

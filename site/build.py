@@ -160,7 +160,9 @@ def build():
         + "</urlset>\n"
     )
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
-    (OUT / "_redirects").write_text("".join(f"{a}  {b}  301\n" for a, b in REDIRECTS.items()))
+    # /vai/amazon: passaggio che conta i clic verso Amazon (funzione netlify/functions/amazon.mjs)
+    (OUT / "_redirects").write_text("/vai/amazon  /.netlify/functions/amazon  200\n"
+                                    + "".join(f"{a}  {b}  301\n" for a, b in REDIRECTS.items()))
     print(f"{len(urls)} pagine in {OUT}/")
 
 
