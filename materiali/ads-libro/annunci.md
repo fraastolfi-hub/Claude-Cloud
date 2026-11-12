@@ -143,15 +143,15 @@ Pubblici personalizzati (11 novembre 2026), aggiunti come suggerimento al gruppo
 
 Ancora da sbloccare: il permesso sui pubblici dell’account Instagram @webcopywriter (errore 2654 su 17841400590280014).
 
-## Versione semplice S1–S5 (12 novembre 2026, da approvare)
+## Versione semplice S1–S5 (12 novembre 2026, attive)
 
 Foto di Francesco + headline + subheadline su fascia gialla, testo nero. File: `genera_semplici.py` → `out-semplici/s1…s5_{45,916}.png`. Testi terra terra, frasi corte.
 
 ### S1 · La domanda
 - Immagine: «Perché un ospite dovrebbe scegliere il tuo hotel?» / «Se non sai rispondere in una frase, sceglierà quello che costa meno.»
-- Testo: Fai una prova: scrivi in una frase perché un ospite dovrebbe scegliere il tuo hotel e non un altro.
-  Se ti escono «posizione, pulizia, cortesia», sono le parole che usano tutti. E allora l’ospite guarda il prezzo.
-  Nel libro ti spiego come trovare la tua frase. 19,90 € su Amazon.
+- Testo: Perché un ospite dovrebbe scegliere il tuo hotel e non quello vicino?
+  Se ti viene da dire «bella posizione, camere pulite, personale gentile», c’è un problema: lo dicono tutti. E quando tutti dicono la stessa cosa, l’ospite sceglie chi costa meno.
+  Nel libro ti aiuto a trovare il motivo vero per cui scelgono te. 19,90 € su Amazon.
 - Titolo: Il libro per chi gestisce un hotel
 
 ### S2 · Le stesse cose
@@ -186,4 +186,4 @@ Tutti: descrizione «19,90 € · cartaceo o Kindle», pulsante «Scopri di più
 
 ### Su Meta (12 novembre 2026)
 S2–S5 caricate e attive nel gruppo 120259095796680197: S2 120259116908040197 · S3 120259116908600197 · S4 120259116909420197 · S5 120259116910060197. Link `/libro/?utm_content=s2…s5`.
-Messi in pausa gli 8 annunci precedenti (L1–L5 e R1–R3). S1 in attesa del testo nuovo; immagini già caricate (hash 4:5 60975763f5cf85f54d94a7d082781f57, 9:16 0452f328f90504a26c0a3eccaae34a7a).
+Messi in pausa gli 8 annunci precedenti (L1–L5 e R1–R3). S1 caricata e attiva con il testo rivisto: 120259116929680197. Immagini (hash 4:5 60975763f5cf85f54d94a7d082781f57, 9:16 0452f328f90504a26c0a3eccaae34a7a).
