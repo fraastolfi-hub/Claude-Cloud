@@ -188,9 +188,10 @@ Tutti: descrizione «19,90 € · cartaceo o Kindle», pulsante «Scopri di più
 S2–S5 caricate e attive nel gruppo 120259095796680197: S2 120259116908040197 · S3 120259116908600197 · S4 120259116909420197 · S5 120259116910060197. Link `/libro/?utm_content=s2…s5`.
 Messi in pausa gli 8 annunci precedenti (L1–L5 e R1–R3). S1 caricata e attiva con il testo rivisto: 120259116929680197. Immagini (hash 4:5 60975763f5cf85f54d94a7d082781f57, 9:16 0452f328f90504a26c0a3eccaae34a7a).
 
-### S6 · Il sito nuovo (proposta, 12 novembre 2026)
-- Immagine: «Stai per rifare il sito del tuo hotel? Non farlo.» / «Non ancora. Prima scopri perché un ospite dovrebbe scegliere te. Se no avrai un sito più bello che dice le stesse cose.»
+### S6 · Il sito nuovo (proposta v2, 12 novembre 2026)
+- Immagine: «Stai per rifare il sito del tuo hotel? Non farlo.» / «Non ancora. Prima decidi per chi è il tuo hotel e cosa gli offri che gli altri non hanno. Il sito viene dopo.»
 - Testo: Stai per rifare il sito del tuo hotel? Aspetta un attimo.
-  Foto nuove, grafica moderna e poi le solite frasi: «posizione strategica, camere confortevoli, colazione abbondante». Il sito è più bello, ma l’ospite continua a scegliere in base al prezzo.
-  Prima devi sapere cosa dire. Poi lo metti sul sito. Il libro ti aiuta a capire cosa dire. 19,90 € su Amazon.
-- Titolo: Prima del sito, leggi questo
+  Un sito nuovo non serve se l’ospite non capisce che hotel sei. Per famiglie? Per chi viaggia in bici? Per chi cerca silenzio? Se non l’hai scelto tu, il sito non può dirlo. E l’ospite confronta solo il prezzo.
+  Prima vengono le scelte: a chi ti rivolgi, che valore gli dai, in quale categoria vuoi essere il riferimento. Poi il sito.
+  Il libro ti guida in queste scelte, passo per passo. 19,90 € su Amazon.
+- Titolo: Prima le scelte, poi il sito
