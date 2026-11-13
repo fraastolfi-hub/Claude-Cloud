@@ -11,7 +11,9 @@
 import { getStore } from '@netlify/blobs';
 
 export const VIAGGIO = /^[a-z0-9-]{2,40}$/;
-export const store = () => getStore('voyager');
+// consistenza forte: senza, Netlify può restituire una copia vecchia di qualche secondo e il controllo
+// sull'etag rifiuterebbe ogni scrittura dopo la prima
+export const store = () => getStore({ name: 'voyager', consistency: 'strong' });
 
 export const vuoto = () => ({
   hotel: [], note: [], sfide: [], risposte: [], partecipanti: [],
