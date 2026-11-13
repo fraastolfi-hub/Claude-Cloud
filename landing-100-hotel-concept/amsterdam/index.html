@@ -33,7 +33,7 @@ h1,h2,h3{font-family:var(--f-display);font-weight:700;text-transform:uppercase;l
 .top .wrap{display:flex;align-items:center;gap:12px}
 .brand{flex:1;line-height:1;min-width:0}
 .brand img{height:16px;width:auto;display:block}
-.brand small{display:block;font-family:var(--f-display);font-size:10.5px;color:var(--gold);opacity:.8;letter-spacing:.14em;text-transform:uppercase;margin-top:5px}
+.brand small{display:block;font-family:var(--f-display);font-size:10.5px;color:var(--gold);opacity:.8;letter-spacing:.12em;text-transform:uppercase;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .me{background:rgba(200,169,77,.18);border:0;border-radius:999px;padding:6px 12px;font-size:13px;color:#fff;cursor:pointer;max-width:45vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sync{width:8px;height:8px;border-radius:50%;background:#9DE0C6;flex:none}
 .sync.off{background:#F3A07A}
@@ -190,7 +190,7 @@ details summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:600;
 <div id="app" hidden>
   <header class="top">
     <div class="wrap">
-      <div class="brand"><img src="logo-hotel-voyager.png" alt="Hotel Voyager" width="788" height="79"><small>Amsterdam · diario di bordo</small></div>
+      <div class="brand"><img src="logo-hotel-voyager.png" alt="Hotel Voyager" width="788" height="79"><small>Diario · Amsterdam</small></div>
       <span class="sync" id="sync" title="Sincronizzato"></span>
       <button class="me" id="meBtn" type="button"></button>
     </div>
