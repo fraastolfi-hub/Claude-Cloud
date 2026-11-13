@@ -220,6 +220,16 @@ const PARTECIPANTI = [
   ['Nicola Delvecchio', 'Hotel Voyager'],
 ];
 
+// Tappe in programma: compaiono da sole al primo ingresso, nell'ordine del viaggio
+const TAPPE = [
+  ['The Social Hub Amsterdam', ''],
+  ['Hotel Arena', 'Oosterpark'],
+  ['Zoku Amsterdam', 'Weesperstraat'],
+  ['Rosewood Amsterdam', 'Prinsengracht'],
+  ['Nhow Amsterdam', 'RAI'],
+  ['Jakarta Hotel', 'Java-eiland'],
+];
+
 const CARTE = [
   'Cosa costa poco a questo hotel e vale tantissimo per l\'ospite?',
   'Se domani togliessi la reception, cosa metteresti al suo posto?',
@@ -336,6 +346,7 @@ async function aggiorna(forza) {
     if (!j.ok) throw new Error();
     $('#sync').classList.remove('off');
     AI = !!j.ai;
+    caricaTappe(j.stato);
     const nuovo = JSON.stringify(j.stato);
     if (forza || nuovo !== lastJson) {
       lastJson = nuovo; S = j.stato;
@@ -354,6 +365,16 @@ function avviaPoll() {
   clearInterval(pollTimer);
   pollTimer = setInterval(() => { if (!document.hidden) aggiorna(); }, 8000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) aggiorna(); });
+}
+let tappeCaricate = false;
+async function caricaTappe(stato) {
+  if (tappeCaricate) return;
+  tappeCaricate = true;
+  const mancano = TAPPE.map(([nome, zona], i) => ({ nome, zona, giorno: String(i + 1) }))
+    .filter((t) => !stato.hotel.some((x) => x.nome.toLowerCase() === t.nome.toLowerCase()));
+  if (!mancano.length) return;
+  for (const t of mancano) { try { await api('hotel', { ...t, autore: 'Nicola Delvecchio' }); } catch {} }
+  aggiorna(true);
 }
 async function azione(nome, dati, ok) {
   try { const j = await api(nome, dati); if (ok) toast(ok); await aggiorna(true); return j; }
@@ -471,13 +492,14 @@ function renderTappe() {
     h('p', { class: 'intro' }, 'Un hotel per volta. Entra, scrivi cosa ti colpisce, metti "+1 Anch\'io" alle note degli altri che condividi. I voti decidono la classifica finale.')));
 
   if (!S.hotel.length) v.append(h('div', { class: 'card empty' }, 'Ancora nessun hotel. Aggiungi il primo della giornata qui sotto.'));
-  const ordinati = [...S.hotel].sort((a, b) => b.ts - a.ts);
+  const ordine = (x) => Number(x.giorno) || 999;
+  const ordinati = [...S.hotel].sort((a, b) => ordine(a) - ordine(b) || a.ts - b.ts);
   for (const ho of ordinati) {
     const note = S.note.filter((n) => n.hotelId === ho.id);
     const top = [...note].sort((a, b) => (b.voti || []).length - (a.voti || []).length)[0];
     v.append(h('button', { type: 'button', class: 'card hotel', onclick: () => { ui.hotelId = ho.id; render(); scrollTo(0, 0); } },
       h('div', { class: 'n' }, String(note.length)),
-      h('div', { class: 'tt' }, h('b', null, ho.nome), h('span', null, top ? (TIPI[top.tipo] || TIPI.rubare).e + ' ' + top.testo : (ho.zona || 'Nessuna nota ancora'))),
+      h('div', { class: 'tt' }, h('b', null, ho.nome), h('span', null, top ? (TIPI[top.tipo] || TIPI.rubare).e + ' ' + top.testo : [Number(ho.giorno) ? 'Tappa ' + ho.giorno : '', ho.zona].filter(Boolean).join(' · ') || 'Nessuna nota ancora')),
       h('span', { 'aria-hidden': 'true' }, '›')));
   }
 
@@ -496,7 +518,7 @@ function renderTappe() {
     } catch (e) { toast(e.message); }
     btn.disabled = false;
   });
-  v.append(h('div', { class: 'card' }, h('h3', null, 'Nuova tappa'), h('span', { class: 'lbl' }, 'Hotel'), nome, h('span', { class: 'lbl' }, 'Dove'), zona, h('div', { style: 'margin-top:14px' }, btn)));
+  v.append(h('div', { class: 'card' }, h('h3', null, 'Una tappa fuori programma?'), h('span', { class: 'lbl' }, 'Hotel'), nome, h('span', { class: 'lbl' }, 'Dove'), zona, h('div', { style: 'margin-top:14px' }, btn)));
 
   const generali = S.note.filter((n) => !n.hotelId && n.tipo !== 'stimolo');
   if (generali.length) v.append(h('div', { class: 'card' }, h('h3', null, 'Note sparse'), generali.slice().reverse().map((n) => vistaNota(n))));
@@ -508,7 +530,7 @@ function renderHotel(v) {
   v.append(h('button', { type: 'button', class: 'back', onclick: () => { ui.hotelId = null; render(); } }, '‹ Tutte le tappe'));
   v.append(h('div', { class: 'card' },
     h('h2', null, ho.nome),
-    h('p', { class: 'intro' }, [ho.zona, 'aggiunto da ' + ho.autore].filter(Boolean).join(' · ')),
+    h('p', { class: 'intro' }, [Number(ho.giorno) ? 'Tappa ' + ho.giorno : 'Fuori programma', ho.zona].filter(Boolean).join(' · ')),
     (ho.autore === io.nome || isAdmin()) ? h('button', { type: 'button', class: 'del', onclick: () => { if (confirm('Elimino questo hotel? Le note restano tra le note sparse.')) { azione('elimina', { id: ho.id }, 'Hotel eliminato'); ui.hotelId = null; } } }, 'elimina hotel') : null));
 
   v.append(compositoreNota({ hotelId: ho.id, titolo: 'Cosa ti porti via da qui?' }));
