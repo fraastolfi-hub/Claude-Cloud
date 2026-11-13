@@ -56,3 +56,17 @@ export async function modifica(chiave, fn, iniziale = vuoto) {
   }
   throw new Error('documento occupato, riprova');
 }
+
+// Adattatore al formato v2 delle funzioni Netlify (Request → Response): solo in v2 Blobs
+// è configurato per la consistenza forte. La logica resta scritta nel formato «evento».
+export const v2 = (gestisci) => async (req) => {
+  const u = new URL(req.url);
+  const event = {
+    httpMethod: req.method,
+    queryStringParameters: Object.fromEntries(u.searchParams),
+    body: req.method === 'GET' || req.method === 'HEAD' ? '' : await req.text(),
+    isBase64Encoded: false,
+  };
+  const r = (await gestisci(event)) || { statusCode: 200 };
+  return new Response(r.body ?? null, { status: r.statusCode || 200, headers: r.headers || {} });
+};

@@ -7,8 +7,7 @@
 // Ognuno si identifica col nome che scrive all'ingresso: è un gruppo di 6-8 persone che si conoscono,
 // il codice del viaggio tiene fuori gli estranei. Nicola modera con la chiave admin.
 
-import { connectLambda } from '@netlify/blobs';
-import { VIAGGIO, store, vuoto, nuovoId, t, json, leggiCorpo, codiceOk, adminOk, modifica } from '../lib/voyager.mjs';
+import { VIAGGIO, store, vuoto, nuovoId, t, json, leggiCorpo, codiceOk, adminOk, modifica, v2 } from '../lib/voyager.mjs';
 
 const TIPI_NOTA = ['rubare', 'evitare', 'dettaglio', 'domanda', 'stimolo'];
 const AREE = ['management', 'comunicazione', 'design', 'esperienza', ''];
@@ -16,7 +15,7 @@ const MAX = 2000; // elementi per elenco: un viaggio ne produce qualche centinai
 
 const togliVoto = (el, chi) => { el.voti = (el.voti || []).filter((v) => v !== chi); };
 
-export const handler = async (event) => {
+const gestisci = async (event) => {
   const q = event.queryStringParameters || {};
   const env = process.env;
 
@@ -25,8 +24,6 @@ export const handler = async (event) => {
       VOYAGER_CODICE: !!env.VOYAGER_CODICE, VOYAGER_ADMIN: !!env.VOYAGER_ADMIN, ANTHROPIC_API_KEY: !!env.ANTHROPIC_API_KEY,
     });
   }
-
-  try { connectLambda(event); } catch (e) { console.error('voyager blobs', e); return json(500, { ok: false, errore: 'archivio non disponibile' }); }
 
   if (event.httpMethod === 'GET') {
     const viaggio = t(q.viaggio, 40);
@@ -177,3 +174,5 @@ export const handler = async (event) => {
     return json(500, { ok: false, errore: e.message || 'errore' });
   }
 };
+
+export default v2(gestisci);

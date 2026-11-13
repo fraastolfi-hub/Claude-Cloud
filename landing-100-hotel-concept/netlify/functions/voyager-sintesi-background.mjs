@@ -6,8 +6,7 @@
 //   persona  → cosa porta a casa una persona, partendo dalla sua sfida e dalla sua struttura
 //   hotel    → le lezioni di un singolo hotel visitato
 
-import { connectLambda } from '@netlify/blobs';
-import { VIAGGIO, store, vuoto, t, leggiCorpo, codiceOk, adminOk, modifica } from '../lib/voyager.mjs';
+import { VIAGGIO, store, vuoto, t, leggiCorpo, codiceOk, adminOk, modifica, v2 } from '../lib/voyager.mjs';
 
 const MODELLO = 'claude-sonnet-5-5';
 const TIPI = { rubare: 'Da rubare', evitare: 'Da non fare mai', dettaglio: 'Dettaglio invisibile', domanda: 'Domanda aperta', stimolo: 'Risposta a uno stimolo' };
@@ -94,7 +93,7 @@ async function chiediClaude(prompt) {
   return (j.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('\n').trim();
 }
 
-export const handler = async (event) => {
+const gestisci = async (event) => {
   if (event.httpMethod !== 'POST') return { statusCode: 405 };
   const d = leggiCorpo(event);
   if (!d) return { statusCode: 400 };
@@ -107,7 +106,6 @@ export const handler = async (event) => {
   const chiaveSintesi = ambito === 'persona' ? `persona:${d.autore}` : ambito === 'hotel' ? `hotel:${d.hotelId}` : 'viaggio';
   if ((ambito === 'persona' && !d.autore) || (ambito === 'hotel' && !d.hotelId)) return { statusCode: 400 };
 
-  connectLambda(event);
   const chiave = `${viaggio}/stato`;
 
   // segna «in corso»; se ce n'è già una partita da meno di 3 minuti, non ne lancia un'altra
@@ -134,3 +132,8 @@ export const handler = async (event) => {
   });
   return { statusCode: 200 };
 };
+
+export default v2(gestisci);
+
+// formato v2: la modalità background si dichiara qui (il suffisso -background nel nome resta come ripiego)
+export const config = { background: true };
