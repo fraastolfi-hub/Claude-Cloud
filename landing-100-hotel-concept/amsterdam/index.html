@@ -126,7 +126,9 @@ nav.tabs button[aria-current=page]{color:var(--blue)}
 .gate .kick{font-family:var(--f-display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
 .gate p{opacity:.9}
 .gate .lbl{color:rgba(255,255,255,.75)}
-.gate input{border-color:transparent}
+.gate input,.gate select{border-color:transparent;color:var(--ink)}
+.gate select{appearance:auto;height:50px}
+.gate .err{color:#FFD2BF;font-weight:600}
 .toast{position:fixed;left:50%;bottom:calc(var(--nav) + 20px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;z-index:50;max-width:90vw;text-align:center}
 details summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:600;margin-top:10px}
 .q{margin-bottom:6px}
@@ -138,14 +140,18 @@ details summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:600;
 <!-- INGRESSO -->
 <section id="gate" class="gate" hidden>
   <div class="wrap">
-    <div class="kick">Hotel Voyager · Amsterdam · 15-17 novembre</div>
+    <div class="kick">Hotel Voyager · Garda Trentino → Amsterdam · 15-17 novembre</div>
     <h1>Diario di bordo</h1>
     <p>Qui il gruppo mette in comune quello che vede: idee da rubare, cose da non fare mai, dettagli che nessuno nota. A fine giornata le leggiamo insieme e ne tiriamo fuori il succo.</p>
     <form id="gateForm" autocomplete="on">
-      <label class="lbl" for="gNome">Come ti chiami</label>
-      <input type="text" id="gNome" autocomplete="name" placeholder="Nome e cognome" required maxlength="60">
-      <label class="lbl" for="gStruttura">La tua struttura, in poche parole</label>
-      <input type="text" id="gStruttura" placeholder="Es. boutique hotel 24 camere, Riccione" maxlength="120">
+      <label class="lbl" for="gChi">Chi sei</label>
+      <select id="gChi"><option value="">Scegli il tuo nome</option></select>
+      <div id="gAltro" hidden>
+        <label class="lbl" for="gNome">Come ti chiami</label>
+        <input type="text" id="gNome" autocomplete="name" placeholder="Nome e cognome" maxlength="60">
+        <label class="lbl" for="gStruttura">La tua struttura, in poche parole</label>
+        <input type="text" id="gStruttura" placeholder="Es. campeggio 120 piazzole, Arco" maxlength="120">
+      </div>
       <div id="gCodiceBox">
         <label class="lbl" for="gCodice">Codice del viaggio</label>
         <input type="text" id="gCodice" autocapitalize="characters" autocomplete="off" placeholder="Te lo dà Nicola" maxlength="60">
@@ -201,6 +207,19 @@ const TIPI = {
 };
 const AREE = { management: 'Management', comunicazione: 'Comunicazione', design: 'Design', esperienza: 'Guest experience' };
 
+const PARTECIPANTI = [
+  ['Silvia Amistadi', 'Arco Bed&Camping'],
+  ['Valentina Amistadi', 'Arco Bed&Camping'],
+  ['Andrea Zambanini', 'Ambassador Suite Hotel'],
+  ['Alessia Nicolli', 'Villa Nicolli'],
+  ['Andrea Modena', 'Hotel Brione'],
+  ['Gregorio Moreschi', 'Giardino Verdi'],
+  ['Gemma Santi', 'Villaggio Val Molini'],
+  ['Sara Morandi', 'Residence Alle Palme'],
+  ['Alessandro Trufelli', 'Astoria Resort'],
+  ['Nicola Delvecchio', 'Hotel Voyager'],
+];
+
 const CARTE = [
   'Cosa costa poco a questo hotel e vale tantissimo per l\'ospite?',
   'Se domani togliessi la reception, cosa metteresti al suo posto?',
@@ -211,11 +230,11 @@ const CARTE = [
   'Cosa ruberesti con 1.000 euro? E con 100.000?',
   'Quale dettaglio hai fotografato oggi? Perché proprio quello?',
   'Se il tuo ospite migliore fosse qui, cosa noterebbe per primo?',
-  'Cosa di oggi in Italia non funzionerebbe mai? Sicuro sicuro?',
+  'Cosa di oggi sul Garda non funzionerebbe mai? Sicuro sicuro?',
   'Lo staff di quale hotel sembrava divertirsi davvero? Da cosa l\'hai capito?',
   'Quale spazio comune lavora 24 ore su 24? Il tuo quante ore lavora?',
   'Quale hotel riconosceresti a occhi chiusi? Suono, profumo, luce?',
-  'Cosa venderesti in camera che oggi non vendi?',
+  'Cosa venderesti in camera (o in piazzola) che oggi non vendi?',
   'Qual è la promessa di questo hotel? La mantiene?',
   'Quale dettaglio è lì solo per la foto su Instagram? Funziona?',
   'Se rifacessi la tua colazione da zero, cosa prenderesti da qui?',
@@ -225,13 +244,13 @@ const CARTE = [
   'Dove ti sei sentito un numero? E dove una persona?',
   'Cosa racconta a casa l\'ospite di questo hotel? E cosa raccontano i tuoi?',
   'Quale cosa del tuo hotel ti sembra improvvisamente vecchia?',
-  'Se questo hotel aprisse nella tua città, cosa ti porterebbe via per primo?',
+  'Se questo hotel aprisse sul Garda, cosa ti porterebbe via per primo?',
 ].map((testo, i) => ({ id: 'c' + (i + 1), n: i + 1, testo }));
 
 const DOMANDE_FINE = [
   'Onestamente: cosa hai detto a casa per giustificare questi giorni fuori? 😄',
   'Cosa ti aspettavi? Un corso con le slide? Com\'è andata davvero?',
-  'Qual è la prima cosa che racconterai appena rientri in hotel?',
+  'Qual è la prima cosa che racconterai appena rientri in struttura?',
   'L\'hotel che ti ha fatto pensare "questa la rubo"? Cosa ti sei rubato?',
   'E quello che ti ha fatto dire "ok, da me non lo faccio mai"?',
   'Quanti passi hai fatto in questi giorni? Ne è valsa la pena? 👟',
@@ -535,12 +554,12 @@ function renderStimoli() {
 function renderMastermind() {
   const v = $('#v-mastermind'); v.replaceChildren();
   v.append(h('div', { class: 'card' }, h('h2', null, 'Mastermind'),
-    h('p', { class: 'intro' }, 'Porta al gruppo la sfida vera del tuo hotel. Gli altri ti rispondono con quello che hanno visto in questi giorni e che fa al caso tuo. Funziona se sei concreto: numeri, camere, stagionalità.')));
+    h('p', { class: 'intro' }, 'Porta al gruppo la sfida vera della tua struttura. Gli altri ti rispondono con quello che hanno visto in questi giorni e che fa al caso tuo. Funziona se sei concreto: numeri, camere o piazzole, stagionalità.')));
 
   const mia = S.sfide.find((f) => f.autore === io.nome);
   if (!mia) {
-    const str = h('input', { type: 'text', value: io.struttura || '', placeholder: 'Es. 3 stelle 40 camere, Rimini, stagionale', maxlength: '160' });
-    const ta = h('textarea', { placeholder: 'Es. Ad agosto siamo pieni, a giugno e settembre no. Vorrei un motivo per venire da noi che non sia il prezzo.', maxlength: '1500' });
+    const str = h('input', { type: 'text', value: io.struttura || '', placeholder: 'Es. campeggio 120 piazzole, Arco, aperto aprile-ottobre', maxlength: '160' });
+    const ta = h('textarea', { placeholder: 'Es. In estate siamo pieni, a ottobre no. Vorrei un motivo per venire da noi che non sia il lago o il prezzo.', maxlength: '1500' });
     const pr = h('textarea', { placeholder: 'Facoltativo', maxlength: '800', style: 'min-height:70px' });
     const btn = h('button', { type: 'button', class: 'btn full' }, 'Porta la sfida al gruppo');
     btn.addEventListener('click', async () => {
@@ -726,20 +745,28 @@ document.querySelectorAll('nav.tabs button').forEach((b) => b.addEventListener('
 $('#meBtn').addEventListener('click', () => { if (confirm('Vuoi cambiare nome o uscire dal diario?')) esci(); });
 
 // ---------- ingresso ----------
+const gChi = $('#gChi');
+PARTECIPANTI.forEach(([n, st]) => gChi.append(h('option', { value: n }, n + ' · ' + st)));
+gChi.append(h('option', { value: '__altro' }, 'Non sono in elenco'));
+gChi.addEventListener('change', () => { $('#gAltro').hidden = gChi.value !== '__altro'; $('#gErr').hidden = true; });
 function esci(msg) {
   clearInterval(pollTimer);
   $('#app').hidden = true; $('#gate').hidden = false;
+  const noto = PARTECIPANTI.find(([n]) => n === io.nome);
+  gChi.value = noto ? noto[0] : (io.nome ? '__altro' : '');
+  $('#gAltro').hidden = gChi.value !== '__altro';
   $('#gNome').value = io.nome || ''; $('#gStruttura').value = io.struttura || ''; $('#gCodice').value = io.codice || '';
   if (msg) { io.codice = ''; save(); $('#gErr').textContent = msg; $('#gErr').hidden = false; $('#gCodiceBox').hidden = false; }
 }
 $('#gateForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const nome = $('#gNome').value.trim().replace(/\s+/g, ' ');
+  const scelto = PARTECIPANTI.find(([n]) => n === gChi.value);
+  const nome = scelto ? scelto[0] : $('#gNome').value.trim().replace(/\s+/g, ' ');
   const codice = $('#gCodice').value.trim() || io.codice;
-  if (!nome) return;
+  if (!nome) { $('#gErr').textContent = 'Scegli il tuo nome dall\'elenco.'; $('#gErr').hidden = false; return; }
   if (!codice) { $('#gErr').textContent = 'Serve il codice del viaggio.'; $('#gErr').hidden = false; return; }
   $('#gBtn').disabled = true;
-  io.nome = nome; io.struttura = $('#gStruttura').value.trim(); io.codice = codice; save();
+  io.nome = nome; io.struttura = scelto ? scelto[1] : $('#gStruttura').value.trim(); io.codice = codice; save();
   try { await api('ingresso', { struttura: io.struttura }); entra(); }
   catch (er) { $('#gErr').textContent = er.message === 'codice' ? 'Il codice non è giusto. Controlla con Nicola.' : er.message; $('#gErr').hidden = false; }
   $('#gBtn').disabled = false;
