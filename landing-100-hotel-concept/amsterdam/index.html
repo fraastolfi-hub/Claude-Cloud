@@ -446,11 +446,11 @@ function vistaNota(n, conHotel) {
     h('div', { class: 'act' }, bottoneVoto(n), h('span', { class: 'micro spacer' }, n.autore + ' · ' + quando(n.ts)), bottoneElimina(n)));
 }
 
-function compositoreNota({ hotelId = null, carta = null, titolo }) {
+function compositoreNota({ hotelId = null, carta = null, titolo, libero = false }) {
   ui.comp = ui.comp || {};
   const st = ui.comp[hotelId || (carta && carta.id) || '_'] ||= { tipo: carta ? 'stimolo' : 'rubare', area: '' };
   let tipo = st.tipo, area = st.area;
-  const ta = h('textarea', { placeholder: carta ? 'La tua risposta…' : 'Cosa hai visto? Scrivi o detta, anche due righe bastano.', maxlength: '1500' });
+  const ta = h('textarea', { placeholder: carta ? 'La tua risposta…' : libero ? 'Qualcosa visto fuori dagli hotel: un bar, una vetrina, il tram, un\'idea che ti è venuta in coda…' : 'Cosa hai visto? Scrivi o detta, anche due righe bastano.', maxlength: '1500' });
   const app = h('textarea', { placeholder: 'Es. lo provo nella sala colazioni da gennaio', maxlength: '800', style: 'min-height:70px' });
   const err = h('p', { class: 'err', hidden: true });
   const btn = h('button', { type: 'button', class: 'btn full' }, 'Condividi col gruppo');
@@ -503,9 +503,9 @@ function renderTappe() {
       h('span', { 'aria-hidden': 'true' }, '›')));
   }
 
-  const nome = h('input', { type: 'text', placeholder: 'Nome dell\'hotel', maxlength: '100' });
+  const nome = h('input', { type: 'text', placeholder: 'Hotel, ristorante, negozio, luogo…', maxlength: '100' });
   const zona = h('input', { type: 'text', placeholder: 'Zona (facoltativa), es. De Pijp', maxlength: '100' });
-  const btn = h('button', { type: 'button', class: 'btn blue full' }, '+ Aggiungi hotel');
+  const btn = h('button', { type: 'button', class: 'btn blue full' }, '+ Aggiungi tappa');
   btn.addEventListener('click', async () => {
     if (!nome.value.trim()) { nome.focus(); return; }
     btn.disabled = true;
@@ -518,10 +518,11 @@ function renderTappe() {
     } catch (e) { toast(e.message); }
     btn.disabled = false;
   });
-  v.append(h('div', { class: 'card' }, h('h3', null, 'Una tappa fuori programma?'), h('span', { class: 'lbl' }, 'Hotel'), nome, h('span', { class: 'lbl' }, 'Dove'), zona, h('div', { style: 'margin-top:14px' }, btn)));
+  v.append(h('div', { class: 'card' }, h('h3', null, 'Una tappa fuori programma?'), h('p', { class: 'intro' }, 'Un hotel in più, un ristorante, un concept store: aggiungilo e diventa una tappa come le altre.'), h('span', { class: 'lbl' }, 'Nome'), nome, h('span', { class: 'lbl' }, 'Dove'), zona, h('div', { style: 'margin-top:14px' }, btn)));
 
+  v.append(compositoreNota({ titolo: '📝 Appunto libero', libero: true }));
   const generali = S.note.filter((n) => !n.hotelId && n.tipo !== 'stimolo');
-  if (generali.length) v.append(h('div', { class: 'card' }, h('h3', null, 'Note sparse'), generali.slice().reverse().map((n) => vistaNota(n))));
+  if (generali.length) v.append(h('div', { class: 'card' }, h('h3', null, 'Appunti liberi (' + generali.length + ')'), generali.slice().reverse().map((n) => vistaNota(n))));
 }
 
 function renderHotel(v) {
