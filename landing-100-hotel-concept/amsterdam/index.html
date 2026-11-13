@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#054BC7">
+<meta name="theme-color" content="#0B0B0B">
 <title>Diario di bordo · Hotel Voyager Amsterdam</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap">
 <style>
 :root{
-  --blue:#054BC7;--blue-deep:#03389A;--blue-soft:#E8EEFB;
+  --blue:#8C6D1F;--blue-deep:#6E5517;--blue-soft:#F5EFDD;--gold:#C8A94D;--black:#0B0B0B;
   --ink:#141821;--ink-soft:#4A5162;--paper:#fff;--paper-2:#F1F2F5;--rule:#D5DCEB;
-  --cta:#E35D12;--cta-deep:#C24A0A;
+  --cta:#C8A94D;--cta-deep:#B39235;
   --rubare:#5FB59A;--evitare:#CB4D36;--dettaglio:#054BC7;--domanda:#F07C2F;--stimolo:#7A5BC9;
-  --f-display:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --f-display:"Josefin Sans","Futura","Century Gothic",sans-serif;
   --f-body:"Wix Madefor Text","Helvetica Neue",Arial,sans-serif;
   --nav:64px;
 }
@@ -23,17 +23,18 @@
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper-2);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:calc(var(--nav) + env(safe-area-inset-bottom) + 16px)}
 button,input,textarea,select{font:inherit;color:inherit}
-h1,h2,h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;margin:0}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;line-height:1.1;margin:0}
 .mono{font-family:var(--f-display)}
 .wrap{max-width:640px;margin:0 auto;padding:0 16px}
 [hidden]{display:none!important}
 
 /* testata */
-.top{position:sticky;top:0;z-index:20;background:var(--blue);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 0 10px}
+.top{position:sticky;top:0;z-index:20;background:var(--black);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 0 10px}
 .top .wrap{display:flex;align-items:center;gap:12px}
-.brand{font-family:var(--f-display);font-weight:800;font-size:14px;line-height:1.1;letter-spacing:.02em;flex:1}
-.brand small{display:block;font-weight:500;font-size:11px;opacity:.75;letter-spacing:.06em;text-transform:uppercase}
-.me{background:rgba(255,255,255,.16);border:0;border-radius:999px;padding:6px 12px;font-size:13px;color:#fff;cursor:pointer;max-width:45vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand{flex:1;line-height:1;min-width:0}
+.brand img{height:16px;width:auto;display:block}
+.brand small{display:block;font-family:var(--f-display);font-size:10.5px;color:var(--gold);opacity:.8;letter-spacing:.14em;text-transform:uppercase;margin-top:5px}
+.me{background:rgba(200,169,77,.18);border:0;border-radius:999px;padding:6px 12px;font-size:13px;color:#fff;cursor:pointer;max-width:45vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sync{width:8px;height:8px;border-radius:50%;background:#9DE0C6;flex:none}
 .sync.off{background:#F3A07A}
 
@@ -47,11 +48,11 @@ h1,h2,h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;l
 input[type=text],input[type=password],textarea,select{width:100%;border:1.5px solid var(--rule);border-radius:10px;padding:12px;background:#fff;font-size:16px;outline:none}
 input:focus,textarea:focus,select:focus{border-color:var(--blue)}
 textarea{min-height:96px;resize:vertical}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:#fff;border:0;border-radius:10px;padding:14px 18px;font-family:var(--f-display);font-weight:800;font-size:14px;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:var(--black);border:0;border-radius:10px;padding:14px 18px;font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;padding-top:16px}
 .btn:active{background:var(--cta-deep)}
 .btn.full{width:100%}
 .btn.ghost{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
-.btn.blue{background:var(--blue)}
+.btn.blue{background:var(--black);color:var(--gold)}
 .btn.small{padding:9px 12px;font-size:12px}
 .btn[disabled]{opacity:.5;pointer-events:none}
 .row{display:flex;gap:8px;align-items:center}
@@ -83,6 +84,26 @@ textarea{min-height:96px;resize:vertical}
 .hotel .tt{flex:1;min-width:0}
 .hotel .tt b{display:block;font-size:16px}
 .hotel .tt span{display:block;font-size:13px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hotel .ph{position:relative;width:64px;height:64px;border-radius:12px;overflow:hidden;flex:none;background:var(--black);display:grid;place-items:center;color:var(--gold);font-family:var(--f-display);font-weight:700;font-size:20px;letter-spacing:.06em}
+.hotel .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.hotel .ph .cnt{position:absolute;right:4px;bottom:4px;background:var(--black);color:var(--gold);font-size:11px;border-radius:999px;padding:2px 7px 1px;font-family:var(--f-display)}
+.hero{position:relative;border-radius:14px;overflow:hidden;margin-bottom:12px;background:var(--black);aspect-ratio:16/10}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .ini{position:absolute;inset:0;display:grid;place-items:center;color:var(--gold);font-family:var(--f-display);font-size:44px;letter-spacing:.12em}
+.hero .tt{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 12px;background:linear-gradient(transparent,rgba(0,0,0,.78));color:#fff}
+.hero .tt h2{font-size:22px;color:#fff;margin:0}
+.hero .tt span{font-size:13px;color:var(--gold)}
+.credit{font-size:10.5px;color:var(--ink-soft);margin:-6px 2px 12px;text-align:right}
+.credit a{color:inherit}
+.welcome{position:fixed;inset:0;z-index:60;background:var(--black);color:#fff;overflow:auto;padding:calc(36px + env(safe-area-inset-top)) 0 40px}
+.welcome .logo{width:min(280px,72%);height:auto;display:block;margin:0 0 26px}
+.welcome h1{font-size:clamp(28px,8vw,38px);font-weight:600;margin:0 0 14px}
+.welcome h1 em{font-style:normal;color:var(--gold)}
+.welcome p{font-size:16.5px;line-height:1.6;opacity:.92;margin:0 0 14px}
+.welcome ul{list-style:none;padding:0;margin:18px 0 22px}
+.welcome li{display:flex;gap:12px;padding:10px 0;border-top:1px solid rgba(200,169,77,.25);font-size:15.5px}
+.welcome li b{color:var(--gold);font-weight:600}
+.welcome .firma{font-family:var(--f-display);color:var(--gold);letter-spacing:.08em;margin-top:6px}
 .nota{border-left:4px solid var(--rule);padding:4px 0 4px 12px;margin:14px 0}
 .nota.t-rubare{border-color:var(--rubare)}.nota.t-evitare{border-color:var(--evitare)}.nota.t-dettaglio{border-color:var(--dettaglio)}.nota.t-domanda{border-color:var(--domanda)}.nota.t-stimolo{border-color:var(--stimolo)}
 .nota .meta{font-size:12px;color:var(--ink-soft);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
@@ -91,15 +112,15 @@ textarea{min-height:96px;resize:vertical}
 .nota .app{font-size:14px;color:var(--ink-soft);background:var(--paper-2);border-radius:8px;padding:8px 10px;margin:6px 0;white-space:pre-wrap}
 .nota .act{display:flex;gap:8px;align-items:center;margin-top:4px}
 .plus{border:1.5px solid var(--rule);background:#fff;border-radius:999px;padding:4px 10px;font-size:13px;cursor:pointer}
-.plus[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.plus[aria-pressed=true]{background:var(--black);border-color:var(--black);color:var(--gold)}
 .del{border:0;background:none;color:var(--ink-soft);font-size:12px;cursor:pointer;text-decoration:underline;padding:4px}
 .empty{color:var(--ink-soft);font-size:14.5px;text-align:center;padding:20px 8px}
 
 /* carta stimolo */
-.carta{background:var(--blue);color:#fff;border-radius:18px;padding:28px 22px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;margin-bottom:12px}
+.carta{background:var(--black);color:#fff;border:1px solid rgba(200,169,77,.35);border-radius:18px;padding:28px 22px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;margin-bottom:12px}
 .carta .num{font-family:var(--f-display);font-size:12px;opacity:.7;letter-spacing:.08em}
-.carta p{font-family:var(--f-display);font-weight:800;font-size:clamp(21px,5.8vw,27px);line-height:1.2;margin:18px 0;letter-spacing:-.01em}
-.oggi{background:var(--ink);color:#fff;border-radius:14px;padding:14px 16px;margin-bottom:12px;cursor:pointer}
+.carta p{font-family:var(--f-display);font-weight:600;font-size:clamp(22px,6vw,28px);line-height:1.25;margin:18px 0;color:var(--gold)}
+.oggi{background:var(--black);border:1px solid rgba(200,169,77,.35);color:#fff;border-radius:14px;padding:14px 16px;margin-bottom:12px;cursor:pointer}
 .oggi small{font-family:var(--f-display);font-size:11px;letter-spacing:.08em;opacity:.7;text-transform:uppercase}
 .oggi b{display:block;margin-top:4px;font-weight:600}
 
@@ -121,9 +142,11 @@ nav.tabs button span{font-size:20px;line-height:1;font-family:var(--f-body)}
 nav.tabs button[aria-current=page]{color:var(--blue)}
 
 /* ingresso */
-.gate{min-height:100vh;background:var(--blue);color:#fff;padding:calc(40px + env(safe-area-inset-top)) 0 40px}
+.gate{min-height:100vh;background:var(--black);color:#fff;padding:calc(40px + env(safe-area-inset-top)) 0 40px}
 .gate h1{font-size:clamp(30px,9vw,44px);margin:10px 0 12px}
-.gate .kick{font-family:var(--f-display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.gate .kick{font-family:var(--f-display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.85}
+.gate .logo{width:min(320px,80%);height:auto;display:block;margin:0 0 28px}
+.gate h1{color:#fff;font-weight:600}
 .gate p{opacity:.9}
 .gate .lbl{color:rgba(255,255,255,.75)}
 .gate input,.gate select{border-color:transparent;color:var(--ink)}
@@ -140,9 +163,10 @@ details summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:600;
 <!-- INGRESSO -->
 <section id="gate" class="gate" hidden>
   <div class="wrap">
-    <div class="kick">Hotel Voyager · Garda Trentino → Amsterdam · 15-17 novembre</div>
+    <img class="logo" src="logo-hotel-voyager.png" alt="Hotel Voyager" width="788" height="79">
+    <div class="kick">Garda Trentino → Amsterdam · 15-17 novembre</div>
     <h1>Diario di bordo</h1>
-    <p>Qui il gruppo mette in comune quello che vede: idee da rubare, cose da non fare mai, dettagli che nessuno nota. A fine giornata le leggiamo insieme e ne tiriamo fuori il succo.</p>
+    <p>Benvenuti a bordo! Qui il gruppo mette in comune quello che vede: idee da rubare, cose da non fare mai, dettagli che nessuno nota. A fine giornata le leggiamo insieme e ne tiriamo fuori il succo.</p>
     <form id="gateForm" autocomplete="on">
       <label class="lbl" for="gChi">Chi sei</label>
       <select id="gChi"><option value="">Scegli il tuo nome</option></select>
@@ -166,7 +190,7 @@ details summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:600;
 <div id="app" hidden>
   <header class="top">
     <div class="wrap">
-      <div class="brand">HOTEL VOYAGER<small>Amsterdam · diario di bordo</small></div>
+      <div class="brand"><img src="logo-hotel-voyager.png" alt="Hotel Voyager" width="788" height="79"><small>Amsterdam · diario di bordo</small></div>
       <span class="sync" id="sync" title="Sincronizzato"></span>
       <button class="me" id="meBtn" type="button"></button>
     </div>
@@ -188,6 +212,24 @@ details summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:600;
     </div>
   </nav>
 </div>
+<section class="welcome" id="welcome" hidden>
+  <div class="wrap">
+    <img class="logo" src="logo-hotel-voyager.png" alt="Hotel Voyager" width="788" height="79">
+    <h1>Ciao <em id="wNome"></em>,<br>che bello averti a bordo!</h1>
+    <p>Per tre giorni Amsterdam diventa la nostra aula: sei hotel che hanno avuto il coraggio di fare le cose in modo diverso, un gruppo di colleghi del Garda e tante idee da portare a casa.</p>
+    <p>Questo diario è il posto dove le mettiamo in comune. Funziona così:</p>
+    <ul>
+      <li><span>🏨</span><span><b>Entra in ogni tappa</b> e scrivi, o detta col microfono, cosa ti colpisce. Bastano due righe.</span></li>
+      <li><span>👍</span><span><b>Metti "+1 Anch'io"</b> alle idee degli altri che condividi: i voti fanno la classifica.</span></li>
+      <li><span>🃏</span><span><b>La sera peschiamo una carta</b> e ne parliamo davanti a un bicchiere.</span></li>
+      <li><span>🤝</span><span><b>Porta la tua sfida</b> al mastermind: il gruppo ti risponde con quello che ha visto.</span></li>
+      <li><span>✨</span><span><b>Alla fine Claude raccoglie tutto</b> e ti prepara le idee giuste per la tua struttura.</span></li>
+    </ul>
+    <p>Nessuna nota è troppo piccola e nessuna domanda è stupida. Buon viaggio!</p>
+    <p class="firma">— Nicola, Hotel Voyager</p>
+    <p style="margin-top:22px"><button class="btn full" type="button" id="wBtn">Iniziamo →</button></p>
+  </div>
+</section>
 <div class="toast" id="toast" hidden></div>
 
 <script>
@@ -229,6 +271,22 @@ const TAPPE = [
   ['Nhow Amsterdam', 'RAI'],
   ['Jakarta Hotel', 'Java-eiland'],
 ];
+
+// Foto delle tappe: Wikimedia Commons, licenze libere con attribuzione (niente foto prese dai siti degli hotel)
+const FOTO = {
+  'the social hub amsterdam': { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Wibautstraat%2C_The_Student_Hotel.jpg/960px-Wibautstraat%2C_The_Student_Hotel.jpg', autore: 'Paul Berendsen', licenza: 'CC BY-SA 4.0', pagina: 'https://commons.wikimedia.org/wiki/File:Wibautstraat,_The_Student_Hotel.jpg' },
+  'hotel arena': { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Oosterpark_met_Arena%2C_april_2017.jpg/960px-Oosterpark_met_Arena%2C_april_2017.jpg', autore: 'Paul Berendsen', licenza: 'CC BY-SA 4.0', pagina: 'https://commons.wikimedia.org/wiki/File:Oosterpark_met_Arena,_april_2017.jpg' },
+  'rosewood amsterdam': { src: 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Paleis_justitie.jpg', autore: 'bureau Monumenten & Archeologie', licenza: 'attribuzione', pagina: 'https://commons.wikimedia.org/wiki/File:Paleis_justitie.jpg' },
+  'nhow amsterdam': { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Nhow_Amsterdam_RAI.jpg/960px-Nhow_Amsterdam_RAI.jpg', autore: 'DFK2021 (Dmitry Feichtner-Kozlov)', licenza: 'CC BY-SA 4.0', pagina: 'https://commons.wikimedia.org/wiki/File:Nhow_Amsterdam_RAI.jpg' },
+  'jakarta hotel': { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2023_Amsterdam%2C_Hotel_Jakarta_%2801%29.jpg/960px-2023_Amsterdam%2C_Hotel_Jakarta_%2801%29.jpg', autore: 'Kleon3', licenza: 'CC BY-SA 4.0', pagina: 'https://commons.wikimedia.org/wiki/File:2023_Amsterdam,_Hotel_Jakarta_(01).jpg' },
+};
+const fotoDi = (nome) => FOTO[String(nome || '').toLowerCase().trim()];
+const iniziali = (nome) => String(nome || '?').replace(/^(the|hotel)\s+/i, '').split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+function immagine(f, alt) {
+  const img = h('img', { src: f.src, alt, loading: 'lazy', referrerpolicy: 'no-referrer' });
+  img.addEventListener('error', () => { img.replaceWith(h('span', { class: 'ini' }, iniziali(alt))); });
+  return img;
+}
 
 const CARTE = [
   'Cosa costa poco a questo hotel e vale tantissimo per l\'ospite?',
@@ -497,8 +555,9 @@ function renderTappe() {
   for (const ho of ordinati) {
     const note = S.note.filter((n) => n.hotelId === ho.id);
     const top = [...note].sort((a, b) => (b.voti || []).length - (a.voti || []).length)[0];
+    const f = fotoDi(ho.nome);
     v.append(h('button', { type: 'button', class: 'card hotel', onclick: () => { ui.hotelId = ho.id; render(); scrollTo(0, 0); } },
-      h('div', { class: 'n' }, String(note.length)),
+      h('div', { class: 'ph' }, f ? immagine(f, ho.nome) : iniziali(ho.nome), h('span', { class: 'cnt', title: 'note' }, String(note.length))),
       h('div', { class: 'tt' }, h('b', null, ho.nome), h('span', null, top ? (TIPI[top.tipo] || TIPI.rubare).e + ' ' + top.testo : [Number(ho.giorno) ? 'Tappa ' + ho.giorno : '', ho.zona].filter(Boolean).join(' · ') || 'Nessuna nota ancora')),
       h('span', { 'aria-hidden': 'true' }, '›')));
   }
@@ -529,10 +588,13 @@ function renderHotel(v) {
   const ho = S.hotel.find((x) => x.id === ui.hotelId);
   if (!ho) { ui.hotelId = null; return renderTappe(); }
   v.append(h('button', { type: 'button', class: 'back', onclick: () => { ui.hotelId = null; render(); } }, '‹ Tutte le tappe'));
-  v.append(h('div', { class: 'card' },
-    h('h2', null, ho.nome),
-    h('p', { class: 'intro' }, [Number(ho.giorno) ? 'Tappa ' + ho.giorno : 'Fuori programma', ho.zona].filter(Boolean).join(' · ')),
-    (ho.autore === io.nome || isAdmin()) ? h('button', { type: 'button', class: 'del', onclick: () => { if (confirm('Elimino questo hotel? Le note restano tra le note sparse.')) { azione('elimina', { id: ho.id }, 'Hotel eliminato'); ui.hotelId = null; } } }, 'elimina hotel') : null));
+  const f = fotoDi(ho.nome);
+  v.append(h('div', { class: 'hero' },
+    f ? immagine(f, ho.nome) : h('div', { class: 'ini' }, iniziali(ho.nome)),
+    h('div', { class: 'tt' }, h('h2', null, ho.nome), h('span', null, [Number(ho.giorno) ? 'Tappa ' + ho.giorno : 'Fuori programma', ho.zona].filter(Boolean).join(' · ')))));
+  if (f) v.append(h('div', { class: 'credit' }, 'Foto: ', h('a', { href: f.pagina, target: '_blank', rel: 'noopener' }, f.autore), ' · ' + f.licenza + ', Wikimedia Commons'));
+  v.append(h('div', { style: (ho.autore === io.nome || isAdmin()) ? 'text-align:right;margin:-4px 0 8px' : 'display:none' },
+    h('button', { type: 'button', class: 'del', onclick: () => { if (confirm('Elimino questo hotel? Le note restano tra le note sparse.')) { azione('elimina', { id: ho.id }, 'Hotel eliminato'); ui.hotelId = null; } } }, 'elimina tappa')));
 
   v.append(compositoreNota({ hotelId: ho.id, titolo: 'Cosa ti porti via da qui?' }));
 
@@ -794,8 +856,14 @@ $('#gateForm').addEventListener('submit', async (e) => {
   catch (er) { $('#gErr').textContent = er.message === 'codice' ? 'Il codice non è giusto. Controlla con Nicola.' : er.message; $('#gErr').hidden = false; }
   $('#gBtn').disabled = false;
 });
+function benvenuto() {
+  $('#wNome').textContent = (io.nome || '').split(' ')[0];
+  $('#welcome').hidden = false; scrollTo(0, 0);
+}
+$('#wBtn').addEventListener('click', () => { $('#welcome').hidden = true; io.benvenuto = true; save(); scrollTo(0, 0); });
 function entra() {
   $('#gate').hidden = true; $('#app').hidden = false; $('#gErr').hidden = true;
+  if (!io.benvenuto) benvenuto();
   vai(ui.tab); aggiorna(true); avviaPoll();
 }
 
