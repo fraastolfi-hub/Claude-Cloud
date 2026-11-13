@@ -1,0 +1,9 @@
+{
+  "name": "100-hotel-concept",
+  "private": true,
+  "type": "module",
+  "description": "Dipendenze delle funzioni Netlify del diario di bordo Hotel Voyager (la landing resta statica)",
+  "dependencies": {
+    "@netlify/blobs": "^11.1.7"
+  }
+}

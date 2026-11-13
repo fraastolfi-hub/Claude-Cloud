@@ -4,6 +4,11 @@
   publish = "."
   command = ""
 
+# Funzioni del diario di bordo Hotel Voyager (/amsterdam/): dati in Netlify Blobs, sintesi con Claude
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 [[headers]]
   for = "/img/*"
   [headers.values]
@@ -14,3 +19,29 @@
   for = "/guida/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+# Il diario di bordo dei viaggi è privato: non va indicizzato
+[[headers]]
+  for = "/amsterdam/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
+
+# Sorgenti delle funzioni e dipendenze stanno nella cartella pubblicata: non vanno servite
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/node_modules/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404"
+  status = 404
+  force = true

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#054BC7">
+<title>Diario di bordo · Hotel Voyager Amsterdam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --blue:#054BC7;--blue-deep:#03389A;--blue-soft:#E8EEFB;
+  --ink:#141821;--ink-soft:#4A5162;--paper:#fff;--paper-2:#F1F2F5;--rule:#D5DCEB;
+  --cta:#E35D12;--cta-deep:#C24A0A;
+  --rubare:#5FB59A;--evitare:#CB4D36;--dettaglio:#054BC7;--domanda:#F07C2F;--stimolo:#7A5BC9;
+  --f-display:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --f-body:"Wix Madefor Text","Helvetica Neue",Arial,sans-serif;
+  --nav:64px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper-2);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:calc(var(--nav) + env(safe-area-inset-bottom) + 16px)}
+button,input,textarea,select{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;margin:0}
+.mono{font-family:var(--f-display)}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+[hidden]{display:none!important}
+
+/* testata */
+.top{position:sticky;top:0;z-index:20;background:var(--blue);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 0 10px}
+.top .wrap{display:flex;align-items:center;gap:12px}
+.brand{font-family:var(--f-display);font-weight:800;font-size:14px;line-height:1.1;letter-spacing:.02em;flex:1}
+.brand small{display:block;font-weight:500;font-size:11px;opacity:.75;letter-spacing:.06em;text-transform:uppercase}
+.me{background:rgba(255,255,255,.16);border:0;border-radius:999px;padding:6px 12px;font-size:13px;color:#fff;cursor:pointer;max-width:45vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sync{width:8px;height:8px;border-radius:50%;background:#9DE0C6;flex:none}
+.sync.off{background:#F3A07A}
+
+/* schede */
+.view{padding-top:16px}
+.card{background:#fff;border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:0 1px 0 rgba(20,24,33,.06)}
+.card h2{font-size:20px;color:var(--blue);margin-bottom:6px}
+.card h3{font-size:15px;color:var(--blue)}
+.intro{color:var(--ink-soft);font-size:14.5px;margin:4px 0 0}
+.lbl{display:block;font-family:var(--f-display);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:14px 0 6px}
+input[type=text],input[type=password],textarea,select{width:100%;border:1.5px solid var(--rule);border-radius:10px;padding:12px;background:#fff;font-size:16px;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--blue)}
+textarea{min-height:96px;resize:vertical}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:#fff;border:0;border-radius:10px;padding:14px 18px;font-family:var(--f-display);font-weight:800;font-size:14px;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.btn:active{background:var(--cta-deep)}
+.btn.full{width:100%}
+.btn.ghost{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.btn.blue{background:var(--blue)}
+.btn.small{padding:9px 12px;font-size:12px}
+.btn[disabled]{opacity:.5;pointer-events:none}
+.row{display:flex;gap:8px;align-items:center}
+.row.wrapit{flex-wrap:wrap}
+.spacer{flex:1}
+.micro{font-size:13px;color:var(--ink-soft)}
+.err{color:var(--evitare);font-size:14px;margin-top:8px}
+.back{background:none;border:0;color:var(--blue);font-family:var(--f-display);font-weight:700;font-size:13px;padding:4px 0 12px;cursor:pointer;text-transform:uppercase;letter-spacing:.04em}
+
+/* chip */
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--rule);background:#fff;border-radius:999px;padding:7px 12px;font-size:13.5px;cursor:pointer;line-height:1.2}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip.t-rubare[aria-pressed=true]{background:var(--rubare);border-color:var(--rubare)}
+.chip.t-evitare[aria-pressed=true]{background:var(--evitare);border-color:var(--evitare)}
+.chip.t-dettaglio[aria-pressed=true]{background:var(--dettaglio);border-color:var(--dettaglio)}
+.chip.t-domanda[aria-pressed=true]{background:var(--domanda);border-color:var(--domanda)}
+
+/* textarea con microfono */
+.mic-box{position:relative}
+.mic-box textarea{padding-right:52px}
+.mic{position:absolute;right:8px;top:8px;width:38px;height:38px;border-radius:50%;border:0;background:var(--blue-soft);color:var(--blue);font-size:18px;cursor:pointer}
+.mic.on{background:var(--evitare);color:#fff;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+
+/* elenchi */
+.hotel{display:flex;gap:12px;align-items:center;cursor:pointer;text-align:left;width:100%;border:0;font:inherit}
+.hotel .n{font-family:var(--f-display);font-weight:800;font-size:13px;background:var(--blue-soft);color:var(--blue);border-radius:10px;min-width:44px;height:44px;display:grid;place-items:center}
+.hotel .tt{flex:1;min-width:0}
+.hotel .tt b{display:block;font-size:16px}
+.hotel .tt span{display:block;font-size:13px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nota{border-left:4px solid var(--rule);padding:4px 0 4px 12px;margin:14px 0}
+.nota.t-rubare{border-color:var(--rubare)}.nota.t-evitare{border-color:var(--evitare)}.nota.t-dettaglio{border-color:var(--dettaglio)}.nota.t-domanda{border-color:var(--domanda)}.nota.t-stimolo{border-color:var(--stimolo)}
+.nota .meta{font-size:12px;color:var(--ink-soft);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.nota .tag{font-family:var(--f-display);font-weight:700;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+.nota .txt{margin:4px 0;white-space:pre-wrap;word-wrap:break-word}
+.nota .app{font-size:14px;color:var(--ink-soft);background:var(--paper-2);border-radius:8px;padding:8px 10px;margin:6px 0;white-space:pre-wrap}
+.nota .act{display:flex;gap:8px;align-items:center;margin-top:4px}
+.plus{border:1.5px solid var(--rule);background:#fff;border-radius:999px;padding:4px 10px;font-size:13px;cursor:pointer}
+.plus[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.del{border:0;background:none;color:var(--ink-soft);font-size:12px;cursor:pointer;text-decoration:underline;padding:4px}
+.empty{color:var(--ink-soft);font-size:14.5px;text-align:center;padding:20px 8px}
+
+/* carta stimolo */
+.carta{background:var(--blue);color:#fff;border-radius:18px;padding:28px 22px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;margin-bottom:12px}
+.carta .num{font-family:var(--f-display);font-size:12px;opacity:.7;letter-spacing:.08em}
+.carta p{font-family:var(--f-display);font-weight:800;font-size:clamp(21px,5.8vw,27px);line-height:1.2;margin:18px 0;letter-spacing:-.01em}
+.oggi{background:var(--ink);color:#fff;border-radius:14px;padding:14px 16px;margin-bottom:12px;cursor:pointer}
+.oggi small{font-family:var(--f-display);font-size:11px;letter-spacing:.08em;opacity:.7;text-transform:uppercase}
+.oggi b{display:block;margin-top:4px;font-weight:600}
+
+/* sintesi */
+.md h3{font-size:15px;color:var(--blue);margin:18px 0 6px}
+.md p{margin:6px 0}
+.md ul{margin:6px 0;padding-left:20px}
+.md li{margin:4px 0}
+.rank{display:flex;gap:10px;margin:12px 0}
+.rank .pos{font-family:var(--f-display);font-weight:800;color:var(--cta);min-width:26px}
+.loading{display:inline-block;width:14px;height:14px;border:2px solid var(--rule);border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite;vertical-align:-2px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* navigazione */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom)}
+nav.tabs .wrap{display:flex;padding:0}
+nav.tabs button{flex:1;border:0;background:none;height:var(--nav);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;color:var(--ink-soft);font-size:10.5px;font-family:var(--f-display);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+nav.tabs button span{font-size:20px;line-height:1;font-family:var(--f-body)}
+nav.tabs button[aria-current=page]{color:var(--blue)}
+
+/* ingresso */
+.gate{min-height:100vh;background:var(--blue);color:#fff;padding:calc(40px + env(safe-area-inset-top)) 0 40px}
+.gate h1{font-size:clamp(30px,9vw,44px);margin:10px 0 12px}
+.gate .kick{font-family:var(--f-display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.gate p{opacity:.9}
+.gate .lbl{color:rgba(255,255,255,.75)}
+.gate input{border-color:transparent}
+.toast{position:fixed;left:50%;bottom:calc(var(--nav) + 20px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;z-index:50;max-width:90vw;text-align:center}
+details summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:600;margin-top:10px}
+.q{margin-bottom:6px}
+.q .lbl{text-transform:none;letter-spacing:0;font-family:var(--f-body);font-size:15px;font-weight:600;color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- INGRESSO -->
+<section id="gate" class="gate" hidden>
+  <div class="wrap">
+    <div class="kick">Hotel Voyager · Amsterdam · 15-17 novembre</div>
+    <h1>Diario di bordo</h1>
+    <p>Qui il gruppo mette in comune quello che vede: idee da rubare, cose da non fare mai, dettagli che nessuno nota. A fine giornata le leggiamo insieme e ne tiriamo fuori il succo.</p>
+    <form id="gateForm" autocomplete="on">
+      <label class="lbl" for="gNome">Come ti chiami</label>
+      <input type="text" id="gNome" autocomplete="name" placeholder="Nome e cognome" required maxlength="60">
+      <label class="lbl" for="gStruttura">La tua struttura, in poche parole</label>
+      <input type="text" id="gStruttura" placeholder="Es. boutique hotel 24 camere, Riccione" maxlength="120">
+      <div id="gCodiceBox">
+        <label class="lbl" for="gCodice">Codice del viaggio</label>
+        <input type="text" id="gCodice" autocapitalize="characters" autocomplete="off" placeholder="Te lo dà Nicola" maxlength="60">
+      </div>
+      <p class="err" id="gErr" hidden></p>
+      <p style="margin-top:20px"><button class="btn full" type="submit" id="gBtn">Si parte →</button></p>
+    </form>
+  </div>
+</section>
+
+<!-- APP -->
+<div id="app" hidden>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand">HOTEL VOYAGER<small>Amsterdam · diario di bordo</small></div>
+      <span class="sync" id="sync" title="Sincronizzato"></span>
+      <button class="me" id="meBtn" type="button"></button>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="view" id="v-tappe"></section>
+    <section class="view" id="v-stimoli" hidden></section>
+    <section class="view" id="v-mastermind" hidden></section>
+    <section class="view" id="v-sintesi" hidden></section>
+    <section class="view" id="v-fine" hidden></section>
+  </main>
+  <nav class="tabs" aria-label="Sezioni">
+    <div class="wrap">
+      <button type="button" data-tab="tappe"><span>🏨</span>Tappe</button>
+      <button type="button" data-tab="stimoli"><span>🃏</span>Stimoli</button>
+      <button type="button" data-tab="mastermind"><span>🤝</span>Mastermind</button>
+      <button type="button" data-tab="sintesi"><span>✨</span>Sintesi</button>
+      <button type="button" data-tab="fine"><span>🎬</span>Fine</button>
+    </div>
+  </nav>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(() => {
+'use strict';
+const VIAGGIO = 'amsterdam';
+const API = '/.netlify/functions/voyager';
+const API_SINTESI = '/.netlify/functions/voyager-sintesi-background';
+const LS = 'voyager-' + VIAGGIO;
+
+const TIPI = {
+  rubare:   { e: '💡', l: 'Da rubare' },
+  evitare:  { e: '✋', l: 'Da non fare mai' },
+  dettaglio:{ e: '🔍', l: 'Dettaglio invisibile' },
+  domanda:  { e: '❓', l: 'Domanda aperta' },
+  stimolo:  { e: '🃏', l: 'Stimolo' },
+};
+const AREE = { management: 'Management', comunicazione: 'Comunicazione', design: 'Design', esperienza: 'Guest experience' };
+
+const CARTE = [
+  'Cosa costa poco a questo hotel e vale tantissimo per l\'ospite?',
+  'Se domani togliessi la reception, cosa metteresti al suo posto?',
+  'Quale regola del tuo hotel esiste solo perché "si è sempre fatto così"?',
+  'Cosa ti ha fatto sorridere oggi senza che nessuno te lo spiegasse?',
+  'Dove hai visto la sostenibilità diventare un piacere e non una rinuncia?',
+  'Quale hotel di oggi sa raccontarsi in una frase? Qual è la frase?',
+  'Cosa ruberesti con 1.000 euro? E con 100.000?',
+  'Quale dettaglio hai fotografato oggi? Perché proprio quello?',
+  'Se il tuo ospite migliore fosse qui, cosa noterebbe per primo?',
+  'Cosa di oggi in Italia non funzionerebbe mai? Sicuro sicuro?',
+  'Lo staff di quale hotel sembrava divertirsi davvero? Da cosa l\'hai capito?',
+  'Quale spazio comune lavora 24 ore su 24? Il tuo quante ore lavora?',
+  'Quale hotel riconosceresti a occhi chiusi? Suono, profumo, luce?',
+  'Cosa venderesti in camera che oggi non vendi?',
+  'Qual è la promessa di questo hotel? La mantiene?',
+  'Quale dettaglio è lì solo per la foto su Instagram? Funziona?',
+  'Se rifacessi la tua colazione da zero, cosa prenderesti da qui?',
+  'Cosa hai visto oggi che il tuo commercialista boccerebbe? E perché forse ha torto?',
+  'Chi è l\'ospite ideale di questo hotel? E chi non dovrebbe mai prenotarlo?',
+  'Quale idea di oggi puoi provare lunedì, a costo zero?',
+  'Dove ti sei sentito un numero? E dove una persona?',
+  'Cosa racconta a casa l\'ospite di questo hotel? E cosa raccontano i tuoi?',
+  'Quale cosa del tuo hotel ti sembra improvvisamente vecchia?',
+  'Se questo hotel aprisse nella tua città, cosa ti porterebbe via per primo?',
+].map((testo, i) => ({ id: 'c' + (i + 1), n: i + 1, testo }));
+
+const DOMANDE_FINE = [
+  'Onestamente: cosa hai detto a casa per giustificare questi giorni fuori? 😄',
+  'Cosa ti aspettavi? Un corso con le slide? Com\'è andata davvero?',
+  'Qual è la prima cosa che racconterai appena rientri in hotel?',
+  'L\'hotel che ti ha fatto pensare "questa la rubo"? Cosa ti sei rubato?',
+  'E quello che ti ha fatto dire "ok, da me non lo faccio mai"?',
+  'Quanti passi hai fatto in questi giorni? Ne è valsa la pena? 👟',
+  'Cosa ti sei portato a casa dal gruppo, a parte qualche chilo?',
+  'Un collega ti scrive: "Ma \'sto Hotel Voyager vale quello che costa?". Cosa gli rispondi su WhatsApp?',
+  'A chi lo regaleresti? E a chi diresti "lascia stare, non fa per te"?',
+  'Completa la frase: "Sono partito pensando che… e torno sapendo che…"',
+];
+
+// ---------- stato locale ----------
+const params = new URLSearchParams(location.search);
+let io = load();
+if (params.get('c')) io.codice = params.get('c');
+if (params.get('admin')) io.admin = params.get('admin');
+save();
+if (params.has('c') || params.has('admin')) history.replaceState(null, '', location.pathname);
+
+let S = { hotel: [], note: [], sfide: [], risposte: [], partecipanti: [], sintesi: {}, cartaDelGiorno: null };
+let AI = false;
+let ui = { tab: 'tappe', hotelId: null, carta: null, sfidaAperta: null, filtro: '' };
+let lastJson = '';
+let pollTimer = null;
+
+function load() { try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch { return {}; } }
+function save() { try { localStorage.setItem(LS, JSON.stringify(io)); } catch {} }
+
+// ---------- utilità ----------
+const $ = (s, r = document) => r.querySelector(s);
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === 'class') el.className = v;
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+    else if (k === 'text') el.textContent = v;
+    else el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of kids.flat()) if (c != null && c !== false) el.append(c.nodeType ? c : document.createTextNode(String(c)));
+  return el;
+}
+function toast(msg) {
+  const t = $('#toast'); t.textContent = msg; t.hidden = false;
+  clearTimeout(toast.t); toast.t = setTimeout(() => { t.hidden = true; }, 2600);
+}
+function quando(ts) {
+  const d = new Date(ts), oggi = new Date();
+  const ora = d.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+  return d.toDateString() === oggi.toDateString() ? ora : d.toLocaleDateString('it-IT', { weekday: 'short' }) + ' ' + ora;
+}
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+function md(testo) {
+  const righe = esc(testo || '').split('\n');
+  let out = '', inList = false;
+  const inline = (s) => s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  for (const r of righe) {
+    const l = r.trim();
+    if (/^[-•*] /.test(l)) { if (!inList) { out += '<ul>'; inList = true; } out += '<li>' + inline(l.slice(2)) + '</li>'; continue; }
+    if (inList) { out += '</ul>'; inList = false; }
+    if (/^#{1,4} /.test(l)) out += '<h3>' + inline(l.replace(/^#+ /, '')) + '</h3>';
+    else if (l) out += '<p>' + inline(l) + '</p>';
+  }
+  if (inList) out += '</ul>';
+  return out;
+}
+const isAdmin = () => !!io.admin;
+const hotelNome = (id) => (S.hotel.find((x) => x.id === id) || {}).nome || '';
+
+// ---------- rete ----------
+async function api(azione, dati = {}) {
+  const r = await fetch(API, {
+    method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ viaggio: VIAGGIO, codice: io.codice, admin: io.admin, autore: io.nome, azione, ...dati }),
+  });
+  const j = await r.json().catch(() => ({ ok: false }));
+  if (!r.ok || !j.ok) throw new Error(j.errore || 'Qualcosa non è andato, riprova');
+  return j;
+}
+async function aggiorna(forza) {
+  try {
+    const r = await fetch(`${API}?viaggio=${VIAGGIO}&codice=${encodeURIComponent(io.codice || '')}`, { cache: 'no-store' });
+    if (r.status === 401) { esci('Il codice del viaggio non è giusto.'); return; }
+    const j = await r.json();
+    if (!j.ok) throw new Error();
+    $('#sync').classList.remove('off');
+    AI = !!j.ai;
+    const nuovo = JSON.stringify(j.stato);
+    if (forza || nuovo !== lastJson) {
+      lastJson = nuovo; S = j.stato;
+      if (forza || !staScrivendo()) render();
+    }
+  } catch { $('#sync').classList.add('off'); }
+}
+// mentre qualcuno scrive l'aggiornamento automatico aspetta; le bozze sopravvivono comunque al ridisegno
+function staScrivendo() {
+  const a = document.activeElement;
+  return !!(a && /^(TEXTAREA|INPUT|SELECT)$/.test(a.tagName) && a.closest('#app'));
+}
+function campi(view) { return [...view.querySelectorAll('textarea,input[type=text],select,details')]; }
+function chiaveCampo(el, i) { return el.tagName + '|' + (el.getAttribute('placeholder') || '') + '|' + i; }
+function avviaPoll() {
+  clearInterval(pollTimer);
+  pollTimer = setInterval(() => { if (!document.hidden) aggiorna(); }, 8000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) aggiorna(); });
+}
+async function azione(nome, dati, ok) {
+  try { const j = await api(nome, dati); if (ok) toast(ok); await aggiorna(true); return j; }
+  catch (e) { toast(e.message); throw e; }
+}
+
+// ---------- dettatura ----------
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+function conMic(textarea) {
+  const box = h('div', { class: 'mic-box' }, textarea);
+  if (!SR) return box;
+  const b = h('button', { type: 'button', class: 'mic', 'aria-label': 'Detta a voce', title: 'Detta a voce' }, '🎙');
+  let rec = null;
+  b.addEventListener('click', () => {
+    if (rec) { rec.stop(); return; }
+    rec = new SR(); rec.lang = 'it-IT'; rec.continuous = true; rec.interimResults = false;
+    rec.onresult = (e) => {
+      for (let i = e.resultIndex; i < e.results.length; i++) if (e.results[i].isFinal) {
+        const p = e.results[i][0].transcript.trim();
+        textarea.value = (textarea.value ? textarea.value.replace(/\s*$/, ' ') : '') + p.charAt(0).toUpperCase() + p.slice(1);
+      }
+    };
+    rec.onend = () => { b.classList.remove('on'); rec = null; };
+    rec.onerror = () => { b.classList.remove('on'); rec = null; };
+    try { rec.start(); b.classList.add('on'); } catch { rec = null; }
+  });
+  box.append(b);
+  return box;
+}
+
+// ---------- componenti ----------
+function chipGroup(opzioni, valore, onChange, cls = '') {
+  const wrap = h('div', { class: 'chips', role: 'group' });
+  for (const [k, l] of opzioni) {
+    const c = h('button', { type: 'button', class: 'chip ' + (cls ? cls + k : ''), 'aria-pressed': String(k === valore) }, l);
+    c.addEventListener('click', () => {
+      const nuovo = c.getAttribute('aria-pressed') === 'true' && cls === '' ? '' : k;
+      wrap.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', 'false'));
+      if (nuovo) c.setAttribute('aria-pressed', 'true');
+      onChange(nuovo);
+    });
+    wrap.append(c);
+  }
+  return wrap;
+}
+function bottoneVoto(el) {
+  const miei = (el.voti || []).includes(io.nome);
+  const n = (el.voti || []).length;
+  return h('button', {
+    type: 'button', class: 'plus', 'aria-pressed': String(miei),
+    title: n ? 'D\'accordo: ' + el.voti.join(', ') : 'Sono d\'accordo',
+    onclick: () => azione('voto', { id: el.id }),
+  }, (miei ? '✓ ' : '+1 ') + 'Anch\'io' + (n ? ' · ' + n : ''));
+}
+function bottoneElimina(el) {
+  if (el.autore !== io.nome && !isAdmin()) return null;
+  return h('button', { type: 'button', class: 'del', onclick: () => { if (confirm('Elimino questo contributo?')) azione('elimina', { id: el.id }, 'Eliminato'); } }, 'elimina');
+}
+function vistaNota(n, conHotel) {
+  const t = TIPI[n.tipo] || TIPI.rubare;
+  return h('div', { class: 'nota t-' + n.tipo },
+    h('div', { class: 'meta' },
+      h('span', { class: 'tag' }, t.e + ' ' + t.l),
+      n.area ? h('span', null, '· ' + AREE[n.area]) : null,
+      conHotel && n.hotelId ? h('span', null, '· ' + hotelNome(n.hotelId)) : null),
+    n.domanda ? h('div', { class: 'micro' }, '«' + n.domanda + '»') : null,
+    h('p', { class: 'txt' }, n.testo),
+    n.applicazione ? h('div', { class: 'app' }, '→ Da me: ' + n.applicazione) : null,
+    h('div', { class: 'act' }, bottoneVoto(n), h('span', { class: 'micro spacer' }, n.autore + ' · ' + quando(n.ts)), bottoneElimina(n)));
+}
+
+function compositoreNota({ hotelId = null, carta = null, titolo }) {
+  ui.comp = ui.comp || {};
+  const st = ui.comp[hotelId || (carta && carta.id) || '_'] ||= { tipo: carta ? 'stimolo' : 'rubare', area: '' };
+  let tipo = st.tipo, area = st.area;
+  const ta = h('textarea', { placeholder: carta ? 'La tua risposta…' : 'Cosa hai visto? Scrivi o detta, anche due righe bastano.', maxlength: '1500' });
+  const app = h('textarea', { placeholder: 'Es. lo provo nella sala colazioni da gennaio', maxlength: '800', style: 'min-height:70px' });
+  const err = h('p', { class: 'err', hidden: true });
+  const btn = h('button', { type: 'button', class: 'btn full' }, 'Condividi col gruppo');
+  btn.addEventListener('click', async () => {
+    if (!ta.value.trim()) { err.textContent = 'Scrivi qualcosa prima di condividere.'; err.hidden = false; return; }
+    btn.disabled = true;
+    try {
+      await api('nota', { hotelId, tipo, area, testo: ta.value, applicazione: app.value, cartaId: carta && carta.id, domanda: carta && carta.testo });
+      ta.value = ''; app.value = ''; err.hidden = true; st.area = ''; toast('Condiviso ✓');
+      await aggiorna(true);
+    } catch (e) { err.textContent = e.message; err.hidden = false; }
+    btn.disabled = false;
+  });
+  return h('div', { class: 'card' },
+    titolo ? h('h3', null, titolo) : null,
+    carta ? null : h('div', null,
+      h('span', { class: 'lbl' }, 'Che cos\'è'),
+      chipGroup(Object.entries(TIPI).filter(([k]) => k !== 'stimolo').map(([k, v]) => [k, v.e + ' ' + v.l]), tipo, (v) => { tipo = st.tipo = v || 'rubare'; }, 't-')),
+    h('span', { class: 'lbl' }, carta ? 'Rispondi' : 'Racconta'),
+    conMic(ta),
+    h('details', null, h('summary', null, 'Aggiungi area e "come lo applicherei da me"'),
+      h('span', { class: 'lbl' }, 'Area (facoltativa)'),
+      chipGroup(Object.entries(AREE), area, (v) => { area = st.area = v; }),
+      h('span', { class: 'lbl' }, 'Come lo applicherei da me'),
+      conMic(app)),
+    err, h('div', { style: 'margin-top:14px' }, btn));
+}
+
+// ---------- TAPPE ----------
+function renderTappe() {
+  const v = $('#v-tappe'); v.replaceChildren();
+  if (ui.hotelId) return renderHotel(v);
+
+  const cdg = CARTE.find((c) => c.id === S.cartaDelGiorno);
+  if (cdg) v.append(h('div', { class: 'oggi', onclick: () => { ui.carta = cdg.id; vai('stimoli'); } }, h('small', null, '🃏 La carta di oggi'), h('b', null, cdg.testo)));
+
+  v.append(h('div', { class: 'card' },
+    h('h2', null, 'Le tappe'),
+    h('p', { class: 'intro' }, 'Un hotel per volta. Entra, scrivi cosa ti colpisce, metti "+1 Anch\'io" alle note degli altri che condividi. I voti decidono la classifica finale.')));
+
+  if (!S.hotel.length) v.append(h('div', { class: 'card empty' }, 'Ancora nessun hotel. Aggiungi il primo della giornata qui sotto.'));
+  const ordinati = [...S.hotel].sort((a, b) => b.ts - a.ts);
+  for (const ho of ordinati) {
+    const note = S.note.filter((n) => n.hotelId === ho.id);
+    const top = [...note].sort((a, b) => (b.voti || []).length - (a.voti || []).length)[0];
+    v.append(h('button', { type: 'button', class: 'card hotel', onclick: () => { ui.hotelId = ho.id; render(); scrollTo(0, 0); } },
+      h('div', { class: 'n' }, String(note.length)),
+      h('div', { class: 'tt' }, h('b', null, ho.nome), h('span', null, top ? (TIPI[top.tipo] || TIPI.rubare).e + ' ' + top.testo : (ho.zona || 'Nessuna nota ancora'))),
+      h('span', { 'aria-hidden': 'true' }, '›')));
+  }
+
+  const nome = h('input', { type: 'text', placeholder: 'Nome dell\'hotel', maxlength: '100' });
+  const zona = h('input', { type: 'text', placeholder: 'Zona (facoltativa), es. De Pijp', maxlength: '100' });
+  const btn = h('button', { type: 'button', class: 'btn blue full' }, '+ Aggiungi hotel');
+  btn.addEventListener('click', async () => {
+    if (!nome.value.trim()) { nome.focus(); return; }
+    btn.disabled = true;
+    try {
+      const j = await api('hotel', { nome: nome.value, zona: zona.value });
+      nome.value = ''; zona.value = '';
+      await aggiorna(true);
+      const trovato = j.id && S.hotel.find((x) => x.id === j.id) || S.hotel.find((x) => x.nome.toLowerCase() === nome.value.toLowerCase());
+      if (trovato) { ui.hotelId = trovato.id; render(); scrollTo(0, 0); }
+    } catch (e) { toast(e.message); }
+    btn.disabled = false;
+  });
+  v.append(h('div', { class: 'card' }, h('h3', null, 'Nuova tappa'), h('span', { class: 'lbl' }, 'Hotel'), nome, h('span', { class: 'lbl' }, 'Dove'), zona, h('div', { style: 'margin-top:14px' }, btn)));
+
+  const generali = S.note.filter((n) => !n.hotelId && n.tipo !== 'stimolo');
+  if (generali.length) v.append(h('div', { class: 'card' }, h('h3', null, 'Note sparse'), generali.slice().reverse().map((n) => vistaNota(n))));
+}
+
+function renderHotel(v) {
+  const ho = S.hotel.find((x) => x.id === ui.hotelId);
+  if (!ho) { ui.hotelId = null; return renderTappe(); }
+  v.append(h('button', { type: 'button', class: 'back', onclick: () => { ui.hotelId = null; render(); } }, '‹ Tutte le tappe'));
+  v.append(h('div', { class: 'card' },
+    h('h2', null, ho.nome),
+    h('p', { class: 'intro' }, [ho.zona, 'aggiunto da ' + ho.autore].filter(Boolean).join(' · ')),
+    (ho.autore === io.nome || isAdmin()) ? h('button', { type: 'button', class: 'del', onclick: () => { if (confirm('Elimino questo hotel? Le note restano tra le note sparse.')) { azione('elimina', { id: ho.id }, 'Hotel eliminato'); ui.hotelId = null; } } }, 'elimina hotel') : null));
+
+  v.append(compositoreNota({ hotelId: ho.id, titolo: 'Cosa ti porti via da qui?' }));
+
+  const note = S.note.filter((n) => n.hotelId === ho.id);
+  const filtri = h('div', { class: 'chips', style: 'margin:4px 0 8px' });
+  [['', 'Tutte'], ...Object.entries(TIPI).filter(([k]) => k !== 'stimolo').map(([k, t]) => [k, t.e + ' ' + note.filter((n) => n.tipo === k).length])].forEach(([k, l]) => {
+    filtri.append(h('button', { type: 'button', class: 'chip', 'aria-pressed': String(ui.filtro === k), onclick: () => { ui.filtro = k; render(); } }, l));
+  });
+  const lista = note.filter((n) => !ui.filtro || n.tipo === ui.filtro).sort((a, b) => (b.voti || []).length - (a.voti || []).length || b.ts - a.ts);
+  v.append(h('div', { class: 'card' }, h('h3', null, 'Il gruppo ha notato (' + note.length + ')'), filtri,
+    lista.length ? lista.map((n) => vistaNota(n)) : h('p', { class: 'empty' }, 'Nessuna nota ancora. Rompi il ghiaccio tu.')));
+
+  if (AI && note.length >= 3) v.append(boxSintesi('hotel:' + ho.id, { ambito: 'hotel', hotelId: ho.id }, 'Il succo di questo hotel', 'Claude legge le note del gruppo su questo hotel e ne tira fuori lezioni e disaccordi.'));
+}
+
+// ---------- STIMOLI ----------
+function renderStimoli() {
+  const v = $('#v-stimoli'); v.replaceChildren();
+  if (!ui.carta) ui.carta = S.cartaDelGiorno || CARTE[Math.floor(Math.random() * CARTE.length)].id;
+  const c = CARTE.find((x) => x.id === ui.carta) || CARTE[0];
+  const risposte = S.note.filter((n) => n.cartaId === c.id);
+
+  v.append(h('div', { class: 'card' }, h('h2', null, 'Stimoli'),
+    h('p', { class: 'intro' }, 'Una carta, una domanda scomoda. Rispondi di getto: le risposte degli altri compaiono sotto. Perfette per il brainstorming di fine giornata.')));
+  v.append(h('div', { class: 'carta' },
+    h('div', { class: 'num' }, 'CARTA ' + String(c.n).padStart(2, '0') + ' / ' + CARTE.length + (S.cartaDelGiorno === c.id ? ' · CARTA DI OGGI' : '')),
+    h('p', null, c.testo),
+    h('div', { class: 'row wrapit' },
+      h('button', { type: 'button', class: 'btn small', onclick: () => { let n; do { n = CARTE[Math.floor(Math.random() * CARTE.length)]; } while (n.id === c.id); ui.carta = n.id; render(); } }, '🔀 Pesca un\'altra'),
+      isAdmin() ? h('button', { type: 'button', class: 'btn small ghost', style: 'color:#fff;border-color:#fff', onclick: () => azione('carta', { cartaId: S.cartaDelGiorno === c.id ? null : c.id }, S.cartaDelGiorno === c.id ? 'Tolta' : 'Fissata per tutti') }, S.cartaDelGiorno === c.id ? 'Togli da carta di oggi' : '📌 Carta di oggi') : null)));
+  v.append(compositoreNota({ carta: c }));
+  v.append(h('div', { class: 'card' }, h('h3', null, 'Le risposte del gruppo (' + risposte.length + ')'),
+    risposte.length ? risposte.sort((a, b) => (b.voti || []).length - (a.voti || []).length).map((n) => vistaNota(n)) : h('p', { class: 'empty' }, 'Ancora nessuna risposta a questa carta.')));
+
+  const giocate = CARTE.filter((x) => x.id !== c.id && S.note.some((n) => n.cartaId === x.id));
+  if (giocate.length) v.append(h('div', { class: 'card' }, h('h3', null, 'Carte già giocate'),
+    giocate.map((x) => h('button', { type: 'button', class: 'hotel', style: 'background:none;padding:10px 0;border-bottom:1px solid var(--paper-2)', onclick: () => { ui.carta = x.id; render(); scrollTo(0, 0); } },
+      h('div', { class: 'n' }, String(S.note.filter((n) => n.cartaId === x.id).length)), h('div', { class: 'tt' }, h('span', { style: 'white-space:normal;color:var(--ink)' }, x.testo))))));
+}
+
+// ---------- MASTERMIND ----------
+function renderMastermind() {
+  const v = $('#v-mastermind'); v.replaceChildren();
+  v.append(h('div', { class: 'card' }, h('h2', null, 'Mastermind'),
+    h('p', { class: 'intro' }, 'Porta al gruppo la sfida vera del tuo hotel. Gli altri ti rispondono con quello che hanno visto in questi giorni e che fa al caso tuo. Funziona se sei concreto: numeri, camere, stagionalità.')));
+
+  const mia = S.sfide.find((f) => f.autore === io.nome);
+  if (!mia) {
+    const str = h('input', { type: 'text', value: io.struttura || '', placeholder: 'Es. 3 stelle 40 camere, Rimini, stagionale', maxlength: '160' });
+    const ta = h('textarea', { placeholder: 'Es. Ad agosto siamo pieni, a giugno e settembre no. Vorrei un motivo per venire da noi che non sia il prezzo.', maxlength: '1500' });
+    const pr = h('textarea', { placeholder: 'Facoltativo', maxlength: '800', style: 'min-height:70px' });
+    const btn = h('button', { type: 'button', class: 'btn full' }, 'Porta la sfida al gruppo');
+    btn.addEventListener('click', async () => {
+      if (!ta.value.trim()) { ta.focus(); return; }
+      btn.disabled = true;
+      try { await api('sfida', { struttura: str.value, testo: ta.value, provato: pr.value }); ta.value = ''; pr.value = ''; str.value = ''; toast('Sfida condivisa ✓'); await aggiorna(true); }
+      catch (e) { toast(e.message); }
+      btn.disabled = false;
+    });
+    v.append(h('div', { class: 'card' }, h('h3', null, 'La tua sfida'),
+      h('span', { class: 'lbl' }, 'La tua struttura'), str,
+      h('span', { class: 'lbl' }, 'Il problema che vorresti risolvere'), conMic(ta),
+      h('span', { class: 'lbl' }, 'Cosa hai già provato'), conMic(pr),
+      h('div', { style: 'margin-top:14px' }, btn)));
+  }
+
+  if (!S.sfide.length) v.append(h('div', { class: 'card empty' }, 'Ancora nessuna sfida. Inizia tu: le prime risposte arrivano già dal primo hotel.'));
+  const ordinate = [...S.sfide].sort((a, b) => (a.autore === io.nome ? -1 : 0) - (b.autore === io.nome ? -1 : 0) || a.ts - b.ts);
+  for (const f of ordinate) {
+    const rr = S.risposte.filter((r) => r.sfidaId === f.id).sort((a, b) => (b.voti || []).length - (a.voti || []).length || a.ts - b.ts);
+    const aperta = ui.sfidaAperta === f.id || f.autore === io.nome;
+    const card = h('div', { class: 'card' },
+      h('div', { class: 'micro' }, '🤝 La sfida di ' + f.autore + (f.struttura ? ' · ' + f.struttura : '')),
+      h('p', { class: 'txt', style: 'font-weight:600;margin:6px 0;white-space:pre-wrap' }, f.testo),
+      f.provato ? h('div', { class: 'micro', style: 'white-space:pre-wrap' }, 'Già provato: ' + f.provato) : null,
+      h('div', { class: 'act row', style: 'margin-top:8px' }, bottoneVoto(f), h('span', { class: 'spacer' }), bottoneElimina(f)));
+    if (!aperta) {
+      card.append(h('button', { type: 'button', class: 'btn ghost small', style: 'margin-top:10px', onclick: () => { ui.sfidaAperta = f.id; render(); } }, rr.length ? 'Leggi ' + rr.length + (rr.length === 1 ? ' risposta' : ' risposte') + ' e rispondi' : 'Rispondi per primo'));
+    } else {
+      rr.forEach((r) => card.append(h('div', { class: 'nota t-rubare' },
+        h('div', { class: 'meta' }, h('span', { class: 'tag' }, '💬 ' + r.autore), r.hotelId ? h('span', null, '· visto da ' + hotelNome(r.hotelId)) : null),
+        h('p', { class: 'txt' }, r.testo),
+        h('div', { class: 'act' }, bottoneVoto(r), h('span', { class: 'micro spacer' }, quando(r.ts)), bottoneElimina(r)))));
+      if (f.autore !== io.nome) {
+        const ta = h('textarea', { placeholder: 'Cosa hai visto che può servire a ' + f.autore.split(' ')[0] + '?', maxlength: '1500' });
+        const sel = h('select', null, h('option', { value: '' }, 'L\'ho visto… (facoltativo)'), [...S.hotel].sort((a, b) => b.ts - a.ts).map((x) => h('option', { value: x.id }, x.nome)));
+        const btn = h('button', { type: 'button', class: 'btn full' }, 'Rispondi');
+        btn.addEventListener('click', async () => {
+          if (!ta.value.trim()) { ta.focus(); return; }
+          btn.disabled = true;
+          try { await api('risposta', { sfidaId: f.id, hotelId: sel.value, testo: ta.value }); ta.value = ''; toast('Risposta inviata ✓'); await aggiorna(true); }
+          catch (e) { toast(e.message); }
+          btn.disabled = false;
+        });
+        card.append(h('span', { class: 'lbl' }, 'La tua risposta'), conMic(ta), h('div', { style: 'margin-top:8px' }, sel), h('div', { style: 'margin-top:10px' }, btn));
+      } else if (!rr.length) card.append(h('p', { class: 'micro', style: 'margin-top:10px' }, 'Le risposte del gruppo arriveranno qui.'));
+    }
+    v.append(card);
+  }
+}
+
+// ---------- SINTESI ----------
+function boxSintesi(chiave, richiesta, titolo, spiega) {
+  const s = S.sintesi[chiave];
+  const inCorso = s && s.stato === 'in corso' && Date.now() - s.ts < 180000;
+  const btn = h('button', { type: 'button', class: 'btn blue full', disabled: inCorso }, inCorso ? 'Claude sta leggendo…' : (s && s.testo ? '↻ Aggiorna con le ultime note' : '✨ Genera'));
+  btn.addEventListener('click', async () => {
+    btn.disabled = true; btn.textContent = 'Claude sta leggendo…';
+    try {
+      const r = await fetch(API_SINTESI, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ viaggio: VIAGGIO, codice: io.codice, admin: io.admin, ...richiesta }) });
+      if (r.status >= 400) throw new Error();
+      toast('Ci vuole circa un minuto: la sintesi compare qui da sola.');
+      setTimeout(() => aggiorna(true), 4000);
+    } catch { toast('Non riesco ad avviare la sintesi, riprova.'); btn.disabled = false; btn.textContent = '✨ Genera'; }
+  });
+  const box = h('div', { class: 'card' }, h('h3', null, titolo), h('p', { class: 'intro' }, spiega));
+  if (inCorso) box.append(h('p', { class: 'micro' }, h('span', { class: 'loading' }), ' Claude sta leggendo le note del gruppo, un minuto circa…'));
+  if (s && s.stato === 'errore') box.append(h('p', { class: 'err' }, s.errore || 'La sintesi non è riuscita.'));
+  if (s && s.testo) {
+    const corpo = h('div', { class: 'md' }); corpo.innerHTML = md(s.testo);
+    box.append(h('p', { class: 'micro', style: 'margin-top:10px' }, 'Aggiornata alle ' + quando(s.ts) + (s.note != null ? ' · su ' + s.note + ' note' : '')), corpo,
+      h('button', { type: 'button', class: 'btn ghost small', style: 'margin:8px 8px 0 0', onclick: () => navigator.clipboard.writeText(s.testo).then(() => toast('Copiata'), () => toast('Copia non riuscita')) }, 'Copia testo'));
+  }
+  box.append(h('div', { style: 'margin-top:12px' }, btn));
+  return box;
+}
+function renderSintesi() {
+  const v = $('#v-sintesi'); v.replaceChildren();
+  const tutti = [...S.note, ...S.risposte].filter((n) => (n.voti || []).length).sort((a, b) => b.voti.length - a.voti.length || a.ts - b.ts).slice(0, 10);
+  const persone = new Set([...S.note, ...S.sfide, ...S.risposte].map((x) => x.autore));
+
+  v.append(h('div', { class: 'card' }, h('h2', null, 'Il succo'),
+    h('p', { class: 'intro' }, [S.hotel.length + ' hotel', S.note.length + ' note', S.sfide.length + (S.sfide.length === 1 ? ' sfida' : ' sfide'), persone.size + (persone.size === 1 ? ' persona attiva' : ' persone attive')].join(' · '))));
+
+  v.append(h('div', { class: 'card' }, h('h3', null, '🏆 Le idee più votate'),
+    tutti.length ? tutti.map((n, i) => h('div', { class: 'rank' }, h('div', { class: 'pos' }, String(i + 1).padStart(2, '0')),
+      h('div', null, h('div', { style: 'white-space:pre-wrap' }, n.testo),
+        h('div', { class: 'micro' }, [n.autore, n.hotelId ? hotelNome(n.hotelId) : (n.sfidaId ? 'mastermind' : (n.domanda ? 'stimolo' : '')), n.voti.length + (n.voti.length === 1 ? ' voto' : ' voti')].filter(Boolean).join(' · ')))))
+      : h('p', { class: 'empty' }, 'La classifica si forma con i "+1 Anch\'io". Votate le note degli altri!')));
+
+  if (AI) {
+    v.append(boxSintesi('persona:' + io.nome, { ambito: 'persona', autore: io.nome }, '🧭 La tua pagina', 'Le idee di tutto il gruppo che fanno al caso tuo, adattate alla tua struttura e alla tua sfida. Più hai scritto, più è precisa.'));
+    v.append(boxSintesi('viaggio', { ambito: 'viaggio' }, '✨ La sintesi del gruppo', 'Claude legge tutto quello che avete scritto: idee forti, dove siete d\'accordo, dove vi dividete, i fili rossi del viaggio.'));
+  } else {
+    v.append(h('div', { class: 'card micro' }, 'La sintesi automatica con Claude non è attiva in questo viaggio.'));
+  }
+}
+
+// ---------- FINE VIAGGIO ----------
+function renderFine() {
+  const v = $('#v-fine'); v.replaceChildren();
+  v.append(h('div', { class: 'card' }, h('h2', null, 'Ultima tappa'),
+    h('p', { class: 'intro' }, 'Due chiacchiere prima di tornare. Rispondi a quelle che ti vanno (quattro o cinque bastano), come se le scrivessi a un amico. Le legge solo Nicola.')));
+
+  const campi = DOMANDE_FINE.map((d) => ({ d, ta: h('textarea', { maxlength: '2000', style: 'min-height:80px' }) }));
+  const ruolo = h('input', { type: 'text', placeholder: 'Es. titolare, direttore, architetto', maxlength: '120' });
+  const str = h('input', { type: 'text', value: io.struttura || '', maxlength: '160' });
+  const citta = h('input', { type: 'text', placeholder: 'Città', maxlength: '80' });
+  const contatto = h('input', { type: 'text', placeholder: 'Email o telefono (facoltativo)', maxlength: '160' });
+  const consenso = h('input', { type: 'checkbox', id: 'consenso' });
+  const btn = h('button', { type: 'button', class: 'btn full' }, 'Manda a Nicola');
+  const err = h('p', { class: 'err', hidden: true });
+  btn.addEventListener('click', async () => {
+    const risposte = campi.map(({ d, ta }) => ({ domanda: d, risposta: ta.value.trim() })).filter((r) => r.risposta);
+    if (!risposte.length) { err.textContent = 'Rispondi almeno a una domanda.'; err.hidden = false; return; }
+    btn.disabled = true;
+    try {
+      await api('testimonial', { risposte, ruolo: ruolo.value, struttura: str.value, citta: citta.value, contatto: contatto.value, consenso: consenso.checked });
+      campi.forEach(({ ta }) => { ta.value = ''; });
+      v.replaceChildren(h('div', { class: 'card' }, h('h2', null, 'Grazie! 🙌'), h('p', { class: 'intro' }, 'Arrivato a Nicola. Buon rientro, e occhio a cosa ti rubi per primo.')));
+      if (isAdmin()) renderAdmin(v);
+    } catch (e) { err.textContent = e.message; err.hidden = false; btn.disabled = false; }
+  });
+  v.append(h('div', { class: 'card' },
+    campi.map(({ d, ta }) => h('div', { class: 'q' }, h('label', { class: 'lbl' }, d), conMic(ta))),
+    h('span', { class: 'lbl' }, 'Il tuo ruolo'), ruolo,
+    h('span', { class: 'lbl' }, 'La tua struttura'), str,
+    h('span', { class: 'lbl' }, 'Città'), citta,
+    h('span', { class: 'lbl' }, 'Per ricontattarti'), contatto,
+    h('label', { class: 'row', style: 'margin-top:14px;align-items:flex-start;gap:10px;font-size:14px' }, consenso,
+      h('span', null, 'Hotel Voyager può pubblicare le mie risposte con nome, ruolo e struttura, anche accorciate, sul sito e sui social.')),
+    err, h('div', { style: 'margin-top:14px' }, btn)));
+  if (isAdmin()) renderAdmin(v);
+}
+async function renderAdmin(v) {
+  const box = h('div', { class: 'card' }, h('h3', null, '🔑 Testimonial ricevuti (solo Nicola)'), h('p', { class: 'micro' }, h('span', { class: 'loading' }), ' carico…'));
+  v.append(box);
+  try {
+    const j = await api('testimonial-lista');
+    box.replaceChildren(h('h3', null, '🔑 Testimonial ricevuti (' + j.voci.length + ')'));
+    if (!j.voci.length) box.append(h('p', { class: 'empty' }, 'Ancora nessuno.'));
+    j.voci.forEach((t) => box.append(h('div', { class: 'nota t-rubare' },
+      h('div', { class: 'meta' }, h('span', { class: 'tag' }, t.autore), h('span', null, [t.ruolo, t.struttura, t.citta].filter(Boolean).join(' · ')), h('span', null, t.consenso ? '✅ pubblicabile' : '⛔ non pubblicare')),
+      t.risposte.map((r) => h('div', { style: 'margin:8px 0' }, h('div', { class: 'micro' }, r.domanda), h('div', { class: 'txt' }, r.risposta))),
+      t.contatto ? h('div', { class: 'micro' }, 'Contatto: ' + t.contatto) : null)));
+    if (j.voci.length) box.append(h('button', { type: 'button', class: 'btn ghost small', onclick: () => scaricaCsv(j.voci) }, 'Scarica CSV'));
+  } catch (e) { box.replaceChildren(h('p', { class: 'err' }, 'Chiave admin non valida o errore: ' + e.message)); }
+}
+function scaricaCsv(voci) {
+  const q = (s) => '"' + String(s || '').replace(/"/g, '""') + '"';
+  const righe = [['Nome', 'Ruolo', 'Struttura', 'Città', 'Contatto', 'Pubblicabile', ...DOMANDE_FINE].map(q).join(';')];
+  voci.forEach((t) => righe.push([t.autore, t.ruolo, t.struttura, t.citta, t.contatto, t.consenso ? 'sì' : 'no',
+    ...DOMANDE_FINE.map((d) => (t.risposte.find((r) => r.domanda === d) || {}).risposta)].map(q).join(';')));
+  const a = h('a', { href: URL.createObjectURL(new Blob(['﻿' + righe.join('\n')], { type: 'text/csv' })), download: 'testimonial-' + VIAGGIO + '.csv' });
+  document.body.append(a); a.click(); a.remove();
+}
+
+// ---------- navigazione ----------
+function vai(tab) {
+  ui.tab = tab;
+  document.querySelectorAll('nav.tabs button').forEach((b) => b.setAttribute('aria-current', b.dataset.tab === tab ? 'page' : 'false'));
+  document.querySelectorAll('.view').forEach((s) => { s.hidden = s.id !== 'v-' + tab; });
+  render(); scrollTo(0, 0);
+}
+function render() {
+  $('#meBtn').textContent = (isAdmin() ? '🔑 ' : '') + (io.nome || '');
+  const view = $('#v-' + ui.tab);
+  const bozze = {}; let focus = null;
+  campi(view).forEach((el, i) => {
+    const k = chiaveCampo(el, i);
+    if (el.tagName === 'DETAILS') bozze[k] = el.open; else if (el.value) bozze[k] = el.value;
+    if (el === document.activeElement) focus = k;
+  });
+  ({ tappe: renderTappe, stimoli: renderStimoli, mastermind: renderMastermind, sintesi: renderSintesi, fine: renderFine })[ui.tab]();
+  campi(view).forEach((el, i) => {
+    const k = chiaveCampo(el, i);
+    if (!(k in bozze)) return;
+    if (el.tagName === 'DETAILS') el.open = bozze[k]; else el.value = bozze[k];
+    if (k === focus) el.focus();
+  });
+}
+document.querySelectorAll('nav.tabs button').forEach((b) => b.addEventListener('click', () => { if (b.dataset.tab === 'tappe' && ui.tab === 'tappe') ui.hotelId = null; vai(b.dataset.tab); }));
+$('#meBtn').addEventListener('click', () => { if (confirm('Vuoi cambiare nome o uscire dal diario?')) esci(); });
+
+// ---------- ingresso ----------
+function esci(msg) {
+  clearInterval(pollTimer);
+  $('#app').hidden = true; $('#gate').hidden = false;
+  $('#gNome').value = io.nome || ''; $('#gStruttura').value = io.struttura || ''; $('#gCodice').value = io.codice || '';
+  if (msg) { io.codice = ''; save(); $('#gErr').textContent = msg; $('#gErr').hidden = false; $('#gCodiceBox').hidden = false; }
+}
+$('#gateForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const nome = $('#gNome').value.trim().replace(/\s+/g, ' ');
+  const codice = $('#gCodice').value.trim() || io.codice;
+  if (!nome) return;
+  if (!codice) { $('#gErr').textContent = 'Serve il codice del viaggio.'; $('#gErr').hidden = false; return; }
+  $('#gBtn').disabled = true;
+  io.nome = nome; io.struttura = $('#gStruttura').value.trim(); io.codice = codice; save();
+  try { await api('ingresso', { struttura: io.struttura }); entra(); }
+  catch (er) { $('#gErr').textContent = er.message === 'codice' ? 'Il codice non è giusto. Controlla con Nicola.' : er.message; $('#gErr').hidden = false; }
+  $('#gBtn').disabled = false;
+});
+function entra() {
+  $('#gate').hidden = true; $('#app').hidden = false; $('#gErr').hidden = true;
+  vai(ui.tab); aggiorna(true); avviaPoll();
+}
+
+if (io.nome && io.codice) entra();
+else { esci(); if (io.codice) $('#gCodiceBox').hidden = true; }
+})();
+</script>
+</body>
+</html>
