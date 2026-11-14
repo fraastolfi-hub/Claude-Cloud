@@ -259,6 +259,7 @@ const PARTECIPANTI = [
   ['Gemma Santi', 'Villaggio Val Molini'],
   ['Sara Morandi', 'Residence Alle Palme'],
   ['Alessandro Trufelli', 'Astoria Resort'],
+  ['Mattia Detoni', ''],
   ['Nicola Delvecchio', 'Hotel Voyager'],
 ];
 
@@ -322,7 +323,7 @@ const DOMANDE_FINE = [
   'L\'hotel che ti ha fatto pensare "questa la rubo"? Cosa ti sei rubato?',
   'E quello che ti ha fatto dire "ok, da me non lo faccio mai"?',
   'Quanti passi hai fatto in questi giorni? Ne è valsa la pena? 👟',
-  'Cosa ti sei portato a casa dal gruppo, a parte qualche chilo?',
+  'Cosa ti sei portato a casa dal gruppo?',
   'Un collega ti scrive: "Ma \'sto Hotel Voyager vale quello che costa?". Cosa gli rispondi su WhatsApp?',
   'A chi lo regaleresti? E a chi diresti "lascia stare, non fa per te"?',
   'Completa la frase: "Sono partito pensando che… e torno sapendo che…"',
@@ -831,7 +832,7 @@ $('#meBtn').addEventListener('click', () => { if (confirm('Vuoi cambiare nome o 
 
 // ---------- ingresso ----------
 const gChi = $('#gChi');
-PARTECIPANTI.forEach(([n, st]) => gChi.append(h('option', { value: n }, n + ' · ' + st)));
+PARTECIPANTI.forEach(([n, st]) => gChi.append(h('option', { value: n }, st ? n + ' · ' + st : n)));
 gChi.append(h('option', { value: '__altro' }, 'Non sono in elenco'));
 gChi.addEventListener('change', () => { $('#gAltro').hidden = gChi.value !== '__altro'; $('#gErr').hidden = true; });
 function esci(msg) {
