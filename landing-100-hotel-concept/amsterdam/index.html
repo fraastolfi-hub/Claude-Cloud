@@ -223,7 +223,7 @@ details summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:600;
       <li><span>👍</span><span><b>Metti "+1 Anch'io"</b> alle idee degli altri che condividi: i voti fanno la classifica.</span></li>
       <li><span>🃏</span><span><b>La sera peschiamo una carta</b> e ne parliamo davanti a un bicchiere.</span></li>
       <li><span>🤝</span><span><b>Porta la tua sfida</b> al mastermind: il gruppo ti risponde con quello che ha visto.</span></li>
-      <li><span>✨</span><span><b>Alla fine Claude raccoglie tutto</b> e ti prepara le idee giuste per la tua struttura.</span></li>
+      <li><span>✨</span><span><b>Alla fine Hotel Voyager AI raccoglie tutto</b> e ti prepara le idee giuste per la tua struttura.</span></li>
     </ul>
     <p>Nessuna nota è troppo piccola e nessuna domanda è stupida. Buon viaggio!</p>
     <p class="firma">— Nicola, Hotel Voyager</p>
@@ -607,7 +607,7 @@ function renderHotel(v) {
   v.append(h('div', { class: 'card' }, h('h3', null, 'Il gruppo ha notato (' + note.length + ')'), filtri,
     lista.length ? lista.map((n) => vistaNota(n)) : h('p', { class: 'empty' }, 'Nessuna nota ancora. Rompi il ghiaccio tu.')));
 
-  if (AI && note.length >= 3) v.append(boxSintesi('hotel:' + ho.id, { ambito: 'hotel', hotelId: ho.id }, 'Il succo di questo hotel', 'Claude legge le note del gruppo su questo hotel e ne tira fuori lezioni e disaccordi.'));
+  if (AI && note.length >= 3) v.append(boxSintesi('hotel:' + ho.id, { ambito: 'hotel', hotelId: ho.id }, 'Il succo di questo hotel', 'Hotel Voyager AI legge le note del gruppo su questo hotel e ne tira fuori lezioni e disaccordi.'));
 }
 
 // ---------- STIMOLI ----------
@@ -700,9 +700,9 @@ function renderMastermind() {
 function boxSintesi(chiave, richiesta, titolo, spiega) {
   const s = S.sintesi[chiave];
   const inCorso = s && s.stato === 'in corso' && Date.now() - s.ts < 180000;
-  const btn = h('button', { type: 'button', class: 'btn blue full', disabled: inCorso }, inCorso ? 'Claude sta leggendo…' : (s && s.testo ? '↻ Aggiorna con le ultime note' : '✨ Genera'));
+  const btn = h('button', { type: 'button', class: 'btn blue full', disabled: inCorso }, inCorso ? 'Hotel Voyager AI sta leggendo…' : (s && s.testo ? '↻ Aggiorna con le ultime note' : '✨ Genera'));
   btn.addEventListener('click', async () => {
-    btn.disabled = true; btn.textContent = 'Claude sta leggendo…';
+    btn.disabled = true; btn.textContent = 'Hotel Voyager AI sta leggendo…';
     try {
       const r = await fetch(API_SINTESI, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ viaggio: VIAGGIO, codice: io.codice, admin: io.admin, ...richiesta }) });
       if (r.status >= 400) throw new Error();
@@ -711,7 +711,7 @@ function boxSintesi(chiave, richiesta, titolo, spiega) {
     } catch { toast('Non riesco ad avviare la sintesi, riprova.'); btn.disabled = false; btn.textContent = '✨ Genera'; }
   });
   const box = h('div', { class: 'card' }, h('h3', null, titolo), h('p', { class: 'intro' }, spiega));
-  if (inCorso) box.append(h('p', { class: 'micro' }, h('span', { class: 'loading' }), ' Claude sta leggendo le note del gruppo, un minuto circa…'));
+  if (inCorso) box.append(h('p', { class: 'micro' }, h('span', { class: 'loading' }), ' Hotel Voyager AI sta leggendo le note del gruppo, un minuto circa…'));
   if (s && s.stato === 'errore') box.append(h('p', { class: 'err' }, s.errore || 'La sintesi non è riuscita.'));
   if (s && s.testo) {
     const corpo = h('div', { class: 'md' }); corpo.innerHTML = md(s.testo);
@@ -737,9 +737,9 @@ function renderSintesi() {
 
   if (AI) {
     v.append(boxSintesi('persona:' + io.nome, { ambito: 'persona', autore: io.nome }, '🧭 La tua pagina', 'Le idee di tutto il gruppo che fanno al caso tuo, adattate alla tua struttura e alla tua sfida. Più hai scritto, più è precisa.'));
-    v.append(boxSintesi('viaggio', { ambito: 'viaggio' }, '✨ La sintesi del gruppo', 'Claude legge tutto quello che avete scritto: idee forti, dove siete d\'accordo, dove vi dividete, i fili rossi del viaggio.'));
+    v.append(boxSintesi('viaggio', { ambito: 'viaggio' }, '✨ La sintesi del gruppo', 'Hotel Voyager AI legge tutto quello che avete scritto: idee forti, dove siete d\'accordo, dove vi dividete, i fili rossi del viaggio.'));
   } else {
-    v.append(h('div', { class: 'card micro' }, 'La sintesi automatica con Claude non è attiva in questo viaggio.'));
+    v.append(h('div', { class: 'card micro' }, 'La sintesi di Hotel Voyager AI non è attiva in questo viaggio.'));
   }
 }
 
