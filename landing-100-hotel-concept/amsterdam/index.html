@@ -333,9 +333,16 @@ const DOMANDE_FINE = [
 const params = new URLSearchParams(location.search);
 let io = load();
 if (params.get('c')) io.codice = params.get('c');
+// link personale: ?p=nome-cognome fa entrare direttamente con quel nome
+const slug = (t) => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const personale = params.get('p') ? PARTECIPANTI.find(([n]) => slug(n) === slug(params.get('p'))) : null;
+if (personale) {
+  if (io.nome !== personale[0]) io.benvenuto = false;
+  io.nome = personale[0]; io.struttura = personale[1] || io.struttura || '';
+}
 if (params.get('admin')) io.admin = params.get('admin');
 save();
-if (params.has('c') || params.has('admin')) history.replaceState(null, '', location.pathname);
+if (params.has('c') || params.has('admin') || params.has('p')) history.replaceState(null, '', location.pathname);
 
 let S = { hotel: [], note: [], sfide: [], risposte: [], partecipanti: [], sintesi: {}, cartaDelGiorno: null };
 let AI = false;
@@ -868,7 +875,7 @@ function entra() {
   vai(ui.tab); aggiorna(true); avviaPoll();
 }
 
-if (io.nome && io.codice) entra();
+if (io.nome && io.codice) { entra(); if (personale) api('ingresso', { struttura: io.struttura }).catch(() => {}); }
 else { esci(); if (io.codice) $('#gCodiceBox').hidden = true; }
 })();
 </script>
