@@ -368,7 +368,15 @@ if (personale) {
 }
 if (params.get('admin')) io.admin = params.get('admin');
 save();
-if (params.has('c') || params.has('admin') || params.has('p')) history.replaceState(null, '', location.pathname);
+// L'indirizzo tiene sempre codice e nome: se qualcuno salva la pagina sulla schermata Home (che su iPhone
+// non vede i dati di Safari), l'icona riapre il diario già con la persona giusta, senza chiedere il codice.
+function aggiornaUrl() {
+  if (!io.codice || !io.nome) return;
+  const q = new URLSearchParams({ c: io.codice });
+  if (PARTECIPANTI.some(([n]) => n === io.nome)) q.set('p', slug(io.nome));
+  if (io.admin) q.set('admin', io.admin);
+  history.replaceState(null, '', location.pathname + '?' + q.toString());
+}
 
 let S = { hotel: [], note: [], sfide: [], risposte: [], partecipanti: [], sintesi: {}, cartaDelGiorno: null };
 let AI = false;
@@ -1006,6 +1014,7 @@ gChi.append(h('option', { value: '__altro' }, 'Non sono in elenco'));
 gChi.addEventListener('change', () => { $('#gAltro').hidden = gChi.value !== '__altro'; $('#gErr').hidden = true; });
 function esci(msg) {
   clearInterval(pollTimer);
+  history.replaceState(null, '', location.pathname + (io.codice && !msg ? '?c=' + encodeURIComponent(io.codice) : ''));
   $('#app').hidden = true; $('#gate').hidden = false;
   const noto = PARTECIPANTI.find(([n]) => n === io.nome);
   gChi.value = noto ? noto[0] : (io.nome ? '__altro' : '');
@@ -1032,6 +1041,7 @@ function benvenuto() {
 }
 $('#wBtn').addEventListener('click', () => { $('#welcome').hidden = true; io.benvenuto = true; save(); scrollTo(0, 0); });
 function entra() {
+  aggiornaUrl();
   $('#gate').hidden = true; $('#app').hidden = false; $('#gErr').hidden = true;
   if (!io.benvenuto) benvenuto();
   vai(ui.tab); aggiorna(true); avviaPoll();
