@@ -24,7 +24,7 @@ function materiale(s, filtroHotel) {
     .filter((n) => !filtroHotel || n.hotelId === filtroHotel)
     .forEach((n) => {
       const dove = n.hotelId ? nomeHotel[n.hotelId] || 'hotel' : (n.domanda ? `stimolo «${n.domanda}»` : 'generale');
-      righe.push(`- [${TIPI[n.tipo] || n.tipo}${n.area ? ' · ' + AREE[n.area] : ''} · ${dove} · ${n.autore} · voti ${(n.voti || []).length}] ${n.testo}${n.applicazione ? ` → da me: ${n.applicazione}` : ''}`);
+      righe.push(`- [${TIPI[n.tipo] || n.tipo}${n.area ? ' · ' + AREE[n.area] : ''} · ${dove} · ${n.autore} · voti ${(n.voti || []).length}] ${n.testo || '(solo foto)'}${n.foto ? ' [con foto]' : ''}${n.applicazione ? ` → da me: ${n.applicazione}` : ''}`);
     });
   if (!filtroHotel) {
     righe.push('\nSFIDE PORTATE AL MASTERMIND E RISPOSTE:');

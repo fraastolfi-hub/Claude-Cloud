@@ -7,7 +7,7 @@
 // Ognuno si identifica col nome che scrive all'ingresso: è un gruppo di 6-8 persone che si conoscono,
 // il codice del viaggio tiene fuori gli estranei. Nicola modera con la chiave admin.
 
-import { VIAGGIO, store, vuoto, nuovoId, t, json, leggiCorpo, codiceOk, adminOk, modifica, v2 } from '../lib/voyager.mjs';
+import { VIAGGIO, store, storeFoto, vuoto, nuovoId, t, json, leggiCorpo, codiceOk, adminOk, modifica, v2 } from '../lib/voyager.mjs';
 
 const TIPI_NOTA = ['rubare', 'evitare', 'dettaglio', 'domanda', 'stimolo'];
 const AREE = ['management', 'comunicazione', 'design', 'esperienza', ''];
@@ -29,6 +29,17 @@ const gestisci = async (event) => {
     const viaggio = t(q.viaggio, 40);
     if (!VIAGGIO.test(viaggio)) return json(400, { ok: false, errore: 'viaggio' });
     if (!codiceOk(q.codice)) return json(401, { ok: false, errore: 'codice' });
+    if (q.foto) {
+      const id = t(q.foto, 30);
+      if (!/^[a-z0-9]+$/.test(id)) return json(400, { ok: false });
+      const r = await storeFoto().getWithMetadata(`${viaggio}/${id}`, { type: 'arrayBuffer' });
+      if (!r) return { statusCode: 404, body: '' };
+      return {
+        statusCode: 200,
+        headers: { 'content-type': r.metadata?.tipo || 'image/jpeg', 'cache-control': 'private, max-age=31536000, immutable' },
+        body: Buffer.from(r.data),
+      };
+    }
     const stato = (await store().get(`${viaggio}/stato`, { type: 'json' })) || vuoto();
     return json(200, { ok: true, stato, ai: !!env.ANTHROPIC_API_KEY });
   }
@@ -69,10 +80,22 @@ const gestisci = async (event) => {
         return json(200, { ok: true, id });
       }
 
+      case 'foto': {
+        // la pagina riduce la foto a ~1600px JPEG prima di mandarla; qui solo controllo e salvataggio
+        if (!chi) return json(400, { ok: false, errore: 'nome' });
+        const tipo = ['image/jpeg', 'image/png', 'image/webp'].includes(d.tipo) ? d.tipo : 'image/jpeg';
+        const buf = Buffer.from(String(d.dati || ''), 'base64');
+        if (buf.length < 200 || buf.length > 3_000_000) return json(400, { ok: false, errore: 'foto troppo grande' });
+        const id = nuovoId();
+        await storeFoto().set(`${viaggio}/${id}`, buf, { metadata: { tipo, autore: chi, ts } });
+        return json(200, { ok: true, id });
+      }
+
       case 'nota': {
         const testo = t(d.testo);
         const tipo = TIPI_NOTA.includes(d.tipo) ? d.tipo : 'rubare';
-        if (!testo || !chi) return json(400, { ok: false, errore: 'dati' });
+        const foto = /^[a-z0-9]{6,30}$/.test(String(d.foto || '')) ? String(d.foto) : null;
+        if ((!testo && !foto) || !chi) return json(400, { ok: false, errore: 'dati' });
         const id = nuovoId();
         await modifica(chiave, (s) => {
           if (s.note.length >= MAX) throw new Error('archivio pieno');
@@ -83,6 +106,7 @@ const gestisci = async (event) => {
             applicazione: t(d.applicazione, 800),
             cartaId: t(d.cartaId, 20) || null,
             domanda: t(d.domanda, 300),
+            foto,
           });
         });
         return json(200, { ok: true, id });
@@ -124,12 +148,13 @@ const gestisci = async (event) => {
 
       case 'elimina': {
         if (!d.id) return json(400, { ok: false, errore: 'dati' });
-        let negato = false;
+        let negato = false, fotoDaTogliere = null;
         await modifica(chiave, (s) => {
           for (const k of ['note', 'sfide', 'risposte', 'hotel']) {
             const el = s[k].find((x) => x.id === d.id);
             if (!el) continue;
             if (!admin && el.autore !== chi) { negato = true; return false; }
+            fotoDaTogliere = el.foto || null;
             s[k] = s[k].filter((x) => x.id !== d.id);
             if (k === 'sfide') s.risposte = s.risposte.filter((r) => r.sfidaId !== d.id);
             if (k === 'hotel') s.note.forEach((n) => { if (n.hotelId === d.id) n.hotelId = null; });
@@ -137,6 +162,7 @@ const gestisci = async (event) => {
           }
           return false;
         });
+        if (!negato && fotoDaTogliere) await storeFoto().delete(`${viaggio}/${fotoDaTogliere}`).catch(() => {});
         return negato ? json(403, { ok: false, errore: 'puoi eliminare solo i tuoi contributi' }) : json(200, { ok: true });
       }
 

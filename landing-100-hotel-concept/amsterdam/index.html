@@ -104,6 +104,16 @@ textarea{min-height:96px;resize:vertical}
 .welcome li{display:flex;gap:12px;padding:10px 0;border-top:1px solid rgba(200,169,77,.25);font-size:15.5px}
 .welcome li b{color:var(--gold);font-weight:600}
 .welcome .firma{font-family:var(--f-display);color:var(--gold);letter-spacing:.08em;margin-top:6px}
+.fotonota{display:block;margin:8px 0 4px;border-radius:10px;overflow:hidden;background:var(--paper-2)}
+.fotonota img{width:100%;max-height:420px;object-fit:cover;display:block}
+.fotobox{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.fotobtn{display:inline-flex;align-items:center;gap:8px;border:1.5px dashed var(--rule);border-radius:10px;padding:10px 14px;font-size:14.5px;cursor:pointer;background:#fff}
+.fotobtn input{display:none}
+.anteprima{position:relative;width:76px;height:76px;border-radius:10px;overflow:hidden;background:var(--paper-2)}
+.anteprima img{width:100%;height:100%;object-fit:cover}
+.anteprima button{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.7);color:#fff;font-size:13px;cursor:pointer;line-height:1}
+.lightbox{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:16px}
+.lightbox img{max-width:100%;max-height:100%;border-radius:8px}
 .nota{border-left:4px solid var(--rule);padding:4px 0 4px 12px;margin:14px 0}
 .nota.t-rubare{border-color:var(--rubare)}.nota.t-evitare{border-color:var(--evitare)}.nota.t-dettaglio{border-color:var(--dettaglio)}.nota.t-domanda{border-color:var(--domanda)}.nota.t-stimolo{border-color:var(--stimolo)}
 .nota .meta{font-size:12px;color:var(--ink-soft);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
@@ -285,6 +295,13 @@ const FOTO = {
   'jakarta hotel': { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2023_Amsterdam%2C_Hotel_Jakarta_%2801%29.jpg/960px-2023_Amsterdam%2C_Hotel_Jakarta_%2801%29.jpg', autore: 'Kleon3', licenza: 'CC BY-SA 4.0', pagina: 'https://commons.wikimedia.org/wiki/File:2023_Amsterdam,_Hotel_Jakarta_(01).jpg' },
 };
 const fotoDi = (nome) => FOTO[String(nome || '').toLowerCase().trim()];
+// la foto del gruppo più votata batte quella di Wikimedia: racconta l'hotel visto da dentro
+function fotoTappa(ho) {
+  const conFoto = S.note.filter((n) => n.hotelId === ho.id && n.foto)
+    .sort((a, b) => (b.voti || []).length - (a.voti || []).length || b.ts - a.ts)[0];
+  if (conFoto) return { src: urlFoto(conFoto.foto), gruppo: true, autore: conFoto.autore };
+  return fotoDi(ho.nome);
+}
 const iniziali = (nome) => String(nome || '?').replace(/^(the|hotel)\s+/i, '').split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
 function immagine(f, alt) {
   const img = h('img', { src: f.src, alt, loading: 'lazy', referrerpolicy: 'no-referrer' });
@@ -450,6 +467,30 @@ async function azione(nome, dati, ok) {
   catch (e) { toast(e.message); throw e; }
 }
 
+// ---------- foto ----------
+const urlFoto = (id) => `${API}?viaggio=${VIAGGIO}&codice=${encodeURIComponent(io.codice || '')}&foto=${id}`;
+// riduce la foto sul telefono (lato lungo 1600px, JPEG) prima di caricarla: veloce anche col 4G
+function riduciFoto(file) {
+  return new Promise((ok, ko) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      const max = 1600, k = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+      const c = document.createElement('canvas');
+      c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url);
+      ok(c.toDataURL('image/jpeg', 0.8).split(',')[1]);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); ko(new Error('Questa foto non si riesce ad aprire, prova con un\'altra.')); };
+    img.src = url;
+  });
+}
+function apriFoto(id) {
+  const lb = h('div', { class: 'lightbox', onclick: () => lb.remove() }, h('img', { src: urlFoto(id), alt: 'Foto' }));
+  document.body.append(lb);
+}
+
 // ---------- dettatura ----------
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 function conMic(textarea) {
@@ -510,7 +551,8 @@ function vistaNota(n, conHotel) {
       n.area ? h('span', null, '· ' + AREE[n.area]) : null,
       conHotel && n.hotelId ? h('span', null, '· ' + hotelNome(n.hotelId)) : null),
     n.domanda ? h('div', { class: 'micro' }, '«' + n.domanda + '»') : null,
-    h('p', { class: 'txt' }, n.testo),
+    n.foto ? h('a', { class: 'fotonota', href: '#', onclick: (e) => { e.preventDefault(); apriFoto(n.foto); } }, h('img', { src: urlFoto(n.foto), alt: 'Foto di ' + n.autore, loading: 'lazy' })) : null,
+    n.testo ? h('p', { class: 'txt' }, n.testo) : null,
     n.applicazione ? h('div', { class: 'app' }, '→ Da me: ' + n.applicazione) : null,
     h('div', { class: 'act' }, bottoneVoto(n), h('span', { class: 'micro spacer' }, n.autore + ' · ' + quando(n.ts)), bottoneElimina(n)));
 }
@@ -523,12 +565,38 @@ function compositoreNota({ hotelId = null, carta = null, titolo, libero = false 
   const app = h('textarea', { placeholder: 'Es. lo provo nella sala colazioni da gennaio', maxlength: '800', style: 'min-height:70px' });
   const err = h('p', { class: 'err', hidden: true });
   const btn = h('button', { type: 'button', class: 'btn full' }, 'Condividi col gruppo');
+  // foto: si carica appena scelta, la nota porta solo il suo id
+  const fotoBox = h('div', { class: 'fotobox' });
+  const disegnaFoto = () => {
+    fotoBox.replaceChildren();
+    if (st.caricando) { fotoBox.append(h('span', { class: 'micro' }, h('span', { class: 'loading' }), ' Carico la foto…')); return; }
+    if (st.foto) {
+      fotoBox.append(h('div', { class: 'anteprima' }, h('img', { src: urlFoto(st.foto), alt: 'Foto scelta' }),
+        h('button', { type: 'button', 'aria-label': 'Togli la foto', onclick: () => { st.foto = null; disegnaFoto(); } }, '✕')));
+      return;
+    }
+    const input = h('input', { type: 'file', accept: 'image/*' });
+    input.addEventListener('change', async () => {
+      const f = input.files && input.files[0];
+      if (!f) return;
+      st.caricando = true; disegnaFoto(); btn.disabled = true;
+      try {
+        const dati = await riduciFoto(f);
+        const j = await api('foto', { dati, tipo: 'image/jpeg' });
+        st.foto = j.id;
+      } catch (e) { toast(e.message || 'Foto non caricata, riprova'); }
+      st.caricando = false; btn.disabled = false; disegnaFoto();
+    });
+    fotoBox.append(h('label', { class: 'fotobtn' }, input, '📷 Aggiungi una foto'));
+  };
+  disegnaFoto();
   btn.addEventListener('click', async () => {
-    if (!ta.value.trim()) { err.textContent = 'Scrivi qualcosa prima di condividere.'; err.hidden = false; return; }
+    if (!ta.value.trim() && !st.foto) { err.textContent = 'Scrivi qualcosa o aggiungi una foto prima di condividere.'; err.hidden = false; return; }
+    if (st.caricando) return;
     btn.disabled = true;
     try {
-      await api('nota', { hotelId, tipo, area, testo: ta.value, applicazione: app.value, cartaId: carta && carta.id, domanda: carta && carta.testo });
-      ta.value = ''; app.value = ''; err.hidden = true; st.area = ''; toast('Condiviso ✓');
+      await api('nota', { hotelId, tipo, area, testo: ta.value, applicazione: app.value, cartaId: carta && carta.id, domanda: carta && carta.testo, foto: st.foto });
+      ta.value = ''; app.value = ''; err.hidden = true; st.area = ''; st.foto = null; disegnaFoto(); toast('Condiviso ✓');
       await aggiorna(true);
     } catch (e) { err.textContent = e.message; err.hidden = false; }
     btn.disabled = false;
@@ -540,6 +608,7 @@ function compositoreNota({ hotelId = null, carta = null, titolo, libero = false 
       chipGroup(Object.entries(TIPI).filter(([k]) => k !== 'stimolo').map(([k, v]) => [k, v.e + ' ' + v.l]), tipo, (v) => { tipo = st.tipo = v || 'rubare'; }, 't-')),
     h('span', { class: 'lbl' }, carta ? 'Rispondi' : 'Racconta'),
     conMic(ta),
+    fotoBox,
     h('details', null, h('summary', null, 'Aggiungi area e "come lo applicherei da me"'),
       h('span', { class: 'lbl' }, 'Area (facoltativa)'),
       chipGroup(Object.entries(AREE), area, (v) => { area = st.area = v; }),
@@ -566,10 +635,10 @@ function renderTappe() {
   for (const ho of ordinati) {
     const note = S.note.filter((n) => n.hotelId === ho.id);
     const top = [...note].sort((a, b) => (b.voti || []).length - (a.voti || []).length)[0];
-    const f = fotoDi(ho.nome);
+    const f = fotoTappa(ho);
     v.append(h('button', { type: 'button', class: 'card hotel', onclick: () => { ui.hotelId = ho.id; render(); scrollTo(0, 0); } },
       h('div', { class: 'ph' }, f ? immagine(f, ho.nome) : iniziali(ho.nome), h('span', { class: 'cnt', title: 'note' }, String(note.length))),
-      h('div', { class: 'tt' }, h('b', null, ho.nome), h('span', null, top ? (TIPI[top.tipo] || TIPI.rubare).e + ' ' + top.testo : [Number(ho.giorno) ? 'Tappa ' + ho.giorno : '', ho.zona].filter(Boolean).join(' · ') || 'Nessuna nota ancora')),
+      h('div', { class: 'tt' }, h('b', null, ho.nome), h('span', null, top ? (TIPI[top.tipo] || TIPI.rubare).e + ' ' + (top.testo || '📷 foto') : [Number(ho.giorno) ? 'Tappa ' + ho.giorno : '', ho.zona].filter(Boolean).join(' · ') || 'Nessuna nota ancora')),
       h('span', { 'aria-hidden': 'true' }, '›')));
   }
 
@@ -599,11 +668,12 @@ function renderHotel(v) {
   const ho = S.hotel.find((x) => x.id === ui.hotelId);
   if (!ho) { ui.hotelId = null; return renderTappe(); }
   v.append(h('button', { type: 'button', class: 'back', onclick: () => { ui.hotelId = null; render(); } }, '‹ Tutte le tappe'));
-  const f = fotoDi(ho.nome);
+  const f = fotoTappa(ho);
   v.append(h('div', { class: 'hero' },
     f ? immagine(f, ho.nome) : h('div', { class: 'ini' }, iniziali(ho.nome)),
     h('div', { class: 'tt' }, h('h2', null, ho.nome), h('span', null, [Number(ho.giorno) ? 'Tappa ' + ho.giorno : 'Fuori programma', ho.zona].filter(Boolean).join(' · ')))));
-  if (f) v.append(h('div', { class: 'credit' }, 'Foto: ', h('a', { href: f.pagina, target: '_blank', rel: 'noopener' }, f.autore), ' · ' + f.licenza + ', Wikimedia Commons'));
+  if (f && f.gruppo) v.append(h('div', { class: 'credit' }, '📷 Foto di ' + f.autore + ' · la più votata del gruppo'));
+  else if (f) v.append(h('div', { class: 'credit' }, 'Foto: ', h('a', { href: f.pagina, target: '_blank', rel: 'noopener' }, f.autore), ' · ' + f.licenza + ', Wikimedia Commons'));
   v.append(h('div', { style: (ho.autore === io.nome || isAdmin()) ? 'text-align:right;margin:-4px 0 8px' : 'display:none' },
     h('button', { type: 'button', class: 'del', onclick: () => { if (confirm('Elimino questo hotel? Le note restano tra le note sparse.')) { azione('elimina', { id: ho.id }, 'Hotel eliminato'); ui.hotelId = null; } } }, 'elimina tappa')));
 
@@ -769,7 +839,7 @@ function renderSintesi() {
 
   v.append(h('div', { class: 'card' }, h('h3', null, '🏆 Le idee più votate'),
     tutti.length ? tutti.map((n, i) => h('div', { class: 'rank' }, h('div', { class: 'pos' }, String(i + 1).padStart(2, '0')),
-      h('div', null, h('div', { style: 'white-space:pre-wrap' }, n.testo),
+      h('div', null, h('div', { style: 'white-space:pre-wrap' }, n.testo || '📷 foto'),
         h('div', { class: 'micro' }, [n.autore, n.hotelId ? hotelNome(n.hotelId) : (n.sfidaId ? 'mastermind' : (n.domanda ? 'stimolo' : '')), n.voti.length + (n.voti.length === 1 ? ' voto' : ' voti')].filter(Boolean).join(' · ')))))
       : h('p', { class: 'empty' }, 'La classifica si forma con i "+1 Anch\'io". Votate le note degli altri!')));
 
