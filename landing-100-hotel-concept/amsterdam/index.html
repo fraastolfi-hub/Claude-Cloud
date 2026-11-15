@@ -732,6 +732,33 @@ function boxSintesi(chiave, richiesta, titolo, spiega) {
   box.append(h('div', { style: 'margin-top:12px' }, btn));
   return box;
 }
+// Solo per Nicola: chi è entrato, quanto ha scritto, quando si è fatto vivo l'ultima volta
+function boxPartecipazione() {
+  const nomi = [...new Set([...PARTECIPANTI.map(([n]) => n), ...S.partecipanti.map((p) => p.nome)])];
+  const righe = nomi.map((nome) => {
+    const entrato = S.partecipanti.find((p) => p.nome === nome);
+    const note = S.note.filter((n) => n.autore === nome);
+    const risp = S.risposte.filter((r) => r.autore === nome);
+    const sfide = S.sfide.filter((f) => f.autore === nome);
+    const voti = [...S.note, ...S.risposte, ...S.sfide].filter((x) => (x.voti || []).includes(nome)).length;
+    const tempi = [...note, ...risp, ...sfide, ...S.hotel.filter((x) => x.autore === nome)].map((x) => x.ts);
+    if (entrato) tempi.push(entrato.ts);
+    const ultimo = tempi.length ? Math.max(...tempi) : 0;
+    return { nome, entrato: !!entrato, note: note.length, risp: risp.length, sfide: sfide.length, voti, ultimo };
+  }).sort((a, b) => b.ultimo - a.ultimo);
+  const dentro = righe.filter((r) => r.entrato).length;
+  const box = h('div', { class: 'card' }, h('h3', null, '🔑 Chi sta partecipando'),
+    h('p', { class: 'intro' }, dentro + ' su ' + righe.length + ' sono entrati. Si aggiorna da solo; lo vedi solo tu.'));
+  righe.forEach((r) => box.append(h('div', { class: 'row', style: 'padding:10px 0;border-top:1px solid var(--paper-2);align-items:flex-start' },
+    h('span', { style: 'width:22px' }, r.entrato ? '✅' : '⏳'),
+    h('div', { style: 'flex:1;min-width:0' },
+      h('b', null, r.nome),
+      h('div', { class: 'micro' }, r.entrato
+        ? [r.note + (r.note === 1 ? ' nota' : ' note'), r.voti + (r.voti === 1 ? ' voto' : ' voti'), r.risp ? r.risp + ' risposte' : '', r.sfide ? 'sfida ✓' : ''].filter(Boolean).join(' · ')
+        : 'non ancora entrato')),
+    h('span', { class: 'micro' }, r.ultimo ? quando(r.ultimo) : ''))));
+  return box;
+}
 function renderSintesi() {
   const v = $('#v-sintesi'); v.replaceChildren();
   const tutti = [...S.note, ...S.risposte].filter((n) => (n.voti || []).length).sort((a, b) => b.voti.length - a.voti.length || a.ts - b.ts).slice(0, 10);
@@ -746,6 +773,7 @@ function renderSintesi() {
         h('div', { class: 'micro' }, [n.autore, n.hotelId ? hotelNome(n.hotelId) : (n.sfidaId ? 'mastermind' : (n.domanda ? 'stimolo' : '')), n.voti.length + (n.voti.length === 1 ? ' voto' : ' voti')].filter(Boolean).join(' · ')))))
       : h('p', { class: 'empty' }, 'La classifica si forma con i "+1 Anch\'io". Votate le note degli altri!')));
 
+  if (isAdmin()) v.prepend(boxPartecipazione());
   if (AI) {
     v.append(boxSintesi('persona:' + io.nome, { ambito: 'persona', autore: io.nome }, '🧭 La tua pagina', 'Le idee di tutto il gruppo che fanno al caso tuo, adattate alla tua struttura e alla tua sfida. Più hai scritto, più è precisa.'));
     v.append(boxSintesi('viaggio', { ambito: 'viaggio' }, '✨ La sintesi del gruppo', 'Hotel Voyager AI legge tutto quello che avete scritto: idee forti, dove siete d\'accordo, dove vi dividete, i fili rossi del viaggio.'));
