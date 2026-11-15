@@ -9,7 +9,7 @@
 
 import { VIAGGIO, store, storeFoto, vuoto, nuovoId, t, json, leggiCorpo, codiceOk, adminOk, modifica, v2 } from '../lib/voyager.mjs';
 
-const TIPI_NOTA = ['rubare', 'evitare', 'dettaglio', 'domanda', 'stimolo'];
+const TIPI_NOTA = ['rubare', 'evitare', 'dettaglio', 'domanda', 'stimolo', 'foto'];
 const AREE = ['management', 'comunicazione', 'design', 'esperienza', ''];
 const MAX = 2000; // elementi per elenco: un viaggio ne produce qualche centinaio
 

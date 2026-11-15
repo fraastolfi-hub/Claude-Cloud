@@ -9,7 +9,7 @@
 import { VIAGGIO, store, vuoto, t, leggiCorpo, codiceOk, adminOk, modifica, v2 } from '../lib/voyager.mjs';
 
 const MODELLO = 'claude-sonnet-5-5';
-const TIPI = { rubare: 'Da rubare', evitare: 'Da non fare mai', dettaglio: 'Dettaglio invisibile', domanda: 'Domanda aperta', stimolo: 'Risposta a uno stimolo' };
+const TIPI = { rubare: 'Da rubare', evitare: 'Da non fare mai', dettaglio: 'Dettaglio invisibile', domanda: 'Domanda aperta', stimolo: 'Risposta a uno stimolo', foto: 'Foto con didascalia' };
 const AREE = { management: 'Management', comunicazione: 'Comunicazione', design: 'Design e ristrutturazione', esperienza: 'Guest experience e servizio' };
 
 function materiale(s, filtroHotel) {

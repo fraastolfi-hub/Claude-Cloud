@@ -114,6 +114,11 @@ textarea{min-height:96px;resize:vertical}
 .anteprima button{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.7);color:#fff;font-size:13px;cursor:pointer;line-height:1}
 .lightbox{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:16px}
 .lightbox img{max-width:100%;max-height:100%;border-radius:8px}
+.nota.t-foto{border-color:var(--gold)}
+.galleria{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:10px}
+.galleria a{display:block;aspect-ratio:1;border-radius:6px;overflow:hidden;background:var(--paper-2);position:relative}
+.galleria img{width:100%;height:100%;object-fit:cover;display:block}
+.galleria span{position:absolute;left:0;right:0;bottom:0;padding:10px 5px 3px;font-size:10px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nota{border-left:4px solid var(--rule);padding:4px 0 4px 12px;margin:14px 0}
 .nota.t-rubare{border-color:var(--rubare)}.nota.t-evitare{border-color:var(--evitare)}.nota.t-dettaglio{border-color:var(--dettaglio)}.nota.t-domanda{border-color:var(--domanda)}.nota.t-stimolo{border-color:var(--stimolo)}
 .nota .meta{font-size:12px;color:var(--ink-soft);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
@@ -256,6 +261,7 @@ const TIPI = {
   dettaglio:{ e: '🔍', l: 'Dettaglio invisibile' },
   domanda:  { e: '❓', l: 'Domanda aperta' },
   stimolo:  { e: '🃏', l: 'Stimolo' },
+  foto:     { e: '📷', l: 'Foto' },
 };
 const AREE = { management: 'Management', comunicazione: 'Comunicazione', design: 'Design', esperienza: 'Guest experience' };
 
@@ -486,9 +492,58 @@ function riduciFoto(file) {
     img.src = url;
   });
 }
-function apriFoto(id) {
-  const lb = h('div', { class: 'lightbox', onclick: () => lb.remove() }, h('img', { src: urlFoto(id), alt: 'Foto' }));
+function apriFoto(id, n) {
+  const dida = n ? [n.hotelId ? hotelNome(n.hotelId) : '', n.testo, n.autore].filter(Boolean).join(' · ') : '';
+  const lb = h('div', { class: 'lightbox', style: 'flex-direction:column;gap:12px', onclick: () => lb.remove() },
+    h('img', { src: urlFoto(id), alt: dida || 'Foto' }),
+    dida ? h('p', { style: 'color:#fff;font-size:14px;margin:0;text-align:center;max-width:560px' }, dida) : null);
   document.body.append(lb);
+}
+// riquadro "Carica una foto" della sezione Tappe: foto + tappa + didascalia
+function caricaFoto() {
+  ui.cf = ui.cf || { foto: null, caricando: false, hotelId: ui.cf?.hotelId || '' };
+  const st = ui.cf;
+  const sel = h('select', null, h('option', { value: '' }, 'Nessuna tappa in particolare'),
+    [...S.hotel].sort((a, b) => (Number(a.giorno) || 999) - (Number(b.giorno) || 999) || a.ts - b.ts).map((x) => h('option', { value: x.id }, x.nome)));
+  sel.value = st.hotelId; sel.addEventListener('change', () => { st.hotelId = sel.value; });
+  const dida = h('input', { type: 'text', placeholder: 'Didascalia (facoltativa): cosa si vede, perché conta', maxlength: '300' });
+  const btn = h('button', { type: 'button', class: 'btn full' }, 'Condividi la foto');
+  const box = h('div', { class: 'fotobox' });
+  const disegna = () => {
+    box.replaceChildren();
+    if (st.caricando) { box.append(h('span', { class: 'micro' }, h('span', { class: 'loading' }), ' Carico la foto…')); return; }
+    if (st.foto) {
+      box.append(h('div', { class: 'anteprima', style: 'width:110px;height:110px' }, h('img', { src: urlFoto(st.foto), alt: 'Foto scelta' }),
+        h('button', { type: 'button', 'aria-label': 'Togli la foto', onclick: () => { st.foto = null; disegna(); } }, '✕')));
+      return;
+    }
+    const input = h('input', { type: 'file', accept: 'image/*' });
+    input.addEventListener('change', async () => {
+      const f = input.files && input.files[0];
+      if (!f) return;
+      st.caricando = true; disegna(); btn.disabled = true;
+      try { st.foto = (await api('foto', { dati: await riduciFoto(f), tipo: 'image/jpeg' })).id; }
+      catch (e) { toast(e.message || 'Foto non caricata, riprova'); }
+      st.caricando = false; btn.disabled = false; disegna();
+    });
+    box.append(h('label', { class: 'fotobtn' }, input, '📷 Scatta o scegli una foto'));
+  };
+  disegna();
+  btn.addEventListener('click', async () => {
+    if (st.caricando) return;
+    if (!st.foto) { toast('Prima scegli una foto'); return; }
+    btn.disabled = true;
+    try {
+      await api('nota', { tipo: 'foto', hotelId: st.hotelId || null, testo: dida.value, foto: st.foto });
+      st.foto = null; dida.value = ''; toast('Foto condivisa ✓');
+      await aggiorna(true);
+    } catch (e) { toast(e.message); }
+    btn.disabled = false;
+  });
+  return h('div', { class: 'card' }, h('h3', null, '📷 Carica una foto'),
+    h('p', { class: 'intro' }, 'Una camera, una hall, un dettaglio: scatta e indica a quale tappa appartiene. La foto più votata di ogni tappa ne diventa la copertina.'),
+    box, h('span', { class: 'lbl' }, 'Tappa'), sel, h('span', { class: 'lbl' }, 'Didascalia'), dida,
+    h('div', { style: 'margin-top:14px' }, btn));
 }
 
 // ---------- dettatura ----------
@@ -551,7 +606,7 @@ function vistaNota(n, conHotel) {
       n.area ? h('span', null, '· ' + AREE[n.area]) : null,
       conHotel && n.hotelId ? h('span', null, '· ' + hotelNome(n.hotelId)) : null),
     n.domanda ? h('div', { class: 'micro' }, '«' + n.domanda + '»') : null,
-    n.foto ? h('a', { class: 'fotonota', href: '#', onclick: (e) => { e.preventDefault(); apriFoto(n.foto); } }, h('img', { src: urlFoto(n.foto), alt: 'Foto di ' + n.autore, loading: 'lazy' })) : null,
+    n.foto ? h('a', { class: 'fotonota', href: '#', onclick: (e) => { e.preventDefault(); apriFoto(n.foto, n); } }, h('img', { src: urlFoto(n.foto), alt: 'Foto di ' + n.autore, loading: 'lazy' })) : null,
     n.testo ? h('p', { class: 'txt' }, n.testo) : null,
     n.applicazione ? h('div', { class: 'app' }, '→ Da me: ' + n.applicazione) : null,
     h('div', { class: 'act' }, bottoneVoto(n), h('span', { class: 'micro spacer' }, n.autore + ' · ' + quando(n.ts)), bottoneElimina(n)));
@@ -605,7 +660,7 @@ function compositoreNota({ hotelId = null, carta = null, titolo, libero = false 
     titolo ? h('h3', null, titolo) : null,
     carta ? null : h('div', null,
       h('span', { class: 'lbl' }, 'Che cos\'è'),
-      chipGroup(Object.entries(TIPI).filter(([k]) => k !== 'stimolo').map(([k, v]) => [k, v.e + ' ' + v.l]), tipo, (v) => { tipo = st.tipo = v || 'rubare'; }, 't-')),
+      chipGroup(Object.entries(TIPI).filter(([k]) => k !== 'stimolo' && k !== 'foto').map(([k, v]) => [k, v.e + ' ' + v.l]), tipo, (v) => { tipo = st.tipo = v || 'rubare'; }, 't-')),
     h('span', { class: 'lbl' }, carta ? 'Rispondi' : 'Racconta'),
     conMic(ta),
     fotoBox,
@@ -660,8 +715,14 @@ function renderTappe() {
   v.append(h('div', { class: 'card' }, h('h3', null, 'Una tappa fuori programma?'), h('p', { class: 'intro' }, 'Un hotel in più, un ristorante, un concept store: aggiungilo e diventa una tappa come le altre.'), h('span', { class: 'lbl' }, 'Nome'), nome, h('span', { class: 'lbl' }, 'Dove'), zona, h('div', { style: 'margin-top:14px' }, btn)));
 
   v.append(compositoreNota({ titolo: '📝 Appunto libero', libero: true }));
-  const generali = S.note.filter((n) => !n.hotelId && n.tipo !== 'stimolo');
+  const generali = S.note.filter((n) => !n.hotelId && n.tipo !== 'stimolo' && n.tipo !== 'foto');
   if (generali.length) v.append(h('div', { class: 'card' }, h('h3', null, 'Appunti liberi (' + generali.length + ')'), generali.slice().reverse().map((n) => vistaNota(n))));
+  v.append(caricaFoto());
+  const foto = S.note.filter((n) => n.foto).sort((a, b) => b.ts - a.ts);
+  if (foto.length) v.append(h('div', { class: 'card' }, h('h3', null, '📷 Le foto del viaggio (' + foto.length + ')'),
+    h('div', { class: 'galleria' }, foto.map((n) => h('a', { href: '#', title: n.testo || n.autore, onclick: (e) => { e.preventDefault(); apriFoto(n.foto, n); } },
+      h('img', { src: urlFoto(n.foto), alt: n.testo || 'Foto di ' + n.autore, loading: 'lazy' }),
+      h('span', null, n.hotelId ? hotelNome(n.hotelId) : n.autore))))));
 }
 
 function renderHotel(v) {
