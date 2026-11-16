@@ -17,6 +17,8 @@ export const FORMS = {
   // Tagliando Hotel (/tagliando/): il controllo gratuito della pagina. FONTE = «Tagliando Hotel» è il filtro per la sequenza «errori dell'albergatore»
   // chi spunta il consenso facoltativo entra anche nella lista che fa partire la sequenza (come cassetta e guida)
   'tagliando': { label: 'Tagliando Hotel', list: 'BREVO_LIST_TAGLIANDO', optIn: 'BREVO_LIST_TAGLIANDO_SEQUENZA', optInField: 'consenso_email' },
+  // il primo capitolo del libro gratis (landing /capitolo/, campagna Meta con obiettivo Lead): stessa logica della guida
+  'capitolo': { label: 'Il primo capitolo (landing /capitolo/)', list: 'BREVO_LIST_CAPITOLO', optIn: 'BREVO_LIST_CAPITOLO_SEQUENZA', optInField: 'consenso_email' },
 };
 
 // etichette leggibili per l'email di notifica
@@ -67,7 +69,7 @@ export function contact(d, formName, form) {
   const want = (process.env.BREVO_ATTRIBUTES || '').trim();
   const keys = want === '1' ? Object.keys(extra) : want.split(',').map((k) => k.trim().toUpperCase()).filter((k) => k in extra);
   for (const k of keys) attributes[k] = extra[k];
-  if (d.camere && ['guida', 'cassetta'].includes(formName)) attributes.CAMERE = d.camere;
+  if (d.camere && ['guida', 'cassetta', 'capitolo'].includes(formName)) attributes.CAMERE = d.camere;
   for (const k of Object.keys(attributes)) if (attributes[k] === '') delete attributes[k];
   const id = Number(process.env[form.list] || process.env.BREVO_LIST_DEFAULT);
   const optIn = form.optIn && d[form.optInField] ? Number(process.env[form.optIn]) : 0;
@@ -296,5 +298,32 @@ export function guidaMail(d) {
     tags: ['guida-email-1'],
     textContent: [...txt(v.prima), `Apri la guida → ${pdf}`, ...txt(v.dopo), `P.S. ${v.ps}`].join('\n\n'),
     htmlContent: `<div style="display:none;max-height:0;overflow:hidden;opacity:0">${esc(v.pre)}</div><div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${v.prima.map(para).join('')}<p style="margin:6px 0 22px"><a href="${pdf}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri la guida →</a></p>${v.dopo.map(para).join('')}<p style="margin:0 0 14px"><strong>P.S.</strong> ${esc(v.ps)}</p></div>`,
+  };
+}
+
+// Mail del primo capitolo: il link al PDF, subito. La sequenza successiva parte da Brevo (lista BREVO_LIST_CAPITOLO_SEQUENZA).
+export function capitoloMail(d) {
+  const nome = ((d.nome || '').trim().split(/\s+/)[0]) || '';
+  const pdf = 'https://hotelpositioning.com/assets/capitolo/hotel-positioning-capitolo-1.pdf';
+  const libro = 'https://hotelpositioning.com/vai/libro/?da=capitolo-email-1';
+  const prima = [
+    `Ciao${nome ? ' ' + nome : ''},\necco il primo capitolo di Hotel Positioning.`,
+  ];
+  const dopo = [
+    'Comincia dalle pesche di mio nonno. Sono tre pagine, e sono il motivo per cui ho scritto il libro.',
+    'Poi leggi il capitolo fino in fondo. L\'ultima pagina è un test: dieci secondi, una persona che non conosce il tuo hotel, una domanda.\nFallo stasera. La risposta che ricevi ti dice da dove partire.',
+    'Nei prossimi giorni ti scrivo qualche riga. Poche, e solo su quello che c\'è nel capitolo.',
+    'Francesco',
+  ];
+  const ps = `Se dopo il test vuoi andare avanti, il libro intero è qui, 19,90 €: ${libro}`;
+  const para = (x) => `<p style="margin:0 0 14px">${esc(x).replace(/\n/g, '<br>')}</p>`;
+  return {
+    sender: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    to: [{ email: d.email, ...(nome ? { name: nome } : {}) }],
+    replyTo: { email: process.env.BREVO_SENDER_EMAIL, name: 'Francesco Astolfi' },
+    subject: 'Il primo capitolo. Il test è all\'ultima pagina.',
+    tags: ['capitolo-email-1'],
+    textContent: [...prima, `Apri il capitolo → ${pdf}`, ...dopo, `P.S. ${ps}`].join('\n\n'),
+    htmlContent: `<div style="display:none;max-height:0;overflow:hidden;opacity:0">Comincia dalle pesche di mio nonno.</div><div style="font:16px/1.55 -apple-system,Helvetica,Arial,sans-serif;color:#0a0a0a;max-width:560px">${prima.map(para).join('')}<p style="margin:6px 0 22px"><a href="${pdf}" style="display:inline-block;background:#ffd22e;color:#0a0a0a;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;border:2px solid #0a0a0a">Apri il capitolo →</a></p>${dopo.map(para).join('')}<p style="margin:0 0 14px"><strong>P.S.</strong> Se dopo il test vuoi andare avanti, <a href="${libro}" style="color:#0a0a0a">il libro intero è qui</a>, 19,90 €.</p></div>`,
   };
 }

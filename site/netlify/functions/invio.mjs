@@ -8,9 +8,10 @@
 //   BREVO_API_KEY, NOTIFY_EMAIL, BREVO_SENDER_EMAIL   obbligatorie per la notifica
 //   BREVO_LIST_DEFAULT, BREVO_LIST_*, BREVO_ATTRIBUTES facoltative (vedi lib/brevo.mjs)
 //   BREVO_LIST_CASSETTA, BREVO_LIST_CASSETTA_SEQUENZA   liste della campagna /cassetta/ (la seconda: chi ha dato il consenso alle mail successive)
+//   BREVO_LIST_CAPITOLO, BREVO_LIST_CAPITOLO_SEQUENZA   liste del primo capitolo gratis /capitolo/ (stessa logica della cassetta)
 //   META_PIXEL_ID, META_CAPI_TOKEN, META_TEST_EVENT_CODE  Conversions API di Meta per l'evento Lead (facoltative)
 
-import { FORMS, brevo, saveContact, notification, confirmation, bonusMail, cassettaMail, guidaMail, metaLead } from '../lib/brevo.mjs';
+import { FORMS, brevo, saveContact, notification, confirmation, bonusMail, cassettaMail, guidaMail, capitoloMail, metaLead } from '../lib/brevo.mjs';
 
 const json = (statusCode, body) => ({ statusCode, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' }, body: JSON.stringify(body) });
 
@@ -22,6 +23,7 @@ export const handler = async (event) => {
       BREVO_LIST_DEFAULT: !!env.BREVO_LIST_DEFAULT, BREVO_LIST_REVISIONE: !!env.BREVO_LIST_REVISIONE,
       BREVO_LIST_CASSETTA: !!env.BREVO_LIST_CASSETTA, BREVO_LIST_CASSETTA_SEQUENZA: !!env.BREVO_LIST_CASSETTA_SEQUENZA,
       BREVO_LIST_GUIDA: !!env.BREVO_LIST_GUIDA, BREVO_LIST_GUIDA_SEQUENZA: !!env.BREVO_LIST_GUIDA_SEQUENZA,
+      BREVO_LIST_CAPITOLO: !!env.BREVO_LIST_CAPITOLO, BREVO_LIST_CAPITOLO_SEQUENZA: !!env.BREVO_LIST_CAPITOLO_SEQUENZA,
       META_PIXEL_ID: !!env.META_PIXEL_ID, META_CAPI_TOKEN: !!env.META_CAPI_TOKEN, META_TEST_EVENT_CODE: !!env.META_TEST_EVENT_CODE,
       META_PIXEL_ID_UGUALE_A_GTM: env.META_PIXEL_ID === '28889512877380364',
     });
@@ -43,18 +45,18 @@ export const handler = async (event) => {
   const [saved, mailed, meta] = await Promise.allSettled([
     saveContact(d, d['form-name'], form),
     brevo('/smtp/email', notification(d, form)),
-    ['cassetta', 'guida'].includes(d['form-name']) ? metaLead(d, event.headers || {}) : Promise.resolve('non serve'),
+    ['cassetta', 'guida', 'capitolo'].includes(d['form-name']) ? metaLead(d, event.headers || {}) : Promise.resolve('non serve'),
   ]);
   // esito della Conversions API: nei log della funzione e nella risposta (visibile in Network, senza dati riservati)
   const metaEsito = meta.status === 'fulfilled' ? meta.value : 'errore: ' + (meta.reason?.message || meta.reason);
-  if (['cassetta', 'guida'].includes(d['form-name'])) console.log('Meta CAPI:', metaEsito);
+  if (['cassetta', 'guida', 'capitolo'].includes(d['form-name'])) console.log('Meta CAPI:', metaEsito);
   if (saved.status === 'rejected') console.error(saved.reason);
   if (mailed.status === 'rejected') { console.error(mailed.reason); return json(502, { ok: false, errore: 'notifica' }); }
   // conferma a chi ha compilato: solo per la lettura; se non parte, la richiesta resta valida
-  const reply = d['form-name'] === 'revisione-homepage' ? confirmation(d) : d['form-name'] === 'strumenti-libro' ? bonusMail(d) : d['form-name'] === 'cassetta' ? cassettaMail(d) : d['form-name'] === 'guida' ? guidaMail(d) : null;
+  const reply = d['form-name'] === 'revisione-homepage' ? confirmation(d) : d['form-name'] === 'strumenti-libro' ? bonusMail(d) : d['form-name'] === 'cassetta' ? cassettaMail(d) : d['form-name'] === 'guida' ? guidaMail(d) : d['form-name'] === 'capitolo' ? capitoloMail(d) : null;
   if (reply) {
     try { await brevo('/smtp/email', reply); console.log('conferma inviata'); } catch (e) { console.error('conferma non inviata:', e.message); }
   }
   console.log('notifica inviata', d['form-name'], 'contatto salvato:', saved.status === 'fulfilled');
-  return json(200, { ok: true, contatto: saved.status === 'fulfilled', ...(['cassetta', 'guida'].includes(d['form-name']) ? { meta: metaEsito } : {}) });
+  return json(200, { ok: true, contatto: saved.status === 'fulfilled', ...(['cassetta', 'guida', 'capitolo'].includes(d['form-name']) ? { meta: metaEsito } : {}) });
 };
