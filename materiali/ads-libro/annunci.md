@@ -3,7 +3,7 @@
 Destinazione: la pagina del libro sul sito, `https://hotelpositioning.com/libro/?utm_source=meta&utm_medium=paid_social&utm_campaign=libro&utm_content=<id>`. Da lì si va su Amazon. Pulsante: **Scopri di più**.
 Testi a schermo ripassati con neurocopy (stesso principio del testo principale di ogni angolo).
 Immagini: `out/<id>_45.png` (feed 4:5) e `out/<id>_916.png` (storie e reel 9:16). Reel: `reel-*.mp4` (9:16, 15 s, senza voce).
-Fatti usati: 19,90 € su Amazon, cartaceo o Kindle, 120 pagine, metodo in 6 passaggi, canvas tra gli strumenti gratuiti, rimborso Amazon entro 14 giorni.
+Fatti usati: 19,90 € su Amazon, cartaceo o Kindle, 150 pagine, 10 figure, metodo in 6 passaggi, canvas tra gli strumenti gratuiti, rimborso Amazon entro 14 giorni.
 
 ## L1 · La domanda  (immagini L1 + reel-domanda)
 - **Principio:** Tensione cognitiva
