@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il primo capitolo gratis · Hotel Positioning, il libro</title>
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Il primo capitolo di Hotel Positioning, gratis in PDF: perché su Booking cinquanta hotel sembrano uno, e il test dei dieci secondi per capire se succede anche al tuo.">
+<link rel="canonical" href="https://hotelpositioning.com/capitolo/">
+<meta property="og:title" content="Il tuo hotel non è poco conosciuto. È invisibile."><meta property="og:description" content="Il primo capitolo di Hotel Positioning, gratis in PDF nella tua email."><meta property="og:type" content="website">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/libro-copertina-og.jpg">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
+<meta name="theme-color" content="#fffdf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/libro-copertina-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=b3a8d31d">
+
+<style>
+/* landing della campagna: testata con il solo logo, un solo bottone ripetuto */
+.lp-top{background:var(--surface-cream);border-bottom:1px solid var(--line-soft)}
+.lp-top .wrap{display:flex;align-items:center;min-height:64px}
+.lp-foot{padding:28px 0}
+.lp-foot .legal{border:0;padding:0;margin:0}
+
+/* apertura */
+.hero{padding-top:clamp(32px,4.5vw,64px)}
+.cp-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,5vw,72px);align-items:center}
+.cp-hero .eyebrow{justify-content:flex-start}
+.cp-hero h1{margin:16px 0 18px;font-size:clamp(36px,4.6vw,62px);max-width:15ch}
+.cp-sub{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--ink-2);max-width:42ch}
+.cp-sub + .cp-sub{margin-top:12px}
+.cp-offer{margin:20px 0 0;font:700 clamp(19px,1.7vw,22px)/1.35 var(--display);letter-spacing:-.015em;color:var(--ink);max-width:36ch}
+.cp-hero .btn-row{justify-content:flex-start;margin-top:24px}
+.gm{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:15.5px;line-height:1.45;color:var(--ink-2)}
+.gm-ic{flex:none;width:22px;height:22px;margin-top:-1px;padding:3px;border-radius:7px;background:var(--yellow);color:var(--inchiostro);border:1.5px solid var(--inchiostro);box-sizing:border-box}
+.gm b{color:var(--ink)}
+
+/* il libro con il primo capitolo aperto */
+.cp-book{position:relative;max-width:340px;margin:0 auto}
+.cp-book img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:12px;box-shadow:var(--o-xl);transform:rotate(-3deg)}
+.cp-badge{position:absolute;right:-26px;top:-22px;width:96px;height:96px;border-radius:50%;display:grid;place-content:center;text-align:center;background:var(--yellow);border:2px solid var(--inchiostro);box-shadow:var(--o-sm);transform:rotate(12deg);font:900 17px/1 var(--display)}
+.cp-badge small{display:block;margin-top:4px;font:800 9px/1.15 var(--display);letter-spacing:.04em;text-transform:uppercase}
+.cp-page{position:absolute;left:-34px;bottom:-26px;width:58%;background:#fff;border:2px solid var(--inchiostro);border-radius:10px;box-shadow:var(--o-md);padding:14px 14px 16px;transform:rotate(4deg)}
+.cp-page b{display:block;font:800 10px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cp-page p{margin-top:6px;font:800 15px/1.2 var(--display);letter-spacing:-.01em;color:var(--ink)}
+.cp-page i{display:block;height:5px;border-radius:3px;background:var(--line-soft);margin-top:7px}
+.cp-page i:nth-of-type(2){width:82%}.cp-page i:nth-of-type(3){width:64%}
+@media (max-width:860px){
+  .cp-hero{grid-template-columns:minmax(0,1fr);gap:40px}
+  .cp-visual{order:-1}
+  .cp-book{max-width:min(200px,52vw)}
+  .cp-badge{width:70px;height:70px;right:-22px;top:-16px;font-size:13px}
+  .cp-badge small{font-size:7.5px}
+  .cp-page{display:none}
+}
+
+/* la griglia di Booking: cinquanta rettangoli uguali */
+.cp-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:7px;max-width:640px;margin-top:28px;background:var(--surface-white);padding:clamp(14px,2vw,22px);border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-md)}
+.cp-grid i{aspect-ratio:1.15;border-radius:6px;background:var(--line-soft)}
+.cp-grid i:nth-child(3n){background:var(--mist-2)}
+.cp-grid-cap{margin-top:12px;font-size:15px;color:var(--muted);font-style:italic}
+.cp-narrow{max-width:720px}
+.cp-narrow p{font-size:19px;line-height:1.6;color:var(--ink-2)}
+.cp-narrow p + p{margin-top:14px}
+.cp-narrow em{color:var(--ink)}
+.cp-law{margin-top:26px!important;font:800 clamp(24px,2.6vw,32px)/1.2 var(--display)!important;letter-spacing:-.025em;color:var(--ink)!important}
+
+/* cosa c'è nel capitolo */
+.cp-in{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;counter-reset:ci}
+.cp-in li{background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:18px;box-shadow:var(--o-sm);padding:20px 22px;display:grid;grid-template-columns:40px 1fr;gap:6px 16px;align-items:start}
+.cp-in li::before{counter-increment:ci;content:counter(ci,decimal-leading-zero);grid-row:span 2;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--yellow-soft);border:2px solid var(--inchiostro);font:800 14px var(--display);color:var(--inchiostro)}
+.cp-in li:last-child{grid-column:1/-1;background:var(--yellow-soft)}
+.cp-in li:last-child::before{background:var(--yellow)}
+.cp-in h3{font-size:19px;line-height:1.25}
+.cp-in p{font-size:16.5px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:760px){.cp-in{grid-template-columns:1fr}}
+
+/* un estratto */
+.cp-quote{max-width:760px;background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-md);padding:clamp(22px,3vw,36px)}
+.cp-quote .k{font:800 12px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cp-quote blockquote{margin:14px 0 0;font-family:"Source Serif 4",Georgia,serif;font-size:clamp(19px,1.8vw,22px);line-height:1.55;color:var(--ink)}
+.cp-quote blockquote p + p{margin-top:12px}
+.cp-quote figcaption{margin-top:16px;font-size:14px;color:var(--muted)}
+
+/* per chi è */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.fit{grid-template-columns:1fr}}
+.fit .card h3{margin-bottom:16px}
+
+/* chi scrive */
+.me-row{display:grid;grid-template-columns:.65fr 1.35fr;gap:clamp(30px,5vw,64px);align-items:start}
+@media (max-width:860px){.me-row{grid-template-columns:1fr}.me-row .photo{max-width:280px}}
+.me-row .photo img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-md)}
+.cp-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px}
+.cp-stats .stat{text-align:left}
+.cp-stats .stat b{font-size:clamp(24px,2.3vw,32px);white-space:nowrap}
+@media (max-width:760px){.cp-stats{grid-template-columns:1fr}}
+
+/* form */
+.cp-form{max-width:640px}
+.form h2{font-size:clamp(26px,2.6vw,34px);margin-bottom:6px}
+.form .sub{font-size:16px;margin-bottom:20px;color:var(--muted)}
+.form .field select:invalid{color:var(--muted)}
+.form .check.opt span{color:var(--ink-2)}
+.fstep-k{margin:0 0 12px;font-size:15px;color:var(--ink-2)}
+
+/* barra fissa su telefono */
+.gd-bar{position:fixed;left:0;right:0;bottom:0;z-index:80;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--surface-cream);border-top:2px solid var(--inchiostro);transform:translateY(110%);transition:transform .25s}
+.gd-bar.on{transform:none}
+.gd-bar .btn{width:100%;justify-content:center}
+@media (min-width:861px){.gd-bar{display:none!important}}
+@media (max-width:860px){.lp-foot{padding-bottom:96px}}
+@media (max-width:640px){.sec{padding-top:64px;padding-bottom:64px}.cp-narrow p{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.gd-bar{transition:none}}
+</style>
+<link rel="stylesheet" href="/assets/soft.css?v=0d866f63">
+<link rel="stylesheet" href="/assets/editoriale.css?v=d022a7b9">
+
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="lp-top"><div class="wrap"><span class="logo" aria-label="Hotel Positioning"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</span></div></header>
+
+<main id="main">
+
+<!-- ================= 1 · APERTURA ================= -->
+<section class="hero">
+  <div class="wrap cp-hero">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Il primo capitolo del libro, gratis</span>
+      <h1>Il tuo hotel non è poco conosciuto. <span class="hl in">È invisibile.</span></h1>
+      <p class="cp-sub">Apri Booking e cerca la tua zona. Cinquanta rettangoli. La stessa piscina vista dal drone, le stesse quattro stelle, gli stessi aggettivi.</p>
+      <p class="cp-sub">Quando gli sembrate tutti uguali, all'ospite restano due cose per decidere: il prezzo e le recensioni.</p>
+      <p class="cp-offer">Il primo capitolo di Hotel Positioning spiega perché succede. E ti dà un test di dieci secondi per capire se succede anche a te.</p>
+      <div class="btn-row">
+        <a href="#form" class="btn">Mandami il primo capitolo <span class="arr">→</span></a>
+      </div>
+      <p class="gm"><svg class="gm-ic" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span><b>Gratis</b>, in PDF, nella tua email. Si legge in venti minuti.</span></p>
+    </div>
+    <div class="cp-visual">
+      <div class="cp-book">
+        <img src="/assets/img/libro-copertina.webp" srcset="/assets/img/libro-copertina.webp 420w, /assets/img/libro-copertina@2x.webp 840w" sizes="(max-width:860px) 200px, 340px" width="420" height="658" fetchpriority="high" alt="Copertina del libro Hotel Positioning di Francesco Astolfi">
+        <span class="cp-badge">Cap. 1<small>gratis in PDF</small></span>
+        <div class="cp-page" aria-hidden="true"><b>Capitolo 1</b><p>L'hotel invisibile</p><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2 · IL PROBLEMA ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Su Booking il tuo hotel è <em>un rettangolo su cinquanta.</em></h2>
+    </div>
+    <div class="cp-narrow rv">
+      <p>Centocinquanta parole a testa. Lette in trenta secondi, se va bene.</p>
+      <p><em>«Questo hotel dispone di piscina e parcheggio gratuito. Le coppie apprezzano molto la posizione.»</em></p>
+      <p>La stessa frase per una pensione e per un resort da trenta milioni. Non è un errore: Booking deve far scorrere lo sguardo, non fermarlo.</p>
+      <p>E adesso c'è un filtro in più. Sempre più ospiti non aprono Booking: chiedono a ChatGPT. L'AI non mostra cinquanta hotel. Ne nomina due o tre.</p>
+      <p class="cp-law">Su Booking, se sei uguale agli altri, sei l'ultimo della fila. Nella risposta di un'AI non ci sei proprio.</p>
+    </div>
+    <div class="cp-grid rv" role="img" aria-label="Una griglia di cinquanta rettangoli tutti uguali, come i risultati di Booking: nessuno spicca."><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="cp-grid-cap">Trova il tuo. Ecco, è questo il problema.</p>
+  </div>
+</section>
+
+<!-- ================= 3 · COSA C'È DENTRO ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Nel PDF</span>
+      <h2>Cosa trovi <em>nel primo capitolo.</em></h2>
+    </div>
+    <ol class="cp-in rv">
+      <li><h3>Le pesche di mio nonno</h3><p>Aveva il prodotto migliore della zona e il potere contrattuale di un mendicante. Perché tanti albergatori fanno lo stesso con Booking.</p></li>
+      <li><h3>Perché l'ospite sceglie sul prezzo</h3><p>Non è tirchio. Gli hai dato un righello solo. Quando tutto sembra uguale, misura con quello.</p></li>
+      <li><h3>Il noleggio bici del vicino</h3><p>Lui lo mette, tu ne compri di più e più belle. Perché oltre un certo livello l'ospite non somma: sottrae.</p></li>
+      <li><h3>Il filtro nuovo: l'AI</h3><p>Booking ti mette in fila. ChatGPT sceglie per l'ospite. E premia una cosa sola: essere riconoscibile.</p></li>
+      <li><h3>Il test dei dieci secondi</h3><p>Metti uno che non ti conosce davanti al tuo sito per dieci secondi. Poi chiedigli perché dovrebbe scegliere te. Se risponde «boh, sembra carino», sei invisibile. Il capitolo ti dice cosa fare dopo.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= 4 · UN ESTRATTO ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <figure class="cp-quote rv">
+      <span class="k">Dal capitolo 1 · L'hotel invisibile</span>
+      <blockquote>
+        <p>È come una trattoria che mette il menù turistico per riempire. Si riempie di gente che voleva spendere poco. Che poi si lamenta che la carne è dura.</p>
+        <p>E il proprietario giura che la carne è la stessa di prima. Ed è vero.</p>
+        <p>Non ha un problema di recensioni. Ha un problema di chi si siede a tavola.</p>
+      </blockquote>
+      <figcaption>Hotel Positioning · Manuale di posizionamento alberghiero</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= 5 · PER CHI È ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Per chi è. <em>E per chi no.</em></h2>
+    </div>
+    <div class="fit rv">
+      <div class="card">
+        <h3>È per te se</h3>
+        <ul class="check-list">
+          <li>Hai un hotel indipendente e decidi tu, con i tuoi soldi.</li>
+          <li>Paghi a Booking più di quanto vorresti, e ogni anno un po' di più.</li>
+          <li>Quando il vicino abbassa, abbassi anche tu.</li>
+          <li>Hai provato sito nuovo, foto nuove, agenzia nuova. E non è cambiato molto.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Non è per te se</h3>
+        <ul class="check-list no">
+          <li>Cerchi trucchi per scalare Booking o una tariffa più bassa del vicino.</li>
+          <li>Lavori in una catena con l'ufficio marketing al piano di sopra.</li>
+          <li>Vuoi un hotel che piaccia a tutti.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6 · CHI SCRIVE ================= -->
+<section class="sec alt">
+  <div class="wrap me-row">
+    <div class="photo rv"><img src="/assets/img/francesco.webp" width="560" height="700" loading="lazy" alt="Francesco Astolfi"></div>
+    <div class="rv">
+      <div class="sec-head" style="margin-bottom:18px">
+        <span class="num-tag">Chi scrive</span>
+        <h2>Francesco Astolfi. <em>Vent'anni tra ospitalità e viaggi.</em></h2>
+      </div>
+      <div class="prose">
+        <p>Ho portato TUI.it da zero a trenta milioni. Ho guidato il marketing di Ata Hotels, venti alberghi. Ho diretto una web agency che lavorava solo con hotel.</p>
+        <p>Poi ho rischiato soldi miei: ho inventato Yume Ramen e l'ho portato da zero a 2,5 milioni. Oggi seguo hotel come il Silva Splendid di Fiuggi e il Veridia Resort di Chia.</p>
+        <p>Il libro è il metodo che uso con loro. Il primo capitolo è il punto da cui parto sempre.</p>
+      </div>
+      <div class="cp-stats">
+        <div class="stat"><b>20 anni</b><span>tra ospitalità e viaggi</span></div>
+        <div class="stat"><b>×2</b><span>la tariffa media del Silva Splendid</span></div>
+        <div class="stat"><b>150 pagine</b><span>il libro intero, 19,90 €</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7 · FORM ================= -->
+<section class="sec white" id="form">
+  <div class="wrap cp-form">
+    <form class="form rv" id="capitolo-form" name="capitolo" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" data-next="/capitolo/grazie/" novalidate>
+      <input type="hidden" name="form-name" value="capitolo"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value=""><input type="hidden" name="privacy" value="informativa letta (invio del modulo)">
+      <p hidden><label>Non compilare: <input name="bot-field"></label></p>
+      <div class="fields">
+        <div class="form-head"><span>Capitolo 1 · PDF in email</span><span data-step-txt>Passo 1 di 2</span></div>
+        <div class="prog"><i></i></div>
+        <h2>Il primo capitolo di Hotel Positioning</h2>
+        <p class="sub">Gratis nella tua email. Si legge in venti minuti.</p>
+        <div class="fstep">
+        <div class="field"><label for="c-nome">Nome</label><input id="c-nome" name="nome" autocomplete="given-name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
+        <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: il capitolo arriva qui.</span></div>
+        <button class="btn dark" type="button" data-next style="margin-top:8px">Continua <span class="arr">→</span></button>
+        </div>
+        <div class="fstep">
+        <p class="fstep-k"><em>Ancora una domanda. Poi il capitolo è tuo.</em></p>
+        <div class="field"><label for="c-camere">Quante camere ha la tua struttura?</label>
+          <select id="c-camere" name="camere" required>
+            <option value="" selected disabled>Scegli</option>
+            <option>meno di 20</option>
+            <option>20-40</option>
+            <option>40-80</option>
+            <option>oltre 80</option>
+          </select><span class="em">Scegli una voce: così ti mando quello che serve alla tua struttura.</span></div>
+        <label class="check opt"><input type="checkbox" name="consenso_email" value="sì"><span>Voglio ricevere anche le mail successive su posizionamento e libro. <em>(facoltativo)</em></span></label>
+        <button class="btn dark" type="submit" style="margin-top:18px">Mandami il capitolo <span class="arr">→</span></button>
+        <p class="form-foot">Inviando il modulo dichiari di aver letto la <a href="/privacy-policy/">privacy policy</a>. Ti cancelli con un clic.</p>
+        </div>
+      </div>
+      <div class="ok" role="status">
+        <div class="tick">✓</div>
+        <p class="big">Fatto.</p>
+        <p>Ti porto al capitolo…</p>
+        <a href="/capitolo/grazie/" class="btn" style="margin-top:16px">Apri il capitolo <span class="arr">→</span></a>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot lp-foot"><div class="wrap"><div class="legal">
+  <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+  <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
+</div></div></footer>
+<div class="gd-bar" id="gdBar" hidden><a href="#form" class="btn">Mandami il primo capitolo <span class="arr">→</span></a></div>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
+  <button type="button" class="cc-x" data-cc="reject" aria-label="Chiudi e rifiuta i cookie non necessari">✕</button>
+  <p class="cc-t" id="cc-t">Cookie e privacy</p>
+  <p class="cc-p">Usiamo cookie tecnici, necessari al sito. Con il tuo consenso usiamo anche cookie di statistica (Google Analytics) e di marketing (Pixel di Meta) per misurare le visite e l’efficacia delle campagne. Puoi cambiare idea in qualsiasi momento. Dettagli nella <a href="/privacy-policy/#cookie">privacy policy</a>.</p>
+  <div class="cc-opts" id="cc-opts" hidden>
+    <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Tecnici</b> Necessari al funzionamento del sito. Sempre attivi.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistica</b> Google Analytics: visite e pagine più lette, in forma aggregata.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-mkt"><span><b>Marketing</b> Pixel di Meta: misura delle campagne su Facebook e Instagram e pubblico per gli annunci.</span></label>
+  </div>
+  <div class="cc-btns">
+    <button type="button" class="btn sm" data-cc="reject">Rifiuta</button>
+    <button type="button" class="btn sm" data-cc="accept">Accetta tutti</button>
+    <button type="button" class="cc-more" data-cc="custom" id="cc-custom">Personalizza</button>
+    <button type="button" class="btn sm" data-cc="save" id="cc-save" hidden>Salva le scelte</button>
+  </div>
+</div>
+<script src="/assets/consent.js?v=8e7af5a8"></script>
+
+<script src="/assets/site.js?v=08d2301c"></script>
+<script>
+(function(){
+  // barra fissa su telefono: dopo l'apertura, finché il form non è sullo schermo
+  var bar = document.getElementById('gdBar'), hero = document.querySelector('.hero'), form = document.getElementById('form');
+  if (!bar || !('IntersectionObserver' in window)) return;
+  bar.hidden = false;
+  var pastHero = false, formIn = false;
+  function upd(){ bar.classList.toggle('on', pastHero && !formIn); }
+  new IntersectionObserver(function(es){ pastHero = !es[0].isIntersecting; upd(); }).observe(hero);
+  new IntersectionObserver(function(es){ formIn = es[0].isIntersecting; upd(); }, { rootMargin: '0px 0px -20% 0px' }).observe(form);
+})();
+</script>
+</body>
+</html>
