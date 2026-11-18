@@ -1,7 +1,8 @@
 // Swipe file (/swipe-file/). Dati e screenshot in Netlify Blobs, vedi ../lib/swipe.mjs.
 //
 // Pubblico, senza chiave:
-//   GET  ?elenco=1                      → { esempi[] } solo quelli pubblicati
+//   GET  ?elenco=1                      → { esempi[] } solo quelli pubblicati, con il conteggio dei cuori
+//   POST { azione: 'cuore', id, valore: 1 | -1 } → { cuori } preferito di un visitatore (senza chiave; il browser ricorda i suoi)
 //   GET  ?img=<id>                      → lo screenshot (id casuale non indovinabile)
 // Con la chiave:
 //   GET  ?analisi=<id>&chiave=…         → { pronto, ok, proposta | errore } dell'analisi in background
@@ -38,6 +39,11 @@ async function tutti(s) {
 }
 
 const pubblico = ({ chiave_radar, ...e }) => e;
+
+// cuori dei visitatori: un solo blob { id: conteggio }
+async function cuori(s) {
+  return (await s.get('cuori', { type: 'json' })) || {};
+}
 
 function normalizza(e, esistente) {
   const ora = new Date().toISOString();
@@ -92,7 +98,8 @@ export const handler = async (event) => {
       };
     }
     if (q.elenco) {
-      const esempi = (await tutti(s)).filter((e) => e.stato === 'pubblicato').map(pubblico);
+      const c = await cuori(s);
+      const esempi = (await tutti(s)).filter((e) => e.stato === 'pubblicato').map((e) => ({ ...pubblico(e), cuori: c[e.id] || 0 }));
       return { ...json(200, { ok: true, esempi }), headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=0, must-revalidate', 'netlify-cdn-cache-control': 'public, max-age=60, stale-while-revalidate=300' } };
     }
     if (q.analisi) {
@@ -108,6 +115,18 @@ export const handler = async (event) => {
 
   const d = leggiCorpo(event);
   if (!d) return json(400, { ok: false, errore: 'richiesta' });
+
+  if (d.azione === 'cuore') {
+    if (!ID.test(String(d.id || '')) || ![1, -1].includes(d.valore)) return json(400, { ok: false, errore: 'richiesta' });
+    const e = await s.get(`esempi/${d.id}`, { type: 'json' });
+    if (!e || statoDi(e) !== 'pubblicato') return json(404, { ok: false, errore: 'non_trovato' });
+    const c = await cuori(s);
+    c[d.id] = Math.max(0, (c[d.id] || 0) + d.valore);
+    if (!c[d.id]) delete c[d.id];
+    await s.setJSON('cuori', c);
+    return json(200, { ok: true, cuori: c[d.id] || 0 });
+  }
+
   if (!autorizzato(d.chiave)) return json(401, { ok: false, errore: 'chiave_errata' });
 
   try {
@@ -115,8 +134,10 @@ export const handler = async (event) => {
       case 'verifica':
         return json(200, { ok: true });
 
-      case 'elenco':
-        return json(200, { ok: true, esempi: await tutti(s) });
+      case 'elenco': {
+        const c = await cuori(s);
+        return json(200, { ok: true, esempi: (await tutti(s)).map((e) => ({ ...e, cuori: c[e.id] || 0 })) });
+      }
 
       case 'carica': {
         if (!TIPI[d.tipo]) return json(400, { ok: false, errore: 'formato_non_supportato' });
@@ -154,6 +175,8 @@ export const handler = async (event) => {
         const e = await s.get(`esempi/${d.id}`, { type: 'json' });
         await s.delete(`esempi/${d.id}`);
         await Promise.allSettled((e?.images || []).map((x) => s.delete(`img/${x}`)));
+        const c = await cuori(s);
+        if (c[d.id]) { delete c[d.id]; await s.setJSON('cuori', c); }
         return json(200, { ok: true });
       }
 

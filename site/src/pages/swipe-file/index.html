@@ -65,6 +65,13 @@ body{background:var(--e-carta)}
 .sw-stars{color:var(--e-inchiostro);letter-spacing:1px}
 .sw-stars i{font-style:normal;opacity:.2}
 .sw-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.sw-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
+.sw-heart{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--e-linea-forte);border-radius:999px;background:var(--e-foglio);padding:5px 11px;font:600 13px/1 var(--display);color:var(--e-grafite);cursor:pointer;transition:border-color .12s,color .12s,background-color .12s}
+.sw-heart:hover{border-color:var(--e-inchiostro);color:var(--e-inchiostro)}
+.sw-heart svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8}
+.sw-heart.on{color:#b3261e;border-color:#b3261e;background:#fdf3f2}
+.sw-heart.on svg{fill:#b3261e;stroke:#b3261e}
+.sw-heart--lg{padding:9px 16px;font-size:15px}
 .sw-tag{font:600 10.5px/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--e-grafite);border:1px solid var(--e-linea-forte);border-radius:3px;padding:2px 6px}
 .sw-tag.free{background:var(--e-sabbia);border-color:transparent}
 
@@ -179,6 +186,7 @@ body{background:var(--e-carta)}
       <span class="sw-count" id="count">Caricamento…</span>
       <select class="sw-select" id="sort" aria-label="Ordina">
         <option value="recent">Più recenti</option>
+        <option value="cuori">Preferiti</option>
         <option value="rating">Più votati</option>
         <option value="az">A → Z</option>
       </select>
@@ -239,12 +247,16 @@ async function api(azione, body={}){
 }
 
 /* ---------- Stato ---------- */
+const CUORI_LS='hp-swipe-cuori';
+const miei = () => { try { return new Set(JSON.parse(localStorage.getItem(CUORI_LS)||'[]')); } catch { return new Set(); } };
+const salvaMiei = set => { try { localStorage.setItem(CUORI_LS, JSON.stringify([...set])); } catch {} };
+const CUORE_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.3 7.7 3.6 4.5 6.9 4.5c2 0 3.4 1.1 4.1 2.3.7-1.2 2.1-2.3 4.1-2.3 3.3 0 5.6 3.2 4.2 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>';
 const S = { items:[], loaded:false, q:'', sel:new Set(), sort:'recent', minRating:0, onlyImg:false, vista:'pubblicato' };
 const FONTE = { meta:'Meta Ads', email:'Email', sito:'Sito', landing:'Landing', manuale:'' };
 const statoDi = e => e.stato==='da_valutare' ? 'da_valutare' : 'pubblicato';
 const hay = new Map();
 function haystack(it){ if(!hay.has(it.id)) hay.set(it.id, norm([it.title,it.brand,it.url,it.copy,it.why,it.steal,(it.tags||[]).map(tagValue).join(' ')].join(' \n '))); return hay.get(it.id); }
-function upsert(e){ hay.delete(e.id); const i=S.items.findIndex(x=>x.id===e.id); if(i<0) S.items.unshift(e); else S.items[i]=e; }
+function upsert(e){ hay.delete(e.id); const i=S.items.findIndex(x=>x.id===e.id); if(i<0) S.items.unshift(e); else S.items[i]={...e,cuori:e.cuori??S.items[i].cuori}; }
 
 /* ---------- Accesso (solo Francesco: aggiunge, modifica, valuta la coda del radar) ---------- */
 function esci(){ lsSet(''); CHIAVE=''; S.vista='pubblicato'; closeModal(); mostra(); }
@@ -294,6 +306,7 @@ function matches(it){
 const nVista = v => S.items.filter(it=>statoDi(it)===v).length;
 function filtered(){
   const by={ recent:(a,b)=>String(b.created_at).localeCompare(String(a.created_at)),
+    cuori:(a,b)=>(b.cuori||0)-(a.cuori||0)||String(b.created_at).localeCompare(String(a.created_at)),
     rating:(a,b)=>(b.rating||0)-(a.rating||0)||String(b.created_at).localeCompare(String(a.created_at)),
     az:(a,b)=>String(a.title||'').localeCompare(String(b.title||''),'it') }[S.sort];
   return S.items.filter(matches).sort(by);
@@ -343,14 +356,25 @@ function renderGrid(){
   if(!res.length){ g.style.columns='auto'; g.innerHTML='<div class="sw-empty"><h2>Nessun risultato</h2><p>Prova a togliere un filtro o a cambiare parole.</p><button class="btn ghost" data-act="clear">Azzera i filtri</button></div>'; return; }
   g.style.columns='';
   g.innerHTML=res.map(it=>{
-    const img=(it.images||[])[0], tags=(it.tags||[]).slice(0,5);
+    const img=(it.images||[])[0];
+    const t=it.tags||[], tags=[t.find(x=>tagFacet(x)==='formato'), t.find(x=>tagFacet(x)==='leva')].filter(Boolean);
     return `<article class="sw-card" tabindex="0" data-open="${esc(it.id)}">
       ${img?`<img class="sw-thumb" loading="lazy" src="${imgUrl(img)}" alt="">`:(it.copy?`<div class="sw-quote">${esc(it.copy.slice(0,400))}</div>`:'')}
       <div class="sw-body">${CHIAVE&&FONTE[it.fonte]?`<span class="sw-badge" style="margin-bottom:8px">Radar · ${FONTE[it.fonte]}</span>`:''}<h3>${esc(it.title||'Senza titolo')}</h3>
       <div class="sw-meta">${it.brand?`<span>${esc(it.brand)}</span>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}</div>
-      ${tags.length?`<div class="sw-tags">${tags.map(t=>`<span class="sw-tag ${tagFacet(t)==='tag'?'free':''}">${esc(tagLabel(t))}</span>`).join('')}</div>`:''}
+      <div class="sw-foot">${tags.length?`<div class="sw-tags" style="margin:0">${tags.map(t=>`<span class="sw-tag">${esc(tagLabel(t))}</span>`).join('')}</div>`:'<span></span>'}${cuoreBtn(it)}</div>
       </div></article>`;
   }).join('');
+}
+
+function cuoreBtn(it,lg){ const on=miei().has(it.id); return `<button type="button" class="sw-heart ${on?'on':''} ${lg?'sw-heart--lg':''}" data-cuore="${esc(it.id)}" aria-pressed="${on}" aria-label="${on?'Togli dai preferiti':'Aggiungi ai preferiti'}">${CUORE_SVG}<span>${it.cuori||0}</span></button>`; }
+async function toggleCuore(id){
+  const it=S.items.find(x=>x.id===id); if(!it) return;
+  const m=miei(); const on=m.has(id); const valore=on?-1:1;
+  on?m.delete(id):m.add(id); salvaMiei(m); it.cuori=Math.max(0,(it.cuori||0)+valore);
+  document.querySelectorAll(`[data-cuore="${CSS.escape(id)}"]`).forEach(b=>{ b.classList.toggle('on',!on); b.setAttribute('aria-pressed',String(!on)); b.querySelector('span').textContent=it.cuori; });
+  try{ const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({azione:'cuore',id,valore})}).then(x=>x.json()); if(r.ok){ it.cuori=r.cuori; document.querySelectorAll(`[data-cuore="${CSS.escape(id)}"] span`).forEach(e=>e.textContent=r.cuori); } }catch{}
+  if(S.sort==='cuori') renderGrid();
 }
 
 /* ---------- Eventi ---------- */
@@ -365,6 +389,7 @@ $('#exportBtn').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(JSON.stringify(data,null,2));toast(`Copiati ${data.length} esempi negli appunti`);}catch{toast('Copia non consentita da questo browser');}
 });
 document.addEventListener('click',e=>{
+  const c=e.target.closest('[data-cuore]'); if(c){ e.stopPropagation(); toggleCuore(c.dataset.cuore); return; }
   const t=e.target.closest('[data-tag],[data-rating],[data-act],[data-open]'); if(!t||t.closest('.sw-modal')) return;
   if(t.dataset.tag){ S.sel.has(t.dataset.tag)?S.sel.delete(t.dataset.tag):S.sel.add(t.dataset.tag); render(); }
   else if(t.dataset.rating){ const n=+t.dataset.rating; S.minRating=S.minRating===n?0:n; render(); }
@@ -416,6 +441,7 @@ function openDetail(id){
         (it.copy?`<div class="sw-copybox">${esc(it.copy)}</div>`:'<div class="sw-empty">Nessuna immagine</div>')}</div>
       <div>
         <div class="sw-meta" style="margin-bottom:6px">${it.brand?`<b style="color:var(--e-inchiostro)">${esc(it.brand)}</b>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}${date?`<span>Aggiunto il ${date}</span>`:''}</div>
+        <div style="margin:4px 0 10px">${cuoreBtn(it,true)}</div>
         ${it.url?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Fonte</span></div><a class="sw-src" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.url)}</a>`:''}
         ${it.why?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Perché funziona</span></div><div class="sw-prose">${esc(it.why)}</div>`:''}
         ${it.steal?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Come rubarlo</span></div><div class="sw-prose">${esc(it.steal)}</div>`:''}
