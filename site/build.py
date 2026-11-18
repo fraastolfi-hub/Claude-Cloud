@@ -52,6 +52,8 @@ REDIRECTS = {
     "/guida/formula": "/guida/",
     "/guida/formula/": "/guida/",
     "/vai/libro": "/vai/libro/",
+    "/swipe-file": "/marketing-ideas/",
+    "/swipe-file/": "/marketing-ideas/",
 }
 
 
