@@ -358,12 +358,11 @@ function renderGrid(){
   g.style.columns='';
   g.innerHTML=res.map(it=>{
     const img=(it.images||[])[0];
-    const t=it.tags||[], tags=[t.find(x=>tagFacet(x)==='formato'), t.find(x=>tagFacet(x)==='leva')].filter(Boolean);
     return `<article class="sw-card" tabindex="0" data-open="${esc(it.id)}">
       ${img?`<img class="sw-thumb" loading="lazy" src="${imgUrl(img)}" alt="">`:(it.copy?`<div class="sw-quote">${esc(it.copy.slice(0,400))}</div>`:'')}
-      <div class="sw-body">${CHIAVE&&FONTE[it.fonte]?`<span class="sw-badge" style="margin-bottom:8px">Radar · ${FONTE[it.fonte]}</span>`:''}<h3>${esc(it.title||'Senza titolo')}</h3>
+      <div class="sw-body"><h3>${esc(it.title||'Senza titolo')}</h3>
       <div class="sw-meta">${it.brand?`<span>${esc(it.brand)}</span>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}</div>
-      <div class="sw-foot">${tags.length?`<div class="sw-tags" style="margin:0">${tags.map(t=>`<span class="sw-tag">${esc(tagLabel(t))}</span>`).join('')}</div>`:'<span></span>'}${cuoreBtn(it)}</div>
+      <div class="sw-foot"><span></span>${cuoreBtn(it)}</div>
       </div></article>`;
   }).join('');
 }
