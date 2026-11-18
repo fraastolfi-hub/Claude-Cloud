@@ -1,39 +1,76 @@
-// Swipe file privato (/swipe-file/). Dati e screenshot in Netlify Blobs, vedi ../lib/swipe.mjs.
+// Swipe file (/swipe-file/). Dati e screenshot in Netlify Blobs, vedi ../lib/swipe.mjs.
 //
-//   GET  ?img=<id>                      → lo screenshot (id casuale non indovinabile, noindex)
+// Pubblico, senza chiave:
+//   GET  ?elenco=1                      → { esempi[] } solo quelli pubblicati
+//   GET  ?img=<id>                      → lo screenshot (id casuale non indovinabile)
+// Con la chiave:
 //   GET  ?analisi=<id>&chiave=…         → { pronto, ok, proposta | errore } dell'analisi in background
 //   POST { azione, chiave, … }:
 //        verifica                       → { ok }
-//        elenco                         → { esempi[] }
+//        elenco                         → { esempi[] } tutti, anche quelli da valutare
 //        carica { tipo, dati(base64) }  → { id } dello screenshot
-//        salva { esempio, rimosse[] }   → { esempio }
+//        salva { esempio, rimosse[] }   → { esempio }   (esempio.stato: 'pubblicato' | 'da_valutare')
+//        stato { id, stato }            → { esempio }   pubblica o rimette in coda
 //        elimina { id }                 → { ok }
-//        scarta { immagini[] }          → { ok } (screenshot caricati e poi non salvati)
+//        scarta { immagini[] }          → { ok }        screenshot caricati e poi non salvati
+//        candidato { esempio, chiave_radar, immagini_url[] } → { ok, id } | { ok, duplicato: true }
+//            usato dal radar: scarica le immagini dagli URL, salva in coda «da valutare» e ricorda la chiave_radar
+//            (URL dell'inserzione, della pagina o id dell'email) per non riproporre lo stesso pezzo.
 // L'analisi con Claude parte da swipe-analisi-background.mjs (dura più dei 10 secondi di una funzione normale).
-import { randomUUID } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import { connectLambda } from '@netlify/blobs';
 import { ID, TIPI, autorizzato, json, leggiCorpo, store, testo } from '../lib/swipe.mjs';
 
 const MAX_IMG = 4.4 * 1024 * 1024;
+const STATI = ['pubblicato', 'da_valutare'];
+const FONTI = ['manuale', 'meta', 'email', 'sito', 'landing'];
+const statoDi = (e) => (e?.stato === 'da_valutare' ? 'da_valutare' : 'pubblicato');
 
-async function usate(s) {
-  const { blobs } = await s.list({ prefix: 'esempi/' });
-  const tutte = new Set();
-  for (const b of blobs) {
-    const e = await s.get(b.key, { type: 'json' });
-    (e?.images || []).forEach((i) => tutte.add(i));
-  }
-  return tutte;
-}
-
-async function elenco(s) {
+async function tutti(s) {
   const { blobs } = await s.list({ prefix: 'esempi/' });
   const out = [];
   for (let i = 0; i < blobs.length; i += 25) {
     const parte = await Promise.all(blobs.slice(i, i + 25).map((b) => s.get(b.key, { type: 'json' })));
     out.push(...parte.filter(Boolean));
   }
-  return out.sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)));
+  return out.map((e) => ({ ...e, stato: statoDi(e) })).sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)));
+}
+
+const pubblico = ({ chiave_radar, ...e }) => e;
+
+function normalizza(e, esistente) {
+  const ora = new Date().toISOString();
+  return {
+    id: esistente?.id || randomUUID(),
+    created_at: esistente?.created_at || ora,
+    updated_at: ora,
+    stato: STATI.includes(e.stato) ? e.stato : statoDi(esistente),
+    fonte: FONTI.includes(e.fonte) ? e.fonte : (esistente?.fonte || 'manuale'),
+    title: testo(e.title, 200).trim(),
+    brand: testo(e.brand, 120).trim(),
+    url: testo(e.url, 1000).trim(),
+    copy: testo(e.copy, 20000),
+    why: testo(e.why, 8000),
+    steal: testo(e.steal, 8000),
+    rating: Math.max(0, Math.min(5, Math.round(Number(e.rating) || 0))),
+    tags: [...new Set((Array.isArray(e.tags) ? e.tags : []).filter((t) => typeof t === 'string' && t.includes(':')).map((t) => t.slice(0, 120)))].slice(0, 80),
+    images: (Array.isArray(e.images) ? e.images : []).filter((x) => ID.test(String(x))).slice(0, 20),
+    ...(esistente?.chiave_radar ? { chiave_radar: esistente.chiave_radar } : {}),
+  };
+}
+
+// Scarica un'immagine per il radar: solo https verso nomi di dominio pubblici, solo immagini, al massimo 4,4 MB.
+async function scarica(url) {
+  let u;
+  try { u = new URL(url); } catch { return null; }
+  if (u.protocol !== 'https:' || /^(localhost|.*\.local|.*\.internal|\d+\.\d+\.\d+\.\d+|\[.*\])$/i.test(u.hostname)) return null;
+  const r = await fetch(u, { redirect: 'follow', signal: AbortSignal.timeout(8000) }).catch(() => null);
+  if (!r?.ok) return null;
+  const tipo = (r.headers.get('content-type') || '').split(';')[0].trim();
+  if (!TIPI[tipo]) return null;
+  const buf = Buffer.from(await r.arrayBuffer());
+  if (!buf.length || buf.length > MAX_IMG) return null;
+  return { buf, tipo };
 }
 
 export const handler = async (event) => {
@@ -48,10 +85,14 @@ export const handler = async (event) => {
       if (!r) return { statusCode: 404 };
       return {
         statusCode: 200,
-        headers: { 'content-type': r.metadata?.tipo || 'image/jpeg', 'cache-control': 'private, max-age=31536000, immutable', 'x-robots-tag': 'noindex' },
+        headers: { 'content-type': r.metadata?.tipo || 'image/jpeg', 'cache-control': 'public, max-age=31536000, immutable' },
         body: Buffer.from(r.data).toString('base64'),
         isBase64Encoded: true,
       };
+    }
+    if (q.elenco) {
+      const esempi = (await tutti(s)).filter((e) => e.stato === 'pubblicato').map(pubblico);
+      return { ...json(200, { ok: true, esempi }), headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=0, must-revalidate', 'netlify-cdn-cache-control': 'public, max-age=60, stale-while-revalidate=300' } };
     }
     if (q.analisi) {
       if (!autorizzato(q.chiave)) return json(401, { ok: false, errore: 'chiave_errata' });
@@ -74,7 +115,7 @@ export const handler = async (event) => {
         return json(200, { ok: true });
 
       case 'elenco':
-        return json(200, { ok: true, esempi: await elenco(s) });
+        return json(200, { ok: true, esempi: await tutti(s) });
 
       case 'carica': {
         if (!TIPI[d.tipo]) return json(400, { ok: false, errore: 'formato_non_supportato' });
@@ -90,27 +131,20 @@ export const handler = async (event) => {
         const e = d.esempio || {};
         const esistente = typeof e.id === 'string' && ID.test(e.id) ? await s.get(`esempi/${e.id}`, { type: 'json' }) : null;
         if (e.id && !esistente) return json(404, { ok: false, errore: 'non_trovato' });
-        const images = (Array.isArray(e.images) ? e.images : []).filter((x) => ID.test(String(x))).slice(0, 20);
-        const tags = [...new Set((Array.isArray(e.tags) ? e.tags : []).filter((t) => typeof t === 'string' && t.includes(':')).map((t) => t.slice(0, 120)))].slice(0, 80);
-        const ora = new Date().toISOString();
-        const riga = {
-          id: esistente?.id || randomUUID(),
-          created_at: esistente?.created_at || ora,
-          updated_at: ora,
-          title: testo(e.title, 200).trim(),
-          brand: testo(e.brand, 120).trim(),
-          url: testo(e.url, 1000).trim(),
-          copy: testo(e.copy, 20000),
-          why: testo(e.why, 8000),
-          steal: testo(e.steal, 8000),
-          rating: Math.max(0, Math.min(5, Math.round(Number(e.rating) || 0))),
-          tags,
-          images,
-        };
-        if (!riga.title && !riga.copy.trim() && !images.length) return json(400, { ok: false, errore: 'vuoto' });
+        const riga = normalizza(e, esistente);
+        if (!riga.title && !riga.copy.trim() && !riga.images.length) return json(400, { ok: false, errore: 'vuoto' });
         await s.setJSON(`esempi/${riga.id}`, riga);
-        const rimosse = (Array.isArray(d.rimosse) ? d.rimosse : []).filter((x) => ID.test(String(x)) && !images.includes(x));
+        const rimosse = (Array.isArray(d.rimosse) ? d.rimosse : []).filter((x) => ID.test(String(x)) && !riga.images.includes(x));
         await Promise.allSettled(rimosse.map((x) => s.delete(`img/${x}`)));
+        return json(200, { ok: true, esempio: riga });
+      }
+
+      case 'stato': {
+        if (!ID.test(String(d.id || '')) || !STATI.includes(d.stato)) return json(400, { ok: false, errore: 'richiesta' });
+        const e = await s.get(`esempi/${d.id}`, { type: 'json' });
+        if (!e) return json(404, { ok: false, errore: 'non_trovato' });
+        const riga = { ...e, stato: d.stato, updated_at: new Date().toISOString() };
+        await s.setJSON(`esempi/${d.id}`, riga);
         return json(200, { ok: true, esempio: riga });
       }
 
@@ -125,10 +159,31 @@ export const handler = async (event) => {
       case 'scarta': {
         const ids = (Array.isArray(d.immagini) ? d.immagini : []).filter((x) => ID.test(String(x))).slice(0, 20);
         if (ids.length) {
-          const u = await usate(s);
-          await Promise.allSettled(ids.filter((x) => !u.has(x)).map((x) => s.delete(`img/${x}`)));
+          const usate = new Set((await tutti(s)).flatMap((e) => e.images || []));
+          await Promise.allSettled(ids.filter((x) => !usate.has(x)).map((x) => s.delete(`img/${x}`)));
         }
         return json(200, { ok: true });
+      }
+
+      case 'candidato': {
+        const k = testo(d.chiave_radar, 1000).trim();
+        if (!k) return json(400, { ok: false, errore: 'chiave_radar' });
+        const visto = `visti/${createHash('sha256').update(k).digest('hex')}`;
+        if (await s.get(visto)) return json(200, { ok: true, duplicato: true });
+        const images = [];
+        for (const url of (Array.isArray(d.immagini_url) ? d.immagini_url : []).slice(0, 4)) {
+          const img = await scarica(String(url));
+          if (!img) continue;
+          const id = randomUUID();
+          await s.set(`img/${id}`, img.buf, { metadata: { tipo: img.tipo } });
+          images.push(id);
+        }
+        const riga = normalizza({ ...(d.esempio || {}), stato: 'da_valutare', images }, null);
+        riga.chiave_radar = k;
+        if (!riga.title && !riga.copy.trim() && !images.length) return json(400, { ok: false, errore: 'vuoto' });
+        await s.setJSON(`esempi/${riga.id}`, riga);
+        await s.set(visto, riga.id);
+        return json(200, { ok: true, id: riga.id, immagini: images.length });
       }
 
       default:

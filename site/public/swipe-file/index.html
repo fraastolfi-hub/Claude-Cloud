@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Swipe file · Hotel Positioning</title>
-<meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Archivio privato.">
+<title>Swipe file per hotel e ristoranti: annunci, email e landing che funzionano · Hotel Positioning</title>
+<meta name="description" content="Annunci Meta, email, landing page e homepage che funzionano, raccolti da Francesco Astolfi. Per ognuno: perché funziona e come portarlo nel tuo hotel o ristorante. Con filtri per formato, leva e occasione.">
+<link rel="canonical" href="https://hotelpositioning.com/swipe-file/">
+<meta property="og:title" content="Lo swipe file dell'ospitalità"><meta property="og:description" content="Annunci, email e landing che funzionano. Per ognuno: perché funziona e come rubarlo per il tuo hotel."><meta property="og:type" content="website">
 <script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
 window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 <meta name="theme-color" content="#fffdf6">
@@ -28,17 +29,22 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 /* /swipe-file/ — archivio privato di esempi di marketing per l'hospitality. Pagina nascosta (noindex, fuori dalla
    sitemap); dati e screenshot passano da netlify/functions/swipe.mjs con la chiave. Classi con prefisso sw-. */
 body{background:var(--e-carta)}
-.sw-top{position:sticky;top:0;z-index:20;background:var(--e-carta);border-bottom:1px solid var(--e-linea)}
-.sw-top .wrap{display:flex;align-items:center;gap:16px;min-height:68px}
-.sw-top .logo{flex:none}
-.sw-name{font:500 22px/1 var(--serif-t);letter-spacing:-.01em;color:var(--e-inchiostro);flex:none;padding-left:16px;border-left:1px solid var(--e-linea)}
-.sw-search{flex:1;min-width:0;position:relative}
+.sw-hero{padding:clamp(40px,6vw,88px) 0 clamp(24px,3vw,36px);border-bottom:1px solid var(--e-linea)}
+.sw-hero h1{margin:16px 0 18px;max-width:16ch}
+.sw-hero .lead{max-width:56ch;margin:0}
+.sw-bar{position:sticky;top:0;z-index:20;background:var(--e-carta);border-bottom:1px solid var(--e-linea)}
+.sw-bar .wrap{display:flex;align-items:center;gap:12px;min-height:68px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.sw-search{flex:1;min-width:200px;position:relative}
 .sw-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--e-nebbia)}
 .sw-search input{width:100%;font:400 16px/1.3 var(--display);color:var(--e-inchiostro);background:var(--e-foglio);border:1px solid var(--e-linea-forte);border-radius:4px;padding:11px 14px 11px 40px;outline:0;appearance:none}
 .sw-search input:focus{border-color:var(--e-inchiostro);box-shadow:0 0 0 3px var(--focus)}
-.sw-top .btn{flex:none}
+.sw-bar .btn{flex:none}
 .sw-filters-btn{display:none!important}
-
+.sw-tabs{display:inline-flex;border:1px solid var(--e-linea-forte);border-radius:4px;overflow:hidden;flex:none}
+.sw-tabs button{font:600 14px/1 var(--display);border:0;background:var(--e-foglio);color:var(--e-grafite);padding:12px 14px;cursor:pointer}
+.sw-tabs button+button{border-left:1px solid var(--e-linea-forte)}
+.sw-tabs button.on{background:var(--e-inchiostro);color:var(--e-carta)}
+.sw-badge{display:inline-block;font:600 10.5px/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;background:var(--e-giallo);color:var(--e-inchiostro);border-radius:3px;padding:2px 6px}
 .sw-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;padding-top:32px;padding-bottom:96px}
 .sw-aside{position:sticky;top:96px;align-self:start;max-height:calc(100vh - 112px);overflow:auto;padding:0 8px 8px 0;scrollbar-width:thin}
 .sw-aside-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
@@ -84,8 +90,7 @@ body{background:var(--e-carta)}
 .sw-empty .btn{margin-top:12px}
 
 /* accesso */
-.sw-gate{min-height:100vh;display:grid;place-items:center;padding:24px}
-.sw-gate form{width:min(440px,100%);background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;padding:clamp(26px,5vw,40px)}
+.sw-gate{width:min(440px,100%);margin:12vh auto 0;background:var(--e-foglio);border-radius:8px;padding:clamp(26px,5vw,40px);box-shadow:0 20px 60px rgba(18,26,34,.3)}
 .sw-gate h1{font-size:clamp(34px,5vw,46px)!important;margin:14px 0 10px}
 .sw-gate p{color:var(--e-grafite);margin:0 0 22px}
 .sw-gate .btn{width:100%;justify-content:center}
@@ -141,8 +146,7 @@ body{background:var(--e-carta)}
 
 @media (prefers-reduced-motion:reduce){.sw-card,.sw-chip,.sw-drop{transition:none}}
 @media (max-width:860px){
-  .sw-name{display:none}
-  .sw-top .wrap{gap:10px}
+  .sw-bar .wrap{gap:8px}
   .sw-filters-btn{display:inline-flex!important}
   .sw-add-l{display:none}
   .sw-layout{grid-template-columns:minmax(0,1fr);padding-top:20px}
@@ -158,39 +162,69 @@ body{background:var(--e-carta)}
   .sw-modal{margin:0;min-height:100%;border-radius:0}
   .sw-mhead,.sw-mfoot{border-radius:0}
 }
-@media (max-width:480px){.sw-top .logo{display:none}}
 </style>
 </head>
 <body>
-
-<div id="gate" class="sw-gate hidden">
-  <form id="gateForm">
-    <span class="kicker"><b>Area privata</b></span>
-    <h1>Swipe file</h1>
-    <p>Inserisci la chiave di accesso. Resta salvata su questo dispositivo.</p>
-    <div class="field"><label for="gateKey">Chiave</label><input id="gateKey" type="password" autocomplete="current-password" required></div>
-    <p id="gateErr" class="sw-err hidden" role="alert"></p>
-    <button class="btn" id="gateBtn">Entra</button>
-  </form>
-</div>
-
-<div id="app" class="hidden">
-<header class="sw-top">
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="readbar" aria-hidden="true"></div>
+<div role="region" aria-label="Novità"><a class="ticker" href="/libro/" aria-label="Novità: è uscito il libro Hotel Positioning. Scopri di più">
+  <div class="ticker-track" aria-hidden="true">
+    <span><em>Novità</em> È uscito il libro Hotel Positioning</span><span>Il metodo in sei passaggi · 19,90 €</span><span>Otto strumenti gratis per applicarlo</span><span>Scopri di più ›</span>
+  </div>
+</a></div>
+<header class="nav">
   <div class="wrap">
-    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span></a>
-    <span class="sw-name">Swipe file</span>
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a>
+    <nav class="nav-links" aria-label="Principale">
+      <a href="/metodo/">Il metodo</a>
+      <a href="/analisi/">L'analisi</a>
+      <a href="/casi/">Casi</a>
+      <a href="/libro/">Libro</a>
+      <a href="/risorse/">Risorse gratuite</a>
+      <a href="/francesco/">Chi sono</a>
+    </nav>
+    <div class="nav-right">
+      <a class="lang-sw" href="/en/" hreflang="en" lang="en" title="English version">EN</a>
+      <a class="btn sm" href="/#richiedi">Richiedi la lettura <span class="arr">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mm" aria-label="Apri il menu"><i></i></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mm" aria-label="Menu mobile">
+    <a href="/metodo/">Il metodo</a>
+    <a href="/analisi/">L'analisi di posizionamento</a>
+    <a href="/casi/">Casi</a>
+    <a href="/libro/">Il libro</a>
+    <a href="/risorse/">Risorse gratuite</a>
+    <a href="/francesco/">Chi sono</a>
+    <a href="/en/" hreflang="en" lang="en">English version</a>
+    <a class="btn" href="/#richiedi">Richiedi la lettura gratuita <span class="arr">→</span></a>
+  </nav>
+</header>
+
+<main id="main">
+<section class="sw-hero">
+  <div class="wrap">
+    <span class="eyebrow">Risorse · Swipe file</span>
+    <h1>Lo swipe file <em>dell'ospitalità.</em></h1>
+    <p class="lead">Annunci, email, landing e homepage che mi hanno fermato. Per ognuno ti dico perché funziona e come portarlo nel tuo hotel o nel tuo ristorante. Filtra per formato, leva e occasione.</p>
+  </div>
+</section>
+<div class="sw-bar">
+  <div class="wrap">
     <label class="sw-search">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input id="q" type="search" aria-label="Cerca" placeholder="Cerca brand, parole del copy, note…" autocomplete="off">
     </label>
+    <div class="sw-tabs hidden" id="tabs" role="group" aria-label="Vista">
+      <button type="button" data-vista="pubblicato" class="on">Pubblicati</button><button type="button" data-vista="da_valutare">Da valutare</button>
+    </div>
     <button class="btn sm ghost sw-filters-btn" id="filtersBtn" type="button">Filtri</button>
-    <button class="btn sm" id="addBtn" type="button">+<span class="sw-add-l">&nbsp;Aggiungi</span></button>
+    <button class="btn sm hidden" id="addBtn" type="button">+<span class="sw-add-l">&nbsp;Aggiungi</span></button>
   </div>
-</header>
-
-<div class="wrap sw-layout" id="main">
+</div>
+<div class="wrap sw-layout">
   <aside class="sw-aside" id="aside"></aside>
-  <main>
+  <div>
     <div id="notice" class="sw-notice hidden" role="status"></div>
     <div class="sw-toolbar">
       <span class="sw-count" id="count">Caricamento…</span>
@@ -199,16 +233,95 @@ body{background:var(--e-carta)}
         <option value="rating">Più votati</option>
         <option value="az">A → Z</option>
       </select>
-      <button class="btn sm ghost" id="exportBtn" type="button" title="Copia tutto l'archivio come JSON">Copia JSON</button>
+      <button class="btn sm ghost hidden" id="exportBtn" type="button" title="Copia tutto l'archivio come JSON">Copia JSON</button>
     </div>
     <div class="sw-chips sw-active" id="active"></div>
     <div id="grid" class="sw-grid"></div>
-  </main>
+  </div>
 </div>
-</div>
-
+</main>
 <div id="modalRoot"></div>
 <div id="toast" class="sw-toast hidden" role="status"></div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="big">Senza un posizionamento chiaro, l’unica leva che resta è il prezzo.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Il metodo</h2>
+        <ul>
+          <li><a href="/metodo/">I sei passaggi</a></li>
+          <li><a href="/analisi/">L'analisi di posizionamento</a></li>
+          <li><a href="/casi/">Casi</a></li>
+          <li><a href="/smontaggio/">La lettura del posizionamento</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Problemi che risolve</h2>
+        <ul>
+          <li><a href="/problemi/booking/">Troppe commissioni OTA</a></li>
+          <li><a href="/problemi/prezzi/">Tariffe che non salgono</a></li>
+          <li><a href="/problemi/sostituibili/">Un hotel uguale agli altri</a></li>
+          <li><a href="/problemi/agenzie/">Agenzie che non bastano</a></li>
+          <li><a href="/problemi/valore/">Il valore del brand</a></li>
+          <li><a href="/problemi/apertura/">Un hotel da aprire</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Risorse gratuite</h2>
+        <ul>
+          <li><a href="/quiz/">Il test di posizionamento</a></li>
+          <li><a href="/bonus/">Gli 8 strumenti del libro</a></li>
+          <li><a href="/library/">La library dei posizionamenti</a></li>
+          <li><a aria-current="page" href="/swipe-file/">Lo swipe file</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Francesco</h2>
+        <ul>
+          <li><a href="/francesco/">Chi sono</a></li>
+          <li><a href="/libro/">Il libro</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+      <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
+    </div>
+  </div>
+</footer>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-t" hidden>
+  <button type="button" class="cc-x" data-cc="reject" aria-label="Chiudi e rifiuta i cookie non necessari">✕</button>
+  <p class="cc-t" id="cc-t">Cookie e privacy</p>
+  <p class="cc-p">Usiamo cookie tecnici, necessari al sito. Con il tuo consenso usiamo anche cookie di statistica (Google Analytics) e di marketing (Pixel di Meta) per misurare le visite e l’efficacia delle campagne. Puoi cambiare idea in qualsiasi momento. Dettagli nella <a href="/privacy-policy/#cookie">privacy policy</a>.</p>
+  <div class="cc-opts" id="cc-opts" hidden>
+    <label class="cc-opt"><input type="checkbox" checked disabled><span><b>Tecnici</b> Necessari al funzionamento del sito. Sempre attivi.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-stats"><span><b>Statistica</b> Google Analytics: visite e pagine più lette, in forma aggregata.</span></label>
+    <label class="cc-opt"><input type="checkbox" id="cc-mkt"><span><b>Marketing</b> Pixel di Meta: misura delle campagne su Facebook e Instagram e pubblico per gli annunci.</span></label>
+  </div>
+  <div class="cc-btns">
+    <button type="button" class="btn sm" data-cc="reject">Rifiuta</button>
+    <button type="button" class="btn sm" data-cc="accept">Accetta tutti</button>
+    <button type="button" class="cc-more" data-cc="custom" id="cc-custom">Personalizza</button>
+    <button type="button" class="btn sm" data-cc="save" id="cc-save" hidden>Salva le scelte</button>
+  </div>
+</div>
+<script src="/assets/consent.js?v=8e7af5a8"></script>
+
+<div class="exit" id="exit" role="dialog" aria-modal="true" aria-labelledby="exit-t" hidden>
+  <div class="exit-card">
+    <button type="button" class="exit-x" data-exit-close aria-label="Chiudi">✕</button>
+    <span class="exit-k" id="exit-k"></span>
+    <p class="exit-t" id="exit-t"></p>
+    <p class="exit-p" id="exit-p"></p>
+    <div class="exit-btns"><a class="btn" id="exit-cta" href="#"></a></div>
+    <button type="button" class="exit-no" data-exit-close id="exit-no"></button>
+  </div>
+</div>
+
+<script src="/assets/site.js?v=08d2301c"></script>
+
 
 <script>
 (() => {
@@ -256,43 +369,59 @@ async function api(azione, body={}){
 }
 
 /* ---------- Stato ---------- */
-const S = { items:[], loaded:false, q:'', sel:new Set(), sort:'recent', minRating:0, onlyImg:false };
+const S = { items:[], loaded:false, q:'', sel:new Set(), sort:'recent', minRating:0, onlyImg:false, vista:'pubblicato' };
+const FONTE = { meta:'Meta Ads', email:'Email', sito:'Sito', landing:'Landing', manuale:'' };
+const statoDi = e => e.stato==='da_valutare' ? 'da_valutare' : 'pubblicato';
 const hay = new Map();
 function haystack(it){ if(!hay.has(it.id)) hay.set(it.id, norm([it.title,it.brand,it.url,it.copy,it.why,it.steal,(it.tags||[]).map(tagValue).join(' ')].join(' \n '))); return hay.get(it.id); }
 function upsert(e){ hay.delete(e.id); const i=S.items.findIndex(x=>x.id===e.id); if(i<0) S.items.unshift(e); else S.items[i]=e; }
 
-/* ---------- Accesso ---------- */
-function esci(){ lsSet(''); CHIAVE=''; S.items=[]; S.loaded=false; closeModal(); mostra(); }
+/* ---------- Accesso (solo Francesco: aggiunge, modifica, valuta la coda del radar) ---------- */
+function esci(){ lsSet(''); CHIAVE=''; S.vista='pubblicato'; closeModal(); mostra(); }
 function mostra(){
-  $('#gate').classList.toggle('hidden', !!CHIAVE);
-  $('#app').classList.toggle('hidden', !CHIAVE);
-  if(CHIAVE) carica(); else setTimeout(()=>$('#gateKey').focus(),0);
+  const admin=!!CHIAVE;
+  ['#tabs','#addBtn','#exportBtn'].forEach(x=>$(x).classList.toggle('hidden',!admin));
+  carica();
 }
-$('#gateForm').addEventListener('submit', async e=>{
-  e.preventDefault();
-  const k=$('#gateKey').value.trim(); if(!k) return;
-  const b=$('#gateBtn'), er=$('#gateErr'); b.disabled=true; b.textContent='Controllo…'; er.classList.add('hidden');
-  CHIAVE=k; const r=await api('verifica'); b.disabled=false; b.textContent='Entra';
-  if(r.ok){ lsSet(k); $('#gateKey').value=''; mostra(); }
-  else { CHIAVE=''; er.textContent=errore(r.errore); er.classList.remove('hidden'); }
-});
+function apriAccesso(){
+  openModal(`<form class="sw-gate" id="gateForm">
+    <span class="kicker"><b>Area riservata</b></span>
+    <h1>Accedi</h1>
+    <p>Inserisci la chiave di accesso. Resta salvata su questo dispositivo.</p>
+    <div class="field"><label for="gateKey">Chiave</label><input id="gateKey" type="password" autocomplete="current-password" required></div>
+    <p id="gateErr" class="sw-err hidden" role="alert"></p>
+    <button class="btn" id="gateBtn">Entra</button></form>`, true);
+  setTimeout(()=>$('#gateKey').focus(),0);
+  $('#gateForm').addEventListener('submit', async e=>{
+    e.preventDefault();
+    const k=$('#gateKey').value.trim(); if(!k) return;
+    const b=$('#gateBtn'), er=$('#gateErr'); b.disabled=true; b.textContent='Controllo…'; er.classList.add('hidden');
+    CHIAVE=k; const r=await api('verifica'); b.disabled=false; b.textContent='Entra';
+    if(r.ok){ lsSet(k); closeModal(); mostra(); toast('Accesso fatto'); }
+    else { CHIAVE=''; er.textContent=errore(r.errore); er.classList.remove('hidden'); }
+  });
+}
 async function carica(){
-  render();
-  const r=await api('elenco');
+  S.loaded=false; render();
+  let r;
+  if(CHIAVE) r=await api('elenco');
+  else { try{ r=await fetch(API+'?elenco=1').then(x=>x.json()); }catch{ r={ok:false,errore:'rete'}; } }
   S.loaded=true;
   if(r.ok){ S.items=r.esempi||[]; hay.clear(); notice(''); }
-  else if(CHIAVE) notice('Archivio non raggiungibile ('+errore(r.errore)+'). Ricarica la pagina più tardi.');
+  else notice('Archivio non raggiungibile ('+errore(r.errore)+'). Ricarica la pagina più tardi.');
   render();
 }
 
 /* ---------- Filtri ---------- */
 function matches(it){
+  if(statoDi(it)!==S.vista) return false;
   if(S.q){ const h=haystack(it); for(const w of norm(S.q).split(/\s+/).filter(Boolean)) if(!h.includes(w)) return false; }
   if(S.minRating && (it.rating||0)<S.minRating) return false;
   if(S.onlyImg && !(it.images||[]).length) return false;
   const tags=it.tags||[]; for(const t of S.sel) if(!tags.includes(t)) return false;
   return true;
 }
+const nVista = v => S.items.filter(it=>statoDi(it)===v).length;
 function filtered(){
   const by={ recent:(a,b)=>String(b.created_at).localeCompare(String(a.created_at)),
     rating:(a,b)=>(b.rating||0)-(a.rating||0)||String(b.created_at).localeCompare(String(a.created_at)),
@@ -317,18 +446,23 @@ function renderAside(){
     h+=`<div class="sw-facet"><span class="sw-lab">${esc(g.label)}</span><div class="sw-chips">`+
       vals.map(t=>`<button class="sw-chip ${S.sel.has(t)?'on':''} ${g.key==='tag'?'free':''}" data-tag="${esc(t)}">${esc(tagLabel(t))}<span class="n">${counts[t]||0}</span></button>`).join('')+'</div></div>';
   }
-  if(S.loaded && !S.items.length) h+='<p class="sw-hint">I filtri compaiono qui quando aggiungi i primi esempi. Mostrano solo i tag presenti nei risultati, così ogni combinazione porta sempre da qualche parte.</p>';
-  h+='<div class="sw-out"><button class="sw-link" data-act="logout">Esci da questo dispositivo</button></div>';
+  if(S.loaded && !nVista(S.vista)) h+='<p class="sw-hint">I filtri compaiono qui quando aggiungi i primi esempi. Mostrano solo i tag presenti nei risultati, così ogni combinazione porta sempre da qualche parte.</p>';
+  h+=CHIAVE?'<div class="sw-out"><button class="sw-link" data-act="logout">Esci da questo dispositivo</button></div>':'<div class="sw-out"><button class="sw-link" data-act="login" style="color:var(--e-nebbia);background-image:none">Area riservata</button></div>';
   $('#aside').innerHTML=h;
   $('#filtersBtn').textContent=nf?`Filtri (${nf})`:'Filtri';
 }
 function renderGrid(){
   const res=filtered();
-  $('#count').textContent=!S.loaded?'Caricamento…':`${res.length} ${res.length===1?'esempio':'esempi'}${res.length!==S.items.length?' su '+S.items.length:''}`;
+  const tot=nVista(S.vista);
+  $('#count').textContent=!S.loaded?'Caricamento…':`${res.length} ${res.length===1?'esempio':'esempi'}${res.length!==tot?' su '+tot:''}${S.vista==='da_valutare'?' da valutare':''}`;
+  const tb=$('#tabs').querySelectorAll('button'); tb[0].textContent=`Pubblicati (${nVista('pubblicato')})`; tb[1].textContent=`Da valutare (${nVista('da_valutare')})`;
+  tb.forEach(b=>b.classList.toggle('on',b.dataset.vista===S.vista));
   $('#active').innerHTML=[...S.sel].map(t=>`<button class="sw-chip on sm" data-tag="${esc(t)}">${esc(tagLabel(t))} ✕</button>`).join('');
   const g=$('#grid');
   if(!S.loaded){ g.innerHTML=''; return; }
-  if(!S.items.length){
+  if(!tot && S.vista==='da_valutare'){ g.style.columns='auto'; g.innerHTML='<div class="sw-empty"><h2>Coda vuota</h2><p>Il radar non ha trovato niente di nuovo. Ripassa domani mattina.</p></div>'; return; }
+  if(!tot && !CHIAVE){ g.style.columns='auto'; g.innerHTML='<div class="sw-empty"><h2>I primi esempi arrivano a breve</h2><p>Sto raccogliendo annunci, email e landing che funzionano. Torna tra qualche giorno.</p></div>'; return; }
+  if(!tot){
     g.style.columns='auto';
     g.innerHTML=`<div class="sw-empty"><h2>Lo swipe file è vuoto</h2>
       <p>Quando vedi un'ad, una DEM, una landing o un menu che ti ferma, fai uno screenshot e aggiungilo qui, da telefono o da desktop.</p>
@@ -342,7 +476,7 @@ function renderGrid(){
     const img=(it.images||[])[0], tags=(it.tags||[]).slice(0,5);
     return `<article class="sw-card" tabindex="0" data-open="${esc(it.id)}">
       ${img?`<img class="sw-thumb" loading="lazy" src="${imgUrl(img)}" alt="">`:(it.copy?`<div class="sw-quote">${esc(it.copy.slice(0,400))}</div>`:'')}
-      <div class="sw-body"><h3>${esc(it.title||'Senza titolo')}</h3>
+      <div class="sw-body">${CHIAVE&&FONTE[it.fonte]?`<span class="sw-badge" style="margin-bottom:8px">Radar · ${FONTE[it.fonte]}</span>`:''}<h3>${esc(it.title||'Senza titolo')}</h3>
       <div class="sw-meta">${it.brand?`<span>${esc(it.brand)}</span>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}</div>
       ${tags.length?`<div class="sw-tags">${tags.map(t=>`<span class="sw-tag ${tagFacet(t)==='tag'?'free':''}">${esc(tagLabel(t))}</span>`).join('')}</div>`:''}
       </div></article>`;
@@ -354,6 +488,7 @@ let qT;
 $('#q').addEventListener('input',e=>{clearTimeout(qT);qT=setTimeout(()=>{S.q=e.target.value.trim();render();},150);});
 $('#sort').addEventListener('change',e=>{S.sort=e.target.value;renderGrid();});
 $('#addBtn').addEventListener('click',()=>openEditor());
+$('#tabs').addEventListener('click',e=>{ const b=e.target.closest('[data-vista]'); if(!b) return; S.vista=b.dataset.vista; S.sel.clear(); render(); });
 $('#filtersBtn').addEventListener('click',()=>$('#aside').classList.add('open'));
 $('#exportBtn').addEventListener('click',async()=>{
   const data=S.items.map(r=>({...r,immagini:(r.images||[]).map(i=>location.origin+imgUrl(i))}));
@@ -370,18 +505,19 @@ document.addEventListener('click',e=>{
     case 'add': openEditor();break;
     case 'closeAside': $('#aside').classList.remove('open');break;
     case 'logout': esci();break;
+    case 'login': apriAccesso();break;
   }
 });
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape') closeModal();
   if(e.key==='Enter' && e.target.matches('.sw-card')) openDetail(e.target.dataset.open);
-  if(e.key==='/' && CHIAVE && !e.target.closest('input,textarea,select')){e.preventDefault();$('#q').focus();}
+  if(e.key==='/' && !e.target.closest('input,textarea,select')){e.preventDefault();$('#q').focus();}
 });
 
 /* ---------- Modali ---------- */
 let EDIT=null;
-function openModal(html){
-  $('#modalRoot').innerHTML=`<div class="sw-scrim" id="scrim"><div class="sw-modal" role="dialog" aria-modal="true">${html}</div></div>`;
+function openModal(html, nudo){
+  $('#modalRoot').innerHTML=nudo?`<div class="sw-scrim" id="scrim"><div role="dialog" aria-modal="true" style="width:min(440px,100%)">${html}</div></div>`:`<div class="sw-scrim" id="scrim"><div class="sw-modal" role="dialog" aria-modal="true">${html}</div></div>`;
   document.body.style.overflow='hidden';
   $('#scrim').addEventListener('mousedown',e=>{ if(e.target.id==='scrim') closeModal(); });
 }
@@ -403,7 +539,8 @@ function openDetail(id){
   const imgs=it.images||[];
   openModal(`
     <div class="sw-mhead"><h2>${esc(it.title||'Senza titolo')}</h2>
-      <button class="btn sm ghost" id="dEdit" type="button">Modifica</button><button class="sw-x" id="dClose" aria-label="Chiudi">✕</button></div>
+      ${CHIAVE&&statoDi(it)==='da_valutare'?'<button class="btn sm ghost sw-danger" id="dDrop" type="button">Scarta</button><button class="btn sm" id="dPub" type="button">Pubblica</button>':''}
+      ${CHIAVE?'<button class="btn sm ghost" id="dEdit" type="button">Modifica</button>':''}<button class="sw-x" id="dClose" aria-label="Chiudi">✕</button></div>
     <div class="sw-mbody"><div class="sw-detail">
       <div class="sw-imgs">${imgs.map(a=>`<a href="${imgUrl(a)}" target="_blank" rel="noopener"><img src="${imgUrl(a)}" alt=""></a>`).join('')||
         (it.copy?`<div class="sw-copybox">${esc(it.copy)}</div>`:'<div class="sw-empty">Nessuna immagine</div>')}</div>
@@ -415,10 +552,13 @@ function openDetail(id){
         ${it.copy&&imgs.length?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Copy trascritto</span><button class="sw-link" id="dCopy">Copia</button></div><div class="sw-copybox">${esc(it.copy)}</div>`:''}
         ${groups.map(g=>`<div class="sw-fl"><span class="sw-lab" style="margin:0">${esc(g.f.label)}</span></div><div class="sw-chips">${g.vals.map(t=>`<button class="sw-chip" data-ftag="${esc(t)}">${esc(tagValue(t))}</button>`).join('')}</div>`).join('')}
         ${free.length?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Tag liberi</span></div><div class="sw-chips">${free.map(t=>`<button class="sw-chip free" data-ftag="${esc(t)}">${esc(tagLabel(t))}</button>`).join('')}</div>`:''}
+        ${CHIAVE&&FONTE[it.fonte]?`<p class="sw-hint" style="margin-top:20px">Trovato dal radar (${FONTE[it.fonte]}). Controlla testo e tag prima di pubblicarlo.</p>`:''}
         <p class="sw-hint" style="margin-top:20px">Tocca un tag per vedere tutti gli esempi con quel tag.</p>
       </div></div></div>`);
   $('#dClose').onclick=closeModal;
-  $('#dEdit').onclick=()=>openEditor(it);
+  if($('#dEdit')) $('#dEdit').onclick=()=>openEditor(it);
+  if($('#dPub')) $('#dPub').onclick=async()=>{ const r=await api('stato',{id:it.id,stato:'pubblicato'}); if(!r.ok) return toast(errore(r.errore)); upsert(r.esempio); closeModal(); render(); toast('Pubblicato'); };
+  if($('#dDrop')) $('#dDrop').onclick=async()=>{ const r=await api('elimina',{id:it.id}); if(!r.ok) return toast(errore(r.errore)); S.items=S.items.filter(x=>x.id!==it.id); closeModal(); render(); toast('Scartato: il radar non lo riproporrà'); };
   const c=$('#dCopy'); if(c) c.onclick=async()=>{try{await navigator.clipboard.writeText(it.copy);toast('Copy copiato');}catch{toast('Copia non consentita');}};
   document.querySelectorAll('[data-ftag]').forEach(b=>b.onclick=()=>{S.sel=new Set([b.dataset.ftag]);closeModal();render();window.scrollTo({top:0});});
 }
@@ -427,7 +567,7 @@ function openDetail(id){
 const CAMPI={fTitle:'title',fBrand:'brand',fUrl:'url',fCopy:'copy',fWhy:'why',fSteal:'steal'};
 function openEditor(it){
   if(EDIT) closeModal();
-  EDIT={ id:it?.id||null,
+  EDIT={ id:it?.id||null, stato:it?statoDi(it):'pubblicato', fonte:it?.fonte||'manuale',
     d:{title:it?.title||'',brand:it?.brand||'',url:it?.url||'',copy:it?.copy||'',why:it?.why||'',steal:it?.steal||'',rating:it?.rating||0},
     tags:new Set(it?.tags||[]), imgs:(it?.images||[]).map(id=>({k:id,id,url:imgUrl(id),nuova:false})), rimosse:[], busy:false, armed:false };
   openModal(`
@@ -584,7 +724,7 @@ async function save(){
   const images=E.imgs.filter(i=>i.id).map(i=>i.id);
   if(!E.d.title.trim() && !E.d.copy.trim() && !images.length){ st.textContent='Aggiungi almeno un titolo, un testo o un’immagine.'; return; }
   E.busy=true; btn.disabled=true; st.textContent='Salvo…';
-  const r=await api('salva',{esempio:{id:E.id,...E.d,tags:[...E.tags],images},rimosse:E.rimosse});
+  const r=await api('salva',{esempio:{id:E.id,stato:E.stato,fonte:E.fonte,...E.d,tags:[...E.tags],images},rimosse:E.rimosse});
   if(!r.ok){ if(EDIT===E){ E.busy=false; btn.disabled=false; st.textContent=errore(r.errore,'Salvataggio non riuscito.'); } return; }
   E.salvato=true; upsert(r.esempio); closeModal(); render(); toast(E.id?'Esempio aggiornato':'Esempio salvato');
 }

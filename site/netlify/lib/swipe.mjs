@@ -1,9 +1,10 @@
-// Swipe file privato (/swipe-file/): pezzi comuni alle funzioni swipe.mjs e swipe-analisi-background.mjs.
+// Swipe file (/swipe-file/): pezzi comuni alle funzioni swipe.mjs e swipe-analisi-background.mjs.
 //
 // Tutto sta in Netlify Blobs, store «swipe»:
 //   esempi/<id>   un esempio (JSON)
 //   img/<id>      uno screenshot (binario, tipo nei metadati)
 //   analisi/<id>  il risultato di un'analisi con Claude (JSON), letto dalla pagina finché non è pronto
+//   visti/<sha256> i pezzi già proposti dal radar (URL o id), per non riproporli
 //
 // Accesso: la pagina manda la chiave, qui si confronta il suo SHA-256 con SWIPE_KEY_SHA256
 // (variabile d'ambiente facoltativa) o con l'hash predefinito qui sotto.
