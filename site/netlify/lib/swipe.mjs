@@ -16,7 +16,8 @@ const HASH_PREDEFINITO = 'f1d29816669aa3080462a9193415900906b8759b934d497708bc2c
 export const ID = /^[0-9a-f-]{36}$/;
 export const TIPI = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif' };
 
-export const store = () => getStore({ name: 'swipe', consistency: 'strong' });
+// consistenza «eventual» (default): la «strong» non è disponibile nelle funzioni in stile Lambda
+export const store = () => getStore('swipe');
 
 export const json = (statusCode, body) => ({
   statusCode,
