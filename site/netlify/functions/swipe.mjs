@@ -13,7 +13,8 @@
 //        stato { id, stato }            → { esempio }   pubblica o rimette in coda
 //        elimina { id }                 → { ok }
 //        scarta { immagini[] }          → { ok }        screenshot caricati e poi non salvati
-//        candidato { esempio, chiave_radar, immagini_url[] } → { ok, id } | { ok, duplicato: true }
+//        candidato { esempio, chiave_radar, immagini[], immagini_url[] } → { ok, id } | { ok, duplicato: true }
+//        visto { chiave_radar }         → { visto } (il radar controlla prima di fare lo screenshot)
 //            usato dal radar: scarica le immagini dagli URL, salva in coda «da valutare» e ricorda la chiave_radar
 //            (URL dell'inserzione, della pagina o id dell'email) per non riproporre lo stesso pezzo.
 // L'analisi con Claude parte da swipe-analisi-background.mjs (dura più dei 10 secondi di una funzione normale).
@@ -165,12 +166,19 @@ export const handler = async (event) => {
         return json(200, { ok: true });
       }
 
+      case 'visto': {
+        const k = testo(d.chiave_radar, 1000).trim();
+        if (!k) return json(400, { ok: false, errore: 'chiave_radar' });
+        return json(200, { ok: true, visto: !!(await s.get(`visti/${createHash('sha256').update(k).digest('hex')}`)) });
+      }
+
       case 'candidato': {
         const k = testo(d.chiave_radar, 1000).trim();
         if (!k) return json(400, { ok: false, errore: 'chiave_radar' });
         const visto = `visti/${createHash('sha256').update(k).digest('hex')}`;
         if (await s.get(visto)) return json(200, { ok: true, duplicato: true });
-        const images = [];
+        // immagini già caricate con «carica» (screenshot fatti dal radar) + immagini da scaricare dagli URL
+        const images = (Array.isArray(d.immagini) ? d.immagini : []).filter((x) => ID.test(String(x))).slice(0, 4);
         for (const url of (Array.isArray(d.immagini_url) ? d.immagini_url : []).slice(0, 4)) {
           const img = await scarica(String(url));
           if (!img) continue;
