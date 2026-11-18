@@ -76,7 +76,7 @@ body{background:var(--e-carta)}
 .sw-card{break-inside:avoid;margin:0 0 20px;background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;overflow:hidden;cursor:pointer;transition:border-color .15s}
 .sw-card:hover{border-color:var(--e-inchiostro)}
 .sw-card:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
-.sw-thumb{display:block;width:100%;max-height:420px;object-fit:cover;object-position:top;background:var(--e-sabbia);border-bottom:1px solid var(--e-linea)}
+.sw-thumb{display:block;width:100%;max-height:560px;object-fit:cover;object-position:top;background:var(--e-sabbia)}
 .sw-quote{padding:20px 20px 6px;font:400 18px/1.4 var(--serif-t);letter-spacing:-.01em;white-space:pre-line;max-height:220px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent);background:var(--e-sabbia)}
 .sw-body{padding:14px 18px 16px}
 .sw-body h3{font-size:19px!important;line-height:1.25;margin:0 0 4px}
@@ -647,9 +647,25 @@ document.addEventListener('paste',e=>{
 });
 
 /* Screenshot entro i limiti (lato lungo ≤ 7900px, ≤ 3 MB) e poi caricato subito: così l'analisi lo trova già salvato. */
+/* toglie i bordi uniformi (bianco, grigio, trasparente) intorno allo screenshot: l'immagine deve riempire la scheda */
+function rifila(c){
+  const x=c.getContext('2d'), w=c.width, h=c.height; if(w<40||h<40) return c;
+  const d=x.getImageData(0,0,w,h).data, r0=d[0],g0=d[1],b0=d[2];
+  const diff=i=>Math.abs(d[i]-r0)+Math.abs(d[i+1]-g0)+Math.abs(d[i+2]-b0)>54;
+  const riga=y=>{ for(let xx=0;xx<w;xx+=2) if(diff((y*w+xx)*4)) return true; return false; };
+  const col=xx=>{ for(let y=0;y<h;y+=2) if(diff((y*w+xx)*4)) return true; return false; };
+  let t=0,b=h-1,l=0,r=w-1;
+  while(t<b&&!riga(t)) t++; while(b>t&&!riga(b)) b--; while(l<r&&!col(l)) l++; while(r>l&&!col(r)) r--;
+  if((r-l)<w*.35||(b-t)<h*.2) return c;
+  t=Math.max(0,t-8); l=Math.max(0,l-8); b=Math.min(h-1,b+8); r=Math.min(w-1,r+8);
+  if(t===0&&l===0&&b===h-1&&r===w-1) return c;
+  const o=document.createElement('canvas'); o.width=r-l+1; o.height=b-t+1; o.getContext('2d').drawImage(c,l,t,o.width,o.height,0,0,o.width,o.height); return o;
+}
 async function prepara(file){
   if(file.type==='image/gif' && file.size<=3*1024*1024) return file;
   let bmp; try{ bmp=await createImageBitmap(file); }catch{ return file; }
+  { const c0=document.createElement('canvas'); c0.width=bmp.width; c0.height=bmp.height; c0.getContext('2d').drawImage(bmp,0,0);
+    const c1=rifila(c0); if(c1!==c0){ bmp.close(); bmp=await createImageBitmap(c1); } }
   if(bmp.width<=2000 && bmp.height<=7900 && file.size<=3*1024*1024 && ['image/png','image/jpeg','image/webp'].includes(file.type)){ bmp.close(); return file; }
   const sc=Math.min(1,1600/bmp.width,7900/bmp.height), c=document.createElement('canvas');
   c.width=Math.round(bmp.width*sc); c.height=Math.round(bmp.height*sc);
