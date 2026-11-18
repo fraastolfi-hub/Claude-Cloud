@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marketing ideas per hotel e ristoranti: annunci, email e landing che funzionano · Hotel Positioning</title>
+<title>L'Archivio del Marketing dell'Ospitalità · Hotel Positioning</title>
 <meta name="description" content="Idee di marketing per hotel e ristoranti, prese da annunci, email, landing e homepage che funzionano in tutto il mondo. Per ognuna: perché funziona e come portarla nella tua struttura. Con filtri per formato, leva e occasione.">
 <link rel="canonical" href="https://hotelpositioning.com/marketing-ideas/">
-<meta property="og:title" content="Marketing ideas per l'ospitalità"><meta property="og:description" content="Idee prese da annunci, email e landing che funzionano. Per ognuna: perché funziona e come portarla nel tuo hotel."><meta property="og:type" content="website">
+<meta property="og:title" content="L'Archivio del Marketing dell'Ospitalità"><meta property="og:description" content="Idee prese da annunci, email e landing che funzionano. Per ognuna: perché funziona e come portarla nel tuo hotel."><meta property="og:type" content="website">
 <!-- @include head -->
 <!-- @include tema -->
 <style>
@@ -14,7 +14,7 @@
    con la chiave si aggiunge, si modifica e si valuta la coda del radar (netlify/functions/swipe.mjs). Classi con prefisso sw-. */
 body{background:var(--e-carta)}
 .sw-hero{padding:clamp(40px,6vw,88px) 0 clamp(24px,3vw,36px);border-bottom:1px solid var(--e-linea)}
-.sw-hero h1{margin:16px 0 18px;max-width:18ch}
+.sw-hero h1{margin:16px 0 18px;max-width:20ch}
 .sw-hero .lead{max-width:56ch;margin:0}
 .sw-bar{position:sticky;top:0;z-index:20;background:var(--e-carta);border-bottom:1px solid var(--e-linea)}
 .sw-bar .wrap{display:flex;align-items:center;gap:12px;min-height:68px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
@@ -23,14 +23,17 @@ body{background:var(--e-carta)}
 .sw-search input{width:100%;font:400 16px/1.3 var(--display);color:var(--e-inchiostro);background:var(--e-foglio);border:1px solid var(--e-linea-forte);border-radius:4px;padding:11px 14px 11px 40px;outline:0;appearance:none}
 .sw-search input:focus{border-color:var(--e-inchiostro);box-shadow:0 0 0 3px var(--focus)}
 .sw-bar .btn{flex:none}
-.sw-filters-btn{display:none!important}
 .sw-tabs{display:inline-flex;border:1px solid var(--e-linea-forte);border-radius:4px;overflow:hidden;flex:none}
 .sw-tabs button{font:600 14px/1 var(--display);border:0;background:var(--e-foglio);color:var(--e-grafite);padding:12px 14px;cursor:pointer}
 .sw-tabs button+button{border-left:1px solid var(--e-linea-forte)}
 .sw-tabs button.on{background:var(--e-inchiostro);color:var(--e-carta)}
 .sw-badge{display:inline-block;font:600 10.5px/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;background:var(--e-giallo);color:var(--e-inchiostro);border-radius:3px;padding:2px 6px}
-.sw-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;padding-top:32px;padding-bottom:96px}
-.sw-aside{position:sticky;top:96px;align-self:start;max-height:calc(100vh - 112px);overflow:auto;padding:0 8px 8px 0;scrollbar-width:thin}
+.sw-layout{display:block;padding-top:28px;padding-bottom:96px}
+/* i filtri stanno in un pannello laterale che si apre dal bottone «Filtri»: lo spazio è tutto delle schede */
+.sw-aside{position:fixed;inset:0 0 0 auto;width:min(360px,90vw);z-index:40;overflow:auto;background:var(--e-carta);border-left:1px solid var(--e-linea);padding:22px 22px 32px;transform:translateX(105%);transition:transform .2s;scrollbar-width:thin}
+.sw-aside.open{transform:none}
+.sw-aside-scrim{position:fixed;inset:0;z-index:39;background:rgba(18,26,34,.35);display:none}
+.sw-aside-scrim.on{display:block}
 .sw-aside-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
 .sw-aside-head h2{flex:1;font-size:26px!important}
 .sw-facet{margin-bottom:22px}
@@ -53,7 +56,7 @@ body{background:var(--e-carta)}
 .sw-active{margin-bottom:18px}
 .sw-notice{border:1px solid var(--e-linea-forte);border-left:3px solid var(--e-giallo);background:var(--e-foglio);border-radius:4px;padding:12px 16px;margin-bottom:18px;font-size:15px}
 
-.sw-grid{columns:3 260px;column-gap:20px}
+.sw-grid{columns:4 250px;column-gap:20px}
 .sw-card{break-inside:avoid;margin:0 0 20px;background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;overflow:hidden;cursor:pointer;transition:border-color .15s}
 .sw-card:hover{border-color:var(--e-inchiostro)}
 .sw-card:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
@@ -138,11 +141,8 @@ body{background:var(--e-carta)}
 @media (prefers-reduced-motion:reduce){.sw-card,.sw-chip,.sw-drop{transition:none}}
 @media (max-width:860px){
   .sw-bar .wrap{gap:8px}
-  .sw-filters-btn{display:inline-flex!important}
   .sw-add-l{display:none}
-  .sw-layout{grid-template-columns:minmax(0,1fr);padding-top:20px}
-  .sw-aside{position:fixed;inset:0 0 0 auto;width:min(340px,88vw);max-height:none;z-index:40;background:var(--e-carta);border-left:1px solid var(--e-linea);padding:20px;transform:translateX(105%);transition:transform .2s}
-  .sw-aside.open{transform:none}
+  .sw-layout{padding-top:20px}
   .sw-grid{columns:2 150px;column-gap:12px}
   .sw-card{margin-bottom:12px}
   .sw-quote{font-size:15px;padding:14px 14px 4px}
@@ -161,7 +161,7 @@ body{background:var(--e-carta)}
 <section class="sw-hero">
   <div class="wrap">
     <span class="eyebrow">Risorse · Marketing ideas</span>
-    <h1>Marketing ideas <em>per l'ospitalità.</em></h1>
+    <h1>L'Archivio del Marketing <em>dell'Ospitalità</em></h1>
     <p class="lead">Idee prese da annunci, email, landing e homepage che funzionano, in Italia e nel mondo. Per ognuna ti dico perché funziona e come portarla nel tuo hotel o nel tuo ristorante. Filtra per formato, leva e occasione.</p>
   </div>
 </section>
@@ -179,7 +179,8 @@ body{background:var(--e-carta)}
   </div>
 </div>
 <div class="wrap sw-layout">
-  <aside class="sw-aside" id="aside"></aside>
+  <aside class="sw-aside" id="aside" aria-label="Filtri"></aside>
+  <div class="sw-aside-scrim" id="asideScrim"></div>
   <div>
     <div id="notice" class="sw-notice hidden" role="status"></div>
     <div class="sw-toolbar">
@@ -383,7 +384,9 @@ $('#q').addEventListener('input',e=>{clearTimeout(qT);qT=setTimeout(()=>{S.q=e.t
 $('#sort').addEventListener('change',e=>{S.sort=e.target.value;renderGrid();});
 $('#addBtn').addEventListener('click',()=>openEditor());
 $('#tabs').addEventListener('click',e=>{ const b=e.target.closest('[data-vista]'); if(!b) return; S.vista=b.dataset.vista; S.sel.clear(); render(); });
-$('#filtersBtn').addEventListener('click',()=>$('#aside').classList.add('open'));
+const apriFiltri=o=>{ $('#aside').classList.toggle('open',o); $('#asideScrim').classList.toggle('on',o); };
+$('#filtersBtn').addEventListener('click',()=>apriFiltri(true));
+$('#asideScrim').addEventListener('click',()=>apriFiltri(false));
 $('#exportBtn').addEventListener('click',async()=>{
   const data=S.items.map(r=>({...r,immagini:(r.images||[]).map(i=>location.origin+imgUrl(i))}));
   try{await navigator.clipboard.writeText(JSON.stringify(data,null,2));toast(`Copiate ${data.length} idee negli appunti`);}catch{toast('Copia non consentita da questo browser');}
@@ -398,13 +401,13 @@ document.addEventListener('click',e=>{
     case 'clear': S.sel.clear();S.minRating=0;S.onlyImg=false;render();break;
     case 'onlyImg': S.onlyImg=!S.onlyImg;render();break;
     case 'add': openEditor();break;
-    case 'closeAside': $('#aside').classList.remove('open');break;
+    case 'closeAside': apriFiltri(false);break;
     case 'logout': esci();break;
     case 'login': apriAccesso();break;
   }
 });
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape') closeModal();
+  if(e.key==='Escape'){ closeModal(); apriFiltri(false); }
   if(e.key==='Enter' && e.target.matches('.sw-card')) openDetail(e.target.dataset.open);
   if(e.key==='/' && !e.target.closest('input,textarea,select')){e.preventDefault();$('#q').focus();}
 });
