@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swipe file · Hotel Positioning</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Archivio privato.">
+<script>/* ID di tracciamento: lasciare vuoto per disattivare. Partono solo dopo il consenso (vedi /assets/consent.js). */
+window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
+<meta name="theme-color" content="#fffdf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='12' y='30' width='9' height='22' fill='%23c9c5bc'/%3E%3Crect x='24' y='22' width='9' height='30' fill='%23c9c5bc'/%3E%3Crect x='36' y='12' width='9' height='40' fill='%23ffd22e'/%3E%3Crect x='48' y='26' width='6' height='26' fill='%23c9c5bc'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Hotel Positioning">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://hotelpositioning.com/assets/img/og-hotel-positioning.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=b3a8d31d">
+
+<link rel="stylesheet" href="/assets/soft.css?v=0d866f63">
+<link rel="stylesheet" href="/assets/editoriale.css?v=d022a7b9">
+
+<style>
+/* /swipe-file/ — archivio privato di esempi di marketing per l'hospitality. Pagina nascosta (noindex, fuori dalla
+   sitemap); dati e screenshot passano da netlify/functions/swipe.mjs con la chiave. Classi con prefisso sw-. */
+body{background:var(--e-carta)}
+.sw-top{position:sticky;top:0;z-index:20;background:var(--e-carta);border-bottom:1px solid var(--e-linea)}
+.sw-top .wrap{display:flex;align-items:center;gap:16px;min-height:68px}
+.sw-top .logo{flex:none}
+.sw-name{font:500 22px/1 var(--serif-t);letter-spacing:-.01em;color:var(--e-inchiostro);flex:none;padding-left:16px;border-left:1px solid var(--e-linea)}
+.sw-search{flex:1;min-width:0;position:relative}
+.sw-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--e-nebbia)}
+.sw-search input{width:100%;font:400 16px/1.3 var(--display);color:var(--e-inchiostro);background:var(--e-foglio);border:1px solid var(--e-linea-forte);border-radius:4px;padding:11px 14px 11px 40px;outline:0;appearance:none}
+.sw-search input:focus{border-color:var(--e-inchiostro);box-shadow:0 0 0 3px var(--focus)}
+.sw-top .btn{flex:none}
+.sw-filters-btn{display:none!important}
+
+.sw-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;padding-top:32px;padding-bottom:96px}
+.sw-aside{position:sticky;top:96px;align-self:start;max-height:calc(100vh - 112px);overflow:auto;padding:0 8px 8px 0;scrollbar-width:thin}
+.sw-aside-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+.sw-aside-head h2{flex:1;font-size:26px!important}
+.sw-facet{margin-bottom:22px}
+.sw-lab{display:block;font:600 11px/1.3 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--e-nebbia);margin:0 0 9px}
+.sw-chips{display:flex;flex-wrap:wrap;gap:6px}
+.sw-chip{font:500 13px/1.35 var(--display);color:var(--e-grafite);background:var(--e-foglio);border:1px solid var(--e-linea-forte);border-radius:3px;padding:4px 9px;cursor:pointer;transition:background-color .12s,border-color .12s,color .12s}
+.sw-chip:hover{border-color:var(--e-inchiostro);color:var(--e-inchiostro)}
+.sw-chip.on{background:var(--e-inchiostro);border-color:var(--e-inchiostro);color:var(--e-carta)}
+.sw-chip.free{background:var(--e-sabbia)}
+.sw-chip.free.on{background:var(--e-inchiostro)}
+.sw-chip.sm{font-size:12px;padding:2px 8px}
+.sw-chip .n{font-size:11px;margin-left:5px;opacity:.55}
+.sw-link{background:none;border:0;padding:0;font:600 13px/1.3 var(--display);color:var(--e-inchiostro);cursor:pointer;background-image:linear-gradient(var(--e-giallo),var(--e-giallo));background-size:100% 2px;background-position:0 100%;background-repeat:no-repeat}
+.sw-hint{font-size:14px;line-height:1.5;color:var(--e-nebbia);margin:12px 0 0}
+.sw-out{margin-top:28px}
+
+.sw-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.sw-count{margin-right:auto;font:600 12px/1.3 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--e-nebbia);padding-left:38px;background:linear-gradient(currentColor,currentColor) 0 50%/26px 1px no-repeat}
+.sw-select{font:500 14px/1.2 var(--display);color:var(--e-inchiostro);background:var(--e-foglio);border:1px solid var(--e-linea-forte);border-radius:4px;padding:9px 12px}
+.sw-active{margin-bottom:18px}
+.sw-notice{border:1px solid var(--e-linea-forte);border-left:3px solid var(--e-giallo);background:var(--e-foglio);border-radius:4px;padding:12px 16px;margin-bottom:18px;font-size:15px}
+
+.sw-grid{columns:3 260px;column-gap:20px}
+.sw-card{break-inside:avoid;margin:0 0 20px;background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;overflow:hidden;cursor:pointer;transition:border-color .15s}
+.sw-card:hover{border-color:var(--e-inchiostro)}
+.sw-card:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.sw-thumb{display:block;width:100%;max-height:420px;object-fit:cover;object-position:top;background:var(--e-sabbia);border-bottom:1px solid var(--e-linea)}
+.sw-quote{padding:20px 20px 6px;font:400 18px/1.4 var(--serif-t);letter-spacing:-.01em;white-space:pre-line;max-height:220px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent);background:var(--e-sabbia)}
+.sw-body{padding:14px 18px 16px}
+.sw-body h3{font-size:19px!important;line-height:1.25;margin:0 0 4px}
+.sw-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--e-nebbia)}
+.sw-stars{color:var(--e-inchiostro);letter-spacing:1px}
+.sw-stars i{font-style:normal;opacity:.2}
+.sw-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.sw-tag{font:600 10.5px/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--e-grafite);border:1px solid var(--e-linea-forte);border-radius:3px;padding:2px 6px}
+.sw-tag.free{background:var(--e-sabbia);border-color:transparent}
+
+.sw-empty{border:1px solid var(--e-linea);border-radius:6px;background:var(--e-foglio);padding:clamp(32px,6vw,64px) clamp(22px,5vw,56px);max-width:680px}
+.sw-empty h2{margin:0 0 14px}
+.sw-empty p{color:var(--e-grafite);margin:0 0 12px}
+.sw-empty .btn{margin-top:12px}
+
+/* accesso */
+.sw-gate{min-height:100vh;display:grid;place-items:center;padding:24px}
+.sw-gate form{width:min(440px,100%);background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;padding:clamp(26px,5vw,40px)}
+.sw-gate h1{font-size:clamp(34px,5vw,46px)!important;margin:14px 0 10px}
+.sw-gate p{color:var(--e-grafite);margin:0 0 22px}
+.sw-gate .btn{width:100%;justify-content:center}
+.sw-err{color:#a12a2a;font-size:14px;margin:-6px 0 14px}
+
+/* modale */
+.sw-scrim{position:fixed;inset:0;z-index:60;background:rgba(18,26,34,.55);display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:0 16px}
+.sw-modal{margin:32px 0;width:min(1000px,100%);background:var(--e-carta);border-radius:8px;box-shadow:0 20px 60px rgba(18,26,34,.3)}
+.sw-mhead{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:12px;padding:16px 22px;background:var(--e-carta);border-bottom:1px solid var(--e-linea);border-radius:8px 8px 0 0}
+.sw-mhead h2{flex:1;min-width:0;margin:0;font-size:24px!important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sw-x{flex:none;width:40px;height:40px;border:1px solid var(--e-linea-forte);border-radius:4px;background:var(--e-foglio);font-size:15px;cursor:pointer;color:var(--e-inchiostro)}
+.sw-x:hover{border-color:var(--e-inchiostro)}
+.sw-mbody{padding:24px 22px}
+.sw-mfoot{position:sticky;bottom:0;display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;padding:14px 22px;background:var(--e-carta);border-top:1px solid var(--e-linea);border-radius:0 0 8px 8px}
+.sw-status{margin-right:auto;align-self:center;font-size:14px;color:var(--e-nebbia)}
+.btn.sw-danger{--fg:#a12a2a;border-color:#a12a2a}
+.btn.sw-danger.armed{--bg:#a12a2a;--fg:#fff}
+
+.sw-detail{display:grid;grid-template-columns:1.1fr 1fr;gap:32px}
+.sw-imgs img{display:block;width:100%;border:1px solid var(--e-linea);border-radius:4px;margin-bottom:12px}
+.sw-fl{display:flex;justify-content:space-between;align-items:center;margin:20px 0 7px}
+.sw-fl:first-child{margin-top:0}
+.sw-prose{white-space:pre-wrap;color:var(--e-inchiostro)}
+.sw-copybox{background:var(--e-sabbia);border-radius:4px;padding:14px 16px;white-space:pre-wrap;font:400 17px/1.45 var(--serif-t)}
+.sw-src{color:var(--e-inchiostro);word-break:break-all;text-decoration:none;background-image:linear-gradient(var(--e-giallo),var(--e-giallo));background-size:100% 2px;background-position:0 100%;background-repeat:no-repeat}
+
+.sw-form{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.sw-form .field{margin-bottom:16px}
+.sw-form .field textarea{min-height:100px}
+.sw-drop{border:1px dashed var(--e-linea-forte);border-radius:6px;background:var(--e-foglio);padding:22px;text-align:center;font-size:15px;color:var(--e-grafite);transition:background-color .12s,border-color .12s}
+.sw-drop.over{border-color:var(--e-inchiostro);background:var(--e-sabbia)}
+.sw-drop b{color:var(--e-inchiostro)}
+.sw-pick{cursor:pointer;font-weight:600;color:var(--e-inchiostro);background-image:linear-gradient(var(--e-giallo),var(--e-giallo));background-size:100% 2px;background-position:0 100%;background-repeat:no-repeat}
+.sw-pv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px;margin-top:10px}
+.sw-pv{position:relative;aspect-ratio:3/4;border:1px solid var(--e-linea);border-radius:4px;overflow:hidden;background:var(--e-sabbia)}
+.sw-pv img{width:100%;height:100%;object-fit:cover;object-position:top}
+.sw-pv.loading img{opacity:.4}
+.sw-pv.loading::after{content:"Carico…";position:absolute;inset:auto 0 0;background:var(--e-carta);font-size:11px;text-align:center;padding:2px}
+.sw-pv.error{border-color:#a12a2a}
+.sw-pv.error::after{content:"Non caricata";position:absolute;inset:auto 0 0;background:#a12a2a;color:#fff;font-size:11px;text-align:center;padding:2px}
+.sw-pv button{position:absolute;top:4px;right:4px;width:24px;height:24px;padding:0;border:0;border-radius:3px;background:rgba(18,26,34,.75);color:#fff;font-size:12px;line-height:24px;cursor:pointer}
+.sw-ai{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:16px 0 20px}
+.sw-ai-st{flex:1;min-width:180px;font-size:14px;color:var(--e-nebbia)}
+.sw-rating{display:flex;gap:2px}
+.sw-rating button{border:0;background:none;font-size:26px;line-height:1;padding:0 2px;color:var(--e-linea-forte);cursor:pointer}
+.sw-rating button.on{color:var(--e-inchiostro)}
+.sw-pick-f{margin:12px 0 14px}
+.sw-pick-f h4{font:500 13px/1.3 var(--display);color:var(--e-grafite);margin:0 0 7px}
+
+.sw-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:80;background:var(--e-inchiostro);color:var(--e-carta);border-radius:4px;padding:11px 18px;font-size:15px}
+.hidden{display:none!important}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+@media (prefers-reduced-motion:reduce){.sw-card,.sw-chip,.sw-drop{transition:none}}
+@media (max-width:860px){
+  .sw-name{display:none}
+  .sw-top .wrap{gap:10px}
+  .sw-filters-btn{display:inline-flex!important}
+  .sw-add-l{display:none}
+  .sw-layout{grid-template-columns:minmax(0,1fr);padding-top:20px}
+  .sw-aside{position:fixed;inset:0 0 0 auto;width:min(340px,88vw);max-height:none;z-index:40;background:var(--e-carta);border-left:1px solid var(--e-linea);padding:20px;transform:translateX(105%);transition:transform .2s}
+  .sw-aside.open{transform:none}
+  .sw-grid{columns:2 150px;column-gap:12px}
+  .sw-card{margin-bottom:12px}
+  .sw-quote{font-size:15px;padding:14px 14px 4px}
+  .sw-body{padding:10px 12px 12px}
+  .sw-body h3{font-size:16px!important}
+  .sw-detail,.sw-form{grid-template-columns:minmax(0,1fr)}
+  .sw-scrim{padding:0}
+  .sw-modal{margin:0;min-height:100%;border-radius:0}
+  .sw-mhead,.sw-mfoot{border-radius:0}
+}
+@media (max-width:480px){.sw-top .logo{display:none}}
+</style>
+</head>
+<body>
+
+<div id="gate" class="sw-gate hidden">
+  <form id="gateForm">
+    <span class="kicker"><b>Area privata</b></span>
+    <h1>Swipe file</h1>
+    <p>Inserisci la chiave di accesso. Resta salvata su questo dispositivo.</p>
+    <div class="field"><label for="gateKey">Chiave</label><input id="gateKey" type="password" autocomplete="current-password" required></div>
+    <p id="gateErr" class="sw-err hidden" role="alert"></p>
+    <button class="btn" id="gateBtn">Entra</button>
+  </form>
+</div>
+
+<div id="app" class="hidden">
+<header class="sw-top">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span></a>
+    <span class="sw-name">Swipe file</span>
+    <label class="sw-search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" aria-label="Cerca" placeholder="Cerca brand, parole del copy, note…" autocomplete="off">
+    </label>
+    <button class="btn sm ghost sw-filters-btn" id="filtersBtn" type="button">Filtri</button>
+    <button class="btn sm" id="addBtn" type="button">+<span class="sw-add-l">&nbsp;Aggiungi</span></button>
+  </div>
+</header>
+
+<div class="wrap sw-layout" id="main">
+  <aside class="sw-aside" id="aside"></aside>
+  <main>
+    <div id="notice" class="sw-notice hidden" role="status"></div>
+    <div class="sw-toolbar">
+      <span class="sw-count" id="count">Caricamento…</span>
+      <select class="sw-select" id="sort" aria-label="Ordina">
+        <option value="recent">Più recenti</option>
+        <option value="rating">Più votati</option>
+        <option value="az">A → Z</option>
+      </select>
+      <button class="btn sm ghost" id="exportBtn" type="button" title="Copia tutto l'archivio come JSON">Copia JSON</button>
+    </div>
+    <div class="sw-chips sw-active" id="active"></div>
+    <div id="grid" class="sw-grid"></div>
+  </main>
+</div>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toast" class="sw-toast hidden" role="status"></div>
+
+<script>
+(() => {
+/* ---------- Tassonomia (unica fonte: la funzione di analisi la riceve da qui) ---------- */
+const TAX = [
+  {key:'formato', label:'Formato', values:['Meta Ads','Google Ads','Email / DEM','Oggetto email','Landing page','Homepage','Pagina camere','Pagina pacchetto','Post Instagram','Reel / Video','Carosello','Stories','LinkedIn','TikTok','Menu','Brochure / Print','Scheda OTA','Scheda Google','Risposta a recensione','Messaggio pre-arrivo','WhatsApp / SMS','Comunicato stampa','Signage / In struttura','Gadget / Packaging']},
+  {key:'settore', label:'Settore', values:['Hotel città','Resort','Family hotel','SPA & wellness','Boutique hotel','Hotel di catena','Agriturismo','B&B','Ristorante','Pizzeria','Bar / Cocktail','Wedding','MICE','Destinazione / DMO','Fuori settore']},
+  {key:'leva', label:'Leva persuasiva', values:['Headline','Hook / Apertura','Social proof','Recensioni','Autorità','Scarsità','Urgenza','Garanzia / Rischio zero','Offerta / Bundle','Ancoraggio prezzo','Specificità / Numeri','Storytelling','Nemico comune','Posizionamento','Meccanismo unico','Prima / Dopo','Sensoriale','Umorismo','Esclusività','Reciprocità','Personalizzazione','Prenota diretto','CTA']},
+  {key:'consapevolezza', label:'Consapevolezza (Schwartz)', values:['Inconsapevole','Consapevole del problema','Consapevole della soluzione','Consapevole del prodotto','Pienamente consapevole']},
+  {key:'viaggio', label:"Viaggio dell'ospite", values:['Ispirazione','Valutazione','Prenotazione','Pre-arrivo','Soggiorno','Post-soggiorno','Fidelizzazione']},
+  {key:'occasione', label:'Occasione', values:['Weekend di coppia','Famiglia','Business','Ponte / Festività','Bassa stagione','Evento','Anniversario','Regalo / Gift card','Last minute']},
+];
+const API = '/.netlify/functions/swipe';
+const API_BG = '/.netlify/functions/swipe-analisi-background';
+const LS = 'hp-swipe-chiave';
+const ERR = {
+  chiave_errata:'Chiave non valida.', rete:'Connessione non riuscita: riprova.', troppe_richieste:'Troppe richieste: riprova tra poco.',
+  rifiutato:'Claude non ha analizzato questo contenuto.', risposta_illeggibile:'Risposta non leggibile: riprova.',
+  formato_non_supportato:'Formato non supportato (usa PNG, JPG, WEBP o GIF).', immagine_grande:'Immagine troppo grande.',
+  vuoto:'Aggiungi almeno un titolo, un testo o un’immagine.', interno:'Errore del server: riprova.',
+};
+const errore = (c, f='Operazione non riuscita.') => ERR[c] || f;
+
+const tagFacet = t => t.split(':')[0];
+const tagValue = t => t.slice(t.indexOf(':')+1);
+const tagLabel = t => tagFacet(t)==='tag' ? '#'+tagValue(t) : tagValue(t);
+const $ = s => document.querySelector(s);
+const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm = s => String(s??'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const imgUrl = id => API+'?img='+encodeURIComponent(id);
+const stars = n => n ? '★'.repeat(n)+'<i>'+'★'.repeat(5-n)+'</i>' : '';
+const lsGet = () => { try { return localStorage.getItem(LS)||''; } catch { return ''; } };
+const lsSet = v => { try { v ? localStorage.setItem(LS,v) : localStorage.removeItem(LS); } catch {} };
+function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.remove('hidden'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.add('hidden'),2600); }
+function notice(m){ const n=$('#notice'); if(!m){n.classList.add('hidden');return;} n.textContent=m; n.classList.remove('hidden'); }
+
+let CHIAVE = lsGet();
+async function api(azione, body={}){
+  try{
+    const r = await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...body,azione,chiave:CHIAVE})});
+    const d = await r.json().catch(()=>({ok:false,errore:'interno'}));
+    if(d.errore==='chiave_errata') esci();
+    return d;
+  }catch{ return {ok:false,errore:'rete'}; }
+}
+
+/* ---------- Stato ---------- */
+const S = { items:[], loaded:false, q:'', sel:new Set(), sort:'recent', minRating:0, onlyImg:false };
+const hay = new Map();
+function haystack(it){ if(!hay.has(it.id)) hay.set(it.id, norm([it.title,it.brand,it.url,it.copy,it.why,it.steal,(it.tags||[]).map(tagValue).join(' ')].join(' \n '))); return hay.get(it.id); }
+function upsert(e){ hay.delete(e.id); const i=S.items.findIndex(x=>x.id===e.id); if(i<0) S.items.unshift(e); else S.items[i]=e; }
+
+/* ---------- Accesso ---------- */
+function esci(){ lsSet(''); CHIAVE=''; S.items=[]; S.loaded=false; closeModal(); mostra(); }
+function mostra(){
+  $('#gate').classList.toggle('hidden', !!CHIAVE);
+  $('#app').classList.toggle('hidden', !CHIAVE);
+  if(CHIAVE) carica(); else setTimeout(()=>$('#gateKey').focus(),0);
+}
+$('#gateForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const k=$('#gateKey').value.trim(); if(!k) return;
+  const b=$('#gateBtn'), er=$('#gateErr'); b.disabled=true; b.textContent='Controllo…'; er.classList.add('hidden');
+  CHIAVE=k; const r=await api('verifica'); b.disabled=false; b.textContent='Entra';
+  if(r.ok){ lsSet(k); $('#gateKey').value=''; mostra(); }
+  else { CHIAVE=''; er.textContent=errore(r.errore); er.classList.remove('hidden'); }
+});
+async function carica(){
+  render();
+  const r=await api('elenco');
+  S.loaded=true;
+  if(r.ok){ S.items=r.esempi||[]; hay.clear(); notice(''); }
+  else if(CHIAVE) notice('Archivio non raggiungibile ('+errore(r.errore)+'). Ricarica la pagina più tardi.');
+  render();
+}
+
+/* ---------- Filtri ---------- */
+function matches(it){
+  if(S.q){ const h=haystack(it); for(const w of norm(S.q).split(/\s+/).filter(Boolean)) if(!h.includes(w)) return false; }
+  if(S.minRating && (it.rating||0)<S.minRating) return false;
+  if(S.onlyImg && !(it.images||[]).length) return false;
+  const tags=it.tags||[]; for(const t of S.sel) if(!tags.includes(t)) return false;
+  return true;
+}
+function filtered(){
+  const by={ recent:(a,b)=>String(b.created_at).localeCompare(String(a.created_at)),
+    rating:(a,b)=>(b.rating||0)-(a.rating||0)||String(b.created_at).localeCompare(String(a.created_at)),
+    az:(a,b)=>String(a.title||'').localeCompare(String(b.title||''),'it') }[S.sort];
+  return S.items.filter(matches).sort(by);
+}
+
+/* ---------- Render ---------- */
+function render(){ renderAside(); renderGrid(); }
+function renderAside(){
+  const res=filtered(), counts={};
+  res.forEach(it=>(it.tags||[]).forEach(t=>counts[t]=(counts[t]||0)+1));
+  const free=[...new Set(S.items.flatMap(it=>(it.tags||[]).filter(t=>tagFacet(t)==='tag')))].sort();
+  const nf=S.sel.size+(S.minRating?1:0)+(S.onlyImg?1:0);
+  let h=`<div class="sw-aside-head"><h2>Filtri</h2>${nf?'<button class="sw-link" data-act="clear">Azzera</button>':''}<button class="sw-link sw-filters-btn" data-act="closeAside">Chiudi</button></div>`;
+  h+=`<div class="sw-facet"><span class="sw-lab">Qualità</span><div class="sw-chips">`+
+     [3,4,5].map(n=>`<button class="sw-chip ${S.minRating===n?'on':''}" data-rating="${n}">${n}★ e più</button>`).join('')+
+     `<button class="sw-chip ${S.onlyImg?'on':''}" data-act="onlyImg">Con immagine</button></div></div>`;
+  const groups=[...TAX.map(f=>({key:f.key,label:f.label,values:f.values.map(v=>f.key+':'+v)})),{key:'tag',label:'Tag liberi',values:free}];
+  for(const g of groups){
+    const vals=g.values.filter(t=>counts[t]||S.sel.has(t)); if(!vals.length) continue;
+    h+=`<div class="sw-facet"><span class="sw-lab">${esc(g.label)}</span><div class="sw-chips">`+
+      vals.map(t=>`<button class="sw-chip ${S.sel.has(t)?'on':''} ${g.key==='tag'?'free':''}" data-tag="${esc(t)}">${esc(tagLabel(t))}<span class="n">${counts[t]||0}</span></button>`).join('')+'</div></div>';
+  }
+  if(S.loaded && !S.items.length) h+='<p class="sw-hint">I filtri compaiono qui quando aggiungi i primi esempi. Mostrano solo i tag presenti nei risultati, così ogni combinazione porta sempre da qualche parte.</p>';
+  h+='<div class="sw-out"><button class="sw-link" data-act="logout">Esci da questo dispositivo</button></div>';
+  $('#aside').innerHTML=h;
+  $('#filtersBtn').textContent=nf?`Filtri (${nf})`:'Filtri';
+}
+function renderGrid(){
+  const res=filtered();
+  $('#count').textContent=!S.loaded?'Caricamento…':`${res.length} ${res.length===1?'esempio':'esempi'}${res.length!==S.items.length?' su '+S.items.length:''}`;
+  $('#active').innerHTML=[...S.sel].map(t=>`<button class="sw-chip on sm" data-tag="${esc(t)}">${esc(tagLabel(t))} ✕</button>`).join('');
+  const g=$('#grid');
+  if(!S.loaded){ g.innerHTML=''; return; }
+  if(!S.items.length){
+    g.style.columns='auto';
+    g.innerHTML=`<div class="sw-empty"><h2>Lo swipe file è vuoto</h2>
+      <p>Quando vedi un'ad, una DEM, una landing o un menu che ti ferma, fai uno screenshot e aggiungilo qui, da telefono o da desktop.</p>
+      <p><b>Analizza con Claude</b> trascrive il copy (così lo ritrovi con la ricerca), propone i tag e scrive perché funziona e come adattarlo a un hotel o a un ristorante.</p>
+      <button class="btn" data-act="add">Aggiungi il primo esempio</button></div>`;
+    return;
+  }
+  if(!res.length){ g.style.columns='auto'; g.innerHTML='<div class="sw-empty"><h2>Nessun risultato</h2><p>Prova a togliere un filtro o a cambiare parole.</p><button class="btn ghost" data-act="clear">Azzera i filtri</button></div>'; return; }
+  g.style.columns='';
+  g.innerHTML=res.map(it=>{
+    const img=(it.images||[])[0], tags=(it.tags||[]).slice(0,5);
+    return `<article class="sw-card" tabindex="0" data-open="${esc(it.id)}">
+      ${img?`<img class="sw-thumb" loading="lazy" src="${imgUrl(img)}" alt="">`:(it.copy?`<div class="sw-quote">${esc(it.copy.slice(0,400))}</div>`:'')}
+      <div class="sw-body"><h3>${esc(it.title||'Senza titolo')}</h3>
+      <div class="sw-meta">${it.brand?`<span>${esc(it.brand)}</span>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}</div>
+      ${tags.length?`<div class="sw-tags">${tags.map(t=>`<span class="sw-tag ${tagFacet(t)==='tag'?'free':''}">${esc(tagLabel(t))}</span>`).join('')}</div>`:''}
+      </div></article>`;
+  }).join('');
+}
+
+/* ---------- Eventi ---------- */
+let qT;
+$('#q').addEventListener('input',e=>{clearTimeout(qT);qT=setTimeout(()=>{S.q=e.target.value.trim();render();},150);});
+$('#sort').addEventListener('change',e=>{S.sort=e.target.value;renderGrid();});
+$('#addBtn').addEventListener('click',()=>openEditor());
+$('#filtersBtn').addEventListener('click',()=>$('#aside').classList.add('open'));
+$('#exportBtn').addEventListener('click',async()=>{
+  const data=S.items.map(r=>({...r,immagini:(r.images||[]).map(i=>location.origin+imgUrl(i))}));
+  try{await navigator.clipboard.writeText(JSON.stringify(data,null,2));toast(`Copiati ${data.length} esempi negli appunti`);}catch{toast('Copia non consentita da questo browser');}
+});
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-tag],[data-rating],[data-act],[data-open]'); if(!t||t.closest('.sw-modal')) return;
+  if(t.dataset.tag){ S.sel.has(t.dataset.tag)?S.sel.delete(t.dataset.tag):S.sel.add(t.dataset.tag); render(); }
+  else if(t.dataset.rating){ const n=+t.dataset.rating; S.minRating=S.minRating===n?0:n; render(); }
+  else if(t.dataset.open){ openDetail(t.dataset.open); }
+  else switch(t.dataset.act){
+    case 'clear': S.sel.clear();S.minRating=0;S.onlyImg=false;render();break;
+    case 'onlyImg': S.onlyImg=!S.onlyImg;render();break;
+    case 'add': openEditor();break;
+    case 'closeAside': $('#aside').classList.remove('open');break;
+    case 'logout': esci();break;
+  }
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeModal();
+  if(e.key==='Enter' && e.target.matches('.sw-card')) openDetail(e.target.dataset.open);
+  if(e.key==='/' && CHIAVE && !e.target.closest('input,textarea,select')){e.preventDefault();$('#q').focus();}
+});
+
+/* ---------- Modali ---------- */
+let EDIT=null;
+function openModal(html){
+  $('#modalRoot').innerHTML=`<div class="sw-scrim" id="scrim"><div class="sw-modal" role="dialog" aria-modal="true">${html}</div></div>`;
+  document.body.style.overflow='hidden';
+  $('#scrim').addEventListener('mousedown',e=>{ if(e.target.id==='scrim') closeModal(); });
+}
+function closeModal(){
+  if(EDIT){
+    const nuove=EDIT.imgs.filter(i=>i.nuova&&i.id).map(i=>i.id);
+    if(nuove.length && !EDIT.salvato) api('scarta',{immagini:nuove});
+    EDIT.imgs.forEach(i=>i.nuova&&URL.revokeObjectURL(i.url));
+    EDIT.chiuso=true; EDIT=null;
+  }
+  $('#modalRoot').innerHTML=''; document.body.style.overflow='';
+}
+
+function openDetail(id){
+  const it=S.items.find(x=>x.id===id); if(!it) return;
+  const groups=TAX.map(f=>({f,vals:(it.tags||[]).filter(t=>tagFacet(t)===f.key)})).filter(g=>g.vals.length);
+  const free=(it.tags||[]).filter(t=>tagFacet(t)==='tag');
+  const date=it.created_at?new Date(it.created_at).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'}):'';
+  const imgs=it.images||[];
+  openModal(`
+    <div class="sw-mhead"><h2>${esc(it.title||'Senza titolo')}</h2>
+      <button class="btn sm ghost" id="dEdit" type="button">Modifica</button><button class="sw-x" id="dClose" aria-label="Chiudi">✕</button></div>
+    <div class="sw-mbody"><div class="sw-detail">
+      <div class="sw-imgs">${imgs.map(a=>`<a href="${imgUrl(a)}" target="_blank" rel="noopener"><img src="${imgUrl(a)}" alt=""></a>`).join('')||
+        (it.copy?`<div class="sw-copybox">${esc(it.copy)}</div>`:'<div class="sw-empty">Nessuna immagine</div>')}</div>
+      <div>
+        <div class="sw-meta" style="margin-bottom:6px">${it.brand?`<b style="color:var(--e-inchiostro)">${esc(it.brand)}</b>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}${date?`<span>Aggiunto il ${date}</span>`:''}</div>
+        ${it.url?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Fonte</span></div><a class="sw-src" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.url)}</a>`:''}
+        ${it.why?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Perché funziona</span></div><div class="sw-prose">${esc(it.why)}</div>`:''}
+        ${it.steal?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Come rubarlo</span></div><div class="sw-prose">${esc(it.steal)}</div>`:''}
+        ${it.copy&&imgs.length?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Copy trascritto</span><button class="sw-link" id="dCopy">Copia</button></div><div class="sw-copybox">${esc(it.copy)}</div>`:''}
+        ${groups.map(g=>`<div class="sw-fl"><span class="sw-lab" style="margin:0">${esc(g.f.label)}</span></div><div class="sw-chips">${g.vals.map(t=>`<button class="sw-chip" data-ftag="${esc(t)}">${esc(tagValue(t))}</button>`).join('')}</div>`).join('')}
+        ${free.length?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Tag liberi</span></div><div class="sw-chips">${free.map(t=>`<button class="sw-chip free" data-ftag="${esc(t)}">${esc(tagLabel(t))}</button>`).join('')}</div>`:''}
+        <p class="sw-hint" style="margin-top:20px">Tocca un tag per vedere tutti gli esempi con quel tag.</p>
+      </div></div></div>`);
+  $('#dClose').onclick=closeModal;
+  $('#dEdit').onclick=()=>openEditor(it);
+  const c=$('#dCopy'); if(c) c.onclick=async()=>{try{await navigator.clipboard.writeText(it.copy);toast('Copy copiato');}catch{toast('Copia non consentita');}};
+  document.querySelectorAll('[data-ftag]').forEach(b=>b.onclick=()=>{S.sel=new Set([b.dataset.ftag]);closeModal();render();window.scrollTo({top:0});});
+}
+
+/* ---------- Editor ---------- */
+const CAMPI={fTitle:'title',fBrand:'brand',fUrl:'url',fCopy:'copy',fWhy:'why',fSteal:'steal'};
+function openEditor(it){
+  if(EDIT) closeModal();
+  EDIT={ id:it?.id||null,
+    d:{title:it?.title||'',brand:it?.brand||'',url:it?.url||'',copy:it?.copy||'',why:it?.why||'',steal:it?.steal||'',rating:it?.rating||0},
+    tags:new Set(it?.tags||[]), imgs:(it?.images||[]).map(id=>({k:id,id,url:imgUrl(id),nuova:false})), rimosse:[], busy:false, armed:false };
+  openModal(`
+    <div class="sw-mhead"><h2>${it?'Modifica esempio':'Nuovo esempio'}</h2><button class="sw-x" id="eClose" aria-label="Chiudi">✕</button></div>
+    <div class="sw-mbody"><div class="sw-form">
+      <div>
+        <div class="sw-drop" id="drop"><b>Trascina gli screenshot qui</b><br>oppure incollali (Ctrl/Cmd+V) o
+          <label class="sw-pick">sceglili<input id="file" type="file" accept="image/*" multiple hidden></label></div>
+        <div class="sw-pv-grid" id="pv"></div>
+        <div class="sw-ai"><button class="btn sm" id="aiBtn" type="button">Analizza con Claude</button><span class="sw-ai-st" id="aiStatus" aria-live="polite">Trascrive il copy, propone i tag e scrive perché funziona.</span></div>
+        <div class="field"><label for="fCopy">Copy (testo dell'esempio)</label><textarea id="fCopy" placeholder="Headline, corpo, CTA… Serve per ritrovarlo con la ricerca."></textarea></div>
+        <div class="field"><label for="fWhy">Perché funziona</label><textarea id="fWhy" placeholder="Il meccanismo che ti ha fermato."></textarea></div>
+        <div class="field"><label for="fSteal">Come rubarlo</label><textarea id="fSteal" placeholder="Come lo adatteresti a un hotel o a un ristorante."></textarea></div>
+      </div>
+      <div>
+        <div class="field"><label for="fTitle">Titolo</label><input id="fTitle" type="text" placeholder="Es. Garanzia 'se piove ti rimborsiamo'"></div>
+        <div class="field"><label for="fBrand">Brand / struttura</label><input id="fBrand" type="text" placeholder="Es. Aman, Airbnb, Eataly…"></div>
+        <div class="field"><label for="fUrl">Link alla fonte</label><input id="fUrl" type="url" placeholder="https://…"></div>
+        <div class="field"><span class="lab">Valutazione</span><div class="sw-rating" id="rating"></div></div>
+        <div class="field"><span class="lab">Tag</span><div id="tagpick"></div></div>
+        <div class="field"><label for="fFree">Tag liberi <small>(separati da virgola, Invio per aggiungere)</small></label>
+          <input id="fFree" type="text" placeholder="es. natale, gen z, tono ironico"><div class="sw-chips" id="freeChips" style="margin-top:8px"></div></div>
+      </div>
+    </div></div>
+    <div class="sw-mfoot">
+      <span class="sw-status" id="saveStatus" aria-live="polite"></span>
+      ${it?'<button class="btn sm ghost sw-danger" id="eDel" type="button">Elimina</button>':''}
+      <button class="btn sm ghost" id="eCancel" type="button">Annulla</button>
+      <button class="btn sm" id="eSave" type="button">Salva</button>
+    </div>`);
+  for(const [id,k] of Object.entries(CAMPI)){ const el=$('#'+id); el.value=EDIT.d[k]; el.addEventListener('input',()=>EDIT.d[k]=el.value); }
+  renderRating(); renderTagPick(); renderFree(); renderPreviews();
+  $('#eClose').onclick=$('#eCancel').onclick=closeModal;
+  $('#eSave').onclick=save;
+  const del=$('#eDel'); if(del) del.onclick=()=>{ const E=EDIT; if(!E.armed){E.armed=true;del.classList.add('armed');del.textContent='Conferma eliminazione';setTimeout(()=>{if(EDIT===E){E.armed=false;del.classList.remove('armed');del.textContent='Elimina';}},4000);} else remove(); };
+  $('#file').addEventListener('change',e=>{addFiles(e.target.files);e.target.value='';});
+  const drop=$('#drop');
+  drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('over');});
+  drop.addEventListener('dragleave',()=>drop.classList.remove('over'));
+  drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('over');addFiles(e.dataTransfer.files);});
+  $('#fFree').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===','){e.preventDefault();commitFree();} });
+  $('#fFree').addEventListener('blur',commitFree);
+  $('#aiBtn').onclick=analyze;
+}
+document.addEventListener('paste',e=>{
+  if(!EDIT) return;
+  const files=[...(e.clipboardData?.files||[])].filter(f=>f.type.startsWith('image/'));
+  if(files.length){ e.preventDefault(); addFiles(files); }
+});
+
+/* Screenshot entro i limiti (lato lungo ≤ 7900px, ≤ 3 MB) e poi caricato subito: così l'analisi lo trova già salvato. */
+async function prepara(file){
+  if(file.type==='image/gif' && file.size<=3*1024*1024) return file;
+  let bmp; try{ bmp=await createImageBitmap(file); }catch{ return file; }
+  if(bmp.width<=2000 && bmp.height<=7900 && file.size<=3*1024*1024 && ['image/png','image/jpeg','image/webp'].includes(file.type)){ bmp.close(); return file; }
+  const sc=Math.min(1,1600/bmp.width,7900/bmp.height), c=document.createElement('canvas');
+  c.width=Math.round(bmp.width*sc); c.height=Math.round(bmp.height*sc);
+  c.getContext('2d').drawImage(bmp,0,0,c.width,c.height); bmp.close();
+  let q=.85, blob;
+  do{ blob=await new Promise(r=>c.toBlob(r,'image/jpeg',q)); q-=.15; }while(blob && blob.size>3*1024*1024 && q>.3);
+  return blob||file;
+}
+const b64 = blob => new Promise((ok,ko)=>{ const r=new FileReader(); r.onload=()=>ok(String(r.result).split(',')[1]); r.onerror=ko; r.readAsDataURL(blob); });
+function addFiles(list){
+  const E=EDIT; if(!E) return;
+  for(const f of [...list].filter(f=>f.type.startsWith('image/'))){
+    const img={k:Math.random().toString(36).slice(2),id:null,url:URL.createObjectURL(f),nuova:true};
+    E.imgs.push(img);
+    (async()=>{
+      try{
+        const blob=await prepara(f);
+        const r=await api('carica',{tipo:blob.type||f.type,dati:await b64(blob)});
+        if(!r.ok) throw new Error(r.errore);
+        if(E.chiuso){ api('scarta',{immagini:[r.id]}); return; }
+        img.id=r.id;
+      }catch(e){ img.errore=true; if(EDIT===E) $('#saveStatus').textContent=errore(e.message,'Un’immagine non è stata caricata.'); }
+      if(EDIT===E) renderPreviews();
+    })();
+  }
+  renderPreviews();
+}
+const inCarico = () => EDIT.imgs.some(i=>!i.id&&!i.errore);
+function renderPreviews(){
+  $('#pv').innerHTML=EDIT.imgs.map(i=>`<div class="sw-pv ${!i.id&&!i.errore?'loading':''} ${i.errore?'error':''}"><img src="${i.url}" alt=""><button data-k="${i.k}" aria-label="Rimuovi">✕</button></div>`).join('');
+  $('#pv').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    const i=EDIT.imgs.findIndex(x=>x.k===b.dataset.k); if(i<0) return;
+    const [img]=EDIT.imgs.splice(i,1);
+    if(img.nuova){ if(img.id) api('scarta',{immagini:[img.id]}); URL.revokeObjectURL(img.url); }
+    else EDIT.rimosse.push(img.id);
+    renderPreviews();
+  });
+}
+function renderRating(){
+  $('#rating').innerHTML=[1,2,3,4,5].map(n=>`<button type="button" class="${n<=EDIT.d.rating?'on':''}" data-r="${n}" aria-label="${n} stelle">★</button>`).join('');
+  $('#rating').querySelectorAll('button').forEach(b=>b.onclick=()=>{const n=+b.dataset.r;EDIT.d.rating=EDIT.d.rating===n?0:n;renderRating();});
+}
+function renderTagPick(){
+  $('#tagpick').innerHTML=TAX.map(f=>`<div class="sw-pick-f"><h4>${esc(f.label)}</h4><div class="sw-chips">${
+    f.values.map(v=>{const t=f.key+':'+v;return `<button type="button" class="sw-chip sm ${EDIT.tags.has(t)?'on':''}" data-t="${esc(t)}">${esc(v)}</button>`;}).join('')}</div></div>`).join('');
+  $('#tagpick').querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{const t=b.dataset.t;EDIT.tags.has(t)?EDIT.tags.delete(t):EDIT.tags.add(t);b.classList.toggle('on');});
+}
+function commitFree(){
+  const el=$('#fFree'); if(!el||!EDIT) return;
+  el.value.split(',').map(s=>s.trim().toLowerCase().replace(/^#/,'')).filter(Boolean).forEach(v=>EDIT.tags.add('tag:'+v.slice(0,40)));
+  el.value=''; renderFree();
+}
+function renderFree(){
+  const free=[...EDIT.tags].filter(t=>tagFacet(t)==='tag');
+  $('#freeChips').innerHTML=free.map(t=>`<button type="button" class="sw-chip sm free" data-x="${esc(t)}">${esc(tagLabel(t))} ✕</button>`).join('');
+  $('#freeChips').querySelectorAll('[data-x]').forEach(b=>b.onclick=()=>{EDIT.tags.delete(b.dataset.x);renderFree();});
+}
+
+/* ---------- Analisi con Claude (in background, la pagina chiede il risultato ogni 3 secondi) ---------- */
+async function analyze(){
+  const E=EDIT, btn=$('#aiBtn'), st=$('#aiStatus');
+  if(inCarico()){ st.textContent='Aspetta che finisca il caricamento delle immagini.'; return; }
+  const immagini=E.imgs.filter(i=>i.id).map(i=>i.id);
+  if(!immagini.length && !E.d.copy.trim() && !E.d.title.trim() && !E.d.why.trim()){ st.textContent='Aggiungi uno screenshot o incolla il copy, poi riprova.'; return; }
+  btn.disabled=true; st.textContent='Claude sta leggendo l’esempio…';
+  const id=crypto.randomUUID();
+  let r;
+  try{
+    const a=await fetch(API_BG,{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({chiave:CHIAVE,id,immagini,tassonomia:TAX,campi:{title:E.d.title,brand:E.d.brand,url:E.d.url,copy:E.d.copy,why:E.d.why}})});
+    if(!a.ok && a.status!==202) throw new Error('rete');
+    const fine=Date.now()+4*60*1000;
+    while(Date.now()<fine){
+      await new Promise(ok=>setTimeout(ok,3000));
+      if(E.chiuso) return;
+      const p=await fetch(`${API}?analisi=${id}&chiave=${encodeURIComponent(CHIAVE)}`).then(x=>x.json()).catch(()=>null);
+      if(p?.pronto){ r=p; break; }
+      if(p?.errore==='chiave_errata'){ esci(); return; }
+    }
+  }catch{ r={ok:false,errore:'rete'}; }
+  if(E.chiuso) return;
+  btn.disabled=false;
+  if(!r){ st.textContent='L’analisi ci sta mettendo troppo: riprova.'; return; }
+  if(!r.ok){ st.textContent=errore(r.errore,'Analisi non riuscita: riprova.'); return; }
+  const p=r.proposta||{};
+  for(const k of ['title','brand','copy','why','steal']) if(typeof p[k]==='string' && p[k].trim() && !E.d[k].trim()) E.d[k]=p[k].trim();
+  let added=0;
+  for(const f of TAX) for(const v of (p.tags?.[f.key]||[])){ const hit=f.values.find(x=>norm(x)===norm(v)); if(hit && !E.tags.has(f.key+':'+hit)){E.tags.add(f.key+':'+hit);added++;} }
+  for(const v of (p.extra||[]).slice(0,3)){ if(typeof v==='string'&&v.trim()){ const t='tag:'+v.trim().toLowerCase().replace(/^#/,'').slice(0,40); if(!E.tags.has(t)){E.tags.add(t);added++;} } }
+  for(const [id2,k] of Object.entries(CAMPI)) $('#'+id2).value=E.d[k];
+  renderTagPick(); renderFree();
+  st.textContent=`Fatto: campi vuoti compilati e ${added} tag proposti. Controlla e correggi prima di salvare.`;
+}
+
+/* ---------- Salvataggio ---------- */
+async function save(){
+  const E=EDIT; if(!E||E.busy) return; commitFree();
+  const st=$('#saveStatus'), btn=$('#eSave');
+  if(inCarico()){ st.textContent='Aspetta che finisca il caricamento delle immagini.'; return; }
+  const images=E.imgs.filter(i=>i.id).map(i=>i.id);
+  if(!E.d.title.trim() && !E.d.copy.trim() && !images.length){ st.textContent='Aggiungi almeno un titolo, un testo o un’immagine.'; return; }
+  E.busy=true; btn.disabled=true; st.textContent='Salvo…';
+  const r=await api('salva',{esempio:{id:E.id,...E.d,tags:[...E.tags],images},rimosse:E.rimosse});
+  if(!r.ok){ if(EDIT===E){ E.busy=false; btn.disabled=false; st.textContent=errore(r.errore,'Salvataggio non riuscito.'); } return; }
+  E.salvato=true; upsert(r.esempio); closeModal(); render(); toast(E.id?'Esempio aggiornato':'Esempio salvato');
+}
+async function remove(){
+  const E=EDIT; if(!E?.id) return;
+  E.busy=true;
+  const r=await api('elimina',{id:E.id});
+  if(!r.ok){ E.busy=false; $('#saveStatus').textContent='Eliminazione non riuscita.'; return; }
+  S.items=S.items.filter(x=>x.id!==E.id); closeModal(); render(); toast('Esempio eliminato');
+}
+
+mostra();
+})();
+</script>
+</body>
+</html>
