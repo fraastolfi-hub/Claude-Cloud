@@ -3,6 +3,7 @@
 // Pubblico, senza chiave:
 //   GET  ?elenco=1                      → { esempi[] } solo quelli pubblicati, con il conteggio dei cuori
 //   POST { azione: 'cuore', id, valore: 1 | -1 } → { cuori } preferito di un visitatore (senza chiave; il browser ricorda i suoi)
+//   POST { azione: 'segnala', url, nota, nome?, email?, tipo?, dati? } → { ok } un visitatore propone un'idea: entra in coda «da valutare» (senza chiave)
 //   GET  ?img=<id>                      → lo screenshot (id casuale non indovinabile)
 //   GET  ?trad=<id>                     → { pronto, testo } traduzione italiana del copy, se già fatta
 //   GET  ?lavoro=<jobid>                → { pronto, ok, testo | errore } risultato di swipe-idea-background
@@ -27,7 +28,7 @@ import { ID, TIPI, autorizzato, json, leggiCorpo, store, testo } from '../lib/sw
 
 const MAX_IMG = 4.4 * 1024 * 1024;
 const STATI = ['pubblicato', 'da_valutare'];
-const FONTI = ['manuale', 'meta', 'email', 'sito', 'landing'];
+const FONTI = ['manuale', 'meta', 'email', 'sito', 'landing', 'segnalazione'];
 const statoDi = (e) => (e?.stato === 'da_valutare' ? 'da_valutare' : 'pubblicato');
 
 async function tutti(s) {
@@ -40,7 +41,7 @@ async function tutti(s) {
   return out.map((e) => ({ ...e, stato: statoDi(e) })).sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)));
 }
 
-const pubblico = ({ chiave_radar, ...e }) => e;
+const pubblico = ({ chiave_radar, segnalazione, ...e }) => e;
 
 // cuori dei visitatori: un solo blob { id: conteggio }
 async function cuori(s) {
@@ -65,6 +66,7 @@ function normalizza(e, esistente) {
     tags: [...new Set((Array.isArray(e.tags) ? e.tags : []).filter((t) => typeof t === 'string' && t.includes(':')).map((t) => t.slice(0, 120)))].slice(0, 80),
     images: (Array.isArray(e.images) ? e.images : []).filter((x) => ID.test(String(x))).slice(0, 20),
     ...(esistente?.chiave_radar ? { chiave_radar: esistente.chiave_radar } : {}),
+    ...(esistente?.segnalazione ? { segnalazione: esistente.segnalazione } : {}),
   };
 }
 
@@ -137,6 +139,28 @@ export const handler = async (event) => {
     if (!c[d.id]) delete c[d.id];
     await s.setJSON('cuori', c);
     return json(200, { ok: true, cuori: c[d.id] || 0 });
+  }
+
+  if (d.azione === 'segnala') {
+    if (d['bot-field']) return json(200, { ok: true });
+    const url = testo(d.url, 1000).trim();
+    const nota = testo(d.nota, 2000).trim();
+    let img = null;
+    if (d.dati && TIPI[d.tipo]) {
+      const buf = Buffer.from(String(d.dati), 'base64');
+      if (buf.length > 3.2 * 1024 * 1024) return json(413, { ok: false, errore: 'immagine_grande' });
+      if (buf.length) img = { buf, tipo: d.tipo };
+    }
+    if (!/^https?:\/\/\S+$/i.test(url) && !img) return json(400, { ok: false, errore: 'serve_link_o_immagine' });
+    if (nota.length < 10 && !img) return json(400, { ok: false, errore: 'nota' });
+    const images = [];
+    if (img) { const id = randomUUID(); await s.set(`img/${id}`, img.buf, { metadata: { tipo: img.tipo } }); images.push(id); }
+    let host = '';
+    try { host = url ? new URL(url).hostname.replace(/^www\./, '') : ''; } catch { /* url non valido: resta vuoto */ }
+    const riga = normalizza({ stato: 'da_valutare', fonte: 'segnalazione', title: host ? `Segnalazione: ${host}` : 'Segnalazione con screenshot', url, why: nota, images }, null);
+    riga.segnalazione = { nome: testo(d.nome, 120).trim(), email: testo(d.email, 200).trim(), nota, quando: riga.created_at };
+    await s.setJSON(`esempi/${riga.id}`, riga);
+    return json(200, { ok: true });
   }
 
   if (!autorizzato(d.chiave)) return json(401, { ok: false, errore: 'chiave_errata' });

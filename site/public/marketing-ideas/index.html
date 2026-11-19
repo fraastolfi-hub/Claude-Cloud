@@ -56,6 +56,14 @@ body{background:var(--e-carta)}
 .sw-adatta-out{margin-top:14px;white-space:pre-wrap;font-size:15px;line-height:1.55}
 .sw-adatta-out b{font-weight:600}
 .sw-wait{font-size:13px;color:var(--e-nebbia)}
+.sw-segnala{padding:4px 2px}
+.sw-segnala h2{margin:0 0 6px}
+.sw-segnala p.lead{font-size:16px;margin:0 0 18px;color:var(--e-grafite)}
+.sw-segnala .field{margin-bottom:12px}
+.sw-segnala textarea{min-height:90px}
+.sw-ok{background:var(--e-sabbia);border-radius:6px;padding:20px;font-size:16px}
+.sw-segn-box{margin-top:18px;border-left:3px solid var(--e-giallo);padding:10px 14px;background:var(--e-foglio);border-radius:0 4px 4px 0;font-size:14px}
+.sw-hp{position:absolute;left:-9999px}
 .sw-bar{position:sticky;top:0;z-index:20;background:var(--e-carta);border-bottom:1px solid var(--e-linea)}
 .sw-bar .wrap{display:flex;align-items:center;gap:12px;min-height:68px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
 .sw-search{flex:1;min-width:200px;position:relative}
@@ -258,6 +266,7 @@ body{background:var(--e-carta)}
     <div class="sw-tabs hidden" id="tabs" role="group" aria-label="Vista">
       <button type="button" data-vista="pubblicato" class="on">Pubblicati</button><button type="button" data-vista="da_valutare">Da valutare</button>
     </div>
+    <button class="btn sm ghost" id="segnalaBtn" type="button">Segnala un'idea</button>
     <button class="btn sm ghost sw-filters-btn" id="filtersBtn" type="button">Filtri</button>
     <button class="btn sm hidden" id="addBtn" type="button">+<span class="sw-add-l">&nbsp;Aggiungi</span></button>
   </div>
@@ -425,7 +434,7 @@ const PERCORSI = [
   {key:'numeri', icona:'<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.3-7 10-3.8-1.7-7-5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>', titolo:'Dare credibilità alla propria proposta', intro:'Gradi, metri, nomi, orari: la specificità che rende credibile una promessa senza dire «unico».', any:['leva:Specificità / Numeri','leva:Sensoriale']},
 ];
 const S = { items:[], loaded:false, percorso:null, q:'', sel:new Set(), sort:'recent', minRating:0, onlyImg:false, vista:'pubblicato' };
-const FONTE = { meta:'Meta Ads', email:'Email', sito:'Sito', landing:'Landing', manuale:'' };
+const FONTE = { meta:'Meta Ads', email:'Email', sito:'Sito', landing:'Landing', segnalazione:'Segnalata da un lettore', manuale:'' };
 const statoDi = e => e.stato==='da_valutare' ? 'da_valutare' : 'pubblicato';
 const hay = new Map();
 function haystack(it){ if(!hay.has(it.id)) hay.set(it.id, norm([it.title,it.brand,it.url,it.copy,it.why,it.steal,(it.tags||[]).map(tagValue).join(' ')].join(' \n '))); return hay.get(it.id); }
@@ -565,6 +574,7 @@ let qT;
 $('#q').addEventListener('input',e=>{clearTimeout(qT);qT=setTimeout(()=>{S.q=e.target.value.trim();render();},150);});
 $('#sort').addEventListener('change',e=>{S.sort=e.target.value;renderGrid();});
 $('#addBtn').addEventListener('click',()=>openEditor());
+$('#segnalaBtn').addEventListener('click',apriSegnala);
 $('#tabs').addEventListener('click',e=>{ const b=e.target.closest('[data-vista]'); if(!b) return; S.vista=b.dataset.vista; S.sel.clear(); render(); });
 const apriFiltri=o=>{ $('#aside').classList.toggle('open',o); $('#asideScrim').classList.toggle('on',o); };
 $('#filtersBtn').addEventListener('click',()=>apriFiltri(true));
@@ -635,7 +645,8 @@ function openDetail(id){
         ${it.copy&&statoDi(it)==='pubblicato'&&!sembraItaliano(it.copy)?`<div style="margin-top:8px"><button type="button" class="sw-link" id="dTrad">Traduci in italiano</button> <span class="sw-wait" id="dTradSt"></span></div><div id="dTradOut"></div>`:''}
         ${groups.map(g=>`<div class="sw-fl"><span class="sw-lab" style="margin:0">${esc(g.f.label)}</span></div><div class="sw-chips">${g.vals.map(t=>`<button class="sw-chip" data-ftag="${esc(t)}">${esc(tagValue(t))}</button>`).join('')}</div>`).join('')}
         ${free.length?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Tag liberi</span></div><div class="sw-chips">${free.map(t=>`<button class="sw-chip free" data-ftag="${esc(t)}">${esc(tagLabel(t))}</button>`).join('')}</div>`:''}
-        ${CHIAVE&&FONTE[it.fonte]?`<p class="sw-hint" style="margin-top:20px">Trovato dal radar (${FONTE[it.fonte]}). Controlla testo e tag prima di pubblicarlo.</p>`:''}
+        ${CHIAVE&&it.segnalazione?`<div class="sw-segn-box"><b>Segnalata da ${esc(it.segnalazione.nome||'un lettore')}${it.segnalazione.email?' · '+esc(it.segnalazione.email):''}</b><br>${esc(it.segnalazione.nota||'')}</div>`:''}
+        ${CHIAVE&&FONTE[it.fonte]&&!it.segnalazione?`<p class="sw-hint" style="margin-top:20px">Trovato dal radar (${FONTE[it.fonte]}). Controlla testo e tag prima di pubblicarlo.</p>`:''}
         ${statoDi(it)==='pubblicato'?`<div class="sw-adatta" id="dAdatta">
           <h3>Adattala al tuo hotel</h3>
           <p>Dimmi che struttura hai e ti riscrivo questa idea in tre modi pronti da usare.</p>
@@ -655,6 +666,34 @@ function openDetail(id){
   document.querySelectorAll('[data-ftag]').forEach(b=>b.onclick=()=>{S.sel=new Set([b.dataset.ftag]);closeModal();render();window.scrollTo({top:0});});
   const bt=$('#dTrad'); if(bt) bt.onclick=()=>traduciIdea(it);
   const ag=$('#aGo'); if(ag){ try{ $('#aEmail').value=localStorage.getItem('hp-swipe-email')||''; }catch{} ag.onclick=()=>adattaIdea(it); }
+}
+
+/* ---------- «Segnala un'idea»: chiunque propone, Francesco vaglia ---------- */
+function apriSegnala(){
+  openModal(`<div class="sw-modal__body sw-segnala">
+    <h2>Segnala un'idea</h2>
+    <p class="lead">Hai visto un annuncio, un'email, una pagina o un cartello che ti ha fermato? Mandamelo: lo guardo io e, se insegna qualcosa, entra nell'archivio.</p>
+    <div class="field"><label for="sgUrl">Link <small>(dell'annuncio, della pagina, del post)</small></label><input id="sgUrl" type="url" placeholder="https://…"></div>
+    <div class="field"><label for="sgNota">Perché ti ha colpito</label><textarea id="sgNota" maxlength="2000" placeholder="Due righe bastano: cosa fa funzionare questo pezzo?"></textarea></div>
+    <div class="field"><label for="sgImg">Screenshot <small>(facoltativo, se il link non basta)</small></label><input id="sgImg" type="file" accept="image/*"></div>
+    <div class="field"><label for="sgNome">Il tuo nome <small>(facoltativo: se pubblico l'idea, ti cito)</small></label><input id="sgNome" type="text" maxlength="120"></div>
+    <div class="field"><label for="sgEmail">La tua email <small>(facoltativa, per dirti se è entrata)</small></label><input id="sgEmail" type="email"></div>
+    <input class="sw-hp" id="sgBot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px"><button type="button" class="btn sm" id="sgGo">Invia la segnalazione</button><button type="button" class="btn sm ghost" id="sgNo">Annulla</button><span class="sw-wait" id="sgSt"></span></div>
+  </div>`);
+  $('#sgNo').onclick=closeModal;
+  $('#sgGo').onclick=async()=>{
+    const url=$('#sgUrl').value.trim(), nota=$('#sgNota').value.trim(), st=$('#sgSt'), go=$('#sgGo'), f=$('#sgImg').files[0];
+    if(!url && !f){ st.textContent='Metti un link o uno screenshot.'; return; }
+    if(url && !/^https?:\/\/\S+$/i.test(url)){ st.textContent='Il link deve iniziare con https://'; return; }
+    if(nota.length<10 && !f){ st.textContent='Scrivi due righe su perché ti ha colpito.'; return; }
+    go.disabled=true; st.textContent='Invio…';
+    let dati=null,tipo=null;
+    if(f){ try{ const blob=await prepara(f); tipo=blob.type||f.type; dati=await b64(blob); }catch{ st.textContent='Immagine non leggibile.'; go.disabled=false; return; } }
+    let r; try{ r=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({azione:'segnala',url,nota,nome:$('#sgNome').value.trim(),email:$('#sgEmail').value.trim(),tipo,dati,'bot-field':$('#sgBot').value})}).then(x=>x.json()); }catch{ r={ok:false,errore:'rete'}; }
+    if(r?.ok){ $('.sw-segnala').innerHTML='<div class="sw-ok"><b>Grazie.</b> L\'ho ricevuta: la guardo io e, se entra, la trovi qui con il perché funziona.</div><p style="margin-top:14px"><button type="button" class="btn sm ghost" id="sgChiudi">Chiudi</button></p>'; $('#sgChiudi').onclick=closeModal; }
+    else { go.disabled=false; st.textContent={immagine_grande:'Immagine troppo grande (max 3 MB).',serve_link_o_immagine:'Metti un link o uno screenshot.',nota:'Scrivi due righe su perché ti ha colpito.'}[r?.errore]||'Invio non riuscito: riprova.'; }
+  };
 }
 
 /* ---------- Traduzione e «Adattala al tuo hotel» (lavori in background, la pagina chiede il risultato ogni 2,5 s) ---------- */
