@@ -17,6 +17,8 @@ export const FORMS = {
   // Tagliando Hotel (/tagliando/): il controllo gratuito della pagina. FONTE = «Tagliando Hotel» è il filtro per la sequenza «errori dell'albergatore»
   // chi spunta il consenso facoltativo entra anche nella lista che fa partire la sequenza (come cassetta e guida)
   'tagliando': { label: 'Tagliando Hotel', list: 'BREVO_LIST_TAGLIANDO', optIn: 'BREVO_LIST_TAGLIANDO_SEQUENZA', optInField: 'consenso_email' },
+  // Marketing ideas (/marketing-ideas/): chi usa «Adattalo al mio hotel» lascia l'email
+  'marketing-ideas': { label: 'Marketing ideas: adattalo al mio hotel', list: 'BREVO_LIST_IDEAS' },
 };
 
 // etichette leggibili per l'email di notifica

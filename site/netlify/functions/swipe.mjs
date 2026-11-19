@@ -4,6 +4,8 @@
 //   GET  ?elenco=1                      → { esempi[] } solo quelli pubblicati, con il conteggio dei cuori
 //   POST { azione: 'cuore', id, valore: 1 | -1 } → { cuori } preferito di un visitatore (senza chiave; il browser ricorda i suoi)
 //   GET  ?img=<id>                      → lo screenshot (id casuale non indovinabile)
+//   GET  ?trad=<id>                     → { pronto, testo } traduzione italiana del copy, se già fatta
+//   GET  ?lavoro=<jobid>                → { pronto, ok, testo | errore } risultato di swipe-idea-background
 // Con la chiave:
 //   GET  ?analisi=<id>&chiave=…         → { pronto, ok, proposta | errore } dell'analisi in background
 //   POST { azione, chiave, … }:
@@ -101,6 +103,16 @@ export const handler = async (event) => {
       const c = await cuori(s);
       const esempi = (await tutti(s)).filter((e) => e.stato === 'pubblicato').map((e) => ({ ...pubblico(e), cuori: c[e.id] || 0 }));
       return { ...json(200, { ok: true, esempi }), headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=0, must-revalidate', 'netlify-cdn-cache-control': 'public, max-age=60, stale-while-revalidate=300' } };
+    }
+    if (q.trad) {
+      if (!ID.test(q.trad)) return json(400, { ok: false, errore: 'richiesta' });
+      const t = await s.get(`trad/${q.trad}`);
+      return json(200, t ? { pronto: true, testo: t } : { pronto: false });
+    }
+    if (q.lavoro) {
+      if (!ID.test(q.lavoro)) return json(400, { ok: false, errore: 'richiesta' });
+      const r = await s.get(`lavori/${q.lavoro}`, { type: 'json' });
+      return json(200, r ? { pronto: true, ...r } : { pronto: false });
     }
     if (q.analisi) {
       if (!autorizzato(q.chiave)) return json(401, { ok: false, errore: 'chiave_errata' });

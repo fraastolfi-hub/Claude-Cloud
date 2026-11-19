@@ -32,6 +32,29 @@ body{background:var(--e-carta)}
 .sw-hero{padding:clamp(40px,6vw,88px) 0 clamp(24px,3vw,36px);border-bottom:1px solid var(--e-linea)}
 .sw-hero h1{margin:16px 0 18px;max-width:20ch}
 .sw-hero .lead{max-width:56ch;margin:0}
+.sw-paths{padding:22px 0 6px}
+.sw-paths .sw-lab{margin-bottom:10px}
+.sw-paths-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.sw-path{text-align:left;background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;padding:14px 16px;cursor:pointer;transition:border-color .15s;display:flex;flex-direction:column;gap:4px}
+.sw-path:hover{border-color:var(--e-inchiostro)}
+.sw-path.on{border-color:var(--e-inchiostro);box-shadow:inset 0 0 0 1px var(--e-inchiostro)}
+.sw-path b{font:500 18px/1.2 var(--serif-t);letter-spacing:-.01em;color:var(--e-inchiostro)}
+.sw-path span{font-size:13px;color:var(--e-nebbia)}
+.sw-path i{font:600 11px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--e-nebbia);font-style:normal;margin-top:4px}
+.sw-path-banner{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;background:var(--e-sabbia);border-radius:6px;padding:16px 18px;margin-bottom:18px}
+.sw-path-banner b{font:500 20px/1.2 var(--serif-t);display:block;margin-bottom:4px}
+.sw-path-banner p{margin:0;color:var(--e-grafite);font-size:15px}
+.sw-trad{margin-top:8px;border-left:3px solid var(--e-giallo);padding:10px 14px;background:var(--e-foglio);border-radius:0 4px 4px 0;white-space:pre-wrap;font-size:15px}
+.sw-adatta{margin-top:22px;border:1px solid var(--e-linea-forte);border-radius:6px;padding:18px;background:var(--e-foglio)}
+.sw-adatta h3{font-size:20px!important;margin:0 0 4px}
+.sw-adatta p{margin:0 0 12px;color:var(--e-grafite);font-size:15px}
+.sw-adatta .field{margin-bottom:10px}
+.sw-adatta .field input{font-size:15px;padding:10px 12px}
+.sw-adatta label.sw-chk{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--e-grafite);margin:4px 0 12px}
+.sw-adatta label.sw-chk input{margin-top:3px}
+.sw-adatta-out{margin-top:14px;white-space:pre-wrap;font-size:15px;line-height:1.55}
+.sw-adatta-out b{font-weight:600}
+.sw-wait{font-size:13px;color:var(--e-nebbia)}
 .sw-bar{position:sticky;top:0;z-index:20;background:var(--e-carta);border-bottom:1px solid var(--e-linea)}
 .sw-bar .wrap{display:flex;align-items:center;gap:12px;min-height:68px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
 .sw-search{flex:1;min-width:200px;position:relative}
@@ -216,6 +239,7 @@ body{background:var(--e-carta)}
     <p class="lead">Idee prese da annunci, email, landing e homepage che funzionano, in Italia e nel mondo. Per ognuna ti dico perché funziona e come portarla nel tuo hotel o nel tuo ristorante. Filtra per formato, leva e occasione.</p>
   </div>
 </section>
+<div class="wrap sw-paths" id="paths"></div>
 <div class="sw-bar">
   <div class="wrap">
     <label class="sw-search">
@@ -234,6 +258,7 @@ body{background:var(--e-carta)}
   <div class="sw-aside-scrim" id="asideScrim"></div>
   <div>
     <div id="notice" class="sw-notice hidden" role="status"></div>
+    <div id="pathBanner"></div>
     <div class="sw-toolbar">
       <span class="sw-count" id="count">Caricamento…</span>
       <select class="sw-select" id="sort" aria-label="Ordina">
@@ -382,7 +407,15 @@ const CUORI_LS='hp-swipe-cuori';
 const miei = () => { try { return new Set(JSON.parse(localStorage.getItem(CUORI_LS)||'[]')); } catch { return new Set(); } };
 const salvaMiei = set => { try { localStorage.setItem(CUORI_LS, JSON.stringify([...set])); } catch {} };
 const CUORE_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.3 7.7 3.6 4.5 6.9 4.5c2 0 3.4 1.1 4.1 2.3.7-1.2 2.1-2.3 4.1-2.3 3.3 0 5.6 3.2 4.2 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>';
-const S = { items:[], loaded:false, q:'', sel:new Set(), sort:'recent', minRating:0, onlyImg:false, vista:'pubblicato' };
+/* Percorsi: ingressi per problema. Ogni percorso tiene le idee che hanno almeno uno dei tag in «any». Si modificano qui. */
+const PERCORSI = [
+  {key:'novembre', titolo:'Riempire novembre', intro:'Bassa stagione, ultimi posti, un motivo per venire adesso: le idee che vendono la data, non la camera.', any:['occasione:Bassa stagione','occasione:Last minute','leva:Urgenza','leva:Scarsità']},
+  {key:'diretto', titolo:'Vendere il diretto senza sconti', intro:'Garanzie, vantaggi concreti, il nemico giusto: come far prenotare dal sito senza regalare margine.', any:['leva:Prenota diretto','leva:Garanzia / Rischio zero']},
+  {key:'feste', titolo:'Natale e feste senza il solito pacchetto', intro:'Eventi inventati, regali con una ragione, date precise: le feste come occasione, non come listino.', any:['occasione:Ponte / Festività','occasione:Regalo / Gift card','tag:natale']},
+  {key:'posizione', titolo:'Dire chi non è il tuo ospite', intro:'Esclusione, nemico comune, un posto preciso nella testa: il posizionamento scritto in una riga.', any:['leva:Posizionamento','leva:Esclusività','leva:Nemico comune']},
+  {key:'numeri', titolo:'Numeri al posto degli aggettivi', intro:'Gradi, metri, nomi, orari: la specificità che rende credibile una promessa senza dire «unico».', any:['leva:Specificità / Numeri','leva:Sensoriale']},
+];
+const S = { items:[], loaded:false, percorso:null, q:'', sel:new Set(), sort:'recent', minRating:0, onlyImg:false, vista:'pubblicato' };
 const FONTE = { meta:'Meta Ads', email:'Email', sito:'Sito', landing:'Landing', manuale:'' };
 const statoDi = e => e.stato==='da_valutare' ? 'da_valutare' : 'pubblicato';
 const hay = new Map();
@@ -428,6 +461,7 @@ async function carica(){
 /* ---------- Filtri ---------- */
 function matches(it){
   if(statoDi(it)!==S.vista) return false;
+  if(S.percorso){ const p=PERCORSI.find(x=>x.key===S.percorso); if(p && !(it.tags||[]).some(t=>p.any.includes(t))) return false; }
   if(S.q){ const h=haystack(it); for(const w of norm(S.q).split(/\s+/).filter(Boolean)) if(!h.includes(w)) return false; }
   if(S.minRating && (it.rating||0)<S.minRating) return false;
   if(S.onlyImg && !(it.images||[]).length) return false;
@@ -444,7 +478,17 @@ function filtered(){
 }
 
 /* ---------- Render ---------- */
-function render(){ renderAside(); renderGrid(); }
+function render(){ renderPaths(); renderAside(); renderGrid(); }
+function renderPaths(){
+  const pub=S.items.filter(it=>statoDi(it)==='pubblicato');
+  const conta=p=>pub.filter(it=>(it.tags||[]).some(t=>p.any.includes(t))).length;
+  const vis=PERCORSI.map(p=>({...p,n:conta(p)})).filter(p=>p.n>=3);
+  const box=$('#paths');
+  if(!S.loaded||!vis.length||S.vista!=='pubblicato'){ box.innerHTML=''; $('#pathBanner').innerHTML=''; return; }
+  box.innerHTML=`<span class="sw-lab">Da dove partire</span><div class="sw-paths-grid">${vis.map(p=>`<button type="button" class="sw-path ${S.percorso===p.key?'on':''}" data-percorso="${p.key}"><b>${esc(p.titolo)}</b><span>${esc(p.intro)}</span><i>${p.n} idee</i></button>`).join('')}</div>`;
+  const cur=vis.find(p=>p.key===S.percorso);
+  $('#pathBanner').innerHTML=cur?`<div class="sw-path-banner"><div><b>${esc(cur.titolo)}</b><p>${esc(cur.intro)}</p></div><button type="button" class="sw-link" data-percorso="">Tutte le idee</button></div>`:'';
+}
 function renderAside(){
   const res=filtered(), counts={};
   res.forEach(it=>(it.tags||[]).forEach(t=>counts[t]=(counts[t]||0)+1));
@@ -521,6 +565,7 @@ $('#exportBtn').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(JSON.stringify(data,null,2));toast(`Copiate ${data.length} idee negli appunti`);}catch{toast('Copia non consentita da questo browser');}
 });
 document.addEventListener('click',e=>{
+  const pp=e.target.closest('[data-percorso]'); if(pp){ S.percorso=pp.dataset.percorso||null; S.sel.clear(); render(); if(S.percorso) $('#pathBanner').scrollIntoView({behavior:'smooth',block:'start'}); return; }
   const c=e.target.closest('[data-cuore]'); if(c){ e.stopPropagation(); toggleCuore(c.dataset.cuore); return; }
   const t=e.target.closest('[data-tag],[data-rating],[data-act],[data-open]'); if(!t||t.closest('.sw-modal')) return;
   if(t.dataset.tag){ S.sel.has(t.dataset.tag)?S.sel.delete(t.dataset.tag):S.sel.add(t.dataset.tag); render(); }
@@ -578,9 +623,19 @@ function openDetail(id){
         ${it.why?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Perché funziona</span></div><div class="sw-prose">${esc(it.why)}</div>`:''}
         ${it.steal?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Come rubarlo</span></div><div class="sw-prose">${esc(it.steal)}</div>`:''}
         ${it.copy&&imgs.length?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Copy trascritto</span><button class="sw-link" id="dCopy">Copia</button></div><div class="sw-copybox">${esc(it.copy)}</div>`:''}
+        ${it.copy&&statoDi(it)==='pubblicato'&&!sembraItaliano(it.copy)?`<div style="margin-top:8px"><button type="button" class="sw-link" id="dTrad">Traduci in italiano</button> <span class="sw-wait" id="dTradSt"></span></div><div id="dTradOut"></div>`:''}
         ${groups.map(g=>`<div class="sw-fl"><span class="sw-lab" style="margin:0">${esc(g.f.label)}</span></div><div class="sw-chips">${g.vals.map(t=>`<button class="sw-chip" data-ftag="${esc(t)}">${esc(tagValue(t))}</button>`).join('')}</div>`).join('')}
         ${free.length?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Tag liberi</span></div><div class="sw-chips">${free.map(t=>`<button class="sw-chip free" data-ftag="${esc(t)}">${esc(tagLabel(t))}</button>`).join('')}</div>`:''}
         ${CHIAVE&&FONTE[it.fonte]?`<p class="sw-hint" style="margin-top:20px">Trovato dal radar (${FONTE[it.fonte]}). Controlla testo e tag prima di pubblicarlo.</p>`:''}
+        ${statoDi(it)==='pubblicato'?`<div class="sw-adatta" id="dAdatta">
+          <h3>Adattala al tuo hotel</h3>
+          <p>Dimmi che struttura hai e ti riscrivo questa idea in tre modi pronti da usare.</p>
+          <div class="field"><label for="aStruttura">La tua struttura</label><input id="aStruttura" type="text" maxlength="200" placeholder="es. hotel 3 stelle in montagna, 40 camere, famiglie"></div>
+          <div class="field"><label for="aEmail">La tua email</label><input id="aEmail" type="email" placeholder="nome@hotel.it"></div>
+          <label class="sw-chk"><input type="checkbox" id="aPrivacy"> <span>Ho letto la <a href="/privacy-policy/" target="_blank" rel="noopener" style="text-decoration:underline">privacy policy</a>. Riceverò la risposta qui e potrò ricevere altre idee via email.</span></label>
+          <button type="button" class="btn sm" id="aGo">Adatta l'idea</button> <span class="sw-wait" id="aSt"></span>
+          <div class="sw-adatta-out" id="aOut"></div>
+        </div>`:''}
         <p class="sw-hint" style="margin-top:20px">Tocca un tag per vedere tutti gli esempi con quel tag.</p>
       </div></div></div>`);
   $('#dClose').onclick=closeModal;
@@ -589,6 +644,44 @@ function openDetail(id){
   if($('#dDrop')) $('#dDrop').onclick=async()=>{ const r=await api('elimina',{id:it.id}); if(!r.ok) return toast(errore(r.errore)); S.items=S.items.filter(x=>x.id!==it.id); closeModal(); render(); toast('Scartato: il radar non lo riproporrà'); };
   const c=$('#dCopy'); if(c) c.onclick=async()=>{try{await navigator.clipboard.writeText(it.copy);toast('Copy copiato');}catch{toast('Copia non consentita');}};
   document.querySelectorAll('[data-ftag]').forEach(b=>b.onclick=()=>{S.sel=new Set([b.dataset.ftag]);closeModal();render();window.scrollTo({top:0});});
+  const bt=$('#dTrad'); if(bt) bt.onclick=()=>traduciIdea(it);
+  const ag=$('#aGo'); if(ag){ try{ $('#aEmail').value=localStorage.getItem('hp-swipe-email')||''; }catch{} ag.onclick=()=>adattaIdea(it); }
+}
+
+/* ---------- Traduzione e «Adattala al tuo hotel» (lavori in background, la pagina chiede il risultato ogni 2,5 s) ---------- */
+const IT_PAROLE=/\b(il|la|le|gli|di|che|per|con|una|uno|non|del|della|dei|nel|sono|come|più|anche)\b/gi;
+function sembraItaliano(t){ const n=(t.match(IT_PAROLE)||[]).length; const w=t.split(/\s+/).length; return w<6 || n/w>0.08; }
+function formattaMd(t){ return esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>'); }
+async function lavoro(body){
+  const jobid=crypto.randomUUID();
+  const a=await fetch(API_BG.replace('swipe-analisi-background','swipe-idea-background'),{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...body,jobid})});
+  if(!a.ok && a.status!==202) return {ok:false,errore:'rete'};
+  const fine=Date.now()+90*1000;
+  while(Date.now()<fine){
+    await new Promise(ok=>setTimeout(ok,2500));
+    const p=await fetch(`${API}?lavoro=${jobid}`).then(x=>x.json()).catch(()=>null);
+    if(p?.pronto) return p;
+  }
+  return {ok:false,errore:'tempo'};
+}
+async function traduciIdea(it){
+  const b=$('#dTrad'), st=$('#dTradSt'), out=$('#dTradOut'); b.disabled=true; st.textContent='Traduco…';
+  let r=await fetch(`${API}?trad=${it.id}`).then(x=>x.json()).catch(()=>null);
+  if(!r?.pronto) r=await lavoro({tipo:'traduci',id:it.id});
+  if(r?.testo){ out.innerHTML=`<div class="sw-trad">${esc(r.testo)}</div>`; b.remove(); st.textContent=''; }
+  else { st.textContent='Traduzione non riuscita: riprova.'; b.disabled=false; }
+}
+async function adattaIdea(it){
+  const struttura=$('#aStruttura').value.trim(), email=$('#aEmail').value.trim(), privacy=$('#aPrivacy').checked, st=$('#aSt'), out=$('#aOut'), go=$('#aGo');
+  if(struttura.length<4){ st.textContent='Scrivi che struttura hai.'; $('#aStruttura').focus(); return; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ st.textContent='Serve un’email valida.'; $('#aEmail').focus(); return; }
+  if(!privacy){ st.textContent='Spunta la casella della privacy.'; return; }
+  try{ localStorage.setItem('hp-swipe-email',email); }catch{}
+  go.disabled=true; st.textContent='Ci penso, mezzo minuto…'; out.innerHTML='';
+  const r=await lavoro({tipo:'adatta',id:it.id,struttura,email,privacy:true,pagina:location.pathname});
+  go.disabled=false;
+  if(r?.testo){ st.textContent=''; out.innerHTML=formattaMd(r.testo); }
+  else st.textContent={email:'Serve un’email valida.',struttura:'Descrivi meglio la struttura.',troppe_richieste:'Troppe richieste: riprova tra poco.',tempo:'Ci sta mettendo troppo: riprova tra un minuto.'}[r?.errore]||'Non ci sono riuscito: riprova.';
 }
 
 /* ---------- Editor ---------- */

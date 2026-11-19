@@ -5,6 +5,9 @@
 //   img/<id>      uno screenshot (binario, tipo nei metadati)
 //   analisi/<id>  il risultato di un'analisi con Claude (JSON), letto dalla pagina finché non è pronto
 //   visti/<sha256> i pezzi già proposti dal radar (URL o id), per non riproporli
+//   trad/<id>     la traduzione italiana del copy di un'idea pubblicata (testo), fatta una volta sola
+//   adatta/<id>/<sha> «Adattalo al mio hotel»: risposta per una struttura, in cache
+//   lavori/<jobid> risultato di un lavoro in background (traduzione o adattamento) letto dalla pagina
 //
 // Accesso: la pagina manda la chiave, qui si confronta il suo SHA-256 con SWIPE_KEY_SHA256
 // (variabile d'ambiente facoltativa) o con l'hash predefinito qui sotto.
@@ -122,4 +125,55 @@ export async function analizza({ campi = {}, immagini = [], tassonomia = [] }) {
   } catch {
     return { ok: false, errore: 'risposta_illeggibile' };
   }
+}
+
+
+// ---------------------------------------------------------------- traduzione e «Adattalo al mio hotel» (pagina pubblica)
+
+/** Traduce in italiano il copy trascritto di un'idea, riga per riga, senza commenti. */
+export async function traduci(esempio) {
+  const client = new Anthropic({ timeout: 60000, maxRetries: 1 });
+  const r = await client.messages.create({
+    model: 'claude-haiku-5-5',
+    max_tokens: 1500,
+    system: "Traduci in italiano il testo di marketing che ricevi (annuncio, email o pagina web). Mantieni la divisione in righe e l'ordine. Non aggiungere commenti, titoli o note: solo la traduzione. Lascia in originale nomi propri, brand e slogan intraducibili, mettendo tra parentesi la resa italiana se aiuta. Se il testo è già in italiano, restituiscilo identico.",
+    messages: [{ role: 'user', content: esempio.copy.slice(0, 6000) }],
+  });
+  return r.content.filter((b) => b.type === 'text').map((b) => b.text).join('').trim();
+}
+
+/** Riscrive il «come rubarlo» per una struttura precisa: tre proposte concrete, pronte da usare. */
+export async function adatta(esempio, struttura) {
+  const client = new Anthropic({ timeout: 90000, maxRetries: 1 });
+  const dati = [
+    `Idea: ${esempio.title}`,
+    `Brand d'origine: ${esempio.brand || '-'}`,
+    `Copy originale:\n${(esempio.copy || '').slice(0, 2500)}`,
+    `Perché funziona: ${esempio.why || '-'}`,
+    `Come rubarlo (generico): ${esempio.steal || '-'}`,
+    '',
+    `La struttura del lettore: ${struttura}`,
+  ].join('\n');
+  const r = await client.messages.create({
+    model: 'claude-sonnet-5-5',
+    max_tokens: 1200,
+    system: `Sei il copy chief di Hotel Positioning, specialista di posizionamento per hotel e ristoranti indipendenti italiani (metodo April Dunford, livelli di consapevolezza di Schwartz, direct response). Ricevi un'idea di marketing presa da un altro brand e la descrizione della struttura di chi legge. Devi adattare il meccanismo a quella struttura.
+
+Rispondi in italiano, dando del tu, in questo formato e niente altro:
+
+**Il meccanismo in una riga**
+Una frase: cosa fa funzionare l'idea, spogliata dal brand.
+
+**Tre modi per usarla in ${struttura}**
+1. *Dove:* (il canale: annuncio, homepage, email, menu, cartello…) — il copy pronto, tra virgolette, 1-3 righe, con dettagli plausibili per quel tipo di struttura. Poi una riga su cosa serve perché sia vero.
+2. idem
+3. idem
+
+**Attenzione a**
+Una o due righe: l'errore tipico quando si copia questa idea.
+
+Regole: niente aggettivi vuoti (unico, esclusivo, emozionante), niente «esperienza». Numeri, nomi, orari, oggetti. Non inventare recensioni o dati della struttura: dove servono, metti un segnaposto tra parentesi quadre, es. [il nome del tuo chef].`,
+    messages: [{ role: 'user', content: dati }],
+  });
+  return r.content.filter((b) => b.type === 'text').map((b) => b.text).join('').trim();
 }
