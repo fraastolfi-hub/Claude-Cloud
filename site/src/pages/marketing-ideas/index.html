@@ -22,6 +22,7 @@ body{background:var(--e-carta)}
 .sw-path{text-align:left;background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;padding:14px 16px;cursor:pointer;transition:border-color .15s;display:flex;flex-direction:column;gap:4px}
 .sw-path:hover{border-color:var(--e-inchiostro)}
 .sw-path.on{border-color:var(--e-inchiostro);box-shadow:inset 0 0 0 1px var(--e-inchiostro)}
+.sw-path svg{width:26px;height:26px;fill:none;stroke:var(--e-inchiostro);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
 .sw-path b{font:500 18px/1.2 var(--serif-t);letter-spacing:-.01em;color:var(--e-inchiostro)}
 .sw-path span{font-size:13px;color:var(--e-nebbia)}
 .sw-path i{font:600 11px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--e-nebbia);font-style:normal;margin-top:4px}
@@ -279,11 +280,11 @@ const salvaMiei = set => { try { localStorage.setItem(CUORI_LS, JSON.stringify([
 const CUORE_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.3 7.7 3.6 4.5 6.9 4.5c2 0 3.4 1.1 4.1 2.3.7-1.2 2.1-2.3 4.1-2.3 3.3 0 5.6 3.2 4.2 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>';
 /* Percorsi: ingressi per problema. Ogni percorso tiene le idee che hanno almeno uno dei tag in «any». Si modificano qui. */
 const PERCORSI = [
-  {key:'bassa', titolo:'Riempire in bassa stagione', intro:'Ultimi posti, un motivo per venire adesso, un prezzo con una scadenza: le idee che vendono la data, non la camera.', any:['occasione:Bassa stagione','occasione:Last minute','leva:Urgenza','leva:Scarsità']},
-  {key:'diretto', titolo:'Vendere diretto, senza sconti', intro:'Garanzie, vantaggi concreti, il nemico giusto: come far prenotare dal sito senza regalare margine.', any:['leva:Prenota diretto','leva:Garanzia / Rischio zero']},
-  {key:'feste', titolo:'Natale e feste senza il solito pacchetto', intro:'Eventi inventati, regali con una ragione, date precise: le feste come occasione, non come listino.', any:['occasione:Ponte / Festività','occasione:Regalo / Gift card','tag:natale']},
-  {key:'posizione', titolo:'Comunicare il proprio posizionamento', intro:'Esclusione, nemico comune, un posto preciso nella testa: il posizionamento scritto in una riga.', any:['leva:Posizionamento','leva:Esclusività','leva:Nemico comune']},
-  {key:'numeri', titolo:'Dare credibilità alla propria proposta', intro:'Gradi, metri, nomi, orari: la specificità che rende credibile una promessa senza dire «unico».', any:['leva:Specificità / Numeri','leva:Sensoriale']},
+  {key:'bassa', icona:'<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="16" cy="16" r="1.4" fill="currentColor" stroke="none"/></svg>', titolo:'Riempire in bassa stagione', intro:'Ultimi posti, un motivo per venire adesso, un prezzo con una scadenza: le idee che vendono la data, non la camera.', any:['occasione:Bassa stagione','occasione:Last minute','leva:Urgenza','leva:Scarsità']},
+  {key:'diretto', icona:'<svg viewBox="0 0 24 24"><path d="M4 12h13"/><path d="m13 7 5 5-5 5"/><path d="M20 5v14"/></svg>', titolo:'Vendere diretto, senza sconti', intro:'Garanzie, vantaggi concreti, il nemico giusto: come far prenotare dal sito senza regalare margine.', any:['leva:Prenota diretto','leva:Garanzia / Rischio zero']},
+  {key:'feste', icona:'<svg viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="11" rx="1.5"/><path d="M3 10h18M12 10v11M12 10c-2 0-4.5-.6-4.5-3a2.2 2.2 0 0 1 4.5-.6M12 10c2 0 4.5-.6 4.5-3a2.2 2.2 0 0 0-4.5-.6"/></svg>', titolo:'Natale e feste senza il solito pacchetto', intro:'Eventi inventati, regali con una ragione, date precise: le feste come occasione, non come listino.', any:['occasione:Ponte / Festività','occasione:Regalo / Gift card','tag:natale']},
+  {key:'posizione', icona:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"/></svg>', titolo:'Comunicare il proprio posizionamento', intro:'Esclusione, nemico comune, un posto preciso nella testa: il posizionamento scritto in una riga.', any:['leva:Posizionamento','leva:Esclusività','leva:Nemico comune']},
+  {key:'numeri', icona:'<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.3-7 10-3.8-1.7-7-5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>', titolo:'Dare credibilità alla propria proposta', intro:'Gradi, metri, nomi, orari: la specificità che rende credibile una promessa senza dire «unico».', any:['leva:Specificità / Numeri','leva:Sensoriale']},
 ];
 const S = { items:[], loaded:false, percorso:null, q:'', sel:new Set(), sort:'recent', minRating:0, onlyImg:false, vista:'pubblicato' };
 const FONTE = { meta:'Meta Ads', email:'Email', sito:'Sito', landing:'Landing', manuale:'' };
@@ -355,7 +356,7 @@ function renderPaths(){
   const vis=PERCORSI.map(p=>({...p,n:conta(p)})).filter(p=>p.n>=3);
   const box=$('#paths');
   if(!S.loaded||!vis.length||S.vista!=='pubblicato'){ box.innerHTML=''; $('#pathBanner').innerHTML=''; return; }
-  box.innerHTML=`<span class="sw-lab">Da dove partire</span><div class="sw-paths-grid">${vis.map(p=>`<button type="button" class="sw-path ${S.percorso===p.key?'on':''}" data-percorso="${p.key}"><b>${esc(p.titolo)}</b><span>${esc(p.intro)}</span><i>${p.n} idee</i></button>`).join('')}</div>`;
+  box.innerHTML=`<span class="sw-lab">Da dove partire</span><div class="sw-paths-grid">${vis.map(p=>`<button type="button" class="sw-path ${S.percorso===p.key?'on':''}" data-percorso="${p.key}">${p.icona||''}<b>${esc(p.titolo)}</b><span>${esc(p.intro)}</span><i>${p.n} idee</i></button>`).join('')}</div>`;
   const cur=vis.find(p=>p.key===S.percorso);
   $('#pathBanner').innerHTML=cur?`<div class="sw-path-banner"><div><b>${esc(cur.titolo)}</b><p>${esc(cur.intro)}</p></div><button type="button" class="sw-link" data-percorso="">Tutte le idee</button></div>`:'';
 }
