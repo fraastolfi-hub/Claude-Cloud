@@ -151,8 +151,7 @@ export const handler = async (event) => {
       if (buf.length > 3.2 * 1024 * 1024) return json(413, { ok: false, errore: 'immagine_grande' });
       if (buf.length) img = { buf, tipo: d.tipo };
     }
-    if (!/^https?:\/\/\S+$/i.test(url) && !img) return json(400, { ok: false, errore: 'serve_link_o_immagine' });
-    if (nota.length < 10 && !img) return json(400, { ok: false, errore: 'nota' });
+    if (!/^https?:\/\/\S+\.\S+/i.test(url) && !img) return json(400, { ok: false, errore: 'serve_link_o_immagine' });
     const images = [];
     if (img) { const id = randomUUID(); await s.set(`img/${id}`, img.buf, { metadata: { tipo: img.tipo } }); images.push(id); }
     let host = '';

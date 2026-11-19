@@ -58,12 +58,18 @@ body{background:var(--e-carta)}
 .sw-adatta-out{margin-top:14px;white-space:pre-wrap;font-size:15px;line-height:1.55}
 .sw-adatta-out b{font-weight:600}
 .sw-wait{font-size:13px;color:var(--e-nebbia)}
-.sw-segnala{padding:4px 2px}
-.sw-segnala h2{margin:0 0 6px}
-.sw-segnala p.lead{font-size:16px;margin:0 0 18px;color:var(--e-grafite)}
-.sw-segnala .field{margin-bottom:12px}
-.sw-segnala textarea{min-height:90px}
-.sw-ok{background:var(--e-sabbia);border-radius:6px;padding:20px;font-size:16px}
+.sw-fab{position:fixed;right:22px;bottom:22px;z-index:45;display:inline-flex;align-items:center;gap:8px;background:var(--e-giallo);color:var(--e-inchiostro);border:1px solid var(--e-inchiostro);border-radius:999px;padding:12px 18px 12px 14px;font:600 15px/1 var(--display);cursor:pointer;box-shadow:0 6px 24px rgba(18,26,34,.18);transition:background-color .15s,transform .15s}
+.sw-fab:hover{background:#ffd84f}
+.sw-fab svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.sw-segnala{width:min(480px,100%);margin:10vh auto 0;background:var(--e-foglio);border-radius:8px;padding:clamp(24px,5vw,36px);box-shadow:0 20px 60px rgba(18,26,34,.3)}
+.sw-segnala h2{font-size:clamp(26px,3.4vw,32px)!important;margin:0 0 8px}
+.sw-segnala p.lead{font-size:16px;line-height:1.5;margin:0 0 20px;color:var(--e-grafite)}
+.sw-segnala .field{margin-bottom:14px}
+.sw-segnala .field label{font-size:14px}
+.sw-segnala .field small{font-weight:400;color:var(--e-nebbia)}
+.sw-segnala textarea{min-height:96px}
+.sw-segnala .sw-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.sw-ok{background:var(--e-sabbia);border-radius:6px;padding:18px;font-size:16px;line-height:1.5}
 .sw-segn-box{margin-top:18px;border-left:3px solid var(--e-giallo);padding:10px 14px;background:var(--e-foglio);border-radius:0 4px 4px 0;font-size:14px}
 .sw-hp{position:absolute;left:-9999px}
 .sw-bar{position:sticky;top:0;z-index:20;background:var(--e-carta);border-bottom:1px solid var(--e-linea)}
@@ -204,6 +210,7 @@ body{background:var(--e-carta)}
   .sw-mhead,.sw-mfoot{border-radius:0}
 }
 @media (max-width:600px){
+  .sw-fab{right:14px;bottom:14px;padding:11px 14px 11px 12px;font-size:14px}
   .sw-grid{columns:1}
   .sw-card{margin-bottom:16px}
   .sw-thumb{max-height:none}
@@ -268,7 +275,6 @@ body{background:var(--e-carta)}
     <div class="sw-tabs hidden" id="tabs" role="group" aria-label="Vista">
       <button type="button" data-vista="pubblicato" class="on">Pubblicati</button><button type="button" data-vista="da_valutare">Da valutare</button>
     </div>
-    <button class="btn sm ghost" id="segnalaBtn" type="button">Segnala un'idea</button>
     <button class="btn sm ghost sw-filters-btn" id="filtersBtn" type="button">Filtri</button>
     <button class="btn sm hidden" id="addBtn" type="button">+<span class="sw-add-l">&nbsp;Aggiungi</span></button>
   </div>
@@ -294,6 +300,7 @@ body{background:var(--e-carta)}
   </div>
 </div>
 </main>
+<button type="button" class="sw-fab" id="segnalaBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Segnala un'idea</span></button>
 <div id="modalRoot"></div>
 <div id="toast" class="sw-toast hidden" role="status"></div>
 <footer class="foot">
@@ -672,29 +679,23 @@ function openDetail(id){
 
 /* ---------- «Segnala un'idea»: chiunque propone, Francesco vaglia ---------- */
 function apriSegnala(){
-  openModal(`<div class="sw-modal__body sw-segnala">
+  openModal(`<div class="sw-segnala" role="document">
     <h2>Segnala un'idea</h2>
-    <p class="lead">Hai visto un annuncio, un'email, una pagina o un cartello che ti ha fermato? Mandamelo: lo guardo io e, se insegna qualcosa, entra nell'archivio.</p>
-    <div class="field"><label for="sgUrl">Link <small>(dell'annuncio, della pagina, del post)</small></label><input id="sgUrl" type="url" placeholder="https://…"></div>
-    <div class="field"><label for="sgNota">Perché ti ha colpito</label><textarea id="sgNota" maxlength="2000" placeholder="Due righe bastano: cosa fa funzionare questo pezzo?"></textarea></div>
-    <div class="field"><label for="sgImg">Screenshot <small>(facoltativo, se il link non basta)</small></label><input id="sgImg" type="file" accept="image/*"></div>
-    <div class="field"><label for="sgNome">Il tuo nome <small>(facoltativo: se pubblico l'idea, ti cito)</small></label><input id="sgNome" type="text" maxlength="120"></div>
-    <div class="field"><label for="sgEmail">La tua email <small>(facoltativa, per dirti se è entrata)</small></label><input id="sgEmail" type="email"></div>
+    <p class="lead">Un annuncio, un'email, una pagina che ti ha fermato. Incolla il link: lo guardo io e, se insegna qualcosa, entra nell'archivio.</p>
+    <div class="field"><label for="sgUrl">Link</label><input id="sgUrl" type="url" placeholder="https://…" autocomplete="off"></div>
+    <div class="field"><label for="sgNota">Note <small>(facoltative)</small></label><textarea id="sgNota" maxlength="2000" placeholder="Perché ti ha colpito, se vuoi dirmelo in due righe."></textarea></div>
     <input class="sw-hp" id="sgBot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px"><button type="button" class="btn sm" id="sgGo">Invia la segnalazione</button><button type="button" class="btn sm ghost" id="sgNo">Annulla</button><span class="sw-wait" id="sgSt"></span></div>
-  </div>`);
+    <div class="sw-row"><button type="button" class="btn sm" id="sgGo">Invia</button><button type="button" class="btn sm ghost" id="sgNo">Annulla</button><span class="sw-wait" id="sgSt"></span></div>
+  </div>`, true);
+  setTimeout(()=>$('#sgUrl').focus(),0);
   $('#sgNo').onclick=closeModal;
   $('#sgGo').onclick=async()=>{
-    const url=$('#sgUrl').value.trim(), nota=$('#sgNota').value.trim(), st=$('#sgSt'), go=$('#sgGo'), f=$('#sgImg').files[0];
-    if(!url && !f){ st.textContent='Metti un link o uno screenshot.'; return; }
-    if(url && !/^https?:\/\/\S+$/i.test(url)){ st.textContent='Il link deve iniziare con https://'; return; }
-    if(nota.length<10 && !f){ st.textContent='Scrivi due righe su perché ti ha colpito.'; return; }
+    const url=$('#sgUrl').value.trim(), nota=$('#sgNota').value.trim(), st=$('#sgSt'), go=$('#sgGo');
+    if(!/^https?:\/\/\S+\.\S+/i.test(url)){ st.textContent='Incolla un link completo, con https://'; $('#sgUrl').focus(); return; }
     go.disabled=true; st.textContent='Invio…';
-    let dati=null,tipo=null;
-    if(f){ try{ const blob=await prepara(f); tipo=blob.type||f.type; dati=await b64(blob); }catch{ st.textContent='Immagine non leggibile.'; go.disabled=false; return; } }
-    let r; try{ r=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({azione:'segnala',url,nota,nome:$('#sgNome').value.trim(),email:$('#sgEmail').value.trim(),tipo,dati,'bot-field':$('#sgBot').value})}).then(x=>x.json()); }catch{ r={ok:false,errore:'rete'}; }
-    if(r?.ok){ $('.sw-segnala').innerHTML='<div class="sw-ok"><b>Grazie.</b> L\'ho ricevuta: la guardo io e, se entra, la trovi qui con il perché funziona.</div><p style="margin-top:14px"><button type="button" class="btn sm ghost" id="sgChiudi">Chiudi</button></p>'; $('#sgChiudi').onclick=closeModal; }
-    else { go.disabled=false; st.textContent={immagine_grande:'Immagine troppo grande (max 3 MB).',serve_link_o_immagine:'Metti un link o uno screenshot.',nota:'Scrivi due righe su perché ti ha colpito.'}[r?.errore]||'Invio non riuscito: riprova.'; }
+    let r; try{ r=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({azione:'segnala',url,nota,'bot-field':$('#sgBot').value})}).then(x=>x.json()); }catch{ r={ok:false,errore:'rete'}; }
+    if(r?.ok){ $('.sw-segnala').innerHTML='<h2>Grazie.</h2><div class="sw-ok">L\'ho ricevuta. La guardo io e, se entra nell\'archivio, la trovi qui con il perché funziona e come portarla nel tuo hotel.</div><p style="margin:16px 0 0"><button type="button" class="btn sm" id="sgChiudi">Chiudi</button></p>'; $('#sgChiudi').onclick=closeModal; }
+    else { go.disabled=false; st.textContent={serve_link_o_immagine:'Incolla un link completo.',rete:'Connessione non riuscita: riprova.'}[r?.errore]||'Invio non riuscito: riprova.'; }
   };
 }
 
