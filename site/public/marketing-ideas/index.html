@@ -409,7 +409,7 @@ const salvaMiei = set => { try { localStorage.setItem(CUORI_LS, JSON.stringify([
 const CUORE_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.3 7.7 3.6 4.5 6.9 4.5c2 0 3.4 1.1 4.1 2.3.7-1.2 2.1-2.3 4.1-2.3 3.3 0 5.6 3.2 4.2 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>';
 /* Percorsi: ingressi per problema. Ogni percorso tiene le idee che hanno almeno uno dei tag in «any». Si modificano qui. */
 const PERCORSI = [
-  {key:'novembre', titolo:'Riempire novembre', intro:'Bassa stagione, ultimi posti, un motivo per venire adesso: le idee che vendono la data, non la camera.', any:['occasione:Bassa stagione','occasione:Last minute','leva:Urgenza','leva:Scarsità']},
+  {key:'bassa', titolo:'Riempire in bassa stagione', intro:'Ultimi posti, un motivo per venire adesso, un prezzo con una scadenza: le idee che vendono la data, non la camera.', any:['occasione:Bassa stagione','occasione:Last minute','leva:Urgenza','leva:Scarsità']},
   {key:'diretto', titolo:'Vendere il diretto senza sconti', intro:'Garanzie, vantaggi concreti, il nemico giusto: come far prenotare dal sito senza regalare margine.', any:['leva:Prenota diretto','leva:Garanzia / Rischio zero']},
   {key:'feste', titolo:'Natale e feste senza il solito pacchetto', intro:'Eventi inventati, regali con una ragione, date precise: le feste come occasione, non come listino.', any:['occasione:Ponte / Festività','occasione:Regalo / Gift card','tag:natale']},
   {key:'posizione', titolo:'Dire chi non è il tuo ospite', intro:'Esclusione, nemico comune, un posto preciso nella testa: il posizionamento scritto in una riga.', any:['leva:Posizionamento','leva:Esclusività','leva:Nemico comune']},
