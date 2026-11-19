@@ -19,6 +19,8 @@ export const FORMS = {
   'tagliando': { label: 'Tagliando Hotel', list: 'BREVO_LIST_TAGLIANDO', optIn: 'BREVO_LIST_TAGLIANDO_SEQUENZA', optInField: 'consenso_email' },
   // Marketing ideas (/marketing-ideas/): chi usa «Adattalo al mio hotel» lascia l'email
   'marketing-ideas': { label: 'Marketing ideas: adattalo al mio hotel', list: 'BREVO_LIST_IDEAS' },
+  // Idee per il tuo hotel (/idee/): l'albergatore lascia sito ed email e riceve idee scelte dall'archivio
+  'idee': { label: 'Idee per il tuo hotel', list: 'BREVO_LIST_IDEE', optIn: 'BREVO_LIST_IDEE_SEQUENZA', optInField: 'consenso_email' },
 };
 
 // etichette leggibili per l'email di notifica
