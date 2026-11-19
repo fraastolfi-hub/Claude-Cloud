@@ -18,7 +18,9 @@ body{background:var(--e-carta)}
 .sw-hero .lead{max-width:56ch;margin:0}
 .sw-paths{padding:22px 0 6px}
 .sw-paths .sw-lab{margin-bottom:10px}
-.sw-paths-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.sw-paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:900px){.sw-paths-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.sw-paths-grid{grid-template-columns:1fr}}
 .sw-path{text-align:left;background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;padding:14px 16px;cursor:pointer;transition:border-color .15s;display:flex;flex-direction:column;gap:4px}
 .sw-path:hover{border-color:var(--e-inchiostro)}
 .sw-path.on{border-color:var(--e-inchiostro);box-shadow:inset 0 0 0 1px var(--e-inchiostro)}
