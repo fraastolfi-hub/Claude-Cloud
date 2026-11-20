@@ -32,7 +32,10 @@ body{background:var(--e-carta)}
 .sw-hero{padding:clamp(40px,6vw,88px) 0 clamp(24px,3vw,36px);border-bottom:1px solid var(--e-linea)}
 .sw-hero h1{margin:16px 0 18px;max-width:20ch}
 .sw-hero .lead{max-width:56ch;margin:0}
-.sw-paths{padding:22px 0 6px}
+.sw-lingua{max-width:56ch;margin:12px 0 0;font-size:15px;color:var(--e-grafite)}
+.sw-intro>summary{display:none}
+.sw-intro>summary::-webkit-details-marker{display:none}
+.sw-paths{padding-top:22px;padding-bottom:6px}
 .sw-paths .sw-lab{margin-bottom:10px}
 .sw-paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 @media (max-width:900px){.sw-paths-grid{grid-template-columns:repeat(2,1fr)}}
@@ -131,6 +134,19 @@ body{background:var(--e-carta)}
 .sw-heart.on{color:#b3261e;border-color:#b3261e;background:#fdf3f2}
 .sw-heart.on svg{fill:#b3261e;stroke:#b3261e}
 .sw-heart--lg{padding:9px 16px;font-size:15px}
+.sw-acts{display:inline-flex;gap:6px;align-items:center}
+.sw-share{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--e-linea-forte);border-radius:999px;background:var(--e-foglio);color:var(--e-grafite);cursor:pointer;transition:border-color .12s,color .12s}
+.sw-share:hover{border-color:var(--e-inchiostro);color:var(--e-inchiostro)}
+.sw-share svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sw-share--lg{width:auto;height:auto;gap:7px;padding:9px 14px;font:600 15px/1 var(--display)}
+.sw-pop{position:fixed;z-index:90;min-width:220px;background:var(--e-carta);border:1px solid var(--e-linea-forte);border-radius:6px;box-shadow:0 12px 40px rgba(18,26,34,.22);padding:6px}
+.sw-pop button{display:flex;align-items:center;gap:10px;width:100%;border:0;background:none;text-align:left;padding:9px 10px;border-radius:4px;font:500 14px/1.2 var(--display);color:var(--e-inchiostro);cursor:pointer}
+.sw-pop button:hover{background:var(--e-sabbia)}
+.sw-pop button svg{width:16px;height:16px;flex:none;fill:currentColor}
+.sw-pop button svg.o{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sw-pop .sw-pop-h{font:600 11px/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--e-nebbia);padding:6px 10px 4px}
+.sw-pop-scrim{position:fixed;inset:0;z-index:89}
+@media (max-width:600px){.sw-pop{left:12px!important;right:12px!important;top:auto!important;bottom:12px!important;min-width:0;padding:10px 8px}.sw-pop button{padding:12px 10px;font-size:15px}}
 .sw-tag{font:600 10.5px/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--e-grafite);border:1px solid var(--e-linea-forte);border-radius:3px;padding:2px 6px}
 .sw-tag.free{background:var(--e-sabbia);border-color:transparent}
 
@@ -210,6 +226,17 @@ body{background:var(--e-carta)}
   .sw-mhead,.sw-mfoot{border-radius:0}
 }
 @media (max-width:600px){
+  .sw-hero{padding:22px 0 14px}
+  .sw-hero h1{margin:8px 0 6px;font-size:30px!important}
+  .sw-intro>summary{display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;font:600 14px/1.2 var(--display);color:var(--e-grafite);padding:4px 0}
+  .sw-intro>summary::after{content:"";display:inline-block;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 2px;transition:transform .15s}
+  .sw-intro[open]>summary::after{transform:rotate(-135deg);margin-top:3px}
+  .sw-intro .lead{margin-top:10px;font-size:16px}
+  .sw-paths{padding-top:12px;padding-bottom:2px}
+  .sw-paths-grid{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 10px;margin:0 -20px;padding-left:20px;padding-right:20px;scroll-padding-left:20px;scrollbar-width:none}
+  .sw-paths-grid::-webkit-scrollbar{display:none}
+  .sw-paths-grid .sw-path{flex:0 0 74%;scroll-snap-align:start}
+  .sw-paths-grid .sw-path span{display:none}
   .sw-fab{right:14px;bottom:14px;padding:11px 14px 11px 12px;font-size:14px}
   .sw-grid{columns:1}
   .sw-card{margin-bottom:16px}
@@ -262,7 +289,11 @@ body{background:var(--e-carta)}
   <div class="wrap">
     <span class="eyebrow">Risorse · Marketing ideas</span>
     <h1>L'Archivio del Marketing <em>dell'Ospitalità</em></h1>
-    <p class="lead">Idee prese da annunci, email, landing e homepage che funzionano, in Italia e nel mondo. Per ognuna ti dico perché funziona e come portarla nel tuo hotel o nel tuo ristorante. Filtra per formato, leva e occasione.</p>
+    <details class="sw-intro" id="intro">
+      <summary>Cos'è questo archivio</summary>
+      <p class="lead">Idee prese da annunci, email, landing e homepage che funzionano, in Italia e nel mondo. Per ognuna ti dico perché funziona e come portarla nel tuo hotel o nel tuo ristorante. Filtra per formato, leva e occasione.</p>
+      <p class="sw-lingua">La maggior parte dei materiali è in lingua originale, quasi sempre l'inglese: in ogni scheda trovi il pulsante «Traduci in italiano».</p>
+    </details>
   </div>
 </section>
 <div class="wrap sw-paths" id="paths"></div>
@@ -433,6 +464,7 @@ async function api(azione, body={}){
 const CUORI_LS='hp-swipe-cuori';
 const miei = () => { try { return new Set(JSON.parse(localStorage.getItem(CUORI_LS)||'[]')); } catch { return new Set(); } };
 const salvaMiei = set => { try { localStorage.setItem(CUORI_LS, JSON.stringify([...set])); } catch {} };
+const SHARE_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4"/><path d="m8 8 4-4 4 4"/><path d="M5 13v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6"/></svg>';
 const CUORE_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.3 7.7 3.6 4.5 6.9 4.5c2 0 3.4 1.1 4.1 2.3.7-1.2 2.1-2.3 4.1-2.3 3.3 0 5.6 3.2 4.2 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>';
 /* Percorsi: ingressi per problema. Ogni percorso tiene le idee che hanno almeno uno dei tag in «any». Si modificano qui. */
 const PERCORSI = [
@@ -483,6 +515,9 @@ async function carica(){
   if(r.ok){ S.items=r.esempi||[]; hay.clear(); notice(''); }
   else notice('Archivio non raggiungibile ('+errore(r.errore)+'). Ricarica la pagina più tardi.');
   render();
+  // arrivo da un link condiviso (/marketing-ideas/?idea=<id>): apre subito quella scheda
+  const idea=new URLSearchParams(location.search).get('idea');
+  if(idea && r.ok && !document.querySelector('.sw-modal')){ if(S.items.some(x=>x.id===idea)) openDetail(idea); else { history.replaceState(null,'',location.pathname); toast('Questa idea non è più nell\'archivio'); } }
 }
 
 /* ---------- Filtri ---------- */
@@ -563,7 +598,7 @@ function renderGrid(){
       ${img?`<img class="sw-thumb" loading="lazy" src="${imgUrl(img)}" alt="">`:(it.copy?`<div class="sw-quote">${esc(it.copy.slice(0,400))}</div>`:'')}
       <div class="sw-body"><h3>${esc(it.title||'Senza titolo')}</h3>
       <div class="sw-meta">${it.brand?`<span>${esc(it.brand)}</span>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}</div>
-      <div class="sw-foot"><span></span>${cuoreBtn(it)}</div>
+      <div class="sw-foot"><span></span><span class="sw-acts">${condividiBtn(it)}${cuoreBtn(it)}</span></div>
       </div></article>`;
   }).join('');
 }
@@ -576,6 +611,64 @@ async function toggleCuore(id){
   document.querySelectorAll(`[data-cuore="${CSS.escape(id)}"]`).forEach(b=>{ b.classList.toggle('on',!on); b.setAttribute('aria-pressed',String(!on)); b.querySelector('span').textContent=it.cuori; });
   try{ const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({azione:'cuore',id,valore})}).then(x=>x.json()); if(r.ok){ it.cuori=r.cuori; document.querySelectorAll(`[data-cuore="${CSS.escape(id)}"] span`).forEach(e=>e.textContent=r.cuori); } }catch{}
   if(S.sort==='cuori') renderGrid();
+}
+
+/* ---------- Condividi: link alla scheda (/marketing-ideas/i/<id>, con anteprima per i social) o l'immagine stessa ---------- */
+function condividiBtn(it,lg){ if(statoDi(it)!=='pubblicato') return ''; return `<button type="button" class="sw-share ${lg?'sw-share--lg':''}" data-share="${esc(it.id)}" aria-label="Condividi" title="Condividi">${SHARE_SVG}${lg?'<span>Condividi</span>':''}</button>`; }
+const linkIdea = id => `${location.origin}/marketing-ideas/i/${id}`;
+function chiudiPop(){ document.querySelectorAll('.sw-pop,.sw-pop-scrim').forEach(e=>e.remove()); }
+async function fileIdea(it){
+  const img=(it.images||[])[0]; if(!img) return null;
+  const b=await fetch(imgUrl(img)).then(r=>r.ok?r.blob():null).catch(()=>null); if(!b) return null;
+  const ext={'image/png':'png','image/webp':'webp','image/gif':'gif'}[b.type]||'jpg';
+  const nome=(it.title||'idea').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)||'idea';
+  return new File([b],`${nome}.${ext}`,{type:b.type||'image/jpeg'});
+}
+function apriCondividi(id, btn){
+  chiudiPop();
+  const it=S.items.find(x=>x.id===id); if(!it) return;
+  const url=linkIdea(id), titolo=it.title||'Idea di marketing', testo=`${titolo}${it.brand?' · '+it.brand:''} — L'Archivio del Marketing dell'Ospitalità`;
+  const u=encodeURIComponent(url), t=encodeURIComponent(testo);
+  const nativo=!!navigator.share, img=(it.images||[])[0];
+  const voci=[
+    nativo?['nativo','Condividi…','<svg class="o" viewBox="0 0 24 24"><path d="M12 15V4"/><path d="m8 8 4-4 4 4"/><path d="M5 13v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6"/></svg>']:null,
+    nativo&&img&&navigator.canShare?['immagine','Condividi l\'immagine (Instagram, Stories)','<svg class="o" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>']:null,
+    ['fb','Facebook','<svg viewBox="0 0 24 24"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg>'],
+    ['wa','WhatsApp','<svg viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5zm0 17.3c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A7.8 7.8 0 1 1 12 19.8zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-.9-1-1.2-1.6-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.6.6-.9 1.3-.9 2.1.1.9.4 1.7 1 2.4 1 1.5 2.3 2.7 3.9 3.5.5.2.9.4 1.4.5.5.2 1 .2 1.5.1.6-.2 1.1-.6 1.4-1.1.1-.3.2-.7.1-1l-.4-.2z"/></svg>'],
+    ['li','LinkedIn','<svg viewBox="0 0 24 24"><path d="M6.5 8.5H3.6V20h2.9V8.5zM5 7.2a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4zM20.4 20h-2.9v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V20H10.6V8.5h2.8v1.6c.6-1 1.7-1.8 3.2-1.8 3.4 0 3.9 2.2 3.9 5.1V20z"/></svg>'],
+    ['copia','Copia il link','<svg class="o" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>'],
+    img?['scarica','Scarica l\'immagine','<svg class="o" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m8 11 4 4 4-4"/><path d="M5 19h14"/></svg>']:null,
+  ].filter(Boolean);
+  const pop=document.createElement('div'); pop.className='sw-pop'; pop.setAttribute('role','menu');
+  pop.innerHTML=`<div class="sw-pop-h">Condividi questa idea</div>`+voci.map(v=>`<button type="button" role="menuitem" data-via="${v[0]}">${v[2]}<span>${v[1]}</span></button>`).join('');
+  const scrim=document.createElement('div'); scrim.className='sw-pop-scrim'; scrim.onclick=chiudiPop;
+  document.body.append(scrim,pop);
+  const r=btn.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
+  pop.style.left=Math.max(8,Math.min(r.left, innerWidth-pw-8))+'px';
+  pop.style.top=(r.bottom+ph+8<innerHeight? r.bottom+6 : Math.max(8,r.top-ph-6))+'px';
+  pop.querySelector('button')?.focus();
+  const apri=h=>window.open(h,'_blank','noopener,width=640,height=560');
+  pop.onclick=async e=>{
+    const b=e.target.closest('[data-via]'); if(!b) return;
+    const via=b.dataset.via; if(via!=='immagine') chiudiPop();
+    switch(via){
+      case 'nativo': try{ await navigator.share({title:titolo,text:testo,url}); }catch{} break;
+      case 'immagine': {
+        b.disabled=true; b.querySelector('span').textContent='Preparo l\'immagine…';
+        const f=await fileIdea(it); chiudiPop();
+        if(f && navigator.canShare({files:[f]})){ try{ await navigator.share({files:[f],title:titolo,text:`${testo}\n${url}`}); }catch{} }
+        else { try{ await navigator.share({title:titolo,text:testo,url}); }catch{} }
+        break; }
+      case 'fb': apri(`https://www.facebook.com/sharer/sharer.php?u=${u}`); break;
+      case 'wa': apri(`https://api.whatsapp.com/send?text=${t}%20${u}`); break;
+      case 'li': apri(`https://www.linkedin.com/sharing/share-offsite/?url=${u}`); break;
+      case 'copia': try{ await navigator.clipboard.writeText(url); toast('Link copiato'); }catch{ toast('Copia non consentita da questo browser'); } break;
+      case 'scarica': {
+        const f=await fileIdea(it); if(!f) return toast('Immagine non disponibile');
+        const a=document.createElement('a'); a.href=URL.createObjectURL(f); a.download=f.name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+        break; }
+    }
+  };
 }
 
 /* ---------- Eventi ---------- */
@@ -595,6 +688,7 @@ $('#exportBtn').addEventListener('click',async()=>{
 document.addEventListener('click',e=>{
   const pp=e.target.closest('[data-percorso]'); if(pp){ S.percorso=pp.dataset.percorso||null; S.sel.clear(); render(); if(S.percorso) $('#pathBanner').scrollIntoView({behavior:'smooth',block:'start'}); return; }
   const c=e.target.closest('[data-cuore]'); if(c){ e.stopPropagation(); toggleCuore(c.dataset.cuore); return; }
+  const sh=e.target.closest('[data-share]'); if(sh){ e.stopPropagation(); apriCondividi(sh.dataset.share, sh); return; }
   const t=e.target.closest('[data-tag],[data-rating],[data-act],[data-open]'); if(!t||t.closest('.sw-modal')) return;
   if(t.dataset.tag){ S.sel.has(t.dataset.tag)?S.sel.delete(t.dataset.tag):S.sel.add(t.dataset.tag); render(); }
   else if(t.dataset.rating){ const n=+t.dataset.rating; S.minRating=S.minRating===n?0:n; render(); }
@@ -609,7 +703,7 @@ document.addEventListener('click',e=>{
   }
 });
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){ closeModal(); apriFiltri(false); }
+  if(e.key==='Escape'){ if(document.querySelector('.sw-pop')){ chiudiPop(); return; } closeModal(); apriFiltri(false); }
   if(e.key==='Enter' && e.target.matches('.sw-card')) openDetail(e.target.dataset.open);
   if(e.key==='/' && !e.target.closest('input,textarea,select')){e.preventDefault();$('#q').focus();}
 });
@@ -622,6 +716,8 @@ function openModal(html, nudo){
   $('#scrim').addEventListener('mousedown',e=>{ if(e.target.id==='scrim') closeModal(); });
 }
 function closeModal(){
+  chiudiPop();
+  if(new URLSearchParams(location.search).has('idea')) history.replaceState(null,'',location.pathname);
   if(EDIT){
     const nuove=EDIT.imgs.filter(i=>i.nuova&&i.id).map(i=>i.id);
     if(nuove.length && !EDIT.salvato) api('scarta',{immagini:nuove});
@@ -633,6 +729,7 @@ function closeModal(){
 
 function openDetail(id){
   const it=S.items.find(x=>x.id===id); if(!it) return;
+  if(statoDi(it)==='pubblicato') history.replaceState(null,'',`${location.pathname}?idea=${encodeURIComponent(id)}`);
   const groups=TAX.map(f=>({f,vals:(it.tags||[]).filter(t=>tagFacet(t)===f.key)})).filter(g=>g.vals.length);
   const free=(it.tags||[]).filter(t=>tagFacet(t)==='tag');
   const date=it.created_at?new Date(it.created_at).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'}):'';
@@ -646,7 +743,7 @@ function openDetail(id){
         (it.copy?`<div class="sw-copybox">${esc(it.copy)}</div>`:'<div class="sw-empty">Nessuna immagine</div>')}</div>
       <div>
         <div class="sw-meta" style="margin-bottom:6px">${it.brand?`<b style="color:var(--e-inchiostro)">${esc(it.brand)}</b>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}${date?`<span>Aggiunto il ${date}</span>`:''}</div>
-        <div style="margin:4px 0 10px">${cuoreBtn(it,true)}</div>
+        <div class="sw-acts" style="margin:4px 0 10px;flex-wrap:wrap">${cuoreBtn(it,true)}${condividiBtn(it,true)}</div>
         ${it.url?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Fonte</span></div><a class="sw-src" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.url)}</a>`:''}
         ${it.why?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Perché funziona</span></div><div class="sw-prose">${esc(it.why)}</div>`:''}
         ${it.steal?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Come rubarlo</span></div><div class="sw-prose">${esc(it.steal)}</div>`:''}
@@ -923,6 +1020,12 @@ async function remove(){
   if(!r.ok){ E.busy=false; $('#saveStatus').textContent='Eliminazione non riuscita.'; return; }
   S.items=S.items.filter(x=>x.id!==E.id); closeModal(); render(); toast('Esempio eliminato');
 }
+
+// la presentazione è ripiegata solo su schermi piccoli; su desktop resta sempre aperta
+const mqIntro=matchMedia('(max-width:600px)');
+const sistemaIntro=()=>{ const d=$('#intro'); if(!mqIntro.matches) d.open=true; else if(!d.dataset.toccato) d.open=false; };
+$('#intro').addEventListener('toggle',()=>{ if(mqIntro.matches) $('#intro').dataset.toccato='1'; });
+sistemaIntro(); mqIntro.addEventListener('change',sistemaIntro);
 
 mostra();
 })();
