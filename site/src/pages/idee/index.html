@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Idee di marketing per il tuo hotel · Hotel Positioning</title>
+<meta name="description" content="Scrivi l'indirizzo del sito del tuo hotel: leggo le pagine, cerco concorrenti e recensioni, e scelgo dall'Archivio del Marketing tre idee scritte per te, con i passi per farle. Gratis.">
+<link rel="canonical" href="https://hotelpositioning.com/idee/">
+<meta property="og:title" content="Tre idee di marketing scritte per il tuo hotel">
+<meta property="og:description" content="Dal tuo sito, dai tuoi concorrenti e dalle tue recensioni. Ogni idea parte da un esempio vero dell'Archivio del Marketing. Gratis.">
+<meta property="og:type" content="website">
+<!-- @include head -->
+<style>
+/* landing senza menù (come /tagliando/): testata con il solo logo, footer con le sole note legali */
+.lp-top{background:var(--surface-cream);border-bottom:1px solid var(--line-soft)}
+.lp-top .wrap{display:flex;align-items:center;min-height:64px}
+.lp-foot{padding:28px 0}
+.lp-foot .legal{border:0;padding:0;margin:0}
+/* stesso design system morbido del Tagliando: pannelli bianchi, bordi 2px, ombra piena */
+.ihero{padding:clamp(32px,4vw,56px) 0 clamp(56px,7vw,96px)}
+.ihero .split{align-items:start;grid-template-columns:1fr 1fr}
+@media (min-width:901px){.ihero .split > .tg{position:sticky;top:90px}}
+.ihero h1{margin:22px 0 22px;font-size:clamp(40px,4.4vw,66px)}
+.ihero h1 em{color:inherit;font-style:normal;background:linear-gradient(transparent 62%,var(--giallo) 62% 92%,transparent 92%)}
+.ihero .lead{margin-bottom:20px;font-weight:600;color:var(--inchiostro)}
+.come{list-style:none;display:grid;gap:12px;margin:6px 0 22px;counter-reset:c}
+.come li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font:400 17px/1.45 var(--text);counter-increment:c}
+.come li::before{content:counter(c);width:28px;height:28px;border-radius:50%;border:2px solid var(--inchiostro);background:#fff;display:grid;place-items:center;font:800 14px var(--display)}
+.come b{font-weight:700}
+
+.tg{background:#fff;border:2px solid var(--inchiostro);border-radius:24px;box-shadow:5px 5px 0 var(--inchiostro);overflow:hidden}
+.tg-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px clamp(18px,2.6vw,28px);border-bottom:2px solid var(--inchiostro);background:var(--yellow-soft);font:700 13px/1.3 var(--display);letter-spacing:.04em;text-transform:uppercase}
+.tg-body{padding:clamp(20px,2.6vw,30px)}
+[hidden]{display:none!important}
+.tg .field{display:grid;gap:6px;margin-bottom:16px}
+.tg .field label{font:600 14px/1.3 var(--text)}
+.tg .field small{font-weight:400;color:var(--muted)}
+.tg .field input{width:100%;font:400 16px var(--text);background:#fff;border:1.5px solid var(--line-field);border-radius:10px;min-height:50px;padding:10px 14px}
+.tg .field input:focus{outline:none;box-shadow:0 0 0 3px var(--focus);border-color:var(--inchiostro)}
+.tg .field .em{display:none}
+.tg .field.err input{border-color:var(--cost-text);background:#fff7f4}
+.tg .field.err .em{display:inline-block;justify-self:start;color:var(--inchiostro);background:var(--cost-soft);padding:3px 10px;border-radius:999px;font:700 13px var(--text)}
+.tg .check{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font:400 15px/1.45 var(--text);margin:4px 0 12px}
+.tg .check.opt{margin-bottom:20px;color:var(--ink-2s)}
+.tg .check input{width:20px;height:20px;margin-top:2px;accent-color:var(--inchiostro)}
+.tg .check.err span{color:var(--cost-text)}
+.tg .btn[type=submit]{--bg:var(--giallo);--fg:#262521;width:100%;border:2px solid var(--inchiostro);font-size:18px;padding:16px 22px}
+.tg .tg-note{margin-top:14px;font:400 14px/1.45 var(--text);color:var(--inchiostro-3)}
+
+.steps{list-style:none;display:grid;gap:12px;margin:4px 0 18px}
+.steps li{display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:center;padding:14px 16px;border:2px solid var(--line-soft);border-radius:14px;font:600 16px/1.35 var(--text);transition:border-color .15s,background .15s}
+.steps li small{display:block;font-weight:400;font-size:14px;color:var(--muted)}
+.steps .st{width:26px;height:26px;border-radius:50%;border:2px solid var(--inchiostro);background:#fff}
+.steps li.run .st{border-color:var(--line-soft);border-top-color:var(--inchiostro);animation:gira .9s linear infinite}
+.steps li.ok{border-color:var(--inchiostro);background:var(--surface-cream)}
+.steps li.ok .st{background:var(--verde)}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.steps li.run .st{animation:none;border-color:var(--inchiostro);background:var(--yellow-soft)}}
+.wait{font:400 15px/1.5 var(--text);color:var(--muted)}
+.errbox{padding:16px 18px;border-radius:14px;background:var(--cost-soft);font:400 16px/1.5 var(--text);margin-bottom:16px}
+.errbox b{display:block;font:800 18px/1.3 var(--display);margin-bottom:4px}
+.again{background:none;border:0;padding:0;margin-top:14px;font:600 15px var(--text);text-decoration:underline;color:var(--inchiostro);cursor:pointer}
+
+/* risultato */
+.ris{padding:0 0 clamp(56px,7vw,96px)}
+.ris-head{display:grid;gap:12px;margin-bottom:clamp(24px,3vw,36px)}
+.ris-head h2{font-size:clamp(30px,3.6vw,48px);line-height:1.05;outline:0;max-width:24ch}
+.ris-head .url{font:400 14px/1.4 var(--text);color:var(--muted);word-break:break-all}
+.parole{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font:600 14px var(--text)}
+.parole span{padding:4px 12px;border-radius:999px;background:var(--yellow-soft);border:1.5px solid var(--inchiostro)}
+.parole .k{background:none;border:0;padding:0;color:var(--muted);font-weight:400}
+.idee{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+@media (max-width:1000px){.idee{grid-template-columns:1fr}}
+.idea{background:#fff;border:2px solid var(--inchiostro);border-radius:20px;box-shadow:4px 4px 0 var(--inchiostro);padding:clamp(20px,2.4vw,28px);display:grid;gap:14px}
+.idea .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.idea .n{font:800 14px var(--display);width:34px;height:34px;border-radius:50%;border:2px solid var(--inchiostro);display:grid;place-items:center;background:var(--giallo)}
+.idea .canale{font:700 12px/1.3 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.idea h3{font:800 clamp(20px,1.8vw,24px)/1.2 var(--display)}
+.idea ol{display:grid;gap:8px;padding-left:20px;font:600 16px/1.45 var(--text)}
+.idea .perche{font:400 16px/1.5 var(--text);color:var(--ink-2s)}
+.idea .conc{font:400 15px/1.5 var(--text);color:var(--muted);border-left:3px solid var(--line-soft);padding-left:12px}
+.idea .kpi{font:400 15px/1.45 var(--text);padding:10px 12px;border-radius:12px;background:var(--surface-cream)}
+.idea .kpi b{font-weight:700}
+.esempio{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center;padding-top:14px;border-top:2px dashed var(--line-soft);color:inherit;text-decoration:none}
+.esempio img{width:72px;height:72px;object-fit:cover;object-position:top;border:2px solid var(--inchiostro);border-radius:10px;background:var(--surface-sand)}
+.esempio .k{display:block;font:700 12px/1.3 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.esempio b{display:block;font:700 15px/1.3 var(--text);margin-top:2px}
+.esempio small{display:block;font:400 14px/1.4 var(--text);color:var(--ink-2s);margin-top:4px}
+.esempio:hover b{text-decoration:underline}
+.dopo{margin-top:clamp(32px,4vw,48px);background:var(--giallo);border:2px solid var(--inchiostro);border-radius:24px;box-shadow:6px 6px 0 var(--inchiostro);padding:clamp(28px,4vw,48px) clamp(22px,4vw,48px);display:grid;gap:14px;justify-items:start}
+.dopo h2{max-width:24ch;font-size:clamp(28px,3.4vw,44px)}
+.dopo p{max-width:60ch;font:400 17px/1.5 var(--text)}
+.dopo .btn{--bg:var(--inchiostro);--fg:#fff;border:2px solid var(--inchiostro);font-size:17px;padding:14px 24px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+@media (max-width:900px){.ihero .split{grid-template-columns:1fr}}
+.qa{display:grid;gap:12px}
+.qa details{background:#fff;border:2px solid var(--inchiostro);border-radius:16px;padding:16px 18px}
+.qa summary{font:700 18px/1.3 var(--display);cursor:pointer;list-style:none}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";float:right;font-weight:800}
+.qa details[open] summary::after{content:"–"}
+.qa details p{margin-top:10px;font:400 16px/1.55 var(--text);color:var(--ink-2s)}
+</style>
+<!-- @include tema -->
+</head>
+<body>
+<header class="lp-top"><div class="wrap"><span class="logo" aria-label="Hotel Positioning"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</span></div></header>
+
+<main id="main">
+
+<section class="ihero" id="hero">
+  <div class="wrap">
+    <div class="split">
+      <div class="testo">
+        <span class="eyebrow"><span class="dot"></span>Per hotel · gratis · tre minuti</span>
+        <h1>Tre idee di marketing <em>scritte per il tuo hotel.</em></h1>
+        <p class="lead">Non idee da manuale. Idee che partono da quello che il tuo hotel ha già, e che puoi fare da domani.</p>
+        <ol class="come">
+          <li><span><b>Leggo il tuo sito:</b> la homepage e le pagine delle camere, delle offerte, del ristorante.</span></li>
+          <li><span><b>Cerco fuori:</b> i concorrenti vicini, le parole che tornano nelle recensioni, cosa succede in zona nei prossimi mesi.</span></li>
+          <li><span><b>Scelgo nell'<a href="/marketing-ideas/">Archivio del Marketing</a></b> le idee di altri brand che servono a te, e le riscrivo per il tuo hotel.</span></li>
+          <li><span><b>Ricevi tre idee</b>, ognuna con i passi, il numero da guardare e l'esempio vero da cui parte.</span></li>
+        </ol>
+      </div>
+
+      <div class="tg" id="strumento">
+        <div class="tg-top"><span id="tgStato">Idee per il tuo hotel</span><span aria-hidden="true">Sito · Concorrenti · Archivio</span></div>
+
+        <form class="tg-body" id="iForm" novalidate>
+          <div class="field"><label for="i-url">L'indirizzo del sito del tuo hotel</label><input id="i-url" name="url" inputmode="url" autocomplete="url" required placeholder="www.tuohotel.it"><span class="em">Scrivi l'indirizzo del sito</span></div>
+          <div class="field"><label for="i-email">Email <small>(le idee le vedi subito qui, e ti scrivo se qualcosa non va)</small></label><input id="i-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'email</span></div>
+          <label class="check" id="i-privacy-l"><input type="checkbox" id="i-privacy" name="privacy" required><span>Ho letto la <a href="/privacy-policy/">privacy policy</a>: Hotel Positioning legge il mio sito con l'aiuto di un'AI e salva la mia email.</span></label>
+          <label class="check opt"><input type="checkbox" id="i-consenso" name="consenso_email"><span><b>Facoltativo:</b> mandami ogni tanto un'idea nuova dall'archivio.</span></label>
+          <button class="btn dark" type="submit">Trova le mie idee</button>
+          <p class="tg-note">Ci vogliono due o tre minuti: leggo il sito e cerco concorrenti e recensioni sul web.</p>
+        </form>
+
+        <div class="tg-body" id="iLavoro" hidden aria-live="polite">
+          <ul class="steps">
+            <li id="st1"><span class="st"></span><span>Leggo il tuo sito<small>homepage e pagine interne</small></span></li>
+            <li id="st2"><span class="st"></span><span>Cerco concorrenti e recensioni<small>la parte più lunga</small></span></li>
+            <li id="st3"><span class="st"></span><span>Scelgo nell'archivio<small>le idee che servono al tuo hotel</small></span></li>
+            <li id="st4"><span class="st"></span><span>Scrivo le idee per te<small>con i passi e il numero da guardare</small></span></li>
+          </ul>
+          <p class="wait">Puoi lasciare aperta la pagina e tornare tra qualche minuto.</p>
+        </div>
+
+        <div class="tg-body" id="iErrore" hidden>
+          <div class="errbox" role="alert"><b>Non ci sono riuscito</b><span id="erTesto"></span></div>
+          <p class="wait">Se il sito è tuo e non si lascia leggere, scrivimi a <a href="mailto:consulting@francescoastolfi.net">consulting@francescoastolfi.net</a>: lo guardo io.</p>
+          <button type="button" class="again" id="erAgain">Riprova con un altro indirizzo</button>
+        </div>
+
+        <div class="tg-body" id="iFatto" hidden>
+          <p style="font:600 17px/1.45 var(--text)">Le tue idee sono qui sotto.</p>
+          <button type="button" class="again" id="okAgain">Trova idee per un altro sito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ris" id="risultato" hidden>
+  <div class="wrap">
+    <div class="ris-head">
+      <span class="kicker"><b>Le tue idee</b></span>
+      <h2 id="risTitolo" tabindex="-1">Tre idee per il tuo hotel</h2>
+      <p class="url" id="risUrl"></p>
+      <div class="parole" id="risParole"></div>
+    </div>
+    <div class="idee" id="risIdee"></div>
+    <div class="dopo">
+      <h2>Le idee funzionano meglio se sai perché un ospite sceglie te.</h2>
+      <p>Ogni idea qui sopra mette in vista qualcosa che hai già. Se non è chiaro cosa ti rende diverso dall'hotel accanto, le idee restano trucchi. Mandami la homepage: copro il logo, la metto accanto a quella dei tuoi concorrenti e ti dico se si distinguono. Gratis, lo faccio io.</p>
+      <a class="btn" href="/smontaggio/">Richiedi lo smontaggio gratuito</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap two">
+    <div>
+      <span class="kicker"><b>Da dove vengono le idee</b></span>
+      <h2 style="margin-top:14px">Da un archivio di esempi veri, <em>non dalla fantasia di un'AI.</em></h2>
+      <div class="prose" style="margin-top:22px">
+        <p>Ogni giorno raccolgo annunci, email, homepage e pagine offerta di hotel, ristoranti e brand che sanno vendere. Li metto nell'<a href="/marketing-ideas/">Archivio del Marketing dell'Ospitalità</a>, ognuno con il perché funziona e come rubarlo.</p>
+        <p>Qui l'AI fa una cosa sola: sceglie nell'archivio le idee che servono al tuo hotel e le riscrive con i tuoi nomi, le tue pagine, le parole dei tuoi ospiti. Sotto ogni idea trovi l'esempio da cui parte.</p>
+      </div>
+    </div>
+    <div class="qa">
+      <details open><summary>Quanto costa?</summary><p>Niente. Lasci l'indirizzo del sito e la tua email, le idee le vedi in questa pagina.</p></details>
+      <details><summary>Cosa leggi del mio sito?</summary><p>Il testo della homepage e di qualche pagina interna (camere, offerte, ristorante, contatti). Poi cerco sul web i concorrenti vicini, le recensioni pubbliche e gli eventi della zona. Non entro in aree riservate e non salvo nulla del sito oltre alle idee.</p></details>
+      <details><summary>Le idee sono giuste per forza?</summary><p>No. Sono un punto di partenza scritto da un'AI con il mio metodo: controlla i nomi e i dati prima di usarle. Dove manca un dato lo trovi tra parentesi quadre, da completare tu.</p></details>
+      <details><summary>Posso provarlo sul sito di un concorrente?</summary><p>Sì. Vedi cosa potrebbe fare lui, e cosa potresti fare tu prima di lui.</p></details>
+      <details><summary>Funziona con ogni sito?</summary><p>Quasi. Se il sito si costruisce tutto con JavaScript o blocca le letture automatiche, te lo dico subito. In quel caso scrivimi e lo guardo io.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot lp-foot"><div class="wrap"><div class="legal">
+  <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
+  <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
+</div></div></footer>
+<!-- @include cookie-banner -->
+<script src="/assets/site.js"></script>
+<script>
+(function(){
+  var FN = '/.netlify/functions/idee';
+  var $ = function(id){ return document.getElementById(id); };
+  var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+  var form = $('iForm'), pannelli = ['iForm','iLavoro','iErrore','iFatto'];
+  function mostra(id){ pannelli.forEach(function(p){ $(p).hidden = p !== id; }); }
+  function passo(n, stato){ var li = $('st' + n); li.className = stato || ''; }
+  var timer = [];
+
+  var q = new URLSearchParams(location.search).get('url');
+  if (q) $('i-url').value = q;
+
+  function nuovoId(){
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'i' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+  }
+
+  function valida(){
+    var ok = true;
+    var u = $('i-url'), e = $('i-email'), p = $('i-privacy');
+    var fu = u.value.trim().length > 3 && /\./.test(u.value); u.parentNode.classList.toggle('err', !fu); ok = ok && fu;
+    var fe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value.trim()); e.parentNode.classList.toggle('err', !fe); ok = ok && fe;
+    $('i-privacy-l').classList.toggle('err', !p.checked); ok = ok && p.checked;
+    return ok;
+  }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if (!valida()) return;
+    var id = nuovoId();
+    var corpo = { id: id, url: $('i-url').value.trim(), email: $('i-email').value.trim(), privacy: true, consenso_email: $('i-consenso').checked, pagina: location.pathname };
+    mostra('iLavoro'); $('tgStato').textContent = 'Sto lavorando';
+    [1,2,3,4].forEach(function(n){ passo(n, ''); }); passo(1, 'run');
+    // i passi avanzano a tempo: il lavoro vero è uno solo, in background
+    timer.push(setTimeout(function(){ passo(1,'ok'); passo(2,'run'); }, 12000));
+    timer.push(setTimeout(function(){ passo(2,'ok'); passo(3,'run'); }, 75000));
+    timer.push(setTimeout(function(){ passo(3,'ok'); passo(4,'run'); }, 100000));
+    if (window.dataLayer) dataLayer.push({ event: 'idee_richiesta' });
+    fetch(FN + '-background', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(corpo) })
+      .then(function(){ attendi(id, Date.now()); })
+      .catch(function(){ errore('Connessione interrotta. Riprova.'); });
+  });
+
+  function attendi(id, inizio){
+    fetch(FN + '?id=' + encodeURIComponent(id), { cache:'no-store' })
+      .then(function(r){ return r.json(); })
+      .then(function(r){
+        if (r.pronto) return r.ok ? risultato(r) : errore(r.messaggio || 'Qualcosa non ha funzionato. Riprova tra qualche minuto.');
+        if (Date.now() - inizio > 6 * 60000) return errore('Ci sto mettendo troppo. Riprova tra qualche minuto.');
+        setTimeout(function(){ attendi(id, inizio); }, 4000);
+      })
+      .catch(function(){
+        if (Date.now() - inizio > 6 * 60000) return errore('Connessione interrotta. Riprova.');
+        setTimeout(function(){ attendi(id, inizio); }, 5000);
+      });
+  }
+
+  function ferma(){ timer.forEach(clearTimeout); timer = []; }
+
+  function errore(msg){
+    ferma(); $('erTesto').textContent = msg; mostra('iErrore'); $('tgStato').textContent = 'Idee per il tuo hotel';
+  }
+
+  function risultato(r){
+    ferma(); [1,2,3,4].forEach(function(n){ passo(n,'ok'); });
+    mostra('iFatto'); $('tgStato').textContent = 'Fatto';
+    var idee = r.idee || [];
+    $('risTitolo').textContent = (idee.length === 3 ? 'Tre idee' : idee.length + ' idee') + ' per ' + (r.struttura || r.dominio || 'il tuo hotel');
+    $('risUrl').textContent = r.url || '';
+    var parole = (r.parole || []).slice(0, 5);
+    $('risParole').innerHTML = parole.length ? '<span class="k">Il tuo sito insiste su:</span>' + parole.map(function(p){ return '<span>' + esc(p) + '</span>'; }).join('') : '';
+    $('risIdee').innerHTML = idee.map(function(i, n){
+      var e = i.esempio;
+      return '<article class="idea">'
+        + '<div class="top"><span class="n">' + (n + 1) + '</span><span class="canale">' + esc(i.canale) + '</span></div>'
+        + '<h3>' + esc(i.titolo) + '</h3>'
+        + '<ol>' + (i.passi || []).map(function(p){ return '<li>' + esc(p) + '</li>'; }).join('') + '</ol>'
+        + '<p class="perche">' + esc(i.perche) + '</p>'
+        + (i.concorrente ? '<p class="conc">' + esc(i.concorrente) + '</p>' : '')
+        + '<p class="kpi"><b>Da guardare:</b> ' + esc(i.kpi) + '</p>'
+        + (e ? '<a class="esempio" href="/marketing-ideas/" target="_blank" rel="noopener">'
+            + (e.immagine ? '<img src="/.netlify/functions/swipe?img=' + encodeURIComponent(e.immagine) + '" alt="" loading="lazy">' : '<span></span>')
+            + '<span><span class="k">Parte da</span><b>' + esc(e.brand ? e.brand + ' · ' + e.title : e.title) + '</b><small>' + esc(i.dall_esempio) + '</small></span></a>' : '')
+        + '</article>';
+    }).join('');
+    $('risultato').hidden = false;
+    $('risultato').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function(){ $('risTitolo').focus({ preventScroll: true }); }, 400);
+    if (window.dataLayer) dataLayer.push({ event: 'idee_pronte' });
+  }
+
+  function daCapo(){ ferma(); mostra('iForm'); $('tgStato').textContent = 'Idee per il tuo hotel'; $('i-url').value = ''; $('strumento').scrollIntoView({ behavior:'smooth', block:'start' }); setTimeout(function(){ $('i-url').focus(); }, 300); }
+  $('erAgain').addEventListener('click', daCapo);
+  $('okAgain').addEventListener('click', function(){ $('risultato').hidden = true; daCapo(); });
+})();
+</script>
+</body>
+</html>
