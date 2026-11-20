@@ -3,7 +3,7 @@
 // Pubblico, senza chiave:
 //   GET  ?elenco=1                      → { esempi[] } solo quelli pubblicati, con il conteggio dei cuori
 //   POST { azione: 'cuore', id, valore: 1 | -1 } → { cuori } preferito di un visitatore (senza chiave; il browser ricorda i suoi)
-//   POST { azione: 'segnala', url, nota, nome?, email?, tipo?, dati? } → { ok } un visitatore propone un'idea: entra in coda «da valutare» (senza chiave)
+//   POST { azione: 'segnala', url?, nota?, nome?, email?, tipo?, dati? } → { ok } un visitatore manda un'idea (link o foto): entra in coda «da valutare»; nome → credito pubblico
 //   GET  ?img=<id>                      → lo screenshot (id casuale non indovinabile)
 //   GET  ?trad=<id>                     → { pronto, testo } traduzione italiana del copy, se già fatta
 //   GET  ?lavoro=<jobid>                → { pronto, ok, testo | errore } risultato di swipe-idea-background
@@ -65,6 +65,7 @@ function normalizza(e, esistente) {
     rating: Math.max(0, Math.min(5, Math.round(Number(e.rating) || 0))),
     tags: [...new Set((Array.isArray(e.tags) ? e.tags : []).filter((t) => typeof t === 'string' && t.includes(':')).map((t) => t.slice(0, 120)))].slice(0, 80),
     images: (Array.isArray(e.images) ? e.images : []).filter((x) => ID.test(String(x))).slice(0, 20),
+    credito: testo(e.credito ?? esistente?.credito, 120).trim(), // chi l'ha segnalata («Segnalata da Marta, Rimini»), visibile a tutti
     ...(esistente?.chiave_radar ? { chiave_radar: esistente.chiave_radar } : {}),
     ...(esistente?.segnalazione ? { segnalazione: esistente.segnalazione } : {}),
   };
@@ -156,8 +157,9 @@ export const handler = async (event) => {
     if (img) { const id = randomUUID(); await s.set(`img/${id}`, img.buf, { metadata: { tipo: img.tipo } }); images.push(id); }
     let host = '';
     try { host = url ? new URL(url).hostname.replace(/^www\./, '') : ''; } catch { /* url non valido: resta vuoto */ }
-    const riga = normalizza({ stato: 'da_valutare', fonte: 'segnalazione', title: host ? `Segnalazione: ${host}` : 'Segnalazione con screenshot', url, why: nota, images }, null);
-    riga.segnalazione = { nome: testo(d.nome, 120).trim(), email: testo(d.email, 200).trim(), nota, quando: riga.created_at };
+    const nome = testo(d.nome, 120).trim();
+    const riga = normalizza({ stato: 'da_valutare', fonte: 'segnalazione', title: host ? `Segnalazione: ${host}` : 'Segnalazione con foto', url, why: nota, images, credito: nome }, null);
+    riga.segnalazione = { nome, email: testo(d.email, 200).trim(), nota, quando: riga.created_at };
     await s.setJSON(`esempi/${riga.id}`, riga);
     return json(200, { ok: true });
   }

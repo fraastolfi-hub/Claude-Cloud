@@ -70,7 +70,16 @@ body{background:var(--e-carta)}
 .sw-segnala .field{margin-bottom:14px}
 .sw-segnala .field label{font-size:14px}
 .sw-segnala .field small{font-weight:400;color:var(--e-nebbia)}
-.sw-segnala textarea{min-height:96px}
+.sw-segnala textarea{min-height:72px}
+.sw-foto{display:flex;gap:12px;align-items:center;border:1px dashed var(--e-linea-forte);border-radius:6px;padding:12px 14px;background:var(--e-carta);cursor:pointer;transition:border-color .12s}
+.sw-foto:hover,.sw-foto.has{border-color:var(--e-inchiostro)}
+.sw-foto img{width:56px;height:56px;object-fit:cover;border-radius:4px;background:var(--e-sabbia)}
+.sw-foto svg{width:28px;height:28px;flex:none;fill:none;stroke:var(--e-inchiostro);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.sw-foto b{display:block;font:600 14px/1.3 var(--display);color:var(--e-inchiostro)}
+.sw-foto small{display:block;font-size:13px;color:var(--e-nebbia);margin-top:2px}
+.sw-foto input{position:absolute;width:1px;height:1px;opacity:0}
+.sw-oppure{text-align:center;font:600 11px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--e-nebbia);margin:12px 0}
+.sw-credito{font-size:14px;color:var(--e-grafite);margin:0 0 4px}
 .sw-segnala .sw-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:4px}
 .sw-ok{background:var(--e-sabbia);border-radius:6px;padding:18px;font-size:16px;line-height:1.5}
 .sw-segn-box{margin-top:18px;border-left:3px solid var(--e-giallo);padding:10px 14px;background:var(--e-foglio);border-radius:0 4px 4px 0;font-size:14px}
@@ -331,7 +340,7 @@ body{background:var(--e-carta)}
   </div>
 </div>
 </main>
-<button type="button" class="sw-fab" id="segnalaBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Segnala un'idea</span></button>
+<button type="button" class="sw-fab" id="segnalaBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Manda un'idea</span></button>
 <div id="modalRoot"></div>
 <div id="toast" class="sw-toast hidden" role="status"></div>
 <footer class="foot">
@@ -751,6 +760,7 @@ function openDetail(id){
         ${it.copy&&statoDi(it)==='pubblicato'&&!sembraItaliano(it.copy)?`<div style="margin-top:8px"><button type="button" class="sw-link" id="dTrad">Traduci in italiano</button> <span class="sw-wait" id="dTradSt"></span></div><div id="dTradOut"></div>`:''}
         ${groups.map(g=>`<div class="sw-fl"><span class="sw-lab" style="margin:0">${esc(g.f.label)}</span></div><div class="sw-chips">${g.vals.map(t=>`<button class="sw-chip" data-ftag="${esc(t)}">${esc(tagValue(t))}</button>`).join('')}</div>`).join('')}
         ${free.length?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Tag liberi</span></div><div class="sw-chips">${free.map(t=>`<button class="sw-chip free" data-ftag="${esc(t)}">${esc(tagLabel(t))}</button>`).join('')}</div>`:''}
+        ${it.credito?`<p class="sw-credito">Segnalata da <b>${esc(it.credito)}</b></p>`:''}
         ${CHIAVE&&it.segnalazione?`<div class="sw-segn-box"><b>Segnalata da ${esc(it.segnalazione.nome||'un lettore')}${it.segnalazione.email?' · '+esc(it.segnalazione.email):''}</b><br>${esc(it.segnalazione.nota||'')}</div>`:''}
         ${CHIAVE&&FONTE[it.fonte]&&!it.segnalazione?`<p class="sw-hint" style="margin-top:20px">Trovato dal radar (${FONTE[it.fonte]}). Controlla testo e tag prima di pubblicarlo.</p>`:''}
         ${statoDi(it)==='pubblicato'?`<div class="sw-adatta" id="dAdatta">
@@ -774,25 +784,45 @@ function openDetail(id){
   const ag=$('#aGo'); if(ag){ try{ $('#aEmail').value=localStorage.getItem('hp-swipe-email')||''; }catch{} ag.onclick=()=>adattaIdea(it); }
 }
 
-/* ---------- «Segnala un'idea»: chiunque propone, Francesco vaglia ---------- */
+/* ---------- «Manda un'idea»: chiunque manda una foto o un link, Francesco vaglia; chi vuole viene citato («Segnalata da …») ---------- */
 function apriSegnala(){
   openModal(`<div class="sw-segnala" role="document">
-    <h2>Segnala un'idea</h2>
-    <p class="lead">Un annuncio, un'email, una pagina che ti ha fermato. Incolla il link: lo guardo io e, se insegna qualcosa, entra nell'archivio.</p>
-    <div class="field"><label for="sgUrl">Link</label><input id="sgUrl" type="url" placeholder="https://…" autocomplete="off"></div>
-    <div class="field"><label for="sgNota">Note <small>(facoltative)</small></label><textarea id="sgNota" maxlength="2000" placeholder="Perché ti ha colpito, se vuoi dirmelo in due righe."></textarea></div>
+    <h2>Hai visto qualcosa di buono?</h2>
+    <p class="lead">Un cartello in un hotel, un menu scritto bene, un'email che ti ha fatto dire «bravi», un annuncio che ti ha fermato. Mandamelo con una foto o un link: lo guardo io e, se insegna qualcosa, entra nell'archivio con il tuo nome accanto.</p>
+    <label class="sw-foto" id="sgFoto"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span><b>Scatta o scegli una foto</b><small>Dal telefono va benissimo anche una foto storta.</small></span><input type="file" id="sgFile" accept="image/*"></label>
+    <div class="sw-oppure">oppure</div>
+    <div class="field"><label for="sgUrl">Il link</label><input id="sgUrl" type="url" placeholder="https://…" autocomplete="off"></div>
+    <div class="field"><label for="sgNota">Cosa ti ha colpito <small>(due righe, se ti va)</small></label><textarea id="sgNota" maxlength="2000" placeholder="Anche solo «guarda come hanno scritto il prezzo»."></textarea></div>
+    <div class="field"><label for="sgNome">Il tuo nome e città <small>(per citarti, se vuoi)</small></label><input id="sgNome" type="text" maxlength="120" placeholder="es. Marta, Rimini" autocomplete="name"></div>
     <input class="sw-hp" id="sgBot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <div class="sw-row"><button type="button" class="btn sm" id="sgGo">Invia</button><button type="button" class="btn sm ghost" id="sgNo">Annulla</button><span class="sw-wait" id="sgSt"></span></div>
+    <div class="sw-row"><button type="button" class="btn sm" id="sgGo">Mandala</button><button type="button" class="btn sm ghost" id="sgNo">Annulla</button><span class="sw-wait" id="sgSt"></span></div>
   </div>`, true);
-  setTimeout(()=>$('#sgUrl').focus(),0);
+  let foto=null;
+  try{ $('#sgNome').value=localStorage.getItem('hp-swipe-nome')||''; }catch{}
+  $('#sgFile').addEventListener('change',async e=>{
+    const f=e.target.files?.[0]; if(!f) return;
+    const box=$('#sgFoto'); box.querySelector('b').textContent='Preparo la foto…';
+    const blob=await prepara(f); foto={blob,tipo:blob.type||f.type||'image/jpeg'};
+    box.classList.add('has'); box.querySelector('svg')?.remove();
+    const im=new Image(); im.src=URL.createObjectURL(blob); im.alt=''; box.prepend(im);
+    box.querySelector('b').textContent='Foto pronta'; box.querySelector('small').textContent='Tocca per cambiarla.';
+  });
   $('#sgNo').onclick=closeModal;
   $('#sgGo').onclick=async()=>{
-    const url=$('#sgUrl').value.trim(), nota=$('#sgNota').value.trim(), st=$('#sgSt'), go=$('#sgGo');
-    if(!/^https?:\/\/\S+\.\S+/i.test(url)){ st.textContent='Incolla un link completo, con https://'; $('#sgUrl').focus(); return; }
+    const url=$('#sgUrl').value.trim(), nota=$('#sgNota').value.trim(), nome=$('#sgNome').value.trim(), st=$('#sgSt'), go=$('#sgGo');
+    if(!foto && !url){ st.textContent='Metti una foto o un link, uno dei due basta.'; $('#sgUrl').focus(); return; }
+    if(url && !/^https?:\/\/\S+\.\S+/i.test(url)){ st.textContent='Il link deve essere completo, con https://'; $('#sgUrl').focus(); return; }
     go.disabled=true; st.textContent='Invio…';
-    let r; try{ r=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({azione:'segnala',url,nota,'bot-field':$('#sgBot').value})}).then(x=>x.json()); }catch{ r={ok:false,errore:'rete'}; }
-    if(r?.ok){ $('.sw-segnala').innerHTML='<h2>Grazie.</h2><div class="sw-ok">L\'ho ricevuta. La guardo io e, se entra nell\'archivio, la trovi qui con il perché funziona e come portarla nel tuo hotel.</div><p style="margin:16px 0 0"><button type="button" class="btn sm" id="sgChiudi">Chiudi</button></p>'; $('#sgChiudi').onclick=closeModal; }
-    else { go.disabled=false; st.textContent={serve_link_o_immagine:'Incolla un link completo.',rete:'Connessione non riuscita: riprova.'}[r?.errore]||'Invio non riuscito: riprova.'; }
+    try{ nome?localStorage.setItem('hp-swipe-nome',nome):localStorage.removeItem('hp-swipe-nome'); }catch{}
+    const body={azione:'segnala',url,nota,nome,'bot-field':$('#sgBot').value};
+    if(foto){ body.tipo=foto.tipo; body.dati=await b64(foto.blob); }
+    let r; try{ r=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)}).then(x=>x.json()); }catch{ r={ok:false,errore:'rete'}; }
+    if(r?.ok){
+      const chi=nome?esc(nome.split(/[,|·-]/)[0].trim()):'';
+      $('.sw-segnala').innerHTML=`<h2>Ricevuta${chi?', '+chi:''}. Grazie!</h2><div class="sw-ok">La guardo con calma. Se entra nell'archivio la trovi qui, con il perché funziona, come portarla in un hotel${nome?' e il tuo nome accanto':''}.<br><br>Ne hai vista un'altra? Manda pure.</div><p style="margin:16px 0 0;display:flex;gap:10px"><button type="button" class="btn sm" id="sgAltra">Un'altra</button><button type="button" class="btn sm ghost" id="sgChiudi">Chiudi</button></p>`;
+      $('#sgChiudi').onclick=closeModal; $('#sgAltra').onclick=apriSegnala;
+    }
+    else { go.disabled=false; st.textContent={serve_link_o_immagine:'Metti una foto o un link.',immagine_grande:'La foto è troppo pesante: prova con una più piccola.',rete:'Connessione non riuscita: riprova.'}[r?.errore]||'Invio non riuscito: riprova.'; }
   };
 }
 
