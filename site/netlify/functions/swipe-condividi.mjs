@@ -14,7 +14,9 @@ const vai = (dove) => ({ statusCode: 302, headers: { location: dove, 'cache-cont
 
 export const handler = async (event) => {
   if (event.httpMethod !== 'GET') return { statusCode: 405 };
-  const id = String((event.queryStringParameters || {}).id || '').replace(/\/+$/, '');
+  // l'id arriva nel percorso (/marketing-ideas/i/<id>, Netlify non passa lo splat nella query) o in ?id= (chiamata diretta)
+  const m = String(event.rawUrl || event.path || '').match(/\/marketing-ideas\/i\/([0-9a-f-]{36})/i);
+  const id = m ? m[1] : String((event.queryStringParameters || {}).id || '').replace(/\/+$/, '');
   if (!ID.test(id)) return vai('/marketing-ideas/');
   const pagina = `/marketing-ideas/?idea=${id}`;
   const ua = event.headers?.['user-agent'] || '';

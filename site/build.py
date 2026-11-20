@@ -165,7 +165,7 @@ def build():
     # /vai/amazon: passaggio che conta i clic verso Amazon (funzione netlify/functions/amazon.mjs)
     # /marketing-ideas/i/<id>: link di condivisione di una scheda (anteprima social, poi la pagina; netlify/functions/swipe-condividi.mjs)
     (OUT / "_redirects").write_text("/vai/amazon  /.netlify/functions/amazon  200\n"
-                                    "/marketing-ideas/i/*  /.netlify/functions/swipe-condividi?id=:splat  200\n"
+                                    "/marketing-ideas/i/*  /.netlify/functions/swipe-condividi  200\n"
                                     + "".join(f"{a}  {b}  301\n" for a, b in REDIRECTS.items()))
     print(f"{len(urls)} pagine in {OUT}/")
 
