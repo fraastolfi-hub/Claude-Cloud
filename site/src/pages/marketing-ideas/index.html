@@ -64,6 +64,7 @@ body{background:var(--e-carta)}
 .sw-foto input{position:absolute;width:1px;height:1px;opacity:0}
 .sw-oppure{text-align:center;font:600 11px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--e-nebbia);margin:12px 0}
 .sw-credito{font-size:14px;color:var(--e-grafite);margin:0 0 4px}
+.sw-voto{font-size:13px;line-height:1.45;color:var(--e-nebbia);margin:0 0 10px;max-width:52ch}
 .sw-segnala .sw-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:4px}
 .sw-ok{background:var(--e-sabbia);border-radius:6px;padding:18px;font-size:16px;line-height:1.5}
 .sw-segn-box{margin-top:18px;border-left:3px solid var(--e-giallo);padding:10px 14px;background:var(--e-foglio);border-radius:0 4px 4px 0;font-size:14px}
@@ -622,6 +623,7 @@ function openDetail(id){
         (it.copy?`<div class="sw-copybox">${esc(it.copy)}</div>`:'<div class="sw-empty">Nessuna immagine</div>')}</div>
       <div>
         <div class="sw-meta" style="margin-bottom:6px">${it.brand?`<b style="color:var(--e-inchiostro)">${esc(it.brand)}</b>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}${date?`<span>Aggiunto il ${date}</span>`:''}</div>
+        ${it.rating?`<p class="sw-voto">Le stelle sono il voto di Francesco, da 1 a 5: quanto l'idea è rubabile e quanto insegna. I cuori sono dei lettori.</p>`:''}
         <div class="sw-acts" style="margin:4px 0 10px;flex-wrap:wrap">${cuoreBtn(it,true)}${condividiBtn(it,true)}</div>
         ${it.url?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Fonte</span></div><a class="sw-src" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.url)}</a>`:''}
         ${it.why?`<div class="sw-fl"><span class="sw-lab" style="margin:0">Perché funziona</span></div><div class="sw-prose">${esc(it.why)}</div>`:''}
