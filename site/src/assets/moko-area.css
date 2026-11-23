@@ -727,3 +727,6 @@ figure.rvc figcaption{font-size:13px;color:var(--grey);margin-top:8px;padding:0;
 .conf-box{min-width:0}
 .conf-box .mk-block-t{color:var(--cta)}
 .conf-list{max-height:none}
+a.pg{text-decoration:none}
+.acx-body .adc-grid,.acx-body .em-grid,.acx-body .ig-grid{margin-top:18px}
+.acx-body .pg-row{margin-top:0}
