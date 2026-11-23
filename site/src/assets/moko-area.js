@@ -49,7 +49,40 @@
         else fallback();
       });
     });
-    main.querySelectorAll("[data-enc]").forEach(function (a) {
+    main.querySelectorAll("img[data-src-enc]").forEach(function (im) {
+      fetch(im.dataset.srcEnc).then(function (r) { return r.text(); }).then(function (t) { return decrypt(raw, t.trim()); })
+        .then(function (buf) { im.src = URL.createObjectURL(new Blob([buf], { type: "image/jpeg" })); im.classList.add("ok"); })
+        .catch(function () {});
+    });
+    main.querySelectorAll("[data-tabs]").forEach(function (bar) {
+      var btns = bar.querySelectorAll("[data-tab]");
+      function show(id, push) {
+        btns.forEach(function (b) { b.setAttribute("aria-selected", b.dataset.tab === id ? "true" : "false"); });
+        main.querySelectorAll("[data-panel]").forEach(function (p) { p.hidden = p.dataset.panel !== id; });
+        if (push) history.replaceState(null, "", "#" + id);
+      }
+      btns.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.tab, true); }); });
+      var h = location.hash.slice(1);
+      if (h && main.querySelector('[data-panel="' + h + '"]')) show(h, false);
+    });
+    main.querySelectorAll("[data-filter-group]").forEach(function (g) {
+      g.querySelectorAll("[data-filter]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var f = b.dataset.filter;
+          g.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+          main.querySelectorAll("[data-cat]").forEach(function (it) { it.hidden = f !== "*" && it.dataset.cat !== f; });
+        });
+      });
+    });
+    main.querySelectorAll("[data-check]").forEach(function (box) {
+      var out = box.querySelector(".ck-out"), all = box.querySelectorAll("input");
+      box.addEventListener("change", function () {
+        var n = 0; all.forEach(function (i) { if (i.checked) n++; });
+        out.textContent = n === all.length ? "10 su 10: si può pubblicare." : n + " su " + all.length;
+        box.classList.toggle("done", n === all.length);
+      });
+    });
+    main.querySelectorAll("a[data-enc]").forEach(function (a) {
       a.addEventListener("click", async function (e) {
         e.preventDefault();
         a.classList.add("mk-busy");
