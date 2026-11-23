@@ -26,10 +26,16 @@
   }
 
   function wire(raw) {
+    main.querySelectorAll(".copy").forEach(function (el, i) {
+      if (!el.id) el.id = "cp-" + i;
+      var btn = document.createElement("button");
+      btn.type = "button"; btn.className = "mk-btn"; btn.textContent = "Copia"; btn.dataset.copy = el.id;
+      el.classList.add("has-btn"); el.appendChild(btn);
+    });
     main.querySelectorAll("[data-copy]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var src = document.getElementById(btn.dataset.copy);
-        var text = src.innerText.trim();
+        var text = src.innerText.replace(/\s*Copia(to)?\s*$/, "").trim();
         function done() {
           btn.textContent = "Copiato"; btn.classList.add("ok");
           setTimeout(function () { btn.textContent = "Copia"; btn.classList.remove("ok"); }, 1600);
