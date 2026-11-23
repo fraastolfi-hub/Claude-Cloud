@@ -82,6 +82,23 @@
         box.classList.toggle("done", n === all.length);
       });
     });
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function grow(el) {
+      el.querySelectorAll("[data-w]").forEach(function (b) { b.style.width = b.dataset.w + "%"; });
+      el.querySelectorAll(".cnt").forEach(function (c) {
+        var to = parseFloat(c.dataset.to), dec = +c.dataset.dec || 0, pre = c.dataset.pre || "", suf = c.dataset.suf || "";
+        function fmt(v) { return pre + v.toFixed(dec).replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".") + suf; }
+        if (still) { c.textContent = fmt(to); return; }
+        var t0 = null;
+        function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 900); c.textContent = fmt(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); }
+        requestAnimationFrame(step);
+      });
+    }
+    var anim = main.querySelectorAll(".kt-grid, figure.ch, .stk");
+    if ("IntersectionObserver" in window && !still) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { grow(e.target); io.unobserve(e.target); } }); }, { threshold: 0.25 });
+      anim.forEach(function (el) { io.observe(el); });
+    } else { anim.forEach(grow); }
     main.querySelectorAll("a[data-enc]").forEach(function (a) {
       a.addEventListener("click", async function (e) {
         e.preventDefault();
