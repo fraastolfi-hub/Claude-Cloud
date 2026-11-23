@@ -512,3 +512,31 @@ ol.concl span{font-size:16px}
 .ac-sum p{font-size:17px;line-height:1.5;margin:8px 0}
 .ac details.mk-more{margin-left:46px}
 @media(max-width:560px){.ac-sum,.ac details.mk-more{padding-left:0;margin-left:0}}
+
+/* pacchetti leggibili */
+.pg-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 22px}
+.pg{font:inherit;text-align:left;background:#F7F1EE;border:0;border-top:4px solid var(--hl);padding:14px 14px 16px;cursor:pointer;color:var(--ink);display:flex;flex-direction:column;gap:3px;transition:background-color .15s}
+.pg.mo2{border-top-color:#C9A27F}.pg.mo3{border-top-color:var(--cta)}.pg.mo4{border-top-color:var(--ink)}
+.pg small{font-size:13px;color:var(--grey);font-weight:600}
+.pg b{font-size:21px;font-weight:600;line-height:1.2}
+.pg span{font-size:14px}
+.pg em{font-style:normal;font-size:14px;font-weight:700;margin-top:4px}
+.pg:hover{background:#efe6e2}
+.pg[aria-selected=true]{background:var(--ink);color:var(--sand)}
+.pg[aria-selected=true] small{color:var(--sand);opacity:.75}
+.pk-one .pk-img{aspect-ratio:3/1}
+@media(max-width:560px){.pk-one .pk-img{aspect-ratio:16/9}}
+.pk-one .pk-img .tag-hl{font-size:16px;padding:4px 10px;top:auto;bottom:14px}
+.pk-cols{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;padding:22px 0 8px}
+.pk-name{font-size:36px;font-weight:600;margin:0}
+.pk-cols h4{font-size:16px;font-weight:700;margin:18px 0 6px}
+ul.ticks{list-style:none;padding:0;margin:0}
+ul.ticks li{position:relative;padding:6px 0 6px 28px;font-size:16px;border-bottom:1px solid var(--rule)}
+ul.ticks li::before{content:"✓";position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:50%;background:var(--hl);font-size:12px;font-weight:700;display:grid;place-items:center}
+.pk-facts{background:#F7F1EE;padding:18px 18px 14px;align-self:start}
+.pk-facts dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:0 0 14px;font-size:15px}
+.pk-facts dt{font-weight:700}.pk-facts dd{margin:0}
+.pk-facts .pk-ver{border-top:1px solid var(--rule);padding-top:10px;color:var(--ink);font-size:14px}
+.pk-facts .pk-ver b{color:var(--cta)}
+ul.rule3 li{font-size:16px}
+@media(max-width:860px){.pg-row{grid-template-columns:1fr 1fr}.pk-cols{grid-template-columns:1fr;gap:18px}}
