@@ -100,6 +100,54 @@
       var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { grow(e.target); io.unobserve(e.target); } }); }, { threshold: 0.25 });
       anim.forEach(function (el) { io.observe(el); });
     } else { anim.forEach(grow); }
+    // Analisi: livelli di lettura
+    main.querySelectorAll("[data-lv-set]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        main.dataset.level = btn.dataset.lvSet;
+        main.querySelectorAll("[data-lv-set]").forEach(function (x) { x.setAttribute("aria-selected", x === btn ? "true" : "false"); });
+        var first = main.querySelector('[data-lv="' + btn.dataset.lvSet + '"]') || main.querySelector("[data-lv]");
+        if (first && btn.dataset.lvSet !== "3") first.scrollIntoView({ block: "start" });
+      });
+    });
+    // Analisi: tutto quello che è «da confermare»
+    main.querySelectorAll("[data-confirm]").forEach(function (box) {
+      var list = box.querySelector(".conf-list"), n = 0;
+      main.querySelectorAll(".acx .p-c").forEach(function (tag) {
+        var blk = tag.closest("p, li, tr, .kpi, div"), sec = tag.closest(".acx");
+        if (!blk || !sec) return;
+        var t = blk.innerText.replace(/\s+/g, " ").trim();
+        if (t.length > 220) t = t.slice(0, 217) + "…";
+        var li = document.createElement("li");
+        li.innerHTML = '<a href="#' + sec.id + '"></a>';
+        li.firstChild.textContent = sec.dataset.title + " — " + t;
+        list.appendChild(li); n++;
+      });
+      box.querySelector(".conf-n").textContent = "(" + n + ")";
+    });
+    // Analisi: indice laterale, capitolo attivo, avanzamento
+    var side = main.querySelector(".an-side"), grid = main.querySelector(".an-grid"), prog = main.querySelector(".an-prog span");
+    if (side && grid) {
+      var links = side.querySelectorAll("[data-sec]");
+      if ("IntersectionObserver" in window) {
+        var so = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (e.isIntersecting) links.forEach(function (l) { l.classList.toggle("on", l.dataset.sec === e.target.id); });
+          });
+        }, { rootMargin: "-40% 0px -55% 0px" });
+        main.querySelectorAll("section.acx").forEach(function (sx) { so.observe(sx); });
+      }
+      function onScroll() {
+        var r = grid.getBoundingClientRect(), h = window.innerHeight;
+        var p = Math.min(1, Math.max(0, (h * 0.4 - r.top) / (r.height)));
+        if (prog) { prog.style.width = (p * 100).toFixed(1) + "%"; prog.parentNode.classList.toggle("show", r.top < h * 0.5 && r.bottom > 0); }
+      }
+      window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+      var fab = main.querySelector(".an-fab");
+      if (fab) {
+        fab.addEventListener("click", function () { var o = document.body.classList.toggle("side-open"); fab.setAttribute("aria-expanded", o ? "true" : "false"); });
+        side.addEventListener("click", function (e) { if (e.target.closest("a")) { document.body.classList.remove("side-open"); fab.setAttribute("aria-expanded", "false"); } });
+      }
+    }
     main.querySelectorAll("a[data-enc]").forEach(function (a) {
       a.addEventListener("click", async function (e) {
         e.preventDefault();
