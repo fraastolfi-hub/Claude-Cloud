@@ -85,6 +85,7 @@
     var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     function grow(el) {
       el.querySelectorAll("[data-w]").forEach(function (b) { b.style.width = b.dataset.w + "%"; });
+      el.querySelectorAll("[data-dash]").forEach(function (c) { c.style.strokeDasharray = c.dataset.dash; });
       el.querySelectorAll(".cnt").forEach(function (c) {
         var to = parseFloat(c.dataset.to), dec = +c.dataset.dec || 0, pre = c.dataset.pre || "", suf = c.dataset.suf || "";
         function fmt(v) { return pre + v.toFixed(dec).replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".") + suf; }
