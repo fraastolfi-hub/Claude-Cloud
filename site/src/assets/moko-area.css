@@ -730,3 +730,53 @@ figure.rvc figcaption{font-size:13px;color:var(--grey);margin-top:8px;padding:0;
 a.pg{text-decoration:none}
 .acx-body .adc-grid,.acx-body .em-grid,.acx-body .ig-grid{margin-top:18px}
 .acx-body .pg-row{margin-top:0}
+
+/* livello Giulia / livello operativo */
+.mk-top .mk-nav .nav-sep{font-size:12px;font-weight:600;color:var(--grey);white-space:nowrap;padding:0 4px 0 14px;margin-left:6px;border-left:1px solid var(--rule)}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0 8px}
+.path{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);padding:24px 24px 22px;transition:opacity .15s}
+.path:hover{opacity:.92}
+.p-g{background:var(--cta);color:#fff}.p-o{background:var(--ink);color:var(--sand)}
+.path small{font-size:13px;font-weight:700;opacity:.85}
+.path b{font-size:30px;font-weight:600;line-height:1.1}
+.path span{font-size:16px;line-height:1.45}
+.path em{font-style:normal;font-weight:700;font-size:15px;margin-top:6px;text-decoration:underline;text-underline-offset:4px}
+ol.steps{list-style:none;counter-reset:st;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+ol.steps li{counter-increment:st;background:#F7F1EE;padding:16px;display:flex;flex-direction:column;gap:6px}
+ol.steps li::before{content:counter(st);font-size:30px;font-weight:600;color:var(--hl);line-height:1}
+ol.steps b{font-size:17px;font-weight:600}ol.steps span{font-size:14.5px}
+ol.steps a{color:var(--ink);font-weight:700}
+ol.steps-sm{grid-template-columns:repeat(3,1fr)}
+.map{border-top:1px solid var(--rule)}
+.map-r{display:grid;grid-template-columns:150px 190px 1fr;gap:14px;align-items:baseline;padding:13px 4px;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);transition:background-color .15s}
+.map-r:hover{background:rgba(48,22,18,.04)}
+.map-r b{font-size:18px;font-weight:600}
+.map-who{font-size:13px;font-weight:700;background:var(--hl);padding:2px 8px;border-radius:5px;justify-self:start}
+.map-d{font-size:15px}
+.role{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;background:#F7F1EE;padding:10px 14px;margin:0 0 18px;font-size:14px}
+.role-tag{background:var(--ink);color:var(--sand);font-weight:700;font-size:12px;padding:3px 9px;border-radius:999px}
+.role a{margin-left:auto;color:var(--ink);font-weight:700}
+.big3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.big3 div{background:#F7F1EE;padding:18px;border-top:4px solid var(--hl)}
+.big3 div:nth-child(2){border-top-color:var(--cta)}
+.big3 b{display:block;font-size:40px;font-weight:600;line-height:1.05}
+.big3 span{font-size:15.5px}
+p.say{font-size:20px;line-height:1.45;font-weight:500;margin:20px 0}
+.goal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.goal{background:#F7F1EE;padding:16px}
+.goal b{display:block;font-size:20px;font-weight:600;line-height:1.2;margin-bottom:6px}
+.goal span{font-size:15px}
+.when{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.w{background:#F7F1EE;padding:16px;border-top:4px solid var(--hl);display:flex;flex-direction:column;gap:6px}
+.w2{border-top-color:#C9A27F}.w3{border-top-color:var(--cta)}.w4{border-top-color:var(--ink)}
+.w small{font-size:13px;font-weight:700;color:var(--grey)}
+.w b{font-size:21px;font-weight:600}
+.w p{font-size:15px;margin:0}
+.w em{font-style:normal;font-size:13.5px;font-weight:600;margin-top:auto;padding-top:8px;border-top:1px solid var(--rule)}
+.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ex-grid small{display:block;font-size:13px;color:var(--grey);margin-top:6px}
+.who{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
+.who div{padding:14px 12px 14px 0;border-bottom:1px solid var(--rule)}
+.who b{display:block;font-size:17px;font-weight:600}.who span{font-size:14.5px;color:var(--grey)}
+@media(max-width:860px){.paths,.when,.ex-grid,.big3{grid-template-columns:1fr 1fr}ol.steps{grid-template-columns:1fr 1fr}.map-r{grid-template-columns:1fr;gap:4px}.who{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.paths,.when,.ex-grid,.big3,ol.steps,ol.steps-sm,.who{grid-template-columns:1fr}.role a{margin-left:0}}
