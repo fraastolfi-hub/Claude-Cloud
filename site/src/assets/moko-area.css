@@ -714,3 +714,16 @@ figure.rvc figcaption{font-size:13px;color:var(--grey);margin-top:8px;padding:0;
 }
 .an-grid>*{min-width:0}
 @media(max-width:1000px){.an-grid{grid-template-columns:minmax(0,1fr)}}
+.pane-dark.manif.copy{background:var(--ink);color:var(--sand);border-left:0;border-radius:0;white-space:pre-line;font-size:22px;font-weight:600;line-height:1.45;padding:28px 30px}
+.pane-dark.manif.copy .mk-btn{background:var(--sand);color:var(--ink)}
+.acx-body .ck-box{max-width:none}
+/* blocchi sempre aperti */
+.mk-block{border-top:1px solid var(--rule);padding:14px 0 6px;margin:14px 0}
+.mk-block-t{font-size:16px;font-weight:700;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
+.mk-block-t span{font-weight:500;color:var(--grey);font-size:14px}
+.adc .mk-block,.ig .mk-block,.em-card .mk-block,.pi .mk-block{margin-top:12px}
+.ig .mk-block{margin:10px 12px 4px;font-family:"Wix",sans-serif}
+.months .mk-block-t b{font-size:18px}
+.conf-box{min-width:0}
+.conf-box .mk-block-t{color:var(--cta)}
+.conf-list{max-height:none}
