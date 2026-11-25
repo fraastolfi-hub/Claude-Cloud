@@ -16,6 +16,8 @@
 //        salva { esempio, rimosse[] }   → { esempio }   (esempio.stato: 'pubblicato' | 'da_valutare')
 //        stato { id, stato }            → { esempio }   pubblica o rimette in coda
 //        elimina { id }                 → { ok }
+//        copertina { id, off? }         → { esempio }   mette l'idea in copertina (una sola) o la toglie
+//        focale { id, focale:{x,y} }    → { esempio }   punto focale del primo screenshot (calcolato da swipe-radar/copertina.py)
 //        scarta { immagini[] }          → { ok }        screenshot caricati e poi non salvati
 //        candidato { esempio, chiave_radar, immagini[], immagini_url[] } → { ok, id } | { ok, duplicato: true }
 //        visto { chiave_radar }         → { visto } (il radar controlla prima di fare lo screenshot)
@@ -43,6 +45,14 @@ async function tutti(s) {
 
 const pubblico = ({ chiave_radar, segnalazione, ...e }) => e;
 
+// {x,y} tra 0 e 1, calcolato da swipe-radar/copertina.py (zona con più testo del primo screenshot); null se non ancora calcolato
+function focaleDi(f) {
+  if (!f || typeof f !== 'object') return null;
+  const x = Number(f.x), y = Number(f.y);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+  return { x: Math.round(Math.max(0, Math.min(1, x)) * 1000) / 1000, y: Math.round(Math.max(0, Math.min(1, y)) * 1000) / 1000 };
+}
+
 // cuori dei visitatori: un solo blob { id: conteggio }
 async function cuori(s) {
   return (await s.get('cuori', { type: 'json' })) || {};
@@ -66,6 +76,8 @@ function normalizza(e, esistente) {
     tags: [...new Set((Array.isArray(e.tags) ? e.tags : []).filter((t) => typeof t === 'string' && t.includes(':')).map((t) => t.slice(0, 120)))].slice(0, 80),
     images: (Array.isArray(e.images) ? e.images : []).filter((x) => ID.test(String(x))).slice(0, 20),
     credito: testo(e.credito ?? esistente?.credito, 120).trim(), // chi l'ha segnalata («Segnalata da Marta, Rimini»), visibile a tutti
+    copertina: !!(e.copertina ?? esistente?.copertina), // l'idea in testa alla pagina (una sola): la sceglie Francesco
+    focale: focaleDi(e.focale ?? esistente?.focale), // punto focale del primo screenshot {x,y} in frazioni: dove ritagliare la copertina e le miniature
     ...(esistente?.chiave_radar ? { chiave_radar: esistente.chiave_radar } : {}),
     ...(esistente?.segnalazione ? { segnalazione: esistente.segnalazione } : {}),
   };
@@ -203,6 +215,30 @@ export const handler = async (event) => {
         const e = await s.get(`esempi/${d.id}`, { type: 'json' });
         if (!e) return json(404, { ok: false, errore: 'non_trovato' });
         const riga = { ...e, stato: d.stato, updated_at: new Date().toISOString() };
+        await s.setJSON(`esempi/${d.id}`, riga);
+        return json(200, { ok: true, esempio: riga });
+      }
+
+      case 'copertina': {
+        // una sola idea in copertina: metterla su una la toglie dalle altre; { id, off: true } la toglie e basta
+        if (!ID.test(String(d.id || ''))) return json(400, { ok: false, errore: 'richiesta' });
+        const e = await s.get(`esempi/${d.id}`, { type: 'json' });
+        if (!e) return json(404, { ok: false, errore: 'non_trovato' });
+        const ora = new Date().toISOString();
+        if (!d.off) {
+          for (const altro of (await tutti(s)).filter((x) => x.copertina && x.id !== d.id)) await s.setJSON(`esempi/${altro.id}`, { ...altro, copertina: false, updated_at: ora });
+        }
+        const riga = { ...e, copertina: !d.off, updated_at: ora };
+        await s.setJSON(`esempi/${d.id}`, riga);
+        return json(200, { ok: true, esempio: riga });
+      }
+
+      case 'focale': {
+        // salva il punto focale calcolato dallo script, senza toccare il resto della scheda
+        if (!ID.test(String(d.id || ''))) return json(400, { ok: false, errore: 'richiesta' });
+        const e = await s.get(`esempi/${d.id}`, { type: 'json' });
+        if (!e) return json(404, { ok: false, errore: 'non_trovato' });
+        const riga = { ...e, focale: focaleDi(d.focale), updated_at: new Date().toISOString() };
         await s.setJSON(`esempi/${d.id}`, riga);
         return json(200, { ok: true, esempio: riga });
       }
