@@ -33,6 +33,9 @@ Ogni pagina ha **un'azione principale** e al massimo una secondaria, presa dal g
 │       ├── valore/       "Quanto vale davvero il tuo hotel?"
 │       └── apertura/     "Sto aprendo: non voglio nascere commodity"
 ├── /casi/                Silva Splendid · Veridia · Yume Ramen             → Analisi
+├── /clienti/moko/        Area riservata Moko (Manuale 2027, materiali, analisi), noindex, CIFRATA:
+│                         il repo è pubblico, qui c'è solo testo AES-GCM. Si rigenera da
+│                         ~/Desktop/Claude/moko/sito/genera.py (password e sorgenti solo sul Mac)
 ├── /libro/               Pagina di vendita del libro                        → Amazon · sec.: Strumenti gratis
 ├── /risorse/             Hub degli strumenti gratuiti: "parti da qui"
 │   ├── /quiz/            Che hotel sei? 7 domande                           → risultato + Analisi o Libro
