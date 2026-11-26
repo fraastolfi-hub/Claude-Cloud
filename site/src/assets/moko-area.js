@@ -163,14 +163,28 @@
       if (h && main.querySelector('[data-panel="' + h + '"]')) show(h, false);
     });
     main.querySelectorAll("[data-filter-group]").forEach(function (g) {
-      g.querySelectorAll("[data-filter]").forEach(function (b) {
-        b.addEventListener("click", function () {
-          var f = b.dataset.filter;
+      g._apply = function (f) { apply(f, g.querySelector('[data-filter="4"]')); };
+      function apply(f, b) {
           g.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-          main.querySelectorAll("[data-cat]").forEach(function (it) { it.hidden = f !== "*" && it.dataset.cat !== f; });
+          main.querySelectorAll("[data-cat]").forEach(function (it) { it.hidden = f !== "*" && it.dataset.cat !== f && it.dataset.camp !== f; });
+          main.querySelectorAll(".mt-group").forEach(function (gr) {
+            var vis = gr.querySelectorAll(".mt-item:not([hidden])").length;
+            gr.hidden = vis === 0; var n = gr.querySelector(".mt-n"); if (n) n.textContent = vis;
+          });
+      }
+      g.querySelectorAll("[data-filter]").forEach(function (b) {
+        b.addEventListener("click", function () { apply(b.dataset.filter, b);
         });
       });
     });
+    (function () {
+      var c = new URLSearchParams(location.search).get("c");
+      if (!c) return;
+      var b = main.querySelector('[data-filter="' + c + '"]');
+      if (b) { b.click(); return; }
+      var g = main.querySelector("[data-filter-group]");
+      if (g) g._apply && g._apply(c);
+    })();
     main.querySelectorAll("[data-check]").forEach(function (box) {
       var out = box.querySelector(".ck-out"), all = box.querySelectorAll("input");
       box.addEventListener("change", function () {

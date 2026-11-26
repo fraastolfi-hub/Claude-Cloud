@@ -890,3 +890,25 @@ ol.mt a{color:var(--ink);font-weight:700}
 }
 .cr-manca{margin:0;padding:8px 12px;background:#FFF3C9;border-top:1px solid #E9D48A;font-size:12.5px;line-height:1.4;color:#5a4300}
 .cr-manca b{display:block;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+
+/* materiali per canale */
+.mt-bar{position:sticky;top:0;z-index:5;background:var(--bg,#F2EAE7);padding:6px 0 2px;margin-bottom:8px}
+.mt-lab{margin:8px 0 0;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.mt-bar .mk-tabs,.mt-bar .mk-chips{margin:6px 0 8px;padding-bottom:10px}
+.mt-sub{font-size:22px;margin:48px 0 4px}
+.mt-group{margin-bottom:12px}
+.mt-group[hidden],.mt-item[hidden]{display:none}
+.mt-item{display:flex;flex-direction:column;gap:8px;min-width:0}
+.mt-tag{align-self:flex-start;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--sand);color:var(--ink)}
+.mt-tag.mt-1{background:var(--ink);color:var(--sand)}
+.mt-tag.mt-4{background:var(--hl);color:var(--ink)}
+.mt-links{display:flex;flex-wrap:wrap;gap:10px}
+.mt-links a{display:inline-flex;gap:6px;align-items:baseline;padding:10px 16px;border:1px solid var(--ink);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600}
+.mt-links a b{font-size:20px}
+.mt-links a:hover{background:var(--ink);color:var(--sand)}
+.g-list{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
+.g-list h4{margin:0 0 6px;font-size:14px}
+.g-list ol{margin:0;padding-left:20px}
+.g-list small{color:var(--grey)}
+.mt-note{color:var(--grey);font-size:14px}
+@media(max-width:720px){.g-list{grid-template-columns:1fr}.mt-bar{position:static}}
