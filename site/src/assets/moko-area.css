@@ -953,3 +953,4 @@ ol.mt a{color:var(--ink);font-weight:700}
 .pk-nomi li{padding:8px 0;border-bottom:1px solid var(--rule);font-size:15px}
 .pk-todo li{font-size:15px}
 @media(max-width:860px){.pk-two{grid-template-columns:1fr;gap:0}}
+.mt-tag.mt-pk{background:#C9A27F;color:var(--ink)}
