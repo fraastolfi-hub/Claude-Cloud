@@ -955,3 +955,6 @@ ol.mt a{color:var(--ink);font-weight:700}
 @media(max-width:860px){.pk-two{grid-template-columns:1fr;gap:0}}
 .mt-tag.mt-pk{background:#C9A27F;color:var(--ink)}
 .mt-tag.mt-dach{background:var(--ink);color:#fff;opacity:.85}
+.pk-ideale{font-size:15px;margin:4px 0 6px}.pk-ideale b{font-weight:700;margin-right:4px}
+.pk-cmp{margin:0 0 26px}.pk-cmp summary{cursor:pointer;font-weight:700;font-size:16px;margin-bottom:8px}
+.pk-cmp td.pk-no{color:var(--grey);text-align:center}.pk-cmp a{color:inherit}
