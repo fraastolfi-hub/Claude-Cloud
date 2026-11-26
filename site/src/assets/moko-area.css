@@ -888,3 +888,5 @@ ol.mt a{color:var(--ink);font-weight:700}
   .rg-it{flex-direction:column;gap:10px}
   .rg-me{margin-left:0}
 }
+.cr-manca{margin:0;padding:8px 12px;background:#FFF3C9;border-top:1px solid #E9D48A;font-size:12.5px;line-height:1.4;color:#5a4300}
+.cr-manca b{display:block;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
