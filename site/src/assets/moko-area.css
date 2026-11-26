@@ -943,3 +943,13 @@ ol.mt a{color:var(--ink);font-weight:700}
 .rg-fase{margin:0 0 6px;color:var(--grey);font-size:15px}
 .em-ps{margin:14px 0 18px!important;padding-top:12px;border-top:1px solid rgba(48,22,18,.15);font-size:15px;font-style:italic}
 .em-text p{line-height:1.6}
+/* pacchetti 2027 */
+.pg-row10{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.pk-idea{font-size:15px;line-height:1.55;background:#F7F1EE;padding:12px 14px;margin:14px 0 0}
+.pk-box{margin:0;font-size:15px;line-height:1.5}
+.pk-tab td{font-size:14.5px;vertical-align:top}
+.pk-two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.pk-nomi{list-style:none;padding:0;margin:0}
+.pk-nomi li{padding:8px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.pk-todo li{font-size:15px}
+@media(max-width:860px){.pk-two{grid-template-columns:1fr;gap:0}}
