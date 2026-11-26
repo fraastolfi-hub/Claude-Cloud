@@ -941,3 +941,5 @@ ol.mt a{color:var(--ink);font-weight:700}
 .rg-month{margin-top:28px}
 .rg-month h3 small{font-size:13px;font-weight:500;color:var(--grey)}
 .rg-fase{margin:0 0 6px;color:var(--grey);font-size:15px}
+.em-ps{margin:14px 0 18px!important;padding-top:12px;border-top:1px solid rgba(48,22,18,.15);font-size:15px;font-style:italic}
+.em-text p{line-height:1.6}
