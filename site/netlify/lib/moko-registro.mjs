@@ -9,7 +9,7 @@ import { TOKEN_SHA } from './moko-registro-token.mjs';
 
 export const STORE = 'moko-registro';
 export const CHIAVE = 'stato';
-export const LINK = 'https://hotelpositioning.com/clienti/moko/registro/';
+export const LINK = 'https://hotelpositioning.com/clienti/moko/#checklist';
 // mese 0 del registro = dicembre 2026
 export const INIZIO = { anno: 2026, mese: 12 };
 const NOMI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
@@ -84,15 +84,15 @@ export function email(stato, i = indiceMese()) {
   const subject = `Moko · il piano di ${mese}${indietro.length ? ` · ${indietro.length} cose rimaste indietro` : ''}`;
   const html = `<!doctype html><html lang="it"><body style="margin:0;background:#F2EAE7;font-family:Helvetica,Arial,sans-serif;color:#301612">
 <div style="max-width:560px;margin:0 auto;padding:28px 20px">
-<p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px">Registro di marcia · ${esc(titoloMese)}</p>
+<p style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px">Checklist · ${esc(titoloMese)}</p>
 <h1 style="font-size:24px;line-height:1.2;margin:0 0 14px">Ecco il piano di ${esc(mese)}.</h1>
-<p style="font-size:15px;line-height:1.5;margin:0 0 20px">Le cose del mese e quelle rimaste indietro. Quando una è fatta, segnala nel registro: il mese prossimo non la ritrovi qui.</p>
+<p style="font-size:15px;line-height:1.5;margin:0 0 20px">Le cose del mese e quelle rimaste indietro. Quando una è fatta, segnala nella checklist: il mese prossimo non la ritrovi qui.</p>
 ${blocchi.map((b) => `<h2 style="font-size:16px;margin:22px 0 8px;padding-top:12px;border-top:1px solid #DCCFC9">${esc(b.titolo)}</h2><ul style="padding-left:18px;margin:0;font-size:15px;line-height:1.45">${b.righe.map((r) => r.html).join('')}</ul>`).join('\n')}
-<p style="margin:28px 0"><a href="${LINK}" style="background:#DA4054;color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:bold;display:inline-block">Apri il registro</a></p>
+<p style="margin:28px 0"><a href="${LINK}" style="background:#DA4054;color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:bold;display:inline-block">Apri la checklist</a></p>
 <p style="font-size:12px;color:#8a7470;margin:0">Promemoria automatico del primo del mese · Hotel Positioning · Hotel Voyager</p>
 </div></body></html>`;
-  const text = [`Registro di marcia · ${titoloMese}`, '', `Ecco il piano di ${mese}.`, '',
-    ...blocchi.flatMap((b) => [b.titolo.toUpperCase(), ...b.righe.map((r) => r.text), '']), `Apri il registro: ${LINK}`].join('\n');
+  const text = [`Checklist · ${titoloMese}`, '', `Ecco il piano di ${mese}.`, '',
+    ...blocchi.flatMap((b) => [b.titolo.toUpperCase(), ...b.righe.map((r) => r.text), '']), `Apri la checklist: ${LINK}`].join('\n');
   return { subject, html, text, mese: chiaveMese(i), voci: delMese.length, indietro: indietro.length };
 }
 

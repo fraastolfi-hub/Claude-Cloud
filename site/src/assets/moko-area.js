@@ -74,7 +74,7 @@
         status.textContent = "Collegato: quello che segni lo vedono tutti." + (j.aggiornato ? " Ultima modifica il " + quando(j.aggiornato) + "." : "");
       } catch (e) {
         online = false;
-        status.textContent = "Registro non raggiungibile: quello che segni ora non viene salvato.";
+        status.textContent = "Checklist non raggiungibile: quello che segni ora non viene salvato.";
       }
       bar.classList.toggle("rg-off", !online);
       draw();
@@ -116,7 +116,7 @@
         po.innerHTML = "";
         var h = document.createElement("p"); h.className = "rg-subj"; h.textContent = "Oggetto: " + j.email.subject; po.appendChild(h);
         var f = document.createElement("iframe"); f.className = "rg-frame"; f.title = "Anteprima dell'email"; f.setAttribute("sandbox", ""); f.srcdoc = j.email.html; po.appendChild(f);
-      } catch (e) { po.textContent = "Anteprima non disponibile: il registro non è raggiungibile."; }
+      } catch (e) { po.textContent = "Anteprima non disponibile: la checklist non è raggiungibile."; }
     });
     draw();
     load();

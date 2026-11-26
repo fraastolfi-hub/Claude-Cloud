@@ -937,3 +937,7 @@ ol.mt a{color:var(--ink);font-weight:700}
 .ggc-kw b{margin-right:4px}
 .ggc-kw span{background:var(--sand);border-radius:6px;padding:2px 8px}
 @media(max-width:720px){.ggc .gg-wrap{grid-template-columns:1fr}}
+.an-side-g{display:block;margin-top:16px;padding-top:12px;border-top:1px solid var(--rule)}
+.rg-month{margin-top:28px}
+.rg-month h3 small{font-size:13px;font-weight:500;color:var(--grey)}
+.rg-fase{margin:0 0 6px;color:var(--grey);font-size:15px}
