@@ -852,3 +852,4 @@ ol.mt a{color:var(--ink);font-weight:700}
 @media(max-width:720px){
   .mk-top .mk-nav{justify-content:flex-start}
 }
+.sp-list .sp-dove{display:block;margin-top:4px;font-size:13px;color:var(--grey)}
