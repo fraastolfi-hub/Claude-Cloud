@@ -153,6 +153,10 @@
         else fallback();
       });
     });
+    main.querySelectorAll(".ip-f img").forEach(function (im) {  // ipotesi di annunci: il clic apre l'immagine grande
+      im.title = "Apri l'immagine grande";
+      im.addEventListener("click", function () { if (im.src) window.open(im.src, "_blank"); });
+    });
     main.querySelectorAll("img[data-src-enc]").forEach(function (im) {
       fetch(im.dataset.srcEnc).then(function (r) { return r.text(); }).then(function (t) { return decrypt(raw, t.trim()); })
         .then(function (buf) { im.src = URL.createObjectURL(new Blob([buf], { type: "image/jpeg" })); im.classList.add("ok"); })
