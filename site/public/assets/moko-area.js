@@ -25,7 +25,104 @@
     return crypto.subtle.decrypt({ name: "AES-GCM", iv: buf.slice(0, 12) }, key, buf.slice(12));
   }
 
+
+  /* Registro di marcia: stato condiviso su Netlify (funzione /api/moko-registro), accesso con un token tratto dalla chiave */
+  async function registro(raw) {
+    var bar = main.querySelector("[data-registro]");
+    var status = bar.querySelector(".rg-status"), sel = bar.querySelector(".rg-chi");
+    var items = Array.prototype.slice.call(main.querySelectorAll("[data-rg]"));
+    var API = "/api/moko-registro";
+    var pre = new TextEncoder().encode("moko-registro:"), buf = new Uint8Array(pre.length + raw.length);
+    buf.set(pre); buf.set(raw, pre.length);
+    var tok = Array.prototype.map.call(new Uint8Array(await crypto.subtle.digest("SHA-256", buf)), function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+    var H = { "x-registro": tok };
+    var stati = {}, online = false, vociInviate = false;
+    try { var c = localStorage.getItem("mk-rg-chi"); if (c) sel.value = c; } catch (e) {}
+    sel.addEventListener("change", function () { try { localStorage.setItem("mk-rg-chi", sel.value); } catch (e) {} });
+    var d = new Date(), adesso = (d.getFullYear() - 2026) * 12 + (d.getMonth() + 1 - 12);
+    var cur = main.querySelector("#rg-" + Math.max(0, Math.min(12, adesso)));
+    bar.querySelector(".rg-now").addEventListener("click", function (e) { e.preventDefault(); if (cur) cur.scrollIntoView({ behavior: "smooth" }); });
+    function voci() {
+      return items.map(function (li) {
+        return { id: li.dataset.rg, mese: +li.dataset.mese, tipo: li.dataset.tipo, testo: li.querySelector(".rg-t").textContent, chi: li.dataset.chi, entro: li.dataset.entro };
+      });
+    }
+    function quando(iso) { try { return new Date(iso).toLocaleDateString("it-IT", { day: "numeric", month: "long" }); } catch (e) { return ""; } }
+    function draw() {
+      var fatte = 0, late = 0, perMese = {};
+      items.forEach(function (li) {
+        var st = stati[li.dataset.rg] || {}, s = st.s || "", m = +li.dataset.mese;
+        li.querySelectorAll("[data-s]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.s === s ? "true" : "false"); });
+        li.dataset.state = s;
+        var isLate = !s && m < adesso;
+        li.classList.toggle("rg-late", isLate);
+        li.querySelector(".rg-who").textContent = s ? (s === "fatto" ? "Fatto" : "Non serve") + (st.chi ? " · " + st.chi : "") + (st.quando ? " · " + quando(st.quando) : "") : (isLate ? "Rimasta indietro" : "");
+        if (s === "fatto") fatte++;
+        if (isLate) late++;
+        var pm = perMese[m] || (perMese[m] = [0, 0]); pm[1]++; if (s) pm[0]++;
+      });
+      bar.querySelector(".rg-n-done").textContent = fatte + " su " + items.length;
+      bar.querySelector(".rg-n-late").textContent = late; bar.querySelector(".rg-sum-late").classList.toggle("on", late > 0);
+      main.querySelectorAll("[data-cnt]").forEach(function (el) { var pm = perMese[el.dataset.cnt] || [0, 0]; el.textContent = pm[0] + " su " + pm[1] + " chiuse."; });
+    }
+    async function load() {
+      try {
+        var r = await fetch(API, { headers: H, cache: "no-store" });
+        if (!r.ok) throw new Error(r.status);
+        var j = await r.json(); stati = j.stati || {}; online = true;
+        vociInviate = j.voci === items.length;
+        status.textContent = "Collegato: quello che segni lo vedono tutti." + (j.aggiornato ? " Ultima modifica il " + quando(j.aggiornato) + "." : "");
+      } catch (e) {
+        online = false;
+        status.textContent = "Checklist non raggiungibile: quello che segni ora non viene salvato.";
+      }
+      bar.classList.toggle("rg-off", !online);
+      draw();
+    }
+    items.forEach(function (li) {
+      li.querySelectorAll("[data-s]").forEach(function (b) {
+        b.addEventListener("click", async function () {
+          var id = li.dataset.rg, prima = stati[id], s = b.dataset.s;
+          if (s) stati[id] = { s: s, chi: sel.value, quando: new Date().toISOString() }; else delete stati[id];
+          draw();
+          if (!online) return;
+          try {
+            var body = { id: id, s: s, chi: sel.value };
+            if (!vociInviate) body.voci = voci();
+            var r = await fetch(API, { method: "POST", headers: Object.assign({ "content-type": "application/json" }, H), body: JSON.stringify(body) });
+            if (!r.ok) throw new Error(r.status);
+            vociInviate = true;
+            status.textContent = "Salvato.";
+          } catch (e) {
+            if (prima) stati[id] = prima; else delete stati[id];
+            draw();
+            status.textContent = "Non salvato: riprova tra poco.";
+          }
+        });
+      });
+    });
+    var pb = main.querySelector(".rg-prev"), po = main.querySelector(".rg-prev-out");
+    if (pb) pb.addEventListener("click", async function () {
+      po.hidden = false; po.textContent = "Preparo l'anteprima…";
+      try {
+        if (!vociInviate) {
+          var first = items[0];
+          await fetch(API, { method: "POST", headers: Object.assign({ "content-type": "application/json" }, H), body: JSON.stringify({ id: first.dataset.rg, s: (stati[first.dataset.rg] || {}).s || "", chi: sel.value, voci: voci() }) });
+          vociInviate = true;
+        }
+        var r = await fetch(API + "?anteprima=1", { headers: H, cache: "no-store" });
+        var j = await r.json();
+        if (!j.email) { po.textContent = "Questo mese non c'è niente da mandare."; return; }
+        po.innerHTML = "";
+        var h = document.createElement("p"); h.className = "rg-subj"; h.textContent = "Oggetto: " + j.email.subject; po.appendChild(h);
+        var f = document.createElement("iframe"); f.className = "rg-frame"; f.title = "Anteprima dell'email"; f.setAttribute("sandbox", ""); f.srcdoc = j.email.html; po.appendChild(f);
+      } catch (e) { po.textContent = "Anteprima non disponibile: la checklist non è raggiungibile."; }
+    });
+    draw();
+    load();
+  }
   function wire(raw) {
+    if (main.querySelector("[data-registro]")) registro(raw).catch(function () {});
     main.querySelectorAll(".copy").forEach(function (el, i) {
       if (!el.id) el.id = "cp-" + i;
       var btn = document.createElement("button");
@@ -66,14 +163,28 @@
       if (h && main.querySelector('[data-panel="' + h + '"]')) show(h, false);
     });
     main.querySelectorAll("[data-filter-group]").forEach(function (g) {
-      g.querySelectorAll("[data-filter]").forEach(function (b) {
-        b.addEventListener("click", function () {
-          var f = b.dataset.filter;
+      g._apply = function (f) { apply(f, g.querySelector('[data-filter="4"]')); };
+      function apply(f, b) {
           g.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-          main.querySelectorAll("[data-cat]").forEach(function (it) { it.hidden = f !== "*" && it.dataset.cat !== f; });
+          main.querySelectorAll("[data-cat]").forEach(function (it) { it.hidden = f !== "*" && it.dataset.cat !== f && it.dataset.camp !== f; });
+          main.querySelectorAll(".mt-group").forEach(function (gr) {
+            var vis = gr.querySelectorAll(".mt-item:not([hidden])").length;
+            gr.hidden = vis === 0; var n = gr.querySelector(".mt-n"); if (n) n.textContent = vis;
+          });
+      }
+      g.querySelectorAll("[data-filter]").forEach(function (b) {
+        b.addEventListener("click", function () { apply(b.dataset.filter, b);
         });
       });
     });
+    (function () {
+      var c = new URLSearchParams(location.search).get("c");
+      if (!c) return;
+      var b = main.querySelector('[data-filter="' + c + '"]');
+      if (b) { b.click(); return; }
+      var g = main.querySelector("[data-filter-group]");
+      if (g) g._apply && g._apply(c);
+    })();
     main.querySelectorAll("[data-check]").forEach(function (box) {
       var out = box.querySelector(".ck-out"), all = box.querySelectorAll("input");
       box.addEventListener("change", function () {
