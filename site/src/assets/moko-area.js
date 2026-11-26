@@ -52,7 +52,7 @@
       var fatte = 0, late = 0, perMese = {};
       items.forEach(function (li) {
         var st = stati[li.dataset.rg] || {}, s = st.s || "", m = +li.dataset.mese;
-        li.querySelectorAll("[data-s]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.s === s ? "true" : "false"); });
+        li.querySelectorAll("[data-s]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.s === s ? "true" : "false"); b.disabled = !online; });
         li.dataset.state = s;
         var isLate = !s && m < adesso;
         li.classList.toggle("rg-late", isLate);
@@ -74,7 +74,11 @@
         status.textContent = "Collegato: quello che segni lo vedono tutti." + (j.aggiornato ? " Ultima modifica il " + quando(j.aggiornato) + "." : "");
       } catch (e) {
         online = false;
-        status.textContent = "Checklist non raggiungibile: quello che segni ora non viene salvato.";
+        status.textContent = "Checklist non raggiungibile: per non perdere quello che segni, i bottoni restano fermi finché non torna. ";
+        var again = document.createElement("button");
+        again.type = "button"; again.className = "rg-again"; again.textContent = "Riprova";
+        again.addEventListener("click", function () { status.textContent = "Ricollegamento…"; load(); });
+        status.appendChild(again);
       }
       bar.classList.toggle("rg-off", !online);
       draw();
@@ -132,10 +136,13 @@
     main.querySelectorAll("[data-copy]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var src = document.getElementById(btn.dataset.copy);
-        var text = src.innerText.replace(/\s*Copia(to)?\s*$/, "").trim();
+        var text = src.innerText.replace(/\s*Copia(to)?(\s·.*)?\s*$/, "").trim();
+        var gaps = (text.match(/‹[^›]*›|\[[^\]\n]+\]|SERVE/g) || []).length;
         function done() {
-          btn.textContent = "Copiato"; btn.classList.add("ok");
-          setTimeout(function () { btn.textContent = "Copia"; btn.classList.remove("ok"); }, 1600);
+          var msg = gaps ? "Copiato · " + gaps + (gaps === 1 ? " campo" : " campi") + " da completare" : "Copiato";
+          btn.textContent = msg; btn.classList.add("ok"); btn.classList.toggle("warn", gaps > 0);
+          say(msg);
+          setTimeout(function () { btn.textContent = "Copia"; btn.classList.remove("ok", "warn"); }, gaps ? 3200 : 1600);
         }
         function fallback() {
           var r = document.createRange(); r.selectNodeContents(src);
@@ -158,19 +165,47 @@
         main.querySelectorAll("[data-panel]").forEach(function (p) { p.hidden = p.dataset.panel !== id; });
         if (push) history.replaceState(null, "", "#" + id);
       }
+      bar._show = show;
       btns.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.tab, true); }); });
       var h = location.hash.slice(1);
       if (h && main.querySelector('[data-panel="' + h + '"]')) show(h, false);
     });
+    var curF = "*", curQ = "", qBox = main.querySelector(".mt-q"), qRes = main.querySelector(".mt-res");
+    function norm(t) { return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+    var mtItems = Array.prototype.slice.call(main.querySelectorAll(".mt-item[data-cat]"));
+    mtItems.forEach(function (it) { it._q = norm(it.textContent); });
+    function filterAll() {
+      mtItems.forEach(function (it) {
+        var okF = curF === "*" || it.dataset.cat === curF || it.dataset.camp === curF;
+        var okQ = !curQ || it._q.indexOf(curQ) > -1;
+        it.hidden = !(okF && okQ);
+      });
+      main.querySelectorAll(".mt-group").forEach(function (gr) {
+        if (!gr.querySelector(".mt-item")) return;
+        var vis = gr.querySelectorAll(".mt-item:not([hidden])").length;
+        gr.hidden = vis === 0; var n = gr.querySelector(".mt-n"); if (n) n.textContent = vis;
+      });
+      var parts = [], tot = 0;
+      main.querySelectorAll("[data-tab]").forEach(function (b) {
+        var pn = main.querySelector('[data-panel="' + b.dataset.tab + '"]');
+        if (!pn || !pn.querySelector(".mt-item")) return;
+        var n = pn.querySelectorAll(".mt-item:not([hidden])").length;
+        b.textContent = b.dataset.label + " · " + n; tot += n;
+        if (curQ && n) parts.push(b.dataset.label + " " + n);
+      });
+      if (qRes) qRes.textContent = !curQ ? "" : tot ? tot + (tot === 1 ? " materiale" : " materiali") + " con «" + qBox.value.trim() + "»: " + parts.join(" · ") + "."
+        : "Nessun materiale con «" + qBox.value.trim() + "». Prova un'altra parola" + (curF !== "*" ? " o scegli «Tutte le campagne»." : ".");
+    }
+    if (qBox) {
+      var qt;
+      qBox.addEventListener("input", function () { clearTimeout(qt); qt = setTimeout(function () { curQ = norm(qBox.value.trim()); filterAll(); }, 120); });
+      qBox.addEventListener("keydown", function (e) { if (e.key === "Escape") { qBox.value = ""; curQ = ""; filterAll(); } });
+    }
     main.querySelectorAll("[data-filter-group]").forEach(function (g) {
       g._apply = function (f) { apply(f, g.querySelector('[data-filter="4"]')); };
       function apply(f, b) {
           g.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-          main.querySelectorAll("[data-cat]").forEach(function (it) { it.hidden = f !== "*" && it.dataset.cat !== f && it.dataset.camp !== f; });
-          main.querySelectorAll(".mt-group").forEach(function (gr) {
-            var vis = gr.querySelectorAll(".mt-item:not([hidden])").length;
-            gr.hidden = vis === 0; var n = gr.querySelector(".mt-n"); if (n) n.textContent = vis;
-          });
+          curF = f; filterAll();
       }
       g.querySelectorAll("[data-filter]").forEach(function (b) {
         b.addEventListener("click", function () { apply(b.dataset.filter, b);
@@ -255,8 +290,14 @@
       window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
       var fab = main.querySelector(".an-fab");
       if (fab) {
-        fab.addEventListener("click", function () { var o = document.body.classList.toggle("side-open"); fab.setAttribute("aria-expanded", o ? "true" : "false"); });
-        side.addEventListener("click", function (e) { if (e.target.closest("a")) { document.body.classList.remove("side-open"); fab.setAttribute("aria-expanded", "false"); } });
+        function closeSide(back) { document.body.classList.remove("side-open"); fab.setAttribute("aria-expanded", "false"); if (back) fab.focus(); }
+        fab.addEventListener("click", function () {
+          var o = document.body.classList.toggle("side-open"); fab.setAttribute("aria-expanded", o ? "true" : "false");
+          if (o) { var on = side.querySelector("a.on") || side.querySelector("a"); if (on) on.focus(); }
+        });
+        side.addEventListener("click", function (e) { if (e.target.closest("a")) closeSide(false); });
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape" && document.body.classList.contains("side-open")) closeSide(true); });
+        document.addEventListener("click", function (e) { if (document.body.classList.contains("side-open") && !side.contains(e.target) && e.target !== fab) closeSide(false); });
       }
     }
     main.querySelectorAll("a[data-enc]").forEach(function (a) {
@@ -270,19 +311,67 @@
           var l = document.createElement("a"); l.href = url; l.download = a.dataset.name;
           document.body.appendChild(l); l.click(); l.remove();
           setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
+          var old = a.parentNode.querySelector(".mk-dl-err"); if (old) old.remove();
+        } catch (x) {
+          var m = a.parentNode.querySelector(".mk-dl-err") || document.createElement("small");
+          m.className = "mk-dl-err"; m.setAttribute("role", "alert");
+          m.textContent = " Download non riuscito: controlla la connessione e riprova. Se continua, ricarica la pagina.";
+          a.after(m);
         } finally { a.classList.remove("mk-busy"); }
       });
     });
   }
 
-  async function open(raw) {
+  function reveal(el) {
+    var pn = el.closest("[data-panel]");
+    if (pn && pn.hidden) { var bar = main.querySelector("[data-tabs]"); if (bar && bar._show) bar._show(pn.dataset.panel, false); }
+    if (el.closest("[hidden]")) {
+      var q = main.querySelector(".mt-q"); if (q && q.value) { q.value = ""; q.dispatchEvent(new Event("input")); }
+      var all = main.querySelector('[data-filter="*"]'); if (all) all.click();
+    }
+    for (var d = el.closest("details"); d; d = d.parentElement && d.parentElement.closest("details")) d.open = true;
+    setTimeout(function () {
+      var off = 14;
+      document.querySelectorAll(".mk-top, .mt-bar").forEach(function (x) { if (getComputedStyle(x).position === "sticky" && !x.classList.contains("mk-hide")) off += x.getBoundingClientRect().height; });
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - off, behavior: "instant" });
+    }, el.closest("[hidden]") ? 160 : 30);
+  }
+  function goHash() {
+    if (!location.hash) return false;
+    var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!el || el.dataset.panel !== undefined) return false;
+    reveal(el); return true;
+  }
+  window.addEventListener("hashchange", goHash);
+
+  async function open(raw, typed) {
     var html = new TextDecoder().decode(await decrypt(raw, meta.data));
     main.innerHTML = html;
     document.body.classList.add("mk-open");
     if (out) out.hidden = false;
+    setHdr();
     wire(raw);
-    if (location.hash) { var el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }
+    if (!goHash() && typed) { var h = main.querySelector("h1"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); } }
   }
+  function say(t) { var l = document.getElementById("mk-live"); if (l) { l.textContent = ""; setTimeout(function () { l.textContent = t; }, 30); } }
+
+  /* menu su telefono e testata che si fa da parte mentre leggi */
+  var top = document.querySelector(".mk-top"), menu = document.querySelector(".mk-menu");
+  if (menu) {
+    menu.addEventListener("click", function () { var o = document.body.classList.toggle("nav-open"); menu.setAttribute("aria-expanded", o ? "true" : "false"); if (o) top.classList.remove("mk-hide"); setHdr(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && document.body.classList.contains("nav-open")) { document.body.classList.remove("nav-open"); menu.setAttribute("aria-expanded", "false"); menu.focus(); } });
+  }
+  function setHdr() { document.documentElement.style.setProperty("--hdr", (top.classList.contains("mk-hide") ? 0 : Math.round(top.getBoundingClientRect().height)) + "px"); }
+  window.addEventListener("resize", setHdr); setHdr();
+  var lastY = window.scrollY, small = window.matchMedia("(max-width: 720px)");
+  window.addEventListener("scroll", function () {
+    var y = window.scrollY;
+    if (!small.matches || document.body.classList.contains("nav-open") || document.body.classList.contains("side-open")) { top.classList.remove("mk-hide"); lastY = y; setHdr(); return; }
+    if (y > lastY + 8 && y > 160) top.classList.add("mk-hide");
+    else if (y < lastY - 8) top.classList.remove("mk-hide");
+    lastY = y; setHdr();
+  }, { passive: true });
+  top.addEventListener("focusin", function () { top.classList.remove("mk-hide"); });
 
   if (out) out.addEventListener("click", function () { storeDel(); location.reload(); });
 
@@ -291,7 +380,7 @@
     err.hidden = true; form.classList.add("mk-busy");
     try {
       var raw = await derive(form.password.value);
-      await open(raw);
+      await open(raw, true);
       storeSet(raw);
     } catch (x) {
       err.hidden = false; form.classList.remove("mk-busy"); form.password.select();
