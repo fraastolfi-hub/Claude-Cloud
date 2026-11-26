@@ -844,3 +844,11 @@ ol.mt a{color:var(--ink);font-weight:700}
 .mm-prep li.none{color:var(--grey)}
 .mm-dec li{font-weight:600}
 @media(max-width:860px){.mm-grid{grid-template-columns:1fr}.mm-chips{margin-left:0}}
+
+/* menu: su desktop va a capo e resta centrato; su telefono scorre da sinistra */
+@media(min-width:721px){
+  .mk-top .mk-nav{flex-wrap:wrap;overflow:visible;row-gap:4px;max-width:1080px;padding:4px 24px 12px}
+}
+@media(max-width:720px){
+  .mk-top .mk-nav{justify-content:flex-start}
+}
