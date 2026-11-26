@@ -818,3 +818,29 @@ ol.mt li{display:grid;grid-template-columns:54px 1fr;gap:14px;background:var(--b
 .mt-n{font-size:34px;font-weight:600;color:var(--cta);line-height:1}
 ol.mt b{font-size:18px;font-weight:600}ol.mt p{font-size:15.5px;margin:6px 0 0;max-width:68ch}
 ol.mt a{color:var(--ink);font-weight:700}
+
+/* mese per mese leggibile */
+.mm-fix{background:var(--ink);color:var(--sand);padding:14px 18px;margin-bottom:16px}
+.mm-fix b{color:var(--hl)}.mm-fix ul{margin:6px 0 0;padding-left:18px;font-size:15px}
+.mm-list{display:grid;gap:18px}
+.mm{background:#F7F1EE;padding:0 0 6px}
+.mm-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding:14px 18px 10px;border-bottom:1px solid var(--rule)}
+.mm-h h3{font-size:24px;font-weight:600;margin:0}
+.mm-fase{font-size:14.5px;color:var(--grey);font-weight:600}
+.mm-chips{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.mm-chip{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--sand)}
+.k-indelebile{background:var(--cta);color:#fff}.k-c1{background:var(--hl)}.k-c2{background:#C9A27F}.k-c3{background:#e9b8bd}.k-c4{background:var(--ink);color:var(--sand)}.k-365{background:#fff;box-shadow:inset 0 0 0 1px var(--rule)}
+.mm-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:0 24px;padding:4px 18px 8px}
+.mm-col h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--cta);margin:12px 0 6px}
+.mm-col ul{list-style:none;padding:0;margin:0}
+.mm-col li{font-size:15px;padding:6px 0;border-bottom:1px solid var(--rule)}
+.mm-col li:last-child{border-bottom:0}
+.mm-on li{display:grid;grid-template-columns:70px 1fr 18px;gap:10px;align-items:start}
+.mm-on a{color:var(--ink);text-decoration:none;font-weight:700}
+.ch{font-size:11.5px;font-weight:700;padding:2px 6px;border-radius:5px;text-align:center;background:#fff}
+.ch-ad{background:var(--ink);color:var(--sand)}.ch-em{background:var(--cta);color:#fff}.ch-po{background:var(--hl)}.ch-si{background:#fff;box-shadow:inset 0 0 0 1px var(--rule)}
+.mm-prep li{display:flex;flex-direction:column;gap:1px}
+.mm-prep b{font-size:13px;color:var(--cta)}.mm-prep small{font-size:13px;color:var(--grey);font-weight:600}
+.mm-prep li.none{color:var(--grey)}
+.mm-dec li{font-weight:600}
+@media(max-width:860px){.mm-grid{grid-template-columns:1fr}.mm-chips{margin-left:0}}
