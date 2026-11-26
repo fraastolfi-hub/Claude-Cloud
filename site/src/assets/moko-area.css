@@ -978,3 +978,8 @@ ol.mt a{color:var(--ink);font-weight:700}
 .mk-extra:hover{background:rgba(48,22,18,.07)}
 .mk-extra[aria-current]{background:var(--ink);color:var(--sand);border-color:var(--ink)}
 @media(max-width:720px){.mk-extra{font-size:12px;padding:4px 10px}}
+/* icone del menu */
+.mk-top .mk-nav a,.mk-extra{display:inline-flex;align-items:center;gap:6px}
+.nav-i{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mk-extra .nav-i{width:13px;height:13px}
+@media(min-width:721px){.mk-top .mk-nav{padding-left:16px;padding-right:16px}.mk-top .mk-nav a{padding:6px 7px;gap:5px}}
