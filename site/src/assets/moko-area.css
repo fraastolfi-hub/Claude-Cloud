@@ -1012,3 +1012,28 @@ ol.mt a{color:var(--ink);font-weight:700}
 @media(max-width:720px){.mk-side{display:none}}
 /* separatore senza scritta tra Panoramica e le pagine operative */
 .mk-top .mk-nav .nav-sep{padding:0;margin:0 6px;height:18px;width:0;border-left:1px solid var(--rule);flex:none}
+
+/* ===== rifinitura grafica (26-11-2026) ===== */
+/* 1 · il sottotitolo sotto il titolo: più leggero, riga più corta */
+.nb-lede{font-size:clamp(18px,1.75vw,21px)!important;line-height:1.5!important;font-weight:500!important;max-width:62ch}
+/* 2 · scheda pacchetto: etichetta sopra il valore, niente colonne strette */
+@media(min-width:861px){.pk-cols{grid-template-columns:1.25fr 1fr}}
+.pk-facts dl{grid-template-columns:1fr;gap:0}
+.pk-facts dt{font-size:12.5px;font-weight:600;color:var(--grey);margin-top:10px}
+.pk-facts dt:first-child{margin-top:0}
+.pk-facts dd{font-size:15px;line-height:1.45;padding-bottom:8px;border-bottom:1px solid rgba(48,22,18,.12)}
+.pk-facts dd:last-of-type{border-bottom:0;padding-bottom:0}
+/* 3 · sul telefono il menu scorre: la dissolvenza a destra lo fa capire */
+@media(max-width:720px){
+  .mk-top .mk-nav{-webkit-mask-image:linear-gradient(to right,#000 82%,transparent);mask-image:linear-gradient(to right,#000 82%,transparent);padding-right:40px}
+}
+/* 4 · i salti alle sezioni arrivano sotto l'intestazione fissa */
+html{scroll-padding-top:140px}
+@media(max-width:720px){html{scroll-padding-top:128px}}
+/* 5 · titoli bilanciati, paragrafi senza parole orfane, cifre allineate nelle tabelle */
+.mk-h1,.acx-h h2,h3.blk,.pk-prom,.cs-h h3,.pi h3{text-wrap:balance}
+.acx-body p,.nb-lede,.say{text-wrap:pretty}
+.nb-table td,.ob b,.big3 b,.pk-tab td,.mm-chip{font-variant-numeric:tabular-nums}
+/* 6 · selezione e cursore nei colori di Moko */
+::selection{background:var(--hl);color:var(--ink)}
+input,textarea{caret-color:var(--cta)}
