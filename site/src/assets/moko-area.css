@@ -966,3 +966,10 @@ ol.mt a{color:var(--ink);font-weight:700}
 @media(max-width:860px){.ct-tema{grid-template-columns:1fr}.ct-rif .mk-photo{aspect-ratio:16/9}}
 /* menu a nove voci: padding più stretto perché stia su una riga a 1280 px */
 .mk-top .mk-nav a{padding:6px 9px}
+/* stampa: comunicati argomentati */
+.cs-com{padding:8px 0 28px;border-bottom:1px solid var(--rule);margin-bottom:18px}
+.cs-h h3{font-size:26px;font-weight:600;margin:8px 0 6px}
+.cs-com h4{font-size:16px;font-weight:700;margin:18px 0 6px}
+.cs-com>p{font-size:16px;line-height:1.5;margin:0}
+.cs-two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:860px){.cs-two{grid-template-columns:1fr;gap:0}}
