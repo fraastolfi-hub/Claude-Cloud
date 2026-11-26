@@ -973,3 +973,8 @@ ol.mt a{color:var(--ink);font-weight:700}
 .cs-com>p{font-size:16px;line-height:1.5;margin:0}
 .cs-two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 @media(max-width:860px){.cs-two{grid-template-columns:1fr;gap:0}}
+/* analisi del brand: fuori dal menu, in alto a destra */
+.mk-extra{font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;padding:5px 12px;border:1px solid var(--rule);border-radius:999px;white-space:nowrap;transition:background .15s}
+.mk-extra:hover{background:rgba(48,22,18,.07)}
+.mk-extra[aria-current]{background:var(--ink);color:var(--sand);border-color:var(--ink)}
+@media(max-width:720px){.mk-extra{font-size:12px;padding:4px 10px}}
