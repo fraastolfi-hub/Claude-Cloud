@@ -13,13 +13,34 @@
 /* /marketing-ideas/ — raccolta pubblica di idee di marketing per l'hospitality (nata come «swipe file»: nel codice resta quel nome). Tutti leggono gli esempi pubblicati;
    con la chiave si aggiunge, si modifica e si valuta la coda del radar (netlify/functions/swipe.mjs). Classi con prefisso sw-. */
 body{background:var(--e-carta)}
-.sw-hero{padding:clamp(40px,6vw,88px) 0 clamp(24px,3vw,36px);border-bottom:1px solid var(--e-linea)}
+.sw-hero{padding:clamp(32px,5vw,64px) 0 clamp(18px,2.5vw,28px)}
 .sw-hero h1{margin:16px 0 18px;max-width:26ch}
 .sw-hero .lead{max-width:56ch;margin:0}
 .sw-lingua{max-width:56ch;margin:12px 0 0;font-size:15px;color:var(--e-grafite)}
 .sw-intro>summary{display:none}
 .sw-intro>summary::-webkit-details-marker{display:none}
-.sw-paths{padding-top:22px;padding-bottom:6px}
+/* in testa: la copertina (l'idea scelta da Francesco, o l'ultima a 5 stelle) e le ultime tre da 4 stelle in su.
+   Compaiono solo con l'archivio «pulito»: appena filtri o cerchi, restano i risultati. Il ritaglio delle immagini segue il punto focale (--fx/--fy) calcolato da swipe-radar/copertina.py */
+.sw-top{padding-top:4px}
+.sw-cover{display:grid;grid-template-columns:1.25fr 1fr;background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color .15s}
+.sw-cover:hover{border-color:var(--e-inchiostro)}
+.sw-cover:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.sw-cover-img{aspect-ratio:4/3;background:var(--e-sabbia);overflow:hidden;border-right:1px solid var(--e-linea)}
+.sw-cover-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--fx,50%) var(--fy,20%)}
+.sw-cover-txt{padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;justify-content:center;gap:10px}
+.sw-cover-txt .sw-lab{margin:0}
+.sw-cover-txt h2{font-size:clamp(26px,2.6vw,36px)!important;line-height:1.15;margin:0}
+.sw-cover-txt p{margin:0;color:var(--e-grafite);font-size:16px;line-height:1.5;max-width:44ch}
+.sw-more{font:600 14px/1.3 var(--display);color:var(--e-inchiostro);background-image:linear-gradient(var(--e-giallo),var(--e-giallo));background-size:100% 2px;background-position:0 100%;background-repeat:no-repeat;align-self:flex-start;margin-top:4px}
+.sw-top3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.sw-top3 .sw-lab{grid-column:1/-1;margin:0 0 -6px}
+.sw-tcard{background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;overflow:hidden;cursor:pointer;transition:border-color .15s;display:flex;flex-direction:column}
+.sw-tcard:hover{border-color:var(--e-inchiostro)}
+.sw-tcard:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.sw-tcard .sw-body{padding:14px 16px 12px;flex:1}
+.sw-tcard .sw-body h3{font-size:19px!important}
+.sw-tcard .sw-thumb{aspect-ratio:16/10;border-top:1px solid var(--e-linea)}
+.sw-paths{padding-top:30px;padding-bottom:6px}
 .sw-paths .sw-lab{margin-bottom:10px}
 .sw-paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 @media (max-width:900px){.sw-paths-grid{grid-template-columns:repeat(2,1fr)}}
@@ -104,19 +125,21 @@ body{background:var(--e-carta)}
 .sw-out{margin-top:28px}
 
 .sw-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.sw-toolbar .sw-chip{flex:none}
 .sw-count{margin-right:auto;font:600 12px/1.3 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--e-nebbia);padding-left:38px;background:linear-gradient(currentColor,currentColor) 0 50%/26px 1px no-repeat}
 .sw-select{font:500 14px/1.2 var(--display);color:var(--e-inchiostro);background:var(--e-foglio);border:1px solid var(--e-linea-forte);border-radius:4px;padding:9px 12px}
 .sw-active{margin-bottom:18px}
 .sw-notice{border:1px solid var(--e-linea-forte);border-left:3px solid var(--e-giallo);background:var(--e-foglio);border-radius:4px;padding:12px 16px;margin-bottom:18px;font-size:15px}
 
-.sw-grid{columns:4 250px;column-gap:20px}
-.sw-card{break-inside:avoid;margin:0 0 20px;background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;overflow:hidden;cursor:pointer;transition:border-color .15s}
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;align-items:start}
+.sw-grid.one{grid-template-columns:minmax(0,1fr)}
+.sw-card{margin:0;background:var(--e-foglio);border:1px solid var(--e-linea);border-radius:6px;overflow:hidden;cursor:pointer;transition:border-color .15s}
 .sw-card:hover{border-color:var(--e-inchiostro)}
 .sw-card:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
-.sw-thumb{display:block;width:100%;max-height:560px;object-fit:cover;object-position:top;background:var(--e-sabbia)}
-.sw-quote{padding:20px 20px 6px;font:400 18px/1.4 var(--serif-t);letter-spacing:-.01em;white-space:pre-line;max-height:220px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent);background:var(--e-sabbia)}
-.sw-body{padding:14px 18px 16px}
-.sw-body h3{font-size:19px!important;line-height:1.25;margin:0 0 4px}
+.sw-thumb{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:var(--fx,50%) var(--fy,20%);background:var(--e-sabbia)}
+.sw-quote{padding:16px 16px 6px;font:400 15px/1.4 var(--serif-t);letter-spacing:-.01em;white-space:pre-line;max-height:150px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent);background:var(--e-sabbia)}
+.sw-body{padding:11px 13px 12px}
+.sw-body h3{font-size:16px!important;line-height:1.25;margin:0 0 4px}
 .sw-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--e-nebbia)}
 .sw-stars{color:var(--e-inchiostro);letter-spacing:1px}
 .sw-stars i{font-style:normal;opacity:.2}
@@ -209,11 +232,14 @@ body{background:var(--e-carta)}
   .sw-bar .wrap{gap:8px}
   .sw-add-l{display:none}
   .sw-layout{padding-top:20px}
-  .sw-grid{columns:2 150px;column-gap:12px}
-  .sw-card{margin-bottom:12px}
-  .sw-quote{font-size:15px;padding:14px 14px 4px}
+  .sw-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .sw-quote{font-size:14px;padding:12px 12px 4px}
   .sw-body{padding:10px 12px 12px}
-  .sw-body h3{font-size:16px!important}
+  .sw-body h3{font-size:15px!important}
+  .sw-cover{grid-template-columns:1fr}
+  .sw-cover-img{aspect-ratio:16/10;border-right:0;border-bottom:1px solid var(--e-linea)}
+  .sw-cover-txt{padding:18px 18px 20px}
+  .sw-cover-txt h2{font-size:24px!important}
   .sw-detail,.sw-form{grid-template-columns:minmax(0,1fr)}
   .sw-scrim{padding:0}
   .sw-modal{margin:0;min-height:100%;border-radius:0}
@@ -232,12 +258,13 @@ body{background:var(--e-carta)}
   .sw-paths-grid .sw-path{flex:0 0 74%;scroll-snap-align:start}
   .sw-paths-grid .sw-path span{display:none}
   .sw-fab{right:14px;bottom:14px;padding:11px 14px 11px 12px;font-size:14px}
-  .sw-grid{columns:1}
-  .sw-card{margin-bottom:16px}
-  .sw-thumb{max-height:none}
-  .sw-quote{font-size:16px;padding:16px 16px 6px}
-  .sw-body{padding:12px 14px 14px}
-  .sw-body h3{font-size:18px!important}
+  .sw-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .sw-top3{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:22px -20px 0;padding:0 20px 10px;scroll-padding-left:20px;scrollbar-width:none}
+  .sw-top3::-webkit-scrollbar{display:none}
+  .sw-top3 .sw-lab{flex:0 0 100%;margin:0 0 -4px}
+  .sw-top3 .sw-tcard{flex:0 0 78%;scroll-snap-align:start}
+  .sw-tcard .sw-body h3{font-size:17px!important}
+  .sw-toolbar{gap:8px}
 }
 </style>
 </head>
@@ -255,6 +282,7 @@ body{background:var(--e-carta)}
     </details>
   </div>
 </section>
+<div class="wrap sw-top" id="top"></div>
 <div class="wrap sw-paths" id="paths"></div>
 <div class="sw-bar">
   <div class="wrap">
@@ -277,6 +305,7 @@ body{background:var(--e-carta)}
     <div id="pathBanner"></div>
     <div class="sw-toolbar">
       <span class="sw-count" id="count">Caricamento…</span>
+      <button type="button" class="sw-chip" id="q4" data-rating="4">4★ e più</button>
       <select class="sw-select" id="sort" aria-label="Ordina">
         <option value="recent">Più recenti</option>
         <option value="cuori">Preferiti</option>
@@ -325,6 +354,9 @@ const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>
 const norm = s => String(s??'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 const imgUrl = id => API+'?img='+encodeURIComponent(id);
 const stars = n => n ? '★'.repeat(n)+'<i>'+'★'.repeat(5-n)+'</i>' : '';
+// punto focale del primo screenshot (calcolato dal radar): dove ritagliare miniature e copertina; senza, si mostra la parte alta
+const focStyle = it => it.focale ? ` style="--fx:${Math.round(it.focale.x*100)}%;--fy:${Math.round(it.focale.y*100)}%"` : '';
+const recente = (a,b)=>String(b.created_at).localeCompare(String(a.created_at));
 const lsGet = () => { try { return localStorage.getItem(LS)||''; } catch { return ''; } };
 const lsSet = v => { try { v ? localStorage.setItem(LS,v) : localStorage.removeItem(LS); } catch {} };
 function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.remove('hidden'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.add('hidden'),2600); }
@@ -420,7 +452,27 @@ function filtered(){
 }
 
 /* ---------- Render ---------- */
-function render(){ renderPaths(); renderAside(); renderGrid(); }
+function render(){ renderTop(); renderPaths(); renderAside(); renderGrid(); }
+/* ---------- In testa: copertina e le ultime tre (solo con l'archivio pulito) ---------- */
+const pulito = () => S.vista==='pubblicato' && !S.q && !S.sel.size && !S.percorso && !S.minRating && !S.onlyImg;
+const conImg = it => (it.images||[]).length>0;
+function copertinaDi(pub){ return pub.find(it=>it.copertina&&conImg(it)) || pub.find(it=>it.rating===5&&conImg(it)) || pub.find(it=>it.rating===4&&conImg(it)) || null; }
+function renderTop(){
+  const box=$('#top');
+  const pub=S.items.filter(it=>statoDi(it)==='pubblicato').sort(recente);
+  if(!S.loaded||!pulito()||pub.length<6){ box.innerHTML=''; return; }
+  const cov=copertinaDi(pub); if(!cov){ box.innerHTML=''; return; }
+  const tre=pub.filter(it=>it!==cov&&(it.rating||0)>=4&&conImg(it)).slice(0,3);
+  const frase=(cov.why||'').split(/(?<=[.!?])\s+/)[0].slice(0,200);
+  box.innerHTML=`<article class="sw-cover" tabindex="0" data-open="${esc(cov.id)}">
+      <div class="sw-cover-img"><img src="${imgUrl(cov.images[0])}" alt=""${focStyle(cov)}></div>
+      <div class="sw-cover-txt"><span class="sw-lab">In copertina</span><h2>${esc(cov.title||'Senza titolo')}</h2>
+        <div class="sw-meta">${cov.brand?`<span>${esc(cov.brand)}</span>`:''}${cov.rating?`<span class="sw-stars">${stars(cov.rating)}</span>`:''}</div>
+        ${frase?`<p>${esc(frase)}</p>`:''}<span class="sw-more">Leggi perché funziona e come rubarla</span></div></article>`+
+    (tre.length>=3?`<div class="sw-top3"><span class="sw-lab">Le ultime, da 4 stelle in su</span>${tre.map(it=>`<article class="sw-tcard" tabindex="0" data-open="${esc(it.id)}">
+      <div class="sw-body"><h3>${esc(it.title||'Senza titolo')}</h3><div class="sw-meta">${it.brand?`<span>${esc(it.brand)}</span>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}</div></div>
+      <img class="sw-thumb" loading="lazy" src="${imgUrl(it.images[0])}" alt=""${focStyle(it)}></article>`).join('')}</div>`:'');
+}
 function renderPaths(){
   const pub=S.items.filter(it=>statoDi(it)==='pubblicato');
   const conta=p=>pub.filter(it=>(it.tags||[]).some(t=>p.any.includes(t))).length;
@@ -457,25 +509,26 @@ function renderGrid(){
   $('#count').textContent=!S.loaded?'Caricamento…':`${res.length} ${res.length===1?'idea':'idee'}${res.length!==tot?' su '+tot:''}${S.vista==='da_valutare'?' da valutare':''}`;
   const tb=$('#tabs').querySelectorAll('button'); tb[0].textContent=`Pubblicati (${nVista('pubblicato')})`; tb[1].textContent=`Da valutare (${nVista('da_valutare')})`;
   tb.forEach(b=>b.classList.toggle('on',b.dataset.vista===S.vista));
+  $('#q4').classList.toggle('on',S.minRating===4);
   $('#active').innerHTML=[...S.sel].map(t=>`<button class="sw-chip on sm" data-tag="${esc(t)}">${esc(tagLabel(t))} ✕</button>`).join('');
   const g=$('#grid');
   if(!S.loaded){ g.innerHTML=''; return; }
-  if(!tot && S.vista==='da_valutare'){ g.style.columns='auto'; g.innerHTML='<div class="sw-empty"><h2>Coda vuota</h2><p>Il radar non ha trovato niente di nuovo. Ripassa domani mattina.</p></div>'; return; }
-  if(!tot && !CHIAVE){ g.style.columns='auto'; g.innerHTML='<div class="sw-empty"><h2>Le prime idee arrivano a breve</h2><p>Sto raccogliendo annunci, email e landing che funzionano. Torna tra qualche giorno.</p></div>'; return; }
+  if(!tot && S.vista==='da_valutare'){ g.classList.add('one'); g.innerHTML='<div class="sw-empty"><h2>Coda vuota</h2><p>Il radar non ha trovato niente di nuovo. Ripassa domani mattina.</p></div>'; return; }
+  if(!tot && !CHIAVE){ g.classList.add('one'); g.innerHTML='<div class="sw-empty"><h2>Le prime idee arrivano a breve</h2><p>Sto raccogliendo annunci, email e landing che funzionano. Torna tra qualche giorno.</p></div>'; return; }
   if(!tot){
-    g.style.columns='auto';
+    g.classList.add('one');
     g.innerHTML=`<div class="sw-empty"><h2>Nessuna idea ancora</h2>
       <p>Quando vedi un'ad, una DEM, una landing o un menu che ti ferma, fai uno screenshot e aggiungilo qui, da telefono o da desktop.</p>
       <p><b>Analizza con Claude</b> trascrive il copy (così lo ritrovi con la ricerca), propone i tag e scrive perché funziona e come adattarlo a un hotel o a un ristorante.</p>
       <button class="btn" data-act="add">Aggiungi il primo esempio</button></div>`;
     return;
   }
-  if(!res.length){ g.style.columns='auto'; g.innerHTML='<div class="sw-empty"><h2>Nessun risultato</h2><p>Prova a togliere un filtro o a cambiare parole.</p><button class="btn ghost" data-act="clear">Azzera i filtri</button></div>'; return; }
-  g.style.columns='';
+  if(!res.length){ g.classList.add('one'); g.innerHTML='<div class="sw-empty"><h2>Nessun risultato</h2><p>Prova a togliere un filtro o a cambiare parole.</p><button class="btn ghost" data-act="clear">Azzera i filtri</button></div>'; return; }
+  g.classList.remove('one');
   g.innerHTML=res.map(it=>{
     const img=(it.images||[])[0];
     return `<article class="sw-card" tabindex="0" data-open="${esc(it.id)}">
-      ${img?`<img class="sw-thumb" loading="lazy" src="${imgUrl(img)}" alt="">`:(it.copy?`<div class="sw-quote">${esc(it.copy.slice(0,400))}</div>`:'')}
+      ${img?`<img class="sw-thumb" loading="lazy" src="${imgUrl(img)}" alt=""${focStyle(it)}>`:(it.copy?`<div class="sw-quote">${esc(it.copy.slice(0,400))}</div>`:'')}
       <div class="sw-body"><h3>${esc(it.title||'Senza titolo')}</h3>
       <div class="sw-meta">${it.brand?`<span>${esc(it.brand)}</span>`:''}${it.rating?`<span class="sw-stars">${stars(it.rating)}</span>`:''}</div>
       <div class="sw-foot"><span></span><span class="sw-acts">${condividiBtn(it)}${cuoreBtn(it)}</span></div>
@@ -584,7 +637,7 @@ document.addEventListener('click',e=>{
 });
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){ if(document.querySelector('.sw-pop')){ chiudiPop(); return; } closeModal(); apriFiltri(false); }
-  if(e.key==='Enter' && e.target.matches('.sw-card')) openDetail(e.target.dataset.open);
+  if(e.key==='Enter' && e.target.matches('.sw-card,.sw-tcard,.sw-cover')) openDetail(e.target.dataset.open);
   if(e.key==='/' && !e.target.closest('input,textarea,select')){e.preventDefault();$('#q').focus();}
 });
 
@@ -617,6 +670,7 @@ function openDetail(id){
   openModal(`
     <div class="sw-mhead"><h2>${esc(it.title||'Senza titolo')}</h2>
       ${CHIAVE&&statoDi(it)==='da_valutare'?'<button class="btn sm ghost sw-danger" id="dDrop" type="button">Scarta</button><button class="btn sm" id="dPub" type="button">Pubblica</button>':''}
+      ${CHIAVE&&statoDi(it)==='pubblicato'?`<button class="btn sm ghost" id="dCover" type="button">${it.copertina?'Togli dalla copertina':'In copertina'}</button>`:''}
       ${CHIAVE?'<button class="btn sm ghost" id="dEdit" type="button">Modifica</button>':''}<button class="sw-x" id="dClose" aria-label="Chiudi">✕</button></div>
     <div class="sw-mbody"><div class="sw-detail">
       <div class="sw-imgs">${imgs.map(a=>`<a href="${imgUrl(a)}" target="_blank" rel="noopener"><img src="${imgUrl(a)}" alt=""></a>`).join('')||
@@ -648,6 +702,7 @@ function openDetail(id){
       </div></div></div>`);
   $('#dClose').onclick=closeModal;
   if($('#dEdit')) $('#dEdit').onclick=()=>openEditor(it);
+  if($('#dCover')) $('#dCover').onclick=async()=>{ const off=!!it.copertina; const r=await api('copertina',{id:it.id,off}); if(!r.ok) return toast(errore(r.errore)); if(!off) S.items.forEach(x=>x.copertina=false); upsert(r.esempio); closeModal(); render(); window.scrollTo({top:0}); toast(off?'Tolta dalla copertina':'In copertina'); };
   if($('#dPub')) $('#dPub').onclick=async()=>{ const r=await api('stato',{id:it.id,stato:'pubblicato'}); if(!r.ok) return toast(errore(r.errore)); upsert(r.esempio); closeModal(); render(); toast('Pubblicato'); };
   if($('#dDrop')) $('#dDrop').onclick=async()=>{ const r=await api('elimina',{id:it.id}); if(!r.ok) return toast(errore(r.errore)); S.items=S.items.filter(x=>x.id!==it.id); closeModal(); render(); toast('Scartato: il radar non lo riproporrà'); };
   const c=$('#dCopy'); if(c) c.onclick=async()=>{try{await navigator.clipboard.writeText(it.copy);toast('Copy copiato');}catch{toast('Copia non consentita');}};
