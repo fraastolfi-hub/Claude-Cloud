@@ -1,0 +1,50 @@
+{
+ "batch": "out-p",
+ "palette": [
+  "#fcfbf8",
+  "#f2efe8",
+  "#121a22",
+  "#ffffff",
+  "#15181c",
+  "#e3e1db",
+  "#1b2530",
+  "#ffd22e",
+  "#c9c6be",
+  "#4a4f57",
+  "#d9d6cf"
+ ],
+ "ads": [
+  {
+   "id": "P1_45",
+   "file": "p1_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "P1_916",
+   "file": "p1_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  }
+ ]
+}

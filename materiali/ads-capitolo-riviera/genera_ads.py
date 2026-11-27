@@ -193,6 +193,17 @@ def vasca():
 ADS.append(dict(id='N11', bg=CARTA, h='Più clic, camere vuote?<br><em>Manca il tappo.</em>', hs=92, vis=vasca,
                 sub='Il tappo è <b>un motivo per scegliere te.</b>'))
 
+# P1 (27 novembre 2026): l'annuncio sull'offerta stessa, il capitolo e cosa c'è dentro (voci dalla pagina /capitolo/)
+def indice():
+    voci = ('Le pesche di mio nonno', 'Perché l’ospite guarda solo prezzo e recensioni', 'Il noleggio bici del vicino',
+            'Il filtro nuovo: l’AI', 'Il test dei dieci secondi')
+    li = ''.join(f'<li><span>{k+1}</span>{v}</li>' for k, v in enumerate(voci))
+    return (f'<div class="pdf"><div class="pdf-cov"><img src="{COVER}" alt=""><em>13 pagine · PDF</em></div>'
+            f'<div class="pdf-toc"><small>Nel PDF</small><ol>{li}</ol><p>+ il link per fare il test sul tuo sito</p></div></div>')
+
+ADS.append(dict(id='P1', bg=SABBIA, h='Il primo capitolo.<br><em>Gratis, in venti minuti.</em>', hs=84, vis=indice,
+                sub='Meno di una riunione col commercialista. <b>Lasci la mail, il PDF arriva lì.</b>'))
+
 CSS = '''
 @font-face{font-family:Newsreader;src:url(@@NEWS@@) format("woff2");font-weight:200 800}
 @font-face{font-family:Figtree;src:url(@@FIG@@) format("woff2");font-weight:300 900}
@@ -336,6 +347,18 @@ h1 em{font-style:normal;background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .
 .er .empty{width:220px;height:40px;border-bottom:3px dashed #c9c6be}
 /* N11: la vasca disegnata */
 .vasca{display:block;max-width:920px;overflow:visible}
+/* P1: copertina del PDF e indice */
+.pdf{display:grid;grid-template-columns:330px 1fr;gap:44px;align-items:center;width:100%}
+.pdf-cov{display:grid;gap:14px;justify-items:center}
+.pdf-cov img{width:100%;border:2px solid #c9c6be;border-radius:4px;background:#fff}
+.pdf-cov em{font:600 20px Figtree;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#6f747c}
+.pdf-toc small{display:block;margin-bottom:16px;font:600 22px Figtree;letter-spacing:.14em;text-transform:uppercase;color:#6f747c}
+.pdf-toc ol{list-style:none;display:grid;gap:4px}
+.pdf-toc li{display:grid;grid-template-columns:44px 1fr;align-items:baseline;padding:14px 0;border-bottom:1px solid #e3e1db;font:500 31px/1.2 Newsreader;color:#15181c}
+.pdf-toc li span{font:600 22px Figtree;color:#6f747c}
+.pdf-toc li:last-child span{color:#15181c}
+.pdf-toc li:last-child{background:linear-gradient(#ffd22e,#ffd22e) 44px 88%/calc(100% - 44px) .12em no-repeat}
+.pdf-toc p{margin-top:16px;font:400 24px/1.3 Figtree;color:#4a4f57}
 /* famiglia foto: testo in alto, foto a tutta larghezza, piede su carta */
 .fo .txt{position:absolute;left:72px;right:72px;top:PT}
 .fo .txt .sub{margin:22px 0 0}

@@ -411,3 +411,27 @@ Immagine: «Più clic, camere vuote? Manca il tappo.» Rubinetto = campagne, pos
 - N8 (120259349943240197), N9 (120259349943540197), N10 (120259349944310197) caricati e pubblicati attivi, in revisione Meta.
 - **Attivi:** B1, C1, D2, E1, T1, T2, N2, N6, N8, N9, N10, N11 (dodici annunci, 10 €/giorno).
 - Ogni annuncio porta già il 4:5 (feed) e il 9:16 (storie e reel) nella stessa creatività.
+
+## P1 · L'offerta: il capitolo e cosa c'è dentro (27 novembre 2026) · bozza, non caricata
+Annuncio diretto sul download. Le voci dell'indice sono quelle della sezione «Nel PDF» di /capitolo/. Immagine in `out-p/` (route A, copertina reale del PDF). Generazione: `python3 -X utf8 genera_ads.py out-p P1`.
+- **Testo principale:**
+
+  Albergatore della Riviera, ti regalo il primo capitolo del mio libro.
+
+  13 pagine. Si leggono in venti minuti.
+  Meno di una riunione col commercialista.
+
+  Dentro trovi:
+  · le pesche di mio nonno, e perché è il no che fa il prezzo;
+  · perché l'ospite guarda solo prezzo e recensioni;
+  · il noleggio bici del vicino;
+  · il filtro nuovo: l'AI ne nomina due o tre;
+  · il test dei dieci secondi, con il link per farlo sul tuo sito.
+
+  È lo stesso metodo che uso con gli hotel che seguo.
+
+  Lasci la mail, il PDF arriva lì.
+
+- **Titolo:** Primo capitolo gratis: 13 pagine, 20 minuti
+- **Descrizione:** Dentro c'è il test dei dieci secondi
+- **utm_content:** p1
