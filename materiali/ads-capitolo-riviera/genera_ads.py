@@ -201,8 +201,9 @@ def indice():
     return (f'<div class="pdf"><div class="pdf-cov"><img class="me" src="{FOTO}" alt=""><em>13 pagine · PDF</em></div>'
             f'<div class="pdf-toc"><small>Nel PDF</small><ol>{li}</ol><p>+ il link per fare il test sul tuo sito</p></div></div>')
 
-ADS.append(dict(id='P1', bg=SABBIA, h='Il primo capitolo.<br><em>Gratis, in venti minuti.</em>', hs=84, vis=indice,
-                sub='Meno di una riunione col commercialista. <b>Lasci la mail, il PDF arriva lì.</b>'))
+# versione asciutta: titolo, una riga, foto grande (l'indice resta nella funzione indice() ma non si usa)
+ADS.append(dict(id='P1', bg=CARTA, foto=True, h='Il primo capitolo.<br><em>Gratis, in venti minuti.</em>', hs=88,
+                sub='<b>Dentro c’è il test dei dieci secondi.</b>'))
 
 CSS = '''
 @font-face{font-family:Newsreader;src:url(@@NEWS@@) format("woff2");font-weight:200 800}

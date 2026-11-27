@@ -21,13 +21,14 @@
     1080,
     1350
    ],
-   "route": "A",
-   "bleeds": "",
-   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
    "assets": [
     "newsreader.woff2",
     "figtree.woff2",
-    "copertina-pdf.png"
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
    ]
   },
   {
@@ -37,13 +38,14 @@
     1080,
     1920
    ],
-   "route": "A",
-   "bleeds": "",
-   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
    "assets": [
     "newsreader.woff2",
     "figtree.woff2",
-    "copertina-pdf.png"
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
    ]
   }
  ]
