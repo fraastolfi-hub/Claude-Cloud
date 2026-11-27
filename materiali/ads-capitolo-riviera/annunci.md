@@ -150,6 +150,9 @@ Annunci (pulsante «Scarica», link `/capitolo/` con `utm_campaign=capitolo-rivi
 | FE4 · Le lenzuola in vetrina · foto | 120259342814270197 | 2232763061449034 | sì |
 
 Da fare in Gestione inserzioni prima di pubblicare:
-- interessi (gestione alberghiera, Booking.com, titoli albergatore/hotel manager) come suggerimento: non aggiunti, servono gli ID veri di Meta;
+- ~~interessi~~ aggiunti il 27 novembre 2026 come suggerimento (pubblico Advantage+ resta attivo), con gli ID già usati nella campagna HDay 2026:
+  - titoli di lavoro: Hotel manager (109397225752920), Hospitality Manager (1407196789584789), Resort Manager (375037756013955), Revenue Manager (613318265434714), Reservations Manager (1542821855972806), Guest Services Manager (452716398209360), HOTEL MANAGEMENT (201355566598353), Hotel and Restaurant Management (128581427161886), hotel and restaurant management(HRM) (110796458998879);
+  - studi: Hotel / Motel and Restaurant Management (102091076536266), Hotel, Restaurant, & Institutional Management (170826086297252);
+  - mancano interessi veri e propri (Booking.com, settore alberghiero): la ricerca degli ID era esaurita il 27 novembre, si riprova dal 28;
 - esclusione di chi ha già scaricato il capitolo (pubblico personalizzato da creare sui visitatori di /capitolo/grazie/);
 - se si segue il piano a fasi: mettere in pausa B2, E4, FB2 e FE4 prima di pubblicare.
