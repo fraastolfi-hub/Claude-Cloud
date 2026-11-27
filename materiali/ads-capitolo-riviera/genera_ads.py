@@ -198,7 +198,7 @@ def indice():
     voci = ('Le pesche di mio nonno', 'Perché l’ospite guarda solo prezzo e recensioni', 'Il noleggio bici del vicino',
             'Il filtro nuovo: l’AI', 'Il test dei dieci secondi')
     li = ''.join(f'<li><span>{k+1}</span>{v}</li>' for k, v in enumerate(voci))
-    return (f'<div class="pdf"><div class="pdf-cov"><img src="{COVER}" alt=""><em>13 pagine · PDF</em></div>'
+    return (f'<div class="pdf"><div class="pdf-cov"><img class="me" src="{FOTO}" alt=""><em>13 pagine · PDF</em></div>'
             f'<div class="pdf-toc"><small>Nel PDF</small><ol>{li}</ol><p>+ il link per fare il test sul tuo sito</p></div></div>')
 
 ADS.append(dict(id='P1', bg=SABBIA, h='Il primo capitolo.<br><em>Gratis, in venti minuti.</em>', hs=84, vis=indice,
@@ -351,6 +351,7 @@ h1 em{font-style:normal;background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .
 .pdf{display:grid;grid-template-columns:330px 1fr;gap:44px;align-items:center;width:100%}
 .pdf-cov{display:grid;gap:14px;justify-items:center}
 .pdf-cov img{width:100%;border:2px solid #c9c6be;border-radius:4px;background:#fff}
+.pdf-cov img.me{height:560px;object-fit:cover;object-position:50% 18%;border-radius:12px;border-color:#e3e1db}
 .pdf-cov em{font:600 20px Figtree;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#6f747c}
 .pdf-toc small{display:block;margin-bottom:16px;font:600 22px Figtree;letter-spacing:.14em;text-transform:uppercase;color:#6f747c}
 .pdf-toc ol{list-style:none;display:grid;gap:4px}

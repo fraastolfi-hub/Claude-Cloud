@@ -413,7 +413,7 @@ Immagine: «Più clic, camere vuote? Manca il tappo.» Rubinetto = campagne, pos
 - Ogni annuncio porta già il 4:5 (feed) e il 9:16 (storie e reel) nella stessa creatività.
 
 ## P1 · L'offerta: il capitolo e cosa c'è dentro (27 novembre 2026) · bozza, non caricata
-Annuncio diretto sul download. Le voci dell'indice sono quelle della sezione «Nel PDF» di /capitolo/. Immagine in `out-p/` (route A, copertina reale del PDF). Generazione: `python3 -X utf8 genera_ads.py out-p P1`.
+Annuncio diretto sul download. Le voci dell'indice sono quelle della sezione «Nel PDF» di /capitolo/. Immagine in `out-p/` (route A, foto di Francesco con il libro, generata con AI: su Meta etichetta AI attiva). Generazione: `python3 -X utf8 genera_ads.py out-p P1`.
 - **Testo principale:**
 
   Albergatore della Riviera, ti regalo il primo capitolo del mio libro.
