@@ -409,10 +409,10 @@ Immagine: «Più clic, camere vuote? Manca il tappo.» Rubinetto = campagne, pos
 - N2 (120259349857870197), N6 (120259349857910197), N11 (120259349858010197) caricati e pubblicati attivi nel gruppo 120259342791260197, in revisione Meta. Etichetta AI: no (illustrazioni).
 - T1 e T2 superata la revisione: attivi.
 - N8 (120259349943240197), N9 (120259349943540197), N10 (120259349944310197) caricati e pubblicati attivi, in revisione Meta.
-- **Attivi:** B1, C1, D2, E1, T1, T2, N2, N6, N8, N9, N10, N11 (dodici annunci, 10 €/giorno).
+- **Attivi:** B1, C1, D2, E1, T1, T2, N2, N6, N8, N9, N10, N11, P1 (tredici annunci, 10 €/giorno). P1 con etichetta AI (foto).
 - Ogni annuncio porta già il 4:5 (feed) e il 9:16 (storie e reel) nella stessa creatività.
 
-## P1 · L'offerta: il capitolo e cosa c'è dentro (27 novembre 2026) · bozza, non caricata
+## P1 · L'offerta: il capitolo e cosa c'è dentro (27 novembre 2026) · pubblicato (120259350190760197)
 Annuncio diretto sul download. Le voci dell'indice sono quelle della sezione «Nel PDF» di /capitolo/. Immagine in `out-p/`: titolo «Ti regalo il primo capitolo del mio libro.», riga «Scopri di cosa parla. 13 pagine in PDF.» (route A, foto di Francesco con il libro, generata con AI: su Meta etichetta AI attiva). Generazione: `python3 -X utf8 genera_ads.py out-p P1`.
 - **Testo principale:**
 
