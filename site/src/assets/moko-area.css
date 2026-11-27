@@ -1103,7 +1103,7 @@ a.code-l:hover{text-decoration-color:var(--ink)}
 .mk-dl-err{display:block;color:var(--cta-t);font-weight:600;margin-top:4px}
 
 /* Panoramica: da dove si parte */
-.mk-route{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+.mk-route{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0 6px}
 .mk-route a{display:flex;flex-direction:column;gap:4px;background:#fff;border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink);box-shadow:inset 0 0 0 1px rgba(48,22,18,.14);transition:background-color .14s cubic-bezier(.25,.46,.45,.94)}
 .mk-route a:hover{background:#F7F1EE}
 .mk-route b{font-size:16px;line-height:1.3}
