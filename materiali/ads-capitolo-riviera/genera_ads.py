@@ -91,7 +91,7 @@ def report():
     up1 = (22, 26, 24, 33, 38, 36, 47, 55, 52, 66, 78, 92)
     up2 = (30, 28, 36, 41, 39, 50, 57, 61, 70, 74, 86, 96)
     flat = (34, 31, 35, 33, 32, 34, 33, 35, 32, 34, 33, 34)
-    return ('<div class="rep"><div class="rh"><b>Report del mese</b><span>Agenzia</span></div>'
+    return ('<div class="rep"><div class="rh"><b>Report dell’agenzia</b><span>Ottobre</span></div>'
             + row('Clic', up1, 'in salita') + row('Impression', up2, 'in salita') + row('Prenotazioni', flat, 'uguali', True)
             + '<div class="postit">E le camere?</div></div>')
 
