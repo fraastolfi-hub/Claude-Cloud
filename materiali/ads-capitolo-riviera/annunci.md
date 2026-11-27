@@ -413,15 +413,12 @@ Immagine: «Più clic, camere vuote? Manca il tappo.» Rubinetto = campagne, pos
 - Ogni annuncio porta già il 4:5 (feed) e il 9:16 (storie e reel) nella stessa creatività.
 
 ## P1 · L'offerta: il capitolo e cosa c'è dentro (27 novembre 2026) · bozza, non caricata
-Annuncio diretto sul download. Le voci dell'indice sono quelle della sezione «Nel PDF» di /capitolo/. Immagine in `out-p/` (route A, foto di Francesco con il libro, generata con AI: su Meta etichetta AI attiva). Generazione: `python3 -X utf8 genera_ads.py out-p P1`.
+Annuncio diretto sul download. Le voci dell'indice sono quelle della sezione «Nel PDF» di /capitolo/. Immagine in `out-p/`: titolo «Ti regalo il primo capitolo del mio libro.», riga «Scopri di cosa parla. 13 pagine in PDF.» (route A, foto di Francesco con il libro, generata con AI: su Meta etichetta AI attiva). Generazione: `python3 -X utf8 genera_ads.py out-p P1`.
 - **Testo principale:**
 
   Albergatore della Riviera, ti regalo il primo capitolo del mio libro.
 
-  13 pagine. Si leggono in venti minuti.
-  Meno di una riunione col commercialista.
-
-  Dentro trovi:
+  13 pagine in PDF. Ecco di cosa parla:
   · le pesche di mio nonno, e perché è il no che fa il prezzo;
   · perché l'ospite guarda solo prezzo e recensioni;
   · il noleggio bici del vicino;
@@ -432,6 +429,6 @@ Annuncio diretto sul download. Le voci dell'indice sono quelle della sezione «N
 
   Lasci la mail, il PDF arriva lì.
 
-- **Titolo:** Primo capitolo gratis: 13 pagine, 20 minuti
+- **Titolo:** Ti regalo il primo capitolo del mio libro
 - **Descrizione:** Dentro c'è il test dei dieci secondi
 - **utm_content:** p1
