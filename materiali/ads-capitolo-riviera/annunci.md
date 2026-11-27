@@ -241,3 +241,52 @@ La campagna è stata pubblicata da Gestione inserzioni alle 18:04. Budget 10 €
 - **Attivi live:** B1, C1, D2, E1, T1, T2 (T1 e T2 pubblicati la sera del 27, in revisione Meta).
 - **In pausa:** B2, E4, FB1, FB2, FC1, FD2, FE1, FE4.
 - **Solo in bozza:** B1E e C1E (in pausa).
+
+## Famiglia 4 · angoli Toskich (27 novembre 2026, sera) · bozza, non caricata
+Immagini in `out-n/` (route A, CSS nel design system del sito). Generazione: `python3 -X utf8 genera_ads.py out-n N2,N6`.
+
+### N2 · Il report pieno di clic (fondo carta)
+- **Testo principale:**
+
+  Albergatore della Riviera, fine mese arriva il report dell'agenzia.
+
+  Clic. Impression. Grafici che salgono.
+  Le prenotazioni dirette? Le stesse.
+
+  È come il contapassi.
+  Hai camminato tanto.
+  Sei ancora in cucina.
+
+  Il traffico non è il problema.
+  Chi arriva sul sito non trova un motivo per scegliere te.
+
+  Nel primo capitolo del mio libro ti spiego perché succede.
+  13 pagine, gratis, in PDF.
+
+- **Titolo:** Tanti clic, le stesse prenotazioni
+- **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
+- **utm_content:** n2
+
+### N6 · ChatGPT consiglia chi sa descrivere (fondo sabbia)
+- **Testo principale:**
+
+  Albergatore della Riviera, un ospite chiede a ChatGPT dove dormire a Rimini.
+
+  Ne nomina due o tre.
+  Non i più belli.
+  Quelli che sa descrivere.
+
+  «Quello delle bici.»
+  «Quello del silenzio.»
+
+  Se di te sa solo «vicino al mare», non ti nomina.
+
+  È come chiedere la strada a uno del posto.
+  Ti manda dal bar che sa raccontare.
+
+  Perché succede è nel primo capitolo del mio libro.
+  13 pagine, gratis, in PDF.
+
+- **Titolo:** ChatGPT consiglia chi sa descrivere
+- **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
+- **utm_content:** n6

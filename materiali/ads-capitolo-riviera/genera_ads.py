@@ -83,6 +83,31 @@ ADS += [
       sub='<b>La qualità li fa tornare.</b> Non li fa arrivare.'),
 ]
 
+# famiglia 4 (angoli Toskich, 27 novembre 2026 sera): N2 il report pieno di clic, N6 ChatGPT consiglia chi sa descrivere
+def report():
+    def row(lab, hs, tag, flat=False):
+        bars = ''.join(f'<i style="height:{h}%"></i>' for h in hs)
+        return f'<div class="rr{" fl" if flat else ""}"><b>{lab}</b><div class="bars">{bars}</div><span>{tag}</span></div>'
+    up1 = (22, 26, 24, 33, 38, 36, 47, 55, 52, 66, 78, 92)
+    up2 = (30, 28, 36, 41, 39, 50, 57, 61, 70, 74, 86, 96)
+    flat = (34, 31, 35, 33, 32, 34, 33, 35, 32, 34, 33, 34)
+    return ('<div class="rep"><div class="rh"><b>Report del mese</b><span>Agenzia</span></div>'
+            + row('Clic', up1, 'in salita') + row('Impression', up2, 'in salita') + row('Prenotazioni', flat, 'uguali', True)
+            + '<div class="postit">E le camere?</div></div>')
+
+def chat_desc():
+    li = ''.join(f'<li><i>xxxxxxxxxx</i><span>{t}</span></li>' for t in ('quello delle bici', 'quello del silenzio', 'quello dei bambini'))
+    return f'''<div class="chat cd"><div class="q">Dove dormo tre notti a Rimini?</div>
+<div class="a"><p>Ti consiglio questi tre:</p><ol>{li}</ol></div>
+<div class="ghost"><b>Il tuo hotel</b><span>«vicino al mare»</span><em>non nominato</em></div></div>'''
+
+ADS += [
+ dict(id='N2', bg=CARTA, h='Tanti clic.<br><em>Le stesse prenotazioni.</em>', hs=88, vis=report,
+      sub='È come il contapassi. <b>Hai camminato tanto. Sei ancora in cucina.</b>'),
+ dict(id='N6', bg=SABBIA, h='ChatGPT consiglia<br><em>chi sa descrivere.</em>', hs=92, vis=chat_desc,
+      sub='Se di te sa solo «vicino al mare», <b>non ti nomina.</b>'),
+]
+
 CSS = '''
 @font-face{font-family:Newsreader;src:url(@@NEWS@@) format("woff2");font-weight:200 800}
 @font-face{font-family:Figtree;src:url(@@FIG@@) format("woff2");font-weight:300 900}
@@ -169,6 +194,27 @@ h1 em{font-style:normal;background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .
 .shut .handle{position:absolute;left:50%;bottom:36px;width:90px;height:12px;margin-left:-45px;border-radius:6px;background:#6f747c;z-index:2}
 .shut .glow{position:absolute;left:0;right:0;bottom:0;height:14px;background:#ffd22e;box-shadow:0 -6px 18px rgba(255,210,46,.55);z-index:1}
 .shut .floor{height:6px;background:#4a4f57;border-radius:0 0 3px 3px}
+/* N2: il report dell'agenzia, un solo post-it giallo */
+.rep{position:relative;width:100%;max-width:900px;background:#fff;border:2px solid #e3e1db;border-radius:12px;padding:30px 36px 18px}
+.rh{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:2px solid #e3e1db}
+.rh b{font:500 38px Newsreader}.rh span{font:600 19px Figtree;letter-spacing:.06em;color:#6f747c;border:1px solid #c9c6be;border-radius:3px;padding:4px 10px}
+.rr{display:grid;grid-template-columns:200px 1fr 120px;gap:24px;align-items:end;padding:20px 0;border-bottom:1px solid #e3e1db}
+.rr:last-of-type{border-bottom:0}
+.rr b{font:600 28px/1.2 Figtree;align-self:center}
+.rr span{font:600 20px Figtree;color:#6f747c;text-align:right;align-self:center}
+.bars{display:flex;align-items:flex-end;gap:8px;height:96px}
+.bars i{flex:1;background:#4a4f57;border-radius:3px 3px 0 0}
+.fl .bars i{background:#c9c6be}
+.fl b,.fl span{color:#15181c}
+.postit{position:absolute;right:-18px;bottom:-44px;transform:rotate(-3deg);background:#ffd22e;padding:20px 28px;font:italic 500 44px/1 Newsreader;color:#15181c;border-radius:2px}
+/* N6: la chat che descrive, e il tuo hotel che non c'è */
+.cd{gap:20px}
+.cd .a{width:760px}
+.cd ol{margin-left:36px}
+.cd li span{font-weight:400;color:#b8c0c8;margin-left:14px}
+.ghost{justify-self:start;width:760px;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;border:2px dashed #c9c6be;border-radius:12px;padding:22px 28px;color:#6f747c}
+.ghost b{font:500 34px Newsreader;color:#4a4f57}.ghost span{font:italic 400 28px Figtree}
+.ghost em{font:600 19px Figtree;font-style:normal;letter-spacing:.06em;text-transform:uppercase;border:1px solid #c9c6be;border-radius:3px;padding:4px 10px}
 /* famiglia foto: testo in alto, foto a tutta larghezza, piede su carta */
 .fo .txt{position:absolute;left:72px;right:72px;top:PT}
 .fo .txt .sub{margin:22px 0 0}
@@ -198,6 +244,7 @@ def build(ad, W, H):
         body = f'''<div class="canvas"><div class="col">{kick}<h1>{ad["h"]}</h1><div class="vis">{ad["vis"]()}</div><p class="sub">{ad["sub"]}</p>{foot}</div></div>'''
     return f'<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><style>{css}</style></head><body class="{cls}">{body}</body></html>'
 
+if len(sys.argv) > 2: ADS = [a for a in ADS if a['id'] in sys.argv[2].split(',')]  # es. N2,N6
 man = {'batch': OUT.name, 'palette': [CARTA, SABBIA, NOTTE, '#ffffff', '#15181c', '#e3e1db', '#1b2530', '#ffd22e', '#c9c6be', '#4a4f57', '#d9d6cf'], 'ads': []}
 for ad in ADS:
     for (W, H, suf) in ((1080, 1350, '45'), (1080, 1920, '916')):
