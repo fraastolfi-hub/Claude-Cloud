@@ -109,10 +109,39 @@ ADS += [
 ]
 
 # famiglia 4, seconda tornata (27 novembre 2026): N8 il gemello, N9 il sito rifatto, N10 prima dei lavori, N11 la vasca senza tappo
+def facade(name):
+    # facciata da Riviera: insegna sul tetto, quattro piani di balconi, tenda a righe sull'ingresso
+    ink = '#15181c'
+    wins = ''
+    for r in range(4):
+        y = 92 + r * 52
+        for c in range(4):
+            x = 58 + c * 74
+            wins += f'<rect x="{x}" y="{y}" width="40" height="30" rx="2" fill="#dfe6ea" stroke="{ink}" stroke-width="2"/>'
+        wins += f'<path d="M48 {y+34} H352 M48 {y+34} v-10 M352 {y+34} v-10" stroke="{ink}" stroke-width="3" fill="none"/>'
+    stripes = ''.join(f'<rect x="{150 + k*20}" y="306" width="10" height="22" fill="#4a4f57"/>' for k in range(5))
+    return f"""<svg viewBox="0 0 400 400" width="100%" class="fac">
+<rect x="96" y="20" width="208" height="44" rx="4" fill="#fff" stroke="{ink}" stroke-width="3"/>
+<text x="200" y="51" text-anchor="middle" font-family="Newsreader" font-weight="500" font-size="25" fill="{ink}">{name}</text>
+<path d="M130 64 v12 M270 64 v12" stroke="{ink}" stroke-width="3"/>
+<rect x="36" y="76" width="328" height="312" fill="#f2efe8" stroke="{ink}" stroke-width="3"/>
+{wins}
+<rect x="140" y="306" width="120" height="22" fill="#fff" stroke="{ink}" stroke-width="2"/>{stripes}
+<rect x="170" y="330" width="60" height="58" fill="#c9d5db" stroke="{ink}" stroke-width="2"/>
+<path d="M200 330 v58" stroke="{ink}" stroke-width="2"/>
+<rect x="64" y="340" width="70" height="34" rx="2" fill="#dfe6ea" stroke="{ink}" stroke-width="2"/>
+<rect x="266" y="340" width="70" height="34" rx="2" fill="#dfe6ea" stroke="{ink}" stroke-width="2"/>
+<path d="M10 388 H390" stroke="{ink}" stroke-width="3"/>
+</svg>"""
+
 def twins():
-    card = ('<div class="hp"><div class="hp-ph"></div><b>Hotel <i class="bl">xxxxxxx</i></b>'
-            '<ul><li>Camere confortevoli</li><li>A due passi dal mare</li><li>Staff cordiale</li></ul><span class="hp-bt">Prenota</span></div>')
-    return f'<div class="twins"><div class="tw-row"><div><small class="tw-l">Il tuo hotel</small>{card}</div><div><small class="tw-l">Quello accanto</small>{card}</div></div><div class="tw-sol">Soluzione: nessuna.</div></div>'
+    def card(name):
+        return (f'<div class="hp">{facade(name)}<b>{name}</b>'
+                '<ul><li>Camere confortevoli</li><li>A due passi dal mare</li><li>Staff cordiale</li></ul></div>')
+    return ('<div class="twins"><div class="tw-row">'
+            f'<div><small class="tw-l">Il tuo hotel</small>{card("Hotel Miramare")}</div>'
+            f'<div><small class="tw-l">Quello accanto</small>{card("Hotel Bellavista")}</div>'
+            '</div><div class="tw-sol">Soluzione: nessuna.</div></div>')
 
 def browsers():
     old = ('<div class="br old"><div class="br-bar"><i></i><i></i><i></i></div><div class="br-in">'
@@ -136,10 +165,33 @@ ADS += [
  dict(id='N10', bg=CARTA, h='Gli interni li rifanno tutti.<br><em>Il motivo no.</em>', hs=80, vis=estimate,
       sub='<b>Prima dei lavori,</b> decidi per chi li fai.'),
 ]
-if (HERE / 'foto-artlist/vasca.png').exists():
-    ADS.append(dict(id='N11', bg=CARTA, foto=True, img=b64(HERE / 'foto-artlist/vasca.png', 'image/png'), opos='62% 62%',
-                    h='L’acqua entra.<br><em>L’acqua esce.</em>', hs=88,
-                    sub='<b>La bolletta la paghi tu.</b> Il tappo è un motivo per scegliere te.'))
+# N11 disegnata (la foto Artlist foto-artlist/vasca.png resta come alternativa): rubinetto = traffico, scarico aperto, tappo appeso fuori
+def vasca():
+    ink, w1, w2 = '#15181c', '#c9d5db', '#dfe6ea'
+    stream = f'<path d="M262 132 C 258 220, 270 330, 262 452" stroke="{w1}" stroke-width="16" fill="none" stroke-linecap="round"/>'
+    out = ''.join(f'<path d="M{x} 478 C {x-4} 500, {x+4} 520, {x} 548" stroke="{w1}" stroke-width="8" fill="none" stroke-linecap="round"/>' for x in (498, 520, 542))
+    arrow = f'<path d="M520 552 l-14 -14 M520 552 l14 -14" stroke="{ink}" stroke-width="3" fill="none"/>'
+    return f'''<svg class="vasca" viewBox="0 0 900 600" width="100%" font-family="Figtree">
+<rect x="0" y="0" width="900" height="600" fill="none"/>
+<path d="M196 40 V108 H270 V128" stroke="{ink}" stroke-width="10" fill="none" stroke-linejoin="round"/>
+<rect x="180" y="58" width="32" height="14" rx="4" fill="{ink}"/>
+<path d="M128 214 L772 214 L736 444 Q730 474 696 474 L204 474 Q170 474 164 444 Z" fill="#fff" stroke="{ink}" stroke-width="4"/>
+<path d="M170 452 Q176 470 204 470 L696 470 Q724 470 730 452 L732 440 L168 440 Z" fill="{w2}"/>
+<rect x="104" y="200" width="692" height="20" rx="10" fill="#fff" stroke="{ink}" stroke-width="4"/>
+<path d="M210 474 l-14 36 M690 474 l14 36" stroke="{ink}" stroke-width="6" stroke-linecap="round"/>
+{stream}
+<ellipse cx="520" cy="472" rx="26" ry="7" fill="{ink}"/>
+{out}{arrow}
+<path d="M760 210 C 800 240, 790 280, 810 308" stroke="#6f747c" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" fill="none"/>
+<circle cx="810" cy="330" r="22" fill="#ffd22e" stroke="{ink}" stroke-width="3"/>
+<text x="300" y="72" font-size="28" font-weight="600" fill="{ink}">Il rubinetto: campagne, post, agenzia</text>
+<text x="830" y="392" font-size="28" font-weight="600" fill="{ink}" text-anchor="middle">Il tappo</text>
+<text x="566" y="540" font-size="27" font-weight="600" fill="{ink}">Scarico aperto:</text>
+<text x="566" y="574" font-size="27" fill="#4a4f57">nessun motivo per sceglierti</text>
+</svg>'''
+
+ADS.append(dict(id='N11', bg=CARTA, h='Più clic, camere vuote?<br><em>Manca il tappo.</em>', hs=92, vis=vasca,
+                sub='Il tappo è <b>un motivo per scegliere te.</b>'))
 
 CSS = '''
 @font-face{font-family:Newsreader;src:url(@@NEWS@@) format("woff2");font-weight:200 800}
@@ -254,7 +306,8 @@ h1 em{font-style:normal;background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .
 .tw-row{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%}
 .hp{background:#fff;border:2px solid #e3e1db;border-radius:12px;padding:20px}
 .hp-ph{height:170px;border-radius:8px;background:linear-gradient(180deg,#dfe6ea 0 52%,#c9d5db 52% 66%,#ece4d4 66%)}
-.hp b{display:block;margin:18px 0 10px;font:500 34px Newsreader}
+.hp b{display:block;margin:14px 0 8px;font:500 32px Newsreader}
+.fac{display:block}
 .hp ul{list-style:none;display:grid;gap:4px;font:400 26px/1.35 Figtree;color:#4a4f57}
 .hp-bt{display:inline-block;margin-top:16px;font:600 22px Figtree;border:2px solid #15181c;border-radius:999px;padding:8px 22px}
 .tw-sol{font:600 18px Figtree;letter-spacing:.14em;text-transform:uppercase;color:#6f747c;transform:rotate(180deg)}
@@ -281,6 +334,8 @@ h1 em{font-style:normal;background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .
 .er.why{border-bottom:0;margin-top:10px;padding-top:26px;border-top:2px solid #15181c;color:#15181c;font-weight:600}
 .er.why span{background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .14em no-repeat;padding-bottom:.06em}
 .er .empty{width:220px;height:40px;border-bottom:3px dashed #c9c6be}
+/* N11: la vasca disegnata */
+.vasca{display:block;max-width:920px;overflow:visible}
 /* famiglia foto: testo in alto, foto a tutta larghezza, piede su carta */
 .fo .txt{position:absolute;left:72px;right:72px;top:PT}
 .fo .txt .sub{margin:22px 0 0}

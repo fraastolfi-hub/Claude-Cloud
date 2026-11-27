@@ -292,7 +292,7 @@ Immagini in `out-n/` (route A, CSS nel design system del sito). Generazione: `py
 - **utm_content:** n6
 
 ## Famiglia 4, seconda tornata (27 novembre 2026) · bozza, non caricata
-Dagli spunti di `copy-genius/.../meta-ads-30.html` (01, 05+16, 25, 06), riscritti in tono Toskich per il capitolo gratis: niente prezzo, niente garanzia. Immagini in `out-n2/`: N8, N9, N10 in CSS (route A), N11 foto Artlist `foto-artlist/vasca.png` (Nano Banana Pro, variante B di due, 320 crediti; su Meta etichetta AI attiva). Generazione: `python3 -X utf8 genera_ads.py out-n2 N8,N9,N10,N11`.
+Dagli spunti di `copy-genius/.../meta-ads-30.html` (01, 05+16, 25, 06), riscritti in tono Toskich per il capitolo gratis: niente prezzo, niente garanzia. Immagini in `out-n2/`: tutte in CSS/SVG (route A), niente etichetta AI. N8 con due facciate disegnate e nomi di fantasia generici (Hotel Miramare, Hotel Bellavista). N11 disegnata: la foto Artlist `foto-artlist/vasca.png` (320 crediti) resta come alternativa. Generazione: `python3 -X utf8 genera_ads.py out-n2 N8,N9,N10,N11`.
 
 ### N8 · Il gemello (fondo carta)
 - **Testo principale:**
@@ -376,7 +376,8 @@ Dagli spunti di `copy-genius/.../meta-ads-30.html` (01, 05+16, 25, 06), riscritt
 - **utm_content:** n10
 - Nota: vicino a T2 (la serranda). Gli importi nel preventivo sono sfocati e illeggibili.
 
-### N11 · La vasca senza tappo (fondo carta, foto Artlist)
+### N11 · La vasca senza tappo (fondo carta, disegno)
+Immagine: «Più clic, camere vuote? Manca il tappo.» Rubinetto = campagne, post, agenzia; scarico aperto = nessun motivo per sceglierti; il tappo giallo appeso fuori.
 - **Testo principale:**
 
   Albergatore della Riviera, compri traffico.
@@ -400,6 +401,6 @@ Dagli spunti di `copy-genius/.../meta-ads-30.html` (01, 05+16, 25, 06), riscritt
   Nel primo capitolo del mio libro ti spiego perché succede.
   13 pagine, gratis, in PDF.
 
-- **Titolo:** L'acqua entra, l'acqua esce
+- **Titolo:** Più clic, camere vuote? Manca il tappo
 - **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
 - **utm_content:** n11
