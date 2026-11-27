@@ -267,7 +267,7 @@ Immagini in `out-n/` (route A, CSS nel design system del sito). Generazione: `py
 - **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
 - **utm_content:** n2
 
-### N6 · ChatGPT consiglia chi sa descrivere (fondo sabbia)
+### N6 · Chi consiglia ChatGPT? Chi sa descrivere (fondo sabbia)
 - **Testo principale:**
 
   Albergatore della Riviera, un ospite chiede a ChatGPT dove dormire a Rimini.
@@ -287,6 +287,6 @@ Immagini in `out-n/` (route A, CSS nel design system del sito). Generazione: `py
   Perché succede è nel primo capitolo del mio libro.
   13 pagine, gratis, in PDF.
 
-- **Titolo:** ChatGPT consiglia chi sa descrivere
+- **Titolo:** Chi consiglia ChatGPT? Chi sa descrivere
 - **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
 - **utm_content:** n6

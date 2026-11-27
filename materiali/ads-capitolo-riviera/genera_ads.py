@@ -104,7 +104,7 @@ def chat_desc():
 ADS += [
  dict(id='N2', bg=CARTA, h='Tanti clic.<br><em>Le stesse prenotazioni.</em>', hs=88, vis=report,
       sub='È come il contapassi. <b>Hai camminato tanto. Sei ancora in cucina.</b>'),
- dict(id='N6', bg=SABBIA, h='ChatGPT consiglia<br><em>chi sa descrivere.</em>', hs=92, vis=chat_desc,
+ dict(id='N6', bg=SABBIA, h='Chi consiglia ChatGPT?<br><em>Chi sa descrivere.</em>', hs=84, vis=chat_desc,
       sub='Se di te sa solo «vicino al mare», <b>non ti nomina.</b>'),
 ]
 
