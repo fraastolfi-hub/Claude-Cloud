@@ -148,6 +148,11 @@ Annunci (pulsante «Scarica», link `/capitolo/` con `utm_campaign=capitolo-rivi
 | FD2 · Le bici del vicino · foto | 120259342814100197 | 29524691577193078 | sì |
 | FE1 · Ad agosto dici no · foto | 120259342814250197 | 1789483678830861 | sì |
 | FE4 · Le lenzuola in vetrina · foto | 120259342814270197 | 2232763061449034 | sì |
+| B1E · Cinquanta rettangoli · illustrata · emoji | 120259345147010197 | 1456583756612868 | no |
+| C1E · Test dei dieci secondi · illustrata · emoji | 120259345148020197 | 1454903256824878 | no |
+
+### Test emoji (27 novembre 2026)
+B1E e C1E sono identici a B1 e C1 (stesse immagini, titolo, descrizione), con una sola differenza: l'ultima riga del testo principale comincia con 📖. Codici `utm_content=b1e` e `c1e`. Regola: mai nella prima riga, mai più di una per annuncio, mai in titolo e descrizione. Dopo 7-10 giorni confrontare il costo per iscritto B1E contro B1 e C1E contro C1: se l'emoji vince in entrambi, estenderla agli altri.
 
 Da fare in Gestione inserzioni prima di pubblicare:
 - ~~interessi~~ aggiunti il 27 novembre 2026 come suggerimento (pubblico Advantage+ resta attivo), con gli ID già usati nella campagna HDay 2026:
