@@ -2,8 +2,8 @@
   "summary": {
     "batch": "out",
     "date": "2026-11-27",
-    "n": 24,
-    "passed": 12,
+    "n": 28,
+    "passed": 14,
     "avg_score": 92.5,
     "benchmarks": {
       "margin_floor": 48,
@@ -43,7 +43,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.989,
+          "value": 0.993,
           "min": 0.8,
           "pass": true
         }
@@ -80,7 +80,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.993,
+          "value": 0.995,
           "min": 0.8,
           "pass": true
         }
@@ -119,7 +119,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.968,
+          "value": 0.98,
           "min": 0.8,
           "pass": true
         }
@@ -156,7 +156,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.978,
+          "value": 0.986,
           "min": 0.8,
           "pass": true
         }
@@ -195,7 +195,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.985,
+          "value": 0.99,
           "min": 0.8,
           "pass": true
         }
@@ -232,7 +232,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.989,
+          "value": 0.993,
           "min": 0.8,
           "pass": true
         }
@@ -271,7 +271,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.979,
+          "value": 0.987,
           "min": 0.8,
           "pass": true
         }
@@ -308,7 +308,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.985,
+          "value": 0.991,
           "min": 0.8,
           "pass": true
         }
@@ -347,7 +347,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.987,
+          "value": 0.991,
           "min": 0.8,
           "pass": true
         }
@@ -384,7 +384,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.991,
+          "value": 0.994,
           "min": 0.8,
           "pass": true
         }
@@ -423,7 +423,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.955,
+          "value": 0.974,
           "min": 0.8,
           "pass": true
         }
@@ -460,7 +460,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.968,
+          "value": 0.982,
           "min": 0.8,
           "pass": true
         }
@@ -499,7 +499,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.68,
+          "value": 0.754,
           "min": 0.0,
           "pass": true
         }
@@ -536,7 +536,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.768,
+          "value": 0.823,
           "min": 0.0,
           "pass": true
         }
@@ -575,7 +575,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.678,
+          "value": 0.754,
           "min": 0.0,
           "pass": true
         }
@@ -612,7 +612,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.767,
+          "value": 0.823,
           "min": 0.0,
           "pass": true
         }
@@ -651,7 +651,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.679,
+          "value": 0.754,
           "min": 0.0,
           "pass": true
         }
@@ -688,7 +688,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.767,
+          "value": 0.823,
           "min": 0.0,
           "pass": true
         }
@@ -727,7 +727,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.677,
+          "value": 0.753,
           "min": 0.0,
           "pass": true
         }
@@ -764,7 +764,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.767,
+          "value": 0.823,
           "min": 0.0,
           "pass": true
         }
@@ -803,7 +803,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.679,
+          "value": 0.754,
           "min": 0.0,
           "pass": true
         }
@@ -840,7 +840,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.768,
+          "value": 0.823,
           "min": 0.0,
           "pass": true
         }
@@ -879,7 +879,7 @@
           "pass": true
         },
         "palette": {
-          "value": 0.681,
+          "value": 0.755,
           "min": 0.0,
           "pass": true
         }
@@ -916,8 +916,160 @@
           "pass": true
         },
         "palette": {
-          "value": 0.769,
+          "value": 0.824,
           "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "t1_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 79,
+            "R": 72,
+            "B": 64
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#121A22",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.975,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "t1_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 257,
+            "R": 72,
+            "B": 300
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#121A22",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.982,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "t2_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 79,
+            "R": 72,
+            "B": 64
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.972,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "t2_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 257,
+            "R": 72,
+            "B": 300
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.98,
+          "min": 0.8,
           "pass": true
         }
       },

@@ -60,6 +60,27 @@ ADS += [dict(id='F' + k, foto=True, bg=CARTA, **COPY[k]) for k in COPY]
 # senza il fumetto «Boh, sembra carino» la riga di C1 va detta per intero
 next(a for a in ADS if a['id'] == 'FC1')['sub'] = '«Boh, sembra carino.» <b>Per l’ospite sei invisibile.</b>'
 
+# famiglia 3 (registro Toskich, 27 novembre 2026): T1 il tappo di sughero, T2 la serranda abbassata
+def tappo():
+    waves = ''.join(f'<path d="M0 {y} C 75 {y-18}, 150 {y+18}, 225 {y} S 375 {y-18}, 450 {y} S 600 {y+18}, 675 {y} S 825 {y-18}, 900 {y}" fill="none" stroke="{c}" stroke-width="3"/>'
+                    for y, c in ((250, '#eef0f2'), (300, '#5b6875'), (350, '#3a4652')))
+    dots = ''.join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#a98352"/>' for x, y, r in ((-18,-30,3),(6,-40,2.5),(16,-18,3.5),(-6,-10,2.5),(-20,0,2),(12,4,3),(0,-26,2)))
+    bob = ('<g transform="translate(450 262) rotate(-14) scale(1.7)">'
+           '<path d="M -46 -58 L 46 -58 L 36 22 L -36 22 Z" fill="#d6b37a"/>'
+           '<ellipse cx="0" cy="-58" rx="46" ry="11" fill="#e6c995"/>'
+           + dots + '</g>')
+    return f'<svg class="sea" viewBox="0 0 900 400" width="100%">{waves}{bob}</svg>'
+
+def serranda():
+    return '<div class="shut"><div class="box"><i class="bar"></i><div class="slats"></div><div class="handle"></div><div class="glow"></div></div><div class="floor"></div></div>'
+
+ADS += [
+ dict(id='T1', bg=NOTTE, h='Il tappo di sughero<br><em>non sceglie</em><br><em>dove andare.</em>', hs=90,
+      sub='Agosto tira. Maggio si ferma. <b>Il prezzo lo fa chi ha gente alla porta.</b>', vis=tappo),
+ dict(id='T2', bg=CARTA, h='Dentro è tutto perfetto.<br><em>Da fuori si vede</em><br><em>la serranda.</em>', hs=84,
+      sub='<b>La qualità li fa tornare.</b> Non li fa arrivare.', vis=serranda),
+]
+
 CSS = '''
 @font-face{font-family:Newsreader;src:url(@@NEWS@@) format("woff2");font-weight:200 800}
 @font-face{font-family:Figtree;src:url(@@FIG@@) format("woff2");font-weight:300 900}
@@ -136,6 +157,16 @@ h1 em{font-style:normal;background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .
 .am ul{list-style:none;display:grid;gap:6px}
 .am li{font:400 28px/1.3 Figtree;color:#b8c0c8;padding-left:40px;position:relative}
 .am li:before{content:"";position:absolute;left:2px;top:8px;width:20px;height:11px;border-left:3px solid #eef0f2;border-bottom:3px solid #eef0f2;transform:rotate(-45deg)}
+/* T1: il mare e il galleggiante */
+.sea{display:block;max-width:900px}
+/* T2: la serranda abbassata, uno spiraglio di luce gialla */
+.shut{width:100%;max-width:820px}
+.shut .box{position:relative;height:440px;border:2px solid #4a4f57;border-bottom:0;border-radius:6px 6px 0 0;overflow:hidden;background:#d9d6cf}
+.shut .bar{position:absolute;left:0;right:0;top:0;height:34px;background:#4a4f57;z-index:2}
+.shut .slats{position:absolute;inset:34px 0 0 0;background:repeating-linear-gradient(180deg,#c9c6be 0 22px,#b3b0a8 22px 24px,#e3e1db 24px 30px)}
+.shut .handle{position:absolute;left:50%;bottom:36px;width:90px;height:12px;margin-left:-45px;border-radius:6px;background:#6f747c;z-index:2}
+.shut .glow{position:absolute;left:0;right:0;bottom:0;height:14px;background:#ffd22e;box-shadow:0 -6px 18px rgba(255,210,46,.55);z-index:1}
+.shut .floor{height:6px;background:#4a4f57;border-radius:0 0 3px 3px}
 /* famiglia foto: testo in alto, foto a tutta larghezza, piede su carta */
 .fo .txt{position:absolute;left:72px;right:72px;top:PT}
 .fo .txt .sub{margin:22px 0 0}
@@ -165,7 +196,7 @@ def build(ad, W, H):
         body = f'''<div class="canvas"><div class="col">{kick}<h1>{ad["h"]}</h1><div class="vis">{ad["vis"]()}</div><p class="sub">{ad["sub"]}</p>{foot}</div></div>'''
     return f'<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><style>{css}</style></head><body class="{cls}">{body}</body></html>'
 
-man = {'batch': OUT.name, 'palette': [CARTA, SABBIA, NOTTE, '#ffffff', '#15181c', '#e3e1db', '#1b2530', '#ffd22e'], 'ads': []}
+man = {'batch': OUT.name, 'palette': [CARTA, SABBIA, NOTTE, '#ffffff', '#15181c', '#e3e1db', '#1b2530', '#ffd22e', '#c9c6be', '#4a4f57', '#d9d6cf'], 'ads': []}
 for ad in ADS:
     for (W, H, suf) in ((1080, 1350, '45'), (1080, 1920, '916')):
         f = f'{ad["id"].lower()}_{suf}.html'

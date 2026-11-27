@@ -161,3 +161,72 @@ Da fare in Gestione inserzioni prima di pubblicare:
   - mancano interessi veri e propri (Booking.com, settore alberghiero): la ricerca degli ID era esaurita il 27 novembre, si riprova dal 28;
 - esclusione di chi ha già scaricato il capitolo (pubblico personalizzato da creare sui visitatori di /capitolo/grazie/);
 - se si segue il piano a fasi: mettere in pausa B2, E4, FB2 e FE4 prima di pubblicare.
+
+---
+
+## Registro Toskich (27 novembre 2026, skill toskich-romagna) · test contro gli annunci attuali
+
+### T1 · Il tappo di sughero
+- **Immagine:** fondo notte, «Il tappo di sughero / *non sceglie dove andare.*», un tappo di sughero che galleggia sulle onde. Riga sotto: «Agosto tira. Maggio si ferma. **Il prezzo lo fa chi ha gente alla porta.**»
+- **Testo principale:**
+
+  Albergatore della Riviera, guarda un tappo di sughero in mare.
+
+  Galleggia benissimo.
+  Se la corrente tira, va.
+  Se si ferma, si ferma.
+  Non decide mai lui dove andare.
+
+  Agosto tira. Tutti pieni.
+  Maggio si ferma. Tutti a fare sconti.
+
+  Puoi avere il gestionale nuovo.
+  Il revenue più sofisticato della costa.
+  Se non generi domanda, galleggi.
+
+  Il prezzo lo fa chi ha gente alla porta.
+
+  Come si smette di galleggiare?
+  Te lo spiego nel primo capitolo del mio libro.
+  Gratis. Venti minuti.
+  Meno di una riunione col commercialista.
+
+- **Titolo:** Il tappo non sceglie dove andare
+- **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
+
+### T2 · La serranda
+- **Immagine:** fondo carta, «Dentro è tutto perfetto. / *Da fuori si vede la serranda.*», una serranda abbassata con uno spiraglio di luce gialla. Riga sotto: «**La qualità li fa tornare.** Non li fa arrivare.»
+- **Testo principale:**
+
+  Albergatore della Riviera, hai rifatto le camere.
+
+  Bagni nuovi. Materassi nuovi.
+  Il buffet più lungo della via.
+
+  Bravo.
+  L'ospite non lo sa ancora.
+
+  Non ha dormito da te.
+  Non ha assaggiato la colazione.
+  Sceglie da fuori. Una foto. Un nome. Una riga.
+
+  È come quando cerchi un ristorante in una città nuova.
+  Non hai assaggiato niente.
+  Scegli dalla prima riga.
+
+  La qualità li fa tornare.
+  Non li fa arrivare.
+
+  È come la gelateria più buona del lungomare.
+  Con la serranda abbassata.
+
+  Dentro è tutto perfetto.
+  Da fuori si vede la serranda.
+
+  E la gente tira dritto. Fino a quella dopo.
+
+  Cosa li fa arrivare? È nel primo capitolo del mio libro.
+  13 pagine, gratis, in PDF.
+
+- **Titolo:** Da fuori si vede la serranda
+- **Descrizione:** Primo capitolo gratis, in PDF
