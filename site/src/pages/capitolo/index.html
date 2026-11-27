@@ -30,6 +30,69 @@
 .gm-ic{flex:none;width:22px;height:22px;margin-top:-1px;padding:3px;border-radius:7px;background:var(--yellow);color:var(--inchiostro);border:1.5px solid var(--inchiostro);box-sizing:border-box}
 .gm b{color:var(--ink)}
 
+/* modulo nell'apertura: passo 1 solo email, passo 2 nome e camere */
+.cp-hf{margin-top:22px;max-width:520px;background:none!important;border:0!important;box-shadow:none!important;padding:0!important}
+.cp-hf .fstep-1{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start}
+.cp-hf .fstep-1[hidden],.cp-hf .fstep-2[hidden]{display:none}
+.cp-hf .field{margin:0}
+.cp-hf .fstep-1 .field label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.cp-hf input:not([type=checkbox]),.cp-hf select{width:100%;min-height:54px;font-size:17px;padding:0 16px;border:2px solid var(--inchiostro);border-radius:12px;background:var(--surface-white);color:var(--ink)}
+.cp-hf .btn{min-height:54px;white-space:nowrap;justify-content:center}
+.cp-hf .fstep-2{display:grid;gap:12px}
+.cp-hf .fstep-2 .field label{display:block;font-size:14px;margin-bottom:4px}
+.cp-hf .em{display:none;font-size:14px;color:#b3261e;margin-top:6px}
+.cp-hf .field.err .em{display:block}
+.cp-hf .field.err input,.cp-hf .field.err select{border-color:#b3261e}
+.cp-hf .form-foot{font-size:13px;color:var(--muted);margin:0}
+.cp-hf .fstep-k{margin:0;font-size:15.5px;color:var(--ink-2)}
+.cp-hf .ok{display:none}
+@media (max-width:520px){.cp-hf .fstep-1{grid-template-columns:1fr}.cp-hf .btn{width:100%}}
+
+/* la foto di Francesco con il libro (la stessa degli annunci) */
+.cp-me{position:relative;max-width:420px;margin:0 auto}
+.cp-me img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-xl)}
+.cp-me figcaption{margin-top:12px;font-size:14px;color:var(--muted);text-align:center}
+.cp-me .cp-badge{right:-18px;top:-18px}
+
+/* striscia «dove mi hai visto» */
+.cp-proof{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--surface-white)}
+.cp-proof .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 28px;padding-top:18px;padding-bottom:18px}
+.cp-proof .k{font:800 12px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cp-proof .stage{display:inline-flex;align-items:center;gap:10px;font:800 15px var(--display);color:var(--ink)}
+.cp-proof .stage i{width:10px;height:10px;border-radius:50%;background:#d7263d;box-shadow:0 0 0 4px rgba(215,38,61,.15)}
+.cp-proof .stars{color:#e8781e;letter-spacing:1px}
+.cp-proof ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 22px;margin:0;padding:0}
+.cp-proof li{font:700 15px var(--display);color:var(--ink-2)}
+@media (max-width:640px){.cp-proof .wrap{justify-content:flex-start;gap:8px 18px}.cp-proof li{font-size:14px}}
+
+/* prove: il caso Silva, la prefazione, la recensione Amazon */
+.cp-why{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.cp-why{grid-template-columns:1fr}}
+.cp-case{background:var(--inchiostro);color:#f2efe8;border-radius:20px;padding:clamp(22px,3vw,34px);box-shadow:var(--o-md)}
+.cp-case .k{font:800 12px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--yellow)}
+.cp-case h3{color:#fff;margin-top:10px;font-size:clamp(22px,2.2vw,28px)}
+.cp-case .nums{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.cp-case .nums b{display:block;font:800 clamp(34px,3.6vw,46px)/1 var(--display);color:var(--yellow);letter-spacing:-.02em}
+.cp-case .nums span{display:block;margin-top:6px;font-size:15px;line-height:1.4;color:#cfd4da}
+.cp-case p{margin-top:16px;font-size:16px;line-height:1.5;color:#cfd4da}
+.cp-pref,.cp-rev{margin:0;background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:20px;padding:clamp(22px,3vw,34px);box-shadow:var(--o-md);display:flex;flex-direction:column;justify-content:space-between}
+.cp-pref blockquote,.cp-rev blockquote{margin:0;font-family:"Source Serif 4",Georgia,serif;font-size:clamp(19px,1.8vw,23px);line-height:1.45;color:var(--ink)}
+.cp-pref blockquote p + p,.cp-rev blockquote p + p{margin-top:12px}
+.cp-pref figcaption,.cp-rev figcaption{margin-top:18px;font-size:15px;color:var(--muted)}
+.cp-pref figcaption b,.cp-rev figcaption b{color:var(--ink)}
+.cp-rev{grid-column:1/-1}
+.cp-g{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:860px){.cp-g{grid-template-columns:1fr}}
+.cp-g figure{margin:0;background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:18px;padding:20px 22px;box-shadow:var(--o-sm);display:flex;flex-direction:column;justify-content:space-between}
+.cp-g blockquote{margin:0;font-size:16.5px;line-height:1.5;color:var(--ink)}
+.cp-g .stars{color:#e8781e;letter-spacing:2px;font-size:16px;display:block;margin-bottom:8px}
+.cp-g figcaption{margin-top:14px;font-size:14px;color:var(--muted)}
+.cp-g figcaption b{color:var(--ink)}
+.cp-g-head{grid-column:1/-1;margin-top:10px;font:800 13px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cp-rev .stars{color:#e8781e;font-size:22px;letter-spacing:2px}
+.cp-rev h3{margin:6px 0 12px;font-size:clamp(20px,2vw,24px)}
+.cp-rev .ver{color:#c45500;font-weight:700}
+
 /* il libro con il primo capitolo aperto */
 .cp-book{position:relative;max-width:340px;margin:0 auto}
 .cp-book img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:12px;box-shadow:var(--o-xl);transform:rotate(-3deg)}
@@ -41,8 +104,18 @@
 .cp-page i{display:block;height:5px;border-radius:3px;background:var(--line-soft);margin-top:7px}
 .cp-page i:nth-of-type(2){width:82%}.cp-page i:nth-of-type(3){width:64%}
 @media (max-width:860px){
-  .cp-hero{grid-template-columns:minmax(0,1fr);gap:40px}
+  .hero{padding-top:14px}
+  .cp-hero{grid-template-columns:minmax(0,1fr);gap:16px}
   .cp-visual{order:-1}
+  /* sul telefono la foto è una fascia: volto e libro, poi subito titolo ed email */
+  .cp-me{max-width:none}
+  .cp-me img{height:min(52vw,240px);object-fit:cover;object-position:50% 26%;border-radius:16px}
+  .cp-me figcaption{display:none}
+  .cp-me .cp-badge{right:-4px;top:-8px}
+  .cp-hero h1{margin:10px 0 12px}
+  .cp-sub{display:none}
+  .cp-offer{margin-top:4px;font-size:18px}
+  .cp-hf{margin-top:14px}
   .cp-book{max-width:min(200px,52vw)}
   .cp-badge{width:70px;height:70px;right:-22px;top:-16px;font-size:13px}
   .cp-badge small{font-size:7.5px}
@@ -51,8 +124,19 @@
 
 /* la griglia di Booking: cinquanta rettangoli uguali */
 .cp-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:7px;max-width:640px;margin-top:28px;background:var(--surface-white);padding:clamp(14px,2vw,22px);border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-md)}
-.cp-grid i{aspect-ratio:1.15;border-radius:6px;background:var(--line-soft)}
+.cp-grid i{position:relative;aspect-ratio:1.15;border-radius:6px;background:var(--line-soft);transition:opacity .35s,transform .35s,background .5s,box-shadow .5s}
 .cp-grid i:nth-child(3n){background:var(--mist-2)}
+/* animazione: i rettangoli compaiono uno alla volta, poi uno solo diventa giallo, con la bandierina (l'hotel della copertina) */
+.cp-grid.anim i{opacity:0;transform:scale(.6)}
+.cp-grid.anim.go i{opacity:1;transform:none;transition-delay:calc(var(--n) * 18ms)}
+.cp-grid.lit i:not(.me){opacity:.5;transition-delay:0s}
+.cp-grid.lit i.me{background:var(--yellow);transform:scale(1.2);box-shadow:0 0 0 2px var(--inchiostro),var(--o-sm);z-index:1;transition-delay:0s}
+.cp-grid i.me::before{content:"";position:absolute;left:30%;bottom:100%;width:2px;height:0;background:var(--inchiostro);transition:height .3s .4s}
+.cp-grid i.me::after{content:"";position:absolute;left:calc(30% + 2px);bottom:calc(100% + 6px);border-left:10px solid var(--yellow);border-top:5px solid transparent;border-bottom:5px solid transparent;opacity:0;transition:opacity .2s .7s;filter:drop-shadow(0 0 .5px var(--inchiostro))}
+.cp-grid.lit i.me::before{height:16px}
+.cp-grid.lit i.me::after{opacity:1}
+.cp-grid-cap b{font-style:normal;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.cp-grid i,.cp-grid i::before,.cp-grid i::after{transition:none!important}.cp-grid.anim i{opacity:1;transform:none}}
 .cp-grid-cap{margin-top:12px;font-size:15px;color:var(--muted);font-style:italic}
 .cp-narrow{max-width:720px}
 .cp-narrow p{font-size:19px;line-height:1.6;color:var(--ink-2)}
@@ -123,20 +207,52 @@
       <span class="eyebrow"><span class="dot"></span>Il primo capitolo del libro, gratis</span>
       <h1>Il tuo hotel non è poco conosciuto. <span class="hl in">È invisibile.</span></h1>
       <p class="cp-sub">Apri Booking e cerca la tua zona. Cinquanta rettangoli. La stessa piscina vista dal drone, le stesse quattro stelle, gli stessi aggettivi.</p>
-      <p class="cp-sub">Quando gli sembrate tutti uguali, all'ospite restano due cose per decidere: il prezzo e le recensioni.</p>
+      <p class="cp-sub d">Quando gli sembrate tutti uguali, all'ospite restano due cose per decidere: il prezzo e le recensioni.</p>
       <p class="cp-offer">Il primo capitolo di Hotel Positioning spiega perché succede. E ti dà un test di dieci secondi per capire se succede anche a te.</p>
-      <div class="btn-row">
-        <a href="#form" class="btn">Mandami il primo capitolo <span class="arr">→</span></a>
-      </div>
+      <form class="form cp-hf" name="capitolo" action="/" method="post" data-hp-form data-pos="apertura" data-netlify="true" netlify-honeypot="bot-field" data-next="/capitolo/grazie/" novalidate>
+        <input type="hidden" name="form-name" value="capitolo"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value=""><input type="hidden" name="privacy" value="informativa letta (invio del modulo)">
+        <p hidden><label>Non compilare: <input name="bot-field"></label></p>
+        <div class="fstep fstep-1">
+          <div class="field"><label for="h-email">La tua email</label><input id="h-email" name="email" type="email" autocomplete="email" placeholder="La tua email" required><span class="em">Controlla l'indirizzo: il capitolo arriva qui.</span></div>
+          <button class="btn" type="button" data-next>Mandami il capitolo <span class="arr">→</span></button>
+        </div>
+        <div class="fstep fstep-2">
+          <p class="fstep-k"><b>Ci siamo quasi.</b> Due cose e il capitolo è tuo.</p>
+          <div class="field"><label for="h-nome">Nome</label><input id="h-nome" name="nome" autocomplete="given-name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
+          <div class="field"><label for="h-camere">Quante camere ha la tua struttura?</label>
+            <select id="h-camere" name="camere" required>
+              <option value="" selected disabled>Scegli</option>
+              <option>meno di 20</option>
+              <option>20-40</option>
+              <option>40-80</option>
+              <option>oltre 80</option>
+            </select><span class="em">Scegli una voce: così ti mando quello che serve alla tua struttura.</span></div>
+          <label class="check opt"><input type="checkbox" name="consenso_email" value="sì"><span>Voglio ricevere anche le mail successive su posizionamento e libro. <em>(facoltativo)</em></span></label>
+          <button class="btn" type="submit">Mandami il capitolo <span class="arr">→</span></button>
+          <p class="form-foot">Inviando il modulo dichiari di aver letto la <a href="/privacy-policy/">privacy policy</a>. Ti cancelli con un clic.</p>
+        </div>
+        <div class="ok" role="status"><p>Fatto. Ti porto al capitolo…</p></div>
+      </form>
       <p class="gm"><svg class="gm-ic" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span><b>Gratis</b>, in PDF, nella tua email. Si legge in venti minuti.</span></p>
     </div>
     <div class="cp-visual">
-      <div class="cp-book">
-        <img src="/assets/img/libro-copertina.webp" srcset="/assets/img/libro-copertina.webp 420w, /assets/img/libro-copertina@2x.webp 840w" sizes="(max-width:860px) 200px, 340px" width="420" height="658" fetchpriority="high" alt="Copertina del libro Hotel Positioning di Francesco Astolfi">
+      <figure class="cp-me">
+        <img src="/assets/img/francesco-libro.webp" srcset="/assets/img/francesco-libro.webp 560w, /assets/img/francesco-libro@2x.webp 1027w" sizes="(max-width:860px) 92vw, 420px" width="560" height="627" fetchpriority="high" alt="Francesco Astolfi con in mano il suo libro Hotel Positioning">
         <span class="cp-badge">Cap. 1<small>gratis in PDF</small></span>
-        <div class="cp-page" aria-hidden="true"><b>Capitolo 1</b><p>L'hotel invisibile</p><i></i><i></i><i></i></div>
-      </div>
+        <figcaption>Francesco Astolfi, autore di Hotel Positioning</figcaption>
+      </figure>
     </div>
+  </div>
+</section>
+
+<!-- ================= 1b · DOVE MI HAI VISTO ================= -->
+<section class="cp-proof" aria-label="Dove mi hai visto">
+  <div class="wrap">
+    <span class="stage"><i aria-hidden="true"></i>Sul palco di Hospitality Day 2026</span>
+    <span class="stage"><span class="stars" aria-hidden="true">★★★★★</span>Recensioni su Amazon</span>
+    <span class="stage"><span class="stars" aria-hidden="true">★</span>4,7 su Google · 14 recensioni</span>
+    <span class="k">Seguo oggi</span>
+    <ul><li>Silva Splendid, Fiuggi</li><li>Veridia Resort, Chia</li><li>Tocq Hotel, Milano</li><li>Radisson Blu Bergamo</li></ul>
   </div>
 </section>
 
@@ -153,8 +269,8 @@
       <p>E adesso c'è un filtro in più. Sempre più ospiti non aprono Booking: chiedono a ChatGPT. L'AI non mostra cinquanta hotel. Ne nomina due o tre.</p>
       <p class="cp-law">Su Booking, se sei uguale agli altri, sei l'ultimo della fila. Nella risposta di un'AI non ci sei proprio.</p>
     </div>
-    <div class="cp-grid rv" role="img" aria-label="Una griglia di cinquanta rettangoli tutti uguali, come i risultati di Booking: nessuno spicca."><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <p class="cp-grid-cap">Trova il tuo. Ecco, è questo il problema.</p>
+    <div class="cp-grid" role="img" aria-label="Una griglia di cinquanta rettangoli tutti uguali, come i risultati di Booking. Poi uno solo si accende di giallo."><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="cp-grid-cap">Trova il tuo. Ecco, è questo il problema. <b>Il libro serve a farti diventare quello giallo.</b></p>
   </div>
 </section>
 
@@ -172,6 +288,50 @@
       <li><h3>Il filtro nuovo: l'AI</h3><p>Booking ti mette in fila. ChatGPT sceglie per l'ospite. E premia una cosa sola: essere riconoscibile.</p></li>
       <li><h3>Il test dei dieci secondi</h3><p>Metti uno che non ti conosce davanti al tuo sito per dieci secondi. Poi chiedigli perché dovrebbe scegliere te. Se risponde «boh, sembra carino», sei invisibile. Il capitolo ti dice cosa fare dopo.</p></li>
     </ol>
+  </div>
+</section>
+
+<!-- ================= 3b · PERCHÉ FIDARSI ================= -->
+<section class="sec white">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num-tag">Il metodo, sul campo</span>
+      <h2>Non è teoria. <em>È quello che faccio con gli hotel che seguo.</em></h2>
+    </div>
+    <div class="cp-why rv">
+      <div class="cp-case">
+        <span class="k">Un caso del libro · Silva Splendid, Fiuggi</span>
+        <h3>Da «hotel per tutti» a L'Hotel Benessere di Fiuggi.</h3>
+        <div class="nums">
+          <div><b>×2</b><span>la tariffa media, circa</span></div>
+          <div><b>3,5 → 7</b><span>milioni di fatturato in cinque anni, insieme alla ristrutturazione</span></div>
+        </div>
+        <p>Lo racconto nel capitolo 11: cosa ha scelto, a cosa ha rinunciato, cosa è cambiato.</p>
+      </div>
+      <figure class="cp-pref">
+        <blockquote>
+          <p>«Il libro del mio amico Francesco dice, alla fine, una cosa semplice quanto scomoda. Posizionati, oppure non lamentarti se prenotano su Booking.com.»</p>
+          <p>«Non cercare la scorciatoia, perché Francesco non te la darà.»</p>
+        </blockquote>
+        <figcaption><b>Nicola Delvecchio</b>, dalla prefazione del libro</figcaption>
+      </figure>
+      <figure class="cp-rev">
+        <div>
+          <span class="stars" aria-label="5 stelle su 5">★★★★★</span>
+          <h3>«Ti legge dentro e ti fa guardare il tuo hotel con occhi diversi»</h3>
+          <blockquote>
+            <p>«Non è il classico libro di marketing per hotel. Ti fa capire da dove iniziare e cosa puoi cambiare fin da subito, senza aspettare di avere un budget stratosferico. Soprattutto, fa chiarezza sul posizionamento: chi sei, cosa ti rende riconoscibile e perché un ospite dovrebbe scegliere proprio te.»</p>
+          </blockquote>
+        </div>
+        <figcaption><b>Andrea</b>, recensione su Amazon · <span class="ver">Acquisto verificato</span> · 10 ottobre 2026</figcaption>
+      </figure>
+      <p class="cp-g-head">Chi ha lavorato con me · 4,7 su Google, 14 recensioni</p>
+      <div class="cp-g">
+        <figure><div><span class="stars" aria-label="5 stelle su 5">★★★★★</span><blockquote>«Un professionista di grande esperienza e con una mente molto acuta, capace di affrontare le tematiche su molti livelli di complessità, non fermandosi solamente all'apparenza o alla soluzione più scontata.»</blockquote></div><figcaption><b>Stefano Renzi</b>, su Google</figcaption></figure>
+        <figure><div><span class="stars" aria-label="5 stelle su 5">★★★★★</span><blockquote>«Lo considero un ottimo professionista, con un approccio al posizionamento e marketing per l'hospitality davvero strategico e personalizzato. Un esperto del settore che consiglio.»</blockquote></div><figcaption><b>Silvia Zaghini</b>, su Google</figcaption></figure>
+        <figure><div><span class="stars" aria-label="5 stelle su 5">★★★★★</span><blockquote>«Ciò che trovo particolarmente prezioso nel suo approccio è la capacità di offrire punti di vista alternativi e nuovi spunti di riflessione, aiutando a guardare la propria attività da prospettive diverse.»</blockquote></div><figcaption><b>Luca Ottaviani</b>, su Google</figcaption></figure>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -244,7 +404,7 @@
 <!-- ================= 7 · FORM ================= -->
 <section class="sec white" id="form">
   <div class="wrap cp-form">
-    <form class="form rv" id="capitolo-form" name="capitolo" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" data-next="/capitolo/grazie/" novalidate>
+    <form class="form rv" id="capitolo-form" name="capitolo" data-pos="fondo" action="/" method="post" data-hp-form data-netlify="true" netlify-honeypot="bot-field" data-next="/capitolo/grazie/" novalidate>
       <input type="hidden" name="form-name" value="capitolo"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value=""><input type="hidden" name="privacy" value="informativa letta (invio del modulo)">
       <p hidden><label>Non compilare: <input name="bot-field"></label></p>
       <div class="fields">
@@ -253,12 +413,12 @@
         <h2>Il primo capitolo di Hotel Positioning</h2>
         <p class="sub">Gratis nella tua email. Si legge in venti minuti.</p>
         <div class="fstep">
-        <div class="field"><label for="c-nome">Nome</label><input id="c-nome" name="nome" autocomplete="given-name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
         <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: il capitolo arriva qui.</span></div>
         <button class="btn dark" type="button" data-next style="margin-top:8px">Continua <span class="arr">→</span></button>
         </div>
         <div class="fstep">
-        <p class="fstep-k"><em>Ancora una domanda. Poi il capitolo è tuo.</em></p>
+        <p class="fstep-k"><em>Ancora due cose. Poi il capitolo è tuo.</em></p>
+        <div class="field"><label for="c-nome">Nome</label><input id="c-nome" name="nome" autocomplete="given-name" required><span class="em">Mi serve per sapere a chi scrivo.</span></div>
         <div class="field"><label for="c-camere">Quante camere ha la tua struttura?</label>
           <select id="c-camere" name="camere" required>
             <option value="" selected disabled>Scegli</option>
@@ -288,11 +448,50 @@
   <span>Francesco Astolfi · Hotel Positioning · Via Cupa 5, 47923 Rimini (RN) · P. IVA 04283940403</span>
   <span><a href="/privacy-policy/">Privacy policy</a> · <button type="button" class="cc-link" data-cookie-prefs>Preferenze cookie</button></span>
 </div></div></footer>
+<div class="exit" id="exit" data-mobile role="dialog" aria-modal="true" aria-labelledby="exit-t" hidden>
+  <div class="exit-card">
+    <button type="button" class="exit-x" data-exit-close aria-label="Chiudi">✕</button>
+    <span class="exit-k" id="exit-k"></span>
+    <p class="exit-t" id="exit-t"></p>
+    <p class="exit-p" id="exit-p"></p>
+    <div class="exit-btns"><a class="btn" id="exit-cta" href="#" hidden></a></div>
+    <form class="ex-form" name="capitolo" action="/" method="post" data-hp-form data-pos="popup" data-netlify="true" netlify-honeypot="bot-field" data-next="/capitolo/grazie/" novalidate>
+      <input type="hidden" name="form-name" value="capitolo"><input type="hidden" name="inviato" value="funzione"><input type="hidden" name="pagina" value=""><input type="hidden" name="evento" value=""><input type="hidden" name="mkt" value=""><input type="hidden" name="fbp" value=""><input type="hidden" name="fbc" value=""><input type="hidden" name="privacy" value="informativa letta (invio del modulo)">
+      <p hidden><label>Non compilare: <input name="bot-field"></label></p>
+      <div class="field"><label for="x-email">La tua email</label><input id="x-email" name="email" type="email" autocomplete="email" required><span class="em">Controlla l'indirizzo: il capitolo arriva qui.</span></div>
+      <div class="field"><label for="x-camere">Quante camere ha la tua struttura?</label>
+        <select id="x-camere" name="camere" required>
+          <option value="" selected disabled>Scegli</option>
+          <option>meno di 20</option>
+          <option>20-40</option>
+          <option>40-80</option>
+          <option>oltre 80</option>
+        </select><span class="em">Scegli una voce: così ti mando quello che serve alla tua struttura.</span></div>
+      <label class="check opt"><input type="checkbox" name="consenso_email" value="sì"><span>Voglio ricevere anche le mail successive su posizionamento e libro. <em>(facoltativo)</em></span></label>
+      <button class="btn" type="submit">Mandami il capitolo <span class="arr">→</span></button>
+      <p class="form-foot">Inviando dichiari di aver letto la <a href="/privacy-policy/">privacy policy</a>.</p>
+    </form>
+    <button type="button" class="exit-no" data-exit-close id="exit-no"></button>
+  </div>
+</div>
 <div class="gd-bar" id="gdBar" hidden><a href="#form" class="btn">Mandami il primo capitolo <span class="arr">→</span></a></div>
 <!-- @include cookie-banner -->
 <script src="/assets/site.js"></script>
 <script>
 (function(){
+  // griglia di Booking: i rettangoli compaiono, poi uno solo si accende (prima riga, al centro)
+  var g = document.querySelector('.cp-grid');
+  if (g && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    g.classList.add('anim');
+    var cells = g.querySelectorAll('i');
+    for (var k = 0; k < cells.length; k++) cells[k].style.setProperty('--n', k);
+    var me = cells[23]; if (me) me.classList.add('me');
+    var run = function(){ g.classList.add('go'); setTimeout(function(){ g.classList.add('lit'); }, matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 1700); };
+    if ('IntersectionObserver' in window) {
+      var gio = new IntersectionObserver(function(es){ if (es[0].isIntersecting) { run(); gio.disconnect(); } }, { threshold: .45 });
+      gio.observe(g);
+    } else run();
+  }
   // barra fissa su telefono: dopo l'apertura, finché il form non è sullo schermo
   var bar = document.getElementById('gdBar'), hero = document.querySelector('.hero'), form = document.getElementById('form');
   if (!bar || !('IntersectionObserver' in window)) return;
