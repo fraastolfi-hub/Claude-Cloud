@@ -235,3 +235,9 @@ Da fare in Gestione inserzioni prima di pubblicare:
 
 ### Foto Artlist per T1 e T2 (27 novembre 2026)
 Nano Banana Pro 2K, 3:2, 2 varianti per foto, 640 crediti (cartella Artlist «Hotel Positioning · Meta Riviera»). Scelte: `foto-artlist/tappo_b.png` (con la costa sull'orizzonte) e `foto-artlist/serranda_a.png` (lungomare con muretto). Impaginate in CSS sopra il fondo del sito (route hybrid). Su Meta: etichetta AI attiva. Codici `utm_content=t1` e `t2`.
+
+### Stato al 27 novembre 2026, sera
+La campagna è stata pubblicata da Gestione inserzioni alle 18:04. Budget 10 €/giorno.
+- **Attivi live:** B1, C1, D2, E1.
+- **In pausa:** B2, E4, FB1, FB2, FC1, FD2, FE1, FE4.
+- **Solo in bozza, non ancora pubblicati:** T1 e T2 (attivi nella bozza), B1E e C1E (in pausa nella bozza). Pubblicando la bozza partono T1 e T2.
