@@ -37,6 +37,9 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
 .book-stage{display:flex;flex-direction:column;align-items:center;margin:0}
 .book-img{width:min(420px,100%);height:auto;transition:transform .4s cubic-bezier(.5,1.8,.5,1)}
 .book-img:hover{transform:translateY(-4px)}
+/* la foto di Francesco con il libro (la stessa di /capitolo/ e degli annunci) */
+.book-photo{border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-xl)}
+.book-photo:hover{transform:none}
 .book-stage .price-tag{margin-top:22px;font:700 21px/1.3 var(--display);color:var(--ink)}
 .book-stage .price-tag small{font:400 17px var(--text);color:var(--ink-2);margin-left:6px}
 .hero .btn-row{justify-content:flex-start;margin-top:22px}
@@ -46,6 +49,8 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
   .hero-grid{grid-template-columns:minmax(0,1fr);gap:24px}
   .book-stage{order:-1}
   .book-img{width:min(190px,46vw)}
+  /* sul telefono la foto è una fascia: volto e libro */
+  .book-photo{width:100%;height:min(52vw,240px);object-fit:cover;object-position:50% 26%;border-radius:16px}
   .book-stage .price-tag{display:none}
   .hero h1{margin:12px auto 14px}
   .hero .eyebrow,.hero .btn-row{justify-content:center}
@@ -167,7 +172,7 @@ window.HP_TRACKING = { gtm: 'GTM-WPD3MZLM', ga4: '', metaPixel: '' };</script>
         <p class="micro"><b>Cartaceo o Kindle.</b> Se non ti è utile, Amazon lo rimborsa entro 14 giorni.</p>
       </div>
       <div class="book-stage">
-        <img class="book-img" src="/assets/img/libro-copertina.webp" srcset="/assets/img/libro-copertina.webp 420w, /assets/img/libro-copertina@2x.webp 840w" sizes="(max-width:860px) 52vw, 400px" width="420" height="658" fetchpriority="high" alt="Copertina del libro Hotel Positioning. Come l'ospite sceglie un hotel (e perché non sceglie il tuo), di Francesco Astolfi">
+        <img class="book-img book-photo" src="/assets/img/francesco-libro.webp" srcset="/assets/img/francesco-libro.webp 560w, /assets/img/francesco-libro@2x.webp 1027w" sizes="(max-width:860px) 92vw, 420px" width="560" height="627" fetchpriority="high" alt="Francesco Astolfi con in mano il suo libro Hotel Positioning">
         <span class="price-tag">19,90 €<small>su Amazon</small></span>
       </div>
     </div>
