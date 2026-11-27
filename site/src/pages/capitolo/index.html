@@ -169,6 +169,10 @@
 /* chi scrive */
 .me-row{display:grid;grid-template-columns:.65fr 1.35fr;gap:clamp(30px,5vw,64px);align-items:start}
 @media (max-width:860px){.me-row{grid-template-columns:1fr}.me-row .photo{max-width:280px}}
+.cp-stage{margin:0;position:relative;background:none!important;padding:0!important;box-shadow:none!important}
+.cp-stage img{filter:none!important}
+.cp-stage figcaption{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;background:var(--surface-white);border:2px solid var(--inchiostro);border-radius:999px;padding:7px 14px;font:800 13px var(--display);color:var(--ink);box-shadow:var(--o-sm)}
+.cp-stage figcaption i{width:9px;height:9px;border-radius:50%;background:#d7263d}
 .me-row .photo img{display:block;width:100%;height:auto;border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-md)}
 .cp-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px}
 .cp-stats .stat{text-align:left}
@@ -381,7 +385,7 @@
 <!-- ================= 6 · CHI SCRIVE ================= -->
 <section class="sec alt">
   <div class="wrap me-row">
-    <div class="photo rv"><img src="/assets/img/francesco.webp" width="560" height="700" loading="lazy" alt="Francesco Astolfi"></div>
+    <figure class="photo rv cp-stage"><img src="/assets/img/francesco-hospitality-day.webp" width="486" height="588" loading="lazy" alt="Francesco Astolfi sul palco di Hospitality Day 2026"><figcaption><i aria-hidden="true"></i>Sul palco di Hospitality Day 2026</figcaption></figure>
     <div class="rv">
       <div class="sec-head" style="margin-bottom:18px">
         <span class="num-tag">Chi scrive</span>
