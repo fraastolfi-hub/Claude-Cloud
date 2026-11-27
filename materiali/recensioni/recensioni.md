@@ -18,6 +18,7 @@ Scheda «Francesco Astolfi - Marketing e Positioning per Hotel e Ristoranti», V
 - Senza testo, 5★: Valentina Semprini, Charming House DD724, Riccione Social Club.
 
 ## Amazon (libro Hotel Positioning)
+Totale al 27 novembre 2026: **4 recensioni, tutte da 5 stelle** (dato di Francesco). Qui sotto l'unica con testo trascritto.
 - **Andrea** (5★, «Acquisto verificato», copertina flessibile, 10/10/2026). Titolo: «Ti legge dentro e ti fa guardare il tuo hotel con occhi diversi». Testo: «Profondo, mai banale. Non è il classico libro di marketing per hotel: è uno di quei libri che ti leggono dentro, toccano le corde giuste e ti portano a mettere in discussione il tuo modo di fare le cose. Ti fa capire da dove iniziare e cosa puoi cambiare fin da subito, senza aspettare di avere un budget stratosferico. Soprattutto, fa chiarezza su un concetto di cui si parla tanto, ma che spesso resta astratto: il posizionamento. Chi sei, cosa ti rende riconoscibile e perché un ospite dovrebbe scegliere proprio te. Una lettura che ti lascia qualcosa e ti fa venire voglia di metterlo in pratica.»
 
 ## Prefazione del libro (Nicola Delvecchio)
