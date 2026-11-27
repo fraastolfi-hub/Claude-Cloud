@@ -33,6 +33,9 @@ Ogni pagina ha **un'azione principale** e al massimo una secondaria, presa dal g
 │       ├── valore/       "Quanto vale davvero il tuo hotel?"
 │       └── apertura/     "Sto aprendo: non voglio nascere commodity"
 ├── /casi/                Silva Splendid · Veridia · Yume Ramen             → Analisi
+├── /clienti/moko/        Area riservata Moko (Manuale 2027, materiali, analisi), noindex, CIFRATA:
+│                         il repo è pubblico, qui c'è solo testo AES-GCM. Si rigenera da
+│                         ~/Desktop/Claude/moko/sito/genera.py (password e sorgenti solo sul Mac)
 ├── /libro/               Pagina di vendita del libro                        → Amazon · sec.: Strumenti gratis
 ├── /risorse/             Hub degli strumenti gratuiti: "parti da qui"
 │   ├── /quiz/            Che hotel sei? 7 domande                           → risultato + Analisi o Libro
@@ -87,3 +90,9 @@ Vedi [TONO.md](TONO.md), e prima di tutto gli aggiornamenti del 7 e 9 ottobre 20
 2. Il gradino "affiancamento continuativo / fractional CMO" esiste nei fatti (Tocq, Radisson), ma nessuna pagina lo vende. In `/analisi/` compare solo come "dopo l'analisi, se serve", senza prezzo.
 3. Le domande del quiz non erano leggibili dal sito pubblicato: sono state riscritte da zero e vanno validate.
 4. I form non inviano ancora dati: vanno collegati al CRM o al servizio di email marketing.
+
+## Registro di marcia dell'area clienti Moko
+- Pagina cifrata `/clienti/moko/registro/` (generata da `moko/sito/genera.py`): le voci del piano mese per mese, con stato «Da fare / Fatto / Non serve».
+- Stato condiviso in Netlify Blobs (store `moko-registro`) tramite `netlify/functions/moko-registro.mjs` (`/api/moko-registro`). Accesso solo con l'intestazione `x-registro`, ricavata nel browser dalla chiave della password; nel repository c'è solo l'impronta (`netlify/lib/moko-registro-token.mjs`, riscritta da genera.py). Nessun testo del cliente nel repository: le voci arrivano dalla pagina cifrata.
+- `netlify/functions/moko-registro-mensile.mjs`: il primo del mese alle 7 UTC manda il promemoria via Brevo (voci del mese e voci passate non chiuse). Gira solo sul deploy di produzione.
+- Variabili: `MOKO_REGISTRO_TO` (destinataria), `MOKO_REGISTRO_CC` (copie, separate da virgola), più `BREVO_API_KEY` e `BREVO_SENDER_EMAIL` già usate dai moduli. Senza `MOKO_REGISTRO_TO` non parte niente.

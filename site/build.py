@@ -53,6 +53,8 @@ REDIRECTS = {
     "/guida/formula": "/guida/",
     "/guida/formula/": "/guida/",
     "/vai/libro": "/vai/libro/",
+    "/swipe-file": "/marketing-ideas/",
+    "/swipe-file/": "/marketing-ideas/",
 }
 
 
@@ -162,7 +164,9 @@ def build():
     )
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
     # /vai/amazon: passaggio che conta i clic verso Amazon (funzione netlify/functions/amazon.mjs)
+    # /marketing-ideas/i/<id>: link di condivisione di una scheda (anteprima social, poi la pagina; netlify/functions/swipe-condividi.mjs)
     (OUT / "_redirects").write_text("/vai/amazon  /.netlify/functions/amazon  200\n"
+                                    "/marketing-ideas/i/*  /.netlify/functions/swipe-condividi  200\n"
                                     + "".join(f"{a}  {b}  301\n" for a, b in REDIRECTS.items()))
     print(f"{len(urls)} pagine in {OUT}/")
 

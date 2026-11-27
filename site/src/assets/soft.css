@@ -151,7 +151,8 @@ h1 em,h2 em,.pmband h2 em{font-style:normal;background:var(--giallo);color:#2625
 .nav-links a[aria-current="page"]{background:var(--yellow-tint);padding:4px 10px;margin:-4px -10px;border-radius:999px}
 .nav-links a{white-space:nowrap}
 @media (max-width:1240px){.nav-links{gap:20px}}
-@media (max-width:1140px){.nav-links a[href="/risorse/"]{display:none}}
+@media (max-width:1300px){.nav-links a[href="/risorse/"]{display:none}}
+@media (max-width:1140px){.nav-links a[href="/marketing-ideas/"]{display:none}}
 .mobile-menu{background:var(--surface-cream)}
 .mobile-menu a{font-family:var(--display);font-weight:700;text-transform:none}
 .foot .big{font-family:var(--display);font-weight:800;text-transform:none;color:var(--giallo)}
