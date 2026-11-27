@@ -238,6 +238,6 @@ Nano Banana Pro 2K, 3:2, 2 varianti per foto, 640 crediti (cartella Artlist «Ho
 
 ### Stato al 27 novembre 2026, sera
 La campagna è stata pubblicata da Gestione inserzioni alle 18:04. Budget 10 €/giorno.
-- **Attivi live:** B1, C1, D2, E1.
+- **Attivi live:** B1, C1, D2, E1, T1, T2 (T1 e T2 pubblicati la sera del 27, in revisione Meta).
 - **In pausa:** B2, E4, FB1, FB2, FC1, FD2, FE1, FE4.
-- **Solo in bozza, non ancora pubblicati:** T1 e T2 (attivi nella bozza), B1E e C1E (in pausa nella bozza). Pubblicando la bozza partono T1 e T2.
+- **Solo in bozza:** B1E e C1E (in pausa).
