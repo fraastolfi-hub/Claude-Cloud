@@ -1,0 +1,933 @@
+{
+  "summary": {
+    "batch": "out",
+    "date": "2026-11-27",
+    "n": 24,
+    "passed": 12,
+    "avg_score": 92.5,
+    "benchmarks": {
+      "margin_floor": 48,
+      "palette_min": {
+        "A": 0.8,
+        "A-composite": 0.8,
+        "hybrid": 0.0,
+        "B": 0.0
+      },
+      "pass_score": 80
+    }
+  },
+  "ads": [
+    {
+      "file": "b1_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 79,
+            "R": 72,
+            "B": 64
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.989,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "b1_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 257,
+            "R": 72,
+            "B": 300
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.993,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "b2_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 79,
+            "R": 72,
+            "B": 64
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#121A22",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.968,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "b2_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 257,
+            "R": 72,
+            "B": 300
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#121A22",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.978,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "c1_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 79,
+            "R": 72,
+            "B": 64
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#F2EFE8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.985,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "c1_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 257,
+            "R": 72,
+            "B": 300
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#F2EFE8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.989,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "d2_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 79,
+            "R": 72,
+            "B": 64
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.979,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "d2_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 257,
+            "R": 72,
+            "B": 300
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.985,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "e1_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 79,
+            "R": 72,
+            "B": 64
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#F2EFE8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.987,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "e1_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 257,
+            "R": 72,
+            "B": 300
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#F2EFE8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.991,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "e4_45.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 79,
+            "R": 72,
+            "B": 64
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#121A22",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.955,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "e4_916.png",
+      "route": "A",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 72,
+            "T": 257,
+            "R": 72,
+            "B": 300
+          },
+          "bleeds": "",
+          "pass": true
+        },
+        "ground": {
+          "value": "#121A22",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.968,
+          "min": 0.8,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "fb1_45.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 79,
+            "R": 0,
+            "B": 52
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.68,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "fb1_916.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 257,
+            "R": 0,
+            "B": 330
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.768,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "fb2_45.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 79,
+            "R": 0,
+            "B": 52
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.678,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "fb2_916.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 257,
+            "R": 0,
+            "B": 330
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.767,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "fc1_45.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 79,
+            "R": 0,
+            "B": 52
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.679,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "fc1_916.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 257,
+            "R": 0,
+            "B": 330
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.767,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "fd2_45.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 79,
+            "R": 0,
+            "B": 52
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.677,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "fd2_916.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 257,
+            "R": 0,
+            "B": 330
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.767,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "fe1_45.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 79,
+            "R": 0,
+            "B": 52
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.679,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "fe1_916.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 257,
+            "R": 0,
+            "B": 330
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.768,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    },
+    {
+      "file": "fe4_45.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1350
+          ],
+          "pass": true
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 79,
+            "R": 0,
+            "B": 52
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.681,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [],
+      "visual_rubric": null,
+      "human": null,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "file": "fe4_916.png",
+      "route": "A+foto",
+      "checks": {
+        "canvas": {
+          "value": [
+            1080,
+            1920
+          ],
+          "pass": false
+        },
+        "margins": {
+          "value": {
+            "L": 0,
+            "T": 257,
+            "R": 0,
+            "B": 330
+          },
+          "bleeds": "LR",
+          "pass": true
+        },
+        "ground": {
+          "value": "#FCFBF8",
+          "pass": true
+        },
+        "palette": {
+          "value": 0.769,
+          "min": 0.0,
+          "pass": true
+        }
+      },
+      "fails": [
+        "canvas 1080x1920, atteso 1080x1350"
+      ],
+      "visual_rubric": null,
+      "human": null,
+      "score": 85,
+      "pass": false
+    }
+  ]
+}

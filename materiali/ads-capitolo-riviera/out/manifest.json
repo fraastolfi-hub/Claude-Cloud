@@ -1,0 +1,411 @@
+{
+ "batch": "out",
+ "palette": [
+  "#fcfbf8",
+  "#f2efe8",
+  "#121a22",
+  "#ffffff",
+  "#15181c",
+  "#e3e1db",
+  "#1b2530",
+  "#ffd22e"
+ ],
+ "ads": [
+  {
+   "id": "B1_45",
+   "file": "b1_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "B1_916",
+   "file": "b1_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "B2_45",
+   "file": "b2_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "B2_916",
+   "file": "b2_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "C1_45",
+   "file": "c1_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "C1_916",
+   "file": "c1_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "D2_45",
+   "file": "d2_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "D2_916",
+   "file": "d2_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "E1_45",
+   "file": "e1_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "E1_916",
+   "file": "e1_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "E4_45",
+   "file": "e4_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "E4_916",
+   "file": "e4_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A",
+   "bleeds": "",
+   "route_reason": "diagrammi in CSS, nessuna foto della struttura",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png"
+   ]
+  },
+  {
+   "id": "FB1_45",
+   "file": "fb1_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FB1_916",
+   "file": "fb1_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FB2_45",
+   "file": "fb2_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FB2_916",
+   "file": "fb2_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FC1_45",
+   "file": "fc1_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FC1_916",
+   "file": "fc1_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FD2_45",
+   "file": "fd2_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FD2_916",
+   "file": "fd2_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FE1_45",
+   "file": "fe1_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FE1_916",
+   "file": "fe1_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FE4_45",
+   "file": "fe4_45.png",
+   "size": [
+    1080,
+    1350
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  },
+  {
+   "id": "FE4_916",
+   "file": "fe4_916.png",
+   "size": [
+    1080,
+    1920
+   ],
+   "route": "A+foto",
+   "bleeds": "LR",
+   "route_reason": "foto reale di Francesco con il libro",
+   "assets": [
+    "newsreader.woff2",
+    "figtree.woff2",
+    "copertina-pdf.png",
+    "francesco-libro@2x.webp"
+   ]
+  }
+ ]
+}
