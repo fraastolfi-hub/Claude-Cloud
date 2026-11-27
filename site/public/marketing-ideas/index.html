@@ -588,7 +588,13 @@ function render(){ renderTop(); renderPaths(); renderAside(); renderGrid(); }
 /* ---------- In testa: copertina e le ultime tre (solo con l'archivio pulito) ---------- */
 const pulito = () => S.vista==='pubblicato' && !S.q && !S.sel.size && !S.percorso && !S.minRating && !S.onlyImg;
 const conImg = it => (it.images||[]).length>0;
-function copertinaDi(pub){ return pub.find(it=>it.copertina&&conImg(it)) || pub.find(it=>it.rating===5&&conImg(it)) || pub.find(it=>it.rating===4&&conImg(it)) || null; }
+// la copertina: quella scelta da Francesco; altrimenti una 5 stelle a rotazione, una diversa al giorno (il giorno fa da seme, così non cambia a ogni ricarica); senza 5 stelle, l'ultima 4 stelle
+function copertinaDi(pub){
+  const scelta=pub.find(it=>it.copertina&&conImg(it)); if(scelta) return scelta;
+  const cinque=pub.filter(it=>it.rating===5&&conImg(it)).sort((a,b)=>a.id.localeCompare(b.id));
+  if(cinque.length) return cinque[Math.floor(Date.now()/864e5)%cinque.length];
+  return pub.find(it=>it.rating===4&&conImg(it))||null;
+}
 function renderTop(){
   const box=$('#top');
   const pub=S.items.filter(it=>statoDi(it)==='pubblicato').sort(recente);
