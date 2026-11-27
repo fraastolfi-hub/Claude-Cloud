@@ -432,3 +432,8 @@ Annuncio diretto sul download. Le voci dell'indice sono quelle della sezione «N
 - **Titolo:** Ti regalo il primo capitolo del mio libro
 - **Descrizione:** Dentro c'è il test dei dieci secondi
 - **utm_content:** p1
+
+### Selezione del 27 novembre 2026, notte (dati del primo giorno)
+Dati a quel momento: hanno speso solo E1 (1,44 €, 104 impression, CTR 7,69%, 2 clic sul link) e T1 (1,57 €, 133 impression, CTR 7,52%, 1 clic sul link). T2 4 impression, tutti gli altri zero. Nessun lead registrato. Scelta quindi fatta su diversità degli angoli più che sui numeri.
+- **Attivi (5):** P1 (richiesto), E1, T1 (gli unici con dati, CTR buono), B1 (stesso messaggio del titolo della pagina /capitolo/: continuità), N6 (angolo AI, diverso dagli altri).
+- **In pausa:** C1, D2, T2, N2, N8, N9, N10, N11. Riattivabili per sostituire i più deboli dopo 4-5 giorni.
