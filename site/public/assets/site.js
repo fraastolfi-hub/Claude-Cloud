@@ -227,7 +227,7 @@
     '/quiz/': ['Mancano due minuti', 'Il risultato arriva alla fine del test.', 'Rispondi alle domande per vedere il profilo del tuo hotel.', 'Completa il test', '#close', 'Esci'],
     '/guida/': ['Prima di andare', 'Te ne vai senza la formula?', 'Va bene. Ma domani il vicino abbassa ancora.', '', '', 'No, grazie'],
     '/guida-hotel-romagna/': ['Prima di andare', 'Te ne vai senza la formula?', 'Va bene. Ma domani il vicino di viale abbassa ancora.', '', '', 'No, grazie'],
-    '/capitolo/': ['Prima di andare', 'Te ne vai senza il capitolo?', 'Venti minuti di lettura e il test dei dieci secondi. Gratis, nella tua email.', '', '', 'No, grazie'],
+    '/capitolo/': ['Prima di andare', 'Il test dei dieci secondi è nel primo capitolo.', '13 pagine in PDF, gratis nella tua email.', '', '', 'No, grazie'],
     '/smontaggio/': ['Prima di andare', 'Bastano pochi campi.', 'Nessuna chiamata. Ricevi la lettura entro tre giorni lavorativi.', 'Richiedi la lettura', '#form', 'No, grazie'],
     // versione inglese: chiavi con /en/ (più lunghe, quindi vincono sulle italiane con lo stesso finale)
     '/en/': ['Before you go', 'It takes a minute to request it.', 'The free positioning read of your homepage, next to your competitors. Done by hand by me, up to 6 a month.', 'Request the positioning read', '#richiedi', 'No, thanks'],
