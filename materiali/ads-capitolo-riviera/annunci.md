@@ -408,5 +408,6 @@ Immagine: «Più clic, camere vuote? Manca il tappo.» Rubinetto = campagne, pos
 ### Stato al 27 novembre 2026, notte
 - N2 (120259349857870197), N6 (120259349857910197), N11 (120259349858010197) caricati e pubblicati attivi nel gruppo 120259342791260197, in revisione Meta. Etichetta AI: no (illustrazioni).
 - T1 e T2 superata la revisione: attivi.
-- **Attivi:** B1, C1, D2, E1, T1, T2, N2, N6, N11 (nove annunci, 10 €/giorno).
-- **Pronti ma non caricati:** N8, N9, N10.
+- N8 (120259349943240197), N9 (120259349943540197), N10 (120259349944310197) caricati e pubblicati attivi, in revisione Meta.
+- **Attivi:** B1, C1, D2, E1, T1, T2, N2, N6, N8, N9, N10, N11 (dodici annunci, 10 €/giorno).
+- Ogni annuncio porta già il 4:5 (feed) e il 9:16 (storie e reel) nella stessa creatività.
