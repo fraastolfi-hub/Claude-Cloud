@@ -247,7 +247,8 @@ body{background:var(--e-carta)}
 }
 @media (max-width:600px){
   .sw-hero{padding:22px 0 14px}
-  .sw-hero h1{margin:8px 0 6px;font-size:30px!important}
+  .sw-hero h1{margin:10px 0 8px;font-size:38px!important;line-height:1.05}
+  .sw-cover-txt h2{font-size:27px!important}
   .sw-intro>summary{display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;font:600 14px/1.2 var(--display);color:var(--e-grafite);padding:4px 0}
   .sw-intro>summary::after{content:"";display:inline-block;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 2px;transition:transform .15s}
   .sw-intro[open]>summary::after{transform:rotate(-135deg);margin-top:3px}
@@ -456,7 +457,13 @@ function render(){ renderTop(); renderPaths(); renderAside(); renderGrid(); }
 /* ---------- In testa: copertina e le ultime tre (solo con l'archivio pulito) ---------- */
 const pulito = () => S.vista==='pubblicato' && !S.q && !S.sel.size && !S.percorso && !S.minRating && !S.onlyImg;
 const conImg = it => (it.images||[]).length>0;
-function copertinaDi(pub){ return pub.find(it=>it.copertina&&conImg(it)) || pub.find(it=>it.rating===5&&conImg(it)) || pub.find(it=>it.rating===4&&conImg(it)) || null; }
+// la copertina: quella scelta da Francesco; altrimenti una 5 stelle a rotazione, una diversa al giorno (il giorno fa da seme, così non cambia a ogni ricarica); senza 5 stelle, l'ultima 4 stelle
+function copertinaDi(pub){
+  const scelta=pub.find(it=>it.copertina&&conImg(it)); if(scelta) return scelta;
+  const cinque=pub.filter(it=>it.rating===5&&conImg(it)).sort((a,b)=>a.id.localeCompare(b.id));
+  if(cinque.length) return cinque[Math.floor(Date.now()/864e5)%cinque.length];
+  return pub.find(it=>it.rating===4&&conImg(it))||null;
+}
 function renderTop(){
   const box=$('#top');
   const pub=S.items.filter(it=>statoDi(it)==='pubblicato').sort(recente);
