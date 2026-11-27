@@ -150,6 +150,8 @@ Annunci (pulsante «Scarica», link `/capitolo/` con `utm_campaign=capitolo-rivi
 | FE4 · Le lenzuola in vetrina · foto | 120259342814270197 | 2232763061449034 | sì |
 | B1E · Cinquanta rettangoli · illustrata · emoji | 120259345147010197 | 1456583756612868 | no |
 | C1E · Test dei dieci secondi · illustrata · emoji | 120259345148020197 | 1454903256824878 | no |
+| T1 · Il tappo di sughero · foto Artlist | 120259346443150197 | 1149944757777837 | sì |
+| T2 · La serranda · foto Artlist | 120259346450500197 | 1457358839268097 | sì |
 
 ### Test emoji (27 novembre 2026)
 B1E e C1E sono identici a B1 e C1 (stesse immagini, titolo, descrizione), con una sola differenza: l'ultima riga del testo principale comincia con 📖. Codici `utm_content=b1e` e `c1e`. Regola: mai nella prima riga, mai più di una per annuncio, mai in titolo e descrizione. Dopo 7-10 giorni confrontare il costo per iscritto B1E contro B1 e C1E contro C1: se l'emoji vince in entrambi, estenderla agli altri.
@@ -230,3 +232,6 @@ Da fare in Gestione inserzioni prima di pubblicare:
 
 - **Titolo:** Da fuori si vede la serranda
 - **Descrizione:** Primo capitolo gratis, in PDF
+
+### Foto Artlist per T1 e T2 (27 novembre 2026)
+Nano Banana Pro 2K, 3:2, 2 varianti per foto, 640 crediti (cartella Artlist «Hotel Positioning · Meta Riviera»). Scelte: `foto-artlist/tappo_b.png` (con la costa sull'orizzonte) e `foto-artlist/serranda_a.png` (lungomare con muretto). Impaginate in CSS sopra il fondo del sito (route hybrid). Su Meta: etichetta AI attiva. Codici `utm_content=t1` e `t2`.
