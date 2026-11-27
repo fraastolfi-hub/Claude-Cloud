@@ -75,10 +75,12 @@ def serranda():
     return '<div class="shut"><div class="box"><i class="bar"></i><div class="slats"></div><div class="handle"></div><div class="glow"></div></div><div class="floor"></div></div>'
 
 ADS += [
- dict(id='T1', bg=NOTTE, h='Il tappo di sughero<br><em>non sceglie</em><br><em>dove andare.</em>', hs=90,
-      sub='Agosto tira. Maggio si ferma. <b>Il prezzo lo fa chi ha gente alla porta.</b>', vis=tappo),
- dict(id='T2', bg=CARTA, h='Dentro è tutto perfetto.<br><em>Da fuori si vede</em><br><em>la serranda.</em>', hs=84,
-      sub='<b>La qualità li fa tornare.</b> Non li fa arrivare.', vis=serranda),
+ dict(id='T1', bg=NOTTE, foto=True, img=b64(HERE / 'foto-artlist/tappo_b.png', 'image/png'), opos='60% 70%',
+      h='Il tappo di sughero<br><em>non sceglie dove andare.</em>', hs=80,
+      sub='Agosto tira. Maggio si ferma. <b>Il prezzo lo fa chi ha gente alla porta.</b>'),
+ dict(id='T2', bg=CARTA, foto=True, img=b64(HERE / 'foto-artlist/serranda_a.png', 'image/png'), opos='50% 60%',
+      h='Dentro è tutto perfetto.<br><em>Da fuori si vede la serranda.</em>', hs=72,
+      sub='<b>La qualità li fa tornare.</b> Non li fa arrivare.'),
 ]
 
 CSS = '''
@@ -191,7 +193,7 @@ def build(ad, W, H):
     foot = f'<div class="foot"><span class="logo"><span class="mark"></span>Hotel Positioning</span><div class="gift"><div><span>Primo capitolo gratis · 13 pagine</span><small>hotelpositioning.com</small></div><img src="{COVER}" alt=""></div></div>'
     if foto:
         body = f'''<div class="canvas fo"><div class="txt">{kick}<h1>{ad["h"]}</h1><p class="sub">{ad["sub"]}</p></div>
-<div class="photo"><img src="{FOTO}" alt=""></div>{foot}</div>'''
+<div class="photo"><img src="{ad.get('img', FOTO)}" alt="" style="object-position:{ad.get('opos', '50% ' + vals['OPOS'])}"></div>{foot}</div>'''
     else:
         body = f'''<div class="canvas"><div class="col">{kick}<h1>{ad["h"]}</h1><div class="vis">{ad["vis"]()}</div><p class="sub">{ad["sub"]}</p>{foot}</div></div>'''
     return f'<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><style>{css}</style></head><body class="{cls}">{body}</body></html>'
@@ -203,8 +205,8 @@ for ad in ADS:
         (OUT / f).write_text(build(ad, W, H))
         man['ads'].append({'id': f'{ad["id"]}_{suf}', 'file': f.replace('.html', '.png'), 'size': [W, H],
                            # foto reale a tutta larghezza: esce dai bordi a sinistra e a destra, e i suoi colori non sono in palette
-                           'route': 'A+foto' if ad.get('foto') else 'A', 'bleeds': 'LR' if ad.get('foto') else '',
+                           'route': ('hybrid' if ad['id'].startswith('T') else 'A+foto') if ad.get('foto') else 'A', 'bleeds': 'LR' if ad.get('foto') else '',
                            'route_reason': 'foto reale di Francesco con il libro' if ad.get('foto') else 'diagrammi in CSS, nessuna foto della struttura',
-                           'assets': ['newsreader.woff2', 'figtree.woff2', 'copertina-pdf.png'] + (['francesco-libro@2x.webp'] if ad.get('foto') else [])})
+                           'assets': ['newsreader.woff2', 'figtree.woff2', 'copertina-pdf.png'] + ((['foto-artlist (Nano Banana Pro, generata AI)'] if ad['id'].startswith('T') else ['francesco-libro@2x.webp']) if ad.get('foto') else [])})
 (OUT / 'manifest.json').write_text(json.dumps(man, indent=1, ensure_ascii=False))
 print(len(man['ads']), 'html')

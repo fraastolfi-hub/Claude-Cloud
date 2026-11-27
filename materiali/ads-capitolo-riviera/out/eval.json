@@ -931,7 +931,7 @@
     },
     {
       "file": "t1_45.png",
-      "route": "A",
+      "route": "hybrid",
       "checks": {
         "canvas": {
           "value": [
@@ -942,12 +942,12 @@
         },
         "margins": {
           "value": {
-            "L": 72,
+            "L": 0,
             "T": 79,
-            "R": 72,
-            "B": 64
+            "R": 0,
+            "B": 52
           },
-          "bleeds": "",
+          "bleeds": "LR",
           "pass": true
         },
         "ground": {
@@ -955,8 +955,8 @@
           "pass": true
         },
         "palette": {
-          "value": 0.975,
-          "min": 0.8,
+          "value": 0.788,
+          "min": 0.0,
           "pass": true
         }
       },
@@ -968,7 +968,7 @@
     },
     {
       "file": "t1_916.png",
-      "route": "A",
+      "route": "hybrid",
       "checks": {
         "canvas": {
           "value": [
@@ -979,12 +979,12 @@
         },
         "margins": {
           "value": {
-            "L": 72,
+            "L": 0,
             "T": 257,
-            "R": 72,
-            "B": 300
+            "R": 0,
+            "B": 330
           },
-          "bleeds": "",
+          "bleeds": "LR",
           "pass": true
         },
         "ground": {
@@ -992,8 +992,8 @@
           "pass": true
         },
         "palette": {
-          "value": 0.982,
-          "min": 0.8,
+          "value": 0.848,
+          "min": 0.0,
           "pass": true
         }
       },
@@ -1007,7 +1007,7 @@
     },
     {
       "file": "t2_45.png",
-      "route": "A",
+      "route": "hybrid",
       "checks": {
         "canvas": {
           "value": [
@@ -1018,12 +1018,12 @@
         },
         "margins": {
           "value": {
-            "L": 72,
+            "L": 0,
             "T": 79,
-            "R": 72,
-            "B": 64
+            "R": 0,
+            "B": 52
           },
-          "bleeds": "",
+          "bleeds": "LR",
           "pass": true
         },
         "ground": {
@@ -1031,8 +1031,8 @@
           "pass": true
         },
         "palette": {
-          "value": 0.972,
-          "min": 0.8,
+          "value": 0.643,
+          "min": 0.0,
           "pass": true
         }
       },
@@ -1044,7 +1044,7 @@
     },
     {
       "file": "t2_916.png",
-      "route": "A",
+      "route": "hybrid",
       "checks": {
         "canvas": {
           "value": [
@@ -1055,12 +1055,12 @@
         },
         "margins": {
           "value": {
-            "L": 72,
+            "L": 0,
             "T": 257,
-            "R": 72,
-            "B": 300
+            "R": 0,
+            "B": 330
           },
-          "bleeds": "",
+          "bleeds": "LR",
           "pass": true
         },
         "ground": {
@@ -1068,8 +1068,8 @@
           "pass": true
         },
         "palette": {
-          "value": 0.98,
-          "min": 0.8,
+          "value": 0.738,
+          "min": 0.0,
           "pass": true
         }
       },
