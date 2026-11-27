@@ -108,6 +108,39 @@ ADS += [
       sub='Se di te sa solo «vicino al mare», <b>non ti nomina.</b>'),
 ]
 
+# famiglia 4, seconda tornata (27 novembre 2026): N8 il gemello, N9 il sito rifatto, N10 prima dei lavori, N11 la vasca senza tappo
+def twins():
+    card = ('<div class="hp"><div class="hp-ph"></div><b>Hotel <i class="bl">xxxxxxx</i></b>'
+            '<ul><li>Camere confortevoli</li><li>A due passi dal mare</li><li>Staff cordiale</li></ul><span class="hp-bt">Prenota</span></div>')
+    return f'<div class="twins"><div class="tw-row"><div><small class="tw-l">Il tuo hotel</small>{card}</div><div><small class="tw-l">Quello accanto</small>{card}</div></div><div class="tw-sol">Soluzione: nessuna.</div></div>'
+
+def browsers():
+    old = ('<div class="br old"><div class="br-bar"><i></i><i></i><i></i></div><div class="br-in">'
+           '<div class="o-logo">HOTEL <i class="bl">xxxxxx</i> ★★★</div><div class="o-ban"></div>'
+           '<p class="claim"><span>Camere confortevoli a due passi dal mare</span></p><div class="o-nav"><i></i><i></i><i></i><i></i></div></div></div>')
+    new = ('<div class="br new"><div class="br-bar"><i></i><i></i><i></i></div><div class="br-in">'
+           '<div class="n-hero"><p class="claim"><span>Camere confortevoli a due passi dal mare</span></p><span class="n-bt">Prenota ora</span></div></div></div>')
+    return f'<div class="sites"><div class="st"><small>Prima</small>{old}</div><div class="st"><small>Dopo</small>{new}</div></div>'
+
+def estimate():
+    rows = ''.join(f'<div class="er"><span>{t}</span><b><i class="bl">{v}</i></b></div>' for t, v in
+                   (('Bagni nuovi', '48.000 €'), ('Parquet nelle camere', '36.000 €'), ('Testiere imbottite', '9.500 €'), ('Facciata e balconi', '27.000 €')))
+    return ('<div class="est"><div class="rh"><b>Preventivo ristrutturazione</b><span>Inverno</span></div>' + rows
+            + '<div class="er why"><span>Perché sceglierti</span><b class="empty"></b></div></div>')
+
+ADS += [
+ dict(id='N8', bg=CARTA, h='Trova le differenze.<br><em>Non ce ne sono.</em>', hs=88, vis=twins,
+      sub='Il tuo hotel è bellissimo. <b>E identico a quello accanto.</b>'),
+ dict(id='N9', bg=SABBIA, h='Sito nuovo.<br><em>Stesse parole.</em>', vis=browsers,
+      sub='Più bello. Più veloce. <b>Dice le stesse cose.</b>'),
+ dict(id='N10', bg=CARTA, h='Gli interni li rifanno tutti.<br><em>Il motivo no.</em>', hs=80, vis=estimate,
+      sub='<b>Prima dei lavori,</b> decidi per chi li fai.'),
+]
+if (HERE / 'foto-artlist/vasca.png').exists():
+    ADS.append(dict(id='N11', bg=CARTA, foto=True, img=b64(HERE / 'foto-artlist/vasca.png', 'image/png'), opos='62% 62%',
+                    h='L’acqua entra.<br><em>L’acqua esce.</em>', hs=88,
+                    sub='<b>La bolletta la paghi tu.</b> Il tappo è un motivo per scegliere te.'))
+
 CSS = '''
 @font-face{font-family:Newsreader;src:url(@@NEWS@@) format("woff2");font-weight:200 800}
 @font-face{font-family:Figtree;src:url(@@FIG@@) format("woff2");font-weight:300 900}
@@ -215,6 +248,39 @@ h1 em{font-style:normal;background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .
 .ghost{justify-self:start;width:760px;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;border:2px dashed #c9c6be;border-radius:12px;padding:22px 28px;color:#6f747c}
 .ghost b{font:500 34px Newsreader;color:#4a4f57}.ghost span{font:italic 400 28px Figtree}
 .ghost em{font:600 19px Figtree;font-style:normal;letter-spacing:.06em;text-transform:uppercase;border:1px solid #c9c6be;border-radius:3px;padding:4px 10px}
+/* N8: due homepage gemelle */
+.twins{width:100%;max-width:900px;display:grid;gap:22px;justify-items:center}
+.tw-l{display:block;margin-bottom:12px;font:600 22px Figtree;letter-spacing:.14em;text-transform:uppercase;color:#6f747c}
+.tw-row{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%}
+.hp{background:#fff;border:2px solid #e3e1db;border-radius:12px;padding:20px}
+.hp-ph{height:170px;border-radius:8px;background:linear-gradient(180deg,#dfe6ea 0 52%,#c9d5db 52% 66%,#ece4d4 66%)}
+.hp b{display:block;margin:18px 0 10px;font:500 34px Newsreader}
+.hp ul{list-style:none;display:grid;gap:4px;font:400 26px/1.35 Figtree;color:#4a4f57}
+.hp-bt{display:inline-block;margin-top:16px;font:600 22px Figtree;border:2px solid #15181c;border-radius:999px;padding:8px 22px}
+.tw-sol{font:600 18px Figtree;letter-spacing:.14em;text-transform:uppercase;color:#6f747c;transform:rotate(180deg)}
+/* N9: il sito prima e dopo, la stessa frase cerchiata */
+.sites{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%}
+.st small{display:block;margin-bottom:12px;font:600 22px Figtree;letter-spacing:.14em;text-transform:uppercase;color:#6f747c}
+.br{background:#fff;border:2px solid #c9c6be;border-radius:10px;overflow:hidden}
+.br-bar{display:flex;gap:8px;padding:12px 14px;background:#e3e1db}
+.br-bar i{width:14px;height:14px;border-radius:50%;background:#c9c6be}
+.br-in{height:420px;padding:22px;display:flex;flex-direction:column;gap:18px}
+.old .br-in{background:#f2efe8;align-items:center;text-align:center}
+.o-logo{font:700 22px Newsreader;letter-spacing:.08em}
+.o-ban{width:100%;height:120px;border:4px double #4a4f57;background:linear-gradient(180deg,#dfe6ea 0 55%,#c9d5db 55%)}
+.o-nav{display:flex;gap:10px}.o-nav i{width:58px;height:16px;background:#4a4f57;border-radius:2px}
+.old .claim{font:700 30px/1.2 Newsreader;color:#15181c}
+.n-hero{flex:1;border-radius:8px;background:linear-gradient(180deg,#b9c7cf,#8fa3ae);padding:26px;display:flex;flex-direction:column;justify-content:flex-end;gap:16px}
+.new .claim{font:600 34px/1.15 Figtree;color:#fff}
+.n-bt{align-self:flex-start;font:600 20px Figtree;background:#fff;color:#15181c;border-radius:999px;padding:8px 20px}
+.claim span{background:linear-gradient(#ffd22e,#ffd22e) 0 96%/100% .16em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* N10: il preventivo dei lavori, l'ultima riga vuota */
+.est{width:100%;max-width:900px;background:#fff;border:2px solid #e3e1db;border-radius:12px;padding:30px 36px 26px}
+.er{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #e3e1db;font:400 30px Figtree;color:#4a4f57}
+.er b{font:500 32px Newsreader;color:#15181c}
+.er.why{border-bottom:0;margin-top:10px;padding-top:26px;border-top:2px solid #15181c;color:#15181c;font-weight:600}
+.er.why span{background:linear-gradient(#ffd22e,#ffd22e) 0 92%/100% .14em no-repeat;padding-bottom:.06em}
+.er .empty{width:220px;height:40px;border-bottom:3px dashed #c9c6be}
 /* famiglia foto: testo in alto, foto a tutta larghezza, piede su carta */
 .fo .txt{position:absolute;left:72px;right:72px;top:PT}
 .fo .txt .sub{margin:22px 0 0}

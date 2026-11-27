@@ -290,3 +290,116 @@ Immagini in `out-n/` (route A, CSS nel design system del sito). Generazione: `py
 - **Titolo:** Chi consiglia ChatGPT? Chi sa descrivere
 - **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
 - **utm_content:** n6
+
+## Famiglia 4, seconda tornata (27 novembre 2026) · bozza, non caricata
+Dagli spunti di `copy-genius/.../meta-ads-30.html` (01, 05+16, 25, 06), riscritti in tono Toskich per il capitolo gratis: niente prezzo, niente garanzia. Immagini in `out-n2/`: N8, N9, N10 in CSS (route A), N11 foto Artlist `foto-artlist/vasca.png` (Nano Banana Pro, variante B di due, 320 crediti; su Meta etichetta AI attiva). Generazione: `python3 -X utf8 genera_ads.py out-n2 N8,N9,N10,N11`.
+
+### N8 · Il gemello (fondo carta)
+- **Testo principale:**
+
+  Albergatore della Riviera, il tuo hotel è bellissimo.
+  E identico a quello accanto.
+
+  Non è un'offesa.
+  Succede quasi sempre ai migliori.
+
+  Hai rifatto le camere.
+  La cucina vale il viaggio.
+  Lo staff è con te da anni.
+
+  Poi apri il sito.
+  «Camere confortevoli. A due passi dal mare. Staff cordiale.»
+  Le stesse parole del vicino.
+
+  È come il gioco delle differenze sotto l'ombrellone.
+  Guardi. Riguardi.
+  Non ne trovi.
+
+  L'ospite fa lo stesso.
+  Poi sceglie quello che costa meno.
+
+  Nel primo capitolo del mio libro ti spiego perché succede.
+  13 pagine, gratis, in PDF.
+
+- **Titolo:** Il tuo hotel è identico a quello accanto
+- **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
+- **utm_content:** n8
+
+### N9 · Il sito rifatto (fondo sabbia)
+- **Testo principale:**
+
+  Albergatore della Riviera, hai rifatto il sito.
+
+  Font nuovo. Foto nuove. Si apre veloce.
+  Le prenotazioni dirette? Come prima.
+
+  È come ridipingere l'insegna.
+  Con le stesse parole del vicino.
+
+  Nel rifacimento è cambiato tutto.
+  Tranne quello che decide: cosa c'è scritto.
+
+  Un sito più bello ti fa sembrare professionale.
+  Non ti fa sembrare necessario.
+
+  Prima del prossimo preventivo, fai il test dei dieci secondi.
+  È nel primo capitolo del mio libro.
+  13 pagine, gratis, in PDF.
+
+- **Titolo:** Sito nuovo, stesse parole
+- **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
+- **utm_content:** n9
+
+### N10 · Prima dei lavori (fondo carta)
+- **Testo principale:**
+
+  Albergatore della Riviera, vuoi rifare l'hotel per farlo più bello?
+
+  Aspetta un attimo.
+
+  Bagni nuovi. Parquet. Testiere imbottite.
+  Belli.
+  Il vicino li fa l'inverno dopo.
+
+  Gli interni si copiano in una stagione.
+  Il motivo per sceglierti no.
+
+  È come comprare il vestito prima di sapere dove vai.
+  Elegante. Magari sbagliato.
+
+  Prima di firmare i lavori, decidi per chi li fai.
+  Perché le camere nuove non bastano a farti scegliere, è nel primo capitolo del mio libro.
+  13 pagine, gratis, in PDF.
+
+- **Titolo:** Gli interni li rifanno tutti. Il motivo no.
+- **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
+- **utm_content:** n10
+- Nota: vicino a T2 (la serranda). Gli importi nel preventivo sono sfocati e illeggibili.
+
+### N11 · La vasca senza tappo (fondo carta, foto Artlist)
+- **Testo principale:**
+
+  Albergatore della Riviera, compri traffico.
+  Campagne. Post. L'agenzia.
+
+  L'acqua entra.
+  L'acqua esce.
+  La bolletta la paghi tu.
+
+  È come riempire la vasca senza tappo.
+  Apri di più il rubinetto.
+  Esce più in fretta.
+
+  Ogni clic arriva su un sito che dice quello che dicono tutti.
+  E va dal vicino.
+  Di solito da quello che costa meno.
+
+  Il tappo non è una campagna migliore.
+  È un motivo per scegliere te.
+
+  Nel primo capitolo del mio libro ti spiego perché succede.
+  13 pagine, gratis, in PDF.
+
+- **Titolo:** L'acqua entra, l'acqua esce
+- **Descrizione:** Primo capitolo gratis · 13 pagine in PDF
+- **utm_content:** n11
