@@ -352,3 +352,13 @@ mark.gen{background:linear-gradient(transparent 88%,var(--e-giallo) 88%)!importa
 /* apertura della home: titolo su due frasi, più contenuto */
 .hero-c h1{font-size:clamp(34px,4.6vw,64px)!important;max-width:21ch!important;line-height:1.06}
 @media (max-width:600px){.hero-c h1{font-size:clamp(30px,8.4vw,40px)!important}}
+
+/* barra in cima: il libro nuovo e il primo capitolo gratis (header.html e /libro/) */
+.hp-news{position:relative;z-index:31;display:flex;align-items:center;justify-content:center;gap:12px;padding:9px var(--gut,16px);background:var(--e-inchiostro,#15181c);color:#fcfbf8;text-decoration:none;font:500 14.5px/1.35 Figtree,system-ui,sans-serif;text-align:center}
+.hp-news:hover .hp-news-t b,.hp-news:focus-visible .hp-news-t b{text-decoration:underline;text-underline-offset:3px}
+.hp-news-k{flex:none;background:var(--e-giallo,#ffd22e);color:#15181c;border-radius:999px;padding:2px 10px;font:800 11px/1.6 Figtree,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.hp-news-t b{color:var(--e-giallo,#ffd22e);font-weight:700}
+.hp-news-a{flex:none;color:var(--e-giallo,#ffd22e);font-weight:700;transition:transform .2s}
+.hp-news:hover .hp-news-a{transform:translateX(3px)}
+@media (max-width:640px){.hp-news{font-size:13.5px;gap:8px;justify-content:flex-start;text-align:left}.hp-news-l{display:none}}
+@media (prefers-reduced-motion:reduce){.hp-news-a{transition:none}}

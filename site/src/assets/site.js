@@ -154,7 +154,7 @@
     var started = false;
     f.addEventListener('focusin', function(e){
       if (started || !e.target.matches('input:not([type=hidden]),select,textarea')) return;
-      started = true; if (window.HPtrack) HPtrack('form_start', { form: f.getAttribute('name') || f.id, posizione: f.closest('#exit') ? 'popup' : 'pagina' });
+      started = true; if (window.HPtrack) HPtrack('form_start', { form: f.getAttribute('name') || f.id, posizione: f.dataset.pos || (f.closest('#exit') ? 'popup' : 'pagina') });
     });
     f.addEventListener('input', function(e){ progress(); var w = e.target.closest('fieldset,.field,.check'); if (w) w.classList.remove('err'); });
     f.addEventListener('change', progress);
@@ -227,6 +227,7 @@
     '/quiz/': ['Mancano due minuti', 'Il risultato arriva alla fine del test.', 'Rispondi alle domande per vedere il profilo del tuo hotel.', 'Completa il test', '#close', 'Esci'],
     '/guida/': ['Prima di andare', 'Te ne vai senza la formula?', 'Va bene. Ma domani il vicino abbassa ancora.', '', '', 'No, grazie'],
     '/guida-hotel-romagna/': ['Prima di andare', 'Te ne vai senza la formula?', 'Va bene. Ma domani il vicino di viale abbassa ancora.', '', '', 'No, grazie'],
+    '/capitolo/': ['Prima di andare', 'Il test dei dieci secondi è nel primo capitolo.', '13 pagine in PDF, gratis nella tua email.', '', '', 'No, grazie'],
     '/smontaggio/': ['Prima di andare', 'Bastano pochi campi.', 'Nessuna chiamata. Ricevi la lettura entro tre giorni lavorativi.', 'Richiedi la lettura', '#form', 'No, grazie'],
     // versione inglese: chiavi con /en/ (più lunghe, quindi vincono sulle italiane con lo stesso finale)
     '/en/': ['Before you go', 'It takes a minute to request it.', 'The free positioning read of your homepage, next to your competitors. Done by hand by me, up to 6 a month.', 'Request the positioning read', '#richiedi', 'No, thanks'],
@@ -298,6 +299,16 @@
     // desktop: il mouse esce verso la barra del browser
     document.addEventListener('mouseout', function(e){ if (!e.relatedTarget && e.clientY <= 0) open(); });
     if (force) setTimeout(open, 1000);
+    // telefono (solo pop-up con data-mobile): dopo metà pagina, una risalita veloce vale come «sto andando via»
+    if (exitEl.hasAttribute('data-mobile') && matchMedia('(pointer: coarse)').matches) {
+      var maxY = 0, lastY = scrollY, lastT = Date.now();
+      addEventListener('scroll', function(){
+        var y = scrollY, t = Date.now(), H = document.documentElement.scrollHeight - innerHeight;
+        if (y > maxY) maxY = y;
+        if (maxY > H * .5 && lastY - y > innerHeight * .35 && t - lastT < 400) open();
+        if (t - lastT > 120) { lastY = y; lastT = t; }
+      }, { passive: true });
+    }
     // mobile: dopo metà pagina, una risalita veloce verso l'alto
     var lastY = scrollY, lastT = Date.now(), deep = false;
     addEventListener('scroll', function(){

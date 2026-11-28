@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hotel Positioning, il libro: posizionamento per hotel indipendenti · Hotel Positioning</title>
-<meta name="description" content="Il manuale di posizionamento alberghiero di Francesco Astolfi. 120 pagine, un metodo in 6 passaggi, 200 attributi per distinguere il tuo hotel da quelli simili. 19,90 € su Amazon, anche Kindle.">
+<meta name="description" content="Il manuale di posizionamento alberghiero di Francesco Astolfi. 150 pagine, un metodo in 6 passaggi, 200 attributi per distinguere il tuo hotel da quelli simili. 19,90 € su Amazon, anche Kindle.">
 <link rel="canonical" href="https://hotelpositioning.com/libro/">
 <meta property="og:title" content="Hotel Positioning: il metodo in sei passaggi per far scegliere il tuo hotel."><meta property="og:description" content="Hotel Positioning, il manuale di posizionamento alberghiero. Il metodo in sei passaggi, i casi Silva e Veridia, 200 attributi. 19,90 € su Amazon."><meta property="og:type" content="website">
-<meta property="og:image" content="https://hotelpositioning.com/assets/img/libro-og.jpg">
+<meta property="og:image" content="https://hotelpositioning.com/assets/img/libro-copertina-og.jpg">
 <!-- @include head -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"Hotel Positioning","alternativeHeadline":"Come l'ospite sceglie un hotel (e perché non sceglie il tuo)","genre":"Manuale di posizionamento alberghiero","image":"https://hotelpositioning.com/assets/img/libro-hotel-positioning@2x.webp","author":{"@type":"Person","name":"Francesco Astolfi","url":"https://hotelpositioning.com/francesco/"},"inLanguage":"it","numberOfPages":120,"bookFormat":["https://schema.org/Paperback","https://schema.org/EBook"],"url":"https://hotelpositioning.com/libro/","description":"Il metodo in sei passaggi per posizionare un hotel indipendente e farlo scegliere al suo prezzo.","offers":{"@type":"Offer","price":"19.90","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.amazon.it/dp/B0HL3Z4XL7/","seller":{"@type":"Organization","name":"Amazon"}}}
+{"@context":"https://schema.org","@type":"Book","name":"Hotel Positioning","alternativeHeadline":"Come l'ospite sceglie un hotel (e perché non sceglie il tuo)","genre":"Manuale di posizionamento alberghiero","image":"https://hotelpositioning.com/assets/img/libro-copertina@2x.webp","author":{"@type":"Person","name":"Francesco Astolfi","url":"https://hotelpositioning.com/francesco/"},"inLanguage":"it","numberOfPages":150,"bookFormat":["https://schema.org/Paperback","https://schema.org/EBook"],"url":"https://hotelpositioning.com/libro/","description":"Il metodo in sei passaggi per posizionare un hotel indipendente e farlo scegliere al suo prezzo.","offers":{"@type":"Offer","price":"19.90","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.amazon.it/dp/B0HL3Z4XL7/","seller":{"@type":"Organization","name":"Amazon"}}}
 </script>
 <style>
 /* --- apertura: una colonna centrata, copertina grande, prezzo, numeri --- */
@@ -26,6 +26,9 @@
 .book-stage{display:flex;flex-direction:column;align-items:center;margin:0}
 .book-img{width:min(420px,100%);height:auto;transition:transform .4s cubic-bezier(.5,1.8,.5,1)}
 .book-img:hover{transform:translateY(-4px)}
+/* la foto di Francesco con il libro (la stessa di /capitolo/ e degli annunci) */
+.book-photo{border:2px solid var(--inchiostro);border-radius:20px;box-shadow:var(--o-xl)}
+.book-photo:hover{transform:none}
 .book-stage .price-tag{margin-top:22px;font:700 21px/1.3 var(--display);color:var(--ink)}
 .book-stage .price-tag small{font:400 17px var(--text);color:var(--ink-2);margin-left:6px}
 .hero .btn-row{justify-content:flex-start;margin-top:22px}
@@ -35,6 +38,8 @@
   .hero-grid{grid-template-columns:minmax(0,1fr);gap:24px}
   .book-stage{order:-1}
   .book-img{width:min(190px,46vw)}
+  /* sul telefono la foto è una fascia: volto e libro */
+  .book-photo{width:100%;height:min(52vw,240px);object-fit:cover;object-position:50% 26%;border-radius:16px}
   .book-stage .price-tag{display:none}
   .hero h1{margin:12px auto 14px}
   .hero .eyebrow,.hero .btn-row{justify-content:center}
@@ -131,6 +136,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Vai al contenuto</a>
+<a class="hp-news" href="/capitolo/?da=barra"><span class="hp-news-k">Novità</span><span class="hp-news-t"><span class="hp-news-l">È uscito il mio nuovo libro, Hotel Positioning.</span> <b>Leggi gratis il primo capitolo</b></span><span class="hp-news-a" aria-hidden="true">→</span></a>
 <header class="lp-top"><div class="wrap"><a href="/" class="logo" aria-label="Hotel Positioning, home"><span class="logo-mark" aria-hidden="true">HP</span>Hotel Positioning</a></div></header>
 
 <main id="main">
@@ -150,12 +156,12 @@
         <p class="micro"><b>Cartaceo o Kindle.</b> Se non ti è utile, Amazon lo rimborsa entro 14 giorni.</p>
       </div>
       <div class="book-stage">
-        <img class="book-img" src="/assets/img/libro-hotel-positioning.webp" srcset="/assets/img/libro-hotel-positioning.webp 420w, /assets/img/libro-hotel-positioning@2x.webp 840w" sizes="(max-width:860px) 52vw, 400px" width="420" height="658" fetchpriority="high" alt="Copertina del libro Hotel Positioning. Come l'ospite sceglie un hotel (e perché non sceglie il tuo), di Francesco Astolfi">
+        <img class="book-img book-photo" src="/assets/img/francesco-libro.webp" srcset="/assets/img/francesco-libro.webp 560w, /assets/img/francesco-libro@2x.webp 1027w" sizes="(max-width:860px) 92vw, 420px" width="560" height="627" fetchpriority="high" alt="Francesco Astolfi con in mano il suo libro Hotel Positioning">
         <span class="price-tag">19,90 €<small>su Amazon</small></span>
       </div>
     </div>
     <div class="stat-row hero-stats rv">
-      <div class="stat"><b data-count="120">120</b><span>pagine. Due sere.</span></div>
+      <div class="stat"><b data-count="150">150</b><span>pagine. Due sere.</span></div>
       <div class="stat"><b data-count="6">6</b><span>passaggi, nell'ordine giusto</span></div>
       <div class="stat"><b data-count="200">200</b><span>attributi per distinguerti</span></div>
       <div class="stat"><b>19,90 €</b><span>su Amazon. Anche Kindle.</span></div>
@@ -230,17 +236,20 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="num-tag">Cosa c'è dentro</span>
-      <h2>120 pagine, 8 figure. <em>Capitolo per capitolo.</em></h2>
+      <h2>150 pagine, 10 figure. <em>Capitolo per capitolo.</em></h2>
     </div>
     <ol class="toc rv">
-      <li><span class="ref">Cap. 1</span><p>Perché un hotel può essere il più grande e il più recensito della zona, e restare poco riconoscibile.</p></li>
-      <li><span class="ref">Cap. 5</span><p>Sei cose su come ragiona l'ospite, prima di scrivere una riga di sito. Per esempio perché un elenco di servizi non si ricorda.</p></li>
-      <li><span class="ref">Cap. 6</span><p>I sei passaggi e il Positioning Canvas. Come ricavare un fatto dalle recensioni che hai già.</p></li>
-      <li><span class="ref">Cap. 7</span><p>Dal fatto al beneficio alla trasformazione. Quattro strutture di racconto, una per ogni sezione del sito.</p></li>
-      <li><span class="ref">Cap. 8</span><p>Il documento di messaggistica: una pagina che fa dire la stessa cosa a sito, reception, campagne e risposte alle recensioni.</p></li>
-      <li><span class="ref">Cap. 9</span><p>Il conto delle commissioni: quanto vale un punto di prenotazioni dirette, con i tuoi numeri.</p></li>
-      <li><span class="ref">Cap. 10</span><p>Perché «l'hotel benessere di Fiuggi» vale più di «un hotel benessere a Fiuggi».</p></li>
-      <li><span class="ref">Appendici</span><p>200 attributi in undici famiglie, per sceglierne due da difendere. Dodici vie per prendere posizione, ognuna con un esempio reale e il suo rischio.</p></li>
+      <li><span class="ref">Cap. 1</span><p>Perché su Booking sembri uguale agli altri cinquanta, e perché l'AI ti salta del tutto. Con il test dei dieci secondi.</p></li>
+      <li><span class="ref">Cap. 4</span><p>Non perdi per il prezzo, perdi per il posizionamento. Il prezzo è la febbre, non la malattia: per questo abbassarlo non cura niente.</p></li>
+      <li><span class="ref">Cap. 5</span><p>Sei cose su come ragiona l'ospite, prima di scrivere una riga di sito. Per esempio perché ne ricorda due sole.</p></li>
+      <li><span class="ref">Cap. 6</span><p>O scegli tu, o sceglie il prezzo: le quattro caselle in cui può stare un hotel, e come capire qual è la tua.</p></li>
+      <li><span class="ref">Cap. 7</span><p>I sei passaggi e il Positioning Canvas, compilato su un hotel vero. Come ricavare un fatto dalle recensioni che hai già.</p></li>
+      <li><span class="ref">Cap. 8</span><p>Dal fatto al beneficio alla trasformazione. Come dire la tua posizione con parole che l'ospite riconosce scritte per lui.</p></li>
+      <li><span class="ref">Cap. 9</span><p>Il brand non è il logo. Il documento di messaggistica: una pagina che fa dire la stessa cosa a sito, reception, campagne e risposte alle recensioni.</p></li>
+      <li><span class="ref">Cap. 10</span><p>Quanto torna in cassa. Ogni euro di tariffa che difendi con il posizionamento è margine pieno, senza commissione.</p></li>
+      <li><span class="ref">Cap. 11</span><p>Silva Splendid e Veridia. Perché «l'hotel benessere di Fiuggi» vale più di «un hotel benessere a Fiuggi».</p></li>
+      <li><span class="ref">Cap. 12</span><p>L'ultimo filtro. Prima le agenzie, poi Booking, adesso l'AI: sceglie due o tre hotel per l'ospite e premia chi è riconoscibile.</p></li>
+      <li><span class="ref">Appendici</span><p>Oltre 200 attributi in undici famiglie, per sceglierne due da difendere. Dodici vie per prendere posizione, ognuna con un esempio reale e il suo rischio. E come scegliere il nome.</p></li>
     </ol>
     <div class="btn-row rv" style="margin-top:40px">
       <a href="/vai/amazon?da=libro-centro" class="btn" rel="noopener">Ordina su Amazon · 19,90 € <span class="arr">→</span></a>

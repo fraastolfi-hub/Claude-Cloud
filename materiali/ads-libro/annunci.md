@@ -3,7 +3,7 @@
 Destinazione: la pagina del libro sul sito, `https://hotelpositioning.com/libro/?utm_source=meta&utm_medium=paid_social&utm_campaign=libro&utm_content=<id>`. Da lì si va su Amazon. Pulsante: **Scopri di più**.
 Testi a schermo ripassati con neurocopy (stesso principio del testo principale di ogni angolo).
 Immagini: `out/<id>_45.png` (feed 4:5) e `out/<id>_916.png` (storie e reel 9:16). Reel: `reel-*.mp4` (9:16, 15 s, senza voce).
-Fatti usati: 19,90 € su Amazon, cartaceo o Kindle, 120 pagine, metodo in 6 passaggi, canvas tra gli strumenti gratuiti, rimborso Amazon entro 14 giorni.
+Fatti usati: 19,90 € su Amazon, cartaceo o Kindle, 150 pagine, 10 figure, metodo in 6 passaggi, canvas tra gli strumenti gratuiti, rimborso Amazon entro 14 giorni.
 
 ## L1 · La domanda  (immagini L1 + reel-domanda)
 - **Principio:** Tensione cognitiva
@@ -142,3 +142,56 @@ Pubblici personalizzati (11 novembre 2026), aggiunti come suggerimento al gruppo
 - «Simile 1% · visitatori sito» 120259096038610197
 
 Ancora da sbloccare: il permesso sui pubblici dell’account Instagram @webcopywriter (errore 2654 su 17841400590280014).
+
+## Versione semplice S1–S5 (12 novembre 2026, attive)
+
+Foto di Francesco + headline + subheadline su fascia gialla, testo nero. File: `genera_semplici.py` → `out-semplici/s1…s5_{45,916}.png`. Testi terra terra, frasi corte.
+
+### S1 · La domanda
+- Immagine: «Perché un ospite dovrebbe scegliere il tuo hotel?» / «Se non sai rispondere in una frase, sceglierà quello che costa meno.»
+- Testo: Perché un ospite dovrebbe scegliere il tuo hotel e non quello vicino?
+  Se ti viene da dire «bella posizione, camere pulite, personale gentile», c’è un problema: lo dicono tutti. E quando tutti dicono la stessa cosa, l’ospite sceglie chi costa meno.
+  Nel libro ti aiuto a trovare il motivo vero per cui scelgono te. 19,90 € su Amazon.
+- Titolo: Il libro per chi gestisce un hotel
+
+### S2 · Le stesse cose
+- Immagine: «Il tuo hotel e quello accanto dicono le stesse cose.» / «“Bella posizione, ottimo servizio, camere confortevoli.” Così l’ospite guarda solo il prezzo.»
+- Testo: Apri il sito del tuo hotel e quello dell’hotel accanto. Leggi le prime righe.
+  Quasi sempre dicono le stesse cose.
+  Quando tutti dicono lo stesso, l’ospite sceglie chi costa meno. Il libro ti aiuta a dire una cosa che è solo tua.
+- Titolo: Come farti scegliere
+
+### S3 · Gli sconti
+- Immagine: «Smetti di abbassare i prezzi per riempire le camere.» / «Un libro pratico per farti scegliere senza fare sconti.»
+- Testo: Abbassare i prezzi riempie le camere per qualche giorno. Poi lo fanno anche gli altri e sei da capo.
+  C’è un altro modo: dare all’ospite un motivo chiaro per scegliere te.
+  Il libro ti spiega come, passo per passo. 19,90 € su Amazon.
+- Titolo: Farsi scegliere senza sconti
+
+### S4 · Booking
+- Immagine: «Booking ti prende 30 € a notte. Questo libro costa 19,90 €.» / «E ti aiuta a dipendere meno dai portali.»
+- Testo: Una camera da 180 € venduta su Booking: circa 30 € vanno al portale. Ogni notte.
+  Il libro costa 19,90 €, una volta sola.
+  Dentro trovi come farti scegliere per quello che sei, non perché sei in cima alla lista.
+- Titolo: Meno portali, più ospiti tuoi
+
+### S5 · Chi lo ha scritto
+- Immagine: «Ho scritto un libro per chi gestisce un hotel.» / «Sei passi semplici per far capire all’ospite perché scegliere te.»
+- Testo: Ciao, sono Francesco. Lavoro da anni con gli hotel su una domanda sola: perché un ospite dovrebbe scegliere proprio te?
+  Ho messo il metodo in un libro: sei passi semplici, con esempi veri.
+  È scritto per chi gestisce un hotel, non per chi fa marketing. 19,90 € su Amazon.
+- Titolo: Hotel Positioning, il libro
+
+Tutti: descrizione «19,90 € · cartaceo o Kindle», pulsante «Scopri di più», link alla pagina /libro/ come gli altri.
+
+### Su Meta (12 novembre 2026)
+S2–S5 caricate e attive nel gruppo 120259095796680197: S2 120259116908040197 · S3 120259116908600197 · S4 120259116909420197 · S5 120259116910060197. Link `/libro/?utm_content=s2…s5`.
+Messi in pausa gli 8 annunci precedenti (L1–L5 e R1–R3). S1 caricata e attiva con il testo rivisto: 120259116929680197. Immagini (hash 4:5 60975763f5cf85f54d94a7d082781f57, 9:16 0452f328f90504a26c0a3eccaae34a7a).
+
+### S6 · Il sito nuovo (v2, attiva dal 12 novembre 2026, annuncio 120259116995220197)
+- Immagine: «Stai per rifare il sito del tuo hotel? Non farlo.» / «Non ancora. Prima decidi per chi è il tuo hotel e cosa gli offri che gli altri non hanno. Il sito viene dopo.»
+- Testo: Stai per rifare il sito del tuo hotel? Aspetta un attimo.
+  Un sito nuovo non serve se l’ospite non capisce che hotel sei. Per famiglie? Per chi viaggia in bici? Per chi cerca silenzio? Se non l’hai scelto tu, il sito non può dirlo. E l’ospite confronta solo il prezzo.
+  Prima vengono le scelte: a chi ti rivolgi, che valore gli dai, in quale categoria vuoi essere il riferimento. Poi il sito.
+  Il libro ti guida in queste scelte, passo per passo. 19,90 € su Amazon.
+- Titolo: Prima le scelte, poi il sito
