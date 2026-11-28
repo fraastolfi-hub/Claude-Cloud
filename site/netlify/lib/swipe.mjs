@@ -78,6 +78,8 @@ Campi:
 - tags: da 0 a 4 valori per categoria, solo tra quelli ammessi; per "consapevolezza" al massimo 1; se l'esempio non è hospitality usa settore "Fuori settore".
 - extra: al massimo 3 tag liberi brevi in minuscolo.
 
+Scrivi per un albergatore, non per un marketer: niente nomi di autori o esperti di marketing e niente gergo inglese (CTA, upsell, target, hook, funnel, claim, social proof). Italiano comune: «il bottone», «proporre un extra», «i clienti a cui ti rivolgi», «quello che dicono gli altri ospiti». RevPAR e ADR vanno bene.
+
 I dati già inseriti dall'utente hanno la precedenza: non contraddirli.`;
 
 /** Legge screenshot e testo con Claude e restituisce la proposta di campi e tag. */
@@ -172,7 +174,7 @@ Una frase: cosa fa funzionare l'idea, spogliata dal brand.
 **Attenzione a**
 Una o due righe: l'errore tipico quando si copia questa idea.
 
-Regole: niente aggettivi vuoti (unico, esclusivo, emozionante), niente «esperienza». Numeri, nomi, orari, oggetti. Non inventare recensioni o dati della struttura: dove servono, metti un segnaposto tra parentesi quadre, es. [il nome del tuo chef].`,
+Regole: scrivi per un albergatore, non per un marketer: niente nomi di autori o metodi (Dunford, Schwartz…) e niente gergo inglese (CTA, upsell, target, funnel). Niente aggettivi vuoti (unico, esclusivo, emozionante), niente «esperienza». Numeri, nomi, orari, oggetti. Non inventare recensioni o dati della struttura: dove servono, metti un segnaposto tra parentesi quadre, es. [il nome del tuo chef].`,
     messages: [{ role: 'user', content: dati }],
   });
   return r.content.filter((b) => b.type === 'text').map((b) => b.text).join('').trim();
